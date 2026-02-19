@@ -4,7 +4,8 @@
   "description": "A personal collection of skills for AI coding agents",
   "type": "module",
   "scripts": {
-    "sync": "node scripts/sync.js"
+    "sync-from-home": "node scripts/sync-from-home.js",
+    "sync-to-home": "node scripts/sync-to-home.js"
   },
   "keywords": ["skills", "ai", "agents"],
   "author": "",

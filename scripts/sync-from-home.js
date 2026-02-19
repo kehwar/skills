@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, cpSync, rmSync } from 'fs';
+import { readFileSync, existsSync, mkdirSync, cpSync, rmSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { homedir } from 'os';
@@ -25,7 +25,7 @@ try {
         process.exit(1);
     }
 
-    // Read the lockfile
+    // Read the lockfile to get skill count for display
     const lockfileContent = readFileSync(homeLockFile, 'utf8');
     const lockfile = JSON.parse(lockfileContent);
 
@@ -38,8 +38,8 @@ try {
         mkdirSync(repoAgentsDir, { recursive: true });
     }
 
-    // Write to repo
-    writeFileSync(repoLockFile, JSON.stringify(lockfile, null, 2) + '\n');
+    // Copy lockfile from home to repo
+    cpSync(homeLockFile, repoLockFile);
 
     console.log('\n✓ Lockfile synced to repository!');
     console.log(`  ${repoLockFile}`);
