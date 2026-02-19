@@ -4,8 +4,7 @@
   "description": "A personal collection of skills for AI coding agents",
   "type": "module",
   "scripts": {
-    "add-skill": "node scripts/add-skill.js",
-    "install-skills": "node scripts/install-skills.js"
+    "sync": "node scripts/sync.js"
   },
   "keywords": ["skills", "ai", "agents"],
   "author": "",

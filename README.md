@@ -1,60 +1,32 @@
-# skills
+# Skills
 
 A personal collection of skills for AI coding agents, installable via the [skills CLI](https://github.com/vercel-labs/skills).
 
-## Install
+## Install All Skills from This Collection
 
-Install all skills from this collection:
+To install all skills tracked in this repository:
 
 ```bash
 npx skills add kehwar/skills
 ```
 
-## Add Skills
+## Updating Skills from Home Directory
 
-To add skills and save them to the skills registry:
-
-```bash
-pnpm add-skill <repo> [-s <skill>]
-```
-
-**When you don't specify a skill** (`-s` flag), the script will:
-1. List all available skills in the repository using `npx skills add <repo> -l`
-2. Install each skill individually with `npx skills add <repo> -s <skill> -a github-copilot -y`
-3. Add each skill to `.agents/skills.json`
-
-**When you specify a skill**, it will install only that specific skill.
-
-Examples:
+Sync your installed skills from home directory to the repository:
 
 ```bash
-# List and add ALL skills from a repository
-pnpm add-skill https://github.com/vercel-labs/skills
-
-# Add a specific skill from a repository
-pnpm add-skill https://github.com/vercel-labs/skills -s find-skills
+pnpm sync
 ```
 
-Skills added via this command are automatically:
-- Installed with the `-a github-copilot -y` flags for auto-configuration
-- Saved to `.agents/skills.json` for tracking and future updates
+This command:
+1. Copies `.skill-lock.json` from `~/.agents/` to repo `.agents/`
+2. For each skill in the lockfile, removes old copy and syncs fresh skill folder from `~/.agents/skills/`
+3. Prepares your current skill setup for git commit
 
-## Managing Skills
-
-The `.agents/skills.json` file tracks all installed skills with their source repositories and installation dates. This allows you to:
-- Keep track of what skills are installed
-- Reinstall skills from the registry
-- Update skills from their source repositories
-
-### Reinstall All Skills
-
-To reinstall all skills from the registry (useful after cloning or syncing):
-
-```bash
-pnpm install-skills
-```
-
-This command reads `.agents/skills.json` and reinstalls all tracked skills.
+**Use cases:**
+- Backup your installed skills to the repository
+- Share skills configuration across team/machines via git
+- Track skill installations and their contents in version control
 
 ## License
 
