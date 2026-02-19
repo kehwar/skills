@@ -1,6 +1,15 @@
 {
   "version": 3,
   "skills": {
+    "antfu": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/antfu/skills.git",
+      "skillPath": "skills/antfu/SKILL.md",
+      "skillFolderHash": "892f71a5d96f9ad720d7af4cdb692852b643f119",
+      "installedAt": "2026-02-19T20:49:08.772Z",
+      "updatedAt": "2026-02-19T20:49:08.772Z"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
