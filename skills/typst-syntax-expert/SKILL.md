@@ -245,3 +245,4 @@ A template is a function that wraps `doc` content:
 | [references/math.md](references/math.md) | Math functions, symbols, and advanced math typesetting |
 | [references/styling.md](references/styling.md) | Advanced set/show rule patterns and styling techniques |
 | [references/scripting.md](references/scripting.md) | Data types, operators, destructuring, methods |
+| [references/tables.md](references/tables.md) | Table structure, column sizing, headers, merging, strokes, fills, alignment |
