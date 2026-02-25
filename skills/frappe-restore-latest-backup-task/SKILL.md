@@ -27,11 +27,26 @@ Use this skill when users request:
 ### 1. Find Latest Backup
 
 ```bash
-cd /workspace/development/frappe-bench/backups && \
-ls -t *-database.sql.gz | head -1
+cd /workspace/development/frappe-bench && \
+LATEST_DB=$(find backups -maxdepth 1 -type f -name '*-database.sql.gz' -printf '%T@ %p\n' | sort -nr | head -1 | cut -d' ' -f2-) && \
+TS=$(basename "$LATEST_DB" | cut -d'-' -f1) && \
+echo "TIMESTAMP=$TS" && \
+echo "DB_FILE=$LATEST_DB"
 ```
 
 Extract the timestamp prefix (e.g., `20260219_000036`) for use in subsequent commands.
+
+### 1.1 Verify Companion File Archives
+
+```bash
+cd /workspace/development/frappe-bench && \
+PUB="backups/TIMESTAMP-gruposoldamundo_frappe_cloud-files.tar" && \
+PRI="backups/TIMESTAMP-gruposoldamundo_frappe_cloud-private-files.tar" && \
+([ -f "$PUB" ] && echo "PUBLIC=present:$PUB" || echo "PUBLIC=missing:$PUB") && \
+([ -f "$PRI" ] && echo "PRIVATE=present:$PRI" || echo "PRIVATE=missing:$PRI")
+```
+
+If `PUBLIC=missing`, restore with private files only (or database only if both are missing).
 
 ### 2. Check Database Size
 
@@ -46,7 +61,7 @@ ls -lh backups/TIMESTAMP-gruposoldamundo_frappe_cloud-database.sql.gz
 Required for large databases to prevent packet size errors.
 
 ```bash
-mariadb -h mariadb -u root -p123 -e "SET GLOBAL max_allowed_packet=536870912; SHOW VARIABLES LIKE 'max_allowed_packet';"
+mariadb -h mariadb -u root -p123 -e "SET GLOBAL max_allowed_packet=536870912; SHOW GLOBAL VARIABLES LIKE 'max_allowed_packet';"
 ```
 
 **Expected output**: `max_allowed_packet | 536870912` (512MB)
@@ -55,12 +70,24 @@ mariadb -h mariadb -u root -p123 -e "SET GLOBAL max_allowed_packet=536870912; SH
 
 ### 4. Restore Database and Files
 
+When both file archives exist:
+
 ```bash
 cd /workspace/development/frappe-bench && \
 bench --site development.localhost restore \
     --db-root-password 123 \
     "backups/TIMESTAMP-gruposoldamundo_frappe_cloud-database.sql.gz" \
     --with-public-files "backups/TIMESTAMP-gruposoldamundo_frappe_cloud-files.tar" \
+    --with-private-files "backups/TIMESTAMP-gruposoldamundo_frappe_cloud-private-files.tar"
+```
+
+When public files are missing but private files exist:
+
+```bash
+cd /workspace/development/frappe-bench && \
+bench --site development.localhost restore \
+    --db-root-password 123 \
+    "backups/TIMESTAMP-gruposoldamundo_frappe_cloud-database.sql.gz" \
     --with-private-files "backups/TIMESTAMP-gruposoldamundo_frappe_cloud-private-files.tar"
 ```
 
@@ -100,7 +127,7 @@ ADMIN_PASSWORD="admin"
 cd "$BENCH_PATH"
 
 # Find latest backup
-LATEST=$(ls -t backups/*-database.sql.gz 2>/dev/null | head -1)
+LATEST=$(find backups -maxdepth 1 -type f -name '*-database.sql.gz' -printf '%T@ %p\n' | sort -nr | head -1 | cut -d' ' -f2-)
 if [ -z "$LATEST" ]; then
     echo "Error: No backup files found"
     exit 1
@@ -214,6 +241,7 @@ When implementing this workflow:
 3. **Handle errors gracefully** - Each step should check for success
 4. **Use absolute paths** - Prevents ambiguity in file locations
 5. **Verify completion** - Confirm admin password was set and migrations completed
+6. **Prefer single-shell one-liners for discovery** - Avoid multi-line partial execution in persistent terminals
 
 ## Quick Reference
 
