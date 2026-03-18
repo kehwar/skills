@@ -1,6 +1,6 @@
 ---
 name: frappe-doctype-form-view
-description: Expert guidance for implementing Frappe DocType JavaScript form controllers (.js app files). Covers the complete lifecycle hook execution order (setup/onload/refresh) with explicit placement rules, frm object API (fields_dict, set_query, set_value, toggle_display/reqd/enable, add_custom_button), frappe.call for server methods, frappe.prompt and frappe.ui.Dialog for user input dialogs, frappe.show_progress for progress feedback, and child table APIs. Use when writing or debugging .js controller files, choosing which hook to use, adding custom buttons, building dialogs, running server methods, or fixing bugs caused by logic placed in the wrong hook.
+description: Expert guidance for implementing Frappe DocType JavaScript form controllers (.js app files). Covers the complete lifecycle hook execution order (setup/onload/refresh) with explicit placement rules, frm object API (fields_dict, set_query, set_value, toggle_display/reqd/enable, add_custom_button, frm.trigger), frappe.call for server methods, frappe.prompt and frappe.ui.Dialog for user input dialogs, frappe.show_progress for progress feedback, child table APIs, and reusable helper code via frappe.ui.form.Controller subclasses (extend_cscript pattern) to avoid global scope pollution. Use when writing or debugging .js controller files, choosing which hook to use, adding custom buttons, building dialogs, running server methods, triggering events programmatically, sharing logic across event handlers, or fixing bugs caused by logic placed in the wrong hook.
 ---
 
 # Frappe DocType Form Controller (.js)
@@ -138,6 +138,37 @@ await frm.set_value('field', value)
 await frm.set_value({ field1: val1, field2: val2 })
 ```
 
+### Triggering Events Programmatically
+
+`frm.trigger(event, cdt?, cdn?)` fires a registered event handler as if the user had caused it. Use it to avoid duplicating logic that already lives in a field trigger or a named event.
+
+```js
+// Fire a field trigger manually (e.g. after setting a value in code)
+async customer(frm) {
+    await frm.set_value('territory', 'Peru')
+    // set_value does NOT fire the territory trigger — call it explicitly
+    frm.trigger('territory')
+},
+
+// Fire a named (non-field) event — useful for separating concerns
+refresh(frm) {
+    if (frm.doc.status === 'Cancelled') {
+        frm.trigger('on_cancel_ui')   // delegate display logic to a named handler
+    }
+},
+
+on_cancel_ui(frm) {
+    frm.toggle_display('cancellation_reason', true)
+    frm.toggle_reqd('cancellation_reason', true)
+},
+```
+
+**Rules:**
+- `frm.trigger` is **always synchronous dispatch** — it calls the handler immediately but the handler may itself be async. If you need to await its side-effects (e.g. a `frappe.call` inside it), await the trigger: `await frm.trigger('field')`.
+- Calling `frm.trigger('refresh')` re-runs your `refresh` hook — rarely needed but valid.
+- For child-table events pass `cdt` and `cdn`: `frm.trigger('item_code', cdt, cdn)`.
+- Do **not** trigger `setup` or `onload` — those hooks are lifecycle-managed by the framework.
+
 ### Buttons
 
 ```js
@@ -251,3 +282,141 @@ frappe.model.set_value(cdt, cdn, 'rate', 100)  // set value in child row
 ```
 
 See [REFERENCE.md § Child Tables](REFERENCE.md#child-tables) for the full grid API.
+
+---
+
+## Reusable Code — The `frappe.ui.form.Controller` Pattern
+
+### The problem
+
+All code inside a `.js` file executes in the browser's global scope. Declaring helper functions at the top level puts them on `window`, polluting the global namespace and risking collisions across doctypes.
+
+```js
+// ❌ BAD — pollutes window.canTransitionTo
+function canTransitionTo(frm, status) { ... }
+
+frappe.ui.form.on('My Doc', {
+    refresh(frm) {
+        if (canTransitionTo(frm, 'Active')) { ... }   // global leak
+    },
+})
+```
+
+### The solution: extend `frappe.ui.form.Controller`
+
+Frappe's built-in Controller pattern (used internally for DocType and Customize Form) is the canonical way to attach reusable methods to a form without polluting global scope.
+
+```js
+// ✅ GOOD — safe namespace, no global pollution
+frappe.provide('frappe.model')
+
+frappe.model.MyDocTypeController = class MyDocTypeController extends frappe.ui.form.Controller {
+    // this.frm is always available (set by the base class constructor)
+
+    canTransitionTo(newStatus) {
+        const allowed = { Draft: ['Active'], Active: ['Archived', 'Draft'] }
+        return (allowed[this.frm.doc.status] || []).includes(newStatus)
+    }
+
+    isManager() {
+        return frappe.user_roles.includes('System Manager')
+    }
+}
+
+frappe.ui.form.on('My Doc Type', {
+    refresh(frm) {
+        if (!frm.cscript.isManager()) return
+
+        if (frm.cscript.canTransitionTo('Active')) {
+            frm.add_custom_button(__('Activate'), () => frm.trigger('activate'), __('Actions'))
+        }
+    },
+})
+
+// Must be the last line — merges controller methods into frm.cscript
+extend_cscript(cur_frm.cscript, new frappe.model.MyDocTypeController({ frm: cur_frm }))
+```
+
+### How it works
+
+| Part | What it does |
+|------|------|
+| `frappe.ui.form.Controller` | Base class: `constructor(opts) { $.extend(this, opts); }` — copies `{ frm }` as instance properties, making `this.frm` available on every method |
+| `frappe.provide('frappe.model')` | Creates the namespace object safely — a no-op if it already exists, never clobbers |
+| `extend_cscript(frm.cscript, instance)` | Merges controller's own properties and prototype chain into `frm.cscript` via `$.extend` + `__proto__` assignment, so all methods are accessible via `frm.cscript` |
+| `frm.cscript.myMethod()` | How event handlers call controller methods |
+
+### Namespace conventions
+
+Follow Frappe's own convention — put the controller on a `frappe.provide` namespace, never on `window`.
+
+```js
+frappe.provide('frappe.model')           // Frappe's own doctypes (DocType, Customize Form)
+frappe.provide('myapp.model')            // ✅ recommended for app-specific doctypes
+frappe.provide('myapp.controllers')      // acceptable alternative
+```
+
+**Naming**: `<Namespace>.<DocTypeNameInCamelCase>Controller`  
+Example for docttype "Sales Commission Settlement" in app "soldamundo":
+
+```js
+frappe.provide('frappe.model')
+frappe.model.SalesCommissionSettlementController = class ... extends frappe.ui.form.Controller { ... }
+```
+
+### Placement rules for Controller methods
+
+| Put in Controller | Keep in `frappe.ui.form.on` |
+|---|---|
+| Permission / role checks | `setup`, `refresh`, field triggers |
+| State transition guards | Any hook that needs `(frm, cdt, cdn)` args |
+| Helpers called from ≥ 2 event handlers | One-shot logic used only once |
+| Constants shared across handlers | |
+
+### Controller does NOT replace event hooks
+
+Event hooks (`setup`, `refresh`, `fieldname`) must stay in `frappe.ui.form.on`. The Controller is only for **helper methods** — not for declaring lifecycle hooks.
+
+> **Why?** If you define `refresh()` on the Controller, Frappe calls it as an old-style handler with `(doc, cdt, cdn)` signature (not `(frm, ...)`). Mixing old-style and new-style handlers is confusing. Keep all event declarations in `frappe.ui.form.on`.
+
+### Full file structure
+
+```js
+// 1. Namespace + Controller class (top of file)
+frappe.provide('frappe.model')
+
+frappe.model.MyDocTypeController = class MyDocTypeController extends frappe.ui.form.Controller {
+    ALLOWED_TRANSITIONS = {
+        Draft: ['Active'],
+        Active: ['Archived', 'Draft'],
+    }
+
+    canTransitionTo(newStatus) {
+        return (this.ALLOWED_TRANSITIONS[this.frm.doc.status] || []).includes(newStatus)
+    }
+
+    isManager() {
+        return frappe.user_roles.includes('System Manager')
+    }
+}
+
+// 2. Event hooks
+frappe.ui.form.on('My Doc Type', {
+    refresh(frm) {
+        if (!frm.cscript.isManager()) return
+
+        if (frm.cscript.canTransitionTo('Active')) {
+            frm.add_custom_button(__('Activate'), () => frm.trigger('activate'), __('Actions'))
+        }
+    },
+
+    activate(frm) {
+        frappe.confirm(__('Activate this record?'), () => {
+            frappe.call({ method: 'activate', doc: frm.doc, callback() { frm.reload_doc() } })
+        })
+    },
+})
+
+// 3. extend_cscript — ALWAYS last line
+extend_cscript(cur_frm.cscript, new frappe.model.MyDocTypeController({ frm: cur_frm }))
+```

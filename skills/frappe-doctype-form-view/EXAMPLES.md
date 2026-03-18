@@ -464,3 +464,76 @@ frappe.ui.form.on('Project', {
 
 > **Headline alert vs indicator:** Use `set_headline_alert` when the doc needs to loudly signal a blocking state (hold, pending approval, error). Use `add_indicator` for supplementary, non-blocking facts that sit alongside automatic dashboard data.
 ```
+
+---
+
+## 12. Reusable Helpers via `frappe.ui.form.Controller`
+
+When multiple event hooks share logic (permission checks, transition guards, derivations), extract them into a Controller subclass instead of top-level functions (which would leak onto `window`).
+
+```js
+// soldamundo/sales_performance/doctype/sales_commission_settlement/sales_commission_settlement.js
+
+frappe.provide('frappe.model')
+
+frappe.model.SalesCommissionSettlementController = class SalesCommissionSettlementController
+    extends frappe.ui.form.Controller {
+
+    // this.frm is always available — set by the base class constructor
+    ALLOWED_TRANSITIONS = {
+        Draft:    ['Active'],
+        Active:   ['Archived', 'Settled', 'Draft'],
+        Archived: ['Draft'],
+        Settled:  ['Draft'],
+    }
+
+    canManageSettlements() {
+        return frappe.user_roles.includes('System Manager')
+    }
+
+    canTransitionTo(newStatus) {
+        return (this.ALLOWED_TRANSITIONS[this.frm.doc.status] || []).includes(newStatus)
+    }
+}
+
+frappe.ui.form.on('Sales Commission Settlement', {
+    refresh(frm) {
+        // Access controller helpers via frm.cscript
+        if (frm.is_new() || !frm.cscript.canManageSettlements()) return
+
+        if (frm.doc.settlement_result) {
+            frm.add_custom_button(__('View Result'), () => frm.trigger('view_result'))
+        }
+
+        if (frm.cscript.canTransitionTo('Active')) {
+            frm.add_custom_button(__('Aggregate'), () => frm.trigger('aggregate'), __('Actions'))
+        }
+
+        if (frm.cscript.canTransitionTo('Settled')) {
+            frm.add_custom_button(__('Mark as Settled'), () => frm.trigger('mark_as_settled'), __('Actions'))
+        }
+
+        if (frm.cscript.canTransitionTo('Draft')) {
+            frm.add_custom_button(__('Reset'), () => frm.trigger('reset'), __('Actions'))
+        }
+    },
+
+    aggregate(frm) {
+        // canTransitionTo already checked by refresh before showing the button,
+        // but defending here avoids stale-button edge cases
+        frappe.confirm(__('Run aggregation?'), () => {
+            frappe.call({ method: 'enqueue_aggregate', doc: frm.doc, freeze: true })
+        })
+    },
+})
+
+// extend_cscript MUST be the last line — merges controller methods onto frm.cscript
+extend_cscript(cur_frm.cscript, new frappe.model.SalesCommissionSettlementController({ frm: cur_frm }))
+```
+
+**Key points:**
+- `frappe.provide('frappe.model')` creates the namespace — no global pollution, safe to call even if it already exists
+- The Controller class name follows `<Namespace>.<DocTypeCamelCase>Controller` convention
+- Helper methods use `this.frm` (not `frm`) to access the document
+- `extend_cscript` uses `$.extend` + prototype swap so methods are reachable via `frm.cscript`
+- Event hooks stay in `frappe.ui.form.on`; the Controller only holds reusable helpers
