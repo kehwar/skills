@@ -1,5 +1,5 @@
 ---
-name: kehwar-frappe-standard-script-report-schema
+name: frappe-standard-script-report-schema
 description: Guidance for scaffolding and maintaining Frappe standard Script Reports in code, with emphasis on report .json metadata shape and file-based behavior. Use when creating/editing standard Script Report folders, structuring report .json metadata, and defining filters/columns via .js and .py.
 ---
 
