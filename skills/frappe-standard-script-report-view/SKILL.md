@@ -1,11 +1,11 @@
 ---
 name: frappe-standard-script-report-view
-description: Expert guidance for writing the .js controller for a Frappe Standard Script Report. Use when defining report filters, implementing formatter callbacks, adding onload toolbar buttons, setting default filter values, using get_datatable_options, or after_datatable_render hooks. Companion to frappe-standard-script-report-schema.
+description: Expert guidance for writing the .js controller for a Frappe Standard Script Report. Use when defining report filters, implementing formatter callbacks, adding onload toolbar buttons, setting default filter values, using get_datatable_options, or after_datatable_render hooks.
 ---
 
 # Frappe Standard Script Report — JS Controller
 
-Companion to `frappe-standard-script-report-schema`. That skill covers the `.json` schema; this skill covers the `.js` controller.
+Companion to `frappe-standard-script-report-schema` (`.json`) and `frappe-standard-script-report-controller` (`.py`). This skill covers the `.js` controller only.
 
 ## Golden Rule
 

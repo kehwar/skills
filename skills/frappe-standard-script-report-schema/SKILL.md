@@ -5,6 +5,8 @@ description: Create and edit Frappe Script Report `.json` schema files through F
 
 # Frappe Standard Script Report Schema
 
+Companion to `frappe-standard-script-report-controller` (`.py`) and `frappe-standard-script-report-view` (`.js`). This skill covers the `.json` schema only.
+
 Manipulate Script Report schemas through Frappe's document engine. Output is identical to a developer saving a Report in the Frappe UI in developer mode: Frappe exports canonical JSON and scaffolds missing `.py`/`.js` controller files.
 
 ## Quick Start

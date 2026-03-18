@@ -1,6 +1,6 @@
 ---
 name: frappe-standard-script-report-controller
-description: Expert guidance for writing the .py controller for a Frappe Standard Script Report. Covers the execute() contract, column definition (dict format + full fieldtype reference), data fetching with frappe.get_all / frappe.db.sql / frappe.qb, permission-aware queries with build_match_conditions, and reusable get_columns() export patterns. Companion to frappe-standard-script-report-schema and frappe-standard-script-report-view.
+description: Expert guidance for writing the .py controller for a Frappe Standard Script Report. Covers the execute() contract, column definition (dict format + full fieldtype reference), data fetching with frappe.get_all / frappe.db.sql / frappe.qb, permission-aware queries with build_match_conditions, and reusable get_columns() export patterns.
 ---
 
 # Frappe Standard Script Report — Python Controller
