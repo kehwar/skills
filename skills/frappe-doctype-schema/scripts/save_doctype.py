@@ -103,6 +103,10 @@ def main():
     frappe.connect()
 
     try:
+        # Strip Frappe-managed metadata so it doesn't cause timestamp conflicts
+        for key in ("creation", "modified", "modified_by", "owner"):
+            data.pop(key, None)
+
         if frappe.db.exists("DocType", name):
             print(f"Updating existing DocType: {name}")
             doc = frappe.get_doc("DocType", name)
