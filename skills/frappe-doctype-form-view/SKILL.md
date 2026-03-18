@@ -189,17 +189,34 @@ frm.set_query('child_fieldname', 'parent_table_field', () => ({ filters: {} }))
 
 ### Calling Server Methods
 
+Always use `frappe.call`. Never use `frm.call` — it hides the method path, making code harder to trace.
+
+Pass `callback` as a parameter rather than chaining `.then()` — it keeps the response handler co-located with the call options and is the idiomatic Frappe style.
+
+**When calling a document method** (a `@frappe.whitelist()` method on the controller), pass `doc: frm.doc` and a short `method` name. The `doc` carries the doctype, name, and all field values — no need to repeat them in `args`.
+
 ```js
-// Preferred — explicit, no magic
+// ✅ GOOD — doc method, short path, callback param
 frappe.call({
-    method: 'myapp.mymodule.doctype.my_doc.my_doc.my_function',
+    doc: frm.doc,
+    method: 'my_function',   // short name — no full dotted path needed
+    freeze: true,
+    callback(r) { console.log(r.message) },
+})
+
+// ✅ GOOD — module-level function, full path required
+frappe.call({
+    method: 'myapp.mymodule.some_module.my_function',
     args: { name: frm.doc.name },
     freeze: true,
     callback(r) { console.log(r.message) },
 })
 
-// await/async style
-const { message } = await frappe.call({ method: '...', args: {} })
+// ❌ BAD — avoid frm.call
+frm.call('my_function')  // do not use
+
+// ❌ BAD — avoid .then() for response handling
+frappe.call({ doc: frm.doc, method: 'my_function' }).then(r => { ... })
 ```
 
 ### Dialogs
