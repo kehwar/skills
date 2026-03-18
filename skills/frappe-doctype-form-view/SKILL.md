@@ -7,6 +7,7 @@ description: Expert guidance for implementing Frappe DocType JavaScript form con
 
 See [frappe-doctype-schema](../frappe-doctype-schema/SKILL.md) for the `.json` schema.
 See [frappe-doctype-controller](../frappe-doctype-controller/SKILL.md) for the `.py` server controller.
+See [frappe-doctype-list-view](../frappe-doctype-list-view/SKILL.md) for the `_list.js` list view controller.
 Full per-hook details: [REFERENCE.md](REFERENCE.md).
 Common use-case examples: [EXAMPLES.md](EXAMPLES.md).
 

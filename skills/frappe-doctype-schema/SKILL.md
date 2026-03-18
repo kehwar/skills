@@ -8,6 +8,8 @@ description: Create and edit Frappe DocType `.json` schema files through Frappe'
 Manipulate DocType schemas through Frappe's document engine. Output is identical to a developer saving a DocType via the UI in developer mode: Frappe exports canonical JSON and scaffolds missing controller files.
 
 See [frappe-doctype-controller](../frappe-doctype-controller/SKILL.md) for implementing the `.py` controller class (hooks, lifecycle, Document API).
+See [frappe-doctype-form-view](../frappe-doctype-form-view/SKILL.md) for the `.js` form controller.
+See [frappe-doctype-list-view](../frappe-doctype-list-view/SKILL.md) for the `_list.js` list view controller.
 
 ## Quick Start
 
