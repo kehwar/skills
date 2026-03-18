@@ -237,12 +237,23 @@ frm.change_custom_button_type(__('Label'), group, 'primary')
 
 ### `frappe.call` — Preferred
 
+Two call signatures — choose based on where the Python function lives:
+
 ```js
+// ✅ Controller method — Python @frappe.whitelist() method on the DocType class:
+frappe.call({
+    doc: frm.doc,           // injects doctype + name; use short method name only
+    method: 'my_function',
+    freeze: true,
+    callback(r) { console.log(r.message) },
+})
+
+// ✅ Module-level function — standalone @frappe.whitelist() function:
 frappe.call({
     method: 'myapp.mymodule.doctype.my_doc.my_doc.my_function',
     args: { name: frm.doc.name, extra: 'data' },
     // --- optional ---
-    callback(r) { console.log(r.message) },   // r.message = Python return value
+    callback(r) { console.log(r.message) },   // r.message = Python return value; PREFERRED over .then()
     error(r) { },                              // on HTTP/server error
     always(r) { },                             // fires regardless of success/error
     freeze: true,                              // full-page loading overlay
@@ -250,12 +261,18 @@ frappe.call({
     btn: $(event.currentTarget),              // button to disable during request
     no_spinner: true,                        // suppress loading spinner (alias: quiet)
 })
+```
+
+```
 // Returns: jQuery jqXHR deferred (jQuery 3.7, Promises/A+ compliant)
-// Works with await, .then(), .done(), .fail(), .catch()
+// Prefer callback: option over .then() — idiomatic Frappe style; keeps handler co-located
+// Works with await, .then(), .done(), .fail(), .catch() but callback is idiomatic
 // Prefer the error: callback option for error handling — chained .fail()/.catch() only
 // catches network/HTTP failures; server-side exceptions are routed through error: only
+```
 
-// await style:
+```js
+// await style (acceptable when sequential logic makes it clearer):
 const { message } = await frappe.call({
     method: 'myapp.mymodule.doctype.my_doc.my_doc.my_function',
     args: { name: frm.doc.name },
@@ -270,16 +287,17 @@ def my_function(name, extra=None):
     return frappe.get_doc('My DocType', name).some_result
 ```
 
-### `frm.call` — Exists, Use Sparingly
+### `frm.call` — Anti-Pattern, Do Not Use
 
-`frm.call` is a lighter wrapper that injects `doc: frm.doc` automatically and resolves short method names to `DocController.method`. It can surprise you with auto-refresh behavior. Prefer explicit `frappe.call` with full dotted paths.
+`frm.call` hides the method path, making code harder to trace, and can trigger unexpected auto-refresh behaviour. Use `frappe.call` with `doc: frm.doc` and the short method name instead — it is explicit, traceable, and idiomatic.
 
 ```js
-// Short form — calls Python method on the DocType controller class:
+// ❌ BAD
 frm.call('server_method_name', { extra: 'arg' }, (r) => { })
-
-// Promise form:
 await frm.call('server_method_name')
+
+// ✅ GOOD — equivalent, explicit
+frappe.call({ doc: frm.doc, method: 'server_method_name', args: { extra: 'arg' }, callback(r) { } })
 ```
 
 ---
