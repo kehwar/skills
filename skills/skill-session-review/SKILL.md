@@ -39,14 +39,16 @@ For each skill, look for evidence of these categories:
 
 ### 4 — Write SESSION_REVIEW.md
 
-Append a dated section to `SESSION_REVIEW.md` inside each skill's own folder. Create the file if it does not exist.
+**Only write a SESSION_REVIEW.md entry if at least one issue was found for that skill.** Skip writing entirely for skills with no issues.
+
+Append a timestamped section to `SESSION_REVIEW.md` inside each skill's own folder. Create the file if it does not exist.
 
 **File location**: `<skill-folder>/SESSION_REVIEW.md`
 
 **Section format**:
 
 ```md
-## Session: YYYY-MM-DD
+## Session: YYYY-MM-DD HH:MM
 
 ### Summary
 
@@ -61,21 +63,20 @@ One sentence describing how the skill was used this session.
 
 #### [Category] — [Short title]
 
+**File**: `path/to/relevant/file.py` (or the SKILL.md path if the issue is in the skill itself)  
 **Evidence**: Quote or describe the exact moment in the session where this surfaced.  
 **Impact**: How it affected the session (e.g. wrong output produced, had to retry, caused a runtime error).
 
 #### [Category] — [Short title]
 
 ...
-
-### No issues observed
-
-_(Only include this heading when no issues were found for this skill)_
 ```
+
+Include relevant file paths for every issue — the workspace file where the problem manifested, or the `SKILL.md` path if the issue is a documentation error. If multiple files are relevant, list them all.
 
 If the skill was invoked multiple times in the same session, consolidate all observations into one section.
 
-If a `SESSION_REVIEW.md` already has a section for today's date, append a `#### Addendum` sub-section rather than duplicating the heading.
+If a `SESSION_REVIEW.md` already has a section for today's date and minute, append a `#### Addendum` sub-section rather than duplicating the heading.
 
 ### 5 — Output a summary
 
@@ -84,15 +85,17 @@ After writing all review files, print a summary table in the conversation:
 | Skill | Status | Issues found |
 |-------|--------|-------------|
 | skill-name | Applied | 2 |
-| other-skill | Not applied — reason | 1 |
+| other-skill | Applied | 0 — no review written |
 
 Then state:
 
-> Review complete. SESSION_REVIEW.md updated for each skill above. These files will be used to refine the skills in future sessions.
+> Review complete. SESSION_REVIEW.md updated for skills with issues. These files will be used to refine the skills in future sessions.
 
 ## Rules
 
 - Work only on what is visible in the current context window. Do not ask the user for additional context.
 - Record **observations only** — do not propose edits to SKILL.md in the review file.
-- Always write an entry for every loaded skill, even if no issues were found ("No issues observed").
+- **Only write SESSION_REVIEW.md for skills where at least one issue was found.** Do not create files for clean sessions.
+- Use `YYYY-MM-DD HH:MM` (24-hour, local time) as the section timestamp.
+- Always include a relevant file path for each issue.
 - Keep evidence quotes concise — paraphrase rather than paste large blocks.
