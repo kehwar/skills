@@ -361,3 +361,106 @@ frappe.ui.form.on('Leave Application', {
     },
 })
 ```
+
+---
+
+## 11. Dashboard Headline Alerts & Indicators
+
+Three patterns showing when and how to use the different `frm.dashboard` notification surfaces.
+
+### Pattern A — Persistent status banner (approval hold)
+
+Show a yellow banner while a doc is pending approval. Cleared automatically when the status changes.
+
+```js
+frappe.ui.form.on('Purchase Order', {
+    refresh(frm) {
+        // Always derive from document state — refresh is idempotent
+        if (frm.doc.docstatus === 0 && frm.doc.status === 'Pending Approval') {
+            frm.dashboard.set_headline_alert(
+                __('Waiting for manager approval — do not submit until approved'),
+                'yellow'
+            )
+        } else {
+            frm.dashboard.clear_headline()  // no banner in any other state
+        }
+    },
+})
+```
+
+> **Why `set_headline_alert` here?** The banner reflects a persistent document state, not a transient user action. It should re-appear every time the form is opened while the doc is in this state.
+
+### Pattern B — Transient action feedback (auto-dismissing)
+
+After a custom button triggers a background job, confirm with a temporary banner.
+
+```js
+frappe.ui.form.on('Sales Order', {
+    refresh(frm) {
+        if (frm.doc.docstatus === 1) {
+            frm.add_custom_button(__('Sync to SAP'), () => frm.trigger('sync_to_sap'))
+        }
+    },
+
+    async sync_to_sap(frm) {
+        await frappe.call({
+            method: 'myapp.integrations.sync_sales_order',
+            args: { name: frm.doc.name },
+            freeze: true,
+            freeze_message: __('Syncing to SAP...'),
+        })
+        // auto-dismisses after 10 seconds
+        frm.dashboard.add_comment(__('Sync queued — SAP will pick up within 60 seconds'), 'blue')
+    },
+})
+```
+
+> **Why `add_comment` here?** The banner is transient feedback for an action just taken. There's no need to re-show it on next refresh — auto-dismissal is the right UX.
+
+### Pattern C — Rich HTML banner (link in message)
+
+When plain text is not enough, use `set_headline` for full HTML control.
+
+```js
+frappe.ui.form.on('Delivery Note', {
+    refresh(frm) {
+        if (frm.doc.docstatus === 1 && frm.doc.linked_invoice) {
+            frm.dashboard.set_headline(
+                `${__('Invoice')}: <a href="/app/sales-invoice/${frm.doc.linked_invoice}">
+                    ${frm.doc.linked_invoice}
+                </a>`,
+                'green'
+            )
+        }
+    },
+})
+```
+
+### Pattern D — Indicator pills for multiple status dimensions
+
+Use `add_indicator` when you need to show several independent status facts at once.
+
+```js
+frappe.ui.form.on('Project', {
+    refresh(frm) {
+        if (frm.doc.docstatus === 0) return  // indicators only useful on submitted/saved docs
+
+        // Each call adds one pill
+        frm.dashboard.add_indicator(
+            frm.doc.priority === 'High' ? __('High Priority') : __('Normal'),
+            frm.doc.priority === 'High' ? 'red' : 'grey'
+        )
+
+        if (frm.doc.is_overdue) {
+            frm.dashboard.add_indicator(__('Overdue'), 'red')
+        }
+
+        if (frm.doc.billing_status === 'Fully Billed') {
+            frm.dashboard.add_indicator(__('Fully Billed'), 'green')
+        }
+    },
+})
+```
+
+> **Headline alert vs indicator:** Use `set_headline_alert` when the doc needs to loudly signal a blocking state (hold, pending approval, error). Use `add_indicator` for supplementary, non-blocking facts that sit alongside automatic dashboard data.
+```

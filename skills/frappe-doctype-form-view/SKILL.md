@@ -192,7 +192,40 @@ d.show()
 ```js
 frappe.show_progress(__('Processing'), current, total, __('Description'))
 frappe.hide_progress()
+
+// In-form dashboard progress bar (inside the form, no modal dialog)
+frm.dashboard.show_progress(__('Processing'), 45, __('Step 2 of 4'))  // percent 0–100
+frm.dashboard.hide_progress()
 ```
+
+### Dashboard Headline Alerts
+
+Display a colored alert banner **inside the form** between the form header and the first field. Persistent until explicitly cleared.
+
+```js
+// Primitive — arbitrary HTML, color is one of: 'yellow', 'blue', 'red', 'green', 'orange'
+frm.dashboard.set_headline('<b>Pending</b> approval since ' + frm.doc.creation, 'yellow')
+frm.dashboard.clear_headline()                        // remove the banner
+
+// Plain-text shorthand (wraps text in <div> automatically)
+frm.dashboard.set_headline_alert(__('On Hold'), 'orange')
+frm.dashboard.set_headline_alert(null)               // also clears
+
+// Auto-dismissing (clears after 10 seconds unless permanent=true)
+frm.dashboard.add_comment(__('Reminder: attach invoice before submitting'), 'yellow')
+frm.dashboard.add_comment(__('Settings saved'), 'green', /*permanent=*/false)
+```
+
+### Dashboard Indicator Pills
+
+Add a small colored pill in the **Stats** section below the links area.
+
+```js
+frm.dashboard.add_indicator(__('Overdue'), 'red')
+frm.dashboard.add_indicator(frm.doc.status, 'blue')
+```
+
+See [REFERENCE.md § Dashboard Alerts & Indicators](REFERENCE.md#dashboard-alerts--indicators) for full signatures and color values.
 
 ---
 

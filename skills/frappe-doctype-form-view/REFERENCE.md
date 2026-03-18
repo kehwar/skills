@@ -520,3 +520,110 @@ frappe.datetime.str_to_obj('2024-01-01')  // Date object
 format_currency(value, currency, decimals)
 frappe.format(value, { fieldtype: 'Currency' })
 ```
+
+---
+
+## Dashboard Alerts & Indicators
+
+All APIs live on `frm.dashboard` (`frappe.ui.form.Dashboard`). They render UI elements **inside the form** (not modal overlays).
+
+### `frm.dashboard.set_headline(html, color)`
+
+The raw primitive. Renders an arbitrary HTML block as a colored banner between the form header and the first field section. Delegates to `frm.layout.show_message`.
+
+```js
+frm.dashboard.set_headline(html, color)
+// html  : String — arbitrary HTML or plain text
+//         If the string contains no HTML tags, it is text-escaped automatically
+// color : String — one of: 'yellow', 'blue', 'red', 'green', 'orange'
+//         Any other value (or omitted) defaults to 'blue'
+
+// Examples:
+frm.dashboard.set_headline('<b>Blocked</b>: waiting for credit approval', 'red')
+frm.dashboard.set_headline(
+    `${__('Created by {0}', [frm.doc.owner])} — <a href="/app/user/${frm.doc.owner}">${__('View')}</a>`,
+    'blue'
+)
+```
+
+The banner gets a **close button** by default so users can dismiss it manually. To suppress the close button, call `frm.layout.show_message(html, color, /*permanent=*/true)` directly.
+
+### `frm.dashboard.set_headline_alert(text, color)`
+
+Plain-text shorthand. Wraps `text` in a `<div>` and delegates to `set_headline`. Use this over `set_headline` when you don't need custom HTML.
+
+```js
+frm.dashboard.set_headline_alert(text, color)
+// text  : String — plain text (not HTML); pass null/undefined/'' to clear
+// color : same values as set_headline
+
+// Examples:
+frm.dashboard.set_headline_alert(__('On hold — awaiting supplier confirmation'), 'orange')
+frm.dashboard.set_headline_alert(__('Approved'), 'green')
+frm.dashboard.set_headline_alert(null)    // clears the banner
+frm.dashboard.set_headline_alert('')      // also clears
+```
+
+**Relationship to `set_headline`:** `set_headline_alert` wraps text in `<div>` then calls `set_headline`. Use `set_headline` only when you need raw HTML (links, bold tags, etc.).
+
+### `frm.dashboard.clear_headline()`
+
+Removes the banner unconditionally. Equivalent to `set_headline_alert(null)` or `set_headline(null)`.
+
+```js
+frm.dashboard.clear_headline()
+```
+
+### `frm.dashboard.add_comment(text, color, permanent)`
+
+Auto-dismissing wrapper around `set_headline_alert`. Clears after 10 seconds unless `permanent` is `true`.
+
+```js
+frm.dashboard.add_comment(text, color, permanent)
+// text      : String — plain text
+// color     : same color values as set_headline
+// permanent : Boolean — default false; if true, banner persists until cleared manually
+//             (permanent=true makes it behave identically to set_headline_alert)
+
+// Temporary — auto-clears after 10 seconds
+frm.dashboard.add_comment(__('Document queued for processing'), 'blue')
+
+// Persistent — same as set_headline_alert but via add_comment API
+frm.dashboard.add_comment(__('Credit limit exceeded'), 'red', true)
+```
+
+**Decision: `set_headline_alert` vs `add_comment`**
+
+| Need | Use |
+|------|-----|
+| Persistent contextual status (approval state, holds) | `set_headline_alert` |
+| Transient feedback after a user action | `add_comment` (auto-dismisses) |
+| Custom HTML (links, bold) in the banner | `set_headline` |
+| Clear the banner | `clear_headline()` |
+
+### `frm.dashboard.add_indicator(label, color)`
+
+Adds a small colored pill/badge to the **Stats** section of the form dashboard (below the Connections area). Multiple indicators stack side-by-side (up to 4 per row, then wraps). The stats section is shown automatically.
+
+```js
+frm.dashboard.add_indicator(label, color)
+// label : String — text shown inside the pill
+// color : Bootstrap indicator color class — 'red', 'green', 'orange', 'blue',
+//         'yellow', 'grey', 'darkgrey', 'purple', 'pink', 'cyan', 'light-blue'
+//         (passed as a CSS class on <span class="indicator {color}">)
+// Returns: jQuery element for the column div
+
+// Examples:
+frm.dashboard.add_indicator(__('Overdue'), 'red')
+frm.dashboard.add_indicator(frm.doc.priority, 'orange')
+frm.dashboard.add_indicator(__('Verified'), 'green')
+```
+
+> **Note:** `add_indicator` is different from `add_comment` / `set_headline_alert`. Indicators render inside the collapsible dashboard area; headline alerts render **above** all form fields and are always visible when the form opens.
+
+### Color Reference
+
+| Context | Parameter | Valid values |
+|---------|-----------|-------------|
+| `set_headline`, `set_headline_alert`, `add_comment` | `color` | `'yellow'`, `'blue'`, `'red'`, `'green'`, `'orange'` — anything else → `'blue'` |
+| `add_indicator` | `color` | CSS indicator class: `'red'`, `'green'`, `'orange'`, `'blue'`, `'yellow'`, `'grey'`, `'darkgrey'`, `'purple'`, `'pink'`, `'cyan'`, `'light-blue'` |
