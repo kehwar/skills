@@ -6,6 +6,7 @@ description: Expert guidance for writing the .js controller for a Frappe Standar
 # Frappe Standard Script Report — JS Controller
 
 Companion to `frappe-standard-script-report-schema` (`.json`) and `frappe-standard-script-report-controller` (`.py`). This skill covers the `.js` controller only.
+For full option tables on `frappe.datetime.*`, `frappe.defaults.*`, `frappe.db.*`, and all other globals, see [frappe-js-api](../frappe-js-api/SKILL.md).
 
 ## Golden Rule
 

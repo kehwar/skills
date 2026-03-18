@@ -248,9 +248,12 @@ frappe.call({
     freeze: true,                              // full-page loading overlay
     freeze_message: __('Please wait...'),
     btn: $(event.currentTarget),              // button to disable during request
-    quiet: true,                              // suppress network spinner
+    no_spinner: true,                        // suppress loading spinner (alias: quiet)
 })
-// Returns: Promise — can be awaited or .then()
+// Returns: jQuery jqXHR deferred (jQuery 3.7, Promises/A+ compliant)
+// Works with await, .then(), .done(), .fail(), .catch()
+// Prefer the error: callback option for error handling — chained .fail()/.catch() only
+// catches network/HTTP failures; server-side exceptions are routed through error: only
 
 // await style:
 const { message } = await frappe.call({
@@ -405,7 +408,7 @@ frappe.hide_progress()
 
 ```js
 // Update loop:
-for (let i = 0; i <= items.length; i++) {
+for (let i = 0; i < items.length; i++) {
     await processItem(items[i])
     frappe.show_progress(__('Importing'), i + 1, items.length, items[i].name)
 }
@@ -510,7 +513,7 @@ __('Hello {0}', ['World'])   // with substitution
 
 ```js
 frappe.datetime.get_today()           // "YYYY-MM-DD"
-frappe.datetime.now_datetime()        // "YYYY-MM-DD HH:MM:SS"
+frappe.datetime.now_datetime()        // "YYYY-MM-DD HH:mm:ss"  (lowercase mm = minutes)
 frappe.datetime.str_to_obj('2024-01-01')  // Date object
 ```
 

@@ -13,6 +13,7 @@ Covers the **always-loaded desk layer** — JS that registers once via `app_incl
 | Doctype form hooks (`refresh`, `validate`, …) | `frappe-doctype-form-view` |
 | List view buttons / indicators | `frappe-doctype-list-view` |
 | Script Report filters / formatter | `frappe-standard-script-report-view` |
+| Global JS API signatures and option tables | `frappe-js-api` |
 
 ---
 
