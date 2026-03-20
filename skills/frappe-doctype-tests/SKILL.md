@@ -18,7 +18,7 @@ Before writing any test, complete these steps **in order**:
 1. **Read the controller** (`.py`) — identify hooks, validations, computed fields, whitelisted methods
 2. **Read the schema** (`.json`) — identify fields, child tables, link fields, `is_submittable`, mandatory fields
 3. **Write the test** (`test_{doctype}.py`) in the same doctype folder
-4. **Run** with `bench run-tests --doctype "DocType Name"`
+4. **Run** with `bench run-tests --module "app_name.module.doctype.my_doctype.test_my_doctype"`
 
 ## File location
 
@@ -96,9 +96,17 @@ Check `is_submittable` in the doctype JSON:
 
 ## Running tests
 
+Prefer `--module` over `--doctype` — it maps directly to the test file and is unambiguous.
+
 ```bash
-bench run-tests --doctype "My Doctype"                              # all tests
+bench run-tests --module "app_name.module.doctype.my_doctype.test_my_doctype"             # all tests
+bench run-tests --module "app_name.module.doctype.my_doctype.test_my_doctype" --test test_method_name  # one test
+bench run-tests --module "app_name.module.doctype.my_doctype.test_my_doctype" --failfast  # stop on first failure
+```
+
+`--doctype` is acceptable when you don't know the module path:
+
+```bash
+bench run-tests --doctype "My Doctype"                              # all tests for doctype
 bench run-tests --doctype "My Doctype" --test test_method_name      # one test
-bench run-tests --doctype "My Doctype" --failfast                   # stop on first failure
-bench run-tests --doctype "My Doctype" --skip-test-records          # faster startup
 ```
