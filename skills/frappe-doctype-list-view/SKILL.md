@@ -8,6 +8,7 @@ description: Expert guidance for implementing Frappe DocType JavaScript list vie
 See [frappe-doctype-schema](../frappe-doctype-schema/SKILL.md) for the `.json` schema.
 See [frappe-doctype-form-view](../frappe-doctype-form-view/SKILL.md) for the `.js` form controller.
 See [frappe-doctype-controller](../frappe-doctype-controller/SKILL.md) for the `.py` server controller.
+See [frappe-doctype-tests](../frappe-doctype-tests/SKILL.md) for writing DocType controller Python tests.
 See [frappe-js-api](../frappe-js-api/SKILL.md) for full option tables on `frappe.call`, `frappe.db.*`, `frappe.msgprint`, `frappe.set_route`, and all other globals.
 
 ---

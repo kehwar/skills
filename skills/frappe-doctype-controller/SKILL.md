@@ -8,6 +8,7 @@ description: Expert guidance for implementing Frappe DocType Python controllers.
 See [frappe-doctype-schema](../frappe-doctype-schema/SKILL.md) for the `.json` schema side.
 See [frappe-doctype-form-view](../frappe-doctype-form-view/SKILL.md) for the `.js` form controller.
 See [frappe-doctype-list-view](../frappe-doctype-list-view/SKILL.md) for the `_list.js` list view controller.
+See [frappe-doctype-tests](../frappe-doctype-tests/SKILL.md) for writing DocType controller Python tests.
 Full per-hook reference and pitfalls table: [REFERENCE.md](REFERENCE.md).
 
 ## Quick start
