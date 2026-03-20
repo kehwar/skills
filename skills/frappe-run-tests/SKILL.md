@@ -54,6 +54,24 @@ Add `--skip-test-records` to skip creating test records (useful when test record
 bench run-tests --module {module_path} --skip-test-records
 ```
 
+### Multiple test modules
+
+⚠️ **`--module` only accepts one value.** Passing `--module A --module B` silently runs only the **last** module. Do not repeat the flag.
+
+Use a shell `for` loop to run them sequentially and collect per-module results:
+
+```bash
+for module in \
+  soldamundo.sales_performance.doctype.sales_performance_period.test_sales_performance_period \
+  soldamundo.sales_performance.doctype.sales_commission_policy.test_sales_commission_policy \
+  soldamundo.sales_performance.doctype.sales_commission_rule.test_sales_commission_rule; do
+  echo "=== $module ==="
+  bench run-tests --module "$module" 2>&1 | grep -E "(Ran [0-9]+ test|OK|FAILED|ERROR)" | tail -3
+done
+```
+
+Omit the `grep` pipe to see full verbose output per module.
+
 ### A specific doctype
 
 ```bash
