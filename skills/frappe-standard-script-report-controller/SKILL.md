@@ -1,6 +1,6 @@
 ---
 name: frappe-standard-script-report-controller
-description: Expert guidance for writing the .py controller for a Frappe Standard Script Report. Covers the execute() contract, column definition (dict format + full fieldtype reference), data fetching with frappe.get_all / frappe.db.sql / frappe.qb, permission-aware queries with build_match_conditions, and reusable get_columns() export patterns.
+description: Expert guidance for writing the .py controller for a Frappe Standard Script Report. Covers the execute() contract, column definition (dict format + full fieldtype reference), data fetching (preference order: frappe.get_all → frappe.qb → frappe.db.sql), permission-aware queries with build_match_conditions, and reusable get_columns() export patterns.
 ---
 
 # Frappe Standard Script Report — Python Controller
@@ -199,7 +199,13 @@ You may encounter `_("Customer") + ":Link/Customer:150"` in older ERPNext code. 
 
 ## Fetching Data
 
-### 1. `frappe.get_all` — ORM-style
+> **Preference order — use the highest-level API that can express the query:**
+>
+> 1. **`frappe.get_all`** — always prefer first; handles single-doctype queries with filters, ordering, and pagination with zero boilerplate.
+> 2. **`frappe.qb`** — use when you need joins, aggregations, or composable dynamic conditions that `frappe.get_all` cannot express; fully injection-safe without raw SQL strings.
+> 3. **`frappe.db.sql` + Jinja** — last resort only; reserve for queries that `frappe.qb` cannot express (e.g. complex subqueries, CTEs, or database-specific functions).
+
+### 1. `frappe.get_all` — ORM-style ✅ Prefer first
 
 Best for simple queries on a single doctype. Returns a list of `frappe._dict` objects.
 
@@ -241,9 +247,54 @@ def get_data(filters):
 
 ---
 
-### 2. `frappe.db.sql` — Raw SQL
+### 2. `frappe.qb` — Query Builder ✅ Prefer over Raw SQL
 
-Use when you need joins, aggregations, subqueries, or anything `frappe.get_all` cannot express.
+Use when you need joins, aggregations, or composable dynamic conditions that `frappe.get_all` cannot express. Fully injection-safe — no raw SQL strings, no Jinja required. Powered by PyPika.
+
+```python
+from frappe.query_builder.functions import Coalesce, Sum
+
+
+def get_data(filters):
+    si = frappe.qb.DocType("Sales Invoice")
+    sii = frappe.qb.DocType("Sales Invoice Item")
+
+    query = (
+        frappe.qb.from_(si)
+        .join(sii)
+        .on(sii.parent == si.name)
+        .select(
+            si.name,
+            si.customer,
+            si.posting_date,
+            Sum(sii.amount).as_("total_amount"),
+        )
+        .where(si.docstatus == 1)
+        .groupby(si.name)
+        .orderby(si.posting_date, order=frappe.qb.desc)
+    )
+
+    if filters.company:
+        query = query.where(si.company == filters.company)
+
+    if filters.from_date:
+        query = query.where(si.posting_date >= filters.from_date)
+
+    if filters.to_date:
+        query = query.where(si.posting_date <= filters.to_date)
+
+    return query.run(as_dict=1)
+```
+
+Common functions from `frappe.query_builder.functions`: `Sum`, `Count`, `Avg`, `Max`, `Min`, `Date`, `Coalesce`, `IfNull`, `Concat_ws`.
+
+Use `.left_join()` for outer joins and `.inner_join()` (or `.join()`) for inner joins.
+
+---
+
+### 3. `frappe.db.sql` — Raw SQL ⚠️ Last resort
+
+Use **only** when `frappe.qb` cannot express the query — e.g. CTEs, window functions, complex subqueries, or database-specific SQL functions. For everything else, prefer `frappe.get_all` or `frappe.qb`.
 
 **Use Jinja templating for conditional SQL structure, and parameterized values (`%(x)s`) for all user-supplied data** — never embed filter values directly into the SQL string via f-strings or `%` formatting.
 
@@ -288,51 +339,6 @@ def get_data(filters):
 > Jinja `{%- if company %}` checks the key in `params`; `%(company)s` is a SQL placeholder — Jinja passes it through unchanged.  
 > `as_dict=1` returns dicts keyed by the column alias — aligns directly with report column `fieldname` values.  
 > `as_list=1` returns flat lists — columns and rows must be positionally aligned.
-
----
-
-### 3. `frappe.qb` — Query Builder
-
-Use when you want composable, injection-safe query construction without raw SQL strings. Powered by PyPika.
-
-```python
-from frappe.query_builder.functions import Coalesce, Sum
-
-
-def get_data(filters):
-    si = frappe.qb.DocType("Sales Invoice")
-    sii = frappe.qb.DocType("Sales Invoice Item")
-
-    query = (
-        frappe.qb.from_(si)
-        .join(sii)
-        .on(sii.parent == si.name)
-        .select(
-            si.name,
-            si.customer,
-            si.posting_date,
-            Sum(sii.amount).as_("total_amount"),
-        )
-        .where(si.docstatus == 1)
-        .groupby(si.name)
-        .orderby(si.posting_date, order=frappe.qb.desc)
-    )
-
-    if filters.company:
-        query = query.where(si.company == filters.company)
-
-    if filters.from_date:
-        query = query.where(si.posting_date >= filters.from_date)
-
-    if filters.to_date:
-        query = query.where(si.posting_date <= filters.to_date)
-
-    return query.run(as_dict=1)
-```
-
-Common functions from `frappe.query_builder.functions`: `Sum`, `Count`, `Avg`, `Max`, `Min`, `Date`, `Coalesce`, `IfNull`, `Concat_ws`.
-
-Use `.left_join()` for outer joins and `.inner_join()` (or `.join()`) for inner joins.
 
 ---
 
