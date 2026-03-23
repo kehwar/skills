@@ -17,6 +17,7 @@ Complete catalog of globals available inside the **System Console** (`frappe.uti
 | `frappe.copy_doc(doc)` | Deep-copy a document |
 | `frappe.get_list(doctype, filters, fields, order_by, limit_page_length, ...)` | List documents (respects permissions) |
 | `frappe.get_all(doctype, ...)` | List documents (ignores permissions) |
+| `frappe.get_all_docs(doctype, ...)` | Like `get_all`, but yields full Document instances instead of dicts |
 | `frappe.rename_doc(doctype, old, new, ...)` | Rename document |
 | `frappe.delete_doc(doctype, name, ...)` | Delete document |
 | `frappe.get_mapped_doc(from_doctype, from_name, table_maps, ...)` | Map doc to another doctype |
