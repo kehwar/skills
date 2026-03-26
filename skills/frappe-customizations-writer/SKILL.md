@@ -130,27 +130,135 @@ SCRIPT=$(find "$BENCH_DIR" -path "*/frappe-customizations-writer/scripts/add_cus
 
 ---
 
-## Patches and `sync_on_migrate` timing
+## Patches and Hooks — When `sync_on_migrate` Is Not Enough
 
-`sync_customizations()` runs in **`post_schema_updates`** — after **all** patches (both `pre_model_sync` and `post_model_sync`). This means the DB columns added by your custom fields **do not exist yet** when any patch executes.
+> **Preferred approach: `sync_on_migrate` JSON files.** They re-apply on every `bench migrate`, require no code, and are idempotent by default. Only reach for patches or hooks when you need logic that a JSON declaration cannot express.
 
-**If a patch needs to read or write a column backed by a `sync_on_migrate` custom field**, call `sync_customizations` manually at the top of the patch before touching those columns:
+### When to use each mechanism
+
+| Situation | Recommended mechanism |
+|---|---|
+| Standard field / property setter addition | `sync_on_migrate` JSON **(default)** |
+| Backfill data into a new custom field | Patch (call `sync_customizations` first, then write data) |
+| Apply a customization conditionally | `after_migrate` hook |
+| Dynamically adjust properties on every migration | `after_migrate` hook |
+| One-time setup only on the very first install | `after_install` hook |
+
+> **Critical:** Patches **do not run on fresh installs** — they are skipped entirely when an app is installed for the first time (the site is treated as already up to date). Similarly, `after_install` runs **only once**, on the first `bench install-app` for that app, and never again. Neither mechanism is reliable for ensuring a customization is always present. Use `sync_on_migrate` JSON or `after_migrate` for anything that must exist on every site, whether newly installed or migrated.
+
+---
+
+### Timing reference
+
+```
+bench migrate
+  └─ pre_model_sync patches
+  └─ schema updates (ALTER TABLE …)
+  └─ post_model_sync patches
+  └─ post_schema_updates          ← sync_customizations() runs here
+  └─ after_migrate hooks          ← custom field columns are available here
+```
+
+---
+
+### Calling `sync_customizations` from a patch
+
+`sync_customizations()` runs in `post_schema_updates` — **after all patches**. DB columns for `sync_on_migrate` custom fields **do not exist yet** when any patch runs.
+
+If a patch needs to read or write a column backed by a custom field, call `sync_customizations` manually at the top before touching those columns:
 
 ```python
-# myapp/patches/2025/2025_06_01__my_patch.py
+# myapp/patches/2025/2025_06_01__backfill_my_field.py
 import frappe
 from frappe.modules.utils import sync_customizations
 
 
 def execute():
-    # Ensure the custom fields for this app are present before using them
+    # Pull the custom field columns into the DB before writing to them
     sync_customizations(app="myapp")
 
-    # Now the columns exist and can be queried/written
     frappe.db.sql("UPDATE `tabEmployee` SET custom_my_field = 1 WHERE ...")
 ```
 
-`sync_customizations(app=…)` is idempotent — safe to call multiple times. Pass the specific `app` name to limit the scope and avoid re-syncing unrelated apps.
+`sync_customizations(app=…)` is idempotent — safe to call multiple times. Pass the specific `app` name to limit scope and avoid re-syncing unrelated apps.
+
+---
+
+### Applying customizations programmatically in a patch
+
+Use Frappe helpers when conditional logic is needed:
+
+```python
+# myapp/patches/2025/2025_06_01__conditional_field.py
+import frappe
+from frappe.custom.doctype.custom_field.custom_field import create_custom_field
+from frappe.custom.doctype.property_setter.property_setter import make_property_setter
+
+
+def execute():
+    # Only add the field when a feature flag is active
+    if frappe.db.get_single_value("System Settings", "enable_my_feature"):
+        create_custom_field("Contact", {
+            "fieldname": "custom_my_field",
+            "fieldtype": "Data",
+            "label": "My Field",
+            "insert_after": "phone",
+        })
+
+    # Or modify a property conditionally
+    make_property_setter("Sales Invoice", "customer_name", "reqd", "1", "Check")
+```
+
+> These helpers write to the DB immediately; no explicit `frappe.db.commit()` is needed.
+
+---
+
+### `after_install` hook — one-time first-install logic
+
+> **Warning:** `after_install` runs **only once**, on the very first `bench install-app`. It does **not** run on subsequent `bench migrate` calls, and it does **not** run for sites that already have the app installed. Any customization created here will be absent on pre-existing sites until they run a patch or migrate hook that re-creates it. Use `after_install` only for logic that truly must happen once (e.g. seeding default records), never for schema customizations that need to survive on existing sites.
+
+```python
+# myapp/hooks.py
+after_install = "myapp.setup.install.after_install"
+```
+
+```python
+# myapp/setup/install.py
+import frappe
+from frappe.modules.utils import sync_customizations
+
+
+def after_install():
+    # sync_on_migrate files are applied automatically at install.
+    # Only add logic here that cannot live in JSON AND is truly install-only.
+    _seed_default_records()
+```
+
+---
+
+### `after_migrate` hook — the safe home for imperative customizations
+
+`after_migrate` runs on **every** `bench migrate` — including fresh installs. It is therefore the correct place for any imperative logic that must be present on all sites:
+
+```python
+# myapp/hooks.py
+after_migrate = ["myapp.setup.migrate.after_migrate"]
+```
+
+```python
+# myapp/setup/migrate.py
+from frappe.modules.utils import sync_customizations
+
+
+def after_migrate():
+    # Runs on every bench migrate, including fresh installs.
+    # sync_customizations has already fired, so all sync_on_migrate columns exist.
+    _apply_dynamic_property_setters()
+```
+
+> `after_migrate` fires **after** `sync_customizations`, so all `sync_on_migrate` columns are guaranteed to exist.
+
+**Prefer `after_migrate` over `after_install` for any customization that must be present on every site**, not just newly installed ones.
 
 ---
 
