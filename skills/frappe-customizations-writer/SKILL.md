@@ -130,6 +130,30 @@ SCRIPT=$(find "$BENCH_DIR" -path "*/frappe-customizations-writer/scripts/add_cus
 
 ---
 
+## Patches and `sync_on_migrate` timing
+
+`sync_customizations()` runs in **`post_schema_updates`** — after **all** patches (both `pre_model_sync` and `post_model_sync`). This means the DB columns added by your custom fields **do not exist yet** when any patch executes.
+
+**If a patch needs to read or write a column backed by a `sync_on_migrate` custom field**, call `sync_customizations` manually at the top of the patch before touching those columns:
+
+```python
+# myapp/patches/2025/2025_06_01__my_patch.py
+import frappe
+from frappe.modules.utils import sync_customizations
+
+
+def execute():
+    # Ensure the custom fields for this app are present before using them
+    sync_customizations(app="myapp")
+
+    # Now the columns exist and can be queried/written
+    frappe.db.sql("UPDATE `tabEmployee` SET custom_my_field = 1 WHERE ...")
+```
+
+`sync_customizations(app=…)` is idempotent — safe to call multiple times. Pass the specific `app` name to limit the scope and avoid re-syncing unrelated apps.
+
+---
+
 ## Reference
 
 Full JSON schema, Custom Field defaults, Property Setter defaults, file path convention, ownership detection → [REFERENCE.md](REFERENCE.md)
