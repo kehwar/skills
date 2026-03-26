@@ -113,6 +113,7 @@ The script is **not bundled inside individual apps** — it lives alongside this
 **What it does:**
 - Loads `<target.json>` if present, or creates a new file with the correct top-level structure
 - Normalises each entry to the **full Frappe export format** — all schema fields, computed `name`, timestamps
+- **Sets `module`** on every Custom Field and Property Setter — inferred automatically from the target path (`apps/{app}/{app}/{module_dir}/custom/…`) and converterd to title-case (e.g. `selling` → `Selling`). Override by adding `"module": "My Module"` to the spec envelope.
 - Deduplicates: Custom Fields by `fieldname`; Property Setters by `(doc_type, field_name, property)`
 - Saves with `indent=1, sort_keys=True` — identical to `frappe.as_json` output
 

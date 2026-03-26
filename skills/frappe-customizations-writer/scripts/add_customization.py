@@ -34,6 +34,7 @@ CUSTOM_FIELD_DEFAULTS: dict = {
     "_comments": None,
     "_liked_by": None,
     "_user_tags": None,
+    "module": None,
     "allow_on_submit": 0,
     "bold": 0,
     "collapsible": 0,
@@ -106,7 +107,7 @@ _EMPTY_FILE: dict = {
 # ──────────────────────────────────────────────────────────────────────────────
 
 
-def normalize_custom_field(spec: dict) -> dict:
+def normalize_custom_field(spec: dict, module: str | None = None) -> dict:
     """Merge spec over defaults; compute name and timestamps if absent."""
     entry = {**CUSTOM_FIELD_DEFAULTS, **spec}
     now = _now()
@@ -114,10 +115,12 @@ def normalize_custom_field(spec: dict) -> dict:
     entry.setdefault("modified", now)
     if not entry.get("name"):
         entry["name"] = f"{entry['dt']}-{entry['fieldname']}"
+    if module and not entry.get("module"):
+        entry["module"] = module
     return entry
 
 
-def normalize_property_setter(spec: dict) -> dict:
+def normalize_property_setter(spec: dict, module: str | None = None) -> dict:
     """Merge spec over defaults; compute name and timestamps if absent."""
     entry = {**PROPERTY_SETTER_DEFAULTS, **spec}
     now = _now()
@@ -129,6 +132,8 @@ def normalize_property_setter(spec: dict) -> dict:
     # Auto-set doctype_or_field for DocType-level setters
     if not entry.get("field_name") and entry.get("doctype_or_field") == "DocField":
         entry["doctype_or_field"] = "DocType"
+    if module and not entry.get("module"):
+        entry["module"] = module
     return entry
 
 
@@ -162,10 +167,12 @@ def save(path: Path, data: dict) -> None:
 # ──────────────────────────────────────────────────────────────────────────────
 
 
-def merge_custom_fields(existing: list, new_entries: list) -> list:
+def merge_custom_fields(
+    existing: list, new_entries: list, module: str | None = None
+) -> list:
     index = {e["fieldname"]: i for i, e in enumerate(existing)}
     for spec in new_entries:
-        entry = normalize_custom_field(spec)
+        entry = normalize_custom_field(spec, module=module)
         key = entry["fieldname"]
         if key in index:
             existing[index[key]].update(entry)
@@ -175,13 +182,15 @@ def merge_custom_fields(existing: list, new_entries: list) -> list:
     return existing
 
 
-def merge_property_setters(existing: list, new_entries: list) -> list:
+def merge_property_setters(
+    existing: list, new_entries: list, module: str | None = None
+) -> list:
     def ps_key(e: dict) -> tuple:
         return (e.get("doc_type"), e.get("field_name"), e.get("property"))
 
     index = {ps_key(e): i for i, e in enumerate(existing)}
     for spec in new_entries:
-        entry = normalize_property_setter(spec)
+        entry = normalize_property_setter(spec, module=module)
         k = ps_key(entry)
         if k in index:
             existing[index[k]].update(entry)
@@ -189,6 +198,24 @@ def merge_property_setters(existing: list, new_entries: list) -> list:
             existing.append(entry)
             index[k] = len(existing) - 1
     return existing
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Module inference
+# ──────────────────────────────────────────────────────────────────────────────
+
+
+def infer_module_from_path(target: Path) -> str | None:
+    """Infer module title from the file path convention:
+    apps/{app}/{app}/{module_dir}/custom/{dt}.json
+    Returns None if the path doesn't follow the expected convention.
+    """
+    # target.parent = custom/; target.parent.parent = module_dir/
+    module_dir = target.parent.parent.name
+    if module_dir in ("", "custom"):
+        return None
+    # Convert scrubbed name to title: "selling" -> "Selling"
+    return module_dir.replace("_", " ").title()
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -245,11 +272,16 @@ def main() -> None:
         )
         sys.exit(1)
 
+    # Resolve module: spec envelope > path inference
+    module = raw.get("module") or infer_module_from_path(target)
+
     existed = target.exists()
     data = load(target, doctype)
-    data["custom_fields"] = merge_custom_fields(data["custom_fields"], custom_fields)
+    data["custom_fields"] = merge_custom_fields(
+        data["custom_fields"], custom_fields, module=module
+    )
     data["property_setters"] = merge_property_setters(
-        data["property_setters"], property_setters
+        data["property_setters"], property_setters, module=module
     )
     save(target, data)
 
