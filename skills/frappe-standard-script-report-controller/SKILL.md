@@ -63,7 +63,6 @@ def get_data(filters):
         filters={"docstatus": 1},
         fields=["name", "customer", "grand_total"],
         order_by="posting_date desc",
-        limit=0,
     )
 ```
 
@@ -226,11 +225,8 @@ def get_data(filters):
         filters=f,
         fields=["name", "customer", "posting_date", "grand_total"],
         order_by="posting_date desc",
-        limit=0,   # always set limit=0 in reports — default cap is 20
     )
 ```
-
-> **Always set `limit=0`** — `frappe.get_all` defaults to 20 rows, which silently truncates report results.
 
 #### Filter operators
 
