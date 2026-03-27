@@ -22,6 +22,39 @@ After baking, any now-redundant DB Custom Field or Property Setter record must b
 
 ## Detailed Workflow
 
+### Feature-driven entrypoint: "ensure all necessary fields are baked in"
+
+When the request is feature-oriented (not just global baking), start with code analysis first:
+
+1. Build a **feature field map** from the feature code:
+  - Collect `(DocType, fieldname)` pairs used by the feature (controllers, reports, client scripts, tests, and query filters).
+  - Keep source references so each field can be traced back to feature behavior.
+2. Check each mapped field against code definitions:
+  - Same-app native schema: `apps/<app>/<app>/<module>/doctype/<dt>/<dt>.json`
+  - Different-app customizations: `apps/<app>/<app>/<module>/custom/<dt>.json`
+3. Mark fields as:
+  - `defined_in_code`
+  - `missing_in_code`
+4. For `missing_in_code` only, do a targeted dev DB customization lookup.
+5. Continue with the bake workflow:
+  - If DB customization exists -> continue with Step 2, Step 3, and Step 4.
+  - If DB customization does not exist -> proceed only with Step 3 (define in code), then continue feature implementation.
+
+Notes:
+- "Proceed only with Step 3" means: skip broad fetch/filter and directly add the required field/property in code using same-app or different-app path.
+- Do not add cleanup patch entries for fields that had no DB customization row.
+
+Example field-map format:
+
+```
+DocType: Sales Order
+  - campo_ruta (used in soldamundo/.../sales_order.py)
+  - campo_zona (used in soldamundo/.../sales_order.js)
+
+DocType: Customer
+  - canal_venta (used in soldamundo/.../customer_report.py)
+```
+
 ### Step 0 — Clarify scope (ask user only when ambiguous)
 
 Ask the user which **baking app** (the app doing the baking) if it cannot be inferred. Ambiguous situations:
@@ -56,6 +89,8 @@ The script outputs JSON with four keys:
 - `module_to_app` — `{module_lower: app_name}`
 
 Each row has `doctype_app` (app that owns the target DocType) and `customization_app` (app that declared the customization).
+
+For feature-driven targeted lookups, filter results to the mapped `(DocType, fieldname)` pairs before candidate analysis.
 
 ### Step 2 — Analyse and filter candidates
 

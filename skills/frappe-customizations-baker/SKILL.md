@@ -1,6 +1,6 @@
 ---
 name: frappe-customizations-baker
-description: Identify live database Custom Fields and Property Setters that are not yet persisted in the codebase, then bake them in — either into the owning doctype's .json schema (same-app) or into a sync_on_migrate custom/ JSON file (different-app). Generates cleanup patches for any now-redundant DB records. Use when a user says "bake in customizations", "persist customizations", "ensure fields are defined in code", or wants to move ad-hoc form customizations into source control. Requires frappe-doctype-schema and frappe-customizations-writer skills.
+description: Bake live database Custom Fields and Property Setters into source code, and reconcile feature-required DocType fields against code definitions and dev DB customizations. Use when user says "bake in customizations", "persist customizations", "ensure all necessary fields are baked in", or asks to harden feature fields for fresh installs.
 ---
 
 # Frappe — Bake Customizations
@@ -36,10 +36,22 @@ Move live-database Custom Fields and Property Setters into the codebase so they 
 4. Draft cleanup patches (one per app) to delete now-redundant DB records
 5. Run `bench migrate` to apply DB changes
 
+### Feature workflow: Ensure all necessary fields are baked in
+
+**Context:** User is developing a feature and asks to ensure all required fields are baked in.
+
+**Steps:**
+1. Build a feature field map by reading code and listing `(DocType, fieldname, usage location)`.
+2. Check whether each field is already defined in code (`doctype/*.json` or `custom/*.json`).
+3. For missing fields only, run a targeted search in dev DB customizations and continue with the bake plan.
+4. If missing fields exist in DB customizations, continue from the detailed workflow (analysis -> bake -> cleanup patch).
+5. If no matching DB customizations exist, proceed only with Step 3 of the detailed workflow (define fields in code), then continue the feature plan.
+
 ## Advanced features
 
 See [REFERENCE.md](REFERENCE.md) for:
 - Mental model: `doctype_app` vs `customization_app` distinction
 - Detailed step-by-step workflow with edge cases
+- Feature field-map workflow for feature development
 - Decision tree for filtering candidates
 - Common pitfalls (blank modules, Property Setter quirks, `default_print_format`)
