@@ -1,13 +1,4 @@
----
-name: frappe-bake-customizations
-description: Identify live database Custom Fields and Property Setters that are not yet persisted in the codebase, then bake them in — either into the owning doctype's .json schema (same-app) or into a sync_on_migrate custom/ JSON file (different-app). Generates cleanup patches for any now-redundant DB records. Use when a user says "bake in customizations", "persist customizations", "ensure fields are defined in code", or wants to move ad-hoc form customizations into source control. Requires frappe-doctype-schema and frappe-customizations-writer skills.
----
-
-# Frappe — Bake Customizations
-
-**Goal:** Move live-database Custom Fields and Property Setters into the codebase so they survive `bench migrate` on fresh installs, are version-controlled, and no longer depend on ad-hoc DB state.
-
----
+# Frappe — Bake Customizations — Reference
 
 ## Mental Model
 
@@ -29,7 +20,7 @@ After baking, any now-redundant DB Custom Field or Property Setter record must b
 
 ---
 
-## Workflow
+## Detailed Workflow
 
 ### Step 0 — Clarify scope (ask user only when ambiguous)
 
@@ -49,7 +40,7 @@ Run the bundled script from the bench root:
 ```bash
 BENCH=$(pwd)
 PYTHON="$BENCH/env/bin/python"
-SCRIPT=$(find "$BENCH" -path "*/frappe-bake-customizations/scripts/fetch_customizations.py" | head -1)
+SCRIPT=$(find "$BENCH" -path "*/frappe-customizations-baker/scripts/fetch_customizations.py" | head -1)
 
 # All customizations in the site:
 "$PYTHON" "$SCRIPT" > /tmp/customizations.json
