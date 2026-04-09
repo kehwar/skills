@@ -30,18 +30,17 @@ bench generate-pot-file --app <app>
 # 2. Merge new strings into PO
 bench update-po-files --app <app> --locale es_PE
 
-# 3. Query strings → partial PO (auto-named next to source)
-$PYTHON $SCRIPTS/po_query.py --po $PO
-#   → locale/drafts/es_PE.po  (all entries)
-#   Filter by module:  add --path "<module>/**"
-#   Only untranslated: add --untranslated
-#   Only fuzzy:        add --fuzzy
+# 3. Query strings → save to <po_dir>/drafts/es_PE.review.po
+$PYTHON $SCRIPTS/po_query.py --po $PO --out es_PE.review.po
+#   Filter by module:   add --path "<module>/**" --out es_PE.module.po
+#   Only untranslated:  add --untranslated --out es_PE.untranslated.po
+#   Only fuzzy:         add --fuzzy --out es_PE.fuzzy.po
 
 # 4. Edit the partial PO — fill in msgstr values
 
 # 5. Merge partial PO back into the full file
-$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.untranslated.po --dry-run
-$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.untranslated.po
+$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.review.po --dry-run
+$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.review.po
 
 # 6. Compile PO → MO binary
 bench compile-po-to-mo --app <app> --locale es_PE
@@ -59,7 +58,7 @@ bench clear-cache
 | `generate-pot-file` | `--app` |
 | `update-po-files` | `--app`, `--locale` |
 | `compile-po-to-mo` | `--app`, `--locale`, `--force` |
-| `po_query.py` | `--path GLOB` (repeatable), `--out`; filters: `--untranslated`, `--fuzzy` (omit both = all entries) |
+| `po_query.py` | `--path GLOB` (repeatable), `--format po\|tsv\|json`, `--out` (relative → `<po_dir>/drafts/`, absolute → as-is, omit → stdout); filters: `--untranslated`, `--fuzzy` (omit both = all entries) |
 | `po_merge.py` | `--dry-run`, `--clear-fuzzy`, `--out` |
 
 See [scripts/po_query.py](scripts/po_query.py) and [scripts/po_merge.py](scripts/po_merge.py) for full usage.
