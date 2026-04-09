@@ -16,6 +16,12 @@ description: Helper utilities for finding, validating, and managing translations
 ## Workflow
 
 ```bash
+PYTHON=/workspace/development/frappe-bench/env/bin/python
+SCRIPTS=<skill_dir>/scripts
+PO=apps/<app>/<app>/locale/es_PE.po
+```
+
+```bash
 cd /workspace/development/frappe-bench
 
 # 1. Extract strings from code → update POT
@@ -24,40 +30,39 @@ bench generate-pot-file --app <app>
 # 2. Merge new strings into PO
 bench update-po-files --app <app> --locale es_PE
 
-# 3. Edit PO file — add translations
-# apps/<app>/<app>/locale/es_PE.po
+# 3. Query strings → partial PO (auto-named next to source)
+$PYTHON $SCRIPTS/po_query.py --po $PO
+#   → locale/drafts/es_PE.po  (all entries)
+#   Filter by module:  add --path "<module>/**"
+#   Only untranslated: add --untranslated
+#   Only fuzzy:        add --fuzzy
 
-# 4. Compile PO → MO binary
+# 4. Edit the partial PO — fill in msgstr values
+
+# 5. Merge partial PO back into the full file
+$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.untranslated.po --dry-run
+$PYTHON $SCRIPTS/po_merge.py --main $PO --patch locale/drafts/es_PE.untranslated.po
+
+# 6. Compile PO → MO binary
 bench compile-po-to-mo --app <app> --locale es_PE
 
-# 5. Clear cache
+# 7. Clear cache
 bench clear-cache
 ```
 
-> `--site` is only required when `--app` is omitted (Frappe needs it to discover installed apps).
+> `--site` is only required when `--app` is omitted.
 
 ## Command options
 
-| Command | Options |
+| Command | Key options |
 |---|---|
 | `generate-pot-file` | `--app` |
 | `update-po-files` | `--app`, `--locale` |
 | `compile-po-to-mo` | `--app`, `--locale`, `--force` |
+| `po_query.py` | `--path GLOB` (repeatable), `--out`; filters: `--untranslated`, `--fuzzy` (omit both = all entries) |
+| `po_merge.py` | `--dry-run`, `--clear-fuzzy`, `--out` |
 
-## Find untranslated strings
-
-```bash
-cd apps/<app>
-
-# All untranslated
-grep -B 1 'msgstr ""$' <app>/locale/es_PE.po | grep msgid
-
-# Count untranslated
-grep -c 'msgstr ""$' <app>/locale/es_PE.po
-
-# Untranslated for a specific context
-awk '/msgctxt "ContextName"/{getline; msgid=$0; getline; if($0 ~ /msgstr ""$/) print msgid}' <app>/locale/es_PE.po
-```
+See [scripts/po_query.py](scripts/po_query.py) and [scripts/po_merge.py](scripts/po_merge.py) for full usage.
 
 ## Key rules
 
