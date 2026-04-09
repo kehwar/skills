@@ -6,38 +6,52 @@ Usage:
 
 Options:
     --po FILE          Source PO file (required)
-    --out FILE         Output path (default: auto-named under locale/drafts/)
+    --out FILE         Output path. Relative paths are resolved under <po_dir>/drafts/.
+                       Absolute paths are used as-is. Omit to write to stdout.
     --untranslated     Include only entries with empty msgstr
     --fuzzy            Include only fuzzy entries
     --path PATTERN     Include entries whose reference path matches PATTERN
                        Supports fnmatch globs, e.g. "<module>/**"
                        Can be given multiple times (OR logic between paths)
+    --format FORMAT    Output format: po (default), tsv, json
+                       po   — valid PO file
+                       tsv  — tab-separated msgid\tcontext\tmsgstr
+                       json — JSON array of {id, context, string}
 
 Filters are combined with AND (e.g. --untranslated --path <module>/**
 returns untranslated entries that come from that path).
 
-The output is a valid PO file placed in locale/drafts/, named from the
-active filters (e.g. "es_PE.untranslated.po", "es_PE.<module>.po").
-It can be opened in Poedit or edited manually, then fed back to po_merge.py.
+When --out is given the output is saved to disk (relative paths land in
+<po_dir>/drafts/); otherwise everything goes to stdout.
 
 Examples:
-    # All untranslated strings  →  locale/drafts/es_PE.untranslated.po
+    # All untranslated strings → stdout
     python po_query.py --po <app>/locale/es_PE.po --untranslated
 
-    # Untranslated strings from a specific module
-    #   →  locale/drafts/es_PE.<module>.untranslated.po
+    # Untranslated strings from a specific module → stdout
     python po_query.py --po <app>/locale/es_PE.po --untranslated \\
         --path "<module>/**"
 
-    # All fuzzy entries  →  locale/drafts/es_PE.fuzzy.po
+    # All fuzzy entries → stdout
     python po_query.py --po <app>/locale/es_PE.po --fuzzy
 
-    # Everything from a module  →  locale/drafts/es_PE.<module>.po
-    python po_query.py --po <app>/locale/es_PE.po \\
-        --path "<module>/**"
+    # Save PO with relative path  →  <app>/locale/drafts/review.po
+    python po_query.py --po <app>/locale/es_PE.po --untranslated --out review.po
 
-    # Override output path
+    # Save PO with absolute path
     python po_query.py --po <app>/locale/es_PE.po --untranslated --out /tmp/review.po
+
+    # Dump untranslated strings to stdout as TSV (for agent / script consumption)
+    python po_query.py --po <app>/locale/es_PE.po --untranslated --format tsv
+
+    # Save TSV to a file
+    python po_query.py --po <app>/locale/es_PE.po --untranslated --format tsv --out strings.tsv
+
+    # Dump as JSON
+    python po_query.py --po <app>/locale/es_PE.po --untranslated --format json
+
+    # Save JSON to a file
+    python po_query.py --po <app>/locale/es_PE.po --untranslated --format json --out strings.json
 """
 
 import argparse
@@ -53,7 +67,11 @@ def parse_args():
     )
     p.add_argument("--po", required=True, help="Source PO file path")
     p.add_argument(
-        "--out", help="Output file path (default: auto-named next to the source PO)"
+        "--out",
+        help=(
+            "Output file path. Relative paths are resolved under <po_dir>/drafts/. "
+            "Absolute paths are used as-is. Omit to write to stdout."
+        ),
     )
     p.add_argument(
         "--untranslated",
@@ -71,6 +89,17 @@ def parse_args():
         dest="paths",
         metavar="PATTERN",
         help="Include entries whose reference path matches PATTERN (fnmatch). Repeatable.",
+    )
+    p.add_argument(
+        "--format",
+        choices=["po", "tsv", "json"],
+        default="po",
+        help=(
+            "Output format. "
+            "po (default): write a PO file to --out or auto-named path. "
+            "tsv: print tab-separated msgid\\tmsgstr to stdout. "
+            "json: print a JSON array of {id, context, string} to stdout."
+        ),
     )
     return p.parse_args()
 
@@ -133,33 +162,18 @@ def build_sub_catalog(cat, args):
     return sub
 
 
-def _default_out_path(po_path: Path, args) -> Path:
-    """Build a descriptive output filename next to the source PO file."""
-    stem = po_path.stem  # e.g. "es_PE"
-    parts = []
+def _resolve_out_path(po_path: Path, out: str) -> Path:
+    """Resolve --out to an absolute path.
 
-    # First segment: first path pattern (leaf directory name)
-    if args.paths:
-        # Take the last non-wildcard segment of the first pattern as a label.
-        # "<module>/**" -> "<module>"
-        # "<app>/<module>/**" -> "<module>"
-        first = args.paths[0].rstrip("/").rstrip("*").rstrip("/")
-        label = Path(first).name or first
-        if label:
-            parts.append(label)
-
-    if args.fuzzy:
-        parts.append("fuzzy")
-    if args.untranslated:
-        parts.append("untranslated")
-
-    if not parts:
-        parts.append("review")
-
-    out_name = f"{stem}.{'.' .join(parts)}.po"
+    Relative paths are placed under <po_dir>/drafts/.
+    Absolute paths are used as-is.
+    """
+    p = Path(out)
+    if p.is_absolute():
+        return p
     drafts_dir = po_path.parent / "drafts"
     drafts_dir.mkdir(exist_ok=True)
-    return drafts_dir / out_name
+    return drafts_dir / p
 
 
 def main():
@@ -182,9 +196,46 @@ def main():
     pofile.write_po(buf, sub, width=76, omit_header=False)
     content = buf.getvalue()
 
-    out_path = Path(args.out) if args.out else _default_out_path(po_path, args)
-    out_path.write_bytes(content)
-    print(f"Wrote {count} entries to {out_path}", file=sys.stderr)
+    if args.out:
+        out_path = _resolve_out_path(po_path, args.out)
+        if args.format in ("tsv", "json"):
+            with out_path.open("w", encoding="utf-8") as fh:
+                _dump(sub, args.format, fh)
+            print(f"Wrote {count} entries to {out_path}", file=sys.stderr)
+        else:
+            out_path.write_bytes(content)
+            print(f"Wrote {count} entries to {out_path}", file=sys.stderr)
+    else:
+        if args.format in ("tsv", "json"):
+            _dump(sub, args.format, sys.stdout)
+        else:
+            sys.stdout.buffer.write(content)
+        print(f"# {count} entries", file=sys.stderr)
+
+
+def _dump(sub, fmt, out):
+    """Write catalog entries in tsv or json format to the given text stream."""
+    import json
+
+    messages = [
+        {
+            "id": msg.id if isinstance(msg.id, str) else msg.id[0],
+            "context": msg.context or "",
+            "string": msg.string if isinstance(msg.string, str) else msg.string[0],
+        }
+        for msg in sub
+        if msg.id
+    ]
+
+    if fmt == "tsv":
+        print("msgid\tcontext\tmsgstr", file=out)
+        for m in messages:
+            msgid = m["id"].replace("\n", " ").replace("\t", " ")
+            msgstr = m["string"].replace("\n", " ").replace("\t", " ")
+            ctx = m["context"].replace("\n", " ").replace("\t", " ")
+            print(f"{msgid}\t{ctx}\t{msgstr}", file=out)
+    elif fmt == "json":
+        print(json.dumps(messages, ensure_ascii=False, indent=2), file=out)
 
 
 if __name__ == "__main__":
