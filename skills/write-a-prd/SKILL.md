@@ -1,6 +1,6 @@
 ---
 name: write-a-prd
-description: Create a PRD through user interview, codebase exploration, and module design, then save to docs/planning/<name>.md in the repo. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
+description: Create a PRD through user interview, codebase exploration, and module design, then save to docs/prd/<name>.md in the repo. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
 ---
 
 This skill will be invoked when the user wants to create a PRD. You may skip steps if you don't consider them necessary.
@@ -17,7 +17,7 @@ A deep module (as opposed to a shallow module) is one which encapsulates a lot o
 
 Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. Derive a short kebab-case name for the feature (e.g. `user-notifications`) and save the PRD to `docs/planning/<name>.md` in the current repository root. Create the `docs/planning/` directory if it does not exist.
+5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. Derive a short kebab-case name for the feature (e.g. `user-notifications`) and save the PRD to `docs/prd/<name>.md` in the current repository root. Create the `docs/prd/` directory if it does not exist.
 
 <prd-template>
 
