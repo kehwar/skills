@@ -1,0 +1,14 @@
+{
+  "doctype": "Inventory Dimension",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "condition",
+      "filename": "condition.py"
+    }
+  ],
+  "filters": {
+    "condition": ["!=", ""]
+  },
+  "description": "Inventory Dimension conditions are Python expressions evaluated via safe_eval to decide whether a dimension applies to a stock ledger entry."
+}

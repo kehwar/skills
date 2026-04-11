@@ -1,0 +1,14 @@
+{
+  "doctype": "Quality Inspection Reading",
+  "group_by_field": "parent",
+  "code_fields": [
+    {
+      "field": "acceptance_formula",
+      "filename": "acceptance_formula.py"
+    }
+  ],
+  "filters": {
+    "acceptance_formula": ["!=", ""]
+  },
+  "description": "Quality Inspection Reading acceptance formulas are Python expressions evaluated via safe_eval to determine pass/fail status of a reading. Grouped by parent Quality Inspection."
+}

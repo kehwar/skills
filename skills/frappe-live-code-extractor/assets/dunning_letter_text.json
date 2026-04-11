@@ -1,0 +1,16 @@
+{
+  "doctype": "Dunning Letter Text",
+  "group_by_field": "parent",
+  "code_fields": [
+    {
+      "field": "body_text",
+      "filename": "body_text.html"
+    },
+    {
+      "field": "closing_text",
+      "filename": "closing_text.html"
+    }
+  ],
+  "filters": {},
+  "description": "Dunning Letter Text rows are Jinja2 HTML templates rendered via render_template when generating dunning letters. Grouped by parent Dunning Type."
+}

@@ -1,0 +1,14 @@
+{
+  "doctype": "Supplier Scorecard Criteria",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "formula",
+      "filename": "formula.py"
+    }
+  ],
+  "filters": {
+    "formula": ["!=", ""]
+  },
+  "description": "Supplier Scorecard Criteria formulas are Python expressions evaluated via safe_eval to compute a supplier's score for the criteria."
+}

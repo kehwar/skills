@@ -1,0 +1,14 @@
+{
+  "doctype": "Workflow Transition",
+  "group_by_field": "parent",
+  "code_fields": [
+    {
+      "field": "condition",
+      "filename": "condition.py"
+    }
+  ],
+  "filters": {
+    "condition": ["!=", ""]
+  },
+  "description": "Workflow Transition conditions are Python expressions evaluated to allow or block individual state transitions. Grouped by parent Workflow name."
+}

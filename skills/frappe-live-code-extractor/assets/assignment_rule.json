@@ -1,0 +1,20 @@
+{
+  "doctype": "Assignment Rule",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "assign_condition",
+      "filename": "assign_condition.py"
+    },
+    {
+      "field": "unassign_condition",
+      "filename": "unassign_condition.py"
+    },
+    {
+      "field": "close_condition",
+      "filename": "close_condition.py"
+    }
+  ],
+  "filters": {},
+  "description": "Assignment Rules use Python expressions to automatically assign, unassign, or close documents for users."
+}

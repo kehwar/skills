@@ -1,0 +1,14 @@
+{
+  "doctype": "Service Level Agreement",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "condition",
+      "filename": "condition.py"
+    }
+  ],
+  "filters": {
+    "condition": ["!=", ""]
+  },
+  "description": "Service Level Agreement conditions are Python expressions evaluated via safe_eval to decide whether an SLA applies to a document."
+}

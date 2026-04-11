@@ -206,6 +206,16 @@ STANDARD_DOCTYPE_OUTPUT_DIRS: dict[str, str] = {
     "Notification": "notification",
     "Email Template": "email-template",
     "Letter Head": "letter-head",
+    "Assignment Rule": "assignment-rule",
+    "Workflow Transition": "workflow-transition",
+    # ERPNext
+    "Pricing Rule": "pricing-rule",
+    "Service Level Agreement": "service-level-agreement",
+    "Inventory Dimension": "inventory-dimension",
+    "Contract Template": "contract-template",
+    "Supplier Scorecard Criteria": "supplier-scorecard-criteria",
+    "Dunning Letter Text": "dunning-letter-text",
+    "Quality Inspection Reading": "quality-inspection-reading",
 }
 
 

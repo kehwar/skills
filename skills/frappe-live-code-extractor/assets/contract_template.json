@@ -1,0 +1,12 @@
+{
+  "doctype": "Contract Template",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "contract_terms",
+      "filename": "contract_terms.html"
+    }
+  ],
+  "filters": {},
+  "description": "Contract Template terms are Jinja2 HTML templates rendered via render_template when creating a Contract from a template."
+}
