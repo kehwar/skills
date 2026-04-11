@@ -1,0 +1,13 @@
+{
+  "doctype": "Email Template",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "response_html",
+      "filename": "response_html.html",
+      "skip_if_field_false": "use_html"
+    }
+  ],
+  "filters": {},
+  "description": "Email Templates define reusable email content with Jinja templating. HTML content only extracted when use_html is enabled."
+}

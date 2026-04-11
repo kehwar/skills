@@ -1,0 +1,35 @@
+{
+  "doctype": "Report",
+  "group_by_field": "report_type",
+  "group_by_map": {
+    "Query Report": "query",
+    "Script Report": "script",
+    "Report Builder": "builder"
+  },
+  "code_fields": [
+    {
+      "field": "query",
+      "filename": "query.sql",
+      "only_for_groups": ["query"]
+    },
+    {
+      "field": "report_script",
+      "filename": "report_script.py",
+      "only_for_groups": ["script"]
+    },
+    {
+      "field": "javascript",
+      "filename": "javascript.js",
+      "exclude_for_groups": ["builder"]
+    },
+    {
+      "field": "json",
+      "filename": "json.json"
+    }
+  ],
+  "filters": {
+    "is_standard": "No",
+    "report_type": ["in", ["Query Report", "Script Report", "Report Builder"]]
+  },
+  "description": "Custom Reports provide data queries and analysis. Query Reports use SQL, Script Reports use Python, and Report Builder uses visual configuration."
+}

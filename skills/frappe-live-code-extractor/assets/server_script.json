@@ -1,0 +1,18 @@
+{
+  "doctype": "Server Script",
+  "group_by_field": "script_type",
+  "group_by_map": {
+    "API": "api",
+    "DocType Event": "doctype-event",
+    "Scheduler Event": "scheduler-event",
+    "Permission Query": "permission-query"
+  },
+  "code_fields": [
+    {
+      "field": "script",
+      "filename": "script.py"
+    }
+  ],
+  "filters": {},
+  "description": "Server Scripts provide server-side Python code for API endpoints, DocType events, scheduled tasks, and permission queries."
+}

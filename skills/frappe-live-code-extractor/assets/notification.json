@@ -1,0 +1,22 @@
+{
+  "doctype": "Notification",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "message",
+      "ext_from_field": "message_type",
+      "ext_map": {
+        "Markdown": ".md",
+        "HTML": ".html",
+        "Plain Text": ".txt"
+      },
+      "ext_default": ".html"
+    },
+    {
+      "field": "condition",
+      "filename": "condition.py"
+    }
+  ],
+  "filters": {},
+  "description": "Notifications send automated messages based on document events. Message format determined by message_type field."
+}

@@ -1,0 +1,24 @@
+{
+  "doctype": "Letter Head",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "content",
+      "filename": "content.html"
+    },
+    {
+      "field": "footer",
+      "filename": "footer.html"
+    },
+    {
+      "field": "header_script",
+      "filename": "header_script.js"
+    },
+    {
+      "field": "footer_script",
+      "filename": "footer_script.js"
+    }
+  ],
+  "filters": {},
+  "description": "Letter Heads define document headers and footers with HTML content and optional JavaScript for dynamic rendering."
+}

@@ -1,0 +1,52 @@
+{
+  "doctype": "Print Format",
+  "group_by_field": null,
+  "code_fields": [
+    {
+      "field": "html",
+      "filename": "html.html",
+      "skip_if_field_populated": "format_data"
+    },
+    {
+      "field": "format_data",
+      "filename": "format_data.json",
+      "skip_if_field_populated": "html"
+    },
+    {
+      "field": "print_designer_header",
+      "filename": "print_designer_header.json"
+    },
+    {
+      "field": "print_designer_footer",
+      "filename": "print_designer_footer.json"
+    },
+    {
+      "field": "print_designer_body",
+      "filename": "print_designer_body.json"
+    },
+    {
+      "field": "print_designer_settings",
+      "filename": "print_designer_settings.json"
+    },
+    {
+      "field": "print_designer_print_format",
+      "filename": "print_designer_print_format.json"
+    },
+    {
+      "field": "print_designer_after_table",
+      "filename": "print_designer_after_table.json"
+    },
+    {
+      "field": "css",
+      "filename": "css.css"
+    },
+    {
+      "field": "raw_commands",
+      "filename": "raw_commands.txt"
+    }
+  ],
+  "filters": {
+    "standard": ["!=", "Yes"]
+  },
+  "description": "Print Formats define custom document templates using Jinja HTML or Print Designer (visual builder). Includes CSS styling and raw printer commands."
+}
