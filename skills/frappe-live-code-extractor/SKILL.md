@@ -55,7 +55,7 @@ To extract **a single DocType** (faster, useful after editing one doctype):
 
 `--doctype` accepts the exact DocType name (case-insensitive). Works for both standard Frappe DocTypes (`Server Script`, `Report`, …) and custom ones registered via `config.json`.
 
-> **⚠️ Side-effect:** even with `--doctype`, the script seeds `config.json` files from `assets/` into every `<app>/live/<doctype-slug>/` directory that doesn't have one yet. Only the specified DocType's artifacts are extracted, but the config seeding happens for all known assets. Avoid running with `--app` pointing at an app whose `live/` tree you haven't already populated; prefer seeding the config manually (step 2 of "Add a new DocType") before running extraction.
+> When `--doctype` is specified, config seeding from assets is limited to that DocType only — no other `config.json` files are written.
 
 ## Workflows
 

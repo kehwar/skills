@@ -138,6 +138,7 @@ def _load_assets(assets_dir: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
 def discover_all_configs(
     live_dir: Path,
     assets_dir: Path,
+    doctype_filter: str | None = None,
 ) -> list[dict[str, Any]]:
     """
     Resolve configs for all known doctypes using the 3-step fallback:
@@ -148,12 +149,18 @@ def discover_all_configs(
 
     Also picks up any live/<slug>/config.json not covered by assets.
     Returns a list of parsed config dicts (one per doctype).
+
+    When *doctype_filter* is given (casefolded name), only the matching
+    doctype is processed; config seeding from assets is also skipped for
+    every non-matching doctype.
     """
     assets_by_doctype = _load_assets(assets_dir)
     resolved: dict[str, dict[str, Any]] = {}  # doctype_name -> config
 
     # Steps 1 & 2: process every known asset config
     for doctype, (asset_path, asset_config) in assets_by_doctype.items():
+        if doctype_filter and doctype.casefold() != doctype_filter:
+            continue
         slug = slugify(doctype)
         app_config_path = live_dir / slug / "config.json"
         if app_config_path.exists():
@@ -628,7 +635,9 @@ def main() -> None:
         # Resolve configs for all doctypes (3-step: app → assets → skip)
         script_dir = Path(__file__).parent
         assets_dir = script_dir.parent / "assets"
-        all_configs = discover_all_configs(live_dir, assets_dir)
+        all_configs = discover_all_configs(
+            live_dir, assets_dir, doctype_filter=doctype_filter
+        )
 
         for config in all_configs:
             doctype = config["doctype"]
