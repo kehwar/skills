@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-"""frappe-live-code-extractor  —  extract.py  (Phase 4: Custom DocType Mirroring)
+"""frappe-live-code-extractor  —  extract.py
 
 Queries the live Frappe database (read-only) and writes every DB-resident
-code artifact as a plain file under  <app>/live/<type>/[<subtype>/]<slug>/.
+code artifact as a plain file under  <app>/live/<doctype-slug>/[<subtype>/]<slug>/.
+
+All doctypes — built-in Frappe types or custom app types — are treated
+uniformly.  Each extracted doctype uses a config.json that lives at:
+
+    <app>/live/<doctype-slug>/config.json
+
+Config resolution follows a 3-step fallback per doctype:
+  1. <app>/live/<doctype-slug>/config.json  — app-local customisation
+  2. skills/.agents/.../assets/<name>.json  — skill-bundled default, copied
+                                              into the app tree on first run
+  3. (agent responsibility) interview the user / infer from context
 
 Continues processing even if individual artifacts fail — errors are collected
 and reported at the end. Safe to run at any time; never writes to the database.
-
-Supported artifact types (configured via assets/*.json and custom config.json):
-  Server Scripts   → live/server-script/{api,doctype-event,scheduler-event,permission-query}/
-  Client Scripts   → live/client-script/
-  Print Formats    → live/print-format/
-  Reports          → live/report/{query,script,builder}/
-  Notifications    → live/notification/
-  Email Templates  → live/email-template/
-  Letter Heads     → live/letter-head/
-  Custom DocTypes  → live/doctype/<doctype-slug>/  (auto-discovered from config.json)
 
 Run from the bench directory:
 
@@ -114,37 +115,71 @@ def cleanup_stale(base_dir: Path, valid_slugs: set[str]) -> int:
 # ---------------------------------------------------------------------------
 
 
-def load_standard_configs() -> list[dict[str, Any]]:
-    """
-    Load all standard doctype config files from assets/*.json.
-
-    Returns a list of parsed config dictionaries.
-    """
-    # Get the directory where this script lives
-    script_dir = Path(__file__).parent
-    assets_dir = script_dir.parent / "assets"
-
+def _load_assets(assets_dir: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """Return a mapping of {doctype_name: (asset_path, config)} from assets/*.json."""
+    result: dict[str, tuple[Path, dict[str, Any]]] = {}
     if not assets_dir.is_dir():
-        return []
-
-    configs = []
+        return result
     for config_file in sorted(assets_dir.glob("*.json")):
         try:
-            content = config_file.read_text(encoding="utf-8")
-            config = json.loads(content)
+            config = json.loads(config_file.read_text(encoding="utf-8"))
             if isinstance(config, dict) and config.get("doctype"):
-                configs.append(config)
+                result[config["doctype"]] = (config_file, config)
             else:
                 print(
                     f"Warning: {config_file.name} does not contain a valid config",
                     file=sys.stderr,
                 )
         except Exception as e:
-            print(
-                f"Warning: could not load {config_file.name}: {e}",
-                file=sys.stderr,
-            )
-    return configs
+            print(f"Warning: could not load {config_file.name}: {e}", file=sys.stderr)
+    return result
+
+
+def discover_all_configs(
+    live_dir: Path,
+    assets_dir: Path,
+) -> list[dict[str, Any]]:
+    """
+    Resolve configs for all known doctypes using the 3-step fallback:
+
+    1. Check <app>/live/<doctype-slug>/config.json       — use if present
+    2. Check skill assets/*.json                         — copy into app tree then use
+    3. (Agent responsibility) interview user             — not handled here
+
+    Also picks up any live/<slug>/config.json not covered by assets.
+    Returns a list of parsed config dicts (one per doctype).
+    """
+    assets_by_doctype = _load_assets(assets_dir)
+    resolved: dict[str, dict[str, Any]] = {}  # doctype_name -> config
+
+    # Steps 1 & 2: process every known asset config
+    for doctype, (asset_path, asset_config) in assets_by_doctype.items():
+        slug = slugify(doctype)
+        app_config_path = live_dir / slug / "config.json"
+        if app_config_path.exists():
+            # Step 1: app has a local override — prefer it
+            parsed = parse_config_json(app_config_path)
+            if parsed:
+                resolved[doctype] = parsed
+        else:
+            # Step 2: seed the app tree from the skill asset
+            app_config_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(asset_path, app_config_path)
+            resolved[doctype] = asset_config
+
+    # Discover any app-side configs not already covered by assets
+    if live_dir.is_dir():
+        for entry in sorted(live_dir.iterdir()):
+            if not entry.is_dir():
+                continue
+            config_path = entry / "config.json"
+            if not config_path.is_file():
+                continue
+            parsed = parse_config_json(config_path)
+            if parsed and parsed.get("doctype") not in resolved:
+                resolved[parsed["doctype"]] = parsed
+
+    return list(resolved.values())
 
 
 # ---------------------------------------------------------------------------
@@ -193,40 +228,13 @@ class ErrorCollector:
 
 
 # ---------------------------------------------------------------------------
-# Standard type output directory mapping
-# ---------------------------------------------------------------------------
-
-# Maps standard doctype names to their output directory names.
-# Custom doctypes use live/doctype/<doctype-slug>/
-STANDARD_DOCTYPE_OUTPUT_DIRS: dict[str, str] = {
-    "Server Script": "server-script",
-    "Client Script": "client-script",
-    "Print Format": "print-format",
-    "Report": "report",
-    "Notification": "notification",
-    "Email Template": "email-template",
-    "Letter Head": "letter-head",
-    "Assignment Rule": "assignment-rule",
-    "Workflow Transition": "workflow-transition",
-    # ERPNext
-    "Pricing Rule": "pricing-rule",
-    "Service Level Agreement": "service-level-agreement",
-    "Inventory Dimension": "inventory-dimension",
-    "Contract Template": "contract-template",
-    "Supplier Scorecard Criteria": "supplier-scorecard-criteria",
-    "Dunning Letter Text": "dunning-letter-text",
-    "Quality Inspection Reading": "quality-inspection-reading",
-}
-
-
-# ---------------------------------------------------------------------------
-# Unified DocType extraction (Phase 4: Config-driven for all types)
+# Config-driven DocType extraction
 # ---------------------------------------------------------------------------
 
 
 def parse_config_json(config_path: Path) -> dict[str, Any] | None:
     """
-    Parse a config.json file for custom DocType extraction.
+    Parse a config.json file for DocType extraction.
 
     Expected JSON structure:
     {
@@ -290,47 +298,23 @@ def parse_config_json(config_path: Path) -> dict[str, Any] | None:
     return config
 
 
-def discover_custom_doctype_configs(
-    live_dir: Path,
-) -> list[tuple[Path, dict[str, Any]]]:
-    """
-    Walk live_dir/doctype/ and collect all config.json files with successfully parsed configs.
-
-    Returns a list of (config_path, parsed_config) tuples.
-    """
-    doctype_dir = live_dir / "doctype"
-    if not doctype_dir.is_dir():
-        return []
-
-    configs = []
-    for entry in doctype_dir.iterdir():
-        if not entry.is_dir():
-            continue
-        config_path = entry / "config.json"
-        if not config_path.is_file():
-            continue
-        parsed = parse_config_json(config_path)
-        if parsed:
-            configs.append((config_path, parsed))
-
-    return configs
-
-
 def extract_doctype(
     live_dir: Path,
     frappe,  # noqa: ANN001
     config: dict[str, Any],
-    is_standard: bool,
     errors: ErrorCollector,
 ) -> tuple[int, int]:
     """
     Extract all records of a doctype according to the config.
 
+    Output directory is always ``live_dir / slugify(doctype)``.
+    Group subdirectories are created inside that root when the config
+    specifies ``group_by_field``.
+
     Args:
         live_dir: Base live directory for the app
         frappe: Frappe module instance
         config: Parsed config dictionary
-        is_standard: If True, outputs to live/<type>/; if False, to live/doctype/<doctype-slug>/
         errors: Error collector for tracking failures
 
     Returns (total_written, total_deleted).
@@ -357,20 +341,8 @@ def extract_doctype(
         )
         return 0, 0
 
-    # Determine base output directory
-    if is_standard:
-        output_dir_name = STANDARD_DOCTYPE_OUTPUT_DIRS.get(doctype)
-        if not output_dir_name:
-            print(
-                f"Warning: standard doctype '{doctype}' has no output dir mapping",
-                file=sys.stderr,
-            )
-            return 0, 0
-        base_root = live_dir / output_dir_name
-    else:
-        doctype_slug = slugify(doctype)
-        base_root = live_dir / "doctype" / doctype_slug
-
+    # All doctypes output to live/<doctype-slug>/
+    base_root = live_dir / slugify(doctype)
     base_root.mkdir(parents=True, exist_ok=True)
 
     total_written = 0
@@ -403,7 +375,7 @@ def extract_doctype(
 
         active_top_dirs = set(multi_groups.keys())
 
-        # Clean up stale top-level dirs
+        # Clean up stale top-level dirs (files like config.json are preserved)
         for entry in base_root.iterdir():
             if entry.is_file():
                 continue
@@ -468,7 +440,7 @@ def extract_doctype(
         active_groups: set[str] = set(by_group.keys())
 
         # Clean up group directories that no longer exist
-        # (but preserve config.json at the root for custom doctypes)
+        # (files like config.json at the root are preserved)
         for entry in base_root.iterdir():
             if entry.is_file():
                 continue
@@ -653,26 +625,18 @@ def main() -> None:
 
         doctype_filter = args.doctype.casefold() if args.doctype else None
 
-        # Load standard configs from assets/
-        standard_configs = load_standard_configs()
-        for config in standard_configs:
+        # Resolve configs for all doctypes (3-step: app → assets → skip)
+        script_dir = Path(__file__).parent
+        assets_dir = script_dir.parent / "assets"
+        all_configs = discover_all_configs(live_dir, assets_dir)
+
+        for config in all_configs:
             doctype = config["doctype"]
             if doctype_filter and doctype.casefold() != doctype_filter:
                 continue
-            output_dir = STANDARD_DOCTYPE_OUTPUT_DIRS.get(doctype, slugify(doctype))
-            results[output_dir] = extract_doctype(
-                live_dir, frappe, config, is_standard=True, errors=errors
-            )
-
-        # Extract custom doctypes (Phase 4)
-        custom_configs = discover_custom_doctype_configs(live_dir)
-        for config_path, config in custom_configs:
-            doctype_slug = slugify(config["doctype"])
-            if doctype_filter and config["doctype"].casefold() != doctype_filter:
-                continue
-            result_key = f"doctype:{doctype_slug}"
+            result_key = slugify(doctype)
             results[result_key] = extract_doctype(
-                live_dir, frappe, config, is_standard=False, errors=errors
+                live_dir, frappe, config, errors=errors
             )
 
         total_written = sum(w for w, _ in results.values())

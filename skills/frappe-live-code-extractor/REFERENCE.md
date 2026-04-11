@@ -2,9 +2,10 @@
 
 ## Supported artifact types
 
-All artifact types are config-driven — standard doctypes use JSON configs in
-`skills/.agents/skills/frappe-live-code-extractor/assets/`, and custom doctypes use
-`config.json` in `<app>/live/doctype/<doctype-slug>/`.
+All artifact types are config-driven. Every doctype — whether a built-in Frappe type or
+a custom app type — uses a `config.json` that lives at `<app>/live/<doctype-slug>/config.json`.
+Built-in defaults are bundled under `assets/` and are copied into the app tree automatically
+on the first run.
 
 | Artifact | Output directory | Code file(s) | Filter |
 |---|---|---|---|
@@ -22,7 +23,7 @@ All artifact types are config-driven — standard doctypes use JSON configs in
 | Email Template | `live/email-template/` | `response_html.html`* | all |
 | Letter Head | `live/letter-head/` | `content.html`*, `footer.html`*, `header_script.js`*, `footer_script.js`* | all |
 | Terms and Conditions | `live/terms-and-conditions/` | `terms.html`* | all |
-| **Custom DocType** | `live/doctype/<doctype-slug>/` | Configured via `config.json` | all |
+| Any other DocType | `live/<doctype-slug>/` | Configured via `config.json` | Configured via `filters` |
 
 \* = skipped when the source field is empty. Print Designer fields (`print_designer_*`) are extracted unconditionally.
 
@@ -37,8 +38,11 @@ apps/<app>/<app>/live/
   notification/<slug>/
   email-template/<slug>/
   letter-head/<slug>/
-  doctype/<doctype-slug>/        # custom doctypes
+  <any-doctype-slug>/<slug>/      # every doctype uses live/<doctype-slug>/
 ```
+
+Each doctype directory also contains its `config.json` (copied from skill assets on first run
+or written manually for custom doctypes).
 
 `<slug>` = artifact `name` lowercased with non-alphanumeric chars replaced by hyphens.
 Collisions get a numeric suffix (`my-script`, `my-script-2`, …), assigned alphabetically for stability.
@@ -161,7 +165,7 @@ git commit -m "chore: refresh live code snapshot"
 When `group_by_field` is an array, each record is assigned to the **first field in the list that has a non-empty value**. The folder structure becomes:
 
 ```
-live/doctype/<doctype-slug>/
+live/my-custom-doctype/
   <field_name>/          ← raw field name (e.g. reference_doctype)
     <value_slug>/        ← slugified field value (e.g. user)
       <record_slug>/
@@ -261,7 +265,7 @@ doctype/my-custom-rule/
 
 ## Standard doctype configs
 
-All standard artifact types are configured in:
+Bundled default configs for all built-in Frappe / ERPNext artifact types live in:
 
 ```
 skills/.agents/skills/frappe-live-code-extractor/assets/
@@ -273,9 +277,16 @@ skills/.agents/skills/frappe-live-code-extractor/assets/
   email_template.json
   letter_head.json
   terms_and_conditions.json
+  assignment_rule.json
+  workflow_transition.json
+  ...
 ```
 
-## End-to-end example: registering My Custom Script
+On the first run for a given app, each asset config is automatically copied to
+`<app>/live/<doctype-slug>/config.json`. After that the app-side copy is used,
+so you can customise it without affecting other apps.
+
+## End-to-end example: adding My Custom Script
 
 ```bash
 # 1. Discover fields
@@ -293,8 +304,8 @@ frappe.destroy()
 # → script (Code), category (Select: General/Utility)
 
 # 2. Create config
-mkdir -p apps/myapp/myapp/live/doctype/my-custom-script
-cat > apps/myapp/myapp/live/doctype/my-custom-script/config.json << 'EOF'
+mkdir -p apps/myapp/myapp/live/my-custom-script
+cat > apps/myapp/myapp/live/my-custom-script/config.json << 'EOF'
 {
   "doctype": "My Custom Script",
   "group_by_field": "category",
@@ -308,6 +319,6 @@ EOF
 
 # 4. Commit
 cd apps/myapp
-git add myapp/live/doctype/my-custom-script/
+git add myapp/live/my-custom-script/
 git commit -m "feat: add My Custom Script extraction config"
 ```

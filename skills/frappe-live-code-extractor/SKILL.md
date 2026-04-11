@@ -1,11 +1,17 @@
 ---
 name: frappe-live-code-extractor
-description: Extract all live Frappe code into plain files under `<app>/live/` so they can be searched with grep and read by AI assistants. Use when you need to refresh the live code snapshot before a refactor, search across the full codebase, understand DB-resident script context, or register a new custom doctype for extraction.
+description: Extract all live Frappe code into plain files under `<app>/live/` so they can be searched with grep and read by AI assistants. Use when you need to refresh the live code snapshot before a refactor, search across the full codebase, understand DB-resident script context, or add a new doctype for extraction.
 ---
 
 # frappe-live-code-extractor
 
-Queries the live Frappe database (**read-only**) and writes each artifact's code into source files and `meta.json` under `<app>/live/<type>/`. Makes all DB-resident code visible to grep, LSP, and AI assistants. Safe to run at any time.
+Queries the live Frappe database (**read-only**) and writes each artifact's code into source files and `meta.json` under `<app>/live/<doctype-slug>/`. Makes all DB-resident code visible to grep, LSP, and AI assistants. Safe to run at any time.
+
+All doctypes — built-in Frappe types and custom app types — are treated identically. Each doctype has a `config.json` at `<app>/live/<doctype-slug>/config.json`. The script resolves it via a 3-step fallback:
+
+1. **App config** — `<app>/live/<doctype-slug>/config.json` if it exists
+2. **Skill asset** — copies the bundled default from `assets/` into the app tree, then uses it
+3. **Agent** — interview the user / infer from context to create a config (see [REFERENCE.md](REFERENCE.md#configjson-format))
 
 ## Quick start
 
@@ -15,8 +21,8 @@ Queries the live Frappe database (**read-only**) and writes each artifact's code
 
 If the user has not specified an app, determine it from context:
 
-1. **From the open file / workspace folder** — if the user is editing a file under `apps/<app>/`, use that `<app>`.
-2. **From the conversation** — if the user has mentioned an app name, use it.
+1. **From the workspace folder** — use the workspace folder the user is currently in. **The app that owns the DocType being extracted is irrelevant** — always use the user's active workspace app.
+2. **From the conversation** — if the user has explicitly mentioned an app name, use it.
 3. **From installed apps** — as a last resort, query the DB and pick the first non-framework app:
 
 ```bash
@@ -49,6 +55,8 @@ To extract **a single DocType** (faster, useful after editing one doctype):
 
 `--doctype` accepts the exact DocType name (case-insensitive). Works for both standard Frappe DocTypes (`Server Script`, `Report`, …) and custom ones registered via `config.json`.
 
+> **⚠️ Side-effect:** even with `--doctype`, the script seeds `config.json` files from `assets/` into every `<app>/live/<doctype-slug>/` directory that doesn't have one yet. Only the specified DocType's artifacts are extracted, but the config seeding happens for all known assets. Avoid running with `--app` pointing at an app whose `live/` tree you haven't already populated; prefer seeding the config manually (step 2 of "Add a new DocType") before running extraction.
+
 ## Workflows
 
 ### Refresh before a refactor
@@ -59,9 +67,9 @@ When the user says "refresh the live code snapshot":
 2. Grep across `apps/<app>/<app>/` — the `live/` subtree is included automatically
 3. Proceed with the refactor
 
-### Register a custom DocType
+### Add a new DocType for extraction
 
-When the user asks to "mirror" or "extract" a DocType:
+When the user asks to "mirror" or "extract" a DocType that has no config yet:
 
 1. **Discover fields** — query the schema for Code/Text/HTML fields:
    ```bash
@@ -77,7 +85,8 @@ When the user asks to "mirror" or "extract" a DocType:
    frappe.destroy()
    "
    ```
-2. **Create `config.json`** in `<app>/live/doctype/<doctype-slug>/config.json` — see [REFERENCE.md](REFERENCE.md#configjson-format) for schema and examples
+2. **Create `config.json`** at `<app>/live/<doctype-slug>/config.json` — see [REFERENCE.md](REFERENCE.md#configjson-format) for schema and examples.
+   > **⚠️ Never add configs to `skills/.agents/skills/frappe-live-code-extractor/assets/` unless explicitly told to.** That directory is reserved for configs bundled with the skill itself. User-defined configs always go into the app's own `live/<doctype-slug>/config.json`.
 3. **Run extraction** — the file is auto-discovered and processed
 4. **Commit** `config.json` and extracted files
 
