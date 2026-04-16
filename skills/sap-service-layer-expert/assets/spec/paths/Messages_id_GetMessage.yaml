@@ -1,10 +1,10 @@
 post:
   tags:
-  - Messages(id)/GetMessage
+  - Messages
   summary: POST Messages(id)/GetMessage
   description: Invoke the method 'GetMessage' on this EntitySet with the specified id. It is functionally equivalent to 'GET
     Messages(id)'
-  operationId: post_Messages_id/GetMessage
+  operationId: post_Messages_id_GetMessage
   responses:
     '200':
       description: Success
@@ -16,6 +16,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/Messages(1)/GetMessage
   x-resource-description: This entity enables you to manipulate 'Messages'. You can also specify the OData query options to
     query the messages, which is a combination of Inbox messages, Outbox messages and to-send messages.

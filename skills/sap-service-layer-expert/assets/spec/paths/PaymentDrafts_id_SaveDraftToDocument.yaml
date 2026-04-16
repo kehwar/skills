@@ -1,9 +1,9 @@
 post:
   tags:
-  - PaymentDrafts(id)/SaveDraftToDocument
+  - PaymentDrafts
   summary: POST PaymentDrafts(id)/SaveDraftToDocument
   description: Invoke the method 'SaveDraftToDocument' on this EntitySet with the specified id.
-  operationId: post_PaymentDrafts_id/SaveDraftToDocument
+  operationId: post_PaymentDrafts_id_SaveDraftToDocument
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/PaymentDrafts(123)/SaveDraftToDocument
   x-resource-description: This entity enables you to manipulate 'PaymentDrafts'.

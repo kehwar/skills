@@ -142,10 +142,12 @@ post:
                   example: 0
                 ReportLayoutItems:
                   type: array
-                  items: {}
+                  items:
+                    type: object
                 ReportLayout_TranslationLines:
                   type: array
-                  items: {}
+                  items:
+                    type: object
                 RightMargin:
                   type: integer
                   example: 30

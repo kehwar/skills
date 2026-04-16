@@ -1,9 +1,9 @@
 post:
   tags:
-  - InventoryTransferRequests(id)/SaveDraftToDocument
+  - InventoryTransferRequests
   summary: POST InventoryTransferRequests(id)/SaveDraftToDocument
   description: Invoke the method 'SaveDraftToDocument' on this EntitySet with the specified id.
-  operationId: post_InventoryTransferRequests_id/SaveDraftToDocument
+  operationId: post_InventoryTransferRequests_id_SaveDraftToDocument
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/InventoryTransferRequests(123)/SaveDraftToDocument
   x-resource-description: This entity enables you to manipulate 'InventoryTransferRequests'. It represents a request to transfer
     inventory from one warehouse to another. After the requested quantity is received by the receiving warehouse, you can

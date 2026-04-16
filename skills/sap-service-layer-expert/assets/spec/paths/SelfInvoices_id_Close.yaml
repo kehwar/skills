@@ -1,9 +1,9 @@
 post:
   tags:
-  - SelfInvoices(id)/Close
+  - SelfInvoices
   summary: POST SelfInvoices(id)/Close
   description: Invoke the method 'Close' on this EntitySet with the specified id.
-  operationId: post_SelfInvoices_id/Close
+  operationId: post_SelfInvoices_id_Close
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/SelfInvoices(123)/Close
   x-resource-description: This entity enables you to manipulate 'SelfInvoices'. It represents a request for payment. It also
     records the cost in a profit and loss statement.

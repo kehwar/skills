@@ -1,9 +1,9 @@
 post:
   tags:
-  - LandedCosts(id)/CloseLandedCost
+  - LandedCosts
   summary: POST LandedCosts(id)/CloseLandedCost
   description: Invoke the method 'CloseLandedCost' on this EntitySet with the specified id.
-  operationId: post_LandedCosts_id/CloseLandedCost
+  operationId: post_LandedCosts_id_CloseLandedCost
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/LandedCosts(123)/CloseLandedCost
   x-resource-description: This entity enables you to manipulate 'LandedCosts'.

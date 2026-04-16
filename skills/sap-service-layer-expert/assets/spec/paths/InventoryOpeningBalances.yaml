@@ -104,10 +104,12 @@ post:
                     example: 0
                   InventoryOpeningBalanceBatchNumbers:
                     type: array
-                    items: {}
+                    items:
+                      type: object
                   InventoryOpeningBalanceSerialNumbers:
                     type: array
-                    items: {}
+                    items:
+                      type: object
                   ItemCode:
                     type: string
                     example: I02

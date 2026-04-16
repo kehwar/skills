@@ -1,9 +1,9 @@
 post:
   tags:
-  - PurchaseRequests(id)/Cancel
+  - PurchaseRequests
   summary: POST PurchaseRequests(id)/Cancel
   description: Invoke the method 'Cancel' on this EntitySet with the specified id.
-  operationId: post_PurchaseRequests_id/Cancel
+  operationId: post_PurchaseRequests_id_Cancel
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/PurchaseRequests(123)/Cancel
   x-resource-description: This entity enables you to manipulate 'PurchaseRequests'. It allows users and employees in an organization
     to initiate a purchasing process by submitting their needs for certain goods or services.

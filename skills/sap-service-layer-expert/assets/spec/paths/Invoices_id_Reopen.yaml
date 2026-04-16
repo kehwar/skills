@@ -1,9 +1,9 @@
 post:
   tags:
-  - Invoices(id)/Reopen
+  - Invoices
   summary: POST Invoices(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_Invoices_id/Reopen
+  operationId: post_Invoices_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/Invoices(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'Invoices'.

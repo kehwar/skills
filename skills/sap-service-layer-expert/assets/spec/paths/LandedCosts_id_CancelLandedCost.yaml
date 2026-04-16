@@ -1,9 +1,9 @@
 post:
   tags:
-  - LandedCosts(id)/CancelLandedCost
+  - LandedCosts
   summary: POST LandedCosts(id)/CancelLandedCost
   description: Invoke the method 'CancelLandedCost' on this EntitySet with the specified id.
-  operationId: post_LandedCosts_id/CancelLandedCost
+  operationId: post_LandedCosts_id_CancelLandedCost
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/LandedCosts(123)/CancelLandedCost
   x-resource-description: This entity enables you to manipulate 'LandedCosts'.

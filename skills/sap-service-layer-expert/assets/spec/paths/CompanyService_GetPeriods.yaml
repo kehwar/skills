@@ -4,7 +4,7 @@ get:
   summary: GET CompanyService_GetPeriods
   description: Invoke the method 'GetPeriods' on this service. It returns the 'PeriodCategoryParamsCollection', which is a
     collection of 'PeriodCategoryParams' identification keys.
-  operationId: get_CompanyService_GetPeriods_2
+  operationId: get_CompanyService_GetPeriods
   responses:
     '200':
       description: Success

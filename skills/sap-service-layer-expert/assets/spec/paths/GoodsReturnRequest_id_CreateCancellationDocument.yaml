@@ -1,9 +1,9 @@
 post:
   tags:
-  - GoodsReturnRequest(id)/CreateCancellationDocument
+  - GoodsReturnRequest
   summary: POST GoodsReturnRequest(id)/CreateCancellationDocument
   description: Invoke the method 'CreateCancellationDocument' on this EntitySet with the specified id.
-  operationId: post_GoodsReturnRequest_id/CreateCancellationDocument
+  operationId: post_GoodsReturnRequest_id_CreateCancellationDocument
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/GoodsReturnRequest(123)/CreateCancellationDocument
   x-resource-description: This entity enables you to manipulate 'GoodsReturnRequest'. A return is the clearing document for
     a delivery.

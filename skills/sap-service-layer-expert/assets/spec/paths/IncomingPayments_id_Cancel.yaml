@@ -1,9 +1,9 @@
 post:
   tags:
-  - IncomingPayments(id)/Cancel
+  - IncomingPayments
   summary: POST IncomingPayments(id)/Cancel
   description: Invoke the method 'Cancel' on this EntitySet with the specified id.
-  operationId: post_IncomingPayments_id/Cancel
+  operationId: post_IncomingPayments_id_Cancel
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/IncomingPayments(123)/Cancel
   x-resource-description: This entity enables you to manipulate 'IncomingPayments'. It represents incoming payments from customers
     or, for returned goods, from vendors. Available payment methods are cash, credit cards, checks, bank transfers, and in

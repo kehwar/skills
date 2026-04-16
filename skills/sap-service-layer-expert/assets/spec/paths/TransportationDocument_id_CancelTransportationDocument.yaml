@@ -1,9 +1,9 @@
 post:
   tags:
-  - TransportationDocument(id)/CancelTransportationDocument
+  - TransportationDocument
   summary: POST TransportationDocument(id)/CancelTransportationDocument
   description: Invoke the method 'CancelTransportationDocument' on this EntitySet with the specified id.
-  operationId: post_TransportationDocument_id/CancelTransportationDocument
+  operationId: post_TransportationDocument_id_CancelTransportationDocument
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/TransportationDocument(123)/CancelTransportationDocument
   x-resource-description: This entity enables you to manipulate 'TransportationDocument'.

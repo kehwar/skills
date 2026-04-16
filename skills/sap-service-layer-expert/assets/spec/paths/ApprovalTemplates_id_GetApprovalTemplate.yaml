@@ -1,9 +1,9 @@
 post:
   tags:
-  - ApprovalTemplates(id)/GetApprovalTemplate
+  - ApprovalTemplates
   summary: POST ApprovalTemplates(id)/GetApprovalTemplate
   description: Invoke the method 'GetApprovalTemplate' on this EntitySet with the specified id.
-  operationId: post_ApprovalTemplates_id/GetApprovalTemplate
+  operationId: post_ApprovalTemplates_id_GetApprovalTemplate
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/ApprovalTemplates(123)/GetApprovalTemplate
   x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
     and the users and transactions to which the procedure applies.

@@ -1,9 +1,9 @@
 post:
   tags:
-  - PickLists(id)/GetReleasedAllocation
+  - PickLists
   summary: POST PickLists(id)/GetReleasedAllocation
   description: Invoke the method 'GetReleasedAllocation' on this EntitySet with the specified id.
-  operationId: post_PickLists_id/GetReleasedAllocation
+  operationId: post_PickLists_id_GetReleasedAllocation
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/PickLists(3)/GetReleasedAllocation
   x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
     the warehouse. The picking process applies only to items that are already approved in sales orders.

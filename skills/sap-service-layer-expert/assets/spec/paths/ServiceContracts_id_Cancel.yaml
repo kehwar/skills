@@ -1,9 +1,9 @@
 post:
   tags:
-  - ServiceContracts(id)/Cancel
+  - ServiceContracts
   summary: POST ServiceContracts(id)/Cancel
   description: Invoke the method 'Cancel' on this EntitySet with the specified id.
-  operationId: post_ServiceContracts_id/Cancel
+  operationId: post_ServiceContracts_id_Cancel
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/ServiceContracts(123)/Cancel
   x-resource-description: 'This entity enables you to manipulate ''ServiceContracts''. It represents the service contracts
     table in the Service module of the SAP Business One application. This object enables you to do the following: Add a service

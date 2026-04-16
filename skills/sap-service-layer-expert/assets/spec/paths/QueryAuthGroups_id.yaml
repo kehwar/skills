@@ -29,7 +29,7 @@ patch:
   summary: PATCH QueryAuthGroups(id)
   description: unassign QueryAuthorizationGroups to query category such as Category with CategoryId=-1.In http header, set
     B1S-ReplaceCollectionsOnPatch as true.
-  operationId: patch_QueryAuthGroups_id_2
+  operationId: patch_QueryAuthGroups_id
   responses:
     '200':
       description: Success

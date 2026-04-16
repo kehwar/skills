@@ -1,9 +1,9 @@
 post:
   tags:
-  - BlanketAgreements(id)/GetRelatedDocuments
+  - BlanketAgreements
   summary: POST BlanketAgreements(id)/GetRelatedDocuments
   description: Invoke the method 'GetRelatedDocuments' on this EntitySet with the specified id.
-  operationId: post_BlanketAgreements_id/GetRelatedDocuments
+  operationId: post_BlanketAgreements_id_GetRelatedDocuments
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/BlanketAgreements(123)/GetRelatedDocuments
   x-resource-description: This entity enables you to manipulate 'BlanketAgreements'.

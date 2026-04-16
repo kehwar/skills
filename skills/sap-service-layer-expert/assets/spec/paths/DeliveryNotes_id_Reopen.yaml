@@ -1,9 +1,9 @@
 post:
   tags:
-  - DeliveryNotes(id)/Reopen
+  - DeliveryNotes
   summary: POST DeliveryNotes(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_DeliveryNotes_id/Reopen
+  operationId: post_DeliveryNotes_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/DeliveryNotes(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'DeliveryNotes'. It is a legally binding document indicating
     that the shipment of goods or the delivery of services has occurred.

@@ -1,9 +1,9 @@
 post:
   tags:
-  - PurchaseDeliveryNotes(id)/Close
+  - PurchaseDeliveryNotes
   summary: POST PurchaseDeliveryNotes(id)/Close
   description: Invoke the method 'Close' on this EntitySet with the specified id.
-  operationId: post_PurchaseDeliveryNotes_id/Close
+  operationId: post_PurchaseDeliveryNotes_id_Close
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/PurchaseDeliveryNotes(123)/Close
   x-resource-description: This entity enables you to manipulate 'PurchaseDeliveryNotes'. It represents a legally binding document
     indicating that a shipment of goods or a delivery of services has occurred.

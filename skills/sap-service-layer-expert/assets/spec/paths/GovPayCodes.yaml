@@ -53,7 +53,8 @@ post:
               example: c1
             GovPayCodeAuthorities:
               type: array
-              items: {}
+              items:
+                type: object
             Prdcity:
               type: string
               example: gpcpMonth

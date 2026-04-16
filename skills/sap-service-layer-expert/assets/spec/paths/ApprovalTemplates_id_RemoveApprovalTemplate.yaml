@@ -1,9 +1,9 @@
 post:
   tags:
-  - ApprovalTemplates(id)/RemoveApprovalTemplate
+  - ApprovalTemplates
   summary: POST ApprovalTemplates(id)/RemoveApprovalTemplate
   description: Invoke the method 'RemoveApprovalTemplate' on this EntitySet with the specified id.
-  operationId: post_ApprovalTemplates_id/RemoveApprovalTemplate
+  operationId: post_ApprovalTemplates_id_RemoveApprovalTemplate
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/ApprovalTemplates(123)/RemoveApprovalTemplate
   x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
     and the users and transactions to which the procedure applies.

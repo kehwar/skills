@@ -125,7 +125,8 @@ put:
                     example: 17
                   BatchNumbers:
                     type: array
-                    items: {}
+                    items:
+                      type: object
                   DocumentLinesBinAllocations:
                     type: array
                     items:
@@ -169,7 +170,8 @@ put:
                     example: 2
                   SerialNumbers:
                     type: array
-                    items: {}
+                    items:
+                      type: object
             Remarks:
               type: string
               example: ''

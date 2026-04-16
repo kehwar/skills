@@ -1,9 +1,9 @@
 post:
   tags:
-  - DownPayments(id)/Reopen
+  - DownPayments
   summary: POST DownPayments(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_DownPayments_id/Reopen
+  operationId: post_DownPayments_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/DownPayments(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
     a customer is committed and will follow through with a placed order.

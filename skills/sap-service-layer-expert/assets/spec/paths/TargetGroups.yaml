@@ -53,7 +53,8 @@ post:
               example: tgtCustomer
             TargetGroupsDetails:
               type: array
-              items: {}
+              items:
+                type: object
         example:
           TargetGroupCode: '1'
           TargetGroupName: '1'

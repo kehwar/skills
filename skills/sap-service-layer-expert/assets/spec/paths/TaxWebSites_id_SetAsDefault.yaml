@@ -1,9 +1,9 @@
 post:
   tags:
-  - TaxWebSites(id)/SetAsDefault
+  - TaxWebSites
   summary: POST TaxWebSites(id)/SetAsDefault
   description: Invoke the method 'SetAsDefault' on this EntitySet with the specified id.
-  operationId: post_TaxWebSites_id/SetAsDefault
+  operationId: post_TaxWebSites_id_SetAsDefault
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/TaxWebSites(1)/SetAsDefault
   x-resource-description: This entity enables you to manipulate 'TaxWebSites'.

@@ -358,10 +358,12 @@ post:
                     example: rdcwFirst
             ResourceEmployees:
               type: array
-              items: {}
+              items:
+                type: object
             ResourceFixedAssets:
               type: array
-              items: {}
+              items:
+                type: object
             ResourceWarehouses:
               type: array
               items:

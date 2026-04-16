@@ -1,9 +1,9 @@
 post:
   tags:
-  - Users(id)/Close
+  - Users
   summary: POST Users(id)/Close
   description: Invoke the method 'Close' on this EntitySet with the specified id.
-  operationId: post_Users_id/Close
+  operationId: post_Users_id_Close
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/Users(123)/Close
   x-resource-description: This entity enables you to manipulate 'Users'. It represents the users table of the SAP Business
     One application. The users table includes the users list, login details, and authorizations.

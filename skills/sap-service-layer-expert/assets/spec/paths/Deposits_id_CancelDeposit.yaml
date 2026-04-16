@@ -1,9 +1,9 @@
 post:
   tags:
-  - Deposits(id)/CancelDeposit
+  - Deposits
   summary: POST Deposits(id)/CancelDeposit
   description: Invoke the method 'CancelDeposit' on this EntitySet with the specified id.
-  operationId: post_Deposits_id/CancelDeposit
+  operationId: post_Deposits_id_CancelDeposit
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/Deposits(123)/CancelDeposit
   x-resource-description: This entity enables you to manipulate 'Deposits'.

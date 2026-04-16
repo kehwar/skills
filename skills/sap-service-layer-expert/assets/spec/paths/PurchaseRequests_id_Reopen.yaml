@@ -1,9 +1,9 @@
 post:
   tags:
-  - PurchaseRequests(id)/Reopen
+  - PurchaseRequests
   summary: POST PurchaseRequests(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_PurchaseRequests_id/Reopen
+  operationId: post_PurchaseRequests_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/PurchaseRequests(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'PurchaseRequests'. It allows users and employees in an organization
     to initiate a purchasing process by submitting their needs for certain goods or services.

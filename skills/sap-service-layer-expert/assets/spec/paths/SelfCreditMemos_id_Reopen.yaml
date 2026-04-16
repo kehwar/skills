@@ -1,9 +1,9 @@
 post:
   tags:
-  - SelfCreditMemos(id)/Reopen
+  - SelfCreditMemos
   summary: POST SelfCreditMemos(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_SelfCreditMemos_id/Reopen
+  operationId: post_SelfCreditMemos_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,6 +15,12 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/SelfCreditMemos(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'SelfCreditMemos'. It represents a request for payment. It
     also records the cost in a profit and loss statement.

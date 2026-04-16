@@ -1,9 +1,9 @@
 post:
   tags:
-  - ApprovalStages(id)/GetApprovalStage
+  - ApprovalStages
   summary: POST ApprovalStages(id)/GetApprovalStage
   description: Invoke the method 'GetApprovalStage' on this EntitySet with the specified id.
-  operationId: post_ApprovalStages_id/GetApprovalStage
+  operationId: post_ApprovalStages_id_GetApprovalStage
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/ApprovalStages(123)/GetApprovalStage
   x-resource-description: This entity enables you to manipulate 'ApprovalStages'.

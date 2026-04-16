@@ -1,9 +1,9 @@
 post:
   tags:
-  - Returns(id)/Reopen
+  - Returns
   summary: POST Returns(id)/Reopen
   description: Invoke the method 'Reopen' on this EntitySet with the specified id.
-  operationId: post_Returns_id/Reopen
+  operationId: post_Returns_id_Reopen
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/Returns(123)/Reopen
   x-resource-description: This entity enables you to manipulate 'Returns'. A return is the clearing document for a delivery.

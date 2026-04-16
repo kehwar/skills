@@ -1,9 +1,9 @@
 post:
   tags:
-  - StockTransferDrafts(id)/Cancel
+  - StockTransferDrafts
   summary: POST StockTransferDrafts(id)/Cancel
   description: Invoke the method 'Cancel' on this EntitySet with the specified id.
-  operationId: post_StockTransferDrafts_id/Cancel
+  operationId: post_StockTransferDrafts_id_Cancel
   responses:
     '200':
       description: Success
@@ -15,5 +15,11 @@ post:
       description: Unauthorized
     '404':
       description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
   x-example-url: POST https://localhost:50000/b1s/v2/StockTransferDrafts(123)/Cancel
   x-resource-description: This entity enables you to manipulate 'StockTransferDrafts'.
