@@ -1,0 +1,934 @@
+'-1':
+  header: OBPD
+  description: Blocked Personal Data
+  tables:
+  - ADRP
+  - AEC4
+  - AEDG
+  - ECM4
+  - OBPD
+  - ODRP
+  - ODSL
+  - OEDG
+  - OPR1
+  - OSLD
+'0':
+  header: ADO24
+  description: Marketing Document - Tracking Note Assignment - History
+  tables:
+  - ADO24
+  - ADO25
+  - ADO28
+  - AIT3
+  - AQI3
+  - AQR4
+  - DOC24
+  - DOC28
+'1':
+  header: OACT
+  description: G/L Accounts
+  tables:
+  - OACT
+  - RCC4
+'2':
+  header: OCRD
+  description: Business Partners
+  tables:
+  - ACR1
+  - ACR2
+  - ACR3
+  - ACRD
+  - ASQL
+  - CRD1
+  - CRD2
+  - CRD3
+  - OCRD
+  - OSQL
+'4':
+  header: OITM
+  description: Items
+  tables:
+  - AIT13
+  - AIT5
+  - AIT6
+  - AIT7
+  - AIT8
+  - AIT9
+  - ITM1
+  - ITM13
+  - ITM2
+  - ITM3
+  - ITM5
+  - ITM6
+  - ITM7
+  - ITM8
+  - ITM9
+  - OITM
+  - SITM
+  - UITM
+'11':
+  header: OCPR
+  description: Contact Persons
+  tables:
+  - OCPR
+'12':
+  header: ACL2
+  description: Activity Multiple Recipients - History
+  tables:
+  - ACL2
+  - AOB1
+  - CLG2
+'13':
+  header: OINV
+  description: A/R Invoice
+  tables:
+  - AADP1
+  - ADO11
+  - ADO15
+  - ADP1
+  - CPV7
+  - INV1
+  - INV10
+  - INV11
+  - INV13
+  - INV15
+  - INV16
+  - INV19
+  - INV2
+  - INV24
+  - INV25
+  - INV28
+  - INV3
+  - INV5
+  - INV6
+  - INV7
+  - INV8
+  - OINV
+  - PRR5
+  - PWZ3
+'14':
+  header: ORIN
+  description: A/R Credit Memo
+  tables:
+  - ORIN
+  - RIN1
+  - RIN10
+  - RIN11
+  - RIN13
+  - RIN15
+  - RIN16
+  - RIN19
+  - RIN2
+  - RIN24
+  - RIN25
+  - RIN28
+  - RIN3
+  - RIN5
+  - RIN6
+  - RIN7
+  - RIN8
+'15':
+  header: ODLN
+  description: Delivery
+  tables:
+  - DLN1
+  - DLN10
+  - DLN11
+  - DLN13
+  - DLN15
+  - DLN16
+  - DLN19
+  - DLN2
+  - DLN24
+  - DLN25
+  - DLN28
+  - DLN3
+  - DLN5
+  - DLN6
+  - DLN7
+  - DLN8
+  - ODLN
+'16':
+  header: ORDN
+  description: Returns
+  tables:
+  - ORDN
+  - RDN1
+  - RDN10
+  - RDN11
+  - RDN13
+  - RDN15
+  - RDN16
+  - RDN19
+  - RDN2
+  - RDN24
+  - RDN25
+  - RDN28
+  - RDN3
+  - RDN5
+  - RDN6
+  - RDN7
+  - RDN8
+'17':
+  header: ORDR
+  description: Sales Order
+  tables:
+  - ORDR
+  - OWFST
+  - RDR1
+  - RDR10
+  - RDR11
+  - RDR13
+  - RDR15
+  - RDR16
+  - RDR19
+  - RDR2
+  - RDR24
+  - RDR25
+  - RDR28
+  - RDR3
+  - RDR5
+  - RDR6
+  - RDR7
+  - RDR8
+'18':
+  header: OPCH
+  description: A/P Invoice
+  tables:
+  - OPCH
+  - PCH1
+  - PCH10
+  - PCH11
+  - PCH13
+  - PCH15
+  - PCH16
+  - PCH19
+  - PCH2
+  - PCH24
+  - PCH25
+  - PCH28
+  - PCH3
+  - PCH5
+  - PCH6
+  - PCH7
+  - PCH8
+'19':
+  header: ORPC
+  description: A/P Credit Memo
+  tables:
+  - ORPC
+  - RPC1
+  - RPC10
+  - RPC11
+  - RPC13
+  - RPC15
+  - RPC16
+  - RPC19
+  - RPC2
+  - RPC24
+  - RPC25
+  - RPC28
+  - RPC3
+  - RPC5
+  - RPC6
+  - RPC7
+  - RPC8
+'20':
+  header: OPDN
+  description: Goods Receipt PO
+  tables:
+  - OPDN
+  - PDN1
+  - PDN10
+  - PDN11
+  - PDN13
+  - PDN15
+  - PDN16
+  - PDN19
+  - PDN2
+  - PDN24
+  - PDN25
+  - PDN28
+  - PDN3
+  - PDN5
+  - PDN6
+  - PDN7
+  - PDN8
+'21':
+  header: ORPD
+  description: Goods Return
+  tables:
+  - ORPD
+  - RPD1
+  - RPD10
+  - RPD11
+  - RPD13
+  - RPD15
+  - RPD16
+  - RPD19
+  - RPD2
+  - RPD24
+  - RPD25
+  - RPD28
+  - RPD3
+  - RPD5
+  - RPD6
+  - RPD7
+  - RPD8
+'22':
+  header: OPOR
+  description: Purchase Order
+  tables:
+  - OPOR
+  - POR1
+  - POR10
+  - POR11
+  - POR13
+  - POR15
+  - POR16
+  - POR19
+  - POR2
+  - POR24
+  - POR25
+  - POR28
+  - POR3
+  - POR5
+  - POR6
+  - POR7
+  - POR8
+'23':
+  header: OQUT
+  description: Sales Quotation
+  tables:
+  - ADO10
+  - OQUT
+  - QUT1
+  - QUT10
+  - QUT11
+  - QUT13
+  - QUT15
+  - QUT16
+  - QUT19
+  - QUT2
+  - QUT24
+  - QUT25
+  - QUT28
+  - QUT3
+  - QUT5
+  - QUT6
+  - QUT7
+  - QUT8
+'24':
+  header: ORCT
+  description: Incoming Payments
+  tables:
+  - ARC4
+  - ARC6
+  - ORCT
+  - PDF1
+  - PDF6
+  - PMN5
+  - RCT1
+  - RCT2
+  - RCT3
+  - RCT4
+  - RCT5
+  - RCT6
+'30':
+  header: OBTF
+  description: Journal Voucher Entry
+  tables:
+  - AJD1
+  - AJD2
+  - BTF1
+  - BTF2
+  - JDT1
+  - JDT2
+  - OBTF
+  - OJDT
+'46':
+  header: OVPM
+  description: Outgoing Payments
+  tables:
+  - OVPM
+  - VPM1
+  - VPM2
+  - VPM3
+  - VPM4
+  - VPM5
+  - VPM6
+'57':
+  header: OCHO
+  description: Checks for Payment
+  tables:
+  - ACH1
+  - ACHO
+  - CHO1
+  - OCHO
+'59':
+  header: OIGN
+  description: Goods Receipt
+  tables:
+  - IGN1
+  - IGN10
+  - IGN11
+  - IGN13
+  - IGN15
+  - IGN16
+  - IGN19
+  - IGN2
+  - IGN24
+  - IGN25
+  - IGN28
+  - IGN3
+  - IGN5
+  - IGN6
+  - IGN7
+  - IGN8
+  - OIGN
+'60':
+  header: OIGE
+  description: Goods Issue
+  tables:
+  - IGE1
+  - IGE10
+  - IGE11
+  - IGE13
+  - IGE15
+  - IGE16
+  - IGE19
+  - IGE2
+  - IGE24
+  - IGE25
+  - IGE28
+  - IGE3
+  - IGE5
+  - IGE6
+  - IGE7
+  - IGE8
+  - OIGE
+'67':
+  header: OWTR
+  description: Inventory Transfer
+  tables:
+  - OWTR
+  - WTR1
+  - WTR10
+  - WTR11
+  - WTR13
+  - WTR15
+  - WTR16
+  - WTR19
+  - WTR2
+  - WTR24
+  - WTR25
+  - WTR28
+  - WTR3
+  - WTR5
+  - WTR6
+  - WTR7
+  - WTR8
+'68':
+  header: OWKO
+  description: Production Instructions
+  tables:
+  - OWKO
+  - UWKO
+'69':
+  header: OIPF
+  description: Landed Costs
+  tables:
+  - OIPF
+'112':
+  header: DRF1
+  description: Draft - Rows
+  tables:
+  - DRF1
+  - DRF10
+  - DRF11
+  - DRF13
+  - DRF15
+  - DRF19
+  - DRF2
+  - DRF24
+  - DRF25
+  - DRF28
+  - DRF3
+  - DRF5
+  - DRF6
+  - DRF7
+  - DRF8
+'123':
+  header: OCHD
+  description: Checks for Payment Drafts
+  tables:
+  - CHD1
+  - OCHD
+'132':
+  header: OCIN
+  description: A/R Correction Invoice
+  tables:
+  - CIN1
+  - CIN10
+  - CIN11
+  - CIN13
+  - CIN15
+  - CIN19
+  - CIN2
+  - CIN24
+  - CIN25
+  - CIN28
+  - CIN3
+  - CIN5
+  - CIN6
+  - CIN7
+  - CIN8
+  - OCIN
+'156':
+  header: OPKL
+  description: Pick List
+  tables:
+  - AKL2
+  - AKL3
+  - APKL
+  - OPKL
+  - PKL2
+  - PKL3
+'162':
+  header: OMRV
+  description: Inventory Revaluation
+  tables:
+  - AMR1
+  - AMR2
+  - AMRV
+  - MRV1
+  - MRV2
+  - OMRV
+'163':
+  header: OCPI
+  description: A/P Correction Invoice
+  tables:
+  - CIN16
+  - CPI1
+  - CPI10
+  - CPI11
+  - CPI13
+  - CPI15
+  - CPI16
+  - CPI19
+  - CPI2
+  - CPI24
+  - CPI25
+  - CPI28
+  - CPI3
+  - CPI5
+  - CPI6
+  - CPI7
+  - CPI8
+  - OCPI
+'164':
+  header: OCPV
+  description: A/P Correction Invoice Reversal
+  tables:
+  - CPV1
+  - CPV10
+  - CPV11
+  - CPV13
+  - CPV15
+  - CPV16
+  - CPV19
+  - CPV2
+  - CPV24
+  - CPV25
+  - CPV28
+  - CPV3
+  - CPV5
+  - CPV6
+  - CPV8
+  - OCPV
+'165':
+  header: OCSI
+  description: A/R Correction Invoice
+  tables:
+  - CSI1
+  - CSI10
+  - CSI11
+  - CSI13
+  - CSI15
+  - CSI16
+  - CSI19
+  - CSI2
+  - CSI24
+  - CSI25
+  - CSI28
+  - CSI3
+  - CSI5
+  - CSI6
+  - CSI7
+  - CSI8
+  - OCSI
+'166':
+  header: OCSV
+  description: A/R Correction Invoice Reversal
+  tables:
+  - CSV1
+  - CSV10
+  - CSV11
+  - CSV13
+  - CSV15
+  - CSV16
+  - CSV19
+  - CSV2
+  - CSV24
+  - CSV25
+  - CSV28
+  - CSV3
+  - CSV5
+  - CSV6
+  - CSV7
+  - CSV8
+  - OCSV
+'190':
+  header: OCTR
+  description: Service Contracts
+  tables:
+  - ACTR
+  - OCTR
+'194':
+  header: OTPI
+  description: Purchase Tax Invoice
+  tables:
+  - ATXI
+  - OTPI
+  - OTSI
+  - OTXD
+'202':
+  header: OWOR
+  description: Production Order
+  tables:
+  - AWO5
+  - AWOR
+  - DPI13
+  - DPI3
+  - OWOR
+  - UWOR
+  - UWOR5
+  - WOR5
+'203':
+  header: ODPI
+  description: A/R Down Payment
+  tables:
+  - CSI9
+  - DPI1
+  - DPI10
+  - DPI11
+  - DPI15
+  - DPI16
+  - DPI19
+  - DPI2
+  - DPI24
+  - DPI25
+  - DPI28
+  - DPI5
+  - DPI6
+  - DPI7
+  - DPI8
+  - IEI9
+  - INV9
+  - ODPI
+  - OEI9
+  - PRR9
+  - RRR9
+  - SFC9
+  - SFI9
+'204':
+  header: ODPO
+  description: A/P Down Payment
+  tables:
+  - DPO1
+  - DPO10
+  - DPO11
+  - DPO13
+  - DPO15
+  - DPO16
+  - DPO19
+  - DPO2
+  - DPO24
+  - DPO25
+  - DPO28
+  - DPO3
+  - DPO5
+  - DPO6
+  - DPO7
+  - DPO8
+  - ODPO
+  - PCH9
+'247':
+  header: ABP2
+  description: Branch Tributary Info. Log
+  tables:
+  - ABP2
+  - BPL2
+'290':
+  header: ORSC
+  description: Resources
+  tables:
+  - ARSC
+  - ARSC1
+  - ARSC2
+  - ARSC5
+  - ORSC
+  - RSC1
+  - RSC2
+  - RSC5
+'321':
+  header: OITR
+  description: Internal Reconciliation
+  tables:
+  - OITR
+'10000071':
+  header: OIPD
+  description: Inventory Posting Draft
+  tables:
+  - AIQR
+  - AQR1
+  - IPD1
+  - IPD4
+  - IQR1
+  - IQR4
+  - OIPD
+  - OIQR
+'140000000':
+  header: OEI6
+  description: Outgoing Excise Invoice - Installments
+  tables:
+  - OEI6
+'140000009':
+  header: OEI1
+  description: Outgoing Excise Invoice - Rows
+  tables:
+  - OEI1
+  - OEI10
+  - OEI11
+  - OEI13
+  - OEI15
+  - OEI16
+  - OEI19
+  - OEI2
+  - OEI24
+  - OEI25
+  - OEI28
+  - OEI3
+  - OEI5
+  - OEI7
+  - OEI8
+  - OOEI
+'140000010':
+  header: OIEI
+  description: Incoming Excise Invoice
+  tables:
+  - IEI1
+  - IEI10
+  - IEI11
+  - IEI13
+  - IEI15
+  - IEI16
+  - IEI19
+  - IEI2
+  - IEI24
+  - IEI25
+  - IEI28
+  - IEI3
+  - IEI5
+  - IEI6
+  - IEI7
+  - IEI8
+  - OIEI
+'234000031':
+  header: ORRR
+  description: Return Request
+  tables:
+  - ORRR
+  - RRR1
+  - RRR10
+  - RRR11
+  - RRR13
+  - RRR15
+  - RRR16
+  - RRR19
+  - RRR24
+  - RRR25
+  - RRR28
+  - RRR3
+  - RRR5
+  - RRR6
+  - RRR7
+  - RRR8
+'234000032':
+  header: OPRR
+  description: Goods Return Request
+  tables:
+  - OPRR
+  - PRR1
+  - PRR10
+  - PRR11
+  - PRR13
+  - PRR15
+  - PRR16
+  - PRR19
+  - PRR2
+  - PRR24
+  - PRR25
+  - PRR28
+  - PRR3
+  - PRR6
+  - PRR7
+  - PRR8
+'234003013':
+  header: OEBK
+  description: E-Books
+  tables:
+  - AEBK
+  - OEBK
+'254000065':
+  header: OSFI
+  description: Self Invoice
+  tables:
+  - OSFI
+  - SFI1
+  - SFI10
+  - SFI11
+  - SFI13
+  - SFI15
+  - SFI16
+  - SFI19
+  - SFI2
+  - SFI24
+  - SFI25
+  - SFI28
+  - SFI3
+  - SFI5
+  - SFI6
+  - SFI7
+  - SFI8
+'254000066':
+  header: OSFC
+  description: Self Credit Memo
+  tables:
+  - OSFC
+  - SFC1
+  - SFC10
+  - SFC11
+  - SFC13
+  - SFC15
+  - SFC16
+  - SFC19
+  - SFC2
+  - SFC24
+  - SFC25
+  - SFC28
+  - SFC3
+  - SFC5
+  - SFC6
+  - SFC7
+  - SFC8
+'256000005':
+  header: OCEM
+  description: Cost Element
+  tables:
+  - ACEM
+  - OCEM
+'310000001':
+  header: OIOD
+  description: Inventory Opening Balance Draft
+  tables:
+  - AIQI
+  - AQI1
+  - IOD1
+  - IOD3
+  - IQI1
+  - IQI3
+  - OIOD
+  - OIQI
+'540000006':
+  header: OPQT
+  description: Purchase Quotation
+  tables:
+  - OPQT
+  - PQT1
+  - PQT10
+  - PQT11
+  - PQT13
+  - PQT15
+  - PQT16
+  - PQT19
+  - PQT2
+  - PQT24
+  - PQT25
+  - PQT28
+  - PQT3
+  - PQT5
+  - PQT6
+  - PQT7
+  - PQT8
+'540000073':
+  header: OLGL
+  description: Legal Data
+  tables:
+  - OLGL
+'1250000001':
+  header: OWTQ
+  description: Inventory Transfer Request
+  tables:
+  - OWTQ
+  - WTQ1
+  - WTQ10
+  - WTQ11
+  - WTQ13
+  - WTQ15
+  - WTQ19
+  - WTQ24
+  - WTQ25
+  - WTQ28
+  - WTQ6
+  - WTQ7
+  - WTQ8
+'1250000025':
+  header: OOAT
+  description: Blanket Agreement
+  tables:
+  - AOAT
+  - OOAT
+'1470000065':
+  header: OICD
+  description: Inventory Counting Draft
+  tables:
+  - AINC
+  - OICD
+  - OINC
+'1470000113':
+  header: OPRQ
+  description: Purchase Request
+  tables:
+  - OPRQ
+  - PRQ1
+  - PRQ10
+  - PRQ11
+  - PRQ13
+  - PRQ15
+  - PRQ16
+  - PRQ19
+  - PRQ2
+  - PRQ24
+  - PRQ25
+  - PRQ28
+  - PRQ3
+  - PRQ5
+  - PRQ6
+  - PRQ7
+  - PRQ8
+A/R Return Request:
+  header: RRR2
+  description: A/R Return Request - Freight - Rows
+  tables:
+  - RRR2
