@@ -55,7 +55,7 @@ def read_index(names_filter: set[str] | None = None) -> list[dict]:
             {
                 "name": name,
                 "module": item.get("module", ""),
-                "otype": item.get("object_type", ""),
+                "otype": item.get("tabletype", ""),
                 "description": item.get("description", ""),
                 "url": url,
             }
@@ -299,9 +299,7 @@ def fetch(url: str, no_cache: bool = False) -> str:
 
         resp = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
         if resp.status_code in (429, 503):
-            raise RateLimitError(
-                f"HTTP {resp.status_code} from {url} — rate limit hit"
-            )
+            raise RateLimitError(f"HTTP {resp.status_code} from {url} — rate limit hit")
         resp.raise_for_status()
         html = resp.text
     except ImportError:
@@ -392,7 +390,7 @@ def main():
         "--resume", action="store_true", help="Skip tables already written"
     )
     parser.add_argument("--workers", type=int, default=1, metavar="N")
-    parser.add_argument("--delay", type=float, default=1.3, metavar="S")
+    parser.add_argument("--delay", type=float, default=1, metavar="S")
     parser.add_argument(
         "--no-cache",
         action="store_true",
