@@ -1,0 +1,75 @@
+get:
+  tags:
+  - Quotations
+  summary: GET Quotations
+  description: Retrieve a collection of 'Quotations' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Quotations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Quotations
+  x-resource-description: This entity enables you to manipulate 'Quotations'. It is an offer or proposal that you send either
+    to a customer or to a lead.
+post:
+  tags:
+  - Quotations
+  summary: POST Quotations
+  description: Create an instance of 'Quotations' with the given payload of type 'Document' in JSON format.
+  operationId: post_Quotations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  Quantity:
+                    type: string
+                    example: '100'
+                  TaxCode:
+                    type: string
+                    example: T1
+                  UnitPrice:
+                    type: string
+                    example: '30'
+        example:
+          CardCode: c001
+          DocumentLines:
+          - ItemCode: i001
+            Quantity: '100'
+            TaxCode: T1
+            UnitPrice: '30'
+  x-example-url: POST https://localhost:50000/b1s/v2/Quotations
+  x-resource-description: This entity enables you to manipulate 'Quotations'. It is an offer or proposal that you send either
+    to a customer or to a lead.

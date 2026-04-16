@@ -1,0 +1,100 @@
+get:
+  tags:
+  - DeductibleTaxes
+  summary: GET DeductibleTaxes(id)
+  description: Retrieve all or some selected properties from an instance of 'DeductibleTaxes' with the given id.
+  operationId: get_DeductibleTaxes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/DeductibleTaxes('abc')
+  x-resource-description: This entity enables you to manipulate 'DeductibleTaxes'.
+patch:
+  tags:
+  - DeductibleTaxes
+  summary: PATCH DeductibleTaxes(id)
+  description: Update an instance of 'DeductibleTaxes' with the given payload of type 'DeductibleTax' in JSON format and with
+    the specified id.
+  operationId: patch_DeductibleTaxes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Category:
+              type: string
+              example: bovcInputTax
+            DeductibleTaxRate:
+              type: number
+              example: 7.0
+            Inactive:
+              type: string
+              example: tYES
+            Name:
+              type: string
+              example: Z6 updated name
+        example:
+          Category: bovcInputTax
+          DeductibleTaxRate: 7.0
+          Inactive: tYES
+          Name: Z6 updated name
+  x-example-url: PATCH https://localhost:50000/b1s/v2/DeductibleTaxes('abc')
+  x-resource-description: This entity enables you to manipulate 'DeductibleTaxes'.
+delete:
+  tags:
+  - DeductibleTaxes
+  summary: DELETE DeductibleTaxes(id)
+  description: Delete an instance of 'DeductibleTaxes' with the specified id.
+  operationId: delete_DeductibleTaxes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/DeductibleTaxes('abc')
+  x-resource-description: This entity enables you to manipulate 'DeductibleTaxes'.

@@ -1,0 +1,78 @@
+get:
+  tags:
+  - BillOfExchangeTransactions
+  summary: GET BillOfExchangeTransactions
+  description: Retrieve a collection of 'BillOfExchangeTransactions' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_BillOfExchangeTransactions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BillOfExchangeTransactions
+  x-resource-description: This entity enables you to manipulate 'BillOfExchangeTransactions'.
+post:
+  tags:
+  - BillOfExchangeTransactions
+  summary: POST BillOfExchangeTransactions
+  description: Create an instance of 'BillOfExchangeTransactions' with the given payload of type 'BillOfExchangeTransactions'
+    in JSON format.
+  operationId: post_BillOfExchangeTransactions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BillOfExchangeTransactionLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  BillOfExchangeDueDate:
+                    type: string
+                    example: '2014-12-10'
+                  BillOfExchangeNo:
+                    type: integer
+                    example: 1
+                  BillOfExchangeType:
+                    type: string
+                    example: bobt_Outgoing
+            IsBoeReconciled:
+              type: string
+              example: tNO
+            StatusFrom:
+              type: string
+              example: btfs_Generated
+            StatusTo:
+              type: string
+              example: btts_Paid
+        example:
+          BillOfExchangeTransactionLines:
+          - BillOfExchangeDueDate: '2014-12-10'
+            BillOfExchangeNo: 1
+            BillOfExchangeType: bobt_Outgoing
+          IsBoeReconciled: tNO
+          StatusFrom: btfs_Generated
+          StatusTo: btts_Paid
+  x-example-url: POST https://localhost:50000/b1s/v2/BillOfExchangeTransactions
+  x-resource-description: This entity enables you to manipulate 'BillOfExchangeTransactions'.

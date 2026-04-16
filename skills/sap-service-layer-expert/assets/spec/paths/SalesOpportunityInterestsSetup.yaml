@@ -1,0 +1,60 @@
+get:
+  tags:
+  - SalesOpportunityInterestsSetup
+  summary: GET SalesOpportunityInterestsSetup
+  description: Retrieve a collection of 'SalesOpportunityInterestsSetup' with all or some selected properties in the given
+    order by specifying the given filter condition.
+  operationId: get_SalesOpportunityInterestsSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesOpportunityInterestsSetup
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityInterestsSetup'.
+post:
+  tags:
+  - SalesOpportunityInterestsSetup
+  summary: POST SalesOpportunityInterestsSetup
+  description: Create an instance of 'SalesOpportunityInterestsSetup' with the given payload of type 'SalesOpportunityInterestSetup'
+    in JSON format.
+  operationId: post_SalesOpportunityInterestsSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: good
+            SequenceNo:
+              type: integer
+              example: 2
+            Sort:
+              type: integer
+              example: 100
+        example:
+          Description: good
+          SequenceNo: 2
+          Sort: 100
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesOpportunityInterestsSetup
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityInterestsSetup'.

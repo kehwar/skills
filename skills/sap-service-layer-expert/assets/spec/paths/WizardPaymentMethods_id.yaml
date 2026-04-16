@@ -1,0 +1,94 @@
+get:
+  tags:
+  - WizardPaymentMethods
+  summary: GET WizardPaymentMethods(id)
+  description: Retrieve all or some selected properties from an instance of 'WizardPaymentMethods' with the given id.
+  operationId: get_WizardPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/WizardPaymentMethods('outpay')
+  x-resource-description: This entity enables you to manipulate 'WizardPaymentMethods'. It defines various payment methods
+    for various payment means (such as check, bank transfer, and in some localizations, bills of exchange) which can be used
+    in payment wizard runs.
+patch:
+  tags:
+  - WizardPaymentMethods
+  summary: PATCH WizardPaymentMethods(id)
+  description: Update an instance of 'WizardPaymentMethods' with the given payload of type 'WizardPaymentMethod' in JSON format
+    and with the specified id.
+  operationId: patch_WizardPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: outgoing payment method
+        example:
+          Description: outgoing payment method
+  x-example-url: PATCH https://localhost:50000/b1s/v2/WizardPaymentMethods('outpay')
+  x-resource-description: This entity enables you to manipulate 'WizardPaymentMethods'. It defines various payment methods
+    for various payment means (such as check, bank transfer, and in some localizations, bills of exchange) which can be used
+    in payment wizard runs.
+delete:
+  tags:
+  - WizardPaymentMethods
+  summary: DELETE WizardPaymentMethods(id)
+  description: Delete an instance of 'WizardPaymentMethods' with the specified id.
+  operationId: delete_WizardPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/WizardPaymentMethods('outpay')
+  x-resource-description: This entity enables you to manipulate 'WizardPaymentMethods'. It defines various payment methods
+    for various payment means (such as check, bank transfer, and in some localizations, bills of exchange) which can be used
+    in payment wizard runs.

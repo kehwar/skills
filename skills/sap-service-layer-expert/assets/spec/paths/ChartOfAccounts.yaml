@@ -1,0 +1,65 @@
+get:
+  tags:
+  - ChartOfAccounts
+  summary: GET ChartOfAccounts
+  description: Retrieve a collection of 'ChartOfAccounts' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ChartOfAccounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ChartOfAccounts
+  x-resource-description: This entity enables you to manipulate 'ChartOfAccounts'. It represents the General Ledger (G/L)
+    accounts in the Finance module. The Chart of Accounts is an index of all G/L accounts that are used by one or more companies.
+    For every G/L account there is an account number, an account description, and information that determines the function
+    of the account.
+post:
+  tags:
+  - ChartOfAccounts
+  summary: POST ChartOfAccounts
+  description: Create an instance of 'ChartOfAccounts' with the given payload of type 'ChartOfAccount' in JSON format.
+  operationId: post_ChartOfAccounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FatherAccountKey:
+              type: string
+              example: 100000000000000k
+            FormatCode:
+              type: string
+              example: '100000000100101'
+            Name:
+              type: string
+              example: Test Account
+        example:
+          FatherAccountKey: 100000000000000k
+          FormatCode: '100000000100101'
+          Name: Test Account
+  x-example-url: POST https://localhost:50000/b1s/v2/ChartOfAccounts
+  x-resource-description: This entity enables you to manipulate 'ChartOfAccounts'. It represents the General Ledger (G/L)
+    accounts in the Finance module. The Chart of Accounts is an index of all G/L accounts that are used by one or more companies.
+    For every G/L account there is an account number, an account description, and information that determines the function
+    of the account.

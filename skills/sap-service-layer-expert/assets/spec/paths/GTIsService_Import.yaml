@@ -1,0 +1,31 @@
+post:
+  tags:
+  - GTIsService
+  summary: POST GTIsService_Import
+  description: Invoke the method 'Import' on this service by specifying the payload 'GTIParams' in the JSON format.
+  operationId: post_GTIsService_Import
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GTIParams:
+              type: object
+              properties: {}
+        example:
+          GTIParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/GTIsService_Import
+  x-resource-description: This API enables you to invoke the interfaces defined on 'GTIsService'.

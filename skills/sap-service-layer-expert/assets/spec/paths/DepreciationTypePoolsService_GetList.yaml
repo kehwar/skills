@@ -1,0 +1,38 @@
+get:
+  tags:
+  - DepreciationTypePoolsService
+  summary: GET DepreciationTypePoolsService_GetList
+  description: Invoke the method 'GetList' on this service.
+  operationId: get_DepreciationTypePoolsService_GetList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DepreciationTypePoolsService_GetList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'DepreciationTypePoolsService'.
+post:
+  tags:
+  - DepreciationTypePoolsService
+  summary: POST DepreciationTypePoolsService_GetList
+  description: Invoke the method 'GetList' on this service.
+  operationId: post_DepreciationTypePoolsService_GetList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/DepreciationTypePoolsService_GetList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'DepreciationTypePoolsService'.

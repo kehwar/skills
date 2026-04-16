@@ -1,0 +1,135 @@
+get:
+  tags:
+  - UnitOfMeasurements
+  summary: GET UnitOfMeasurements
+  description: Retrieve a collection of 'UnitOfMeasurements' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UnitOfMeasurements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UnitOfMeasurements
+  x-resource-description: This entity enables you to manipulate 'UnitOfMeasurements'.
+post:
+  tags:
+  - UnitOfMeasurements
+  summary: POST UnitOfMeasurements
+  description: Create an instance of 'UnitOfMeasurements' with the given payload of type 'UnitOfMeasurement' in JSON format.
+  operationId: post_UnitOfMeasurements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 2
+            Code:
+              type: string
+              example: Carton
+            Height1:
+              type: integer
+              example: 300
+            Height1Unit:
+              type: integer
+              example: 50
+            Height2:
+              type: integer
+              example: 0
+            Height2Unit:
+              type: string
+              example: null
+            InternationalSymbol:
+              type: string
+              example: null
+            Length1:
+              type: integer
+              example: 100
+            Length1Unit:
+              type: integer
+              example: 50
+            Length2:
+              type: integer
+              example: 0
+            Length2Unit:
+              type: string
+              example: null
+            Name:
+              type: string
+              example: Carton
+            Volume:
+              type: integer
+              example: 6000000
+            VolumeUnit:
+              type: integer
+              example: 5
+            Weight1:
+              type: integer
+              example: 0
+            Weight1Unit:
+              type: string
+              example: null
+            Weight2:
+              type: integer
+              example: 0
+            Weight2Unit:
+              type: string
+              example: null
+            Width1:
+              type: integer
+              example: 200
+            Width1Unit:
+              type: integer
+              example: 50
+            Width2:
+              type: integer
+              example: 0
+            Width2Unit:
+              type: string
+              example: null
+        example:
+          AbsEntry: 2
+          Code: Carton
+          Height1: 300
+          Height1Unit: 50
+          Height2: 0
+          Height2Unit: null
+          InternationalSymbol: null
+          Length1: 100
+          Length1Unit: 50
+          Length2: 0
+          Length2Unit: null
+          Name: Carton
+          Volume: 6000000
+          VolumeUnit: 5
+          Weight1: 0
+          Weight1Unit: null
+          Weight2: 0
+          Weight2Unit: null
+          Width1: 200
+          Width1Unit: 50
+          Width2: 0
+          Width2Unit: null
+  x-example-url: POST https://localhost:50000/b1s/v2/UnitOfMeasurements
+  x-resource-description: This entity enables you to manipulate 'UnitOfMeasurements'.

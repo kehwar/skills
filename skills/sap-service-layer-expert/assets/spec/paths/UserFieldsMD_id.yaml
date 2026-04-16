@@ -1,0 +1,99 @@
+get:
+  tags:
+  - UserFieldsMD
+  summary: GET UserFieldsMD(id)
+  description: Retrieve all or some selected properties from an instance of 'UserFieldsMD' with the given id.
+  operationId: get_UserFieldsMD_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/UserFieldsMD(TableName='@UDT01',FieldID=0)
+  x-resource-description: This entity enables you to manipulate 'UserFieldsMD' and manage user-defined fields in user and
+    system tables.
+patch:
+  tags:
+  - UserFieldsMD
+  summary: PATCH UserFieldsMD(id)
+  description: Update an instance of 'UserFieldsMD' with the given payload of type 'UserFieldMD' in JSON format and with the
+    specified id.
+  operationId: patch_UserFieldsMD_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: new UDF01
+            FieldID:
+              type: integer
+              example: 0
+            TableName:
+              type: string
+              example: '@UDT01'
+        example:
+          Description: new UDF01
+          FieldID: 0
+          TableName: '@UDT01'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/UserFieldsMD(TableName='@UDT01',FieldID=0)
+  x-resource-description: This entity enables you to manipulate 'UserFieldsMD' and manage user-defined fields in user and
+    system tables.
+delete:
+  tags:
+  - UserFieldsMD
+  summary: DELETE UserFieldsMD(id)
+  description: Delete an instance of 'UserFieldsMD' with the specified id.
+  operationId: delete_UserFieldsMD_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/UserFieldsMD(TableName='@UDT01',FieldID=0)
+  x-resource-description: This entity enables you to manipulate 'UserFieldsMD' and manage user-defined fields in user and
+    system tables.

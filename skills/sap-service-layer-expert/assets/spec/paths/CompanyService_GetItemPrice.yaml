@@ -1,0 +1,41 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_GetItemPrice
+  description: Invoke the method 'GetItemPrice' on this service by specifying the payload 'ItemPriceParams' in the JSON format.
+    It returns a business object that contains the item price for specified business partner and item, based on the amount
+    and transaction date.
+  operationId: post_CompanyService_GetItemPrice
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ItemPriceParams:
+              type: object
+              properties:
+                CardCode:
+                  type: string
+                  example: Customer
+                ItemCode:
+                  type: string
+                  example: Item
+        example:
+          ItemPriceParams:
+            CardCode: Customer
+            ItemCode: Item
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_GetItemPrice
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

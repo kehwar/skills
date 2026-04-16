@@ -1,0 +1,88 @@
+get:
+  tags:
+  - ProfitCenters
+  summary: GET ProfitCenters(id)
+  description: Retrieve all or some selected properties from an instance of 'ProfitCenters' with the given id.
+  operationId: get_ProfitCenters_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ProfitCenters('NY_B')
+  x-resource-description: This entity enables you to manipulate 'ProfitCenters'.
+patch:
+  tags:
+  - ProfitCenters
+  summary: PATCH ProfitCenters(id)
+  description: Update an instance of 'ProfitCenters' with the given payload of type 'ProfitCenter' in JSON format and with
+    the specified id.
+  operationId: patch_ProfitCenters_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CenterName:
+              type: string
+              example: General Center
+        example:
+          CenterName: General Center
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ProfitCenters('NY_B')
+  x-resource-description: This entity enables you to manipulate 'ProfitCenters'.
+delete:
+  tags:
+  - ProfitCenters
+  summary: DELETE ProfitCenters(id)
+  description: Delete an instance of 'ProfitCenters' with the specified id.
+  operationId: delete_ProfitCenters_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ProfitCenters('NY_B')
+  x-resource-description: This entity enables you to manipulate 'ProfitCenters'.

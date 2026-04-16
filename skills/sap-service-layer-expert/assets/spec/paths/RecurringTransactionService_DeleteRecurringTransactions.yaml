@@ -1,0 +1,36 @@
+post:
+  tags:
+  - RecurringTransactionService
+  summary: POST RecurringTransactionService_DeleteRecurringTransactions
+  description: Invoke the method 'DeleteRecurringTransactions' on this service by specifying the payload 'RclRecurringTransactionParamsCollection'
+    in the JSON format.
+  operationId: post_RecurringTransactionService_DeleteRecurringTransactions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            RclRecurringTransactionParamsCollection:
+              type: array
+              items:
+                type: object
+                properties: {}
+        example:
+          RclRecurringTransactionParamsCollection:
+          - {}
+          - {}
+  x-example-url: POST https://localhost:50000/b1s/v2/RecurringTransactionService_DeleteRecurringTransactions
+  x-resource-description: This API enables you to invoke the interfaces defined on 'RecurringTransactionService'.

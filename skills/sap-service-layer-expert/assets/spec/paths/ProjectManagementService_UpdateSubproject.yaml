@@ -1,0 +1,48 @@
+post:
+  tags:
+  - ProjectManagementService
+  summary: POST ProjectManagementService_UpdateSubproject
+  description: Invoke the method 'UpdateSubproject' on this service by specifying the payload 'PM_SubprojectDocumentData'
+    in the JSON format.
+  operationId: post_ProjectManagementService_UpdateSubproject
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PM_SubprojectDocumentData:
+              type: object
+              properties:
+                AbsEntry:
+                  type: integer
+                  example: 1
+                ProjectID:
+                  type: string
+                  example: '2'
+                StartDate:
+                  type: string
+                  example: '2016-08-30'
+                SubprojectName:
+                  type: string
+                  example: new subProject1
+        example:
+          PM_SubprojectDocumentData:
+            AbsEntry: 1
+            ProjectID: '2'
+            StartDate: '2016-08-30'
+            SubprojectName: new subProject1
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementService_UpdateSubproject
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementService'.

@@ -1,0 +1,89 @@
+get:
+  tags:
+  - ApprovalStages
+  summary: GET ApprovalStages(id)
+  description: Retrieve all or some selected properties from an instance of 'ApprovalStages' with the given id.
+  operationId: get_ApprovalStages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ApprovalStages(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalStages'.
+patch:
+  tags:
+  - ApprovalStages
+  summary: PATCH ApprovalStages(id)
+  description: Update an instance of 'ApprovalStages' with the given payload of type 'ApprovalStage' in JSON format and with
+    the specified id.
+  operationId: patch_ApprovalStages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Remarks:
+              type: string
+              example: Approved by Director
+        example:
+          Remarks: Approved by Director
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ApprovalStages(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalStages'.
+delete:
+  tags:
+  - ApprovalStages
+  summary: DELETE ApprovalStages(id)
+  description: Delete an instance of 'ApprovalStages' with the specified id. However, you are not allowed to remove the stage
+    that is linked to an approval template.
+  operationId: delete_ApprovalStages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ApprovalStages(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalStages'.

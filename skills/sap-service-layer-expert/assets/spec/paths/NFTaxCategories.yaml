@@ -1,0 +1,63 @@
+get:
+  tags:
+  - NFTaxCategories
+  summary: GET NFTaxCategories
+  description: Retrieve a collection of 'NFTaxCategories' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_NFTaxCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NFTaxCategories
+  x-resource-description: This entity enables you to manipulate 'NFTaxCategories'.
+post:
+  tags:
+  - NFTaxCategories
+  summary: POST NFTaxCategories
+  description: Create an instance of 'NFTaxCategories' with the given payload of type 'NFTaxCategory' in JSON format.
+  operationId: post_NFTaxCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsId:
+              type: integer
+              example: 1
+            Code:
+              type: string
+              example: PIS1
+            GPCId:
+              type: integer
+              example: -1
+            Locked:
+              type: string
+              example: tNO
+        example:
+          AbsId: 1
+          Code: PIS1
+          GPCId: -1
+          Locked: tNO
+  x-example-url: POST https://localhost:50000/b1s/v2/NFTaxCategories
+  x-resource-description: This entity enables you to manipulate 'NFTaxCategories'.

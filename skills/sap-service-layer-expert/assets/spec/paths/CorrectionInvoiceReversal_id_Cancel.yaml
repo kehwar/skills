@@ -1,0 +1,20 @@
+post:
+  tags:
+  - CorrectionInvoiceReversal(id)/Cancel
+  summary: POST CorrectionInvoiceReversal(id)/Cancel
+  description: Invoke the method 'Cancel' on this EntitySet with the specified id.
+  operationId: post_CorrectionInvoiceReversal_id/Cancel
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoiceReversal(123)/Cancel
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoiceReversal'. It is used to reverse the correction
+    invoice.

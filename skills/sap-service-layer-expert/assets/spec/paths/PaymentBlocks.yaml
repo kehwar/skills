@@ -1,0 +1,51 @@
+get:
+  tags:
+  - PaymentBlocks
+  summary: GET PaymentBlocks
+  description: Retrieve a collection of 'PaymentBlocks' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PaymentBlocks
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PaymentBlocks
+  x-resource-description: This entity enables you to manipulate 'PaymentBlocks'.
+post:
+  tags:
+  - PaymentBlocks
+  summary: POST PaymentBlocks
+  description: Create an instance of 'PaymentBlocks' with the given payload of type 'PaymentBlock' in JSON format.
+  operationId: post_PaymentBlocks
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PaymentBlockCode:
+              type: string
+              example: aaaaaa
+        example:
+          PaymentBlockCode: aaaaaa
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentBlocks
+  x-resource-description: This entity enables you to manipulate 'PaymentBlocks'.

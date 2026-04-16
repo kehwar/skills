@@ -1,0 +1,88 @@
+get:
+  tags:
+  - NFModels
+  summary: GET NFModels(id)
+  description: Retrieve all or some selected properties from an instance of 'NFModels' with the given id.
+  operationId: get_NFModels_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/NFModels('abc')
+  x-resource-description: This entity enables you to manipulate 'NFModels'.
+patch:
+  tags:
+  - NFModels
+  summary: PATCH NFModels(id)
+  description: Update an instance of 'NFModels' with the given payload of type 'NFModel' in JSON format and with the specified
+    id.
+  operationId: patch_NFModels_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            NFMDescription:
+              type: string
+              example: 02 Nota Fiscal de Venda a Consumidor
+        example:
+          NFMDescription: 02 Nota Fiscal de Venda a Consumidor
+  x-example-url: PATCH https://localhost:50000/b1s/v2/NFModels('abc')
+  x-resource-description: This entity enables you to manipulate 'NFModels'.
+delete:
+  tags:
+  - NFModels
+  summary: DELETE NFModels(id)
+  description: Delete an instance of 'NFModels' with the specified id.
+  operationId: delete_NFModels_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/NFModels('abc')
+  x-resource-description: This entity enables you to manipulate 'NFModels'.

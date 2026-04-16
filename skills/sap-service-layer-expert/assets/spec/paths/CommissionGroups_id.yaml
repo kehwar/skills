@@ -1,0 +1,91 @@
+get:
+  tags:
+  - CommissionGroups
+  summary: GET CommissionGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'CommissionGroups' with the given id.
+  operationId: get_CommissionGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CommissionGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CommissionGroups'. It defines commission groups for a sales
+    employee, an item, or a customer.
+patch:
+  tags:
+  - CommissionGroups
+  summary: PATCH CommissionGroups(id)
+  description: Update an instance of 'CommissionGroups' with the given payload of type 'CommissionGroup' in JSON format and
+    with the specified id.
+  operationId: patch_CommissionGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CommissionPercentage:
+              type: string
+              example: '28'
+        example:
+          CommissionPercentage: '28'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CommissionGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CommissionGroups'. It defines commission groups for a sales
+    employee, an item, or a customer.
+delete:
+  tags:
+  - CommissionGroups
+  summary: DELETE CommissionGroups(id)
+  description: Delete an instance of 'CommissionGroups' with the specified id.
+  operationId: delete_CommissionGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CommissionGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CommissionGroups'. It defines commission groups for a sales
+    employee, an item, or a customer.

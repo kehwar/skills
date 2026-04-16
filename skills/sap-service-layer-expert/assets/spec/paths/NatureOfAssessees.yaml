@@ -1,0 +1,63 @@
+get:
+  tags:
+  - NatureOfAssessees
+  summary: GET NatureOfAssessees
+  description: Retrieve a collection of 'NatureOfAssessees' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_NatureOfAssessees
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NatureOfAssessees
+  x-resource-description: This entity enables you to manipulate 'NatureOfAssessees'.
+post:
+  tags:
+  - NatureOfAssessees
+  summary: POST NatureOfAssessees
+  description: Create an instance of 'NatureOfAssessees' with the given payload of type 'NatureOfAssessee' in JSON format.
+  operationId: post_NatureOfAssessees
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 4
+            AssesseeType:
+              type: string
+              example: atOthers
+            Code:
+              type: string
+              example: 2HUF
+            Description:
+              type: string
+              example: 11HUF
+        example:
+          AbsEntry: 4
+          AssesseeType: atOthers
+          Code: 2HUF
+          Description: 11HUF
+  x-example-url: POST https://localhost:50000/b1s/v2/NatureOfAssessees
+  x-resource-description: This entity enables you to manipulate 'NatureOfAssessees'.

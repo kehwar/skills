@@ -1,0 +1,31 @@
+post:
+  tags:
+  - UserMenuService
+  summary: POST UserMenuService_UpdateUserMenu
+  description: Invoke the method 'UpdateUserMenu' on this service by specifying the payload 'UserMenuParams' in the JSON format.
+  operationId: post_UserMenuService_UpdateUserMenu
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            UserMenuParams:
+              type: object
+              properties: {}
+        example:
+          UserMenuParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/UserMenuService_UpdateUserMenu
+  x-resource-description: This API enables you to invoke the interfaces defined on 'UserMenuService'.

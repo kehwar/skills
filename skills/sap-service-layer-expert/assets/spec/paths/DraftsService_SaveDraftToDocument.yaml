@@ -1,0 +1,40 @@
+post:
+  tags:
+  - DraftsService
+  summary: POST DraftsService_SaveDraftToDocument
+  description: Invoke the method 'SaveDraftToDocument' on this service by specifying the payload 'Document' in the JSON format.
+  operationId: post_DraftsService_SaveDraftToDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Document:
+              type: object
+              properties:
+                DocDueDate:
+                  type: string
+                  example: '2017-01-28'
+                DocEntry:
+                  type: string
+                  example: '3'
+        example:
+          Document:
+            DocDueDate: '2017-01-28'
+            DocEntry: '3'
+  x-example-url: POST https://localhost:50000/b1s/v2/DraftsService_SaveDraftToDocument
+  x-resource-description: This API enables you to invoke the interfaces defined on 'DraftsService'. It represents the preliminary
+    version of a document or report.

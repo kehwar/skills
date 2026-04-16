@@ -1,0 +1,67 @@
+get:
+  tags:
+  - DeductibleTaxes
+  summary: GET DeductibleTaxes
+  description: Retrieve a collection of 'DeductibleTaxes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DeductibleTaxes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DeductibleTaxes
+  x-resource-description: This entity enables you to manipulate 'DeductibleTaxes'.
+post:
+  tags:
+  - DeductibleTaxes
+  summary: POST DeductibleTaxes
+  description: Create an instance of 'DeductibleTaxes' with the given payload of type 'DeductibleTax' in JSON format.
+  operationId: post_DeductibleTaxes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Category:
+              type: string
+              example: bovcInputTax
+            Code:
+              type: string
+              example: Z6
+            DeductibleTaxRate:
+              type: number
+              example: 10.0
+            Inactive:
+              type: string
+              example: tNO
+            Name:
+              type: string
+              example: Z6 name
+        example:
+          Category: bovcInputTax
+          Code: Z6
+          DeductibleTaxRate: 10.0
+          Inactive: tNO
+          Name: Z6 name
+  x-example-url: POST https://localhost:50000/b1s/v2/DeductibleTaxes
+  x-resource-description: This entity enables you to manipulate 'DeductibleTaxes'.

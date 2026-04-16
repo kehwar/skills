@@ -1,0 +1,67 @@
+get:
+  tags:
+  - BarCodes
+  summary: GET BarCodes
+  description: Retrieve a collection of 'BarCodes' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_BarCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BarCodes
+  x-resource-description: This entity enables you to manipulate 'BarCodes'.
+post:
+  tags:
+  - BarCodes
+  summary: POST BarCodes
+  description: Create an instance of 'BarCodes' with the given payload of type 'BarCode' in JSON format.
+  operationId: post_BarCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            Barcode:
+              type: string
+              example: '1000001'
+            FreeText:
+              type: string
+              example: '01'
+            ItemNo:
+              type: string
+              example: I001
+            UoMEntry:
+              type: integer
+              example: -1
+        example:
+          AbsEntry: 1
+          Barcode: '1000001'
+          FreeText: '01'
+          ItemNo: I001
+          UoMEntry: -1
+  x-example-url: POST https://localhost:50000/b1s/v2/BarCodes
+  x-resource-description: This entity enables you to manipulate 'BarCodes'.

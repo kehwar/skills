@@ -1,0 +1,65 @@
+get:
+  tags:
+  - ChecksforPayment
+  summary: GET ChecksforPayment(id)
+  description: Retrieve all or some selected properties from an instance of 'ChecksforPayment' with the given id.
+  operationId: get_ChecksforPayment_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ChecksforPayment(123)
+  x-resource-description: This entity enables you to manipulate 'ChecksforPayment'. It represents checks payable that are
+    not tied to a document.
+patch:
+  tags:
+  - ChecksforPayment
+  summary: PATCH ChecksforPayment(id)
+  description: Update an instance of 'ChecksforPayment' with the given payload of type 'ChecksforPayment' in JSON format and
+    with the specified id.
+  operationId: patch_ChecksforPayment_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Details:
+              type: string
+              example: update check payment
+        example:
+          Details: update check payment
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ChecksforPayment(123)
+  x-resource-description: This entity enables you to manipulate 'ChecksforPayment'. It represents checks payable that are
+    not tied to a document.

@@ -1,0 +1,19 @@
+post:
+  tags:
+  - Drafts(id)/CreateCancellationDocument
+  summary: POST Drafts(id)/CreateCancellationDocument
+  description: Invoke the method 'CreateCancellationDocument' on this EntitySet with the specified id.
+  operationId: post_Drafts_id/CreateCancellationDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/Drafts(123)/CreateCancellationDocument
+  x-resource-description: This entity enables you to manipulate 'Drafts'. It is the preliminary version of a document or report.

@@ -1,0 +1,110 @@
+get:
+  tags:
+  - ProjectManagementTimeSheet
+  summary: GET ProjectManagementTimeSheet(id)
+  description: Retrieve all or some selected properties from an instance of 'ProjectManagementTimeSheet' with the given id.
+  operationId: get_ProjectManagementTimeSheet_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ProjectManagementTimeSheet(2)
+  x-resource-description: This entity enables you to manipulate 'ProjectManagementTimeSheet'.
+patch:
+  tags:
+  - ProjectManagementTimeSheet
+  summary: PATCH ProjectManagementTimeSheet(id)
+  description: Update an instance of 'ProjectManagementTimeSheet' with the given payload of type 'PM_TimeSheetData' in JSON
+    format and with the specified id.
+  operationId: patch_ProjectManagementTimeSheet_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DateFrom:
+              type: string
+              example: '2016-08-31'
+            DateTo:
+              type: string
+              example: '2016-09-01'
+            PM_TimeSheetLineDataCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  ActivityType:
+                    type: string
+                    example: '1'
+                  Date:
+                    type: string
+                    example: '2016-09-01'
+                  LineID:
+                    type: integer
+                    example: 1
+        example:
+          DateFrom: '2016-08-31'
+          DateTo: '2016-09-01'
+          PM_TimeSheetLineDataCollection:
+          - ActivityType: '1'
+            Date: '2016-09-01'
+            LineID: 1
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ProjectManagementTimeSheet(2)
+  x-resource-description: This entity enables you to manipulate 'ProjectManagementTimeSheet'.
+delete:
+  tags:
+  - ProjectManagementTimeSheet
+  summary: DELETE ProjectManagementTimeSheet(id)
+  description: Delete an instance of 'ProjectManagementTimeSheet' with the specified id.
+  operationId: delete_ProjectManagementTimeSheet_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ProjectManagementTimeSheet(2)
+  x-resource-description: This entity enables you to manipulate 'ProjectManagementTimeSheet'.

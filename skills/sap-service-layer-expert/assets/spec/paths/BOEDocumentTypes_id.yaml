@@ -1,0 +1,92 @@
+get:
+  tags:
+  - BOEDocumentTypes
+  summary: GET BOEDocumentTypes(id)
+  description: Retrieve all or some selected properties from an instance of 'BOEDocumentTypes' with the given id.
+  operationId: get_BOEDocumentTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BOEDocumentTypes(1)
+  x-resource-description: This entity enables you to manipulate 'BOEDocumentTypes'.
+patch:
+  tags:
+  - BOEDocumentTypes
+  summary: PATCH BOEDocumentTypes(id)
+  description: Update an instance of 'BOEDocumentTypes' with the given payload of type 'BOEDocumentType' in JSON format and
+    with the specified id.
+  operationId: patch_BOEDocumentTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DocDescription:
+              type: string
+              example: testing
+            DocType:
+              type: string
+              example: '11'
+        example:
+          DocDescription: testing
+          DocType: '11'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BOEDocumentTypes(1)
+  x-resource-description: This entity enables you to manipulate 'BOEDocumentTypes'.
+delete:
+  tags:
+  - BOEDocumentTypes
+  summary: DELETE BOEDocumentTypes(id)
+  description: Delete an instance of 'BOEDocumentTypes' with the specified id.
+  operationId: delete_BOEDocumentTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BOEDocumentTypes(1)
+  x-resource-description: This entity enables you to manipulate 'BOEDocumentTypes'.

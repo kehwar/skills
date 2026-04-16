@@ -1,0 +1,64 @@
+post:
+  tags:
+  - JournalVouchersService
+  summary: POST JournalVouchersService_Add
+  description: Invoke the method 'Add' on this service by specifying the payload 'Collection(JournalEntry)' in the JSON format.
+  operationId: post_JournalVouchersService_Add
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            JournalVoucher:
+              type: object
+              properties:
+                JournalEntry:
+                  type: object
+                  properties:
+                    DueDate:
+                      type: string
+                      example: '2014-12-06'
+                    JournalEntryLines:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          AccountCode:
+                            type: string
+                            example: _SYS00000000094
+                          Credit:
+                            type: string
+                            example: '0'
+                          Debit:
+                            type: string
+                            example: '123'
+                    ReferenceDate:
+                      type: string
+                      example: '2014-12-06'
+        example:
+          JournalVoucher:
+            JournalEntry:
+              DueDate: '2014-12-06'
+              JournalEntryLines:
+              - AccountCode: _SYS00000000094
+                Credit: '0'
+                Debit: '123'
+              - AccountCode: _SYS00000000019
+                Credit: '123'
+                Debit: '0'
+              ReferenceDate: '2014-12-06'
+  x-example-url: POST https://localhost:50000/b1s/v2/JournalVouchersService_Add
+  x-resource-description: This API enables you to invoke the interfaces defined on 'JournalVouchersService'.

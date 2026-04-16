@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ApprovalTemplates
+  summary: GET ApprovalTemplates
+  description: Retrieve a collection of 'ApprovalTemplates' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ApprovalTemplates
+  x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
+    and the users and transactions to which the procedure applies.
+post:
+  tags:
+  - ApprovalTemplates
+  summary: POST ApprovalTemplates
+  description: Create an instance of 'ApprovalTemplates' with the given payload of type 'ApprovalTemplate' in JSON format.
+  operationId: post_ApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ApprovalTemplateDocuments:
+              type: array
+              items:
+                type: object
+                properties:
+                  DocumentType:
+                    type: string
+                    example: atdtDelivery
+            ApprovalTemplateStages:
+              type: array
+              items:
+                type: object
+                properties:
+                  ApprovalStageCode:
+                    type: string
+                    example: '3'
+                  SortID:
+                    type: string
+                    example: '1'
+            ApprovalTemplateUsers:
+              type: array
+              items:
+                type: object
+                properties:
+                  UserID:
+                    type: string
+                    example: '1'
+            Name:
+              type: string
+              example: ShipDocTemp
+            Remarks:
+              type: string
+              example: Delivery approval
+        example:
+          ApprovalTemplateDocuments:
+          - DocumentType: atdtDelivery
+          ApprovalTemplateStages:
+          - ApprovalStageCode: '3'
+            SortID: '1'
+          ApprovalTemplateUsers:
+          - UserID: '1'
+          Name: ShipDocTemp
+          Remarks: Delivery approval
+  x-example-url: POST https://localhost:50000/b1s/v2/ApprovalTemplates
+  x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
+    and the users and transactions to which the procedure applies.

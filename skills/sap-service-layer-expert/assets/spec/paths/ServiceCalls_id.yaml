@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ServiceCalls
+  summary: GET ServiceCalls(id)
+  description: Retrieve all or some selected properties from an instance of 'ServiceCalls' with the given id.
+  operationId: get_ServiceCalls_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCalls(123)
+  x-resource-description: This entity enables you to manipulate 'ServiceCalls'. It represents the service calls in the Service
+    module. Service calls are used to manage service and support activities that you provide to your customers.
+patch:
+  tags:
+  - ServiceCalls
+  summary: PATCH ServiceCalls(id)
+  description: Update an instance of 'ServiceCalls' with the given payload of type 'ServiceCall' in JSON format and with the
+    specified id.
+  operationId: patch_ServiceCalls_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Subject:
+              type: string
+              example: new subject - modified by Service Layer
+        example:
+          Subject: new subject - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ServiceCalls(123)
+  x-resource-description: This entity enables you to manipulate 'ServiceCalls'. It represents the service calls in the Service
+    module. Service calls are used to manage service and support activities that you provide to your customers.
+delete:
+  tags:
+  - ServiceCalls
+  summary: DELETE ServiceCalls(id)
+  description: Delete an instance of 'ServiceCalls' with the specified id.
+  operationId: delete_ServiceCalls_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ServiceCalls(123)
+  x-resource-description: This entity enables you to manipulate 'ServiceCalls'. It represents the service calls in the Service
+    module. Service calls are used to manage service and support activities that you provide to your customers.

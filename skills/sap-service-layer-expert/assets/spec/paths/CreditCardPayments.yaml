@@ -1,0 +1,57 @@
+get:
+  tags:
+  - CreditCardPayments
+  summary: GET CreditCardPayments
+  description: Retrieve a collection of 'CreditCardPayments' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CreditCardPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditCardPayments
+  x-resource-description: This entity enables you to manipulate 'CreditCardPayments'. It defines dates on which the credit
+    card company credits the cardholder.
+post:
+  tags:
+  - CreditCardPayments
+  summary: POST CreditCardPayments
+  description: Create an instance of 'CreditCardPayments' with the given payload of type 'CreditCardPayment' in JSON format.
+  operationId: post_CreditCardPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DueDateCode:
+              type: string
+              example: code01
+            DueDateName:
+              type: string
+              example: 10 days
+        example:
+          DueDateCode: code01
+          DueDateName: 10 days
+  x-example-url: POST https://localhost:50000/b1s/v2/CreditCardPayments
+  x-resource-description: This entity enables you to manipulate 'CreditCardPayments'. It defines dates on which the credit
+    card company credits the cardholder.

@@ -1,0 +1,104 @@
+get:
+  tags:
+  - FiscalPrinter
+  summary: GET FiscalPrinter(id)
+  description: Retrieve all or some selected properties from an instance of 'FiscalPrinter' with the given id.
+  operationId: get_FiscalPrinter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/FiscalPrinter('1')
+  x-resource-description: This entity enables you to manipulate 'FiscalPrinter'.
+patch:
+  tags:
+  - FiscalPrinter
+  summary: PATCH FiscalPrinter(id)
+  description: Update an instance of 'FiscalPrinter' with the given payload of type 'FiscalPrinter' in JSON format and with
+    the specified id.
+  operationId: patch_FiscalPrinter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            EquipmentNo:
+              type: string
+              example: '1'
+            FiscalDocumentModel:
+              type: string
+              example: FM
+            ManufacturerSerialN:
+              type: string
+              example: ManufacturerSerialN
+            Model:
+              type: string
+              example: Model
+            RegisterNo:
+              type: string
+              example: 0123456789
+        example:
+          EquipmentNo: '1'
+          FiscalDocumentModel: FM
+          ManufacturerSerialN: ManufacturerSerialN
+          Model: Model
+          RegisterNo: 0123456789
+  x-example-url: PATCH https://localhost:50000/b1s/v2/FiscalPrinter('1')
+  x-resource-description: This entity enables you to manipulate 'FiscalPrinter'.
+delete:
+  tags:
+  - FiscalPrinter
+  summary: DELETE FiscalPrinter(id)
+  description: Delete an instance of 'FiscalPrinter' with the specified id.
+  operationId: delete_FiscalPrinter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/FiscalPrinter('1')
+  x-resource-description: This entity enables you to manipulate 'FiscalPrinter'.

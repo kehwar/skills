@@ -1,0 +1,91 @@
+get:
+  tags:
+  - GoodsReturnRequest
+  summary: GET GoodsReturnRequest(id)
+  description: Retrieve all or some selected properties from an instance of 'GoodsReturnRequest' with the given id.
+  operationId: get_GoodsReturnRequest_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/GoodsReturnRequest(123)
+  x-resource-description: This entity enables you to manipulate 'GoodsReturnRequest'. A return is the clearing document for
+    a delivery.
+patch:
+  tags:
+  - GoodsReturnRequest
+  summary: PATCH GoodsReturnRequest(id)
+  description: Update an instance of 'GoodsReturnRequest' with the given payload of type 'Document' in JSON format and with
+    the specified id.
+  operationId: patch_GoodsReturnRequest_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: new comments - modified by Service Layer
+        example:
+          Comments: new comments - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/GoodsReturnRequest(123)
+  x-resource-description: This entity enables you to manipulate 'GoodsReturnRequest'. A return is the clearing document for
+    a delivery.
+delete:
+  tags:
+  - GoodsReturnRequest
+  summary: DELETE GoodsReturnRequest(id)
+  description: Delete an instance of 'GoodsReturnRequest' with the specified id.
+  operationId: delete_GoodsReturnRequest_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/GoodsReturnRequest(123)
+  x-resource-description: This entity enables you to manipulate 'GoodsReturnRequest'. A return is the clearing document for
+    a delivery.

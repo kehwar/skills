@@ -1,0 +1,19 @@
+post:
+  tags:
+  - BOEPortfoliosService
+  summary: POST BOEPortfoliosService_GetBOEPortfolioList
+  description: Invoke the method 'GetBOEPortfolioList' on this service.
+  operationId: post_BOEPortfoliosService_GetBOEPortfolioList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/BOEPortfoliosService_GetBOEPortfolioList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'BOEPortfoliosService'.

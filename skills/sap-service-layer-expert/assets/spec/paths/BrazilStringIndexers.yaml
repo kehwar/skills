@@ -1,0 +1,59 @@
+get:
+  tags:
+  - BrazilStringIndexers
+  summary: GET BrazilStringIndexers
+  description: Retrieve a collection of 'BrazilStringIndexers' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_BrazilStringIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BrazilStringIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilStringIndexers'.
+post:
+  tags:
+  - BrazilStringIndexers
+  summary: POST BrazilStringIndexers
+  description: Create an instance of 'BrazilStringIndexers' with the given payload of type 'BrazilStringIndexer' in JSON format.
+  operationId: post_BrazilStringIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: '3'
+            Description:
+              type: string
+              example: aaaaaaaa
+            IndexerType:
+              type: string
+              example: bsitIPIPeriod
+        example:
+          Code: '3'
+          Description: aaaaaaaa
+          IndexerType: bsitIPIPeriod
+  x-example-url: POST https://localhost:50000/b1s/v2/BrazilStringIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilStringIndexers'.

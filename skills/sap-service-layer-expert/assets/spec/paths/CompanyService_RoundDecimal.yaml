@@ -1,0 +1,44 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_RoundDecimal
+  description: Invoke the method 'RoundDecimal' on this service by specifying the payload 'DecimalData' in the JSON format.
+    It rounds data to a specified number of decimal places or to a whole number if no decimal places are specified.
+  operationId: post_CompanyService_RoundDecimal
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DecimalData:
+              type: object
+              properties:
+                Context:
+                  type: string
+                  example: rcPrice
+                Currency:
+                  type: string
+                  example: $
+                Value:
+                  type: number
+                  example: 12.345
+        example:
+          DecimalData:
+            Context: rcPrice
+            Currency: $
+            Value: 12.345
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_RoundDecimal
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

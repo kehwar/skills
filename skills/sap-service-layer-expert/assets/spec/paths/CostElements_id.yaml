@@ -1,0 +1,92 @@
+get:
+  tags:
+  - CostElements
+  summary: GET CostElements(id)
+  description: Retrieve all or some selected properties from an instance of 'CostElements' with the given id.
+  operationId: get_CostElements_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CostElements('abc')
+  x-resource-description: This entity enables you to manipulate 'CostElements'.
+patch:
+  tags:
+  - CostElements
+  summary: PATCH CostElements(id)
+  description: Update an instance of 'CostElements' with the given payload of type 'CostElement' in JSON format and with the
+    specified id.
+  operationId: patch_CostElements_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: Cost Element 000001
+            IsActive:
+              type: string
+              example: tNO
+        example:
+          Description: Cost Element 000001
+          IsActive: tNO
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CostElements('CE 01')
+  x-resource-description: This entity enables you to manipulate 'CostElements'.
+delete:
+  tags:
+  - CostElements
+  summary: DELETE CostElements(id)
+  description: Delete an instance of 'CostElements' with the specified id.
+  operationId: delete_CostElements_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CostElements('abc')
+  x-resource-description: This entity enables you to manipulate 'CostElements'.

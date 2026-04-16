@@ -1,0 +1,72 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_UpdateTechnicianSettingsGroup
+  description: Invoke the method 'UpdateTechnicianSettingsGroup' on this service by specifying the payload 'TechnicianSettingsGroup'
+    in the JSON format.
+  operationId: post_MobileAppService_UpdateTechnicianSettingsGroup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AdvancedDashBoard:
+              type: integer
+              example: -4
+            Code:
+              type: integer
+              example: -1
+            CustomizedGroup:
+              type: string
+              example: tNO
+            EnableActualDuration:
+              type: string
+              example: tNO
+            EnableEditTime:
+              type: string
+              example: tNO
+            EnableFollowup:
+              type: string
+              example: tNO
+            EnableReject:
+              type: string
+              example: tNO
+            EnableResign:
+              type: string
+              example: tNO
+            EnableSignature:
+              type: string
+              example: tNO
+            EnableStarRating:
+              type: string
+              example: tNO
+            Name:
+              type: string
+              example: TESTCODE-1
+        example:
+          AdvancedDashBoard: -4
+          Code: -1
+          CustomizedGroup: tNO
+          EnableActualDuration: tNO
+          EnableEditTime: tNO
+          EnableFollowup: tNO
+          EnableReject: tNO
+          EnableResign: tNO
+          EnableSignature: tNO
+          EnableStarRating: tNO
+          Name: TESTCODE-1
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_UpdateTechnicianSettingsGroup
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

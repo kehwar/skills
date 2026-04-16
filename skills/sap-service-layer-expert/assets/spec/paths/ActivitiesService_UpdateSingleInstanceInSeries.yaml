@@ -1,0 +1,92 @@
+post:
+  tags:
+  - ActivitiesService
+  summary: POST ActivitiesService_UpdateSingleInstanceInSeries
+  description: Invoke the method 'UpdateSingleInstanceInSeries' on this service by specifying the payload 'Activity' in the
+    JSON format.
+  operationId: post_ActivitiesService_UpdateSingleInstanceInSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Activity:
+              type: object
+              properties:
+                ActivityDate:
+                  type: string
+                  example: '2016-08-30'
+                ActivityTime:
+                  type: string
+                  example: 08:13:00
+                CardCode:
+                  type: string
+                  example: C01
+                DocEntry:
+                  type: string
+                  example: '3'
+                DocNum:
+                  type: string
+                  example: '1'
+                DocType:
+                  type: string
+                  example: '17'
+                Duration:
+                  type: integer
+                  example: 15
+                DurationType:
+                  type: string
+                  example: du_Minuts
+                EndDueDate:
+                  type: string
+                  example: '2016-08-30'
+                EndTime:
+                  type: string
+                  example: 08:28:00
+                Reminder:
+                  type: string
+                  example: tYES
+                ReminderPeriod:
+                  type: integer
+                  example: 15
+                ReminderType:
+                  type: string
+                  example: du_Minuts
+                StartDate:
+                  type: string
+                  example: '2016-08-30'
+                StartTime:
+                  type: string
+                  example: 08:13:00
+        example:
+          Activity:
+            ActivityDate: '2016-08-30'
+            ActivityTime: 08:13:00
+            CardCode: C01
+            DocEntry: '3'
+            DocNum: '1'
+            DocType: '17'
+            Duration: 15
+            DurationType: du_Minuts
+            EndDueDate: '2016-08-30'
+            EndTime: 08:28:00
+            Reminder: tYES
+            ReminderPeriod: 15
+            ReminderType: du_Minuts
+            StartDate: '2016-08-30'
+            StartTime: 08:13:00
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivitiesService_UpdateSingleInstanceInSeries
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ActivitiesService'.

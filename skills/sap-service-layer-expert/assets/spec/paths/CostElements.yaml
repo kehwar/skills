@@ -1,0 +1,59 @@
+get:
+  tags:
+  - CostElements
+  summary: GET CostElements
+  description: Retrieve a collection of 'CostElements' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CostElements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CostElements
+  x-resource-description: This entity enables you to manipulate 'CostElements'.
+post:
+  tags:
+  - CostElements
+  summary: POST CostElements
+  description: Create an instance of 'CostElements' with the given payload of type 'CostElement' in JSON format.
+  operationId: post_CostElements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: CE 01
+            Description:
+              type: string
+              example: Cost Element 001
+            IsActive:
+              type: string
+              example: tYES
+        example:
+          Code: CE 01
+          Description: Cost Element 001
+          IsActive: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/CostElements
+  x-resource-description: This entity enables you to manipulate 'CostElements'.

@@ -1,0 +1,20 @@
+post:
+  tags:
+  - PurchaseDeliveryNotes(id)/CreateCancellationDocument
+  summary: POST PurchaseDeliveryNotes(id)/CreateCancellationDocument
+  description: Invoke the method 'CreateCancellationDocument' on this EntitySet with the specified id.
+  operationId: post_PurchaseDeliveryNotes_id/CreateCancellationDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/PurchaseDeliveryNotes(123)/CreateCancellationDocument
+  x-resource-description: This entity enables you to manipulate 'PurchaseDeliveryNotes'. It represents a legally binding document
+    indicating that a shipment of goods or a delivery of services has occurred.

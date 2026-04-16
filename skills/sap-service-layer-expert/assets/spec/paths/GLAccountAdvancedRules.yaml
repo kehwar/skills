@@ -1,0 +1,116 @@
+get:
+  tags:
+  - GLAccountAdvancedRules
+  summary: GET GLAccountAdvancedRules
+  description: Retrieve a collection of 'GLAccountAdvancedRules' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_GLAccountAdvancedRules
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/GLAccountAdvancedRules
+  x-resource-description: This entity enables you to manipulate 'GLAccountAdvancedRules'.
+post:
+  tags:
+  - GLAccountAdvancedRules
+  summary: POST GLAccountAdvancedRules
+  description: Create an instance of 'GLAccountAdvancedRules' with the given payload of type 'GLAccountAdvancedRule' in JSON
+    format.
+  operationId: post_GLAccountAdvancedRules
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsoluteEntry:
+              type: integer
+              example: 1
+            BeginningofFinancialYear:
+              type: string
+              example: '2016-01-01'
+            Code:
+              type: string
+              example: Test1
+            Description:
+              type: string
+              example: Test Determination Rules1
+            EUExpensesAccount:
+              type: string
+              example: '2730'
+            EURevenuesAccount:
+              type: string
+              example: '2725'
+            ExpenseClearingAct:
+              type: string
+              example: '2739'
+            ExpensesAccount:
+              type: string
+              example: '2720'
+            FinancialYear:
+              type: integer
+              example: 2016
+            ForeignExpensAcc:
+              type: string
+              example: '2735'
+            ForeignRevenueAcc:
+              type: string
+              example: '2732'
+            FromDate:
+              type: string
+              example: '2016-01-01'
+            IsActive:
+              type: string
+              example: tNO
+            Period:
+              type: string
+              example: '2016'
+            RevenuesAccount:
+              type: string
+              example: '2715'
+            ToDate:
+              type: string
+              example: '2016-12-31'
+            Warehouse:
+              type: string
+              example: '01'
+        example:
+          AbsoluteEntry: 1
+          BeginningofFinancialYear: '2016-01-01'
+          Code: Test1
+          Description: Test Determination Rules1
+          EUExpensesAccount: '2730'
+          EURevenuesAccount: '2725'
+          ExpenseClearingAct: '2739'
+          ExpensesAccount: '2720'
+          FinancialYear: 2016
+          ForeignExpensAcc: '2735'
+          ForeignRevenueAcc: '2732'
+          FromDate: '2016-01-01'
+          IsActive: tNO
+          Period: '2016'
+          RevenuesAccount: '2715'
+          ToDate: '2016-12-31'
+          Warehouse: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/GLAccountAdvancedRules
+  x-resource-description: This entity enables you to manipulate 'GLAccountAdvancedRules'.

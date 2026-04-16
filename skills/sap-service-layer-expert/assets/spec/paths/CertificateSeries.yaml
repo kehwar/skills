@@ -1,0 +1,93 @@
+get:
+  tags:
+  - CertificateSeries
+  summary: GET CertificateSeries
+  description: Retrieve a collection of 'CertificateSeries' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CertificateSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CertificateSeries
+  x-resource-description: This entity enables you to manipulate 'CertificateSeries'.
+post:
+  tags:
+  - CertificateSeries
+  summary: POST CertificateSeries
+  description: Create an instance of 'CertificateSeries' with the given payload of type 'CertificateSeries' in JSON format.
+  operationId: post_CertificateSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            Code:
+              type: string
+              example: D1
+            DefaultSeries:
+              type: integer
+              example: 0
+            Location:
+              type: integer
+              example: -1
+            Section:
+              type: integer
+              example: 1
+            SeriesLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  FirstNum:
+                    type: integer
+                    example: 1
+                  LastNum:
+                    type: string
+                    example: null
+                  NextNum:
+                    type: integer
+                    example: 1
+                  Prefix:
+                    type: string
+                    example: D
+                  Series:
+                    type: integer
+                    example: 0
+        example:
+          AbsEntry: 1
+          Code: D1
+          DefaultSeries: 0
+          Location: -1
+          Section: 1
+          SeriesLines:
+          - FirstNum: 1
+            LastNum: null
+            NextNum: 1
+            Prefix: D
+            Series: 0
+  x-example-url: POST https://localhost:50000/b1s/v2/CertificateSeries
+  x-resource-description: This entity enables you to manipulate 'CertificateSeries'.

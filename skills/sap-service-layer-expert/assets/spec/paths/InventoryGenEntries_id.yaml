@@ -1,0 +1,65 @@
+get:
+  tags:
+  - InventoryGenEntries
+  summary: GET InventoryGenEntries(id)
+  description: Retrieve all or some selected properties from an instance of 'InventoryGenEntries' with the given id.
+  operationId: get_InventoryGenEntries_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryGenEntries(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryGenEntries'. It represents inventory gains in quantities
+    not resulting from doing business with vendors, for example, receipt from production.
+patch:
+  tags:
+  - InventoryGenEntries
+  summary: PATCH InventoryGenEntries(id)
+  description: Update an instance of 'InventoryGenEntries' with the given payload of type 'Document' in JSON format and with
+    the specified id.
+  operationId: patch_InventoryGenEntries_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: new comments - modified by Service Layer
+        example:
+          Comments: new comments - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/InventoryGenEntries(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryGenEntries'. It represents inventory gains in quantities
+    not resulting from doing business with vendors, for example, receipt from production.

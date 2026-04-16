@@ -1,0 +1,60 @@
+get:
+  tags:
+  - ValueMappingCommunication
+  summary: GET ValueMappingCommunication
+  description: Retrieve a collection of 'ValueMappingCommunication' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_ValueMappingCommunication
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ValueMappingCommunication
+  x-resource-description: This entity enables you to manipulate 'ValueMappingCommunication'.
+post:
+  tags:
+  - ValueMappingCommunication
+  summary: POST ValueMappingCommunication
+  description: Create an instance of 'ValueMappingCommunication' with the given payload of type 'ValueMappingCommunicationData'
+    in JSON format.
+  operationId: post_ValueMappingCommunication
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CommunicationType:
+              type: string
+              example: MD
+            ObjectId:
+              type: integer
+              example: 37
+            ThirdPartySystemId:
+              type: integer
+              example: 1
+        example:
+          CommunicationType: MD
+          ObjectId: 37
+          ThirdPartySystemId: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ValueMappingCommunication
+  x-resource-description: This entity enables you to manipulate 'ValueMappingCommunication'.

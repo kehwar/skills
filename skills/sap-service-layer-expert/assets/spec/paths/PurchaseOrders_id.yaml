@@ -1,0 +1,65 @@
+get:
+  tags:
+  - PurchaseOrders
+  summary: GET PurchaseOrders(id)
+  description: Retrieve all or some selected properties from an instance of 'PurchaseOrders' with the given id.
+  operationId: get_PurchaseOrders_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PurchaseOrders(123)
+  x-resource-description: This entity enables you to manipulate 'PurchaseOrders'. It is a document used to request items or
+    services from a vendor at an agreed upon price.
+patch:
+  tags:
+  - PurchaseOrders
+  summary: PATCH PurchaseOrders(id)
+  description: Update an instance of 'PurchaseOrders' with the given payload of type 'Document' in JSON format and with the
+    specified id.
+  operationId: patch_PurchaseOrders_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: new comments - modified by Service Layer
+        example:
+          Comments: new comments - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PurchaseOrders(123)
+  x-resource-description: This entity enables you to manipulate 'PurchaseOrders'. It is a document used to request items or
+    services from a vendor at an agreed upon price.

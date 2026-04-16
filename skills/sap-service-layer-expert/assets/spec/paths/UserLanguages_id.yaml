@@ -1,0 +1,91 @@
+get:
+  tags:
+  - UserLanguages
+  summary: GET UserLanguages(id)
+  description: Retrieve all or some selected properties from an instance of 'UserLanguages' with the given id.
+  operationId: get_UserLanguages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/UserLanguages(123)
+  x-resource-description: This entity enables you to manipulate 'UserLanguages'. It defines user languages for multi-language
+    support.
+patch:
+  tags:
+  - UserLanguages
+  summary: PATCH UserLanguages(id)
+  description: Update an instance of 'UserLanguages' with the given payload of type 'UserLanguage' in JSON format and with
+    the specified id.
+  operationId: patch_UserLanguages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            LanguageFullName:
+              type: string
+              example: Traditional Chinese
+        example:
+          LanguageFullName: Traditional Chinese
+  x-example-url: PATCH https://localhost:50000/b1s/v2/UserLanguages(123)
+  x-resource-description: This entity enables you to manipulate 'UserLanguages'. It defines user languages for multi-language
+    support.
+delete:
+  tags:
+  - UserLanguages
+  summary: DELETE UserLanguages(id)
+  description: Delete an instance of 'UserLanguages' with the specified id.
+  operationId: delete_UserLanguages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/UserLanguages(123)
+  x-resource-description: This entity enables you to manipulate 'UserLanguages'. It defines user languages for multi-language
+    support.

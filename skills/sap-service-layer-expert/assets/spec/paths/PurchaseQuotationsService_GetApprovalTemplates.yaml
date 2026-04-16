@@ -1,0 +1,61 @@
+post:
+  tags:
+  - PurchaseQuotationsService
+  summary: POST PurchaseQuotationsService_GetApprovalTemplates
+  description: Invoke the method 'GetApprovalTemplates' on this service by specifying the payload 'Document' in the JSON format.
+  operationId: post_PurchaseQuotationsService_GetApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Document:
+              type: object
+              properties:
+                CardCode:
+                  type: string
+                  example: c001
+                DocumentLines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      ItemCode:
+                        type: string
+                        example: i001
+                      Quantity:
+                        type: string
+                        example: '100'
+                      TaxCode:
+                        type: string
+                        example: T1
+                      UnitPrice:
+                        type: string
+                        example: '50'
+                RequriedDate:
+                  type: string
+                  example: '2014-04-04'
+        example:
+          Document:
+            CardCode: c001
+            DocumentLines:
+            - ItemCode: i001
+              Quantity: '100'
+              TaxCode: T1
+              UnitPrice: '50'
+            RequriedDate: '2014-04-04'
+  x-example-url: POST https://localhost:50000/b1s/v2/PurchaseQuotationsService_GetApprovalTemplates
+  x-resource-description: This API enables you to invoke the interfaces defined on 'PurchaseQuotationsService'.

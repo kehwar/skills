@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ExternalReconciliationsService
+  summary: POST ExternalReconciliationsService_CancelReconciliation
+  description: Invoke the method 'CancelReconciliation' on this service by specifying the payload 'ExternalReconciliationParams'
+    in the JSON format.
+  operationId: post_ExternalReconciliationsService_CancelReconciliation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ExternalReconciliationParams:
+              type: object
+              properties:
+                AccountCode:
+                  type: string
+                  example: _SYS00000000001
+                ReconciliationNo:
+                  type: integer
+                  example: 1
+        example:
+          ExternalReconciliationParams:
+            AccountCode: _SYS00000000001
+            ReconciliationNo: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ExternalReconciliationsService_CancelReconciliation
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ExternalReconciliationsService'.

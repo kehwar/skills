@@ -1,0 +1,73 @@
+get:
+  tags:
+  - CustomsGroups
+  summary: GET CustomsGroups
+  description: Retrieve a collection of 'CustomsGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CustomsGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CustomsGroups
+  x-resource-description: This entity enables you to manipulate 'CustomsGroups'. It defines custom groups, which specify the
+    customs duty for items purchased abroad that are liable for customs.
+post:
+  tags:
+  - CustomsGroups
+  summary: POST CustomsGroups
+  description: Create an instance of 'CustomsGroups' with the given payload of type 'CustomsGroup' in JSON format.
+  operationId: post_CustomsGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Customs:
+              type: string
+              example: '10'
+            CustomsAllocationAccount:
+              type: string
+              example: _SYS00000000051
+            CustomsExpenseAccount:
+              type: string
+              example: _SYS00000000085
+            Name:
+              type: string
+              example: Exempt
+            Other:
+              type: string
+              example: '30'
+            Purchase:
+              type: string
+              example: '20'
+        example:
+          Customs: '10'
+          CustomsAllocationAccount: _SYS00000000051
+          CustomsExpenseAccount: _SYS00000000085
+          Name: Exempt
+          Other: '30'
+          Purchase: '20'
+  x-example-url: POST https://localhost:50000/b1s/v2/CustomsGroups
+  x-resource-description: This entity enables you to manipulate 'CustomsGroups'. It defines custom groups, which specify the
+    customs duty for items purchased abroad that are liable for customs.

@@ -1,0 +1,114 @@
+get:
+  tags:
+  - DistributionRules
+  summary: GET DistributionRules(id)
+  description: Retrieve all or some selected properties from an instance of 'DistributionRules' with the given id.
+  operationId: get_DistributionRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/DistributionRules('DR1')
+  x-resource-description: This entity enables you to manipulate 'DistributionRules'.
+patch:
+  tags:
+  - DistributionRules
+  summary: PATCH DistributionRules(id)
+  description: Update an instance of 'DistributionRules' with the given payload of type 'DistributionRule' in JSON format
+    and with the specified id.
+  operationId: patch_DistributionRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DistributionRuleLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  CenterCode:
+                    type: string
+                    example: '1'
+                  EffectiveFrom:
+                    type: string
+                    example: '2016-09-01'
+                  EffectiveTo:
+                    type: string
+                    example: '2016-12-01'
+                  TotalInCenter:
+                    type: integer
+                    example: 50
+            FactorDescription:
+              type: string
+              example: TEST
+        example:
+          DistributionRuleLines:
+          - CenterCode: '1'
+            EffectiveFrom: '2016-09-01'
+            EffectiveTo: '2016-12-01'
+            TotalInCenter: 50
+          - CenterCode: '2'
+            EffectiveFrom: '2016-09-01'
+            EffectiveTo: '2016-12-01'
+            TotalInCenter: 50
+          FactorDescription: TEST
+  x-example-url: PATCH https://localhost:50000/b1s/v2/DistributionRules('DR1')
+  x-resource-description: This entity enables you to manipulate 'DistributionRules'.
+delete:
+  tags:
+  - DistributionRules
+  summary: DELETE DistributionRules(id)
+  description: Delete an instance of 'DistributionRules' with the specified id.
+  operationId: delete_DistributionRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/DistributionRules('DR1')
+  x-resource-description: This entity enables you to manipulate 'DistributionRules'.

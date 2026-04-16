@@ -1,0 +1,63 @@
+get:
+  tags:
+  - BOEPortfolios
+  summary: GET BOEPortfolios
+  description: Retrieve a collection of 'BOEPortfolios' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BOEPortfolios
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BOEPortfolios
+  x-resource-description: This entity enables you to manipulate 'BOEPortfolios'.
+post:
+  tags:
+  - BOEPortfolios
+  summary: POST BOEPortfolios
+  description: Create an instance of 'BOEPortfolios' with the given payload of type 'BOEPortfolio' in JSON format.
+  operationId: post_BOEPortfolios
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PortfolioCode:
+              type: string
+              example: '01'
+            PortfolioDescription:
+              type: string
+              example: '01'
+            PortfolioID:
+              type: string
+              example: '01'
+            PortfolioNum:
+              type: string
+              example: '01'
+        example:
+          PortfolioCode: '01'
+          PortfolioDescription: '01'
+          PortfolioID: '01'
+          PortfolioNum: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/BOEPortfolios
+  x-resource-description: This entity enables you to manipulate 'BOEPortfolios'.

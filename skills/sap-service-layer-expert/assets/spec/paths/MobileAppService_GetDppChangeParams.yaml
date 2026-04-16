@@ -1,0 +1,40 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_GetDppChangeParams
+  description: Invoke the method 'GetDppChangeParams' on this service by specifying the payload 'DppChangeParams' in the JSON
+    format.
+  operationId: post_MobileAppService_GetDppChangeParams
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DppChangeParams:
+              type: object
+              properties:
+                FromDate:
+                  type: string
+                  example: '2018-03-30'
+                FromTime:
+                  type: string
+                  example: '17:30:00'
+        example:
+          DppChangeParams:
+            FromDate: '2018-03-30'
+            FromTime: '17:30:00'
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_GetDppChangeParams
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

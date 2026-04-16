@@ -1,0 +1,77 @@
+get:
+  tags:
+  - ChooseFromList
+  summary: GET ChooseFromList
+  description: Retrieve a collection of 'ChooseFromList' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ChooseFromList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ChooseFromList
+  x-resource-description: This entity enables you to manipulate 'ChooseFromList'.
+post:
+  tags:
+  - ChooseFromList
+  summary: POST ChooseFromList
+  description: Create an instance of 'ChooseFromList' with the given payload of type 'ChooseFromList' in JSON format.
+  operationId: post_ChooseFromList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ChooseFromList_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  DisplayedName:
+                    type: string
+                    example: Weight
+                  FieldNo:
+                    type: string
+                    example: '1'
+                  ShowType:
+                    type: string
+                    example: tYES
+                  SortOrder:
+                    type: string
+                    example: soAscending
+                  Visible:
+                    type: string
+                    example: tNO
+            ObjectName:
+              type: string
+              example: ITM1
+        example:
+          ChooseFromList_Lines:
+          - DisplayedName: Weight
+            FieldNo: '1'
+            ShowType: tYES
+            SortOrder: soAscending
+            Visible: tNO
+          ObjectName: ITM1
+  x-example-url: POST https://localhost:50000/b1s/v2/ChooseFromList
+  x-resource-description: This entity enables you to manipulate 'ChooseFromList'.

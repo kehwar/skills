@@ -1,0 +1,91 @@
+get:
+  tags:
+  - UserPermissionTree
+  summary: GET UserPermissionTree(id)
+  description: Retrieve all or some selected properties from an instance of 'UserPermissionTree' with the given id.
+  operationId: get_UserPermissionTree_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/UserPermissionTree('P01')
+  x-resource-description: This entity enables you to manipulate 'UserPermissionTree'. It represents the User Authorization
+    form. This object enables managing user authorization for various forms.
+patch:
+  tags:
+  - UserPermissionTree
+  summary: PATCH UserPermissionTree(id)
+  description: Update an instance of 'UserPermissionTree' with the given payload of type 'UserPermissionTree' in JSON format
+    and with the specified id.
+  operationId: patch_UserPermissionTree_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: newFormPer
+        example:
+          Name: newFormPer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/UserPermissionTree('P01')
+  x-resource-description: This entity enables you to manipulate 'UserPermissionTree'. It represents the User Authorization
+    form. This object enables managing user authorization for various forms.
+delete:
+  tags:
+  - UserPermissionTree
+  summary: DELETE UserPermissionTree(id)
+  description: Delete an instance of 'UserPermissionTree' with the specified id.
+  operationId: delete_UserPermissionTree_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/UserPermissionTree('P01')
+  x-resource-description: This entity enables you to manipulate 'UserPermissionTree'. It represents the User Authorization
+    form. This object enables managing user authorization for various forms.

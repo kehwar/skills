@@ -1,0 +1,25 @@
+get:
+  tags:
+  - BillOfExchangeTransactions
+  summary: GET BillOfExchangeTransactions(id)
+  description: Retrieve all or some selected properties from an instance of 'BillOfExchangeTransactions' with the given id.
+  operationId: get_BillOfExchangeTransactions_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BillOfExchangeTransactions(123)
+  x-resource-description: This entity enables you to manipulate 'BillOfExchangeTransactions'.

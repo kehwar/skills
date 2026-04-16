@@ -1,0 +1,201 @@
+get:
+  tags:
+  - KPIs
+  summary: GET KPIs
+  description: Retrieve a collection of 'KPIs' with all or some selected properties in the given order by specifying the given
+    filter condition.
+  operationId: get_KPIs
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/KPIs
+  x-resource-description: This entity enables you to manipulate 'KPIs'.
+post:
+  tags:
+  - KPIs
+  summary: POST KPIs
+  description: Create an instance of 'KPIs' with the given payload of type 'KPI' in JSON format.
+  operationId: post_KPIs
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            KPICode:
+              type: string
+              example: CFC001
+            KPIName:
+              type: string
+              example: Cash Flow Config001
+            KPIType:
+              type: string
+              example: asSingle
+            KPI_ItemLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  KPICode:
+                    type: string
+                    example: CFC001
+                  KPILineNumber:
+                    type: integer
+                    example: 1
+                  KPIName:
+                    type: string
+                    example: No. of Days
+                  KPIValue1:
+                    type: integer
+                    example: 5
+                  KPIValue10:
+                    type: integer
+                    example: 0
+                  KPIValue11:
+                    type: integer
+                    example: 0
+                  KPIValue12:
+                    type: integer
+                    example: 0
+                  KPIValue13:
+                    type: integer
+                    example: 0
+                  KPIValue14:
+                    type: integer
+                    example: 0
+                  KPIValue15:
+                    type: integer
+                    example: 0
+                  KPIValue16:
+                    type: integer
+                    example: 0
+                  KPIValue17:
+                    type: integer
+                    example: 0
+                  KPIValue18:
+                    type: integer
+                    example: 0
+                  KPIValue19:
+                    type: integer
+                    example: 0
+                  KPIValue2:
+                    type: integer
+                    example: 0
+                  KPIValue20:
+                    type: integer
+                    example: 0
+                  KPIValue21:
+                    type: integer
+                    example: 0
+                  KPIValue22:
+                    type: integer
+                    example: 0
+                  KPIValue23:
+                    type: integer
+                    example: 0
+                  KPIValue24:
+                    type: integer
+                    example: 0
+                  KPIValue25:
+                    type: integer
+                    example: 0
+                  KPIValue26:
+                    type: integer
+                    example: 0
+                  KPIValue27:
+                    type: integer
+                    example: 0
+                  KPIValue28:
+                    type: integer
+                    example: 0
+                  KPIValue29:
+                    type: integer
+                    example: 0
+                  KPIValue3:
+                    type: integer
+                    example: 0
+                  KPIValue30:
+                    type: integer
+                    example: 0
+                  KPIValue4:
+                    type: integer
+                    example: 0
+                  KPIValue5:
+                    type: integer
+                    example: 0
+                  KPIValue6:
+                    type: integer
+                    example: 0
+                  KPIValue7:
+                    type: integer
+                    example: 0
+                  KPIValue8:
+                    type: integer
+                    example: 0
+                  KPIValue9:
+                    type: integer
+                    example: 0
+            NumberOfColumns:
+              type: integer
+              example: 1
+        example:
+          KPICode: CFC001
+          KPIName: Cash Flow Config001
+          KPIType: asSingle
+          KPI_ItemLines:
+          - KPICode: CFC001
+            KPILineNumber: 1
+            KPIName: No. of Days
+            KPIValue1: 5
+            KPIValue10: 0
+            KPIValue11: 0
+            KPIValue12: 0
+            KPIValue13: 0
+            KPIValue14: 0
+            KPIValue15: 0
+            KPIValue16: 0
+            KPIValue17: 0
+            KPIValue18: 0
+            KPIValue19: 0
+            KPIValue2: 0
+            KPIValue20: 0
+            KPIValue21: 0
+            KPIValue22: 0
+            KPIValue23: 0
+            KPIValue24: 0
+            KPIValue25: 0
+            KPIValue26: 0
+            KPIValue27: 0
+            KPIValue28: 0
+            KPIValue29: 0
+            KPIValue3: 0
+            KPIValue30: 0
+            KPIValue4: 0
+            KPIValue5: 0
+            KPIValue6: 0
+            KPIValue7: 0
+            KPIValue8: 0
+            KPIValue9: 0
+          NumberOfColumns: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/KPIs
+  x-resource-description: This entity enables you to manipulate 'KPIs'.

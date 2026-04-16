@@ -1,0 +1,119 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_LogLogoffAction
+  description: Invoke the method 'LogLogoffAction' on this service by specifying the payload 'UserAccessLog' and 'SupportUserLoginRecord'
+    in the JSON format. 1. SupportUserLoginRecord is only used in 'On Premise' mode. For 'On Demand' mode, there is no need
+    to provide 'SupportUserLoginRecord'. For 'On Premise' mode, there is no need to provide 'ReasonID' and 'ReasonDesc'. 2.
+    'SessionID' can be retrieved from DB server. 3. 'ActionDate' and 'ActionTime' must be the same value as those in LogLoginAction.
+    4. 'ID' of 'SupportUserLoginRecord' comes from LogLoginAction.
+  operationId: post_CompanyService_LogLogoffAction
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            SupportUserLoginRecord:
+              type: object
+              properties:
+                ID:
+                  type: integer
+                  example: 21
+                LogDetail:
+                  type: string
+                  example: Log detail
+                LogReason:
+                  type: string
+                  example: J
+                RealName:
+                  type: string
+                  example: Real name
+            UserAccessLog:
+              type: object
+              properties:
+                Action:
+                  type: string
+                  example: O
+                ActionBy:
+                  type: string
+                  example: Support
+                ActionDate:
+                  type: string
+                  example: '2021-06-23'
+                ActionTime:
+                  type: integer
+                  example: 102959
+                ClientIP:
+                  type: string
+                  example: 10.10.10.10
+                ClientName:
+                  type: string
+                  example: SERVER01A
+                ProcName:
+                  type: string
+                  example: Web Client.jar
+                ProcessID:
+                  type: integer
+                  example: 10592
+                ReasonDesc:
+                  type: string
+                  example: Reason desc
+                ReasonID:
+                  type: integer
+                  example: 51
+                SessionID:
+                  type: integer
+                  example: 65
+                Source:
+                  type: string
+                  example: SBO_Web_Client
+                UserCode:
+                  type: string
+                  example: Support
+                UserID:
+                  type: integer
+                  example: 4
+                WinSessnID:
+                  type: integer
+                  example: -1
+                WinUsrName:
+                  type: string
+                  example: b1admin
+        example:
+          SupportUserLoginRecord:
+            ID: 21
+            LogDetail: Log detail
+            LogReason: J
+            RealName: Real name
+          UserAccessLog:
+            Action: O
+            ActionBy: Support
+            ActionDate: '2021-06-23'
+            ActionTime: 102959
+            ClientIP: 10.10.10.10
+            ClientName: SERVER01A
+            ProcName: Web Client.jar
+            ProcessID: 10592
+            ReasonDesc: Reason desc
+            ReasonID: 51
+            SessionID: 65
+            Source: SBO_Web_Client
+            UserCode: Support
+            UserID: 4
+            WinSessnID: -1
+            WinUsrName: b1admin
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_LogLogoffAction
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

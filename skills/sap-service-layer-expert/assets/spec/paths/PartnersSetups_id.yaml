@@ -1,0 +1,92 @@
+get:
+  tags:
+  - PartnersSetups
+  summary: GET PartnersSetups(id)
+  description: Retrieve all or some selected properties from an instance of 'PartnersSetups' with the given id.
+  operationId: get_PartnersSetups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PartnersSetups(1)
+  x-resource-description: This entity enables you to manipulate 'PartnersSetups'.
+patch:
+  tags:
+  - PartnersSetups
+  summary: PATCH PartnersSetups(id)
+  description: Update an instance of 'PartnersSetups' with the given payload of type 'PartnersSetup' in JSON format and with
+    the specified id.
+  operationId: patch_PartnersSetups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Details:
+              type: string
+              example: Updated related BP
+            RelatedBP:
+              type: string
+              example: V01
+        example:
+          Details: Updated related BP
+          RelatedBP: V01
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PartnersSetups(1)
+  x-resource-description: This entity enables you to manipulate 'PartnersSetups'.
+delete:
+  tags:
+  - PartnersSetups
+  summary: DELETE PartnersSetups(id)
+  description: Delete an instance of 'PartnersSetups' with the specified id.
+  operationId: delete_PartnersSetups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/PartnersSetups(1)
+  x-resource-description: This entity enables you to manipulate 'PartnersSetups'.

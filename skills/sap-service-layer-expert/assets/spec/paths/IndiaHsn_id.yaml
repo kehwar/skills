@@ -1,0 +1,100 @@
+get:
+  tags:
+  - IndiaHsn
+  summary: GET IndiaHsn(id)
+  description: Retrieve all or some selected properties from an instance of 'IndiaHsn' with the given id.
+  operationId: get_IndiaHsn_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/IndiaHsn(123)
+  x-resource-description: This entity enables you to manipulate 'IndiaHsn'.
+patch:
+  tags:
+  - IndiaHsn
+  summary: PATCH IndiaHsn(id)
+  description: Update an instance of 'IndiaHsn' with the given payload of type 'IndiaHsn' in JSON format and with the specified
+    id.
+  operationId: patch_IndiaHsn_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Chapter:
+              type: string
+              example: 08
+            Description:
+              type: string
+              example: Update HSN
+            Heading:
+              type: string
+              example: '01'
+            SubHeading:
+              type: string
+              example: '0102'
+        example:
+          Chapter: 08
+          Description: Update HSN
+          Heading: '01'
+          SubHeading: '0102'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/IndiaHsn(123)
+  x-resource-description: This entity enables you to manipulate 'IndiaHsn'.
+delete:
+  tags:
+  - IndiaHsn
+  summary: DELETE IndiaHsn(id)
+  description: Delete an instance of 'IndiaHsn' with the specified id.
+  operationId: delete_IndiaHsn_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/IndiaHsn(123)
+  x-resource-description: This entity enables you to manipulate 'IndiaHsn'.

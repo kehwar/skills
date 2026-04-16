@@ -1,0 +1,55 @@
+get:
+  tags:
+  - BPPriorities
+  summary: GET BPPriorities
+  description: Retrieve a collection of 'BPPriorities' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BPPriorities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BPPriorities
+  x-resource-description: This entity enables you to manipulate 'BPPriorities'.
+post:
+  tags:
+  - BPPriorities
+  summary: POST BPPriorities
+  description: Create an instance of 'BPPriorities' with the given payload of type 'BPPriority' in JSON format.
+  operationId: post_BPPriorities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Priority:
+              type: string
+              example: P4
+            PriorityDescription:
+              type: string
+              example: Third
+        example:
+          Priority: P4
+          PriorityDescription: Third
+  x-example-url: POST https://localhost:50000/b1s/v2/BPPriorities
+  x-resource-description: This entity enables you to manipulate 'BPPriorities'.

@@ -1,0 +1,65 @@
+get:
+  tags:
+  - CreditCards
+  summary: GET CreditCards
+  description: Retrieve a collection of 'CreditCards' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CreditCards
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditCards
+  x-resource-description: This entity enables you to manipulate 'CreditCards'. It defines credit cards that the company can
+    use for incoming and outgoing payments.
+post:
+  tags:
+  - CreditCards
+  summary: POST CreditCards
+  description: Create an instance of 'CreditCards' with the given payload of type 'CreditCard' in JSON format.
+  operationId: post_CreditCards
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CompanyID:
+              type: string
+              example: '123456789'
+            CreditCardName:
+              type: string
+              example: Test
+            GLAccount:
+              type: string
+              example: _SYS00000000004
+            Telephone:
+              type: string
+              example: '61087839'
+        example:
+          CompanyID: '123456789'
+          CreditCardName: Test
+          GLAccount: _SYS00000000004
+          Telephone: '61087839'
+  x-example-url: POST https://localhost:50000/b1s/v2/CreditCards
+  x-resource-description: This entity enables you to manipulate 'CreditCards'. It defines credit cards that the company can
+    use for incoming and outgoing payments.

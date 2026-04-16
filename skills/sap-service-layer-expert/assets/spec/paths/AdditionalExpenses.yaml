@@ -1,0 +1,73 @@
+get:
+  tags:
+  - AdditionalExpenses
+  summary: GET AdditionalExpenses
+  description: Retrieve a collection of 'AdditionalExpenses' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AdditionalExpenses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AdditionalExpenses
+  x-resource-description: This entity enables you to manipulate 'AdditionalExpenses'. It represents additional expenses for
+    transporting freight or delivering services, such as delivery fees and tax deposits.
+post:
+  tags:
+  - AdditionalExpenses
+  summary: POST AdditionalExpenses
+  description: Create an instance of 'AdditionalExpenses' with the given payload of type 'AdditionalExpense' in JSON format.
+  operationId: post_AdditionalExpenses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DistributionMethod:
+              type: string
+              example: aed_None
+            ExpenseAccount:
+              type: string
+              example: _SYS00000000002
+            FixedAmountExpenses:
+              type: string
+              example: '20'
+            FixedAmountRevenues:
+              type: string
+              example: '10'
+            Name:
+              type: string
+              example: road fee
+            RevenuesAccount:
+              type: string
+              example: _SYS00000000082
+        example:
+          DistributionMethod: aed_None
+          ExpenseAccount: _SYS00000000002
+          FixedAmountExpenses: '20'
+          FixedAmountRevenues: '10'
+          Name: road fee
+          RevenuesAccount: _SYS00000000082
+  x-example-url: POST https://localhost:50000/b1s/v2/AdditionalExpenses
+  x-resource-description: This entity enables you to manipulate 'AdditionalExpenses'. It represents additional expenses for
+    transporting freight or delivering services, such as delivery fees and tax deposits.

@@ -1,0 +1,75 @@
+get:
+  tags:
+  - FormattedSearches
+  summary: GET FormattedSearches
+  description: Retrieve a collection of 'FormattedSearches' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_FormattedSearches
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/FormattedSearches
+  x-resource-description: This entity enables you to manipulate 'FormattedSearches'. It allows to assign a formatted search
+    function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process,
+    to the field.
+post:
+  tags:
+  - FormattedSearches
+  summary: POST FormattedSearches
+  description: Create an instance of 'FormattedSearches' with the given payload of type 'FormattedSearche' in JSON format.
+  operationId: post_FormattedSearches
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Action:
+              type: string
+              example: bofsaValidValues
+            ByField:
+              type: string
+              example: tYES
+            ColumnID:
+              type: string
+              example: '-1'
+            FormID:
+              type: string
+              example: '139'
+            Index:
+              type: string
+              example: '24488'
+            ItemID:
+              type: string
+              example: '16'
+        example:
+          Action: bofsaValidValues
+          ByField: tYES
+          ColumnID: '-1'
+          FormID: '139'
+          Index: '24488'
+          ItemID: '16'
+  x-example-url: POST https://localhost:50000/b1s/v2/FormattedSearches
+  x-resource-description: This entity enables you to manipulate 'FormattedSearches'. It allows to assign a formatted search
+    function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process,
+    to the field.

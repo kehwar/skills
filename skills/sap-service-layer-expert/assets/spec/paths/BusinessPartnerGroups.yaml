@@ -1,0 +1,58 @@
+get:
+  tags:
+  - BusinessPartnerGroups
+  summary: GET BusinessPartnerGroups
+  description: Retrieve a collection of 'BusinessPartnerGroups' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_BusinessPartnerGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BusinessPartnerGroups
+  x-resource-description: This entity enables you to manipulate 'BusinessPartnerGroups'. It represents the setup of customer
+    and vendor groups. Used for classifying business partners according to different criteria, such as sector or size.
+post:
+  tags:
+  - BusinessPartnerGroups
+  summary: POST BusinessPartnerGroups
+  description: Create an instance of 'BusinessPartnerGroups' with the given payload of type 'BusinessPartnerGroup' in JSON
+    format.
+  operationId: post_BusinessPartnerGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: newGroup
+            Type:
+              type: string
+              example: bbpgt_CustomerGroup
+        example:
+          Name: newGroup
+          Type: bbpgt_CustomerGroup
+  x-example-url: POST https://localhost:50000/b1s/v2/BusinessPartnerGroups
+  x-resource-description: This entity enables you to manipulate 'BusinessPartnerGroups'. It represents the setup of customer
+    and vendor groups. Used for classifying business partners according to different criteria, such as sector or size.

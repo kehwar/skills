@@ -1,0 +1,77 @@
+get:
+  tags:
+  - TrackingNotes
+  summary: GET TrackingNotes
+  description: Retrieve a collection of 'TrackingNotes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_TrackingNotes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/TrackingNotes
+  x-resource-description: This entity enables you to manipulate 'TrackingNotes'.
+post:
+  tags:
+  - TrackingNotes
+  summary: POST TrackingNotes
+  description: Create an instance of 'TrackingNotes' with the given payload of type 'TrackingNote' in JSON format.
+  operationId: post_TrackingNotes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CCDNumber:
+              type: string
+              example: 18/2018/18
+            CountryOfOrigin:
+              type: string
+              example: XX
+            Date:
+              type: string
+              example: '2016-08-31'
+            TrackingNoteItemCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCCDNumber:
+                    type: integer
+                    example: 1
+                  ItemCode:
+                    type: string
+                    example: I01
+                  Quantity:
+                    type: string
+                    example: '100'
+        example:
+          CCDNumber: 18/2018/18
+          CountryOfOrigin: XX
+          Date: '2016-08-31'
+          TrackingNoteItemCollection:
+          - ItemCCDNumber: 1
+            ItemCode: I01
+            Quantity: '100'
+  x-example-url: POST https://localhost:50000/b1s/v2/TrackingNotes
+  x-resource-description: This entity enables you to manipulate 'TrackingNotes'.

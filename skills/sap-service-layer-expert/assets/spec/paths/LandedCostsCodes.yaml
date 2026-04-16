@@ -1,0 +1,63 @@
+get:
+  tags:
+  - LandedCostsCodes
+  summary: GET LandedCostsCodes
+  description: Retrieve a collection of 'LandedCostsCodes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_LandedCostsCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/LandedCostsCodes
+  x-resource-description: This entity enables you to manipulate 'LandedCostsCodes'. It defines various types of landed costs
+    (for example, insurance, customs) and their default distribution rules. When you record landed costs for deliveries, landed
+    costs are allocated to the goods according to the distribution rule of each type.
+post:
+  tags:
+  - LandedCostsCodes
+  summary: POST LandedCostsCodes
+  description: Create an instance of 'LandedCostsCodes' with the given payload of type 'LandedCostsCode' in JSON format.
+  operationId: post_LandedCostsCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AllocationBy:
+              type: string
+              example: ab_Quantity
+            Code:
+              type: string
+              example: '01'
+            Name:
+              type: string
+              example: Insurance
+        example:
+          AllocationBy: ab_Quantity
+          Code: '01'
+          Name: Insurance
+  x-example-url: POST https://localhost:50000/b1s/v2/LandedCostsCodes
+  x-resource-description: This entity enables you to manipulate 'LandedCostsCodes'. It defines various types of landed costs
+    (for example, insurance, customs) and their default distribution rules. When you record landed costs for deliveries, landed
+    costs are allocated to the goods according to the distribution rule of each type.

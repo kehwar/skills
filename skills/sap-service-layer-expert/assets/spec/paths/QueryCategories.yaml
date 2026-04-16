@@ -1,0 +1,51 @@
+get:
+  tags:
+  - QueryCategories
+  summary: GET QueryCategories
+  description: Retrieve a collection of 'QueryCategories' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_QueryCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/QueryCategories
+  x-resource-description: This entity enables you to manipulate 'QueryCategories'. It represents the predefined query categories.
+post:
+  tags:
+  - QueryCategories
+  summary: POST QueryCategories
+  description: Create an instance of 'QueryCategories' with the given payload of type 'QueryCategory' in JSON format.
+  operationId: post_QueryCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Query_Category_12
+        example:
+          Name: Query_Category_12
+  x-example-url: POST https://localhost:50000/b1s/v2/QueryCategories
+  x-resource-description: This entity enables you to manipulate 'QueryCategories'. It represents the predefined query categories.

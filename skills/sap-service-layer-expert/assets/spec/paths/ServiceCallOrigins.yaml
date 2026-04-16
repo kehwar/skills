@@ -1,0 +1,55 @@
+get:
+  tags:
+  - ServiceCallOrigins
+  summary: GET ServiceCallOrigins
+  description: Retrieve a collection of 'ServiceCallOrigins' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ServiceCallOrigins
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCallOrigins
+  x-resource-description: This entity enables you to manipulate 'ServiceCallOrigins'.
+post:
+  tags:
+  - ServiceCallOrigins
+  summary: POST ServiceCallOrigins
+  description: Create an instance of 'ServiceCallOrigins' with the given payload of type 'ServiceCallOrigin' in JSON format.
+  operationId: post_ServiceCallOrigins
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: E-test
+            Name:
+              type: string
+              example: E-test
+        example:
+          Description: E-test
+          Name: E-test
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceCallOrigins
+  x-resource-description: This entity enables you to manipulate 'ServiceCallOrigins'.

@@ -1,0 +1,75 @@
+get:
+  tags:
+  - MaterialRevaluation
+  summary: GET MaterialRevaluation
+  description: Retrieve a collection of 'MaterialRevaluation' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_MaterialRevaluation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/MaterialRevaluation
+  x-resource-description: This entity enables you to manipulate 'MaterialRevaluation'. It allows to update the items' price
+    (average price or standard price only), revaluate the stock, and create journal entries accordingly.
+post:
+  tags:
+  - MaterialRevaluation
+  summary: POST MaterialRevaluation
+  description: Create an instance of 'MaterialRevaluation' with the given payload of type 'MaterialRevaluation' in JSON format.
+  operationId: post_MaterialRevaluation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: Create new revaluation for item
+            DataSource:
+              type: string
+              example: I
+            MaterialRevaluationLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: item01
+                  Price:
+                    type: string
+                    example: '18805'
+            RevalType:
+              type: string
+              example: P
+        example:
+          Comments: Create new revaluation for item
+          DataSource: I
+          MaterialRevaluationLines:
+          - ItemCode: item01
+            Price: '18805'
+          RevalType: P
+  x-example-url: POST https://localhost:50000/b1s/v2/MaterialRevaluation
+  x-resource-description: This entity enables you to manipulate 'MaterialRevaluation'. It allows to update the items' price
+    (average price or standard price only), revaluate the stock, and create journal entries accordingly.

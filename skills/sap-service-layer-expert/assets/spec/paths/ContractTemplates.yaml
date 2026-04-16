@@ -1,0 +1,67 @@
+get:
+  tags:
+  - ContractTemplates
+  summary: GET ContractTemplates
+  description: Retrieve a collection of 'ContractTemplates' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ContractTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ContractTemplates
+  x-resource-description: This entity enables you to manipulate 'ContractTemplates'.
+post:
+  tags:
+  - ContractTemplates
+  summary: POST ContractTemplates
+  description: Create an instance of 'ContractTemplates' with the given payload of type 'ContractTemplate' in JSON format.
+  operationId: post_ContractTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ContractType:
+              type: string
+              example: ct_SerialNumber
+            Description:
+              type: string
+              example: for service
+            MondayEnabled:
+              type: string
+              example: tNO
+            Remarks:
+              type: string
+              example: Create new Contract Template
+            TemplateName:
+              type: string
+              example: newTemplate
+        example:
+          ContractType: ct_SerialNumber
+          Description: for service
+          MondayEnabled: tNO
+          Remarks: Create new Contract Template
+          TemplateName: newTemplate
+  x-example-url: POST https://localhost:50000/b1s/v2/ContractTemplates
+  x-resource-description: This entity enables you to manipulate 'ContractTemplates'.

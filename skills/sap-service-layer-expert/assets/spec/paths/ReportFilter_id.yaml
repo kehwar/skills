@@ -1,0 +1,92 @@
+get:
+  tags:
+  - ReportFilter
+  summary: GET ReportFilter(id)
+  description: Retrieve all or some selected properties from an instance of 'ReportFilter' with the given id.
+  operationId: get_ReportFilter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ReportFilter(1)
+  x-resource-description: This entity enables you to manipulate 'ReportFilter'.
+patch:
+  tags:
+  - ReportFilter
+  summary: PATCH ReportFilter(id)
+  description: Update an instance of 'ReportFilter' with the given payload of type 'TaxReportFilter' in JSON format and with
+    the specified id.
+  operationId: patch_ReportFilter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FromDate:
+              type: string
+              example: '2016-08-01'
+            ToDate:
+              type: string
+              example: '2016-08-31'
+        example:
+          FromDate: '2016-08-01'
+          ToDate: '2016-08-31'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ReportFilter(1)
+  x-resource-description: This entity enables you to manipulate 'ReportFilter'.
+delete:
+  tags:
+  - ReportFilter
+  summary: DELETE ReportFilter(id)
+  description: Delete an instance of 'ReportFilter' with the specified id.
+  operationId: delete_ReportFilter_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ReportFilter(1)
+  x-resource-description: This entity enables you to manipulate 'ReportFilter'.

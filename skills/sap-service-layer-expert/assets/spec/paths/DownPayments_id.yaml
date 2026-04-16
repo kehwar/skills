@@ -1,0 +1,91 @@
+get:
+  tags:
+  - DownPayments
+  summary: GET DownPayments(id)
+  description: Retrieve all or some selected properties from an instance of 'DownPayments' with the given id.
+  operationId: get_DownPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/DownPayments(123)
+  x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
+    a customer is committed and will follow through with a placed order.
+patch:
+  tags:
+  - DownPayments
+  summary: PATCH DownPayments(id)
+  description: Update an instance of 'DownPayments' with the given payload of type 'Document' in JSON format and with the
+    specified id.
+  operationId: patch_DownPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: new comments - modified by Service Layer
+        example:
+          Comments: new comments - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/DownPayments(123)
+  x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
+    a customer is committed and will follow through with a placed order.
+delete:
+  tags:
+  - DownPayments
+  summary: DELETE DownPayments(id)
+  description: Delete an instance of 'DownPayments' with the specified id.
+  operationId: delete_DownPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/DownPayments(123)
+  x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
+    a customer is committed and will follow through with a placed order.

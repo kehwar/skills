@@ -1,0 +1,65 @@
+get:
+  tags:
+  - PaymentTermsTypes
+  summary: GET PaymentTermsTypes
+  description: Retrieve a collection of 'PaymentTermsTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PaymentTermsTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PaymentTermsTypes
+  x-resource-description: This entity enables you to manipulate 'PaymentTermsTypes'. It represents the types of payment terms
+    in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors.
+post:
+  tags:
+  - PaymentTermsTypes
+  summary: POST PaymentTermsTypes
+  description: Create an instance of 'PaymentTermsTypes' with the given payload of type 'PaymentTermsType' in JSON format.
+  operationId: post_PaymentTermsTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CreditLimit:
+              type: string
+              example: '44'
+            GeneralDiscount:
+              type: string
+              example: '33'
+            LoadLimit:
+              type: string
+              example: '55'
+            PaymentTermsGroupName:
+              type: string
+              example: 10DTerm
+        example:
+          CreditLimit: '44'
+          GeneralDiscount: '33'
+          LoadLimit: '55'
+          PaymentTermsGroupName: 10DTerm
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentTermsTypes
+  x-resource-description: This entity enables you to manipulate 'PaymentTermsTypes'. It represents the types of payment terms
+    in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors.

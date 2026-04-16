@@ -1,0 +1,65 @@
+get:
+  tags:
+  - SpecialPrices
+  summary: GET SpecialPrices
+  description: Retrieve a collection of 'SpecialPrices' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SpecialPrices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SpecialPrices
+  x-resource-description: This entity enables you to manipulate 'SpecialPrices'. It represents a discount for a specific item
+    in a specific price list. The discount can apply to a specific business partner or for all business partners. For a specific
+    business partner, the item and business partner must be unique; for all business partners, the item and price list must
+    be unique.
+post:
+  tags:
+  - SpecialPrices
+  summary: POST SpecialPrices
+  description: Create an instance of 'SpecialPrices' with the given payload of type 'SpecialPrice' in JSON format.
+  operationId: post_SpecialPrices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DiscountPercent:
+              type: integer
+              example: 10
+            ItemCode:
+              type: string
+              example: i001
+        example:
+          CardCode: c001
+          DiscountPercent: 10
+          ItemCode: i001
+  x-example-url: POST https://localhost:50000/b1s/v2/SpecialPrices
+  x-resource-description: This entity enables you to manipulate 'SpecialPrices'. It represents a discount for a specific item
+    in a specific price list. The discount can apply to a specific business partner or for all business partners. For a specific
+    business partner, the item and business partner must be unique; for all business partners, the item and price list must
+    be unique.

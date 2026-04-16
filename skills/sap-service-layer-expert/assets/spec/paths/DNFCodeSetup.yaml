@@ -1,0 +1,67 @@
+get:
+  tags:
+  - DNFCodeSetup
+  summary: GET DNFCodeSetup
+  description: Retrieve a collection of 'DNFCodeSetup' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DNFCodeSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DNFCodeSetup
+  x-resource-description: This entity enables you to manipulate 'DNFCodeSetup'.
+post:
+  tags:
+  - DNFCodeSetup
+  summary: POST DNFCodeSetup
+  description: Create an instance of 'DNFCodeSetup' with the given payload of type 'DNFCodeSetup' in JSON format.
+  operationId: post_DNFCodeSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            DNFCode:
+              type: string
+              example: '1113'
+            Factor:
+              type: integer
+              example: 15
+            NCMCode:
+              type: integer
+              example: 9774
+            UoM:
+              type: string
+              example: '11'
+        example:
+          AbsEntry: 1
+          DNFCode: '1113'
+          Factor: 15
+          NCMCode: 9774
+          UoM: '11'
+  x-example-url: POST https://localhost:50000/b1s/v2/DNFCodeSetup
+  x-resource-description: This entity enables you to manipulate 'DNFCodeSetup'.

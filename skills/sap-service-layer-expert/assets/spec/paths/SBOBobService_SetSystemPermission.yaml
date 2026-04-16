@@ -1,0 +1,40 @@
+post:
+  tags:
+  - SBOBobService
+  summary: POST SBOBobService_SetSystemPermission
+  description: Invoke the method 'SetSystemPermission' on this service by specifying the payload 'UserCode,PermissionID and
+    Permission' in the JSON format.
+  operationId: post_SBOBobService_SetSystemPermission
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Permission:
+              type: integer
+              example: 2
+            PermissionID:
+              type: string
+              example: '57'
+            UserCode:
+              type: string
+              example: andy
+        example:
+          Permission: 2
+          PermissionID: '57'
+          UserCode: andy
+  x-example-url: POST https://localhost:50000/b1s/v2/SBOBobService_SetSystemPermission
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SBOBobService'.

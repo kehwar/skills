@@ -1,0 +1,84 @@
+get:
+  tags:
+  - DeductionTaxHierarchies
+  summary: GET DeductionTaxHierarchies
+  description: Retrieve a collection of 'DeductionTaxHierarchies' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_DeductionTaxHierarchies
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DeductionTaxHierarchies
+  x-resource-description: This entity enables you to manipulate 'DeductionTaxHierarchies'. It defines taxation levels to withhold
+    from payments to vendors.
+post:
+  tags:
+  - DeductionTaxHierarchies
+  summary: POST DeductionTaxHierarchies
+  description: Create an instance of 'DeductionTaxHierarchies' with the given payload of type 'DeductionTaxHierarchy' in JSON
+    format.
+  operationId: post_DeductionTaxHierarchies
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BPCode:
+              type: string
+              example: v001
+            DeductionTaxHierarchies_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  DeductionPercent:
+                    type: string
+                    example: '12'
+                  MaximumTotal:
+                    type: string
+                    example: '10000'
+            HierarchyCode:
+              type: string
+              example: G01
+            HierarchyName:
+              type: string
+              example: new hierarchy group
+            ValidFrom:
+              type: string
+              example: '2014-01-01'
+            ValidUntil:
+              type: string
+              example: '2014-12-31'
+        example:
+          BPCode: v001
+          DeductionTaxHierarchies_Lines:
+          - DeductionPercent: '12'
+            MaximumTotal: '10000'
+          HierarchyCode: G01
+          HierarchyName: new hierarchy group
+          ValidFrom: '2014-01-01'
+          ValidUntil: '2014-12-31'
+  x-example-url: POST https://localhost:50000/b1s/v2/DeductionTaxHierarchies
+  x-resource-description: This entity enables you to manipulate 'DeductionTaxHierarchies'. It defines taxation levels to withhold
+    from payments to vendors.

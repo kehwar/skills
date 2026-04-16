@@ -1,0 +1,2311 @@
+openapi: 3.0.3
+info:
+  title: SAP Business One Service Layer API
+  version: '10.0'
+  description: 'OData v4 REST API exposed by SAP Business One Service Layer. Base URL: https://<host>:50000/b1s/v2'
+servers:
+- url: https://localhost:50000/b1s/v2
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: B1SESSION
+      description: Session cookie obtained from POST /Login
+security:
+- cookieAuth: []
+paths:
+  /AccountCategoryService_GetCategoryList:
+    $ref: paths/AccountCategoryService_GetCategoryList.yaml
+  /AccountsService_CreateOpenBalance:
+    $ref: paths/AccountsService_CreateOpenBalance.yaml
+  /AccrualTypesService_GetAccrualTypeList:
+    $ref: paths/AccrualTypesService_GetAccrualTypeList.yaml
+  /ActivitiesService_GetActivityList:
+    $ref: paths/ActivitiesService_GetActivityList.yaml
+  /ActivitiesService_GetSingleInstanceFromSeries:
+    $ref: paths/ActivitiesService_GetSingleInstanceFromSeries.yaml
+  /ActivitiesService_UpdateSingleInstanceInSeries:
+    $ref: paths/ActivitiesService_UpdateSingleInstanceInSeries.yaml
+  /ActivitiesService_DeleteSingleInstanceFromSeries:
+    $ref: paths/ActivitiesService_DeleteSingleInstanceFromSeries.yaml
+  /ActivitiesService_GetTopNActivityInstances:
+    $ref: paths/ActivitiesService_GetTopNActivityInstances.yaml
+  /ActivityRecipientListsService_GetList:
+    $ref: paths/ActivityRecipientListsService_GetList.yaml
+  /AddressService_GetFullAddress:
+    $ref: paths/AddressService_GetFullAddress.yaml
+  /AlternativeItemsService_AddItem:
+    $ref: paths/AlternativeItemsService_AddItem.yaml
+  /AlternativeItemsService_UpdateItem:
+    $ref: paths/AlternativeItemsService_UpdateItem.yaml
+  /AlternativeItemsService_DeleteItem:
+    $ref: paths/AlternativeItemsService_DeleteItem.yaml
+  /AlternativeItemsService_GetItem:
+    $ref: paths/AlternativeItemsService_GetItem.yaml
+  /ApprovalRequestsService_GetApprovalRequestList:
+    $ref: paths/ApprovalRequestsService_GetApprovalRequestList.yaml
+  /ApprovalRequestsService_GetOpenApprovalRequestList:
+    $ref: paths/ApprovalRequestsService_GetOpenApprovalRequestList.yaml
+  /ApprovalRequestsService_GetAllApprovalRequestsList:
+    $ref: paths/ApprovalRequestsService_GetAllApprovalRequestsList.yaml
+  /ApprovalStagesService_GetApprovalStageList:
+    $ref: paths/ApprovalStagesService_GetApprovalStageList.yaml
+  /ApprovalTemplatesService_GetApprovalTemplateList:
+    $ref: paths/ApprovalTemplatesService_GetApprovalTemplateList.yaml
+  /AssetCapitalizationCreditMemoService_Cancel:
+    $ref: paths/AssetCapitalizationCreditMemoService_Cancel.yaml
+  /AssetCapitalizationCreditMemoService_GetList:
+    $ref: paths/AssetCapitalizationCreditMemoService_GetList.yaml
+  /AssetCapitalizationService_Cancel:
+    $ref: paths/AssetCapitalizationService_Cancel.yaml
+  /AssetCapitalizationService_GetList:
+    $ref: paths/AssetCapitalizationService_GetList.yaml
+  /AssetClassesService_GetList:
+    $ref: paths/AssetClassesService_GetList.yaml
+  /AssetDepreciationGroupsService_GetList:
+    $ref: paths/AssetDepreciationGroupsService_GetList.yaml
+  /AssetGroupsService_GetList:
+    $ref: paths/AssetGroupsService_GetList.yaml
+  /AssetManualDepreciationService_Cancel:
+    $ref: paths/AssetManualDepreciationService_Cancel.yaml
+  /AssetManualDepreciationService_GetList:
+    $ref: paths/AssetManualDepreciationService_GetList.yaml
+  /AssetRetirementService_Cancel:
+    $ref: paths/AssetRetirementService_Cancel.yaml
+  /AssetRetirementService_GetList:
+    $ref: paths/AssetRetirementService_GetList.yaml
+  /AssetTransferService_Cancel:
+    $ref: paths/AssetTransferService_Cancel.yaml
+  /AssetTransferService_GetList:
+    $ref: paths/AssetTransferService_GetList.yaml
+  /AttributeGroupsService_GetList:
+    $ref: paths/AttributeGroupsService_GetList.yaml
+  /BankChargesAllocationCodesService_GetBankChargesAllocationCodeList:
+    $ref: paths/BankChargesAllocationCodesService_GetBankChargesAllocationCodeList.yaml
+  /BankStatementsService_GetBankStatementList:
+    $ref: paths/BankStatementsService_GetBankStatementList.yaml
+  /BarCodesService_GetList:
+    $ref: paths/BarCodesService_GetList.yaml
+  /BEMReplicationPeriodService_GetList:
+    $ref: paths/BEMReplicationPeriodService_GetList.yaml
+  /BinLocationAttributesService_GetList:
+    $ref: paths/BinLocationAttributesService_GetList.yaml
+  /BinLocationFieldsService_GetList:
+    $ref: paths/BinLocationFieldsService_GetList.yaml
+  /BinLocationsService_GetList:
+    $ref: paths/BinLocationsService_GetList.yaml
+  /BlanketAgreementsService_GetBlanketAgreementList:
+    $ref: paths/BlanketAgreementsService_GetBlanketAgreementList.yaml
+  /BOEDocumentTypesService_GetBOEDocumentTypeList:
+    $ref: paths/BOEDocumentTypesService_GetBOEDocumentTypeList.yaml
+  /BOEInstructionsService_GetBOEInstructionList:
+    $ref: paths/BOEInstructionsService_GetBOEInstructionList.yaml
+  /BOELinesService_GetBOELine:
+    $ref: paths/BOELinesService_GetBOELine.yaml
+  /BOEPortfoliosService_GetBOEPortfolioList:
+    $ref: paths/BOEPortfoliosService_GetBOEPortfolioList.yaml
+  /BPOpeningBalanceService_CreateOpenBalance:
+    $ref: paths/BPOpeningBalanceService_CreateOpenBalance.yaml
+  /BranchesService_GetBranchList:
+    $ref: paths/BranchesService_GetBranchList.yaml
+  /BrazilBeverageIndexersService_GetList:
+    $ref: paths/BrazilBeverageIndexersService_GetList.yaml
+  /BrazilFuelIndexersService_GetList:
+    $ref: paths/BrazilFuelIndexersService_GetList.yaml
+  /BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList:
+    $ref: paths/BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList.yaml
+  /BusinessPartnersService_CreateOpenBalance:
+    $ref: paths/BusinessPartnersService_CreateOpenBalance.yaml
+  /CampaignResponseTypeService_GetResponseTypeList:
+    $ref: paths/CampaignResponseTypeService_GetResponseTypeList.yaml
+  /CampaignsService_GetList:
+    $ref: paths/CampaignsService_GetList.yaml
+  /CashDiscountsService_GetCashDiscountList:
+    $ref: paths/CashDiscountsService_GetCashDiscountList.yaml
+  /CashFlowLineItemsService_GetCashFlowLineItemList:
+    $ref: paths/CashFlowLineItemsService_GetCashFlowLineItemList.yaml
+  /CertificateSeriesService_GetCertificateSeriesList:
+    $ref: paths/CertificateSeriesService_GetCertificateSeriesList.yaml
+  /ChangeLogsService_GetChangeLog:
+    $ref: paths/ChangeLogsService_GetChangeLog.yaml
+  /ChangeLogsService_GetChangeLogDifferences:
+    $ref: paths/ChangeLogsService_GetChangeLogDifferences.yaml
+  /CheckLinesService_GetCheckLine:
+    $ref: paths/CheckLinesService_GetCheckLine.yaml
+  /CheckLinesService_GetValidCheckLineList:
+    $ref: paths/CheckLinesService_GetValidCheckLineList.yaml
+  /CockpitsService_GetCockpitList:
+    $ref: paths/CockpitsService_GetCockpitList.yaml
+  /CockpitsService_PublishCockpit:
+    $ref: paths/CockpitsService_PublishCockpit.yaml
+  /CockpitsService_GetUserCockpitList:
+    $ref: paths/CockpitsService_GetUserCockpitList.yaml
+  /CockpitsService_GetTemplateCockpitList:
+    $ref: paths/CockpitsService_GetTemplateCockpitList.yaml
+  /CompanyService_GetCompanyInfo:
+    $ref: paths/CompanyService_GetCompanyInfo.yaml
+  /CompanyService_UpdateCompanyInfo:
+    $ref: paths/CompanyService_UpdateCompanyInfo.yaml
+  /CompanyService_GetAdminInfo:
+    $ref: paths/CompanyService_GetAdminInfo.yaml
+  /CompanyService_UpdateAdminInfo:
+    $ref: paths/CompanyService_UpdateAdminInfo.yaml
+  /CompanyService_CreatePeriod:
+    $ref: paths/CompanyService_CreatePeriod.yaml
+  /CompanyService_GetPeriods:
+    $ref: paths/CompanyService_GetPeriods.yaml
+  /CompanyService_GetPeriod:
+    $ref: paths/CompanyService_GetPeriod.yaml
+  /CompanyService_UpdatePeriod:
+    $ref: paths/CompanyService_UpdatePeriod.yaml
+  /CompanyService_GetFinancePeriods:
+    $ref: paths/CompanyService_GetFinancePeriods.yaml
+  /CompanyService_GetFinancePeriod:
+    $ref: paths/CompanyService_GetFinancePeriod.yaml
+  /CompanyService_UpdateFinancePeriod:
+    $ref: paths/CompanyService_UpdateFinancePeriod.yaml
+  /CompanyService_RemoveFinancePeriod:
+    $ref: paths/CompanyService_RemoveFinancePeriod.yaml
+  /CompanyService_CreatePeriodWithFinanceParams:
+    $ref: paths/CompanyService_CreatePeriodWithFinanceParams.yaml
+  /CompanyService_GetFeaturesStatus:
+    $ref: paths/CompanyService_GetFeaturesStatus.yaml
+  /CompanyService_GetPathAdmin:
+    $ref: paths/CompanyService_GetPathAdmin.yaml
+  /CompanyService_UpdatePathAdmin:
+    $ref: paths/CompanyService_UpdatePathAdmin.yaml
+  /CompanyService_RoundDecimal:
+    $ref: paths/CompanyService_RoundDecimal.yaml
+  /CompanyService_GetItemPrice:
+    $ref: paths/CompanyService_GetItemPrice.yaml
+  /CompanyService_GetAdvancedGLAccount:
+    $ref: paths/CompanyService_GetAdvancedGLAccount.yaml
+  /CompanyService_LogLoginAction:
+    $ref: paths/CompanyService_LogLoginAction.yaml
+  /CompanyService_LogLogoffAction:
+    $ref: paths/CompanyService_LogLogoffAction.yaml
+  /CorrectionInvoiceReversalService_GetApprovalTemplates:
+    $ref: paths/CorrectionInvoiceReversalService_GetApprovalTemplates.yaml
+  /CorrectionInvoiceReversalService_HandleApprovalRequest:
+    $ref: paths/CorrectionInvoiceReversalService_HandleApprovalRequest.yaml
+  /CorrectionInvoiceService_GetApprovalTemplates:
+    $ref: paths/CorrectionInvoiceService_GetApprovalTemplates.yaml
+  /CorrectionInvoiceService_HandleApprovalRequest:
+    $ref: paths/CorrectionInvoiceService_HandleApprovalRequest.yaml
+  /CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates:
+    $ref: paths/CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates.yaml
+  /CorrectionPurchaseInvoiceReversalService_HandleApprovalRequest:
+    $ref: paths/CorrectionPurchaseInvoiceReversalService_HandleApprovalRequest.yaml
+  /CorrectionPurchaseInvoiceService_GetApprovalTemplates:
+    $ref: paths/CorrectionPurchaseInvoiceService_GetApprovalTemplates.yaml
+  /CorrectionPurchaseInvoiceService_HandleApprovalRequest:
+    $ref: paths/CorrectionPurchaseInvoiceService_HandleApprovalRequest.yaml
+  /CostCenterTypesService_GetCostCenterTypeList:
+    $ref: paths/CostCenterTypesService_GetCostCenterTypeList.yaml
+  /CostElementService_GetCostElementList:
+    $ref: paths/CostElementService_GetCostElementList.yaml
+  /CountiesService_GetCountyList:
+    $ref: paths/CountiesService_GetCountyList.yaml
+  /CountriesService_GetCountryList:
+    $ref: paths/CountriesService_GetCountryList.yaml
+  /CreditLinesService_GetCreditLine:
+    $ref: paths/CreditLinesService_GetCreditLine.yaml
+  /CreditLinesService_GetValidCreditLineList:
+    $ref: paths/CreditLinesService_GetValidCreditLineList.yaml
+  /CreditNotesService_GetApprovalTemplates:
+    $ref: paths/CreditNotesService_GetApprovalTemplates.yaml
+  /CreditNotesService_HandleApprovalRequest:
+    $ref: paths/CreditNotesService_HandleApprovalRequest.yaml
+  /CreditNotesService_RequestApproveCancellation:
+    $ref: paths/CreditNotesService_RequestApproveCancellation.yaml
+  /CreditNotesService_Cancel2:
+    $ref: paths/CreditNotesService_Cancel2.yaml
+  /CycleCountDeterminationsService_GetList:
+    $ref: paths/CycleCountDeterminationsService_GetList.yaml
+  /DashboardPackagesService_ImportDashboardPackage:
+    $ref: paths/DashboardPackagesService_ImportDashboardPackage.yaml
+  /DeductibleTaxService_GetList:
+    $ref: paths/DeductibleTaxService_GetList.yaml
+  /DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList:
+    $ref: paths/DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList.yaml
+  /DeliveryNotesService_GetApprovalTemplates:
+    $ref: paths/DeliveryNotesService_GetApprovalTemplates.yaml
+  /DeliveryNotesService_HandleApprovalRequest:
+    $ref: paths/DeliveryNotesService_HandleApprovalRequest.yaml
+  /DeliveryNotesService_Cancel2:
+    $ref: paths/DeliveryNotesService_Cancel2.yaml
+  /DepartmentsService_GetDepartmentList:
+    $ref: paths/DepartmentsService_GetDepartmentList.yaml
+  /DepositsService_GetDepositList:
+    $ref: paths/DepositsService_GetDepositList.yaml
+  /DepositsService_CancelCheckRow:
+    $ref: paths/DepositsService_CancelCheckRow.yaml
+  /DepositsService_CancelCheckRowbyCurrentSystemDate:
+    $ref: paths/DepositsService_CancelCheckRowbyCurrentSystemDate.yaml
+  /DepreciationAreasService_GetList:
+    $ref: paths/DepreciationAreasService_GetList.yaml
+  /DepreciationTypePoolsService_GetList:
+    $ref: paths/DepreciationTypePoolsService_GetList.yaml
+  /DepreciationTypesService_GetList:
+    $ref: paths/DepreciationTypesService_GetList.yaml
+  /DeterminationCriteriasService_GetList:
+    $ref: paths/DeterminationCriteriasService_GetList.yaml
+  /DimensionsService_GetDimensionList:
+    $ref: paths/DimensionsService_GetDimensionList.yaml
+  /DistributionRulesService_GetDistributionRuleList:
+    $ref: paths/DistributionRulesService_GetDistributionRuleList.yaml
+  /DNFCodeSetupService_GetDNFCodeSetupList:
+    $ref: paths/DNFCodeSetupService_GetDNFCodeSetupList.yaml
+  /DownPaymentsService_GetApprovalTemplates:
+    $ref: paths/DownPaymentsService_GetApprovalTemplates.yaml
+  /DownPaymentsService_HandleApprovalRequest:
+    $ref: paths/DownPaymentsService_HandleApprovalRequest.yaml
+  /DraftsService_GetApprovalTemplates:
+    $ref: paths/DraftsService_GetApprovalTemplates.yaml
+  /DraftsService_HandleApprovalRequest:
+    $ref: paths/DraftsService_HandleApprovalRequest.yaml
+  /DraftsService_SaveDraftToDocument:
+    $ref: paths/DraftsService_SaveDraftToDocument.yaml
+  /DunningTermsService_GetDunningTermList:
+    $ref: paths/DunningTermsService_GetDunningTermList.yaml
+  /ElectronicCommunicationActionService_GetAction:
+    $ref: paths/ElectronicCommunicationActionService_GetAction.yaml
+  /ElectronicCommunicationActionService_UpdateAction:
+    $ref: paths/ElectronicCommunicationActionService_UpdateAction.yaml
+  /ElectronicCommunicationActionService_ConfirmSuccessOfCommunication:
+    $ref: paths/ElectronicCommunicationActionService_ConfirmSuccessOfCommunication.yaml
+  /ElectronicCommunicationActionService_ReportErrorAndContinue:
+    $ref: paths/ElectronicCommunicationActionService_ReportErrorAndContinue.yaml
+  /ElectronicCommunicationActionService_ReportErrorAndStop:
+    $ref: paths/ElectronicCommunicationActionService_ReportErrorAndStop.yaml
+  /ElectronicCommunicationActionsService_GetEcmAction:
+    $ref: paths/ElectronicCommunicationActionsService_GetEcmAction.yaml
+  /ElectronicCommunicationActionsService_AddEcmAction:
+    $ref: paths/ElectronicCommunicationActionsService_AddEcmAction.yaml
+  /ElectronicCommunicationActionsService_UpdateEcmAction:
+    $ref: paths/ElectronicCommunicationActionsService_UpdateEcmAction.yaml
+  /ElectronicCommunicationActionsService_DeleteEcmAction:
+    $ref: paths/ElectronicCommunicationActionsService_DeleteEcmAction.yaml
+  /ElectronicCommunicationActionsService_GetEcmActionByDoc:
+    $ref: paths/ElectronicCommunicationActionsService_GetEcmActionByDoc.yaml
+  /ElectronicCommunicationActionsService_GetEcmActionLogList:
+    $ref: paths/ElectronicCommunicationActionsService_GetEcmActionLogList.yaml
+  /ElectronicCommunicationActionsService_GetEcmActionLog:
+    $ref: paths/ElectronicCommunicationActionsService_GetEcmActionLog.yaml
+  /ElectronicCommunicationActionsService_AddEcmActionLog:
+    $ref: paths/ElectronicCommunicationActionsService_AddEcmActionLog.yaml
+  /ElectronicFileFormatsService_GetElectronicFileFormatList:
+    $ref: paths/ElectronicFileFormatsService_GetElectronicFileFormatList.yaml
+  /EmailGroupsService_GetList:
+    $ref: paths/EmailGroupsService_GetList.yaml
+  /EmployeeIDTypeService_GetList:
+    $ref: paths/EmployeeIDTypeService_GetList.yaml
+  /EmployeePositionService_GetList:
+    $ref: paths/EmployeePositionService_GetList.yaml
+  /EmployeeRolesSetupService_GetEmployeeRoleSetupList:
+    $ref: paths/EmployeeRolesSetupService_GetEmployeeRoleSetupList.yaml
+  /EmployeeStatusService_GetList:
+    $ref: paths/EmployeeStatusService_GetList.yaml
+  /EmployeeTransfersService_GetEmployeeTransferList:
+    $ref: paths/EmployeeTransfersService_GetEmployeeTransferList.yaml
+  /EmploymentCategoryService_GetEmploymentCategoryList:
+    $ref: paths/EmploymentCategoryService_GetEmploymentCategoryList.yaml
+  /EnhancedDiscountGroupsService_GetList:
+    $ref: paths/EnhancedDiscountGroupsService_GetList.yaml
+  /ExceptionalEventService_GetExceptionalEventList:
+    $ref: paths/ExceptionalEventService_GetExceptionalEventList.yaml
+  /ExtendedTranslationsService_GetExtendedTranslationList:
+    $ref: paths/ExtendedTranslationsService_GetExtendedTranslationList.yaml
+  /ExternalCallsService_SendCall:
+    $ref: paths/ExternalCallsService_SendCall.yaml
+  /ExternalCallsService_UpdateCall:
+    $ref: paths/ExternalCallsService_UpdateCall.yaml
+  /ExternalCallsService_GetCall:
+    $ref: paths/ExternalCallsService_GetCall.yaml
+  /ExternalReconciliationsService_Reconcile:
+    $ref: paths/ExternalReconciliationsService_Reconcile.yaml
+  /ExternalReconciliationsService_GetReconciliation:
+    $ref: paths/ExternalReconciliationsService_GetReconciliation.yaml
+  /ExternalReconciliationsService_CancelReconciliation:
+    $ref: paths/ExternalReconciliationsService_CancelReconciliation.yaml
+  /ExternalReconciliationsService_GetReconciliationList:
+    $ref: paths/ExternalReconciliationsService_GetReconciliationList.yaml
+  /FAAccountDeterminationsService_GetList:
+    $ref: paths/FAAccountDeterminationsService_GetList.yaml
+  /FinancialYearsService_GetFinancialYearList:
+    $ref: paths/FinancialYearsService_GetFinancialYearList.yaml
+  /FiscalPrinterService_GetFiscalPrinterList:
+    $ref: paths/FiscalPrinterService_GetFiscalPrinterList.yaml
+  /FixedAssetItemsService_GetAssetValuesList:
+    $ref: paths/FixedAssetItemsService_GetAssetValuesList.yaml
+  /FixedAssetItemsService_GetAssetEndBalance:
+    $ref: paths/FixedAssetItemsService_GetAssetEndBalance.yaml
+  /FixedAssetItemsService_UpdateAssetEndBalance:
+    $ref: paths/FixedAssetItemsService_UpdateAssetEndBalance.yaml
+  /GLAccountAdvancedRulesService_GetList:
+    $ref: paths/GLAccountAdvancedRulesService_GetList.yaml
+  /GoodsReturnRequestService_GetApprovalTemplates:
+    $ref: paths/GoodsReturnRequestService_GetApprovalTemplates.yaml
+  /GoodsReturnRequestService_Preview:
+    $ref: paths/GoodsReturnRequestService_Preview.yaml
+  /GoodsReturnRequestService_HandleApprovalRequest:
+    $ref: paths/GoodsReturnRequestService_HandleApprovalRequest.yaml
+  /GovPayCodesService_GetList:
+    $ref: paths/GovPayCodesService_GetList.yaml
+  /GTIsService_Import:
+    $ref: paths/GTIsService_Import.yaml
+  /IndiaHsnService_GetList:
+    $ref: paths/IndiaHsnService_GetList.yaml
+  /IntegrationPackagesConfigureService_GetList:
+    $ref: paths/IntegrationPackagesConfigureService_GetList.yaml
+  /InternalReconciliationsService_GetOpenTransactions:
+    $ref: paths/InternalReconciliationsService_GetOpenTransactions.yaml
+  /InternalReconciliationsService_Cancel:
+    $ref: paths/InternalReconciliationsService_Cancel.yaml
+  /InternalReconciliationsService_RequestApproveCancellation:
+    $ref: paths/InternalReconciliationsService_RequestApproveCancellation.yaml
+  /IntrastatConfigurationService_GetList:
+    $ref: paths/IntrastatConfigurationService_GetList.yaml
+  /InventoryCountingsService_GetList:
+    $ref: paths/InventoryCountingsService_GetList.yaml
+  /InventoryGenEntryService_GetApprovalTemplates:
+    $ref: paths/InventoryGenEntryService_GetApprovalTemplates.yaml
+  /InventoryGenEntryService_HandleApprovalRequest:
+    $ref: paths/InventoryGenEntryService_HandleApprovalRequest.yaml
+  /InventoryGenExitService_GetApprovalTemplates:
+    $ref: paths/InventoryGenExitService_GetApprovalTemplates.yaml
+  /InventoryGenExitService_HandleApprovalRequest:
+    $ref: paths/InventoryGenExitService_HandleApprovalRequest.yaml
+  /InventoryOpeningBalancesService_GetList:
+    $ref: paths/InventoryOpeningBalancesService_GetList.yaml
+  /InventoryPostingsService_GetList:
+    $ref: paths/InventoryPostingsService_GetList.yaml
+  /InventoryPostingsService_SetCopyOption:
+    $ref: paths/InventoryPostingsService_SetCopyOption.yaml
+  /InventoryTransferRequestsService_GetApprovalTemplates:
+    $ref: paths/InventoryTransferRequestsService_GetApprovalTemplates.yaml
+  /InventoryTransferRequestsService_HandleApprovalRequest:
+    $ref: paths/InventoryTransferRequestsService_HandleApprovalRequest.yaml
+  /InvoicesService_GetApprovalTemplates:
+    $ref: paths/InvoicesService_GetApprovalTemplates.yaml
+  /InvoicesService_HandleApprovalRequest:
+    $ref: paths/InvoicesService_HandleApprovalRequest.yaml
+  /InvoicesService_RequestApproveCancellation:
+    $ref: paths/InvoicesService_RequestApproveCancellation.yaml
+  /InvoicesService_Cancel2:
+    $ref: paths/InvoicesService_Cancel2.yaml
+  /JournalEntryDocumentTypeService_GetList:
+    $ref: paths/JournalEntryDocumentTypeService_GetList.yaml
+  /JournalVouchersService_Add:
+    $ref: paths/JournalVouchersService_Add.yaml
+  /KPIsService_GetList:
+    $ref: paths/KPIsService_GetList.yaml
+  /LandedCostsService_GetLandedCostList:
+    $ref: paths/LandedCostsService_GetLandedCostList.yaml
+  /LicenseService_GetInstallationNumber:
+    $ref: paths/LicenseService_GetInstallationNumber.yaml
+  /Login:
+    $ref: paths/Login.yaml
+  /Logout:
+    $ref: paths/Logout.yaml
+  /MaterialGroupsService_GetMaterialGroupList:
+    $ref: paths/MaterialGroupsService_GetMaterialGroupList.yaml
+  /MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO:
+    $ref: paths/MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO.yaml
+  /MaterialRevaluationSNBService_GetList:
+    $ref: paths/MaterialRevaluationSNBService_GetList.yaml
+  /MessagesService_GetInbox:
+    $ref: paths/MessagesService_GetInbox.yaml
+  /MessagesService_GetOutbox:
+    $ref: paths/MessagesService_GetOutbox.yaml
+  /MessagesService_GetSentMessages:
+    $ref: paths/MessagesService_GetSentMessages.yaml
+  /MobileAddOnSettingService_GetMobileAddOnSettingList:
+    $ref: paths/MobileAddOnSettingService_GetMobileAddOnSettingList.yaml
+  /MobileAppService_GetCurrentServerDateTime:
+    $ref: paths/MobileAppService_GetCurrentServerDateTime.yaml
+  /MobileAppService_GetDppChangeParams:
+    $ref: paths/MobileAppService_GetDppChangeParams.yaml
+  /MobileAppService_GetTechnicianSchedulings:
+    $ref: paths/MobileAppService_GetTechnicianSchedulings.yaml
+  /MobileAppService_GetEmployeeFullNames:
+    $ref: paths/MobileAppService_GetEmployeeFullNames.yaml
+  /MobileAppService_GetTechnicianSettings:
+    $ref: paths/MobileAppService_GetTechnicianSettings.yaml
+  /MobileAppService_UpdateTechnicianSettings:
+    $ref: paths/MobileAppService_UpdateTechnicianSettings.yaml
+  /MobileAppService_GetTechnicianSettingsGroup:
+    $ref: paths/MobileAppService_GetTechnicianSettingsGroup.yaml
+  /MobileAppService_UpdateTechnicianSettingsGroup:
+    $ref: paths/MobileAppService_UpdateTechnicianSettingsGroup.yaml
+  /MobileAppService_GetSalesAppSetting:
+    $ref: paths/MobileAppService_GetSalesAppSetting.yaml
+  /MobileAppService_UpdateSalesAppSetting:
+    $ref: paths/MobileAppService_UpdateSalesAppSetting.yaml
+  /MobileAppService_GetServiceAppReportContent:
+    $ref: paths/MobileAppService_GetServiceAppReportContent.yaml
+  /MobileAppService_UpdateServiceAppReportContent:
+    $ref: paths/MobileAppService_UpdateServiceAppReportContent.yaml
+  /MobileAppService_GetServiceAppReport:
+    $ref: paths/MobileAppService_GetServiceAppReport.yaml
+  /MobileAppService_UpdateServiceAppReport:
+    $ref: paths/MobileAppService_UpdateServiceAppReport.yaml
+  /NatureOfAssesseesService_GetNatureOfAssesseeList:
+    $ref: paths/NatureOfAssesseesService_GetNatureOfAssesseeList.yaml
+  /NCMCodesSetupService_GetNCMCodeSetupList:
+    $ref: paths/NCMCodesSetupService_GetNCMCodeSetupList.yaml
+  /NFModelsService_GetList:
+    $ref: paths/NFModelsService_GetList.yaml
+  /NFTaxCategoriesService_GetList:
+    $ref: paths/NFTaxCategoriesService_GetList.yaml
+  /OccurrenceCodesService_GetList:
+    $ref: paths/OccurrenceCodesService_GetList.yaml
+  /OrdersService_GetApprovalTemplates:
+    $ref: paths/OrdersService_GetApprovalTemplates.yaml
+  /OrdersService_Preview:
+    $ref: paths/OrdersService_Preview.yaml
+  /OrdersService_HandleApprovalRequest:
+    $ref: paths/OrdersService_HandleApprovalRequest.yaml
+  /PartnersSetupsService_GetList:
+    $ref: paths/PartnersSetupsService_GetList.yaml
+  /PaymentBlocksService_GetPaymentBlockList:
+    $ref: paths/PaymentBlocksService_GetPaymentBlockList.yaml
+  /PaymentCalculationService_GetPaymentAmount:
+    $ref: paths/PaymentCalculationService_GetPaymentAmount.yaml
+  /PaymentReasonCodeService_GetPaymentReasonCodeList:
+    $ref: paths/PaymentReasonCodeService_GetPaymentReasonCodeList.yaml
+  /PaymentTermsTypesService_UpdateWithBPs:
+    $ref: paths/PaymentTermsTypesService_UpdateWithBPs.yaml
+  /PickListsService_Close:
+    $ref: paths/PickListsService_Close.yaml
+  /PickListsService_UpdateReleasedAllocation:
+    $ref: paths/PickListsService_UpdateReleasedAllocation.yaml
+  /PredefinedTextsService_GetPredefinedTextList:
+    $ref: paths/PredefinedTextsService_GetPredefinedTextList.yaml
+  /ProfitCentersService_GetProfitCenterList:
+    $ref: paths/ProfitCentersService_GetProfitCenterList.yaml
+  /ProjectManagementConfigurationService_GetSubprojectTypes:
+    $ref: paths/ProjectManagementConfigurationService_GetSubprojectTypes.yaml
+  /ProjectManagementConfigurationService_AddSubprojectTypes:
+    $ref: paths/ProjectManagementConfigurationService_AddSubprojectTypes.yaml
+  /ProjectManagementConfigurationService_UpdateSubprojectTypes:
+    $ref: paths/ProjectManagementConfigurationService_UpdateSubprojectTypes.yaml
+  /ProjectManagementConfigurationService_DeleteSubprojectTypes:
+    $ref: paths/ProjectManagementConfigurationService_DeleteSubprojectTypes.yaml
+  /ProjectManagementConfigurationService_GetStageTypes:
+    $ref: paths/ProjectManagementConfigurationService_GetStageTypes.yaml
+  /ProjectManagementConfigurationService_AddStageTypes:
+    $ref: paths/ProjectManagementConfigurationService_AddStageTypes.yaml
+  /ProjectManagementConfigurationService_UpdateStageTypes:
+    $ref: paths/ProjectManagementConfigurationService_UpdateStageTypes.yaml
+  /ProjectManagementConfigurationService_DeleteStageTypes:
+    $ref: paths/ProjectManagementConfigurationService_DeleteStageTypes.yaml
+  /ProjectManagementConfigurationService_GetAreas:
+    $ref: paths/ProjectManagementConfigurationService_GetAreas.yaml
+  /ProjectManagementConfigurationService_AddAreas:
+    $ref: paths/ProjectManagementConfigurationService_AddAreas.yaml
+  /ProjectManagementConfigurationService_UpdateAreas:
+    $ref: paths/ProjectManagementConfigurationService_UpdateAreas.yaml
+  /ProjectManagementConfigurationService_DeleteAreas:
+    $ref: paths/ProjectManagementConfigurationService_DeleteAreas.yaml
+  /ProjectManagementConfigurationService_GetPriorities:
+    $ref: paths/ProjectManagementConfigurationService_GetPriorities.yaml
+  /ProjectManagementConfigurationService_AddPriorities:
+    $ref: paths/ProjectManagementConfigurationService_AddPriorities.yaml
+  /ProjectManagementConfigurationService_UpdatePriorities:
+    $ref: paths/ProjectManagementConfigurationService_UpdatePriorities.yaml
+  /ProjectManagementConfigurationService_DeletePriorities:
+    $ref: paths/ProjectManagementConfigurationService_DeletePriorities.yaml
+  /ProjectManagementConfigurationService_GetActivities:
+    $ref: paths/ProjectManagementConfigurationService_GetActivities.yaml
+  /ProjectManagementConfigurationService_AddActivities:
+    $ref: paths/ProjectManagementConfigurationService_AddActivities.yaml
+  /ProjectManagementConfigurationService_UpdateActivities:
+    $ref: paths/ProjectManagementConfigurationService_UpdateActivities.yaml
+  /ProjectManagementConfigurationService_DeleteActivities:
+    $ref: paths/ProjectManagementConfigurationService_DeleteActivities.yaml
+  /ProjectManagementConfigurationService_GetTasks:
+    $ref: paths/ProjectManagementConfigurationService_GetTasks.yaml
+  /ProjectManagementConfigurationService_AddTasks:
+    $ref: paths/ProjectManagementConfigurationService_AddTasks.yaml
+  /ProjectManagementConfigurationService_UpdateTasks:
+    $ref: paths/ProjectManagementConfigurationService_UpdateTasks.yaml
+  /ProjectManagementConfigurationService_DeleteTasks:
+    $ref: paths/ProjectManagementConfigurationService_DeleteTasks.yaml
+  /ProjectManagementService_GetSubprojectsList:
+    $ref: paths/ProjectManagementService_GetSubprojectsList.yaml
+  /ProjectManagementService_GetSubproject:
+    $ref: paths/ProjectManagementService_GetSubproject.yaml
+  /ProjectManagementService_AddSubproject:
+    $ref: paths/ProjectManagementService_AddSubproject.yaml
+  /ProjectManagementService_UpdateSubproject:
+    $ref: paths/ProjectManagementService_UpdateSubproject.yaml
+  /ProjectManagementService_DeleteSubproject:
+    $ref: paths/ProjectManagementService_DeleteSubproject.yaml
+  /ProjectsService_GetProjectList:
+    $ref: paths/ProjectsService_GetProjectList.yaml
+  /PurchaseCreditNotesService_GetApprovalTemplates:
+    $ref: paths/PurchaseCreditNotesService_GetApprovalTemplates.yaml
+  /PurchaseCreditNotesService_HandleApprovalRequest:
+    $ref: paths/PurchaseCreditNotesService_HandleApprovalRequest.yaml
+  /PurchaseCreditNotesService_Cancel2:
+    $ref: paths/PurchaseCreditNotesService_Cancel2.yaml
+  /PurchaseDeliveryNotesService_GetApprovalTemplates:
+    $ref: paths/PurchaseDeliveryNotesService_GetApprovalTemplates.yaml
+  /PurchaseDeliveryNotesService_HandleApprovalRequest:
+    $ref: paths/PurchaseDeliveryNotesService_HandleApprovalRequest.yaml
+  /PurchaseDeliveryNotesService_Cancel2:
+    $ref: paths/PurchaseDeliveryNotesService_Cancel2.yaml
+  /PurchaseDownPaymentsService_GetApprovalTemplates:
+    $ref: paths/PurchaseDownPaymentsService_GetApprovalTemplates.yaml
+  /PurchaseDownPaymentsService_HandleApprovalRequest:
+    $ref: paths/PurchaseDownPaymentsService_HandleApprovalRequest.yaml
+  /PurchaseInvoicesService_GetApprovalTemplates:
+    $ref: paths/PurchaseInvoicesService_GetApprovalTemplates.yaml
+  /PurchaseInvoicesService_HandleApprovalRequest:
+    $ref: paths/PurchaseInvoicesService_HandleApprovalRequest.yaml
+  /PurchaseInvoicesService_Cancel2:
+    $ref: paths/PurchaseInvoicesService_Cancel2.yaml
+  /PurchaseOrdersService_GetApprovalTemplates:
+    $ref: paths/PurchaseOrdersService_GetApprovalTemplates.yaml
+  /PurchaseOrdersService_HandleApprovalRequest:
+    $ref: paths/PurchaseOrdersService_HandleApprovalRequest.yaml
+  /PurchaseQuotationsService_GetApprovalTemplates:
+    $ref: paths/PurchaseQuotationsService_GetApprovalTemplates.yaml
+  /PurchaseQuotationsService_HandleApprovalRequest:
+    $ref: paths/PurchaseQuotationsService_HandleApprovalRequest.yaml
+  /PurchaseRequestService_GetApprovalTemplates:
+    $ref: paths/PurchaseRequestService_GetApprovalTemplates.yaml
+  /PurchaseRequestService_HandleApprovalRequest:
+    $ref: paths/PurchaseRequestService_HandleApprovalRequest.yaml
+  /PurchaseReturnsService_GetApprovalTemplates:
+    $ref: paths/PurchaseReturnsService_GetApprovalTemplates.yaml
+  /PurchaseReturnsService_HandleApprovalRequest:
+    $ref: paths/PurchaseReturnsService_HandleApprovalRequest.yaml
+  /PurchaseReturnsService_Cancel2:
+    $ref: paths/PurchaseReturnsService_Cancel2.yaml
+  /QRCodeService_AddOrUpdateQRCode:
+    $ref: paths/QRCodeService_AddOrUpdateQRCode.yaml
+  /QueryService_PostQuery:
+    $ref: paths/QueryService_PostQuery.yaml
+  /QuotationsService_GetApprovalTemplates:
+    $ref: paths/QuotationsService_GetApprovalTemplates.yaml
+  /QuotationsService_HandleApprovalRequest:
+    $ref: paths/QuotationsService_HandleApprovalRequest.yaml
+  /RecurringTransactionService_GetAvailableRecurringTransactions:
+    $ref: paths/RecurringTransactionService_GetAvailableRecurringTransactions.yaml
+  /RecurringTransactionService_DeleteRecurringTransactions:
+    $ref: paths/RecurringTransactionService_DeleteRecurringTransactions.yaml
+  /RecurringTransactionService_GetRecurringTransaction:
+    $ref: paths/RecurringTransactionService_GetRecurringTransaction.yaml
+  /RecurringTransactionService_ExecuteRecurringTransactions:
+    $ref: paths/RecurringTransactionService_ExecuteRecurringTransactions.yaml
+  /ReportFilterService_GetTaxReportFilterList:
+    $ref: paths/ReportFilterService_GetTaxReportFilterList.yaml
+  /ReportLayoutsService_SetDefaultReport:
+    $ref: paths/ReportLayoutsService_SetDefaultReport.yaml
+  /ReportLayoutsService_GetDefaultReport:
+    $ref: paths/ReportLayoutsService_GetDefaultReport.yaml
+  /ReportLayoutsService_AddReportLayout:
+    $ref: paths/ReportLayoutsService_AddReportLayout.yaml
+  /ReportLayoutsService_UpdatePrinterSettings:
+    $ref: paths/ReportLayoutsService_UpdatePrinterSettings.yaml
+  /ReportLayoutsService_DeleteReportLayout:
+    $ref: paths/ReportLayoutsService_DeleteReportLayout.yaml
+  /ReportLayoutsService_GetReportLayout:
+    $ref: paths/ReportLayoutsService_GetReportLayout.yaml
+  /ReportLayoutsService_GetDefaultReportLayout:
+    $ref: paths/ReportLayoutsService_GetDefaultReportLayout.yaml
+  /ReportLayoutsService_GetReportLayoutList:
+    $ref: paths/ReportLayoutsService_GetReportLayoutList.yaml
+  /ReportLayoutsService_UpdateLanguageReport:
+    $ref: paths/ReportLayoutsService_UpdateLanguageReport.yaml
+  /ReportLayoutsService_AddReportLayoutToMenu:
+    $ref: paths/ReportLayoutsService_AddReportLayoutToMenu.yaml
+  /ReportLayoutsService_DeleteReportLayoutAndMenu:
+    $ref: paths/ReportLayoutsService_DeleteReportLayoutAndMenu.yaml
+  /ReportTypesService_GetReportTypeList:
+    $ref: paths/ReportTypesService_GetReportTypeList.yaml
+  /ResourceCapacitiesService_GetList:
+    $ref: paths/ResourceCapacitiesService_GetList.yaml
+  /ResourceCapacitiesService_GetListWithFilter:
+    $ref: paths/ResourceCapacitiesService_GetListWithFilter.yaml
+  /ResourceGroupsService_GetList:
+    $ref: paths/ResourceGroupsService_GetList.yaml
+  /ResourcePropertiesService_GetList:
+    $ref: paths/ResourcePropertiesService_GetList.yaml
+  /ResourcesService_GetList:
+    $ref: paths/ResourcesService_GetList.yaml
+  /RetornoCodesService_GetList:
+    $ref: paths/RetornoCodesService_GetList.yaml
+  /ReturnRequestService_GetApprovalTemplates:
+    $ref: paths/ReturnRequestService_GetApprovalTemplates.yaml
+  /ReturnRequestService_Preview:
+    $ref: paths/ReturnRequestService_Preview.yaml
+  /ReturnRequestService_HandleApprovalRequest:
+    $ref: paths/ReturnRequestService_HandleApprovalRequest.yaml
+  /ReturnsService_GetApprovalTemplates:
+    $ref: paths/ReturnsService_GetApprovalTemplates.yaml
+  /ReturnsService_HandleApprovalRequest:
+    $ref: paths/ReturnsService_HandleApprovalRequest.yaml
+  /ReturnsService_Cancel2:
+    $ref: paths/ReturnsService_Cancel2.yaml
+  /RouteStagesService_GetList:
+    $ref: paths/RouteStagesService_GetList.yaml
+  /SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList:
+    $ref: paths/SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList.yaml
+  /SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList:
+    $ref: paths/SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList.yaml
+  /SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList:
+    $ref: paths/SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList.yaml
+  /SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList:
+    $ref: paths/SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList.yaml
+  /SBOBobService_GetSystemPermission:
+    $ref: paths/SBOBobService_GetSystemPermission.yaml
+  /SBOBobService_GetSystemCurrency:
+    $ref: paths/SBOBobService_GetSystemCurrency.yaml
+  /SBOBobService_GetDueDate:
+    $ref: paths/SBOBobService_GetDueDate.yaml
+  /SBOBobService_GetLocalCurrency:
+    $ref: paths/SBOBobService_GetLocalCurrency.yaml
+  /SBOBobService_GetCurrencyRate:
+    $ref: paths/SBOBobService_GetCurrencyRate.yaml
+  /SBOBobService_GetIndexRate:
+    $ref: paths/SBOBobService_GetIndexRate.yaml
+  /SBOBobService_Format_MoneyToString:
+    $ref: paths/SBOBobService_Format_MoneyToString.yaml
+  /SBOBobService_SetCurrencyRate:
+    $ref: paths/SBOBobService_SetCurrencyRate.yaml
+  /SBOBobService_SetSystemPermission:
+    $ref: paths/SBOBobService_SetSystemPermission.yaml
+  /SectionsService_GetSectionList:
+    $ref: paths/SectionsService_GetSectionList.yaml
+  /SelfCreditMemoService_GetApprovalTemplates:
+    $ref: paths/SelfCreditMemoService_GetApprovalTemplates.yaml
+  /SelfCreditMemoService_HandleApprovalRequest:
+    $ref: paths/SelfCreditMemoService_HandleApprovalRequest.yaml
+  /SelfCreditMemoService_Cancel2:
+    $ref: paths/SelfCreditMemoService_Cancel2.yaml
+  /SelfInvoiceService_GetApprovalTemplates:
+    $ref: paths/SelfInvoiceService_GetApprovalTemplates.yaml
+  /SelfInvoiceService_HandleApprovalRequest:
+    $ref: paths/SelfInvoiceService_HandleApprovalRequest.yaml
+  /SelfInvoiceService_Cancel2:
+    $ref: paths/SelfInvoiceService_Cancel2.yaml
+  /SeriesService_AddSeries:
+    $ref: paths/SeriesService_AddSeries.yaml
+  /SeriesService_RemoveSeries:
+    $ref: paths/SeriesService_RemoveSeries.yaml
+  /SeriesService_AttachSeriesToDocument:
+    $ref: paths/SeriesService_AttachSeriesToDocument.yaml
+  /SeriesService_UnattachSeriesFromDocument:
+    $ref: paths/SeriesService_UnattachSeriesFromDocument.yaml
+  /SeriesService_SetDefaultSeriesForAllUsers:
+    $ref: paths/SeriesService_SetDefaultSeriesForAllUsers.yaml
+  /SeriesService_SetDefaultSeriesForCurrentUser:
+    $ref: paths/SeriesService_SetDefaultSeriesForCurrentUser.yaml
+  /SeriesService_SetDefaultSeriesForUser:
+    $ref: paths/SeriesService_SetDefaultSeriesForUser.yaml
+  /SeriesService_UpdateSeries:
+    $ref: paths/SeriesService_UpdateSeries.yaml
+  /SeriesService_GetDefaultSeries:
+    $ref: paths/SeriesService_GetDefaultSeries.yaml
+  /SeriesService_GetDocumentSeries:
+    $ref: paths/SeriesService_GetDocumentSeries.yaml
+  /SeriesService_GetSeries:
+    $ref: paths/SeriesService_GetSeries.yaml
+  /SeriesService_GetDocumentChangedMenuName:
+    $ref: paths/SeriesService_GetDocumentChangedMenuName.yaml
+  /SeriesService_ChangeDocumentMenuName:
+    $ref: paths/SeriesService_ChangeDocumentMenuName.yaml
+  /SeriesService_GetElectronicSeries:
+    $ref: paths/SeriesService_GetElectronicSeries.yaml
+  /SeriesService_AddElectronicSeries:
+    $ref: paths/SeriesService_AddElectronicSeries.yaml
+  /SeriesService_RemoveElectronicSeries:
+    $ref: paths/SeriesService_RemoveElectronicSeries.yaml
+  /SeriesService_UpdateElectronicSeries:
+    $ref: paths/SeriesService_UpdateElectronicSeries.yaml
+  /SeriesService_GetDefaultElectronicSeries:
+    $ref: paths/SeriesService_GetDefaultElectronicSeries.yaml
+  /SeriesService_SetDefaultElectronicSeries:
+    $ref: paths/SeriesService_SetDefaultElectronicSeries.yaml
+  /ServiceCallOriginsService_GetServiceCallOriginList:
+    $ref: paths/ServiceCallOriginsService_GetServiceCallOriginList.yaml
+  /ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList:
+    $ref: paths/ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList.yaml
+  /ServiceCallProblemTypesService_GetServiceCallProblemTypeList:
+    $ref: paths/ServiceCallProblemTypesService_GetServiceCallProblemTypeList.yaml
+  /ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList:
+    $ref: paths/ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList.yaml
+  /ServiceCallStatusService_GetServiceCallStatusList:
+    $ref: paths/ServiceCallStatusService_GetServiceCallStatusList.yaml
+  /ServiceCallTypesService_GetServiceCallTypeList:
+    $ref: paths/ServiceCallTypesService_GetServiceCallTypeList.yaml
+  /ServiceGroupsService_GetServiceGroupList:
+    $ref: paths/ServiceGroupsService_GetServiceGroupList.yaml
+  /ServiceTaxPostingService_PostServiceTax:
+    $ref: paths/ServiceTaxPostingService_PostServiceTax.yaml
+  /ServiceTaxPostingService_GetTaxableDeliveries:
+    $ref: paths/ServiceTaxPostingService_GetTaxableDeliveries.yaml
+  /ShortLinkMappingsService_BatchDelete:
+    $ref: paths/ShortLinkMappingsService_BatchDelete.yaml
+  /StatesService_GetStateList:
+    $ref: paths/StatesService_GetStateList.yaml
+  /StockTransferDraftService_GetApprovalTemplates:
+    $ref: paths/StockTransferDraftService_GetApprovalTemplates.yaml
+  /StockTransferDraftService_HandleApprovalRequest:
+    $ref: paths/StockTransferDraftService_HandleApprovalRequest.yaml
+  /StockTransferService_GetApprovalTemplates:
+    $ref: paths/StockTransferService_GetApprovalTemplates.yaml
+  /StockTransferService_HandleApprovalRequest:
+    $ref: paths/StockTransferService_HandleApprovalRequest.yaml
+  /TargetGroupsService_GetList:
+    $ref: paths/TargetGroupsService_GetList.yaml
+  /TaxCodeDeterminationsService_GetTaxCodeDeterminationList:
+    $ref: paths/TaxCodeDeterminationsService_GetTaxCodeDeterminationList.yaml
+  /TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList:
+    $ref: paths/TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList.yaml
+  /TaxWebSitesService_GetTaxWebSiteList:
+    $ref: paths/TaxWebSitesService_GetTaxWebSiteList.yaml
+  /TaxWebSitesService_GetDefaultWebSite:
+    $ref: paths/TaxWebSitesService_GetDefaultWebSite.yaml
+  /TerminationReasonService_GetList:
+    $ref: paths/TerminationReasonService_GetList.yaml
+  /TrackingNotesService_GetList:
+    $ref: paths/TrackingNotesService_GetList.yaml
+  /TransactionCodesService_GetList:
+    $ref: paths/TransactionCodesService_GetList.yaml
+  /TSRExceptionalEventService_GetList:
+    $ref: paths/TSRExceptionalEventService_GetList.yaml
+  /UnitOfMeasurementGroupsService_GetList:
+    $ref: paths/UnitOfMeasurementGroupsService_GetList.yaml
+  /UnitOfMeasurementsService_GetList:
+    $ref: paths/UnitOfMeasurementsService_GetList.yaml
+  /UserMenuService_GetCurrentUserMenu:
+    $ref: paths/UserMenuService_GetCurrentUserMenu.yaml
+  /UserMenuService_UpdateCurrentUserMenu:
+    $ref: paths/UserMenuService_UpdateCurrentUserMenu.yaml
+  /UserMenuService_GetUserMenu:
+    $ref: paths/UserMenuService_GetUserMenu.yaml
+  /UserMenuService_UpdateUserMenu:
+    $ref: paths/UserMenuService_UpdateUserMenu.yaml
+  /UsersService_GetCurrentUser:
+    $ref: paths/UsersService_GetCurrentUser.yaml
+  /ValueMappingService_GetMappedB1Value:
+    $ref: paths/ValueMappingService_GetMappedB1Value.yaml
+  /ValueMappingService_GetThirdPartyValuesForB1Value:
+    $ref: paths/ValueMappingService_GetThirdPartyValuesForB1Value.yaml
+  /ValueMappingService_RemoveMappedValue:
+    $ref: paths/ValueMappingService_RemoveMappedValue.yaml
+  /WarehouseSublevelCodesService_GetList:
+    $ref: paths/WarehouseSublevelCodesService_GetList.yaml
+  /WebClientBookmarkTileService_GetList:
+    $ref: paths/WebClientBookmarkTileService_GetList.yaml
+  /WebClientDashboardService_GetList:
+    $ref: paths/WebClientDashboardService_GetList.yaml
+  /WebClientFormSettingService_GetList:
+    $ref: paths/WebClientFormSettingService_GetList.yaml
+  /WebClientLaunchpadService_GetList:
+    $ref: paths/WebClientLaunchpadService_GetList.yaml
+  /WebClientListviewFilterService_GetList:
+    $ref: paths/WebClientListviewFilterService_GetList.yaml
+  /WebClientNotificationService_GetList:
+    $ref: paths/WebClientNotificationService_GetList.yaml
+  /WebClientPreferenceService_GetList:
+    $ref: paths/WebClientPreferenceService_GetList.yaml
+  /WebClientRecentActivityService_GetList:
+    $ref: paths/WebClientRecentActivityService_GetList.yaml
+  /WebClientVariantGroupService_GetList:
+    $ref: paths/WebClientVariantGroupService_GetList.yaml
+  /WebClientVariantService_GetList:
+    $ref: paths/WebClientVariantService_GetList.yaml
+  /WorkflowTaskService_Complete:
+    $ref: paths/WorkflowTaskService_Complete.yaml
+  /WorkflowTaskService_GetApprovalTaskList:
+    $ref: paths/WorkflowTaskService_GetApprovalTaskList.yaml
+  /WTaxTypeCodeService_GetWTaxTypeCodeList:
+    $ref: paths/WTaxTypeCodeService_GetWTaxTypeCodeList.yaml
+  /Entities:
+    $ref: paths/Entities.yaml
+  /Entity({id}):
+    $ref: paths/Entity_id.yaml
+  /AccountCategory({id}):
+    $ref: paths/AccountCategory_id.yaml
+  /AccountCategory:
+    $ref: paths/AccountCategory.yaml
+  /AccountSegmentationCategories({id}):
+    $ref: paths/AccountSegmentationCategories_id.yaml
+  /AccountSegmentationCategories:
+    $ref: paths/AccountSegmentationCategories.yaml
+  /AccountSegmentations({id}):
+    $ref: paths/AccountSegmentations_id.yaml
+  /AccountSegmentations:
+    $ref: paths/AccountSegmentations.yaml
+  /AccrualTypes({id}):
+    $ref: paths/AccrualTypes_id.yaml
+  /AccrualTypes:
+    $ref: paths/AccrualTypes.yaml
+  /Activities({id}):
+    $ref: paths/Activities_id.yaml
+  /Activities:
+    $ref: paths/Activities.yaml
+  /ActivityLocations({id}):
+    $ref: paths/ActivityLocations_id.yaml
+  /ActivityLocations:
+    $ref: paths/ActivityLocations.yaml
+  /ActivityRecipientLists({id}):
+    $ref: paths/ActivityRecipientLists_id.yaml
+  /ActivityRecipientLists:
+    $ref: paths/ActivityRecipientLists.yaml
+  /ActivityStatuses({id}):
+    $ref: paths/ActivityStatuses_id.yaml
+  /ActivityStatuses:
+    $ref: paths/ActivityStatuses.yaml
+  /ActivityTypes({id}):
+    $ref: paths/ActivityTypes_id.yaml
+  /ActivityTypes:
+    $ref: paths/ActivityTypes.yaml
+  /AdditionalExpenses({id}):
+    $ref: paths/AdditionalExpenses_id.yaml
+  /AdditionalExpenses:
+    $ref: paths/AdditionalExpenses.yaml
+  /AlertManagements({id}):
+    $ref: paths/AlertManagements_id.yaml
+  /AlertManagements:
+    $ref: paths/AlertManagements.yaml
+  /AlertManagements(id)/GetAlertManagement:
+    $ref: paths/AlertManagements_id_GetAlertManagement.yaml
+  /AlertManagements(id)/GetAlertManagementList:
+    $ref: paths/AlertManagements_id_GetAlertManagementList.yaml
+  /AlternateCatNum({id}):
+    $ref: paths/AlternateCatNum_id.yaml
+  /AlternateCatNum:
+    $ref: paths/AlternateCatNum.yaml
+  /ApprovalRequests({id}):
+    $ref: paths/ApprovalRequests_id.yaml
+  /ApprovalRequests:
+    $ref: paths/ApprovalRequests.yaml
+  /ApprovalStages({id}):
+    $ref: paths/ApprovalStages_id.yaml
+  /ApprovalStages:
+    $ref: paths/ApprovalStages.yaml
+  /ApprovalStages(id)/GetApprovalStage:
+    $ref: paths/ApprovalStages_id_GetApprovalStage.yaml
+  /ApprovalStages(id)/RemoveApprovalStage:
+    $ref: paths/ApprovalStages_id_RemoveApprovalStage.yaml
+  /ApprovalTemplates({id}):
+    $ref: paths/ApprovalTemplates_id.yaml
+  /ApprovalTemplates:
+    $ref: paths/ApprovalTemplates.yaml
+  /ApprovalTemplates(id)/GetApprovalTemplate:
+    $ref: paths/ApprovalTemplates_id_GetApprovalTemplate.yaml
+  /ApprovalTemplates(id)/RemoveApprovalTemplate:
+    $ref: paths/ApprovalTemplates_id_RemoveApprovalTemplate.yaml
+  /AssetCapitalization({id}):
+    $ref: paths/AssetCapitalization_id.yaml
+  /AssetCapitalization:
+    $ref: paths/AssetCapitalization.yaml
+  /AssetCapitalizationCreditMemo({id}):
+    $ref: paths/AssetCapitalizationCreditMemo_id.yaml
+  /AssetCapitalizationCreditMemo:
+    $ref: paths/AssetCapitalizationCreditMemo.yaml
+  /AssetClasses({id}):
+    $ref: paths/AssetClasses_id.yaml
+  /AssetClasses:
+    $ref: paths/AssetClasses.yaml
+  /AssetDepreciationGroups({id}):
+    $ref: paths/AssetDepreciationGroups_id.yaml
+  /AssetDepreciationGroups:
+    $ref: paths/AssetDepreciationGroups.yaml
+  /AssetGroups({id}):
+    $ref: paths/AssetGroups_id.yaml
+  /AssetGroups:
+    $ref: paths/AssetGroups.yaml
+  /AssetManualDepreciation({id}):
+    $ref: paths/AssetManualDepreciation_id.yaml
+  /AssetManualDepreciation:
+    $ref: paths/AssetManualDepreciation.yaml
+  /AssetRetirement({id}):
+    $ref: paths/AssetRetirement_id.yaml
+  /AssetRetirement:
+    $ref: paths/AssetRetirement.yaml
+  /AssetTransfer({id}):
+    $ref: paths/AssetTransfer_id.yaml
+  /AssetTransfer:
+    $ref: paths/AssetTransfer.yaml
+  /Attachments2({id}):
+    $ref: paths/Attachments2_id.yaml
+  /Attachments2:
+    $ref: paths/Attachments2.yaml
+  /AttributeGroups({id}):
+    $ref: paths/AttributeGroups_id.yaml
+  /AttributeGroups:
+    $ref: paths/AttributeGroups.yaml
+  /BankChargesAllocationCodes({id}):
+    $ref: paths/BankChargesAllocationCodes_id.yaml
+  /BankChargesAllocationCodes:
+    $ref: paths/BankChargesAllocationCodes.yaml
+  /BankChargesAllocationCodes(id)/SetDefaultBankChargesAllocationCode:
+    $ref: paths/BankChargesAllocationCodes_id_SetDefaultBankChargesAllocationCode.yaml
+  /BankPages({id}):
+    $ref: paths/BankPages_id.yaml
+  /BankPages:
+    $ref: paths/BankPages.yaml
+  /Banks({id}):
+    $ref: paths/Banks_id.yaml
+  /Banks:
+    $ref: paths/Banks.yaml
+  /BankStatements({id}):
+    $ref: paths/BankStatements_id.yaml
+  /BankStatements:
+    $ref: paths/BankStatements.yaml
+  /BarCodes({id}):
+    $ref: paths/BarCodes_id.yaml
+  /BarCodes:
+    $ref: paths/BarCodes.yaml
+  /BatchNumberDetails({id}):
+    $ref: paths/BatchNumberDetails_id.yaml
+  /BatchNumberDetails:
+    $ref: paths/BatchNumberDetails.yaml
+  /BEMReplicationPeriods({id}):
+    $ref: paths/BEMReplicationPeriods_id.yaml
+  /BEMReplicationPeriods:
+    $ref: paths/BEMReplicationPeriods.yaml
+  /BillOfExchangeTransactions({id}):
+    $ref: paths/BillOfExchangeTransactions_id.yaml
+  /BillOfExchangeTransactions:
+    $ref: paths/BillOfExchangeTransactions.yaml
+  /BinLocationAttributes({id}):
+    $ref: paths/BinLocationAttributes_id.yaml
+  /BinLocationAttributes:
+    $ref: paths/BinLocationAttributes.yaml
+  /BinLocationFields({id}):
+    $ref: paths/BinLocationFields_id.yaml
+  /BinLocationFields:
+    $ref: paths/BinLocationFields.yaml
+  /BinLocations({id}):
+    $ref: paths/BinLocations_id.yaml
+  /BinLocations:
+    $ref: paths/BinLocations.yaml
+  /BlanketAgreements({id}):
+    $ref: paths/BlanketAgreements_id.yaml
+  /BlanketAgreements:
+    $ref: paths/BlanketAgreements.yaml
+  /BlanketAgreements(id)/CancelBlanketAgreement:
+    $ref: paths/BlanketAgreements_id_CancelBlanketAgreement.yaml
+  /BlanketAgreements(id)/GetRelatedDocuments:
+    $ref: paths/BlanketAgreements_id_GetRelatedDocuments.yaml
+  /BOEDocumentTypes({id}):
+    $ref: paths/BOEDocumentTypes_id.yaml
+  /BOEDocumentTypes:
+    $ref: paths/BOEDocumentTypes.yaml
+  /BOEInstructions({id}):
+    $ref: paths/BOEInstructions_id.yaml
+  /BOEInstructions:
+    $ref: paths/BOEInstructions.yaml
+  /BOEPortfolios({id}):
+    $ref: paths/BOEPortfolios_id.yaml
+  /BOEPortfolios:
+    $ref: paths/BOEPortfolios.yaml
+  /BPFiscalRegistryID({id}):
+    $ref: paths/BPFiscalRegistryID_id.yaml
+  /BPFiscalRegistryID:
+    $ref: paths/BPFiscalRegistryID.yaml
+  /BPPriorities({id}):
+    $ref: paths/BPPriorities_id.yaml
+  /BPPriorities:
+    $ref: paths/BPPriorities.yaml
+  /Branches({id}):
+    $ref: paths/Branches_id.yaml
+  /Branches:
+    $ref: paths/Branches.yaml
+  /BrazilBeverageIndexers({id}):
+    $ref: paths/BrazilBeverageIndexers_id.yaml
+  /BrazilBeverageIndexers:
+    $ref: paths/BrazilBeverageIndexers.yaml
+  /BrazilFuelIndexers({id}):
+    $ref: paths/BrazilFuelIndexers_id.yaml
+  /BrazilFuelIndexers:
+    $ref: paths/BrazilFuelIndexers.yaml
+  /BrazilMultiIndexers({id}):
+    $ref: paths/BrazilMultiIndexers_id.yaml
+  /BrazilMultiIndexers:
+    $ref: paths/BrazilMultiIndexers.yaml
+  /BrazilMultiIndexers(id)/GetIndexerTypeList:
+    $ref: paths/BrazilMultiIndexers_id_GetIndexerTypeList.yaml
+  /BrazilNumericIndexers({id}):
+    $ref: paths/BrazilNumericIndexers_id.yaml
+  /BrazilNumericIndexers:
+    $ref: paths/BrazilNumericIndexers.yaml
+  /BrazilNumericIndexers(id)/GetIndexerTypeList:
+    $ref: paths/BrazilNumericIndexers_id_GetIndexerTypeList.yaml
+  /BrazilStringIndexers({id}):
+    $ref: paths/BrazilStringIndexers_id.yaml
+  /BrazilStringIndexers:
+    $ref: paths/BrazilStringIndexers.yaml
+  /BrazilStringIndexers(id)/GetIndexerTypeList:
+    $ref: paths/BrazilStringIndexers_id_GetIndexerTypeList.yaml
+  /BudgetDistributions({id}):
+    $ref: paths/BudgetDistributions_id.yaml
+  /BudgetDistributions:
+    $ref: paths/BudgetDistributions.yaml
+  /Budgets({id}):
+    $ref: paths/Budgets_id.yaml
+  /Budgets:
+    $ref: paths/Budgets.yaml
+  /BudgetScenarios({id}):
+    $ref: paths/BudgetScenarios_id.yaml
+  /BudgetScenarios:
+    $ref: paths/BudgetScenarios.yaml
+  /BusinessPartnerGroups({id}):
+    $ref: paths/BusinessPartnerGroups_id.yaml
+  /BusinessPartnerGroups:
+    $ref: paths/BusinessPartnerGroups.yaml
+  /BusinessPartnerProperties({id}):
+    $ref: paths/BusinessPartnerProperties_id.yaml
+  /BusinessPartnerProperties:
+    $ref: paths/BusinessPartnerProperties.yaml
+  /BusinessPartners({id}):
+    $ref: paths/BusinessPartners_id.yaml
+  /BusinessPartners:
+    $ref: paths/BusinessPartners.yaml
+  /BusinessPlaces({id}):
+    $ref: paths/BusinessPlaces_id.yaml
+  /BusinessPlaces:
+    $ref: paths/BusinessPlaces.yaml
+  /CampaignResponseType({id}):
+    $ref: paths/CampaignResponseType_id.yaml
+  /CampaignResponseType:
+    $ref: paths/CampaignResponseType.yaml
+  /Campaigns({id}):
+    $ref: paths/Campaigns_id.yaml
+  /Campaigns:
+    $ref: paths/Campaigns.yaml
+  /Campaigns(id)/Cancel:
+    $ref: paths/Campaigns_id_Cancel.yaml
+  /CashDiscounts({id}):
+    $ref: paths/CashDiscounts_id.yaml
+  /CashDiscounts:
+    $ref: paths/CashDiscounts.yaml
+  /CashFlowLineItems({id}):
+    $ref: paths/CashFlowLineItems_id.yaml
+  /CashFlowLineItems:
+    $ref: paths/CashFlowLineItems.yaml
+  /CertificateSeries({id}):
+    $ref: paths/CertificateSeries_id.yaml
+  /CertificateSeries:
+    $ref: paths/CertificateSeries.yaml
+  /CESTCodes({id}):
+    $ref: paths/CESTCodes_id.yaml
+  /CESTCodes:
+    $ref: paths/CESTCodes.yaml
+  /ChartOfAccounts({id}):
+    $ref: paths/ChartOfAccounts_id.yaml
+  /ChartOfAccounts:
+    $ref: paths/ChartOfAccounts.yaml
+  /ChecksforPayment({id}):
+    $ref: paths/ChecksforPayment_id.yaml
+  /ChecksforPayment:
+    $ref: paths/ChecksforPayment.yaml
+  /ChooseFromList({id}):
+    $ref: paths/ChooseFromList_id.yaml
+  /ChooseFromList:
+    $ref: paths/ChooseFromList.yaml
+  /ClosingDateProcedure({id}):
+    $ref: paths/ClosingDateProcedure_id.yaml
+  /ClosingDateProcedure:
+    $ref: paths/ClosingDateProcedure.yaml
+  /Cockpits({id}):
+    $ref: paths/Cockpits_id.yaml
+  /Cockpits:
+    $ref: paths/Cockpits.yaml
+  /CommissionGroups({id}):
+    $ref: paths/CommissionGroups_id.yaml
+  /CommissionGroups:
+    $ref: paths/CommissionGroups.yaml
+  /Contacts({id}):
+    $ref: paths/Contacts_id.yaml
+  /Contacts:
+    $ref: paths/Contacts.yaml
+  /ContractTemplates({id}):
+    $ref: paths/ContractTemplates_id.yaml
+  /ContractTemplates:
+    $ref: paths/ContractTemplates.yaml
+  /CorrectionInvoice({id}):
+    $ref: paths/CorrectionInvoice_id.yaml
+  /CorrectionInvoice:
+    $ref: paths/CorrectionInvoice.yaml
+  /CorrectionInvoice(id)/Close:
+    $ref: paths/CorrectionInvoice_id_Close.yaml
+  /CorrectionInvoice(id)/Cancel:
+    $ref: paths/CorrectionInvoice_id_Cancel.yaml
+  /CorrectionInvoice(id)/Reopen:
+    $ref: paths/CorrectionInvoice_id_Reopen.yaml
+  /CorrectionInvoice(id)/CreateCancellationDocument:
+    $ref: paths/CorrectionInvoice_id_CreateCancellationDocument.yaml
+  /CorrectionInvoiceReversal({id}):
+    $ref: paths/CorrectionInvoiceReversal_id.yaml
+  /CorrectionInvoiceReversal:
+    $ref: paths/CorrectionInvoiceReversal.yaml
+  /CorrectionInvoiceReversal(id)/Close:
+    $ref: paths/CorrectionInvoiceReversal_id_Close.yaml
+  /CorrectionInvoiceReversal(id)/Cancel:
+    $ref: paths/CorrectionInvoiceReversal_id_Cancel.yaml
+  /CorrectionInvoiceReversal(id)/Reopen:
+    $ref: paths/CorrectionInvoiceReversal_id_Reopen.yaml
+  /CorrectionInvoiceReversal(id)/CreateCancellationDocument:
+    $ref: paths/CorrectionInvoiceReversal_id_CreateCancellationDocument.yaml
+  /CorrectionPurchaseInvoice({id}):
+    $ref: paths/CorrectionPurchaseInvoice_id.yaml
+  /CorrectionPurchaseInvoice:
+    $ref: paths/CorrectionPurchaseInvoice.yaml
+  /CorrectionPurchaseInvoice(id)/Close:
+    $ref: paths/CorrectionPurchaseInvoice_id_Close.yaml
+  /CorrectionPurchaseInvoice(id)/Cancel:
+    $ref: paths/CorrectionPurchaseInvoice_id_Cancel.yaml
+  /CorrectionPurchaseInvoice(id)/Reopen:
+    $ref: paths/CorrectionPurchaseInvoice_id_Reopen.yaml
+  /CorrectionPurchaseInvoice(id)/CreateCancellationDocument:
+    $ref: paths/CorrectionPurchaseInvoice_id_CreateCancellationDocument.yaml
+  /CorrectionPurchaseInvoiceReversal({id}):
+    $ref: paths/CorrectionPurchaseInvoiceReversal_id.yaml
+  /CorrectionPurchaseInvoiceReversal:
+    $ref: paths/CorrectionPurchaseInvoiceReversal.yaml
+  /CorrectionPurchaseInvoiceReversal(id)/Close:
+    $ref: paths/CorrectionPurchaseInvoiceReversal_id_Close.yaml
+  /CorrectionPurchaseInvoiceReversal(id)/Cancel:
+    $ref: paths/CorrectionPurchaseInvoiceReversal_id_Cancel.yaml
+  /CorrectionPurchaseInvoiceReversal(id)/Reopen:
+    $ref: paths/CorrectionPurchaseInvoiceReversal_id_Reopen.yaml
+  /CorrectionPurchaseInvoiceReversal(id)/CreateCancellationDocument:
+    $ref: paths/CorrectionPurchaseInvoiceReversal_id_CreateCancellationDocument.yaml
+  /CostCenterTypes({id}):
+    $ref: paths/CostCenterTypes_id.yaml
+  /CostCenterTypes:
+    $ref: paths/CostCenterTypes.yaml
+  /CostElements({id}):
+    $ref: paths/CostElements_id.yaml
+  /CostElements:
+    $ref: paths/CostElements.yaml
+  /Counties({id}):
+    $ref: paths/Counties_id.yaml
+  /Counties:
+    $ref: paths/Counties.yaml
+  /Countries({id}):
+    $ref: paths/Countries_id.yaml
+  /Countries:
+    $ref: paths/Countries.yaml
+  /CreditCardPayments({id}):
+    $ref: paths/CreditCardPayments_id.yaml
+  /CreditCardPayments:
+    $ref: paths/CreditCardPayments.yaml
+  /CreditCards({id}):
+    $ref: paths/CreditCards_id.yaml
+  /CreditCards:
+    $ref: paths/CreditCards.yaml
+  /CreditNotes({id}):
+    $ref: paths/CreditNotes_id.yaml
+  /CreditNotes:
+    $ref: paths/CreditNotes.yaml
+  /CreditNotes(id)/Close:
+    $ref: paths/CreditNotes_id_Close.yaml
+  /CreditNotes(id)/Cancel:
+    $ref: paths/CreditNotes_id_Cancel.yaml
+  /CreditNotes(id)/Reopen:
+    $ref: paths/CreditNotes_id_Reopen.yaml
+  /CreditNotes(id)/CreateCancellationDocument:
+    $ref: paths/CreditNotes_id_CreateCancellationDocument.yaml
+  /CreditPaymentMethods({id}):
+    $ref: paths/CreditPaymentMethods_id.yaml
+  /CreditPaymentMethods:
+    $ref: paths/CreditPaymentMethods.yaml
+  /Currencies({id}):
+    $ref: paths/Currencies_id.yaml
+  /Currencies:
+    $ref: paths/Currencies.yaml
+  /CustomerEquipmentCards({id}):
+    $ref: paths/CustomerEquipmentCards_id.yaml
+  /CustomerEquipmentCards:
+    $ref: paths/CustomerEquipmentCards.yaml
+  /CustomsDeclaration({id}):
+    $ref: paths/CustomsDeclaration_id.yaml
+  /CustomsDeclaration:
+    $ref: paths/CustomsDeclaration.yaml
+  /CustomsGroups({id}):
+    $ref: paths/CustomsGroups_id.yaml
+  /CustomsGroups:
+    $ref: paths/CustomsGroups.yaml
+  /CycleCountDeterminations({id}):
+    $ref: paths/CycleCountDeterminations_id.yaml
+  /CycleCountDeterminations:
+    $ref: paths/CycleCountDeterminations.yaml
+  /DeductibleTaxes({id}):
+    $ref: paths/DeductibleTaxes_id.yaml
+  /DeductibleTaxes:
+    $ref: paths/DeductibleTaxes.yaml
+  /DeductionTaxGroups({id}):
+    $ref: paths/DeductionTaxGroups_id.yaml
+  /DeductionTaxGroups:
+    $ref: paths/DeductionTaxGroups.yaml
+  /DeductionTaxHierarchies({id}):
+    $ref: paths/DeductionTaxHierarchies_id.yaml
+  /DeductionTaxHierarchies:
+    $ref: paths/DeductionTaxHierarchies.yaml
+  /DeductionTaxSubGroups({id}):
+    $ref: paths/DeductionTaxSubGroups_id.yaml
+  /DeductionTaxSubGroups:
+    $ref: paths/DeductionTaxSubGroups.yaml
+  /DeliveryNotes({id}):
+    $ref: paths/DeliveryNotes_id.yaml
+  /DeliveryNotes:
+    $ref: paths/DeliveryNotes.yaml
+  /DeliveryNotes(id)/Close:
+    $ref: paths/DeliveryNotes_id_Close.yaml
+  /DeliveryNotes(id)/Cancel:
+    $ref: paths/DeliveryNotes_id_Cancel.yaml
+  /DeliveryNotes(id)/Reopen:
+    $ref: paths/DeliveryNotes_id_Reopen.yaml
+  /DeliveryNotes(id)/CreateCancellationDocument:
+    $ref: paths/DeliveryNotes_id_CreateCancellationDocument.yaml
+  /Departments({id}):
+    $ref: paths/Departments_id.yaml
+  /Departments:
+    $ref: paths/Departments.yaml
+  /Deposits({id}):
+    $ref: paths/Deposits_id.yaml
+  /Deposits:
+    $ref: paths/Deposits.yaml
+  /Deposits(id)/CancelDeposit:
+    $ref: paths/Deposits_id_CancelDeposit.yaml
+  /Deposits(id)/CancelDepositbyCurrentSystemDate:
+    $ref: paths/Deposits_id_CancelDepositbyCurrentSystemDate.yaml
+  /DepreciationAreas({id}):
+    $ref: paths/DepreciationAreas_id.yaml
+  /DepreciationAreas:
+    $ref: paths/DepreciationAreas.yaml
+  /DepreciationTypePools({id}):
+    $ref: paths/DepreciationTypePools_id.yaml
+  /DepreciationTypePools:
+    $ref: paths/DepreciationTypePools.yaml
+  /DepreciationTypes({id}):
+    $ref: paths/DepreciationTypes_id.yaml
+  /DepreciationTypes:
+    $ref: paths/DepreciationTypes.yaml
+  /DeterminationCriterias({id}):
+    $ref: paths/DeterminationCriterias_id.yaml
+  /DeterminationCriterias:
+    $ref: paths/DeterminationCriterias.yaml
+  /Dimensions({id}):
+    $ref: paths/Dimensions_id.yaml
+  /Dimensions:
+    $ref: paths/Dimensions.yaml
+  /DistributionRules({id}):
+    $ref: paths/DistributionRules_id.yaml
+  /DistributionRules:
+    $ref: paths/DistributionRules.yaml
+  /DNFCodeSetup({id}):
+    $ref: paths/DNFCodeSetup_id.yaml
+  /DNFCodeSetup:
+    $ref: paths/DNFCodeSetup.yaml
+  /DownPayments({id}):
+    $ref: paths/DownPayments_id.yaml
+  /DownPayments:
+    $ref: paths/DownPayments.yaml
+  /DownPayments(id)/Close:
+    $ref: paths/DownPayments_id_Close.yaml
+  /DownPayments(id)/Cancel:
+    $ref: paths/DownPayments_id_Cancel.yaml
+  /DownPayments(id)/Reopen:
+    $ref: paths/DownPayments_id_Reopen.yaml
+  /DownPayments(id)/CreateCancellationDocument:
+    $ref: paths/DownPayments_id_CreateCancellationDocument.yaml
+  /Drafts({id}):
+    $ref: paths/Drafts_id.yaml
+  /Drafts:
+    $ref: paths/Drafts.yaml
+  /Drafts(id)/Close:
+    $ref: paths/Drafts_id_Close.yaml
+  /Drafts(id)/Cancel:
+    $ref: paths/Drafts_id_Cancel.yaml
+  /Drafts(id)/Reopen:
+    $ref: paths/Drafts_id_Reopen.yaml
+  /Drafts(id)/CreateCancellationDocument:
+    $ref: paths/Drafts_id_CreateCancellationDocument.yaml
+  /DunningLetters({id}):
+    $ref: paths/DunningLetters_id.yaml
+  /DunningLetters:
+    $ref: paths/DunningLetters.yaml
+  /DunningTerms({id}):
+    $ref: paths/DunningTerms_id.yaml
+  /DunningTerms:
+    $ref: paths/DunningTerms.yaml
+  /DynamicSystemStrings({id}):
+    $ref: paths/DynamicSystemStrings_id.yaml
+  /DynamicSystemStrings:
+    $ref: paths/DynamicSystemStrings.yaml
+  /ElectronicFileFormats({id}):
+    $ref: paths/ElectronicFileFormats_id.yaml
+  /ElectronicFileFormats:
+    $ref: paths/ElectronicFileFormats.yaml
+  /EmailGroups({id}):
+    $ref: paths/EmailGroups_id.yaml
+  /EmailGroups:
+    $ref: paths/EmailGroups.yaml
+  /EmployeeIDType({id}):
+    $ref: paths/EmployeeIDType_id.yaml
+  /EmployeeIDType:
+    $ref: paths/EmployeeIDType.yaml
+  /EmployeePosition({id}):
+    $ref: paths/EmployeePosition_id.yaml
+  /EmployeePosition:
+    $ref: paths/EmployeePosition.yaml
+  /EmployeeRolesSetup({id}):
+    $ref: paths/EmployeeRolesSetup_id.yaml
+  /EmployeeRolesSetup:
+    $ref: paths/EmployeeRolesSetup.yaml
+  /EmployeesInfo({id}):
+    $ref: paths/EmployeesInfo_id.yaml
+  /EmployeesInfo:
+    $ref: paths/EmployeesInfo.yaml
+  /EmployeesInfo(id)/Cancel:
+    $ref: paths/EmployeesInfo_id_Cancel.yaml
+  /EmployeesInfo(id)/Close:
+    $ref: paths/EmployeesInfo_id_Close.yaml
+  /EmployeeStatus({id}):
+    $ref: paths/EmployeeStatus_id.yaml
+  /EmployeeStatus:
+    $ref: paths/EmployeeStatus.yaml
+  /EmployeeTransfers({id}):
+    $ref: paths/EmployeeTransfers_id.yaml
+  /EmployeeTransfers:
+    $ref: paths/EmployeeTransfers.yaml
+  /EmploymentCategorys({id}):
+    $ref: paths/EmploymentCategorys_id.yaml
+  /EmploymentCategorys:
+    $ref: paths/EmploymentCategorys.yaml
+  /EnhancedDiscountGroups({id}):
+    $ref: paths/EnhancedDiscountGroups_id.yaml
+  /EnhancedDiscountGroups:
+    $ref: paths/EnhancedDiscountGroups.yaml
+  /ExceptionalEvents({id}):
+    $ref: paths/ExceptionalEvents_id.yaml
+  /ExceptionalEvents:
+    $ref: paths/ExceptionalEvents.yaml
+  /ExtendedTranslations({id}):
+    $ref: paths/ExtendedTranslations_id.yaml
+  /ExtendedTranslations:
+    $ref: paths/ExtendedTranslations.yaml
+  /FAAccountDeterminations({id}):
+    $ref: paths/FAAccountDeterminations_id.yaml
+  /FAAccountDeterminations:
+    $ref: paths/FAAccountDeterminations.yaml
+  /FactoringIndicators({id}):
+    $ref: paths/FactoringIndicators_id.yaml
+  /FactoringIndicators:
+    $ref: paths/FactoringIndicators.yaml
+  /FinancialYears({id}):
+    $ref: paths/FinancialYears_id.yaml
+  /FinancialYears:
+    $ref: paths/FinancialYears.yaml
+  /FiscalPrinter({id}):
+    $ref: paths/FiscalPrinter_id.yaml
+  /FiscalPrinter:
+    $ref: paths/FiscalPrinter.yaml
+  /FormattedSearches({id}):
+    $ref: paths/FormattedSearches_id.yaml
+  /FormattedSearches:
+    $ref: paths/FormattedSearches.yaml
+  /FormPreferences({id}):
+    $ref: paths/FormPreferences_id.yaml
+  /FormPreferences:
+    $ref: paths/FormPreferences.yaml
+  /Forms1099({id}):
+    $ref: paths/Forms1099_id.yaml
+  /Forms1099:
+    $ref: paths/Forms1099.yaml
+  /GLAccountAdvancedRules({id}):
+    $ref: paths/GLAccountAdvancedRules_id.yaml
+  /GLAccountAdvancedRules:
+    $ref: paths/GLAccountAdvancedRules.yaml
+  /GoodsReturnRequest({id}):
+    $ref: paths/GoodsReturnRequest_id.yaml
+  /GoodsReturnRequest:
+    $ref: paths/GoodsReturnRequest.yaml
+  /GoodsReturnRequest(id)/Close:
+    $ref: paths/GoodsReturnRequest_id_Close.yaml
+  /GoodsReturnRequest(id)/Cancel:
+    $ref: paths/GoodsReturnRequest_id_Cancel.yaml
+  /GoodsReturnRequest(id)/Reopen:
+    $ref: paths/GoodsReturnRequest_id_Reopen.yaml
+  /GoodsReturnRequest(id)/SaveDraftToDocument:
+    $ref: paths/GoodsReturnRequest_id_SaveDraftToDocument.yaml
+  /GoodsReturnRequest(id)/CreateCancellationDocument:
+    $ref: paths/GoodsReturnRequest_id_CreateCancellationDocument.yaml
+  /GovPayCodes({id}):
+    $ref: paths/GovPayCodes_id.yaml
+  /GovPayCodes:
+    $ref: paths/GovPayCodes.yaml
+  /Holidays({id}):
+    $ref: paths/Holidays_id.yaml
+  /Holidays:
+    $ref: paths/Holidays.yaml
+  /HouseBankAccounts({id}):
+    $ref: paths/HouseBankAccounts_id.yaml
+  /HouseBankAccounts:
+    $ref: paths/HouseBankAccounts.yaml
+  /IncomingPayments({id}):
+    $ref: paths/IncomingPayments_id.yaml
+  /IncomingPayments:
+    $ref: paths/IncomingPayments.yaml
+  /IncomingPayments(id)/Cancel:
+    $ref: paths/IncomingPayments_id_Cancel.yaml
+  /IncomingPayments(id)/GetApprovalTemplates:
+    $ref: paths/IncomingPayments_id_GetApprovalTemplates.yaml
+  /IncomingPayments(id)/CancelbyCurrentSystemDate:
+    $ref: paths/IncomingPayments_id_CancelbyCurrentSystemDate.yaml
+  /IncomingPayments(id)/RequestApproveCancellation:
+    $ref: paths/IncomingPayments_id_RequestApproveCancellation.yaml
+  /IndiaHsn({id}):
+    $ref: paths/IndiaHsn_id.yaml
+  /IndiaHsn:
+    $ref: paths/IndiaHsn.yaml
+  /Industries({id}):
+    $ref: paths/Industries_id.yaml
+  /Industries:
+    $ref: paths/Industries.yaml
+  /IntegrationPackagesConfigure({id}):
+    $ref: paths/IntegrationPackagesConfigure_id.yaml
+  /IntegrationPackagesConfigure:
+    $ref: paths/IntegrationPackagesConfigure.yaml
+  /InternalReconciliations({id}):
+    $ref: paths/InternalReconciliations_id.yaml
+  /InternalReconciliations:
+    $ref: paths/InternalReconciliations.yaml
+  /IntrastatConfiguration({id}):
+    $ref: paths/IntrastatConfiguration_id.yaml
+  /IntrastatConfiguration:
+    $ref: paths/IntrastatConfiguration.yaml
+  /InventoryCountings({id}):
+    $ref: paths/InventoryCountings_id.yaml
+  /InventoryCountings:
+    $ref: paths/InventoryCountings.yaml
+  /InventoryCountings(id)/Close:
+    $ref: paths/InventoryCountings_id_Close.yaml
+  /InventoryCycles({id}):
+    $ref: paths/InventoryCycles_id.yaml
+  /InventoryCycles:
+    $ref: paths/InventoryCycles.yaml
+  /InventoryGenEntries({id}):
+    $ref: paths/InventoryGenEntries_id.yaml
+  /InventoryGenEntries:
+    $ref: paths/InventoryGenEntries.yaml
+  /InventoryGenEntries(id)/Close:
+    $ref: paths/InventoryGenEntries_id_Close.yaml
+  /InventoryGenEntries(id)/Cancel:
+    $ref: paths/InventoryGenEntries_id_Cancel.yaml
+  /InventoryGenEntries(id)/Reopen:
+    $ref: paths/InventoryGenEntries_id_Reopen.yaml
+  /InventoryGenEntries(id)/CreateCancellationDocument:
+    $ref: paths/InventoryGenEntries_id_CreateCancellationDocument.yaml
+  /InventoryGenExits({id}):
+    $ref: paths/InventoryGenExits_id.yaml
+  /InventoryGenExits:
+    $ref: paths/InventoryGenExits.yaml
+  /InventoryGenExits(id)/Close:
+    $ref: paths/InventoryGenExits_id_Close.yaml
+  /InventoryGenExits(id)/Cancel:
+    $ref: paths/InventoryGenExits_id_Cancel.yaml
+  /InventoryGenExits(id)/Reopen:
+    $ref: paths/InventoryGenExits_id_Reopen.yaml
+  /InventoryGenExits(id)/CreateCancellationDocument:
+    $ref: paths/InventoryGenExits_id_CreateCancellationDocument.yaml
+  /InventoryOpeningBalances({id}):
+    $ref: paths/InventoryOpeningBalances_id.yaml
+  /InventoryOpeningBalances:
+    $ref: paths/InventoryOpeningBalances.yaml
+  /InventoryPostings({id}):
+    $ref: paths/InventoryPostings_id.yaml
+  /InventoryPostings:
+    $ref: paths/InventoryPostings.yaml
+  /InventoryTransferRequests({id}):
+    $ref: paths/InventoryTransferRequests_id.yaml
+  /InventoryTransferRequests:
+    $ref: paths/InventoryTransferRequests.yaml
+  /InventoryTransferRequests(id)/Cancel:
+    $ref: paths/InventoryTransferRequests_id_Cancel.yaml
+  /InventoryTransferRequests(id)/Close:
+    $ref: paths/InventoryTransferRequests_id_Close.yaml
+  /InventoryTransferRequests(id)/SaveDraftToDocument:
+    $ref: paths/InventoryTransferRequests_id_SaveDraftToDocument.yaml
+  /Invoices({id}):
+    $ref: paths/Invoices_id.yaml
+  /Invoices:
+    $ref: paths/Invoices.yaml
+  /Invoices(id)/Close:
+    $ref: paths/Invoices_id_Close.yaml
+  /Invoices(id)/Cancel:
+    $ref: paths/Invoices_id_Cancel.yaml
+  /Invoices(id)/Reopen:
+    $ref: paths/Invoices_id_Reopen.yaml
+  /Invoices(id)/CreateCancellationDocument:
+    $ref: paths/Invoices_id_CreateCancellationDocument.yaml
+  /ItemGroups({id}):
+    $ref: paths/ItemGroups_id.yaml
+  /ItemGroups:
+    $ref: paths/ItemGroups.yaml
+  /ItemImages({id}):
+    $ref: paths/ItemImages_id.yaml
+  /ItemProperties({id}):
+    $ref: paths/ItemProperties_id.yaml
+  /ItemProperties:
+    $ref: paths/ItemProperties.yaml
+  /Items({id}):
+    $ref: paths/Items_id.yaml
+  /Items:
+    $ref: paths/Items.yaml
+  /Items(id)/Cancel:
+    $ref: paths/Items_id_Cancel.yaml
+  /JournalEntries({id}):
+    $ref: paths/JournalEntries_id.yaml
+  /JournalEntries:
+    $ref: paths/JournalEntries.yaml
+  /JournalEntries(id)/Cancel:
+    $ref: paths/JournalEntries_id_Cancel.yaml
+  /JournalEntryDocumentTypes({id}):
+    $ref: paths/JournalEntryDocumentTypes_id.yaml
+  /JournalEntryDocumentTypes:
+    $ref: paths/JournalEntryDocumentTypes.yaml
+  /KnowledgeBaseSolutions({id}):
+    $ref: paths/KnowledgeBaseSolutions_id.yaml
+  /KnowledgeBaseSolutions:
+    $ref: paths/KnowledgeBaseSolutions.yaml
+  /KPIs({id}):
+    $ref: paths/KPIs_id.yaml
+  /KPIs:
+    $ref: paths/KPIs.yaml
+  /LandedCosts({id}):
+    $ref: paths/LandedCosts_id.yaml
+  /LandedCosts:
+    $ref: paths/LandedCosts.yaml
+  /LandedCosts(id)/CloseLandedCost:
+    $ref: paths/LandedCosts_id_CloseLandedCost.yaml
+  /LandedCosts(id)/CancelLandedCost:
+    $ref: paths/LandedCosts_id_CancelLandedCost.yaml
+  /LandedCostsCodes({id}):
+    $ref: paths/LandedCostsCodes_id.yaml
+  /LandedCostsCodes:
+    $ref: paths/LandedCostsCodes.yaml
+  /LegalData({id}):
+    $ref: paths/LegalData_id.yaml
+  /LegalData:
+    $ref: paths/LegalData.yaml
+  /LengthMeasures({id}):
+    $ref: paths/LengthMeasures_id.yaml
+  /LengthMeasures:
+    $ref: paths/LengthMeasures.yaml
+  /LocalEra({id}):
+    $ref: paths/LocalEra_id.yaml
+  /LocalEra:
+    $ref: paths/LocalEra.yaml
+  /Manufacturers({id}):
+    $ref: paths/Manufacturers_id.yaml
+  /Manufacturers:
+    $ref: paths/Manufacturers.yaml
+  /MaterialGroups({id}):
+    $ref: paths/MaterialGroups_id.yaml
+  /MaterialGroups:
+    $ref: paths/MaterialGroups.yaml
+  /MaterialRevaluation({id}):
+    $ref: paths/MaterialRevaluation_id.yaml
+  /MaterialRevaluation:
+    $ref: paths/MaterialRevaluation.yaml
+  /MaterialRevaluation(id)/Cancel:
+    $ref: paths/MaterialRevaluation_id_Cancel.yaml
+  /MaterialRevaluation(id)/Close:
+    $ref: paths/MaterialRevaluation_id_Close.yaml
+  /Messages({id}):
+    $ref: paths/Messages_id.yaml
+  /Messages:
+    $ref: paths/Messages.yaml
+  /Messages(id)/GetMessage:
+    $ref: paths/Messages_id_GetMessage.yaml
+  /MobileAddOnSetting({id}):
+    $ref: paths/MobileAddOnSetting_id.yaml
+  /MobileAddOnSetting:
+    $ref: paths/MobileAddOnSetting.yaml
+  /MultiLanguageTranslations({id}):
+    $ref: paths/MultiLanguageTranslations_id.yaml
+  /MultiLanguageTranslations:
+    $ref: paths/MultiLanguageTranslations.yaml
+  /NatureOfAssessees({id}):
+    $ref: paths/NatureOfAssessees_id.yaml
+  /NatureOfAssessees:
+    $ref: paths/NatureOfAssessees.yaml
+  /NCMCodesSetup({id}):
+    $ref: paths/NCMCodesSetup_id.yaml
+  /NCMCodesSetup:
+    $ref: paths/NCMCodesSetup.yaml
+  /NFModels({id}):
+    $ref: paths/NFModels_id.yaml
+  /NFModels:
+    $ref: paths/NFModels.yaml
+  /NFTaxCategories({id}):
+    $ref: paths/NFTaxCategories_id.yaml
+  /NFTaxCategories:
+    $ref: paths/NFTaxCategories.yaml
+  /NotaFiscalCFOP({id}):
+    $ref: paths/NotaFiscalCFOP_id.yaml
+  /NotaFiscalCFOP:
+    $ref: paths/NotaFiscalCFOP.yaml
+  /NotaFiscalCST({id}):
+    $ref: paths/NotaFiscalCST_id.yaml
+  /NotaFiscalCST:
+    $ref: paths/NotaFiscalCST.yaml
+  /NotaFiscalUsage({id}):
+    $ref: paths/NotaFiscalUsage_id.yaml
+  /NotaFiscalUsage:
+    $ref: paths/NotaFiscalUsage.yaml
+  /OccurrenceCodes({id}):
+    $ref: paths/OccurrenceCodes_id.yaml
+  /OccurrenceCodes:
+    $ref: paths/OccurrenceCodes.yaml
+  /Orders({id}):
+    $ref: paths/Orders_id.yaml
+  /Orders:
+    $ref: paths/Orders.yaml
+  /Orders(id)/Close:
+    $ref: paths/Orders_id_Close.yaml
+  /Orders(id)/Cancel:
+    $ref: paths/Orders_id_Cancel.yaml
+  /Orders(id)/Reopen:
+    $ref: paths/Orders_id_Reopen.yaml
+  /Orders(id)/CreateCancellationDocument:
+    $ref: paths/Orders_id_CreateCancellationDocument.yaml
+  /PackagesTypes({id}):
+    $ref: paths/PackagesTypes_id.yaml
+  /PackagesTypes:
+    $ref: paths/PackagesTypes.yaml
+  /PartnersSetups({id}):
+    $ref: paths/PartnersSetups_id.yaml
+  /PartnersSetups:
+    $ref: paths/PartnersSetups.yaml
+  /PaymentBlocks({id}):
+    $ref: paths/PaymentBlocks_id.yaml
+  /PaymentBlocks:
+    $ref: paths/PaymentBlocks.yaml
+  /PaymentDrafts({id}):
+    $ref: paths/PaymentDrafts_id.yaml
+  /PaymentDrafts:
+    $ref: paths/PaymentDrafts.yaml
+  /PaymentDrafts(id)/Cancel:
+    $ref: paths/PaymentDrafts_id_Cancel.yaml
+  /PaymentDrafts(id)/SaveDraftToDocument:
+    $ref: paths/PaymentDrafts_id_SaveDraftToDocument.yaml
+  /PaymentDrafts(id)/GetApprovalTemplates:
+    $ref: paths/PaymentDrafts_id_GetApprovalTemplates.yaml
+  /PaymentDrafts(id)/CancelbyCurrentSystemDate:
+    $ref: paths/PaymentDrafts_id_CancelbyCurrentSystemDate.yaml
+  /PaymentReasonCodes({id}):
+    $ref: paths/PaymentReasonCodes_id.yaml
+  /PaymentReasonCodes:
+    $ref: paths/PaymentReasonCodes.yaml
+  /PaymentRunExport({id}):
+    $ref: paths/PaymentRunExport_id.yaml
+  /PaymentRunExport:
+    $ref: paths/PaymentRunExport.yaml
+  /PaymentTermsTypes({id}):
+    $ref: paths/PaymentTermsTypes_id.yaml
+  /PaymentTermsTypes:
+    $ref: paths/PaymentTermsTypes.yaml
+  /PickLists({id}):
+    $ref: paths/PickLists_id.yaml
+  /PickLists:
+    $ref: paths/PickLists.yaml
+  /PickLists(id)/GetReleasedAllocation:
+    $ref: paths/PickLists_id_GetReleasedAllocation.yaml
+  /POSDailySummary({id}):
+    $ref: paths/POSDailySummary_id.yaml
+  /POSDailySummary:
+    $ref: paths/POSDailySummary.yaml
+  /PredefinedTexts({id}):
+    $ref: paths/PredefinedTexts_id.yaml
+  /PredefinedTexts:
+    $ref: paths/PredefinedTexts.yaml
+  /PriceLists({id}):
+    $ref: paths/PriceLists_id.yaml
+  /PriceLists:
+    $ref: paths/PriceLists.yaml
+  /ProductionOrders({id}):
+    $ref: paths/ProductionOrders_id.yaml
+  /ProductionOrders:
+    $ref: paths/ProductionOrders.yaml
+  /ProductionOrders(id)/Cancel:
+    $ref: paths/ProductionOrders_id_Cancel.yaml
+  /ProductTrees({id}):
+    $ref: paths/ProductTrees_id.yaml
+  /ProductTrees:
+    $ref: paths/ProductTrees.yaml
+  /ProfitCenters({id}):
+    $ref: paths/ProfitCenters_id.yaml
+  /ProfitCenters:
+    $ref: paths/ProfitCenters.yaml
+  /ProjectManagements({id}):
+    $ref: paths/ProjectManagements_id.yaml
+  /ProjectManagements:
+    $ref: paths/ProjectManagements.yaml
+  /ProjectManagements(id)/CancelProject:
+    $ref: paths/ProjectManagements_id_CancelProject.yaml
+  /ProjectManagementTimeSheet({id}):
+    $ref: paths/ProjectManagementTimeSheet_id.yaml
+  /ProjectManagementTimeSheet:
+    $ref: paths/ProjectManagementTimeSheet.yaml
+  /Projects({id}):
+    $ref: paths/Projects_id.yaml
+  /Projects:
+    $ref: paths/Projects.yaml
+  /PurchaseCreditNotes({id}):
+    $ref: paths/PurchaseCreditNotes_id.yaml
+  /PurchaseCreditNotes:
+    $ref: paths/PurchaseCreditNotes.yaml
+  /PurchaseCreditNotes(id)/Close:
+    $ref: paths/PurchaseCreditNotes_id_Close.yaml
+  /PurchaseCreditNotes(id)/Cancel:
+    $ref: paths/PurchaseCreditNotes_id_Cancel.yaml
+  /PurchaseCreditNotes(id)/Reopen:
+    $ref: paths/PurchaseCreditNotes_id_Reopen.yaml
+  /PurchaseCreditNotes(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseCreditNotes_id_CreateCancellationDocument.yaml
+  /PurchaseDeliveryNotes({id}):
+    $ref: paths/PurchaseDeliveryNotes_id.yaml
+  /PurchaseDeliveryNotes:
+    $ref: paths/PurchaseDeliveryNotes.yaml
+  /PurchaseDeliveryNotes(id)/Close:
+    $ref: paths/PurchaseDeliveryNotes_id_Close.yaml
+  /PurchaseDeliveryNotes(id)/Cancel:
+    $ref: paths/PurchaseDeliveryNotes_id_Cancel.yaml
+  /PurchaseDeliveryNotes(id)/Reopen:
+    $ref: paths/PurchaseDeliveryNotes_id_Reopen.yaml
+  /PurchaseDeliveryNotes(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseDeliveryNotes_id_CreateCancellationDocument.yaml
+  /PurchaseDownPayments({id}):
+    $ref: paths/PurchaseDownPayments_id.yaml
+  /PurchaseDownPayments:
+    $ref: paths/PurchaseDownPayments.yaml
+  /PurchaseDownPayments(id)/Close:
+    $ref: paths/PurchaseDownPayments_id_Close.yaml
+  /PurchaseDownPayments(id)/Cancel:
+    $ref: paths/PurchaseDownPayments_id_Cancel.yaml
+  /PurchaseDownPayments(id)/Reopen:
+    $ref: paths/PurchaseDownPayments_id_Reopen.yaml
+  /PurchaseDownPayments(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseDownPayments_id_CreateCancellationDocument.yaml
+  /PurchaseInvoices({id}):
+    $ref: paths/PurchaseInvoices_id.yaml
+  /PurchaseInvoices:
+    $ref: paths/PurchaseInvoices.yaml
+  /PurchaseInvoices(id)/Close:
+    $ref: paths/PurchaseInvoices_id_Close.yaml
+  /PurchaseInvoices(id)/Cancel:
+    $ref: paths/PurchaseInvoices_id_Cancel.yaml
+  /PurchaseInvoices(id)/Reopen:
+    $ref: paths/PurchaseInvoices_id_Reopen.yaml
+  /PurchaseInvoices(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseInvoices_id_CreateCancellationDocument.yaml
+  /PurchaseOrders({id}):
+    $ref: paths/PurchaseOrders_id.yaml
+  /PurchaseOrders:
+    $ref: paths/PurchaseOrders.yaml
+  /PurchaseOrders(id)/Close:
+    $ref: paths/PurchaseOrders_id_Close.yaml
+  /PurchaseOrders(id)/Cancel:
+    $ref: paths/PurchaseOrders_id_Cancel.yaml
+  /PurchaseOrders(id)/Reopen:
+    $ref: paths/PurchaseOrders_id_Reopen.yaml
+  /PurchaseOrders(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseOrders_id_CreateCancellationDocument.yaml
+  /PurchaseQuotations({id}):
+    $ref: paths/PurchaseQuotations_id.yaml
+  /PurchaseQuotations:
+    $ref: paths/PurchaseQuotations.yaml
+  /PurchaseQuotations(id)/Close:
+    $ref: paths/PurchaseQuotations_id_Close.yaml
+  /PurchaseQuotations(id)/Cancel:
+    $ref: paths/PurchaseQuotations_id_Cancel.yaml
+  /PurchaseQuotations(id)/Reopen:
+    $ref: paths/PurchaseQuotations_id_Reopen.yaml
+  /PurchaseQuotations(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseQuotations_id_CreateCancellationDocument.yaml
+  /PurchaseRequests({id}):
+    $ref: paths/PurchaseRequests_id.yaml
+  /PurchaseRequests:
+    $ref: paths/PurchaseRequests.yaml
+  /PurchaseRequests(id)/Close:
+    $ref: paths/PurchaseRequests_id_Close.yaml
+  /PurchaseRequests(id)/Cancel:
+    $ref: paths/PurchaseRequests_id_Cancel.yaml
+  /PurchaseRequests(id)/Reopen:
+    $ref: paths/PurchaseRequests_id_Reopen.yaml
+  /PurchaseRequests(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseRequests_id_CreateCancellationDocument.yaml
+  /PurchaseReturns({id}):
+    $ref: paths/PurchaseReturns_id.yaml
+  /PurchaseReturns:
+    $ref: paths/PurchaseReturns.yaml
+  /PurchaseReturns(id)/Close:
+    $ref: paths/PurchaseReturns_id_Close.yaml
+  /PurchaseReturns(id)/Cancel:
+    $ref: paths/PurchaseReturns_id_Cancel.yaml
+  /PurchaseReturns(id)/Reopen:
+    $ref: paths/PurchaseReturns_id_Reopen.yaml
+  /PurchaseReturns(id)/CreateCancellationDocument:
+    $ref: paths/PurchaseReturns_id_CreateCancellationDocument.yaml
+  /PurchaseTaxInvoices({id}):
+    $ref: paths/PurchaseTaxInvoices_id.yaml
+  /PurchaseTaxInvoices:
+    $ref: paths/PurchaseTaxInvoices.yaml
+  /QueryAuthGroups({id}):
+    $ref: paths/QueryAuthGroups_id.yaml
+  /QueryAuthGroups:
+    $ref: paths/QueryAuthGroups.yaml
+  /QueryCategories({id}):
+    $ref: paths/QueryCategories_id.yaml
+  /QueryCategories:
+    $ref: paths/QueryCategories.yaml
+  /Queue({id}):
+    $ref: paths/Queue_id.yaml
+  /Queue:
+    $ref: paths/Queue.yaml
+  /Quotations({id}):
+    $ref: paths/Quotations_id.yaml
+  /Quotations:
+    $ref: paths/Quotations.yaml
+  /Quotations(id)/Close:
+    $ref: paths/Quotations_id_Close.yaml
+  /Quotations(id)/Cancel:
+    $ref: paths/Quotations_id_Cancel.yaml
+  /Quotations(id)/Reopen:
+    $ref: paths/Quotations_id_Reopen.yaml
+  /Quotations(id)/CreateCancellationDocument:
+    $ref: paths/Quotations_id_CreateCancellationDocument.yaml
+  /Relationships({id}):
+    $ref: paths/Relationships_id.yaml
+  /Relationships:
+    $ref: paths/Relationships.yaml
+  /ReportFilter({id}):
+    $ref: paths/ReportFilter_id.yaml
+  /ReportFilter:
+    $ref: paths/ReportFilter.yaml
+  /ReportTypes({id}):
+    $ref: paths/ReportTypes_id.yaml
+  /ReportTypes:
+    $ref: paths/ReportTypes.yaml
+  /ResourceCapacities({id}):
+    $ref: paths/ResourceCapacities_id.yaml
+  /ResourceCapacities:
+    $ref: paths/ResourceCapacities.yaml
+  /ResourceGroups({id}):
+    $ref: paths/ResourceGroups_id.yaml
+  /ResourceGroups:
+    $ref: paths/ResourceGroups.yaml
+  /ResourceProperties({id}):
+    $ref: paths/ResourceProperties_id.yaml
+  /ResourceProperties:
+    $ref: paths/ResourceProperties.yaml
+  /Resources({id}):
+    $ref: paths/Resources_id.yaml
+  /Resources:
+    $ref: paths/Resources.yaml
+  /Resources(id)/CreateLinkedItem:
+    $ref: paths/Resources_id_CreateLinkedItem.yaml
+  /RetornoCodes({id}):
+    $ref: paths/RetornoCodes_id.yaml
+  /RetornoCodes:
+    $ref: paths/RetornoCodes.yaml
+  /ReturnRequest({id}):
+    $ref: paths/ReturnRequest_id.yaml
+  /ReturnRequest:
+    $ref: paths/ReturnRequest.yaml
+  /ReturnRequest(id)/Close:
+    $ref: paths/ReturnRequest_id_Close.yaml
+  /ReturnRequest(id)/Cancel:
+    $ref: paths/ReturnRequest_id_Cancel.yaml
+  /ReturnRequest(id)/Reopen:
+    $ref: paths/ReturnRequest_id_Reopen.yaml
+  /ReturnRequest(id)/SaveDraftToDocument:
+    $ref: paths/ReturnRequest_id_SaveDraftToDocument.yaml
+  /ReturnRequest(id)/CreateCancellationDocument:
+    $ref: paths/ReturnRequest_id_CreateCancellationDocument.yaml
+  /Returns({id}):
+    $ref: paths/Returns_id.yaml
+  /Returns:
+    $ref: paths/Returns.yaml
+  /Returns(id)/Close:
+    $ref: paths/Returns_id_Close.yaml
+  /Returns(id)/Cancel:
+    $ref: paths/Returns_id_Cancel.yaml
+  /Returns(id)/Reopen:
+    $ref: paths/Returns_id_Reopen.yaml
+  /Returns(id)/CreateCancellationDocument:
+    $ref: paths/Returns_id_CreateCancellationDocument.yaml
+  /RouteStages({id}):
+    $ref: paths/RouteStages_id.yaml
+  /RouteStages:
+    $ref: paths/RouteStages.yaml
+  /SalesForecast({id}):
+    $ref: paths/SalesForecast_id.yaml
+  /SalesForecast:
+    $ref: paths/SalesForecast.yaml
+  /SalesOpportunities({id}):
+    $ref: paths/SalesOpportunities_id.yaml
+  /SalesOpportunities:
+    $ref: paths/SalesOpportunities.yaml
+  /SalesOpportunities(id)/Close:
+    $ref: paths/SalesOpportunities_id_Close.yaml
+  /SalesOpportunityCompetitorsSetup({id}):
+    $ref: paths/SalesOpportunityCompetitorsSetup_id.yaml
+  /SalesOpportunityCompetitorsSetup:
+    $ref: paths/SalesOpportunityCompetitorsSetup.yaml
+  /SalesOpportunityInterestsSetup({id}):
+    $ref: paths/SalesOpportunityInterestsSetup_id.yaml
+  /SalesOpportunityInterestsSetup:
+    $ref: paths/SalesOpportunityInterestsSetup.yaml
+  /SalesOpportunityReasonsSetup({id}):
+    $ref: paths/SalesOpportunityReasonsSetup_id.yaml
+  /SalesOpportunityReasonsSetup:
+    $ref: paths/SalesOpportunityReasonsSetup.yaml
+  /SalesOpportunitySourcesSetup({id}):
+    $ref: paths/SalesOpportunitySourcesSetup_id.yaml
+  /SalesOpportunitySourcesSetup:
+    $ref: paths/SalesOpportunitySourcesSetup.yaml
+  /SalesPersons({id}):
+    $ref: paths/SalesPersons_id.yaml
+  /SalesPersons:
+    $ref: paths/SalesPersons.yaml
+  /SalesStages({id}):
+    $ref: paths/SalesStages_id.yaml
+  /SalesStages:
+    $ref: paths/SalesStages.yaml
+  /SalesTaxAuthorities({id}):
+    $ref: paths/SalesTaxAuthorities_id.yaml
+  /SalesTaxAuthorities:
+    $ref: paths/SalesTaxAuthorities.yaml
+  /SalesTaxAuthoritiesTypes({id}):
+    $ref: paths/SalesTaxAuthoritiesTypes_id.yaml
+  /SalesTaxAuthoritiesTypes:
+    $ref: paths/SalesTaxAuthoritiesTypes.yaml
+  /SalesTaxCodes({id}):
+    $ref: paths/SalesTaxCodes_id.yaml
+  /SalesTaxCodes:
+    $ref: paths/SalesTaxCodes.yaml
+  /SalesTaxInvoices({id}):
+    $ref: paths/SalesTaxInvoices_id.yaml
+  /SalesTaxInvoices:
+    $ref: paths/SalesTaxInvoices.yaml
+  /Sections({id}):
+    $ref: paths/Sections_id.yaml
+  /Sections:
+    $ref: paths/Sections.yaml
+  /SelfCreditMemos({id}):
+    $ref: paths/SelfCreditMemos_id.yaml
+  /SelfCreditMemos:
+    $ref: paths/SelfCreditMemos.yaml
+  /SelfCreditMemos(id)/Close:
+    $ref: paths/SelfCreditMemos_id_Close.yaml
+  /SelfCreditMemos(id)/Cancel:
+    $ref: paths/SelfCreditMemos_id_Cancel.yaml
+  /SelfCreditMemos(id)/Reopen:
+    $ref: paths/SelfCreditMemos_id_Reopen.yaml
+  /SelfCreditMemos(id)/CreateCancellationDocument:
+    $ref: paths/SelfCreditMemos_id_CreateCancellationDocument.yaml
+  /SelfInvoices({id}):
+    $ref: paths/SelfInvoices_id.yaml
+  /SelfInvoices:
+    $ref: paths/SelfInvoices.yaml
+  /SelfInvoices(id)/Close:
+    $ref: paths/SelfInvoices_id_Close.yaml
+  /SelfInvoices(id)/Cancel:
+    $ref: paths/SelfInvoices_id_Cancel.yaml
+  /SelfInvoices(id)/Reopen:
+    $ref: paths/SelfInvoices_id_Reopen.yaml
+  /SelfInvoices(id)/CreateCancellationDocument:
+    $ref: paths/SelfInvoices_id_CreateCancellationDocument.yaml
+  /SerialNumberDetails({id}):
+    $ref: paths/SerialNumberDetails_id.yaml
+  /SerialNumberDetails:
+    $ref: paths/SerialNumberDetails.yaml
+  /ServiceCallOrigins({id}):
+    $ref: paths/ServiceCallOrigins_id.yaml
+  /ServiceCallOrigins:
+    $ref: paths/ServiceCallOrigins.yaml
+  /ServiceCallProblemSubTypes({id}):
+    $ref: paths/ServiceCallProblemSubTypes_id.yaml
+  /ServiceCallProblemSubTypes:
+    $ref: paths/ServiceCallProblemSubTypes.yaml
+  /ServiceCallProblemTypes({id}):
+    $ref: paths/ServiceCallProblemTypes_id.yaml
+  /ServiceCallProblemTypes:
+    $ref: paths/ServiceCallProblemTypes.yaml
+  /ServiceCalls({id}):
+    $ref: paths/ServiceCalls_id.yaml
+  /ServiceCalls:
+    $ref: paths/ServiceCalls.yaml
+  /ServiceCalls(id)/Close:
+    $ref: paths/ServiceCalls_id_Close.yaml
+  /ServiceCallSolutionStatus({id}):
+    $ref: paths/ServiceCallSolutionStatus_id.yaml
+  /ServiceCallSolutionStatus:
+    $ref: paths/ServiceCallSolutionStatus.yaml
+  /ServiceCallStatus({id}):
+    $ref: paths/ServiceCallStatus_id.yaml
+  /ServiceCallStatus:
+    $ref: paths/ServiceCallStatus.yaml
+  /ServiceCallTypes({id}):
+    $ref: paths/ServiceCallTypes_id.yaml
+  /ServiceCallTypes:
+    $ref: paths/ServiceCallTypes.yaml
+  /ServiceContracts({id}):
+    $ref: paths/ServiceContracts_id.yaml
+  /ServiceContracts:
+    $ref: paths/ServiceContracts.yaml
+  /ServiceContracts(id)/Cancel:
+    $ref: paths/ServiceContracts_id_Cancel.yaml
+  /ServiceContracts(id)/Close:
+    $ref: paths/ServiceContracts_id_Close.yaml
+  /ServiceGroups({id}):
+    $ref: paths/ServiceGroups_id.yaml
+  /ServiceGroups:
+    $ref: paths/ServiceGroups.yaml
+  /ShippingTypes({id}):
+    $ref: paths/ShippingTypes_id.yaml
+  /ShippingTypes:
+    $ref: paths/ShippingTypes.yaml
+  /ShortLinkMappings({id}):
+    $ref: paths/ShortLinkMappings_id.yaml
+  /ShortLinkMappings:
+    $ref: paths/ShortLinkMappings.yaml
+  /SpecialPrices({id}):
+    $ref: paths/SpecialPrices_id.yaml
+  /SpecialPrices:
+    $ref: paths/SpecialPrices.yaml
+  /States({id}):
+    $ref: paths/States_id.yaml
+  /States:
+    $ref: paths/States.yaml
+  /StockTakings({id}):
+    $ref: paths/StockTakings_id.yaml
+  /StockTakings:
+    $ref: paths/StockTakings.yaml
+  /StockTransferDrafts({id}):
+    $ref: paths/StockTransferDrafts_id.yaml
+  /StockTransferDrafts:
+    $ref: paths/StockTransferDrafts.yaml
+  /StockTransferDrafts(id)/Cancel:
+    $ref: paths/StockTransferDrafts_id_Cancel.yaml
+  /StockTransferDrafts(id)/Close:
+    $ref: paths/StockTransferDrafts_id_Close.yaml
+  /StockTransferDrafts(id)/SaveDraftToDocument:
+    $ref: paths/StockTransferDrafts_id_SaveDraftToDocument.yaml
+  /StockTransfers({id}):
+    $ref: paths/StockTransfers_id.yaml
+  /StockTransfers:
+    $ref: paths/StockTransfers.yaml
+  /StockTransfers(id)/Cancel:
+    $ref: paths/StockTransfers_id_Cancel.yaml
+  /StockTransfers(id)/Close:
+    $ref: paths/StockTransfers_id_Close.yaml
+  /TargetGroups({id}):
+    $ref: paths/TargetGroups_id.yaml
+  /TargetGroups:
+    $ref: paths/TargetGroups.yaml
+  /TaxCodeDeterminations({id}):
+    $ref: paths/TaxCodeDeterminations_id.yaml
+  /TaxCodeDeterminations:
+    $ref: paths/TaxCodeDeterminations.yaml
+  /TaxCodeDeterminationsTCD({id}):
+    $ref: paths/TaxCodeDeterminationsTCD_id.yaml
+  /TaxCodeDeterminationsTCD:
+    $ref: paths/TaxCodeDeterminationsTCD.yaml
+  /TaxInvoiceReport({id}):
+    $ref: paths/TaxInvoiceReport_id.yaml
+  /TaxInvoiceReport:
+    $ref: paths/TaxInvoiceReport.yaml
+  /TaxInvoiceReport(id)/CancelTaxInvoiceReport:
+    $ref: paths/TaxInvoiceReport_id_CancelTaxInvoiceReport.yaml
+  /TaxWebSites({id}):
+    $ref: paths/TaxWebSites_id.yaml
+  /TaxWebSites:
+    $ref: paths/TaxWebSites.yaml
+  /TaxWebSites(id)/SetAsDefault:
+    $ref: paths/TaxWebSites_id_SetAsDefault.yaml
+  /Teams({id}):
+    $ref: paths/Teams_id.yaml
+  /Teams:
+    $ref: paths/Teams.yaml
+  /TerminationReason({id}):
+    $ref: paths/TerminationReason_id.yaml
+  /TerminationReason:
+    $ref: paths/TerminationReason.yaml
+  /Territories({id}):
+    $ref: paths/Territories_id.yaml
+  /Territories:
+    $ref: paths/Territories.yaml
+  /TrackingNotes({id}):
+    $ref: paths/TrackingNotes_id.yaml
+  /TrackingNotes:
+    $ref: paths/TrackingNotes.yaml
+  /TransactionCodes({id}):
+    $ref: paths/TransactionCodes_id.yaml
+  /TransactionCodes:
+    $ref: paths/TransactionCodes.yaml
+  /TransportationDocument({id}):
+    $ref: paths/TransportationDocument_id.yaml
+  /TransportationDocument:
+    $ref: paths/TransportationDocument.yaml
+  /TransportationDocument(id)/CancelTransportationDocument:
+    $ref: paths/TransportationDocument_id_CancelTransportationDocument.yaml
+  /TSRExceptionalEvents({id}):
+    $ref: paths/TSRExceptionalEvents_id.yaml
+  /TSRExceptionalEvents:
+    $ref: paths/TSRExceptionalEvents.yaml
+  /UnitOfMeasurementGroups({id}):
+    $ref: paths/UnitOfMeasurementGroups_id.yaml
+  /UnitOfMeasurementGroups:
+    $ref: paths/UnitOfMeasurementGroups.yaml
+  /UnitOfMeasurements({id}):
+    $ref: paths/UnitOfMeasurements_id.yaml
+  /UnitOfMeasurements:
+    $ref: paths/UnitOfMeasurements.yaml
+  /UserDefaultGroups({id}):
+    $ref: paths/UserDefaultGroups_id.yaml
+  /UserDefaultGroups:
+    $ref: paths/UserDefaultGroups.yaml
+  /UserFieldsMD({id}):
+    $ref: paths/UserFieldsMD_id.yaml
+  /UserFieldsMD:
+    $ref: paths/UserFieldsMD.yaml
+  /UserKeysMD({id}):
+    $ref: paths/UserKeysMD_id.yaml
+  /UserKeysMD:
+    $ref: paths/UserKeysMD.yaml
+  /UserLanguages({id}):
+    $ref: paths/UserLanguages_id.yaml
+  /UserLanguages:
+    $ref: paths/UserLanguages.yaml
+  /UserObjectsMD({id}):
+    $ref: paths/UserObjectsMD_id.yaml
+  /UserObjectsMD:
+    $ref: paths/UserObjectsMD.yaml
+  /UserPermissionTree({id}):
+    $ref: paths/UserPermissionTree_id.yaml
+  /UserPermissionTree:
+    $ref: paths/UserPermissionTree.yaml
+  /UserQueries({id}):
+    $ref: paths/UserQueries_id.yaml
+  /UserQueries:
+    $ref: paths/UserQueries.yaml
+  /Users({id}):
+    $ref: paths/Users_id.yaml
+  /Users:
+    $ref: paths/Users.yaml
+  /Users(id)/Close:
+    $ref: paths/Users_id_Close.yaml
+  /UserTablesMD({id}):
+    $ref: paths/UserTablesMD_id.yaml
+  /UserTablesMD:
+    $ref: paths/UserTablesMD.yaml
+  /ValueMapping({id}):
+    $ref: paths/ValueMapping_id.yaml
+  /ValueMapping:
+    $ref: paths/ValueMapping.yaml
+  /ValueMappingCommunication({id}):
+    $ref: paths/ValueMappingCommunication_id.yaml
+  /ValueMappingCommunication:
+    $ref: paths/ValueMappingCommunication.yaml
+  /VatGroups({id}):
+    $ref: paths/VatGroups_id.yaml
+  /VatGroups:
+    $ref: paths/VatGroups.yaml
+  /VendorPayments({id}):
+    $ref: paths/VendorPayments_id.yaml
+  /VendorPayments:
+    $ref: paths/VendorPayments.yaml
+  /VendorPayments(id)/Cancel:
+    $ref: paths/VendorPayments_id_Cancel.yaml
+  /VendorPayments(id)/GetApprovalTemplates:
+    $ref: paths/VendorPayments_id_GetApprovalTemplates.yaml
+  /VendorPayments(id)/CancelbyCurrentSystemDate:
+    $ref: paths/VendorPayments_id_CancelbyCurrentSystemDate.yaml
+  /WarehouseLocations({id}):
+    $ref: paths/WarehouseLocations_id.yaml
+  /WarehouseLocations:
+    $ref: paths/WarehouseLocations.yaml
+  /Warehouses({id}):
+    $ref: paths/Warehouses_id.yaml
+  /Warehouses:
+    $ref: paths/Warehouses.yaml
+  /WarehouseSublevelCodes({id}):
+    $ref: paths/WarehouseSublevelCodes_id.yaml
+  /WarehouseSublevelCodes:
+    $ref: paths/WarehouseSublevelCodes.yaml
+  /WebClientBookmarkTiles({id}):
+    $ref: paths/WebClientBookmarkTiles_id.yaml
+  /WebClientBookmarkTiles:
+    $ref: paths/WebClientBookmarkTiles.yaml
+  /WebClientDashboards({id}):
+    $ref: paths/WebClientDashboards_id.yaml
+  /WebClientDashboards:
+    $ref: paths/WebClientDashboards.yaml
+  /WebClientFormSettings({id}):
+    $ref: paths/WebClientFormSettings_id.yaml
+  /WebClientFormSettings:
+    $ref: paths/WebClientFormSettings.yaml
+  /WebClientLaunchpads({id}):
+    $ref: paths/WebClientLaunchpads_id.yaml
+  /WebClientLaunchpads:
+    $ref: paths/WebClientLaunchpads.yaml
+  /WebClientListviewFilters({id}):
+    $ref: paths/WebClientListviewFilters_id.yaml
+  /WebClientListviewFilters:
+    $ref: paths/WebClientListviewFilters.yaml
+  /WebClientNotifications({id}):
+    $ref: paths/WebClientNotifications_id.yaml
+  /WebClientNotifications:
+    $ref: paths/WebClientNotifications.yaml
+  /WebClientPreferences({id}):
+    $ref: paths/WebClientPreferences_id.yaml
+  /WebClientPreferences:
+    $ref: paths/WebClientPreferences.yaml
+  /WebClientRecentActivities({id}):
+    $ref: paths/WebClientRecentActivities_id.yaml
+  /WebClientRecentActivities:
+    $ref: paths/WebClientRecentActivities.yaml
+  /WebClientVariantGroups({id}):
+    $ref: paths/WebClientVariantGroups_id.yaml
+  /WebClientVariantGroups:
+    $ref: paths/WebClientVariantGroups.yaml
+  /WebClientVariants({id}):
+    $ref: paths/WebClientVariants_id.yaml
+  /WebClientVariants:
+    $ref: paths/WebClientVariants.yaml
+  /WeightMeasures({id}):
+    $ref: paths/WeightMeasures_id.yaml
+  /WeightMeasures:
+    $ref: paths/WeightMeasures.yaml
+  /WithholdingTaxCodes({id}):
+    $ref: paths/WithholdingTaxCodes_id.yaml
+  /WithholdingTaxCodes:
+    $ref: paths/WithholdingTaxCodes.yaml
+  /WitholdingTaxDefinition({id}):
+    $ref: paths/WitholdingTaxDefinition_id.yaml
+  /WitholdingTaxDefinition:
+    $ref: paths/WitholdingTaxDefinition.yaml
+  /WizardPaymentMethods({id}):
+    $ref: paths/WizardPaymentMethods_id.yaml
+  /WizardPaymentMethods:
+    $ref: paths/WizardPaymentMethods.yaml
+  /WTaxTypeCodes({id}):
+    $ref: paths/WTaxTypeCodes_id.yaml
+  /WTaxTypeCodes:
+    $ref: paths/WTaxTypeCodes.yaml

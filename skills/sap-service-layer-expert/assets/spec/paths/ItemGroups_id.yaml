@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ItemGroups
+  summary: GET ItemGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'ItemGroups' with the given id.
+  operationId: get_ItemGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ItemGroups(123)
+  x-resource-description: This entity enables you to manipulate 'ItemGroups'. It represents the definition of item groups
+    in the Inventory module.
+patch:
+  tags:
+  - ItemGroups
+  summary: PATCH ItemGroups(id)
+  description: Update an instance of 'ItemGroups' with the given payload of type 'ItemGroups' in JSON format and with the
+    specified id.
+  operationId: patch_ItemGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Alert:
+              type: string
+              example: tYES
+        example:
+          Alert: tYES
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ItemGroups(123)
+  x-resource-description: This entity enables you to manipulate 'ItemGroups'. It represents the definition of item groups
+    in the Inventory module.
+delete:
+  tags:
+  - ItemGroups
+  summary: DELETE ItemGroups(id)
+  description: Delete an instance of 'ItemGroups' with the specified id.
+  operationId: delete_ItemGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ItemGroups(123)
+  x-resource-description: This entity enables you to manipulate 'ItemGroups'. It represents the definition of item groups
+    in the Inventory module.

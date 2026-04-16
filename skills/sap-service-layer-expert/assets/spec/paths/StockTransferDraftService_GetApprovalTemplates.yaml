@@ -1,0 +1,32 @@
+post:
+  tags:
+  - StockTransferDraftService
+  summary: POST StockTransferDraftService_GetApprovalTemplates
+  description: Invoke the method 'GetApprovalTemplates' on this service by specifying the payload 'StockTransfer' in the JSON
+    format.
+  operationId: post_StockTransferDraftService_GetApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            StockTransfer:
+              type: object
+              properties: {}
+        example:
+          StockTransfer: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/StockTransferDraftService_GetApprovalTemplates
+  x-resource-description: This API enables you to invoke the interfaces defined on 'StockTransferDraftService'.

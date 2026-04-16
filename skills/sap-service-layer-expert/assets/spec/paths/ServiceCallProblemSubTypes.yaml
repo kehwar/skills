@@ -1,0 +1,56 @@
+get:
+  tags:
+  - ServiceCallProblemSubTypes
+  summary: GET ServiceCallProblemSubTypes
+  description: Retrieve a collection of 'ServiceCallProblemSubTypes' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_ServiceCallProblemSubTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCallProblemSubTypes
+  x-resource-description: This entity enables you to manipulate 'ServiceCallProblemSubTypes'.
+post:
+  tags:
+  - ServiceCallProblemSubTypes
+  summary: POST ServiceCallProblemSubTypes
+  description: Create an instance of 'ServiceCallProblemSubTypes' with the given payload of type 'ServiceCallProblemSubType'
+    in JSON format.
+  operationId: post_ServiceCallProblemSubTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: test
+            Name:
+              type: string
+              example: test
+        example:
+          Description: test
+          Name: test
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceCallProblemSubTypes
+  x-resource-description: This entity enables you to manipulate 'ServiceCallProblemSubTypes'.

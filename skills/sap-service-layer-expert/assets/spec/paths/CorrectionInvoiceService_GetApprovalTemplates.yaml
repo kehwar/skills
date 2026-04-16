@@ -1,0 +1,70 @@
+post:
+  tags:
+  - CorrectionInvoiceService
+  summary: POST CorrectionInvoiceService_GetApprovalTemplates
+  description: Invoke the method 'GetApprovalTemplates' on this service by specifying the payload 'Document' in the JSON format.
+  operationId: post_CorrectionInvoiceService_GetApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Document:
+              type: object
+              properties:
+                CardCode:
+                  type: string
+                  example: c001
+                Comments:
+                  type: string
+                  example: Added by Service Layer
+                DocumentLines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      CorrectionInvoiceItem:
+                        type: string
+                        example: ciis_ShouldBe
+                      ItemCode:
+                        type: string
+                        example: item01
+                      Price:
+                        type: string
+                        example: '310'
+                      Quantity:
+                        type: string
+                        example: '10'
+                      VatGroup:
+                        type: string
+                        example: B4
+        example:
+          Document:
+            CardCode: c001
+            Comments: Added by Service Layer
+            DocumentLines:
+            - CorrectionInvoiceItem: ciis_ShouldBe
+              ItemCode: item01
+              Price: '310'
+              Quantity: '10'
+              VatGroup: B4
+            - CorrectionInvoiceItem: ciis_Was
+              ItemCode: item01
+              Price: '110'
+              Quantity: '10'
+              VatGroup: B4
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoiceService_GetApprovalTemplates
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CorrectionInvoiceService'.

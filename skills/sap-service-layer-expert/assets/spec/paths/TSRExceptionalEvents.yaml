@@ -1,0 +1,47 @@
+get:
+  tags:
+  - TSRExceptionalEvents
+  summary: GET TSRExceptionalEvents
+  description: Retrieve a collection of 'TSRExceptionalEvents' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_TSRExceptionalEvents
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/TSRExceptionalEvents
+  x-resource-description: This entity enables you to manipulate 'TSRExceptionalEvents'.
+post:
+  tags:
+  - TSRExceptionalEvents
+  summary: POST TSRExceptionalEvents
+  description: Create an instance of 'TSRExceptionalEvents' with the given payload of type 'TSRExceptionalEvent' in JSON format.
+  operationId: post_TSRExceptionalEvents
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/TSRExceptionalEvents
+  x-resource-description: This entity enables you to manipulate 'TSRExceptionalEvents'.

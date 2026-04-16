@@ -1,0 +1,71 @@
+get:
+  tags:
+  - BrazilMultiIndexers
+  summary: GET BrazilMultiIndexers
+  description: Retrieve a collection of 'BrazilMultiIndexers' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BrazilMultiIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BrazilMultiIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilMultiIndexers'.
+post:
+  tags:
+  - BrazilMultiIndexers
+  summary: POST BrazilMultiIndexers
+  description: Create an instance of 'BrazilMultiIndexers' with the given payload of type 'BrazilMultiIndexer' in JSON format.
+  operationId: post_BrazilMultiIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: '1114'
+            Description:
+              type: string
+              example: Gasolinas, Exceto Gasolina de AviaÃ§Ã£o
+            FirstRefIndexerCode:
+              type: string
+              example: '1'
+            IndexerType:
+              type: string
+              example: bmitIncomeNature
+            SecondRefIndexerCode:
+              type: string
+              example: '101'
+            ThirdRefIndexerCode:
+              type: string
+              example: null
+        example:
+          Code: '1114'
+          Description: Gasolinas, Exceto Gasolina de AviaÃ§Ã£o
+          FirstRefIndexerCode: '1'
+          IndexerType: bmitIncomeNature
+          SecondRefIndexerCode: '101'
+          ThirdRefIndexerCode: null
+  x-example-url: POST https://localhost:50000/b1s/v2/BrazilMultiIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilMultiIndexers'.

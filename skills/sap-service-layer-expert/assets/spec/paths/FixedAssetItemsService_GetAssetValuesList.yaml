@@ -1,0 +1,32 @@
+post:
+  tags:
+  - FixedAssetItemsService
+  summary: POST FixedAssetItemsService_GetAssetValuesList
+  description: Invoke the method 'GetAssetValuesList' on this service by specifying the payload 'FixedAssetValuesParams' in
+    the JSON format.
+  operationId: post_FixedAssetItemsService_GetAssetValuesList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FixedAssetValuesParams:
+              type: object
+              properties: {}
+        example:
+          FixedAssetValuesParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/FixedAssetItemsService_GetAssetValuesList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'FixedAssetItemsService'.

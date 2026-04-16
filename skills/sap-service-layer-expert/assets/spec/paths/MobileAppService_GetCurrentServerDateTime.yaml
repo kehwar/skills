@@ -1,0 +1,19 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_GetCurrentServerDateTime
+  description: Invoke the method 'GetCurrentServerDateTime' on this service.
+  operationId: post_MobileAppService_GetCurrentServerDateTime
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_GetCurrentServerDateTime
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

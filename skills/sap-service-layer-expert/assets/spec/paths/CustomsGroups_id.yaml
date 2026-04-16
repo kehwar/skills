@@ -1,0 +1,91 @@
+get:
+  tags:
+  - CustomsGroups
+  summary: GET CustomsGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'CustomsGroups' with the given id.
+  operationId: get_CustomsGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CustomsGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CustomsGroups'. It defines custom groups, which specify the
+    customs duty for items purchased abroad that are liable for customs.
+patch:
+  tags:
+  - CustomsGroups
+  summary: PATCH CustomsGroups(id)
+  description: Update an instance of 'CustomsGroups' with the given payload of type 'CustomsGroup' in JSON format and with
+    the specified id.
+  operationId: patch_CustomsGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Custom exempt
+        example:
+          Name: Custom exempt
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CustomsGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CustomsGroups'. It defines custom groups, which specify the
+    customs duty for items purchased abroad that are liable for customs.
+delete:
+  tags:
+  - CustomsGroups
+  summary: DELETE CustomsGroups(id)
+  description: Delete an instance of 'CustomsGroups' with the specified id.
+  operationId: delete_CustomsGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CustomsGroups(123)
+  x-resource-description: This entity enables you to manipulate 'CustomsGroups'. It defines custom groups, which specify the
+    customs duty for items purchased abroad that are liable for customs.

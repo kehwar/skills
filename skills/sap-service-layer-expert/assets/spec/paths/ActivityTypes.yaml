@@ -1,0 +1,53 @@
+get:
+  tags:
+  - ActivityTypes
+  summary: GET ActivityTypes
+  description: Retrieve a collection of 'ActivityTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ActivityTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ActivityTypes
+  x-resource-description: This entity enables you to manipulate 'ActivityTypes'. You may have different activities with your
+    business partners, for example, phone calls and meetings.
+post:
+  tags:
+  - ActivityTypes
+  summary: POST ActivityTypes
+  description: Create an instance of 'ActivityTypes' with the given payload of type 'ActivityType' in JSON format.
+  operationId: post_ActivityTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Special
+        example:
+          Name: Special
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivityTypes
+  x-resource-description: This entity enables you to manipulate 'ActivityTypes'. You may have different activities with your
+    business partners, for example, phone calls and meetings.

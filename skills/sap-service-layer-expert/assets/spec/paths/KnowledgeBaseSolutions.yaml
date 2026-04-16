@@ -1,0 +1,66 @@
+get:
+  tags:
+  - KnowledgeBaseSolutions
+  summary: GET KnowledgeBaseSolutions
+  description: Retrieve a collection of 'KnowledgeBaseSolutions' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_KnowledgeBaseSolutions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/KnowledgeBaseSolutions
+  x-resource-description: This entity enables you to manipulate 'KnowledgeBaseSolutions'. It represents the knowledge base
+    solutions in the Service module.
+post:
+  tags:
+  - KnowledgeBaseSolutions
+  summary: POST KnowledgeBaseSolutions
+  description: Create an instance of 'KnowledgeBaseSolutions' with the given payload of type 'KnowledgeBaseSolution' in JSON
+    format.
+  operationId: post_KnowledgeBaseSolutions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: Application Crashed on Linux system
+            ItemCode:
+              type: string
+              example: item01
+            Solution:
+              type: string
+              example: Crash issue
+            Symptom:
+              type: string
+              example: Application Crashed
+        example:
+          Description: Application Crashed on Linux system
+          ItemCode: item01
+          Solution: Crash issue
+          Symptom: Application Crashed
+  x-example-url: POST https://localhost:50000/b1s/v2/KnowledgeBaseSolutions
+  x-resource-description: This entity enables you to manipulate 'KnowledgeBaseSolutions'. It represents the knowledge base
+    solutions in the Service module.

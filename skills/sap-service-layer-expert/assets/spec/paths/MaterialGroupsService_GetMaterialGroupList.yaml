@@ -1,0 +1,19 @@
+post:
+  tags:
+  - MaterialGroupsService
+  summary: POST MaterialGroupsService_GetMaterialGroupList
+  description: Invoke the method 'GetMaterialGroupList' on this service.
+  operationId: post_MaterialGroupsService_GetMaterialGroupList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/MaterialGroupsService_GetMaterialGroupList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MaterialGroupsService'.

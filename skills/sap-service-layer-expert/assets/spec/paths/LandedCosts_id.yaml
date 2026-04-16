@@ -1,0 +1,88 @@
+get:
+  tags:
+  - LandedCosts
+  summary: GET LandedCosts(id)
+  description: Retrieve all or some selected properties from an instance of 'LandedCosts' with the given id.
+  operationId: get_LandedCosts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/LandedCosts(123)
+  x-resource-description: This entity enables you to manipulate 'LandedCosts'.
+patch:
+  tags:
+  - LandedCosts
+  summary: PATCH LandedCosts(id)
+  description: Update an instance of 'LandedCosts' with the given payload of type 'LandedCost' in JSON format and with the
+    specified id.
+  operationId: patch_LandedCosts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            JournalRemarks:
+              type: string
+              example: update from sl
+        example:
+          JournalRemarks: update from sl
+  x-example-url: PATCH https://localhost:50000/b1s/v2/LandedCosts(123)
+  x-resource-description: This entity enables you to manipulate 'LandedCosts'.
+delete:
+  tags:
+  - LandedCosts
+  summary: DELETE LandedCosts(id)
+  description: Delete an instance of 'LandedCosts' with the specified id.
+  operationId: delete_LandedCosts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/LandedCosts(123)
+  x-resource-description: This entity enables you to manipulate 'LandedCosts'.

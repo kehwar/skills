@@ -1,0 +1,89 @@
+get:
+  tags:
+  - SalesOpportunityCompetitorsSetup
+  summary: GET SalesOpportunityCompetitorsSetup(id)
+  description: Retrieve all or some selected properties from an instance of 'SalesOpportunityCompetitorsSetup' with the given
+    id.
+  operationId: get_SalesOpportunityCompetitorsSetup_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesOpportunityCompetitorsSetup(123)
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityCompetitorsSetup'.
+patch:
+  tags:
+  - SalesOpportunityCompetitorsSetup
+  summary: PATCH SalesOpportunityCompetitorsSetup(id)
+  description: Update an instance of 'SalesOpportunityCompetitorsSetup' with the given payload of type 'SalesOpportunityCompetitorSetup'
+    in JSON format and with the specified id.
+  operationId: patch_SalesOpportunityCompetitorsSetup_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Details:
+              type: string
+              example: '2222'
+        example:
+          Details: '2222'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SalesOpportunityCompetitorsSetup(123)
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityCompetitorsSetup'.
+delete:
+  tags:
+  - SalesOpportunityCompetitorsSetup
+  summary: DELETE SalesOpportunityCompetitorsSetup(id)
+  description: Delete an instance of 'SalesOpportunityCompetitorsSetup' with the specified id.
+  operationId: delete_SalesOpportunityCompetitorsSetup_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/SalesOpportunityCompetitorsSetup(123)
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityCompetitorsSetup'.

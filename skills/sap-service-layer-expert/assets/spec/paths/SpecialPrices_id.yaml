@@ -1,0 +1,97 @@
+get:
+  tags:
+  - SpecialPrices
+  summary: GET SpecialPrices(id)
+  description: Retrieve all or some selected properties from an instance of 'SpecialPrices' with the given id.
+  operationId: get_SpecialPrices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SpecialPrices(CardCode='c001',ItemCode='i001')
+  x-resource-description: This entity enables you to manipulate 'SpecialPrices'. It represents a discount for a specific item
+    in a specific price list. The discount can apply to a specific business partner or for all business partners. For a specific
+    business partner, the item and business partner must be unique; for all business partners, the item and price list must
+    be unique.
+patch:
+  tags:
+  - SpecialPrices
+  summary: PATCH SpecialPrices(id)
+  description: Update an instance of 'SpecialPrices' with the given payload of type 'SpecialPrice' in JSON format and with
+    the specified id.
+  operationId: patch_SpecialPrices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DiscountPercent:
+              type: integer
+              example: 20
+        example:
+          DiscountPercent: 20
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SpecialPrices(CardCode='c001',ItemCode='i001')
+  x-resource-description: This entity enables you to manipulate 'SpecialPrices'. It represents a discount for a specific item
+    in a specific price list. The discount can apply to a specific business partner or for all business partners. For a specific
+    business partner, the item and business partner must be unique; for all business partners, the item and price list must
+    be unique.
+delete:
+  tags:
+  - SpecialPrices
+  summary: DELETE SpecialPrices(id)
+  description: Delete an instance of 'SpecialPrices' with the specified id.
+  operationId: delete_SpecialPrices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/SpecialPrices(CardCode='c001',ItemCode='i001')
+  x-resource-description: This entity enables you to manipulate 'SpecialPrices'. It represents a discount for a specific item
+    in a specific price list. The discount can apply to a specific business partner or for all business partners. For a specific
+    business partner, the item and business partner must be unique; for all business partners, the item and price list must
+    be unique.

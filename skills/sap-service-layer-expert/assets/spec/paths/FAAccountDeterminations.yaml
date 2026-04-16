@@ -1,0 +1,124 @@
+get:
+  tags:
+  - FAAccountDeterminations
+  summary: GET FAAccountDeterminations
+  description: Retrieve a collection of 'FAAccountDeterminations' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_FAAccountDeterminations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/FAAccountDeterminations
+  x-resource-description: This entity enables you to manipulate 'FAAccountDeterminations'.
+post:
+  tags:
+  - FAAccountDeterminations
+  summary: POST FAAccountDeterminations
+  description: Create an instance of 'FAAccountDeterminations' with the given payload of type 'FAAccountDetermination' in
+    JSON format.
+  operationId: post_FAAccountDeterminations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AccumulatedOrdinaryDepr:
+              type: string
+              example: '2180'
+            AccumulatedSpecialDepr:
+              type: string
+              example: '2185'
+            AccumulatedUnplannedDepr:
+              type: string
+              example: '2182'
+            AssetBalanceSheetAccount:
+              type: string
+              example: '0027'
+            ClearingAccountAcquisition:
+              type: string
+              example: '2307'
+            Code:
+              type: string
+              example: test
+            Description:
+              type: string
+              example: Immaterielle Verm.
+            LeavewithExpenseNBVGross:
+              type: string
+              example: '2310'
+            LeavewithRevenueNBVGross:
+              type: string
+              example: '2315'
+            OrdinaryDepreciation:
+              type: string
+              example: '4822'
+            RetirementwithExpenseNet:
+              type: string
+              example: '4850'
+            RetirementwithRevenueNet:
+              type: string
+              example: '4850'
+            RevaluationReserveAccount:
+              type: string
+              example: '4850'
+            RevaluationReserveClearing:
+              type: string
+              example: '4850'
+            RevenueAccountforRetirement:
+              type: string
+              example: '8837'
+            RevenueClearingAccount:
+              type: string
+              example: '4850'
+            RevenuefromAssetSalesNet:
+              type: string
+              example: '4850'
+            SpecialDepreciation:
+              type: string
+              example: '4850'
+            UnplannedDepreciation:
+              type: string
+              example: '4826'
+        example:
+          AccumulatedOrdinaryDepr: '2180'
+          AccumulatedSpecialDepr: '2185'
+          AccumulatedUnplannedDepr: '2182'
+          AssetBalanceSheetAccount: '0027'
+          ClearingAccountAcquisition: '2307'
+          Code: test
+          Description: Immaterielle Verm.
+          LeavewithExpenseNBVGross: '2310'
+          LeavewithRevenueNBVGross: '2315'
+          OrdinaryDepreciation: '4822'
+          RetirementwithExpenseNet: '4850'
+          RetirementwithRevenueNet: '4850'
+          RevaluationReserveAccount: '4850'
+          RevaluationReserveClearing: '4850'
+          RevenueAccountforRetirement: '8837'
+          RevenueClearingAccount: '4850'
+          RevenuefromAssetSalesNet: '4850'
+          SpecialDepreciation: '4850'
+          UnplannedDepreciation: '4826'
+  x-example-url: POST https://localhost:50000/b1s/v2/FAAccountDeterminations
+  x-resource-description: This entity enables you to manipulate 'FAAccountDeterminations'.

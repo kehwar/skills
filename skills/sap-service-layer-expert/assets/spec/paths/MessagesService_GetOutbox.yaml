@@ -1,0 +1,20 @@
+post:
+  tags:
+  - MessagesService
+  summary: POST MessagesService_GetOutbox
+  description: Invoke the method 'GetOutbox' on this service.
+  operationId: post_MessagesService_GetOutbox
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/MessagesService_GetOutbox
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MessagesService'. To be specific, this
+    service enables to manage the inbox and outbox messages, and to send messages.

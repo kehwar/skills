@@ -1,0 +1,81 @@
+get:
+  tags:
+  - PurchaseTaxInvoices
+  summary: GET PurchaseTaxInvoices
+  description: Retrieve a collection of 'PurchaseTaxInvoices' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PurchaseTaxInvoices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PurchaseTaxInvoices
+  x-resource-description: This entity enables you to manipulate 'PurchaseTaxInvoices'. It represents the data of a purchase
+    Tax Invoice document.
+post:
+  tags:
+  - PurchaseTaxInvoices
+  summary: POST PurchaseTaxInvoices
+  description: Create an instance of 'PurchaseTaxInvoices' with the given payload of type 'PurchaseTaxInvoice' in JSON format.
+  operationId: post_PurchaseTaxInvoices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: v001
+            Comments:
+              type: string
+              example: create purchase tax invoice
+            DocType:
+              type: string
+              example: botit_Invoice
+            PurchaseTaxInvoiceLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  RefEntry1:
+                    type: string
+                    example: '11'
+            PurchaseTaxInvoiceOperationCodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  OpCode:
+                    type: string
+                    example: '2'
+        example:
+          CardCode: v001
+          Comments: create purchase tax invoice
+          DocType: botit_Invoice
+          PurchaseTaxInvoiceLines:
+          - RefEntry1: '11'
+          PurchaseTaxInvoiceOperationCodes:
+          - OpCode: '2'
+  x-example-url: POST https://localhost:50000/b1s/v2/PurchaseTaxInvoices
+  x-resource-description: This entity enables you to manipulate 'PurchaseTaxInvoices'. It represents the data of a purchase
+    Tax Invoice document.

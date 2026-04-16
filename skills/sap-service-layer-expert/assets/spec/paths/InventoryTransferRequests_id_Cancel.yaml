@@ -1,0 +1,21 @@
+post:
+  tags:
+  - InventoryTransferRequests(id)/Cancel
+  summary: POST InventoryTransferRequests(id)/Cancel
+  description: Invoke the method 'Cancel' on this EntitySet with the specified id.
+  operationId: post_InventoryTransferRequests_id/Cancel
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/InventoryTransferRequests(123)/Cancel
+  x-resource-description: This entity enables you to manipulate 'InventoryTransferRequests'. It represents a request to transfer
+    inventory from one warehouse to another. After the requested quantity is received by the receiving warehouse, you can
+    close the inventory transfer request and create an inventory transfer document.

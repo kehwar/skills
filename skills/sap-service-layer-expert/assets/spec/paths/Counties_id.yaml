@@ -1,0 +1,88 @@
+get:
+  tags:
+  - Counties
+  summary: GET Counties(id)
+  description: Retrieve all or some selected properties from an instance of 'Counties' with the given id.
+  operationId: get_Counties_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Counties(123)
+  x-resource-description: This entity enables you to manipulate 'Counties'.
+patch:
+  tags:
+  - Counties
+  summary: PATCH Counties(id)
+  description: Update an instance of 'Counties' with the given payload of type 'County' in JSON format and with the specified
+    id.
+  operationId: patch_Counties_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: abc
+        example:
+          Name: abc
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Counties(123)
+  x-resource-description: This entity enables you to manipulate 'Counties'.
+delete:
+  tags:
+  - Counties
+  summary: DELETE Counties(id)
+  description: Delete an instance of 'Counties' with the specified id.
+  operationId: delete_Counties_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Counties(123)
+  x-resource-description: This entity enables you to manipulate 'Counties'.

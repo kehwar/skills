@@ -1,0 +1,88 @@
+get:
+  tags:
+  - ExtendedTranslations
+  summary: GET ExtendedTranslations(id)
+  description: Retrieve all or some selected properties from an instance of 'ExtendedTranslations' with the given id.
+  operationId: get_ExtendedTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ExtendedTranslations(1)
+  x-resource-description: This entity enables you to manipulate 'ExtendedTranslations'.
+patch:
+  tags:
+  - ExtendedTranslations
+  summary: PATCH ExtendedTranslations(id)
+  description: Update an instance of 'ExtendedTranslations' with the given payload of type 'ExtendedTranslation' in JSON format
+    and with the specified id.
+  operationId: patch_ExtendedTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ID:
+              type: string
+              example: '123'
+        example:
+          ID: '123'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ExtendedTranslations(1)
+  x-resource-description: This entity enables you to manipulate 'ExtendedTranslations'.
+delete:
+  tags:
+  - ExtendedTranslations
+  summary: DELETE ExtendedTranslations(id)
+  description: Delete an instance of 'ExtendedTranslations' with the specified id.
+  operationId: delete_ExtendedTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ExtendedTranslations(1)
+  x-resource-description: This entity enables you to manipulate 'ExtendedTranslations'.

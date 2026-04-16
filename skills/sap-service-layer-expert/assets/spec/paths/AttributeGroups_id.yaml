@@ -1,0 +1,106 @@
+get:
+  tags:
+  - AttributeGroups
+  summary: GET AttributeGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'AttributeGroups' with the given id.
+  operationId: get_AttributeGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/AttributeGroups(1)
+  x-resource-description: This entity enables you to manipulate 'AttributeGroups'.
+patch:
+  tags:
+  - AttributeGroups
+  summary: PATCH AttributeGroups(id)
+  description: Update an instance of 'AttributeGroups' with the given payload of type 'AttributeGroup' in JSON format and
+    with the specified id.
+  operationId: patch_AttributeGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AttributeGroupCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AttributeID:
+                    type: integer
+                    example: 1
+                  AttributeName:
+                    type: string
+                    example: test 123
+                  DefaultValue:
+                    type: string
+                    example: '123'
+                  SortNumber:
+                    type: integer
+                    example: 1
+        example:
+          AttributeGroupCollection:
+          - AttributeID: 1
+            AttributeName: test 123
+            DefaultValue: '123'
+            SortNumber: 1
+  x-example-url: PATCH https://localhost:50000/b1s/v2/AttributeGroups(1)
+  x-resource-description: This entity enables you to manipulate 'AttributeGroups'.
+delete:
+  tags:
+  - AttributeGroups
+  summary: DELETE AttributeGroups(id)
+  description: Delete an instance of 'AttributeGroups' with the specified id.
+  operationId: delete_AttributeGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/AttributeGroups(1)
+  x-resource-description: This entity enables you to manipulate 'AttributeGroups'.

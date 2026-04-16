@@ -1,0 +1,59 @@
+get:
+  tags:
+  - ReportFilter
+  summary: GET ReportFilter
+  description: Retrieve a collection of 'ReportFilter' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ReportFilter
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ReportFilter
+  x-resource-description: This entity enables you to manipulate 'ReportFilter'.
+post:
+  tags:
+  - ReportFilter
+  summary: POST ReportFilter
+  description: Create an instance of 'ReportFilter' with the given payload of type 'TaxReportFilter' in JSON format.
+  operationId: post_ReportFilter
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FilterType:
+              type: string
+              example: trft_TaxReport
+            Name:
+              type: string
+              example: Myfilter
+            ReportLayout:
+              type: string
+              example: trfrlt_RegisterBookLayout
+        example:
+          FilterType: trft_TaxReport
+          Name: Myfilter
+          ReportLayout: trfrlt_RegisterBookLayout
+  x-example-url: POST https://localhost:50000/b1s/v2/ReportFilter
+  x-resource-description: This entity enables you to manipulate 'ReportFilter'.

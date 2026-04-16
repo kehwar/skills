@@ -1,0 +1,69 @@
+get:
+  tags:
+  - ValueMapping
+  summary: GET ValueMapping
+  description: Retrieve a collection of 'ValueMapping' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ValueMapping
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ValueMapping
+  x-resource-description: This entity enables you to manipulate 'ValueMapping'.
+post:
+  tags:
+  - ValueMapping
+  summary: POST ValueMapping
+  description: Create an instance of 'ValueMapping' with the given payload of type 'VM_B1ValuesData' in JSON format.
+  operationId: post_ValueMapping
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ObjectAbsEntry:
+              type: string
+              example: USD
+            ObjectId:
+              type: integer
+              example: 37
+            VM_ThirdPartyValuesCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  ThirdPartySystemId:
+                    type: integer
+                    example: 1
+                  ThirdPartyValue:
+                    type: string
+                    example: USD
+        example:
+          ObjectAbsEntry: USD
+          ObjectId: 37
+          VM_ThirdPartyValuesCollection:
+          - ThirdPartySystemId: 1
+            ThirdPartyValue: USD
+  x-example-url: POST https://localhost:50000/b1s/v2/ValueMapping
+  x-resource-description: This entity enables you to manipulate 'ValueMapping'.

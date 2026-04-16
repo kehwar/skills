@@ -1,0 +1,91 @@
+get:
+  tags:
+  - AlternateCatNum
+  summary: GET AlternateCatNum(id)
+  description: Retrieve all or some selected properties from an instance of 'AlternateCatNum' with the given id.
+  operationId: get_AlternateCatNum_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/AlternateCatNum(ItemCode='item01',CardCode='c001',Substitute='BP01')
+  x-resource-description: This entity enables you to manipulate 'AlternateCatNum'. It represents the alternative catalog numbers
+    in the Business Partners module.
+patch:
+  tags:
+  - AlternateCatNum
+  summary: PATCH AlternateCatNum(id)
+  description: Update an instance of 'AlternateCatNum' with the given payload of type 'AlternateCatNum' in JSON format and
+    with the specified id.
+  operationId: patch_AlternateCatNum_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DisplayBPCatalogNumber:
+              type: string
+              example: tYES
+        example:
+          DisplayBPCatalogNumber: tYES
+  x-example-url: PATCH https://localhost:50000/b1s/v2/AlternateCatNum(ItemCode='item01',CardCode='c001',Substitute='BP01')
+  x-resource-description: This entity enables you to manipulate 'AlternateCatNum'. It represents the alternative catalog numbers
+    in the Business Partners module.
+delete:
+  tags:
+  - AlternateCatNum
+  summary: DELETE AlternateCatNum(id)
+  description: Delete an instance of 'AlternateCatNum' with the specified id.
+  operationId: delete_AlternateCatNum_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/AlternateCatNum(ItemCode='item01',CardCode='c001',Substitute='BP01')
+  x-resource-description: This entity enables you to manipulate 'AlternateCatNum'. It represents the alternative catalog numbers
+    in the Business Partners module.

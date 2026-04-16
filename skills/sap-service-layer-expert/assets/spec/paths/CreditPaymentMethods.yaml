@@ -1,0 +1,55 @@
+get:
+  tags:
+  - CreditPaymentMethods
+  summary: GET CreditPaymentMethods
+  description: Retrieve a collection of 'CreditPaymentMethods' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_CreditPaymentMethods
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditPaymentMethods
+  x-resource-description: This entity enables you to manipulate 'CreditPaymentMethods'. It defines credit card payment methods.
+post:
+  tags:
+  - CreditPaymentMethods
+  summary: POST CreditPaymentMethods
+  description: Create an instance of 'CreditPaymentMethods' with the given payload of type 'CreditPaymentMethod' in JSON format.
+  operationId: post_CreditPaymentMethods
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Default 20D
+            PaymentCode:
+              type: string
+              example: 20D
+        example:
+          Name: Default 20D
+          PaymentCode: 20D
+  x-example-url: POST https://localhost:50000/b1s/v2/CreditPaymentMethods
+  x-resource-description: This entity enables you to manipulate 'CreditPaymentMethods'. It defines credit card payment methods.

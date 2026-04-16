@@ -1,0 +1,212 @@
+get:
+  tags:
+  - PickLists
+  summary: GET PickLists(id)
+  description: Retrieve all or some selected properties from an instance of 'PickLists' with the given id.
+  operationId: get_PickLists_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PickLists(3)
+  x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
+    the warehouse. The picking process applies only to items that are already approved in sales orders.
+patch:
+  tags:
+  - PickLists
+  summary: PATCH PickLists(id)
+  description: Update an instance of 'PickLists' with the given payload of type 'PickList' in JSON format and with the specified
+    id.
+  operationId: patch_PickLists_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Remarks:
+              type: string
+              example: Updated Remarks
+        example:
+          Remarks: Updated Remarks
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PickLists(3)
+  x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
+    the warehouse. The picking process applies only to items that are already approved in sales orders.
+put:
+  tags:
+  - PickLists
+  summary: PUT PickLists(id)
+  description: PickList is a very special object. The exposed properties are not enough for Service Layer to finish a patch
+    operation with 'PickListsLines'. In this way, use 'put' instead.
+  operationId: put_PickLists_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Absoluteentry:
+              type: integer
+              example: 19
+            Name:
+              type: string
+              example: Jayson Butler
+            ObjectType:
+              type: string
+              example: '156'
+            OwnerCode:
+              type: integer
+              example: 1
+            OwnerName:
+              type: string
+              example: null
+            PickDate:
+              type: string
+              example: '2017-09-09'
+            PickListsLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  AbsoluteEntry:
+                    type: integer
+                    example: 19
+                  BaseObjectType:
+                    type: integer
+                    example: 17
+                  BatchNumbers:
+                    type: array
+                    items: {}
+                  DocumentLinesBinAllocations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        AllowNegativeQuantity:
+                          type: string
+                          example: tNO
+                        BaseLineNumber:
+                          type: integer
+                          example: 0
+                        BinAbsEntry:
+                          type: integer
+                          example: 2
+                        Quantity:
+                          type: integer
+                          example: 2
+                        SerialAndBatchNumbersBaseLine:
+                          type: integer
+                          example: -1
+                  LineNumber:
+                    type: integer
+                    example: 0
+                  OrderEntry:
+                    type: integer
+                    example: 378
+                  OrderRowID:
+                    type: integer
+                    example: 0
+                  PickStatus:
+                    type: string
+                    example: ps_Picked
+                  PickedQuantity:
+                    type: integer
+                    example: 2
+                  PreviouslyReleasedQuantity:
+                    type: integer
+                    example: 4
+                  ReleasedQuantity:
+                    type: integer
+                    example: 2
+                  SerialNumbers:
+                    type: array
+                    items: {}
+            Remarks:
+              type: string
+              example: ''
+            Status:
+              type: string
+              example: ps_Picked
+            UseBaseUnits:
+              type: string
+              example: tNO
+        example:
+          Absoluteentry: 19
+          Name: Jayson Butler
+          ObjectType: '156'
+          OwnerCode: 1
+          OwnerName: null
+          PickDate: '2017-09-09'
+          PickListsLines:
+          - AbsoluteEntry: 19
+            BaseObjectType: 17
+            BatchNumbers: []
+            DocumentLinesBinAllocations:
+            - AllowNegativeQuantity: tNO
+              BaseLineNumber: 0
+              BinAbsEntry: 2
+              Quantity: 2
+              SerialAndBatchNumbersBaseLine: -1
+            LineNumber: 0
+            OrderEntry: 378
+            OrderRowID: 0
+            PickStatus: ps_Picked
+            PickedQuantity: 2
+            PreviouslyReleasedQuantity: 4
+            ReleasedQuantity: 2
+            SerialNumbers: []
+          Remarks: ''
+          Status: ps_Picked
+          UseBaseUnits: tNO
+  x-example-url: PUT https://localhost:50000/b1s/v2/PickLists(19)
+  x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
+    the warehouse. The picking process applies only to items that are already approved in sales orders.

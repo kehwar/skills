@@ -1,0 +1,100 @@
+get:
+  tags:
+  - MultiLanguageTranslations
+  summary: GET MultiLanguageTranslations(id)
+  description: Retrieve all or some selected properties from an instance of 'MultiLanguageTranslations' with the given id.
+  operationId: get_MultiLanguageTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/MultiLanguageTranslations(123)
+  x-resource-description: This entity enables you to manipulate 'MultiLanguageTranslations'. It allows translating alphanumeric
+    data of specified fields in master data objects (such as BusinessPartners and Items) to foreign languages and then printing
+    documents in the translated languages.
+patch:
+  tags:
+  - MultiLanguageTranslations
+  summary: PATCH MultiLanguageTranslations(id)
+  description: Update an instance of 'MultiLanguageTranslations' with the given payload of type 'MultiLanguageTranslation'
+    in JSON format and with the specified id.
+  operationId: patch_MultiLanguageTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TranslationsInUserLanguages:
+              type: array
+              items:
+                type: object
+                properties:
+                  Translationscontent:
+                    type: string
+                    example: Description
+        example:
+          TranslationsInUserLanguages:
+          - Translationscontent: Description
+  x-example-url: PATCH https://localhost:50000/b1s/v2/MultiLanguageTranslations(123)
+  x-resource-description: This entity enables you to manipulate 'MultiLanguageTranslations'. It allows translating alphanumeric
+    data of specified fields in master data objects (such as BusinessPartners and Items) to foreign languages and then printing
+    documents in the translated languages.
+delete:
+  tags:
+  - MultiLanguageTranslations
+  summary: DELETE MultiLanguageTranslations(id)
+  description: Delete an instance of 'MultiLanguageTranslations' with the specified id.
+  operationId: delete_MultiLanguageTranslations_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/MultiLanguageTranslations(123)
+  x-resource-description: This entity enables you to manipulate 'MultiLanguageTranslations'. It allows translating alphanumeric
+    data of specified fields in master data objects (such as BusinessPartners and Items) to foreign languages and then printing
+    documents in the translated languages.

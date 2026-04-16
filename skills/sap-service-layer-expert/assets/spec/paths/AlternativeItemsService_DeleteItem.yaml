@@ -1,0 +1,39 @@
+post:
+  tags:
+  - AlternativeItemsService
+  summary: POST AlternativeItemsService_DeleteItem
+  description: Invoke the method 'DeleteItem' on this service by specifying the payload 'OriginalItemParams' in the JSON format.
+  operationId: post_AlternativeItemsService_DeleteItem
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            OriginalItem:
+              type: object
+              properties:
+                ItemCode:
+                  type: string
+                  example: I001
+                ItemName:
+                  type: string
+                  example: I001
+        example:
+          OriginalItem:
+            ItemCode: I001
+            ItemName: I001
+  x-example-url: POST https://localhost:50000/b1s/v2/AlternativeItemsService_DeleteItem
+  x-resource-description: This API enables you to invoke the interfaces defined on 'AlternativeItemsService'.

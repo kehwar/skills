@@ -1,0 +1,59 @@
+get:
+  tags:
+  - StockTakings
+  summary: GET StockTakings
+  description: Retrieve a collection of 'StockTakings' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_StockTakings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/StockTakings
+  x-resource-description: This entity enables you to manipulate 'StockTakings'.
+post:
+  tags:
+  - StockTakings
+  summary: POST StockTakings
+  description: Create an instance of 'StockTakings' with the given payload of type 'StockTaking' in JSON format.
+  operationId: post_StockTakings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Counted:
+              type: integer
+              example: 0
+            ItemCode:
+              type: string
+              example: item001
+            WarehouseCode:
+              type: string
+              example: '01'
+        example:
+          Counted: 0
+          ItemCode: item001
+          WarehouseCode: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/StockTakings
+  x-resource-description: This entity enables you to manipulate 'StockTakings'.

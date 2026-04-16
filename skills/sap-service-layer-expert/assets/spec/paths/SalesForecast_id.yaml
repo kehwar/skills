@@ -1,0 +1,91 @@
+get:
+  tags:
+  - SalesForecast
+  summary: GET SalesForecast(id)
+  description: Retrieve all or some selected properties from an instance of 'SalesForecast' with the given id.
+  operationId: get_SalesForecast_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesForecast(123)
+  x-resource-description: This entity enables you to manipulate 'SalesForecast'. It represents the sales forecast for a specified
+    period.
+patch:
+  tags:
+  - SalesForecast
+  summary: PATCH SalesForecast(id)
+  description: Update an instance of 'SalesForecast' with the given payload of type 'SalesForecast' in JSON format and with
+    the specified id.
+  operationId: patch_SalesForecast_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ForecastName:
+              type: string
+              example: Daily forecast for item01
+        example:
+          ForecastName: Daily forecast for item01
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SalesForecast(123)
+  x-resource-description: This entity enables you to manipulate 'SalesForecast'. It represents the sales forecast for a specified
+    period.
+delete:
+  tags:
+  - SalesForecast
+  summary: DELETE SalesForecast(id)
+  description: Delete an instance of 'SalesForecast' with the specified id.
+  operationId: delete_SalesForecast_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/SalesForecast(123)
+  x-resource-description: This entity enables you to manipulate 'SalesForecast'. It represents the sales forecast for a specified
+    period.

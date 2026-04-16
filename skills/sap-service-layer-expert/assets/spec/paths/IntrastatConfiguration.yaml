@@ -1,0 +1,104 @@
+get:
+  tags:
+  - IntrastatConfiguration
+  summary: GET IntrastatConfiguration
+  description: Retrieve a collection of 'IntrastatConfiguration' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_IntrastatConfiguration
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/IntrastatConfiguration
+  x-resource-description: This entity enables you to manipulate 'IntrastatConfiguration'.
+post:
+  tags:
+  - IntrastatConfiguration
+  summary: POST IntrastatConfiguration
+  description: Create an instance of 'IntrastatConfiguration' with the given payload of type 'IntrastatConfiguration' in JSON
+    format.
+  operationId: post_IntrastatConfiguration
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            Code:
+              type: string
+              example: c/k11
+            ConfID:
+              type: string
+              example: 'M:c/k:::'
+            ConfType:
+              type: string
+              example: enAdditionalMeasureUnit
+            Country:
+              type: string
+              example: null
+            DateFrom:
+              type: string
+              example: null
+            DateTo:
+              type: string
+              example: null
+            Descr:
+              type: string
+              example: test Quantidade de quilates (1 quilate metr. = 2 ?10-4 kg)
+            Export:
+              type: string
+              example: tYES
+            Import:
+              type: string
+              example: tYES
+            PrcstVal:
+              type: integer
+              example: 0
+            StatCode:
+              type: string
+              example: ''
+            SuppUnit:
+              type: string
+              example: null
+            TriangDeal:
+              type: string
+              example: null
+        example:
+          AbsEntry: 1
+          Code: c/k11
+          ConfID: 'M:c/k:::'
+          ConfType: enAdditionalMeasureUnit
+          Country: null
+          DateFrom: null
+          DateTo: null
+          Descr: test Quantidade de quilates (1 quilate metr. = 2 ?10-4 kg)
+          Export: tYES
+          Import: tYES
+          PrcstVal: 0
+          StatCode: ''
+          SuppUnit: null
+          TriangDeal: null
+  x-example-url: POST https://localhost:50000/b1s/v2/IntrastatConfiguration
+  x-resource-description: This entity enables you to manipulate 'IntrastatConfiguration'.

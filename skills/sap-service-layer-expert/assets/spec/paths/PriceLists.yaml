@@ -1,0 +1,55 @@
+get:
+  tags:
+  - PriceLists
+  summary: GET PriceLists
+  description: Retrieve a collection of 'PriceLists' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PriceLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PriceLists
+  x-resource-description: This entity enables you to manipulate 'PriceLists'. It represents the management of price lists
+    in the Inventory module. An item can have several prices, with each based on a different price list, for example, purchase
+    price list, sales price list, distributor price list, and so on.
+post:
+  tags:
+  - PriceLists
+  summary: POST PriceLists
+  description: Create an instance of 'PriceLists' with the given payload of type 'PriceList' in JSON format.
+  operationId: post_PriceLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PriceListName:
+              type: string
+              example: Price List 30
+        example:
+          PriceListName: Price List 30
+  x-example-url: POST https://localhost:50000/b1s/v2/PriceLists
+  x-resource-description: This entity enables you to manipulate 'PriceLists'. It represents the management of price lists
+    in the Inventory module. An item can have several prices, with each based on a different price list, for example, purchase
+    price list, sales price list, distributor price list, and so on.

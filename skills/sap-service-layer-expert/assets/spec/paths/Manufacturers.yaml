@@ -1,0 +1,53 @@
+get:
+  tags:
+  - Manufacturers
+  summary: GET Manufacturers
+  description: Retrieve a collection of 'Manufacturers' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Manufacturers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Manufacturers
+  x-resource-description: This entity enables you to manipulate 'Manufacturers'. It defines manufacturers used in the Item
+    master data.
+post:
+  tags:
+  - Manufacturers
+  summary: POST Manufacturers
+  description: Create an instance of 'Manufacturers' with the given payload of type 'Manufacturer' in JSON format.
+  operationId: post_Manufacturers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ManufacturerName:
+              type: string
+              example: Prosoft
+        example:
+          ManufacturerName: Prosoft
+  x-example-url: POST https://localhost:50000/b1s/v2/Manufacturers
+  x-resource-description: This entity enables you to manipulate 'Manufacturers'. It defines manufacturers used in the Item
+    master data.

@@ -1,0 +1,93 @@
+get:
+  tags:
+  - CashDiscounts
+  summary: GET CashDiscounts
+  description: Retrieve a collection of 'CashDiscounts' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CashDiscounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CashDiscounts
+  x-resource-description: This entity enables you to manipulate 'CashDiscounts'.
+post:
+  tags:
+  - CashDiscounts
+  summary: POST CashDiscounts
+  description: Create an instance of 'CashDiscounts' with the given payload of type 'CashDiscount' in JSON format.
+  operationId: post_CashDiscounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ByDate:
+              type: string
+              example: tNO
+            Code:
+              type: string
+              example: EPDiscount
+            DiscountLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  Discount:
+                    type: integer
+                    example: 15
+                  DiscountCode:
+                    type: string
+                    example: EPDiscount
+                  LineId:
+                    type: integer
+                    example: 0
+                  NumOfDays:
+                    type: integer
+                    example: 10
+            Freight:
+              type: string
+              example: tYES
+            Name:
+              type: string
+              example: Early Pay Discount
+            Tax:
+              type: string
+              example: tYES
+        example:
+          ByDate: tNO
+          Code: EPDiscount
+          DiscountLines:
+          - Discount: 15
+            DiscountCode: EPDiscount
+            LineId: 0
+            NumOfDays: 10
+          - Discount: 25
+            DiscountCode: EPDiscount
+            LineId: 1
+            NumOfDays: 15
+          Freight: tYES
+          Name: Early Pay Discount
+          Tax: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/CashDiscounts
+  x-resource-description: This entity enables you to manipulate 'CashDiscounts'.

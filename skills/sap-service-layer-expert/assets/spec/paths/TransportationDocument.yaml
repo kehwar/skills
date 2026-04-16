@@ -1,0 +1,126 @@
+get:
+  tags:
+  - TransportationDocument
+  summary: GET TransportationDocument
+  description: Retrieve a collection of 'TransportationDocument' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_TransportationDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/TransportationDocument
+  x-resource-description: This entity enables you to manipulate 'TransportationDocument'.
+post:
+  tags:
+  - TransportationDocument
+  summary: POST TransportationDocument
+  description: Create an instance of 'TransportationDocument' with the given payload of type 'TransportationDocumentData'
+    in JSON format.
+  operationId: post_TransportationDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AttachmentEntry:
+              type: string
+              example: null
+            Canceled:
+              type: string
+              example: tNO
+            CarrierCode:
+              type: string
+              example: V01
+            ElDocExportFormat:
+              type: string
+              example: null
+            ElDocGenType:
+              type: string
+              example: edgt_NotRelevant
+            ExpirationDate:
+              type: string
+              example: null
+            IssueGate:
+              type: integer
+              example: 0
+            PostDate:
+              type: string
+              example: '2018-01-30'
+            TrailerID:
+              type: string
+              example: null
+            TransportationDocumentLineDataCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  DocLineNumber:
+                    type: integer
+                    example: 0
+                  DocNumber:
+                    type: integer
+                    example: 4
+                  DocOrderNum:
+                    type: string
+                    example: null
+                  DocType:
+                    type: string
+                    example: dc_Delivery
+                  ItemCode:
+                    type: string
+                    example: I01
+                  TransportedQuantity:
+                    type: number
+                    example: 1.0
+            TransportationNumber:
+              type: string
+              example: null
+            VehicleID:
+              type: string
+              example: null
+            WarehouseCode:
+              type: string
+              example: '01'
+        example:
+          AttachmentEntry: null
+          Canceled: tNO
+          CarrierCode: V01
+          ElDocExportFormat: null
+          ElDocGenType: edgt_NotRelevant
+          ExpirationDate: null
+          IssueGate: 0
+          PostDate: '2018-01-30'
+          TrailerID: null
+          TransportationDocumentLineDataCollection:
+          - DocLineNumber: 0
+            DocNumber: 4
+            DocOrderNum: null
+            DocType: dc_Delivery
+            ItemCode: I01
+            TransportedQuantity: 1.0
+          TransportationNumber: null
+          VehicleID: null
+          WarehouseCode: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/TransportationDocument
+  x-resource-description: This entity enables you to manipulate 'TransportationDocument'.

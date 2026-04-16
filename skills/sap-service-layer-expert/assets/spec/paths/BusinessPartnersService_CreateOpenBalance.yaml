@@ -1,0 +1,60 @@
+post:
+  tags:
+  - BusinessPartnersService
+  summary: POST BusinessPartnersService_CreateOpenBalance
+  description: Invoke the method 'CreateOpenBalance' on this service by specifying the payload 'OpenningBalanceAccount,BPCodes'
+    in the JSON format.
+  operationId: post_BusinessPartnersService_CreateOpenBalance
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BPCodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  Code:
+                    type: string
+                    example: HU1006
+                  Credit:
+                    type: integer
+                    example: 300
+            OpenningBalanceAccount:
+              type: object
+              properties:
+                Date:
+                  type: string
+                  example: '2016-09-19'
+                Details:
+                  type: string
+                  example: Bp Accounts Opening Balance
+                OpenBalanceAccount:
+                  type: string
+                  example: _SYS00000000078
+        example:
+          BPCodes:
+          - Code: HU1006
+            Credit: 300
+          - Code: HU1007
+            Credit: 300
+          OpenningBalanceAccount:
+            Date: '2016-09-19'
+            Details: Bp Accounts Opening Balance
+            OpenBalanceAccount: _SYS00000000078
+  x-example-url: POST https://localhost:50000/b1s/v2/BusinessPartnersService_CreateOpenBalance
+  x-resource-description: This API enables you to invoke the interfaces defined on 'BusinessPartnersService'.

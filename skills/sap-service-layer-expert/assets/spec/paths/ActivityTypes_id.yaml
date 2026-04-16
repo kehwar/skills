@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ActivityTypes
+  summary: GET ActivityTypes(id)
+  description: Retrieve all or some selected properties from an instance of 'ActivityTypes' with the given id.
+  operationId: get_ActivityTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ActivityTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ActivityTypes'. You may have different activities with your
+    business partners, for example, phone calls and meetings.
+patch:
+  tags:
+  - ActivityTypes
+  summary: PATCH ActivityTypes(id)
+  description: Update an instance of 'ActivityTypes' with the given payload of type 'ActivityType' in JSON format and with
+    the specified id.
+  operationId: patch_ActivityTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Others
+        example:
+          Name: Others
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ActivityTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ActivityTypes'. You may have different activities with your
+    business partners, for example, phone calls and meetings.
+delete:
+  tags:
+  - ActivityTypes
+  summary: DELETE ActivityTypes(id)
+  description: Delete an instance of 'ActivityTypes' with the specified id.
+  operationId: delete_ActivityTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ActivityTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ActivityTypes'. You may have different activities with your
+    business partners, for example, phone calls and meetings.

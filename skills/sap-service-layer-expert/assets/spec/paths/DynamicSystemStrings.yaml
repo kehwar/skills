@@ -1,0 +1,65 @@
+get:
+  tags:
+  - DynamicSystemStrings
+  summary: GET DynamicSystemStrings
+  description: Retrieve a collection of 'DynamicSystemStrings' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_DynamicSystemStrings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DynamicSystemStrings
+  x-resource-description: This entity enables you to manipulate 'DynamicSystemStrings' and enables modifying a field name
+    and format in the interface to match the terms used in your company.
+post:
+  tags:
+  - DynamicSystemStrings
+  summary: POST DynamicSystemStrings
+  description: Create an instance of 'DynamicSystemStrings' with the given payload of type 'DynamicSystemString' in JSON format.
+  operationId: post_DynamicSystemStrings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ColumnID:
+              type: string
+              example: '-1'
+            FormID:
+              type: string
+              example: '139'
+            ItemID:
+              type: string
+              example: '230'
+            ItemString:
+              type: string
+              example: new owner
+        example:
+          ColumnID: '-1'
+          FormID: '139'
+          ItemID: '230'
+          ItemString: new owner
+  x-example-url: POST https://localhost:50000/b1s/v2/DynamicSystemStrings
+  x-resource-description: This entity enables you to manipulate 'DynamicSystemStrings' and enables modifying a field name
+    and format in the interface to match the terms used in your company.

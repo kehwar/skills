@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_AddActivities
+  description: Invoke the method 'AddActivities' on this service by specifying the payload 'Collection(PMC_ActivityData)'
+    in the JSON format.
+  operationId: post_ProjectManagementConfigurationService_AddActivities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_ActivityData:
+              type: object
+              properties:
+                ActivityType:
+                  type: string
+                  example: calls
+                IsChargeable:
+                  type: string
+                  example: tYES
+        example:
+          PMC_ActivityData:
+            ActivityType: calls
+            IsChargeable: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_AddActivities
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

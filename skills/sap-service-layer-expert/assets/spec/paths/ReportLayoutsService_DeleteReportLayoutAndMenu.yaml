@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ReportLayoutsService
+  summary: POST ReportLayoutsService_DeleteReportLayoutAndMenu
+  description: Invoke the method 'DeleteReportLayoutAndMenu' on this service by specifying the payload 'ReportLayoutParams'
+    in the JSON format.
+  operationId: post_ReportLayoutsService_DeleteReportLayoutAndMenu
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ReportLayoutParams:
+              type: object
+              properties:
+                LayoutCode:
+                  type: string
+                  example: POR10007
+        example:
+          ReportLayoutParams:
+            LayoutCode: POR10007
+  x-example-url: POST https://localhost:50000/b1s/v2/ReportLayoutsService_DeleteReportLayoutAndMenu
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ReportLayoutsService'.

@@ -1,0 +1,87 @@
+get:
+  tags:
+  - SalesTaxAuthorities
+  summary: GET SalesTaxAuthorities
+  description: Retrieve a collection of 'SalesTaxAuthorities' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SalesTaxAuthorities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesTaxAuthorities
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthorities'. It represents the sales tax jurisdictions
+    data for the US and Canada localizations, or sales tax types for the Latin America localization.
+post:
+  tags:
+  - SalesTaxAuthorities
+  summary: POST SalesTaxAuthorities
+  description: Create an instance of 'SalesTaxAuthorities' with the given payload of type 'SalesTaxAuthority' in JSON format.
+  operationId: post_SalesTaxAuthorities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AOrPTaxAccount:
+              type: string
+              example: _SYS00000000168
+            AOrRTaxAccount:
+              type: string
+              example: _SYS00000000061
+            Code:
+              type: string
+              example: WYN
+            Name:
+              type: string
+              example: Wyoming new
+            TaxDefinitions:
+              type: array
+              items:
+                type: object
+                properties:
+                  Effectivefrom:
+                    type: string
+                    example: '2000-01-01'
+                  Rate:
+                    type: string
+                    example: '10'
+            Type:
+              type: string
+              example: '-3'
+            UseTaxAccount:
+              type: string
+              example: _SYS00000000066
+        example:
+          AOrPTaxAccount: _SYS00000000168
+          AOrRTaxAccount: _SYS00000000061
+          Code: WYN
+          Name: Wyoming new
+          TaxDefinitions:
+          - Effectivefrom: '2000-01-01'
+            Rate: '10'
+          Type: '-3'
+          UseTaxAccount: _SYS00000000066
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesTaxAuthorities
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthorities'. It represents the sales tax jurisdictions
+    data for the US and Canada localizations, or sales tax types for the Latin America localization.

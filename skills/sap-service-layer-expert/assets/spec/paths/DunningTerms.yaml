@@ -1,0 +1,85 @@
+get:
+  tags:
+  - DunningTerms
+  summary: GET DunningTerms
+  description: Retrieve a collection of 'DunningTerms' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DunningTerms
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DunningTerms
+  x-resource-description: This entity enables you to manipulate 'DunningTerms'.
+post:
+  tags:
+  - DunningTerms
+  summary: POST DunningTerms
+  description: Create an instance of 'DunningTerms' with the given payload of type 'DunningTerm' in JSON format.
+  operationId: post_DunningTerms
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: DT01
+            DaysInMonth:
+              type: string
+              example: '10'
+            DaysInYear:
+              type: string
+              example: '2016'
+            DunningTermLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  Effectiveafter:
+                    type: string
+                    example: '30'
+                  LetterFormat:
+                    type: string
+                    example: dltDunningLetter1
+                  LevelNum:
+                    type: string
+                    example: '001'
+            GroupingMethod:
+              type: string
+              example: gmPerBP
+            Name:
+              type: string
+              example: DT01
+        example:
+          Code: DT01
+          DaysInMonth: '10'
+          DaysInYear: '2016'
+          DunningTermLines:
+          - Effectiveafter: '30'
+            LetterFormat: dltDunningLetter1
+            LevelNum: '001'
+          GroupingMethod: gmPerBP
+          Name: DT01
+  x-example-url: POST https://localhost:50000/b1s/v2/DunningTerms
+  x-resource-description: This entity enables you to manipulate 'DunningTerms'.

@@ -1,0 +1,87 @@
+get:
+  tags:
+  - Cockpits
+  summary: GET Cockpits
+  description: Retrieve a collection of 'Cockpits' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Cockpits
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Cockpits
+  x-resource-description: This entity enables you to manipulate 'Cockpits'.
+post:
+  tags:
+  - Cockpits
+  summary: POST Cockpits
+  description: Create an instance of 'Cockpits' with the given payload of type 'Cockpit' in JSON format.
+  operationId: post_Cockpits
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 4
+            CockpitType:
+              type: string
+              example: cptt_UserCockpit
+            Code:
+              type: integer
+              example: 1
+            Date:
+              type: string
+              example: null
+            Description:
+              type: string
+              example: null
+            Manufacturer:
+              type: string
+              example: SAP
+            Name:
+              type: string
+              example: Home11
+            Publisher:
+              type: string
+              example: null
+            Time:
+              type: string
+              example: null
+            UserSignature:
+              type: integer
+              example: 1
+        example:
+          AbsEntry: 4
+          CockpitType: cptt_UserCockpit
+          Code: 1
+          Date: null
+          Description: null
+          Manufacturer: SAP
+          Name: Home11
+          Publisher: null
+          Time: null
+          UserSignature: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/Cockpits
+  x-resource-description: This entity enables you to manipulate 'Cockpits'.

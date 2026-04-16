@@ -1,0 +1,68 @@
+get:
+  tags:
+  - JournalEntries
+  summary: GET JournalEntries
+  description: Retrieve a collection of 'JournalEntries' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_JournalEntries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/JournalEntries
+  x-resource-description: This entity enables you to manipulate 'JournalEntries'. It represents journal transactions.
+post:
+  tags:
+  - JournalEntries
+  summary: POST JournalEntries
+  description: Create an instance of 'JournalEntries' with the given payload of type 'JournalEntry' in JSON format.
+  operationId: post_JournalEntries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            JournalEntryLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccountCode:
+                    type: string
+                    example: _SYS00000000019
+                  Credit:
+                    type: integer
+                    example: 100
+                  Debit:
+                    type: integer
+                    example: 0
+        example:
+          JournalEntryLines:
+          - AccountCode: _SYS00000000019
+            Credit: 100
+            Debit: 0
+          - AccountCode: _SYS00000000164
+            Credit: 0
+            Debit: 100
+  x-example-url: POST https://localhost:50000/b1s/v2/JournalEntries
+  x-resource-description: This entity enables you to manipulate 'JournalEntries'. It represents journal transactions.

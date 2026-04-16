@@ -1,0 +1,23 @@
+get:
+  tags:
+  - Entity
+  summary: GET Entity(id)
+  description: ''
+  operationId: get_Entity_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string

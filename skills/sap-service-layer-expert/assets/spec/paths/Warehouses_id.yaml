@@ -1,0 +1,91 @@
+get:
+  tags:
+  - Warehouses
+  summary: GET Warehouses(id)
+  description: Retrieve all or some selected properties from an instance of 'Warehouses' with the given id.
+  operationId: get_Warehouses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Warehouses('w001')
+  x-resource-description: This entity enables you to manipulate 'Warehouses'. It represents the information of warehouses
+    in the Inventory module.
+patch:
+  tags:
+  - Warehouses
+  summary: PATCH Warehouses(id)
+  description: Update an instance of 'Warehouses' with the given payload of type 'Warehouse' in JSON format and with the specified
+    id.
+  operationId: patch_Warehouses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            WarehouseName:
+              type: string
+              example: UpdatedWHName
+        example:
+          WarehouseName: UpdatedWHName
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Warehouses('w001')
+  x-resource-description: This entity enables you to manipulate 'Warehouses'. It represents the information of warehouses
+    in the Inventory module.
+delete:
+  tags:
+  - Warehouses
+  summary: DELETE Warehouses(id)
+  description: Delete an instance of 'Warehouses' with the specified id.
+  operationId: delete_Warehouses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Warehouses('w001')
+  x-resource-description: This entity enables you to manipulate 'Warehouses'. It represents the information of warehouses
+    in the Inventory module.

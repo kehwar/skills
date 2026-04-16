@@ -1,0 +1,63 @@
+get:
+  tags:
+  - ProfitCenters
+  summary: GET ProfitCenters
+  description: Retrieve a collection of 'ProfitCenters' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ProfitCenters
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ProfitCenters
+  x-resource-description: This entity enables you to manipulate 'ProfitCenters'.
+post:
+  tags:
+  - ProfitCenters
+  summary: POST ProfitCenters
+  description: Create an instance of 'ProfitCenters' with the given payload of type 'ProfitCenter' in JSON format.
+  operationId: post_ProfitCenters
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CenterCode:
+              type: string
+              example: NY_B
+            CenterName:
+              type: string
+              example: New York Branch
+            EffectiveFrom:
+              type: string
+              example: '2014-01-01'
+            EffectiveTo:
+              type: string
+              example: '2014-12-31'
+        example:
+          CenterCode: NY_B
+          CenterName: New York Branch
+          EffectiveFrom: '2014-01-01'
+          EffectiveTo: '2014-12-31'
+  x-example-url: POST https://localhost:50000/b1s/v2/ProfitCenters
+  x-resource-description: This entity enables you to manipulate 'ProfitCenters'.

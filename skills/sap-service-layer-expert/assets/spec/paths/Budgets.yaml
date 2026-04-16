@@ -1,0 +1,59 @@
+get:
+  tags:
+  - Budgets
+  summary: GET Budgets
+  description: Retrieve a collection of 'Budgets' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Budgets
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Budgets
+  x-resource-description: This entity enables you to manipulate 'Budgets' based on G/L accounts.
+post:
+  tags:
+  - Budgets
+  summary: POST Budgets
+  description: Create an instance of 'Budgets' with the given payload of type 'Budget' in JSON format.
+  operationId: post_Budgets
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AccountCode:
+              type: string
+              example: _SYS00000000220
+            StartofFiscalYear:
+              type: string
+              example: '2014-01-01'
+            TotalAnnualBudgetDebitLoc:
+              type: string
+              example: '0.894'
+        example:
+          AccountCode: _SYS00000000220
+          StartofFiscalYear: '2014-01-01'
+          TotalAnnualBudgetDebitLoc: '0.894'
+  x-example-url: POST https://localhost:50000/b1s/v2/Budgets
+  x-resource-description: This entity enables you to manipulate 'Budgets' based on G/L accounts.

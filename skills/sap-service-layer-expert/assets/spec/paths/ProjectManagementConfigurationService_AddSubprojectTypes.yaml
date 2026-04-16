@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_AddSubprojectTypes
+  description: Invoke the method 'AddSubprojectTypes' on this service by specifying the payload 'Collection(PMC_SubprojectTypeData)'
+    in the JSON format.
+  operationId: post_ProjectManagementConfigurationService_AddSubprojectTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_SubprojectTypeData:
+              type: object
+              properties:
+                SubprojectTypeID:
+                  type: string
+                  example: '1'
+                SubprojectTypeName:
+                  type: string
+                  example: subproject 01
+        example:
+          PMC_SubprojectTypeData:
+            SubprojectTypeID: '1'
+            SubprojectTypeName: subproject 01
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_AddSubprojectTypes
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

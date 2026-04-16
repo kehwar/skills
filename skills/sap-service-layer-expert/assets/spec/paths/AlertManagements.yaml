@@ -1,0 +1,89 @@
+get:
+  tags:
+  - AlertManagements
+  summary: GET AlertManagements
+  description: Retrieve a collection of 'AlertManagements' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AlertManagements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AlertManagements
+  x-resource-description: This entity enables you to manipulate 'AlertManagements'. For each alert, you need to define its
+    priority, the users and documents to which the alert applies, and the conditions that trigger the alert. In addition to
+    activating system alerts, you can also add alerts based on user-defined queries.
+post:
+  tags:
+  - AlertManagements
+  summary: POST AlertManagements
+  description: Create an instance of 'AlertManagements' with the given payload of type 'AlertManagement' in JSON format.
+  operationId: post_AlertManagements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Active:
+              type: string
+              example: tYES
+            AlertManagementRecipients:
+              type: array
+              items:
+                type: object
+                properties:
+                  SendInternal:
+                    type: string
+                    example: tYES
+                  UserCode:
+                    type: string
+                    example: '1'
+            FrequencyInterval:
+              type: string
+              example: '1'
+            FrequencyType:
+              type: string
+              example: atfi_Hours
+            Name:
+              type: string
+              example: task alert
+            Priority:
+              type: string
+              example: atp_Normal
+            QueryID:
+              type: string
+              example: '282'
+        example:
+          Active: tYES
+          AlertManagementRecipients:
+          - SendInternal: tYES
+            UserCode: '1'
+          FrequencyInterval: '1'
+          FrequencyType: atfi_Hours
+          Name: task alert
+          Priority: atp_Normal
+          QueryID: '282'
+  x-example-url: POST https://localhost:50000/b1s/v2/AlertManagements
+  x-resource-description: This entity enables you to manipulate 'AlertManagements'. For each alert, you need to define its
+    priority, the users and documents to which the alert applies, and the conditions that trigger the alert. In addition to
+    activating system alerts, you can also add alerts based on user-defined queries.

@@ -1,0 +1,44 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_UpdateStageTypes
+  description: Invoke the method 'UpdateStageTypes' on this service by specifying the payload 'Collection(PMC_StageTypeData)'
+    in the JSON format.
+  operationId: post_ProjectManagementConfigurationService_UpdateStageTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_StageTypeData:
+              type: object
+              properties:
+                StageDescription:
+                  type: string
+                  example: update stage 01 description
+                StageID:
+                  type: integer
+                  example: 6
+                StageName:
+                  type: string
+                  example: stage01
+        example:
+          PMC_StageTypeData:
+            StageDescription: update stage 01 description
+            StageID: 6
+            StageName: stage01
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_UpdateStageTypes
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

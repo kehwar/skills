@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ApprovalTemplates
+  summary: GET ApprovalTemplates(id)
+  description: Retrieve all or some selected properties from an instance of 'ApprovalTemplates' with the given id.
+  operationId: get_ApprovalTemplates_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ApprovalTemplates(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
+    and the users and transactions to which the procedure applies.
+patch:
+  tags:
+  - ApprovalTemplates
+  summary: PATCH ApprovalTemplates(id)
+  description: Update an instance of 'ApprovalTemplates' with the given payload of type 'ApprovalTemplate' in JSON format
+    and with the specified id.
+  operationId: patch_ApprovalTemplates_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Remarks:
+              type: string
+              example: Shipping
+        example:
+          Remarks: Shipping
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ApprovalTemplates(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
+    and the users and transactions to which the procedure applies.
+delete:
+  tags:
+  - ApprovalTemplates
+  summary: DELETE ApprovalTemplates(id)
+  description: Delete an instance of 'ApprovalTemplates' with the specified id.
+  operationId: delete_ApprovalTemplates_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ApprovalTemplates(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalTemplates'. Each template specifies an approval procedure,
+    and the users and transactions to which the procedure applies.

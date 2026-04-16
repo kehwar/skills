@@ -1,0 +1,54 @@
+get:
+  tags:
+  - SalesTaxAuthoritiesTypes
+  summary: GET SalesTaxAuthoritiesTypes
+  description: Retrieve a collection of 'SalesTaxAuthoritiesTypes' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_SalesTaxAuthoritiesTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesTaxAuthoritiesTypes
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthoritiesTypes'. It represents the types of sales
+    tax authorities. It specifies whether the sales tax authority includes VAT.
+post:
+  tags:
+  - SalesTaxAuthoritiesTypes
+  summary: POST SalesTaxAuthoritiesTypes
+  description: Create an instance of 'SalesTaxAuthoritiesTypes' with the given payload of type 'SalesTaxAuthoritiesType' in
+    JSON format.
+  operationId: post_SalesTaxAuthoritiesTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Town
+        example:
+          Name: Town
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesTaxAuthoritiesTypes
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthoritiesTypes'. It represents the types of sales
+    tax authorities. It specifies whether the sales tax authority includes VAT.

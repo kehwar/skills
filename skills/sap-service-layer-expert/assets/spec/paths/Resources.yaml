@@ -1,0 +1,563 @@
+get:
+  tags:
+  - Resources
+  summary: GET Resources
+  description: Retrieve a collection of 'Resources' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Resources
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Resources
+  x-resource-description: This entity enables you to manipulate 'Resources'.
+post:
+  tags:
+  - Resources
+  summary: POST Resources
+  description: Create an instance of 'Resources' with the given payload of type 'Resource' in JSON format.
+  operationId: post_Resources
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Active:
+              type: string
+              example: tYES
+            ActiveFrom:
+              type: string
+              example: null
+            ActiveRemarks:
+              type: string
+              example: null
+            ActiveTo:
+              type: string
+              example: null
+            Allocation:
+              type: string
+              example: raOnStartDate
+            AttachmentEntry:
+              type: string
+              example: null
+            Code:
+              type: string
+              example: R02
+            CodeBar:
+              type: string
+              example: null
+            Cost1:
+              type: integer
+              example: 0
+            Cost10:
+              type: integer
+              example: 0
+            Cost2:
+              type: integer
+              example: 0
+            Cost3:
+              type: integer
+              example: 0
+            Cost4:
+              type: integer
+              example: 0
+            Cost5:
+              type: integer
+              example: 0
+            Cost6:
+              type: integer
+              example: 0
+            Cost7:
+              type: integer
+              example: 0
+            Cost8:
+              type: integer
+              example: 0
+            Cost9:
+              type: integer
+              example: 0
+            DefaultWarehouse:
+              type: string
+              example: null
+            ForeignName:
+              type: string
+              example: null
+            Group:
+              type: integer
+              example: 1
+            Inactive:
+              type: string
+              example: tNO
+            InactiveFrom:
+              type: string
+              example: null
+            InactiveRemarks:
+              type: string
+              example: null
+            InactiveTo:
+              type: string
+              example: null
+            IssueMethod:
+              type: string
+              example: rimBackflush
+            LinkedItem:
+              type: string
+              example: null
+            Name:
+              type: string
+              example: null
+            Number:
+              type: string
+              example: null
+            Picture:
+              type: string
+              example: null
+            Property1:
+              type: string
+              example: tNO
+            Property10:
+              type: string
+              example: tNO
+            Property11:
+              type: string
+              example: tNO
+            Property12:
+              type: string
+              example: tNO
+            Property13:
+              type: string
+              example: tNO
+            Property14:
+              type: string
+              example: tNO
+            Property15:
+              type: string
+              example: tNO
+            Property16:
+              type: string
+              example: tNO
+            Property17:
+              type: string
+              example: tNO
+            Property18:
+              type: string
+              example: tNO
+            Property19:
+              type: string
+              example: tNO
+            Property2:
+              type: string
+              example: tNO
+            Property20:
+              type: string
+              example: tNO
+            Property21:
+              type: string
+              example: tNO
+            Property22:
+              type: string
+              example: tNO
+            Property23:
+              type: string
+              example: tNO
+            Property24:
+              type: string
+              example: tNO
+            Property25:
+              type: string
+              example: tNO
+            Property26:
+              type: string
+              example: tNO
+            Property27:
+              type: string
+              example: tNO
+            Property28:
+              type: string
+              example: tNO
+            Property29:
+              type: string
+              example: tNO
+            Property3:
+              type: string
+              example: tNO
+            Property30:
+              type: string
+              example: tNO
+            Property31:
+              type: string
+              example: tNO
+            Property32:
+              type: string
+              example: tNO
+            Property33:
+              type: string
+              example: tNO
+            Property34:
+              type: string
+              example: tNO
+            Property35:
+              type: string
+              example: tNO
+            Property36:
+              type: string
+              example: tNO
+            Property37:
+              type: string
+              example: tNO
+            Property38:
+              type: string
+              example: tNO
+            Property39:
+              type: string
+              example: tNO
+            Property4:
+              type: string
+              example: tNO
+            Property40:
+              type: string
+              example: tNO
+            Property41:
+              type: string
+              example: tNO
+            Property42:
+              type: string
+              example: tNO
+            Property43:
+              type: string
+              example: tNO
+            Property44:
+              type: string
+              example: tNO
+            Property45:
+              type: string
+              example: tNO
+            Property46:
+              type: string
+              example: tNO
+            Property47:
+              type: string
+              example: tNO
+            Property48:
+              type: string
+              example: tNO
+            Property49:
+              type: string
+              example: tNO
+            Property5:
+              type: string
+              example: tNO
+            Property50:
+              type: string
+              example: tNO
+            Property51:
+              type: string
+              example: tNO
+            Property52:
+              type: string
+              example: tNO
+            Property53:
+              type: string
+              example: tNO
+            Property54:
+              type: string
+              example: tNO
+            Property55:
+              type: string
+              example: tNO
+            Property56:
+              type: string
+              example: tNO
+            Property57:
+              type: string
+              example: tNO
+            Property58:
+              type: string
+              example: tNO
+            Property59:
+              type: string
+              example: tNO
+            Property6:
+              type: string
+              example: tNO
+            Property60:
+              type: string
+              example: tNO
+            Property61:
+              type: string
+              example: tNO
+            Property62:
+              type: string
+              example: tNO
+            Property63:
+              type: string
+              example: tNO
+            Property64:
+              type: string
+              example: tNO
+            Property7:
+              type: string
+              example: tNO
+            Property8:
+              type: string
+              example: tNO
+            Property9:
+              type: string
+              example: tNO
+            Remarks:
+              type: string
+              example: null
+            ResourceDailyCapacities:
+              type: array
+              items:
+                type: object
+                properties:
+                  Code:
+                    type: string
+                    example: R02
+                  Factor1:
+                    type: string
+                    example: null
+                  Factor2:
+                    type: string
+                    example: null
+                  Factor3:
+                    type: string
+                    example: null
+                  Factor4:
+                    type: string
+                    example: null
+                  Remarks:
+                    type: string
+                    example: ''
+                  Total:
+                    type: string
+                    example: null
+                  Weekday:
+                    type: string
+                    example: rdcwFirst
+            ResourceEmployees:
+              type: array
+              items: {}
+            ResourceFixedAssets:
+              type: array
+              items: {}
+            ResourceWarehouses:
+              type: array
+              items:
+                type: object
+                properties:
+                  Code:
+                    type: string
+                    example: R02
+                  Locked:
+                    type: string
+                    example: tNO
+                  Warehouse:
+                    type: string
+                    example: '01'
+            Series:
+              type: integer
+              example: 37
+            TimePerUnits:
+              type: string
+              example: null
+            Type:
+              type: string
+              example: rtMachine
+            UnitOfMeasure:
+              type: string
+              example: null
+            UnitsPerTime:
+              type: integer
+              example: 1
+            VisCode:
+              type: string
+              example: R02
+        example:
+          Active: tYES
+          ActiveFrom: null
+          ActiveRemarks: null
+          ActiveTo: null
+          Allocation: raOnStartDate
+          AttachmentEntry: null
+          Code: R02
+          CodeBar: null
+          Cost1: 0
+          Cost10: 0
+          Cost2: 0
+          Cost3: 0
+          Cost4: 0
+          Cost5: 0
+          Cost6: 0
+          Cost7: 0
+          Cost8: 0
+          Cost9: 0
+          DefaultWarehouse: null
+          ForeignName: null
+          Group: 1
+          Inactive: tNO
+          InactiveFrom: null
+          InactiveRemarks: null
+          InactiveTo: null
+          IssueMethod: rimBackflush
+          LinkedItem: null
+          Name: null
+          Number: null
+          Picture: null
+          Property1: tNO
+          Property10: tNO
+          Property11: tNO
+          Property12: tNO
+          Property13: tNO
+          Property14: tNO
+          Property15: tNO
+          Property16: tNO
+          Property17: tNO
+          Property18: tNO
+          Property19: tNO
+          Property2: tNO
+          Property20: tNO
+          Property21: tNO
+          Property22: tNO
+          Property23: tNO
+          Property24: tNO
+          Property25: tNO
+          Property26: tNO
+          Property27: tNO
+          Property28: tNO
+          Property29: tNO
+          Property3: tNO
+          Property30: tNO
+          Property31: tNO
+          Property32: tNO
+          Property33: tNO
+          Property34: tNO
+          Property35: tNO
+          Property36: tNO
+          Property37: tNO
+          Property38: tNO
+          Property39: tNO
+          Property4: tNO
+          Property40: tNO
+          Property41: tNO
+          Property42: tNO
+          Property43: tNO
+          Property44: tNO
+          Property45: tNO
+          Property46: tNO
+          Property47: tNO
+          Property48: tNO
+          Property49: tNO
+          Property5: tNO
+          Property50: tNO
+          Property51: tNO
+          Property52: tNO
+          Property53: tNO
+          Property54: tNO
+          Property55: tNO
+          Property56: tNO
+          Property57: tNO
+          Property58: tNO
+          Property59: tNO
+          Property6: tNO
+          Property60: tNO
+          Property61: tNO
+          Property62: tNO
+          Property63: tNO
+          Property64: tNO
+          Property7: tNO
+          Property8: tNO
+          Property9: tNO
+          Remarks: null
+          ResourceDailyCapacities:
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwFirst
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwSecond
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwThird
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwFourth
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwFifth
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwSixth
+          - Code: R02
+            Factor1: null
+            Factor2: null
+            Factor3: null
+            Factor4: null
+            Remarks: ''
+            Total: null
+            Weekday: rdcwSeventh
+          ResourceEmployees: []
+          ResourceFixedAssets: []
+          ResourceWarehouses:
+          - Code: R02
+            Locked: tNO
+            Warehouse: '01'
+          Series: 37
+          TimePerUnits: null
+          Type: rtMachine
+          UnitOfMeasure: null
+          UnitsPerTime: 1
+          VisCode: R02
+  x-example-url: POST https://localhost:50000/b1s/v2/Resources
+  x-resource-description: This entity enables you to manipulate 'Resources'.

@@ -1,0 +1,88 @@
+get:
+  tags:
+  - RetornoCodes
+  summary: GET RetornoCodes(id)
+  description: Retrieve all or some selected properties from an instance of 'RetornoCodes' with the given id.
+  operationId: get_RetornoCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/RetornoCodes(123)
+  x-resource-description: This entity enables you to manipulate 'RetornoCodes'.
+patch:
+  tags:
+  - RetornoCodes
+  summary: PATCH RetornoCodes(id)
+  description: Update an instance of 'RetornoCodes' with the given payload of type 'RetornoCode' in JSON format and with the
+    specified id.
+  operationId: patch_RetornoCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BankCode:
+              type: string
+              example: '1000'
+        example:
+          BankCode: '1000'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/RetornoCodes(123)
+  x-resource-description: This entity enables you to manipulate 'RetornoCodes'.
+delete:
+  tags:
+  - RetornoCodes
+  summary: DELETE RetornoCodes(id)
+  description: Delete an instance of 'RetornoCodes' with the specified id.
+  operationId: delete_RetornoCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/RetornoCodes(123)
+  x-resource-description: This entity enables you to manipulate 'RetornoCodes'.

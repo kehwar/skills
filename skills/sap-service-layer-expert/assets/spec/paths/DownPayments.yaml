@@ -1,0 +1,79 @@
+get:
+  tags:
+  - DownPayments
+  summary: GET DownPayments
+  description: Retrieve a collection of 'DownPayments' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DownPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DownPayments
+  x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
+    a customer is committed and will follow through with a placed order.
+post:
+  tags:
+  - DownPayments
+  summary: POST DownPayments
+  description: Create an instance of 'DownPayments' with the given payload of type 'Document' in JSON format.
+  operationId: post_DownPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  Quantity:
+                    type: string
+                    example: '100'
+                  TaxCode:
+                    type: string
+                    example: T1
+                  UnitPrice:
+                    type: string
+                    example: '30'
+            DownPaymentType:
+              type: string
+              example: dptInvoice
+        example:
+          CardCode: c001
+          DocumentLines:
+          - ItemCode: i001
+            Quantity: '100'
+            TaxCode: T1
+            UnitPrice: '30'
+          DownPaymentType: dptInvoice
+  x-example-url: POST https://localhost:50000/b1s/v2/DownPayments
+  x-resource-description: This entity enables you to manipulate 'DownPayments'. It represents a document for ensuring that
+    a customer is committed and will follow through with a placed order.

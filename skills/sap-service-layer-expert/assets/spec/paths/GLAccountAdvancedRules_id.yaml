@@ -1,0 +1,96 @@
+get:
+  tags:
+  - GLAccountAdvancedRules
+  summary: GET GLAccountAdvancedRules(id)
+  description: Retrieve all or some selected properties from an instance of 'GLAccountAdvancedRules' with the given id.
+  operationId: get_GLAccountAdvancedRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/GLAccountAdvancedRules(8)
+  x-resource-description: This entity enables you to manipulate 'GLAccountAdvancedRules'.
+patch:
+  tags:
+  - GLAccountAdvancedRules
+  summary: PATCH GLAccountAdvancedRules(id)
+  description: Update an instance of 'GLAccountAdvancedRules' with the given payload of type 'GLAccountAdvancedRule' in JSON
+    format and with the specified id.
+  operationId: patch_GLAccountAdvancedRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsoluteEntry:
+              type: integer
+              example: 1
+            Description:
+              type: string
+              example: Test Determination Rules123
+            IsActive:
+              type: string
+              example: tYES
+        example:
+          AbsoluteEntry: 1
+          Description: Test Determination Rules123
+          IsActive: tYES
+  x-example-url: PATCH https://localhost:50000/b1s/v2/GLAccountAdvancedRules(8)
+  x-resource-description: This entity enables you to manipulate 'GLAccountAdvancedRules'.
+delete:
+  tags:
+  - GLAccountAdvancedRules
+  summary: DELETE GLAccountAdvancedRules(id)
+  description: Delete an instance of 'GLAccountAdvancedRules' with the specified id.
+  operationId: delete_GLAccountAdvancedRules_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/GLAccountAdvancedRules(8)
+  x-resource-description: This entity enables you to manipulate 'GLAccountAdvancedRules'.

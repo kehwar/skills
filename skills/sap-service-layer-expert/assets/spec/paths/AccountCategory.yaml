@@ -1,0 +1,55 @@
+get:
+  tags:
+  - AccountCategory
+  summary: GET AccountCategory
+  description: Retrieve a collection of 'AccountCategory' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AccountCategory
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AccountCategory
+  x-resource-description: This entity enables you to manipulate 'AccountCategory'.
+post:
+  tags:
+  - AccountCategory
+  summary: POST AccountCategory
+  description: Create an instance of 'AccountCategory' with the given payload of type 'AccountCategory' in JSON format.
+  operationId: post_AccountCategory
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CategoryCode:
+              type: integer
+              example: 1
+            CategoryName:
+              type: string
+              example: test1
+        example:
+          CategoryCode: 1
+          CategoryName: test1
+  x-example-url: POST https://localhost:50000/b1s/v2/AccountCategory
+  x-resource-description: This entity enables you to manipulate 'AccountCategory'.

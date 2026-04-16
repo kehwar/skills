@@ -1,0 +1,54 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_CreatePeriod
+  description: 'Invoke the method ''CreatePeriod'' on this service by specifying the payload ''PeriodCategory'' in the JSON
+    format. It returns the ''PeriodCategoryParams'' identification key based on the ''PeriodCategory'' data structure. The
+    ''PeriodCategory'' object provides two types of properties: 1.Properties that access existing Accounts and function as
+    foreign keys to the ChartOfAccounts object. 2.Properties that define new accounts by using Posting and Sub-Period definitions.'
+  operationId: post_CompanyService_CreatePeriod
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PeriodCategory:
+              type: object
+              properties:
+                BeginningofFinancialYear:
+                  type: string
+                  example: '2010-01-01'
+                NumberOfPeriods:
+                  type: integer
+                  example: 1
+                PeriodCategory:
+                  type: string
+                  example: '2010'
+                PeriodName:
+                  type: string
+                  example: '2010'
+                SubPeriodType:
+                  type: string
+                  example: spt_Year
+        example:
+          PeriodCategory:
+            BeginningofFinancialYear: '2010-01-01'
+            NumberOfPeriods: 1
+            PeriodCategory: '2010'
+            PeriodName: '2010'
+            SubPeriodType: spt_Year
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_CreatePeriod
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

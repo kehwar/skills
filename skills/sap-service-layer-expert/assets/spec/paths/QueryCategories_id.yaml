@@ -1,0 +1,92 @@
+get:
+  tags:
+  - QueryCategories
+  summary: GET QueryCategories(id)
+  description: Retrieve all or some selected properties from an instance of 'QueryCategories' with the given id.
+  operationId: get_QueryCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/QueryCategories(123)
+  x-resource-description: This entity enables you to manipulate 'QueryCategories'. It represents the predefined query categories.
+patch:
+  tags:
+  - QueryCategories
+  summary: PATCH QueryCategories(id)
+  description: Update an instance of 'QueryCategories' with the given payload of type 'QueryCategory' in JSON format and with
+    the specified id.
+  operationId: patch_QueryCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Query_Category_01
+            Permissions:
+              type: string
+              example: NNNYNNNNNNNNNNN
+        example:
+          Name: Query_Category_01
+          Permissions: NNNYNNNNNNNNNNN
+  x-example-url: PATCH https://localhost:50000/b1s/v2/QueryCategories(123)
+  x-resource-description: This entity enables you to manipulate 'QueryCategories'. It represents the predefined query categories.
+delete:
+  tags:
+  - QueryCategories
+  summary: DELETE QueryCategories(id)
+  description: Delete an instance of 'QueryCategories' with the specified id.
+  operationId: delete_QueryCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/QueryCategories(123)
+  x-resource-description: This entity enables you to manipulate 'QueryCategories'. It represents the predefined query categories.

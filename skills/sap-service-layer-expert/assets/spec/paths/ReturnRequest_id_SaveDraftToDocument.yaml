@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ReturnRequest(id)/SaveDraftToDocument
+  summary: POST ReturnRequest(id)/SaveDraftToDocument
+  description: Invoke the method 'SaveDraftToDocument' on this EntitySet with the specified id.
+  operationId: post_ReturnRequest_id/SaveDraftToDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ReturnRequest(123)/SaveDraftToDocument
+  x-resource-description: This entity enables you to manipulate 'ReturnRequest'. A return is the clearing document for a delivery.

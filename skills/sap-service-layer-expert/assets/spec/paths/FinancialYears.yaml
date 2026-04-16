@@ -1,0 +1,67 @@
+get:
+  tags:
+  - FinancialYears
+  summary: GET FinancialYears
+  description: Retrieve a collection of 'FinancialYears' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_FinancialYears
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/FinancialYears
+  x-resource-description: This entity enables you to manipulate 'FinancialYears'.
+post:
+  tags:
+  - FinancialYears
+  summary: POST FinancialYears
+  description: Create an instance of 'FinancialYears' with the given payload of type 'FinancialYear' in JSON format.
+  operationId: post_FinancialYears
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssessYear:
+              type: string
+              example: '201718'
+            Code:
+              type: string
+              example: '201617'
+            Description:
+              type: string
+              example: '201617'
+            EndDate:
+              type: string
+              example: '2017-08-31'
+            StartDate:
+              type: string
+              example: '2016-09-01'
+        example:
+          AssessYear: '201718'
+          Code: '201617'
+          Description: '201617'
+          EndDate: '2017-08-31'
+          StartDate: '2016-09-01'
+  x-example-url: POST https://localhost:50000/b1s/v2/FinancialYears
+  x-resource-description: This entity enables you to manipulate 'FinancialYears'.

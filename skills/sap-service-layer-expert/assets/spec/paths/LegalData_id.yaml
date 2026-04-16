@@ -1,0 +1,63 @@
+get:
+  tags:
+  - LegalData
+  summary: GET LegalData(id)
+  description: Retrieve all or some selected properties from an instance of 'LegalData' with the given id.
+  operationId: get_LegalData_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/LegalData(123)
+  x-resource-description: This entity enables you to manipulate 'LegalData'.
+patch:
+  tags:
+  - LegalData
+  summary: PATCH LegalData(id)
+  description: Update an instance of 'LegalData' with the given payload of type 'LegalData' in JSON format and with the specified
+    id.
+  operationId: patch_LegalData_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PrinterType:
+              type: string
+              example: '12'
+        example:
+          PrinterType: '12'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/LegalData(123)
+  x-resource-description: This entity enables you to manipulate 'LegalData'.

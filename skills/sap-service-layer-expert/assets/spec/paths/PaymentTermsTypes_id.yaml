@@ -1,0 +1,91 @@
+get:
+  tags:
+  - PaymentTermsTypes
+  summary: GET PaymentTermsTypes(id)
+  description: Retrieve all or some selected properties from an instance of 'PaymentTermsTypes' with the given id.
+  operationId: get_PaymentTermsTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PaymentTermsTypes(123)
+  x-resource-description: This entity enables you to manipulate 'PaymentTermsTypes'. It represents the types of payment terms
+    in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors.
+patch:
+  tags:
+  - PaymentTermsTypes
+  summary: PATCH PaymentTermsTypes(id)
+  description: Update an instance of 'PaymentTermsTypes' with the given payload of type 'PaymentTermsType' in JSON format
+    and with the specified id.
+  operationId: patch_PaymentTermsTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GeneralDiscount:
+              type: string
+              example: '10'
+        example:
+          GeneralDiscount: '10'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PaymentTermsTypes(123)
+  x-resource-description: This entity enables you to manipulate 'PaymentTermsTypes'. It represents the types of payment terms
+    in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors.
+delete:
+  tags:
+  - PaymentTermsTypes
+  summary: DELETE PaymentTermsTypes(id)
+  description: Delete an instance of 'PaymentTermsTypes' with the specified id.
+  operationId: delete_PaymentTermsTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/PaymentTermsTypes(123)
+  x-resource-description: This entity enables you to manipulate 'PaymentTermsTypes'. It represents the types of payment terms
+    in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors.

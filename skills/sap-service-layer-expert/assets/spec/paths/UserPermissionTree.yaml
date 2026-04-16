@@ -1,0 +1,57 @@
+get:
+  tags:
+  - UserPermissionTree
+  summary: GET UserPermissionTree
+  description: Retrieve a collection of 'UserPermissionTree' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserPermissionTree
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserPermissionTree
+  x-resource-description: This entity enables you to manipulate 'UserPermissionTree'. It represents the User Authorization
+    form. This object enables managing user authorization for various forms.
+post:
+  tags:
+  - UserPermissionTree
+  summary: POST UserPermissionTree
+  description: Create an instance of 'UserPermissionTree' with the given payload of type 'UserPermissionTree' in JSON format.
+  operationId: post_UserPermissionTree
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: newPer
+            PermissionID:
+              type: string
+              example: P01
+        example:
+          Name: newPer
+          PermissionID: P01
+  x-example-url: POST https://localhost:50000/b1s/v2/UserPermissionTree
+  x-resource-description: This entity enables you to manipulate 'UserPermissionTree'. It represents the User Authorization
+    form. This object enables managing user authorization for various forms.

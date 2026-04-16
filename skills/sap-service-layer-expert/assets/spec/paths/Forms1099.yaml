@@ -1,0 +1,71 @@
+get:
+  tags:
+  - Forms1099
+  summary: GET Forms1099
+  description: Retrieve a collection of 'Forms1099' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Forms1099
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Forms1099
+  x-resource-description: 'This entity enables you to manipulate ''Forms1099''. It defines new Form 1099 types in addition
+    to the existing types: 1099 Miscellaneous, 1099 Interest, and 1099 Dividends.'
+post:
+  tags:
+  - Forms1099
+  summary: POST Forms1099
+  description: Create an instance of 'Forms1099' with the given payload of type 'Forms1099' in JSON format.
+  operationId: post_Forms1099
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Boxes1099:
+              type: array
+              items:
+                type: object
+                properties:
+                  Box1099:
+                    type: string
+                    example: '01'
+                  BoxDescription:
+                    type: string
+                    example: Foreign tax paid
+                  Minimum1099Amount:
+                    type: string
+                    example: '11'
+            Form1099:
+              type: string
+              example: 1099 Tax
+        example:
+          Boxes1099:
+          - Box1099: '01'
+            BoxDescription: Foreign tax paid
+            Minimum1099Amount: '11'
+          Form1099: 1099 Tax
+  x-example-url: POST https://localhost:50000/b1s/v2/Forms1099
+  x-resource-description: 'This entity enables you to manipulate ''Forms1099''. It defines new Form 1099 types in addition
+    to the existing types: 1099 Miscellaneous, 1099 Interest, and 1099 Dividends.'

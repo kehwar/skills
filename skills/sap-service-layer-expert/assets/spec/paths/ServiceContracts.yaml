@@ -1,0 +1,81 @@
+get:
+  tags:
+  - ServiceContracts
+  summary: GET ServiceContracts
+  description: Retrieve a collection of 'ServiceContracts' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ServiceContracts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceContracts
+  x-resource-description: 'This entity enables you to manipulate ''ServiceContracts''. It represents the service contracts
+    table in the Service module of the SAP Business One application. This object enables you to do the following: Add a service
+    contract; retrieve a service contract by its key; update a service contract; remove a service contract.'
+post:
+  tags:
+  - ServiceContracts
+  summary: POST ServiceContracts
+  description: Create an instance of 'ServiceContracts' with the given payload of type 'ServiceContract' in JSON format.
+  operationId: post_ServiceContracts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CustomerCode:
+              type: string
+              example: C60000
+            EndDate:
+              type: string
+              example: '2014-12-09'
+            Remarks:
+              type: string
+              example: Add service Contract
+            ServiceContract_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  InternalSerialNum:
+                    type: string
+                    example: A6-000005
+                  ItemCode:
+                    type: string
+                    example: S10000
+                  ManufacturerSerialNum:
+                    type: string
+                    example: S1-000166
+        example:
+          CustomerCode: C60000
+          EndDate: '2014-12-09'
+          Remarks: Add service Contract
+          ServiceContract_Lines:
+          - InternalSerialNum: A6-000005
+            ItemCode: S10000
+            ManufacturerSerialNum: S1-000166
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceContracts
+  x-resource-description: 'This entity enables you to manipulate ''ServiceContracts''. It represents the service contracts
+    table in the Service module of the SAP Business One application. This object enables you to do the following: Add a service
+    contract; retrieve a service contract by its key; update a service contract; remove a service contract.'

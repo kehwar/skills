@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ActivitiesService
+  summary: POST ActivitiesService_GetActivityList
+  description: Invoke the method 'GetActivityList' on this service.
+  operationId: post_ActivitiesService_GetActivityList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivitiesService_GetActivityList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ActivitiesService'.

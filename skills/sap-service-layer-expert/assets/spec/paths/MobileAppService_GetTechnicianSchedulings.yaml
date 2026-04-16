@@ -1,0 +1,44 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_GetTechnicianSchedulings
+  description: Invoke the method 'GetTechnicianSchedulings' on this service by specifying the payload 'TechnicianSchedulingsParams'
+    in the JSON format.
+  operationId: post_MobileAppService_GetTechnicianSchedulings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TechnicianSchedulingsParams:
+              type: object
+              properties:
+                EndDate:
+                  type: string
+                  example: '2017-12-31'
+                StartDate:
+                  type: string
+                  example: '2017-08-10'
+                Technician:
+                  type: string
+                  example: '2'
+        example:
+          TechnicianSchedulingsParams:
+            EndDate: '2017-12-31'
+            StartDate: '2017-08-10'
+            Technician: '2'
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_GetTechnicianSchedulings
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

@@ -1,0 +1,63 @@
+post:
+  tags:
+  - AlternativeItemsService
+  summary: POST AlternativeItemsService_UpdateItem
+  description: Invoke the method 'UpdateItem' on this service by specifying the payload 'OriginalItem' in the JSON format.
+  operationId: post_AlternativeItemsService_UpdateItem
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            OriginalItem:
+              type: object
+              properties:
+                AlternativeItems:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      AlternativeItemCode:
+                        type: string
+                        example: B001
+                      MatchFactor:
+                        type: integer
+                        example: 100
+                      Remarks:
+                        type: string
+                        example: B001
+                ItemCode:
+                  type: string
+                  example: I001
+                ItemName:
+                  type: string
+                  example: null
+        example:
+          OriginalItem:
+            AlternativeItems:
+            - AlternativeItemCode: B001
+              MatchFactor: 100
+              Remarks: B001
+            - AlternativeItemCode: I002
+              MatchFactor: 100
+              Remarks: I002
+            - AlternativeItemCode: I003
+              MatchFactor: 100
+              Remarks: I003
+            ItemCode: I001
+            ItemName: null
+  x-example-url: POST https://localhost:50000/b1s/v2/AlternativeItemsService_UpdateItem
+  x-resource-description: This API enables you to invoke the interfaces defined on 'AlternativeItemsService'.

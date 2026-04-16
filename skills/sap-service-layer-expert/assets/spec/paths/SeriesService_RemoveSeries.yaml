@@ -1,0 +1,107 @@
+post:
+  tags:
+  - SeriesService
+  summary: POST SeriesService_RemoveSeries
+  description: Invoke the method 'RemoveSeries' on this service by specifying the payload 'SeriesParams' in the JSON format.
+  operationId: post_SeriesService_RemoveSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Series:
+              type: object
+              properties:
+                ATDocumentType:
+                  type: string
+                  example: null
+                BPLID:
+                  type: string
+                  example: null
+                DigitNumber:
+                  type: integer
+                  example: 2
+                Document:
+                  type: string
+                  example: '2'
+                DocumentSubType:
+                  type: string
+                  example: C
+                GroupCode:
+                  type: string
+                  example: sg_Group1
+                InitialNumber:
+                  type: integer
+                  example: 21
+                IsDigitalSeries:
+                  type: string
+                  example: tNO
+                IsElectronicCommEnabled:
+                  type: string
+                  example: tNO
+                LastNumber:
+                  type: integer
+                  example: 30
+                Locked:
+                  type: string
+                  example: tNO
+                Name:
+                  type: string
+                  example: New2
+                NextNumber:
+                  type: integer
+                  example: 21
+                PeriodIndicator:
+                  type: string
+                  example: Default
+                Prefix:
+                  type: string
+                  example: S
+                Remarks:
+                  type: string
+                  example: test
+                Series:
+                  type: integer
+                  example: 70
+                SeriesType:
+                  type: string
+                  example: stBusinessPartner
+                Suffix:
+                  type: string
+                  example: b
+        example:
+          Series:
+            ATDocumentType: null
+            BPLID: null
+            DigitNumber: 2
+            Document: '2'
+            DocumentSubType: C
+            GroupCode: sg_Group1
+            InitialNumber: 21
+            IsDigitalSeries: tNO
+            IsElectronicCommEnabled: tNO
+            LastNumber: 30
+            Locked: tNO
+            Name: New2
+            NextNumber: 21
+            PeriodIndicator: Default
+            Prefix: S
+            Remarks: test
+            Series: 70
+            SeriesType: stBusinessPartner
+            Suffix: b
+  x-example-url: POST https://localhost:50000/b1s/v2/SeriesService_RemoveSeries
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SeriesService'.

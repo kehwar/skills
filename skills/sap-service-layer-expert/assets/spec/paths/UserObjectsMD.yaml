@@ -1,0 +1,79 @@
+get:
+  tags:
+  - UserObjectsMD
+  summary: GET UserObjectsMD
+  description: Retrieve a collection of 'UserObjectsMD' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserObjectsMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserObjectsMD
+  x-resource-description: This entity enables you to manipulate 'UserObjectsMD'. It represents the registration data settings,
+    such as table name and supported services, of a user-defined object.
+post:
+  tags:
+  - UserObjectsMD
+  summary: POST UserObjectsMD
+  description: Create an instance of 'UserObjectsMD' with the given payload of type 'UserObjectsMD' in JSON format.
+  operationId: post_UserObjectsMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: UDO5353
+            Name:
+              type: string
+              example: UDOTest
+            TableName:
+              type: string
+              example: UDT01
+            UserObjectMD_ChildTables:
+              type: array
+              items:
+                type: object
+                properties:
+                  ObjectName:
+                    type: string
+                    example: UDO Child
+                  SonNumber:
+                    type: string
+                    example: '1'
+                  TableName:
+                    type: string
+                    example: UDT02
+        example:
+          Code: UDO5353
+          Name: UDOTest
+          TableName: UDT01
+          UserObjectMD_ChildTables:
+          - ObjectName: UDO Child
+            SonNumber: '1'
+            TableName: UDT02
+  x-example-url: POST https://localhost:50000/b1s/v2/UserObjectsMD
+  x-resource-description: This entity enables you to manipulate 'UserObjectsMD'. It represents the registration data settings,
+    such as table name and supported services, of a user-defined object.

@@ -1,0 +1,94 @@
+get:
+  tags:
+  - LandedCostsCodes
+  summary: GET LandedCostsCodes(id)
+  description: Retrieve all or some selected properties from an instance of 'LandedCostsCodes' with the given id.
+  operationId: get_LandedCostsCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/LandedCostsCodes('01')
+  x-resource-description: This entity enables you to manipulate 'LandedCostsCodes'. It defines various types of landed costs
+    (for example, insurance, customs) and their default distribution rules. When you record landed costs for deliveries, landed
+    costs are allocated to the goods according to the distribution rule of each type.
+patch:
+  tags:
+  - LandedCostsCodes
+  summary: PATCH LandedCostsCodes(id)
+  description: Update an instance of 'LandedCostsCodes' with the given payload of type 'LandedCostsCode' in JSON format and
+    with the specified id.
+  operationId: patch_LandedCostsCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: Shipping
+        example:
+          Name: Shipping
+  x-example-url: PATCH https://localhost:50000/b1s/v2/LandedCostsCodes('01')
+  x-resource-description: This entity enables you to manipulate 'LandedCostsCodes'. It defines various types of landed costs
+    (for example, insurance, customs) and their default distribution rules. When you record landed costs for deliveries, landed
+    costs are allocated to the goods according to the distribution rule of each type.
+delete:
+  tags:
+  - LandedCostsCodes
+  summary: DELETE LandedCostsCodes(id)
+  description: Delete an instance of 'LandedCostsCodes' with the specified id.
+  operationId: delete_LandedCostsCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/LandedCostsCodes('01')
+  x-resource-description: This entity enables you to manipulate 'LandedCostsCodes'. It defines various types of landed costs
+    (for example, insurance, customs) and their default distribution rules. When you record landed costs for deliveries, landed
+    costs are allocated to the goods according to the distribution rule of each type.

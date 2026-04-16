@@ -1,0 +1,44 @@
+post:
+  tags:
+  - ValueMappingService
+  summary: POST ValueMappingService_GetMappedB1Value
+  description: Invoke the method 'GetMappedB1Value' on this service by specifying the payload 'VM_B1ValuesData' in the JSON
+    format. Retreives value from Business One universe, that is mapped to specific 3th party value.
+  operationId: post_ValueMappingService_GetMappedB1Value
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ObjectId:
+              type: integer
+              example: 37
+            VM_ThirdPartyValuesData:
+              type: object
+              properties:
+                ThirdPartySystemId:
+                  type: integer
+                  example: 1
+                ThirdPartyValue:
+                  type: string
+                  example: AED
+        example:
+          ObjectId: 37
+          VM_ThirdPartyValuesData:
+            ThirdPartySystemId: 1
+            ThirdPartyValue: AED
+  x-example-url: POST https://localhost:50000/b1s/v2/ValueMappingService_GetMappedB1Value
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ValueMappingService'.

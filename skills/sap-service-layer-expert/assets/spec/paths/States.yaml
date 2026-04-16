@@ -1,0 +1,59 @@
+get:
+  tags:
+  - States
+  summary: GET States
+  description: Retrieve a collection of 'States' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_States
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/States
+  x-resource-description: This entity enables you to manipulate 'States'.
+post:
+  tags:
+  - States
+  summary: POST States
+  description: Create an instance of 'States' with the given payload of type 'State' in JSON format.
+  operationId: post_States
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: AK1
+            Country:
+              type: string
+              example: US
+            Name:
+              type: string
+              example: Alaska1
+        example:
+          Code: AK1
+          Country: US
+          Name: Alaska1
+  x-example-url: POST https://localhost:50000/b1s/v2/States
+  x-resource-description: This entity enables you to manipulate 'States'.

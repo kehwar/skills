@@ -1,0 +1,79 @@
+get:
+  tags:
+  - HouseBankAccounts
+  summary: GET HouseBankAccounts
+  description: Retrieve a collection of 'HouseBankAccounts' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_HouseBankAccounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/HouseBankAccounts
+  x-resource-description: This entity enables you to manipulate 'HouseBankAccounts'.
+post:
+  tags:
+  - HouseBankAccounts
+  summary: POST HouseBankAccounts
+  description: Create an instance of 'HouseBankAccounts' with the given payload of type 'HouseBankAccount' in JSON format.
+  operationId: post_HouseBankAccounts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AccNo:
+              type: string
+              example: '11123456'
+            BankCode:
+              type: string
+              example: HSBC
+            BankKey:
+              type: string
+              example: '6'
+            Branch:
+              type: string
+              example: '123'
+            Country:
+              type: string
+              example: US
+            GLAccount:
+              type: string
+              example: _SYS00000000001
+            GLInterimAccount:
+              type: string
+              example: _SYS00000000052
+            ZipCode:
+              type: string
+              example: '201200'
+        example:
+          AccNo: '11123456'
+          BankCode: HSBC
+          BankKey: '6'
+          Branch: '123'
+          Country: US
+          GLAccount: _SYS00000000001
+          GLInterimAccount: _SYS00000000052
+          ZipCode: '201200'
+  x-example-url: POST https://localhost:50000/b1s/v2/HouseBankAccounts
+  x-resource-description: This entity enables you to manipulate 'HouseBankAccounts'.

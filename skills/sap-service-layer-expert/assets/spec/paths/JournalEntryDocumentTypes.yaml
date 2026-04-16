@@ -1,0 +1,60 @@
+get:
+  tags:
+  - JournalEntryDocumentTypes
+  summary: GET JournalEntryDocumentTypes
+  description: Retrieve a collection of 'JournalEntryDocumentTypes' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_JournalEntryDocumentTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/JournalEntryDocumentTypes
+  x-resource-description: This entity enables you to manipulate 'JournalEntryDocumentTypes'.
+post:
+  tags:
+  - JournalEntryDocumentTypes
+  summary: POST JournalEntryDocumentTypes
+  description: Create an instance of 'JournalEntryDocumentTypes' with the given payload of type 'JournalEntryDocumentType'
+    in JSON format.
+  operationId: post_JournalEntryDocumentTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DocTypeDescription:
+              type: string
+              example: my desc
+            JournalEntryType:
+              type: string
+              example: type1
+            ShortName:
+              type: string
+              example: my first type
+        example:
+          DocTypeDescription: my desc
+          JournalEntryType: type1
+          ShortName: my first type
+  x-example-url: POST https://localhost:50000/b1s/v2/JournalEntryDocumentTypes
+  x-resource-description: This entity enables you to manipulate 'JournalEntryDocumentTypes'.

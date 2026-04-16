@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ProjectManagementService
+  summary: POST ProjectManagementService_GetSubprojectsList
+  description: Invoke the method 'GetSubprojectsList' on this service by specifying the payload 'PM_SubprojectParams' in the
+    JSON format.
+  operationId: post_ProjectManagementService_GetSubprojectsList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PM_SubprojectParams:
+              type: object
+              properties:
+                AbsEntry:
+                  type: integer
+                  example: 2
+        example:
+          PM_SubprojectParams:
+            AbsEntry: 2
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementService_GetSubprojectsList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementService'.

@@ -1,0 +1,75 @@
+get:
+  tags:
+  - EmployeesInfo
+  summary: GET EmployeesInfo
+  description: Retrieve a collection of 'EmployeesInfo' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_EmployeesInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/EmployeesInfo
+  x-resource-description: This entity enables you to manipulate 'EmployeesInfo'.
+post:
+  tags:
+  - EmployeesInfo
+  summary: POST EmployeesInfo
+  description: Create an instance of 'EmployeesInfo' with the given payload of type 'EmployeeInfo' in JSON format.
+  operationId: post_EmployeesInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Branch:
+              type: string
+              example: '-2'
+            Department:
+              type: string
+              example: '-2'
+            FirstName:
+              type: string
+              example: Harry
+            JobTitle:
+              type: string
+              example: Tester
+            LastName:
+              type: string
+              example: Hu
+            Remarks:
+              type: string
+              example: Best Employee
+            WorkCountryCode:
+              type: string
+              example: US
+        example:
+          Branch: '-2'
+          Department: '-2'
+          FirstName: Harry
+          JobTitle: Tester
+          LastName: Hu
+          Remarks: Best Employee
+          WorkCountryCode: US
+  x-example-url: POST https://localhost:50000/b1s/v2/EmployeesInfo
+  x-resource-description: This entity enables you to manipulate 'EmployeesInfo'.

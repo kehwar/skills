@@ -1,0 +1,84 @@
+get:
+  tags:
+  - IntrastatConfiguration
+  summary: GET IntrastatConfiguration(id)
+  description: Retrieve all or some selected properties from an instance of 'IntrastatConfiguration' with the given id.
+  operationId: get_IntrastatConfiguration_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/IntrastatConfiguration(123)
+  x-resource-description: This entity enables you to manipulate 'IntrastatConfiguration'.
+patch:
+  tags:
+  - IntrastatConfiguration
+  summary: PATCH IntrastatConfiguration(id)
+  description: Update an instance of 'IntrastatConfiguration' with the given payload of type 'IntrastatConfiguration' in JSON
+    format and with the specified id.
+  operationId: patch_IntrastatConfiguration_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: PATCH https://localhost:50000/b1s/v2/IntrastatConfiguration(123)
+  x-resource-description: This entity enables you to manipulate 'IntrastatConfiguration'.
+delete:
+  tags:
+  - IntrastatConfiguration
+  summary: DELETE IntrastatConfiguration(id)
+  description: Delete an instance of 'IntrastatConfiguration' with the specified id.
+  operationId: delete_IntrastatConfiguration_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/IntrastatConfiguration(123)
+  x-resource-description: This entity enables you to manipulate 'IntrastatConfiguration'.

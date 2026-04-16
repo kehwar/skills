@@ -1,0 +1,81 @@
+get:
+  tags:
+  - AssetTransfer
+  summary: GET AssetTransfer
+  description: Retrieve a collection of 'AssetTransfer' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AssetTransfer
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetTransfer
+  x-resource-description: This entity enables you to manipulate 'AssetTransfer'.
+post:
+  tags:
+  - AssetTransfer
+  summary: POST AssetTransfer
+  description: Create an instance of 'AssetTransfer' with the given payload of type 'AssetDocument' in JSON format.
+  operationId: post_AssetTransfer
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetDocumentLineCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AssetNumber:
+                    type: string
+                    example: FA4
+                  NewAssetNumber:
+                    type: string
+                    example: FA3
+            AssetValueDate:
+              type: string
+              example: '2017-01-01'
+            DepreciationArea:
+              type: string
+              example: '*'
+            DocumentDate:
+              type: string
+              example: '2017-01-01'
+            DocumentType:
+              type: string
+              example: adtAssetTransfer
+            PostingDate:
+              type: string
+              example: '2017-01-01'
+        example:
+          AssetDocumentLineCollection:
+          - AssetNumber: FA4
+            NewAssetNumber: FA3
+          AssetValueDate: '2017-01-01'
+          DepreciationArea: '*'
+          DocumentDate: '2017-01-01'
+          DocumentType: adtAssetTransfer
+          PostingDate: '2017-01-01'
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetTransfer
+  x-resource-description: This entity enables you to manipulate 'AssetTransfer'.

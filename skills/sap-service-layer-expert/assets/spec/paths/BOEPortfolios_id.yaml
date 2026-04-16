@@ -1,0 +1,100 @@
+get:
+  tags:
+  - BOEPortfolios
+  summary: GET BOEPortfolios(id)
+  description: Retrieve all or some selected properties from an instance of 'BOEPortfolios' with the given id.
+  operationId: get_BOEPortfolios_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BOEPortfolios(123)
+  x-resource-description: This entity enables you to manipulate 'BOEPortfolios'.
+patch:
+  tags:
+  - BOEPortfolios
+  summary: PATCH BOEPortfolios(id)
+  description: Update an instance of 'BOEPortfolios' with the given payload of type 'BOEPortfolio' in JSON format and with
+    the specified id.
+  operationId: patch_BOEPortfolios_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PortfolioCode:
+              type: string
+              example: '02'
+            PortfolioDescription:
+              type: string
+              example: '02'
+            PortfolioID:
+              type: string
+              example: '02'
+            PortfolioNum:
+              type: string
+              example: '02'
+        example:
+          PortfolioCode: '02'
+          PortfolioDescription: '02'
+          PortfolioID: '02'
+          PortfolioNum: '02'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BOEPortfolios(123)
+  x-resource-description: This entity enables you to manipulate 'BOEPortfolios'.
+delete:
+  tags:
+  - BOEPortfolios
+  summary: DELETE BOEPortfolios(id)
+  description: Delete an instance of 'BOEPortfolios' with the specified id.
+  operationId: delete_BOEPortfolios_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BOEPortfolios(123)
+  x-resource-description: This entity enables you to manipulate 'BOEPortfolios'.

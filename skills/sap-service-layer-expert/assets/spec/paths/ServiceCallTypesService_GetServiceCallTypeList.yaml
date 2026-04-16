@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ServiceCallTypesService
+  summary: POST ServiceCallTypesService_GetServiceCallTypeList
+  description: Invoke the method 'GetServiceCallTypeList' on this service.
+  operationId: post_ServiceCallTypesService_GetServiceCallTypeList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceCallTypesService_GetServiceCallTypeList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ServiceCallTypesService'.

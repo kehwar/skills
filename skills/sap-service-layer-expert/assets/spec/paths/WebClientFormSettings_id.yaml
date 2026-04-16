@@ -1,0 +1,84 @@
+get:
+  tags:
+  - WebClientFormSettings
+  summary: GET WebClientFormSettings(id)
+  description: Retrieve all or some selected properties from an instance of 'WebClientFormSettings' with the given id.
+  operationId: get_WebClientFormSettings_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/WebClientFormSettings('abc')
+  x-resource-description: This entity enables you to manipulate 'WebClientFormSettings'.
+patch:
+  tags:
+  - WebClientFormSettings
+  summary: PATCH WebClientFormSettings(id)
+  description: Update an instance of 'WebClientFormSettings' with the given payload of type 'WebClientFormSetting' in JSON
+    format and with the specified id.
+  operationId: patch_WebClientFormSettings_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: PATCH https://localhost:50000/b1s/v2/WebClientFormSettings('abc')
+  x-resource-description: This entity enables you to manipulate 'WebClientFormSettings'.
+delete:
+  tags:
+  - WebClientFormSettings
+  summary: DELETE WebClientFormSettings(id)
+  description: Delete an instance of 'WebClientFormSettings' with the specified id.
+  operationId: delete_WebClientFormSettings_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/WebClientFormSettings('abc')
+  x-resource-description: This entity enables you to manipulate 'WebClientFormSettings'.

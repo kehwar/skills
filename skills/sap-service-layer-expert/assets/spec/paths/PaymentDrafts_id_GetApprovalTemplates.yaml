@@ -1,0 +1,19 @@
+post:
+  tags:
+  - PaymentDrafts(id)/GetApprovalTemplates
+  summary: POST PaymentDrafts(id)/GetApprovalTemplates
+  description: Invoke the method 'GetApprovalTemplates' on this EntitySet with the specified id.
+  operationId: post_PaymentDrafts_id/GetApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentDrafts(123)/GetApprovalTemplates
+  x-resource-description: This entity enables you to manipulate 'PaymentDrafts'.

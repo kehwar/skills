@@ -1,0 +1,89 @@
+get:
+  tags:
+  - PackagesTypes
+  summary: GET PackagesTypes
+  description: Retrieve a collection of 'PackagesTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PackagesTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PackagesTypes
+  x-resource-description: This entity enables you to manipulate 'PackagesTypes'. It represents various packaging types for
+    deliveries.
+post:
+  tags:
+  - PackagesTypes
+  summary: POST PackagesTypes
+  description: Create an instance of 'PackagesTypes' with the given payload of type 'PackagesType' in JSON format.
+  operationId: post_PackagesTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Height1:
+              type: string
+              example: '60'
+            Height1Unit:
+              type: string
+              example: '4'
+            Length1:
+              type: string
+              example: '10'
+            Length1Unit:
+              type: string
+              example: '4'
+            Type:
+              type: string
+              example: carton
+            VolumeUnit:
+              type: string
+              example: '2'
+            Weight1:
+              type: string
+              example: '200'
+            Weight1Unit:
+              type: string
+              example: '3'
+            Width1:
+              type: string
+              example: '30'
+            Width1Unit:
+              type: string
+              example: '4'
+        example:
+          Height1: '60'
+          Height1Unit: '4'
+          Length1: '10'
+          Length1Unit: '4'
+          Type: carton
+          VolumeUnit: '2'
+          Weight1: '200'
+          Weight1Unit: '3'
+          Width1: '30'
+          Width1Unit: '4'
+  x-example-url: POST https://localhost:50000/b1s/v2/PackagesTypes
+  x-resource-description: This entity enables you to manipulate 'PackagesTypes'. It represents various packaging types for
+    deliveries.

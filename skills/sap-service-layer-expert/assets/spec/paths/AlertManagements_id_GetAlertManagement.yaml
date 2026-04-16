@@ -1,0 +1,21 @@
+post:
+  tags:
+  - AlertManagements(id)/GetAlertManagement
+  summary: POST AlertManagements(id)/GetAlertManagement
+  description: Invoke the method 'GetAlertManagement' on this EntitySet with the specified id.
+  operationId: post_AlertManagements_id/GetAlertManagement
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/AlertManagements(123)/GetAlertManagement
+  x-resource-description: This entity enables you to manipulate 'AlertManagements'. For each alert, you need to define its
+    priority, the users and documents to which the alert applies, and the conditions that trigger the alert. In addition to
+    activating system alerts, you can also add alerts based on user-defined queries.

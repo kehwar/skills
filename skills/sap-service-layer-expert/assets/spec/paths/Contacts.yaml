@@ -1,0 +1,61 @@
+get:
+  tags:
+  - Contacts
+  summary: GET Contacts
+  description: Retrieve a collection of 'Contacts' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Contacts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Contacts
+  x-resource-description: This entity enables you to manipulate 'Contacts'. It represents the activities carried out with
+    customers and vendors.
+post:
+  tags:
+  - Contacts
+  summary: POST Contacts
+  description: Create an instance of 'Contacts' with the given payload of type 'Contact' in JSON format.
+  operationId: post_Contacts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Activity:
+              type: string
+              example: cn_Meeting
+            CardCode:
+              type: string
+              example: v001
+            Details:
+              type: string
+              example: create meeting type activity
+        example:
+          Activity: cn_Meeting
+          CardCode: v001
+          Details: create meeting type activity
+  x-example-url: POST https://localhost:50000/b1s/v2/Contacts
+  x-resource-description: This entity enables you to manipulate 'Contacts'. It represents the activities carried out with
+    customers and vendors.

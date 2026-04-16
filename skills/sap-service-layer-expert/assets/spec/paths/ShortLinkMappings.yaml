@@ -1,0 +1,71 @@
+get:
+  tags:
+  - ShortLinkMappings
+  summary: GET ShortLinkMappings
+  description: Retrieve a collection of 'ShortLinkMappings' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ShortLinkMappings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ShortLinkMappings
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappings'.
+post:
+  tags:
+  - ShortLinkMappings
+  summary: POST ShortLinkMappings
+  description: Create an instance of 'ShortLinkMappings' with the given payload of type 'ShortLinkMappings' in JSON format.
+  operationId: post_ShortLinkMappings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CreateDate:
+              type: string
+              example: '2010-01-01'
+            CreateTime:
+              type: string
+              example: '132233'
+            Guid:
+              type: string
+              example: guid123
+            Origin:
+              type: string
+              example: origin123
+            OwnerCode:
+              type: string
+              example: manager
+            SrcLink:
+              type: string
+              example: srcLink123
+        example:
+          CreateDate: '2010-01-01'
+          CreateTime: '132233'
+          Guid: guid123
+          Origin: origin123
+          OwnerCode: manager
+          SrcLink: srcLink123
+  x-example-url: POST https://localhost:50000/b1s/v2/ShortLinkMappings
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappings'.

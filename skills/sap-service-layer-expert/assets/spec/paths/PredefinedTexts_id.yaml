@@ -1,0 +1,92 @@
+get:
+  tags:
+  - PredefinedTexts
+  summary: GET PredefinedTexts(id)
+  description: Retrieve all or some selected properties from an instance of 'PredefinedTexts' with the given id.
+  operationId: get_PredefinedTexts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PredefinedTexts(1)
+  x-resource-description: This entity enables you to manipulate 'PredefinedTexts'.
+patch:
+  tags:
+  - PredefinedTexts
+  summary: PATCH PredefinedTexts(id)
+  description: Update an instance of 'PredefinedTexts' with the given payload of type 'PredefinedText' in JSON format and
+    with the specified id.
+  operationId: patch_PredefinedTexts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Text:
+              type: string
+              example: updating V5's text
+            TextCode:
+              type: string
+              example: V5
+        example:
+          Text: updating V5's text
+          TextCode: V5
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PredefinedTexts(1)
+  x-resource-description: This entity enables you to manipulate 'PredefinedTexts'.
+delete:
+  tags:
+  - PredefinedTexts
+  summary: DELETE PredefinedTexts(id)
+  description: Delete an instance of 'PredefinedTexts' with the specified id.
+  operationId: delete_PredefinedTexts_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/PredefinedTexts(1)
+  x-resource-description: This entity enables you to manipulate 'PredefinedTexts'.

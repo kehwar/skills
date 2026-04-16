@@ -1,0 +1,31 @@
+post:
+  tags:
+  - CockpitsService
+  summary: POST CockpitsService_PublishCockpit
+  description: Invoke the method 'PublishCockpit' on this service by specifying the payload 'Cockpit' in the JSON format.
+  operationId: post_CockpitsService_PublishCockpit
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Cockpit:
+              type: object
+              properties: {}
+        example:
+          Cockpit: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/CockpitsService_PublishCockpit
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CockpitsService'.

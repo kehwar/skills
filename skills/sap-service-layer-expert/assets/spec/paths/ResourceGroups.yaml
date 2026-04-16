@@ -1,0 +1,143 @@
+get:
+  tags:
+  - ResourceGroups
+  summary: GET ResourceGroups
+  description: Retrieve a collection of 'ResourceGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ResourceGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ResourceGroups
+  x-resource-description: This entity enables you to manipulate 'ResourceGroups'.
+post:
+  tags:
+  - ResourceGroups
+  summary: POST ResourceGroups
+  description: Create an instance of 'ResourceGroups' with the given payload of type 'ResourceGroup' in JSON format.
+  operationId: post_ResourceGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: integer
+              example: 2
+            Cost1:
+              type: integer
+              example: 0
+            Cost10:
+              type: integer
+              example: 0
+            Cost2:
+              type: integer
+              example: 0
+            Cost3:
+              type: integer
+              example: 0
+            Cost4:
+              type: integer
+              example: 0
+            Cost5:
+              type: integer
+              example: 0
+            Cost6:
+              type: integer
+              example: 0
+            Cost7:
+              type: integer
+              example: 0
+            Cost8:
+              type: integer
+              example: 0
+            Cost9:
+              type: integer
+              example: 0
+            CostName1:
+              type: string
+              example: Ressource Standardkosten 1
+            CostName10:
+              type: string
+              example: Ressource Standardkosten 10
+            CostName2:
+              type: string
+              example: Ressource Standardkosten 2
+            CostName3:
+              type: string
+              example: Ressource Standardkosten 3
+            CostName4:
+              type: string
+              example: Ressource Standardkosten 4
+            CostName5:
+              type: string
+              example: Ressource Standardkosten 5
+            CostName6:
+              type: string
+              example: Ressource Standardkosten 6
+            CostName7:
+              type: string
+              example: Ressource Standardkosten 7
+            CostName8:
+              type: string
+              example: Ressource Standardkosten 8
+            CostName9:
+              type: string
+              example: Ressource Standardkosten 9
+            Name:
+              type: string
+              example: tRessourcen
+            NumOfUnitsText:
+              type: string
+              example: null
+            Type:
+              type: string
+              example: rtMachine
+        example:
+          Code: 2
+          Cost1: 0
+          Cost10: 0
+          Cost2: 0
+          Cost3: 0
+          Cost4: 0
+          Cost5: 0
+          Cost6: 0
+          Cost7: 0
+          Cost8: 0
+          Cost9: 0
+          CostName1: Ressource Standardkosten 1
+          CostName10: Ressource Standardkosten 10
+          CostName2: Ressource Standardkosten 2
+          CostName3: Ressource Standardkosten 3
+          CostName4: Ressource Standardkosten 4
+          CostName5: Ressource Standardkosten 5
+          CostName6: Ressource Standardkosten 6
+          CostName7: Ressource Standardkosten 7
+          CostName8: Ressource Standardkosten 8
+          CostName9: Ressource Standardkosten 9
+          Name: tRessourcen
+          NumOfUnitsText: null
+          Type: rtMachine
+  x-example-url: POST https://localhost:50000/b1s/v2/ResourceGroups
+  x-resource-description: This entity enables you to manipulate 'ResourceGroups'.

@@ -1,0 +1,40 @@
+get:
+  tags:
+  - CompanyService
+  summary: GET CompanyService_GetAdminInfo
+  description: Invoke the method 'GetAdminInfo' on this service. It Returns the 'AdminInfo' data structure, including administration
+    properties for system initialization and various definitions, such as financials and banking.
+  operationId: get_CompanyService_GetAdminInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CompanyService_GetAdminInfo
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_GetAdminInfo
+  description: Invoke the method 'GetAdminInfo' on this service. It Returns the 'AdminInfo' data structure, including administration
+    properties for system initialization and various definitions, such as financials and banking.
+  operationId: post_CompanyService_GetAdminInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_GetAdminInfo
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

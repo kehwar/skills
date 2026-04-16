@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ActivitiesService
+  summary: POST ActivitiesService_GetTopNActivityInstances
+  description: Invoke the method 'GetTopNActivityInstances' on this service by specifying the payload 'ActivityInstancesListParams'
+    in the JSON format.
+  operationId: post_ActivitiesService_GetTopNActivityInstances
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ActivityInstancesListParams:
+              type: object
+              properties:
+                ActivityInstancesListParams:
+                  type: object
+                  properties:
+                    StartDate:
+                      type: string
+                      example: '2016-08-30'
+        example:
+          ActivityInstancesListParams:
+            ActivityInstancesListParams:
+              StartDate: '2016-08-30'
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivitiesService_GetTopNActivityInstances
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ActivitiesService'.

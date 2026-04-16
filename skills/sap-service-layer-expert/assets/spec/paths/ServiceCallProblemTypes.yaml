@@ -1,0 +1,56 @@
+get:
+  tags:
+  - ServiceCallProblemTypes
+  summary: GET ServiceCallProblemTypes
+  description: Retrieve a collection of 'ServiceCallProblemTypes' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_ServiceCallProblemTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCallProblemTypes
+  x-resource-description: This entity enables you to manipulate 'ServiceCallProblemTypes'.
+post:
+  tags:
+  - ServiceCallProblemTypes
+  summary: POST ServiceCallProblemTypes
+  description: Create an instance of 'ServiceCallProblemTypes' with the given payload of type 'ServiceCallProblemType' in
+    JSON format.
+  operationId: post_ServiceCallProblemTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: test
+            Name:
+              type: string
+              example: test
+        example:
+          Description: test
+          Name: test
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceCallProblemTypes
+  x-resource-description: This entity enables you to manipulate 'ServiceCallProblemTypes'.

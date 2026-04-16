@@ -1,0 +1,94 @@
+get:
+  tags:
+  - BusinessPartners
+  summary: GET BusinessPartners(id)
+  description: Retrieve all or some selected properties from an instance of 'BusinessPartners' with the given id.
+  operationId: get_BusinessPartners_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BusinessPartners('c001')
+  x-resource-description: This entity enables you to manipulate 'BusinessPartners'. It represents the business partners master
+    data in the Business Partners module. You can use this data to record and retrieve business partner (customers, vendors,
+    and leads) information and schedule business partner activities.
+patch:
+  tags:
+  - BusinessPartners
+  summary: PATCH BusinessPartners(id)
+  description: Update an instance of 'BusinessPartners' with the given payload of type 'BusinessPartner' in JSON format and
+    with the specified id.
+  operationId: patch_BusinessPartners_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardName:
+              type: string
+              example: Updated customer name
+        example:
+          CardName: Updated customer name
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BusinessPartners('c001')
+  x-resource-description: This entity enables you to manipulate 'BusinessPartners'. It represents the business partners master
+    data in the Business Partners module. You can use this data to record and retrieve business partner (customers, vendors,
+    and leads) information and schedule business partner activities.
+delete:
+  tags:
+  - BusinessPartners
+  summary: DELETE BusinessPartners(id)
+  description: Delete an instance of 'BusinessPartners' with the specified id.
+  operationId: delete_BusinessPartners_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BusinessPartners('c001')
+  x-resource-description: This entity enables you to manipulate 'BusinessPartners'. It represents the business partners master
+    data in the Business Partners module. You can use this data to record and retrieve business partner (customers, vendors,
+    and leads) information and schedule business partner activities.

@@ -1,0 +1,50 @@
+get:
+  tags:
+  - BrazilBeverageIndexers
+  summary: GET BrazilBeverageIndexers(id)
+  description: Retrieve all or some selected properties from an instance of 'BrazilBeverageIndexers' with the given id.
+  operationId: get_BrazilBeverageIndexers_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BrazilBeverageIndexers(847)
+  x-resource-description: This entity enables you to manipulate 'BrazilBeverageIndexers'.
+delete:
+  tags:
+  - BrazilBeverageIndexers
+  summary: DELETE BrazilBeverageIndexers(id)
+  description: Delete an instance of 'BrazilBeverageIndexers' with the specified id.
+  operationId: delete_BrazilBeverageIndexers_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BrazilBeverageIndexers(847)
+  x-resource-description: This entity enables you to manipulate 'BrazilBeverageIndexers'.

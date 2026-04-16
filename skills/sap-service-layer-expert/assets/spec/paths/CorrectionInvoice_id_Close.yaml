@@ -1,0 +1,19 @@
+post:
+  tags:
+  - CorrectionInvoice(id)/Close
+  summary: POST CorrectionInvoice(id)/Close
+  description: Invoke the method 'Close' on this EntitySet with the specified id.
+  operationId: post_CorrectionInvoice_id/Close
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoice(123)/Close
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoice'.

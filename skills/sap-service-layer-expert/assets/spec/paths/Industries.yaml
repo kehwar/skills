@@ -1,0 +1,57 @@
+get:
+  tags:
+  - Industries
+  summary: GET Industries
+  description: Retrieve a collection of 'Industries' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Industries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Industries
+  x-resource-description: This entity enables you to manipulate 'Industries'. It represents the industries list from which
+    an industry can be associated with a sales opportunity.
+post:
+  tags:
+  - Industries
+  summary: POST Industries
+  description: Create an instance of 'Industries' with the given payload of type 'Industry' in JSON format.
+  operationId: post_Industries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            IndustryDescription:
+              type: string
+              example: chemical industry
+            IndustryName:
+              type: string
+              example: chemical
+        example:
+          IndustryDescription: chemical industry
+          IndustryName: chemical
+  x-example-url: POST https://localhost:50000/b1s/v2/Industries
+  x-resource-description: This entity enables you to manipulate 'Industries'. It represents the industries list from which
+    an industry can be associated with a sales opportunity.

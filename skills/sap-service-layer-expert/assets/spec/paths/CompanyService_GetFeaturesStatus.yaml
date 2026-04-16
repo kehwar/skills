@@ -1,0 +1,44 @@
+get:
+  tags:
+  - CompanyService
+  summary: GET CompanyService_GetFeaturesStatus
+  description: 'Invoke the method ''GetFeaturesStatus'' on this service. It returns the ''FeatureStatusCollection''. A feature
+    status can be either blocked or not. This object represents the status of a specified feature in the application, whether
+    it is blocked or not according to the installation type: new 2007 release installation or upgrade installation prior to
+    2007 release.'
+  operationId: get_CompanyService_GetFeaturesStatus
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CompanyService_GetFeaturesStatus
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_GetFeaturesStatus
+  description: 'Invoke the method ''GetFeaturesStatus'' on this service. It returns the ''FeatureStatusCollection''. A feature
+    status can be either blocked or not. This object represents the status of a specified feature in the application, whether
+    it is blocked or not according to the installation type: new 2007 release installation or upgrade installation prior to
+    2007 release.'
+  operationId: post_CompanyService_GetFeaturesStatus
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_GetFeaturesStatus
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

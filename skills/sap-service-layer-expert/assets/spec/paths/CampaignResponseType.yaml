@@ -1,0 +1,60 @@
+get:
+  tags:
+  - CampaignResponseType
+  summary: GET CampaignResponseType
+  description: Retrieve a collection of 'CampaignResponseType' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_CampaignResponseType
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CampaignResponseType
+  x-resource-description: This entity enables you to manipulate 'CampaignResponseType'.
+post:
+  tags:
+  - CampaignResponseType
+  summary: POST CampaignResponseType
+  description: Create an instance of 'CampaignResponseType' with the given payload of type 'CampaignResponseType' in JSON
+    format.
+  operationId: post_CampaignResponseType
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            IsActive:
+              type: string
+              example: tYES
+            ResponseType:
+              type: string
+              example: '01'
+            ResponseTypeDescription:
+              type: string
+              example: '001'
+        example:
+          IsActive: tYES
+          ResponseType: '01'
+          ResponseTypeDescription: '001'
+  x-example-url: POST https://localhost:50000/b1s/v2/CampaignResponseType
+  x-resource-description: This entity enables you to manipulate 'CampaignResponseType'.

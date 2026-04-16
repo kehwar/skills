@@ -1,0 +1,79 @@
+get:
+  tags:
+  - SalesForecast
+  summary: GET SalesForecast
+  description: Retrieve a collection of 'SalesForecast' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SalesForecast
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesForecast
+  x-resource-description: This entity enables you to manipulate 'SalesForecast'. It represents the sales forecast for a specified
+    period.
+post:
+  tags:
+  - SalesForecast
+  summary: POST SalesForecast
+  description: Create an instance of 'SalesForecast' with the given payload of type 'SalesForecast' in JSON format.
+  operationId: post_SalesForecast
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ForecastCode:
+              type: string
+              example: D01
+            ForecastName:
+              type: string
+              example: For Daily forecast
+            SalesForecastLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ForecastedDay:
+                    type: string
+                    example: '2014-11-29'
+                  ItemNo:
+                    type: string
+                    example: item01
+                  Quantity:
+                    type: string
+                    example: '100'
+            View:
+              type: string
+              example: fvtDaily
+        example:
+          ForecastCode: D01
+          ForecastName: For Daily forecast
+          SalesForecastLines:
+          - ForecastedDay: '2014-11-29'
+            ItemNo: item01
+            Quantity: '100'
+          View: fvtDaily
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesForecast
+  x-resource-description: This entity enables you to manipulate 'SalesForecast'. It represents the sales forecast for a specified
+    period.

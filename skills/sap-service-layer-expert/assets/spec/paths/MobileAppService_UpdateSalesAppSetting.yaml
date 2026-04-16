@@ -1,0 +1,44 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_UpdateSalesAppSetting
+  description: Invoke the method 'UpdateSalesAppSetting' on this service by specifying the payload 'SalesAppSetting' in the
+    JSON format.
+  operationId: post_MobileAppService_UpdateSalesAppSetting
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AdvancedDashBoard:
+              type: integer
+              example: -1
+            Code:
+              type: integer
+              example: -1
+            CustomerAdvancedDashBoard:
+              type: integer
+              example: -2
+            Name:
+              type: string
+              example: TESTCODE-1
+        example:
+          AdvancedDashBoard: -1
+          Code: -1
+          CustomerAdvancedDashBoard: -2
+          Name: TESTCODE-1
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_UpdateSalesAppSetting
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

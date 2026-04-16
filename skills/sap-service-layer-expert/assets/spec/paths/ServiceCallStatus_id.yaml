@@ -1,0 +1,88 @@
+get:
+  tags:
+  - ServiceCallStatus
+  summary: GET ServiceCallStatus(id)
+  description: Retrieve all or some selected properties from an instance of 'ServiceCallStatus' with the given id.
+  operationId: get_ServiceCallStatus_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCallStatus(1)
+  x-resource-description: This entity enables you to manipulate 'ServiceCallStatus'.
+patch:
+  tags:
+  - ServiceCallStatus
+  summary: PATCH ServiceCallStatus(id)
+  description: Update an instance of 'ServiceCallStatus' with the given payload of type 'ServiceCallStatus' in JSON format
+    and with the specified id.
+  operationId: patch_ServiceCallStatus_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: '123'
+        example:
+          Description: '123'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ServiceCallStatus(1)
+  x-resource-description: This entity enables you to manipulate 'ServiceCallStatus'.
+delete:
+  tags:
+  - ServiceCallStatus
+  summary: DELETE ServiceCallStatus(id)
+  description: Delete an instance of 'ServiceCallStatus' with the specified id.
+  operationId: delete_ServiceCallStatus_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ServiceCallStatus(1)
+  x-resource-description: This entity enables you to manipulate 'ServiceCallStatus'.

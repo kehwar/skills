@@ -1,0 +1,19 @@
+post:
+  tags:
+  - SalesOpportunityReasonsSetupService
+  summary: POST SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList
+  description: Invoke the method 'GetSalesOpportunityReasonSetupList' on this service.
+  operationId: post_SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SalesOpportunityReasonsSetupService'.

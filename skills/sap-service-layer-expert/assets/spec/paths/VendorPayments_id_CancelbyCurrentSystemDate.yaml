@@ -1,0 +1,21 @@
+post:
+  tags:
+  - VendorPayments(id)/CancelbyCurrentSystemDate
+  summary: POST VendorPayments(id)/CancelbyCurrentSystemDate
+  description: Invoke the method 'CancelbyCurrentSystemDate' on this EntitySet with the specified id.
+  operationId: post_VendorPayments_id/CancelbyCurrentSystemDate
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/VendorPayments(123)/CancelbyCurrentSystemDate
+  x-resource-description: This entity enables you to manipulate 'VendorPayments'. It represents incoming payments to vendors
+    or, for returned goods, to customers. Available payment methods are cash, credit cards, checks, bank transfers, and in
+    some localizations, bills of exchange.

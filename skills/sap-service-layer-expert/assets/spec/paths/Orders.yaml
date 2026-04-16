@@ -1,0 +1,83 @@
+get:
+  tags:
+  - Orders
+  summary: GET Orders
+  description: Retrieve a collection of 'Orders' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Orders
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Orders
+  x-resource-description: This entity enables you to manipulate 'Orders'. It represents a commitment from a customer or lead
+    to buy a product or service.
+post:
+  tags:
+  - Orders
+  summary: POST Orders
+  description: 'Create an instance of ''Orders'' with the given payload of type ''Document'' in JSON format. Under normal
+    conditions, a new order would be created on posting Orders. However, when activating approval procedures, a draft would
+    be created due to the special business logic and service would return the error code -2028. For this case, a header(Prefer:
+    return-no-content) should be appended to avoid this error. Accordingly, service would return http staus 204, with empty
+    response body. For more details, please see Working with SAP Business One Service Layer.pdf.'
+  operationId: post_Orders
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DocDueDate:
+              type: string
+              example: '2014-04-04'
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  Quantity:
+                    type: string
+                    example: '100'
+                  TaxCode:
+                    type: string
+                    example: T1
+                  UnitPrice:
+                    type: string
+                    example: '30'
+        example:
+          CardCode: c001
+          DocDueDate: '2014-04-04'
+          DocumentLines:
+          - ItemCode: i001
+            Quantity: '100'
+            TaxCode: T1
+            UnitPrice: '30'
+  x-example-url: POST https://localhost:50000/b1s/v2/Orders
+  x-resource-description: This entity enables you to manipulate 'Orders'. It represents a commitment from a customer or lead
+    to buy a product or service.

@@ -1,0 +1,65 @@
+get:
+  tags:
+  - SalesOpportunities
+  summary: GET SalesOpportunities
+  description: Retrieve a collection of 'SalesOpportunities' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SalesOpportunities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesOpportunities
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunities'. It represents the data of sales opportunities
+    in SAP Business One. Sales opportunities include potential sale volumes that may arise from business with customers and
+    interested parties.
+post:
+  tags:
+  - SalesOpportunities
+  summary: POST SalesOpportunities
+  description: Create an instance of 'SalesOpportunities' with the given payload of type 'SalesOpportunities' in JSON format.
+  operationId: post_SalesOpportunities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            InventoryCountingLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: I003
+                  WarehouseCode:
+                    type: string
+                    example: '01'
+        example:
+          InventoryCountingLines:
+          - ItemCode: I003
+            WarehouseCode: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesOpportunities
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunities'. It represents the data of sales opportunities
+    in SAP Business One. Sales opportunities include potential sale volumes that may arise from business with customers and
+    interested parties.

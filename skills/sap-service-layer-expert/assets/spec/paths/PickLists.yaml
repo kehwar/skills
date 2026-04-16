@@ -1,0 +1,79 @@
+get:
+  tags:
+  - PickLists
+  summary: GET PickLists
+  description: Retrieve a collection of 'PickLists' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PickLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PickLists
+  x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
+    the warehouse. The picking process applies only to items that are already approved in sales orders.
+post:
+  tags:
+  - PickLists
+  summary: POST PickLists
+  description: Create an instance of 'PickLists' with the given payload of type 'PickList' in JSON format.
+  operationId: post_PickLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ObjectType:
+              type: string
+              example: '156'
+            PickDate:
+              type: string
+              example: '2016-08-25'
+            PickListsLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  BaseObjectType:
+                    type: integer
+                    example: 17
+                  OrderEntry:
+                    type: integer
+                    example: 9
+                  OrderRowID:
+                    type: integer
+                    example: 0
+                  ReleasedQuantity:
+                    type: integer
+                    example: 1
+        example:
+          ObjectType: '156'
+          PickDate: '2016-08-25'
+          PickListsLines:
+          - BaseObjectType: 17
+            OrderEntry: 9
+            OrderRowID: 0
+            ReleasedQuantity: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/PickLists
+  x-resource-description: This entity enables you to manipulate 'PickLists'. It supports the picking process of items from
+    the warehouse. The picking process applies only to items that are already approved in sales orders.

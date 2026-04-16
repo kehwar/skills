@@ -1,0 +1,138 @@
+post:
+  tags:
+  - PickListsService
+  summary: POST PickListsService_UpdateReleasedAllocation
+  description: Invoke the method 'UpdateReleasedAllocation' on this service by specifying the payload 'PickList' in the JSON
+    format.
+  operationId: post_PickListsService_UpdateReleasedAllocation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PickList:
+              type: object
+              properties:
+                Absoluteentry:
+                  type: integer
+                  example: 3
+                Name:
+                  type: string
+                  example: manager
+                ObjectType:
+                  type: string
+                  example: '156'
+                OwnerCode:
+                  type: integer
+                  example: 1
+                PickDate:
+                  type: string
+                  example: '2016-08-25'
+                PickListsLines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      AbsoluteEntry:
+                        type: integer
+                        example: 3
+                      BaseObjectType:
+                        type: integer
+                        example: 17
+                      DocumentLinesBinAllocations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            BinAbsEntry:
+                              type: integer
+                              example: 2
+                            Quantity:
+                              type: integer
+                              example: 1
+                            SerialAndBatchNumbersBaseLine:
+                              type: integer
+                              example: 0
+                      LineNumber:
+                        type: integer
+                        example: 0
+                      OrderEntry:
+                        type: integer
+                        example: 9
+                      OrderRowID:
+                        type: integer
+                        example: 0
+                      PickStatus:
+                        type: string
+                        example: ps_Released
+                      PickedQuantity:
+                        type: integer
+                        example: 0
+                      PreviouslyReleasedQuantity:
+                        type: integer
+                        example: 1
+                      ReleasedQuantity:
+                        type: integer
+                        example: 1
+                      SerialNumbers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            InternalSerialNumber:
+                              type: integer
+                              example: 4
+                            ManufacturerSerialNumber:
+                              type: integer
+                              example: 4
+                            Quantity:
+                              type: integer
+                              example: 1
+                Status:
+                  type: string
+                  example: ps_Released
+                UseBaseUnits:
+                  type: string
+                  example: tNO
+        example:
+          PickList:
+            Absoluteentry: 3
+            Name: manager
+            ObjectType: '156'
+            OwnerCode: 1
+            PickDate: '2016-08-25'
+            PickListsLines:
+            - AbsoluteEntry: 3
+              BaseObjectType: 17
+              DocumentLinesBinAllocations:
+              - BinAbsEntry: 2
+                Quantity: 1
+                SerialAndBatchNumbersBaseLine: 0
+              LineNumber: 0
+              OrderEntry: 9
+              OrderRowID: 0
+              PickStatus: ps_Released
+              PickedQuantity: 0
+              PreviouslyReleasedQuantity: 1
+              ReleasedQuantity: 1
+              SerialNumbers:
+              - InternalSerialNumber: 4
+                ManufacturerSerialNumber: 4
+                Quantity: 1
+            Status: ps_Released
+            UseBaseUnits: tNO
+  x-example-url: POST https://localhost:50000/b1s/v2/PickListsService_UpdateReleasedAllocation
+  x-resource-description: This API enables you to invoke the interfaces defined on 'PickListsService'.

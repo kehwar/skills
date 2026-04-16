@@ -1,0 +1,106 @@
+get:
+  tags:
+  - ValueMapping
+  summary: GET ValueMapping(id)
+  description: Retrieve all or some selected properties from an instance of 'ValueMapping' with the given id.
+  operationId: get_ValueMapping_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ValueMapping(123)
+  x-resource-description: This entity enables you to manipulate 'ValueMapping'.
+patch:
+  tags:
+  - ValueMapping
+  summary: PATCH ValueMapping(id)
+  description: Update an instance of 'ValueMapping' with the given payload of type 'VM_B1ValuesData' in JSON format and with
+    the specified id.
+  operationId: patch_ValueMapping_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ObjectAbsEntry:
+              type: string
+              example: NOK
+            ObjectId:
+              type: integer
+              example: 37
+            VM_ThirdPartyValuesCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  ThirdPartySystemId:
+                    type: integer
+                    example: 1
+                  ThirdPartyValue:
+                    type: string
+                    example: AFN
+        example:
+          ObjectAbsEntry: NOK
+          ObjectId: 37
+          VM_ThirdPartyValuesCollection:
+          - ThirdPartySystemId: 1
+            ThirdPartyValue: AFN
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ValueMapping(123)
+  x-resource-description: This entity enables you to manipulate 'ValueMapping'.
+delete:
+  tags:
+  - ValueMapping
+  summary: DELETE ValueMapping(id)
+  description: Delete an instance of 'ValueMapping' with the specified id.
+  operationId: delete_ValueMapping_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ValueMapping(123)
+  x-resource-description: This entity enables you to manipulate 'ValueMapping'.

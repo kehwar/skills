@@ -1,0 +1,71 @@
+get:
+  tags:
+  - PurchaseRequests
+  summary: GET PurchaseRequests
+  description: Retrieve a collection of 'PurchaseRequests' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PurchaseRequests
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PurchaseRequests
+  x-resource-description: This entity enables you to manipulate 'PurchaseRequests'. It allows users and employees in an organization
+    to initiate a purchasing process by submitting their needs for certain goods or services.
+post:
+  tags:
+  - PurchaseRequests
+  summary: POST PurchaseRequests
+  description: Create an instance of 'PurchaseRequests' with the given payload of type 'Document' in JSON format.
+  operationId: post_PurchaseRequests
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  LineVendor:
+                    type: string
+                    example: v001
+                  Quantity:
+                    type: string
+                    example: '11'
+            RequriedDate:
+              type: string
+              example: '2014-03-18'
+        example:
+          DocumentLines:
+          - ItemCode: i001
+            LineVendor: v001
+            Quantity: '11'
+          RequriedDate: '2014-03-18'
+  x-example-url: POST https://localhost:50000/b1s/v2/PurchaseRequests
+  x-resource-description: This entity enables you to manipulate 'PurchaseRequests'. It allows users and employees in an organization
+    to initiate a purchasing process by submitting their needs for certain goods or services.

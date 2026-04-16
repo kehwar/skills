@@ -1,0 +1,19 @@
+post:
+  tags:
+  - LicenseService
+  summary: POST LicenseService_GetInstallationNumber
+  description: Invoke the method 'GetInstallationNumber' on this service.
+  operationId: post_LicenseService_GetInstallationNumber
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/LicenseService_GetInstallationNumber
+  x-resource-description: This API enables you to invoke the interfaces defined on 'LicenseService'.

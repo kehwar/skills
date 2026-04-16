@@ -1,0 +1,69 @@
+get:
+  tags:
+  - BankPages
+  summary: GET BankPages
+  description: Retrieve a collection of 'BankPages' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BankPages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BankPages
+  x-resource-description: This entity enables you to manipulate 'BankPages'. It represents external bank statements in the
+    Banking module.
+post:
+  tags:
+  - BankPages
+  summary: POST BankPages
+  description: Create an instance of 'BankPages' with the given payload of type 'BankPage' in JSON format.
+  operationId: post_BankPages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AccountCode:
+              type: string
+              example: _SYS00000000001
+            CardCode:
+              type: string
+              example: c001
+            CreditAmount:
+              type: string
+              example: '111'
+            DocNumberType:
+              type: string
+              example: bpdt_DocNum
+            PaymentReference:
+              type: string
+              example: first pay
+        example:
+          AccountCode: _SYS00000000001
+          CardCode: c001
+          CreditAmount: '111'
+          DocNumberType: bpdt_DocNum
+          PaymentReference: first pay
+  x-example-url: POST https://localhost:50000/b1s/v2/BankPages
+  x-resource-description: This entity enables you to manipulate 'BankPages'. It represents external bank statements in the
+    Banking module.

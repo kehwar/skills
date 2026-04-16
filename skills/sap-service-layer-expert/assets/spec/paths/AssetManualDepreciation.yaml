@@ -1,0 +1,113 @@
+get:
+  tags:
+  - AssetManualDepreciation
+  summary: GET AssetManualDepreciation
+  description: Retrieve a collection of 'AssetManualDepreciation' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_AssetManualDepreciation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetManualDepreciation
+  x-resource-description: This entity enables you to manipulate 'AssetManualDepreciation'.
+post:
+  tags:
+  - AssetManualDepreciation
+  summary: POST AssetManualDepreciation
+  description: Create an instance of 'AssetManualDepreciation' with the given payload of type 'AssetDocument' in JSON format.
+  operationId: post_AssetManualDepreciation
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetDocumentLineCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AssetNumber:
+                    type: string
+                    example: FA1
+                  GLAccount:
+                    type: string
+                    example: null
+                  Quantity:
+                    type: integer
+                    example: 0
+                  Remarks:
+                    type: string
+                    example: test1
+                  TotalFC:
+                    type: integer
+                    example: 0
+                  TotalLC:
+                    type: integer
+                    example: 100
+                  TotalSC:
+                    type: integer
+                    example: 100
+            AssetValueDate:
+              type: string
+              example: '2016-08-31'
+            DepreciationArea:
+              type: string
+              example: '*'
+            DocumentDate:
+              type: string
+              example: '2016-08-31'
+            DocumentTotal:
+              type: integer
+              example: 100
+            DocumentType:
+              type: string
+              example: adtUnplannedDepreciation
+            PostingDate:
+              type: string
+              example: '2016-08-31'
+            SummerizeByDistributionRules:
+              type: string
+              example: tYES
+            SummerizeByProjects:
+              type: string
+              example: tYES
+        example:
+          AssetDocumentLineCollection:
+          - AssetNumber: FA1
+            GLAccount: null
+            Quantity: 0
+            Remarks: test1
+            TotalFC: 0
+            TotalLC: 100
+            TotalSC: 100
+          AssetValueDate: '2016-08-31'
+          DepreciationArea: '*'
+          DocumentDate: '2016-08-31'
+          DocumentTotal: 100
+          DocumentType: adtUnplannedDepreciation
+          PostingDate: '2016-08-31'
+          SummerizeByDistributionRules: tYES
+          SummerizeByProjects: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetManualDepreciation
+  x-resource-description: This entity enables you to manipulate 'AssetManualDepreciation'.

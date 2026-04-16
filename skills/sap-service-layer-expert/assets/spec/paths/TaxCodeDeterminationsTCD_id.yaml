@@ -1,0 +1,149 @@
+get:
+  tags:
+  - TaxCodeDeterminationsTCD
+  summary: GET TaxCodeDeterminationsTCD(id)
+  description: Retrieve all or some selected properties from an instance of 'TaxCodeDeterminationsTCD' with the given id.
+  operationId: get_TaxCodeDeterminationsTCD_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/TaxCodeDeterminationsTCD(4)
+  x-resource-description: This entity enables you to manipulate 'TaxCodeDeterminationsTCD'.
+patch:
+  tags:
+  - TaxCodeDeterminationsTCD
+  summary: PATCH TaxCodeDeterminationsTCD(id)
+  description: Update an instance of 'TaxCodeDeterminationsTCD' with the given payload of type 'TaxCodeDeterminationTCD' in
+    JSON format and with the specified id.
+  operationId: patch_TaxCodeDeterminationsTCD_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DftApCode:
+              type: string
+              example: null
+            DftArCode:
+              type: string
+              example: null
+            TaxCodeDeterminationTCDByUsages:
+              type: array
+              items: {}
+            TaxCodeDeterminationTCDDefaultWTs:
+              type: array
+              items: {}
+            TaxCodeDeterminationTCDKeyFields:
+              type: array
+              items:
+                type: object
+                properties:
+                  AbsId:
+                    type: integer
+                    example: 2
+                  Descr:
+                    type: string
+                    example: ''
+                  KeyFld_1:
+                    type: integer
+                    example: 1
+                  KeyFld_2:
+                    type: integer
+                    example: 0
+                  KeyFld_3:
+                    type: integer
+                    example: 0
+                  KeyFld_4:
+                    type: integer
+                    example: 0
+                  Priority:
+                    type: integer
+                    example: 1
+                  TaxCodeDeterminationTCDKeyFieldValues:
+                    type: array
+                    items: {}
+                  UDFAlias_1:
+                    type: string
+                    example: null
+                  UDFAlias_2:
+                    type: string
+                    example: null
+                  UDFAlias_3:
+                    type: string
+                    example: null
+                  UDFAlias_4:
+                    type: string
+                    example: null
+                  UDFTable_1:
+                    type: string
+                    example: null
+                  UDFTable_2:
+                    type: string
+                    example: null
+                  UDFTable_3:
+                    type: string
+                    example: null
+                  UDFTable_4:
+                    type: string
+                    example: null
+            TcdType:
+              type: string
+              example: tcdtWithholdingTax
+        example:
+          DftApCode: null
+          DftArCode: null
+          TaxCodeDeterminationTCDByUsages: []
+          TaxCodeDeterminationTCDDefaultWTs: []
+          TaxCodeDeterminationTCDKeyFields:
+          - AbsId: 2
+            Descr: ''
+            KeyFld_1: 1
+            KeyFld_2: 0
+            KeyFld_3: 0
+            KeyFld_4: 0
+            Priority: 1
+            TaxCodeDeterminationTCDKeyFieldValues: []
+            UDFAlias_1: null
+            UDFAlias_2: null
+            UDFAlias_3: null
+            UDFAlias_4: null
+            UDFTable_1: null
+            UDFTable_2: null
+            UDFTable_3: null
+            UDFTable_4: null
+          TcdType: tcdtWithholdingTax
+  x-example-url: PATCH https://localhost:50000/b1s/v2/TaxCodeDeterminationsTCD(4)
+  x-resource-description: This entity enables you to manipulate 'TaxCodeDeterminationsTCD'.

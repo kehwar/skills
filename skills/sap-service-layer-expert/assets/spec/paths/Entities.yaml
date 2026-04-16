@@ -1,0 +1,17 @@
+get:
+  tags:
+  - Entities
+  summary: GET Entities
+  description: ''
+  operationId: get_Entities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found

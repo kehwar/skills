@@ -1,0 +1,107 @@
+get:
+  tags:
+  - ApprovalRequests
+  summary: GET ApprovalRequests(id)
+  description: Retrieve all or some selected properties from an instance of 'ApprovalRequests' with the given id.
+  operationId: get_ApprovalRequests_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ApprovalRequests(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalRequests' and retrieve approval requests for various
+    approval processes.
+patch:
+  tags:
+  - ApprovalRequests
+  summary: PATCH ApprovalRequests(id)
+  description: Update an instance of 'ApprovalRequests' with the given payload of type 'ApprovalRequest' in JSON format and
+    with the specified id.
+  operationId: patch_ApprovalRequests_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ApprovalRequestLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  StageCode:
+                    type: integer
+                    example: 3
+                  Status:
+                    type: string
+                    example: ardPending
+                  UserID:
+                    type: integer
+                    example: 1
+            CurrentStage:
+              type: integer
+              example: 3
+            IsDraft:
+              type: string
+              example: Y
+            ObjectEntry:
+              type: integer
+              example: 14
+            ObjectType:
+              type: string
+              example: '112'
+            OriginatorID:
+              type: integer
+              example: 38
+            Remarks:
+              type: string
+              example: Please Approve, dear Master
+            Status:
+              type: string
+              example: arsPending
+        example:
+          ApprovalRequestLines:
+          - StageCode: 3
+            Status: ardPending
+            UserID: 1
+          CurrentStage: 3
+          IsDraft: Y
+          ObjectEntry: 14
+          ObjectType: '112'
+          OriginatorID: 38
+          Remarks: Please Approve, dear Master
+          Status: arsPending
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ApprovalRequests(123)
+  x-resource-description: This entity enables you to manipulate 'ApprovalRequests' and retrieve approval requests for various
+    approval processes.

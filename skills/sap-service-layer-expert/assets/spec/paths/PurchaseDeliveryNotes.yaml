@@ -1,0 +1,75 @@
+get:
+  tags:
+  - PurchaseDeliveryNotes
+  summary: GET PurchaseDeliveryNotes
+  description: Retrieve a collection of 'PurchaseDeliveryNotes' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_PurchaseDeliveryNotes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PurchaseDeliveryNotes
+  x-resource-description: This entity enables you to manipulate 'PurchaseDeliveryNotes'. It represents a legally binding document
+    indicating that a shipment of goods or a delivery of services has occurred.
+post:
+  tags:
+  - PurchaseDeliveryNotes
+  summary: POST PurchaseDeliveryNotes
+  description: Create an instance of 'PurchaseDeliveryNotes' with the given payload of type 'Document' in JSON format.
+  operationId: post_PurchaseDeliveryNotes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: c001
+                  Quantity:
+                    type: string
+                    example: '100'
+                  TaxCode:
+                    type: string
+                    example: T1
+                  UnitPrice:
+                    type: string
+                    example: '50'
+        example:
+          CardCode: c001
+          DocumentLines:
+          - ItemCode: c001
+            Quantity: '100'
+            TaxCode: T1
+            UnitPrice: '50'
+  x-example-url: POST https://localhost:50000/b1s/v2/PurchaseDeliveryNotes
+  x-resource-description: This entity enables you to manipulate 'PurchaseDeliveryNotes'. It represents a legally binding document
+    indicating that a shipment of goods or a delivery of services has occurred.

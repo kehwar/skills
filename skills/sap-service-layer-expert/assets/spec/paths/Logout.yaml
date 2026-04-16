@@ -1,0 +1,22 @@
+post:
+  tags:
+  - Logout
+  summary: POST Logout
+  description: Logout.
+  operationId: post_Logout
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/Logout
+  x-resource-description: By default, a login session will expire and the user will be logged out automatically if there is
+    no new request within 30 minutes. You can change the default expire time by modifying the value of the "SessionTimeout"
+    property in file "{USER_INSTALL_DIR}/ServiceLayer/conf/b1s.conf". Here, "{USER_INSTALL_DIR}" stands for the installation
+    folder.

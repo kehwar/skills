@@ -1,0 +1,66 @@
+get:
+  tags:
+  - AccountSegmentationCategories
+  summary: GET AccountSegmentationCategories
+  description: Retrieve a collection of 'AccountSegmentationCategories' with all or some selected properties in the given
+    order by specifying the given filter condition.
+  operationId: get_AccountSegmentationCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AccountSegmentationCategories
+  x-resource-description: This entity enables you to manipulate 'AccountSegmentationCategories'. It represents the categories
+    under each of the account segments.
+post:
+  tags:
+  - AccountSegmentationCategories
+  summary: POST AccountSegmentationCategories
+  description: Create an instance of 'AccountSegmentationCategories' with the given payload of type 'AccountSegmentationCategory'
+    in JSON format.
+  operationId: post_AccountSegmentationCategories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: '50'
+            Name:
+              type: string
+              example: Sales Department
+            SegmentID:
+              type: string
+              example: '3'
+            ShortName:
+              type: string
+              example: SD
+        example:
+          Code: '50'
+          Name: Sales Department
+          SegmentID: '3'
+          ShortName: SD
+  x-example-url: POST https://localhost:50000/b1s/v2/AccountSegmentationCategories
+  x-resource-description: This entity enables you to manipulate 'AccountSegmentationCategories'. It represents the categories
+    under each of the account segments.

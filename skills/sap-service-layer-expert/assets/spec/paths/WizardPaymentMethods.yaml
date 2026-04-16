@@ -1,0 +1,79 @@
+get:
+  tags:
+  - WizardPaymentMethods
+  summary: GET WizardPaymentMethods
+  description: Retrieve a collection of 'WizardPaymentMethods' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_WizardPaymentMethods
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/WizardPaymentMethods
+  x-resource-description: This entity enables you to manipulate 'WizardPaymentMethods'. It defines various payment methods
+    for various payment means (such as check, bank transfer, and in some localizations, bills of exchange) which can be used
+    in payment wizard runs.
+post:
+  tags:
+  - WizardPaymentMethods
+  summary: POST WizardPaymentMethods
+  description: Create an instance of 'WizardPaymentMethods' with the given payload of type 'WizardPaymentMethod' in JSON format.
+  operationId: post_WizardPaymentMethods
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BankCountry:
+              type: string
+              example: US
+            DefaultAccount:
+              type: string
+              example: '11123456'
+            DefaultBank:
+              type: string
+              example: USBank
+            Description:
+              type: string
+              example: outpayment bank method
+            PaymentMeans:
+              type: string
+              example: bopmCheck
+            PaymentMethodCode:
+              type: string
+              example: outpay
+            Type:
+              type: string
+              example: boptOutgoing
+        example:
+          BankCountry: US
+          DefaultAccount: '11123456'
+          DefaultBank: USBank
+          Description: outpayment bank method
+          PaymentMeans: bopmCheck
+          PaymentMethodCode: outpay
+          Type: boptOutgoing
+  x-example-url: POST https://localhost:50000/b1s/v2/WizardPaymentMethods
+  x-resource-description: This entity enables you to manipulate 'WizardPaymentMethods'. It defines various payment methods
+    for various payment means (such as check, bank transfer, and in some localizations, bills of exchange) which can be used
+    in payment wizard runs.

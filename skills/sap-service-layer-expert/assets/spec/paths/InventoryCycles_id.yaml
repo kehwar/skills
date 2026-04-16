@@ -1,0 +1,91 @@
+get:
+  tags:
+  - InventoryCycles
+  summary: GET InventoryCycles(id)
+  description: Retrieve all or some selected properties from an instance of 'InventoryCycles' with the given id.
+  operationId: get_InventoryCycles_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryCycles(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryCycles'. It allows to set up cycles of inventory
+    counts and order intervals.
+patch:
+  tags:
+  - InventoryCycles
+  summary: PATCH InventoryCycles(id)
+  description: Update an instance of 'InventoryCycles' with the given payload of type 'InventoryCycles' in JSON format and
+    with the specified id.
+  operationId: patch_InventoryCycles_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Frequency:
+              type: string
+              example: bof_OneTime
+        example:
+          Frequency: bof_OneTime
+  x-example-url: PATCH https://localhost:50000/b1s/v2/InventoryCycles(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryCycles'. It allows to set up cycles of inventory
+    counts and order intervals.
+delete:
+  tags:
+  - InventoryCycles
+  summary: DELETE InventoryCycles(id)
+  description: Delete an instance of 'InventoryCycles' with the specified id.
+  operationId: delete_InventoryCycles_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/InventoryCycles(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryCycles'. It allows to set up cycles of inventory
+    counts and order intervals.

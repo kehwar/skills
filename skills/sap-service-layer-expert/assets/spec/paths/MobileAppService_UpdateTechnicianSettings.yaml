@@ -1,0 +1,32 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_UpdateTechnicianSettings
+  description: Invoke the method 'UpdateTechnicianSettings' on this service by specifying the payload 'TechnicianSettings'
+    in the JSON format.
+  operationId: post_MobileAppService_UpdateTechnicianSettings
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TechnicianSettings:
+              type: object
+              properties: {}
+        example:
+          TechnicianSettings: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_UpdateTechnicianSettings
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

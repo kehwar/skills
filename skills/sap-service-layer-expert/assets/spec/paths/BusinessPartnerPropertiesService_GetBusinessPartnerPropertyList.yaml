@@ -1,0 +1,19 @@
+post:
+  tags:
+  - BusinessPartnerPropertiesService
+  summary: POST BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList
+  description: Invoke the method 'GetBusinessPartnerPropertyList' on this service.
+  operationId: post_BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'BusinessPartnerPropertiesService'.

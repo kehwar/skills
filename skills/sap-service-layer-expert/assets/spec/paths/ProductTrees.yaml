@@ -1,0 +1,71 @@
+get:
+  tags:
+  - ProductTrees
+  summary: GET ProductTrees
+  description: Retrieve a collection of 'ProductTrees' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ProductTrees
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ProductTrees
+  x-resource-description: This entity enables you to manipulate 'ProductTrees'. It represents a completed product comprising
+    parts and raw materials, which is described by means of a bill of materials.
+post:
+  tags:
+  - ProductTrees
+  summary: POST ProductTrees
+  description: Create an instance of 'ProductTrees' with the given payload of type 'ProductTree' in JSON format.
+  operationId: post_ProductTrees
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ProductTreeLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  Quantity:
+                    type: integer
+                    example: 5
+            TreeCode:
+              type: string
+              example: pt001
+            TreeType:
+              type: string
+              example: iProductionTree
+        example:
+          ProductTreeLines:
+          - ItemCode: i001
+            Quantity: 5
+          TreeCode: pt001
+          TreeType: iProductionTree
+  x-example-url: POST https://localhost:50000/b1s/v2/ProductTrees
+  x-resource-description: This entity enables you to manipulate 'ProductTrees'. It represents a completed product comprising
+    parts and raw materials, which is described by means of a bill of materials.

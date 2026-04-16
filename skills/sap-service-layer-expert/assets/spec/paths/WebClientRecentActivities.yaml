@@ -1,0 +1,52 @@
+get:
+  tags:
+  - WebClientRecentActivities
+  summary: GET WebClientRecentActivities
+  description: Retrieve a collection of 'WebClientRecentActivities' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_WebClientRecentActivities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/WebClientRecentActivities
+  x-resource-description: This entity enables you to manipulate 'WebClientRecentActivities'.
+post:
+  tags:
+  - WebClientRecentActivities
+  summary: POST WebClientRecentActivities
+  description: Create an instance of 'WebClientRecentActivities' with the given payload of type 'WebClientRecentActivity'
+    in JSON format.
+  operationId: post_WebClientRecentActivities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Guid:
+              type: string
+              example: Act_1
+        example:
+          Guid: Act_1
+  x-example-url: POST https://localhost:50000/b1s/v2/WebClientRecentActivities
+  x-resource-description: This entity enables you to manipulate 'WebClientRecentActivities'.

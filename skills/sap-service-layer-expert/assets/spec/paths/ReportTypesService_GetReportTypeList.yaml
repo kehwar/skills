@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ReportTypesService
+  summary: POST ReportTypesService_GetReportTypeList
+  description: Invoke the method 'GetReportTypeList' on this service.
+  operationId: post_ReportTypesService_GetReportTypeList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ReportTypesService_GetReportTypeList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ReportTypesService'.

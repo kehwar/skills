@@ -1,0 +1,69 @@
+get:
+  tags:
+  - UserDefaultGroups
+  summary: GET UserDefaultGroups
+  description: Retrieve a collection of 'UserDefaultGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserDefaultGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserDefaultGroups
+  x-resource-description: This entity enables you to manipulate 'UserDefaultGroups'. It defines default values (such as, default
+    documents, default address in printed documents, windows color, and so on).
+post:
+  tags:
+  - UserDefaultGroups
+  summary: POST UserDefaultGroups
+  description: Create an instance of 'UserDefaultGroups' with the given payload of type 'UserDefaultGroup' in JSON format.
+  operationId: post_UserDefaultGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Address:
+              type: string
+              example: No. 1001 Chenhui road Shanghai
+            Code:
+              type: string
+              example: UD01
+            Name:
+              type: string
+              example: User Default
+            PrintReceipt:
+              type: string
+              example: boprcAlways
+            UseTax:
+              type: string
+              example: tYES
+        example:
+          Address: No. 1001 Chenhui road Shanghai
+          Code: UD01
+          Name: User Default
+          PrintReceipt: boprcAlways
+          UseTax: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/UserDefaultGroups
+  x-resource-description: This entity enables you to manipulate 'UserDefaultGroups'. It defines default values (such as, default
+    documents, default address in printed documents, windows color, and so on).

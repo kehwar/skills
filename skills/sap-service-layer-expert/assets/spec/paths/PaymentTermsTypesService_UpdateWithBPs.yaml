@@ -1,0 +1,32 @@
+post:
+  tags:
+  - PaymentTermsTypesService
+  summary: POST PaymentTermsTypesService_UpdateWithBPs
+  description: Invoke the method 'UpdateWithBPs' on this service by specifying the payload 'PaymentTermsType' in the JSON
+    format.
+  operationId: post_PaymentTermsTypesService_UpdateWithBPs
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PaymentTermsType:
+              type: object
+              properties: {}
+        example:
+          PaymentTermsType: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentTermsTypesService_UpdateWithBPs
+  x-resource-description: This API enables you to invoke the interfaces defined on 'PaymentTermsTypesService'.

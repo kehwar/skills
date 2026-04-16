@@ -1,0 +1,60 @@
+get:
+  tags:
+  - BinLocationAttributes
+  summary: GET BinLocationAttributes
+  description: Retrieve a collection of 'BinLocationAttributes' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_BinLocationAttributes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BinLocationAttributes
+  x-resource-description: This entity enables you to manipulate 'BinLocationAttributes'.
+post:
+  tags:
+  - BinLocationAttributes
+  summary: POST BinLocationAttributes
+  description: Create an instance of 'BinLocationAttributes' with the given payload of type 'BinLocationAttribute' in JSON
+    format.
+  operationId: post_BinLocationAttributes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 3
+            Attribute:
+              type: integer
+              example: 5
+            Code:
+              type: string
+              example: BinAttr03
+        example:
+          AbsEntry: 3
+          Attribute: 5
+          Code: BinAttr03
+  x-example-url: POST https://localhost:50000/b1s/v2/BinLocationAttributes
+  x-resource-description: This entity enables you to manipulate 'BinLocationAttributes'.

@@ -1,0 +1,57 @@
+get:
+  tags:
+  - InventoryCycles
+  summary: GET InventoryCycles
+  description: Retrieve a collection of 'InventoryCycles' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_InventoryCycles
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryCycles
+  x-resource-description: This entity enables you to manipulate 'InventoryCycles'. It allows to set up cycles of inventory
+    counts and order intervals.
+post:
+  tags:
+  - InventoryCycles
+  summary: POST InventoryCycles
+  description: Create an instance of 'InventoryCycles' with the given payload of type 'InventoryCycles' in JSON format.
+  operationId: post_InventoryCycles
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CycleName:
+              type: string
+              example: DailyCycle
+            Frequency:
+              type: string
+              example: bof_Daily
+        example:
+          CycleName: DailyCycle
+          Frequency: bof_Daily
+  x-example-url: POST https://localhost:50000/b1s/v2/InventoryCycles
+  x-resource-description: This entity enables you to manipulate 'InventoryCycles'. It allows to set up cycles of inventory
+    counts and order intervals.

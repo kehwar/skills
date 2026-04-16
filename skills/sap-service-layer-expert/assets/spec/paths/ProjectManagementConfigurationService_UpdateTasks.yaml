@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_UpdateTasks
+  description: Invoke the method 'UpdateTasks' on this service by specifying the payload 'Collection(PMC_TaskData)' in the
+    JSON format.
+  operationId: post_ProjectManagementConfigurationService_UpdateTasks
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_TaskData:
+              type: object
+              properties:
+                TaskName:
+                  type: string
+                  example: change plans
+        example:
+          PMC_TaskData:
+            TaskName: change plans
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_UpdateTasks
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

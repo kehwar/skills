@@ -1,0 +1,105 @@
+get:
+  tags:
+  - SalesTaxAuthorities
+  summary: GET SalesTaxAuthorities(id)
+  description: Retrieve all or some selected properties from an instance of 'SalesTaxAuthorities' with the given id.
+  operationId: get_SalesTaxAuthorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesTaxAuthorities(Code='WYN',Type=-3)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthorities'. It represents the sales tax jurisdictions
+    data for the US and Canada localizations, or sales tax types for the Latin America localization.
+patch:
+  tags:
+  - SalesTaxAuthorities
+  summary: PATCH SalesTaxAuthorities(id)
+  description: Update an instance of 'SalesTaxAuthorities' with the given payload of type 'SalesTaxAuthority' in JSON format
+    and with the specified id.
+  operationId: patch_SalesTaxAuthorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: new Wyoming
+            TaxDefinitions:
+              type: array
+              items:
+                type: object
+                properties:
+                  Effectivefrom:
+                    type: string
+                    example: '2002-01-01'
+                  Rate:
+                    type: string
+                    example: '25'
+        example:
+          Name: new Wyoming
+          TaxDefinitions:
+          - Effectivefrom: '2002-01-01'
+            Rate: '25'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SalesTaxAuthorities(Code='WYN',Type=-3)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthorities'. It represents the sales tax jurisdictions
+    data for the US and Canada localizations, or sales tax types for the Latin America localization.
+delete:
+  tags:
+  - SalesTaxAuthorities
+  summary: DELETE SalesTaxAuthorities(id)
+  description: Delete an instance of 'SalesTaxAuthorities' with the specified id.
+  operationId: delete_SalesTaxAuthorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/SalesTaxAuthorities(Code='WYN',Type=-3)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxAuthorities'. It represents the sales tax jurisdictions
+    data for the US and Canada localizations, or sales tax types for the Latin America localization.

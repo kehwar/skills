@@ -1,0 +1,59 @@
+get:
+  tags:
+  - UserTablesMD
+  summary: GET UserTablesMD
+  description: Retrieve a collection of 'UserTablesMD' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserTablesMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserTablesMD
+  x-resource-description: This entity enables you to manipulate 'UserTablesMD'.
+post:
+  tags:
+  - UserTablesMD
+  summary: POST UserTablesMD
+  description: Create an instance of 'UserTablesMD' with the given payload of type 'UserTablesMD' in JSON format.
+  operationId: post_UserTablesMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TableDescription:
+              type: string
+              example: NewUDT
+            TableName:
+              type: string
+              example: UDT01
+            TableType:
+              type: string
+              example: bott_NoObject
+        example:
+          TableDescription: NewUDT
+          TableName: UDT01
+          TableType: bott_NoObject
+  x-example-url: POST https://localhost:50000/b1s/v2/UserTablesMD
+  x-resource-description: This entity enables you to manipulate 'UserTablesMD'.

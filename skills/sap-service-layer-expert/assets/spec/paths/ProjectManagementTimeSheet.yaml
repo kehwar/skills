@@ -1,0 +1,82 @@
+get:
+  tags:
+  - ProjectManagementTimeSheet
+  summary: GET ProjectManagementTimeSheet
+  description: Retrieve a collection of 'ProjectManagementTimeSheet' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_ProjectManagementTimeSheet
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ProjectManagementTimeSheet
+  x-resource-description: This entity enables you to manipulate 'ProjectManagementTimeSheet'.
+post:
+  tags:
+  - ProjectManagementTimeSheet
+  summary: POST ProjectManagementTimeSheet
+  description: Create an instance of 'ProjectManagementTimeSheet' with the given payload of type 'PM_TimeSheetData' in JSON
+    format.
+  operationId: post_ProjectManagementTimeSheet
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DateFrom:
+              type: string
+              example: '2016-08-31'
+            DateTo:
+              type: string
+              example: '2016-08-31'
+            PM_TimeSheetLineDataCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  ActivityType:
+                    type: string
+                    example: '1'
+                  Date:
+                    type: string
+                    example: '2016-08-31'
+                  EndTime:
+                    type: string
+                    example: '18:00'
+                  StartTime:
+                    type: string
+                    example: 09:00
+            UserID:
+              type: string
+              example: '2'
+        example:
+          DateFrom: '2016-08-31'
+          DateTo: '2016-08-31'
+          PM_TimeSheetLineDataCollection:
+          - ActivityType: '1'
+            Date: '2016-08-31'
+            EndTime: '18:00'
+            StartTime: 09:00
+          UserID: '2'
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementTimeSheet
+  x-resource-description: This entity enables you to manipulate 'ProjectManagementTimeSheet'.

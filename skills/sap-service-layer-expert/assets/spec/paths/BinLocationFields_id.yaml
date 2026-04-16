@@ -1,0 +1,63 @@
+get:
+  tags:
+  - BinLocationFields
+  summary: GET BinLocationFields(id)
+  description: Retrieve all or some selected properties from an instance of 'BinLocationFields' with the given id.
+  operationId: get_BinLocationFields_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BinLocationFields(123)
+  x-resource-description: This entity enables you to manipulate 'BinLocationFields'.
+patch:
+  tags:
+  - BinLocationFields
+  summary: PATCH BinLocationFields(id)
+  description: Update an instance of 'BinLocationFields' with the given payload of type 'BinLocationField' in JSON format
+    and with the specified id.
+  operationId: patch_BinLocationFields_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DefaultFieldName:
+              type: string
+              example: default_field
+        example:
+          DefaultFieldName: default_field
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BinLocationFields(123)
+  x-resource-description: This entity enables you to manipulate 'BinLocationFields'.

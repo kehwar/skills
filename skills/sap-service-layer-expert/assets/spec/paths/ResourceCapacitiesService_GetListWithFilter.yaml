@@ -1,0 +1,32 @@
+post:
+  tags:
+  - ResourceCapacitiesService
+  summary: POST ResourceCapacitiesService_GetListWithFilter
+  description: Invoke the method 'GetListWithFilter' on this service by specifying the payload 'ResourceCapacityWithFilterParams'
+    in the JSON format.
+  operationId: post_ResourceCapacitiesService_GetListWithFilter
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ResourceCapacityWithFilterParams:
+              type: object
+              properties: {}
+        example:
+          ResourceCapacityWithFilterParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/ResourceCapacitiesService_GetListWithFilter
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ResourceCapacitiesService'.

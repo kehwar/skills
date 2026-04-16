@@ -1,0 +1,32 @@
+post:
+  tags:
+  - RecurringTransactionService
+  summary: POST RecurringTransactionService_GetRecurringTransaction
+  description: Invoke the method 'GetRecurringTransaction' on this service by specifying the payload 'RclRecurringTransactionParams'
+    in the JSON format.
+  operationId: post_RecurringTransactionService_GetRecurringTransaction
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            RclRecurringTransactionParams:
+              type: object
+              properties: {}
+        example:
+          RclRecurringTransactionParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/RecurringTransactionService_GetRecurringTransaction
+  x-resource-description: This API enables you to invoke the interfaces defined on 'RecurringTransactionService'.

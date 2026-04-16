@@ -1,0 +1,32 @@
+post:
+  tags:
+  - ElectronicCommunicationActionsService
+  summary: POST ElectronicCommunicationActionsService_DeleteEcmAction
+  description: Invoke the method 'DeleteEcmAction' on this service by specifying the payload 'EcmAction' in the JSON format.
+  operationId: post_ElectronicCommunicationActionsService_DeleteEcmAction
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            EcmAction:
+              type: object
+              properties: {}
+        example:
+          EcmAction: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/ElectronicCommunicationActionsService_DeleteEcmAction
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ElectronicCommunicationActionsService'.
+    This API depends on EFM runtime.

@@ -1,0 +1,84 @@
+get:
+  tags:
+  - NFTaxCategories
+  summary: GET NFTaxCategories(id)
+  description: Retrieve all or some selected properties from an instance of 'NFTaxCategories' with the given id.
+  operationId: get_NFTaxCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/NFTaxCategories(123)
+  x-resource-description: This entity enables you to manipulate 'NFTaxCategories'.
+patch:
+  tags:
+  - NFTaxCategories
+  summary: PATCH NFTaxCategories(id)
+  description: Update an instance of 'NFTaxCategories' with the given payload of type 'NFTaxCategory' in JSON format and with
+    the specified id.
+  operationId: patch_NFTaxCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: PATCH https://localhost:50000/b1s/v2/NFTaxCategories(123)
+  x-resource-description: This entity enables you to manipulate 'NFTaxCategories'.
+delete:
+  tags:
+  - NFTaxCategories
+  summary: DELETE NFTaxCategories(id)
+  description: Delete an instance of 'NFTaxCategories' with the specified id.
+  operationId: delete_NFTaxCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/NFTaxCategories(123)
+  x-resource-description: This entity enables you to manipulate 'NFTaxCategories'.

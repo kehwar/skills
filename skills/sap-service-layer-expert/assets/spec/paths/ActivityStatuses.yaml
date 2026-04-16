@@ -1,0 +1,57 @@
+get:
+  tags:
+  - ActivityStatuses
+  summary: GET ActivityStatuses
+  description: Retrieve a collection of 'ActivityStatuses' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ActivityStatuses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ActivityStatuses
+  x-resource-description: This entity enables you to manipulate 'ActivityStatuses'. It is a business object that enables to
+    define statuses for Task type activities in the Business Partners module.
+post:
+  tags:
+  - ActivityStatuses
+  summary: POST ActivityStatuses
+  description: Create an instance of 'ActivityStatuses' with the given payload of type 'ActivityStatus' in JSON format.
+  operationId: post_ActivityStatuses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            StatusDescription:
+              type: string
+              example: Task in progress
+            StatusName:
+              type: string
+              example: In Progress
+        example:
+          StatusDescription: Task in progress
+          StatusName: In Progress
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivityStatuses
+  x-resource-description: This entity enables you to manipulate 'ActivityStatuses'. It is a business object that enables to
+    define statuses for Task type activities in the Business Partners module.

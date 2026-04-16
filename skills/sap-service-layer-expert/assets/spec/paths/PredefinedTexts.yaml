@@ -1,0 +1,55 @@
+get:
+  tags:
+  - PredefinedTexts
+  summary: GET PredefinedTexts
+  description: Retrieve a collection of 'PredefinedTexts' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PredefinedTexts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PredefinedTexts
+  x-resource-description: This entity enables you to manipulate 'PredefinedTexts'.
+post:
+  tags:
+  - PredefinedTexts
+  summary: POST PredefinedTexts
+  description: Create an instance of 'PredefinedTexts' with the given payload of type 'PredefinedText' in JSON format.
+  operationId: post_PredefinedTexts
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Text:
+              type: string
+              example: V5's text
+            TextCode:
+              type: string
+              example: V5
+        example:
+          Text: V5's text
+          TextCode: V5
+  x-example-url: POST https://localhost:50000/b1s/v2/PredefinedTexts
+  x-resource-description: This entity enables you to manipulate 'PredefinedTexts'.

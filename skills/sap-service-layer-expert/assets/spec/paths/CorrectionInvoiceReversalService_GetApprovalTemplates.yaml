@@ -1,0 +1,51 @@
+post:
+  tags:
+  - CorrectionInvoiceReversalService
+  summary: POST CorrectionInvoiceReversalService_GetApprovalTemplates
+  description: Invoke the method 'GetApprovalTemplates' on this service by specifying the payload 'Document' in the JSON format.
+  operationId: post_CorrectionInvoiceReversalService_GetApprovalTemplates
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Document:
+              type: object
+              properties:
+                CardCode:
+                  type: string
+                  example: c001
+                Comments:
+                  type: string
+                  example: add correction invoice reversal based on correction invoice
+                DocDate:
+                  type: string
+                  example: '2014-12-06'
+                DocDueDate:
+                  type: string
+                  example: '2014-12-06'
+                InternalCorrectedDocNum:
+                  type: string
+                  example: '10'
+        example:
+          Document:
+            CardCode: c001
+            Comments: add correction invoice reversal based on correction invoice
+            DocDate: '2014-12-06'
+            DocDueDate: '2014-12-06'
+            InternalCorrectedDocNum: '10'
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoiceReversalService_GetApprovalTemplates
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CorrectionInvoiceReversalService'.

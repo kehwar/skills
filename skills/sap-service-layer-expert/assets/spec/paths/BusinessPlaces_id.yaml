@@ -1,0 +1,88 @@
+get:
+  tags:
+  - BusinessPlaces
+  summary: GET BusinessPlaces(id)
+  description: Retrieve all or some selected properties from an instance of 'BusinessPlaces' with the given id.
+  operationId: get_BusinessPlaces_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BusinessPlaces(123)
+  x-resource-description: This entity enables you to manipulate 'BusinessPlaces'. It represents a company's business locations.
+patch:
+  tags:
+  - BusinessPlaces
+  summary: PATCH BusinessPlaces(id)
+  description: Update an instance of 'BusinessPlaces' with the given payload of type 'BusinessPlace' in JSON format and with
+    the specified id.
+  operationId: patch_BusinessPlaces_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Address:
+              type: string
+              example: No. 101 Huaxia Road
+        example:
+          Address: No. 101 Huaxia Road
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BusinessPlaces(123)
+  x-resource-description: This entity enables you to manipulate 'BusinessPlaces'. It represents a company's business locations.
+delete:
+  tags:
+  - BusinessPlaces
+  summary: DELETE BusinessPlaces(id)
+  description: Delete an instance of 'BusinessPlaces' with the specified id.
+  operationId: delete_BusinessPlaces_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BusinessPlaces(123)
+  x-resource-description: This entity enables you to manipulate 'BusinessPlaces'. It represents a company's business locations.

@@ -1,0 +1,55 @@
+get:
+  tags:
+  - AssetGroups
+  summary: GET AssetGroups
+  description: Retrieve a collection of 'AssetGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AssetGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetGroups
+  x-resource-description: This entity enables you to manipulate 'AssetGroups'.
+post:
+  tags:
+  - AssetGroups
+  summary: POST AssetGroups
+  description: Create an instance of 'AssetGroups' with the given payload of type 'AssetGroup' in JSON format.
+  operationId: post_AssetGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: AG
+            Description:
+              type: string
+              example: AssetGroups
+        example:
+          Code: AG
+          Description: AssetGroups
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetGroups
+  x-resource-description: This entity enables you to manipulate 'AssetGroups'.

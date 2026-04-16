@@ -1,0 +1,89 @@
+get:
+  tags:
+  - BlanketAgreements
+  summary: GET BlanketAgreements(id)
+  description: Retrieve all or some selected properties from an instance of 'BlanketAgreements' with the given id.
+  operationId: get_BlanketAgreements_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BlanketAgreements(123)
+  x-resource-description: This entity enables you to manipulate 'BlanketAgreements'.
+patch:
+  tags:
+  - BlanketAgreements
+  summary: PATCH BlanketAgreements(id)
+  description: Update an instance of 'BlanketAgreements' with the given payload of type 'BlanketAgreement' in JSON format
+    and with the specified id.
+  operationId: patch_BlanketAgreements_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BlanketAgreements_ItemsLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemNo:
+                    type: string
+                    example: I03
+                  PlannedQuantity:
+                    type: integer
+                    example: 100
+                  UnitPrice:
+                    type: integer
+                    example: 100
+            Description:
+              type: string
+              example: Add a new item
+            EndDate:
+              type: string
+              example: '2016-12-30'
+            Status:
+              type: string
+              example: asApproved
+        example:
+          BlanketAgreements_ItemsLines:
+          - ItemNo: I03
+            PlannedQuantity: 100
+            UnitPrice: 100
+          Description: Add a new item
+          EndDate: '2016-12-30'
+          Status: asApproved
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BlanketAgreements(123)
+  x-resource-description: This entity enables you to manipulate 'BlanketAgreements'.

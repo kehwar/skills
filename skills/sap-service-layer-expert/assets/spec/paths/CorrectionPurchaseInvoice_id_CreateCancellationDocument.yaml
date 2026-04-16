@@ -1,0 +1,20 @@
+post:
+  tags:
+  - CorrectionPurchaseInvoice(id)/CreateCancellationDocument
+  summary: POST CorrectionPurchaseInvoice(id)/CreateCancellationDocument
+  description: Invoke the method 'CreateCancellationDocument' on this EntitySet with the specified id.
+  operationId: post_CorrectionPurchaseInvoice_id/CreateCancellationDocument
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionPurchaseInvoice(123)/CreateCancellationDocument
+  x-resource-description: This entity enables you to manipulate 'CorrectionPurchaseInvoice'. It is used to correct the purchase
+    invoice.

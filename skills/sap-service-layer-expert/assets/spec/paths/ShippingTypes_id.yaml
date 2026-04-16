@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ShippingTypes
+  summary: GET ShippingTypes(id)
+  description: Retrieve all or some selected properties from an instance of 'ShippingTypes' with the given id.
+  operationId: get_ShippingTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ShippingTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ShippingTypes'. It defines transportation methods (for example,
+    air cargo and courier) of goods.
+patch:
+  tags:
+  - ShippingTypes
+  summary: PATCH ShippingTypes(id)
+  description: Update an instance of 'ShippingTypes' with the given payload of type 'ShippingType' in JSON format and with
+    the specified id.
+  operationId: patch_ShippingTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Website:
+              type: string
+              example: http://www.ups.com/cn
+        example:
+          Website: http://www.ups.com/cn
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ShippingTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ShippingTypes'. It defines transportation methods (for example,
+    air cargo and courier) of goods.
+delete:
+  tags:
+  - ShippingTypes
+  summary: DELETE ShippingTypes(id)
+  description: Delete an instance of 'ShippingTypes' with the specified id.
+  operationId: delete_ShippingTypes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ShippingTypes(123)
+  x-resource-description: This entity enables you to manipulate 'ShippingTypes'. It defines transportation methods (for example,
+    air cargo and courier) of goods.

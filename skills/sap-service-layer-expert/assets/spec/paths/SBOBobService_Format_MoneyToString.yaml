@@ -1,0 +1,36 @@
+post:
+  tags:
+  - SBOBobService
+  summary: POST SBOBobService_Format_MoneyToString
+  description: Invoke the method 'Format_MoneyToString' on this service by specifying the payload 'InMoney,InPrecision' in
+    the JSON format.
+  operationId: post_SBOBobService_Format_MoneyToString
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            InMoney:
+              type: string
+              example: '1234.458'
+            InPrecision:
+              type: string
+              example: mpt_Sum
+        example:
+          InMoney: '1234.458'
+          InPrecision: mpt_Sum
+  x-example-url: POST https://localhost:50000/b1s/v2/SBOBobService_Format_MoneyToString
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SBOBobService'.

@@ -1,0 +1,90 @@
+post:
+  tags:
+  - UserMenuService
+  summary: POST UserMenuService_UpdateCurrentUserMenu
+  description: Invoke the method 'UpdateCurrentUserMenu' on this service by specifying the payload 'Collection(UserMenuItem)'
+    in the JSON format.
+  operationId: post_UserMenuService_UpdateCurrentUserMenu
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            UserMenuItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  LinkedFormMenuID:
+                    type: string
+                    example: '11'
+                  LinkedFormNum:
+                    type: string
+                    example: null
+                  LinkedObjKey:
+                    type: string
+                    example: null
+                  LinkedObjType:
+                    type: string
+                    example: null
+                  Name:
+                    type: string
+                    example: Forms
+                  Position:
+                    type: integer
+                    example: 1
+                  ReportPath:
+                    type: string
+                    example: '11'
+                  Type:
+                    type: string
+                    example: umitFolder
+        example:
+          UserMenuItems:
+          - LinkedFormMenuID: '11'
+            LinkedFormNum: null
+            LinkedObjKey: null
+            LinkedObjType: null
+            Name: Forms
+            Position: 1
+            ReportPath: '11'
+            Type: umitFolder
+          - LinkedFormMenuID: null
+            LinkedFormNum: null
+            LinkedObjKey: null
+            LinkedObjType: null
+            Name: Reports
+            Position: 2
+            ReportPath: ''
+            Type: umitFolder
+          - LinkedFormMenuID: null
+            LinkedFormNum: null
+            LinkedObjKey: null
+            LinkedObjType: null
+            Name: Queries
+            Position: 3
+            ReportPath: ''
+            Type: umitFolder
+          - LinkedFormMenuID: null
+            LinkedFormNum: null
+            LinkedObjKey: null
+            LinkedObjType: null
+            Name: Links
+            Position: 4
+            ReportPath: ''
+            Type: umitFolder
+  x-example-url: POST https://localhost:50000/b1s/v2/UserMenuService_UpdateCurrentUserMenu
+  x-resource-description: This API enables you to invoke the interfaces defined on 'UserMenuService'.

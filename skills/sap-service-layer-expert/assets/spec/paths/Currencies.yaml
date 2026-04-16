@@ -1,0 +1,65 @@
+get:
+  tags:
+  - Currencies
+  summary: GET Currencies
+  description: Retrieve a collection of 'Currencies' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Currencies
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Currencies
+  x-resource-description: This entity enables you to manipulate 'Currencies'. It represents the currency codes in the Administration
+    module.
+post:
+  tags:
+  - Currencies
+  summary: POST Currencies
+  description: Create an instance of 'Currencies' with the given payload of type 'Currency' in JSON format.
+  operationId: post_Currencies
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: CNY
+            DocumentsCode:
+              type: string
+              example: CNY
+            InternationalDescription:
+              type: string
+              example: CN Yuan
+            Name:
+              type: string
+              example: CNY
+        example:
+          Code: CNY
+          DocumentsCode: CNY
+          InternationalDescription: CN Yuan
+          Name: CNY
+  x-example-url: POST https://localhost:50000/b1s/v2/Currencies
+  x-resource-description: This entity enables you to manipulate 'Currencies'. It represents the currency codes in the Administration
+    module.

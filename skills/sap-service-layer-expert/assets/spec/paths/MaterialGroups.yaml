@@ -1,0 +1,59 @@
+get:
+  tags:
+  - MaterialGroups
+  summary: GET MaterialGroups
+  description: Retrieve a collection of 'MaterialGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_MaterialGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/MaterialGroups
+  x-resource-description: This entity enables you to manipulate 'MaterialGroups'.
+post:
+  tags:
+  - MaterialGroups
+  summary: POST MaterialGroups
+  description: Create an instance of 'MaterialGroups' with the given payload of type 'MaterialGroup' in JSON format.
+  operationId: post_MaterialGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            Description:
+              type: string
+              example: ''
+            MaterialGroupCode:
+              type: string
+              example: '1'
+        example:
+          AbsEntry: 1
+          Description: ''
+          MaterialGroupCode: '1'
+  x-example-url: POST https://localhost:50000/b1s/v2/MaterialGroups
+  x-resource-description: This entity enables you to manipulate 'MaterialGroups'.

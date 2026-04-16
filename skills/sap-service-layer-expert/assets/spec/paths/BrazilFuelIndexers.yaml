@@ -1,0 +1,59 @@
+get:
+  tags:
+  - BrazilFuelIndexers
+  summary: GET BrazilFuelIndexers
+  description: Retrieve a collection of 'BrazilFuelIndexers' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BrazilFuelIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BrazilFuelIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilFuelIndexers'.
+post:
+  tags:
+  - BrazilFuelIndexers
+  summary: POST BrazilFuelIndexers
+  description: Create an instance of 'BrazilFuelIndexers' with the given payload of type 'BrazilFuelIndexer' in JSON format.
+  operationId: post_BrazilFuelIndexers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: 999999999-Description
+            FuelCode:
+              type: string
+              example: '999999999'
+            FuelGroupCode:
+              type: string
+              example: '1'
+        example:
+          Description: 999999999-Description
+          FuelCode: '999999999'
+          FuelGroupCode: '1'
+  x-example-url: POST https://localhost:50000/b1s/v2/BrazilFuelIndexers
+  x-resource-description: This entity enables you to manipulate 'BrazilFuelIndexers'.

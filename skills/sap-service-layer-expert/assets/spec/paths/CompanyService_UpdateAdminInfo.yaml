@@ -1,0 +1,103 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_UpdateAdminInfo
+  description: Invoke the method 'UpdateAdminInfo' on this service by specifying the payload 'AdminInfo' in the JSON format.
+  operationId: post_CompanyService_UpdateAdminInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AdminInfo:
+              type: object
+              properties:
+                CalculateBudget:
+                  type: string
+                  example: tYES
+                ChangeDefReconAPAccounts:
+                  type: string
+                  example: tYES
+                ChangeDefReconARAccounts:
+                  type: string
+                  example: tYES
+                ChartofAccountsTemplate:
+                  type: string
+                  example: C
+                Code:
+                  type: integer
+                  example: 1
+                CompanyName:
+                  type: string
+                  example: USTest
+                ContinuousStockManagement:
+                  type: string
+                  example: tYES
+                Country:
+                  type: string
+                  example: US
+                CreditBalancewithMinusSign:
+                  type: string
+                  example: tYES
+                DefaultWarehouse:
+                  type: string
+                  example: '01'
+                ExtendedAdminInfo:
+                  type: object
+                  properties: {}
+                LocalCurrency:
+                  type: string
+                  example: $
+                MultiLanguageSupportEnable:
+                  type: string
+                  example: tYES
+                RoundingMethod:
+                  type: string
+                  example: tYES
+                SetItemsWarehouses:
+                  type: string
+                  example: tYES
+                SplitPO:
+                  type: string
+                  example: tYES
+                SystemCurrency:
+                  type: string
+                  example: $
+                UniqueSerialNo:
+                  type: string
+                  example: usn_MfrSerialNumber
+        example:
+          AdminInfo:
+            CalculateBudget: tYES
+            ChangeDefReconAPAccounts: tYES
+            ChangeDefReconARAccounts: tYES
+            ChartofAccountsTemplate: C
+            Code: 1
+            CompanyName: USTest
+            ContinuousStockManagement: tYES
+            Country: US
+            CreditBalancewithMinusSign: tYES
+            DefaultWarehouse: '01'
+            ExtendedAdminInfo: {}
+            LocalCurrency: $
+            MultiLanguageSupportEnable: tYES
+            RoundingMethod: tYES
+            SetItemsWarehouses: tYES
+            SplitPO: tYES
+            SystemCurrency: $
+            UniqueSerialNo: usn_MfrSerialNumber
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_UpdateAdminInfo
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

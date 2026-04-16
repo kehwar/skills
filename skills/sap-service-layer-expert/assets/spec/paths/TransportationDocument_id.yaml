@@ -1,0 +1,63 @@
+get:
+  tags:
+  - TransportationDocument
+  summary: GET TransportationDocument(id)
+  description: Retrieve all or some selected properties from an instance of 'TransportationDocument' with the given id.
+  operationId: get_TransportationDocument_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/TransportationDocument(123)
+  x-resource-description: This entity enables you to manipulate 'TransportationDocument'.
+patch:
+  tags:
+  - TransportationDocument
+  summary: PATCH TransportationDocument(id)
+  description: Update an instance of 'TransportationDocument' with the given payload of type 'TransportationDocumentData'
+    in JSON format and with the specified id.
+  operationId: patch_TransportationDocument_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            VehicleID:
+              type: string
+              example: '1234'
+        example:
+          VehicleID: '1234'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/TransportationDocument(123)
+  x-resource-description: This entity enables you to manipulate 'TransportationDocument'.

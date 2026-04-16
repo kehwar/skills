@@ -1,0 +1,65 @@
+get:
+  tags:
+  - LengthMeasures
+  summary: GET LengthMeasures
+  description: Retrieve a collection of 'LengthMeasures' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_LengthMeasures
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/LengthMeasures
+  x-resource-description: This entity enables you to manipulate 'LengthMeasures'. It defines the length and width measure
+    units that are used for item records.
+post:
+  tags:
+  - LengthMeasures
+  summary: POST LengthMeasures
+  description: Create an instance of 'LengthMeasures' with the given payload of type 'LengthMeasure' in JSON format.
+  operationId: post_LengthMeasures
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            UnitCodeforQuantityDisplay:
+              type: string
+              example: kmm
+            UnitDisplay:
+              type: string
+              example: KM
+            UnitLengthinmm:
+              type: string
+              example: '120'
+            UnitName:
+              type: string
+              example: kilometer
+        example:
+          UnitCodeforQuantityDisplay: kmm
+          UnitDisplay: KM
+          UnitLengthinmm: '120'
+          UnitName: kilometer
+  x-example-url: POST https://localhost:50000/b1s/v2/LengthMeasures
+  x-resource-description: This entity enables you to manipulate 'LengthMeasures'. It defines the length and width measure
+    units that are used for item records.

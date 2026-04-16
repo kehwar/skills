@@ -1,0 +1,81 @@
+get:
+  tags:
+  - VendorPayments
+  summary: GET VendorPayments
+  description: Retrieve a collection of 'VendorPayments' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_VendorPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/VendorPayments
+  x-resource-description: This entity enables you to manipulate 'VendorPayments'. It represents incoming payments to vendors
+    or, for returned goods, to customers. Available payment methods are cash, credit cards, checks, bank transfers, and in
+    some localizations, bills of exchange.
+post:
+  tags:
+  - VendorPayments
+  summary: POST VendorPayments
+  description: Create an instance of 'VendorPayments' with the given payload of type 'Payment' in JSON format.
+  operationId: post_VendorPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: v001
+            CashFlowAssignments:
+              type: array
+              items:
+                type: object
+                properties:
+                  AmountLC:
+                    type: string
+                    example: '101'
+                  PaymentMeans:
+                    type: string
+                    example: pmtBankTransfer
+            TransferAccount:
+              type: string
+              example: _SYS00000000004
+            TransferDate:
+              type: string
+              example: '2014-03-27'
+            TransferSum:
+              type: string
+              example: '101'
+        example:
+          CardCode: v001
+          CashFlowAssignments:
+          - AmountLC: '101'
+            PaymentMeans: pmtBankTransfer
+          TransferAccount: _SYS00000000004
+          TransferDate: '2014-03-27'
+          TransferSum: '101'
+  x-example-url: POST https://localhost:50000/b1s/v2/VendorPayments
+  x-resource-description: This entity enables you to manipulate 'VendorPayments'. It represents incoming payments to vendors
+    or, for returned goods, to customers. Available payment methods are cash, credit cards, checks, bank transfers, and in
+    some localizations, bills of exchange.

@@ -1,0 +1,64 @@
+get:
+  tags:
+  - SalesOpportunityCompetitorsSetup
+  summary: GET SalesOpportunityCompetitorsSetup
+  description: Retrieve a collection of 'SalesOpportunityCompetitorsSetup' with all or some selected properties in the given
+    order by specifying the given filter condition.
+  operationId: get_SalesOpportunityCompetitorsSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesOpportunityCompetitorsSetup
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityCompetitorsSetup'.
+post:
+  tags:
+  - SalesOpportunityCompetitorsSetup
+  summary: POST SalesOpportunityCompetitorsSetup
+  description: Create an instance of 'SalesOpportunityCompetitorsSetup' with the given payload of type 'SalesOpportunityCompetitorSetup'
+    in JSON format.
+  operationId: post_SalesOpportunityCompetitorsSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Details:
+              type: string
+              example: '1111'
+            Name:
+              type: string
+              example: Win012
+            SequenceNo:
+              type: integer
+              example: 2
+            ThreatLevel:
+              type: string
+              example: tlLow
+        example:
+          Details: '1111'
+          Name: Win012
+          SequenceNo: 2
+          ThreatLevel: tlLow
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesOpportunityCompetitorsSetup
+  x-resource-description: This entity enables you to manipulate 'SalesOpportunityCompetitorsSetup'.

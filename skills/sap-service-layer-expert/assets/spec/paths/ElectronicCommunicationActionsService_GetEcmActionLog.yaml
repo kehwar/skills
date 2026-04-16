@@ -1,0 +1,33 @@
+post:
+  tags:
+  - ElectronicCommunicationActionsService
+  summary: POST ElectronicCommunicationActionsService_GetEcmActionLog
+  description: Invoke the method 'GetEcmActionLog' on this service by specifying the payload 'EcmActionLogParams' in the JSON
+    format.
+  operationId: post_ElectronicCommunicationActionsService_GetEcmActionLog
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            EcmActionLogParams:
+              type: object
+              properties: {}
+        example:
+          EcmActionLogParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/ElectronicCommunicationActionsService_GetEcmActionLog
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ElectronicCommunicationActionsService'.
+    This API depends on EFM runtime.

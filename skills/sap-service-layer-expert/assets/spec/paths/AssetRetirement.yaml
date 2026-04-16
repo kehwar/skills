@@ -1,0 +1,77 @@
+get:
+  tags:
+  - AssetRetirement
+  summary: GET AssetRetirement
+  description: Retrieve a collection of 'AssetRetirement' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AssetRetirement
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetRetirement
+  x-resource-description: This entity enables you to manipulate 'AssetRetirement'.
+post:
+  tags:
+  - AssetRetirement
+  summary: POST AssetRetirement
+  description: Create an instance of 'AssetRetirement' with the given payload of type 'AssetDocument' in JSON format.
+  operationId: post_AssetRetirement
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetDocumentLineCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AssetNumber:
+                    type: string
+                    example: FA1
+                  Quantity:
+                    type: integer
+                    example: 1
+                  TotalLC:
+                    type: integer
+                    example: 1000
+            AssetValueDate:
+              type: string
+              example: '2016-08-29'
+            DocumentDate:
+              type: string
+              example: '2016-08-29'
+            PostingDate:
+              type: string
+              example: '2016-08-29'
+        example:
+          AssetDocumentLineCollection:
+          - AssetNumber: FA1
+            Quantity: 1
+            TotalLC: 1000
+          AssetValueDate: '2016-08-29'
+          DocumentDate: '2016-08-29'
+          PostingDate: '2016-08-29'
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetRetirement
+  x-resource-description: This entity enables you to manipulate 'AssetRetirement'.

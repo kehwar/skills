@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ProjectManagementService
+  summary: POST ProjectManagementService_DeleteSubproject
+  description: Invoke the method 'DeleteSubproject' on this service by specifying the payload 'PM_SubprojectDocumentParams'
+    in the JSON format.
+  operationId: post_ProjectManagementService_DeleteSubproject
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PM_SubprojectDocumentParams:
+              type: object
+              properties:
+                AbsEntry:
+                  type: integer
+                  example: 1
+        example:
+          PM_SubprojectDocumentParams:
+            AbsEntry: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementService_DeleteSubproject
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementService'.

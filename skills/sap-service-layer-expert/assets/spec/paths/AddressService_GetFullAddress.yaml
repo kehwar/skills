@@ -1,0 +1,47 @@
+post:
+  tags:
+  - AddressService
+  summary: POST AddressService_GetFullAddress
+  description: Invoke the method 'GetFullAddress' on this service by specifying the payload 'AddressParams' in the JSON format.
+  operationId: post_AddressService_GetFullAddress
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AddressParams:
+              type: object
+              properties:
+                Block:
+                  type: string
+                  example: '1001'
+                City:
+                  type: string
+                  example: Shanghai
+                Country:
+                  type: string
+                  example: CN
+                Street:
+                  type: string
+                  example: Chenhui
+        example:
+          AddressParams:
+            Block: '1001'
+            City: Shanghai
+            Country: CN
+            Street: Chenhui
+  x-example-url: POST https://localhost:50000/b1s/v2/AddressService_GetFullAddress
+  x-resource-description: This API enables you to invoke the interfaces defined on 'AddressService'.

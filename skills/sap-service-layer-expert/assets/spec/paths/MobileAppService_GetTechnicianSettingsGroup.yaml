@@ -1,0 +1,39 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_GetTechnicianSettingsGroup
+  description: Invoke the method 'GetTechnicianSettingsGroup' on this service.
+  operationId: post_MobileAppService_GetTechnicianSettingsGroup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TechnicianSettingsGroupParams:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  example: -1
+                Name:
+                  type: string
+                  example: TEST1
+        example:
+          TechnicianSettingsGroupParams:
+            Code: -1
+            Name: TEST1
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_GetTechnicianSettingsGroup
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

@@ -1,0 +1,95 @@
+get:
+  tags:
+  - QueryAuthGroups
+  summary: GET QueryAuthGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'QueryAuthGroups' with the given id.
+  operationId: get_QueryAuthGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/QueryAuthGroups(-15)
+  x-resource-description: This entity enables you to manipulate 'QueryAuthGroups'.
+patch:
+  tags:
+  - QueryAuthGroups
+  summary: PATCH QueryAuthGroups(id)
+  description: unassign QueryAuthorizationGroups to query category such as Category with CategoryId=-1.In http header, set
+    B1S-ReplaceCollectionsOnPatch as true.
+  operationId: patch_QueryAuthGroups_id_2
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CategoryGroupCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  CategoryId:
+                    type: integer
+                    example: -2
+        example:
+          CategoryGroupCollection:
+          - CategoryId: -2
+  x-example-url: PATCH https://localhost:50000/b1s/v2/QueryAuthGroups(1)
+  x-resource-description: This entity enables you to manipulate 'QueryAuthGroups'.
+delete:
+  tags:
+  - QueryAuthGroups
+  summary: DELETE QueryAuthGroups(id)
+  description: Delete an instance of 'QueryAuthGroups' with the specified id.It is allowed only when no query category is
+    assigned to the query group.
+  operationId: delete_QueryAuthGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/QueryAuthGroups(1)
+  x-resource-description: This entity enables you to manipulate 'QueryAuthGroups'.

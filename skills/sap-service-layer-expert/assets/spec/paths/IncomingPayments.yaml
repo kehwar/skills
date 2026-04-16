@@ -1,0 +1,77 @@
+get:
+  tags:
+  - IncomingPayments
+  summary: GET IncomingPayments
+  description: Retrieve a collection of 'IncomingPayments' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_IncomingPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/IncomingPayments
+  x-resource-description: This entity enables you to manipulate 'IncomingPayments'. It represents incoming payments from customers
+    or, for returned goods, from vendors. Available payment methods are cash, credit cards, checks, bank transfers, and in
+    some localizations, bills of exchange.
+post:
+  tags:
+  - IncomingPayments
+  summary: POST IncomingPayments
+  description: Create an instance of 'IncomingPayments' with the given payload of type 'Payment' in JSON format.
+  operationId: post_IncomingPayments
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            CashAccount:
+              type: string
+              example: _SYS00000000002
+            CashFlowAssignments:
+              type: array
+              items:
+                type: object
+                properties:
+                  AmountLC:
+                    type: string
+                    example: '110'
+                  PaymentMeans:
+                    type: string
+                    example: pmtCash
+            CashSum:
+              type: string
+              example: '110'
+        example:
+          CardCode: c001
+          CashAccount: _SYS00000000002
+          CashFlowAssignments:
+          - AmountLC: '110'
+            PaymentMeans: pmtCash
+          CashSum: '110'
+  x-example-url: POST https://localhost:50000/b1s/v2/IncomingPayments
+  x-resource-description: This entity enables you to manipulate 'IncomingPayments'. It represents incoming payments from customers
+    or, for returned goods, from vendors. Available payment methods are cash, credit cards, checks, bank transfers, and in
+    some localizations, bills of exchange.

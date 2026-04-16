@@ -1,0 +1,48 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_UpdateServiceAppReportContent
+  description: Invoke the method 'UpdateServiceAppReportContent' on this service by specifying the payload 'ServiceAppReportParams,ServiceAppReportContent'
+    in the JSON format.
+  operationId: post_MobileAppService_UpdateServiceAppReportContent
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ServiceAppReportContent:
+              type: object
+              properties:
+                ReportContent:
+                  type: string
+                  example: ''
+            ServiceAppReportParams:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  example: -1
+                ReportChoice:
+                  type: string
+                  example: marCustomizedReport
+        example:
+          ServiceAppReportContent:
+            ReportContent: ''
+          ServiceAppReportParams:
+            Code: -1
+            ReportChoice: marCustomizedReport
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_UpdateServiceAppReportContent
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

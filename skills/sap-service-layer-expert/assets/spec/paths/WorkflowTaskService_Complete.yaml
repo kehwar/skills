@@ -1,0 +1,20 @@
+post:
+  tags:
+  - WorkflowTaskService
+  summary: POST WorkflowTaskService_Complete
+  description: Invoke the method 'Complete' on this service by specifying the payload 'WorkflowTaskCompleteParams' in the
+    JSON format.
+  operationId: post_WorkflowTaskService_Complete
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/WorkflowTaskService_Complete
+  x-resource-description: This API enables you to invoke the interfaces defined on 'WorkflowTaskService'.

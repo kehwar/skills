@@ -1,0 +1,52 @@
+post:
+  tags:
+  - ChangeLogsService
+  summary: POST ChangeLogsService_GetChangeLogDifferences
+  description: Invoke the method 'GetChangeLogDifferences' on this service by specifying the payload 'ShowDifferenceParams'
+    in the JSON format.
+  operationId: post_ChangeLogsService_GetChangeLogDifferences
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ShowDifferenceParams:
+              type: object
+              properties:
+                LogInstance:
+                  type: integer
+                  example: 1
+                LogInstance2:
+                  type: integer
+                  example: 2
+                Object:
+                  type: string
+                  example: clPurchaseOrders
+                PrimaryKey:
+                  type: string
+                  example: '7'
+                UDOObjectCode:
+                  type: string
+                  example: '3'
+        example:
+          ShowDifferenceParams:
+            LogInstance: 1
+            LogInstance2: 2
+            Object: clPurchaseOrders
+            PrimaryKey: '7'
+            UDOObjectCode: '3'
+  x-example-url: POST https://localhost:50000/b1s/v2/ChangeLogsService_GetChangeLogDifferences
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ChangeLogsService'.

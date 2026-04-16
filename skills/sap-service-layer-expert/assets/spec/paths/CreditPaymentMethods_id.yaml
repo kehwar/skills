@@ -1,0 +1,88 @@
+get:
+  tags:
+  - CreditPaymentMethods
+  summary: GET CreditPaymentMethods(id)
+  description: Retrieve all or some selected properties from an instance of 'CreditPaymentMethods' with the given id.
+  operationId: get_CreditPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditPaymentMethods(123)
+  x-resource-description: This entity enables you to manipulate 'CreditPaymentMethods'. It defines credit card payment methods.
+patch:
+  tags:
+  - CreditPaymentMethods
+  summary: PATCH CreditPaymentMethods(id)
+  description: Update an instance of 'CreditPaymentMethods' with the given payload of type 'CreditPaymentMethod' in JSON format
+    and with the specified id.
+  operationId: patch_CreditPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            MinimumPaymentAmount:
+              type: string
+              example: '100.11'
+        example:
+          MinimumPaymentAmount: '100.11'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CreditPaymentMethods(123)
+  x-resource-description: This entity enables you to manipulate 'CreditPaymentMethods'. It defines credit card payment methods.
+delete:
+  tags:
+  - CreditPaymentMethods
+  summary: DELETE CreditPaymentMethods(id)
+  description: Delete an instance of 'CreditPaymentMethods' with the specified id.
+  operationId: delete_CreditPaymentMethods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CreditPaymentMethods(123)
+  x-resource-description: This entity enables you to manipulate 'CreditPaymentMethods'. It defines credit card payment methods.

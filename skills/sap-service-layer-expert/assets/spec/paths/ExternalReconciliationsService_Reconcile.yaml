@@ -1,0 +1,68 @@
+post:
+  tags:
+  - ExternalReconciliationsService
+  summary: POST ExternalReconciliationsService_Reconcile
+  description: Invoke the method 'Reconcile' on this service by specifying the payload 'ExternalReconciliation' in the JSON
+    format.
+  operationId: post_ExternalReconciliationsService_Reconcile
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ExternalReconciliation:
+              type: object
+              properties:
+                ReconciliationAccountType:
+                  type: string
+                  example: rat_BusinessPartner
+                ReconciliationBankStatementLines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      BankStatementAccountCode:
+                        type: string
+                        example: C1
+                      Sequence:
+                        type: integer
+                        example: 1
+                ReconciliationJournalEntryLines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      LineNumber:
+                        type: integer
+                        example: 1
+                      TransactionNumber:
+                        type: integer
+                        example: 1
+        example:
+          ExternalReconciliation:
+            ReconciliationAccountType: rat_BusinessPartner
+            ReconciliationBankStatementLines:
+            - BankStatementAccountCode: C1
+              Sequence: 1
+            - BankStatementAccountCode: C1
+              Sequence: 2
+            ReconciliationJournalEntryLines:
+            - LineNumber: 1
+              TransactionNumber: 1
+            - LineNumber: 2
+              TransactionNumber: 2
+  x-example-url: POST https://localhost:50000/b1s/v2/ExternalReconciliationsService_Reconcile
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ExternalReconciliationsService'.

@@ -1,0 +1,86 @@
+get:
+  tags:
+  - CorrectionInvoice
+  summary: GET CorrectionInvoice
+  description: Retrieve a collection of 'CorrectionInvoice' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CorrectionInvoice
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CorrectionInvoice
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoice'.
+post:
+  tags:
+  - CorrectionInvoice
+  summary: POST CorrectionInvoice
+  description: Create an instance of 'CorrectionInvoice' with the given payload of type 'Document' in JSON format.
+  operationId: post_CorrectionInvoice
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            Comments:
+              type: string
+              example: Added by Service Layer
+            DocumentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  CorrectionInvoiceItem:
+                    type: string
+                    example: ciis_ShouldBe
+                  ItemCode:
+                    type: string
+                    example: item01
+                  Price:
+                    type: string
+                    example: '310'
+                  Quantity:
+                    type: string
+                    example: '10'
+                  VatGroup:
+                    type: string
+                    example: B4
+        example:
+          CardCode: c001
+          Comments: Added by Service Layer
+          DocumentLines:
+          - CorrectionInvoiceItem: ciis_ShouldBe
+            ItemCode: item01
+            Price: '310'
+            Quantity: '10'
+            VatGroup: B4
+          - CorrectionInvoiceItem: ciis_Was
+            ItemCode: item01
+            Price: '110'
+            Quantity: '10'
+            VatGroup: B4
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoice
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoice'.

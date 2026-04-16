@@ -1,0 +1,57 @@
+get:
+  tags:
+  - ServiceCalls
+  summary: GET ServiceCalls
+  description: Retrieve a collection of 'ServiceCalls' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ServiceCalls
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceCalls
+  x-resource-description: This entity enables you to manipulate 'ServiceCalls'. It represents the service calls in the Service
+    module. Service calls are used to manage service and support activities that you provide to your customers.
+post:
+  tags:
+  - ServiceCalls
+  summary: POST ServiceCalls
+  description: Create an instance of 'ServiceCalls' with the given payload of type 'ServiceCall' in JSON format.
+  operationId: post_ServiceCalls
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CustomerCode:
+              type: string
+              example: c001
+            Subject:
+              type: string
+              example: Subject
+        example:
+          CustomerCode: c001
+          Subject: Subject
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceCalls
+  x-resource-description: This entity enables you to manipulate 'ServiceCalls'. It represents the service calls in the Service
+    module. Service calls are used to manage service and support activities that you provide to your customers.

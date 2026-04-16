@@ -1,0 +1,91 @@
+get:
+  tags:
+  - ChecksforPayment
+  summary: GET ChecksforPayment
+  description: Retrieve a collection of 'ChecksforPayment' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ChecksforPayment
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ChecksforPayment
+  x-resource-description: This entity enables you to manipulate 'ChecksforPayment'. It represents checks payable that are
+    not tied to a document.
+post:
+  tags:
+  - ChecksforPayment
+  summary: POST ChecksforPayment
+  description: Create an instance of 'ChecksforPayment' with the given payload of type 'ChecksforPayment' in JSON format.
+  operationId: post_ChecksforPayment
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AccountNumber:
+              type: string
+              example: '11123456'
+            BankCode:
+              type: string
+              example: bank01
+            Branch:
+              type: string
+              example: '123'
+            CardOrAccount:
+              type: string
+              example: cfp_Account
+            ChecksforPaymentLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  RowTotal:
+                    type: string
+                    example: '315'
+            CountryCode:
+              type: string
+              example: US
+            CustomerAccountCode:
+              type: string
+              example: _SYS00000000052
+            Details:
+              type: string
+              example: Add checks for payment
+            VendorCode:
+              type: string
+              example: _SYS00000000006
+        example:
+          AccountNumber: '11123456'
+          BankCode: bank01
+          Branch: '123'
+          CardOrAccount: cfp_Account
+          ChecksforPaymentLines:
+          - RowTotal: '315'
+          CountryCode: US
+          CustomerAccountCode: _SYS00000000052
+          Details: Add checks for payment
+          VendorCode: _SYS00000000006
+  x-example-url: POST https://localhost:50000/b1s/v2/ChecksforPayment
+  x-resource-description: This entity enables you to manipulate 'ChecksforPayment'. It represents checks payable that are
+    not tied to a document.

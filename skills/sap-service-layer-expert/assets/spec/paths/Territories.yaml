@@ -1,0 +1,55 @@
+get:
+  tags:
+  - Territories
+  summary: GET Territories
+  description: Retrieve a collection of 'Territories' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Territories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Territories
+  x-resource-description: This entity enables you to manipulate 'Territories'. It represents the territory segmentation.
+post:
+  tags:
+  - Territories
+  summary: POST Territories
+  description: Create an instance of 'Territories' with the given payload of type 'Territory' in JSON format.
+  operationId: post_Territories
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: NorthChina
+            Parent:
+              type: string
+              example: '-1'
+        example:
+          Description: NorthChina
+          Parent: '-1'
+  x-example-url: POST https://localhost:50000/b1s/v2/Territories
+  x-resource-description: This entity enables you to manipulate 'Territories'. It represents the territory segmentation.

@@ -1,0 +1,80 @@
+get:
+  tags:
+  - TaxCodeDeterminations
+  summary: GET TaxCodeDeterminations
+  description: Retrieve a collection of 'TaxCodeDeterminations' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_TaxCodeDeterminations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/TaxCodeDeterminations
+  x-resource-description: This entity enables you to manipulate 'TaxCodeDeterminations'.
+post:
+  tags:
+  - TaxCodeDeterminations
+  summary: POST TaxCodeDeterminations
+  description: Create an instance of 'TaxCodeDeterminations' with the given payload of type 'TaxCodeDetermination' in JSON
+    format.
+  operationId: post_TaxCodeDeterminations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BusinessArea:
+              type: string
+              example: baSales
+            Condition1:
+              type: string
+              example: tcdcShipToCity
+            Description:
+              type: string
+              example: test11
+            DocumentType:
+              type: string
+              example: tcddtItem
+            FreightHeaderTax:
+              type: string
+              example: A1
+            FreightRowTax:
+              type: string
+              example: A10
+            NumberValue1:
+              type: integer
+              example: 0
+            TaxCode:
+              type: string
+              example: A10
+        example:
+          BusinessArea: baSales
+          Condition1: tcdcShipToCity
+          Description: test11
+          DocumentType: tcddtItem
+          FreightHeaderTax: A1
+          FreightRowTax: A10
+          NumberValue1: 0
+          TaxCode: A10
+  x-example-url: POST https://localhost:50000/b1s/v2/TaxCodeDeterminations
+  x-resource-description: This entity enables you to manipulate 'TaxCodeDeterminations'.

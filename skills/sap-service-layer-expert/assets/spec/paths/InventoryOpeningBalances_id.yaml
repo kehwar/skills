@@ -1,0 +1,63 @@
+get:
+  tags:
+  - InventoryOpeningBalances
+  summary: GET InventoryOpeningBalances(id)
+  description: Retrieve all or some selected properties from an instance of 'InventoryOpeningBalances' with the given id.
+  operationId: get_InventoryOpeningBalances_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryOpeningBalances(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryOpeningBalances'.
+patch:
+  tags:
+  - InventoryOpeningBalances
+  summary: PATCH InventoryOpeningBalances(id)
+  description: Update an instance of 'InventoryOpeningBalances' with the given payload of type 'InventoryOpeningBalance' in
+    JSON format and with the specified id.
+  operationId: patch_InventoryOpeningBalances_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Remarks:
+              type: string
+              example: test
+        example:
+          Remarks: test
+  x-example-url: PATCH https://localhost:50000/b1s/v2/InventoryOpeningBalances(123)
+  x-resource-description: This entity enables you to manipulate 'InventoryOpeningBalances'.

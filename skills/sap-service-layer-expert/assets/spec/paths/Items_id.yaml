@@ -1,0 +1,87 @@
+get:
+  tags:
+  - Items
+  summary: GET Items(id)
+  description: Retrieve all or some selected properties from an instance of 'Items' with the given id.
+  operationId: get_Items_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Items('i001')
+  x-resource-description: This entity enables you to manipulate 'Items'.
+patch:
+  tags:
+  - Items
+  summary: PATCH Items(id)
+  description: Update an instance of 'Items' with the given payload of type 'Item' in JSON format and with the specified id.
+  operationId: patch_Items_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ItemName:
+              type: string
+              example: Updated Item Name
+        example:
+          ItemName: Updated Item Name
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Items('i001')
+  x-resource-description: This entity enables you to manipulate 'Items'.
+delete:
+  tags:
+  - Items
+  summary: DELETE Items(id)
+  description: Delete an instance of 'Items' with the specified id.
+  operationId: delete_Items_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Items('i001')
+  x-resource-description: This entity enables you to manipulate 'Items'.

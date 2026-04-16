@@ -1,0 +1,69 @@
+get:
+  tags:
+  - UserKeysMD
+  summary: GET UserKeysMD
+  description: Retrieve a collection of 'UserKeysMD' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserKeysMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserKeysMD
+  x-resource-description: This entity enables you to manipulate 'UserKeysMD' and manage secondary keys to user tables.
+post:
+  tags:
+  - UserKeysMD
+  summary: POST UserKeysMD
+  description: Create an instance of 'UserKeysMD' with the given payload of type 'UserKeysMD' in JSON format.
+  operationId: post_UserKeysMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            KeyName:
+              type: string
+              example: uk01
+            TableName:
+              type: string
+              example: OHEM
+            Unique:
+              type: string
+              example: tNO
+            UserKeysMD_Elements:
+              type: array
+              items:
+                type: object
+                properties:
+                  ColumnAlias:
+                    type: string
+                    example: UDF01
+        example:
+          KeyName: uk01
+          TableName: OHEM
+          Unique: tNO
+          UserKeysMD_Elements:
+          - ColumnAlias: UDF01
+  x-example-url: POST https://localhost:50000/b1s/v2/UserKeysMD
+  x-resource-description: This entity enables you to manipulate 'UserKeysMD' and manage secondary keys to user tables.

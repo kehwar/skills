@@ -1,0 +1,78 @@
+get:
+  tags:
+  - MultiLanguageTranslations
+  summary: GET MultiLanguageTranslations
+  description: Retrieve a collection of 'MultiLanguageTranslations' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_MultiLanguageTranslations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/MultiLanguageTranslations
+  x-resource-description: This entity enables you to manipulate 'MultiLanguageTranslations'. It allows translating alphanumeric
+    data of specified fields in master data objects (such as BusinessPartners and Items) to foreign languages and then printing
+    documents in the translated languages.
+post:
+  tags:
+  - MultiLanguageTranslations
+  summary: POST MultiLanguageTranslations
+  description: Create an instance of 'MultiLanguageTranslations' with the given payload of type 'MultiLanguageTranslation'
+    in JSON format.
+  operationId: post_MultiLanguageTranslations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FieldAlias:
+              type: string
+              example: Free_Text
+            PrimaryKeyofobject:
+              type: string
+              example: v001
+            TableName:
+              type: string
+              example: OCRD
+            TranslationsInUserLanguages:
+              type: array
+              items:
+                type: object
+                properties:
+                  LanguageCodeOfUserLanguage:
+                    type: string
+                    example: '8'
+                  Translationscontent:
+                    type: string
+                    example: Remarks
+        example:
+          FieldAlias: Free_Text
+          PrimaryKeyofobject: v001
+          TableName: OCRD
+          TranslationsInUserLanguages:
+          - LanguageCodeOfUserLanguage: '8'
+            Translationscontent: Remarks
+  x-example-url: POST https://localhost:50000/b1s/v2/MultiLanguageTranslations
+  x-resource-description: This entity enables you to manipulate 'MultiLanguageTranslations'. It allows translating alphanumeric
+    data of specified fields in master data objects (such as BusinessPartners and Items) to foreign languages and then printing
+    documents in the translated languages.

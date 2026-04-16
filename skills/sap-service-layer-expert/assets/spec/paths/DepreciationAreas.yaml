@@ -1,0 +1,67 @@
+get:
+  tags:
+  - DepreciationAreas
+  summary: GET DepreciationAreas
+  description: Retrieve a collection of 'DepreciationAreas' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DepreciationAreas
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DepreciationAreas
+  x-resource-description: This entity enables you to manipulate 'DepreciationAreas'.
+post:
+  tags:
+  - DepreciationAreas
+  summary: POST DepreciationAreas
+  description: Create an instance of 'DepreciationAreas' with the given payload of type 'DepreciationArea' in JSON format.
+  operationId: post_DepreciationAreas
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AreaType:
+              type: string
+              example: atPostingtoGL
+            Code:
+              type: string
+              example: test
+            Description:
+              type: string
+              example: test Description
+            PostingOfDepreciation:
+              type: string
+              example: podIndirectPosting
+            RetirementMethod:
+              type: string
+              example: rmGross
+        example:
+          AreaType: atPostingtoGL
+          Code: test
+          Description: test Description
+          PostingOfDepreciation: podIndirectPosting
+          RetirementMethod: rmGross
+  x-example-url: POST https://localhost:50000/b1s/v2/DepreciationAreas
+  x-resource-description: This entity enables you to manipulate 'DepreciationAreas'.

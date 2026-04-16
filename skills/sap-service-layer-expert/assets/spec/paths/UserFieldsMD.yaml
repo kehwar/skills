@@ -1,0 +1,69 @@
+get:
+  tags:
+  - UserFieldsMD
+  summary: GET UserFieldsMD
+  description: Retrieve a collection of 'UserFieldsMD' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserFieldsMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserFieldsMD
+  x-resource-description: This entity enables you to manipulate 'UserFieldsMD' and manage user-defined fields in user and
+    system tables.
+post:
+  tags:
+  - UserFieldsMD
+  summary: POST UserFieldsMD
+  description: Create an instance of 'UserFieldsMD' with the given payload of type 'UserFieldMD' in JSON format.
+  operationId: post_UserFieldsMD
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: UDF01
+            Name:
+              type: string
+              example: UDF01
+            SubType:
+              type: string
+              example: st_Address
+            TableName:
+              type: string
+              example: '@UDT01'
+            Type:
+              type: string
+              example: db_Alpha
+        example:
+          Description: UDF01
+          Name: UDF01
+          SubType: st_Address
+          TableName: '@UDT01'
+          Type: db_Alpha
+  x-example-url: POST https://localhost:50000/b1s/v2/UserFieldsMD
+  x-resource-description: This entity enables you to manipulate 'UserFieldsMD' and manage user-defined fields in user and
+    system tables.

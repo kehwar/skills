@@ -1,0 +1,104 @@
+get:
+  tags:
+  - Messages
+  summary: GET Messages
+  description: Retrieve a collection of 'Messages' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Messages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Messages
+  x-resource-description: This entity enables you to manipulate 'Messages'. You can also specify the OData query options to
+    query the messages, which is a combination of Inbox messages, Outbox messages and to-send messages.
+post:
+  tags:
+  - Messages
+  summary: POST Messages
+  description: Create an instance of 'Messages' with the given payload of type 'Message' in JSON format, which is functionally
+    equivalent to the old method 'MessagesService_SendMessage'.
+  operationId: post_Messages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            MessageDataColumns:
+              type: array
+              items:
+                type: object
+                properties:
+                  ColumnName:
+                    type: string
+                    example: Document
+                  Link:
+                    type: string
+                    example: tYES
+                  MessageDataLines:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Object:
+                          type: string
+                          example: '17'
+                        ObjectKey:
+                          type: string
+                          example: '2'
+                        Value:
+                          type: string
+                          example: '1'
+            RecipientCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  SendInternal:
+                    type: string
+                    example: tYES
+                  UserCode:
+                    type: string
+                    example: andy
+            Subject:
+              type: string
+              example: service layer subject 01
+            Text:
+              type: string
+              example: test by service layer
+        example:
+          MessageDataColumns:
+          - ColumnName: Document
+            Link: tYES
+            MessageDataLines:
+            - Object: '17'
+              ObjectKey: '2'
+              Value: '1'
+          RecipientCollection:
+          - SendInternal: tYES
+            UserCode: andy
+          Subject: service layer subject 01
+          Text: test by service layer
+  x-example-url: POST https://localhost:50000/b1s/v2/Messages
+  x-resource-description: This entity enables you to manipulate 'Messages'. You can also specify the OData query options to
+    query the messages, which is a combination of Inbox messages, Outbox messages and to-send messages.

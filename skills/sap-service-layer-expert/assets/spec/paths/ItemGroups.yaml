@@ -1,0 +1,53 @@
+get:
+  tags:
+  - ItemGroups
+  summary: GET ItemGroups
+  description: Retrieve a collection of 'ItemGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ItemGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ItemGroups
+  x-resource-description: This entity enables you to manipulate 'ItemGroups'. It represents the definition of item groups
+    in the Inventory module.
+post:
+  tags:
+  - ItemGroups
+  summary: POST ItemGroups
+  description: Create an instance of 'ItemGroups' with the given payload of type 'ItemGroups' in JSON format.
+  operationId: post_ItemGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GroupName:
+              type: string
+              example: ig001
+        example:
+          GroupName: ig001
+  x-example-url: POST https://localhost:50000/b1s/v2/ItemGroups
+  x-resource-description: This entity enables you to manipulate 'ItemGroups'. It represents the definition of item groups
+    in the Inventory module.

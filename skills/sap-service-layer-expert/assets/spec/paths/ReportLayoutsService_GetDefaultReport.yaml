@@ -1,0 +1,35 @@
+post:
+  tags:
+  - ReportLayoutsService
+  summary: POST ReportLayoutsService_GetDefaultReport
+  description: Invoke the method 'GetDefaultReport' on this service by specifying the payload 'ReportParams' in the JSON format.
+  operationId: post_ReportLayoutsService_GetDefaultReport
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ReportParams:
+              type: object
+              properties:
+                ReportCode:
+                  type: string
+                  example: POR1
+        example:
+          ReportParams:
+            ReportCode: POR1
+  x-example-url: POST https://localhost:50000/b1s/v2/ReportLayoutsService_GetDefaultReport
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ReportLayoutsService'.

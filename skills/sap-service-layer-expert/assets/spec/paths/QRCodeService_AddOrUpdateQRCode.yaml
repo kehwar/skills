@@ -1,0 +1,47 @@
+post:
+  tags:
+  - QRCodeService
+  summary: POST QRCodeService_AddOrUpdateQRCode
+  description: Invoke the method 'AddOrUpdateQRCode' on this service.
+  operationId: post_QRCodeService_AddOrUpdateQRCode
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            QRCodeData:
+              type: object
+              properties:
+                FieldName:
+                  type: string
+                  example: QRCodeSrc
+                ObjectAbsEntry:
+                  type: string
+                  example: '1'
+                ObjectType:
+                  type: string
+                  example: '22'
+                QRCodeText:
+                  type: string
+                  example: This is QR code text.
+        example:
+          QRCodeData:
+            FieldName: QRCodeSrc
+            ObjectAbsEntry: '1'
+            ObjectType: '22'
+            QRCodeText: This is QR code text.
+  x-example-url: POST https://localhost:50000/b1s/v2/QRCodeService_AddOrUpdateQRCode
+  x-resource-description: This API enables you to invoke the interfaces defined on 'QRCodeService'.

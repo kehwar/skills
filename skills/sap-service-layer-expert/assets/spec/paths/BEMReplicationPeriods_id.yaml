@@ -1,0 +1,67 @@
+get:
+  tags:
+  - BEMReplicationPeriods
+  summary: GET BEMReplicationPeriods(id)
+  description: Retrieve all or some selected properties from an instance of 'BEMReplicationPeriods' with the given id.
+  operationId: get_BEMReplicationPeriods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BEMReplicationPeriods(1)
+  x-resource-description: This entity enables you to manipulate 'BEMReplicationPeriods'.
+patch:
+  tags:
+  - BEMReplicationPeriods
+  summary: PATCH BEMReplicationPeriods(id)
+  description: Update an instance of 'BEMReplicationPeriods' with the given payload of type 'BEMReplicationPeriod' in JSON
+    format and with the specified id.
+  operationId: patch_BEMReplicationPeriods_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Status:
+              type: string
+              example: bemStatus_InProcess
+            UpdateDate:
+              type: string
+              example: '2022-02-01'
+        example:
+          Status: bemStatus_InProcess
+          UpdateDate: '2022-02-01'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BEMReplicationPeriods(1)
+  x-resource-description: This entity enables you to manipulate 'BEMReplicationPeriods'.

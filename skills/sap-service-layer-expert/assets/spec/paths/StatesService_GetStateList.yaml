@@ -1,0 +1,19 @@
+post:
+  tags:
+  - StatesService
+  summary: POST StatesService_GetStateList
+  description: Invoke the method 'GetStateList' on this service.
+  operationId: post_StatesService_GetStateList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/StatesService_GetStateList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'StatesService'.

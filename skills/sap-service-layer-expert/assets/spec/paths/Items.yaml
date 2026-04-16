@@ -1,0 +1,59 @@
+get:
+  tags:
+  - Items
+  summary: GET Items
+  description: Retrieve a collection of 'Items' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Items
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Items
+  x-resource-description: This entity enables you to manipulate 'Items'.
+post:
+  tags:
+  - Items
+  summary: POST Items
+  description: Create an instance of 'Items' with the given payload of type 'Item' in JSON format.
+  operationId: post_Items
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ItemCode:
+              type: string
+              example: i001
+            ItemName:
+              type: string
+              example: Item1
+            ItemType:
+              type: string
+              example: itItems
+        example:
+          ItemCode: i001
+          ItemName: Item1
+          ItemType: itItems
+  x-example-url: POST https://localhost:50000/b1s/v2/Items
+  x-resource-description: This entity enables you to manipulate 'Items'.

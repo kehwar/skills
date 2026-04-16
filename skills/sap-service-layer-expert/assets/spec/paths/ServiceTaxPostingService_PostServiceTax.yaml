@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ServiceTaxPostingService
+  summary: POST ServiceTaxPostingService_PostServiceTax
+  description: Invoke the method 'PostServiceTax' on this service by specifying the payload 'ServiceTaxPostingParams' in the
+    JSON format.
+  operationId: post_ServiceTaxPostingService_PostServiceTax
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ServiceTaxPostingParams:
+              type: object
+              properties:
+                DocEntry:
+                  type: integer
+                  example: 5
+        example:
+          ServiceTaxPostingParams:
+            DocEntry: 5
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceTaxPostingService_PostServiceTax
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ServiceTaxPostingService'.

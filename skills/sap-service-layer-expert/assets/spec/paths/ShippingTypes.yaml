@@ -1,0 +1,57 @@
+get:
+  tags:
+  - ShippingTypes
+  summary: GET ShippingTypes
+  description: Retrieve a collection of 'ShippingTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ShippingTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ShippingTypes
+  x-resource-description: This entity enables you to manipulate 'ShippingTypes'. It defines transportation methods (for example,
+    air cargo and courier) of goods.
+post:
+  tags:
+  - ShippingTypes
+  summary: POST ShippingTypes
+  description: Create an instance of 'ShippingTypes' with the given payload of type 'ShippingType' in JSON format.
+  operationId: post_ShippingTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: UPS Ground
+            Website:
+              type: string
+              example: http://www.ups.com/
+        example:
+          Name: UPS Ground
+          Website: http://www.ups.com/
+  x-example-url: POST https://localhost:50000/b1s/v2/ShippingTypes
+  x-resource-description: This entity enables you to manipulate 'ShippingTypes'. It defines transportation methods (for example,
+    air cargo and courier) of goods.

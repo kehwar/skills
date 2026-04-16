@@ -1,0 +1,87 @@
+get:
+  tags:
+  - Banks
+  summary: GET Banks(id)
+  description: Retrieve all or some selected properties from an instance of 'Banks' with the given id.
+  operationId: get_Banks_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Banks(123)
+  x-resource-description: This entity enables you to manipulate 'Banks'.
+patch:
+  tags:
+  - Banks
+  summary: PATCH Banks(id)
+  description: Update an instance of 'Banks' with the given payload of type 'Bank' in JSON format and with the specified id.
+  operationId: patch_Banks_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BankName:
+              type: string
+              example: US Bank
+        example:
+          BankName: US Bank
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Banks(123)
+  x-resource-description: This entity enables you to manipulate 'Banks'.
+delete:
+  tags:
+  - Banks
+  summary: DELETE Banks(id)
+  description: Delete an instance of 'Banks' with the specified id.
+  operationId: delete_Banks_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Banks(123)
+  x-resource-description: This entity enables you to manipulate 'Banks'.

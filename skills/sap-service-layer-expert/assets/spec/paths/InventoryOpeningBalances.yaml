@@ -1,0 +1,230 @@
+get:
+  tags:
+  - InventoryOpeningBalances
+  summary: GET InventoryOpeningBalances
+  description: Retrieve a collection of 'InventoryOpeningBalances' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_InventoryOpeningBalances
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryOpeningBalances
+  x-resource-description: This entity enables you to manipulate 'InventoryOpeningBalances'.
+post:
+  tags:
+  - InventoryOpeningBalances
+  summary: POST InventoryOpeningBalances
+  description: Create an instance of 'InventoryOpeningBalances' with the given payload of type 'InventoryOpeningBalance' in
+    JSON format.
+  operationId: post_InventoryOpeningBalances
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BranchID:
+              type: string
+              example: null
+            DocObjectCodeEx:
+              type: string
+              example: '310000001'
+            DocumentDate:
+              type: string
+              example: '2016-01-01'
+            DocumentEntry:
+              type: integer
+              example: 4
+            DocumentNumber:
+              type: integer
+              example: 1
+            FinancialPeriod:
+              type: integer
+              example: 1
+            InventoryOpeningBalanceLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ActualPrice:
+                    type: integer
+                    example: 1
+                  AllowBinNegativeQuantity:
+                    type: string
+                    example: tNO
+                  BarCode:
+                    type: string
+                    example: null
+                  BinEntry:
+                    type: string
+                    example: null
+                  CostingCode:
+                    type: string
+                    example: ''
+                  CostingCode2:
+                    type: string
+                    example: ''
+                  CostingCode3:
+                    type: string
+                    example: ''
+                  CostingCode4:
+                    type: string
+                    example: ''
+                  CostingCode5:
+                    type: string
+                    example: ''
+                  Currency:
+                    type: string
+                    example: R$
+                  DocumentEntry:
+                    type: integer
+                    example: 4
+                  InWarehouseQuantity:
+                    type: integer
+                    example: 0
+                  InventoryOpeningBalanceBatchNumbers:
+                    type: array
+                    items: {}
+                  InventoryOpeningBalanceSerialNumbers:
+                    type: array
+                    items: {}
+                  ItemCode:
+                    type: string
+                    example: I02
+                  ItemDescription:
+                    type: string
+                    example: null
+                  LineNumber:
+                    type: integer
+                    example: 1
+                  Manufacturer:
+                    type: integer
+                    example: -1
+                  OpenInventoryAccount:
+                    type: string
+                    example: 1.01.01.01.01
+                  OpeningBalance:
+                    type: integer
+                    example: 1
+                  PostedValueLC:
+                    type: integer
+                    example: 1
+                  PostedValueSC:
+                    type: integer
+                    example: 1
+                  PreferredVendor:
+                    type: string
+                    example: null
+                  Price:
+                    type: integer
+                    example: 1
+                  ProjectCode:
+                    type: string
+                    example: null
+                  Remarks:
+                    type: string
+                    example: ''
+                  SupplierCatalogNo:
+                    type: string
+                    example: null
+                  Total:
+                    type: integer
+                    example: 1
+                  VisualOrder:
+                    type: integer
+                    example: 1
+                  WarehouseCode:
+                    type: string
+                    example: '01'
+            JournalRemark:
+              type: string
+              example: Inventory Opening Balances
+            PeriodIndicator:
+              type: string
+              example: PadrÃ£o
+            PostingDate:
+              type: string
+              example: '2016-01-01'
+            PriceList:
+              type: integer
+              example: -1
+            PriceSource:
+              type: string
+              example: iobpsItemCost
+            Reference2:
+              type: string
+              example: null
+            Remarks:
+              type: string
+              example: null
+            Series:
+              type: integer
+              example: 43
+        example:
+          BranchID: null
+          DocObjectCodeEx: '310000001'
+          DocumentDate: '2016-01-01'
+          DocumentEntry: 4
+          DocumentNumber: 1
+          FinancialPeriod: 1
+          InventoryOpeningBalanceLines:
+          - ActualPrice: 1
+            AllowBinNegativeQuantity: tNO
+            BarCode: null
+            BinEntry: null
+            CostingCode: ''
+            CostingCode2: ''
+            CostingCode3: ''
+            CostingCode4: ''
+            CostingCode5: ''
+            Currency: R$
+            DocumentEntry: 4
+            InWarehouseQuantity: 0
+            InventoryOpeningBalanceBatchNumbers: []
+            InventoryOpeningBalanceSerialNumbers: []
+            ItemCode: I02
+            ItemDescription: null
+            LineNumber: 1
+            Manufacturer: -1
+            OpenInventoryAccount: 1.01.01.01.01
+            OpeningBalance: 1
+            PostedValueLC: 1
+            PostedValueSC: 1
+            PreferredVendor: null
+            Price: 1
+            ProjectCode: null
+            Remarks: ''
+            SupplierCatalogNo: null
+            Total: 1
+            VisualOrder: 1
+            WarehouseCode: '01'
+          JournalRemark: Inventory Opening Balances
+          PeriodIndicator: PadrÃ£o
+          PostingDate: '2016-01-01'
+          PriceList: -1
+          PriceSource: iobpsItemCost
+          Reference2: null
+          Remarks: null
+          Series: 43
+  x-example-url: POST https://localhost:50000/b1s/v2/InventoryOpeningBalances
+  x-resource-description: This entity enables you to manipulate 'InventoryOpeningBalances'.

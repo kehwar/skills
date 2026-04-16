@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ActivitiesService
+  summary: POST ActivitiesService_GetSingleInstanceFromSeries
+  description: Invoke the method 'GetSingleInstanceFromSeries' on this service by specifying the payload 'ActivityInstanceParams'
+    in the JSON format.
+  operationId: post_ActivitiesService_GetSingleInstanceFromSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ActivityInstanceParams:
+              type: object
+              properties:
+                ActivityCode:
+                  type: string
+                  example: '3'
+                InstanceDate:
+                  type: string
+                  example: '2016-08-30'
+        example:
+          ActivityInstanceParams:
+            ActivityCode: '3'
+            InstanceDate: '2016-08-30'
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivitiesService_GetSingleInstanceFromSeries
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ActivitiesService'.

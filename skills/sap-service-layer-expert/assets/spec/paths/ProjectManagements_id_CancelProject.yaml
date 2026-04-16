@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ProjectManagements(id)/CancelProject
+  summary: POST ProjectManagements(id)/CancelProject
+  description: Invoke the method 'CancelProject' on this EntitySet with the specified id.
+  operationId: post_ProjectManagements_id/CancelProject
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagements(123)/CancelProject
+  x-resource-description: This entity enables you to manipulate 'ProjectManagements'.

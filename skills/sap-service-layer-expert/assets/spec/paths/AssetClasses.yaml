@@ -1,0 +1,100 @@
+get:
+  tags:
+  - AssetClasses
+  summary: GET AssetClasses
+  description: Retrieve a collection of 'AssetClasses' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AssetClasses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetClasses
+  x-resource-description: This entity enables you to manipulate 'AssetClasses'.
+post:
+  tags:
+  - AssetClasses
+  summary: POST AssetClasses
+  description: Create an instance of 'AssetClasses' with the given payload of type 'AssetClass' in JSON format.
+  operationId: post_AssetClasses
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetClassCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccountDetermination:
+                    type: string
+                    example: '1001'
+                  ActiveStatus:
+                    type: string
+                    example: tYES
+                  Code:
+                    type: string
+                    example: TEST
+                  DepreciationAreaID:
+                    type: string
+                    example: '100'
+                  DepreciationTypeID:
+                    type: string
+                    example: LINP
+                  LineNumber:
+                    type: integer
+                    example: 0
+                  UseLife:
+                    type: integer
+                    example: 36
+            AssetType:
+              type: string
+              example: atAssetTypeGeneral
+            Code:
+              type: string
+              example: TEST
+            Description:
+              type: string
+              example: test AssetClasses
+        example:
+          AssetClassCollection:
+          - AccountDetermination: '1001'
+            ActiveStatus: tYES
+            Code: TEST
+            DepreciationAreaID: '100'
+            DepreciationTypeID: LINP
+            LineNumber: 0
+            UseLife: 36
+          - AccountDetermination: null
+            ActiveStatus: tYES
+            Code: TEST
+            DepreciationAreaID: '300'
+            DepreciationTypeID: LINP
+            LineNumber: 1
+            UseLife: 36
+          AssetType: atAssetTypeGeneral
+          Code: TEST
+          Description: test AssetClasses
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetClasses
+  x-resource-description: This entity enables you to manipulate 'AssetClasses'.

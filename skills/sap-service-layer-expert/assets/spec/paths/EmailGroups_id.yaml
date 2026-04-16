@@ -1,0 +1,88 @@
+get:
+  tags:
+  - EmailGroups
+  summary: GET EmailGroups(id)
+  description: Retrieve all or some selected properties from an instance of 'EmailGroups' with the given id.
+  operationId: get_EmailGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/EmailGroups('abc')
+  x-resource-description: This entity enables you to manipulate 'EmailGroups'.
+patch:
+  tags:
+  - EmailGroups
+  summary: PATCH EmailGroups(id)
+  description: Update an instance of 'EmailGroups' with the given payload of type 'EmailGroup' in JSON format and with the
+    specified id.
+  operationId: patch_EmailGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            EmailGroupName:
+              type: string
+              example: cnlin0121
+        example:
+          EmailGroupName: cnlin0121
+  x-example-url: PATCH https://localhost:50000/b1s/v2/EmailGroups('abc')
+  x-resource-description: This entity enables you to manipulate 'EmailGroups'.
+delete:
+  tags:
+  - EmailGroups
+  summary: DELETE EmailGroups(id)
+  description: Delete an instance of 'EmailGroups' with the specified id.
+  operationId: delete_EmailGroups_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/EmailGroups('abc')
+  x-resource-description: This entity enables you to manipulate 'EmailGroups'.

@@ -1,0 +1,100 @@
+get:
+  tags:
+  - AssetClasses
+  summary: GET AssetClasses(id)
+  description: Retrieve all or some selected properties from an instance of 'AssetClasses' with the given id.
+  operationId: get_AssetClasses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/AssetClasses('TEST')
+  x-resource-description: This entity enables you to manipulate 'AssetClasses'.
+patch:
+  tags:
+  - AssetClasses
+  summary: PATCH AssetClasses(id)
+  description: Update an instance of 'AssetClasses' with the given payload of type 'AssetClass' in JSON format and with the
+    specified id.
+  operationId: patch_AssetClasses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetType:
+              type: string
+              example: atAssetTypeLowValueAsset
+            Description:
+              type: string
+              example: test AssetClasses
+            ValueLimitFrom:
+              type: string
+              example: '600'
+            ValueLimitTo:
+              type: string
+              example: '2000'
+        example:
+          AssetType: atAssetTypeLowValueAsset
+          Description: test AssetClasses
+          ValueLimitFrom: '600'
+          ValueLimitTo: '2000'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/AssetClasses('TEST')
+  x-resource-description: This entity enables you to manipulate 'AssetClasses'.
+delete:
+  tags:
+  - AssetClasses
+  summary: DELETE AssetClasses(id)
+  description: Delete an instance of 'AssetClasses' with the specified id.
+  operationId: delete_AssetClasses_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/AssetClasses('TEST')
+  x-resource-description: This entity enables you to manipulate 'AssetClasses'.

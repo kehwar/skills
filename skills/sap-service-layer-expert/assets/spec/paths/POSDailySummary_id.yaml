@@ -1,0 +1,106 @@
+get:
+  tags:
+  - POSDailySummary
+  summary: GET POSDailySummary(id)
+  description: Retrieve all or some selected properties from an instance of 'POSDailySummary' with the given id.
+  operationId: get_POSDailySummary_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/POSDailySummary(123)
+  x-resource-description: This entity enables you to manipulate 'POSDailySummary'.
+patch:
+  tags:
+  - POSDailySummary
+  summary: PATCH POSDailySummary(id)
+  description: Update an instance of 'POSDailySummary' with the given payload of type 'POSDailySummary' in JSON format and
+    with the specified id.
+  operationId: patch_POSDailySummary_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Date:
+              type: string
+              example: '2016-08-31'
+            POSTotalizerCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  Code:
+                    type: string
+                    example: '001'
+                  Description:
+                    type: string
+                    example: ''
+                  Number:
+                    type: string
+                    example: '2'
+        example:
+          Date: '2016-08-31'
+          POSTotalizerCollection:
+          - Code: '001'
+            Description: ''
+            Number: '2'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/POSDailySummary(123)
+  x-resource-description: This entity enables you to manipulate 'POSDailySummary'.
+delete:
+  tags:
+  - POSDailySummary
+  summary: DELETE POSDailySummary(id)
+  description: Delete an instance of 'POSDailySummary' with the specified id.
+  operationId: delete_POSDailySummary_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/POSDailySummary(123)
+  x-resource-description: This entity enables you to manipulate 'POSDailySummary'.

@@ -1,0 +1,85 @@
+get:
+  tags:
+  - ActivityRecipientLists
+  summary: GET ActivityRecipientLists
+  description: Retrieve a collection of 'ActivityRecipientLists' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_ActivityRecipientLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ActivityRecipientLists
+  x-resource-description: This entity enables you to manipulate 'ActivityRecipientLists'.
+post:
+  tags:
+  - ActivityRecipientLists
+  summary: POST ActivityRecipientLists
+  description: Create an instance of 'ActivityRecipientLists' with the given payload of type 'ActivityRecipientList' in JSON
+    format.
+  operationId: post_ActivityRecipientLists
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Active:
+              type: string
+              example: tYES
+            ActivityRecipientCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  LineNumber:
+                    type: integer
+                    example: 1
+                  RecipientCode:
+                    type: string
+                    example: '2'
+                  RecipientType:
+                    type: string
+                    example: rtUser
+            Code:
+              type: integer
+              example: 1
+            IsMultiple:
+              type: string
+              example: tNO
+            Name:
+              type: string
+              example: RP1
+        example:
+          Active: tYES
+          ActivityRecipientCollection:
+          - LineNumber: 1
+            RecipientCode: '2'
+            RecipientType: rtUser
+          - LineNumber: 2
+            RecipientCode: '4'
+            RecipientType: rtUser
+          Code: 1
+          IsMultiple: tNO
+          Name: RP1
+  x-example-url: POST https://localhost:50000/b1s/v2/ActivityRecipientLists
+  x-resource-description: This entity enables you to manipulate 'ActivityRecipientLists'.

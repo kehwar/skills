@@ -1,0 +1,89 @@
+get:
+  tags:
+  - Holidays
+  summary: GET Holidays
+  description: Retrieve a collection of 'Holidays' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Holidays
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Holidays
+  x-resource-description: This entity enables you to manipulate 'Holidays'.
+post:
+  tags:
+  - Holidays
+  summary: POST Holidays
+  description: Create an instance of 'Holidays' with the given payload of type 'Holiday' in JSON format.
+  operationId: post_Holidays
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            HolidayCode:
+              type: string
+              example: holiday1
+            HolidayDates:
+              type: array
+              items:
+                type: object
+                properties:
+                  EndDate:
+                    type: string
+                    example: '2020-01-02'
+                  Remarks:
+                    type: string
+                    example: test
+                  StartDate:
+                    type: string
+                    example: '2020-01-01'
+            IgnoreWeekend:
+              type: string
+              example: N
+            IsCurrentYear:
+              type: string
+              example: tYES
+            WeekNoRule:
+              type: string
+              example: fromFirstFourDayWeek
+            WeekendFrom:
+              type: string
+              example: Monday
+            WeekendTO:
+              type: string
+              example: Tuesday
+        example:
+          HolidayCode: holiday1
+          HolidayDates:
+          - EndDate: '2020-01-02'
+            Remarks: test
+            StartDate: '2020-01-01'
+          IgnoreWeekend: N
+          IsCurrentYear: tYES
+          WeekNoRule: fromFirstFourDayWeek
+          WeekendFrom: Monday
+          WeekendTO: Tuesday
+  x-example-url: POST https://localhost:50000/b1s/v2/Holidays
+  x-resource-description: This entity enables you to manipulate 'Holidays'.

@@ -1,0 +1,46 @@
+post:
+  tags:
+  - Login
+  summary: POST Login
+  description: Login Service Layer with the specified credentials.
+  operationId: post_Login
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CompanyDB:
+              type: string
+              example: SBODEMOUS
+            Password:
+              type: string
+              example: '1234'
+            UserName:
+              type: string
+              example: manager
+        example:
+          CompanyDB: SBODEMOUS
+          Password: '1234'
+          UserName: manager
+  x-example-url: POST https://localhost:50000/b1s/v2/Login
+  x-resource-description: Log in Service Layer with the specified credentials. Generally it is the first step to using the
+    Service Layer API. Calling the Service Layer API without a login will result in failure. After logging in successfully,
+    one session ID will be returned in HTTP response body. At the same time, two HTTP cookie items named "B1SESSION" and "ROUTEID"
+    will be set. You do not need to relate to them if calling the Service Layer API in a browser because the browser will
+    send them to Service Layer automatically in subsequent HTTP requests. You do need to add the cookie item "B1SESSION" to
+    your HTTP header in a subsequent Service Layer API call. Otherwise, Service Layer will consider them as a bad request
+    without a login. The cookie item "ROUTEID" is optional. It ensures the session stickiness and optimizes performance through
+    efficient load balancing.

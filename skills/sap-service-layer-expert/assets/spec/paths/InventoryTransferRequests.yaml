@@ -1,0 +1,73 @@
+get:
+  tags:
+  - InventoryTransferRequests
+  summary: GET InventoryTransferRequests
+  description: Retrieve a collection of 'InventoryTransferRequests' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_InventoryTransferRequests
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryTransferRequests
+  x-resource-description: This entity enables you to manipulate 'InventoryTransferRequests'. It represents a request to transfer
+    inventory from one warehouse to another. After the requested quantity is received by the receiving warehouse, you can
+    close the inventory transfer request and create an inventory transfer document.
+post:
+  tags:
+  - InventoryTransferRequests
+  summary: POST InventoryTransferRequests
+  description: Create an instance of 'InventoryTransferRequests' with the given payload of type 'StockTransfer' in JSON format.
+  operationId: post_InventoryTransferRequests
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            StockTransferLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  ItemCode:
+                    type: string
+                    example: i001
+                  Quantity:
+                    type: string
+                    example: '100'
+                  UnitPrice:
+                    type: string
+                    example: '100'
+                  WarehouseCode:
+                    type: string
+                    example: w001
+        example:
+          StockTransferLines:
+          - ItemCode: i001
+            Quantity: '100'
+            UnitPrice: '100'
+            WarehouseCode: w001
+  x-example-url: POST https://localhost:50000/b1s/v2/InventoryTransferRequests
+  x-resource-description: This entity enables you to manipulate 'InventoryTransferRequests'. It represents a request to transfer
+    inventory from one warehouse to another. After the requested quantity is received by the receiving warehouse, you can
+    close the inventory transfer request and create an inventory transfer document.

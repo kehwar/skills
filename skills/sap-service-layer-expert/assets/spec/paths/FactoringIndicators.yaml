@@ -1,0 +1,57 @@
+get:
+  tags:
+  - FactoringIndicators
+  summary: GET FactoringIndicators
+  description: Retrieve a collection of 'FactoringIndicators' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_FactoringIndicators
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/FactoringIndicators
+  x-resource-description: This entity enables you to manipulate 'FactoringIndicators'. It defines keys that can be recorded
+    in certain journal entries and used as selection criteria in various reports.
+post:
+  tags:
+  - FactoringIndicators
+  summary: POST FactoringIndicators
+  description: Create an instance of 'FactoringIndicators' with the given payload of type 'FactoringIndicator' in JSON format.
+  operationId: post_FactoringIndicators
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            IndicatorCode:
+              type: string
+              example: abc
+            IndicatorName:
+              type: string
+              example: new indicator
+        example:
+          IndicatorCode: abc
+          IndicatorName: new indicator
+  x-example-url: POST https://localhost:50000/b1s/v2/FactoringIndicators
+  x-resource-description: This entity enables you to manipulate 'FactoringIndicators'. It defines keys that can be recorded
+    in certain journal entries and used as selection criteria in various reports.

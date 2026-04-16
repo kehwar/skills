@@ -1,0 +1,91 @@
+get:
+  tags:
+  - FactoringIndicators
+  summary: GET FactoringIndicators(id)
+  description: Retrieve all or some selected properties from an instance of 'FactoringIndicators' with the given id.
+  operationId: get_FactoringIndicators_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/FactoringIndicators('abc')
+  x-resource-description: This entity enables you to manipulate 'FactoringIndicators'. It defines keys that can be recorded
+    in certain journal entries and used as selection criteria in various reports.
+patch:
+  tags:
+  - FactoringIndicators
+  summary: PATCH FactoringIndicators(id)
+  description: Update an instance of 'FactoringIndicators' with the given payload of type 'FactoringIndicator' in JSON format
+    and with the specified id.
+  operationId: patch_FactoringIndicators_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            IndicatorName:
+              type: string
+              example: customer indicator
+        example:
+          IndicatorName: customer indicator
+  x-example-url: PATCH https://localhost:50000/b1s/v2/FactoringIndicators('abc')
+  x-resource-description: This entity enables you to manipulate 'FactoringIndicators'. It defines keys that can be recorded
+    in certain journal entries and used as selection criteria in various reports.
+delete:
+  tags:
+  - FactoringIndicators
+  summary: DELETE FactoringIndicators(id)
+  description: Delete an instance of 'FactoringIndicators' with the specified id.
+  operationId: delete_FactoringIndicators_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/FactoringIndicators('abc')
+  x-resource-description: This entity enables you to manipulate 'FactoringIndicators'. It defines keys that can be recorded
+    in certain journal entries and used as selection criteria in various reports.

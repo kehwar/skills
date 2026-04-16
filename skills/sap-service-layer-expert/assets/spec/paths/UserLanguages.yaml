@@ -1,0 +1,61 @@
+get:
+  tags:
+  - UserLanguages
+  summary: GET UserLanguages
+  description: Retrieve a collection of 'UserLanguages' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_UserLanguages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/UserLanguages
+  x-resource-description: This entity enables you to manipulate 'UserLanguages'. It defines user languages for multi-language
+    support.
+post:
+  tags:
+  - UserLanguages
+  summary: POST UserLanguages
+  description: Create an instance of 'UserLanguages' with the given payload of type 'UserLanguage' in JSON format.
+  operationId: post_UserLanguages
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            LanguageFullName:
+              type: string
+              example: Chinese
+            LanguageShortName:
+              type: string
+              example: TWC
+            RelatedSystemLanguage:
+              type: string
+              example: '35'
+        example:
+          LanguageFullName: Chinese
+          LanguageShortName: TWC
+          RelatedSystemLanguage: '35'
+  x-example-url: POST https://localhost:50000/b1s/v2/UserLanguages
+  x-resource-description: This entity enables you to manipulate 'UserLanguages'. It defines user languages for multi-language
+    support.

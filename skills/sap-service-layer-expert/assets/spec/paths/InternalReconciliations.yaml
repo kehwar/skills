@@ -1,0 +1,87 @@
+post:
+  tags:
+  - InternalReconciliations
+  summary: POST InternalReconciliations
+  description: Create an instance of 'InternalReconciliations' with the given payload of type 'InternalReconciliation' in
+    JSON format.
+  operationId: post_InternalReconciliations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardOrAccount:
+              type: string
+              example: coaCard
+            InternalReconciliationOpenTransRows:
+              type: array
+              items:
+                type: object
+                properties:
+                  CashDiscount:
+                    type: string
+                    example: null
+                  CreditOrDebit:
+                    type: string
+                    example: codDebit
+                  ReconcileAmount:
+                    type: integer
+                    example: 10
+                  Selected:
+                    type: string
+                    example: tYES
+                  ShortName:
+                    type: string
+                    example: v01
+                  SrcObjAbs:
+                    type: integer
+                    example: 5
+                  SrcObjTyp:
+                    type: string
+                    example: '46'
+                  TransId:
+                    type: integer
+                    example: 41
+                  TransRowId:
+                    type: integer
+                    example: 1
+            ReconDate:
+              type: string
+              example: '2017-11-15'
+        example:
+          CardOrAccount: coaCard
+          InternalReconciliationOpenTransRows:
+          - CashDiscount: null
+            CreditOrDebit: codDebit
+            ReconcileAmount: 10
+            Selected: tYES
+            ShortName: v01
+            SrcObjAbs: 5
+            SrcObjTyp: '46'
+            TransId: 41
+            TransRowId: 1
+          - CashDiscount: null
+            CreditOrDebit: codCredit
+            ReconcileAmount: 10
+            Selected: tYES
+            ShortName: v01
+            SrcObjAbs: 11
+            SrcObjTyp: '18'
+            TransId: 43
+            TransRowId: 0
+          ReconDate: '2017-11-15'
+  x-example-url: POST https://localhost:50000/b1s/v2/InternalReconciliations
+  x-resource-description: This entity enables you to manipulate 'InternalReconciliations'.

@@ -1,0 +1,19 @@
+post:
+  tags:
+  - Deposits(id)/CancelDepositbyCurrentSystemDate
+  summary: POST Deposits(id)/CancelDepositbyCurrentSystemDate
+  description: Invoke the method 'CancelDepositbyCurrentSystemDate' on this EntitySet with the specified id.
+  operationId: post_Deposits_id/CancelDepositbyCurrentSystemDate
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/Deposits(123)/CancelDepositbyCurrentSystemDate
+  x-resource-description: This entity enables you to manipulate 'Deposits'.

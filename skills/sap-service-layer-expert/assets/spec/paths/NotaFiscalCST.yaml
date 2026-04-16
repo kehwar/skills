@@ -1,0 +1,67 @@
+get:
+  tags:
+  - NotaFiscalCST
+  summary: GET NotaFiscalCST
+  description: Retrieve a collection of 'NotaFiscalCST' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_NotaFiscalCST
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NotaFiscalCST
+  x-resource-description: This entity enables you to manipulate 'NotaFiscalCST'.
+post:
+  tags:
+  - NotaFiscalCST
+  summary: POST NotaFiscalCST
+  description: Create an instance of 'NotaFiscalCST' with the given payload of type 'NotaFiscalCST' in JSON format.
+  operationId: post_NotaFiscalCST
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CSTCodeOutgoing:
+              type: string
+              example: '111'
+            Code:
+              type: string
+              example: 0409
+            DescriptionOutgoing:
+              type: string
+              example: desoutgoing
+            Situation:
+              type: string
+              example: situ
+            TaxCategory:
+              type: integer
+              example: 1
+        example:
+          CSTCodeOutgoing: '111'
+          Code: 0409
+          DescriptionOutgoing: desoutgoing
+          Situation: situ
+          TaxCategory: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/NotaFiscalCST
+  x-resource-description: This entity enables you to manipulate 'NotaFiscalCST'.

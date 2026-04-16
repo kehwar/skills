@@ -1,0 +1,83 @@
+get:
+  tags:
+  - CustomsDeclaration
+  summary: GET CustomsDeclaration
+  description: Retrieve a collection of 'CustomsDeclaration' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_CustomsDeclaration
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CustomsDeclaration
+  x-resource-description: This entity enables you to manipulate 'CustomsDeclaration'.
+post:
+  tags:
+  - CustomsDeclaration
+  summary: POST CustomsDeclaration
+  description: Create an instance of 'CustomsDeclaration' with the given payload of type 'CustomsDeclaration' in JSON format.
+  operationId: post_CustomsDeclaration
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CCDNum:
+              type: string
+              example: '2'
+            CustomsBroker:
+              type: string
+              example: C01
+            CustomsTerminal:
+              type: string
+              example: C01
+            Date:
+              type: string
+              example: '2016-08-31'
+            DocDate:
+              type: string
+              example: '2016-08-31'
+            DocNum:
+              type: string
+              example: Exp./Imp. Doc. No.
+            PaymentKey:
+              type: string
+              example: PID
+            SupplyDate:
+              type: string
+              example: '2016-08-31'
+            SupplyNum:
+              type: string
+              example: Supply Agreement Num
+        example:
+          CCDNum: '2'
+          CustomsBroker: C01
+          CustomsTerminal: C01
+          Date: '2016-08-31'
+          DocDate: '2016-08-31'
+          DocNum: Exp./Imp. Doc. No.
+          PaymentKey: PID
+          SupplyDate: '2016-08-31'
+          SupplyNum: Supply Agreement Num
+  x-example-url: POST https://localhost:50000/b1s/v2/CustomsDeclaration
+  x-resource-description: This entity enables you to manipulate 'CustomsDeclaration'.

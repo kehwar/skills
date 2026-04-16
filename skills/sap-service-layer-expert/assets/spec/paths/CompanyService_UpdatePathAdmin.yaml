@@ -1,0 +1,51 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_UpdatePathAdmin
+  description: Invoke the method 'UpdatePathAdmin' on this service by specifying the payload 'PathAdmin' in the JSON format.
+  operationId: post_CompanyService_UpdatePathAdmin
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PathAdmin:
+              type: object
+              properties:
+                AttachmentsFolderPath:
+                  type: string
+                  example: /usr/sap/SAPBusinessOne/ServiceLayer/modules
+                ExtensionsFolderPath:
+                  type: string
+                  example: null
+                PicturesFolderPath:
+                  type: string
+                  example: null
+                PrintId:
+                  type: string
+                  example: USBO
+                WordTemplateFolderPath:
+                  type: string
+                  example: null
+        example:
+          PathAdmin:
+            AttachmentsFolderPath: /usr/sap/SAPBusinessOne/ServiceLayer/modules
+            ExtensionsFolderPath: null
+            PicturesFolderPath: null
+            PrintId: USBO
+            WordTemplateFolderPath: null
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_UpdatePathAdmin
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

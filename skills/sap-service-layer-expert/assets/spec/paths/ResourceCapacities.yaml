@@ -1,0 +1,131 @@
+get:
+  tags:
+  - ResourceCapacities
+  summary: GET ResourceCapacities
+  description: Retrieve a collection of 'ResourceCapacities' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ResourceCapacities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ResourceCapacities
+  x-resource-description: This entity enables you to manipulate 'ResourceCapacities'.
+post:
+  tags:
+  - ResourceCapacities
+  summary: POST ResourceCapacities
+  description: Create an instance of 'ResourceCapacities' with the given payload of type 'ResourceCapacity' in JSON format.
+  operationId: post_ResourceCapacities
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Action:
+              type: string
+              example: rcaUnknown
+            BaseEntry:
+              type: string
+              example: null
+            BaseLineNum:
+              type: string
+              example: null
+            BaseType:
+              type: string
+              example: rcbtNone
+            Capacity:
+              type: integer
+              example: 50
+            Code:
+              type: string
+              example: R01
+            Date:
+              type: string
+              example: '2016-10-02'
+            Id:
+              type: integer
+              example: 3
+            Memo:
+              type: string
+              example: null
+            MemoSource:
+              type: string
+              example: rcmsUnknown
+            OwningEntry:
+              type: string
+              example: null
+            OwningLineNum:
+              type: string
+              example: null
+            OwningType:
+              type: string
+              example: rcotNone
+            RevertedEntry:
+              type: string
+              example: null
+            RevertedLineNum:
+              type: string
+              example: null
+            RevertedType:
+              type: string
+              example: rcrtNone
+            SourceEntry:
+              type: string
+              example: null
+            SourceLineNum:
+              type: string
+              example: null
+            SourceType:
+              type: string
+              example: rcstNone
+            Type:
+              type: string
+              example: rctInternal
+            Warehouse:
+              type: string
+              example: '01'
+        example:
+          Action: rcaUnknown
+          BaseEntry: null
+          BaseLineNum: null
+          BaseType: rcbtNone
+          Capacity: 50
+          Code: R01
+          Date: '2016-10-02'
+          Id: 3
+          Memo: null
+          MemoSource: rcmsUnknown
+          OwningEntry: null
+          OwningLineNum: null
+          OwningType: rcotNone
+          RevertedEntry: null
+          RevertedLineNum: null
+          RevertedType: rcrtNone
+          SourceEntry: null
+          SourceLineNum: null
+          SourceType: rcstNone
+          Type: rctInternal
+          Warehouse: '01'
+  x-example-url: POST https://localhost:50000/b1s/v2/ResourceCapacities
+  x-resource-description: This entity enables you to manipulate 'ResourceCapacities'.

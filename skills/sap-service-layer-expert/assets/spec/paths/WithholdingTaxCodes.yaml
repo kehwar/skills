@@ -1,0 +1,71 @@
+get:
+  tags:
+  - WithholdingTaxCodes
+  summary: GET WithholdingTaxCodes
+  description: Retrieve a collection of 'WithholdingTaxCodes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_WithholdingTaxCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/WithholdingTaxCodes
+  x-resource-description: This entity enables you to manipulate 'WithholdingTaxCodes'. It defines withholding tax codes that
+    can be applied to business partners, payments, and documents.
+post:
+  tags:
+  - WithholdingTaxCodes
+  summary: POST WithholdingTaxCodes
+  description: Create an instance of 'WithholdingTaxCodes' with the given payload of type 'WithholdingTaxCode' in JSON format.
+  operationId: post_WithholdingTaxCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Account:
+              type: string
+              example: '100000000000000'
+            WTCode:
+              type: string
+              example: W01
+            WTName:
+              type: string
+              example: WT tax
+            WithholdingTaxCodes_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  Effectivefrom:
+                    type: string
+                    example: '2014-11-10'
+        example:
+          Account: '100000000000000'
+          WTCode: W01
+          WTName: WT tax
+          WithholdingTaxCodes_Lines:
+          - Effectivefrom: '2014-11-10'
+  x-example-url: POST https://localhost:50000/b1s/v2/WithholdingTaxCodes
+  x-resource-description: This entity enables you to manipulate 'WithholdingTaxCodes'. It defines withholding tax codes that
+    can be applied to business partners, payments, and documents.

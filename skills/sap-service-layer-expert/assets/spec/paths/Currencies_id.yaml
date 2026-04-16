@@ -1,0 +1,91 @@
+get:
+  tags:
+  - Currencies
+  summary: GET Currencies(id)
+  description: Retrieve all or some selected properties from an instance of 'Currencies' with the given id.
+  operationId: get_Currencies_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Currencies('CNY')
+  x-resource-description: This entity enables you to manipulate 'Currencies'. It represents the currency codes in the Administration
+    module.
+patch:
+  tags:
+  - Currencies
+  summary: PATCH Currencies(id)
+  description: Update an instance of 'Currencies' with the given payload of type 'Currency' in JSON format and with the specified
+    id.
+  operationId: patch_Currencies_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: UpdatedCurrencyName
+        example:
+          Name: UpdatedCurrencyName
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Currencies('CNY')
+  x-resource-description: This entity enables you to manipulate 'Currencies'. It represents the currency codes in the Administration
+    module.
+delete:
+  tags:
+  - Currencies
+  summary: DELETE Currencies(id)
+  description: Delete an instance of 'Currencies' with the specified id.
+  operationId: delete_Currencies_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Currencies('CNY')
+  x-resource-description: This entity enables you to manipulate 'Currencies'. It represents the currency codes in the Administration
+    module.

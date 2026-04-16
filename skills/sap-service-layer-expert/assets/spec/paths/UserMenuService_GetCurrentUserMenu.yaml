@@ -1,0 +1,19 @@
+post:
+  tags:
+  - UserMenuService
+  summary: POST UserMenuService_GetCurrentUserMenu
+  description: Invoke the method 'GetCurrentUserMenu' on this service.
+  operationId: post_UserMenuService_GetCurrentUserMenu
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/UserMenuService_GetCurrentUserMenu
+  x-resource-description: This API enables you to invoke the interfaces defined on 'UserMenuService'.

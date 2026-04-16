@@ -1,0 +1,47 @@
+get:
+  tags:
+  - PaymentReasonCodes
+  summary: GET PaymentReasonCodes
+  description: Retrieve a collection of 'PaymentReasonCodes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PaymentReasonCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PaymentReasonCodes
+  x-resource-description: This entity enables you to manipulate 'PaymentReasonCodes'.
+post:
+  tags:
+  - PaymentReasonCodes
+  summary: POST PaymentReasonCodes
+  description: Create an instance of 'PaymentReasonCodes' with the given payload of type 'PaymentReasonCode' in JSON format.
+  operationId: post_PaymentReasonCodes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentReasonCodes
+  x-resource-description: This entity enables you to manipulate 'PaymentReasonCodes'.

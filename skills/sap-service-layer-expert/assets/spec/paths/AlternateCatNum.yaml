@@ -1,0 +1,65 @@
+get:
+  tags:
+  - AlternateCatNum
+  summary: GET AlternateCatNum
+  description: Retrieve a collection of 'AlternateCatNum' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AlternateCatNum
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AlternateCatNum
+  x-resource-description: This entity enables you to manipulate 'AlternateCatNum'. It represents the alternative catalog numbers
+    in the Business Partners module.
+post:
+  tags:
+  - AlternateCatNum
+  summary: POST AlternateCatNum
+  description: Create an instance of 'AlternateCatNum' with the given payload of type 'AlternateCatNum' in JSON format.
+  operationId: post_AlternateCatNum
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            DisplayBPCatalogNumber:
+              type: string
+              example: tNO
+            ItemCode:
+              type: string
+              example: item01
+            Substitute:
+              type: string
+              example: BP01
+        example:
+          CardCode: c001
+          DisplayBPCatalogNumber: tNO
+          ItemCode: item01
+          Substitute: BP01
+  x-example-url: POST https://localhost:50000/b1s/v2/AlternateCatNum
+  x-resource-description: This entity enables you to manipulate 'AlternateCatNum'. It represents the alternative catalog numbers
+    in the Business Partners module.

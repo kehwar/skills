@@ -1,0 +1,19 @@
+post:
+  tags:
+  - CockpitsService
+  summary: POST CockpitsService_GetTemplateCockpitList
+  description: Invoke the method 'GetTemplateCockpitList' on this service.
+  operationId: post_CockpitsService_GetTemplateCockpitList
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CockpitsService_GetTemplateCockpitList
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CockpitsService'.

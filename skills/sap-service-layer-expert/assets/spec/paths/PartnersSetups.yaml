@@ -1,0 +1,59 @@
+get:
+  tags:
+  - PartnersSetups
+  summary: GET PartnersSetups
+  description: Retrieve a collection of 'PartnersSetups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_PartnersSetups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/PartnersSetups
+  x-resource-description: This entity enables you to manipulate 'PartnersSetups'.
+post:
+  tags:
+  - PartnersSetups
+  summary: POST PartnersSetups
+  description: Create an instance of 'PartnersSetups' with the given payload of type 'PartnersSetup' in JSON format.
+  operationId: post_PartnersSetups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DefaultRelationship:
+              type: string
+              example: '01'
+            Name:
+              type: string
+              example: Partner 01
+            RelatedBP:
+              type: string
+              example: C01
+        example:
+          DefaultRelationship: '01'
+          Name: Partner 01
+          RelatedBP: C01
+  x-example-url: POST https://localhost:50000/b1s/v2/PartnersSetups
+  x-resource-description: This entity enables you to manipulate 'PartnersSetups'.

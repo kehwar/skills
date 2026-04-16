@@ -1,0 +1,59 @@
+get:
+  tags:
+  - BudgetDistributions
+  summary: GET BudgetDistributions
+  description: Retrieve a collection of 'BudgetDistributions' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BudgetDistributions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BudgetDistributions
+  x-resource-description: This entity enables you to manipulate 'BudgetDistributions'.
+post:
+  tags:
+  - BudgetDistributions
+  summary: POST BudgetDistributions
+  description: Create an instance of 'BudgetDistributions' with the given payload of type 'BudgetDistribution' in JSON format.
+  operationId: post_BudgetDistributions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BudgetAmount:
+              type: number
+              example: 1.0
+            Description:
+              type: string
+              example: DisRule
+            September:
+              type: number
+              example: 1.0
+        example:
+          BudgetAmount: 1.0
+          Description: DisRule
+          September: 1.0
+  x-example-url: POST https://localhost:50000/b1s/v2/BudgetDistributions
+  x-resource-description: This entity enables you to manipulate 'BudgetDistributions'.

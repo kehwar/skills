@@ -1,0 +1,51 @@
+get:
+  tags:
+  - ReportTypes
+  summary: GET ReportTypes
+  description: Retrieve a collection of 'ReportTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ReportTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ReportTypes
+  x-resource-description: This entity enables you to manipulate 'ReportTypes'.
+post:
+  tags:
+  - ReportTypes
+  summary: POST ReportTypes
+  description: Create an instance of 'ReportTypes' with the given payload of type 'ReportType' in JSON format.
+  operationId: post_ReportTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            TypeName:
+              type: string
+              example: report type 01
+        example:
+          TypeName: report type 01
+  x-example-url: POST https://localhost:50000/b1s/v2/ReportTypes
+  x-resource-description: This entity enables you to manipulate 'ReportTypes'.

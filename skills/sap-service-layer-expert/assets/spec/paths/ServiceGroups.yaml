@@ -1,0 +1,55 @@
+get:
+  tags:
+  - ServiceGroups
+  summary: GET ServiceGroups
+  description: Retrieve a collection of 'ServiceGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ServiceGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ServiceGroups
+  x-resource-description: This entity enables you to manipulate 'ServiceGroups'.
+post:
+  tags:
+  - ServiceGroups
+  summary: POST ServiceGroups
+  description: Create an instance of 'ServiceGroups' with the given payload of type 'ServiceGroup' in JSON format.
+  operationId: post_ServiceGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: '001'
+            ServiceGroupCode:
+              type: string
+              example: '99'
+        example:
+          Description: '001'
+          ServiceGroupCode: '99'
+  x-example-url: POST https://localhost:50000/b1s/v2/ServiceGroups
+  x-resource-description: This entity enables you to manipulate 'ServiceGroups'.

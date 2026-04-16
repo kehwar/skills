@@ -1,0 +1,91 @@
+get:
+  tags:
+  - CreditCardPayments
+  summary: GET CreditCardPayments(id)
+  description: Retrieve all or some selected properties from an instance of 'CreditCardPayments' with the given id.
+  operationId: get_CreditCardPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditCardPayments('code01')
+  x-resource-description: This entity enables you to manipulate 'CreditCardPayments'. It defines dates on which the credit
+    card company credits the cardholder.
+patch:
+  tags:
+  - CreditCardPayments
+  summary: PATCH CreditCardPayments(id)
+  description: Update an instance of 'CreditCardPayments' with the given payload of type 'CreditCardPayment' in JSON format
+    and with the specified id.
+  operationId: patch_CreditCardPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DueDateName:
+              type: string
+              example: 15 days
+        example:
+          DueDateName: 15 days
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CreditCardPayments('code01')
+  x-resource-description: This entity enables you to manipulate 'CreditCardPayments'. It defines dates on which the credit
+    card company credits the cardholder.
+delete:
+  tags:
+  - CreditCardPayments
+  summary: DELETE CreditCardPayments(id)
+  description: Delete an instance of 'CreditCardPayments' with the specified id.
+  operationId: delete_CreditCardPayments_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CreditCardPayments('code01')
+  x-resource-description: This entity enables you to manipulate 'CreditCardPayments'. It defines dates on which the credit
+    card company credits the cardholder.

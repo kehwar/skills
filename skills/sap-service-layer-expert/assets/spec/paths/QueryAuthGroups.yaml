@@ -1,0 +1,56 @@
+get:
+  tags:
+  - QueryAuthGroups
+  summary: GET QueryAuthGroups
+  description: Retrieve a collection of 'QueryAuthGroups' with all or some selected properties by specifying the given filter
+    condition.
+  operationId: get_QueryAuthGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/QueryAuthGroups
+  x-resource-description: This entity enables you to manipulate 'QueryAuthGroups'.
+post:
+  tags:
+  - QueryAuthGroups
+  summary: POST QueryAuthGroups
+  description: Create an instance of 'QueryAuthGroups' with the given payload of type 'QueryAuthGroup' in JSON format.GroupCode
+    and GroupDes should be unique,mandatory.
+  operationId: post_QueryAuthGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AuthGroupCode:
+              type: string
+              example: Group21
+            AuthGroupDes:
+              type: string
+              example: Group21description
+        example:
+          AuthGroupCode: Group21
+          AuthGroupDes: Group21description
+  x-example-url: POST https://localhost:50000/b1s/v2/QueryAuthGroups
+  x-resource-description: This entity enables you to manipulate 'QueryAuthGroups'.

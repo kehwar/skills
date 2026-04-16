@@ -1,0 +1,91 @@
+get:
+  tags:
+  - Countries
+  summary: GET Countries(id)
+  description: Retrieve all or some selected properties from an instance of 'Countries' with the given id.
+  operationId: get_Countries_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Countries('NC')
+  x-resource-description: This entity enables you to manipulate 'Countries'. It manages the settings of each country, such
+    as country code, country name and address format.
+patch:
+  tags:
+  - Countries
+  summary: PATCH Countries(id)
+  description: Update an instance of 'Countries' with the given payload of type 'Country' in JSON format and with the specified
+    id.
+  operationId: patch_Countries_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Details:
+              type: string
+              example: created new country
+        example:
+          Details: created new country
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Countries('NC')
+  x-resource-description: This entity enables you to manipulate 'Countries'. It manages the settings of each country, such
+    as country code, country name and address format.
+delete:
+  tags:
+  - Countries
+  summary: DELETE Countries(id)
+  description: Delete an instance of 'Countries' with the specified id.
+  operationId: delete_Countries_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Countries('NC')
+  x-resource-description: This entity enables you to manipulate 'Countries'. It manages the settings of each country, such
+    as country code, country name and address format.

@@ -1,0 +1,40 @@
+post:
+  tags:
+  - SBOBobService
+  summary: POST SBOBobService_SetCurrencyRate
+  description: Invoke the method 'SBOBobService_SetCurrencyRate' on this service by specifying the payload 'RateDate,Currency,Rate'
+    in the JSON format.
+  operationId: post_SBOBobService_SetCurrencyRate
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Currency:
+              type: string
+              example: EUR
+            Rate:
+              type: string
+              example: '4.8'
+            RateDate:
+              type: string
+              example: '20161129'
+        example:
+          Currency: EUR
+          Rate: '4.8'
+          RateDate: '20161129'
+  x-example-url: POST https://localhost:50000/b1s/v2/SBOBobService_SetCurrencyRate
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SBOBobService'.

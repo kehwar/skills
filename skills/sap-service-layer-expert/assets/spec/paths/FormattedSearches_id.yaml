@@ -1,0 +1,94 @@
+get:
+  tags:
+  - FormattedSearches
+  summary: GET FormattedSearches(id)
+  description: Retrieve all or some selected properties from an instance of 'FormattedSearches' with the given id.
+  operationId: get_FormattedSearches_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/FormattedSearches(24488)
+  x-resource-description: This entity enables you to manipulate 'FormattedSearches'. It allows to assign a formatted search
+    function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process,
+    to the field.
+patch:
+  tags:
+  - FormattedSearches
+  summary: PATCH FormattedSearches(id)
+  description: Update an instance of 'FormattedSearches' with the given payload of type 'FormattedSearche' in JSON format
+    and with the specified id.
+  operationId: patch_FormattedSearches_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ItemID:
+              type: string
+              example: '29'
+        example:
+          ItemID: '29'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/FormattedSearches(24488)
+  x-resource-description: This entity enables you to manipulate 'FormattedSearches'. It allows to assign a formatted search
+    function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process,
+    to the field.
+delete:
+  tags:
+  - FormattedSearches
+  summary: DELETE FormattedSearches(id)
+  description: Delete an instance of 'FormattedSearches' with the specified id.
+  operationId: delete_FormattedSearches_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/FormattedSearches(24488)
+  x-resource-description: This entity enables you to manipulate 'FormattedSearches'. It allows to assign a formatted search
+    function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process,
+    to the field.

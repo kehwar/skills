@@ -1,0 +1,33 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_GetFinancePeriod
+  description: Invoke the method 'GetFinancePeriod' on this service by specifying the payload 'FinancePeriodParams' in the
+    JSON format. It returns a 'FinancePeriod' data structure according to the specified finance period key parameters. The
+    object is used to identify and define a new 'FinancePeriod'.
+  operationId: post_CompanyService_GetFinancePeriod
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            FinancePeriodParams:
+              type: object
+              properties: {}
+        example:
+          FinancePeriodParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_GetFinancePeriod
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

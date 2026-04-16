@@ -1,0 +1,110 @@
+get:
+  tags:
+  - Attachments2
+  summary: GET Attachments2(id)
+  description: Retrieve all or some selected properties from an instance of 'Attachments2' with the given id.
+  operationId: get_Attachments2_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Attachments2(123)
+  x-resource-description: This entity enables you to manipulate 'Attachments2'.
+patch:
+  tags:
+  - Attachments2
+  summary: PATCH Attachments2(id)
+  description: Update an instance of 'Attachments2' with the given payload of type 'Attachments2' in JSON format and with
+    the specified id.
+  operationId: patch_Attachments2_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Attachments2_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  FileExtension:
+                    type: string
+                    example: so
+                  FileName:
+                    type: string
+                    example: mod_negotiation
+                  SourcePath:
+                    type: string
+                    example: /usr/sap/SAPBusinessOne/ServiceLayer/modules
+                  UserID:
+                    type: string
+                    example: '1'
+        example:
+          Attachments2_Lines:
+          - FileExtension: so
+            FileName: mod_negotiation
+            SourcePath: /usr/sap/SAPBusinessOne/ServiceLayer/modules
+            UserID: '1'
+          - FileExtension: so
+            FileName: mod_negotiation2
+            SourcePath: /usr/sap/SAPBusinessOne/ServiceLayer/modules
+            UserID: '1'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Attachments2(123)
+  x-resource-description: This entity enables you to manipulate 'Attachments2'.
+delete:
+  tags:
+  - Attachments2
+  summary: DELETE Attachments2(id)
+  description: Delete an instance of 'Attachments2' with the specified id.
+  operationId: delete_Attachments2_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Attachments2(123)
+  x-resource-description: This entity enables you to manipulate 'Attachments2'.

@@ -1,0 +1,61 @@
+get:
+  tags:
+  - SalesPersons
+  summary: GET SalesPersons
+  description: Retrieve a collection of 'SalesPersons' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SalesPersons
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesPersons
+  x-resource-description: This entity enables you to manipulate 'SalesPersons'. It defines sales employees and their commission
+    rates.
+post:
+  tags:
+  - SalesPersons
+  summary: POST SalesPersons
+  description: Create an instance of 'SalesPersons' with the given payload of type 'SalesPerson' in JSON format.
+  operationId: post_SalesPersons
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Active:
+              type: string
+              example: tYES
+            Remarks:
+              type: string
+              example: best sales person
+            SalesEmployeeName:
+              type: string
+              example: Lily
+        example:
+          Active: tYES
+          Remarks: best sales person
+          SalesEmployeeName: Lily
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesPersons
+  x-resource-description: This entity enables you to manipulate 'SalesPersons'. It defines sales employees and their commission
+    rates.

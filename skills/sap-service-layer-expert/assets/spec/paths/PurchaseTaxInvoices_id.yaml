@@ -1,0 +1,65 @@
+get:
+  tags:
+  - PurchaseTaxInvoices
+  summary: GET PurchaseTaxInvoices(id)
+  description: Retrieve all or some selected properties from an instance of 'PurchaseTaxInvoices' with the given id.
+  operationId: get_PurchaseTaxInvoices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/PurchaseTaxInvoices(123)
+  x-resource-description: This entity enables you to manipulate 'PurchaseTaxInvoices'. It represents the data of a purchase
+    Tax Invoice document.
+patch:
+  tags:
+  - PurchaseTaxInvoices
+  summary: PATCH PurchaseTaxInvoices(id)
+  description: Update an instance of 'PurchaseTaxInvoices' with the given payload of type 'PurchaseTaxInvoice' in JSON format
+    and with the specified id.
+  operationId: patch_PurchaseTaxInvoices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: Update purchase tax invoice
+        example:
+          Comments: Update purchase tax invoice
+  x-example-url: PATCH https://localhost:50000/b1s/v2/PurchaseTaxInvoices(123)
+  x-resource-description: This entity enables you to manipulate 'PurchaseTaxInvoices'. It represents the data of a purchase
+    Tax Invoice document.

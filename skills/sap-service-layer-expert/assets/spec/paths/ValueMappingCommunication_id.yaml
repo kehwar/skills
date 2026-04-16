@@ -1,0 +1,83 @@
+get:
+  tags:
+  - ValueMappingCommunication
+  summary: GET ValueMappingCommunication(id)
+  description: Retrieve all or some selected properties from an instance of 'ValueMappingCommunication' with the given id.
+  operationId: get_ValueMappingCommunication_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ValueMappingCommunication(123)
+  x-resource-description: This entity enables you to manipulate 'ValueMappingCommunication'.
+patch:
+  tags:
+  - ValueMappingCommunication
+  summary: PATCH ValueMappingCommunication(id)
+  description: Update an instance of 'ValueMappingCommunication' with the given payload of type 'ValueMappingCommunicationData'
+    in JSON format and with the specified id.
+  operationId: patch_ValueMappingCommunication_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CommunicationType:
+              type: string
+              example: vmct_MasterData
+            EndTime:
+              type: integer
+              example: 165050
+            ObjectId:
+              type: integer
+              example: 37
+            StartDate:
+              type: string
+              example: '2017-12-19'
+            StartTime:
+              type: integer
+              example: 160244
+            ThirdPartySystemId:
+              type: integer
+              example: 1
+        example:
+          CommunicationType: vmct_MasterData
+          EndTime: 165050
+          ObjectId: 37
+          StartDate: '2017-12-19'
+          StartTime: 160244
+          ThirdPartySystemId: 1
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ValueMappingCommunication(123)
+  x-resource-description: This entity enables you to manipulate 'ValueMappingCommunication'.

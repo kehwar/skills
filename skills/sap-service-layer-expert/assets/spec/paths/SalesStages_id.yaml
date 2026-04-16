@@ -1,0 +1,69 @@
+get:
+  tags:
+  - SalesStages
+  summary: GET SalesStages(id)
+  description: Retrieve all or some selected properties from an instance of 'SalesStages' with the given id.
+  operationId: get_SalesStages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesStages(123)
+  x-resource-description: This entity enables you to manipulate 'SalesStages'. It defines sales stages and the probability
+    of closing a deal indicated by each stage. For example, you enter stage 1 by identifying a customer as a lead (prospective
+    customer); if you define the closing percentage of this stage as 5%, it means that you estimate 5 out of 100 leads can
+    be converted to customers who will place orders with you.
+patch:
+  tags:
+  - SalesStages
+  summary: PATCH SalesStages(id)
+  description: Update an instance of 'SalesStages' with the given payload of type 'SalesStage' in JSON format and with the
+    specified id.
+  operationId: patch_SalesStages_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: 1st Meeting
+        example:
+          Name: 1st Meeting
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SalesStages(123)
+  x-resource-description: This entity enables you to manipulate 'SalesStages'. It defines sales stages and the probability
+    of closing a deal indicated by each stage. For example, you enter stage 1 by identifying a customer as a lead (prospective
+    customer); if you define the closing percentage of this stage as 5%, it means that you estimate 5 out of 100 leads can
+    be converted to customers who will place orders with you.

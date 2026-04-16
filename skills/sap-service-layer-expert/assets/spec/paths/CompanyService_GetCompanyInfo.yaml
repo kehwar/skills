@@ -1,0 +1,42 @@
+get:
+  tags:
+  - CompanyService
+  summary: GET CompanyService_GetCompanyInfo
+  description: Invoke the method 'GetCompanyInfo' on this service. It returns the 'CompanyInfo' data structure, including
+    initial parameters related to the company. The default values of some of the properties vary according to the country
+    localization.
+  operationId: get_CompanyService_GetCompanyInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CompanyService_GetCompanyInfo
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_GetCompanyInfo
+  description: Invoke the method 'GetCompanyInfo' on this service. It returns the 'CompanyInfo' data structure, including
+    initial parameters related to the company. The default values of some of the properties vary according to the country
+    localization.
+  operationId: post_CompanyService_GetCompanyInfo
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_GetCompanyInfo
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

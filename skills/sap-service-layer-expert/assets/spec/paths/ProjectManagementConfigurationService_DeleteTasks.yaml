@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_DeleteTasks
+  description: Invoke the method 'DeleteTasks' on this service by specifying the payload 'Collection(PMC_TaskData)' in the
+    JSON format.
+  operationId: post_ProjectManagementConfigurationService_DeleteTasks
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_TaskData:
+              type: object
+              properties:
+                TaskID:
+                  type: integer
+                  example: 2
+                TaskName:
+                  type: string
+                  example: change plans
+        example:
+          PMC_TaskData:
+            TaskID: 2
+            TaskName: change plans
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_DeleteTasks
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

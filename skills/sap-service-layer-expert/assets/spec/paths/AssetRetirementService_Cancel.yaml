@@ -1,0 +1,39 @@
+post:
+  tags:
+  - AssetRetirementService
+  summary: POST AssetRetirementService_Cancel
+  description: Invoke the method 'Cancel' on this service by specifying the payload 'AssetDocumentParams' in the JSON format.
+  operationId: post_AssetRetirementService_Cancel
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AssetDocumentParams:
+              type: object
+              properties:
+                CancellationOption:
+                  type: string
+                  example: coByCurrentSystemDate
+                Code:
+                  type: string
+                  example: '9'
+        example:
+          AssetDocumentParams:
+            CancellationOption: coByCurrentSystemDate
+            Code: '9'
+  x-example-url: POST https://localhost:50000/b1s/v2/AssetRetirementService_Cancel
+  x-resource-description: This API enables you to invoke the interfaces defined on 'AssetRetirementService'.

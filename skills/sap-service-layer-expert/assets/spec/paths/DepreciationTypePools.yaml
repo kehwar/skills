@@ -1,0 +1,56 @@
+get:
+  tags:
+  - DepreciationTypePools
+  summary: GET DepreciationTypePools
+  description: Retrieve a collection of 'DepreciationTypePools' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_DepreciationTypePools
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DepreciationTypePools
+  x-resource-description: This entity enables you to manipulate 'DepreciationTypePools'.
+post:
+  tags:
+  - DepreciationTypePools
+  summary: POST DepreciationTypePools
+  description: Create an instance of 'DepreciationTypePools' with the given payload of type 'DepreciationTypePool' in JSON
+    format.
+  operationId: post_DepreciationTypePools
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: '1'
+            Description:
+              type: string
+              example: test
+        example:
+          Code: '1'
+          Description: test
+  x-example-url: POST https://localhost:50000/b1s/v2/DepreciationTypePools
+  x-resource-description: This entity enables you to manipulate 'DepreciationTypePools'.

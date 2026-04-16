@@ -1,0 +1,44 @@
+post:
+  tags:
+  - ChangeLogsService
+  summary: POST ChangeLogsService_GetChangeLog
+  description: Invoke the method 'GetChangeLog' on this service by specifying the payload 'GetChangeLogParams' in the JSON
+    format.
+  operationId: post_ChangeLogsService_GetChangeLog
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GetChangeLogParams:
+              type: object
+              properties:
+                Object:
+                  type: string
+                  example: clPurchaseOrders
+                PrimaryKey:
+                  type: string
+                  example: '7'
+                UDOObjectCode:
+                  type: string
+                  example: '3'
+        example:
+          GetChangeLogParams:
+            Object: clPurchaseOrders
+            PrimaryKey: '7'
+            UDOObjectCode: '3'
+  x-example-url: POST https://localhost:50000/b1s/v2/ChangeLogsService_GetChangeLog
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ChangeLogsService'.

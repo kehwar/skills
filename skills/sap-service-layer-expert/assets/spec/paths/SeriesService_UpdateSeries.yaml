@@ -1,0 +1,31 @@
+post:
+  tags:
+  - SeriesService
+  summary: POST SeriesService_UpdateSeries
+  description: Invoke the method 'UpdateSeries' on this service by specifying the payload 'Series' in the JSON format.
+  operationId: post_SeriesService_UpdateSeries
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Series:
+              type: object
+              properties: {}
+        example:
+          Series: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/SeriesService_UpdateSeries
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SeriesService'.

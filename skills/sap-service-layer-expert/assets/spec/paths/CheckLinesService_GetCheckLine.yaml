@@ -1,0 +1,37 @@
+post:
+  tags:
+  - CheckLinesService
+  summary: POST CheckLinesService_GetCheckLine
+  description: Invoke the method 'GetCheckLine' on this service by specifying the payload 'CheckLineParams' in the JSON format.
+  operationId: post_CheckLinesService_GetCheckLine
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CheckLinesParams:
+              type: array
+              items:
+                type: object
+                properties:
+                  CheckKey:
+                    type: integer
+                    example: 1
+        example:
+          CheckLinesParams:
+          - CheckKey: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/CheckLinesService_GetCheckLine
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CheckLinesService'.

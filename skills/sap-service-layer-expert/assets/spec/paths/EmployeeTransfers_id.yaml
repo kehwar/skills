@@ -1,0 +1,88 @@
+get:
+  tags:
+  - EmployeeTransfers
+  summary: GET EmployeeTransfers(id)
+  description: Retrieve all or some selected properties from an instance of 'EmployeeTransfers' with the given id.
+  operationId: get_EmployeeTransfers_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/EmployeeTransfers(1)
+  x-resource-description: This entity enables you to manipulate 'EmployeeTransfers'.
+patch:
+  tags:
+  - EmployeeTransfers
+  summary: PATCH EmployeeTransfers(id)
+  description: Update an instance of 'EmployeeTransfers' with the given payload of type 'EmployeeTransfer' in JSON format
+    and with the specified id.
+  operationId: patch_EmployeeTransfers_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comment:
+              type: string
+              example: '123'
+        example:
+          Comment: '123'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/EmployeeTransfers(1)
+  x-resource-description: This entity enables you to manipulate 'EmployeeTransfers'.
+delete:
+  tags:
+  - EmployeeTransfers
+  summary: DELETE EmployeeTransfers(id)
+  description: Delete an instance of 'EmployeeTransfers' with the specified id.
+  operationId: delete_EmployeeTransfers_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/EmployeeTransfers(1)
+  x-resource-description: This entity enables you to manipulate 'EmployeeTransfers'.

@@ -1,0 +1,55 @@
+get:
+  tags:
+  - Branches
+  summary: GET Branches
+  description: Retrieve a collection of 'Branches' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Branches
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Branches
+  x-resource-description: This entity enables you to manipulate 'Branches'.
+post:
+  tags:
+  - Branches
+  summary: POST Branches
+  description: Create an instance of 'Branches' with the given payload of type 'Branch' in JSON format.
+  operationId: post_Branches
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: Main Branch
+            Name:
+              type: string
+              example: Branch2
+        example:
+          Description: Main Branch
+          Name: Branch2
+  x-example-url: POST https://localhost:50000/b1s/v2/Branches
+  x-resource-description: This entity enables you to manipulate 'Branches'.

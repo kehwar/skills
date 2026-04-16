@@ -1,0 +1,75 @@
+get:
+  tags:
+  - BankStatements
+  summary: GET BankStatements
+  description: Retrieve a collection of 'BankStatements' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BankStatements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BankStatements
+  x-resource-description: This entity enables you to manipulate 'BankStatements'.
+post:
+  tags:
+  - BankStatements
+  summary: POST BankStatements
+  description: Create an instance of 'BankStatements' with the given payload of type 'BankStatement' in JSON format.
+  operationId: post_BankStatements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            'BankAccountKey ':
+              type: integer
+              example: 1
+            BankStatementRows:
+              type: array
+              items:
+                type: object
+                properties:
+                  ExternalCode:
+                    type: string
+                    example: E1
+            MultiplePayments:
+              type: array
+              items:
+                type: object
+                properties:
+                  AmountFC:
+                    type: integer
+                    example: 20
+                  IsDebit:
+                    type: string
+                    example: tYES
+        example:
+          'BankAccountKey ': 1
+          BankStatementRows:
+          - ExternalCode: E1
+          MultiplePayments:
+          - AmountFC: 20
+            IsDebit: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/BankStatements
+  x-resource-description: This entity enables you to manipulate 'BankStatements'.

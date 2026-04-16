@@ -1,0 +1,88 @@
+get:
+  tags:
+  - BPPriorities
+  summary: GET BPPriorities(id)
+  description: Retrieve all or some selected properties from an instance of 'BPPriorities' with the given id.
+  operationId: get_BPPriorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/BPPriorities(123)
+  x-resource-description: This entity enables you to manipulate 'BPPriorities'.
+patch:
+  tags:
+  - BPPriorities
+  summary: PATCH BPPriorities(id)
+  description: Update an instance of 'BPPriorities' with the given payload of type 'BPPriority' in JSON format and with the
+    specified id.
+  operationId: patch_BPPriorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PriorityDescription:
+              type: string
+              example: HighPri
+        example:
+          PriorityDescription: HighPri
+  x-example-url: PATCH https://localhost:50000/b1s/v2/BPPriorities(123)
+  x-resource-description: This entity enables you to manipulate 'BPPriorities'.
+delete:
+  tags:
+  - BPPriorities
+  summary: DELETE BPPriorities(id)
+  description: Delete an instance of 'BPPriorities' with the specified id.
+  operationId: delete_BPPriorities_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/BPPriorities(123)
+  x-resource-description: This entity enables you to manipulate 'BPPriorities'.

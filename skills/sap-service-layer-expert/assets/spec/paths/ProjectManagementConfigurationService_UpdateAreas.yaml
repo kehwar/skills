@@ -1,0 +1,40 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_UpdateAreas
+  description: Invoke the method 'UpdateAreas' on this service by specifying the payload 'Collection(PMC_AreaData)' in the
+    JSON format.
+  operationId: post_ProjectManagementConfigurationService_UpdateAreas
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_AreaData:
+              type: object
+              properties:
+                AreaID:
+                  type: string
+                  example: '1'
+                AreaName:
+                  type: string
+                  example: update area 1 name
+        example:
+          PMC_AreaData:
+            AreaID: '1'
+            AreaName: update area 1 name
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_UpdateAreas
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

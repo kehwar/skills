@@ -1,0 +1,133 @@
+get:
+  tags:
+  - LegalData
+  summary: GET LegalData
+  description: Retrieve a collection of 'LegalData' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_LegalData
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/LegalData
+  x-resource-description: This entity enables you to manipulate 'LegalData'.
+post:
+  tags:
+  - LegalData
+  summary: POST LegalData
+  description: Create an instance of 'LegalData' with the given payload of type 'LegalData' in JSON format.
+  operationId: post_LegalData
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DateOfPrinting:
+              type: string
+              example: null
+            DocEntry:
+              type: integer
+              example: 1
+            DocumentNumber:
+              type: string
+              example: '1'
+            FiscalNumber:
+              type: string
+              example: '1'
+            FiscalSeries:
+              type: string
+              example: '1'
+            FiscalUserID:
+              type: string
+              example: '1'
+            LegalDataDetailCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  Amount:
+                    type: integer
+                    example: 10
+                  DocEntry:
+                    type: integer
+                    example: 1
+                  LineSequence:
+                    type: integer
+                    example: 1
+                  LineType:
+                    type: string
+                    example: ldlt_DocumentTotal
+                  TaxCode:
+                    type: string
+                    example: '1'
+                  TaxRate:
+                    type: string
+                    example: '1'
+            PrinterBrand:
+              type: string
+              example: '1'
+            PrinterDllVersion:
+              type: string
+              example: '1'
+            PrinterFirmwareVersion:
+              type: string
+              example: '1'
+            PrinterModel:
+              type: string
+              example: '1'
+            PrinterType:
+              type: string
+              example: '1'
+            SourceObjectEntry:
+              type: integer
+              example: 5
+            SourceObjectType:
+              type: string
+              example: bodt_Invoice
+            TimeOfPrinting:
+              type: string
+              example: null
+        example:
+          DateOfPrinting: null
+          DocEntry: 1
+          DocumentNumber: '1'
+          FiscalNumber: '1'
+          FiscalSeries: '1'
+          FiscalUserID: '1'
+          LegalDataDetailCollection:
+          - Amount: 10
+            DocEntry: 1
+            LineSequence: 1
+            LineType: ldlt_DocumentTotal
+            TaxCode: '1'
+            TaxRate: '1'
+          PrinterBrand: '1'
+          PrinterDllVersion: '1'
+          PrinterFirmwareVersion: '1'
+          PrinterModel: '1'
+          PrinterType: '1'
+          SourceObjectEntry: 5
+          SourceObjectType: bodt_Invoice
+          TimeOfPrinting: null
+  x-example-url: POST https://localhost:50000/b1s/v2/LegalData
+  x-resource-description: This entity enables you to manipulate 'LegalData'.

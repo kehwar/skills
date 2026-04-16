@@ -1,0 +1,69 @@
+get:
+  tags:
+  - CorrectionInvoiceReversal
+  summary: GET CorrectionInvoiceReversal
+  description: Retrieve a collection of 'CorrectionInvoiceReversal' with all or some selected properties in the given order
+    by specifying the given filter condition.
+  operationId: get_CorrectionInvoiceReversal
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/CorrectionInvoiceReversal
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoiceReversal'. It is used to reverse the correction
+    invoice.
+post:
+  tags:
+  - CorrectionInvoiceReversal
+  summary: POST CorrectionInvoiceReversal
+  description: Create an instance of 'CorrectionInvoiceReversal' with the given payload of type 'Document' in JSON format.
+  operationId: post_CorrectionInvoiceReversal
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            Comments:
+              type: string
+              example: add correction invoice reversal based on correction invoice
+            DocDate:
+              type: string
+              example: '2014-12-06'
+            DocDueDate:
+              type: string
+              example: '2014-12-06'
+            InternalCorrectedDocNum:
+              type: string
+              example: '10'
+        example:
+          CardCode: c001
+          Comments: add correction invoice reversal based on correction invoice
+          DocDate: '2014-12-06'
+          DocDueDate: '2014-12-06'
+          InternalCorrectedDocNum: '10'
+  x-example-url: POST https://localhost:50000/b1s/v2/CorrectionInvoiceReversal
+  x-resource-description: This entity enables you to manipulate 'CorrectionInvoiceReversal'. It is used to reverse the correction
+    invoice.

@@ -1,0 +1,59 @@
+get:
+  tags:
+  - NCMCodesSetup
+  summary: GET NCMCodesSetup
+  description: Retrieve a collection of 'NCMCodesSetup' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_NCMCodesSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NCMCodesSetup
+  x-resource-description: This entity enables you to manipulate 'NCMCodesSetup'.
+post:
+  tags:
+  - NCMCodesSetup
+  summary: POST NCMCodesSetup
+  description: Create an instance of 'NCMCodesSetup' with the given payload of type 'NCMCodeSetup' in JSON format.
+  operationId: post_NCMCodesSetup
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 2
+            Description:
+              type: string
+              example: Outros
+            NCMCode:
+              type: string
+              example: 0905.59.901
+        example:
+          AbsEntry: 2
+          Description: Outros
+          NCMCode: 0905.59.901
+  x-example-url: POST https://localhost:50000/b1s/v2/NCMCodesSetup
+  x-resource-description: This entity enables you to manipulate 'NCMCodesSetup'.

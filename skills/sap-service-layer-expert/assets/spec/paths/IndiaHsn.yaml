@@ -1,0 +1,67 @@
+get:
+  tags:
+  - IndiaHsn
+  summary: GET IndiaHsn
+  description: Retrieve a collection of 'IndiaHsn' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_IndiaHsn
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/IndiaHsn
+  x-resource-description: This entity enables you to manipulate 'IndiaHsn'.
+post:
+  tags:
+  - IndiaHsn
+  summary: POST IndiaHsn
+  description: Create an instance of 'IndiaHsn' with the given payload of type 'IndiaHsn' in JSON format.
+  operationId: post_IndiaHsn
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 1
+            Chapter:
+              type: string
+              example: '07'
+            Description:
+              type: string
+              example: Test for HSN
+            Heading:
+              type: string
+              example: '01'
+            SubHeading:
+              type: string
+              example: '0102'
+        example:
+          AbsEntry: 1
+          Chapter: '07'
+          Description: Test for HSN
+          Heading: '01'
+          SubHeading: '0102'
+  x-example-url: POST https://localhost:50000/b1s/v2/IndiaHsn
+  x-resource-description: This entity enables you to manipulate 'IndiaHsn'.

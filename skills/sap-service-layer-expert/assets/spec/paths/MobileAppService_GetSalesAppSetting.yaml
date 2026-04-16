@@ -1,0 +1,39 @@
+post:
+  tags:
+  - MobileAppService
+  summary: POST MobileAppService_GetSalesAppSetting
+  description: Invoke the method 'GetSalesAppSetting' on this service.
+  operationId: post_MobileAppService_GetSalesAppSetting
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            SalesAppSettingParams:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  example: -1
+                Name:
+                  type: string
+                  example: TEST1
+        example:
+          SalesAppSettingParams:
+            Code: -1
+            Name: TEST1
+  x-example-url: POST https://localhost:50000/b1s/v2/MobileAppService_GetSalesAppSetting
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MobileAppService'.

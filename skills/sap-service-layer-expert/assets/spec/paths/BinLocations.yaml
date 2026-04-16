@@ -1,0 +1,79 @@
+get:
+  tags:
+  - BinLocations
+  summary: GET BinLocations
+  description: Retrieve a collection of 'BinLocations' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BinLocations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BinLocations
+  x-resource-description: This entity enables you to manipulate 'BinLocations'.
+post:
+  tags:
+  - BinLocations
+  summary: POST BinLocations
+  description: Create an instance of 'BinLocations' with the given payload of type 'BinLocation' in JSON format.
+  operationId: post_BinLocations
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            BinCode:
+              type: string
+              example: 02-PVG
+            Description:
+              type: string
+              example: null
+            Inactive:
+              type: string
+              example: tNO
+            ReceivingBinLocation:
+              type: string
+              example: tNO
+            RestrictedItemType:
+              type: string
+              example: briNone
+            RestrictedUoMType:
+              type: string
+              example: bruNone
+            Sublevel1:
+              type: string
+              example: PVG
+            Warehouse:
+              type: string
+              example: '02'
+        example:
+          BinCode: 02-PVG
+          Description: null
+          Inactive: tNO
+          ReceivingBinLocation: tNO
+          RestrictedItemType: briNone
+          RestrictedUoMType: bruNone
+          Sublevel1: PVG
+          Warehouse: '02'
+  x-example-url: POST https://localhost:50000/b1s/v2/BinLocations
+  x-resource-description: This entity enables you to manipulate 'BinLocations'.

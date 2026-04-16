@@ -1,0 +1,55 @@
+get:
+  tags:
+  - BPFiscalRegistryID
+  summary: GET BPFiscalRegistryID
+  description: Retrieve a collection of 'BPFiscalRegistryID' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BPFiscalRegistryID
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BPFiscalRegistryID
+  x-resource-description: This entity enables you to manipulate 'BPFiscalRegistryID'.
+post:
+  tags:
+  - BPFiscalRegistryID
+  summary: POST BPFiscalRegistryID
+  description: Create an instance of 'BPFiscalRegistryID' with the given payload of type 'BPFiscalRegistryID' in JSON format.
+  operationId: post_BPFiscalRegistryID
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CNAECode:
+              type: string
+              example: '0330'
+            Description:
+              type: string
+              example: CNAE codes
+        example:
+          CNAECode: '0330'
+          Description: CNAE codes
+  x-example-url: POST https://localhost:50000/b1s/v2/BPFiscalRegistryID
+  x-resource-description: This entity enables you to manipulate 'BPFiscalRegistryID'.

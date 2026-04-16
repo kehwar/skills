@@ -1,0 +1,38 @@
+post:
+  tags:
+  - CreditLinesService
+  summary: POST CreditLinesService_GetCreditLine
+  description: Invoke the method 'GetCreditLine' on this service by specifying the payload 'CreditLineParams' in the JSON
+    format.
+  operationId: post_CreditLinesService_GetCreditLine
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CreditLinesParams:
+              type: array
+              items:
+                type: object
+                properties:
+                  AbsId:
+                    type: integer
+                    example: 1
+        example:
+          CreditLinesParams:
+          - AbsId: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/CreditLinesService_GetCreditLine
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CreditLinesService'.

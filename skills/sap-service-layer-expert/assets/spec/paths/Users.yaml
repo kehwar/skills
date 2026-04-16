@@ -1,0 +1,61 @@
+get:
+  tags:
+  - Users
+  summary: GET Users
+  description: Retrieve a collection of 'Users' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_Users
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Users
+  x-resource-description: This entity enables you to manipulate 'Users'. It represents the users table of the SAP Business
+    One application. The users table includes the users list, login details, and authorizations.
+post:
+  tags:
+  - Users
+  summary: POST Users
+  description: Create an instance of 'Users' with the given payload of type 'User' in JSON format.
+  operationId: post_Users
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            UserCode:
+              type: string
+              example: u001
+            UserName:
+              type: string
+              example: User1
+            UserPassword:
+              type: string
+              example: default
+        example:
+          UserCode: u001
+          UserName: User1
+          UserPassword: default
+  x-example-url: POST https://localhost:50000/b1s/v2/Users
+  x-resource-description: This entity enables you to manipulate 'Users'. It represents the users table of the SAP Business
+    One application. The users table includes the users list, login details, and authorizations.

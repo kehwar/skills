@@ -1,0 +1,75 @@
+get:
+  tags:
+  - VatGroups
+  summary: GET VatGroups
+  description: Retrieve a collection of 'VatGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_VatGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/VatGroups
+  x-resource-description: This entity enables you to manipulate 'VatGroups'. It defines tax groups that can be assigned to
+    business partners and items in sales and purchase documents.
+post:
+  tags:
+  - VatGroups
+  summary: POST VatGroups
+  description: Create an instance of 'VatGroups' with the given payload of type 'VatGroup' in JSON format.
+  operationId: post_VatGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: c52
+            Name:
+              type: string
+              example: VAT 20
+            TaxAccount:
+              type: string
+              example: '260000'
+            VatGroups_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  Effectivefrom:
+                    type: string
+                    example: '20070101'
+                  Rate:
+                    type: string
+                    example: '20'
+        example:
+          Code: c52
+          Name: VAT 20
+          TaxAccount: '260000'
+          VatGroups_Lines:
+          - Effectivefrom: '20070101'
+            Rate: '20'
+  x-example-url: POST https://localhost:50000/b1s/v2/VatGroups
+  x-resource-description: This entity enables you to manipulate 'VatGroups'. It defines tax groups that can be assigned to
+    business partners and items in sales and purchase documents.

@@ -1,0 +1,67 @@
+get:
+  tags:
+  - FiscalPrinter
+  summary: GET FiscalPrinter
+  description: Retrieve a collection of 'FiscalPrinter' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_FiscalPrinter
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/FiscalPrinter
+  x-resource-description: This entity enables you to manipulate 'FiscalPrinter'.
+post:
+  tags:
+  - FiscalPrinter
+  summary: POST FiscalPrinter
+  description: Create an instance of 'FiscalPrinter' with the given payload of type 'FiscalPrinter' in JSON format.
+  operationId: post_FiscalPrinter
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            EquipmentNo:
+              type: string
+              example: '1'
+            FiscalDocumentModel:
+              type: string
+              example: FM
+            ManufacturerSerialN:
+              type: string
+              example: ManufacturerSerialN
+            Model:
+              type: string
+              example: Model
+            RegisterNo:
+              type: string
+              example: 0123456789
+        example:
+          EquipmentNo: '1'
+          FiscalDocumentModel: FM
+          ManufacturerSerialN: ManufacturerSerialN
+          Model: Model
+          RegisterNo: 0123456789
+  x-example-url: POST https://localhost:50000/b1s/v2/FiscalPrinter
+  x-resource-description: This entity enables you to manipulate 'FiscalPrinter'.

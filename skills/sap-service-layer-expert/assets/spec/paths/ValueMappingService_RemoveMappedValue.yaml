@@ -1,0 +1,41 @@
+post:
+  tags:
+  - ValueMappingService
+  summary: POST ValueMappingService_RemoveMappedValue
+  description: Invoke the method 'RemoveMappedValue' on this service by specifying the payload 'VM_ThirdPartyValuesData' in
+    the JSON format. Removes one 3th party value from the collection of mapped values to one specific value from Business
+    One universe.
+  operationId: post_ValueMappingService_RemoveMappedValue
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: integer
+              example: 6
+            LineId:
+              type: integer
+              example: 2
+            ThirdPartySystemId:
+              type: integer
+              example: 1
+        example:
+          AbsEntry: 6
+          LineId: 2
+          ThirdPartySystemId: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ValueMappingService_RemoveMappedValue
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ValueMappingService'.

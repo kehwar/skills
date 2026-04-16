@@ -1,0 +1,94 @@
+get:
+  tags:
+  - CreditNotes
+  summary: GET CreditNotes(id)
+  description: Retrieve all or some selected properties from an instance of 'CreditNotes' with the given id.
+  operationId: get_CreditNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CreditNotes(123)
+  x-resource-description: This entity enables you to manipulate 'CreditNotes'. It is the clearing document for invoices and
+    returns. If the goods were delivered to the customer and an invoice has already been created, you can partially or completely
+    reverse the transaction by creating a credit note.
+patch:
+  tags:
+  - CreditNotes
+  summary: PATCH CreditNotes(id)
+  description: Update an instance of 'CreditNotes' with the given payload of type 'Document' in JSON format and with the specified
+    id.
+  operationId: patch_CreditNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: new comments - modified by Service Layer
+        example:
+          Comments: new comments - modified by Service Layer
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CreditNotes(123)
+  x-resource-description: This entity enables you to manipulate 'CreditNotes'. It is the clearing document for invoices and
+    returns. If the goods were delivered to the customer and an invoice has already been created, you can partially or completely
+    reverse the transaction by creating a credit note.
+delete:
+  tags:
+  - CreditNotes
+  summary: DELETE CreditNotes(id)
+  description: Delete an instance of 'CreditNotes' with the specified id.
+  operationId: delete_CreditNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CreditNotes(123)
+  x-resource-description: This entity enables you to manipulate 'CreditNotes'. It is the clearing document for invoices and
+    returns. If the goods were delivered to the customer and an invoice has already been created, you can partially or completely
+    reverse the transaction by creating a credit note.

@@ -1,0 +1,81 @@
+get:
+  tags:
+  - SalesTaxInvoices
+  summary: GET SalesTaxInvoices
+  description: Retrieve a collection of 'SalesTaxInvoices' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_SalesTaxInvoices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesTaxInvoices
+  x-resource-description: This entity enables you to manipulate 'SalesTaxInvoices'. It represents the data of a sales Tax
+    Invoice document.
+post:
+  tags:
+  - SalesTaxInvoices
+  summary: POST SalesTaxInvoices
+  description: Create an instance of 'SalesTaxInvoices' with the given payload of type 'SalesTaxInvoice' in JSON format.
+  operationId: post_SalesTaxInvoices
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CardCode:
+              type: string
+              example: c001
+            Comments:
+              type: string
+              example: create purchase tax invoice
+            DocType:
+              type: string
+              example: botit_Invoice
+            SalesTaxInvoiceLines:
+              type: array
+              items:
+                type: object
+                properties:
+                  RefEntry1:
+                    type: string
+                    example: '16'
+            SalesTaxInvoiceOperationCodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  OpCode:
+                    type: string
+                    example: '2'
+        example:
+          CardCode: c001
+          Comments: create purchase tax invoice
+          DocType: botit_Invoice
+          SalesTaxInvoiceLines:
+          - RefEntry1: '16'
+          SalesTaxInvoiceOperationCodes:
+          - OpCode: '2'
+  x-example-url: POST https://localhost:50000/b1s/v2/SalesTaxInvoices
+  x-resource-description: This entity enables you to manipulate 'SalesTaxInvoices'. It represents the data of a sales Tax
+    Invoice document.

@@ -1,0 +1,92 @@
+get:
+  tags:
+  - CESTCodes
+  summary: GET CESTCodes(id)
+  description: Retrieve all or some selected properties from an instance of 'CESTCodes' with the given id.
+  operationId: get_CESTCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/CESTCodes(2)
+  x-resource-description: This entity enables you to manipulate 'CESTCodes'.
+patch:
+  tags:
+  - CESTCodes
+  summary: PATCH CESTCodes(id)
+  description: Update an instance of 'CESTCodes' with the given payload of type 'CESTCode' in JSON format and with the specified
+    id.
+  operationId: patch_CESTCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Code:
+              type: string
+              example: 01.003.00
+            Description:
+              type: string
+              example: Protetores de caÃ§amba 2
+        example:
+          Code: 01.003.00
+          Description: Protetores de caÃ§amba 2
+  x-example-url: PATCH https://localhost:50000/b1s/v2/CESTCodes(3)
+  x-resource-description: This entity enables you to manipulate 'CESTCodes'.
+delete:
+  tags:
+  - CESTCodes
+  summary: DELETE CESTCodes(id)
+  description: Delete an instance of 'CESTCodes' with the specified id.
+  operationId: delete_CESTCodes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/CESTCodes(2)
+  x-resource-description: This entity enables you to manipulate 'CESTCodes'.

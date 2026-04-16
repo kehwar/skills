@@ -1,0 +1,54 @@
+post:
+  tags:
+  - PaymentCalculationService
+  summary: POST PaymentCalculationService_GetPaymentAmount
+  description: Invoke the method 'GetPaymentAmount' on this service by specifying the payload 'PaymentBPCode,PaymentInvoiceEntries'
+    in the JSON format.
+  operationId: post_PaymentCalculationService_GetPaymentAmount
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PaymentBPCode:
+              type: object
+              properties:
+                BPCode:
+                  type: string
+                  example: C01
+                Date:
+                  type: string
+                  example: '2016-08-30'
+            PaymentInvoiceEntries:
+              type: array
+              items:
+                type: object
+                properties:
+                  DocEntry:
+                    type: string
+                    example: '12'
+                  DocType:
+                    type: string
+                    example: itARInvoice
+        example:
+          PaymentBPCode:
+            BPCode: C01
+            Date: '2016-08-30'
+          PaymentInvoiceEntries:
+          - DocEntry: '12'
+            DocType: itARInvoice
+  x-example-url: POST https://localhost:50000/b1s/v2/PaymentCalculationService_GetPaymentAmount
+  x-resource-description: This API enables you to invoke the interfaces defined on 'PaymentCalculationService'.

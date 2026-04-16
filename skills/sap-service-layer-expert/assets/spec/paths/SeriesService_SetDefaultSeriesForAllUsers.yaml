@@ -1,0 +1,32 @@
+post:
+  tags:
+  - SeriesService
+  summary: POST SeriesService_SetDefaultSeriesForAllUsers
+  description: Invoke the method 'SetDefaultSeriesForAllUsers' on this service by specifying the payload 'DocumentSeriesParams'
+    in the JSON format.
+  operationId: post_SeriesService_SetDefaultSeriesForAllUsers
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            DocumentSeriesParams:
+              type: object
+              properties: {}
+        example:
+          DocumentSeriesParams: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/SeriesService_SetDefaultSeriesForAllUsers
+  x-resource-description: This API enables you to invoke the interfaces defined on 'SeriesService'.

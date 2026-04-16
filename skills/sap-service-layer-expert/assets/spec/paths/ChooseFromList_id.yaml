@@ -1,0 +1,98 @@
+get:
+  tags:
+  - ChooseFromList
+  summary: GET ChooseFromList(id)
+  description: Retrieve all or some selected properties from an instance of 'ChooseFromList' with the given id.
+  operationId: get_ChooseFromList_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ChooseFromList('ITM1')
+  x-resource-description: This entity enables you to manipulate 'ChooseFromList'.
+patch:
+  tags:
+  - ChooseFromList
+  summary: PATCH ChooseFromList(id)
+  description: Update an instance of 'ChooseFromList' with the given payload of type 'ChooseFromList' in JSON format and with
+    the specified id.
+  operationId: patch_ChooseFromList_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ChooseFromList_Lines:
+              type: array
+              items:
+                type: object
+                properties:
+                  FieldNo:
+                    type: string
+                    example: '1'
+                  Visible:
+                    type: string
+                    example: tYES
+        example:
+          ChooseFromList_Lines:
+          - FieldNo: '1'
+            Visible: tYES
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ChooseFromList('ITM1')
+  x-resource-description: This entity enables you to manipulate 'ChooseFromList'.
+delete:
+  tags:
+  - ChooseFromList
+  summary: DELETE ChooseFromList(id)
+  description: Delete an instance of 'ChooseFromList' with the specified id.
+  operationId: delete_ChooseFromList_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ChooseFromList('ITM1')
+  x-resource-description: This entity enables you to manipulate 'ChooseFromList'.

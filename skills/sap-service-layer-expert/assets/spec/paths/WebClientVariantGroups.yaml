@@ -1,0 +1,64 @@
+get:
+  tags:
+  - WebClientVariantGroups
+  summary: GET WebClientVariantGroups
+  description: Retrieve a collection of 'WebClientVariantGroups' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_WebClientVariantGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/WebClientVariantGroups
+  x-resource-description: This entity enables you to manipulate 'WebClientVariantGroups'.
+post:
+  tags:
+  - WebClientVariantGroups
+  summary: POST WebClientVariantGroups
+  description: Create an instance of 'WebClientVariantGroups' with the given payload of type 'WebClientVariantGroup' in JSON
+    format. "Guid", "UserId", "ViewType", and "ObjectName" are four mandertory properties.
+  operationId: post_WebClientVariantGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Guid:
+              type: string
+              example: VG1
+            ObjectName:
+              type: string
+              example: objName1
+            UserId:
+              type: integer
+              example: 1
+            ViewType:
+              type: string
+              example: '2'
+        example:
+          Guid: VG1
+          ObjectName: objName1
+          UserId: 1
+          ViewType: '2'
+  x-example-url: POST https://localhost:50000/b1s/v2/WebClientVariantGroups
+  x-resource-description: This entity enables you to manipulate 'WebClientVariantGroups'.

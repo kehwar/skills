@@ -1,0 +1,36 @@
+post:
+  tags:
+  - ProjectManagementConfigurationService
+  summary: POST ProjectManagementConfigurationService_AddAreas
+  description: Invoke the method 'AddAreas' on this service by specifying the payload 'Collection(PMC_AreaData)' in the JSON
+    format.
+  operationId: post_ProjectManagementConfigurationService_AddAreas
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PMC_AreaData:
+              type: object
+              properties:
+                AreaName:
+                  type: string
+                  example: area 1
+        example:
+          PMC_AreaData:
+            AreaName: area 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagementConfigurationService_AddAreas
+  x-resource-description: This API enables you to invoke the interfaces defined on 'ProjectManagementConfigurationService'.

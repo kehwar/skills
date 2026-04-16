@@ -1,0 +1,67 @@
+get:
+  tags:
+  - AccrualTypes
+  summary: GET AccrualTypes
+  description: Retrieve a collection of 'AccrualTypes' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_AccrualTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/AccrualTypes
+  x-resource-description: This entity enables you to manipulate 'AccrualTypes'.
+post:
+  tags:
+  - AccrualTypes
+  summary: POST AccrualTypes
+  description: Create an instance of 'AccrualTypes' with the given payload of type 'AccrualType' in JSON format.
+  operationId: post_AccrualTypes
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CalculationAccount:
+              type: string
+              example: '2110'
+            Code:
+              type: string
+              example: Accrual1
+            InterimAccount:
+              type: string
+              example: '2120'
+            Name:
+              type: string
+              example: Accrual1
+            PostingAccount:
+              type: string
+              example: '2107'
+        example:
+          CalculationAccount: '2110'
+          Code: Accrual1
+          InterimAccount: '2120'
+          Name: Accrual1
+          PostingAccount: '2107'
+  x-example-url: POST https://localhost:50000/b1s/v2/AccrualTypes
+  x-resource-description: This entity enables you to manipulate 'AccrualTypes'.

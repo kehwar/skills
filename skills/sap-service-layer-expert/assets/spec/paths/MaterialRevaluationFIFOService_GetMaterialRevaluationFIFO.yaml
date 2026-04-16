@@ -1,0 +1,48 @@
+post:
+  tags:
+  - MaterialRevaluationFIFOService
+  summary: POST MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO
+  description: Invoke the method 'GetMaterialRevaluationFIFO' on this service by specifying the payload 'MaterialRevaluationFIFOParams'
+    in the JSON format.
+  operationId: post_MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            MaterialRevaluationFIFOParams:
+              type: object
+              properties:
+                ItemCode:
+                  type: string
+                  example: I001
+                LocationCode:
+                  type: string
+                  example: null
+                LocationType:
+                  type: string
+                  example: null
+                ShowIssuedLayers:
+                  type: string
+                  example: tNO
+        example:
+          MaterialRevaluationFIFOParams:
+            ItemCode: I001
+            LocationCode: null
+            LocationType: null
+            ShowIssuedLayers: tNO
+  x-example-url: POST https://localhost:50000/b1s/v2/MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO
+  x-resource-description: This API enables you to invoke the interfaces defined on 'MaterialRevaluationFIFOService'.

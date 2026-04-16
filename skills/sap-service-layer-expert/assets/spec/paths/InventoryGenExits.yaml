@@ -1,0 +1,41 @@
+get:
+  tags:
+  - InventoryGenExits
+  summary: GET InventoryGenExits
+  description: Retrieve a collection of 'InventoryGenExits' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_InventoryGenExits
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/InventoryGenExits
+  x-resource-description: This entity enables you to manipulate 'InventoryGenExits'. It represents inventory losses in quantities
+    not resulting from doing business with customers, for example, issue for production.
+post:
+  tags:
+  - InventoryGenExits
+  summary: POST InventoryGenExits
+  description: Create an instance of 'InventoryGenExits' with the given payload of type 'Document' in JSON format.
+  operationId: post_InventoryGenExits
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/InventoryGenExits
+  x-resource-description: This entity enables you to manipulate 'InventoryGenExits'. It represents inventory losses in quantities
+    not resulting from doing business with customers, for example, issue for production.

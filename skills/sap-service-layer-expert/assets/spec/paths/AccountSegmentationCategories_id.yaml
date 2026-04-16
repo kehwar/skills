@@ -1,0 +1,92 @@
+get:
+  tags:
+  - AccountSegmentationCategories
+  summary: GET AccountSegmentationCategories(id)
+  description: Retrieve all or some selected properties from an instance of 'AccountSegmentationCategories' with the given
+    id.
+  operationId: get_AccountSegmentationCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/AccountSegmentationCategories(SegmentID=123,Code='abc')
+  x-resource-description: This entity enables you to manipulate 'AccountSegmentationCategories'. It represents the categories
+    under each of the account segments.
+patch:
+  tags:
+  - AccountSegmentationCategories
+  summary: PATCH AccountSegmentationCategories(id)
+  description: Update an instance of 'AccountSegmentationCategories' with the given payload of type 'AccountSegmentationCategory'
+    in JSON format and with the specified id.
+  operationId: patch_AccountSegmentationCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Name:
+              type: string
+              example: General Administration
+        example:
+          Name: General Administration
+  x-example-url: PATCH https://localhost:50000/b1s/v2/AccountSegmentationCategories(SegmentID=3,Code='50')
+  x-resource-description: This entity enables you to manipulate 'AccountSegmentationCategories'. It represents the categories
+    under each of the account segments.
+delete:
+  tags:
+  - AccountSegmentationCategories
+  summary: DELETE AccountSegmentationCategories(id)
+  description: Delete an instance of 'AccountSegmentationCategories' with the specified id.
+  operationId: delete_AccountSegmentationCategories_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/AccountSegmentationCategories(SegmentID=3,Code='50')
+  x-resource-description: This entity enables you to manipulate 'AccountSegmentationCategories'. It represents the categories
+    under each of the account segments.

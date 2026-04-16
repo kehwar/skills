@@ -1,0 +1,91 @@
+get:
+  tags:
+  - SalesTaxInvoices
+  summary: GET SalesTaxInvoices(id)
+  description: Retrieve all or some selected properties from an instance of 'SalesTaxInvoices' with the given id.
+  operationId: get_SalesTaxInvoices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/SalesTaxInvoices(123)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxInvoices'. It represents the data of a sales Tax
+    Invoice document.
+patch:
+  tags:
+  - SalesTaxInvoices
+  summary: PATCH SalesTaxInvoices(id)
+  description: Update an instance of 'SalesTaxInvoices' with the given payload of type 'SalesTaxInvoice' in JSON format and
+    with the specified id.
+  operationId: patch_SalesTaxInvoices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Comments:
+              type: string
+              example: Update sales tax invoice
+        example:
+          Comments: Update sales tax invoice
+  x-example-url: PATCH https://localhost:50000/b1s/v2/SalesTaxInvoices(123)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxInvoices'. It represents the data of a sales Tax
+    Invoice document.
+delete:
+  tags:
+  - SalesTaxInvoices
+  summary: DELETE SalesTaxInvoices(id)
+  description: Delete an instance of 'SalesTaxInvoices' with the specified id.
+  operationId: delete_SalesTaxInvoices_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/SalesTaxInvoices(123)
+  x-resource-description: This entity enables you to manipulate 'SalesTaxInvoices'. It represents the data of a sales Tax
+    Invoice document.

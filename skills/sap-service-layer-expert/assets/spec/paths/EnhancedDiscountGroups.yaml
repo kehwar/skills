@@ -1,0 +1,64 @@
+get:
+  tags:
+  - EnhancedDiscountGroups
+  summary: GET EnhancedDiscountGroups
+  description: Retrieve a collection of 'EnhancedDiscountGroups' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_EnhancedDiscountGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/EnhancedDiscountGroups
+  x-resource-description: This entity enables you to manipulate 'EnhancedDiscountGroups'.
+post:
+  tags:
+  - EnhancedDiscountGroups
+  summary: POST EnhancedDiscountGroups
+  description: Create an instance of 'EnhancedDiscountGroups' with the given payload of type 'EnhancedDiscountGroup' in JSON
+    format.
+  operationId: post_EnhancedDiscountGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Active:
+              type: string
+              example: tYES
+            DiscountRelations:
+              type: string
+              example: dgrLowestDiscount
+            ObjectCode:
+              type: string
+              example: '101'
+            Type:
+              type: string
+              example: dgt_CustomerGroup
+        example:
+          Active: tYES
+          DiscountRelations: dgrLowestDiscount
+          ObjectCode: '101'
+          Type: dgt_CustomerGroup
+  x-example-url: POST https://localhost:50000/b1s/v2/EnhancedDiscountGroups
+  x-resource-description: This entity enables you to manipulate 'EnhancedDiscountGroups'.

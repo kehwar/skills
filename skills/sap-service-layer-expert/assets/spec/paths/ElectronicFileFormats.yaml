@@ -1,0 +1,48 @@
+get:
+  tags:
+  - ElectronicFileFormats
+  summary: GET ElectronicFileFormats
+  description: Retrieve a collection of 'ElectronicFileFormats' with all or some selected properties in the given order by
+    specifying the given filter condition.
+  operationId: get_ElectronicFileFormats
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ElectronicFileFormats
+  x-resource-description: This entity enables you to manipulate 'ElectronicFileFormats'. It depends on EFM runtime.
+post:
+  tags:
+  - ElectronicFileFormats
+  summary: POST ElectronicFileFormats
+  description: Create an instance of 'ElectronicFileFormats' with the given payload of type 'ElectronicFileFormat' in JSON
+    format.
+  operationId: post_ElectronicFileFormats
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: {}
+        example: {}
+  x-example-url: POST https://localhost:50000/b1s/v2/ElectronicFileFormats
+  x-resource-description: This entity enables you to manipulate 'ElectronicFileFormats'. It depends on EFM runtime.

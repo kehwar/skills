@@ -1,0 +1,106 @@
+get:
+  tags:
+  - Holidays
+  summary: GET Holidays(id)
+  description: Retrieve all or some selected properties from an instance of 'Holidays' with the given id.
+  operationId: get_Holidays_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/Holidays('holiday1')
+  x-resource-description: This entity enables you to manipulate 'Holidays'.
+patch:
+  tags:
+  - Holidays
+  summary: PATCH Holidays(id)
+  description: Update an instance of 'Holidays' with the given payload of type 'Holiday' in JSON format and with the specified
+    id.
+  operationId: patch_Holidays_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            HolidayDates:
+              type: array
+              items:
+                type: object
+                properties:
+                  EndDate:
+                    type: string
+                    example: '2020-01-02'
+                  HolidayCode:
+                    type: string
+                    example: holiday1
+                  Remarks:
+                    type: string
+                    example: newRemarks
+                  StartDate:
+                    type: string
+                    example: '2020-01-01'
+        example:
+          HolidayDates:
+          - EndDate: '2020-01-02'
+            HolidayCode: holiday1
+            Remarks: newRemarks
+            StartDate: '2020-01-01'
+  x-example-url: PATCH https://localhost:50000/b1s/v2/Holidays('holiday1')
+  x-resource-description: This entity enables you to manipulate 'Holidays'.
+delete:
+  tags:
+  - Holidays
+  summary: DELETE Holidays(id)
+  description: Delete an instance of 'Holidays' with the specified id.
+  operationId: delete_Holidays_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/Holidays('holiday1')
+  x-resource-description: This entity enables you to manipulate 'Holidays'.

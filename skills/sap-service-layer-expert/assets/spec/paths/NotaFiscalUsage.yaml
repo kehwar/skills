@@ -1,0 +1,79 @@
+get:
+  tags:
+  - NotaFiscalUsage
+  summary: GET NotaFiscalUsage
+  description: Retrieve a collection of 'NotaFiscalUsage' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_NotaFiscalUsage
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NotaFiscalUsage
+  x-resource-description: This entity enables you to manipulate 'NotaFiscalUsage'.
+post:
+  tags:
+  - NotaFiscalUsage
+  summary: POST NotaFiscalUsage
+  description: Create an instance of 'NotaFiscalUsage' with the given payload of type 'NotaFiscalUsage' in JSON format.
+  operationId: post_NotaFiscalUsage
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Description:
+              type: string
+              example: desc
+            IncomingImportCFOPCode:
+              type: string
+              example: '0402'
+            IncomingInStateCFOPCode:
+              type: string
+              example: '0330'
+            IncomingOutStateCFOPCode:
+              type: string
+              example: '0330'
+            OutgoingExportCFOPCode:
+              type: string
+              example: '60000'
+            OutgoingInStateCFOPCode:
+              type: string
+              example: '60000'
+            OutgoingOutStateCFOPCode:
+              type: string
+              example: '60000'
+            Usage:
+              type: string
+              example: usage1
+        example:
+          Description: desc
+          IncomingImportCFOPCode: '0402'
+          IncomingInStateCFOPCode: '0330'
+          IncomingOutStateCFOPCode: '0330'
+          OutgoingExportCFOPCode: '60000'
+          OutgoingInStateCFOPCode: '60000'
+          OutgoingOutStateCFOPCode: '60000'
+          Usage: usage1
+  x-example-url: POST https://localhost:50000/b1s/v2/NotaFiscalUsage
+  x-resource-description: This entity enables you to manipulate 'NotaFiscalUsage'.

@@ -1,0 +1,77 @@
+get:
+  tags:
+  - DunningLetters
+  summary: GET DunningLetters
+  description: Retrieve a collection of 'DunningLetters' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DunningLetters
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DunningLetters
+  x-resource-description: This entity enables you to manipulate 'DunningLetters'. It represents a list of dunning levels that
+    is used as a template when creating a new dunning term.
+post:
+  tags:
+  - DunningLetters
+  summary: POST DunningLetters
+  description: Create an instance of 'DunningLetters' with the given payload of type 'DunningLetter' in JSON format.
+  operationId: post_DunningLetters
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Effectiveafter:
+              type: string
+              example: '10'
+            FeeCurrency:
+              type: string
+              example: RMB
+            Feeperletter:
+              type: string
+              example: '20'
+            LetterFormat:
+              type: string
+              example: DUN0
+            MinimumBalance:
+              type: string
+              example: '2000'
+            MinimumBalanceCurrency:
+              type: string
+              example: RMB
+            RowNumber:
+              type: string
+              example: '1'
+        example:
+          Effectiveafter: '10'
+          FeeCurrency: RMB
+          Feeperletter: '20'
+          LetterFormat: DUN0
+          MinimumBalance: '2000'
+          MinimumBalanceCurrency: RMB
+          RowNumber: '1'
+  x-example-url: POST https://localhost:50000/b1s/v2/DunningLetters
+  x-resource-description: This entity enables you to manipulate 'DunningLetters'. It represents a list of dunning levels that
+    is used as a template when creating a new dunning term.

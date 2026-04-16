@@ -1,0 +1,102 @@
+get:
+  tags:
+  - TrackingNotes
+  summary: GET TrackingNotes(id)
+  description: Retrieve all or some selected properties from an instance of 'TrackingNotes' with the given id.
+  operationId: get_TrackingNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/TrackingNotes(2)
+  x-resource-description: This entity enables you to manipulate 'TrackingNotes'.
+patch:
+  tags:
+  - TrackingNotes
+  summary: PATCH TrackingNotes(id)
+  description: Update an instance of 'TrackingNotes' with the given payload of type 'TrackingNote' in JSON format and with
+    the specified id.
+  operationId: patch_TrackingNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CountryOfOrigin:
+              type: string
+              example: AU
+            TrackingNoteBrokerCollection:
+              type: array
+              items:
+                type: object
+                properties:
+                  AgreementNumber:
+                    type: string
+                    example: '2'
+                  BPCode:
+                    type: string
+                    example: C01
+        example:
+          CountryOfOrigin: AU
+          TrackingNoteBrokerCollection:
+          - AgreementNumber: '2'
+            BPCode: C01
+  x-example-url: PATCH https://localhost:50000/b1s/v2/TrackingNotes(2)
+  x-resource-description: This entity enables you to manipulate 'TrackingNotes'.
+delete:
+  tags:
+  - TrackingNotes
+  summary: DELETE TrackingNotes(id)
+  description: Delete an instance of 'TrackingNotes' with the specified id.
+  operationId: delete_TrackingNotes_id
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/TrackingNotes(2)
+  x-resource-description: This entity enables you to manipulate 'TrackingNotes'.

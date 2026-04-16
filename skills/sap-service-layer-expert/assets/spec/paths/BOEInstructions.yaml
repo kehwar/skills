@@ -1,0 +1,59 @@
+get:
+  tags:
+  - BOEInstructions
+  summary: GET BOEInstructions
+  description: Retrieve a collection of 'BOEInstructions' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_BOEInstructions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/BOEInstructions
+  x-resource-description: This entity enables you to manipulate 'BOEInstructions'.
+post:
+  tags:
+  - BOEInstructions
+  summary: POST BOEInstructions
+  description: Create an instance of 'BOEInstructions' with the given payload of type 'BOEInstruction' in JSON format.
+  operationId: post_BOEInstructions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            InstructionCode:
+              type: string
+              example: '01'
+            InstructionDesc:
+              type: string
+              example: '01'
+            IsCancelInstruction:
+              type: string
+              example: tYES
+        example:
+          InstructionCode: '01'
+          InstructionDesc: '01'
+          IsCancelInstruction: tYES
+  x-example-url: POST https://localhost:50000/b1s/v2/BOEInstructions
+  x-resource-description: This entity enables you to manipulate 'BOEInstructions'.

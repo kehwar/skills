@@ -1,0 +1,19 @@
+post:
+  tags:
+  - ShortLinkMappingsService
+  summary: POST ShortLinkMappingsService_BatchDelete
+  description: Invoke the method 'BatchDelete' on this service.
+  operationId: post_ShortLinkMappingsService_BatchDelete
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: POST https://localhost:50000/b1s/v2/ShortLinkMappingsService_BatchDelete
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappingsService'.

@@ -1,0 +1,63 @@
+get:
+  tags:
+  - NFModels
+  summary: GET NFModels
+  description: Retrieve a collection of 'NFModels' with all or some selected properties in the given order by specifying the
+    given filter condition.
+  operationId: get_NFModels
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/NFModels
+  x-resource-description: This entity enables you to manipulate 'NFModels'.
+post:
+  tags:
+  - NFModels
+  summary: POST NFModels
+  description: Create an instance of 'NFModels' with the given payload of type 'NFModel' in JSON format.
+  operationId: post_NFModels
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AbsEntry:
+              type: string
+              example: '55'
+            NFMCode:
+              type: string
+              example: '201'
+            NFMDescription:
+              type: string
+              example: test
+            NFMName:
+              type: string
+              example: testModelo 21
+        example:
+          AbsEntry: '55'
+          NFMCode: '201'
+          NFMDescription: test
+          NFMName: testModelo 21
+  x-example-url: POST https://localhost:50000/b1s/v2/NFModels
+  x-resource-description: This entity enables you to manipulate 'NFModels'.

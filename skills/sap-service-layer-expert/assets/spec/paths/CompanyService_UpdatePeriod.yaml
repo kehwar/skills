@@ -1,0 +1,55 @@
+post:
+  tags:
+  - CompanyService
+  summary: POST CompanyService_UpdatePeriod
+  description: Invoke the method 'UpdatePeriod' on this service by specifying the payload 'PeriodCategory' in the JSON format.
+  operationId: post_CompanyService_UpdatePeriod
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PeriodCategory:
+              type: object
+              properties:
+                AbsoluteEntry:
+                  type: integer
+                  example: 1
+                AccountforCashReceipt:
+                  type: string
+                  example: _SYS00000000003
+                BeginningofFinancialYear:
+                  type: string
+                  example: '2015-01-01'
+                NumberOfPeriods:
+                  type: integer
+                  example: 12
+                PeriodCategory:
+                  type: string
+                  example: '2015'
+                SubPeriodType:
+                  type: string
+                  example: spt_Months
+        example:
+          PeriodCategory:
+            AbsoluteEntry: 1
+            AccountforCashReceipt: _SYS00000000003
+            BeginningofFinancialYear: '2015-01-01'
+            NumberOfPeriods: 12
+            PeriodCategory: '2015'
+            SubPeriodType: spt_Months
+  x-example-url: POST https://localhost:50000/b1s/v2/CompanyService_UpdatePeriod
+  x-resource-description: This API enables you to invoke the interfaces defined on 'CompanyService'.

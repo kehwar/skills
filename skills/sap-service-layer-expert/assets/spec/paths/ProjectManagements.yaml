@@ -1,0 +1,120 @@
+get:
+  tags:
+  - ProjectManagements
+  summary: GET ProjectManagements
+  description: Retrieve a collection of 'ProjectManagements' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_ProjectManagements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/ProjectManagements
+  x-resource-description: This entity enables you to manipulate 'ProjectManagements'.
+post:
+  tags:
+  - ProjectManagements
+  summary: POST ProjectManagements
+  description: Create an instance of 'ProjectManagements' with the given payload of type 'PM_ProjectDocumentData' in JSON
+    format.
+  operationId: post_ProjectManagements
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            AllowSubprojects:
+              type: string
+              example: tYES
+            AttachmentEntry:
+              type: integer
+              example: 1
+            BusinessPartner:
+              type: string
+              example: Customer_01
+            BusinessPartnerName:
+              type: string
+              example: BP Name_01
+            ClosingDate:
+              type: string
+              example: '2016-12-31'
+            ContactPerson:
+              type: integer
+              example: 2
+            DueDate:
+              type: string
+              example: '2016-11-30'
+            FinancialProject:
+              type: string
+              example: FinProj_01
+            Industry:
+              type: integer
+              example: 3
+            Owner:
+              type: integer
+              example: 1
+            ProjectName:
+              type: string
+              example: ProjectByDI_01
+            ProjectStatus:
+              type: string
+              example: pst_Started
+            ProjectType:
+              type: string
+              example: pt_External
+            Reason:
+              type: string
+              example: Test comment
+            RiskLevel:
+              type: string
+              example: rlt_High
+            SalesEmployee:
+              type: integer
+              example: 5
+            StartDate:
+              type: string
+              example: '2016-02-01'
+            Territory:
+              type: integer
+              example: 1
+        example:
+          AllowSubprojects: tYES
+          AttachmentEntry: 1
+          BusinessPartner: Customer_01
+          BusinessPartnerName: BP Name_01
+          ClosingDate: '2016-12-31'
+          ContactPerson: 2
+          DueDate: '2016-11-30'
+          FinancialProject: FinProj_01
+          Industry: 3
+          Owner: 1
+          ProjectName: ProjectByDI_01
+          ProjectStatus: pst_Started
+          ProjectType: pt_External
+          Reason: Test comment
+          RiskLevel: rlt_High
+          SalesEmployee: 5
+          StartDate: '2016-02-01'
+          Territory: 1
+  x-example-url: POST https://localhost:50000/b1s/v2/ProjectManagements
+  x-resource-description: This entity enables you to manipulate 'ProjectManagements'.

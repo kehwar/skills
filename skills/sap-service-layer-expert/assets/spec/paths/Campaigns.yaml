@@ -1,0 +1,70 @@
+get:
+  tags:
+  - Campaigns
+  summary: GET Campaigns
+  description: Retrieve a collection of 'Campaigns' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_Campaigns
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/Campaigns
+  x-resource-description: This entity enables you to manipulate 'Campaigns'.
+post:
+  tags:
+  - Campaigns
+  summary: POST Campaigns
+  description: Create an instance of 'Campaigns' with the given payload of type 'Campaign' in JSON format.
+  operationId: post_Campaigns
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CampaignBusinessPartners:
+              type: array
+              items:
+                type: object
+                properties:
+                  BPCode:
+                    type: string
+                    example: C01
+            CampaignName:
+              type: string
+              example: Party
+            CampaignType:
+              type: string
+              example: ctEmail
+            StartDate:
+              type: string
+              example: '2016-12-30'
+        example:
+          CampaignBusinessPartners:
+          - BPCode: C01
+          - BPCode: V01
+          CampaignName: Party
+          CampaignType: ctEmail
+          StartDate: '2016-12-30'
+  x-example-url: POST https://localhost:50000/b1s/v2/Campaigns
+  x-resource-description: This entity enables you to manipulate 'Campaigns'.

@@ -1,0 +1,50 @@
+post:
+  tags:
+  - InternalReconciliationsService
+  summary: POST InternalReconciliationsService_GetOpenTransactions
+  description: Invoke the method 'GetOpenTransactions' on this service by specifying the payload 'InternalReconciliationOpenTransParams'
+    in the JSON format.
+  operationId: post_InternalReconciliationsService_GetOpenTransactions
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            InternalReconciliationOpenTransParams:
+              type: object
+              properties:
+                CardOrAccount:
+                  type: string
+                  example: coaCard
+                InternalReconciliationBPs:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      BPCode:
+                        type: string
+                        example: v01
+                ReconDate:
+                  type: string
+                  example: '2017-11-15'
+        example:
+          InternalReconciliationOpenTransParams:
+            CardOrAccount: coaCard
+            InternalReconciliationBPs:
+            - BPCode: v01
+            ReconDate: '2017-11-15'
+  x-example-url: POST https://localhost:50000/b1s/v2/InternalReconciliationsService_GetOpenTransactions
+  x-resource-description: This API enables you to invoke the interfaces defined on 'InternalReconciliationsService'.

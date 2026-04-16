@@ -1,0 +1,88 @@
+get:
+  tags:
+  - ShortLinkMappings
+  summary: GET ShortLinkMappings(guid)
+  description: Retrieve all or some selected properties from an instance of 'ShortLinkMappings' with the given id.
+  operationId: get_ShortLinkMappings_guid
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: GET https://localhost:50000/b1s/v2/ShortLinkMappings('guid123')
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappings'.
+patch:
+  tags:
+  - ShortLinkMappings
+  summary: PATCH ShortLinkMappings(guid)
+  description: Update an instance of 'ShortLinkMappings' with the given payload of type 'ShortLinkMappings' in JSON format
+    and with the specified id.
+  operationId: patch_ShortLinkMappings_guid
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            SrcLink:
+              type: string
+              example: srcLink123
+        example:
+          SrcLink: srcLink123
+  x-example-url: PATCH https://localhost:50000/b1s/v2/ShortLinkMappings('guid123')
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappings'.
+delete:
+  tags:
+  - ShortLinkMappings
+  summary: DELETE ShortLinkMappings(guid)
+  description: Delete an instance of 'ShortLinkMappings' with the specified guid.
+  operationId: delete_ShortLinkMappings_guid
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  x-example-url: DELETE https://localhost:50000/b1s/v2/ShortLinkMappings('guid123')
+  x-resource-description: This entity enables you to manipulate 'ShortLinkMappings'.

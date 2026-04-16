@@ -1,0 +1,61 @@
+get:
+  tags:
+  - DeductionTaxGroups
+  summary: GET DeductionTaxGroups
+  description: Retrieve a collection of 'DeductionTaxGroups' with all or some selected properties in the given order by specifying
+    the given filter condition.
+  operationId: get_DeductionTaxGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  x-example-url: GET https://localhost:50000/b1s/v2/DeductionTaxGroups
+  x-resource-description: This entity enables you to manipulate 'DeductionTaxGroups'. It represents withholding tax deduction
+    groups.
+post:
+  tags:
+  - DeductionTaxGroups
+  summary: POST DeductionTaxGroups
+  description: Create an instance of 'DeductionTaxGroups' with the given payload of type 'DeductionTaxGroup' in JSON format.
+  operationId: post_DeductionTaxGroups
+  responses:
+    '200':
+      description: Success
+    '204':
+      description: No content (update/delete)
+    '400':
+      description: Bad request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Not found
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GroupExtendedCode:
+              type: string
+              example: '01'
+            GroupName:
+              type: string
+              example: Group 01
+            MaxRedin:
+              type: number
+              example: 0.7746
+        example:
+          GroupExtendedCode: '01'
+          GroupName: Group 01
+          MaxRedin: 0.7746
+  x-example-url: POST https://localhost:50000/b1s/v2/DeductionTaxGroups
+  x-resource-description: This entity enables you to manipulate 'DeductionTaxGroups'. It represents withholding tax deduction
+    groups.
