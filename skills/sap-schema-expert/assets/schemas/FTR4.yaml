@@ -1,0 +1,42 @@
+table: FTR4
+description: Transfer - Change Location
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FTR4.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OFTR
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: CurLoc
+  description: Current Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: NewLoc
+  description: New Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: NBV
+  description: Net Book Value
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

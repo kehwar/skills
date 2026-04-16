@@ -1,0 +1,45 @@
+table: EMERR
+description: EMERR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EMERR.htm
+fields:
+- field: ID
+  description: Error ID
+  type: Identity
+  size: 11
+- field: QueueType
+  description: Queue type
+  type: nVarChar
+  size: 30
+- field: IDInQueue
+  description: Message ID in the queue
+  type: nVarChar
+  size: 60
+- field: ErrCode
+  description: Error code
+  type: nVarChar
+  size: 60
+- field: Severity
+  description: Error severity
+  type: nVarChar
+  size: 10
+- field: ErrMessage
+  description: Error message
+  type: nVarChar
+  size: 254
+- field: Member
+  description: Error accessed member
+  type: nVarChar
+  size: 60
+- field: ExcType
+  description: Exception type
+  type: nVarChar
+  size: 160
+- field: ExcString
+  description: Exception string
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

@@ -1,0 +1,58 @@
+table: OSCM
+description: 'Special Ledger - Analytical Accounting Configuration Rules: Material'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OSCM.htm
+fields:
+- field: RuleID
+  description: Rule Identification Number
+  type: Int
+  size: 6
+- field: RuleType
+  description: Rule Type Number
+  type: Int
+  size: 6
+  default: 2
+- field: ParentID
+  description: Parent Rule ID
+  type: Int
+  size: 6
+  related: OSCM
+- field: Status
+  description: Rule Status
+  type: VarChar
+  size: 1
+- field: Priority
+  description: Rule Priority
+  type: Int
+  size: 6
+  default: 100
+- field: Name
+  description: Rule Name
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Date of Rule Generation
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Rule Change
+  type: Date
+  size: 8
+- field: UserSign
+  description: Rule Created By
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Rule Changed By
+  type: Int
+  size: 6
+  related: OUSR
+- field: ExtCond
+  description: Extended Special Data
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RuleID

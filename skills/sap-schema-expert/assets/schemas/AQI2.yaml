@@ -1,0 +1,76 @@
+table: AQI2
+description: Inventory Opening Balance - SnB
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AQI2.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OINC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: SnbIndex
+  description: SnB Index
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: ObjId
+  description: Object ID
+  type: Int
+  size: 11
+- field: ObjAbs
+  description: Object Abs.
+  type: Int
+  size: 11
+- field: DrfWObjAbs
+  description: Draft Whse Obj. Abs.
+  type: Int
+  size: 11
+  default: -1
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: SubLineNum
+  description: Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: TakerType
+  description: Counter Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: One Counter
+  - key: '1'
+    label: Two Counters - Counter 1
+  - key: '2'
+    label: Two Counters - Counter 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - SnbIndex
+  - LogInstanc

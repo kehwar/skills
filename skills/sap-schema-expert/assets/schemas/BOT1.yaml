@@ -1,0 +1,83 @@
+table: BOT1
+description: Bill of Exchange Transactions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/BOT1.htm
+fields:
+- field: AbsEntry
+  description: Transaction No.
+  type: Int
+  size: 11
+  related: OBOT
+- field: BOENumber
+  description: Bill of Exchange No.
+  type: Int
+  size: 11
+- field: BoeType
+  description: Bill of Exchange Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Incoming
+  - key: O
+    label: Outgoing
+- field: DueDate
+  description: Bill of Exchange Due Date
+  type: Date
+  size: 8
+- field: BPBankCtr
+  description: BP Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: BPBankCod
+  description: BP Bank Code
+  type: nVarChar
+  size: 30
+- field: BPBankAct
+  description: BP Bank Account
+  type: nVarChar
+  size: 50
+- field: BPBankBrnc
+  description: BP Bank Branch
+  type: nVarChar
+  size: 50
+- field: ExReconNum
+  description: Extra Reconciliation Number
+  type: Int
+  size: 11
+- field: BOEAbs
+  description: Bill of Exchange Key
+  type: Int
+  size: 11
+  related: OBOE
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: EnBPBnkAct
+  description: Encryption of BP Bank Account
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - BOENumber
+  - BoeType

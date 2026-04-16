@@ -1,0 +1,29 @@
+table: EPASM
+description: EPASM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EPASM.htm
+fields:
+- field: AsmName
+  description: plugin assembly name
+  type: nVarChar
+  size: 100
+- field: PkgName
+  description: FK to the EPPKG table
+  type: nVarChar
+  size: 50
+- field: AsmType
+  description: Ttypes contained in assembly
+  type: nVarChar
+  size: 20
+  default: All
+  constraints:
+  - key: Messages
+    label: Only IMessage contained in the assembly
+  - key: Processors
+    label: Only IMessageProcessor contained in the assembly
+  - key: All
+    label: All types are in the assembly
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AsmName

@@ -1,0 +1,25 @@
+table: OSCG
+description: Service Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OSCG.htm
+fields:
+- field: AbsEntry
+  description: ID
+  type: Int
+  size: 11
+- field: ServiceCtg
+  description: Service Category
+  type: nVarChar
+  size: 60
+- field: Descrip
+  description: Description
+  type: nVarChar
+  size: 120
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - ServiceCtg

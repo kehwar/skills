@@ -1,0 +1,55 @@
+table: OCNT
+description: Counties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCNT.htm
+fields:
+- field: AbsId
+  description: Auto Key
+  type: Int
+  size: 11
+- field: Code
+  description: County Code
+  type: nVarChar
+  size: 7
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: Name
+  description: County Name
+  type: nVarChar
+  size: 100
+- field: TaxZone
+  description: Tax Free Zone
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IbgeCode
+  description: IBGE Code
+  type: nVarChar
+  size: 10
+- field: GiaCode
+  description: GIA Code
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: UNIQUE
+  unique: true
+  fields:
+  - Code
+  - Country
+  - State

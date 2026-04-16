@@ -1,0 +1,169 @@
+table: OEFDW
+description: EFD Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OEFDW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RunName
+  description: Wizard Run Name
+  type: nVarChar
+  size: 100
+- field: RunDate
+  description: Wizard Run Date
+  type: Date
+  size: 8
+- field: RunTime
+  description: Wizard Run Time
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: DateFrom
+  description: Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Date To
+  type: Date
+  size: 8
+- field: Branch
+  description: Branch
+  type: Int
+  size: 11
+  related: OUBR
+  default: -2
+- field: ProfType
+  description: Profile Type
+  type: nVarChar
+  size: 2
+- field: BlockC
+  description: Block C
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockD
+  description: Block D
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockE
+  description: Block E
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockH
+  description: Block H
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockG
+  description: Block G
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockI
+  description: Block I
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FlPurCode
+  description: File Purpose Code
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Remessa do arquivo original
+  - key: '1'
+    label: Remessa do arquivo substituto
+- field: AccEmploye
+  description: Accountant Employee
+  type: Int
+  size: 11
+  related: OCRD
+- field: AccExtern
+  description: Accountant External
+  type: nVarChar
+  size: 15
+  related: OHEM
+- field: ItmFrom
+  description: From Item
+  type: nVarChar
+  size: 50
+- field: ItmTo
+  description: To Item
+  type: nVarChar
+  size: 50
+- field: ItmGroup
+  description: Item Group
+  type: Int
+  size: 6
+- field: ItQryGroup
+  description: Item Properties
+  type: nVarChar
+  size: 250
+- field: RptReason
+  description: Reporting Reason
+  type: nVarChar
+  size: 2
+  default: '01'
+  constraints:
+  - key: '01'
+    label: No final no perï¿½odo
+  - key: '02'
+    label: Na mudanï¿½a de forma de tributaï¿½ï¿½o da mercadoria (ICMS)
+  - key: '03'
+    label: Na solicitaï¿½ï¿½o da baixa cadastral, paralisaï¿½ï¿½o temporï¿½ria e outras
+      situaï¿½ï¿½es
+  - key: '04'
+    label: Na alteraï¿½ï¿½o de regime de pagamento ï¿½ condiï¿½ï¿½o do contribuinte
+  - key: '05'
+    label: Por determinaï¿½ï¿½o dos fiscos
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

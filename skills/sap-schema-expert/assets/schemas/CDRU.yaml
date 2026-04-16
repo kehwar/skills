@@ -1,0 +1,42 @@
+table: CDRU
+description: Drag & Relate User Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CDRU.htm
+fields:
+- field: UserID
+  description: User ID
+  type: Int
+  size: 11
+  default: -1
+- field: ObjectId
+  description: ObjectId
+  type: nVarChar
+  size: 4
+- field: PartOf
+  description: PartOf
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Category
+  - key: R
+    label: Report
+  - key: F
+    label: Table
+- field: Disabled
+  description: Disabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserID
+  - ObjectId
+  - PartOf

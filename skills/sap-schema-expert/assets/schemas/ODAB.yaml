@@ -1,0 +1,89 @@
+table: ODAB
+description: Dashboard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODAB.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: PackEntry
+  description: Package Entry
+  type: Int
+  size: 11
+  related: OWPK
+- field: DashbdCode
+  description: Dashboard Code
+  type: nVarChar
+  size: 32
+- field: DashbdName
+  description: Dashboard Name
+  type: nVarChar
+  size: 100
+- field: DashbdPath
+  description: Dashboard Path
+  type: nVarChar
+  size: 254
+- field: Note
+  description: Dashboard Description
+  type: Text
+  size: 16
+- field: Status
+  description: Dashboard Status
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: I
+    label: Inactive
+  - key: A
+    label: Active
+- field: JobFlag
+  description: Use Schedule Job Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: JobType
+  description: Schedule Job Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Real Time
+  - key: P
+    label: Periodic
+- field: JobSetting
+  description: Schedule Job Time Setting
+  type: nVarChar
+  size: 100
+- field: RenewDate
+  description: Latest Renew Date
+  type: Date
+  size: 8
+- field: RenewTime
+  description: Latest Renew Time
+  type: Int
+  size: 6
+- field: ProcName
+  description: Procedure Name
+  type: nVarChar
+  size: 100
+- field: JobName
+  description: Schedule Job Name
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - PackEntry
+  - DashbdCode

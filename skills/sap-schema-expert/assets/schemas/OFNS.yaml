@@ -1,0 +1,83 @@
+table: OFNS
+description: Folio Numbering - Series
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFNS.htm
+fields:
+- field: Series
+  description: Series ID
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+- field: FirstNum
+  description: First Number
+  type: Int
+  size: 11
+- field: NextNum
+  description: Next Number
+  type: Int
+  size: 11
+- field: LastNum
+  description: Last Number
+  type: Int
+  size: 11
+- field: Letter
+  description: Letter
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: A
+  - key: B
+    label: B
+  - key: C
+    label: C
+  - key: E
+    label: E
+  - key: M
+    label: M
+  - key: R
+    label: R
+  - key: T
+    label: T
+  - key: X
+    label: X
+  - key: '-'
+    label: '-'
+- field: CAI
+  description: CAI
+  type: nVarChar
+  size: 14
+- field: CAIDueDate
+  description: CAI Due Date
+  type: Date
+  size: 8
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Series
+- key: NAME
+  unique: true
+  fields:
+  - Name

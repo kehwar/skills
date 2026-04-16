@@ -1,0 +1,53 @@
+table: BGT2
+description: Budget - Cost Accounting
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BGT2.htm
+fields:
+- field: BudgId
+  description: Budget Key
+  type: Int
+  size: 11
+  related: OBGT
+- field: OcrCode
+  description: Factor Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: DimCode
+  description: In Which Dimension
+  type: Int
+  size: 6
+  related: ODIM
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+  related: OBGS
+  default: 1
+- field: DebLTotal
+  description: Tot. Annu. Budgt Debit (LC)
+  type: Num
+  size: 19.6
+- field: CredLTotal
+  description: Tot. Annu. Budgt Credit (LC)
+  type: Num
+  size: 19.6
+- field: DebSTotal
+  description: Tot. Annu. Budgt Debit (SC)
+  type: Num
+  size: 19.6
+- field: CredSTotal
+  description: Tot. Annu. Budgt Credit (SC)
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BudgId
+  - OcrCode
+  - DimCode

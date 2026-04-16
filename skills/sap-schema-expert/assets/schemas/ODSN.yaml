@@ -1,0 +1,188 @@
+table: ODSN
+description: SNs - Draft - Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ODSN.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SysNumber
+  description: System No.
+  type: Int
+  size: 11
+- field: DistNumber
+  description: Distinct Number
+  type: nVarChar
+  size: 36
+- field: MnfSerial
+  description: Manufacturer Serial No.
+  type: nVarChar
+  size: 36
+- field: LotNumber
+  description: Lot Number
+  type: nVarChar
+  size: 36
+- field: ExpDate
+  description: Expiration Date
+  type: Date
+  size: 8
+- field: MnfDate
+  description: Manufacturing Date
+  type: Date
+  size: 8
+- field: InDate
+  description: Admission Date
+  type: Date
+  size: 8
+- field: GrntStart
+  description: Warranty Start Date
+  type: Date
+  size: 8
+- field: GrntExp
+  description: Warranty End Date
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Location
+  description: Loc.
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Available
+  - key: '1'
+    label: Unavailable
+- field: Notes
+  description: Details
+  type: Text
+  size: 16
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Transfered
+  description: Transferred
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: AbsEntry
+  description: abs entry
+  type: Int
+  size: 11
+- field: ObjType
+  description: object type
+  type: nVarChar
+  size: 20
+- field: itemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: CostTotal
+  description: Total Cost of Batches
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: QuantOut
+  description: Output Quantity
+  type: Num
+  size: 19.6
+- field: PriceDiff
+  description: Price Difference
+  type: Num
+  size: 19.6
+- field: Balance
+  description: Batch Balance
+  type: Num
+  size: 19.6
+- field: TrackingNt
+  description: CCD Tracking Note
+  type: Int
+  size: 11
+  related: OTCN
+- field: TrackiNtLn
+  description: CCD Tracking Note Line
+  type: Int
+  size: 11
+  related: TCN1
+- field: SumDec
+  description: Totals Accuracy for SnB
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: DIST_KEY
+  unique: false
+  fields:
+  - ItemCode
+  - DistNumber
+- key: LOT_KEY
+  unique: false
+  fields:
+  - ItemCode
+  - LotNumber

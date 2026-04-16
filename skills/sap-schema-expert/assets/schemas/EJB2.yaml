@@ -1,0 +1,106 @@
+table: EJB2
+description: Docs List for ERV-JAb Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/EJB2.htm
+fields:
+- field: WizardID
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: OEJB
+- field: DocID
+  description: Document ID
+  type: Int
+  size: 11
+- field: Selected
+  description: Selected
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Mandatory
+  description: Mandatory
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: XML
+    label: XML
+  - key: PDF
+    label: PDF
+- field: RptSec
+  description: Report Section
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: General Information for ERV-JAb
+  - key: '2'
+    label: 'Names of Signatories:'
+  - key: '3'
+    label: Legal Size Classification
+  - key: '4'
+    label: Extract from Balance Sheet (UGB Form 2)
+  - key: '5'
+    label: Balance Sheet
+  - key: '6'
+    label: P&L Statement
+  - key: '7'
+    label: Annex To Be Published (UGB Form 3)
+  - key: '8'
+    label: General and Other Explanations
+  - key: '9'
+    label: Annex to Balance Sheet Entry
+  - key: '10'
+    label: Annex to P&L Statement
+  - key: '11'
+    label: Annual Report
+  - key: '12'
+    label: Suggestion for Financial Statement Usage
+  - key: '13'
+    label: Decision About Financial Statement Usage
+  - key: '14'
+    label: Note of Confirmation
+  - key: '15'
+    label: Supervisory Board Report
+  - key: '16'
+    label: External Auditor Report Acc. to Art. 44 Para. 3 EStG (Income Tax Act)
+  - key: '17'
+    label: Finance-Specific Annex
+  - key: '18'
+    label: Assets History Sheet
+  - key: '19'
+    label: Liabilities History Sheet
+- field: FilePath
+  description: File Path
+  type: nVarChar
+  size: 254
+- field: FileStorag
+  description: File Storage
+  type: Text
+  size: 16
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardID
+  - DocID

@@ -1,0 +1,104 @@
+table: ACR12
+description: BP eDoc Settings - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ACR12.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ProtCode
+  description: Communication Type or Protocol
+  type: Int
+  size: 11
+  related: OECM
+  constraints:
+  - key: '0'
+    label: Invalid
+  - key: '1'
+    label: GEN
+  - key: '2'
+    label: EET
+  - key: '3'
+    label: CFDI
+  - key: '4'
+    label: FPA
+  - key: '5'
+    label: MTD
+  - key: '6'
+    label: EWB
+  - key: '7'
+    label: PEPPOL
+  - key: '8'
+    label: HOI
+  - key: '10'
+    label: EIS
+  - key: '11'
+    label: IIS
+  - key: '12'
+    label: IIS_ANNUAL
+  - key: '16'
+    label: RTIE
+  - key: '17'
+    label: E-Billing
+  - key: '18'
+    label: Tax Service
+  - key: '19'
+    label: AFE
+  - key: '20'
+    label: Doc. Sign.
+  - key: '21'
+    label: KSeF
+  - key: '29'
+    label: Veri*factu
+  - key: '32'
+    label: FReINV
+- field: GenType
+  description: Generation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate Later
+- field: MapID
+  description: Electronic Document Format Mapping
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatStruct
+  description: VAT Structure
+  type: nVarChar
+  size: 64
+- field: ParticipID
+  description: Participant ID
+  type: nVarChar
+  size: 128
+- field: ElecUID
+  description: Electronic UID
+  type: nVarChar
+  size: 46
+- field: C5Relevant
+  description: Corner 5 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - ProtCode
+  - LogInstanc

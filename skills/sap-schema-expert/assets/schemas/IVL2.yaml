@@ -1,0 +1,97 @@
+table: IVL2
+description: Inventory Components for Production
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IVL2.htm
+fields:
+- field: Transseq
+  description: Transaction sequence
+  type: Int
+  size: 11
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+  related: OILM
+- field: LineID
+  description: Line ID
+  type: Int
+  size: 11
+- field: POLine
+  description: Line in Production Order
+  type: Int
+  size: 11
+- field: ItemType
+  description: Item Type
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: LayerTSeq
+  description: FIFO Layer Transaction Sequence
+  type: Int
+  size: 11
+  default: -1
+- field: LayerId
+  description: Layer ID
+  type: Int
+  size: 11
+  default: -1
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: TotalLC
+  description: Inventory Total LC
+  type: Num
+  size: 19.6
+- field: BaseAbsEnt
+  description: Abs. Entry of Base Doc.
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Transaction Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '60'
+    label: Goods Issue
+- field: BaseLine
+  description: Base Line Number
+  type: Int
+  size: 11
+  default: -1
+- field: StgSeqNum
+  description: Stage Sequence Number
+  type: Int
+  size: 11
+- field: StgEntry
+  description: Stage Entry
+  type: Int
+  size: 11
+  related: ORST
+- field: StgDesc
+  description: Stage Description
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID
+  - LineID

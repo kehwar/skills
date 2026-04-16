@@ -1,0 +1,25 @@
+table: OBST
+description: BoE Stamp Tax
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OBST.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Amount
+  description: BoE Amount
+  type: Num
+  size: 19.6
+- field: StampTax
+  description: BoE Stamp Tax
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: AMOUNT
+  unique: true
+  fields:
+  - Amount

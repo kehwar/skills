@@ -1,0 +1,289 @@
+table: ATXI
+description: Tax Invoice - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ATXI.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+  - key: J
+    label: Journal Entry
+  - key: C
+    label: Correction Invoice
+  - key: D
+    label: Down Payment
+  - key: A
+    label: Alteration Invoice
+  - key: B
+    label: Alteration Correction Invoice
+- field: CANCELED
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HandWriten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '194'
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  default: 0
+- field: Segment
+  description: Segment
+  type: Int
+  size: 6
+  default: 0
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: VatDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: TrnspCode
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+  default: -1
+- field: ShipToCode
+  description: Ship-to Code
+  type: nVarChar
+  size: 50
+- field: Address
+  description: Bill To
+  type: nVarChar
+  size: 254
+- field: Address2
+  description: Ship To
+  type: nVarChar
+  size: 254
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CurSource
+  description: Base Currency
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: L
+    label: Local Currency
+  - key: S
+    label: System Currency
+  - key: C
+    label: BP Currency
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: NumAtCard
+  description: BP Reference No.
+  type: nVarChar
+  size: 200
+- field: CardName
+  description: Customer/Vendor Name
+  type: nVarChar
+  size: 200
+- field: CancelDate
+  description: Cancel Date
+  type: Date
+  size: 8
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: PayRefNo
+  description: Payment Ref. No.
+  type: nVarChar
+  size: 16
+- field: PayRefDate
+  description: Payment Ref. Date
+  type: Date
+  size: 8
+- field: TaxMethod
+  description: Taxation Method
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: On Shipment
+  - key: P
+    label: On Payment
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: IsDpm
+  description: IS Down Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AltRev
+  description: Alteration Revision
+  type: Int
+  size: 11
+  default: 0
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: JrnlMemo
+  description: Journal Remark
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VATRegNum
+  description: Branch Reg. No.
+  type: nVarChar
+  size: 32
+- field: GovContrID
+  description: Gov. Contract ID
+  type: nVarChar
+  size: 254
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LogInstanc
+  - ObjType
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - AltRev
+  - LogInstanc
+  - ObjType
+  - PIndicator
+  - Series

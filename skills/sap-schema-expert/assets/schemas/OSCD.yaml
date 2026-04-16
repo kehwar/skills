@@ -1,0 +1,41 @@
+table: OSCD
+description: Service Code Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OSCD.htm
+fields:
+- field: AbsEntry
+  description: ID
+  type: Int
+  size: 11
+- field: County
+  description: County Code
+  type: Int
+  size: 11
+  related: OCNT
+- field: ServiceCD
+  description: Service Code
+  type: nVarChar
+  size: 15
+- field: Descrip
+  description: Description
+  type: nVarChar
+  size: 70
+- field: Incomimg
+  description: Is Incomimg(Y/N)
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Incoming
+  - key: N
+    label: Outgoing
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - County
+  - ServiceCD

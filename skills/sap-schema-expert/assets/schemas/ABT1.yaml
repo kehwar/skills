@@ -1,0 +1,65 @@
+table: ABT1
+description: Internal Bank Operation Codes - Accounts - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ABT1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  default: 0
+- field: LineId
+  description: Row
+  type: Int
+  size: 6
+- field: GLAct
+  description: G/L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Project
+  description: Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: PrftCenter
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: VatCode
+  description: VAT Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: PrftCent2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId
+  - LogInstanc

@@ -1,0 +1,245 @@
+table: SEWDV
+description: SEWDV
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWDV.htm
+fields:
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+- field: CustNumber
+  description: Customer Number
+  type: VarChar
+  size: 1
+- field: DocPeriod
+  description: Doc Period
+  type: nVarChar
+  size: 32
+- field: SalesOrdrs
+  description: Sales Orders
+  type: Int
+  size: 11
+- field: SalDlvDocs
+  description: Sales Delivery Docs
+  type: Int
+  size: 11
+- field: SalesInvs
+  description: Sales Invoices
+  type: Int
+  size: 11
+- field: PurcOrders
+  description: Purchase Orders
+  type: Int
+  size: 11
+- field: GoodRecpts
+  description: Good Receipts
+  type: Int
+  size: 11
+- field: PurchAPInv
+  description: Purchase AP Invoices
+  type: Int
+  size: 11
+- field: ServicCall
+  description: Service Calls
+  type: Int
+  size: 11
+- field: MaterBills
+  description: Meterial Bills
+  type: Int
+  size: 11
+- field: WorkOrders
+  description: Work Orders
+  type: Int
+  size: 11
+- field: SalesOppor
+  description: Opportunities
+  type: Int
+  size: 11
+- field: ItmMasterD
+  description: Item Master Data
+  type: Int
+  size: 11
+- field: CustBPMasD
+  description: Customer Bp Master Data
+  type: Int
+  size: 11
+- field: SuppBPMasD
+  description: Supplier Bp Master Data
+  type: Int
+  size: 11
+- field: SalOrdMinR
+  description: Min Rows Of Sales Orders
+  type: Int
+  size: 11
+- field: SlDlvrMinR
+  description: Min rows Of Sales DElivery
+  type: Int
+  size: 11
+- field: SlsInvMinR
+  description: Min rows Of Invoices
+  type: Int
+  size: 11
+- field: PrcOrdMinR
+  description: Min rows Of Purchase Orders
+  type: Int
+  size: 11
+- field: GodRcpMinR
+  description: Min rows Of Good Receipts
+  type: Int
+  size: 11
+- field: WrkOrdMinR
+  description: Min rows Of work orders
+  type: Int
+  size: 11
+- field: QuotMinR
+  description: Min rows Of QUOT
+  type: Int
+  size: 11
+- field: RetMinR
+  description: Min rows Of RETURN
+  type: Int
+  size: 11
+- field: DownMinR
+  description: Min rows Of DOWN
+  type: Int
+  size: 11
+- field: ARCrdMinR
+  description: Min rows Of ARCREDIT
+  type: Int
+  size: 11
+- field: GodRecMinR
+  description: Min rows Of GOODREC
+  type: Int
+  size: 11
+- field: APRetMinR
+  description: Min rows Of APRETURN
+  type: Int
+  size: 11
+- field: APDwnMinR
+  description: Min rows Of APDOWN
+  type: Int
+  size: 11
+- field: APInvMinR
+  description: Min rows Of APINVOICE
+  type: Int
+  size: 11
+- field: APCrdMinR
+  description: Min rows Of APCREDIT
+  type: Int
+  size: 11
+- field: SalOrdMaxR
+  description: Max Rows Of Sales Orders
+  type: Int
+  size: 11
+- field: SlDlvrMaxR
+  description: Max rows Of Sales DElivery
+  type: Int
+  size: 11
+- field: SlsInvMaxR
+  description: Max rows Of Invoices
+  type: Int
+  size: 11
+- field: PrcOrdMaxR
+  description: Max rows Of Purchase Orders
+  type: Int
+  size: 11
+- field: GodRcpMaxR
+  description: Max rows Of Good Receipts
+  type: Int
+  size: 11
+- field: WrkOrdMaxR
+  description: Max rows Of work orders
+  type: Int
+  size: 11
+- field: QuotMaxR
+  description: Max rows Of QUOT
+  type: Int
+  size: 11
+- field: RetMaxR
+  description: Max rows Of RETURN
+  type: Int
+  size: 11
+- field: DownMaxR
+  description: Max rows Of DOWN
+  type: Int
+  size: 11
+- field: ARCrdMaxR
+  description: Max rows Of ARCREDIT
+  type: Int
+  size: 11
+- field: GodRecMaxR
+  description: Max rows Of GOODREC
+  type: Int
+  size: 11
+- field: APRetMaxR
+  description: Max rows Of APRETURN
+  type: Int
+  size: 11
+- field: APDwnMaxR
+  description: Max rows Of APDOWN
+  type: Int
+  size: 11
+- field: APInvMaxR
+  description: Max rows Of APINVOICE
+  type: Int
+  size: 11
+- field: APCrdMaxR
+  description: Min rows Of APCREDIT
+  type: Int
+  size: 11
+- field: NoPickLst
+  description: No of Picklists in system
+  type: Int
+  size: 11
+- field: MaxLnPkLst
+  description: Maximum Lines in Pick List
+  type: Int
+  size: 11
+- field: MinLnPkLst
+  description: Minimum Lines in Pick List
+  type: Int
+  size: 11
+- field: MaxChldBm
+  description: Maximum children per BOM
+  type: Int
+  size: 11
+- field: NoProdOrd
+  description: Number of Production order
+  type: Int
+  size: 11
+- field: NoSrlNum
+  description: No of Serial number items
+  type: Int
+  size: 11
+- field: NoBatchNum
+  description: No of Batch number items
+  type: Int
+  size: 11
+- field: StockTras
+  description: Number of Stock Transfers
+  type: Int
+  size: 11
+- field: MaxRStTrs
+  description: Max num of rows per stock tran
+  type: Int
+  size: 11
+- field: MinRStTrs
+  description: Min num of rows per stock tran
+  type: Int
+  size: 11
+- field: NoPriceLst
+  description: '''Number of Price Lists'
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbNam

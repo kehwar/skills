@@ -1,0 +1,59 @@
+table: GBI1
+description: GBI Row 1 - Electronic Account Book
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI1.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: AcctBkNo
+  description: Electronic Account Book No.
+  type: nVarChar
+  size: 5
+- field: AcctBkName
+  description: Electronic Account Book Name
+  type: nVarChar
+  size: 30
+- field: OrgCode
+  description: Organizational Code
+  type: nVarChar
+  size: 20
+- field: CompType
+  description: Company Type
+  type: nVarChar
+  size: 8
+- field: Industry
+  description: Industry
+  type: nVarChar
+  size: 20
+- field: SoftVender
+  description: Accounting Software Provider
+  type: nVarChar
+  size: 60
+- field: Version
+  description: Accounting Software Version
+  type: nVarChar
+  size: 20
+- field: FisYear
+  description: Fiscal Year
+  type: nVarChar
+  size: 4
+- field: LocCurr
+  description: Local Currency
+  type: nVarChar
+  size: 3
+- field: AcctStruct
+  description: Account Structure
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

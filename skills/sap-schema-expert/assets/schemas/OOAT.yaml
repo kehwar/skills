@@ -1,0 +1,396 @@
+table: OOAT
+description: Blanket Agreement
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OOAT.htm
+fields:
+- field: AbsID
+  description: Agreement No.
+  type: Int
+  size: 11
+- field: BpCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: BpName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: TermDate
+  description: Termination Date
+  type: Date
+  size: 8
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 254
+- field: Type
+  description: Agreement Type
+  type: VarChar
+  size: 1
+  default: G
+  constraints:
+  - key: G
+    label: General
+  - key: S
+    label: Specific
+- field: Status
+  description: Agreement Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: A
+    label: Approved
+  - key: B
+    label: To Be Approved
+  - key: F
+    label: On Hold
+  - key: D
+    label: Draft
+  - key: T
+    label: Terminated
+  - key: C
+    label: Canceled
+  - key: X
+    label: To Be Terminated
+  - key: P
+    label: To Be On Hold
+- field: Owner
+  description: Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: Renewal
+  description: Renewal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseDiscnt
+  description: Use BP Special Price
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemindVal
+  description: Reminder
+  type: Int
+  size: 6
+- field: RemindUnit
+  description: Reminder Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: W
+    label: Week(s)
+  - key: M
+    label: Month(s)
+- field: Remarks
+  description: Remarks
+  type: Text
+  size: 16
+- field: AtchEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: User Signature 2
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdtDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: Cancelled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year of Transfer
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemindFlg
+  description: Reminder Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Fulfilled
+  description: Fulfilled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Fulfilled
+  - key: N
+    label: Not Fulfilled
+- field: Attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: SettleProb
+  description: Settlement Probability %
+  type: Num
+  size: 19.6
+- field: UpdtTime
+  description: Update Time
+  type: Int
+  size: 11
+- field: Method
+  description: Agreement Method
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Items Method
+  - key: M
+    label: Monetary Method
+- field: GroupNum
+  description: Payment Terms Code
+  type: Int
+  size: 6
+  related: OCTG
+- field: ListNum
+  description: Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+- field: SignDate
+  description: Signing Date
+  type: Date
+  size: 8
+- field: AmendedTo
+  description: Amendment To
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '1250000025'
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: BpType
+  description: BP Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Vendor
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: PayMethod
+  description: Payment Method
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: NumAtCard
+  description: Customer/Vendor Ref. No.
+  type: nVarChar
+  size: 200
+- field: BPCurr
+  description: BP Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: FixedRate
+  description: Exchange Rate
+  type: Num
+  size: 19.6
+- field: TrnspCode
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+- field: WddStatus
+  description: Authorization Status
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: '-'
+    label: Without
+  - key: W
+    label: Pending
+  - key: Y
+    label: Approved
+  - key: N
+    label: Rejected
+  - key: P
+    label: Generated
+  - key: A
+    label: Generated by Authorizer
+  - key: C
+    label: Canceled
+- field: FromStat
+  description: From Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: F
+    label: On Hold
+  - key: D
+    label: Draft
+  - key: A
+    label: Approved
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsID
+- key: NUM
+  unique: true
+  fields:
+  - Number
+  - PIndicator
+  - BpType
+  - Instance

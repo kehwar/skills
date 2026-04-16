@@ -1,0 +1,131 @@
+table: PQW1
+description: 'Purchase Quotation Generation: Line Items'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/PQW1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OPQW
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Dscription
+  description: Item/Service Description
+  type: nVarChar
+  size: 200
+- field: PQTReqDate
+  description: 'Pur Quotation: Required Date'
+  type: Date
+  size: 8
+- field: PQTReqQty
+  description: 'Pur Quotation: Required Qty'
+  type: Num
+  size: 19.6
+- field: BuyUnitMsr
+  description: Purchasing UoM
+  type: nVarChar
+  size: 100
+- field: FreeTxt
+  description: Free Text
+  type: nVarChar
+  size: 100
+- field: PQTGrpNum
+  description: Pur. Quotation Group Number
+  type: Int
+  size: 11
+- field: PQTGrpSer
+  description: Pur. Quotation Group Series
+  type: Int
+  size: 11
+- field: PQTGrpHW
+  description: Pur. Quotation Group Manual
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ValidUntil
+  description: Valid Until Date
+  type: Date
+  size: 8
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: PQTSeries
+  description: Purchase Quotation Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: PRAbsEntry
+  description: Purchase Request Number
+  type: Int
+  size: 11
+  related: OPRQ
+- field: ReqName
+  description: Requester Name
+  type: nVarChar
+  size: 155
+- field: PRLineNum
+  description: Purchase Request Row Number
+  type: Int
+  size: 11
+- field: PRLineStat
+  description: Purchase Request Row Status
+  type: VarChar
+  size: 1
+- field: DistriRule
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+- field: VendMfrNum
+  description: Vendor Mfr Catalog No.
+  type: nVarChar
+  size: 17
+- field: ShipType
+  description: Shipping Type
+  type: Int
+  size: 6
+- field: ItmPerUnit
+  description: No. of Items per Purchase Unit
+  type: Num
+  size: 19.6
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+- field: UoMNum
+  description: UoM Item Per Unit Numerator
+  type: Num
+  size: 19.6
+- field: UoMDen
+  description: UoM Item Per Unit Denominator
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

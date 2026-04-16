@@ -1,0 +1,101 @@
+table: ODBW
+description: Batch Draft Attribs in Locat.
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ODBW.htm
+fields:
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SysNumber
+  description: System No.
+  type: Int
+  size: 11
+  related: OBTN
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Location
+  description: Loc.
+  type: nVarChar
+  size: 100
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Transfered
+  description: Transferred
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: AbsEntry
+  description: abs entry
+  type: Int
+  size: 11
+- field: MdAbsEntry
+  description: MD Abs Entry
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

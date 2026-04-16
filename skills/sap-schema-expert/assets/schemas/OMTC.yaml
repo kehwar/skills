@@ -1,0 +1,64 @@
+table: OMTC
+description: Bank Statement - Matching Criteria
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OMTC.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: MatchID
+  description: Form Type Index
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Documents
+  - key: '2'
+    label: Internal Reconciliation
+  - key: '3'
+    label: External Reconciliation
+- field: Round
+  description: Rounding
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Round 1
+  - key: '2'
+    label: Round 2
+  - key: '3'
+    label: Round 3
+- field: MtcRule
+  description: Matching Rule
+  type: Int
+  size: 6
+  default: 0
+- field: MtcAlias
+  description: Matching Alias
+  type: nVarChar
+  size: 50
+- field: Differnce
+  description: Difference
+  type: Int
+  size: 11
+  default: 0
+- field: DiffAmnt
+  description: Amount Difference
+  type: Num
+  size: 19.6
+- field: RuleIndex
+  description: Rule Index
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: MATCH_TYPE
+  unique: true
+  fields:
+  - MatchID
+  - Round
+  - RuleIndex

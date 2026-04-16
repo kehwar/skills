@@ -1,0 +1,29 @@
+table: SXRCD
+description: XLR Class Definitions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRCD.htm
+fields:
+- field: classid
+  description: classid
+  type: Int
+  size: 11
+- field: name
+  description: name
+  type: nVarChar
+  size: 50
+- field: descriptio
+  description: description
+  type: nVarChar
+  size: 254
+- field: created
+  description: created
+  type: Date
+  size: 8
+- field: lastmodifi
+  description: lastmodified
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - classid

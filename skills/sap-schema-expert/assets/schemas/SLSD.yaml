@@ -1,0 +1,21 @@
+table: SLSD
+description: Local Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLSD.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 3
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: DefLang
+  description: default language
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

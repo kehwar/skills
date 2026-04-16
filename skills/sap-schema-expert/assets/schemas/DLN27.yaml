@@ -1,0 +1,183 @@
+table: DLN27
+description: Delivery - E-Books(GR) Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DLN27.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODLN
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: RelateType
+  description: Relation Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '1'
+    label: Row
+  - key: '2'
+    label: Row Expenses
+  - key: '3'
+    label: Document Expenses
+  - key: '13'
+    label: Distributed Freights
+  - key: '-1'
+    label: Manual
+- field: RelateLine
+  description: Relation Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: GroupNum
+  description: Group Number
+  type: Int
+  size: 11
+  default: -1
+- field: LineTotal
+  description: Line Total
+  type: Num
+  size: 19.6
+- field: LineTotalF
+  description: Line Total (FC)
+  type: Num
+  size: 19.6
+- field: LineTotalS
+  description: Line Total (SC)
+  type: Num
+  size: 19.6
+- field: InClassTyp
+  description: Income Classification Type
+  type: Int
+  size: 11
+  related: OICP
+- field: InClassCat
+  description: Income Classification Category
+  type: Int
+  size: 11
+  related: OICC
+- field: ExClassTyp
+  description: Expense Classification Type
+  type: Int
+  size: 11
+  related: OECP
+- field: ExClassCat
+  description: Expense Classification Cat.
+  type: Int
+  size: 11
+  related: OECC
+- field: VatCate
+  description: VAT Category
+  type: Int
+  size: 11
+- field: NetValue
+  description: Net Value
+  type: Num
+  size: 19.6
+- field: NetValueFC
+  description: Net Value (FC)
+  type: Num
+  size: 19.6
+- field: NetValueSC
+  description: Net Value (SC)
+  type: Num
+  size: 19.6
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: VatAmFC
+  description: VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatAmSC
+  description: VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: WtPercCat
+  description: Withheld Percentage Category
+  type: Int
+  size: 11
+- field: WtAmount
+  description: Withheld Amount
+  type: Num
+  size: 19.6
+- field: WtAmountFC
+  description: Withheld Amount (FC)
+  type: Num
+  size: 19.6
+- field: WtAmountSC
+  description: Withheld Amount (SC)
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '15'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: WtCategory
+  description: Withheld Category
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+- field: VATClassTy
+  description: VAT Classification Type
+  type: Int
+  size: 11
+  related: OECP
+- field: VATClassCa
+  description: VAT Classification Category
+  type: Int
+  size: 11
+  related: OECC
+- field: EBVatExCau
+  description: VAT Exemption Cause
+  type: Int
+  size: 11
+  related: OVEC
+- field: RecType
+  description: Rec Type
+  type: Int
+  size: 11
+  related: OREC
+- field: StampDutyC
+  description: Stamp Duty Categgory
+  type: Int
+  size: 11
+  related: OSDC
+- field: OtherTaxCt
+  description: Other Tax Category
+  type: Int
+  size: 11
+  related: OEOT
+- field: FeesCtegr
+  description: Fees Category
+  type: Int
+  size: 11
+  related: OEFC
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+- key: RELATE_ROW
+  unique: false
+  fields:
+  - DocEntry
+  - RelateType
+  - RelateLine
+  - GroupNum

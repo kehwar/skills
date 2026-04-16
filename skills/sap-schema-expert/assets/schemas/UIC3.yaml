@@ -1,0 +1,24 @@
+table: UIC3
+description: Template User Customization
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC3.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsTemplate
+  description: Is Template
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+  - UserID

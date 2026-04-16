@@ -1,0 +1,26 @@
+table: SXRTE
+description: XLR Terms
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRTE.htm
+fields:
+- field: TermId
+  description: TermId
+  type: nVarChar
+  size: 50
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+- field: Term
+  description: Term
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TermId
+  - Language

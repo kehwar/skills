@@ -1,0 +1,37 @@
+table: KPI1
+description: Key Performance Indicator Field
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/KPI1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: KPIEntry
+  description: KPI Number
+  type: Int
+  size: 11
+- field: Type
+  description: KPI Field Type
+  type: Int
+  size: 11
+- field: FieldName
+  description: KPI Field Name
+  type: nVarChar
+  size: 250
+- field: Method
+  description: Aggregation Method
+  type: nVarChar
+  size: 250
+- field: DbType
+  description: Database Type
+  type: nVarChar
+  size: 250
+- field: DefValue
+  description: Default Value
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

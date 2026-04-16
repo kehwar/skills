@@ -1,0 +1,47 @@
+table: ITT2
+description: BOM - Route Stages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITT2.htm
+fields:
+- field: Father
+  description: Parent Item
+  type: nVarChar
+  size: 50
+  related: OITT
+- field: StageId
+  description: Stage ID
+  type: Int
+  size: 11
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: StgEntry
+  description: Stage Entry
+  type: Int
+  size: 11
+  related: ORST
+- field: Name
+  description: Stage Name
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: WaitDays
+  description: Waiting Days
+  type: Num
+  size: 19.6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Father
+  - StageId
+- key: SEQUENCE
+  unique: true
+  fields:
+  - Father
+  - SeqNum

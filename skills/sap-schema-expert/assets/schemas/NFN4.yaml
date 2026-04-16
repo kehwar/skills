@@ -1,0 +1,74 @@
+table: NFN4
+description: Manual Nota Fiscal Number
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NFN4.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+  related: ONFN
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: SeqName
+  description: Seq Name
+  type: nVarChar
+  size: 8
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+- field: Model
+  description: Nota Fiscal Model
+  type: nVarChar
+  size: 6
+  related: ONFM
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+  default: '-'
+- field: DocEntry
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocNumber
+  description: Document Number
+  type: Int
+  size: 11
+- field: IsReusable
+  description: Is Reusable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectCode
+  - Serial
+  - SeriesStr
+  - SubStr
+  - Model
+  - SeqCode
+  - CardCode

@@ -1,0 +1,362 @@
+table: WOBJ
+description: Object Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WOBJ.htm
+fields:
+- field: ObjCode
+  description: Object Code
+  type: Int
+  size: 11
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 20
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: '2'
+  constraints:
+  - key: '2'
+    label: Noun
+  - key: '3'
+    label: Operation
+  - key: '4'
+    label: History
+  - key: '1'
+    label: Abstract
+  - key: '0'
+    label: Not Exists
+- field: TableName
+  description: TableName
+  type: nVarChar
+  size: 20
+- field: NOE
+  description: NOE or form
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: F
+    label: Form
+  - key: N
+    label: None
+- field: ObjDesc
+  description: Object Description
+  type: nVarChar
+  size: 254
+- field: FileName
+  description: File Name
+  type: nVarChar
+  size: 254
+- field: Status
+  description: Execution Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: R
+    label: Ready
+  - key: P
+    label: Postponed
+  - key: D
+    label: Done
+- field: ClassName
+  description: Class Name
+  type: nVarChar
+  size: 100
+- field: AutoComp
+  description: OnAutoComplete
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Cancel
+  description: OnCancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanUpdate
+  description: OnCanUpdate
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChckDelet
+  description: OnCheckDelete
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Close1
+  description: OnClose
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Create1
+  description: OnCreate
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDef
+  description: OnCreateDefaults
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Delete1
+  description: OnDelete
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GetByKey
+  description: OnGetByKey
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GetNextSer
+  description: OnGetNextSerial
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InitData
+  description: OnInitData
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InitFlow
+  description: OnInitFlow
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EndSucFlow
+  description: OnEndSuccessfulFlow
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsValid
+  description: OnIsValid
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PutSignate
+  description: OnPutSignature
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UndoCancel
+  description: OnUndoCancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Update1
+  description: OnUpdate
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Upgrade
+  description: OnUpgrade
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: YearTransf
+  description: OnYearTransfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AddLogEnt
+  description: OnAddLogEntry
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogTable
+  description: Log Table
+  type: nVarChar
+  size: 20
+- field: CanDisplay
+  description: Can Display
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  default: -1
+- field: IsSeries
+  description: Is Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AddInVer
+  description: Added in version
+  type: Int
+  size: 11
+- field: AbbrevIdx
+  description: Index in abbreviation strl
+  type: Int
+  size: 11
+- field: DfaultForm
+  description: Default form for DI permission
+  type: Int
+  size: 11
+- field: IsService
+  description: Is Service
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtraPerm
+  description: Extra Permission for DI
+  type: Int
+  size: 11
+- field: StrlIndex
+  description: String list index
+  type: nVarChar
+  size: 254
+- field: CanArchive
+  description: Can Archive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Creation date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjCode
+- key: NAME
+  unique: true
+  fields:
+  - ObjName

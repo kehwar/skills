@@ -1,0 +1,25 @@
+table: OEUT
+description: EWB Unit
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OEUT.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: UnitCode
+  description: EWB Unit Code
+  type: nVarChar
+  size: 3
+- field: UnitName
+  description: EWB Unit Name
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: UNIT_CODE
+  unique: true
+  fields:
+  - UnitCode

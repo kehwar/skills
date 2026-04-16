@@ -1,0 +1,33 @@
+table: XAP4
+description: Widget Item
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XAP4.htm
+fields:
+- field: AbsEntry
+  description: Key of filter item
+  type: Int
+  size: 11
+- field: FilEntry
+  description: Foreign key of filter
+  type: Int
+  size: 11
+- field: TarEntry
+  description: Target content Entry
+  type: Int
+  size: 11
+- field: TarType
+  description: Target content type
+  type: nVarChar
+  size: 250
+- field: TarField
+  description: Target field
+  type: nVarChar
+  size: 250
+- field: IsBase
+  description: Is base or not
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,30 @@
+table: OCQG
+description: Card Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OCQG.htm
+fields:
+- field: GroupCode
+  description: Property Group Code
+  type: Int
+  size: 6
+- field: GroupName
+  description: Property Name
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Filler
+  description: Filler
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - GroupName

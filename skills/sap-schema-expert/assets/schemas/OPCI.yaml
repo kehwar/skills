@@ -1,0 +1,66 @@
+table: OPCI
+description: Process Checklist Instance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OPCI.htm
+fields:
+- field: InstancePk
+  description: Instance Primary Key
+  type: Int
+  size: 11
+- field: TemplateFk
+  description: Template Foreign Key
+  type: Int
+  size: 11
+  related: OPCT
+- field: InstName
+  description: Instance Name
+  type: nVarChar
+  size: 100
+- field: InstDesc
+  description: Instance Description
+  type: nVarChar
+  size: 100
+- field: Creator
+  description: Instance Creator
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Instance Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: In Process
+  - key: F
+    label: Finished
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: CloseDate
+  description: Close Date
+  type: Date
+  size: 8
+- field: CloPrcnt
+  description: Closing Percentage
+  type: Num
+  size: 19.6
+- field: Memo
+  description: Remarks
+  type: Text
+  size: 16
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - InstancePk

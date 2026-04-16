@@ -1,0 +1,57 @@
+table: REQ1
+description: External System Call Request - Message List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/REQ1.htm
+fields:
+- field: AbsEntry
+  description: Request ID
+  type: Int
+  size: 11
+  related: OREQ
+- field: LineId
+  description: Message Line ID
+  type: Int
+  size: 11
+- field: MsgType
+  description: Message Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Information
+  - key: W
+    label: Warning
+  - key: E
+    label: Error
+- field: ErrCode
+  description: Error Code
+  type: nVarChar
+  size: 3
+- field: MsgBody
+  description: Message Body
+  type: Text
+  size: 16
+- field: Status
+  description: Message Status
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Unread
+  - key: R
+    label: Read
+- field: MsgDate
+  description: Message Log Date
+  type: Date
+  size: 8
+- field: MsgTime
+  description: Message Log Time
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

@@ -1,0 +1,51 @@
+table: OFYM
+description: Financial Year Master
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFYM.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 6
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: AssessYear
+  description: Assessment Year
+  type: nVarChar
+  size: 6
+- field: TcsAcmBase
+  description: TCS Accumulation Base
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Accumulation Based on Invoice
+  - key: P
+    label: Accumulation Based on Payment
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - Code
+- key: ASSESSYEAR
+  unique: true
+  fields:
+  - AssessYear

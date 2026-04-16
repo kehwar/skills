@@ -1,0 +1,156 @@
+table: OALT
+description: Alerts Management
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OALT.htm
+fields:
+- field: Code
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: S
+    label: System Alert
+  - key: U
+    label: User Alert
+- field: Priority
+  description: Priority
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Low
+  - key: '1'
+    label: Normal
+  - key: '2'
+    label: High
+- field: Active
+  description: Active Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NumOfParam
+  description: No. of Parameters
+  type: Int
+  size: 11
+- field: ParamData
+  description: Parameters
+  type: Text
+  size: 16
+- field: Params
+  description: Parameters
+  type: Text
+  size: 16
+- field: NumOfDocs
+  description: Documents Numbers
+  type: Int
+  size: 11
+- field: DocsData
+  description: Documents
+  type: Text
+  size: 16
+- field: Docs
+  description: Documents
+  type: Text
+  size: 16
+- field: UserText
+  description: MEMO
+  type: Text
+  size: 16
+- field: QueryId
+  description: Query
+  type: Int
+  size: 11
+- field: FrqncyType
+  description: Frequency Type
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: S
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+  - key: W
+    label: Weeks
+  - key: M
+    label: Months
+- field: FrqncyIntr
+  description: Frequency
+  type: Int
+  size: 11
+  default: 1
+- field: ExecDaY
+  description: Day of Execution
+  type: Int
+  size: 6
+  default: 1
+- field: ExecTime
+  description: Execution Hour
+  type: Int
+  size: 11
+  default: 800
+- field: LastDate
+  description: Execution Date
+  type: Date
+  size: 8
+- field: LastTIME
+  description: Execution Time
+  type: Int
+  size: 6
+- field: NextDate
+  description: Next Date
+  type: Date
+  size: 8
+- field: NextTime
+  description: Next Hour
+  type: Int
+  size: 6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: History
+  description: Save History
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QCategory
+  description: Query Category
+  type: Int
+  size: 11
+  related: OUQR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: ACTIVE
+  unique: false
+  fields:
+  - Active
+- key: NAME
+  unique: false
+  fields:
+  - Name

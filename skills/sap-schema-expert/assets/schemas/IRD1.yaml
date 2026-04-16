@@ -1,0 +1,43 @@
+table: IRD1
+description: Report Definition - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/IRD1.htm
+fields:
+- field: ReportId
+  description: Report Id
+  type: nVarChar
+  size: 254
+  related: OIRD
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: XLSX
+- field: Template
+  description: Template
+  type: Text
+  size: 16
+- field: CreateBy
+  description: Created By
+  type: nVarChar
+  size: 25
+- field: CreateDate
+  description: Creation Timestamp
+  type: Date
+  size: 8
+- field: ModifyBy
+  description: Modified By
+  type: nVarChar
+  size: 25
+- field: ModifyDate
+  description: Modification Timestamp
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ReportId
+  - Type

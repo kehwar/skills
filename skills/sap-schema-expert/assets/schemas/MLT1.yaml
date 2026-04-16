@@ -1,0 +1,22 @@
+table: MLT1
+description: Translations in user language
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MLT1.htm
+fields:
+- field: TranEntry
+  description: Key From Header Table
+  type: Int
+  size: 11
+- field: LangCode
+  description: Language Code of User Language
+  type: Int
+  size: 11
+- field: Trans
+  description: Translation Content
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TranEntry
+  - LangCode

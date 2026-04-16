@@ -1,0 +1,56 @@
+table: PWZ1
+description: Payment Wizard - Rows 1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PWZ1.htm
+fields:
+- field: IdEntry
+  description: ID Entry
+  type: Int
+  size: 11
+  related: OPWZ
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CardType
+  description: BP Type
+  type: VarChar
+  size: 1
+- field: Checked
+  description: Checked
+  type: VarChar
+  size: 1
+- field: BPCurrency
+  description: BP Currency
+  type: nVarChar
+  size: 3
+- field: BPSingleP
+  description: BP Single Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdEntry
+  - CardCode

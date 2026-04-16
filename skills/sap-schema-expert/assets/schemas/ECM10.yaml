@@ -1,0 +1,63 @@
+table: ECM10
+description: Emergency Number
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECM10.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Number
+  description: Emergency Number
+  type: nVarChar
+  size: 50
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+  related: OECM
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: U
+    label: Used
+  - key: E
+    label: Expired
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Secs
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NUMBER
+  unique: true
+  fields:
+  - Code
+  - Number

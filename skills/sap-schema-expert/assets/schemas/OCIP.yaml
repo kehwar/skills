@@ -1,0 +1,33 @@
+table: OCIP
+description: Configuration of Integration Packages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OCIP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Package Code
+  type: nVarChar
+  size: 10
+- field: Name
+  description: Package Name
+  type: nVarChar
+  size: 254
+- field: DsplID
+  description: Display Description ID
+  type: Int
+  size: 11
+- field: IsEnable
+  description: Is Enabled
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - Code

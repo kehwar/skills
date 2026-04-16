@@ -1,0 +1,26 @@
+table: OMPO
+description: Value Mapping Object
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMPO.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectId
+  description: Object ID
+  type: Int
+  size: 11
+- field: ObAbsEntry
+  description: Object Internal Number
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: B1_VALUE
+  unique: true
+  fields:
+  - ObjectId
+  - ObAbsEntry

@@ -1,0 +1,22 @@
+table: OMAP
+description: Mapping Elements
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMAP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FrmId
+  description: Format Object ID
+  type: Int
+  size: 11
+  related: OFRM
+- field: MapId
+  description: Mapping ID in Format
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

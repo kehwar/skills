@@ -1,0 +1,42 @@
+table: ARI1
+description: Add-On
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ARI1.htm
+fields:
+- field: USER_CODE
+  description: User Code
+  type: nVarChar
+  size: '25'
+  related: OUSR
+- field: AddOnID
+  description: Add-On ID
+  type: Int
+  size: '11'
+- field: AddOnType
+  description: Add-On Type
+  type: VarChar
+  size: '1'
+  constraints:
+  - key: M
+    label: Manual
+  - key: C
+    label: Critical
+  - key: A
+    label: Automatic
+  - key: D
+    label: Disabled
+- field: EnableFlag
+  description: Add-On Enable Flag
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USER_CODE
+  - AddOnID

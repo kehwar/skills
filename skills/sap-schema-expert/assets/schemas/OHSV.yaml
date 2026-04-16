@@ -1,0 +1,69 @@
+table: OHSV
+description: Hasavsevet Journal Entry
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OHSV.htm
+fields:
+- field: RecordKey
+  description: Record Number
+  type: nVarChar
+  size: 7
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 5
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 5
+- field: RefDate
+  description: Posting Date
+  type: nVarChar
+  size: 6
+- field: DueDate
+  description: Due Date
+  type: nVarChar
+  size: 6
+- field: CurrCode
+  description: Currency Code
+  type: nVarChar
+  size: 3
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 22
+- field: DebAcct1
+  description: Debit Account 1
+  type: nVarChar
+  size: 8
+- field: CredAcct1
+  description: Credit Account 1
+  type: nVarChar
+  size: 8
+- field: DebAmnt1
+  description: Debit
+  type: nVarChar
+  size: 12
+- field: credAmnt1
+  description: Credit
+  type: nVarChar
+  size: 12
+- field: FDebAmnt1
+  description: Debit Amount 1 in FC
+  type: nVarChar
+  size: 12
+- field: FCredAmnt1
+  description: Credit in FC
+  type: nVarChar
+  size: 12
+- field: Filler
+  description: Filler
+  type: nVarChar
+  size: 60
+- field: EndField
+  description: Ending Field
+  type: nVarChar
+  size: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RecordKey

@@ -1,0 +1,191 @@
+table: OISD
+description: Input Service Distribution
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OISD.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: SrcLctCode
+  description: Source Location Code
+  type: Int
+  size: 11
+- field: SrcLctName
+  description: Source Location Name
+  type: nVarChar
+  size: 100
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: DocStatus
+  description: Document Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Canceled
+- field: Revised
+  description: Revised
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OrgRefNo
+  description: Original Reference No.
+  type: nVarChar
+  size: 100
+- field: OrgRefEty
+  description: Original Reference Entry
+  type: Int
+  size: 11
+- field: OrgDocDate
+  description: Original Document Date
+  type: Date
+  size: 8
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+- field: DstPercent
+  description: Percent to Distribute
+  type: Num
+  size: 19.6
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VATRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: SrcDocType
+  description: Source Document Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '18'
+    label: GST Tax Invoice
+  - key: '-19'
+    label: GST Debit Memo/GST Credit Memo
+- field: FromNum
+  description: Document Number From
+  type: Int
+  size: 11
+- field: ToNum
+  description: Document Number To
+  type: Int
+  size: 11
+- field: FromDate
+  description: Document Date From
+  type: Date
+  size: 8
+- field: ToDate
+  description: Document Date To
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: INDEX
+  unique: true
+  fields:
+  - DocNum
+  - PIndicator

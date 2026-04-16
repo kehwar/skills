@@ -1,0 +1,260 @@
+table: OSRA
+description: Scheduled Report Actions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSRA.htm
+fields:
+- field: ActionCode
+  description: Action Code
+  type: Int
+  size: 11
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 100
+- field: Notes
+  description: Remarks
+  type: Text
+  size: 16
+- field: UserKey
+  description: User
+  type: Int
+  size: 11
+  related: OUSR
+- field: Password
+  description: Password
+  type: nVarChar
+  size: 254
+- field: RunDate
+  description: Next Run Date
+  type: Date
+  size: 8
+- field: RunTime
+  description: Next Run Time
+  type: Int
+  size: 11
+- field: RunCounter
+  description: Next Run Counter
+  type: Int
+  size: 11
+  default: 0
+- field: ReportType
+  description: Report Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: Invalid
+  - key: '115'
+    label: User Query
+  - key: '857'
+    label: Sales/Purchase Analysis
+  - key: '6000'
+    label: Inventory Valuation
+- field: Active
+  description: Schedule Active Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: StartDate
+  description: Recurrence Start Date
+  type: Date
+  size: 8
+- field: EndType
+  description: Recurrence End Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No End
+  - key: C
+    label: By Counter
+  - key: D
+    label: By Date
+- field: EndDate
+  description: Recurrence End Date
+  type: Date
+  size: 8
+- field: EndCounter
+  description: Recurrence End Counter
+  type: Int
+  size: 11
+  default: 1
+- field: MissBehav
+  description: Behavior of Missed Run
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Skip
+  - key: R
+    label: Run as Soon as Possible
+- field: RcrType
+  description: Recurrence Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Daily
+  - key: W
+    label: Weekly
+  - key: M
+    label: Monthly
+  - key: Y
+    label: Annually
+- field: RcrIntervl
+  description: Recurrence Interval
+  type: Int
+  size: 11
+  default: 1
+- field: RcrSubType
+  description: Recurrence Subtype
+  type: Int
+  size: 11
+- field: RcrData2
+  description: 'Recurrence: Additional Data 2'
+  type: Int
+  size: 11
+- field: RcrData1
+  description: 'Recurrence: Additional Data 1'
+  type: Int
+  size: 11
+- field: ErrAct
+  description: Action on Error
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: D
+    label: Deactivate Immediately
+  - key: C
+    label: Continue
+  - key: '1'
+    label: Deactivate on Second Failure
+  - key: '2'
+    label: Deactivate on Third Failure
+  - key: '3'
+    label: Deactivate on Fourth Failure
+- field: TransfXslt
+  description: XSLT Transformation
+  type: Text
+  size: 16
+- field: TimeOut
+  description: Rpt Creation Time-Out in Min.
+  type: Int
+  size: 11
+  default: 5
+- field: MsgTitle
+  description: Message Title
+  type: nVarChar
+  size: 254
+- field: MsgBody
+  description: Message Body
+  type: nVarChar
+  size: 254
+- field: LicSrvr
+  description: License Server
+  type: nVarChar
+  size: 254
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+  default: 3
+- field: LstRunStat
+  description: Last Run Status
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Not yet executed
+  - key: S
+    label: Success
+  - key: T
+    label: SAP Business One client stopped due to time-out
+  - key: U
+    label: The next run date was not updated
+  - key: D
+    label: Unable to distribute result
+  - key: X
+    label: Unspecified failure
+  - key: F
+    label: Successfully finished
+- field: ErrorCount
+  description: Number of Failed Runs
+  type: Int
+  size: 11
+  default: 0
+- field: PrntLayout
+  description: Print Layout
+  type: nVarChar
+  size: 20
+  related: RDOC
+  constraints:
+  - key: ''
+    label: Do Not Print
+- field: DistLstCod
+  description: Distribution List Code
+  type: Int
+  size: 11
+  related: OMLS
+- field: Finished
+  description: Schedule Finished Status
+  type: VarChar
+  size: 1
+  default: N
+- field: SLDAddr
+  description: SLD Address
+  type: nVarChar
+  size: 254
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: ObjAbsEnt
+  description: Object Abs Entry
+  type: Int
+  size: 11
+- field: OnceAt
+  description: Once At
+  type: Int
+  size: 11
+- field: Every
+  description: Every
+  type: Int
+  size: 11
+- field: StartAt
+  description: Starting At
+  type: Int
+  size: 11
+- field: EndAt
+  description: Ending At
+  type: Int
+  size: 11
+- field: DFType
+  description: Daily Frequency Type
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Once
+  - key: E
+    label: Every
+  - key: D
+    label: By Date
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ActionCode

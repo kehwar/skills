@@ -1,0 +1,27 @@
+table: ROBL
+description: Resource Object I/E Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ROBL.htm
+fields:
+- field: RobjKey
+  description: Resource Object Key
+  type: Int
+  size: 11
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+- field: ImportDate
+  description: Date Object Imported In Lang
+  type: Date
+  size: 8
+- field: ImportTime
+  description: Time Imported
+  type: Int
+  size: 6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RobjKey
+  - Language

@@ -1,0 +1,30 @@
+table: EML1
+description: E-mail Log - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/EML1.htm
+fields:
+- field: AbsEntry
+  description: Absolute entry
+  type: Int
+  size: 11
+- field: Line
+  description: Row Number
+  type: Int
+  size: 11
+- field: ObjectID
+  description: Document Object ID
+  type: Int
+  size: 11
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocEntry
+  description: Doc Internal Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - Line

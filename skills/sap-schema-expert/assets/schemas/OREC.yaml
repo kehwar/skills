@@ -1,0 +1,17 @@
+table: OREC
+description: E-Books Record Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OREC.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

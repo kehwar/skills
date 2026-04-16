@@ -1,0 +1,63 @@
+table: DTV6
+description: Datev Run Errors Cards
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DTV6.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+  related: ODTV
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: Customer Number
+  type: nVarChar
+  size: 50
+- field: CardName
+  description: Customer Name
+  type: nVarChar
+  size: 100
+- field: Confirm
+  description: Confirmed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Text
+  description: Error Message
+  type: Text
+  size: 16
+- field: CardType
+  description: Customer Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Supplier
+- field: Detail
+  description: Error Details
+  type: Text
+  size: 16
+- field: Type
+  description: Error Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: Error
+  - key: W
+    label: Warning
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId
+  - LineId

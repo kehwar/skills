@@ -1,0 +1,205 @@
+table: ODPT
+description: Postdated Deposit
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ODPT.htm
+fields:
+- field: DeposId
+  description: Payment Internal ID
+  type: Int
+  size: 11
+  default: 0
+- field: DeposType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: K
+  constraints:
+  - key: K
+    label: Check Deposit
+  - key: V
+    label: Credit Deposit
+- field: DeposDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: DeposCurr
+  description: Currency for Payments
+  type: nVarChar
+  size: 3
+- field: BanckAcct
+  description: SAP Business One Acct Code f.
+  type: nVarChar
+  size: 15
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 254
+- field: LocTotal
+  description: Total (LC)
+  type: Num
+  size: 19.6
+- field: FcTotal
+  description: Total (FC)
+  type: Num
+  size: 19.6
+- field: SysTotal
+  description: Total (SC)
+  type: Num
+  size: 19.6
+- field: TransAbs
+  description: Journal Entry Key
+  type: Int
+  size: 11
+  related: OJDT
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: DocRate
+  description: Payment Rate
+  type: Num
+  size: 19.6
+- field: Splited
+  description: Split
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatAct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+- field: ComissAct
+  description: Commissions Account
+  type: nVarChar
+  size: 15
+- field: VatTotal
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: Comission
+  description: Commission
+  type: Num
+  size: 19.6
+- field: ComissDate
+  description: Commission Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: VatTotlSys
+  description: Total Tax on Input (SC)
+  type: Num
+  size: 19.6
+- field: ComissnSys
+  description: Total Commission (SC)
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CommisVat
+  description: Commission VAT Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: ComisFC
+  description: Total Commission (FC)
+  type: Num
+  size: 19.6
+- field: VatTotlFC
+  description: Total Tax on Input (FC)
+  type: Num
+  size: 19.6
+- field: ComisCurr
+  description: Commission Currency
+  type: nVarChar
+  size: 3
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DeposId

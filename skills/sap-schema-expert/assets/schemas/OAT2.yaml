@@ -1,0 +1,96 @@
+table: OAT2
+description: Blanket Agreement - Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OAT2.htm
+fields:
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: OOAT
+- field: AgrLnNum
+  description: Agreement Item Row Number
+  type: Int
+  size: 11
+- field: AgrEfctNum
+  description: Agreement Effective Row No.
+  type: Int
+  size: 11
+- field: DatePeriod
+  description: Frequency
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: D
+    label: Daily
+  - key: W
+    label: Weekly
+  - key: M
+    label: Monthly
+  - key: Q
+    label: Quarterly
+  - key: S
+    label: Semi-Annually
+  - key: A
+    label: Annually
+  - key: O
+    label: One Time
+- field: FromDate
+  description: From Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Date
+  type: Date
+  size: 8
+- field: CallUp
+  description: Release Information
+  type: nVarChar
+  size: 100
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+  default: '-1'
+- field: Quantity
+  description: Item Quantity
+  type: Num
+  size: 19.6
+- field: ConsumeFCT
+  description: Consumer Sales Forecast
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FreeTxt
+  description: Free Text
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: AmountLC
+  description: Planned Amount (LC)
+  type: Num
+  size: 19.6
+- field: AmountFC
+  description: Planned Amount (FC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AgrNo
+  - AgrLnNum
+  - AgrEfctNum

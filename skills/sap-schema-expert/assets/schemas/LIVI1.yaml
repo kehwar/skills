@@ -1,0 +1,82 @@
+table: LIVI1
+description: IVI Log Array File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/LIVI1.htm
+fields:
+- field: LogEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: LIVI
+- field: CalcNum
+  description: Partial Sequence Number
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserToDate
+  description: User To Date
+  type: Date
+  size: 8
+- field: ActuToDate
+  description: Actual To Date
+  type: Date
+  size: 8
+- field: LastMsgID
+  description: Last Calculated OILM Message
+  type: Int
+  size: 11
+- field: Result
+  description: Result of Calculation
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: Failure
+  - key: S
+    label: Success
+  - key: A
+    label: Archived
+- field: ResultStr
+  description: Result String of Calculation
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: IgnFail
+  description: Ignore Previous Failure
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReorderFrm
+  description: 'Reorder 8.8 Messages: From Date'
+  type: Date
+  size: 8
+- field: ReorderTo
+  description: 'Reorder 8.8 Messages: To Date'
+  type: Date
+  size: 8
+- field: StopDate
+  description: Stop Date
+  type: Date
+  size: 8
+- field: StopTime
+  description: Stop Time
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry
+  - CalcNum

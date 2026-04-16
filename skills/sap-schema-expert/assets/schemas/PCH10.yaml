@@ -1,0 +1,57 @@
+table: PCH10
+description: A/P Invoice - Row Structure
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/PCH10.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OPCH
+- field: LineSeq
+  description: Row Sequence
+  type: Int
+  size: 11
+- field: AftLineNum
+  description: After Row Number
+  type: Int
+  size: 11
+- field: OrderNum
+  description: Order Number
+  type: Int
+  size: 11
+- field: LineType
+  description: Row Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: T
+    label: Text
+  - key: S
+    label: Subtotal
+- field: LineText
+  description: Row Text
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '18'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineSeq
+- key: SECONDARY
+  unique: true
+  fields:
+  - DocEntry
+  - AftLineNum
+  - OrderNum

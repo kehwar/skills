@@ -1,0 +1,30 @@
+table: ISD3
+description: DI Input Auto Rule
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ISD3.htm
+fields:
+- field: DocEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+- field: TaxAcc
+  description: Tax Account
+  type: nVarChar
+  size: 15
+- field: AllocPerc
+  description: Allocation Percentage
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

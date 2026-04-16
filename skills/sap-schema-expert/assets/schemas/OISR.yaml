@@ -1,0 +1,63 @@
+table: OISR
+description: Service Calls
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OISR.htm
+fields:
+- field: RequestNum
+  description: Request No.
+  type: Int
+  size: 11
+- field: Open_Date
+  description: Start Date
+  type: Date
+  size: 8
+- field: Open_Time
+  description: Start Time
+  type: Int
+  size: 11
+- field: Task_Id
+  description: Request No. in SAP Business One
+  type: Int
+  size: 11
+- field: Contact
+  description: Contact Person
+  type: nVarChar
+  size: 30
+- field: Phone
+  description: Telephone
+  type: nVarChar
+  size: 20
+- field: TaskType
+  description: Request Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Explanation
+  - key: '1'
+    label: Error
+  - key: '2'
+    label: Complaints
+- field: Dscription
+  description: Call Description
+  type: nVarChar
+  size: 254
+- field: Answer
+  description: Troubleshooting
+  type: Text
+  size: 16
+- field: Status
+  description: Call Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RequestNum

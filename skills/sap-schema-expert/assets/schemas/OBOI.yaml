@@ -1,0 +1,44 @@
+table: OBOI
+description: Count Widget
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBOI.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Count Widget Code
+  type: nVarChar
+  size: 15
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: QueryId
+  description: Link Query ID
+  type: Int
+  size: 11
+  related: OUQR
+- field: QCategory
+  description: Link Query Category
+  type: Int
+  size: 11
+  related: OQCN
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 200
+- field: MenuId
+  description: Menu ID
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - Code

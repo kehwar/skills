@@ -1,0 +1,28 @@
+table: LLR1
+description: Electronic Report Generation Result - Reports
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/LLR1.htm
+fields:
+- field: ResEntry
+  description: Result Internal ID
+  type: Int
+  size: 11
+  related: OLLR
+- field: ReportNum
+  description: Report Number
+  type: Int
+  size: 11
+- field: ReportCode
+  description: Report Code
+  type: nVarChar
+  size: 8
+  related: RDOC
+- field: Criteria
+  description: Selection Criteria
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResEntry
+  - ReportNum

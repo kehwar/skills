@@ -1,0 +1,43 @@
+table: OTOB
+description: 1099 Opening Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTOB.htm
+fields:
+- field: VendCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Form1099
+  description: 1099 Form
+  type: Int
+  size: 11
+  related: OTNN
+- field: Box1099
+  description: 1099 Box
+  type: nVarChar
+  size: 20
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: AmountLC
+  description: Amount (LC)
+  type: Num
+  size: 19.6
+- field: Submitted
+  description: Submitted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: New
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - VendCode
+  - Form1099
+  - Box1099

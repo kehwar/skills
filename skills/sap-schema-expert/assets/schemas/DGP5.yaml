@@ -1,0 +1,49 @@
+table: DGP5
+description: Sort By List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DGP5.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ODGP
+- field: CondNum
+  description: Condition Number
+  type: Int
+  size: 11
+- field: SortField
+  description: Sort Field
+  type: nVarChar
+  size: 100
+  default: DocNum
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: DocNum
+    label: Document Number
+  - key: DocDate
+    label: Posting Date
+  - key: DocDueDate
+    label: Due Date
+  - key: NumAtCard
+    label: BP Reference No.
+  - key: DocTotal
+    label: Document Amount
+  - key: SlpCode
+    label: Sales Employee
+- field: SortOrder
+  description: Sort Order
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Ascending
+  - key: D
+    label: Descending
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - CondNum

@@ -1,0 +1,21 @@
+table: OIWR
+description: India E-Way Bill Report - Header
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OIWR.htm
+fields:
+- field: AbsEbtry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RootEcm2
+  description: Internal Number of ECM2
+  type: Int
+  size: 11
+- field: Status
+  description: Status of Report
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEbtry

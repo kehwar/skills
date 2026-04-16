@@ -1,0 +1,29 @@
+table: RSC3
+description: Resouces - Fixed Assets
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSC3.htm
+fields:
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - ItemCode
+- key: ITEM_CODE
+  unique: true
+  fields:
+  - ItemCode

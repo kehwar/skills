@@ -1,0 +1,132 @@
+table: UDG1
+description: User Defaults - Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDG1.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: Copies
+  description: No. of Copies
+  type: Int
+  size: 6
+  default: 1
+- field: PrintOnAdd
+  description: Add & Print
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExprtOnAdd
+  description: Add & Export
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RoundSums
+  description: Totals Rounding
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Remark
+  description: Permanent Remark
+  type: Text
+  size: 16
+- field: PrintSums
+  description: Print Totals
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VndrNum
+  description: Print Mfr Catalog No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrnDscnt
+  description: Print Discount Data
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HandCopies
+  description: No. of Copies for Manual Doc.
+  type: Int
+  size: 6
+  default: 1
+- field: EngKBItem
+  description: English Keyboard Entering Item No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EngKBCard
+  description: English Keyboard Entering BP Code
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EmailOnAdd
+  description: Add & E-Mail
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PDFOnAdd
+  description: Add & Export to PDF
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - ObjType

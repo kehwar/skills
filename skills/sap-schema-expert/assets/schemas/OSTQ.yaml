@@ -1,0 +1,43 @@
+table: OSTQ
+description: Inventory Valuation Utility Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OSTQ.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: QueryNAme
+  description: Query Name
+  type: nVarChar
+  size: 100
+- field: QueryStr
+  description: Query String
+  type: Text
+  size: 16
+- field: Severity
+  description: Inventory Valuation Query Seve
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: W
+    label: Warning if fails
+  - key: E
+    label: Error if fails
+- field: QueryGroup
+  description: Query Group
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Before Recalculation
+  - key: A
+    label: After Recalculation
+  - key: T
+    label: Year Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

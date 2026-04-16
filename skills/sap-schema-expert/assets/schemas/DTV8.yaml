@@ -1,0 +1,63 @@
+table: DTV8
+description: Datev Run Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DTV8.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+  related: ODTV
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: ConsId
+  description: Advisor Number
+  type: Int
+  size: 11
+- field: ConsName
+  description: Advisor Name
+  type: nVarChar
+  size: 100
+- field: ClientId
+  description: Client Number
+  type: Int
+  size: 11
+- field: DFVCode
+  description: DFV Code
+  type: nVarChar
+  size: 50
+- field: Curr
+  description: Currency
+  type: nVarChar
+  size: 10
+- field: GLLength
+  description: Account Number Length
+  type: Int
+  size: 11
+- field: IntAcc
+  description: Temporary Account
+  type: nVarChar
+  size: 15
+- field: IntTax
+  description: Tax Temporary Account
+  type: nVarChar
+  size: 15
+- field: SetOfBoks
+  description: Chart of Accounts
+  type: nVarChar
+  size: 15
+- field: CostDim
+  description: Cost Center Dimension
+  type: nVarChar
+  size: 15
+- field: FormatVer
+  description: Format Version
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId
+  - LineId

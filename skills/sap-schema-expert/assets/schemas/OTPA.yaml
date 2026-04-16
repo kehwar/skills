@@ -1,0 +1,60 @@
+table: OTPA
+description: Tax Parameter Attributes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTPA.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Attribute Code
+  type: nVarChar
+  size: 8
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: DataType
+  description: Data Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Amounts
+  - key: P
+    label: Prices
+  - key: Q
+    label: Quantities
+  - key: '%'
+    label: Percents
+  - key: I
+    label: Integer
+  - key: A
+    label: String
+  - key: M
+    label: Measures
+- field: FieldId
+  description: Field ID in CUFD
+  type: Int
+  size: 11
+  related: CUFD
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: Changeable
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - Code

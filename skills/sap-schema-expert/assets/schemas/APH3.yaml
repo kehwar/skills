@@ -1,0 +1,42 @@
+table: APH3
+description: Project Management - Stages - Attachments - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/APH3.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: PHA1
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: StageID
+  description: Stage ID
+  type: Int
+  size: 11
+  related: PHA1
+- field: PATH
+  description: Document Path
+  type: Text
+  size: 16
+- field: FILE
+  description: File Name
+  type: nVarChar
+  size: 100
+- field: DATE
+  description: Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+  - LogInstanc

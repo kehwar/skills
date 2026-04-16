@@ -1,0 +1,46 @@
+table: OBBQ
+description: Item - Serial/Batch - Bin Accumulator
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OBBQ.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SnBMDAbs
+  description: Batch MD Internal Number
+  type: Int
+  size: 11
+  related: OBTN
+- field: BinAbs
+  description: Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: OnHandQty
+  description: On-Hand Quantity
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: BUSINESS_K
+  unique: true
+  fields:
+  - SnBMDAbs
+  - BinAbs
+- key: BIN_ABS
+  unique: false
+  fields:
+  - BinAbs

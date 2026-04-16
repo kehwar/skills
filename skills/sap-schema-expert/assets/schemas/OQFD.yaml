@@ -1,0 +1,30 @@
+table: OQFD
+description: Query Fields
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OQFD.htm
+fields:
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: QryCode
+  description: Query Code
+  type: nVarChar
+  size: 254
+- field: CategoryID
+  description: Category ID
+  type: Int
+  size: 11
+- field: BaseCode
+  description: Base Code
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IntrnalKey
+- key: ALIAS
+  unique: true
+  fields:
+  - QryCode
+  - CategoryID

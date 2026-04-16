@@ -1,0 +1,235 @@
+table: OCRV
+description: Credit Payments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OCRV.htm
+fields:
+- field: AbsId
+  description: Seq. No. in Amount
+  type: Int
+  size: 11
+  related: OCRH
+- field: PayId
+  description: Payment No.
+  type: Int
+  size: 11
+  default: 0
+- field: CreditCard
+  description: Credit Card
+  type: Int
+  size: 6
+  related: OCRC
+  default: 0
+- field: CrdCardNum
+  description: Credit Card No.
+  type: nVarChar
+  size: 254
+- field: CardValid
+  description: Credit Card Validity
+  type: Date
+  size: 8
+- field: VoucherNum
+  description: Voucher Number
+  type: nVarChar
+  size: 27
+- field: OwnerIdNum
+  description: ID Number
+  type: nVarChar
+  size: 15
+- field: OwnerPhone
+  description: Telephone
+  type: nVarChar
+  size: 50
+- field: PayDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: PayAmount
+  description: Payment Amount
+  type: Num
+  size: 19.6
+- field: CreditCurr
+  description: Credit Currency
+  type: nVarChar
+  size: 3
+- field: CreditRate
+  description: Credit Rate
+  type: Num
+  size: 19.6
+- field: Deposited
+  description: Paid
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: C
+    label: Closed
+  - key: O
+    label: Open
+  - key: S
+    label: Postdated
+- field: DepNum2
+  description: Postdated Deposit Key
+  type: Int
+  size: 11
+  related: ODPT
+  default: 0
+- field: DepNum
+  description: Payment Internal ID
+  type: Int
+  size: 11
+  related: ODPS
+- field: AcctCode
+  description: Account for Payments
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VouchAcct
+  description: Voucher Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CreditAcct
+  description: Credit Account
+  type: nVarChar
+  size: 15
+- field: CardCode
+  description: BP/Account Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CrTypeCode
+  description: Payment Method Code
+  type: Int
+  size: 6
+  related: OCRP
+- field: NumOfPmnts
+  description: Number of Payments
+  type: Int
+  size: 6
+  default: 1
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Storno
+  description: Cancel Transaction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Transfered
+  description: Postponed to Next Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  related: OCRH
+  default: 0
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: TransRef
+  description: Trans. Reference
+  type: nVarChar
+  size: 20
+- field: CardName
+  description: BP/Account Name
+  type: nVarChar
+  size: 200
+- field: EnOwnerId
+  description: Encryption of ID Number
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - PayId
+  - Instance
+- key: CRED_CARD
+  unique: false
+  fields:
+  - CreditCard
+- key: CUST_CODE
+  unique: false
+  fields:
+  - CardCode
+- key: DEP_ABS1
+  unique: false
+  fields:
+  - DepNum
+- key: IS_VALID
+  unique: false
+  fields:
+  - VoucherNum
+  - PayId
+  - CreditCard
+  - Storno
+- key: CRED_ACCT
+  unique: false
+  fields:
+  - CreditAcct
+- key: DEP_ABS2
+  unique: false
+  fields:
+  - DepNum2
+- key: DEPOSITED
+  unique: false
+  fields:
+  - Deposited
+- key: VOUCHER_ID
+  unique: false
+  fields:
+  - AbsId

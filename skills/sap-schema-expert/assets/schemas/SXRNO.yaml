@@ -1,0 +1,25 @@
+table: SXRNO
+description: XLR Notes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRNO.htm
+fields:
+- field: noteid
+  description: noteid
+  type: nVarChar
+  size: 32
+- field: notetext
+  description: notetext
+  type: Text
+  size: 16
+- field: modified
+  description: modified
+  type: Date
+  size: 8
+- field: access
+  description: access
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - noteid

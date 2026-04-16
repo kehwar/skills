@@ -1,0 +1,157 @@
+table: OPR1
+description: Opportunity - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Sales_Opportunities/OPR1.htm
+fields:
+- field: OpprId
+  description: Sequence No.
+  type: Int
+  size: 11
+  related: OOPR
+- field: Line
+  description: Row No.
+  type: Int
+  size: 6
+- field: SlpCode
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: OpenDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: CloseDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: Step_Id
+  description: Stage Key
+  type: Int
+  size: 11
+  related: OOST
+- field: ClosePrcnt
+  description: Percentage Rate
+  type: Num
+  size: 19.6
+- field: MaxSumLoc
+  description: Max. Local Total
+  type: Num
+  size: 19.6
+- field: MaxSumSys
+  description: Max. System Total
+  type: Num
+  size: 19.6
+- field: Memo
+  description: Remarks
+  type: Text
+  size: 16
+- field: DocId
+  description: Object Code
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 9
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '23'
+    label: Sales Quotations
+  - key: '17'
+    label: Sales Orders
+  - key: '15'
+    label: Delivery Notes
+  - key: '13'
+    label: Sales Invoices
+  - key: '540000006'
+    label: Purchase Quotations
+  - key: '22'
+    label: Purchase Orders
+  - key: '20'
+    label: Goods Receipt POs
+  - key: '18'
+    label: Purchase Invoices
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: Linked
+  description: Activity
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WtSumLoc
+  description: Weighted Amount (LC) - Rows
+  type: Num
+  size: 19.6
+- field: WtSumSys
+  description: Weighted Amount (SC)
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ChnCrdCode
+  description: BP Channel Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ChnCrdName
+  description: BP Channel Name
+  type: nVarChar
+  size: 200
+- field: ChnCrdCon
+  description: BP Channel Contact
+  type: Int
+  size: 11
+  related: OCPR
+- field: DocChkbox
+  description: Document Checkbox
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Owner
+  description: Data Ownership Field
+  type: Int
+  size: 11
+  related: OHEM
+- field: DocNumber
+  description: Document Number
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OpprId
+  - Line

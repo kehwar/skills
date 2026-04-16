@@ -1,0 +1,44 @@
+table: MLOG
+description: MLOG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MLOG.htm
+fields:
+- field: absId
+  description: ''
+  type: Int
+  size: 11
+- field: userCode
+  description: ''
+  type: nVarChar
+  size: 20
+- field: ipAddress
+  description: ''
+  type: nVarChar
+  size: 20
+- field: updateDate
+  description: ''
+  type: Date
+  size: 8
+- field: tableName
+  description: ''
+  type: nVarChar
+  size: 10
+- field: operation
+  description: ''
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Create
+  - key: U
+    label: Update
+  - key: D
+    label: Remove
+- field: objGuid
+  description: ''
+  type: nVarChar
+  size: 36
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - absId

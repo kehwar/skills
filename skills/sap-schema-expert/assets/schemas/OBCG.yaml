@@ -1,0 +1,29 @@
+table: OBCG
+description: Bank Charge for Bank Transfers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OBCG.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: BkChgAmt
+  description: Bank Charge
+  type: Num
+  size: 19.6
+- field: SerialNo
+  description: Serial No.
+  type: Int
+  size: 11
+- field: DocCurr
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: BcgTaxAmt
+  description: Bank Charge Tax
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SerialNo

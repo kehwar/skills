@@ -1,0 +1,30 @@
+table: CUDC
+description: User Display Cat.
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CUDC.htm
+fields:
+- field: CodeID
+  description: Code
+  type: Int
+  size: 11
+- field: NameID
+  description: Name
+  type: nVarChar
+  size: 20
+- field: FormID
+  description: Form ID
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CodeID
+- key: FORM
+  unique: false
+  fields:
+  - NameID

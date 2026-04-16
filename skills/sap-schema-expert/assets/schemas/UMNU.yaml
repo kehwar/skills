@@ -1,0 +1,53 @@
+table: UMNU
+description: UMNU
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UMNU.htm
+fields:
+- field: guid
+  description: Guid
+  type: nVarChar
+  size: 36
+- field: fatherId
+  description: Fathter Id
+  type: nVarChar
+  size: 36
+- field: lineNum
+  description: Line Num
+  type: Int
+  size: 11
+- field: menuName
+  description: Menu Name
+  type: nVarChar
+  size: 254
+- field: linkType
+  description: Link Type
+  type: VarChar
+  size: 1
+- field: linkTo
+  description: LinkTo
+  type: nVarChar
+  size: 36
+- field: icon
+  description: Icon
+  type: Int
+  size: 11
+- field: locale
+  description: Localization Flag
+  type: nVarChar
+  size: 254
+- field: mnuNameSid
+  description: Menu String Id
+  type: Int
+  size: 11
+- field: linkChart
+  description: Linked Chart Id
+  type: nVarChar
+  size: 36
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - guid
+- key: FATHER_ID
+  unique: false
+  fields:
+  - fatherId

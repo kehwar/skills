@@ -1,0 +1,428 @@
+table: ADM2
+description: Administration Electronic Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ADM2.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: '11'
+- field: TaxAuCod
+  description: Tax Authority Code
+  type: nVarChar
+  size: '5'
+- field: KeyEcoAct
+  description: Key Economic Activity
+  type: nVarChar
+  size: '10'
+- field: TaxPayType
+  description: Tax Payer Type
+  type: VarChar
+  size: '1'
+  default: P
+  constraints:
+  - key: P
+    label: ï¿½94
+  - key: I
+    label: ï¿½96
+  - key: S
+    label: ï¿½95a
+- field: TaxLegForm
+  description: Tax Payer Legal Form
+  type: VarChar
+  size: '1'
+  default: P
+  constraints:
+  - key: F
+    label: Sole Proprietorship
+  - key: P
+    label: Company
+- field: RegName
+  description: Registered Name
+  type: nVarChar
+  size: '254'
+- field: RegNameExt
+  description: Registered Name Extension
+  type: nVarChar
+  size: '11'
+- field: SoleFName
+  description: Sole Proprietor First Name
+  type: nVarChar
+  size: '20'
+- field: SoleSName
+  description: Sole Proprietor Surname
+  type: nVarChar
+  size: '36'
+- field: SoleTitle
+  description: Sole Proprietor Title
+  type: nVarChar
+  size: '10'
+- field: CityTown
+  description: City/Town/Village
+  type: nVarChar
+  size: '48'
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: '10'
+- field: Telephone
+  description: Telephone
+  type: nVarChar
+  size: '50'
+- field: Street
+  description: Street
+  type: nVarChar
+  size: '38'
+- field: StreetNum
+  description: Street Number
+  type: nVarChar
+  size: '4'
+- field: BuildinNum
+  description: Building Number
+  type: Int
+  size: '11'
+- field: Email
+  description: E-Mail
+  type: nVarChar
+  size: '254'
+- field: State
+  description: State
+  type: nVarChar
+  size: '20'
+- field: RepType
+  description: Representative Type
+  type: VarChar
+  size: '1'
+  default: P
+  constraints:
+  - key: F
+    label: Sole Proprietorship
+  - key: P
+    label: Company
+- field: RepCode
+  description: Representative Code
+  type: nVarChar
+  size: '2'
+  constraints:
+  - key: '1'
+    label: Legal Representative
+  - key: '2'
+    label: Authorized Representative
+  - key: '3'
+    label: Common Representative, Contractual Representative
+  - key: 4a
+    label: General Appointee - Sole Proprietorship or Company
+  - key: 4b
+    label: Tax Advisor or Attorney
+  - key: 4c
+    label: Tax Advisor
+- field: RepFName
+  description: Representative First Name
+  type: nVarChar
+  size: '20'
+- field: RepSName
+  description: Representative Surname
+  type: nVarChar
+  size: '36'
+- field: CompName
+  description: Company Name
+  type: nVarChar
+  size: '36'
+- field: BirthDate
+  description: Birth Date
+  type: Date
+  size: '8'
+- field: TaxACNum
+  description: Tax Advisor Certificate Number
+  type: nVarChar
+  size: '36'
+- field: LegEntitID
+  description: Legal Entity ID
+  type: nVarChar
+  size: '10'
+- field: AuthFName
+  description: Authorized Person First Name
+  type: nVarChar
+  size: '20'
+- field: AuthLName
+  description: Authorized Person Last Name
+  type: nVarChar
+  size: '36'
+- field: AuthRelat
+  description: Authorized Person Relation
+  type: nVarChar
+  size: '40'
+- field: AuthType
+  description: Type of Authorized Person
+  type: VarChar
+  size: '1'
+- field: TaxPayAttr
+  description: Taxpayer Attribute
+  type: nVarChar
+  size: '2'
+- field: Classifier
+  description: Territorial/Adm. Classifier
+  type: nVarChar
+  size: '11'
+- field: DeprMethod
+  description: Depreciation Method
+  type: VarChar
+  size: '1'
+- field: SubmitPlac
+  description: Place of Submission
+  type: nVarChar
+  size: '3'
+- field: BgtClass
+  description: Budget Classification Code
+  type: nVarChar
+  size: '20'
+- field: SubjOfRuF
+  description: Subject of Russian Federation
+  type: nVarChar
+  size: '20'
+- field: AuthFathrN
+  description: Father Name
+  type: nVarChar
+  size: '254'
+- field: BgtCleVAT
+  description: Budget Classification Code (E-VAT)
+  type: nVarChar
+  size: '20'
+- field: RepTitle
+  description: Representative Title
+  type: nVarChar
+  size: '10'
+- field: TaxRegime
+  description: Tax Regime
+  type: nVarChar
+  size: '5'
+  default: RF01
+  constraints:
+  - key: RF01
+    label: Ordinary
+  - key: RF02
+    label: Minimum taxpayers (Art. 1, section 96-117, Italian Law 244/07)
+  - key: RF03
+    label: New production initiatives (Art. 13, Italian Law 388/00)
+  - key: RF04
+    label: Agriculture and connected activities, and fishing (Arts. 34 and 34-bis,
+      Italian Presidential Decree 633/72)
+  - key: RF05
+    label: Sale of salts and tobaccos (Art. 74, section 1, Italian Presidential Decree
+      633/72)
+  - key: RF06
+    label: Match sales (Art. 74, section 1, Italian Presidential Decree 633/72)
+  - key: RF07
+    label: Publishing (Art. 74, section 1, Italian Presidential Decree 633/72)
+  - key: RF08
+    label: Management of public telephone services (Art. 74, section 1, Italian Presidential
+      Decree 633/72)
+  - key: RF09
+    label: Resale of public transport and parking documents (Art. 74, section 1, Italian
+      Presidential Decree 633/72)
+  - key: RF10
+    label: Entertainment, gaming and other activities referred to by the tariff attached
+      to Italian Presidential Decree 640/72 (Art. 74, section 6, Italian Presidential
+      Decree 633/1972)
+  - key: RF11
+    label: Travel and tourism agencies (Art. 74-ter, Italian Presidential Decree 633/72)
+  - key: RF12
+    label: Farmhouse accommodation/restaurants (Art. 5, section 2, Italian Law 413/91)
+  - key: RF13
+    label: Door-to-door sales (Art. 25-bis, section 6, Italian Presidential Decree
+      600/73)
+  - key: RF14
+    label: Resale of used goods, artworks, antiques or collector's items (Art. 36,
+      Italian Decree Law 41/95)
+  - key: RF15
+    label: Artwork, antiques or collector's items auction agencies (Art. 40-bis, Italian
+      Decree Law 41/95)
+  - key: RF16
+    label: VAT paid in cash by P.A. (Art. 6, section 5, Italian Presidential Decree
+      633/72)
+  - key: RF17
+    label: VAT paid in cash by subjects with business turnover below Euro 200,000
+      (Art. 7, Italian Decree Law 185/2008)
+  - key: RF18
+    label: Other
+  - key: RF19
+    label: Regime forfettario (art.1, c.54-89, L. 190/2014)
+  - key: RF20
+    label: Regime transfrontaliero di Franchigia IVA (Direttiva UE 2020/285)
+- field: SoleBDate
+  description: Sole Proprietor Date of Birth
+  type: Date
+  size: '8'
+- field: SoleGender
+  description: Sole Proprietor Gender
+  type: VarChar
+  size: '1'
+  default: M
+  constraints:
+  - key: F
+    label: Female
+  - key: M
+    label: Male
+  - key: E
+    label: Not Specified
+- field: SoleCity
+  description: Sole Proprietor City of Birth
+  type: nVarChar
+  size: '40'
+- field: SoleDistri
+  description: Sole Proprietor State of Birth
+  type: nVarChar
+  size: '3'
+- field: RepFisCode
+  description: Representative Fiscal Code
+  type: nVarChar
+  size: '16'
+- field: RepPosCode
+  description: Representative Position Code
+  type: nVarChar
+  size: '2'
+- field: RepGender
+  description: Representative Gender
+  type: VarChar
+  size: '1'
+  default: M
+  constraints:
+  - key: F
+    label: Female
+  - key: M
+    label: Male
+  - key: E
+    label: Not Specified
+- field: RepCity
+  description: Representative City of Birth
+  type: nVarChar
+  size: '40'
+- field: RepDistri
+  description: Representative State of Birth
+  type: nVarChar
+  size: '3'
+- field: RepDate1
+  description: Representative Start Date of Procedure
+  type: Date
+  size: '8'
+- field: RepDate2
+  description: Representative End Date of Procedure
+  type: Date
+  size: '8'
+- field: RepPhone
+  description: Representative Telephone
+  type: nVarChar
+  size: '14'
+- field: RepEmail
+  description: Representative E-Mail
+  type: nVarChar
+  size: '254'
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: '3'
+  related: OCRY
+- field: District
+  description: District
+  type: nVarChar
+  size: '3'
+  related: OCST
+- field: RegDistri
+  description: Register District
+  type: nVarChar
+  size: '3'
+- field: RegSCAmnt
+  description: Share Capital Amount
+  type: Num
+  size: '19.6'
+- field: RegSHolder
+  description: Shareholder
+  type: nVarChar
+  size: '2'
+  default: SU
+  constraints:
+  - key: SU
+    label: Sole Shareholder
+  - key: SM
+    label: Several Shareholders
+- field: RegLiquida
+  description: Liquidation
+  type: nVarChar
+  size: '2'
+  default: LN
+  constraints:
+  - key: LS
+    label: In Liquidation
+  - key: LN
+    label: Not in Liquidation
+- field: RepAddID
+  description: Representative Additional ID
+  type: nVarChar
+  size: '28'
+- field: ActCode
+  description: Activity Code
+  type: nVarChar
+  size: '15'
+- field: PosCode347
+  description: Position Code for Report 347
+  type: nVarChar
+  size: '2'
+  constraints:
+  - key: '1'
+    label: '1'
+  - key: '2'
+    label: '2'
+  - key: '3'
+    label: '3'
+  - key: '4'
+    label: '4'
+  - key: '5'
+    label: '5'
+  - key: '6'
+    label: '6'
+  - key: '7'
+    label: '7'
+  - key: '8'
+    label: '8'
+  - key: '9'
+    label: '9'
+  - key: '10'
+    label: '10'
+  - key: '11'
+    label: '11'
+  - key: '12'
+    label: '12'
+  - key: '13'
+    label: '13'
+  - key: '14'
+    label: '14'
+  - key: '15'
+    label: '15'
+- field: FiscalCode
+  description: Fiscal Code
+  type: nVarChar
+  size: '16'
+- field: DataBoxID
+  description: Data Box ID
+  type: nVarChar
+  size: '10'
+- field: SmValLimit
+  description: Small Value Documents Limit
+  type: Num
+  size: '19.6'
+- field: RepCEOName
+  description: Representative CEO Name
+  type: nVarChar
+  size: '254'
+- field: RepCEOFisC
+  description: Representative CEO Fiscal Code
+  type: nVarChar
+  size: '16'
+- field: CmpnTypeFR
+  description: Type d'entreprise
+  type: nVarChar
+  size: '30'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

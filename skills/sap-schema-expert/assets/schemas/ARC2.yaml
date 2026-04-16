@@ -1,0 +1,374 @@
+table: ARC2
+description: Incoming Payment - Invoices - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ARC2.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OVPM
+- field: InvoiceId
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Invoice Key
+  type: Int
+  size: 11
+- field: SumApplied
+  description: Paid (LC)
+  type: Num
+  size: 19.6
+- field: AppliedFC
+  description: Paid (FC)
+  type: Num
+  size: 19.6
+- field: AppliedSys
+  description: Paid (SC)
+  type: Num
+  size: 19.6
+- field: InvType
+  description: Document Type
+  type: nVarChar
+  size: 20
+  default: '13'
+  constraints:
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Payment Advice
+  - key: '57'
+    label: Checks for Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '-2'
+    label: Opening Balance
+  - key: '-3'
+    label: Closing Balance
+  - key: '30'
+    label: Journal Entry
+  - key: '-1'
+    label: All Transactions
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '0'
+    label: ''
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: Flags
+  description: Flags
+  type: Int
+  size: 11
+  default: 0
+- field: IntrsStat
+  description: Interest Letter Status
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Not Sent
+  - key: S
+    label: Sent
+  - key: C
+    label: Closed
+- field: DocLine
+  description: Row Key
+  type: Int
+  size: 11
+  default: 0
+- field: vatApplied
+  description: Tax Definition
+  type: Num
+  size: 19.6
+- field: vatAppldFC
+  description: Tax Paid (FC)
+  type: Num
+  size: 19.6
+- field: vatAppldSy
+  description: Tax Paid (SC)
+  type: Num
+  size: 19.6
+- field: selfInv
+  description: Auto. Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: Dcount
+  description: Discount
+  type: Num
+  size: 19.6
+- field: DcntSum
+  description: Discount Amount
+  type: Num
+  size: 19.6
+- field: DcntSumFC
+  description: Discount Amount (FC)
+  type: Num
+  size: 19.6
+- field: DcntSumSy
+  description: Discount Amount (SC)
+  type: Num
+  size: 19.6
+- field: BfDcntSum
+  description: Amount Bef. Discount
+  type: Num
+  size: 19.6
+- field: BfDcntSumF
+  description: Amount Bef. Discount (FC)
+  type: Num
+  size: 19.6
+- field: BfDcntSumS
+  description: Amount Bef. Discount (SC)
+  type: Num
+  size: 19.6
+- field: BfNetDcnt
+  description: Net Amount Bef. Discount
+  type: Num
+  size: 19.6
+- field: BfNetDcntF
+  description: Net Amount Bef. Discount (FC)
+  type: Num
+  size: 19.6
+- field: BfNetDcntS
+  description: Net Amount Bef. Discount (SC)
+  type: Num
+  size: 19.6
+- field: PaidSum
+  description: Amount Paid (LC)
+  type: Num
+  size: 19.6
+- field: ExpAppld
+  description: Freight applied
+  type: Num
+  size: 19.6
+- field: ExpAppldFC
+  description: Freight applied FC
+  type: Num
+  size: 19.6
+- field: ExpAppldSC
+  description: Freight applied SC
+  type: Num
+  size: 19.6
+- field: Rounddiff
+  description: Rounding Diff.
+  type: Num
+  size: 19.6
+- field: RounddifFc
+  description: Rounding Diff. (FC)
+  type: Num
+  size: 19.6
+- field: RounddifSc
+  description: Rounding Diff. (SC)
+  type: Num
+  size: 19.6
+- field: InstId
+  description: Installment ID
+  type: Int
+  size: 6
+  default: 1
+- field: WtAppld
+  description: Applied WTax
+  type: Num
+  size: 19.6
+- field: WtAppldFC
+  description: Applied WT (FC)
+  type: Num
+  size: 19.6
+- field: WtAppldSC
+  description: Applied WTax (SC)
+  type: Num
+  size: 19.6
+- field: LinkDate
+  description: Link Date
+  type: Date
+  size: 8
+- field: AmtDifPst
+  description: Amount Diffs. Posting Date
+  type: Date
+  size: 8
+- field: PaidDpm
+  description: Paid Down Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DpmPosted
+  description: Link Date
+  type: VarChar
+  size: 1
+- field: ExpVatSum
+  description: VAT on Expenses Sum
+  type: Num
+  size: 19.6
+- field: ExpVatSumF
+  description: VAT on Expenses Sum (FC)
+  type: Num
+  size: 19.6
+- field: ExpVatSumS
+  description: VAT on Expenses Sum (SC)
+  type: Num
+  size: 19.6
+- field: IsRateDiff
+  description: Is Exchange Rate
+  type: VarChar
+  size: 1
+  default: N
+- field: WtInvCatS
+  description: Withholding Tax Invoice Categ.
+  type: Num
+  size: 19.6
+- field: WtInvCatSF
+  description: Withholding Tax Invoice Categ.
+  type: Num
+  size: 19.6
+- field: WtInvCatSS
+  description: Withholding Tax Invoice Categ.
+  type: Num
+  size: 19.6
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: DocTransId
+  description: Trans. ID of Paid Document
+  type: Int
+  size: 11
+  related: OJDT
+- field: MIEntry
+  description: MI Entry Include this Payment
+  type: Int
+  size: 11
+  default: 0
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: IsSelected
+  description: Is Record Selected
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTOnHold
+  description: Withholding Tax On Hold
+  type: Num
+  size: 19.6
+- field: WTOnhldPst
+  description: Withholding Tax Posted
+  type: Num
+  size: 19.6
+- field: baseAbs
+  description: Base Document Number
+  type: Int
+  size: 11
+- field: MIType
+  description: MI Type Include this Payment
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '270'
+    label: A/R Monthly Invoice
+  - key: '140000014'
+    label: A/P Monthly Invoice
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+  default: --
+- field: SpltPmtVAT
+  description: Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: WTSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: SelOrder
+  description: Select Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - InvoiceId
+  - ObjType
+  - LogInstanc

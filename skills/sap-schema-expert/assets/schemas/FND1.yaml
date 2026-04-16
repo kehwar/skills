@@ -1,0 +1,20 @@
+table: FND1
+description: Folio Numbering - Document Series
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/FND1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OFND
+- field: Series
+  description: Series ID
+  type: Int
+  size: 11
+  related: OFNS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - Series

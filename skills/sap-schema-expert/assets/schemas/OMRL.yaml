@@ -1,0 +1,212 @@
+table: OMRL
+description: Advanced Inventory Revaluation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OMRL.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  default: 0
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: RevalType
+  description: Inventory Valuation Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Price Change
+  - key: M
+    label: Inventory Debit/Credit
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Copy
+  - key: N
+    label: Original
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 50
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: DocTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: Confirmed
+  description: Confirmed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: StampNum
+  description: Stamp No.
+  type: nVarChar
+  size: 16
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: StationID
+  description: Workstation ID
+  type: Int
+  size: 11
+  related: CSTN
+- field: Rounding
+  description: Rounding
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Segment
+  description: Segment
+  type: Int
+  size: 6
+  default: 0
+- field: ReqDate
+  description: Required Date
+  type: Date
+  size: 8
+- field: CancelDate
+  description: Cancelation Date
+  type: Date
+  size: 8
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - Instance
+  - Segment
+- key: SERIES
+  unique: false
+  fields:
+  - Series

@@ -1,0 +1,27 @@
+table: GPA6
+description: Product Cost Adjustment - Applied Material Revaluations
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA6.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OGPA
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: PODocAbs
+  description: PO Document Abs. Entry
+  type: Int
+  size: 11
+- field: Applied
+  description: Applied Adjustment
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

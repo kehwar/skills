@@ -1,0 +1,39 @@
+table: WLS5
+description: Task Field Mapping Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WLS5.htm
+fields:
+- field: WFInstID
+  description: Workflow Instance ID
+  type: nVarChar
+  size: 64
+- field: TaskID
+  description: Task ID
+  type: Int
+  size: 11
+  related: OWLS
+- field: LineID
+  description: Line ID
+  type: nVarChar
+  size: 6
+- field: InputID
+  description: Input ID
+  type: Int
+  size: 11
+- field: SrcFld
+  description: Source Field
+  type: nVarChar
+  size: 50
+- field: TgtFld
+  description: Target Field
+  type: nVarChar
+  size: 50
+- field: LogIns
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID
+  - LineID

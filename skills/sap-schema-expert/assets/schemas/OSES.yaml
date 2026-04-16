@@ -1,0 +1,17 @@
+table: OSES
+description: OSES
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSES.htm
+fields:
+- field: Code
+  description: SEFAZ Country Code
+  type: nVarChar
+  size: 15
+- field: Descr
+  description: SEFAZ Country Description
+  type: nVarChar
+  size: 100
+indexes:
+- key: PK_CODE
+  unique: true
+  fields:
+  - Code

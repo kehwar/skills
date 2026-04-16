@@ -1,0 +1,93 @@
+table: MIV1
+description: A/P Monthly Invoice - Document
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/MIV1.htm
+fields:
+- field: MinvNum
+  description: Monthly Invoice Number
+  type: Int
+  size: 11
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Object ID
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+- field: DocDate
+  description: Document Posting Date
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Document Due Date
+  type: Date
+  size: 8
+- field: DocClsDate
+  description: Document Closing Date
+  type: Date
+  size: 8
+- field: DocAmount
+  description: Total Amount
+  type: Num
+  size: 19.6
+- field: DocExpense
+  description: Document Expense
+  type: Num
+  size: 19.6
+- field: DocDiscSum
+  description: Document Discount Sum
+  type: Num
+  size: 19.6
+- field: DocRound
+  description: Document Rounding
+  type: Num
+  size: 19.6
+- field: DocTax
+  description: Document Tax Amount
+  type: Num
+  size: 19.6
+- field: Closed
+  description: Is Document closed in MI
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Closed
+  - key: N
+    label: Not Closed
+- field: MINumWnCls
+  description: absEntry when doc closed
+  type: Int
+  size: 11
+- field: Entry
+  description: Monthly Invoice Entry
+  type: Int
+  size: 11
+  related: OMIV
+- field: DocOrigin
+  description: Document Origin
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: A
+    label: Automatic
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Entry
+  - DocType
+  - AbsEntry

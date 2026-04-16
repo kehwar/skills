@@ -1,0 +1,37 @@
+table: CGEV
+description: Event Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CGEV.htm
+fields:
+- field: EventID
+  description: Event ID
+  type: Identity
+  size: 11
+- field: EventDate
+  description: Date of Event
+  type: Date
+  size: 8
+- field: EventTime
+  description: Timestamp of Event
+  type: Int
+  size: 11
+- field: UserCode
+  description: Current User ID
+  type: nVarChar
+  size: 25
+- field: SourceIP
+  description: Network Address of SAP Business One Client
+  type: nVarChar
+  size: 64
+- field: EventType
+  description: Event Type
+  type: nVarChar
+  size: 32
+- field: EventDetls
+  description: Event Description
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EventID

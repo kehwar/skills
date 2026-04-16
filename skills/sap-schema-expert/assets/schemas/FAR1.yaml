@@ -1,0 +1,99 @@
+table: FAR1
+description: Fixed Asset Revaluation - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FAR1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OFAR
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: NBV
+  description: NBV
+  type: Num
+  size: 19.6
+- field: New_NBV
+  description: New NBV
+  type: Num
+  size: 19.6
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: RevalPerc
+  description: Revaluation Percentage %
+  type: Num
+  size: 19.6
+- field: OrdDprDur
+  description: Ordinary Depr. During Period
+  type: Num
+  size: 19.6
+- field: UnDpDur
+  description: Unplanned Depr. During Period
+  type: Num
+  size: 19.6
+- field: SpDprDur
+  description: Special Depr. During Period
+  type: Num
+  size: 19.6
+- field: WriteUpDur
+  description: Write-Up During Period
+  type: Num
+  size: 19.6
+- field: RevLossDur
+  description: Revaluation Loss During Period
+  type: Num
+  size: 19.6
+- field: ReserveDur
+  description: Reserve During Period
+  type: Num
+  size: 19.6
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

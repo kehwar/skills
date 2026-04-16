@@ -1,0 +1,341 @@
+table: PDF6
+description: Payment Drafts - Withholding Tax - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PDF6.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OPDF
+- field: InvoiceId
+  description: Invoice Key
+  type: Int
+  size: 11
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: PymMean
+  description: Payment Means
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Cash
+  - key: K
+    label: Checks
+  - key: R
+    label: Credit Card
+  - key: T
+    label: Bank Transfer
+  - key: B
+    label: Bill of Exchange
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: WTSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: TaxbleAmnt
+  description: Taxable Amount
+  type: Num
+  size: 19.6
+- field: TxblAmntFC
+  description: Taxable Amount (FC)
+  type: Num
+  size: 19.6
+- field: TxblAmntSC
+  description: Taxable Amount (SC)
+  type: Num
+  size: 19.6
+- field: PymAmount
+  description: Payment Amount
+  type: Num
+  size: 19.6
+- field: PymAmounF
+  description: Payment Amount (FC)
+  type: Num
+  size: 19.6
+- field: PymAmounS
+  description: Payment Amount (SC)
+  type: Num
+  size: 19.6
+- field: Line
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '24'
+- field: TdsBAmt
+  description: TDS Base Amount
+  type: Num
+  size: 19.6
+- field: TdsBAmtSC
+  description: TDS Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: TdsBAmtFC
+  description: TDS Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: SurBAmt
+  description: Surcharge Base Amount
+  type: Num
+  size: 19.6
+- field: SurBAmtSC
+  description: Surcharge Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: SurBAmtFC
+  description: Surcharge Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: CessBAmt
+  description: Cess Base Amount
+  type: Num
+  size: 19.6
+- field: CessBAmtSC
+  description: Cess Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: CessBAmtFC
+  description: Cess Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: HscBAmt
+  description: HSC Base Amount
+  type: Num
+  size: 19.6
+- field: HscBAmtSC
+  description: HSC Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: HscBAmtFC
+  description: HSC Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: TdsAmnt
+  description: TDS Tax Amount
+  type: Num
+  size: 19.6
+- field: TdsAmntSC
+  description: TDS Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: TdsAmntFC
+  description: TDS Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: SurAmnt
+  description: Surcharge Tax Amount
+  type: Num
+  size: 19.6
+- field: SurAmntSC
+  description: Surcharge Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: SurAmntFC
+  description: Surcharge Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: CessAmnt
+  description: Cess Tax Amount
+  type: Num
+  size: 19.6
+- field: CessAmntSC
+  description: Cess Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CessAmntFC
+  description: Cess Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: HscAmnt
+  description: HSC Tax Amount
+  type: Num
+  size: 19.6
+- field: HscAmntSC
+  description: HSC Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: HscAmntFC
+  description: HSC Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTTypeId
+  description: WT Type Id
+  type: Int
+  size: 11
+  related: OWTT
+- field: WTPosted
+  description: WT Posted
+  type: Num
+  size: 19.6
+- field: WTPostedFC
+  description: WT Posted FC
+  type: Num
+  size: 19.6
+- field: WTPostedSC
+  description: WT Posted SC
+  type: Num
+  size: 19.6
+- field: IgstBAmt
+  description: IGST Base Amount
+  type: Num
+  size: 19.6
+- field: IgstBAmtSC
+  description: IGST Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: IgstBAmtFC
+  description: IGST Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: CgstBAmt
+  description: CGST Base Amount
+  type: Num
+  size: 19.6
+- field: CgstBAmtSC
+  description: CGST Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: CgstBAmtFC
+  description: CGST Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: SgstBAmt
+  description: SGST Base Amount
+  type: Num
+  size: 19.6
+- field: SgstBAmtSC
+  description: SGST Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: SgstBAmtFC
+  description: SGST Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: IgstAmnt
+  description: IGST Tax Amount
+  type: Num
+  size: 19.6
+- field: IgstAmntSC
+  description: IGST Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: IgstAmntFC
+  description: IGST Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: CgstAmnt
+  description: CGST Tax Amount
+  type: Num
+  size: 19.6
+- field: CgstAmntSC
+  description: CGST Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CgstAmntFC
+  description: CGST Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: SgstAmnt
+  description: SGST Tax Amount
+  type: Num
+  size: 19.6
+- field: SgstAmntSC
+  description: SGST Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: SgstAmntFC
+  description: SGST Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: DepositNum
+  description: Deposit Number
+  type: Int
+  size: 11
+  related: OVPM
+- field: UtgstBAmt
+  description: UTGST Base Amount
+  type: Num
+  size: 19.6
+- field: UtgstBAmtS
+  description: UTGST Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: UtgstBAmtC
+  description: UTGST Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: CsgstBAmt
+  description: Cess GST Base Amount
+  type: Num
+  size: 19.6
+- field: CsgstBAmtS
+  description: Cess GST Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: CsgstBAmtC
+  description: Cess GST Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: UtgstAmt
+  description: UTGST Amount
+  type: Num
+  size: 19.6
+- field: UtgstAmtSC
+  description: UTGST Amount (SC)
+  type: Num
+  size: 19.6
+- field: UtgstAmtFC
+  description: UTGST Amount (FC)
+  type: Num
+  size: 19.6
+- field: CsgstAmt
+  description: Cess GST Amount
+  type: Num
+  size: 19.6
+- field: CsgstAmtSC
+  description: Cess GST Amount (SC)
+  type: Num
+  size: 19.6
+- field: CsgstAmtFC
+  description: Cess GST Amount (FC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - Line

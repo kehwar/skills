@@ -1,0 +1,26 @@
+table: OWDT
+description: Widget Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWDT.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Widget Name
+  type: nVarChar
+  size: 20
+- field: UserSign
+  description: User ID
+  type: nVarChar
+  size: 6
+  related: OUSR
+- field: Prototype
+  description: Prototype
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

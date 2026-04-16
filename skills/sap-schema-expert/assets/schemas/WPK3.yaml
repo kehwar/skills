@@ -1,0 +1,33 @@
+table: WPK3
+description: Dashboard Legend Color
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPK3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DsbrdEntry
+  description: Dashboard Entry
+  type: Int
+  size: 11
+- field: FldName
+  description: Field Name
+  type: nVarChar
+  size: 250
+- field: FldMethod
+  description: Field Method
+  type: nVarChar
+  size: 250
+- field: DbType
+  description: Database Type
+  type: nVarChar
+  size: 250
+- field: SqlType
+  description: SQL Type
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

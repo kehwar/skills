@@ -1,0 +1,39 @@
+table: JWT1
+description: User Authorization
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/JWT1.htm
+fields:
+- field: UserLink
+  description: USER LINK
+  type: nVarChar
+  size: 254
+  related: OJWT
+- field: PermId
+  description: Authorization ID
+  type: nVarChar
+  size: 20
+- field: CalcView
+  description: CALVIEW ID
+  type: nVarChar
+  size: 254
+- field: Permission
+  description: Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: V
+    label: Various
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserLink
+  - CalcView

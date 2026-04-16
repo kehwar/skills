@@ -1,0 +1,57 @@
+table: OOCC
+description: BoE Occurrence Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OOCC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 10
+- field: Dscription
+  description: Description
+  type: nVarChar
+  size: 128
+- field: Note
+  description: Note
+  type: nVarChar
+  size: 50
+- field: ReqBoeSt
+  description: Requested BoE Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+  - key: D
+    label: Deposited
+  - key: P
+    label: Paid
+  - key: C
+    label: Canceled
+  - key: F
+    label: Failed
+- field: IsMovement
+  description: Is Movement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - Code
+  - IsMovement

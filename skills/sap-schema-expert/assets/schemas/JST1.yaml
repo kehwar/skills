@@ -1,0 +1,274 @@
+table: JST1
+description: TDS Adjustment - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/JST1.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OJST
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: BaseNum
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '18'
+    label: A/P Invoice
+  - key: '204'
+    label: A/P Down Payment
+- field: BaseAbsId
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Row
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: TdsRate
+  description: TDS Rate
+  type: Num
+  size: 19.6
+- field: SurRate
+  description: Surcharge Rate
+  type: Num
+  size: 19.6
+- field: CessRate
+  description: Cess Rate
+  type: Num
+  size: 19.6
+- field: HscRate
+  description: HSC Rate
+  type: Num
+  size: 19.6
+- field: TaxbleAmnt
+  description: Taxable Amount
+  type: Num
+  size: 19.6
+- field: TxblAmntSC
+  description: Taxable Amount (SC)
+  type: Num
+  size: 19.6
+- field: TxblAmntFC
+  description: Taxable Amount (FC)
+  type: Num
+  size: 19.6
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  constraints:
+  - key: P
+    label: Payment
+  - key: I
+    label: Invoice
+- field: Criteria
+  description: Criteria
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: Accrual
+  - key: N
+    label: Cash
+- field: Type
+  description: Withholding Tax Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: V
+    label: VAT Withholding
+  - key: I
+    label: Incoming Tax Withholding
+- field: RoundType
+  description: Rounding Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: T
+    label: Truncated
+  - key: C
+    label: Commercial Values
+- field: BaseType
+  description: Base Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Gross
+  - key: N
+    label: Net
+  - key: V
+    label: VAT
+- field: Account
+  description: G/L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TdsAcc
+  description: TDS Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SurAcc
+  description: Surcharge Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CessAcc
+  description: Cess Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: HscAcc
+  description: HSC Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WTAmnt
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTAmntSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: WTAmntFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: TdsBAmt
+  description: TDS Base Amount
+  type: Num
+  size: 19.6
+- field: TdsBAmtSC
+  description: TDS Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: TdsBAmtFC
+  description: TDS Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: SurBAmt
+  description: Surcharge Base Amount
+  type: Num
+  size: 19.6
+- field: SurBAmtSC
+  description: Surcharge Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: SurBAmtFC
+  description: Surcharge Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: CessBAmt
+  description: Cess Base Amount
+  type: Num
+  size: 19.6
+- field: CessBAmtSC
+  description: Cess Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: CessBAmtFC
+  description: Cess Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: HscBAmt
+  description: HSC Base Amount
+  type: Num
+  size: 19.6
+- field: HscBAmtSC
+  description: HSC Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: HscBAmtFC
+  description: HSC Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: TdsAmnt
+  description: TDS Tax Amount
+  type: Num
+  size: 19.6
+- field: TdsAmntSC
+  description: TDS Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: TdsAmntFC
+  description: TDS Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: SurAmnt
+  description: Surcharge Tax Amount
+  type: Num
+  size: 19.6
+- field: SurAmntSC
+  description: Surcharge Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: SurAmntFC
+  description: Surcharge Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: CessAmnt
+  description: Cess Tax Amount
+  type: Num
+  size: 19.6
+- field: CessAmntSC
+  description: Cess Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CessAmntFC
+  description: Cess Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: HscAmnt
+  description: HSC Tax Amount
+  type: Num
+  size: 19.6
+- field: HscAmntSC
+  description: HSC Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: HscAmntFC
+  description: HSC Tax Amount (FC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LineNum
+- key: BASE_ENTRY
+  unique: false
+  fields:
+  - AbsId
+  - BaseNum
+  - BaseAbsId
+  - BaseLine
+- key: WT_CODE
+  unique: false
+  fields:
+  - AbsId
+  - WTCode

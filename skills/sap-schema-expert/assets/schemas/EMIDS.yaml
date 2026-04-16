@@ -1,0 +1,22 @@
+table: EMIDS
+description: EMIDS
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EMIDS.htm
+fields:
+- field: SequenceID
+  description: Event Sequence ID
+  type: nVarChar
+  size: 60
+- field: ProcessID
+  description: Processed message ID
+  type: nVarChar
+  size: 60
+- field: DispatchID
+  description: Dispached message ID
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SequenceID
+  - DispatchID

@@ -1,0 +1,68 @@
+table: IWZ1
+description: Accounts Revaluation History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/IWZ1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OIWZ
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ActName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: ActFrmBlnc
+  description: Account From Balance
+  type: Num
+  size: 19.6
+- field: ExecutLine
+  description: Executed Row
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Executed Row
+  - key: N
+    label: Filter Line
+- field: ActRevCncl
+  description: Account Revaluation Cancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: RevToAct
+  description: Revaluate To Account
+  type: nVarChar
+  size: 15
+- field: ActDiffBal
+  description: Account Difference Balance
+  type: Num
+  size: 19.6
+- field: RvCaclDate
+  description: Reval. Acct Cancellation Date
+  type: Date
+  size: 8
+- field: ErrReason
+  description: Error Reason
+  type: Int
+  size: 11
+- field: ActLastBal
+  description: Account Last Reval Balance
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - AcctCode

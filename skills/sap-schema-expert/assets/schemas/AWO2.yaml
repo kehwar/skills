@@ -1,0 +1,35 @@
+table: AWO2
+description: Production Order - Base
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AWO2.htm
+fields:
+- field: DocEntry
+  description: Document Internal Number
+  type: Int
+  size: 11
+  related: OWOR
+- field: BaseEntry
+  description: Production Order Base Entry
+  type: Int
+  size: 11
+  related: RDR1
+- field: BaseNum
+  description: Production Order Base Number
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Production Order Base Line
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - BaseEntry
+  - BaseLine
+  - LogInstanc

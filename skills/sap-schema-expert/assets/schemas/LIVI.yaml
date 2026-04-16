@@ -1,0 +1,51 @@
+table: LIVI
+description: IVI Log File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/LIVI.htm
+fields:
+- field: LogEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Version
+  description: B1 Main Version
+  type: Int
+  size: 11
+- field: PatchLevel
+  description: B1 PL Version
+  type: nVarChar
+  size: 50
+- field: Comment
+  description: Recalculation Comment
+  type: nVarChar
+  size: 100
+- field: LoadCustom
+  description: Load customs from OIPF
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: LastMsgID
+  description: Last OILM Message ID
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: InitMap
+  description: Initialize MAP Items
+  type: VarChar
+  size: 1
+- field: InitStd
+  description: Initialize STD Items
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry

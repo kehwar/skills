@@ -1,0 +1,145 @@
+table: OCRY
+description: Countries/Regions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCRY.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 3
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: AddrFormat
+  description: Address Format
+  type: Int
+  size: 6
+  related: OADF
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsEC
+  description: EU
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReportCode
+  description: Code for Reports
+  type: nVarChar
+  size: 3
+- field: TaxIdDigts
+  description: No. of Digits for Tax ID
+  type: Int
+  size: 6
+- field: BnkCodDgts
+  description: No. of Digits for Bank Code
+  type: Int
+  size: 11
+- field: BnkBchDgts
+  description: No. of Digits for Branch
+  type: Int
+  size: 11
+- field: BnkActDgts
+  description: No. of Digits for Account No.
+  type: Int
+  size: 11
+- field: BnkCtKDgts
+  description: No. of Digits for Control No.
+  type: Int
+  size: 11
+- field: ValDomAcct
+  description: Domestic Bank Acct. Validation
+  type: nVarChar
+  size: 3
+  default: XX
+  constraints:
+  - key: XX
+    label: ''
+  - key: BE
+    label: Belgium
+  - key: ES
+    label: Spain
+  - key: FR
+    label: France
+  - key: IT
+    label: Italy
+  - key: NL
+    label: Netherlands
+  - key: PT
+    label: Portugal
+- field: ValIban
+  description: IBAN Validation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsBlackLst
+  description: On Black List
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UICCode
+  description: UIC Country Code
+  type: nVarChar
+  size: 3
+- field: CntCodNum
+  description: Country/Region Code Number
+  type: nVarChar
+  size: 4
+- field: Siscomex
+  description: SISCOMEX Country/Region Code
+  type: nVarChar
+  size: 3
+- field: IsIntraS
+  description: Intrastat Trans.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EAEU
+  description: EAEU
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ISO2Code
+  description: ISO Alpha-2 Code
+  type: nVarChar
+  size: 2
+- field: ISO3Code
+  description: ISO Alpha-3 Code
+  type: nVarChar
+  size: 3
+- field: ISONumeric
+  description: ISO Numeric
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

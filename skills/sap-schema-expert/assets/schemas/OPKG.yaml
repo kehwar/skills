@@ -1,0 +1,93 @@
+table: OPKG
+description: Package Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OPKG.htm
+fields:
+- field: PkgCode
+  description: Code
+  type: Int
+  size: 11
+- field: PkgType
+  description: Type
+  type: nVarChar
+  size: 30
+- field: Length1
+  description: Length 1
+  type: Num
+  size: 19.6
+- field: Len1Unit
+  description: Unit of Length 1
+  type: Int
+  size: 6
+- field: length2
+  description: Length 2
+  type: Num
+  size: 19.6
+- field: Len2Unit
+  description: Unit of Length 2
+  type: Int
+  size: 6
+- field: Width1
+  description: Width 1
+  type: Num
+  size: 19.6
+- field: Wdth1Unit
+  description: Unit of Width 1
+  type: Int
+  size: 6
+- field: Width2
+  description: Width 2
+  type: Num
+  size: 19.6
+- field: Wdth2Unit
+  description: Unit of Width 2
+  type: Int
+  size: 6
+- field: Height1
+  description: Height 1
+  type: Num
+  size: 19.6
+- field: Hght1Unit
+  description: Unit of Height 1
+  type: Int
+  size: 6
+- field: Height2
+  description: Height 2
+  type: Num
+  size: 19.6
+- field: Hght2Unit
+  description: Unit of Height 2
+  type: Int
+  size: 6
+- field: Volume
+  description: Volume
+  type: Num
+  size: 19.6
+- field: VolUnit
+  description: Volume UoM
+  type: Int
+  size: 6
+- field: Weight1
+  description: Weight 1
+  type: Num
+  size: 19.6
+- field: WghtUnit
+  description: Weight UoM
+  type: Int
+  size: 6
+- field: Weight2
+  description: Weight 2
+  type: Num
+  size: 19.6
+- field: Wght2Unit
+  description: Unit of Weight 2
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PkgCode
+- key: TYPE
+  unique: true
+  fields:
+  - PkgType

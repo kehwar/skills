@@ -1,0 +1,79 @@
+table: WDD1
+description: Documents for Approval - Authorizers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/WDD1.htm
+fields:
+- field: WddCode
+  description: Internal ID
+  type: Int
+  size: 11
+- field: StepCode
+  description: Stage Key
+  type: Int
+  size: 11
+  related: OWST
+- field: UserID
+  description: Authorizer Code
+  type: Int
+  size: 11
+  related: OUSR
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: W
+    label: Pending
+  - key: Y
+    label: Approved
+  - key: N
+    label: Rejected
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Request Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Request Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+- field: SortId
+  description: Sort Code
+  type: Int
+  size: 6
+- field: AuthUpdDat
+  description: Authorizer last update date
+  type: Date
+  size: 8
+- field: AuthUpdTim
+  description: Authorizer last update time
+  type: Int
+  size: 11
+- field: Substt
+  description: Substitute Authorizer User ID
+  type: Int
+  size: 11
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WddCode
+  - StepCode
+  - UserID

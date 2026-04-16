@@ -1,0 +1,35 @@
+table: OSCO
+description: Service Call Origins
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OSCO.htm
+fields:
+- field: originID
+  description: Origin ID
+  type: Int
+  size: 6
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - originID

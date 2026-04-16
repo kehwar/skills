@@ -1,0 +1,245 @@
+table: DWZ4
+description: Dunning Wizard Array 4-Paging Grid
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DWZ4.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: ODWZ
+- field: CheckLine
+  description: Checked Row
+  type: VarChar
+  size: 1
+  default: Y
+- field: ExeChkLine
+  description: Executed Checked Row
+  type: VarChar
+  size: 1
+  default: Y
+- field: RowId
+  description: Row Num
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Card Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LetterNum
+  description: Letter Number
+  type: Int
+  size: 11
+- field: DunnLevel
+  description: Dunning Level
+  type: Int
+  size: 11
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: DocCur
+  description: Doc. Currency
+  type: nVarChar
+  size: 3
+- field: DocType
+  description: Source Table
+  type: Int
+  size: 11
+  constraints:
+  - key: '13'
+    label: A/R Invoice
+  - key: '203'
+    label: Down Payment Incoming
+  - key: '165'
+    label: Correction A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '24'
+    label: Incoming Payment
+  - key: '30'
+    label: Journal Transactions
+  - key: '-2'
+    label: Open Balance
+  - key: '-3'
+    label: Close Balance
+- field: DocNum
+  description: Doc. No.
+  type: Int
+  size: 11
+- field: InstlmntID
+  description: Installment ID
+  type: Int
+  size: 6
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: LastLvlDte
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: LastDunDte
+  description: Last Dunning Date
+  type: Date
+  size: 8
+- field: NewLvlDate
+  description: New Level Update Date
+  type: Date
+  size: 8
+- field: DocAmntLC
+  description: DOC. AMOUNT (LC)
+  type: nVarChar
+  size: 100
+- field: DocAmntFC
+  description: DOC. AMOUNT (FC)
+  type: nVarChar
+  size: 100
+- field: OpenAmtLC
+  description: Open Amount (LC)
+  type: nVarChar
+  size: 100
+- field: OpenAmtFC
+  description: Open Amount (FC)
+  type: nVarChar
+  size: 100
+- field: IntrstDays
+  description: Interest Days
+  type: Int
+  size: 11
+- field: IntrstPC
+  description: Interest Percent
+  type: Num
+  size: 19.6
+- field: IntAmntLC
+  description: Interest Amount (LC)
+  type: nVarChar
+  size: 100
+- field: IntAmntFC
+  description: Interest Amount (FC)
+  type: nVarChar
+  size: 100
+- field: InclAmntLC
+  description: Total Incl. Amount (LC)
+  type: nVarChar
+  size: 100
+- field: InclAmntFC
+  description: Total Incl. Amount (FC)
+  type: nVarChar
+  size: 100
+- field: FeeLC
+  description: Fee (LC)
+  type: nVarChar
+  size: 100
+- field: FeeFC
+  description: Fee (FC)
+  type: nVarChar
+  size: 100
+- field: AllTotalLC
+  description: Overall Total (LC)
+  type: nVarChar
+  size: 100
+- field: AllTotalFC
+  description: Overall Total (FC)
+  type: nVarChar
+  size: 100
+- field: AutoPost
+  description: Automatic Posting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: B
+    label: Interest and Fee
+  - key: I
+    label: Interest Only
+  - key: F
+    label: Fee Only
+- field: LineProp
+  description: Line Property
+  type: Int
+  size: 11
+- field: YearDays
+  description: Year Days
+  type: Int
+  size: 11
+- field: YearlyRate
+  description: Yearly Rate
+  type: Num
+  size: 19.6
+- field: LetterFrmt
+  description: Letter Formant
+  type: nVarChar
+  size: 8
+- field: MinBlan
+  description: Min. Balance
+  type: Num
+  size: 19.6
+- field: GrpMethod
+  description: Group Method
+  type: VarChar
+  size: 1
+- field: DocEntry
+  description: DocEntry
+  type: Int
+  size: 11
+- field: DocRate
+  description: Exchange Rate on Document
+  type: nVarChar
+  size: 100
+- field: FeeCurr
+  description: Fee Currency
+  type: nVarChar
+  size: 3
+- field: OrigFee
+  description: Original Fee on Dunning Term
+  type: Num
+  size: 19.6
+- field: MinBalCurr
+  description: Minimum Balance Currency
+  type: nVarChar
+  size: 3
+- field: LvlUpdated
+  description: Level Updated
+  type: nVarChar
+  size: 3
+- field: DunAddr
+  description: Dunning Address
+  type: nVarChar
+  size: 254
+- field: DocText
+  description: Doc. Text
+  type: nVarChar
+  size: 254
+- field: ParentId
+  description: Parent Id
+  type: Int
+  size: 11
+- field: BpCode2
+  description: BP Code 2
+  type: nVarChar
+  size: 15
+- field: BpType
+  description: BP Type
+  type: VarChar
+  size: 1
+- field: CardName2
+  description: Card Name 2
+  type: nVarChar
+  size: 200
+- field: Comment
+  description: Comment
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - RowId

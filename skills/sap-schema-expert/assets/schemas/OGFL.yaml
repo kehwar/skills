@@ -1,0 +1,32 @@
+table: OGFL
+description: Grid Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OGFL.htm
+fields:
+- field: FormID
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: GridID
+  description: Grid ID
+  type: nVarChar
+  size: 11
+- field: UserCode
+  description: User Code
+  type: Int
+  size: 6
+- field: DefFilter
+  description: Default Filter
+  type: Int
+  size: 11
+- field: NextFltID
+  description: Next Filter ID
+  type: Int
+  size: 11
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormID
+  - GridID
+  - UserCode

@@ -1,0 +1,75 @@
+table: OPMX
+description: Payroll
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OPMX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Total
+  description: Total
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Rate
+  description: Exchange Rate
+  type: Num
+  size: 19.6
+- field: Uid
+  description: UUID of payroll
+  type: nVarChar
+  size: 100
+- field: RFC
+  description: RFC
+  type: nVarChar
+  size: 20
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: FileDate
+  description: File Date
+  type: Date
+  size: 8
+- field: FileName
+  description: Imported File Name
+  type: nVarChar
+  size: 254
+- field: JVBatchNum
+  description: Journal Voucher Batch Number
+  type: Int
+  size: 11
+  related: OBTF
+- field: JVTransId
+  description: Journal Voucher Trans Number
+  type: Int
+  size: 11
+  related: OBTF
+- field: JETransId
+  description: Journal Entry Trans Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Payroll
+  - key: E
+    label: Expenses
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: UID
+  unique: true
+  fields:
+  - Uid

@@ -1,0 +1,60 @@
+table: DDT1
+description: Withholding Tax Deduction Hierarchy - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/DDT1.htm
+fields:
+- field: DdtKey
+  description: Hierarchy Key
+  type: Int
+  size: 11
+  related: ODDT
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: DdctPrcnt
+  description: Deduction %
+  type: Num
+  size: 19.6
+- field: MaxSum
+  description: Maximum Total
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Data Doc.
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DdtKey
+  - LineNum

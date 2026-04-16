@@ -1,0 +1,110 @@
+table: ODCI
+description: Intrastat Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODCI.htm
+fields:
+- field: AbsEntry
+  description: Configuration Entry ID
+  type: Int
+  size: 11
+- field: ConfType
+  description: Configuration Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: M
+    label: Additional Measurement Unit
+  - key: C
+    label: Commodity Codes
+  - key: P
+    label: Custom Procedures
+  - key: I
+    label: Incoterms
+  - key: N
+    label: Nature of Transactions
+  - key: E
+    label: Ports of Entry and Exit
+  - key: R
+    label: Service Codes
+  - key: S
+    label: Statistical Procedures
+  - key: T
+    label: Transport Modes
+  - key: G
+    label: Regions
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 50
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: PrcstVal
+  description: Percentage Value
+  type: Num
+  size: 19.6
+- field: SuppUnit
+  description: Supplementary Unit
+  type: Int
+  size: 11
+  related: ODCI
+- field: Export
+  description: Valid for Export
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Import
+  description: Valid for Import
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: StatCode
+  description: Statistical Code
+  type: nVarChar
+  size: 2
+- field: DateFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Valid To
+  type: Date
+  size: 8
+- field: TextVal
+  description: Text Value
+  type: nVarChar
+  size: 12
+- field: ConfID
+  description: Configuration ID
+  type: nVarChar
+  size: 254
+- field: TriangDeal
+  description: Triangular Deal Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: '11'
+    label: Acquisitions intra-communautaires
+  - key: '21'
+    label: Livraison exonï¿½rï¿½e
+  - key: '31'
+    label: Facturations dans le cadre dï¿½opï¿½rations triangulaires
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CONF_ID
+  unique: false
+  fields:
+  - ConfID

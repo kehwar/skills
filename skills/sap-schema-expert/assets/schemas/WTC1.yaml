@@ -1,0 +1,46 @@
+table: WTC1
+description: WTax Certificates - WT Groups in Certificates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WTC1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: WtAbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: WTPercent
+  description: WTax Rate
+  type: Num
+  size: 19.6
+- field: SumVatAmnt
+  description: Sum of VAT Amount
+  type: Num
+  size: 19.6
+- field: SumDocTot
+  description: Sum of Doc. Total Amount
+  type: Num
+  size: 19.6
+- field: SumBaseAmn
+  description: Sum of Base Amount
+  type: Num
+  size: 19.6
+- field: SumAccumAm
+  description: Sum of Accumulated Amount
+  type: Num
+  size: 19.6
+- field: SumPercpAm
+  description: Sum of Perception Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

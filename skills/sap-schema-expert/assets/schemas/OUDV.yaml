@@ -1,0 +1,30 @@
+table: OUDV
+description: User-Defined Views for Service Layer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OUDV.htm
+fields:
+- field: Name
+  description: View Name
+  type: nVarChar
+  size: 100
+- field: DBType
+  description: Database Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: MSSQL
+    label: Microsoft SQL Server
+  - key: HANA
+    label: SAP HANA
+- field: SchemaName
+  description: Schema Name
+  type: nVarChar
+  size: 64
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name

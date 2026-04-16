@@ -1,0 +1,23 @@
+table: SDRR
+description: Drag&Relate - Reports
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SDRR.htm
+fields:
+- field: ObjId
+  description: Object ID
+  type: nVarChar
+  size: 4
+- field: ReportStr
+  description: Report String
+  type: Text
+  size: 16
+- field: ServerType
+  description: Server Type
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjId
+  - ServerType

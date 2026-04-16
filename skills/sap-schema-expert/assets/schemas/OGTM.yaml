@@ -1,0 +1,100 @@
+table: OGTM
+description: GTS Mapping Object
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OGTM.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: GtsMapNum
+  description: GTS Mapping No.
+  type: nVarChar
+  size: 20
+- field: InvMapEnty
+  description: Link to Invoice Mapping ID
+  type: Int
+  size: 11
+  related: OIVM
+- field: GtsInvNum
+  description: Link to GTS Invoice Object
+  type: Int
+  size: 11
+  related: OGTI
+- field: BpCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: BpName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: BpTaxRegNo
+  description: BP Tax Registration No.
+  type: nVarChar
+  size: 20
+- field: BpAddrTel
+  description: BP Address and Telephone
+  type: nVarChar
+  size: 80
+- field: BpBankNum
+  description: BP Bank Number
+  type: nVarChar
+  size: 80
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: Checker
+  description: Checker
+  type: nVarChar
+  size: 80
+- field: Payee
+  description: Payee
+  type: nVarChar
+  size: 80
+- field: DocAmount
+  description: Document Net Amount
+  type: Num
+  size: 19.6
+- field: AmtAftDsct
+  description: Amount After Discount
+  type: Num
+  size: 19.6
+- field: TaxAmount
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: GtsStatus
+  description: GTS Status
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Exported
+  - key: '2'
+    label: Voided
+  - key: '3'
+    label: Imported
+- field: ExportDate
+  description: Export Date
+  type: Date
+  size: 8
+- field: VoidDate
+  description: Void Date
+  type: Date
+  size: 8
+- field: ImportDate
+  description: Import Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

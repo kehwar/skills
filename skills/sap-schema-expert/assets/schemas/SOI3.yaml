@@ -1,0 +1,96 @@
+table: SOI3
+description: Statement of Import - Invoices
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SOI3.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: SOINum
+  description: Statement No.
+  type: Int
+  size: 11
+- field: AgrNum
+  description: Blanket Agreement No.
+  type: Int
+  size: 11
+- field: AgrNo
+  description: Blanket Agreement Entry
+  type: Int
+  size: 11
+  related: OOAT
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Customer/Vendor Name
+  type: nVarChar
+  size: 200
+- field: PayToCtry
+  description: BP Pay-to Country/Region
+  type: nVarChar
+  size: 3
+- field: PmntNum
+  description: Payment No.
+  type: Int
+  size: 11
+- field: PmntEntry
+  description: Payment Entry
+  type: Int
+  size: 11
+  related: OVPM
+- field: PmntType
+  description: Payment Type
+  type: Int
+  size: 11
+- field: PmntDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: ExcBasSum
+  description: Sum of Excise Base Amount
+  type: Num
+  size: 19.6
+- field: ExciseSum
+  description: Sum of Excise Amount
+  type: Num
+  size: 19.6
+- field: VatBaseSum
+  description: Sum of VAT Base Amount
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Total of VAT
+  type: Num
+  size: 19.6
+- field: RegNo
+  description: Registration No.
+  type: nVarChar
+  size: 18
+- field: RegDate
+  description: Registration Date
+  type: Date
+  size: 8
+- field: ExecStat
+  description: Execution Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - SOINum

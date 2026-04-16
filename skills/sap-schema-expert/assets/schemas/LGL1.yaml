@@ -1,0 +1,43 @@
+table: LGL1
+description: Legal Data - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/LGL1.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+  related: OLGL
+- field: LineSeq
+  description: Line Sequence
+  type: Int
+  size: 11
+- field: LineType
+  description: Line Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: T
+    label: Document Total
+  - key: R
+    label: Tax Per Line
+  - key: V
+    label: Total Tax
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: TaxRate
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: Amount
+  description: Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineSeq

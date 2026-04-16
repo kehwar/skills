@@ -1,0 +1,17 @@
+table: ODTS
+description: Datev Transactions Deliveries and Services
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODTS.htm
+fields:
+- field: DTV13BCode
+  description: Code
+  type: nVarChar
+  size: 50
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DTV13BCode

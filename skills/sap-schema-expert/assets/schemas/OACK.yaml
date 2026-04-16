@@ -1,0 +1,46 @@
+table: OACK
+description: Acknowledge Number
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OACK.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FinYear
+  description: Financial Year
+  type: Int
+  size: 11
+  related: OFYM
+- field: Quarter
+  description: Quarter
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '1'
+    label: Quarter 1
+  - key: '2'
+    label: Quarter 2
+  - key: '3'
+    label: Quarter 3
+  - key: '4'
+    label: Quarter 4
+- field: AckNum
+  description: Acknowledgment No.
+  type: nVarChar
+  size: 100
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+  related: OLCT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: LOC_QUART
+  unique: true
+  fields:
+  - FinYear
+  - Quarter
+  - Location

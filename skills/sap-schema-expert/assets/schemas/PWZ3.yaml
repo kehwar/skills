@@ -1,0 +1,783 @@
+table: PWZ3
+description: Payment Wizard - Rows 3
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PWZ3.htm
+fields:
+- field: IdEntry
+  description: ID Entry
+  type: Int
+  size: 11
+  related: OPWZ
+- field: PymNum
+  description: Payment Number
+  type: Int
+  size: 11
+  related: OCRN
+- field: CardCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Vendor Name
+  type: nVarChar
+  size: 200
+- field: PymMeth
+  description: Payment Method
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: GLAccCode
+  description: G/L Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GLAccName
+  description: G/L Account Name
+  type: nVarChar
+  size: 200
+- field: PymAmount
+  description: Total Payment
+  type: Num
+  size: 19.6
+- field: PymAmntFC
+  description: Total Payment (FC)
+  type: Num
+  size: 19.6
+- field: PymAmnSyst
+  description: Total Payment (SC)
+  type: Num
+  size: 19.6
+- field: InvKey
+  description: Invoice Key
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: ValDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: TotalLoc
+  description: Total (LC)
+  type: Num
+  size: 19.6
+- field: TotalFC
+  description: Total (FC)
+  type: Num
+  size: 19.6
+- field: TotalSys
+  description: Total (SC)
+  type: Num
+  size: 19.6
+- field: DueBal
+  description: Balance Due
+  type: Num
+  size: 19.6
+- field: DueBalFC
+  description: Balance Due (FC)
+  type: Num
+  size: 19.6
+- field: DueBalSys
+  description: Balance Due (SC)
+  type: Num
+  size: 19.6
+- field: DiscPrcnt
+  description: Discount %
+  type: Num
+  size: 19.6
+- field: DiscSum
+  description: Total Discount
+  type: Num
+  size: 19.6
+- field: DiscSumFC
+  description: Total Discount (FC)
+  type: Num
+  size: 19.6
+- field: DiscSumSy
+  description: Total Discount (SC)
+  type: Num
+  size: 19.6
+- field: PayAmount
+  description: Payment Amount
+  type: Num
+  size: 19.6
+- field: PayAmntFC
+  description: Payment Amount (FC)
+  type: Num
+  size: 19.6
+- field: PayAmntSys
+  description: Payment Amount (SC)
+  type: Num
+  size: 19.6
+- field: InvPayAmnt
+  description: Total Invoice for Payment
+  type: Num
+  size: 19.6
+- field: InvPayAmFC
+  description: Total Invoice for Payment (FC)
+  type: Num
+  size: 19.6
+- field: InvPayAmSy
+  description: Total Invoice for Payment (SC)
+  type: Num
+  size: 19.6
+- field: CardType
+  description: BP Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Vendor
+  - key: L
+    label: Lead
+- field: Country
+  description: Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '13'
+- field: PymBnkTrns
+  description: Payment Means
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Check
+  - key: T
+    label: Bank Transfer
+  - key: B
+    label: Bill Of Exchange
+- field: ActFrmtCod
+  description: Account Format Code
+  type: nVarChar
+  size: 210
+- field: Checked
+  description: Checked
+  type: VarChar
+  size: 1
+- field: FatherLine
+  description: Father Line
+  type: VarChar
+  size: 1
+  default: N
+- field: InvCurr
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: LineRate
+  description: Row Rate
+  type: Num
+  size: 19.6
+- field: BfDcntSum
+  description: Amount Before Discount
+  type: Num
+  size: 19.6
+- field: BfNetDcnt
+  description: Net Amount Before Discount
+  type: Num
+  size: 19.6
+- field: vatApplied
+  description: VAT Applied
+  type: Num
+  size: 19.6
+- field: IsTax
+  description: Is Tax
+  type: VarChar
+  size: 1
+  default: Y
+- field: IsFreight
+  description: Is Freight
+  type: VarChar
+  size: 1
+  default: Y
+- field: IsOrigMeth
+  description: Original Payment Method
+  type: VarChar
+  size: 1
+  default: N
+- field: FreightSum
+  description: Freight Sum
+  type: Num
+  size: 19.6
+- field: IsrRef
+  description: ISR Ref. No.
+  type: nVarChar
+  size: 27
+- field: RoundSum
+  description: Rounding Amount
+  type: Num
+  size: 19.6
+- field: Agent
+  description: Agent Code
+  type: nVarChar
+  size: 32
+  related: OAGP
+- field: InstId
+  description: Installment ID
+  type: Int
+  size: 6
+  default: 1
+- field: WtSum
+  description: Withholding Tax Amount
+  type: Num
+  size: 19.6
+- field: BoeNum
+  description: Bill of Exchange No.
+  type: Int
+  size: 11
+- field: NumAtCard
+  description: BP Reference No.
+  type: nVarChar
+  size: 200
+- field: DeductPer
+  description: Deduction Percent
+  type: Num
+  size: 19.6
+- field: DpmPosted
+  description: Down Payment Posted
+  type: VarChar
+  size: 1
+- field: Status
+  description: Inv Status
+  type: VarChar
+  size: 1
+- field: NumOfCheck
+  description: Number of Checks
+  type: Int
+  size: 11
+  default: 1
+- field: SumFrstChk
+  description: Sum of First Check
+  type: Num
+  size: 19.6
+- field: SumNxtChk
+  description: Sum of Next Check
+  type: Num
+  size: 19.6
+- field: PayToCode
+  description: Pay To
+  type: nVarChar
+  size: 50
+- field: PayToCntr
+  description: Pay to Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: PayToBank
+  description: Pay to Bank Code
+  type: nVarChar
+  size: 30
+- field: PayToAct
+  description: Pay to Bank Account No.
+  type: nVarChar
+  size: 50
+- field: PymCurr
+  description: Payment Currency
+  type: nVarChar
+  size: 3
+- field: TaxOnExpSu
+  description: Tax on Freight Amount
+  type: Num
+  size: 19.6
+- field: TransId
+  description: Transaction Internal ID
+  type: Int
+  size: 11
+  related: OJDT
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Line_ID
+  description: JE Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PymDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: BcgSum
+  description: Bank Charges Amount
+  type: Num
+  size: 19.6
+- field: BcgSumFC
+  description: Bank Charges Amount (FC)
+  type: Num
+  size: 19.6
+- field: BcgSumSy
+  description: Bank Charges Amount (SC)
+  type: Num
+  size: 19.6
+- field: BcgTaxSum
+  description: Bank Charge Tax Amount
+  type: Num
+  size: 19.6
+- field: BcgTaxSumF
+  description: Bank Charge Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: BcgTaxSumS
+  description: Bank Charge Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: PrjCode
+  description: Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BcgVatGrp
+  description: Bank Charge Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: LinePrjCod
+  description: Line Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BcgPmnt
+  description: Payment Amount (BCG)
+  type: Num
+  size: 19.6
+- field: BcgPmntFc
+  description: Payment Amount FC (BCG)
+  type: Num
+  size: 19.6
+- field: BcgPmntSc
+  description: Payment Amount SC (BCG)
+  type: Num
+  size: 19.6
+- field: PayOrderNo
+  description: Payment Order Number
+  type: Int
+  size: 11
+  related: OIPO
+- field: LineType
+  description: Line Type
+  type: VarChar
+  size: 1
+  default: G
+  constraints:
+  - key: G
+    label: General
+  - key: O
+    label: Pay on Account
+  - key: T
+    label: Pay to Account
+- field: ManualNum
+  description: Manual Entry No.
+  type: Int
+  size: 11
+  default: 0
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 254
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 254
+- field: Ref3
+  description: Reference 3
+  type: nVarChar
+  size: 254
+- field: OrdrStatus
+  description: Payment Order Status
+  type: VarChar
+  size: 1
+- field: BnkCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+- field: BnkAccNo
+  description: Bank Account Number
+  type: nVarChar
+  size: 50
+- field: Branch
+  description: Branch
+  type: nVarChar
+  size: 50
+- field: BnkCountr
+  description: Manual Line Bank Country/Region
+  type: nVarChar
+  size: 3
+- field: TBankCode
+  description: Target Default Bank
+  type: nVarChar
+  size: 30
+  default: '-1'
+- field: TDflAccoun
+  description: Target Default Account
+  type: nVarChar
+  size: 50
+- field: TBankCount
+  description: Target Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: TargetBran
+  description: Target Bank Branch
+  type: nVarChar
+  size: 50
+- field: DscDueDate
+  description: Discount Due Date
+  type: Date
+  size: 8
+- field: CIG
+  description: Contract Code Identification
+  type: Int
+  size: 11
+  related: OCIG
+- field: CUP
+  description: Unique Code of Project
+  type: Int
+  size: 11
+  related: OCUP
+- field: BoeCurrSta
+  description: BoE Current Status
+  type: VarChar
+  size: 1
+- field: BoeKey
+  description: Bill of Exchange Key
+  type: Int
+  size: 11
+  related: OBOE
+- field: BoeDate
+  description: BoE Date
+  type: Date
+  size: 8
+- field: BoeDueDate
+  description: Bill of Exchange Due Date
+  type: Date
+  size: 8
+- field: Instruct1
+  description: BoE Instruction 1
+  type: nVarChar
+  size: 2
+- field: Instruct2
+  description: BoE Instruction 2
+  type: nVarChar
+  size: 2
+- field: BoeCancIns
+  description: BoE Cancel Instruction
+  type: nVarChar
+  size: 2
+- field: BoeOccCode
+  description: BoE Occurrence Code
+  type: nVarChar
+  size: 2
+- field: BoePtfID
+  description: BoE Internal Portfolio ID
+  type: nVarChar
+  size: 3
+- field: BoeOurNum
+  description: Our Number in Next BoE
+  type: Int
+  size: 11
+- field: BoeIntrAm
+  description: BoE Interest Amount
+  type: Num
+  size: 19.6
+- field: BoeDiscD
+  description: BoE Discount Date
+  type: Date
+  size: 8
+- field: BoeDisAmnt
+  description: BoE Discount Amount
+  type: Num
+  size: 19.6
+- field: BoeFineD
+  description: BoE Fine Date
+  type: Date
+  size: 8
+- field: BoeFineAmt
+  description: BoE Fine Amount
+  type: Num
+  size: 19.6
+- field: BoeIntrstD
+  description: BoE Interest Date
+  type: Date
+  size: 8
+- field: BoeIOFAmt
+  description: BoE IOF Amount
+  type: Num
+  size: 19.6
+- field: BoeMovCode
+  description: BoE Movement Code
+  type: nVarChar
+  size: 10
+- field: BarcodeRep
+  description: Barcode Representation
+  type: nVarChar
+  size: 100
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: PONumber
+  description: External Payment Order Number
+  type: Int
+  size: 11
+- field: POSeries
+  description: External Payment Order Series
+  type: Int
+  size: 11
+- field: PaPriority
+  description: Payment Priority
+  type: VarChar
+  size: 1
+  default: '5'
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '2'
+    label: ''
+  - key: '3'
+    label: ''
+  - key: '4'
+    label: ''
+  - key: '5'
+    label: ''
+  - key: '6'
+    label: ''
+- field: PaymType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: E
+    label: Electronic
+  - key: P
+    label: Mail
+  - key: T
+    label: Telegraph
+  - key: X
+    label: Express
+- field: OriPymMeth
+  description: Original Payment Method Code
+  type: nVarChar
+  size: 15
+- field: PymMethTyp
+  description: Payment Method Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Incoming
+  - key: O
+    label: Outgoing
+- field: SinglePym
+  description: Single Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: MandateID
+  description: Mandate ID
+  type: nVarChar
+  size: 35
+- field: SeqType
+  description: Sequence Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: OOFF
+    label: OOFF
+  - key: FRST
+    label: FRST
+  - key: RCUR
+    label: RCUR
+  - key: FNAL
+    label: FNAL
+- field: BaseDocDat
+  description: Base Document Date
+  type: Date
+  size: 8
+- field: OKATO
+  description: OKATO
+  type: nVarChar
+  size: 11
+- field: PostPeriod
+  description: Posting Period Code
+  type: nVarChar
+  size: 10
+- field: RecipStatu
+  description: Recipient Status
+  type: nVarChar
+  size: 2
+- field: BudgetId
+  description: VAT Budget Classification Code
+  type: nVarChar
+  size: 100
+- field: PymReason
+  description: Payment Reason
+  type: nVarChar
+  size: 2
+- field: BaseDocTyp
+  description: Base Document Type
+  type: nVarChar
+  size: 2
+- field: TaxPymType
+  description: Tax Payment Type
+  type: nVarChar
+  size: 2
+- field: OKTMO
+  description: OKTMO
+  type: nVarChar
+  size: 12
+- field: PymIsUpdat
+  description: Payment method is updated
+  type: nVarChar
+  size: 30
+- field: OriPymCode
+  description: Original Payment Method Code
+  type: nVarChar
+  size: 15
+- field: OriPymType
+  description: Original Payment Method Type
+  type: VarChar
+  size: 1
+- field: ReasonCode
+  description: Reason Code
+  type: Int
+  size: 11
+- field: OriActCode
+  description: Original Account Code
+  type: nVarChar
+  size: 15
+- field: OriActName
+  description: Original Account Name
+  type: nVarChar
+  size: 200
+- field: ReasonLine
+  description: Reason Line
+  type: Int
+  size: 11
+- field: OriFormat
+  description: Original Format Code
+  type: nVarChar
+  size: 210
+- field: WtIsPym
+  description: Withholding Tax is Payment Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: IBAN
+  description: IBAN
+  type: nVarChar
+  size: 50
+- field: SwiftNum
+  description: BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: UIPCode
+  description: UIP Code
+  type: nVarChar
+  size: 25
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: OOAT
+- field: ExeByServ
+  description: Executed by Server
+  type: VarChar
+  size: 1
+- field: SpltPmtVAT
+  description: Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: EnPayToAct
+  description: Encryption of Pay to Bank Acct
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: SelOrder
+  description: Select Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdEntry
+  - PymNum
+- key: DOCUMENT
+  unique: false
+  fields:
+  - InvKey
+  - ObjType
+  - InstId

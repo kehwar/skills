@@ -1,0 +1,25 @@
+table: RSC4
+description: Resources - Employees
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSC4.htm
+fields:
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: EmpID
+  description: Employee No.
+  type: nVarChar
+  size: 11
+  related: OHEM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - EmpID

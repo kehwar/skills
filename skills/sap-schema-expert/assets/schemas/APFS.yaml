@@ -1,0 +1,164 @@
+table: APFS
+description: Personal Fields Setup - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/APFS.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: TableName
+  description: Data Subtype
+  type: nVarChar
+  size: '21'
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: '50'
+- field: RefObjType
+  description: Data Type
+  type: nVarChar
+  size: '20'
+- field: Category
+  description: Category
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: R
+    label: Sales A/R
+  - key: P
+    label: Purchase A/P
+  - key: Q
+    label: Purchase Request
+  - key: A
+    label: Inventory Transfers and Requests Sales A/R
+  - key: B
+    label: Inventory Transfers and Requests Purchase A/P
+  - key: C
+    label: Opportunity - Business Partner
+  - key: D
+    label: Opportunity - Business Partner Channel
+  - key: E
+    label: Customer Equipment Card - Business Partner
+  - key: F
+    label: Customer Equipment Card - Direct Partner
+  - key: L
+    label: Landed Cost - Vendor
+  - key: G
+    label: Landed Cost - Broker
+  - key: X
+    label: Payment Results - Business Partner
+  - key: U
+    label: Payment Results - User
+  - key: H
+    label: Incoming Payments
+  - key: I
+    label: Outgoing Payments
+  - key: J
+    label: Sales A/R
+  - key: K
+    label: Purchase A/P
+  - key: M
+    label: Bill of Exchange for Incoming Payments
+  - key: S
+    label: Business Partner - Contact Person
+  - key: O
+    label: Company
+  - key: Y
+    label: Service Call - Employee
+- field: OrigType
+  description: Default Data Classification
+  type: VarChar
+  size: '1'
+  default: U
+  constraints:
+  - key: U
+    label: User Defined
+  - key: S
+    label: Sensitive Personal
+  - key: P
+    label: Personal
+  - key: N
+    label: Not Personal
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: '8'
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: '11'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: '8'
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: '11'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: Type
+  description: Data Classification
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: Not Personal
+  - key: S
+    label: Sensitive Personal
+  - key: P
+    label: Personal
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: '254'
+- field: MaxType
+  description: Max. Data Classification
+  type: VarChar
+  size: '1'
+  default: U
+  constraints:
+  - key: U
+    label: User Defined
+  - key: S
+    label: Sensitive Personal
+  - key: P
+    label: Personal
+- field: SysDefined
+  description: Is System Defined
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc
+- key: SECONDARY
+  unique: true
+  fields:
+  - TableName
+  - FieldName
+  - Category
+  - LogInstanc

@@ -1,0 +1,166 @@
+table: PHA8
+description: Project Management - Summary
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PHA8.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: PhBudget
+  description: Subproject Budget
+  type: Num
+  size: 19.6
+- field: OpenAmtAP
+  description: Open Amount (A/P)
+  type: Num
+  size: 19.6
+- field: InvoicedAP
+  description: Invoiced (A/P)
+  type: Num
+  size: 19.6
+- field: TotalAP
+  description: Total (A/P)
+  type: Num
+  size: 19.6
+- field: TotVarAP
+  description: Total Variance (A/P)
+  type: Num
+  size: 19.6
+- field: VarPercAP
+  description: Variance Percentage (A/P)
+  type: Num
+  size: 19.6
+- field: AccPhBudg
+  description: Accumulated Subproject Budget
+  type: Num
+  size: 19.6
+- field: AccOpAmAP
+  description: Accumulated Open Amount (A/P)
+  type: Num
+  size: 19.6
+- field: AccInvAP
+  description: Accumulated Invoiced (A/P)
+  type: Num
+  size: 19.6
+- field: AccTotAP
+  description: Accumulated Total (A/P)
+  type: Num
+  size: 19.6
+- field: AccTVarAP
+  description: Accumulated Total Variance (A/P)
+  type: Num
+  size: 19.6
+- field: AccVPercAP
+  description: Accumulated Variance Percentage (A/P)
+  type: Num
+  size: 19.6
+- field: PoPhAmt
+  description: Potential Subproject Amount
+  type: Num
+  size: 19.6
+- field: OpenAmtAR
+  description: Open Amount (A/R)
+  type: Num
+  size: 19.6
+- field: InvoicedAR
+  description: Invoiced (A/R)
+  type: Num
+  size: 19.6
+- field: TotalAR
+  description: Total (A/R)
+  type: Num
+  size: 19.6
+- field: TotVarAR
+  description: Total Variance (A/R)
+  type: Num
+  size: 19.6
+- field: VarPercAR
+  description: Variance Percentage (A/R)
+  type: Num
+  size: 19.6
+- field: AccPoPhAmt
+  description: Accumulated Potential Subproject Amount
+  type: Num
+  size: 19.6
+- field: AccOpAmAR
+  description: Accumulated Open Amount (A/R)
+  type: Num
+  size: 19.6
+- field: AccInvAR
+  description: Accumulated Invoiced (A/R)
+  type: Num
+  size: 19.6
+- field: AccTotAR
+  description: Accumulated Total (A/R)
+  type: Num
+  size: 19.6
+- field: AccTVarAR
+  description: Accumulated Total Variance (A/R)
+  type: Num
+  size: 19.6
+- field: AccVPercAR
+  description: Accumulated Variance Percentage (A/R)
+  type: Num
+  size: 19.6
+- field: ActICCost
+  description: Actual Item Component Cost
+  type: Num
+  size: 19.6
+- field: ActRCCost
+  description: Actual Resource Component Cost
+  type: Num
+  size: 19.6
+- field: ActAddCost
+  description: Actual Additional Cost
+  type: Num
+  size: 19.6
+- field: ActPrCost
+  description: Actual Product Cost
+  type: Num
+  size: 19.6
+- field: ActBPrCost
+  description: Actual By-Product Cost
+  type: Num
+  size: 19.6
+- field: TotalVar
+  description: Total Variance
+  type: Num
+  size: 19.6
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CloseDate
+  description: Actual Closing Date
+  type: Date
+  size: 8
+- field: Overdue
+  description: Overdue
+  type: Int
+  size: 11
+  default: 0
+- field: Valid
+  description: If the calculated data is valid
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID

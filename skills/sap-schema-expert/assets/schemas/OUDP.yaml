@@ -1,0 +1,34 @@
+table: OUDP
+description: Departments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OUDP.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 6
+- field: Name
+  description: Departments Name
+  type: nVarChar
+  size: 20
+- field: Remarks
+  description: Description
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Father
+  description: Parent Department
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: NAME
+  unique: true
+  fields:
+  - Name

@@ -1,0 +1,105 @@
+table: OGDP
+description: General Data Protection Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OGDP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RunName
+  description: Wizard Run Name
+  type: nVarChar
+  size: 100
+- field: RunDate
+  description: Wizard Run Date
+  type: Date
+  size: 8
+- field: Status
+  description: Wizard Run Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+  - key: P
+    label: Printed
+  - key: V
+    label: Print Preview Generated
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: Action
+  description: Personal Data Management Wizard Action
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Personal Data Report
+  - key: E
+    label: Personal Data Cleanup
+  - key: B
+    label: Personal Data Blocking
+  - key: U
+    label: Personal Data Unblocking
+  - key: I
+    label: Determine Natural Persons
+  - key: N
+    label: Reverse Natural Person Determination
+- field: BPType
+  description: Business Partner Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Business Partners
+  - key: D
+    label: Default Customers
+- field: PostDateTo
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: EmpType
+  description: Employee Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Employees
+  - key: S
+    label: Sales Employees and Buyers
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - RunName

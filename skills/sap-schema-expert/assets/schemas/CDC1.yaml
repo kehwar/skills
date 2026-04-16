@@ -1,0 +1,35 @@
+table: CDC1
+description: Cash Discount - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CDC1.htm
+fields:
+- field: CdcCode
+  description: Code
+  type: nVarChar
+  size: 20
+  related: OCDC
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: NumOfDays
+  description: Days
+  type: Int
+  size: 6
+- field: Discount
+  description: Discount %
+  type: Num
+  size: 19.6
+- field: Day
+  description: Day
+  type: Int
+  size: 6
+- field: Month
+  description: Month
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CdcCode
+  - LineId

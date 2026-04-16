@@ -1,0 +1,37 @@
+table: CCAL
+description: Chinese Chart of Account Level Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CCAL.htm
+fields:
+- field: lvlIAccLe
+  description: Length First Level Accounts
+  type: Int
+  size: 6
+  default: 4
+  constraints:
+  - key: '4'
+    label: ''
+- field: accLvlSet
+  description: Account Level Set
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: Y
+    label: ''
+- field: balIndSet
+  description: Balance Dir Indicator Set
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: Y
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - lvlIAccLe

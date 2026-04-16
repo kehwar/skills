@@ -1,0 +1,73 @@
+table: BEM1
+description: SAP Sustainability Footprint Management Replication Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/BEM1.htm
+fields:
+- field: AbsEntry
+  description: Master Data Replication Internal No.
+  type: Int
+  size: 11
+- field: MDStatus
+  description: Master Data Replication Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: I
+    label: Initializing
+  - key: R
+    label: Reinitializing
+  - key: P
+    label: In Process
+  - key: C
+    label: Complete
+  - key: E
+    label: Error
+  - key: A
+    label: Complete with Inconsistencies
+- field: UpdMDDate
+  description: Last Update Date of Master Data
+  type: Date
+  size: 8
+- field: ScpStatus
+  description: Get Footprint Inventory Scope Import Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: I
+    label: Initializing
+  - key: R
+    label: Reinitializing
+  - key: P
+    label: In Process
+  - key: C
+    label: Complete
+  - key: E
+    label: Error
+  - key: A
+    label: Complete with Inconsistencies
+- field: UpdScpDate
+  description: Last Update Date of Footprint Inventory Scopes Import
+  type: Date
+  size: 8
+- field: RepMessage
+  description: Replication Status Message
+  type: Text
+  size: 16
+- field: LastRepId
+  description: Master Data Last Replication ID
+  type: nVarChar
+  size: 36
+- field: Dimension
+  description: Cost Accounting Dimension
+  type: nVarChar
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

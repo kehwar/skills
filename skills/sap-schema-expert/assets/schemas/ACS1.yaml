@@ -1,0 +1,63 @@
+table: ACS1
+description: Asset Classes - Depreciation Areas
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ACS1.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+  related: OACS
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: DprAreaID
+  description: Depreciation Area ID
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AcctDtn
+  description: Account Determination
+  type: nVarChar
+  size: 15
+  related: OADT
+- field: DprTypID
+  description: Depreciation Type ID
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: UseLife
+  description: Useful Life
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum
+- key: UNIQUE
+  unique: true
+  fields:
+  - Code
+  - DprAreaID

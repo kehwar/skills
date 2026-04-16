@@ -1,0 +1,25 @@
+table: EBCFG
+description: EBCFG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EBCFG.htm
+fields:
+- field: Id
+  description: ''
+  type: nVarChar
+  size: 50
+- field: LnscpId
+  description: ''
+  type: nVarChar
+  size: 50
+- field: Company
+  description: ''
+  type: nVarChar
+  size: 254
+- field: DefltRecvr
+  description: ''
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

@@ -1,0 +1,39 @@
+table: GBI8
+description: GBI Row 8 - Enterprise's Balance Sheet
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI8.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: AcctName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: LineNum
+  description: Line Number
+  type: nVarChar
+  size: 6
+- field: YearBAmt
+  description: Year Begin Amount
+  type: Num
+  size: 19.6
+- field: PerEAmt
+  description: Period End Amount
+  type: Num
+  size: 19.6
+- field: RepDate
+  description: Report Date
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

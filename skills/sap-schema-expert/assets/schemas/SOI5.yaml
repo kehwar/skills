@@ -1,0 +1,150 @@
+table: SOI5
+description: Statement of Import - Lines
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SOI5.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: SOINum
+  description: Statement No.
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Document Abs Entry
+  type: Int
+  size: 11
+- field: SOILineNum
+  description: SOI Line No.
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Line No.
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: unitMsr
+  description: UoM Name
+  type: nVarChar
+  size: 100
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: TotalFrgn
+  description: Total (Doc.)
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Total (LC)
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Rate
+  description: Line Rate
+  type: Num
+  size: 19.6
+- field: BaseRate
+  description: Base Currency Rate
+  type: Num
+  size: 19.6
+- field: BasNumAtCr
+  description: Base Ref. Vendor Ref. No.
+  type: nVarChar
+  size: 200
+- field: BaseDocNum
+  description: Base Ref. No.
+  type: Int
+  size: 11
+- field: BaseEntry
+  description: Base Entry
+  type: Int
+  size: 11
+- field: BasTaxDate
+  description: Base Ref. Document Date
+  type: Date
+  size: 8
+- field: FExcBasSum
+  description: Fixed Excise Base Amount
+  type: Num
+  size: 19.6
+- field: AExcBasSum
+  description: Ad Valorem Excise Base Amount
+  type: Num
+  size: 19.6
+- field: ExciseUoM
+  description: Excise Units of Measure
+  type: Int
+  size: 11
+  constraints:
+  - key: '112'
+    label: Liters (m3)
+  - key: '168'
+    label: Tons, metric tons (1000 kg)
+  - key: '251'
+    label: Horsepower (1 hp = 0.75 kW)
+  - key: '831'
+    label: Liters of anhydrous (pure) alcohol
+- field: ExcRateUoM
+  description: Excise Rate Units of Measure
+  type: Num
+  size: 19.6
+- field: ExcRateAdV
+  description: Excise Rate Ad Valorem
+  type: Num
+  size: 19.6
+- field: ExciseSum
+  description: Excise Amount
+  type: Num
+  size: 19.6
+- field: VatBaseSum
+  description: VAT Base Amount
+  type: Num
+  size: 19.6
+- field: VatPrcnt
+  description: VAT Rate per Row
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: TaxCtgr
+  description: Tax Type (Annual List)
+  type: nVarChar
+  size: 6
+- field: VatGroup
+  description: VAT Code
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - SOINum
+  - DocType
+  - DocEntry
+  - DocLineNum
+- key: SOILINENUM
+  unique: true
+  fields:
+  - WizardId
+  - SOINum
+  - SOILineNum

@@ -1,0 +1,48 @@
+table: ROBJ
+description: TM Import/Export Obj
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ROBJ.htm
+fields:
+- field: AbsKey
+  description: Absolute Key
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+  default: 0
+- field: SentDate
+  description: Date Sent For Trans
+  type: Date
+  size: 8
+- field: SentTime
+  description: Time Sent For Trans
+  type: Int
+  size: 6
+  default: 0
+- field: Localztion
+  description: Localization relevance of obj
+  type: nVarChar
+  size: 2
+  default: XX
+- field: SntStrCont
+  description: Send Strings Count
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsKey
+- key: NAME
+  unique: true
+  fields:
+  - Name

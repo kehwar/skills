@@ -1,0 +1,65 @@
+table: MVAL
+description: MetaData Tables Fields Vals
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MVAL.htm
+fields:
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 5
+- field: FieldIndex
+  description: Field Index
+  type: Int
+  size: 6
+- field: ValIndex
+  description: Val Index
+  type: Int
+  size: 6
+- field: Value
+  description: Value
+  type: nVarChar
+  size: 254
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 11
+  default: 0
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: DiEnumCode
+  description: DI Enum Code
+  type: Int
+  size: 11
+- field: DiEnItCode
+  description: DI Enum Item Code
+  type: Int
+  size: 11
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableName
+  - FieldIndex
+  - ValIndex
+  - ResCode
+  - RevCode

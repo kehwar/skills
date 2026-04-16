@@ -1,0 +1,81 @@
+table: ASTT
+description: Sales Tax Authorities Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ASTT.htm
+fields:
+- field: AbsId
+  description: Numerator
+  type: Int
+  size: '11'
+- field: Name
+  description: Type Name
+  type: nVarChar
+  size: '40'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+  related: OUSR
+- field: IsVat
+  description: VAT
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NfTaxId
+  description: ID of Nota Fiscal Tax Category
+  type: Int
+  size: '11'
+  related: ONFT
+- field: TpsId
+  description: ID of Tax Parameter Set
+  type: Int
+  size: '11'
+  related: OTPS
+- field: PLABalance
+  description: PLA Current Balance
+  type: Num
+  size: '19.6'
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: '1'
+  default: N
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: '8'
+- field: CreditCtrl
+  description: Tax Credit Control
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc
+- key: NAME
+  unique: true
+  fields:
+  - Name
+  - LogInstanc

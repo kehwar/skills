@@ -1,0 +1,65 @@
+table: OWFER
+description: Workflow Error Message
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWFER.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Identity
+  size: 11
+- field: MsgID
+  description: Message ID
+  type: nVarChar
+  size: 64
+- field: MsgDetails
+  description: Message Details
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Create Date - History
+  type: Date
+  size: 8
+- field: UserSign
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateTime
+  description: Create Time
+  type: Int
+  size: 11
+- field: MsgTaskID
+  description: Message Task ID
+  type: nVarChar
+  size: 6
+- field: MsgErrSrc
+  description: Message Source
+  type: nVarChar
+  size: 20
+- field: Remark
+  description: Remarks
+  type: Text
+  size: 16
+- field: MsgType
+  description: Message Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Information
+  - key: E
+    label: Error
+  - key: W
+    label: Warning
+- field: MsgInstID
+  description: Message Instance ID
+  type: Int
+  size: 11
+- field: TemplateID
+  description: Template ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

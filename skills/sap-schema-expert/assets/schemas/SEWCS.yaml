@@ -1,0 +1,177 @@
+table: SEWCS
+description: SEWCS
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWCS.htm
+fields:
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: COAtemplat
+  description: COA Template
+  type: VarChar
+  size: 1
+- field: LocalCurr
+  description: Local Currency
+  type: nVarChar
+  size: 3
+- field: SystemCurr
+  description: System Currenct
+  type: nVarChar
+  size: 3
+- field: UseSegAcc
+  description: Use Segment Accounts
+  type: VarChar
+  size: 1
+- field: StkValuat
+  description: Stock Valuation
+  type: VarChar
+  size: 1
+- field: PricSysPWh
+  description: Price System Per Warehouse
+  type: VarChar
+  size: 1
+- field: AllowRelSt
+  description: Stock Release w/o Cost Price
+  type: VarChar
+  size: 1
+- field: CostPrcLst
+  description: Gross profit Base Price Origi
+  type: VarChar
+  size: 1
+- field: GrossBySal
+  description: Calculate % GP as
+  type: VarChar
+  size: 1
+- field: BlkNegQuan
+  description: Block Negative Quantity
+  type: VarChar
+  size: 1
+- field: RoundMeth
+  description: Rounding Method
+  type: VarChar
+  size: 1
+- field: RoundVAT
+  description: Round Tax Amount in Rows
+  type: VarChar
+  size: 1
+- field: EnblExpns
+  description: Manage Expenses in Documents
+  type: VarChar
+  size: 1
+- field: DirectRate
+  description: Exchange Rate Posting
+  type: VarChar
+  size: 1
+- field: SumDec
+  description: Decimal - Amounts
+  type: Int
+  size: 11
+- field: PriceDec
+  description: Decimal - Prices
+  type: Int
+  size: 11
+- field: RateDec
+  description: Decimal - Rates
+  type: Int
+  size: 11
+- field: QtyDec
+  description: Decimal - Quantities
+  type: Int
+  size: 11
+- field: PercentDec
+  description: Decimal - Percent
+  type: Int
+  size: 11
+- field: MeasureDec
+  description: Decimal - Units
+  type: Int
+  size: 11
+- field: DecSep
+  description: Decimal - Separator
+  type: VarChar
+  size: 1
+- field: DpmSalAct
+  description: Sal-DownPayment Clearing Acct
+  type: nVarChar
+  size: 15
+- field: DfltIncom
+  description: Sales -Revenues Account
+  type: nVarChar
+  size: 15
+- field: ForgnIncm
+  description: Sales -Revenues Foreign
+  type: nVarChar
+  size: 15
+- field: ECIncome
+  description: Sales -Revenue EU
+  type: nVarChar
+  size: 15
+- field: SHandleWT
+  description: Sales -enable WT
+  type: VarChar
+  size: 1
+- field: SDfltWT
+  description: Sales -Default WT Code
+  type: nVarChar
+  size: 4
+- field: NINum
+  description: Ni No
+  type: nVarChar
+  size: 20
+- field: ExpireDate
+  description: Sales - Expiration Date
+  type: Date
+  size: 8
+- field: CrtfcateNO
+  description: Sales - Certificate Number
+  type: nVarChar
+  size: 20
+- field: SaleVatOff
+  description: Sales - Tax Offsetting account
+  type: nVarChar
+  size: 15
+- field: DfltExpn
+  description: Purchase - Expense Account
+  type: nVarChar
+  size: 15
+- field: ForgnExpn
+  description: Purchase-Foreign Expense Acct
+  type: nVarChar
+  size: 15
+- field: ECExepnses
+  description: Purchase - EU Expense account
+  type: nVarChar
+  size: 15
+- field: DpmPurAct
+  description: Pur-DownPayment Clearing Acct
+  type: nVarChar
+  size: 15
+- field: ExpVarAct
+  description: Purchase - Variance accont
+  type: nVarChar
+  size: 15
+- field: PHandleWT
+  description: Purchase - WT enabled
+  type: VarChar
+  size: 1
+- field: PDfltWT
+  description: Purchase - Default WT code
+  type: nVarChar
+  size: 4
+- field: PurcVatOff
+  description: Pur - Tax Offsetting account
+  type: nVarChar
+  size: 15
+- field: ComissAct
+  description: Gen - Credit Card Deposit fee
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbNam

@@ -1,0 +1,248 @@
+table: AEC8
+description: Electronic Document Import Files - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AEC8.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: ParentID
+  description: Parent ID
+  type: Int
+  size: 11
+- field: ActType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '1'
+    label: Setup
+  - key: '2'
+    label: Report
+  - key: '3'
+    label: A/R Document
+  - key: '4'
+    label: A/P Document
+  - key: '5'
+    label: A/R Draft Document
+  - key: '6'
+    label: A/P Draft Document
+  - key: '7'
+    label: Other
+  - key: '8'
+    label: Skip
+  - key: '9'
+    label: Contingency
+  - key: '10'
+    label: BP Check
+  - key: '11'
+    label: Incoming Payment
+  - key: '12'
+    label: Outgoing Payment
+  - key: '13'
+    label: Internal Reconciliation
+  - key: '14'
+    label: Transportation Document
+  - key: '15'
+    label: Inventory Transfer
+  - key: '16'
+    label: VAT Obligations
+  - key: '17'
+    label: VAT Declarations
+  - key: '18'
+    label: VAT Liabilities
+  - key: '19'
+    label: VAT Payments
+  - key: '20'
+    label: Delivery
+  - key: '21'
+    label: Return
+  - key: '22'
+    label: A/R Invoice
+  - key: '23'
+    label: A/R Credit Memo
+  - key: '24'
+    label: Goods Receipt PO
+  - key: '25'
+    label: Goods Return
+  - key: '26'
+    label: A/P Invoice
+  - key: '27'
+    label: A/P Credit Memo
+  - key: '28'
+    label: Draft Incoming Payment
+  - key: '29'
+    label: Draft Outgoing Payment
+  - key: '30'
+    label: Journal Entry
+  - key: '31'
+    label: E-Books Expense
+  - key: '45'
+    label: Goods Issue
+  - key: '46'
+    label: Goods Receipt
+  - key: '47'
+    label: Pick List
+  - key: '48'
+    label: Draft Goods Issue
+  - key: '49'
+    label: Draft Goods Receipt
+- field: ActDesc
+  description: Action Description
+  type: nVarChar
+  size: 100
+- field: ActStatus
+  description: Action Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: Pending
+  - key: E
+    label: Error
+  - key: T
+    label: Temporary Error
+  - key: O
+    label: OK
+  - key: S
+    label: Sent
+  - key: R
+    label: Document Error
+  - key: W
+    label: Waiting
+  - key: A
+    label: Authorized
+  - key: I
+    label: In Process
+  - key: J
+    label: Rejected
+  - key: D
+    label: Denied
+  - key: C
+    label: Canceled
+  - key: B
+    label: Aborted
+  - key: Q
+    label: Queued
+  - key: M
+    label: Imported
+  - key: G
+    label: Warning
+  - key: V
+    label: Approved
+  - key: F
+    label: Approving
+  - key: H
+    label: Rejecting
+  - key: K
+    label: Generated
+  - key: Y
+    label: Ready to Process
+  - key: L
+    label: Determined
+- field: ActMessage
+  description: Action Message
+  type: nVarChar
+  size: 254
+- field: TestMode
+  description: Test Mode
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: GUID
+  description: GUID
+  type: nVarChar
+  size: 100
+- field: Authority
+  description: Authorities Code
+  type: nVarChar
+  size: 16
+- field: ProcSource
+  description: Processing Source
+  type: nVarChar
+  size: 20
+- field: MetaData
+  description: Metadata
+  type: Text
+  size: 16
+- field: MIMEType
+  description: MIME Type
+  type: nVarChar
+  size: 128
+- field: FileName
+  description: File Name
+  type: Text
+  size: 16
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time - Incl. Secs.
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Secs.
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: AssignedID
+  description: Assigned ID
+  type: nVarChar
+  size: 100
+- field: IsBPManual
+  description: BP is Set Manually
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: ACTION
+  unique: true
+  fields:
+  - Code
+  - AbsEntry

@@ -1,0 +1,61 @@
+table: OTPL
+description: Import Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTPL.htm
+fields:
+- field: TplNum
+  description: Template Number
+  type: Int
+  size: 11
+- field: TplName
+  description: Template Name
+  type: nVarChar
+  size: 100
+- field: TplType
+  description: Template Type
+  type: nVarChar
+  size: 5
+  constraints:
+  - key: T
+    label: Target BPs
+  - key: B
+    label: BP
+  - key: I
+    label: Items
+  - key: F
+    label: Fixed Asset
+  - key: WB
+    label: WebClient BP
+  - key: WBCP
+    label: WebClient BP Contact Person
+  - key: WBAD
+    label: WebClient BP Address
+  - key: WBPM
+    label: WebClient BP Payment Method
+  - key: WBCA
+    label: WebClient BP Control Accounts
+  - key: WJ
+    label: WebClient Journal Entry
+  - key: WJE1
+    label: WebClient JE line1
+  - key: WJE2
+    label: WebClient JE line2
+  - key: WI
+    label: WebClient Items
+  - key: WIP
+    label: WebClient Items Prices
+  - key: WIW
+    label: WebClient Items Warehouses
+- field: TplCode
+  description: Template Code
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TplNum
+- key: CODE
+  unique: true
+  fields:
+  - TplCode
+  - TplType

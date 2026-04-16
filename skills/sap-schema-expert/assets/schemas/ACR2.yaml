@@ -1,0 +1,36 @@
+table: ACR2
+description: Bussiness Partners - Payment Methods - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ACR2.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: PymCode
+  description: Payment Method Code
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: Int
+  size: 6
+  related: ADP1
+  default: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - LineNum
+  - LogInstanc

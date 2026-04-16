@@ -1,0 +1,44 @@
+table: OCSC
+description: Crystal Server Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCSC.htm
+fields:
+- field: DocEntry
+  description: CSC Abs. Entry
+  type: Int
+  size: 11
+- field: Name
+  description: Server Name
+  type: nVarChar
+  size: 100
+- field: User
+  description: Logon User Code
+  type: nVarChar
+  size: 30
+- field: Password
+  description: Logon User Password
+  type: nVarChar
+  size: 254
+- field: URL
+  description: URL
+  type: nVarChar
+  size: 200
+- field: IsDefault
+  description: Is Default
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Port
+  description: Port
+  type: nVarChar
+  size: 20
+  default: '8080'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

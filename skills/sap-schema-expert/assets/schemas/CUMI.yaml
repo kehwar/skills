@@ -1,0 +1,83 @@
+table: CUMI
+description: My Menu Items
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CUMI.htm
+fields:
+- field: Id_
+  description: Folder Key
+  type: Int
+  size: 11
+  default: 0
+- field: Name_
+  description: Menu Item Name
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: FatherId
+  description: Parent Key
+  type: Int
+  size: 11
+  default: -1
+- field: SortNum
+  description: Sort Number
+  type: Int
+  size: 11
+- field: Type_
+  description: Menu Item Type
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: F
+    label: Form
+  - key: Q
+    label: Query
+  - key: R
+    label: Report
+  - key: L
+    label: Link
+  - key: '-'
+    label: Folder
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: Key_
+  description: Internal ID
+  type: nVarChar
+  size: 50
+- field: FormMenuId
+  description: Form Menu ID
+  type: Int
+  size: 11
+- field: FormNum
+  description: Form No.
+  type: Int
+  size: 11
+- field: RepPath
+  description: Report Path
+  type: Text
+  size: 16
+- field: Levels
+  description: Item Level
+  type: Int
+  size: 6
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserSign
+  - Id_
+- key: DETAIL
+  unique: false
+  fields:
+  - UserSign
+  - Name_
+  - Levels
+  - FatherId
+  - SortNum

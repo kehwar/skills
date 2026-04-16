@@ -1,0 +1,66 @@
+table: WTQ16
+description: Inventory Transfer Request - SnB Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WTQ16.htm
+fields:
+- field: AbsEntry
+  description: Document Number
+  type: Int
+  size: 11
+  related: OWTQ
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: SnBIndex
+  description: SnB Index
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: ObjId
+  description: Object ID
+  type: Int
+  size: 11
+- field: ObjAbs
+  description: SnB Object No.
+  type: Int
+  size: 11
+- field: DrfWObjAbs
+  description: SnBW Draft Object No.
+  type: Int
+  size: 11
+  default: -1
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: SubLineNum
+  description: Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+  - SnBIndex
+  - LogInstanc
+  - ObjType

@@ -1,0 +1,17 @@
+table: OTSM
+description: Tax Summary Report Method
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OTSM.htm
+fields:
+- field: AbsEntry
+  description: Abs. Entry
+  type: Int
+  size: 11
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

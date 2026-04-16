@@ -1,0 +1,77 @@
+table: UWOR4
+description: Production Order - Route Stages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/UWOR4.htm
+fields:
+- field: DocEntry
+  description: Document Internal Number
+  type: Int
+  size: 11
+  related: OWOR
+- field: StageId
+  description: Stage ID
+  type: Int
+  size: 11
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: StgEntry
+  description: Stage Entry
+  type: Int
+  size: 11
+  related: ORST
+- field: Name
+  description: Stage Name
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: Status
+  description: Stage Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Planned
+  - key: I
+    label: In Progress
+  - key: C
+    label: Complete
+- field: RtCalcProp
+  description: Routing Calculation Proportion
+  type: Num
+  size: 19.6
+  default: 100
+- field: ReqDays
+  description: Required Days
+  type: Num
+  size: 19.6
+  default: 0
+- field: WaitDays
+  description: Waiting Days
+  type: Num
+  size: 19.6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - StageId
+- key: SEQUENCE
+  unique: true
+  fields:
+  - DocEntry
+  - SeqNum

@@ -1,0 +1,26 @@
+table: SEWUT
+description: SEWUT
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWUT.htm
+fields:
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: transid
+  description: transid
+  type: nVarChar
+  size: 10
+- field: transtype
+  description: transtype
+  type: nVarChar
+  size: 3
+- field: installmen
+  description: installments
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbNam
+  - transid

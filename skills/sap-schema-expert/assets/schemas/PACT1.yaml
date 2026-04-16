@@ -1,0 +1,33 @@
+table: PACT1
+description: Pervasive's Insight to Actions' Subitem
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PACT1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SrcObjId
+  description: Source Object Number
+  type: nVarChar
+  size: 250
+- field: SrcType
+  description: Source Object Type
+  type: nVarChar
+  size: 50
+- field: TgtObjId
+  description: Target Object Number
+  type: nVarChar
+  size: 250
+- field: TgtType
+  description: Target Object Type
+  type: nVarChar
+  size: 50
+- field: ActEntry
+  description: Action Number
+  type: nVarChar
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

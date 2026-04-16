@@ -1,0 +1,99 @@
+table: ASC2
+description: Service Call Inventory Expenses - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/ASC2.htm
+fields:
+- field: SrcvCallID
+  description: Service Call No. - History
+  type: Int
+  size: 11
+  related: OSCL
+- field: Line
+  description: Row - History
+  type: Int
+  size: 6
+  default: -1
+- field: ItemCode
+  description: Item No. - History
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description - History
+  type: nVarChar
+  size: 200
+- field: TransToTec
+  description: Transfer to Technician - History
+  type: Num
+  size: 19.6
+- field: Delivered
+  description: Delivered - History
+  type: Num
+  size: 19.6
+- field: RetFromTec
+  description: Returned from Technician - History
+  type: Num
+  size: 19.6
+- field: Returned
+  description: Returned - History
+  type: Num
+  size: 19.6
+- field: Bill
+  description: Bill - History
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QtyToBill
+  description: Quantity to Bill - History
+  type: Num
+  size: 19.6
+- field: QtyToInv
+  description: Invoiced Qty - History
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: UserSign2
+  description: User Signature 2 - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrcvCallID
+  - Line
+  - LogInstanc

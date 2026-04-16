@@ -1,0 +1,63 @@
+table: OUWTX
+description: Unreported WTax Transactions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OUWTX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '46'
+    label: Outgoing Payment
+  - key: '24'
+    label: Incoming Payment
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: Cancelled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FullCopied
+  description: Fully Copied
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcObjAbs

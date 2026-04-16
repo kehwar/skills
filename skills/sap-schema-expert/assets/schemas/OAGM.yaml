@@ -1,0 +1,30 @@
+table: OAGM
+description: Arguments for Integration Framework
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OAGM.htm
+fields:
+- field: DocEntry
+  description: Internal Number of Document
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: XmlGen
+  description: XML File Generated
+  type: Text
+  size: 16
+- field: XmlRet
+  description: XML File Returned
+  type: Text
+  size: 16
+- field: Message
+  description: Message
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - ObjType

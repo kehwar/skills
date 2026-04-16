@@ -1,0 +1,26 @@
+table: UDO2
+description: User-Defined Objects - Find Columns
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDO2.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: ColumnNum
+  description: Column Number
+  type: Int
+  size: 11
+- field: ColAlias
+  description: Column Alias
+  type: nVarChar
+  size: 52
+- field: ColumnDesc
+  description: Column Description
+  type: nVarChar
+  size: 80
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - ColumnNum

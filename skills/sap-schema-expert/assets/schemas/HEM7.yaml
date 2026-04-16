@@ -1,0 +1,84 @@
+table: HEM7
+description: Savings Payments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HEM7.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+  related: OHEM
+- field: line
+  description: Row
+  type: Int
+  size: 6
+- field: ConName
+  description: Contract Name
+  type: nVarChar
+  size: 50
+- field: PmntNotes
+  description: Payment Details
+  type: nVarChar
+  size: 50
+- field: AN
+  description: Employee
+  type: Num
+  size: 19.6
+- field: AG
+  description: Employer
+  type: Num
+  size: 19.6
+- field: BankName
+  description: Bank Name
+  type: nVarChar
+  size: 50
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 20
+- field: BankAcct
+  description: Bank Account
+  type: nVarChar
+  size: 20
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ANCurrency
+  description: Employee Currency
+  type: nVarChar
+  size: 3
+- field: AGCurrency
+  description: Employer Currency
+  type: nVarChar
+  size: 3
+- field: Sequence
+  description: Frequency
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: B
+    label: ''
+  - key: M
+    label: Monthly
+  - key: Q
+    label: Quarterly
+  - key: S
+    label: Semi-annually
+  - key: Y
+    label: Yearly
+- field: EnBnkAcct
+  description: Encryption of Bank Account
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - line

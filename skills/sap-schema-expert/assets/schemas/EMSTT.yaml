@@ -1,0 +1,27 @@
+table: EMSTT
+description: EMSTT
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EMSTT.htm
+fields:
+- field: MessageID
+  description: Message ID
+  type: nVarChar
+  size: 60
+- field: Timestamp
+  description: Timestamp
+  type: Date
+  size: 8
+- field: Status
+  description: Status
+  type: nVarChar
+  size: 30
+- field: ErrorID
+  description: Error ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID
+  - Timestamp
+  - Status

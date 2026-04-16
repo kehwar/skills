@@ -1,0 +1,46 @@
+table: OUKD
+description: User Key Description
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUKD.htm
+fields:
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: KeyId
+  description: Key Index
+  type: Int
+  size: 6
+- field: KeyName
+  description: Key Name
+  type: nVarChar
+  size: 10
+- field: UniqueKey
+  description: Unique Key
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Action
+  description: Action
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: A
+    label: Add
+  - key: U
+    label: Update
+  - key: D
+    label: Delete
+  - key: N
+    label: None
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableName
+  - KeyId

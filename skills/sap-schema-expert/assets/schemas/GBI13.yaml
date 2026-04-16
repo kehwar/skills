@@ -1,0 +1,35 @@
+table: GBI13
+description: GBI Row 13 - Enterprise's Profit Distribution Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI13.htm
+fields:
+- field: HistoryId
+  description: History ID
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 100
+- field: LineNum
+  description: Line Number
+  type: nVarChar
+  size: 6
+- field: CurAmount
+  description: Current Period Amount
+  type: Num
+  size: 19.6
+- field: PreAmount
+  description: Previous Period Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

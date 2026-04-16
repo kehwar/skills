@@ -1,0 +1,57 @@
+table: ODST
+description: Static Data Source
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODST.htm
+fields:
+- field: Id
+  description: UUID string
+  type: nVarChar
+  size: 64
+- field: Owner
+  description: Owner ID
+  type: Int
+  size: 6
+- field: DataSouId
+  description: ID of data source meta
+  type: nVarChar
+  size: 128
+- field: PermId
+  description: Permission id of data source
+  type: Int
+  size: 11
+- field: MetaVer
+  description: Version of data source meta
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+- field: Dependency
+  description: Dependency
+  type: Text
+  size: 16
+- field: Category
+  description: Category
+  type: Text
+  size: 16
+- field: MetaCont
+  description: Json string of datasource meta
+  type: Text
+  size: 16
+- field: Status
+  description: 0-no view, 1- view created...
+  type: Int
+  size: 11
+- field: LastUpdate
+  description: Timestamp
+  type: nVarChar
+  size: 64
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+- key: SOURCEID
+  unique: true
+  fields:
+  - DataSouId

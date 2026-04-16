@@ -1,0 +1,13 @@
+table: EOY1
+description: End of Year UDOs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/EOY1.htm
+fields:
+- field: UdoCode
+  description: UDO Code
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UdoCode

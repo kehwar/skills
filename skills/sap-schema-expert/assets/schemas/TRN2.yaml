@@ -1,0 +1,37 @@
+table: TRN2
+description: Subtable of OTRN
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TRN2.htm
+fields:
+- field: TrnAbsEntr
+  description: OTRN Abs Entry
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number of TRN1
+  type: Int
+  size: 11
+- field: SubLineNum
+  description: Subline Number
+  type: Int
+  size: 11
+- field: LangCode
+  description: Language Code
+  type: Int
+  size: 11
+- field: Text
+  description: Translated Text
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TrnAbsEntr
+  - LineNum
+  - SubLineNum
+- key: UniqueIdx
+  unique: true
+  fields:
+  - TrnAbsEntr
+  - LineNum
+  - LangCode

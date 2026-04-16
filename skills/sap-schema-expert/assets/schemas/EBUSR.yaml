@@ -1,0 +1,25 @@
+table: EBUSR
+description: EBUSR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EBUSR.htm
+fields:
+- field: B1Company
+  description: B1 Company DB name
+  type: nVarChar
+  size: 200
+- field: B1User
+  description: B1 user name (from OUSR)
+  type: nVarChar
+  size: 30
+- field: Pwd
+  description: encrypted password
+  type: Text
+  size: 16
+- field: Pwd2
+  description: encrypted password (backup)
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - B1Company

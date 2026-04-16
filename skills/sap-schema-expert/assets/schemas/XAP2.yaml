@@ -1,0 +1,37 @@
+table: XAP2
+description: XAPP Widget
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XAP2.htm
+fields:
+- field: AbsEntry
+  description: Key of widget
+  type: Int
+  size: 11
+- field: PageEntry
+  description: Foreign of XAPP page
+  type: Int
+  size: 11
+- field: Type
+  description: Widget Type
+  type: nVarChar
+  size: 250
+- field: ObjEntry
+  description: Foeign key of widget content
+  type: Int
+  size: 11
+- field: Width
+  description: Width of widget
+  type: Int
+  size: 11
+- field: Height
+  description: Height of widget
+  type: Int
+  size: 11
+- field: Index
+  description: Order of widget
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

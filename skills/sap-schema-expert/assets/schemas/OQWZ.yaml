@@ -1,0 +1,26 @@
+table: OQWZ
+description: Query Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OQWZ.htm
+fields:
+- field: Code
+  description: Query Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Query Name
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: NAME
+  unique: true
+  fields:
+  - Name

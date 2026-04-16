@@ -1,0 +1,26 @@
+table: ONCG
+description: State Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ONCG.htm
+fields:
+- field: GroupCode
+  description: Group No.
+  type: Int
+  size: 6
+- field: GroupName
+  description: Group Name
+  type: nVarChar
+  size: 20
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - GroupName

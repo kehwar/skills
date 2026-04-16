@@ -1,0 +1,755 @@
+table: ACLG
+description: Activities - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ACLG.htm
+fields:
+- field: ClgCode
+  description: Activity Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Notes
+  description: Remarks
+  type: Text
+  size: 16
+- field: CntctDate
+  description: System Date
+  type: Date
+  size: 8
+- field: CntctTime
+  description: Time
+  type: Int
+  size: 11
+- field: Recontact
+  description: Activity Date
+  type: Date
+  size: 8
+- field: Closed
+  description: Closed Activity
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CloseDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: ContactPer
+  description: Contact Person Name
+  type: nVarChar
+  size: 90
+- field: Tel
+  description: Telephone
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax
+  type: nVarChar
+  size: 50
+- field: CntctSbjct
+  description: Activity Subject
+  type: Int
+  size: 6
+  related: OCLS
+  default: -1
+- field: Transfered
+  description: Transferred to Next Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocType
+  description: Linked Document
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Return
+  - key: '17'
+    label: Sales Order
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '22'
+    label: Purchase Order
+  - key: '23'
+    label: Sales Quotation
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '30'
+    label: Journal Entry
+  - key: '46'
+    label: Outgoing Payment
+  - key: '57'
+    label: Checks for Payment
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '1250000001'
+    label: Inventory Transfer Request
+  - key: '67'
+    label: Inventory Transfer
+  - key: '68'
+    label: Work Order
+  - key: '69'
+    label: Landed Costs
+  - key: '132'
+    label: Correction Invoice
+  - key: '162'
+    label: Material Revaluation
+  - key: '202'
+    label: Production Order
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '4'
+    label: Items
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '1320000012'
+    label: Campaign
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '1250000025'
+    label: Blanket Agreements
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '112'
+    label: Document Drafts
+  - key: '140'
+    label: Payment Drafts
+  - key: '123'
+    label: Checks for Payment Drafts
+- field: DocNum
+  description: Linked Document Number
+  type: nVarChar
+  size: 50
+- field: DocEntry
+  description: Linked Document Entry
+  type: nVarChar
+  size: 50
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: AttendUser
+  description: Dealt by
+  type: Int
+  size: 6
+  related: OUSR
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: SlpCode
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: Action
+  description: Activity
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Phone Call
+  - key: M
+    label: Meeting
+  - key: T
+    label: Task
+  - key: E
+    label: Note
+  - key: P
+    label: Campaign
+  - key: N
+    label: Other
+- field: Details
+  description: Details
+  type: nVarChar
+  size: 100
+- field: CntctType
+  description: Activity Type
+  type: Int
+  size: 6
+  related: OCLT
+  default: -1
+- field: Location
+  description: Location
+  type: Int
+  size: 6
+  related: OCLO
+  default: -1
+- field: BeginTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: Duration
+  description: Activity Duration
+  type: Num
+  size: 19.6
+- field: DurType
+  description: Duration UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: ENDTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Priority
+  description: Priority
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Low
+  - key: '1'
+    label: Normal
+  - key: '2'
+    label: High
+- field: Reminder
+  description: Reminder
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemQty
+  description: Reminder Quantity
+  type: Num
+  size: 19.6
+- field: RemType
+  description: Reminder Units
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: OprId
+  description: Opportunity - Key
+  type: Int
+  size: 11
+- field: OprLine
+  description: Row No. - Opportunity
+  type: Int
+  size: 6
+- field: RemDate
+  description: Reminder Date
+  type: Date
+  size: 8
+- field: RemTime
+  description: Reminder Time
+  type: Int
+  size: 6
+- field: RemSented
+  description: Reminder Was Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: endDate
+  description: End/Due Date
+  type: Date
+  size: 8
+- field: status
+  description: Status
+  type: Int
+  size: 11
+  related: OCLA
+- field: personal
+  description: Personal Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: inactive
+  description: Inactive Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: emailed
+  description: Emailed Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: tentative
+  description: Tentative Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: city
+  description: City
+  type: nVarChar
+  size: 100
+- field: country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: state
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: room
+  description: Room
+  type: nVarChar
+  size: 50
+- field: parentType
+  description: Parent Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '97'
+    label: Opportunity
+  - key: '191'
+    label: Service Call
+- field: parentId
+  description: Parent Object ID
+  type: Int
+  size: 11
+- field: prevActvty
+  description: Previous Activity
+  type: Int
+  size: 11
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: RecurPat
+  description: Recurrence Pattern
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Daily
+  - key: W
+    label: Weekly
+  - key: M
+    label: Monthly
+  - key: A
+    label: Annually
+- field: EndType
+  description: Recurrence End Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No End Date
+  - key: C
+    label: By Counter
+  - key: D
+    label: By Date
+- field: SeStartDat
+  description: Series Start Date
+  type: Date
+  size: 8
+- field: SeEndDat
+  description: Series End Date
+  type: Date
+  size: 8
+- field: MaxOccur
+  description: Max. Occurrences
+  type: Int
+  size: 11
+- field: Interval
+  description: Interval
+  type: Int
+  size: 11
+  default: 1
+- field: Sunday
+  description: Sunday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Monday
+  description: Monday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Tuesday
+  description: Tuesday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Wednesday
+  description: Wednesday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Thursday
+  description: Thursday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Friday
+  description: Friday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Saturday
+  description: Saturday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SubOption
+  description: Suboption
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Option 1
+  - key: '2'
+    label: Option 2
+- field: DayInMonth
+  description: Repeat Day in Month
+  type: Int
+  size: 11
+- field: Month
+  description: Repeat Month
+  type: Int
+  size: 11
+- field: DayOfWeek
+  description: Repeat Day of Week
+  type: Int
+  size: 11
+- field: Week
+  description: Repeat Week in Month
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: First
+  - key: '2'
+    label: Second
+  - key: '3'
+    label: Third
+  - key: '4'
+    label: Fourth
+  - key: '5'
+    label: Last
+- field: SeriesNum
+  description: Series Number
+  type: Int
+  size: 11
+- field: OrigDate
+  description: Original Date
+  type: Date
+  size: 8
+- field: IsRemoved
+  description: Removed Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: LastRemind
+  description: Last Reminder Date
+  type: Date
+  size: 8
+- field: AssignedBy
+  description: Assigned By
+  type: Int
+  size: 6
+  related: OUSR
+- field: AddrName
+  description: Address Name
+  type: nVarChar
+  size: 50
+- field: AddrType
+  description: Address Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Ship To
+  - key: B
+    label: Bill To
+- field: AttendEmpl
+  description: Dealt by Employee
+  type: Int
+  size: 11
+  related: OHEM
+- field: NextDate
+  description: Date of Next Occurrence
+  type: Date
+  size: 8
+- field: NextTime
+  description: Time of Next Occurrence
+  type: Int
+  size: 6
+- field: OwnerCode
+  description: Activities Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: AttendReci
+  description: Attend Recipient
+  type: Int
+  size: 11
+  related: ORCI
+- field: ActType
+  description: Activity Type
+  type: Int
+  size: 11
+  related: PMC5
+- field: LaborItem
+  description: Labor Item No.
+  type: nVarChar
+  size: 50
+- field: ResCode
+  description: Resource Code from ORSC
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: FIPROJECT
+  description: Financial Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: Of365EvtId
+  description: Office 365 Event ID
+  type: nVarChar
+  size: 200
+- field: AssigneeTy
+  description: Assignee Type
+  type: Int
+  size: 11
+  default: 12
+  constraints:
+  - key: '12'
+    label: User
+  - key: '171'
+    label: Employee
+  - key: '234000033'
+    label: Recipient List
+  - key: '-1'
+    label: Multiple Recipients
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ClgCode
+  - LogInstanc
+- key: CRD_CODE
+  unique: false
+  fields:
+  - CardCode
+- key: OPPORT
+  unique: false
+  fields:
+  - OprId
+  - OprLine

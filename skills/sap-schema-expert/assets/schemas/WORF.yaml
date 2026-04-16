@@ -1,0 +1,92 @@
+table: WORF
+description: Object Wizard Related Files
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WORF.htm
+fields:
+- field: ObjName
+  description: Parent Object Code
+  type: Int
+  size: 11
+- field: SonNum
+  description: Son Number
+  type: Int
+  size: 11
+- field: ObjTable
+  description: Son Table
+  type: nVarChar
+  size: 20
+- field: RelObj
+  description: Object
+  type: nVarChar
+  size: 20
+- field: RelType
+  description: Relationship Type
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Line
+  - key: O
+    label: Odd
+  - key: A
+    label: Another object contained
+- field: LogSon
+  description: Son's Log table
+  type: nVarChar
+  size: 20
+- field: FthrLineId
+  description: Father's Line Id
+  type: Int
+  size: 11
+  default: 0
+- field: UniqueId
+  description: Son Unique Id
+  type: Int
+  size: 11
+- field: LnObjCode
+  description: Line object code
+  type: nVarChar
+  size: 20
+- field: SonDesc
+  description: Son Description
+  type: nVarChar
+  size: 30
+- field: CreateDate
+  description: Creation date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+- field: UserSign
+  description: User Sign
+  type: Int
+  size: 11
+- field: FieldIndex
+  description: Field Index
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjName
+  - SonNum
+- key: UNIQUE_ID
+  unique: true
+  fields:
+  - UniqueId
+- key: TABLE
+  unique: true
+  fields:
+  - ObjName
+  - ObjTable

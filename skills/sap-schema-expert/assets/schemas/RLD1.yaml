@@ -1,0 +1,60 @@
+table: RLD1
+description: Reference Links Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/RLD1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ORLD
+- field: TargetType
+  description: Target Type
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: H
+    label: Header
+  - key: B
+    label: BP Row
+  - key: L
+    label: Row
+- field: TargetFld
+  description: Target Field
+  type: nVarChar
+  size: 50
+- field: SourceFld
+  description: Source Field
+  type: nVarChar
+  size: 50
+- field: OrderNum
+  description: Order Number
+  type: Int
+  size: 11
+- field: SourceType
+  description: Source Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: B
+    label: Base Document Reference
+  - key: C
+    label: Column
+  - key: D
+    label: Default
+  - key: E
+    label: Not Defined
+  - key: I
+    label: Installment Number
+  - key: S
+    label: Reference Link Sources
+  - key: T
+    label: Remarks Template
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - TargetType
+  - TargetFld

@@ -1,0 +1,160 @@
+table: OTNL
+description: CCD Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OTNL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TrNtAbsEnt
+  description: Tracking Note Internal Number
+  type: Int
+  size: 11
+  related: OTCN
+- field: TrNtLineNo
+  description: Tracking Note Row Number
+  type: Int
+  size: 11
+  related: TCN1
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: DocEntry
+  description: Doc Abs Entry
+  type: Int
+  size: 11
+- field: DocNum
+  description: Doc Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Transaction Type
+  type: Int
+  size: 11
+  default: -1
+- field: DocLineNum
+  description: Doc Line Number
+  type: Int
+  size: 11
+- field: BaseAbsEnt
+  description: Base Abs Entry
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+- field: BaseLnNum
+  description: Base Document Line No.
+  type: Int
+  size: 11
+- field: ActionType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 5
+  constraints:
+  - key: '0'
+    label: TRANSACTION_UNKNOWN
+  - key: '1'
+    label: TRANSACTION_IN
+  - key: '2'
+    label: TRANSACTION_OUT
+  - key: '3'
+    label: TRANSACTION_SET
+  - key: '4'
+    label: TRANSACTION_COMPLETE
+  - key: '5'
+    label: EMPTY_TRANSACTION
+  - key: '6'
+    label: TRANSACTION_REVALUATION
+  - key: '7'
+    label: TRANSACTION_REVALUATION_INCREASE
+  - key: '8'
+    label: TRANSACTION_REVALUATION_DECREASE
+  - key: '9'
+    label: TRANSACTION_CLOSE_IN
+  - key: '10'
+    label: TRANSACTION_CLOSE_OUT
+  - key: '11'
+    label: TRANSACTION_NEGATIVE_REVALUATION
+  - key: '12'
+    label: TRANSACTION_NULLIFY
+  - key: '13'
+    label: TRANSACTION_RESERVE_CI_IN
+  - key: '14'
+    label: TRANSACTION_RESERVE_CI_OUT
+  - key: '15'
+    label: TRANSACTION_RESERVE_CI_REVAL_INC
+  - key: '16'
+    label: TRANSACTION_RESERVE_CI_REVAL_DEC
+  - key: '17'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_INCREASE
+  - key: '18'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_DECREASE
+- field: CCDNum
+  description: CCD Number
+  type: nVarChar
+  size: 40
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+- field: DirectImp
+  description: Direct Import
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CntrOrigin
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: AccQty
+  description: Quantity-In Accumulator
+  type: Num
+  size: 19.6
+- field: AccNegQ
+  description: Quantity-Out Accumulator
+  type: Num
+  size: 19.6
+- field: AccRelQty
+  description: Reallocation Quantity Accumulator
+  type: Num
+  size: 19.6
+- field: CCDQty
+  description: CCD Quantity
+  type: Num
+  size: 19.6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: OnHandQty
+  description: Warehouse On Hand Quantity
+  type: Num
+  size: 19.6
+- field: OILMEntry
+  description: OILM Abs Entry
+  type: Int
+  size: 11
+  related: OILM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

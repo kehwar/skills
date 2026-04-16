@@ -1,0 +1,39 @@
+table: RSYS
+description: System Strings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSYS.htm
+fields:
+- field: Num
+  description: String number
+  type: Int
+  size: 11
+- field: String
+  description: String
+  type: nVarChar
+  size: 250
+- field: StringType
+  description: String Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Free Text
+  - key: '1'
+    label: Form
+  - key: '2'
+    label: Table
+  - key: '3'
+    label: Resource
+- field: RefCounter
+  description: Reference Counter
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Num
+- key: STRING
+  unique: true
+  fields:
+  - String

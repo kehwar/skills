@@ -1,0 +1,31 @@
+table: ORTY
+description: Web Client Report Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ORTY.htm
+fields:
+- field: Code
+  description: Report Type Code
+  type: nVarChar
+  size: 32
+- field: Name
+  description: Report Type Name
+  type: nVarChar
+  size: 250
+- field: MenuId
+  description: Report Menu Id
+  type: nVarChar
+  size: 250
+- field: IsSystem
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

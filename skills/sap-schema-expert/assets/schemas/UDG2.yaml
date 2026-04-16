@@ -1,0 +1,24 @@
+table: UDG2
+description: User Defaults - Credit Cards
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDG2.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: CreditCard
+  description: Credit Card Code
+  type: Int
+  size: 6
+  related: OCRC
+- field: AcctCode
+  description: Credit Amount Code
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - CreditCard

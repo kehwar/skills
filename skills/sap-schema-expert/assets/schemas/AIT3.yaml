@@ -1,0 +1,29 @@
+table: AIT3
+description: Items - Localization Fields - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIT3.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: IncNature
+  description: Income Nature
+  type: nVarChar
+  size: 10
+  related: OBMI
+- field: LogInstanc
+  description: IPI Class Code
+  type: Int
+  size: 11
+- field: ObjType
+  description: Log Instance
+  type: nVarChar
+  size: 20
+  default: '0'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - LogInstanc

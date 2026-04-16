@@ -1,0 +1,42 @@
+table: UIVL1
+description: IVL Layer Level
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/UIVL1.htm
+fields:
+- field: TransSeq
+  description: Transaction Sequence No.
+  type: Int
+  size: 11
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+- field: CalcPrice
+  description: Calculated Price
+  type: Num
+  size: 19.6
+- field: Balance
+  description: Stock Balance
+  type: Num
+  size: 19.6
+- field: TransValue
+  description: Transaction Value
+  type: Num
+  size: 19.6
+- field: LayerInQty
+  description: Receipt Quantity
+  type: Num
+  size: 19.6
+- field: LayerOutQ
+  description: Issue Quantity
+  type: Num
+  size: 19.6
+- field: RevalTotal
+  description: Inventory Revaluation Total
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TransSeq
+  - LayerID

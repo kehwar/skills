@@ -1,0 +1,30 @@
+table: OHTM
+description: Employee Teams
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHTM.htm
+fields:
+- field: teamID
+  description: Team ID
+  type: Int
+  size: 11
+- field: name
+  description: Team Name
+  type: nVarChar
+  size: 20
+- field: descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - teamID
+- key: NAME_KEY
+  unique: true
+  fields:
+  - name

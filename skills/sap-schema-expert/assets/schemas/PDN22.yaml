@@ -1,0 +1,43 @@
+table: PDN22
+description: Goods Receipt PO - Resource Costs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/PDN22.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: PDN1
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+  related: PDN1
+- field: StdCostNum
+  description: Resource Standard Cost Number
+  type: Int
+  size: 11
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: Total
+  description: Total
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '20'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - StdCostNum

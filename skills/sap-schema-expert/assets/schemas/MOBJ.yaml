@@ -1,0 +1,77 @@
+table: MOBJ
+description: MOBJ
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MOBJ.htm
+fields:
+- field: guid
+  description: Guid
+  type: nVarChar
+  size: 36
+- field: fatherId
+  description: Father Id
+  type: nVarChar
+  size: 36
+- field: tableName
+  description: Table Name
+  type: nVarChar
+  size: 50
+- field: fatheObjId
+  description: Father Object Id
+  type: nVarChar
+  size: 36
+- field: note
+  description: Note
+  type: nVarChar
+  size: 254
+- field: popCol1
+  description: Popup Column 1
+  type: nVarChar
+  size: 36
+- field: objId
+  description: Internal Object Id
+  type: Int
+  size: 11
+- field: objArrayId
+  description: Internal Object Array Number
+  type: Int
+  size: 11
+- field: allowAdd
+  description: Allow Create
+  type: VarChar
+  size: 1
+- field: allowUpd
+  description: Allow Update
+  type: VarChar
+  size: 1
+- field: allowDel
+  description: Allow Remove
+  type: VarChar
+  size: 1
+- field: noteSid
+  description: ''
+  type: Int
+  size: 11
+- field: modeList
+  description: Listview Mode
+  type: VarChar
+  size: 1
+- field: modeGet
+  description: Get by Key Mode
+  type: VarChar
+  size: 1
+- field: isSystem
+  description: Is System Table
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - guid
+- key: TABLE_NAME
+  unique: true
+  fields:
+  - tableName
+- key: FA_OBJ_ID
+  unique: false
+  fields:
+  - fatheObjId

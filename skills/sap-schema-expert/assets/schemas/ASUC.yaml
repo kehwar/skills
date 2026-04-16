@@ -1,0 +1,51 @@
+table: ASUC
+description: Single User Setup - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ASUC.htm
+fields:
+- field: StpCode
+  description: Setup Code
+  type: Int
+  size: '6'
+- field: StpDes
+  description: Setup Description
+  type: nVarChar
+  size: '100'
+- field: Action
+  description: Action
+  type: VarChar
+  size: '1'
+  default: B
+  constraints:
+  - key: B
+    label: Block Update
+  - key: W
+    label: Warning
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: '8'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: '8'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - StpCode
+  - LogInstanc

@@ -1,0 +1,35 @@
+table: BTA2
+description: Brazil Tax Adujstment - Taxes Paid in Advance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/BTA2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OBTA
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: TaxEntry
+  description: Tax Entry
+  type: Int
+  size: 11
+  related: TAX1
+- field: TaxLine
+  description: Tax Line
+  type: Int
+  size: 11
+  related: TAX1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+- key: TAX
+  unique: true
+  fields:
+  - AbsEntry
+  - TaxEntry
+  - TaxLine

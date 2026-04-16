@@ -1,0 +1,33 @@
+table: OFUS
+description: Microsoft 365 Integration User Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFUS.htm
+fields:
+- field: ID
+  description: ID
+  type: nVarChar
+  size: 254
+- field: USER_ID
+  description: User Code
+  type: nVarChar
+  size: 254
+- field: FOLDERNAME
+  description: Office Folder Name Map
+  type: Text
+  size: 16
+- field: LOCALE
+  description: Locale
+  type: nVarChar
+  size: 254
+- field: PROFPHOTO
+  description: Profile Photo
+  type: Text
+  size: 16
+- field: EM_USER_ID
+  description: Sending email using the MS365 account which bind to this user Id
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

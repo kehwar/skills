@@ -1,0 +1,45 @@
+table: SCLC
+description: SCLC
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SCLC.htm
+fields:
+- field: LangCode
+  description: Language Code
+  type: Int
+  size: 11
+- field: BaseID
+  description: Base language ID
+  type: Int
+  size: 11
+- field: HotKeyID
+  description: Hotkey language ID
+  type: Int
+  size: 11
+- field: Updated
+  description: Date of update
+  type: Date
+  size: 8
+- field: File
+  description: Localization Resource File
+  type: Text
+  size: 16
+- field: FileName
+  description: Localization file name
+  type: nVarChar
+  size: 64
+- field: UpdTime
+  description: Time of update
+  type: Int
+  size: 11
+- field: Version
+  description: B1 version
+  type: nVarChar
+  size: 32
+- field: PatchLevel
+  description: Special build string
+  type: nVarChar
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LangCode

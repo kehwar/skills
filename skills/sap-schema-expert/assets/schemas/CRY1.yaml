@@ -1,0 +1,29 @@
+table: CRY1
+description: Country Combination Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CRY1.htm
+fields:
+- field: Country
+  description: Country/Region Code
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: TransCRY
+  description: Transaction Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: EnableIST
+  description: Enable Intrastat Transactions
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Country
+  - TransCRY

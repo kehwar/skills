@@ -1,0 +1,610 @@
+table: OSCL
+description: Service Calls
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OSCL.htm
+fields:
+- field: callID
+  description: Call ID
+  type: Int
+  size: 11
+- field: subject
+  description: Subject
+  type: nVarChar
+  size: 254
+- field: customer
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: custmrName
+  description: Business Partner Name
+  type: nVarChar
+  size: 200
+- field: contctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: manufSN
+  description: Mfr Serial No.
+  type: nVarChar
+  size: 36
+- field: internalSN
+  description: Serial Number
+  type: nVarChar
+  size: 36
+- field: contractID
+  description: Contract No.
+  type: Int
+  size: 11
+  related: OCTR
+- field: cntrctDate
+  description: Contract End Date
+  type: Date
+  size: 8
+- field: resolDate
+  description: Resolution Date
+  type: Date
+  size: 8
+- field: resolTime
+  description: Resolution Time
+  type: Int
+  size: 6
+- field: free_1
+  description: Warranty
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: free_2
+  description: Warranty End Date
+  type: Date
+  size: 8
+- field: origin
+  description: Origin
+  type: Int
+  size: 6
+  related: OSCO
+- field: itemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: itemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: itemGroup
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: status
+  description: Status
+  type: Int
+  size: 6
+  related: OSCS
+  default: -3
+- field: priority
+  description: Priority
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Low
+  - key: M
+    label: Medium
+  - key: H
+    label: High
+- field: callType
+  description: Call Type
+  type: Int
+  size: 6
+  related: OSCT
+- field: problemTyp
+  description: Problem Type
+  type: Int
+  size: 6
+  related: OSCP
+- field: assignee
+  description: Handled By
+  type: Int
+  size: 6
+  related: OUSR
+- field: descrption
+  description: Description
+  type: Text
+  size: 16
+- field: objType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: userSign
+  description: Creating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: createTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: closeDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: closeTime
+  description: Closing Time
+  type: Int
+  size: 6
+- field: userSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: SCL1Count
+  description: InternalSCL1Count
+  type: Int
+  size: 11
+  default: 0
+- field: SCL2Count
+  description: InternalSCL2Count
+  type: Int
+  size: 11
+  default: 0
+- field: isEntitled
+  description: Entitle for Service
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Entitled
+  - key: C
+    label: Valid contract exists
+- field: insID
+  description: Install Card No.
+  type: Int
+  size: 11
+  related: OINS
+- field: technician
+  description: Technician
+  type: Int
+  size: 11
+  related: OHEM
+- field: resolution
+  description: Resolution
+  type: Text
+  size: 16
+- field: Scl1NxtLn
+  description: SCL1 Next Line
+  type: Int
+  size: 11
+- field: Scl2NxtLn
+  description: SCL2 Next Line
+  type: Int
+  size: 11
+- field: Scl3NxtLn
+  description: SCL3 Next Line
+  type: Int
+  size: 11
+- field: Scl4NxtLn
+  description: SCL4 Next Line
+  type: Int
+  size: 11
+- field: Scl5NxtLn
+  description: SCL5 Next Line
+  type: Int
+  size: 11
+- field: isQueue
+  description: Belongs to a Queue
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Queue
+  description: Queue
+  type: nVarChar
+  size: 20
+  related: OQUE
+- field: resolOnDat
+  description: Resolution on Date
+  type: Date
+  size: 8
+- field: resolOnTim
+  description: Resolution on Time
+  type: Int
+  size: 6
+- field: respByDate
+  description: Response by Date
+  type: Date
+  size: 8
+- field: respByTime
+  description: Response by Time
+  type: Int
+  size: 6
+- field: respOnDate
+  description: Response on Date
+  type: Date
+  size: 8
+- field: respOnTime
+  description: Response on Time
+  type: Int
+  size: 6
+- field: respAssign
+  description: Assigned for Response
+  type: Int
+  size: 6
+  related: OUSR
+- field: AssignDate
+  description: Assigned Date
+  type: Date
+  size: 8
+- field: AssignTime
+  description: Assigned Time
+  type: Int
+  size: 6
+- field: UpdateTime
+  description: Updated Time
+  type: Int
+  size: 6
+- field: responder
+  description: Responder
+  type: Int
+  size: 6
+  related: OUSR
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Duration
+  description: Service Call Duration
+  type: Num
+  size: 19.6
+- field: DurType
+  description: Duration UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: Reminder
+  description: Reminder
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemQty
+  description: Reminder Quantity
+  type: Num
+  size: 19.6
+- field: RemType
+  description: Reminder UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: RemDate
+  description: Reminder Date
+  type: Date
+  size: 8
+- field: RemSent
+  description: Reminder Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemTime
+  description: Reminder Time
+  type: Int
+  size: 6
+- field: Location
+  description: Location
+  type: Int
+  size: 6
+  related: OCLO
+  default: -1
+- field: AddrName
+  description: Address Name
+  type: nVarChar
+  size: 50
+- field: AddrType
+  description: Address Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Ship To
+  - key: B
+    label: Bill To
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: Room
+  description: Room
+  type: nVarChar
+  size: 50
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: DisplInCal
+  description: Display in Calendar
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: NumAtCard
+  description: Business Partner Ref. No.
+  type: nVarChar
+  size: 200
+- field: ProSubType
+  description: Problem Subtype
+  type: Int
+  size: 6
+  related: OPST
+- field: BPType
+  description: Business Partner Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchasing
+- field: Telephone
+  description: Phone Number
+  type: nVarChar
+  size: 50
+- field: BPPhone1
+  description: BP Phone Number1
+  type: nVarChar
+  size: 50
+- field: BPPhone2
+  description: BP Phone Number1
+  type: nVarChar
+  size: 50
+- field: BPCellular
+  description: BP Mobile Phone Number
+  type: nVarChar
+  size: 50
+- field: BPFax
+  description: BP Fax Number
+  type: nVarChar
+  size: 50
+- field: BPShipCode
+  description: BP Ship-to Code
+  type: nVarChar
+  size: 50
+- field: BPShipAddr
+  description: BP Ship-to Address
+  type: nVarChar
+  size: 254
+- field: BPBillCode
+  description: BP Bill-to Code
+  type: nVarChar
+  size: 50
+- field: BPBillAddr
+  description: BP Bill-to Address
+  type: nVarChar
+  size: 254
+- field: BPTerrit
+  description: Business Partner Territory
+  type: Int
+  size: 11
+- field: BPE_Mail
+  description: Business Partner E-Mail
+  type: nVarChar
+  size: 100
+- field: BPProjCode
+  description: Business Partner Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BPContact
+  description: BP Contact Person
+  type: nVarChar
+  size: 245
+- field: OwnerCode
+  description: Service Call Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year of Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - callID
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - Instance
+  - PIndicator
+- key: SERIES
+  unique: false
+  fields:
+  - Series
+- key: REMDATE
+  unique: false
+  fields:
+  - RemDate
+- key: REMTIME
+  unique: false
+  fields:
+  - RemTime

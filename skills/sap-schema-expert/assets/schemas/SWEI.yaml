@@ -1,0 +1,37 @@
+table: SWEI
+description: SWEI
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SWEI.htm
+fields:
+- field: EngineAddr
+  description: Workflow Engine Address
+  type: nVarChar
+  size: 200
+- field: EngineVer
+  description: Workflow Engine Version
+  type: nVarChar
+  size: 30
+- field: HashCode
+  description: Random Generated Hash Code
+  type: Int
+  size: 11
+- field: StartTime
+  description: Start Date of Workflow Engine
+  type: nVarChar
+  size: 50
+- field: LastUpdate
+  description: Last Update Date and Time
+  type: nVarChar
+  size: 50
+- field: NextUpdate
+  description: Expected next update date
+  type: nVarChar
+  size: 50
+- field: EngCmpnys
+  description: Company dbs that support workf
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EngineAddr

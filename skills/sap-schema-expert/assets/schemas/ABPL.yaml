@@ -1,0 +1,276 @@
+table: ABPL
+description: Business Place
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ABPL.htm
+fields:
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: BPLFrName
+  description: Branch Name (Foreign)
+  type: nVarChar
+  size: 200
+- field: VATRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 12
+- field: RepName
+  description: Rep. Name
+  type: nVarChar
+  size: 15
+- field: Industry
+  description: Industry
+  type: nVarChar
+  size: 20
+- field: Business
+  description: Business
+  type: nVarChar
+  size: 20
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: AddressFr
+  description: Address (Foreign)
+  type: nVarChar
+  size: 254
+- field: MainBPL
+  description: Main BPL
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Main Business Place
+  - key: N
+    label: Not Main Business Place
+- field: TxOffcNo
+  description: Tax Office No.
+  type: nVarChar
+  size: 3
+- field: Disabled
+  description: Disabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Disabled
+  - key: N
+    label: Enabled
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: DflCust
+  description: Default Customer ID
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DflVendor
+  description: Default Vendor ID
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DflWhs
+  description: Default Warehouse ID
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: DflTaxCode
+  description: Default Tax Code
+  type: nVarChar
+  size: 8
+  related: OCNA
+- field: RevOffice
+  description: Tax Office
+  type: nVarChar
+  size: 100
+- field: TaxIdNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: TaxIdNum2
+  description: Federal Tax ID 2
+  type: nVarChar
+  size: 32
+- field: TaxIdNum3
+  description: Federal Tax ID 3
+  type: nVarChar
+  size: 32
+- field: AddtnlId
+  description: Additional ID Number
+  type: nVarChar
+  size: 32
+- field: CompNature
+  description: Nature of Company
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: EconActT
+  description: Economic Activity Type
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: CredCOrig
+  description: Credit Contribution Origin
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: IPIPeriod
+  description: IPI Period
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: CoopAssocT
+  description: Cooperative Association Type
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: PrefState
+  description: Default State
+  type: nVarChar
+  size: 3
+- field: ProfTax
+  description: Profit Taxation
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: CompQualif
+  description: Company Qualification
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: DeclType
+  description: Declarer Type
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: AddrType
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: StreetNo
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: Building
+  description: Building/Floor/Room
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: Block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+- field: County
+  description: County
+  type: nVarChar
+  size: 100
+  related: OCNT
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: PmtClrAct
+  description: Payment Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CommerReg
+  description: Commercial Register
+  type: nVarChar
+  size: 60
+- field: DateOfInc
+  description: Date of Incorporation
+  type: Date
+  size: 8
+- field: SPEDProf
+  description: SPED Profile
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: EnvTypeNFe
+  description: Environment Type NFe
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: Opt4ICMS
+  description: Opting for ICMS 115_03
+  type: VarChar
+  size: 1
+  default: N
+- field: AliasName
+  description: Alias Name
+  type: Text
+  size: 16
+- field: GlblLocNum
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: TaxRptFrm
+  description: Tax Wizard Reporting From
+  type: Date
+  size: 8
+- field: Suframa
+  description: SUFRAMA
+  type: nVarChar
+  size: 100
+- field: DfltResWhs
+  description: Default Resource Warehouse ID
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: BPLNum
+  description: Branch No.
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BPLId
+  - LogInstanc

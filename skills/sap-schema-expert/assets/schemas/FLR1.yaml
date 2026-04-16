@@ -1,0 +1,44 @@
+table: FLR1
+description: Filter Lines
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/FLR1.htm
+fields:
+- field: AbsId
+  description: Foreign Key
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ColName
+  description: Column Name
+  type: nVarChar
+  size: 10
+- field: CompValue
+  description: Compare Value
+  type: nVarChar
+  size: 254
+- field: CompOper
+  description: Compare Operator
+  type: nVarChar
+  size: 2
+  default: '='
+  constraints:
+  - key: '='
+    label: '='
+  - key: '>'
+    label: '>'
+  - key: <</td>
+    label: <</td>
+  - key: '>='
+    label: '>='
+  - key: <=
+    label: <=
+  - key: '!='
+    label: '!='
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - ColName

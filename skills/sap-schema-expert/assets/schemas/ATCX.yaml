@@ -1,0 +1,419 @@
+table: ATCX
+description: Tax Code Determination - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ATCX.htm
+fields:
+- field: DocEntry
+  description: Internal Document ID
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Item
+  - key: '1'
+    label: Service
+  - key: '2'
+    label: Item & Service
+- field: BusArea
+  description: Business Area
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Sales
+  - key: '1'
+    label: Purchase
+  - key: '2'
+    label: Sales & Purchase
+- field: Cond1
+  description: Condition 1
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Federal Tax ID
+  - key: '2'
+    label: Ship-To Address
+  - key: '3'
+    label: Ship-To Street / PO Box
+  - key: '4'
+    label: Ship-To City
+  - key: '5'
+    label: Ship-To ZIP Code
+  - key: '6'
+    label: Ship-To County
+  - key: '7'
+    label: Ship-To State
+  - key: '8'
+    label: Ship-to Country/Region
+  - key: '9'
+    label: Item
+  - key: '10'
+    label: Item Group
+  - key: '11'
+    label: Business Partner
+  - key: '12'
+    label: Customer Group
+  - key: '13'
+    label: Vendor Group
+  - key: '14'
+    label: Warehouse
+  - key: '15'
+    label: G/L Account
+  - key: '16'
+    label: Customer Equalization tax
+  - key: '17'
+    label: Tax Status
+  - key: '18'
+    label: Freight
+  - key: '19'
+    label: UDF
+  - key: '20'
+    label: Branch
+  - key: '21'
+    label: Type of Business
+- field: UDFTable1
+  description: UDF Table Name
+  type: nVarChar
+  size: 20
+- field: NumVal1
+  description: Numeric Value
+  type: Int
+  size: 11
+- field: StrVal1
+  description: String Value
+  type: nVarChar
+  size: 100
+- field: MnyVal1
+  description: Monetary Value
+  type: Num
+  size: 19.6
+- field: Cond2
+  description: Condition 2
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Federal Tax ID
+  - key: '2'
+    label: Ship-To Address
+  - key: '3'
+    label: Ship-To Street / PO Box
+  - key: '4'
+    label: Ship-To City
+  - key: '5'
+    label: Ship-To ZIP Code
+  - key: '6'
+    label: Ship-To County
+  - key: '7'
+    label: Ship-To State
+  - key: '8'
+    label: Ship-to Country/Region
+  - key: '9'
+    label: Item
+  - key: '10'
+    label: Item Group
+  - key: '11'
+    label: Business Partner
+  - key: '12'
+    label: Customer Group
+  - key: '13'
+    label: Vendor Group
+  - key: '14'
+    label: Warehouse
+  - key: '15'
+    label: G/L Account
+  - key: '16'
+    label: Customer Equalization tax
+  - key: '17'
+    label: Tax Status
+  - key: '18'
+    label: Freight
+  - key: '19'
+    label: UDF
+  - key: '20'
+    label: Branch
+  - key: '21'
+    label: Type of Business
+- field: UDFTable2
+  description: UDF Table Name
+  type: nVarChar
+  size: 20
+- field: NumVal2
+  description: Numeric Value
+  type: Int
+  size: 11
+- field: StrVal2
+  description: String Value
+  type: nVarChar
+  size: 100
+- field: MnyVal2
+  description: Monetary Value
+  type: Num
+  size: 19.6
+- field: Cond3
+  description: Condition 3
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Federal Tax ID
+  - key: '2'
+    label: Ship-To Address
+  - key: '3'
+    label: Ship-To Street / PO Box
+  - key: '4'
+    label: Ship-To City
+  - key: '5'
+    label: Ship-To ZIP Code
+  - key: '6'
+    label: Ship-To County
+  - key: '7'
+    label: Ship-To State
+  - key: '8'
+    label: Ship-to Country/Region
+  - key: '9'
+    label: Item
+  - key: '10'
+    label: Item Group
+  - key: '11'
+    label: Business Partner
+  - key: '12'
+    label: Customer Group
+  - key: '13'
+    label: Vendor Group
+  - key: '14'
+    label: Warehouse
+  - key: '15'
+    label: G/L Account
+  - key: '16'
+    label: Customer Equalization tax
+  - key: '17'
+    label: Tax Status
+  - key: '18'
+    label: Freight
+  - key: '19'
+    label: UDF
+  - key: '20'
+    label: Branch
+  - key: '21'
+    label: Type of Business
+- field: UdfTable3
+  description: UDF Table Name
+  type: nVarChar
+  size: 20
+- field: NumVal3
+  description: Numeric Value
+  type: Int
+  size: 11
+- field: StrVal3
+  description: String Value
+  type: nVarChar
+  size: 100
+- field: MnyVal3
+  description: Monetary Value
+  type: Num
+  size: 19.6
+- field: Cond4
+  description: Condition 4
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Federal Tax ID
+  - key: '2'
+    label: Ship-To Address
+  - key: '3'
+    label: Ship-To Street / PO Box
+  - key: '4'
+    label: Ship-To City
+  - key: '5'
+    label: Ship-To ZIP Code
+  - key: '6'
+    label: Ship-To County
+  - key: '7'
+    label: Ship-To State
+  - key: '8'
+    label: Ship-to Country/Region
+  - key: '9'
+    label: Item
+  - key: '10'
+    label: Item Group
+  - key: '11'
+    label: Business Partner
+  - key: '12'
+    label: Customer Group
+  - key: '13'
+    label: Vendor Group
+  - key: '14'
+    label: Warehouse
+  - key: '15'
+    label: G/L Account
+  - key: '16'
+    label: Customer Equalization tax
+  - key: '17'
+    label: Tax Status
+  - key: '18'
+    label: Freight
+  - key: '19'
+    label: UDF
+  - key: '20'
+    label: Branch
+  - key: '21'
+    label: Type of Business
+- field: UdfTable4
+  description: UDF Table Name
+  type: nVarChar
+  size: 20
+- field: NumVal4
+  description: Numeric Value
+  type: Int
+  size: 11
+- field: StrVal4
+  description: String Value
+  type: nVarChar
+  size: 100
+- field: MnyVal4
+  description: Monetary Value
+  type: Num
+  size: 19.6
+- field: Cond5
+  description: Condition 5
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Federal Tax ID
+  - key: '2'
+    label: Ship-To Address
+  - key: '3'
+    label: Ship-To Street / PO Box
+  - key: '4'
+    label: Ship-To City
+  - key: '5'
+    label: Ship-To ZIP Code
+  - key: '6'
+    label: Ship-To County
+  - key: '7'
+    label: Ship-To State
+  - key: '8'
+    label: Ship-to Country/Region
+  - key: '9'
+    label: Item
+  - key: '10'
+    label: Item Group
+  - key: '11'
+    label: Business Partner
+  - key: '12'
+    label: Customer Group
+  - key: '13'
+    label: Vendor Group
+  - key: '14'
+    label: Warehouse
+  - key: '15'
+    label: G/L Account
+  - key: '16'
+    label: Customer Equalization tax
+  - key: '17'
+    label: Tax Status
+  - key: '18'
+    label: Freight
+  - key: '19'
+    label: UDF
+  - key: '20'
+    label: Branch
+  - key: '21'
+    label: Type of Business
+- field: UdfTable5
+  description: UDF Table Name
+  type: nVarChar
+  size: 20
+- field: NumVal5
+  description: Numeric Value
+  type: Int
+  size: 11
+- field: StrVal5
+  description: String Value
+  type: nVarChar
+  size: 100
+- field: MnyVal5
+  description: Monetary Value
+  type: Num
+  size: 19.6
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 250
+- field: LnTaxCode
+  description: Line Tax Code
+  type: nVarChar
+  size: 8
+- field: FrLnTax
+  description: Line Freight Tax
+  type: nVarChar
+  size: 8
+- field: FrHdrTax
+  description: Header Freight Tax
+  type: nVarChar
+  size: 8
+- field: UDFAlias1
+  description: UDF Field Alias
+  type: nVarChar
+  size: 18
+- field: UDFAlias2
+  description: UDF Field Alias
+  type: nVarChar
+  size: 18
+- field: UDFAlias3
+  description: UDF Field Alias
+  type: nVarChar
+  size: 18
+- field: UDFAlias4
+  description: UDF Field Alias
+  type: nVarChar
+  size: 18
+- field: UDFAlias5
+  description: UDF Field Alias
+  type: nVarChar
+  size: 18
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Update User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LogInstanc

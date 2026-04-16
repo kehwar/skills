@@ -1,0 +1,90 @@
+table: AMD1
+description: Amout Differences Report Lines
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AMD1.htm
+fields:
+- field: LineNum
+  description: Internal ID
+  type: Int
+  size: 11
+- field: PmnNum
+  description: Payment Number
+  type: Int
+  size: 11
+  related: ORCT
+- field: PmnInvID
+  description: Invoice Seq. No. in Payment
+  type: Int
+  size: 11
+- field: PmnDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: InvType
+  description: Invoice Category
+  type: nVarChar
+  size: 20
+  default: '13'
+  constraints:
+  - key: '13'
+    label: Sales Invoice
+- field: InvEntry
+  description: Invoice Key
+  type: Int
+  size: 11
+  related: OINV
+- field: InstId
+  description: Installment ID
+  type: Int
+  size: 6
+- field: InvTransID
+  description: Invoice Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: InvRate
+  description: Rate, Invoice
+  type: Num
+  size: 19.6
+- field: PmnRate
+  description: Rate, Payment
+  type: Num
+  size: 19.6
+- field: Approved
+  description: Confirmed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AmountDiff
+  description: Amount Difference (LC)
+  type: Num
+  size: 19.6
+- field: TaxAmtDiff
+  description: Tax Difference (LC)
+  type: Num
+  size: 19.6
+- field: TMP_JE
+  description: Temporary Transaction ID
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LineNum
+  - PmnNum
+  - PmnInvID

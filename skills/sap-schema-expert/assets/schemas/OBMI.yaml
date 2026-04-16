@@ -1,0 +1,48 @@
+table: OBMI
+description: Brazilian Multi-Indexer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBMI.htm
+fields:
+- field: ID
+  description: Unique ID
+  type: Int
+  size: 11
+- field: IndexType
+  description: Indexer Type
+  type: Int
+  size: 11
+  default: -1
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 10
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: RefIndCod1
+  description: First Referenced Indexer Code
+  type: nVarChar
+  size: 10
+- field: RefIndCod2
+  description: Second Referenced Indexer Code
+  type: nVarChar
+  size: 10
+- field: RefIndCod3
+  description: Third Referenced Indexer Code
+  type: nVarChar
+  size: 10
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+- key: IND_CODE_K
+  unique: true
+  fields:
+  - IndexType
+  - Code

@@ -1,0 +1,2280 @@
+table: SITM
+description: Items
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/SITM.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: FrgnName
+  description: Foreign Name
+  type: nVarChar
+  size: 200
+- field: ItmsGrpCod
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+  default: 100
+- field: CstGrpCode
+  description: Customs Group
+  type: Int
+  size: 6
+  related: OARG
+  default: -1
+- field: VatGourpSa
+  description: Sales Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: CodeBars
+  description: Bar Code
+  type: nVarChar
+  size: 254
+- field: VATLiable
+  description: Tax Liable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrchseItem
+  description: Purchasing Item
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SellItem
+  description: Sales Item
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InvntItem
+  description: Inventory Item
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OnHand
+  description: In Stock
+  type: Num
+  size: 19.6
+- field: IsCommited
+  description: Qty Ordered by Customers
+  type: Num
+  size: 19.6
+- field: OnOrder
+  description: Qty Ordered from Vendors
+  type: Num
+  size: 19.6
+- field: IncomeAcct
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExmptIncom
+  description: Exempt Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: MaxLevel
+  description: Maximum Inventory Level
+  type: Num
+  size: 19.6
+- field: DfltWH
+  description: Default Warehouse
+  type: nVarChar
+  size: 8
+- field: CardCode
+  description: Preferred Vendor
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: SuppCatNum
+  description: Mfr Catalog No.
+  type: nVarChar
+  size: 50
+- field: BuyUnitMsr
+  description: Purchasing UoM
+  type: nVarChar
+  size: 100
+- field: NumInBuy
+  description: Items per Purchasing Unit
+  type: Num
+  size: 19.6
+- field: ReorderQty
+  description: Required (Purchasing UoM)
+  type: Num
+  size: 19.6
+- field: MinLevel
+  description: Minimum Inventory Level
+  type: Num
+  size: 19.6
+- field: LstEvlPric
+  description: Last Evaluated Price
+  type: Num
+  size: 19.6
+- field: LstEvlDate
+  description: Date of Last Reval. Price
+  type: Date
+  size: 8
+- field: CustomPer
+  description: Customs Rate
+  type: Num
+  size: 19.6
+- field: Canceled
+  description: Canceled Item [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MnufctTime
+  description: Production Date in Days
+  type: Int
+  size: 11
+- field: WholSlsTax
+  description: Tax Rate for Wholesaler
+  type: VarChar
+  size: 1
+- field: RetilrTax
+  description: Sales Tax in %
+  type: VarChar
+  size: 1
+- field: SpcialDisc
+  description: Special Discount %
+  type: Num
+  size: 19.6
+- field: DscountCod
+  description: Discount Code
+  type: Int
+  size: 6
+- field: TrackSales
+  description: Follow-Up [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalUnitMsr
+  description: Sales UoM
+  type: nVarChar
+  size: 100
+- field: NumInSale
+  description: No. of Items per Sales Unit
+  type: Num
+  size: 19.6
+- field: Consig
+  description: Consignment Goods Whse
+  type: Num
+  size: 19.6
+- field: QueryGroup
+  description: Properties
+  type: Int
+  size: 11
+  default: 0
+- field: Counted
+  description: Quantity Counted in Inventory
+  type: Num
+  size: 19.6
+- field: OpenBlnc
+  description: Initial Stock
+  type: Num
+  size: 19.6
+- field: EvalSystem
+  description: Valuation Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Moving Average
+  - key: S
+    label: Standard
+  - key: F
+    label: FIFO
+  - key: B
+    label: Serial/Batch
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: FREE
+  description: Free [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PicturName
+  description: Picture
+  type: nVarChar
+  size: 200
+- field: Transfered
+  description: Year Transfer [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlncTrnsfr
+  description: Balances transferred [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserText
+  description: Item Remarks
+  type: Text
+  size: 16
+- field: SerialNum
+  description: Serial Number
+  type: nVarChar
+  size: 17
+- field: CommisPcnt
+  description: '% Commission for Item'
+  type: Num
+  size: 19.6
+- field: CommisSum
+  description: Total Commission for Item
+  type: Num
+  size: 19.6
+- field: CommisGrp
+  description: Commission Group
+  type: Int
+  size: 6
+  related: OCOG
+  default: 0
+- field: TreeType
+  description: BOM Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not a BOM
+  - key: A
+    label: Assembly
+  - key: S
+    label: Sales
+  - key: P
+    label: Production
+  - key: T
+    label: Template
+- field: TreeQty
+  description: No. of Units
+  type: Num
+  size: 19.6
+- field: LastPurPrc
+  description: Last Purchase Price
+  type: Num
+  size: 19.6
+- field: LastPurCur
+  description: Last Purchase Currency
+  type: nVarChar
+  size: 3
+- field: LastPurDat
+  description: Last Purchase Date
+  type: Date
+  size: 8
+- field: ExitCur
+  description: Issue Currency
+  type: nVarChar
+  size: 3
+- field: ExitPrice
+  description: Issue Price
+  type: Num
+  size: 19.6
+- field: ExitWH
+  description: Release Warehouse
+  type: nVarChar
+  size: 8
+- field: AssetItem
+  description: Fixed Asset Indicator
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WasCounted
+  description: Counted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ManSerNum
+  description: Serial No. Management
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SHeight1
+  description: Height 1 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SHght1Unit
+  description: Height 1 - UoM for Sales
+  type: Int
+  size: 6
+- field: SHeight2
+  description: Height 2 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SHght2Unit
+  description: Height 2 - UoM for Sales
+  type: Int
+  size: 6
+- field: SWidth1
+  description: Width 1 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SWdth1Unit
+  description: Width 1 - UoM for Sales
+  type: Int
+  size: 6
+- field: SWidth2
+  description: Width 2 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SWdth2Unit
+  description: Width 2 - UoM for Sales
+  type: Int
+  size: 6
+- field: SLength1
+  description: Length 1 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SLen1Unit
+  description: Length 1 - UoM for Sales
+  type: Int
+  size: 6
+- field: Slength2
+  description: Length 2 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SLen2Unit
+  description: Length 2 - UoM for Sales
+  type: Int
+  size: 6
+- field: SVolume
+  description: Volume - Sales Unit
+  type: Num
+  size: 19.6
+- field: SVolUnit
+  description: Volume - UoM for Sales
+  type: Int
+  size: 6
+- field: SWeight1
+  description: Weight 1 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SWght1Unit
+  description: Weight 1 - UoM for Sales
+  type: Int
+  size: 6
+- field: SWeight2
+  description: Weight 2 - Sales Unit
+  type: Num
+  size: 19.6
+- field: SWght2Unit
+  description: Weight 2 - UoM for Sales
+  type: Int
+  size: 6
+- field: BHeight1
+  description: Height 1 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BHght1Unit
+  description: Height 1 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BHeight2
+  description: Height 2 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BHght2Unit
+  description: Height 2 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BWidth1
+  description: Width 1 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BWdth1Unit
+  description: Width 1 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BWidth2
+  description: Width 2 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BWdth2Unit
+  description: Width 2 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BLength1
+  description: Length 1 - Purchase Unit
+  type: Num
+  size: 19.6
+- field: BLen1Unit
+  description: Length 1 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: Blength2
+  description: Length 2 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BLen2Unit
+  description: Length 2 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BVolume
+  description: Volume - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BVolUnit
+  description: Volume - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BWeight1
+  description: Weight 1 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BWght1Unit
+  description: Weight 1 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: BWeight2
+  description: Weight 2 - Purchasing Unit
+  type: Num
+  size: 19.6
+- field: BWght2Unit
+  description: Weight 2 - UoM for Purchasing
+  type: Int
+  size: 6
+- field: FixCurrCms
+  description: Currency of Fixed Commission
+  type: nVarChar
+  size: 3
+- field: FirmCode
+  description: Manufacturer
+  type: Int
+  size: 6
+  related: OMRC
+  default: -1
+- field: LstSalDate
+  description: Last Sale Date
+  type: Date
+  size: 8
+- field: QryGroup1
+  description: Property 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup2
+  description: Property 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup3
+  description: Property 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup4
+  description: Property 4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup5
+  description: Property 5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup6
+  description: Property 6
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup7
+  description: Property 7
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup8
+  description: Property 8
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup9
+  description: Property 9
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup10
+  description: Property 10
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup11
+  description: Property 11
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup12
+  description: Property 12
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup13
+  description: Property 13
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup14
+  description: Property 14
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup15
+  description: Property 15
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup16
+  description: Property 16
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup17
+  description: Property 17
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup18
+  description: Property 18
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup19
+  description: Property 19
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup20
+  description: Property 20
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup21
+  description: Property 21
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup22
+  description: Property 22
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup23
+  description: Property 23
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup24
+  description: Property 24
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup25
+  description: Property 25
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup26
+  description: Property 26
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup27
+  description: Property 27
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup28
+  description: Property 28
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup29
+  description: Property 29
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup30
+  description: Property 30
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup31
+  description: Property 31
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup32
+  description: Property 32
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup33
+  description: Property 33
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup34
+  description: Property 34
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup35
+  description: Property 35
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup36
+  description: Property 36
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup37
+  description: Property 37
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup38
+  description: Property 38
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup39
+  description: Property 39
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup40
+  description: Property 40
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup41
+  description: Property 41
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup42
+  description: Property 42
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup43
+  description: Property 43
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup44
+  description: Property 44
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup45
+  description: Property 45
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup46
+  description: Property 46
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup47
+  description: Property 47
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup48
+  description: Property 48
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup49
+  description: Property 49
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup50
+  description: Property 50
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup51
+  description: Property 51
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup52
+  description: Property 52
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup53
+  description: Property 53
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup54
+  description: Property 54
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup55
+  description: Property 55
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup56
+  description: Property 56
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup57
+  description: Property 57
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup58
+  description: Property 58
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup59
+  description: Property 59
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup60
+  description: Property 60
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup61
+  description: Property 61
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup62
+  description: Property 62
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup63
+  description: Property 63
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup64
+  description: Property 64
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: ExportCode
+  description: Data Export Code
+  type: nVarChar
+  size: 20
+- field: SalFactor1
+  description: Sales Factor 1
+  type: Num
+  size: 19.6
+- field: SalFactor2
+  description: Sales Factor 2
+  type: Num
+  size: 19.6
+- field: SalFactor3
+  description: Sales Factor 3
+  type: Num
+  size: 19.6
+- field: SalFactor4
+  description: Sales Factor 4
+  type: Num
+  size: 19.6
+- field: PurFactor1
+  description: Purchasing Factor 1
+  type: Num
+  size: 19.6
+- field: PurFactor2
+  description: Purchasing Factor 2
+  type: Num
+  size: 19.6
+- field: PurFactor3
+  description: Purchasing Factor 3
+  type: Num
+  size: 19.6
+- field: PurFactor4
+  description: Purchasing Factor 4
+  type: Num
+  size: 19.6
+- field: SalFormula
+  description: Sales Formula
+  type: nVarChar
+  size: 40
+- field: PurFormula
+  description: Purchasing Formula
+  type: nVarChar
+  size: 40
+- field: VatGroupPu
+  description: Purchasing Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: AvgPrice
+  description: Item Cost
+  type: Num
+  size: 19.6
+- field: PurPackMsr
+  description: Packaging UoM (Purchasing)
+  type: nVarChar
+  size: 30
+- field: PurPackUn
+  description: Quantity per Package (Purchasing)
+  type: Num
+  size: 19.6
+- field: SalPackMsr
+  description: Packaging UoM (Sales)
+  type: nVarChar
+  size: 30
+- field: SalPackUn
+  description: Quantity per Package (Sales)
+  type: Num
+  size: 19.6
+- field: SCNCounter
+  description: SCN Counter
+  type: Int
+  size: 6
+- field: ManBtchNum
+  description: Manage Batch No. [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ManOutOnly
+  description: Manage SN Only on Exit
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+  - key: G
+    label: Fixed Assets Migration
+- field: validFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: validTo
+  description: Active To
+  type: Date
+  size: 8
+- field: frozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: frozenFrom
+  description: Inactive From
+  type: Date
+  size: 8
+- field: frozenTo
+  description: Inactive To
+  type: Date
+  size: 8
+- field: BlockOut
+  description: Force selection of serial no.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ValidComm
+  description: Active Remarks
+  type: nVarChar
+  size: 30
+- field: FrozenComm
+  description: Inactive Remarks
+  type: nVarChar
+  size: 30
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+- field: SWW
+  description: Additional Identifier
+  type: nVarChar
+  size: 16
+- field: Deleted
+  description: Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ExpensAcct
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrgnInAcct
+  description: Revenue Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ShipType
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+- field: GLMethod
+  description: Set G/L Accounts By
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: W
+    label: Warehouse
+  - key: C
+    label: Item Group
+  - key: L
+    label: Item Level
+- field: ECInAcct
+  description: Revenue Account - EU
+  type: nVarChar
+  size: 15
+- field: FrgnExpAcc
+  description: Expense Account - Foreign
+  type: nVarChar
+  size: 15
+- field: ECExpAcc
+  description: Expense Account - EU
+  type: nVarChar
+  size: 15
+- field: TaxType
+  description: Tax Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Regular Tax
+  - key: U
+    label: Use Tax
+  - key: N
+    label: No Tax
+- field: ByWh
+  description: Manage Inventory by Warehouse
+  type: VarChar
+  size: 1
+- field: WTLiable
+  description: WTax Liable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItemType
+  description: Item Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Items
+  - key: L
+    label: Labor
+  - key: T
+    label: Travel
+  - key: F
+    label: Fixed Assets
+- field: WarrntTmpl
+  description: Warranty Template
+  type: nVarChar
+  size: 20
+  related: OCTT
+- field: BaseUnit
+  description: Base Unit Name
+  type: nVarChar
+  size: 20
+- field: CountryOrg
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: StockValue
+  description: Inventory Value
+  type: Num
+  size: 19.6
+- field: Phantom
+  description: Phantom Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IssueMthd
+  description: Issue Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: B
+    label: Backflush
+  - key: M
+    label: Manual
+- field: FREE1
+  description: Yield in %
+  type: VarChar
+  size: 1
+- field: PricingPrc
+  description: Pricing Percentage
+  type: Num
+  size: 19.6
+- field: MngMethod
+  description: Management Method
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: A
+    label: On Every Transaction
+  - key: R
+    label: On Release Only
+- field: ReorderPnt
+  description: Reorder Point
+  type: Num
+  size: 19.6
+- field: InvntryUom
+  description: Inventory UoM
+  type: nVarChar
+  size: 100
+- field: PlaningSys
+  description: Planning Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: M
+    label: MRP
+  - key: N
+    label: None
+- field: PrcrmntMtd
+  description: Procurement Method
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Buy
+  - key: M
+    label: Make
+- field: OrdrIntrvl
+  description: Order Interval
+  type: Int
+  size: 6
+  related: OCYC
+- field: OrdrMulti
+  description: Order Multiple
+  type: Num
+  size: 19.6
+- field: MinOrdrQty
+  description: Minimum Order Quantity
+  type: Num
+  size: 19.6
+- field: LeadTime
+  description: Lead Time
+  type: Int
+  size: 11
+- field: IndirctTax
+  description: Indirect Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxCodeAR
+  description: Tax Code (A/R)
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: TaxCodeAP
+  description: Tax Code (A/P)
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: OSvcCode
+  description: Outgoing Service Code
+  type: Int
+  size: 11
+  related: OSCD
+  default: -1
+- field: ISvcCode
+  description: Incoming Service Code
+  type: Int
+  size: 11
+  related: OSCD
+  default: -1
+- field: ServiceGrp
+  description: Service Group
+  type: Int
+  size: 11
+  related: OSGP
+  default: -1
+- field: NCMCode
+  description: NCM Code
+  type: Int
+  size: 11
+  related: ONCM
+  default: -1
+- field: MatType
+  description: Material Type
+  type: nVarChar
+  size: 3
+  related: OMTP
+  default: '1'
+- field: MatGrp
+  description: Material Group
+  type: Int
+  size: 11
+  related: OMGP
+  default: -1
+- field: ProductSrc
+  description: Product Source
+  type: nVarChar
+  size: 2
+  related: OPSC
+  default: '0'
+- field: ServiceCtg
+  description: Service Category
+  type: Int
+  size: 11
+  related: OSCG
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+- field: ItemClass
+  description: Service or Material
+  type: VarChar
+  size: 1
+  default: '2'
+  constraints:
+  - key: '2'
+    label: Material
+  - key: '1'
+    label: Service
+- field: Excisable
+  description: Excisable [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChapterID
+  description: Chapter ID
+  type: Int
+  size: 11
+  related: OCHP
+  default: -1
+- field: NotifyASN
+  description: Notification Availed SN.
+  type: nVarChar
+  size: 40
+- field: ProAssNum
+  description: Provisional Assessment No.
+  type: nVarChar
+  size: 20
+- field: AssblValue
+  description: Assessable Value
+  type: Num
+  size: 19.6
+- field: DNFEntry
+  description: DNF Code Entry
+  type: Int
+  size: 11
+  related: ODNF
+  default: -1
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: Spec
+  description: Item Specification
+  type: nVarChar
+  size: 30
+- field: TaxCtg
+  description: Tax Category
+  type: nVarChar
+  size: 4
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: FuelCode
+  description: Fuel
+  type: Int
+  size: 11
+  related: OBFI
+  default: -1
+- field: BeverTblC
+  description: Beverage Table
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: BeverGrpC
+  description: Beverage Group
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: BeverTM
+  description: Beverage Brand
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: ToleranDay
+  description: Tolerance Days
+  type: Int
+  size: 11
+- field: UgpEntry
+  description: UoM Group
+  type: Int
+  size: 11
+  related: OUGP
+- field: PUoMEntry
+  description: Default Purchasing UoM
+  type: Int
+  size: 11
+  related: OUOM
+- field: SUoMEntry
+  description: Default Sales UoM
+  type: Int
+  size: 11
+  related: OUOM
+- field: IUoMEntry
+  description: Inventory UoM
+  type: Int
+  size: 11
+  related: OUOM
+- field: IssuePriBy
+  description: Issue Primarily By SnB or Bin
+  type: Int
+  size: 6
+  constraints:
+  - key: '0'
+    label: Issue Primarily by Serial/Batch Number
+  - key: '1'
+    label: Issue Primarily by Bin Location
+- field: AssetClass
+  description: Asset Class
+  type: nVarChar
+  size: 20
+  related: OACS
+- field: AssetGroup
+  description: Asset Group
+  type: nVarChar
+  size: 15
+  related: OAGS
+- field: InventryNo
+  description: Inventory Number of Asset
+  type: nVarChar
+  size: 12
+- field: Technician
+  description: Technician of Fixed Asset
+  type: Int
+  size: 11
+  related: OHEM
+- field: Employee
+  description: Employee of Fixed Asset
+  type: Int
+  size: 11
+  related: OHEM
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: StatAsset
+  description: Owned by Company
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Cession
+  description: Cession
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DeacAftUL
+  description: Deactivate After Useful Life
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AsstStatus
+  description: Asset Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: A
+    label: Active
+  - key: I
+    label: Inactive
+- field: CapDate
+  description: Capitalization Date
+  type: Date
+  size: 8
+- field: AcqDate
+  description: Acquisition Date
+  type: Date
+  size: 8
+- field: RetDate
+  description: Retirement Date
+  type: Date
+  size: 8
+- field: GLPickMeth
+  description: G/L Account Pick Method
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: General
+  - key: W
+    label: Warehouse
+  - key: C
+    label: Item Group
+- field: NoDiscount
+  description: No Discounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MgrByQty
+  description: Manage Asset by Quantity
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AssetRmk1
+  description: Asset Remark 1
+  type: nVarChar
+  size: 100
+- field: AssetRmk2
+  description: Asset Remark 2
+  type: nVarChar
+  size: 100
+- field: AssetAmnt1
+  description: Asset Amount 1
+  type: Num
+  size: 19.6
+- field: AssetAmnt2
+  description: Asset Amount 2
+  type: Num
+  size: 19.6
+- field: DeprGroup
+  description: Depreciation Group
+  type: nVarChar
+  size: 15
+  related: OADG
+- field: AssetSerNo
+  description: Asset Serial Number
+  type: nVarChar
+  size: 32
+- field: CntUnitMsr
+  description: Inventory Counting UoM Name
+  type: nVarChar
+  size: 100
+- field: NumInCnt
+  description: No. of Items per Counting Unit
+  type: Num
+  size: 19.6
+- field: INUoMEntry
+  description: Inventory Counting UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: OneBOneRec
+  description: One Batch One Receipt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RuleCode
+  description: Checking Rule Code
+  type: nVarChar
+  size: 2
+  related: ODCR
+- field: ScsCode
+  description: Scs Code
+  type: nVarChar
+  size: 10
+- field: SpProdType
+  description: Special Product Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: MT
+    label: Cellular Phones
+  - key: IO
+    label: Integrated Circuits
+- field: IWeight1
+  description: Weight 1 - Inventory
+  type: Num
+  size: 19.6
+- field: IWght1Unit
+  description: Weight 1 - Inventory Unit
+  type: Int
+  size: 6
+- field: IWeight2
+  description: Weight 2 - Inventory
+  type: Num
+  size: 19.6
+- field: IWght2Unit
+  description: Weight 2 - Inventory Unit
+  type: Int
+  size: 6
+- field: CompoWH
+  description: Component Warehouse
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: From Bill of Materials Line
+  - key: P
+    label: From Parent Item Document Line
+- field: CreateTS
+  description: Creatn Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: VirtAstItm
+  description: Virtual Asset Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SouVirAsst
+  description: Source Virtual Asset Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: InCostRoll
+  description: Include in Prod. Cost Rollup
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrdStdCst
+  description: Production Std Cost
+  type: Num
+  size: 19.6
+- field: EnAstSeri
+  description: Enforce Asset Serial Numbers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LinkRsc
+  description: Linked Resource
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: OnHldPert
+  description: Capital Goods On Hold Percent
+  type: Num
+  size: 19.6
+- field: onHldLimt
+  description: Capital Goods on Hold Limit
+  type: Num
+  size: 19.6
+- field: PriceUnit
+  description: Pricing Unit
+  type: Int
+  size: 11
+  related: OUOM
+- field: GSTRelevnt
+  description: GST Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SACEntry
+  description: SAC Entry
+  type: Int
+  size: 11
+  related: OSAC
+  default: -1
+- field: GstTaxCtg
+  description: GST Tax Category
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Regular
+  - key: N
+    label: Nil Rated
+  - key: E
+    label: Exempt
+- field: AssVal4WTR
+  description: Assessable Value for WTR
+  type: Num
+  size: 19.6
+- field: ExcImpQUoM
+  description: Default Excise Imported Quantity UoM
+  type: Int
+  size: 11
+  constraints:
+  - key: '112'
+    label: Liters, m3
+  - key: '168'
+    label: Tonne, metric ton (1000 kg)
+  - key: '251'
+    label: Horsepower (1 hp = 0.75 kW)
+  - key: '831'
+    label: Liters of anhydrous (pure) alcohol
+- field: ExcFixAmnt
+  description: Default Excise Fixed Amount
+  type: Num
+  size: 19.6
+- field: ExcRate
+  description: Default Excise Rate
+  type: Num
+  size: 19.6
+- field: SOIExc
+  description: SOI Excisable
+  type: VarChar
+  size: 1
+  default: '4'
+  constraints:
+  - key: '1'
+    label: Excisable
+  - key: '2'
+    label: Exemption of excises
+  - key: '3'
+    label: Excises are paid to another authority
+  - key: '4'
+    label: Not Excisable
+- field: TNVED
+  description: TNVED Code
+  type: nVarChar
+  size: 10
+- field: Imported
+  description: Imported Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AutoBatch
+  description: Automatic Batch Creation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CstmActing
+  description: Customer Accounting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: StdItemId
+  description: Standard Item Identification
+  type: Int
+  size: 11
+  related: OUNCL
+- field: CommClass
+  description: Commodity Classification
+  type: Int
+  size: 11
+  related: OUNCL
+- field: TaxCatCode
+  description: Tax Category Code for GTS
+  type: nVarChar
+  size: 50
+  related: OTCC
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: NVECode
+  description: NVE Code
+  type: nVarChar
+  size: 6
+- field: CESTCode
+  description: CEST Code
+  type: Int
+  size: 11
+  related: OCEST
+- field: CtrSealQty
+  description: Control Seal Qty
+  type: Num
+  size: 19.6
+- field: LegalText
+  description: Legal Text
+  type: nVarChar
+  size: 250
+- field: QRCodeSrc
+  description: QR Code Source
+  type: Text
+  size: 16
+- field: Traceable
+  description: Traceable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IfrsPsRev
+  description: IFRS Posting for Revaluation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PlPaTaxCat
+  description: Plastic Packaging Tax Category
+  type: nVarChar
+  size: 2
+- field: PlPaWght
+  description: Plastic Packaging Weight
+  type: Num
+  size: 19.6
+- field: PPTExReSa
+  description: Plastic Packaging Tax Exemption Reason for A/P or A/R
+  type: nVarChar
+  size: 2
+- field: PPTExRePr
+  description: Plastic Package Tax Exemption Reason for Production
+  type: nVarChar
+  size: 2
+- field: ProdctType
+  description: SAF-T Product Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Products
+  - key: S
+    label: Services
+  - key: O
+    label: Other
+  - key: I
+    label: Taxes
+- field: ProdTypeEx
+  description: SAF-T Product Type
+  type: nVarChar
+  size: 10
+  related: OSPT
+  default: P
+- field: SalUomNum
+  description: Sales UoM Numerator
+  type: Num
+  size: 19.6
+- field: SalUomDen
+  description: Sales UoM Denominator
+  type: Num
+  size: 19.6
+- field: BuyUomNum
+  description: Buy UoM Numerator
+  type: Num
+  size: 19.6
+- field: BuyUomDen
+  description: Buy UoM Denominator
+  type: Num
+  size: 19.6
+- field: IncUomNum
+  description: Counting UoM Numerator
+  type: Num
+  size: 19.6
+- field: IncUomDen
+  description: Counting UoM Denominator
+  type: Num
+  size: 19.6
+- field: NoApDisc
+  description: Do Not Apply Discount
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+- key: ITEM_NAME
+  unique: false
+  fields:
+  - ItemName
+- key: TREE_TYPE
+  unique: false
+  fields:
+  - TreeType
+- key: COM_GROUP
+  unique: false
+  fields:
+  - CommisGrp
+- key: SALE
+  unique: false
+  fields:
+  - SellItem
+- key: PURCHASE
+  unique: false
+  fields:
+  - PrchseItem
+- key: INVENTORY
+  unique: false
+  fields:
+  - InvntItem

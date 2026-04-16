@@ -1,0 +1,53 @@
+table: TCD5
+description: Tax Code by Usage
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TCD5.htm
+fields:
+- field: AbsId
+  description: Numerator
+  type: Int
+  size: 11
+- field: Tcd3Id
+  description: Valid Period ID
+  type: Int
+  size: 11
+- field: UsageCode
+  description: Usage
+  type: Int
+  size: 11
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: Type
+  description: Tax Code Type
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: R
+    label: A/R Default Tax Code
+  - key: P
+    label: A/P Default Tax Code
+  - key: L
+    label: Line Item Tax Code
+- field: ExpTaxCode
+  description: Freight Tax Code
+  type: nVarChar
+  size: 8
+- field: PurTaxCode
+  description: Purchase Tax Code
+  type: nVarChar
+  size: 8
+- field: TcdId
+  description: Tax Determination Code
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId

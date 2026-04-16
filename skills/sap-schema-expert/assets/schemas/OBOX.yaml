@@ -1,0 +1,152 @@
+table: OBOX
+description: Box Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBOX.htm
+fields:
+- field: BoxCode
+  description: Code
+  type: nVarChar
+  size: 30
+- field: BoxName
+  description: Name
+  type: nVarChar
+  size: 250
+- field: BoxType
+  description: Type
+  type: VarChar
+  size: 1
+  default: V
+  constraints:
+  - key: V
+    label: VAT Group
+  - key: B
+    label: Box
+  - key: A
+    label: Account
+  - key: M
+    label: Manual Input
+  - key: T
+    label: Manual Text Input
+  - key: F
+    label: Formula
+  - key: S
+    label: Single Choice
+- field: SummayFld
+  description: Summary Field
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: B
+    label: Base Amount
+  - key: T
+    label: Tax Amount
+  - key: Q
+    label: EQ Base Amount
+  - key: E
+    label: EQ Tax Amount
+  - key: N
+    label: Non-Deductible Amount
+  - key: S
+    label: ''
+- field: DbtCrdt
+  description: Debit/Credit
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: D
+    label: Debit Side
+  - key: C
+    label: Credit Side
+  - key: B
+    label: Debit Side and Credit Side
+  - key: S
+    label: ''
+- field: Formula
+  description: Formula Syntax
+  type: Text
+  size: 16
+- field: SortOrder
+  description: Sort Order
+  type: Int
+  size: 11
+- field: AbsolutVa
+  description: Absolute Value
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Box Declaration
+  - key: S
+    label: BAS Report
+  - key: X
+    label: BAS Report - Empty Effective Date Holder
+- field: Inactive
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: DecLoc
+  description: Declaration Location
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: ''
+  - key: C
+    label: Continent
+  - key: M
+    label: Madeira
+  - key: A
+    label: Azores
+- field: BosCode
+  description: Box Set Code
+  type: Int
+  size: 11
+  related: OBOS
+- field: Position
+  description: Position in Report
+  type: nVarChar
+  size: 250
+- field: PostToAct
+  description: Post-To Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PostToOffA
+  description: Post-To Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoxCode
+  - ReportType
+  - BosCode

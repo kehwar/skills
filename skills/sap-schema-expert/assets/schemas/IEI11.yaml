@@ -1,0 +1,338 @@
+table: IEI11
+description: IEI - Drawn Dpm Detail
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/IEI11.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OIEI
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LineSeq
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: BaseAbs
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: BaseType
+  description: Base Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+- field: VatGroup
+  description: VAT Group Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatPrcnt
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Net LC
+  type: Num
+  size: 19.6
+- field: TotalFrgn
+  description: Net FC
+  type: Num
+  size: 19.6
+- field: TotalSumSy
+  description: Net SC
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Tax LC
+  type: Num
+  size: 19.6
+- field: VatSumFrgn
+  description: Tax FC
+  type: Num
+  size: 19.6
+- field: VatSumSys
+  description: Tax SC
+  type: Num
+  size: 19.6
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '140000010'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: IsAcq
+  description: Acquisition Tax Liable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: IsAllDrawn
+  description: Remaining Amount Drawn
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsGross
+  description: Is Gross Line
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net Line
+  - key: Y
+    label: Gross Line
+- field: Gross
+  description: Gross LC
+  type: Num
+  size: 19.6
+- field: GrossFc
+  description: Gross FC
+  type: Num
+  size: 19.6
+- field: GrossSc
+  description: Gross SC
+  type: Num
+  size: 19.6
+- field: ApplNet
+  description: Applied Net LC
+  type: Num
+  size: 19.6
+- field: ApplNetFc
+  description: Applied Net FC
+  type: Num
+  size: 19.6
+- field: ApplNetSc
+  description: Applied Net SC
+  type: Num
+  size: 19.6
+- field: ApplVat
+  description: Applied Tax LC
+  type: Num
+  size: 19.6
+- field: ApplVatFc
+  description: Applied Tax FC
+  type: Num
+  size: 19.6
+- field: ApplVatSc
+  description: Applied Tax SC
+  type: Num
+  size: 19.6
+- field: BaseNet
+  description: Base Net LC
+  type: Num
+  size: 19.6
+- field: BaseNetFc
+  description: Base Net FC
+  type: Num
+  size: 19.6
+- field: BaseNetSc
+  description: Base Net SC
+  type: Num
+  size: 19.6
+- field: BaseVat
+  description: Base Tax LC
+  type: Num
+  size: 19.6
+- field: BaseVatFc
+  description: Base Tax FC
+  type: Num
+  size: 19.6
+- field: BaseVatSc
+  description: Base Tax SC
+  type: Num
+  size: 19.6
+- field: BaseGross
+  description: Base Gross LC
+  type: Num
+  size: 19.6
+- field: BaseGrossF
+  description: Base Gross FC
+  type: Num
+  size: 19.6
+- field: BaseGrossS
+  description: Base Gross SC
+  type: Num
+  size: 19.6
+- field: LineType
+  description: Line Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Document Row
+  - key: R
+    label: Currency Rounding
+  - key: H
+    label: Down Payment Document Rounding
+- field: DctSum
+  description: Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: DctSumFc
+  description: Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: DctSumSc
+  description: Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: EqSum
+  description: Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: EqSumFc
+  description: Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: EqSumSc
+  description: Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: ApplDct
+  description: Applied Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: ApplDctFc
+  description: Applied Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: ApplDctSc
+  description: Applied Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: ApplEq
+  description: Applied Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: ApplEqFc
+  description: Applied Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: ApplEqSc
+  description: Applied Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: BaseDct
+  description: Base Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: BaseDctFc
+  description: Base Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: BaseDctSc
+  description: Base Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: BaseEq
+  description: Base Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: BaseEqFc
+  description: Base Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: BaseEqSc
+  description: Base Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: ApplGross
+  description: Applied Gross LC
+  type: Num
+  size: 19.6
+- field: ApplGrossF
+  description: Applied Gross FC
+  type: Num
+  size: 19.6
+- field: ApplGrossS
+  description: Applied Gross SC
+  type: Num
+  size: 19.6
+- field: TaxAdjust
+  description: Manual Tax Adjustment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RvsChrgSum
+  description: Reverse Charge Sum LC
+  type: Num
+  size: 19.6
+- field: RvsChrgFc
+  description: Reverse Charge Sum FC
+  type: Num
+  size: 19.6
+- field: RvsChrgSc
+  description: Reverse Charge Sum SC
+  type: Num
+  size: 19.6
+- field: BasRvsChrg
+  description: Base Reverse Charge LC
+  type: Num
+  size: 19.6
+- field: BasRvsFc
+  description: Base Reverse Charge FC
+  type: Num
+  size: 19.6
+- field: BasRvsSc
+  description: Base Reverse Charge SC
+  type: Num
+  size: 19.6
+- field: ApplRvs
+  description: Applied Reverse Charge LC
+  type: Num
+  size: 19.6
+- field: ApplRvsFc
+  description: Applied Reverse Charge FC
+  type: Num
+  size: 19.6
+- field: ApplRvsSc
+  description: Applied Reverse Charge SC
+  type: Num
+  size: 19.6
+- field: IsCstmAct
+  description: Apply Customer Accounting Tax Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - LineSeq

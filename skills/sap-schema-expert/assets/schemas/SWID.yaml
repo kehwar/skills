@@ -1,0 +1,25 @@
+table: SWID
+description: SWID
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SWID.htm
+fields:
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 200
+- field: Value
+  description: Value
+  type: Int
+  size: 11
+- field: Rev
+  description: Revision
+  type: Int
+  size: 11
+- field: LastUpdate
+  description: Last update date and time
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name

@@ -1,0 +1,61 @@
+table: OPAC
+description: PAC Companies
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OPAC.htm
+fields:
+- field: PACCode
+  description: PAC Code
+  type: nVarChar
+  size: 16
+- field: PACName
+  description: PAC Name
+  type: nVarChar
+  size: 100
+- field: PublicKey
+  description: PAC Public Key
+  type: Text
+  size: 16
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: EDFCode
+  description: Communication Type or Protocol
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Invalid
+  - key: '1'
+    label: GEN
+  - key: '2'
+    label: EET
+  - key: '3'
+    label: CFDI
+  - key: '4'
+    label: FPA
+  - key: '5'
+    label: MTD
+  - key: '6'
+    label: EWB
+  - key: '7'
+    label: PEPPOL
+  - key: '8'
+    label: HOI
+  - key: '9'
+    label: MYF
+  - key: '10'
+    label: EIS
+  - key: '11'
+    label: IIS
+  - key: '12'
+    label: IIS_ANNUAL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PACCode

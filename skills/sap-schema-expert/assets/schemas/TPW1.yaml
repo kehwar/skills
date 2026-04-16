@@ -1,0 +1,40 @@
+table: TPW1
+description: Selection Criteria
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/TPW1.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry No
+  type: Int
+  size: 11
+  related: OTPW
+- field: FromPeriod
+  description: From Period
+  type: Date
+  size: 8
+- field: ToPeriod
+  description: To Period
+  type: Date
+  size: 8
+- field: FromDate
+  description: From Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Date
+  type: Date
+  size: 8
+- field: TaxCategry
+  description: Tax Category
+  type: Int
+  size: 11
+  related: ONFT
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

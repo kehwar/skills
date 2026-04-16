@@ -1,0 +1,55 @@
+table: AWH2
+description: WTax Definition - Rows2
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AWH2.htm
+fields:
+- field: AbsEntry
+  description: Numerator
+  type: Int
+  size: 11
+- field: Code
+  description: Tax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: EffectDate
+  description: Date Effective
+  type: Date
+  size: 8
+- field: Rate
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: MinAmount
+  description: Min. Amount
+  type: Num
+  size: 19.6
+- field: MaxAmount
+  description: Max. Amount
+  type: Num
+  size: 19.6
+- field: WTCUR
+  description: Progressive Tax Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum
+  - SeqNum
+  - LogInstanc

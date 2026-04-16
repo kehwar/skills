@@ -1,0 +1,17 @@
+table: SCCFG
+description: Audit Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SCCFG.htm
+fields:
+- field: KName
+  description: KName
+  type: nVarChar
+  size: 32
+- field: KValue
+  description: KValue
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - KName

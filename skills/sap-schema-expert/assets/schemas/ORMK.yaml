@@ -1,0 +1,25 @@
+table: ORMK
+description: Remark 1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ORMK.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: VarChar
+  size: 1
+- field: Particular
+  description: Particulars
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: Code
+  unique: true
+  fields:
+  - Code

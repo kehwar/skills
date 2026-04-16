@@ -1,0 +1,53 @@
+table: USR2
+description: Run External Application
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/USR2.htm
+fields:
+- field: USER_CODE
+  description: Alert Code
+  type: nVarChar
+  size: 25
+- field: PATH1
+  description: Path 1
+  type: Text
+  size: 16
+- field: PATH2
+  description: Path 2
+  type: Text
+  size: 16
+- field: PATH3
+  description: Path 3
+  type: Text
+  size: 16
+- field: PATH4
+  description: Path 4
+  type: Text
+  size: 16
+- field: PATH5
+  description: Path 5
+  type: Text
+  size: 16
+- field: PATH6
+  description: Path 6
+  type: Text
+  size: 16
+- field: PATH7
+  description: Path 7
+  type: Text
+  size: 16
+- field: PATH8
+  description: Path 8
+  type: Text
+  size: 16
+- field: PATH9
+  description: Path 9
+  type: Text
+  size: 16
+- field: PATH10
+  description: Path 10
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USER_CODE

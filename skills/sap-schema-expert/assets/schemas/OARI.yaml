@@ -1,0 +1,55 @@
+table: OARI
+description: Add-On - Company Definitions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OARI.htm
+fields:
+- field: AddOnID
+  description: Add-On ID
+  type: Int
+  size: 11
+- field: EGroup
+  description: Execution Group
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Automatic
+  - key: M
+    label: Manual
+  - key: C
+    label: Critical
+- field: AStatus
+  description: Is add-on active?
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EventOrder
+  description: Add-on Event Order
+  type: Int
+  size: 11
+- field: IsAdd64
+  description: Add-On is 64 Bit
+  type: VarChar
+  size: 1
+  default: N
+- field: AddPlat
+  description: Add-On Installer Platform
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: x86
+  - key: X
+    label: x64
+  - key: A
+    label: ARM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AddOnID

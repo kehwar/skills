@@ -1,0 +1,52 @@
+table: ARST
+description: Route Stages - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ARST.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: Code
+  description: Code
+  type: nVarChar
+  size: '50'
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: '100'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: '8'
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: '6'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: '8'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc
+- key: SECONDARY
+  unique: true
+  fields:
+  - Code
+  - LogInstanc

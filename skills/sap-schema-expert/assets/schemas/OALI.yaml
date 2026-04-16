@@ -1,0 +1,28 @@
+table: OALI
+description: Alternative Items 2
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OALI.htm
+fields:
+- field: OrigItem
+  description: Original Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: AltItem
+  description: Alternative Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Match
+  description: Match Factor
+  type: Num
+  size: 19.6
+- field: Remarks
+  description: Item Remarks
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OrigItem
+  - AltItem

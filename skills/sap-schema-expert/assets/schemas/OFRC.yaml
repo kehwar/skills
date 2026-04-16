@@ -1,0 +1,696 @@
+table: OFRC
+description: Financial Report Categories
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFRC.htm
+fields:
+- field: CatId
+  description: Numerator
+  type: Int
+  size: 6
+- field: TemplateId
+  description: Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: FrgnName
+  description: Foreign Name
+  type: nVarChar
+  size: 254
+- field: Levels
+  description: Account Level
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Level 1
+  - key: '2'
+    label: Level 2
+  - key: '3'
+    label: Level 3
+- field: FatherNum
+  description: Parent Account Key
+  type: Int
+  size: 6
+- field: Active
+  description: Active Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HasSons
+  description: Including Children
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VisOrder
+  description: Display Order
+  type: Int
+  size: 6
+- field: SubSum
+  description: Subtotal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SubName
+  description: Subtotal Name
+  type: nVarChar
+  size: 100
+- field: Furmula
+  description: Formula
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Param_1
+  description: Parameter 1
+  type: Int
+  size: 6
+  default: 0
+- field: Param_2
+  description: Parameter 2
+  type: Int
+  size: 6
+  default: 0
+- field: Param_3
+  description: Parameter 3
+  type: Int
+  size: 6
+  default: 0
+- field: Param_4
+  description: Parameter 4
+  type: Int
+  size: 6
+  default: 0
+- field: Param_5
+  description: Parameter 5
+  type: Int
+  size: 6
+  default: 0
+- field: Param_6
+  description: Parameter 6
+  type: Int
+  size: 6
+  default: 0
+- field: Param_7
+  description: Parameter 7
+  type: Int
+  size: 6
+  default: 0
+- field: Param_8
+  description: Parameter 8
+  type: Int
+  size: 6
+  default: 0
+- field: Param_9
+  description: Parameter 9
+  type: Int
+  size: 6
+  default: 0
+- field: Param_10
+  description: Parameter 10
+  type: Int
+  size: 6
+  default: 0
+- field: Param_11
+  description: Parameter 11
+  type: Int
+  size: 6
+  default: 0
+- field: Param_12
+  description: Parameter 12
+  type: Int
+  size: 6
+  default: 0
+- field: Param_13
+  description: Parameter 13
+  type: Int
+  size: 6
+  default: 0
+- field: Param_14
+  description: Parameter 14
+  type: Int
+  size: 6
+  default: 0
+- field: Param_15
+  description: Parameter 15
+  type: Int
+  size: 6
+  default: 0
+- field: Param_16
+  description: Parameter 16
+  type: Int
+  size: 6
+  default: 0
+- field: Param_17
+  description: Parameter 17
+  type: Int
+  size: 6
+  default: 0
+- field: Param_18
+  description: Parameter 18
+  type: Int
+  size: 6
+  default: 0
+- field: Param_19
+  description: Parameter 19
+  type: Int
+  size: 6
+  default: 0
+- field: Param_20
+  description: Parameter 20
+  type: Int
+  size: 6
+  default: 0
+- field: Param_21
+  description: Parameter 21
+  type: Int
+  size: 6
+  default: 0
+- field: Param_22
+  description: Parameter 22
+  type: Int
+  size: 6
+  default: 0
+- field: Param_23
+  description: Parameter 23
+  type: Int
+  size: 6
+  default: 0
+- field: Param_24
+  description: Parameter 24
+  type: Int
+  size: 6
+  default: 0
+- field: Param_25
+  description: Parameter 25
+  type: Int
+  size: 6
+  default: 0
+- field: OP_1
+  description: Operator 1
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_2
+  description: Operator 2
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_3
+  description: Operator 3
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_4
+  description: Operator 4
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_5
+  description: Operator 5
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_6
+  description: Operator 6
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_7
+  description: Operator 7
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_8
+  description: Operator 8
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_9
+  description: Operator 9
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_10
+  description: Operator 10
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_11
+  description: Operator 11
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_12
+  description: Operator 12
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_13
+  description: Operator 13
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_14
+  description: Operator 14
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_15
+  description: Operator 15
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_16
+  description: Operator 16
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_17
+  description: Operator 17
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_18
+  description: Operator 18
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_19
+  description: Operator 19
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_20
+  description: Operator 20
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_21
+  description: Operator 21
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_22
+  description: Operator 22
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_23
+  description: Operator 23
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: OP_24
+  description: Operator 24
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Without
+  - key: +
+    label: Addition
+  - key: '-'
+    label: Subtraction
+- field: ProfitLoss
+  description: Profit and Loss
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MoveNeg
+  description: Move if Negative
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dummy
+  description: Dummy Title
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HideAct
+  description: Hide Accounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ToGroup
+  description: Move to Group
+  type: Int
+  size: 6
+  default: 0
+- field: ToTitle
+  description: Move to Title
+  type: Int
+  size: 6
+  default: 0
+- field: LineNum
+  description: Line Number
+  type: nVarChar
+  size: 6
+- field: IndentChar
+  description: Indent Char.
+  type: nVarChar
+  size: 6
+- field: Reversal
+  description: Reversal Sign
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: TextTitle
+  description: Text Title
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SumType
+  description: Gross/Correction/Net
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: B
+    label: Gross
+  - key: C
+    label: Correction
+  - key: N
+    label: Net
+- field: NetIncome
+  description: Net Income
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PLTempId
+  description: Profit & Loss Report Template
+  type: Int
+  size: 11
+- field: CustName
+  description: Customized Account Name
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtFromBS
+  description: Relevant for Bal. Sht Extract
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtData
+  description: Extended Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: A
+    label: Relevant for Asset History Sheet
+  - key: L
+    label: Relevant for Liabilities History Sheet
+  - key: N
+    label: Not Relevant
+- field: LegalRef
+  description: Legal Reference
+  type: nVarChar
+  size: 150
+- field: PLCatId
+  description: Profit & Loss Report Category
+  type: Int
+  size: 6
+  default: 0
+- field: SignAggr
+  description: Sign for Aggregation
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: ''
+  - key: P
+    label: Positive
+  - key: N
+    label: Negative
+- field: Mandatory
+  description: Mandatory
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AcctReq
+  description: Account Verification Required
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NotPermit
+  description: Not Permitted for Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: KPIFactor
+  description: KPI Factor No.
+  type: nVarChar
+  size: 3
+  related: OKPF
+- field: CatCode
+  description: Category Code
+  type: nVarChar
+  size: 15
+- field: CatClass
+  description: Category Classification
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Asset
+  - key: L
+    label: Liabilities
+  - key: E
+    label: Equity
+  - key: D
+    label: Expenses
+  - key: R
+    label: Revenues
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TemplateId
+  - CatId

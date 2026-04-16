@@ -1,0 +1,17 @@
+table: OLTF
+description: Legal Text Format
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OLTF.htm
+fields:
+- field: DocEntry
+  description: Format ID
+  type: Int
+  size: 11
+- field: FormatName
+  description: Legal Text Format Name
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

@@ -1,0 +1,144 @@
+table: PEX1
+description: Payment Results Table - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PEX1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: PayRunDate
+  description: Date of Payment Run
+  type: Date
+  size: 8
+- field: PaymWizCod
+  description: Payment Wizard Code
+  type: Int
+  size: 11
+- field: VendorNum
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CustNum
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: PaymMethod
+  description: Payment Means
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: PaymDocNum
+  description: Payment Document No.
+  type: Int
+  size: 11
+- field: FiscalYear
+  description: Fiscal Year
+  type: Date
+  size: 8
+- field: VendRefNum
+  description: Vendor Ref. No.
+  type: nVarChar
+  size: 200
+- field: ObjType
+  description: Document Object Type
+  type: nVarChar
+  size: 20
+- field: DocDate
+  description: Document Posting Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: CrdGLAcct
+  description: BP Accounts Receivable/Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DocCurr
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: DocTotal
+  description: Document Total (LC)
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Document Total (FC)
+  type: Num
+  size: 19.6
+- field: DocTaxAmnt
+  description: Tax Amount per Document Amount
+  type: Num
+  size: 19.6
+- field: DoxTxAmtFC
+  description: Tax Amount per Document Amount
+  type: Num
+  size: 19.6
+- field: DocRemarks
+  description: Document Remarks
+  type: nVarChar
+  size: 254
+- field: DocPrmTerm
+  description: Document Payment Terms
+  type: Int
+  size: 6
+  related: OCTG
+- field: DocPymRef
+  description: Payment Document Reference
+  type: nVarChar
+  size: 27
+- field: DocLocCurr
+  description: Document Local Currency
+  type: nVarChar
+  size: 3
+- field: PymTermPer
+  description: Payment Terms Period
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: PymNum
+  description: Payment Number (PWZ3 - PymNum)
+  type: Int
+  size: 11
+- field: PayOrderNo
+  description: Payment Order Number
+  type: Int
+  size: 11
+  related: OIPO
+- field: FreeText1
+  description: Free Text 1
+  type: nVarChar
+  size: 100
+- field: FreeText2
+  description: Free Text 2
+  type: nVarChar
+  size: 100
+- field: FreeText3
+  description: Free Text 3
+  type: nVarChar
+  size: 100
+- field: vatApplied
+  description: VAT Applied
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

@@ -1,0 +1,54 @@
+table: FLT1
+description: 856 Report - Selection Criteria
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/FLT1.htm
+fields:
+- field: FormNo
+  description: Form No.
+  type: nVarChar
+  size: 20
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ExNumData1
+  description: Extra Numeric Data 1
+  type: Int
+  size: 11
+- field: ExNumData2
+  description: Extra Numeric Data 2
+  type: Int
+  size: 11
+- field: ExNumData3
+  description: Extra Numeric Data 3
+  type: Int
+  size: 11
+- field: ExStrData1
+  description: Extra String Data 1
+  type: nVarChar
+  size: 254
+- field: ExStrData2
+  description: Extra String Data 2
+  type: nVarChar
+  size: 254
+- field: ExStrData3
+  description: Extra String Data 3
+  type: nVarChar
+  size: 254
+- field: FilterName
+  description: Filter Name
+  type: nVarChar
+  size: 30
+  default: _
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormNo
+  - UserSign
+  - Code
+  - FilterName

@@ -1,0 +1,41 @@
+table: ADP2
+description: Report Settings - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ADP2.htm
+fields:
+- field: PrintId
+  description: Print No.
+  type: nVarChar
+  size: '4'
+  related: OADP
+- field: RptType
+  description: Report Type
+  type: nVarChar
+  size: '20'
+  constraints:
+  - key: '1'
+    label: Aging Report
+  - key: '2'
+    label: Dunning Wizard
+- field: EmailSbj
+  description: E-Mail Subject
+  type: nVarChar
+  size: '254'
+- field: EmailBody
+  description: E-Mail Body
+  type: Text
+  size: '16'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrintId
+  - RptType
+- key: OBJECT
+  unique: true
+  fields:
+  - RptType

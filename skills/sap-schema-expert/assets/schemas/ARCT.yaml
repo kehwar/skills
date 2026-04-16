@@ -1,0 +1,1190 @@
+table: ARCT
+description: Incoming Payments - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ARCT.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: A
+    label: Account
+  - key: S
+    label: Vendor
+  - key: P
+    label: P.L.A
+  - key: D
+    label: 'Yes'
+  - key: T
+    label: TDS
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+  - key: C
+    label: Cancellation
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: Copy
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Original
+  - key: N
+    label: 'Yes'
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: DdctPrcnt
+  description: Deduction %
+  type: Num
+  size: 19.6
+- field: DdctSum
+  description: Total Deductions
+  type: Num
+  size: 19.6
+- field: DdctSumFC
+  description: Total Deductions (FC)
+  type: Num
+  size: 19.6
+- field: CashAcct
+  description: Cash Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CashSum
+  description: Cash Amount
+  type: Num
+  size: 19.6
+- field: CashSumFC
+  description: Cash Amount (FC)
+  type: Num
+  size: 19.6
+- field: CreditSum
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: CredSumFC
+  description: Credit Amount (FC)
+  type: Num
+  size: 19.6
+- field: CheckAcct
+  description: Cash Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CheckSum
+  description: Check Amount
+  type: Num
+  size: 19.6
+- field: CheckSumFC
+  description: Check Amount (FC)
+  type: Num
+  size: 19.6
+- field: TrsfrAcct
+  description: Bank Transfer Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TrsfrSum
+  description: Bank Transfer Amount
+  type: Num
+  size: 19.6
+- field: TrsfrSumFC
+  description: Bank Transfer Amount (FC)
+  type: Num
+  size: 19.6
+- field: TrsfrDate
+  description: Bank Transfer Date
+  type: Date
+  size: 8
+- field: TrsfrRef
+  description: Intended Purpose
+  type: nVarChar
+  size: 27
+- field: PayNoDoc
+  description: Non-Calculated Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'No'
+- field: NoDocSum
+  description: Non-Calculated Amount
+  type: Num
+  size: 19.6
+- field: NoDocSumFC
+  description: Non-Calculated Amount (FC)
+  type: Num
+  size: 19.6
+- field: DocCurr
+  description: Document Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: DiffCurr
+  description: Entered in LC
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'Yes'
+  - key: Y
+    label: 'Yes'
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: SysRate
+  description: Price (SC)
+  type: Num
+  size: 19.6
+- field: DocTotal
+  description: Total Document
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Total Document (FC)
+  type: Num
+  size: 19.6
+- field: Ref1
+  description: Ref. 2
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Ref. 3
+  type: nVarChar
+  size: 50
+- field: CounterRef
+  description: Counter Reference
+  type: nVarChar
+  size: 50
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remark
+  type: nVarChar
+  size: 254
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: DocTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: ShowAtCard
+  description: Display Customer Ref. No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: SpiltTrans
+  description: Split Journal Entry
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: CreateTran
+  description: Create Journal Entry
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: Flags
+  description: Flags
+  type: Int
+  size: 11
+  default: 0
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: DdctSumSy
+  description: Deduction Amount (SC)
+  type: Num
+  size: 19.6
+- field: CashSumSy
+  description: Cash Amount in (SC)
+  type: Num
+  size: 19.6
+- field: CredSumSy
+  description: Credit Amount (SC)
+  type: Num
+  size: 19.6
+- field: CheckSumSy
+  description: Check Amount (SC)
+  type: Num
+  size: 19.6
+- field: TrsfrSumSy
+  description: Bank Transfer Amount (SC)
+  type: Num
+  size: 19.6
+- field: NoDocSumSy
+  description: Not Invoiced Amount (SC)
+  type: Num
+  size: 19.6
+- field: DocTotalSy
+  description: Total Document (SC)
+  type: Num
+  size: 19.6
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: StornoRate
+  description: Cancellation Rate
+  type: Num
+  size: 19.6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: ApplyVAT
+  description: Tax Definition
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: confirmed
+  description: Approved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: ShowJDT
+  description: Display Journal Entries
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: Unknown
+- field: BankCode
+  description: Bank Code for Bank Transfer
+  type: nVarChar
+  size: 30
+- field: BankAcct
+  description: Account for Bank Transfer
+  type: nVarChar
+  size: 50
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Interface
+  - key: I
+    label: Update
+  - key: U
+    label: Import
+  - key: M
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: O
+    label: Doc. Generation Wizard
+  - key: A
+    label: Restore Wizard
+  - key: D
+    label: Partner Implementation
+  - key: P
+    label: Year Transfer
+  - key: T
+    label: 'Yes'
+  - key: B
+    label: BSP
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: VatSumFC
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatSumSy
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: VatPrcnt
+  description: Tax %
+  type: Num
+  size: 19.6
+- field: Dcount
+  description: Discount
+  type: Num
+  size: 19.6
+- field: DcntSum
+  description: Discount Amount
+  type: Num
+  size: 19.6
+- field: DcntSumFC
+  description: Discount Amount (FC)
+  type: Num
+  size: 19.6
+- field: DcntSumSy
+  description: Discount Amount (SC)
+  type: Num
+  size: 19.6
+- field: SpltCredLn
+  description: Split Credit Voucher
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: PrjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: PaymentRef
+  description: Payment Reference No.
+  type: nVarChar
+  size: 27
+- field: Submitted
+  description: Submitted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'Yes'
+- field: Status
+  description: Created by Payment Wizard
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: BoE Canceled
+  - key: C
+    label: 'Yes'
+- field: PayMth
+  description: Payment Method
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: BankCountr
+  description: Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: FreightSum
+  description: Freight Sum
+  type: Num
+  size: 19.6
+- field: FreigtFC
+  description: Freight Sum (FC)
+  type: Num
+  size: 19.6
+- field: FreigtSC
+  description: Freight Sum (SC)
+  type: Num
+  size: 19.6
+- field: BoeAcc
+  description: Boe Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BoeNum
+  description: Bill of Exchange No.
+  type: Int
+  size: 11
+- field: BoeSum
+  description: Bill of Exchange Amount
+  type: Num
+  size: 19.6
+- field: BoeSumFc
+  description: Bill of Exchange Amount (FC)
+  type: Num
+  size: 19.6
+- field: BoeSumSc
+  description: Bill of Exchange Amount (SC)
+  type: Num
+  size: 19.6
+- field: BoeAgent
+  description: Bill of Exchange Agent
+  type: nVarChar
+  size: 32
+  related: OAGP
+- field: BoeStatus
+  description: Bill of Exchange Status
+  type: VarChar
+  size: 1
+- field: WtCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: WtSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WtSumFrgn
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WtSumSys
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WtAccount
+  description: WTax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WtBaseAmnt
+  description: WTax Taxable Amount
+  type: Num
+  size: 19.6
+- field: Proforma
+  description: Proforma
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'No'
+  - key: N
+    label: 'No'
+- field: BoeAbs
+  description: Boe Key
+  type: Int
+  size: 11
+  related: OBOE
+- field: BpAct
+  description: BP Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BcgSum
+  description: Bank Charges Amount
+  type: Num
+  size: 19.6
+- field: BcgSumFC
+  description: Bank Charges Amount (FC)
+  type: Num
+  size: 19.6
+- field: BcgSumSy
+  description: Bank Charges Amount (SC)
+  type: Num
+  size: 19.6
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: PaPriority
+  description: Payment Priority
+  type: VarChar
+  size: 1
+  default: '6'
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '2'
+    label: ''
+  - key: '3'
+    label: ''
+  - key: '4'
+    label: ''
+  - key: '5'
+    label: ''
+  - key: '6'
+    label: ''
+- field: PayToCode
+  description: Pay To
+  type: nVarChar
+  size: 50
+- field: IsPaytoBnk
+  description: Is Pay to Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'Yes'
+  - key: Y
+    label: No.
+- field: PBnkCnt
+  description: Pay to Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: PBnkCode
+  description: Pay to Bank Code
+  type: nVarChar
+  size: 30
+- field: PBnkAccnt
+  description: Pay to Bank Account No.
+  type: nVarChar
+  size: 50
+- field: PBnkBranch
+  description: Pay to Bank Branch
+  type: nVarChar
+  size: 50
+- field: WizDunBlck
+  description: Wizard Dunning Block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'YES'
+  - key: Y
+    label: 'Yes'
+- field: WtBaseSum
+  description: WTax Base Sum
+  type: Num
+  size: 19.6
+- field: WtBaseSumF
+  description: WTax Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: WtBaseSumS
+  description: WTax Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: UndOvDiff
+  description: Under/Overpayment Difference
+  type: Num
+  size: 19.6
+- field: UndOvDiffS
+  description: Under/Overpayment Diff. (SC)
+  type: Num
+  size: 19.6
+- field: BankActKey
+  description: Bank Account Internal ID
+  type: Int
+  size: 11
+  related: DSC1
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: VatDate
+  description: Tax Date
+  type: Date
+  size: 8
+- field: TransCode
+  description: Transaction Code
+  type: nVarChar
+  size: 4
+  related: OTRC
+- field: PaymType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: E
+    label: Mail
+  - key: P
+    label: Telegraph
+  - key: T
+    label: Express
+  - key: X
+    label: Without
+- field: TfrRealAmt
+  description: Transfer Real Amount
+  type: Num
+  size: 19.6
+- field: CancelDate
+  description: Cancelation Date
+  type: Date
+  size: 8
+- field: OpenBal
+  description: Open Balance Amount
+  type: Num
+  size: 19.6
+- field: OpenBalFc
+  description: Open Balance Amount (FC)
+  type: Num
+  size: 19.6
+- field: OpenBalSc
+  description: Open Balance Amount (SC)
+  type: Num
+  size: 19.6
+- field: BcgTaxSum
+  description: Bank Charge Tax Amount
+  type: Num
+  size: 19.6
+- field: BcgTaxSumF
+  description: Bank Charge Tax Amount(FC)
+  type: Num
+  size: 19.6
+- field: BcgTaxSumS
+  description: Bank Charge Tax Amount(SC)
+  type: Num
+  size: 19.6
+- field: TpwID
+  description: Tax Payment Wizard ID
+  type: Int
+  size: 11
+  default: 0
+- field: ChallanNo
+  description: Challan No.
+  type: nVarChar
+  size: 32
+- field: ChallanBak
+  description: Challan Bank Name
+  type: nVarChar
+  size: 60
+- field: ChallanDat
+  description: Challan Received Date
+  type: Date
+  size: 8
+- field: WddStatus
+  description: Authorization Status
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: '-'
+    label: Pending
+  - key: W
+    label: Approved
+  - key: Y
+    label: Rejected
+  - key: N
+    label: Generated
+  - key: P
+    label: Generated by Authorizer
+  - key: A
+    label: Canceled
+  - key: C
+    label: Canceled
+- field: BcgVatGrp
+  description: Bank Charge Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: BcgVatPcnt
+  description: Bank Charge Tax %
+  type: Num
+  size: 19.6
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: BSRCode
+  description: BSR Code
+  type: nVarChar
+  size: 25
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: WTOnhldPst
+  description: WTax On Hold, Posted
+  type: Num
+  size: 19.6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: BuildDesc
+  description: Build Descriptor
+  type: nVarChar
+  size: 50
+- field: ResidenNum
+  description: Residence Number
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Spanish Fiscal ID
+  - key: '2'
+    label: VAT Registration Number
+  - key: '3'
+    label: Passport
+  - key: '4'
+    label: Fiscal ID Issued by the Residence Country/Region
+  - key: '5'
+    label: Certificate of Fiscal Residence
+  - key: '6'
+    label: Other Document
+- field: OperatCode
+  description: Operation Code
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Summary Invoices Entry
+  - key: B
+    label: Summary Receipts Entry
+  - key: C
+    label: Invoice with Several VAT Rates
+  - key: D
+    label: Correction Invoice
+  - key: E
+    label: Due VAT Pending Invoice Issuance
+  - key: F
+    label: Expenses Incurred by Travel Agent for Customers
+  - key: G
+    label: Special Regulation for VAT Group
+  - key: H
+    label: Special Regulation for Gold Investment
+  - key: I
+    label: Reverse Charge Procedure
+  - key: J
+    label: Unsummarized Receipts
+  - key: K
+    label: Identification of Error Transactions
+  - key: X
+    label: Transactions with Entrepreneurs Issuing Receipts for Agricultural Compensation
+  - key: N
+    label: Service Invoicing by Travel Agencies on Behalf of Third Parties
+  - key: R
+    label: Business Office Rental
+  - key: S
+    label: Subsidies
+  - key: T
+    label: Incoming Payments for Industrial and Intellectual Property Rights
+  - key: U
+    label: Insurance Transactions
+  - key: V
+    label: Purchases from Travel Agencies
+  - key: W
+    label: Transactions Subject to Production, Service and Import Taxes in Ceuta and
+      Melilla
+- field: UndOvDiffF
+  description: Under/Overpayment Diff. (FC)
+  type: Num
+  size: 19.6
+- field: MIEntry
+  description: MI Entry Include this Payment
+  type: Int
+  size: 11
+  default: 0
+- field: FreeText1
+  description: Free Text 1
+  type: nVarChar
+  size: 254
+- field: FreeText2
+  description: Free Text 2
+  type: nVarChar
+  size: 254
+- field: FreeText3
+  description: Free Text 3
+  type: nVarChar
+  size: 254
+- field: ShowDocNo
+  description: Display Document No.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TDSInterst
+  description: TDS Interest
+  type: Num
+  size: 19.6
+  default: 0
+- field: TDSCharges
+  description: TDS Other Charges
+  type: Num
+  size: 19.6
+  default: 0
+- field: CUP
+  description: Unique Code of Project
+  type: Int
+  size: 11
+  related: OCUP
+- field: CIG
+  description: Contract Code Identification
+  type: Int
+  size: 11
+  related: OCIG
+- field: MIType
+  description: MI Type Include this Payment
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '270'
+    label: A/R Monthly Invoice
+  - key: '140000014'
+    label: A/P Monthly Invoice
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VATRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: BPLCentPmt
+  description: Centralized Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DraftKey
+  description: Payment Draft Internal ID
+  type: Int
+  size: 11
+  related: OPDF
+- field: TDSFee
+  description: TDS Fee
+  type: Num
+  size: 19.6
+- field: MinHeadCL
+  description: Minor Head of Challan
+  type: Int
+  size: 11
+  constraints:
+  - key: '200'
+    label: TDS Payable by Taxpayer
+  - key: '400'
+    label: TDS Regular Assessment (Raised by IT Dept)
+- field: SEPADate
+  description: Requested SEPA Pmt Date
+  type: Date
+  size: 8
+- field: OwnerCode
+  description: Payment Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: OOAT
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: TDSType
+  description: TDS Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: eTDS
+  - key: D
+    label: GST TDS
+  - key: C
+    label: GST TCS
+- field: DrNo
+  description: Dr. No.
+  type: nVarChar
+  size: 32
+- field: PmntWTCert
+  description: Payment by WT Certificate Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnPBnkAcct
+  description: Encryption of Pay to Bank Acct
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: EnblDpmTax
+  description: Enable Tax Calculation in Down Payment Invoices
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SignMsg
+  description: Signature Input Message
+  type: Text
+  size: 16
+- field: SignDigest
+  description: Signature Digest
+  type: Text
+  size: 16
+- field: CertifNum
+  description: Certification Number
+  type: nVarChar
+  size: 50
+- field: KeyVersion
+  description: Private Key Version
+  type: Int
+  size: 11
+- field: QRCodeSPGn
+  description: QR Code Source Generated from Stored Procedure
+  type: Text
+  size: 16
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: EDocExpFrm
+  description: Electronic Doc. Export Format
+  type: Int
+  size: 11
+- field: ElCoStatus
+  description: Elec. Comm. Status
+  type: nVarChar
+  size: 10
+  constraints:
+  - key: '0'
+    label: Approved
+  - key: '1'
+    label: Pending Approval
+  - key: '2'
+    label: Rejected
+- field: ElCoMsg
+  description: Elec. Comm. Message
+  type: nVarChar
+  size: 254
+- field: DigPayment
+  description: Digital Payments
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AllocNum
+  description: Allocation Number
+  type: nVarChar
+  size: 50
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '24'
+    label: Incoming Payment
+  - key: '46'
+    label: Outgoing Payment
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LogInstanc
+  - ObjType
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - LogInstanc
+  - ObjType
+  - PIndicator
+- key: CARD
+  unique: false
+  fields:
+  - CardCode
+- key: HANDWRITEN
+  unique: false
+  fields:
+  - Handwrtten
+- key: CANCELED
+  unique: false
+  fields:
+  - Canceled
+- key: SERIES
+  unique: false
+  fields:
+  - Series

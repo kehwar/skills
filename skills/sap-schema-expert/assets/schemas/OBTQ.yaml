@@ -1,0 +1,65 @@
+table: OBTQ
+description: Batch No. Quantities
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OBTQ.htm
+fields:
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SysNumber
+  description: System Number
+  type: Int
+  size: 11
+  related: OBTN
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: CommitQty
+  description: Committed Quantity
+  type: Num
+  size: 19.6
+- field: CountQty
+  description: Counted Quantity
+  type: Num
+  size: 19.6
+- field: AbsEntry
+  description: abs entry
+  type: Int
+  size: 11
+- field: MdAbsEntry
+  description: MD Abs Entry
+  type: Int
+  size: 11
+  related: OBTN
+- field: TrackingNt
+  description: CCD Tracking Note
+  type: Int
+  size: 11
+  related: OTCN
+- field: TrackiNtLn
+  description: CCD Tracking Note Line
+  type: Int
+  size: 11
+  related: TCN1
+- field: CCDQuant
+  description: CCD Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SYSTEM_KEY
+  unique: true
+  fields:
+  - ItemCode
+  - SysNumber
+  - WhsCode

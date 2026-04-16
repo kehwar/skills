@@ -1,0 +1,42 @@
+table: IMT1
+description: Acct data in selected template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IMT1.htm
+fields:
+- field: TemplateId
+  description: Template ID
+  type: Int
+  size: 6
+  related: OIMT
+  default: -1
+- field: AccountId
+  description: Account ID
+  type: Int
+  size: 6
+  default: -1
+- field: DebitCredi
+  description: Debit or Credit
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Unknown
+  - key: D
+    label: DEBIT
+  - key: C
+    label: CREDIT
+  - key: B
+    label: Both
+  - key: T
+    label: Total
+- field: OrderCalc
+  description: Order Calc
+  type: Int
+  size: 6
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TemplateId
+  - AccountId

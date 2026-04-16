@@ -1,0 +1,103 @@
+table: ODDT
+description: Withholding Tax Deduction Hierarchy
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ODDT.htm
+fields:
+- field: Numerator
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: TrcCode
+  description: Hierarchy Code
+  type: nVarChar
+  size: 10
+- field: TrcName
+  description: Hierarchy Name
+  type: nVarChar
+  size: 30
+- field: DateFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Valid Until
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LastUpdate
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: WHShaamGrp
+  description: Withholding Shaam Group
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Services and Agriculture Products
+  - key: '2'
+    label: Construction and Transportation
+  - key: '3'
+    label: Insurance Commissions
+  - key: '4'
+    label: Withholding Tax Instructions
+  - key: '5'
+    label: Interest Exchange Rate Differences
+  - key: '6'
+    label: Rental Fees
+- field: DdctPrcnt
+  description: Deduction %
+  type: Num
+  size: 19.6
+- field: MaxSum
+  description: Maximum Total
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Numerator
+- key: CARD
+  unique: true
+  fields:
+  - CardCode
+  - WHShaamGrp
+  - TrcCode

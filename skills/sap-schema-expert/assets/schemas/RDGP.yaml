@@ -1,0 +1,93 @@
+table: RDGP
+description: Development Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RDGP.htm
+fields:
+- field: Num
+  description: Group Number
+  type: Int
+  size: 11
+- field: GroupCode
+  description: Development Group Code
+  type: nVarChar
+  size: 3
+- field: GroupName
+  description: Development Group Name
+  type: nVarChar
+  size: 20
+- field: Lcaliztion
+  description: Localization of Dev Group
+  type: nVarChar
+  size: 2
+- field: IdtRngStrt
+  description: Unique Id Range - Start
+  type: Int
+  size: 11
+- field: IdRngEnd
+  description: Unique Id Range - End
+  type: Int
+  size: 11
+- field: FrmRngStrt
+  description: Forms Editing Range - Start
+  type: Int
+  size: 11
+- field: FrmRngEnd
+  description: Forms Editing Range - End
+  type: Int
+  size: 11
+- field: MtxRngStrt
+  description: Matrixes Editing Range - Start
+  type: Int
+  size: 11
+- field: MtxRngEnd
+  description: Matrixes Editing Range - End
+  type: Int
+  size: 11
+- field: StrRngStrt
+  description: String Lists Range - Start
+  type: Int
+  size: 11
+- field: StrRngEnd
+  description: String Lists Range - End
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode
+- key: NUM
+  unique: true
+  fields:
+  - Num
+- key: ID_START
+  unique: true
+  fields:
+  - IdtRngStrt
+- key: ID_END
+  unique: true
+  fields:
+  - IdRngEnd
+- key: FORM_START
+  unique: true
+  fields:
+  - FrmRngStrt
+- key: FORM_END
+  unique: true
+  fields:
+  - FrmRngEnd
+- key: MTX_START
+  unique: true
+  fields:
+  - MtxRngStrt
+- key: MTX_END
+  unique: true
+  fields:
+  - MtxRngEnd
+- key: STRL_START
+  unique: true
+  fields:
+  - StrRngStrt
+- key: STRL_END
+  unique: true
+  fields:
+  - StrRngEnd

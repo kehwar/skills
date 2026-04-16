@@ -1,0 +1,44 @@
+table: SRA1
+description: Scheduled Report Parameters
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SRA1.htm
+fields:
+- field: ActionCode
+  description: Action Code
+  type: Int
+  size: 11
+- field: ParamCode
+  description: Parameter Code
+  type: Int
+  size: 11
+- field: KeyString
+  description: Parameter Key String
+  type: nVarChar
+  size: 32
+- field: KeyNumber
+  description: Parameter Key Numerator
+  type: Int
+  size: 11
+- field: ValString
+  description: Parameter Value String
+  type: Text
+  size: 16
+- field: ValNumber
+  description: Parameter Value Number
+  type: Int
+  size: 11
+- field: ValMoney
+  description: Parameter Value Money
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ActionCode
+  - ParamCode
+- key: SECONDARY
+  unique: true
+  fields:
+  - ActionCode
+  - KeyString
+  - KeyNumber

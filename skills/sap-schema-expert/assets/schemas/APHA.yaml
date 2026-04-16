@@ -1,0 +1,112 @@
+table: APHA
+description: Project Management Subproject - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/APHA.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: OWNER
+  description: Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: NAME
+  description: Name
+  type: nVarChar
+  size: 254
+- field: START
+  description: Subproject Start Date
+  type: Date
+  size: 8
+- field: FINISHED
+  description: Deduction - Percentage
+  type: Num
+  size: 19.6
+- field: ParentID
+  description: Parent Subproject
+  type: Int
+  size: 11
+- field: ProjectID
+  description: Project No.
+  type: Int
+  size: 11
+  related: OPMG
+- field: Code
+  description: Subproject No.
+  type: Int
+  size: 11
+- field: TYP
+  description: Subproject Type
+  type: Int
+  size: 11
+  related: PMC1
+- field: CONTRIB
+  description: Subproject Contribution - Percentage
+  type: Num
+  size: 19.6
+- field: STATUS
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: END
+  description: Subproject End Date
+  type: Date
+  size: 8
+- field: COST
+  description: Actual Cost
+  type: Num
+  size: 19.6
+- field: PLANNED
+  description: Planned Cost
+  type: Num
+  size: 19.6
+- field: Level
+  description: Depth of Subproject within the project
+  type: Int
+  size: 11
+- field: DUEDATE
+  description: Due Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: BPLid
+  description: Business Place ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

@@ -1,0 +1,120 @@
+table: FORM
+description: FORM resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/FORM.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Name
+  description: Form name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Form number
+  type: Int
+  size: 11
+- field: Type
+  description: Form type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: Resize Document
+  - key: '1'
+    label: Dialog Box
+  - key: '3'
+    label: No Title Document
+  - key: '4'
+    label: Fixed Document
+  - key: '5'
+    label: Resize No Title Document
+  - key: '6'
+    label: Toolbar
+  - key: '7'
+    label: Fixed No Minimize
+- field: CloseBox
+  description: Close box
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DfltButton
+  description: Default button
+  type: Int
+  size: 11
+  default: 0
+- field: _Top
+  description: Top
+  type: Int
+  size: 11
+- field: _Bottom
+  description: Bottom
+  type: Int
+  size: 11
+- field: _Left
+  description: Left
+  type: Int
+  size: 11
+- field: _Right
+  description: Right
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+- field: RobjCode
+  description: ImpExp Obj Code
+  type: Int
+  size: 11
+  default: 0
+- field: HelpCntxt
+  description: Help Context
+  type: nVarChar
+  size: 32
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+- field: UseBoBind
+  description: Use BO Binding
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name
+  - ResCode
+  - RevCode
+- key: NUM
+  unique: true
+  fields:
+  - Num

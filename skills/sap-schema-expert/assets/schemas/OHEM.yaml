@@ -1,0 +1,1043 @@
+table: OHEM
+description: Employees
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHEM.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+- field: lastName
+  description: Last Name
+  type: nVarChar
+  size: 50
+- field: firstName
+  description: First Name
+  type: nVarChar
+  size: 50
+- field: middleName
+  description: Middle Name
+  type: nVarChar
+  size: 50
+- field: sex
+  description: Gender
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: F
+    label: Female
+  - key: M
+    label: Male
+  - key: E
+    label: Not Specified
+  - key: '*'
+    label: Masked
+  - key: I
+    label: Not Valid for System
+- field: jobTitle
+  description: Job Title
+  type: nVarChar
+  size: 20
+- field: type
+  description: Employee Type
+  type: Int
+  size: 11
+  related: OHTY
+- field: dept
+  description: Department
+  type: Int
+  size: 6
+  related: OUDP
+- field: branch
+  description: Branch
+  type: Int
+  size: 6
+  related: OUBR
+- field: workStreet
+  description: Work Street
+  type: nVarChar
+  size: 100
+- field: workBlock
+  description: Work Block
+  type: nVarChar
+  size: 100
+- field: workZip
+  description: Work Zip Code
+  type: nVarChar
+  size: 20
+- field: workCity
+  description: Work City
+  type: nVarChar
+  size: 100
+- field: workCounty
+  description: Work County
+  type: nVarChar
+  size: 100
+- field: workCountr
+  description: Work Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: workState
+  description: Work State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: manager
+  description: Manager
+  type: Int
+  size: 11
+  related: OHEM
+- field: userId
+  description: User ID
+  type: Int
+  size: 11
+  related: OUSR
+- field: salesPrson
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+- field: officeTel
+  description: Office Phone
+  type: nVarChar
+  size: 50
+- field: officeExt
+  description: Office Ext.
+  type: nVarChar
+  size: 50
+- field: mobile
+  description: Mobile Phone
+  type: nVarChar
+  size: 50
+- field: pager
+  description: Pager
+  type: nVarChar
+  size: 50
+- field: homeTel
+  description: Home Phone
+  type: nVarChar
+  size: 50
+- field: fax
+  description: Fax
+  type: nVarChar
+  size: 50
+- field: email
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: startDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: status
+  description: Status
+  type: Int
+  size: 11
+  related: OHST
+- field: salary
+  description: Salary
+  type: Num
+  size: 19.6
+- field: salaryUnit
+  description: Salary Unit
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: H
+    label: Hour
+  - key: D
+    label: Day
+  - key: W
+    label: Week
+  - key: M
+    label: Month
+  - key: Y
+    label: Year
+  - key: S
+    label: Semimonthly
+  - key: B
+    label: Biweekly
+- field: emplCost
+  description: Employee Costs
+  type: Num
+  size: 19.6
+- field: empCostUnt
+  description: Employee Cost Unit
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: H
+    label: Hour
+  - key: D
+    label: Day
+  - key: W
+    label: Week
+  - key: M
+    label: Month
+  - key: Y
+    label: Year
+- field: termDate
+  description: Termination Date
+  type: Date
+  size: 8
+- field: termReason
+  description: Termination Reason
+  type: Int
+  size: 11
+  related: OHTR
+- field: bankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+  related: ODSC
+- field: bankBranch
+  description: Bank Branch
+  type: nVarChar
+  size: 100
+- field: bankBranNo
+  description: Bank Branch No.
+  type: nVarChar
+  size: 30
+- field: bankAcount
+  description: Bank Account
+  type: nVarChar
+  size: 100
+- field: homeStreet
+  description: Home Street
+  type: nVarChar
+  size: 100
+- field: homeBlock
+  description: Home Block
+  type: nVarChar
+  size: 100
+- field: homeZip
+  description: Home Zip Code
+  type: nVarChar
+  size: 20
+- field: homeCity
+  description: Home City
+  type: nVarChar
+  size: 100
+- field: homeCounty
+  description: Home County
+  type: nVarChar
+  size: 100
+- field: homeCountr
+  description: Home Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: homeState
+  description: Home State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: birthDate
+  description: Date of Birth
+  type: Date
+  size: 8
+- field: brthCountr
+  description: Country/Region of Birth
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: martStatus
+  description: Marital Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Single
+  - key: M
+    label: Married
+  - key: D
+    label: Divorced
+  - key: W
+    label: Widowed
+  - key: N
+    label: Not Specified
+- field: nChildren
+  description: No. of Children
+  type: Int
+  size: 6
+- field: govID
+  description: ID Issued by Authorities
+  type: nVarChar
+  size: 64
+- field: citizenshp
+  description: Citizenship
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: passportNo
+  description: Passport No.
+  type: nVarChar
+  size: 64
+- field: passportEx
+  description: Passport Expiration Date
+  type: Date
+  size: 8
+- field: picture
+  description: Picture
+  type: nVarChar
+  size: 200
+- field: remark
+  description: Remarks
+  type: Text
+  size: 16
+- field: attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: salaryCurr
+  description: Salary Currency
+  type: nVarChar
+  size: 3
+- field: empCostCur
+  description: Employee Costs Currency
+  type: nVarChar
+  size: 3
+- field: WorkBuild
+  description: Work Building/Floor/Room
+  type: Text
+  size: 16
+- field: HomeBuild
+  description: Home Building/Floor/Room
+  type: Text
+  size: 16
+- field: position
+  description: Position
+  type: Int
+  size: 11
+  related: OHPS
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: AddrTypeW
+  description: Work Address Type
+  type: nVarChar
+  size: 100
+- field: AddrTypeH
+  description: Home Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNoW
+  description: Work Street No.
+  type: nVarChar
+  size: 100
+- field: StreetNoH
+  description: Home Street No.
+  type: nVarChar
+  size: 100
+- field: DispMidNam
+  description: Display Middle Name
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: NamePos
+  description: Name Positioning Set
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Last Name, First Name
+  - key: '2'
+    label: First Name, Last Name
+- field: DispComma
+  description: Display Comma
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CostCenter
+  description: Cost Center
+  type: nVarChar
+  size: 8
+  related: OPRC
+- field: CompanyNum
+  description: Company Number
+  type: nVarChar
+  size: 20
+- field: VacPreYear
+  description: 'Vacation: Previous Year'
+  type: Int
+  size: 11
+- field: VacCurYear
+  description: 'Vacation: Current Year'
+  type: Int
+  size: 11
+- field: MunKey
+  description: Municipality Key
+  type: nVarChar
+  size: 20
+- field: TaxClass
+  description: Tax Class
+  type: nVarChar
+  size: 2
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Tax Class I
+  - key: '2'
+    label: Tax Class II
+  - key: '3'
+    label: Tax Class III
+  - key: '4'
+    label: Tax Class IV
+  - key: '5'
+    label: Tax Class V
+  - key: '6'
+    label: Tax Class VI
+- field: InTaxLiabi
+  description: Income Tax Liability
+  type: nVarChar
+  size: 2
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: On Tax Card
+  - key: '2'
+    label: Flat-Rate Tax
+  - key: '3'
+    label: Cross-Border Employee
+  - key: '4'
+    label: Not Liable
+- field: EmTaxCCode
+  description: Confession
+  type: nVarChar
+  size: 9
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: --
+    label: No Church Tax Liability
+  - key: AK
+    label: (AK) Old Catholic
+  - key: EV
+    label: (EV) Protestant
+  - key: FA
+    label: (FA) Non-Denomination Alzey
+  - key: FB
+    label: (FB) Non-Denominational Regional Congregation Baden
+  - key: FG
+    label: (FG) Non-Denominational Regional Congregation Palatinate
+  - key: FM
+    label: (FM) Non-Denominational Congregation Mainz
+  - key: FR
+    label: (FR) French-Reformed
+  - key: FS
+    label: (FS) Non-Denominational Congregation Offenbach/Mainz
+  - key: IB
+    label: (IB) Israelite Religious Community Baden
+  - key: IL
+    label: (IL) Israelite Rural
+  - key: IS
+    label: (IS) Israelite
+  - key: IW
+    label: (IW) Israelite Religious Community Wuerttemberg
+  - key: JD
+    label: (JD) Jewish Religion Tax
+  - key: JH
+    label: (JH) Jewish Religion Tax
+  - key: JS
+    label: (JS) Jewish Religion Tax
+  - key: LT
+    label: (LT) Lutheran
+  - key: RF
+    label: (RF) Reformed
+  - key: RK
+    label: (RK) Roman Catholic
+- field: RelPartner
+  description: Confession of Partner
+  type: nVarChar
+  size: 9
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: --
+    label: No Church Tax Liability
+  - key: AK
+    label: (AK) Old Catholic
+  - key: EV
+    label: (EV) Protestant
+  - key: FA
+    label: (FA) Non-Denomination Alzey
+  - key: FB
+    label: (FB) Non-Denominational Regional Congregation Baden
+  - key: FG
+    label: (FG) Non-Denominational Regional Congregation Palatinate
+  - key: FM
+    label: (FM) Non-Denominational Congregation Mainz
+  - key: FR
+    label: (FR) French-Reformed
+  - key: FS
+    label: (FS) Non-Denominational Congregation Offenbach/Mainz
+  - key: IB
+    label: (IB) Israelite Religious Community Baden
+  - key: IL
+    label: (IL) Israelite Rural
+  - key: IS
+    label: (IS) Israelite
+  - key: IW
+    label: (IW) Israelite Religious Community Wuerttemberg
+  - key: JD
+    label: (JD) Jewish Religion Tax
+  - key: JH
+    label: (JH) Jewish Religion Tax
+  - key: JS
+    label: (JS) Jewish Religion Tax
+  - key: LT
+    label: (LT) Lutheran
+  - key: RF
+    label: (RF) Reformed
+  - key: RK
+    label: (RK) Roman Catholic
+- field: ExemptAmnt
+  description: Exemption Amount
+  type: Num
+  size: 19.6
+- field: ExemptUnit
+  description: Exemption Amount Period
+  type: nVarChar
+  size: 20
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Yearly
+  - key: '2'
+    label: Monthly
+  - key: '3'
+    label: Weekly
+  - key: '4'
+    label: Daily
+- field: AddiAmnt
+  description: Additional Amount
+  type: Num
+  size: 19.6
+- field: AddiUnit
+  description: Additional Amount Period
+  type: nVarChar
+  size: 20
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Yearly
+  - key: '2'
+    label: Monthly
+  - key: '3'
+    label: Weekly
+  - key: '4'
+    label: Daily
+- field: TaxOName
+  description: Tax Office Name
+  type: nVarChar
+  size: 50
+- field: TaxONum
+  description: Tax Office Number
+  type: nVarChar
+  size: 20
+- field: HeaInsName
+  description: Health Insurance Company Name
+  type: nVarChar
+  size: 50
+- field: HeaInsCode
+  description: Health Insurance Code
+  type: nVarChar
+  size: 50
+- field: HeaInsType
+  description: Type of Health Insurance
+  type: nVarChar
+  size: 20
+  default: ''' '''
+  constraints:
+  - key: ''' '''
+    label: ''
+  - key: AOK
+    label: (AOK)
+  - key: IKK
+    label: (IKK)
+  - key: EKK
+    label: (EKK)
+  - key: BKK
+    label: (BKK)
+  - key: BKS
+    label: (BKS)
+  - key: LKK
+    label: (LKK)
+- field: SInsurNum
+  description: Social Insurance Number
+  type: nVarChar
+  size: 20
+- field: StatusOfP
+  description: Professional Status
+  type: nVarChar
+  size: 2
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: Trainee
+  - key: '1'
+    label: Worker
+  - key: '2'
+    label: Skilled Worker
+  - key: '3'
+    label: Supervisor/Foreman
+  - key: '4'
+    label: Office Worker
+  - key: '5'
+    label: Youth Help/Sheltered Workshop
+  - key: '6'
+    label: On Career Advancement Training
+  - key: '7'
+    label: Homeworker
+  - key: '8'
+    label: Part Time <18 hrs
+  - key: '9'
+    label: Part Time > 18 Hrs
+- field: StatusOfE
+  description: Educational Status
+  type: nVarChar
+  size: 2
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: W/o Professional Qualification
+  - key: '2'
+    label: W. Professional Qualification
+  - key: '3'
+    label: High School w/o Prof. Qualif.
+  - key: '4'
+    label: High School w. Prof. Qualific.
+  - key: '5'
+    label: Vocational Qualification
+  - key: '6'
+    label: University
+  - key: '7'
+    label: Not Possible to Specify
+- field: BCodeDateV
+  description: Bank Code for DATEV
+  type: nVarChar
+  size: 20
+- field: DevBAOwner
+  description: Deviating Bank Account Owner
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FNameSP
+  description: First Name of Spouse
+  type: nVarChar
+  size: 50
+- field: SurnameSP
+  description: Last Name of Spouse
+  type: nVarChar
+  size: 50
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: PersGroup
+  description: Person Group
+  type: nVarChar
+  size: 5
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '101'
+    label: Subject to Social Insurance
+  - key: '102'
+    label: Apprentice
+  - key: '104'
+    label: Home Worker
+  - key: '105'
+    label: Trainee
+  - key: '106'
+    label: Student
+  - key: '108'
+    label: Early Retirement
+  - key: '109'
+    label: Part-Time Employee
+  - key: '110'
+    label: Short-Term Employee
+  - key: '112'
+    label: 'Family Member: Agriculture'
+  - key: '113'
+    label: 'Addnl Income: Agriculture'
+  - key: '114'
+    label: 'Addnl Income: Seasonal Agriculture'
+  - key: '116'
+    label: Receiving Compensation Pay
+  - key: '118'
+    label: Irregularly Employed
+  - key: '119'
+    label: Pensioner
+  - key: '997'
+    label: Not Specified
+- field: JTCode
+  description: Job Title Code
+  type: nVarChar
+  size: 5
+- field: ExtEmpNo
+  description: Ext. Employee No.
+  type: nVarChar
+  size: 20
+- field: BirthPlace
+  description: Place of Birth
+  type: nVarChar
+  size: 100
+- field: PymMeth
+  description: Payment Method
+  type: nVarChar
+  size: 2
+  default: '05'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '05'
+    label: Bank Transfer
+- field: ExemptCurr
+  description: Exemption Amount Currency
+  type: nVarChar
+  size: 3
+- field: AddiCurr
+  description: Additional Amount Currency
+  type: nVarChar
+  size: 3
+- field: STDCode
+  description: STD Code
+  type: Int
+  size: 11
+- field: FatherName
+  description: Father's Name
+  type: nVarChar
+  size: 150
+- field: CPF
+  description: Personal Fiscal ID
+  type: nVarChar
+  size: 100
+- field: CRC
+  description: CRC Number
+  type: nVarChar
+  size: 20
+- field: ContResp
+  description: Accountant Responsible
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RepLegal
+  description: Legal Representative
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DirfDeclar
+  description: DIRF Responsible
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UF_CRC
+  description: CRC State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: IDType
+  description: ID Type
+  type: nVarChar
+  size: 30
+  related: OIDT
+- field: Active
+  description: Employee Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Active
+  - key: N
+    label: Inactive
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: ManualNUM
+  description: Manual EMP No.
+  type: nVarChar
+  size: 60
+- field: PassIssue
+  description: Passport Issue Date
+  type: Date
+  size: 8
+- field: PassIssuer
+  description: Passport Issuer
+  type: nVarChar
+  size: 254
+- field: QualCode
+  description: Qualification Code
+  type: nVarChar
+  size: 3
+  default: '000'
+  constraints:
+  - key: '000'
+    label: n/a
+  - key: '203'
+    label: Diretor
+  - key: '204'
+    label: Conselheiro de Administraï¿½ï¿½o
+  - key: '205'
+    label: Administrador
+  - key: '206'
+    label: Administrador do Grupo
+  - key: '207'
+    label: Administrador de Sociedade Filiada
+  - key: '220'
+    label: Administrador Judicial - Pessoa Fisica
+  - key: '222'
+    label: Administrador Judicial - Pessoa Juridica - profissional responsï¿½vel
+  - key: '223'
+    label: Administrador Judicial / Gestor
+  - key: '226'
+    label: Gestor Judicial
+  - key: '309'
+    label: Procurador
+  - key: '312'
+    label: Inventariante
+  - key: '313'
+    label: Liquidante
+  - key: '315'
+    label: Interventor
+  - key: '801'
+    label: Empresï¿½rio
+  - key: '900'
+    label: Contador
+  - key: '999'
+    label: Outros
+- field: PRWebAccss
+  description: Enable Access to PR from Web
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrePRWeb
+  description: Previous Stats of PR Web Access
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BPLink
+  description: BP Link
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: NaturalPer
+  description: Natural Person
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+  - key: B
+    label: Blocked
+  - key: U
+    label: Unblocked
+- field: EnRligion
+  description: Encryption of Religion
+  type: Text
+  size: 16
+- field: EnRligionP
+  description: Encryption of Religion Partner
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnGovID
+  description: Encryption of Government ID
+  type: Text
+  size: 16
+- field: EnPassport
+  description: Encryption of Passport No.
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time Incl. Sec.
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: EnInsurNum
+  description: Encryption of Social Insurance No.
+  type: Text
+  size: 16
+- field: EnBnkAcct
+  description: Encryption of Bank Account
+  type: Text
+  size: 16
+- field: Code
+  description: Employee Code
+  type: nVarChar
+  size: 50
+- field: ARetSEFAZ
+  description: Authorization to Retrieve NFe from SEFAZ
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+  - key: G
+    label: Fixed Assets Migration
+- field: EnSex
+  description: Encryption of Sex
+  type: Text
+  size: 16
+- field: SexEx
+  description: Gender
+  type: nVarChar
+  size: 15
+  related: OGDR
+  default: M
+- field: EnSexEx
+  description: Encryption of SexEx
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+- key: OUSR
+  unique: false
+  fields:
+  - userId
+- key: OSLP
+  unique: false
+  fields:
+  - salesPrson
+- key: NAME
+  unique: false
+  fields:
+  - firstName
+  - middleName
+  - lastName

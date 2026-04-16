@@ -1,0 +1,147 @@
+table: KPS1
+description: KPI Set Array 1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/KPS1.htm
+fields:
+- field: KpsCode
+  description: KPI Set Code
+  type: nVarChar
+  size: 15
+- field: LineNum
+  description: KPI Line Number
+  type: Int
+  size: 11
+- field: KpiName
+  description: KPI Name
+  type: nVarChar
+  size: 100
+- field: KpiValue1
+  description: KPI Value 1
+  type: Num
+  size: 19.6
+- field: KpiValue2
+  description: KPI Value 2
+  type: Num
+  size: 19.6
+- field: KpiValue3
+  description: KPI Value 3
+  type: Num
+  size: 19.6
+- field: KpiValue4
+  description: KPI Value 4
+  type: Num
+  size: 19.6
+- field: KpiValue5
+  description: KPI Value 5
+  type: Num
+  size: 19.6
+- field: KpiValue6
+  description: KPI Value 6
+  type: Num
+  size: 19.6
+- field: KpiValue7
+  description: KPI Value 7
+  type: Num
+  size: 19.6
+- field: KpiValue8
+  description: KPI Value 8
+  type: Num
+  size: 19.6
+- field: KpiValue9
+  description: KPI Value 9
+  type: Num
+  size: 19.6
+- field: KpiValue10
+  description: KPI Value 10
+  type: Num
+  size: 19.6
+- field: KpiValue11
+  description: KPI Value 11
+  type: Num
+  size: 19.6
+- field: KpiValue12
+  description: KPI Value 12
+  type: Num
+  size: 19.6
+- field: KpiValue13
+  description: KPI Value 13
+  type: Num
+  size: 19.6
+- field: KpiValue14
+  description: KPI Value 14
+  type: Num
+  size: 19.6
+- field: KpiValue15
+  description: KPI Value 15
+  type: Num
+  size: 19.6
+- field: KpiValue16
+  description: KPI Value 16
+  type: Num
+  size: 19.6
+- field: KpiValue17
+  description: KPI Value 17
+  type: Num
+  size: 19.6
+- field: KpiValue18
+  description: KPI Value 18
+  type: Num
+  size: 19.6
+- field: KpiValue19
+  description: KPI Value 19
+  type: Num
+  size: 19.6
+- field: KpiValue20
+  description: KPI Value 20
+  type: Num
+  size: 19.6
+- field: KpiValue21
+  description: KPI Value 21
+  type: Num
+  size: 19.6
+- field: KpiValue22
+  description: KPI Value 22
+  type: Num
+  size: 19.6
+- field: KpiValue23
+  description: KPI Value 23
+  type: Num
+  size: 19.6
+- field: KpiValue24
+  description: KPI Value 24
+  type: Num
+  size: 19.6
+- field: KpiValue25
+  description: KPI Value 25
+  type: Num
+  size: 19.6
+- field: KpiValue26
+  description: KPI Value 26
+  type: Num
+  size: 19.6
+- field: KpiValue27
+  description: KPI Value 27
+  type: Num
+  size: 19.6
+- field: KpiValue28
+  description: KPI Value 28
+  type: Num
+  size: 19.6
+- field: KpiValue29
+  description: KPI Value 29
+  type: Num
+  size: 19.6
+- field: KpiValue30
+  description: KPI Value 30
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - KpsCode
+  - LineNum
+- key: NAME
+  unique: true
+  fields:
+  - KpsCode
+  - KpiName

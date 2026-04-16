@@ -1,0 +1,37 @@
+table: OFBT
+description: Microsoft 365 Integration Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFBT.htm
+fields:
+- field: ID
+  description: ID
+  type: nVarChar
+  size: 254
+- field: NAME
+  description: Name
+  type: nVarChar
+  size: 254
+- field: CONTENT
+  description: Content
+  type: Text
+  size: 16
+- field: ISDEFAULT
+  description: Is Default
+  type: Int
+  size: 6
+- field: BOTYPE
+  description: BO Type
+  type: nVarChar
+  size: 254
+- field: DOCTYPE
+  description: Doc Type
+  type: nVarChar
+  size: 254
+- field: TEMPFORMAT
+  description: Template Format
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

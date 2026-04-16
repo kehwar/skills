@@ -1,0 +1,21 @@
+table: SWDP
+description: SWDP
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SWDP.htm
+fields:
+- field: DeploymtID
+  description: Workflow Deployment ID
+  type: Identity
+  size: 11
+- field: Name
+  description: Deployment Name
+  type: nVarChar
+  size: 254
+- field: DeploymtDt
+  description: Deployment Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DeploymtID

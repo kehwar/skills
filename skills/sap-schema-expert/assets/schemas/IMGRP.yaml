@@ -1,0 +1,21 @@
+table: IMGRP
+description: Live Collaboration Group Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/IMGRP.htm
+fields:
+- field: Id
+  description: Group ID
+  type: Identity
+  size: 11
+- field: GrpName
+  description: Group Name
+  type: nVarChar
+  size: 254
+- field: CrtTime
+  description: Creation Time
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

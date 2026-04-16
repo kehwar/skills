@@ -1,0 +1,27 @@
+table: HMM3
+description: OHMM Child Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/HMM3.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OHMM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: LangCode
+  description: Language Code
+  type: nVarChar
+  size: 8
+- field: LangDesc
+  description: Language Description
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

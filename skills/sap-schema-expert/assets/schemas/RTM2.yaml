@@ -1,0 +1,47 @@
+table: RTM2
+description: Rate Differences - SC Adjustment Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/RTM2.htm
+fields:
+- field: LineNum
+  description: Reconciliation Key
+  type: Int
+  size: 11
+- field: IsSysCurr
+  description: IS System Currency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: AcctCode
+  description: BP Control Account
+  type: nVarChar
+  size: 15
+- field: TransAmtSC
+  description: Total Transaction Amount (SC)
+  type: Num
+  size: 19.6
+- field: BalDueSC
+  description: Total Balance Due (SC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LineNum
+  - IsSysCurr
+  - CardCode
+  - AcctCode
+- key: CARD_CODE
+  unique: false
+  fields:
+  - CardCode

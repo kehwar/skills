@@ -1,0 +1,75 @@
+table: OPQW
+description: 'Purchase Quotation Generation: Parameter Sets'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OPQW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SetName
+  description: Set Name
+  type: nVarChar
+  size: 20
+- field: SetDesc
+  description: Set Description
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: ModifyDate
+  description: Last Modified Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreatDraft
+  description: Create Drafts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GroupBy
+  description: Group By
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Business Partner
+  - key: I
+    label: Item
+- field: ValidUntil
+  description: Valid Until Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: ReqDate
+  description: Required Date
+  type: Date
+  size: 8
+- field: BaseOn
+  description: Base On Type
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SET_NAME
+  unique: true
+  fields:
+  - SetName

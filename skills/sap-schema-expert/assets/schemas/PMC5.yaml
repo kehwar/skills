@@ -1,0 +1,46 @@
+table: PMC5
+description: Project Management Configuration - Activity Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PMC5.htm
+fields:
+- field: ActTypeID
+  description: Activity Type No.
+  type: Int
+  size: 11
+- field: ActType
+  description: Activity Type
+  type: nVarChar
+  size: 100
+- field: LaborItem
+  description: Labor Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Chargeable
+  description: Chargeable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Absence
+  description: Absence
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AbsenceID
+  description: Absence No.
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ActTypeID

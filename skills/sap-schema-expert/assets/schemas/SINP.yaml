@@ -1,0 +1,25 @@
+table: SINP
+description: '[SINP]'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SINP.htm
+fields:
+- field: SupplCode
+  description: Supplier code
+  type: nVarChar
+  size: 128
+- field: SubDate
+  description: Submission date
+  type: Date
+  size: 8
+- field: SubTime
+  description: Submission time
+  type: Int
+  size: 6
+- field: LogNum
+  description: ??' ?????
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SupplCode

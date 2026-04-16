@@ -1,0 +1,42 @@
+table: SXROB
+description: XLR Objects
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXROB.htm
+fields:
+- field: objid
+  description: objid
+  type: Int
+  size: 11
+- field: classid
+  description: classid
+  type: Int
+  size: 11
+  default: 0
+- field: name
+  description: name
+  type: nVarChar
+  size: 50
+- field: descriptio
+  description: description
+  type: nVarChar
+  size: 254
+- field: created
+  description: created
+  type: Date
+  size: 8
+- field: lastmodifi
+  description: lastmodified
+  type: Date
+  size: 8
+- field: access
+  description: access
+  type: nVarChar
+  size: 50
+- field: searchstri
+  description: searchstring
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - objid

@@ -1,0 +1,29 @@
+table: REQ3
+description: External System Call Request - Message Argument List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/REQ3.htm
+fields:
+- field: AbsEntry
+  description: Request ID
+  type: Int
+  size: 11
+  related: OREQ
+- field: LineId
+  description: Message Line ID
+  type: Int
+  size: 11
+  related: REQ1
+- field: ArgName
+  description: Argument Name
+  type: nVarChar
+  size: 20
+- field: ArgValue
+  description: Argument Value
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId
+  - ArgName

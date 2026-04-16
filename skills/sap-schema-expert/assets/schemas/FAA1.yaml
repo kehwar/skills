@@ -1,0 +1,63 @@
+table: FAA1
+description: Asset Attributes - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FAA1.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+  related: OFAA
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: AttrID
+  description: Attribute ID
+  type: Int
+  size: 11
+- field: AttrName
+  description: Attribute Name
+  type: nVarChar
+  size: 100
+- field: FieldType
+  description: Field Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Text
+  - key: N
+    label: Numeric
+  - key: D
+    label: Date
+  - key: S
+    label: Amount
+  - key: P
+    label: Price
+  - key: Q
+    label: Quantity
+- field: DefaultVal
+  description: Default Value
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum
+- key: UNIQUE
+  unique: true
+  fields:
+  - Code
+  - AttrID

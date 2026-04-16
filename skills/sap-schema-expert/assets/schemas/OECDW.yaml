@@ -1,0 +1,325 @@
+table: OECDW
+description: ECD Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OECDW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RunName
+  description: Wizard Run Name
+  type: nVarChar
+  size: 100
+- field: RunDate
+  description: Wizard Run Date
+  type: Date
+  size: 8
+- field: RunTime
+  description: Wizard Run Time
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: DateFrom
+  description: Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Date To
+  type: Date
+  size: 8
+- field: DecenInd
+  description: Decentralized Indicator
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Relatï¿½rio Consolidado
+  - key: H
+    label: Matriz - Descentralizado
+  - key: B
+    label: Filial - Descentralizado
+- field: Branch
+  description: Branch
+  type: Int
+  size: 11
+  related: OUBR
+  default: -2
+- field: InstCode
+  description: Institution Code
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: '00'
+    label: Nenhuma inscriï¿½ï¿½o em outras entidades
+  - key: '01'
+    label: Banco Central do Brasil
+  - key: '02'
+    label: Superintendï¿½ncia de Seguros Privados (Susep)
+  - key: '03'
+    label: Comissï¿½o de Valores Mobiliï¿½rios (CVM)
+  - key: '04'
+    label: Agï¿½ncia Nacional de Transportes Terrestres (ANTT)
+  - key: AC
+    label: Secretaria da Fazenda do Estado do Acre, ou equivalente
+  - key: AL
+    label: Secretaria da Fazenda de Alagoas, ou equivalente
+  - key: AM
+    label: Secretaria da Fazenda de Amazonas, ou equivalente
+  - key: AP
+    label: Secretaria da Fazenda do Amapï¿½, ou equivalente
+  - key: BA
+    label: Secretaria da Fazenda da Bahia, ou equivalente
+  - key: DF
+    label: Secretaria da Fazenda do Distrito Federal, ou equivalente
+  - key: CE
+    label: Secretaria da Fazenda do Cearï¿½ , ou equivalente
+  - key: ES
+    label: Secretaria da Fazenda do Espï¿½rito Santo, ou equivalente
+  - key: GO
+    label: Secretaria da Fazenda de Goiï¿½s, ou equivalente
+  - key: MA
+    label: Secretaria da Fazenda do Maranhï¿½o, ou equivalente
+  - key: MT
+    label: Secretaria da Fazenda do Mato Grosso, ou equivalente
+  - key: MS
+    label: Secretaria da Fazenda do Mato Grosso do Sul, ou equivalente
+  - key: MG
+    label: Secretaria da Fazenda de Minas Gerais, ou equivalente
+  - key: PA
+    label: Secretaria da Fazenda do Parï¿½, ou equivalente
+  - key: PB
+    label: Secretaria da Fazenda da Paraï¿½ba, ou equivalente
+  - key: PE
+    label: Secretaria da Fazenda de Pernambuco, ou equivalente
+  - key: PR
+    label: Secretaria da Fazenda do Paranï¿½, ou equivalente
+  - key: PI
+    label: Secretaria da Fazenda do Piauï¿½, ou equivalente
+  - key: RJ
+    label: Secretaria da Fazenda do Rio de Janeiro, ou equivalente
+  - key: RN
+    label: Secretaria da Fazenda do Rio Grande do Norte, ou equivalente
+  - key: RS
+    label: Secretaria da Fazenda do Rio Grande do Sul, ou equivalente
+  - key: RR
+    label: Secretaria da Fazenda de Roraima, ou equivalente
+  - key: RO
+    label: Secretaria da Fazenda de Rondï¿½nia, ou equivalente
+  - key: SC
+    label: Secretaria da Fazenda de Santa Catarina, ou equivalente
+  - key: SP
+    label: Secretaria da Fazenda de Sï¿½o Paulo, ou equivalente
+  - key: SE
+    label: Secretaria da Fazenda de Sergipe, ou equivalente
+  - key: TO
+    label: Secretaria da Fazenda de Tocantins, ou equivalente
+- field: EntIdCode
+  description: Entry Identification Code
+  type: nVarChar
+  size: 32
+- field: SituatInd
+  description: Situation Indicator
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Opening (abertura)
+  - key: '1'
+    label: Split-up/ Split-off (Cisï¿½o parcial/ cisï¿½o total)
+  - key: '2'
+    label: Merger (Fusï¿½o)
+  - key: '3'
+    label: Downstream merger/ Upstream merger (Incorporaï¿½ï¿½o)
+  - key: '4'
+    label: Extinction (Extinï¿½ï¿½o)
+  - key: '5'
+    label: Transformation (Transformaï¿½ï¿½o)
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Livro Diï¿½rio
+  - key: R
+    label: Livro Diï¿½rio com Escrituraï¿½ï¿½o Resumida
+  - key: A
+    label: Livro Diï¿½rio Auxiliar ao Diï¿½rio com Escrituraï¿½ï¿½o Resumida
+  - key: B
+    label: Livro Balancetes Diï¿½rios e Balanï¿½os (matriz)
+- field: CmpName
+  description: Company Name
+  type: nVarChar
+  size: 200
+- field: CmpState
+  description: Company State
+  type: nVarChar
+  size: 2
+- field: CmpCntCode
+  description: Company County Code
+  type: nVarChar
+  size: 10
+- field: CmpCNPJ
+  description: Company CNPJ
+  type: nVarChar
+  size: 32
+- field: CmpIE
+  description: Company IE
+  type: nVarChar
+  size: 32
+- field: CmpCity
+  description: Company City
+  type: nVarChar
+  size: 32
+- field: BrnState
+  description: Branch State
+  type: nVarChar
+  size: 2
+- field: BrnCntCode
+  description: Branch County Code
+  type: nVarChar
+  size: 10
+- field: BrnCNPJ
+  description: Branch CNPJ
+  type: nVarChar
+  size: 32
+- field: BrnIE
+  description: Branch IE
+  type: nVarChar
+  size: 32
+- field: BrnCity
+  description: Branch City
+  type: nVarChar
+  size: 32
+- field: AccStIden
+  description: Account Statement Identification
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '1'
+    label: Relatï¿½rio apenas da empresa
+  - key: '2'
+    label: Relatï¿½rio consolidado da matriz e filiais, afiliadas e empresas associadas
+- field: AccStRem
+  description: Account Statement Remark
+  type: Text
+  size: 16
+- field: BookPurp
+  description: Book Purpose
+  type: nVarChar
+  size: 80
+- field: JrnlNum
+  description: Journal Number
+  type: Int
+  size: 11
+- field: PeriodSitu
+  description: Indicator of Initial Period Situation
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Normal (Inï¿½cio no primeiro dia do ano)
+  - key: '1'
+    label: Abertura
+  - key: '2'
+    label: Resultante de cisï¿½o/fusï¿½o ou remanescente de cisï¿½o, ou realizou incorporaï¿½ï¿½o
+  - key: '3'
+    label: Inï¿½cio de obrigatoriedade da entrega da ECD no curso do ano calendï¿½rio
+- field: BkPrpsInd
+  description: Bookkeeping Purpose Indicator
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Original
+  - key: '1'
+    label: Substituta com NIRE
+  - key: '2'
+    label: Substituta sem NIRE
+  - key: '3'
+    label: Substituta com troca de NIRE
+- field: NIREind
+  description: NIRE Indicator
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Empresa nï¿½o possui registro na Junta Comercial (nï¿½o possui NIRE)
+  - key: '1'
+    label: Empresa possui registro na Junta Comercial (possui NIRE)
+- field: SubBkNIRE
+  description: Substitute Bookkeeping NIRE
+  type: nVarChar
+  size: 11
+- field: SubBkHash
+  description: Substitute Bookkeeping Hash
+  type: nVarChar
+  size: 40
+- field: BalanTemp
+  description: Balance Sheet Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: PrLosTemp
+  description: Profit and Loss Statement Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: BalanRefF
+  description: Balance Sheet Reference Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BalanUdfF
+  description: Balance Sheet User-Defined Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrLosRefF
+  description: Profit and Loss Statement Reference Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrLosUdfF
+  description: Profit and Loss Statement User-Defined Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

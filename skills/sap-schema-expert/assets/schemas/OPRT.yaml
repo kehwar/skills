@@ -1,0 +1,72 @@
+table: OPRT
+description: Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OPRT.htm
+fields:
+- field: PrtId
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 15
+- field: RelatnType
+  description: Relationship Type
+  type: nVarChar
+  size: 20
+- field: RelatCard
+  description: Related BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 50
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DefaultORL
+  description: Relationship
+  type: Int
+  size: 11
+  related: OORL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrtId
+- key: NAME
+  unique: true
+  fields:
+  - Name

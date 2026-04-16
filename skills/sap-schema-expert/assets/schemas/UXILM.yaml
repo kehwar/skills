@@ -1,0 +1,34 @@
+table: UXILM
+description: IVI Irrelevant Message IDs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UXILM.htm
+fields:
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+- field: MinMsgID
+  description: MINMessage ID
+  type: Int
+  size: 11
+- field: MaxMsgID
+  description: MaxMessage ID
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Doc Number
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Doc Row Number
+  type: Int
+  size: 11
+- field: TransType
+  description: Transaction Type
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID

@@ -1,0 +1,70 @@
+table: QWZ1
+description: Query Tables
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/QWZ1.htm
+fields:
+- field: Code
+  description: Query Code
+  type: nVarChar
+  size: 8
+- field: Numerator
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FileCode
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: IsTemp
+  description: Is Temp
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DoJoin
+  description: Do Join
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: JoinToTbl
+  description: Joined to Table
+  type: Int
+  size: 11
+- field: NumOfConds
+  description: No. of Conds.
+  type: Int
+  size: 11
+- field: OuterJoin
+  description: Outer Join
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RightJoin
+  description: Right Join
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Numerator

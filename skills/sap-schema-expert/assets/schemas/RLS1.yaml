@@ -1,0 +1,37 @@
+table: RLS1
+description: Reference Links Sources Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/RLS1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ORLS
+- field: LineID
+  description: Line Id
+  type: Int
+  size: 11
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+- field: SrcArr
+  description: Source of Posting
+  type: Int
+  size: 6
+- field: SrcFld
+  description: Source Field
+  type: nVarChar
+  size: 21
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+- key: OBJARRFLD
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcArr
+  - SrcFld

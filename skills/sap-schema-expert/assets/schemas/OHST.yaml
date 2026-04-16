@@ -1,0 +1,25 @@
+table: OHST
+description: Employee Status
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHST.htm
+fields:
+- field: statusID
+  description: Status ID
+  type: Int
+  size: 11
+- field: name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: descriptio
+  description: Description
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - statusID
+- key: NAME_KEY
+  unique: true
+  fields:
+  - name

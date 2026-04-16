@@ -1,0 +1,43 @@
+table: DRN2
+description: Depreciation Run - Posting - Asset
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/DRN2.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODRN
+- field: AcctDtn
+  description: Account Determination
+  type: nVarChar
+  size: 15
+  related: OADT
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: OrdDprAmt
+  description: Ordinary Depreciation Amount
+  type: Num
+  size: 19.6
+- field: SpDprAmt
+  description: Special Depreciation Amount
+  type: Num
+  size: 19.6
+- field: RevReserve
+  description: Revaluation Reserve Amount
+  type: Num
+  size: 19.6
+- field: AssetClass
+  description: Asset Class
+  type: nVarChar
+  size: 20
+  related: OACS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - AssetClass
+  - ItemCode

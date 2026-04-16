@@ -1,0 +1,27 @@
+table: GBI3
+description: GBI Row 3 - Departments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI3.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: DepNo
+  description: Department Number
+  type: nVarChar
+  size: 8
+- field: DepName
+  description: Department Name
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

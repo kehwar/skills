@@ -1,0 +1,47 @@
+table: OWLBT
+description: Fiori Launchpad Bookmark Tiles
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWLBT.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: Title
+  description: Title
+  type: Text
+  size: 16
+- field: SubTitle
+  description: Sub Title
+  type: Text
+  size: 16
+- field: Info
+  description: Icon
+  type: Text
+  size: 16
+- field: Bind
+  description: Bind Type
+  type: nVarChar
+  size: 16
+- field: Target
+  description: Url Target
+  type: Text
+  size: 16
+- field: IsDefault
+  description: Is Default
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Endpoint
+  description: end point
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

@@ -1,0 +1,43 @@
+table: OBSI
+description: Brazil String Indexer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBSI.htm
+fields:
+- field: IndexType
+  description: Indexer Type
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 30
+- field: Descr
+  description: Beverage Table
+  type: Text
+  size: 16
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ID
+  description: Unique ID
+  type: Int
+  size: 11
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+- key: IND_CODE_K
+  unique: true
+  fields:
+  - IndexType
+  - Code

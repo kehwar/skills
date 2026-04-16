@@ -1,0 +1,114 @@
+table: OWTC
+description: WTax Certificates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OWTC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RctType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '24'
+    label: Incoming Payment
+  - key: '46'
+    label: Outgoing Payment
+- field: RctAbs
+  description: Receipt No.
+  type: Int
+  size: 11
+- field: Jurisdict
+  description: Jurisdiction
+  type: nVarChar
+  size: 2
+- field: WtaxType
+  description: WTax Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: --
+    label: WTax Certificate
+  - key: OV
+    label: Outgoing VAT - Withholding Tax
+  - key: OG
+    label: Outgoing Gross Income - Withholding Tax
+  - key: 'ON'
+    label: Outgoing Income - Withholding Tax
+  - key: OS
+    label: Outgoing Social Security - Withholding Tax
+  - key: OI
+    label: Outgoing Industry Specific - Withholding Tax
+  - key: OD
+    label: Outgoing District Specific - Withholding Tax
+  - key: IC
+    label: Incoming WTax Certificate
+- field: WtAbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CerSeries
+  description: WTax Certificate Series
+  type: Int
+  size: 11
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: RefNumber
+  description: Reference Number
+  type: nVarChar
+  size: 20
+- field: SumVatAmnt
+  description: Sum of VAT Amount
+  type: Num
+  size: 19.6
+- field: SumDocTot
+  description: Sum of Doc. Total Amount
+  type: Num
+  size: 19.6
+- field: SumBaseAmn
+  description: Sum of Base Amount
+  type: Num
+  size: 19.6
+- field: SumAccumAm
+  description: Sum of Accumulated Amount
+  type: Num
+  size: 19.6
+- field: SumPercpAm
+  description: Sum of Perception Amount
+  type: Num
+  size: 19.6
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  default: ''' '''
+- field: PTICodeRef
+  description: POI Code Reference
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

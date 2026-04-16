@@ -1,0 +1,59 @@
+table: VTR2
+description: Doc. Type Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/VTR2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectCode
+  description: Object Code
+  type: nVarChar
+  size: 15
+  constraints:
+  - key: '13'
+    label: A/R Invoices
+  - key: '14'
+    label: A/R Credit Memos
+  - key: '18'
+    label: A/P Invoices
+  - key: '19'
+    label: A/P Credit Memos
+  - key: '24'
+    label: Incoming Payments
+  - key: '30'
+    label: Journal Entries
+  - key: '46'
+    label: Outgoing Payments
+  - key: '57'
+    label: Checks for Payment
+  - key: '67'
+    label: Inventory Transfers
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+- field: FromDocNo
+  description: Doc. Number From
+  type: Int
+  size: 11
+- field: ToDocNo
+  description: To Doc Number
+  type: Int
+  size: 11
+- field: Selected
+  description: Is Selected Object.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ObjectCode

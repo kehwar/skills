@@ -1,0 +1,522 @@
+table: ODGP
+description: Document Generation Parameter Sets
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODGP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SetName
+  description: Set Name
+  type: nVarChar
+  size: 20
+- field: SetDesc
+  description: Set Description
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: ModifyDate
+  description: Last Modified
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Target
+  description: Target Document Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '13'
+    label: A/R Invoice
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: Items
+  description: Items Documents Summary
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItemSmmry
+  description: Items Summary Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No Summary
+  - key: I
+    label: Summary by Items
+  - key: D
+    label: Summary by Documents
+- field: Service
+  description: Service Documents Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ServSmmry
+  description: Service Summary Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No Summary
+  - key: D
+    label: Summary by Documents
+- field: ExchgRate
+  description: Exchange Rate
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: D
+    label: Use Base Doc. and Row Rate
+  - key: B
+    label: Use Base Row Rate
+  - key: C
+    label: Use Current Rate
+- field: CreatDraft
+  description: Create Drafts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseQUT
+  description: Sales Quotation Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseRDR
+  description: Order Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseDLN
+  description: Delivery Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseRDN
+  description: Returns Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseResINV
+  description: A/R Reserve Invoice Summary
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpndSel
+  description: Expanded Selection Criteria
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SortField
+  description: Sort Field
+  type: nVarChar
+  size: 100
+  default: DocNum
+  constraints:
+  - key: DocNum
+    label: Document Number
+  - key: DocDate
+    label: Posting Date
+  - key: DocDueDate
+    label: Due Date
+  - key: NumAtCard
+    label: BP Reference No.
+  - key: DocTotal
+    label: Document Amount
+  - key: SlpCode
+    label: Sales Employee
+- field: Consolidat
+  description: Consolidate
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpandCons
+  description: Expanded Consolidation Options
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RCNSummary
+  description: Reference Document
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChainCode
+  description: Retail Chain
+  type: Int
+  size: 11
+- field: OredrNum1
+  description: Order No. From
+  type: Int
+  size: 11
+- field: OredrNum2
+  description: To
+  type: Int
+  size: 11
+- field: Direct
+  description: Direct
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Indirect
+  description: Indirect
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DoReport
+  description: Overview of Invoice Deliveries
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FileExport
+  description: File Export
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SavePath
+  description: File Path
+  type: Text
+  size: 16
+- field: DealNum
+  description: Closing No.
+  type: nVarChar
+  size: 12
+- field: UseDirect
+  description: Direct/Indirect
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NoItmCode
+  description: Drop Item No. Where Cat. No. E
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OnData
+  description: Missing Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Skip to Next Document
+  - key: B
+    label: Skip to Next Customer
+  - key: W
+    label: Ask for User Confirmation
+- field: OnLedger
+  description: Bookkeeping Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Skip to Next Document
+  - key: B
+    label: Skip to Next Customer
+  - key: W
+    label: Ask for User Confirmation
+- field: OnInvnt
+  description: Warehouse Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Skip to Next Document
+  - key: B
+    label: Skip to Next Customer
+  - key: W
+    label: Ask for User Confirmation
+- field: Summary
+  description: Summary
+  type: nVarChar
+  size: 250
+- field: AltItmDocs
+  description: Process docsc with alt. items
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PartDelivr
+  description: Partial Delivery
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConsiderBP
+  description: Consider BP
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConsiderTy
+  description: Consider Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EDocGenTyp
+  description: Electr. Doc. Generation Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+  - key: S
+    label: Send
+  - key: R
+    label: Send - Later
+  - key: D
+    label: Use Defaults
+- field: ESeries
+  description: Electronic Series
+  type: Int
+  size: 6
+  related: NNM4
+- field: EDocNum
+  description: Electronic Document Number
+  type: nVarChar
+  size: 20
+- field: ReopOriRdr
+  description: Reopen Origin. Order by Return
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReopManCls
+  description: Reop. Man. Closed/Canc. Orders
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SeqCode
+  description: Target Doc. NF Sequence Code
+  type: Int
+  size: 6
+- field: UseBaseSeq
+  description: Use Base Document NF Sequence
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OnSeqCode
+  description: Missing NF Sequence
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Skip to Next Document
+  - key: T
+    label: Use NF Sequence from Step 2
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BlckFrOnly
+  description: Block Docs. with Zero Items
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: Bill of Supply
+  - key: GA
+    label: GST Tax Invoice
+- field: EDocDflt
+  description: Apply El. Doc. Defaults
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EDocMapID
+  description: Electronic Document Format Mapping
+  type: Int
+  size: 11
+- field: VatDate
+  description: VAT Allocation Date
+  type: Date
+  size: 8
+- field: BsPrcMode
+  description: Base Document Price Mode
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SET_NAME
+  unique: true
+  fields:
+  - SetName

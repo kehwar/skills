@@ -1,0 +1,97 @@
+table: OIMT
+description: Templates for Inventory JE
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIMT.htm
+fields:
+- field: ValuatType
+  description: Document Valuation Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: A
+    label: ''
+  - key: F
+    label: ''
+  - key: S
+    label: ''
+  - key: N
+    label: unDefined
+- field: TransType
+  description: Transaction type
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Transaction Type
+  type: Int
+  size: 6
+  default: -1
+- field: TemplateId
+  description: Template ID
+  type: Int
+  size: 6
+  default: -1
+- field: LocalizId
+  description: Localization Identifier
+  type: nVarChar
+  size: 2
+  default: XX
+  constraints:
+  - key: XX
+    label: All Localizations
+- field: Action
+  description: Action Type
+  type: Int
+  size: 6
+  default: 0
+- field: JEPosting
+  description: Posting Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: C
+    label: Complete
+  - key: P
+    label: Partial
+- field: LineActTyp
+  description: Line Account Type
+  type: Int
+  size: 6
+  default: 2
+  constraints:
+  - key: '2'
+    label: LINE_ACCT_TYPE
+- field: TmpType
+  description: Template Type
+  type: Int
+  size: 6
+  default: 0
+- field: Total
+  description: Total Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Total from Message
+  - key: C
+    label: Total from Calculator
+  - key: F
+    label: Total from Formula
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TemplateId
+- key: SECONDARY
+  unique: true
+  fields:
+  - TransType
+  - BaseType
+  - ValuatType
+  - LocalizId
+  - Action
+  - TmpType

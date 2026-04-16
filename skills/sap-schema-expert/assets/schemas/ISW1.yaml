@@ -1,0 +1,68 @@
+table: ISW1
+description: Reported Business Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ISW1.htm
+fields:
+- field: WizAbsEnt
+  description: Wizard Run Key
+  type: Int
+  size: 11
+  related: OISW
+- field: CardCode
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Business Partner Name
+  type: nVarChar
+  size: 200
+- field: CardType
+  description: Business Partner Type
+  type: VarChar
+  size: 1
+- field: NatOfTrans
+  description: Nature of Transaction
+  type: nVarChar
+  size: 50
+- field: StatProc
+  description: Statistical Procedure
+  type: nVarChar
+  size: 50
+- field: CustProc
+  description: Customs Procedure
+  type: nVarChar
+  size: 50
+- field: TransMode
+  description: Transport Mode
+  type: nVarChar
+  size: 12
+- field: Incoterms
+  description: Incoterms
+  type: nVarChar
+  size: 12
+- field: PortEnEx
+  description: Port of Entry or Exit
+  type: nVarChar
+  size: 50
+- field: BPVATRegNo
+  description: Business Partner VAT Reg. No.
+  type: nVarChar
+  size: 32
+- field: DomFrgID
+  description: Domestic/Foreign Identifier
+  type: VarChar
+  size: 1
+- field: CtryOrig
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: BPCountry
+  description: Business Partner Country/Region
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizAbsEnt
+  - CardCode

@@ -1,0 +1,330 @@
+table: NNM1
+description: Documents Numbering - Series
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NNM1.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+  related: ONNM
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  default: 0
+- field: SeriesName
+  description: Series Name
+  type: nVarChar
+  size: 8
+- field: InitialNum
+  description: Initial Number
+  type: Int
+  size: 11
+  default: 0
+- field: NextNumber
+  description: Next Number for Use
+  type: Int
+  size: 11
+  default: 0
+- field: LastNum
+  description: Last Number Allowed
+  type: Int
+  size: 11
+- field: BeginStr
+  description: Prefix String
+  type: nVarChar
+  size: 20
+- field: EndStr
+  description: Suffix String
+  type: nVarChar
+  size: 20
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 50
+- field: GroupCode
+  description: Group
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Series Group 1
+  - key: '2'
+    label: Series Group 2
+  - key: '3'
+    label: Series Group 3
+  - key: '4'
+    label: Series Group 4
+  - key: '5'
+    label: Series Group 5
+  - key: '6'
+    label: Series Group 6
+  - key: '7'
+    label: Series Group 7
+  - key: '8'
+    label: Series Group 8
+  - key: '9'
+    label: Series Group 9
+  - key: '10'
+    label: Series Group 10
+  - key: '11'
+    label: Series Group 11
+  - key: '12'
+    label: Series Group 12
+  - key: '13'
+    label: Series Group 13
+  - key: '14'
+    label: Series Group 14
+  - key: '15'
+    label: Series Group 15
+  - key: '16'
+    label: Series Group 16
+  - key: '17'
+    label: Series Group 17
+  - key: '18'
+    label: Series Group 18
+  - key: '19'
+    label: Series Group 19
+  - key: '20'
+    label: Series Group 20
+  - key: '21'
+    label: Series Group 21
+  - key: '22'
+    label: Series Group 22
+  - key: '23'
+    label: Series Group 23
+  - key: '24'
+    label: Series Group 24
+  - key: '25'
+    label: Series Group 25
+  - key: '26'
+    label: Series Group 26
+  - key: '27'
+    label: Series Group 27
+  - key: '28'
+    label: Series Group 28
+  - key: '29'
+    label: Series Group 29
+  - key: '30'
+    label: Series Group 30
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: YearTransf
+  description: Year-End Closing
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Indicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: Template
+  description: Template
+  type: nVarChar
+  size: 20
+- field: NumSize
+  description: Numeric Size
+  type: Int
+  size: 11
+- field: FolioPref
+  description: Folio Prefix String
+  type: nVarChar
+  size: 4
+- field: NextFolio
+  description: Next Folio Number
+  type: Int
+  size: 11
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+- field: DefESeries
+  description: Default Electronic Series
+  type: Int
+  size: 6
+  default: 0
+- field: IsDigSerie
+  description: Is Digital Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SeriesType
+  description: Series Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Document
+  - key: B
+    label: Business Partner
+  - key: I
+    label: Item
+  - key: R
+    label: Resource
+  - key: W
+    label: Witholding Certificates
+- field: IsManual
+  description: Is Manual Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: IsForCncl
+  description: Is Series for Cancelation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AtDocType
+  description: AT Document Type
+  type: nVarChar
+  size: 10
+- field: IsElAuth
+  description: Elec. Authorization Code
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CoAccount
+  description: Cost Account Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GenPassprt
+  description: Do Generate SAP Passport
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: PInvType
+  description: Abs Type of Positive Value Invoice
+  type: Int
+  size: 11
+  related: OEIT
+- field: NInvType
+  description: Abs Type of Negative Value Invoice
+  type: Int
+  size: 11
+  related: OEIT
+- field: AssignedID
+  description: Assigned ID
+  type: nVarChar
+  size: 70
+- field: Action
+  description: Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Report
+  - key: C
+    label: Cancel
+  - key: F
+    label: Finalize
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Reported
+  - key: C
+    label: Canceled
+  - key: F
+    label: Finalized
+- field: Phase
+  description: Phase
+  type: VarChar
+  size: 1
+  constraints:
+  - key: T
+    label: To Be Processed
+  - key: I
+    label: In Process
+  - key: O
+    label: OK
+  - key: E
+    label: Error
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Series
+- key: SER_NAME
+  unique: true
+  fields:
+  - ObjectCode
+  - DocSubType
+  - SeriesName
+  - SeriesType

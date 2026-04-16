@@ -1,0 +1,51 @@
+table: OHET
+description: 'Object: HR Employee Transfer'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHET.htm
+fields:
+- field: TransferID
+  description: Unique ID for Transfer
+  type: Int
+  size: 11
+- field: TransStart
+  description: Transfer Start Date
+  type: Date
+  size: 8
+- field: TransEnd
+  description: Timestamp if Status is "Sent"
+  type: Date
+  size: 8
+- field: Status
+  description: Processing Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: Processing
+  - key: S
+    label: Sent
+  - key: R
+    label: Received
+  - key: A
+    label: Accepted
+  - key: E
+    label: Error
+- field: Comment
+  description: Any comments
+  type: Text
+  size: 16
+- field: StartTime
+  description: Transfer Start Time
+  type: Int
+  size: 6
+- field: EndTime
+  description: Time When Status Is "Sent"
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TransferID

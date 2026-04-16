@@ -1,0 +1,37 @@
+table: CSPI
+description: Solution Packager Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CSPI.htm
+fields:
+- field: AbsEntry
+  description: absEntry
+  type: Int
+  size: 11
+- field: Name
+  description: Parameter Name
+  type: nVarChar
+  size: 50
+- field: Type
+  description: Parameter Type
+  type: nVarChar
+  size: 20
+- field: Value
+  description: Parameter Value
+  type: Text
+  size: 16
+- field: LstUpdDate
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: LstUpdTime
+  description: Last Update Time
+  type: Int
+  size: 11
+- field: CheckSum
+  description: Row Checksum
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,68 @@
+table: ARSC6
+description: Resources - Daily Capacities - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ARSC6.htm
+fields:
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: WeekDay
+  description: Weekday No.
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: First Day of Week
+  - key: '2'
+    label: Second Day of Week
+  - key: '3'
+    label: Third Day of Week
+  - key: '4'
+    label: Fourth Day of Week
+  - key: '5'
+    label: Fifth Day of Week
+  - key: '6'
+    label: Sixth Day of Week
+  - key: '7'
+    label: Seventh Day of Week
+- field: CapFactor1
+  description: Day 1 Capacity Factor 1
+  type: Num
+  size: 19.6
+- field: CapFactor2
+  description: Day 1 Capacity Factor 2
+  type: Num
+  size: 19.6
+- field: CapFactor3
+  description: Day 1 Capacity Factor 3
+  type: Num
+  size: 19.6
+- field: CapFactor4
+  description: Day 1 Capacity Factor 4
+  type: Num
+  size: 19.6
+- field: CapTotal
+  description: Total Daily Capacity
+  type: Num
+  size: 19.6
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: SngRunCap
+  description: Single Run Capacity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - WeekDay
+  - LogInstanc

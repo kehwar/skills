@@ -1,0 +1,50 @@
+table: OTRN
+description: Multilingual Service Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTRN.htm
+fields:
+- field: AbsEntry
+  description: Doc. Entry
+  type: Int
+  size: 11
+- field: Category
+  description: Category
+  type: nVarChar
+  size: 6
+  constraints:
+  - key: CRRpt
+    label: CR Report
+  - key: Menu
+    label: Menu Item
+  - key: EFM
+    label: EFM Item
+- field: PriCode
+  description: Primary Code
+  type: nVarChar
+  size: 128
+- field: SecCode
+  description: Secondary Code
+  type: nVarChar
+  size: 128
+- field: SourceLang
+  description: Source Language
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CATCODE
+  unique: true
+  fields:
+  - Category
+  - PriCode
+  - SecCode

@@ -1,0 +1,37 @@
+table: OBOD
+description: BIOD Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBOD.htm
+fields:
+- field: BIOD_ENTRY
+  description: BIOD Key
+  type: Int
+  size: 11
+- field: BIOD_UID
+  description: User ID
+  type: Int
+  size: 6
+- field: BIOD_QID
+  description: Query Internal Key
+  type: Int
+  size: 11
+- field: BIOD_QN
+  description: Query Name
+  type: nVarChar
+  size: 100
+- field: BIOD_QLD
+  description: Last Upload Date
+  type: Date
+  size: 8
+- field: BIOD_QLT
+  description: Last Upload Time
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BIOD_ENTRY
+- key: USERID
+  unique: false
+  fields:
+  - BIOD_UID

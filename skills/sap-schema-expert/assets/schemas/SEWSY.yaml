@@ -1,0 +1,39 @@
+table: SEWSY
+description: SEWSY
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWSY.htm
+fields:
+- field: S_USER
+  description: Absolute Key
+  type: nVarChar
+  size: 16
+- field: SmpSendAdd
+  description: Smp Server URL
+  type: nVarChar
+  size: 254
+- field: SmpInboAdd
+  description: Smp user Inbox URL
+  type: nVarChar
+  size: 254
+- field: CollecData
+  description: Communication and trigger flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: CollectData
+  - key: N
+    label: DontCollectData
+- field: FindSolAdd
+  description: Find Solution URL
+  type: nVarChar
+  size: 254
+- field: FeedOptAdd
+  description: Feedback Option URL
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - S_USER

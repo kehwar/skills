@@ -1,0 +1,79 @@
+table: ACL1
+description: Activity Check-ins
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ACL1.htm
+fields:
+- field: ClgCode
+  description: Activity Number
+  type: Int
+  size: 11
+  related: OCLG
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: Location
+  description: Location
+  type: nVarChar
+  size: 254
+- field: Latitude
+  description: Latitude
+  type: nVarChar
+  size: 13
+- field: Longitude
+  description: Longitude
+  type: nVarChar
+  size: 14
+- field: Time
+  description: Time
+  type: Int
+  size: 11
+- field: OwnerUser
+  description: Owner User
+  type: Int
+  size: 6
+  related: OUSR
+- field: OwnerEmp
+  description: Owner Employee
+  type: Int
+  size: 11
+  related: OHEM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: RecpntType
+  description: Recipient Type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: User
+  - key: '1'
+    label: Employee
+  - key: '2'
+    label: Contact Person
+  - key: '3'
+    label: Distribution List
+  - key: '4'
+    label: Other (Free Text Email Address)
+- field: RecpntName
+  description: Recipient Name
+  type: nVarChar
+  size: 50
+- field: EmailAddr
+  description: Email Address
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ClgCode
+  - LineNum
+  - LogInstanc

@@ -1,0 +1,49 @@
+table: TRN1
+description: Subtable of OTRN
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TRN1.htm
+fields:
+- field: TrnAbsEntr
+  description: OTRN Abs Entry
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number of Table
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 254
+- field: ItemType
+  description: Item Type
+  type: nVarChar
+  size: 8
+- field: SlimType
+  description: Slim Type
+  type: nVarChar
+  size: 8
+- field: MaxLength
+  description: Max. Length
+  type: Int
+  size: 11
+- field: SourceText
+  description: Source Text
+  type: Text
+  size: 16
+- field: Memo
+  description: Memo
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TrnAbsEntr
+  - LineNum
+- key: UniqueIdx
+  unique: true
+  fields:
+  - TrnAbsEntr
+  - ItemType
+  - ItemCode
+  - LineNum

@@ -1,0 +1,51 @@
+table: GDP2
+description: General Data Protection Wizard - Natural Persons
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/GDP2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OGDP
+- field: LineNum
+  description: Line
+  type: Int
+  size: 6
+- field: NatObjType
+  description: Natural Person Object Type
+  type: nVarChar
+  size: 20
+- field: NatObjArr
+  description: Natural Person Object Array
+  type: Int
+  size: 11
+- field: NatObjKey1
+  description: Natural Person Object Key
+  type: nVarChar
+  size: 20
+- field: NatObjKey2
+  description: Natural Person Object Subkey
+  type: nVarChar
+  size: 20
+- field: Result
+  description: Result
+  type: Int
+  size: 11
+- field: ErrorStr
+  description: Error String
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+- key: NATOBJ_KEY
+  unique: true
+  fields:
+  - AbsEntry
+  - NatObjType
+  - NatObjArr
+  - NatObjKey1
+  - NatObjKey2

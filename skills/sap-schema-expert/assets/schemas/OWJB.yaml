@@ -1,0 +1,41 @@
+table: OWJB
+description: Workflow Job Entity
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWJB.htm
+fields:
+- field: Id
+  description: ID
+  type: Int
+  size: 11
+- field: HandlerTyp
+  description: Handler Type
+  type: nVarChar
+  size: 50
+- field: ExecId
+  description: Execution ID
+  type: Int
+  size: 11
+- field: Rev
+  description: Revision
+  type: Int
+  size: 11
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: ProcInstId
+  description: Process Instance ID
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 250
+- field: HandlerCfg
+  description: Handler Configuration
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

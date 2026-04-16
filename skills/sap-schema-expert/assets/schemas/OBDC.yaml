@@ -1,0 +1,73 @@
+table: OBDC
+description: B1i DI Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBDC.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: Server
+  description: Server
+  type: nVarChar
+  size: 254
+- field: License
+  description: License Server
+  type: nVarChar
+  size: 254
+- field: Company
+  description: Company
+  type: nVarChar
+  size: 128
+- field: DBType
+  description: DB Type
+  type: Int
+  size: 11
+- field: DBUser
+  description: DB User
+  type: nVarChar
+  size: 254
+- field: DBPassword
+  description: DB Password
+  type: nVarChar
+  size: 254
+- field: Username
+  description: User Name
+  type: nVarChar
+  size: 254
+- field: UPassword
+  description: User Password
+  type: nVarChar
+  size: 254
+- field: DBTrusted
+  description: DB Trusted
+  type: VarChar
+  size: 1
+- field: JCOPath
+  description: Java Connector Path
+  type: nVarChar
+  size: 254
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+- field: AddOnIF
+  description: Add-On Identifier
+  type: nVarChar
+  size: 254
+- field: StateFder
+  description: Bank Statement Folder
+  type: nVarChar
+  size: 254
+- field: FormatFder
+  description: Bank Format Folder
+  type: nVarChar
+  size: 254
+- field: FileFolder
+  description: Bank File Folder
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

@@ -1,0 +1,73 @@
+table: BOE1
+description: Bill of Exchange for Payment - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/BOE1.htm
+fields:
+- field: BoeKey
+  description: SBO Internal Key
+  type: Int
+  size: 11
+  related: OBOE
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: LineDitail
+  description: Row Details
+  type: nVarChar
+  size: 40
+- field: LineMoney
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: LineCurr
+  description: Row Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: LineAcct
+  description: Row Account
+  type: nVarChar
+  size: 15
+- field: Line_A_C
+  description: BP/Account
+  type: VarChar
+  size: 1
+  default: '0'
+- field: Code
+  description: Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: CredAcct
+  description: Credited Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TotalLine
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: VatPercent
+  description: 'Tax %:'
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoeKey
+  - LineId

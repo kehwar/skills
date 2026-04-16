@@ -1,0 +1,70 @@
+table: WKO1
+description: Production Instructions - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WKO1.htm
+fields:
+- field: OrderNum
+  description: Instruction Key
+  type: Int
+  size: 11
+  related: OWKO
+- field: LineID
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITT
+- field: Descript
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: Quantity
+  description: Item Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Item Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: WhsCode
+  description: Item Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: ActWorkCod
+  description: Active Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ActWorkSum
+  description: Total Work
+  type: Num
+  size: 19.6
+- field: ProdUpgNum
+  description: Production Upgrade No.
+  type: Int
+  size: 11
+  related: OWOR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OrderNum
+  - LineID
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency

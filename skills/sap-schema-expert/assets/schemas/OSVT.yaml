@@ -1,0 +1,29 @@
+table: OSVT
+description: Define Summary VAT Report Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OSVT.htm
+fields:
+- field: AbsEntry
+  description: VAT Report Type ID
+  type: Int
+  size: 11
+- field: Name
+  description: Summary VAT Report Type
+  type: nVarChar
+  size: 254
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 254
+- field: NameDesc
+  description: Name & Desc
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name

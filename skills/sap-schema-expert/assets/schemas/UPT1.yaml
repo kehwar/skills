@@ -1,0 +1,27 @@
+table: UPT1
+description: User Authorization Tree - Extended Permission
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UPT1.htm
+fields:
+- field: PermId
+  description: Authorization ID
+  type: nVarChar
+  size: 20
+  related: OUPT
+- field: FormId
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: VisOrder
+  description: Display Order
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PermId
+  - FormId
+- key: FORM_ID
+  unique: false
+  fields:
+  - FormId

@@ -1,0 +1,56 @@
+table: ORLD
+description: Reference Links Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ORLD.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: ''
+  - key: IE
+    label: Invoice Exempt
+  - key: DN
+    label: Debit Memo
+  - key: IB
+    label: Bill
+  - key: EB
+    label: Exempt Bill
+  - key: DM
+    label: A/P Debit Memo
+  - key: IX
+    label: Export Invoice
+  - key: GA
+    label: GST Tax Invoice
+  - key: GD
+    label: GST Debit Memo
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Original
+  - key: C
+    label: Customized
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: OBJ_FIELD
+  unique: true
+  fields:
+  - ObjectCode
+  - DocSubType

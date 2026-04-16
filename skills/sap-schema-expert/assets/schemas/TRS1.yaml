@@ -1,0 +1,72 @@
+table: TRS1
+description: Tax Report Saving Object - Approved Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRS1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRS
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: LineID
+  description: Internal Row Number
+  type: Int
+  size: 11
+- field: ApDocType
+  description: Approved Document Type
+  type: nVarChar
+  size: 20
+- field: ApDocEntry
+  description: Approved Document Key
+  type: Int
+  size: 11
+- field: ApDocOrdNo
+  description: Appr. Doc. Ordinal Number
+  type: Int
+  size: 11
+  default: -1
+- field: ApDocAdRef
+  description: Appr. Doc. Additional Reference
+  type: Int
+  size: 11
+  default: -1
+- field: MeansType
+  description: Payment Means Type
+  type: Int
+  size: 11
+  default: -1
+- field: PayLineID
+  description: Payment Means Line ID
+  type: Int
+  size: 11
+  default: -1
+- field: PayDocType
+  description: Payment Document Type
+  type: Int
+  size: 11
+  default: -1
+- field: PayDocEntr
+  description: Payment Document Entry
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+- key: SECONDARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ApDocType
+  - ApDocEntry
+  - ApDocOrdNo
+  - MeansType
+  - PayLineID
+  - PayDocType
+  - PayDocEntr

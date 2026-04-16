@@ -1,0 +1,79 @@
+table: IPF3
+description: Landed Costs - Customs Summary
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IPF3.htm
+fields:
+- field: DocEntry
+  description: Landed Costs Internal ID
+  type: Int
+  size: 11
+  related: OIPF
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Dscription
+  description: Summary Description
+  type: nVarChar
+  size: 200
+- field: LaCAllcAcc
+  description: Landed Costs Alloc. Account
+  type: nVarChar
+  size: 15
+- field: CustSum
+  description: Customs Summary
+  type: Num
+  size: 19.6
+- field: CustSumFC
+  description: Customs Summary FC
+  type: Num
+  size: 19.6
+- field: CustSumSC
+  description: Customs Summary SC
+  type: Num
+  size: 19.6
+- field: OpenSum
+  description: Open Customs Summary
+  type: Num
+  size: 19.6
+- field: OpenSumFC
+  description: Open Customs Summary (FC)
+  type: Num
+  size: 19.6
+- field: OpenSumSC
+  description: Open Customs Summary (SC)
+  type: Num
+  size: 19.6
+- field: AccType
+  description: Type of Account of Summarized
+  type: Int
+  size: 11
+- field: VatGroup
+  description: VAT Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: CstmVatStk
+  description: Is Customs VAT in Stock
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CCDEntry
+  description: CCD Abs. Entry
+  type: Int
+  size: 11
+- field: LineNum2
+  description: Row Number in IPF2
+  type: Int
+  size: 11
+  related: IPF2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

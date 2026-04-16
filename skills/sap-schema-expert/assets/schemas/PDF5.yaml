@@ -1,0 +1,126 @@
+table: PDF5
+description: PaymentDraft - vat adjustment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PDF5.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OPDF
+- field: InvEntry
+  description: Invoice Key
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatPrcnt
+  description: Tax %
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: BaseSum
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: NoDedSum
+  description: Non-Deductible Amount
+  type: Num
+  size: 19.6
+- field: BaseSumFc
+  description: Base Amount FC
+  type: Num
+  size: 19.6
+- field: VatSumFc
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: NoDedSumFc
+  description: Non-Deductible Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseSumSc
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: NoDedSumSc
+  description: Non-Deductible Amount (SC)
+  type: Num
+  size: 19.6
+- field: VatSumSc
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CashDiscAc
+  description: Cash Discount Account
+  type: nVarChar
+  size: 15
+- field: BaseObjArr
+  description: Base Object Array Number
+  type: Int
+  size: 6
+  default: 1
+- field: BaseObj
+  description: Base Object
+  type: Int
+  size: 11
+  default: 13
+- field: InstlmntId
+  description: Installment ID
+  type: Int
+  size: 6
+  default: 0
+- field: GroupNum
+  description: Group Number
+  type: Int
+  size: 11
+  default: 0
+- field: LineSeq
+  description: Row Sequence
+  type: Int
+  size: 11
+  default: -1
+- field: EquVatPer
+  description: Equalization Tax %
+  type: Num
+  size: 19.6
+- field: EquVatSum
+  description: Total Equalization Tax
+  type: Num
+  size: 19.6
+- field: EquVatSumF
+  description: Total Equalization Tax (FC)
+  type: Num
+  size: 19.6
+- field: EquVatSumS
+  description: Total Equalization Tax (SC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - InvEntry
+  - LineNum
+  - ObjType
+  - LogInstanc

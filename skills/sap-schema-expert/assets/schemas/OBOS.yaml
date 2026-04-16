@@ -1,0 +1,61 @@
+table: OBOS
+description: Box Set Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBOS.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: IsUsed
+  description: Is Set Used
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: FileFmtCo
+  description: File Format Code
+  type: Int
+  size: 11
+  related: OLLF
+- field: IsDeleted
+  description: Is Set Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: B
+    label: Box Declaration
+  - key: S
+    label: BAS Report
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: EFFEC_DATE
+  unique: false
+  fields:
+  - EffecDate
+- key: BZKEY
+  unique: false
+  fields:
+  - EffecDate
+  - ReportType

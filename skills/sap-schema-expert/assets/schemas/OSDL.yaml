@@ -1,0 +1,92 @@
+table: OSDL
+description: Sensitive Personal Data Access Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSDL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DataSubjct
+  description: Data Subject Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '1'
+    label: OHEM
+  - key: '2'
+    label: OCRD
+  - key: '3'
+    label: OUSR
+  - key: '4'
+    label: OCPR
+  - key: '6'
+    label: OUDO
+- field: SubjctKey
+  description: Data Subject Key
+  type: nVarChar
+  size: 100
+- field: DataTable
+  description: Data Table
+  type: nVarChar
+  size: 21
+- field: TblKeyCnt
+  description: Data Table Key Count
+  type: Int
+  size: 11
+- field: KeyVal1
+  description: Key Value 1
+  type: nVarChar
+  size: 100
+- field: KeyVal2
+  description: Key Value 2
+  type: nVarChar
+  size: 100
+- field: KeyVal3
+  description: Key Value 3
+  type: nVarChar
+  size: 100
+- field: KeyVal4
+  description: Key Value 4
+  type: nVarChar
+  size: 100
+- field: Property
+  description: Property Name
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: Access User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: AccessDate
+  description: Access Date
+  type: Int
+  size: 11
+- field: AccessTime
+  description: Access Time
+  type: Int
+  size: 11
+- field: AccessChnl
+  description: Access Channel
+  type: VarChar
+  size: 1
+  constraints:
+  - key: U
+    label: UI
+  - key: D
+    label: DI
+  - key: B
+    label: Browser Access
+  - key: W
+    label: Personal Data Management Wizard
+  - key: A
+    label: Bank File
+- field: Version
+  description: Version
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

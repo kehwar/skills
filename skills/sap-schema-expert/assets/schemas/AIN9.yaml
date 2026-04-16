@@ -1,0 +1,33 @@
+table: AIN9
+description: Inventory Counting - Individual Counter - Row Counted Qty - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIN9.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OINC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: CounterNum
+  description: Counter Number
+  type: Int
+  size: 11
+- field: TotalQty
+  description: Total Qty of Inventory UoM
+  type: Num
+  size: 19.6
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - CounterNum
+  - LogIns

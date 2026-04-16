@@ -1,0 +1,244 @@
+table: DWZ2
+description: Dunning Wizard Array 2-Invoice Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DWZ2.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: ODWZ
+- field: CardCode
+  description: BP Card Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LetterNum
+  description: Letter Number
+  type: Int
+  size: 11
+- field: TotalFee
+  description: Total Fee
+  type: Num
+  size: 19.6
+- field: FeeCurr
+  description: Total Fee Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: TtlopnIntr
+  description: Sum of Open Sum+Interest
+  type: Num
+  size: 19.6
+- field: EDunLevel
+  description: Edited Dunning Level
+  type: nVarChar
+  size: 3
+- field: OpnIntrCrr
+  description: Total Open + Interest Currency
+  type: nVarChar
+  size: 3
+- field: DocAbs
+  description: Document Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Doc. No.
+  type: Int
+  size: 11
+- field: InstlmntID
+  description: Installment ID
+  type: Int
+  size: 6
+- field: IntrstPC
+  description: Interest Percent
+  type: Num
+  size: 19.6
+- field: IntrstAmnt
+  description: Interest Amount
+  type: Num
+  size: 19.6
+- field: IntrstCurr
+  description: Interest Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: ChckLine
+  description: Checked Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IntrstDays
+  description: Interest Days
+  type: Int
+  size: 11
+- field: DocType
+  description: Source Table
+  type: Int
+  size: 11
+  constraints:
+  - key: '13'
+    label: A/R Invoice
+  - key: '203'
+    label: Down Payment Incoming
+  - key: '165'
+    label: Correction A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '24'
+    label: Incoming Payment
+  - key: '30'
+    label: Journal Transactions
+  - key: '-2'
+    label: Open Balance
+  - key: '-3'
+    label: Close Balance
+  - key: '46'
+    label: Outgoing Payments
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: LetterLvl
+  description: Letter Level
+  type: nVarChar
+  size: 3
+  default: '0'
+- field: OpenSum
+  description: Open Sum
+  type: Num
+  size: 19.6
+- field: OpenCurr
+  description: Open Sum Currency
+  type: nVarChar
+  size: 3
+- field: sumIntrClc
+  description: Sum for Interest Calculation
+  type: Num
+  size: 19.6
+- field: folioNum
+  description: Folio Number
+  type: nVarChar
+  size: 14
+- field: LvlUpdated
+  description: Level Updated Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TotalFeeFC
+  description: Total Fee in Document Currency
+  type: Num
+  size: 19.6
+- field: TotalFeeLC
+  description: Total Fee in Local Currency
+  type: Num
+  size: 19.6
+- field: TotalFeeSC
+  description: Total Fee in System Currency
+  type: Num
+  size: 19.6
+- field: TtlopnInFC
+  description: Sum of Open Sum+Interest FC
+  type: Num
+  size: 19.6
+- field: TtlopnInSC
+  description: Sum of Open Sum+Interest SC
+  type: Num
+  size: 19.6
+- field: IntrAmtFC
+  description: Interest Amount (FC)
+  type: Num
+  size: 19.6
+- field: IntrAmtSC
+  description: Interest Amount (SC)
+  type: Num
+  size: 19.6
+- field: OpenSumFC
+  description: Open Sum (FC)
+  type: Num
+  size: 19.6
+- field: OpenSumSC
+  description: Open Sum (SC)
+  type: Num
+  size: 19.6
+- field: ExeChkLine
+  description: Executed Checked Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AutoPost
+  description: Automatic Posting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: B
+    label: Interest and Fee
+  - key: I
+    label: Interest Only
+  - key: F
+    label: Fee Only
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: UnpaidBoEV
+  description: Unpaid BoE Value
+  type: Num
+  size: 19.6
+- field: BoENumber
+  description: BoE Number
+  type: Int
+  size: 11
+- field: BoEStatus
+  description: BoE Status
+  type: VarChar
+  size: 1
+- field: BoEDate
+  description: BoE Date
+  type: Date
+  size: 8
+- field: BoEKey
+  description: BoE Key
+  type: Int
+  size: 11
+- field: BPType
+  description: Business Partner Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Vendor
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - LetterNum
+  - DocAbs
+  - InstlmntID
+  - DocType

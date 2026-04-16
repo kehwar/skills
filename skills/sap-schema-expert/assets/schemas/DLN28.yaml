@@ -1,0 +1,63 @@
+table: DLN28
+description: Delivery - Reported Tracking Note
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DLN28.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODOC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ChildNum
+  description: Assignment Line
+  type: Int
+  size: 11
+- field: TrackingNt
+  description: CCD Tracking Note
+  type: Int
+  size: 11
+  related: OTCN
+- field: TrackiNtLn
+  description: CCD Tracking Note Line
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: UnusedQty
+  description: Unused Quantity
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '15'
+- field: SubLineNum
+  description: BOM Line No.
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - ChildNum
+- key: TCN_KEY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - TrackingNt
+  - TrackiNtLn

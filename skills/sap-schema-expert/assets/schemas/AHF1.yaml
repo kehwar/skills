@@ -1,0 +1,125 @@
+table: AHF1
+description: Hide Functions Configuration - Rows History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/AHF1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FuncID
+  description: Function ID
+  type: Int
+  size: 11
+  related: OHFC
+- field: formNum
+  description: Form Number
+  type: nVarChar
+  size: 128
+- field: ItemUID
+  description: Item UID
+  type: nVarChar
+  size: 128
+- field: ColUID
+  description: Column UID
+  type: nVarChar
+  size: 128
+- field: HideVal
+  description: Hide Valid Value
+  type: nVarChar
+  size: 20
+- field: AltVal
+  description: Alternative Valid Value
+  type: nVarChar
+  size: 20
+- field: PanelID
+  description: Hide Item by Panel
+  type: Int
+  size: 6
+- field: ActionType
+  description: Hide Item Action Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Hide Item
+  - key: '1'
+    label: Hide Column
+  - key: '2'
+    label: Hide Item's Valid Value
+  - key: '3'
+    label: Hide Panel
+  - key: '4'
+    label: Hide Column's Valid Value
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: Transfered
+  description: Year Transfer [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

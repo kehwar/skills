@@ -1,0 +1,22 @@
+table: SPAR
+description: SPAR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SPAR.htm
+fields:
+- field: Owner
+  description: Owner
+  type: nVarChar
+  size: 40
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: Value
+  description: Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Owner
+  - Name

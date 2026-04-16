@@ -1,0 +1,52 @@
+table: RMSG
+description: EditMode Messages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RMSG.htm
+fields:
+- field: abs
+  description: abs
+  type: Int
+  size: 11
+- field: fromWho
+  description: from Who
+  type: Int
+  size: 11
+- field: toWho
+  description: to Who
+  type: Int
+  size: 11
+- field: date
+  description: date
+  type: Date
+  size: 8
+- field: time
+  description: time
+  type: Int
+  size: 11
+- field: loggedOnly
+  description: msg valid only f logged
+  type: VarChar
+  size: 1
+  default: Y
+- field: message
+  description: message
+  type: nVarChar
+  size: 250
+- field: msgRead
+  description: was message read
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - abs
+- key: TO_WHO
+  unique: false
+  fields:
+  - toWho
+- key: WHO_READ
+  unique: false
+  fields:
+  - toWho
+  - msgRead

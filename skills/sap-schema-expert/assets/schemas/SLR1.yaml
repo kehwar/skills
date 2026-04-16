@@ -1,0 +1,171 @@
+table: SLR1
+description: 'Special Ledger - Analytical Accounting Report Lines: Revenues & Expenses'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/SLR1.htm
+fields:
+- field: DocID
+  description: Document Identification Number
+  type: Int
+  size: 11
+  related: OSLR
+- field: LineID
+  description: Line Identification
+  type: Int
+  size: 11
+- field: RuleID
+  description: Rule Identification Number
+  type: Int
+  size: 6
+  related: OSCR
+- field: GoalNum
+  description: Rule Goal Number
+  type: Int
+  size: 6
+- field: TransType
+  description: Transaction Type Number
+  type: Int
+  size: 6
+- field: PrfCntVal
+  description: Distribution Rule Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrfCntOrig
+  description: Orig. Distribution Rule Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Checked
+  description: Selected for Processing
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+- field: Enabled
+  description: Enabled for Processing
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DebitAct
+  description: Debit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CreditAct
+  description: Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevSides
+  description: Revert Debit/Credit Sides
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Src
+  description: Source Amount
+  type: Num
+  size: 19.6
+- field: SrcFC
+  description: Source Amount, Foreign Currency
+  type: Num
+  size: 19.6
+- field: SrcSC
+  description: Source Amount, System Currency
+  type: Num
+  size: 19.6
+- field: SrcCalc
+  description: Calculated Amount
+  type: Num
+  size: 19.6
+- field: SrcCalcFC
+  description: Calculated Amount - Foreign
+  type: Num
+  size: 19.6
+- field: SrcCalcSC
+  description: Calculated Amount - System
+  type: Num
+  size: 19.6
+- field: FinalSum
+  description: Final Amount
+  type: Num
+  size: 19.6
+- field: FinalSumFC
+  description: Final Amount (FC)
+  type: Num
+  size: 19.6
+- field: FinalSumSC
+  description: Final Amount (SC)
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: MainTable
+  description: Main Source Table
+  type: nVarChar
+  size: 20
+- field: PKField0
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField1
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField2
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField3
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField4
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField5
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField6
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField7
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField8
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+- field: PKField9
+  description: Primary Key Field
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocID
+  - LineID

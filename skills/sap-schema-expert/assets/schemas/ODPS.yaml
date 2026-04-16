@@ -1,0 +1,417 @@
+table: ODPS
+description: Deposit
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ODPS.htm
+fields:
+- field: DeposId
+  description: Payment Internal ID
+  type: Int
+  size: 11
+  default: 0
+- field: DeposType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: K
+  constraints:
+  - key: K
+    label: Check Deposit
+  - key: C
+    label: Cash Payment
+  - key: V
+    label: Credit Deposit
+  - key: B
+    label: Bill of Exchange
+- field: DeposNum
+  description: Payment No.
+  type: Int
+  size: 11
+- field: DeposDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: DeposCurr
+  description: Currency for Payments
+  type: nVarChar
+  size: 3
+- field: BanckAcct
+  description: Deposit Account
+  type: nVarChar
+  size: 15
+- field: DeposAcct
+  description: Bank Account Number
+  type: nVarChar
+  size: 50
+- field: DeposBrnch
+  description: Branch for Payments
+  type: nVarChar
+  size: 50
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 254
+- field: LocTotal
+  description: Total (LC)
+  type: Num
+  size: 19.6
+- field: FcTotal
+  description: Total (FC)
+  type: Num
+  size: 19.6
+- field: SysTotal
+  description: Total (SC)
+  type: Num
+  size: 19.6
+- field: TransAbs
+  description: Journal Entry Key
+  type: Int
+  size: 11
+  related: OJDT
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: DocTime
+  description: Pay-In Time
+  type: Int
+  size: 6
+- field: AllocAcct
+  description: Cash
+  type: nVarChar
+  size: 15
+- field: ChkType
+  description: Check Deposit Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Cash Checks
+  - key: S
+    label: Postdated Checks
+- field: DpsBank
+  description: Bank Name for Payments
+  type: nVarChar
+  size: 30
+- field: DpostorNam
+  description: Name of Depositor
+  type: nVarChar
+  size: 30
+- field: Printed
+  description: Original/Copy
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocRate
+  description: Payment Rate
+  type: Num
+  size: 19.6
+- field: CrdBankAct
+  description: Voucher Account
+  type: nVarChar
+  size: 15
+- field: IsCard
+  description: Business Partner or Account
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: G/L Account
+  - key: C
+    label: BP
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: Splited
+  description: Split
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: VatAct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+- field: ComissAct
+  description: Commissions Account
+  type: nVarChar
+  size: 15
+- field: VatTotal
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: Comission
+  description: Commission
+  type: Num
+  size: 19.6
+- field: ComissDate
+  description: Commission Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: VatTotlSys
+  description: Total Tax on Input (SC)
+  type: Num
+  size: 19.6
+- field: ComissnSys
+  description: Total Commission (SC)
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DepostNorm
+  description: Deposit Norm
+  type: nVarChar
+  size: 8
+- field: PostType
+  description: Transaction Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Collection
+  - key: D
+    label: Discounted
+- field: BankCountr
+  description: Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CnclDps
+  description: Cancel Deposit
+  type: Int
+  size: 11
+  default: -1
+- field: CommisVat
+  description: Commission VAT Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: ReconAfter
+  description: Reconcile Amounts After Dpst
+  type: VarChar
+  size: 1
+  default: Y
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: ComisFC
+  description: Total Commission (FC)
+  type: Num
+  size: 19.6
+- field: VatTotlFC
+  description: Total Tax on Input (FC)
+  type: Num
+  size: 19.6
+- field: ComisCurr
+  description: Commission Currency
+  type: nVarChar
+  size: 3
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: SysRate
+  description: System Currency Rate
+  type: Num
+  size: 19.6
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: IncomeAct
+  description: Withholding Income Tax Account
+  type: nVarChar
+  size: 15
+- field: IncomeLC
+  description: Withholding Income Tax LC
+  type: Num
+  size: 19.6
+- field: IncomeFC
+  description: Withholding Income Tax FC
+  type: Num
+  size: 19.6
+- field: IncomeSC
+  description: Withholding Income Tax SC
+  type: Num
+  size: 19.6
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnDeposAcc
+  description: Encryption of Bank Account No.
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DeposId
+- key: VIS_NUM
+  unique: true
+  fields:
+  - DeposNum
+  - Series
+- key: SERIES
+  unique: false
+  fields:
+  - Series

@@ -1,0 +1,30 @@
+table: OCEST
+description: CEST Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCEST.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CEST
+  description: CEST Code
+  type: nVarChar
+  size: 32
+- field: Descr
+  description: Description
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CEST_CODE
+  unique: true
+  fields:
+  - CEST

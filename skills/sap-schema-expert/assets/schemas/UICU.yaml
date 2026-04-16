@@ -1,0 +1,37 @@
+table: UICU
+description: Customized Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UICU.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+- field: TPLName
+  description: Template Name
+  type: nVarChar
+  size: 155
+- field: TPLDesc
+  description: Template Description
+  type: nVarChar
+  size: 155
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+- field: Parent
+  description: Parent Template ID
+  type: Int
+  size: 6
+- field: IsTemplate
+  description: Is Template
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+- key: NAME_KEY
+  unique: true
+  fields:
+  - TPLName

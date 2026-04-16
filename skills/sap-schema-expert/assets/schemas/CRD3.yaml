@@ -1,0 +1,65 @@
+table: CRD3
+description: BP Control Account
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CRD3.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: AcctType
+  description: Account Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Domestic
+  - key: F
+    label: Foreign
+  - key: D
+    label: Down Payment
+  - key: A
+    label: Assets Account
+  - key: R
+    label: Bill of Exchange Accounts Receivable
+  - key: P
+    label: Bill of Exchange Accounts Payable
+  - key: C
+    label: Bill of Exchange on Collection
+  - key: S
+    label: Bill of Exchange Presentation
+  - key: Y
+    label: Assets Bill of Exchange Acct Payable
+  - key: I
+    label: Bill of Exchange Discounted
+  - key: U
+    label: Unpaid Bill of Exchange
+  - key: O
+    label: Open Debts
+  - key: H
+    label: Cash Discount Interim
+  - key: E
+    label: Exchange Rate Interim
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LogInstane
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: Int
+  size: 6
+  related: ADP1
+  default: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - AcctType

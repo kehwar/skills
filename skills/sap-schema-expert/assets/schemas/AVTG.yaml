@@ -1,0 +1,595 @@
+table: AVTG
+description: Tax Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AVTG.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 50
+- field: Rate
+  description: Rate %
+  type: Num
+  size: 19.6
+- field: EffecDate
+  description: Effective from
+  type: Date
+  size: 8
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Output Tax
+  - key: I
+    label: Input Tax
+- field: Account
+  description: Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsEC
+  description: EU
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Indicator
+  description: Triangular Deal
+  type: VarChar
+  size: 1
+  related: OIND
+- field: AcqstnRvrs
+  description: Acquisition/Reverse
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NonDedct
+  description: Non-Deductible %
+  type: Num
+  size: 19.6
+- field: AcqsTax
+  description: Acquisition Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GoddsShip
+  description: Goods Shipment
+  type: VarChar
+  size: 1
+  related: OGSP
+- field: NonDedAcc
+  description: Non-Deductible Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DeferrAcc
+  description: Deferred Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EquVatPr
+  description: Equalization Tax %
+  type: Num
+  size: 19.6
+- field: ReportCode
+  description: Group Description
+  type: nVarChar
+  size: 100
+- field: FixdAssts
+  description: Fixed Assets Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CalcMethod
+  description: Calculation Method
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Rate
+  - key: F
+    label: Fixed
+- field: TaxType
+  description: Tax Type (VAT or Stamp)
+  type: VarChar
+  size: 1
+  default: V
+  constraints:
+  - key: V
+    label: VAT
+  - key: S
+    label: Stamp
+- field: FixedAmnt
+  description: Fixed Amount (LC)
+  type: Num
+  size: 19.6
+- field: ExtCode
+  description: External Code
+  type: nVarChar
+  size: 10
+- field: Correction
+  description: Correction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatCrctn
+  description: VAT Correction
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: RetVatCode
+  description: Returning VAT Code
+  type: nVarChar
+  size: 8
+- field: RepType
+  description: Report Type
+  type: Int
+  size: 11
+  related: OKRT
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: TaxCtgr
+  description: Tax Type (Annual List)
+  type: nVarChar
+  size: 6
+  default: E
+  constraints:
+  - key: E
+    label: Excluded
+  - key: T
+    label: Taxable
+  - key: X
+    label: Exempt
+  - key: N
+    label: Not Taxable
+  - key: N31
+    label: N3.1 - Not Taxable - exports
+  - key: N32
+    label: N3.2 - Not Taxable - intra-community sales
+  - key: N33
+    label: N3.3 - Not Taxable - sales to San Marino
+  - key: N34
+    label: N3.4 - Not Taxable - operations similar to export sales
+  - key: N35
+    label: N3.5 - Not Taxable - due to tax exemption letter
+  - key: N36
+    label: N3.6 - Not Taxable - other transactions
+  - key: G
+    label: Gross Profit
+  - key: R
+    label: Reverse Charge
+  - key: R61
+    label: N6.1 - Reverse Charge - disposal of scrap and other recycled materials
+  - key: R62
+    label: N6.2 - Accounting Reversal - sale of gold and pure silver
+  - key: R63
+    label: N6.3 - Reverse Charge - subcontracting in the construction sector
+  - key: R64
+    label: N6.4 - Reverse Charge - sales of buildings
+  - key: R65
+    label: N6.5 - Reverse Charge - sales of cell phones
+  - key: R66
+    label: N6.6 - Reverse Charge - sales of electronic products
+  - key: R67
+    label: N6.7 - Reverse Charge - services of the construction and related sectors
+  - key: R68
+    label: N6.8 - Reverse Charge - energy sector operations
+  - key: R69
+    label: N6.9 - Reverse Charge - other cases
+  - key: U
+    label: Tourism
+  - key: A
+    label: Taxable - Article 162
+  - key: B
+    label: Taxable - Article 173 point 5
+  - key: C
+    label: Taxable - Construction
+  - key: D
+    label: Taxable - Expected Confirmation
+  - key: F
+    label: Taxable - Gross
+  - key: I
+    label: Taxable - Import
+  - key: Y
+    label: Taxable - Import from EAEU
+  - key: L
+    label: Taxable - Late Export
+  - key: O
+    label: Taxable - Not Confirmed
+  - key: S
+    label: Taxable - Real Estate
+  - key: W
+    label: Taxable - Sale of Company
+  - key: H
+    label: Excluded Art. 15
+  - key: J
+    label: Not Subject
+  - key: J21
+    label: N2.1 - Not Subject - to VAT under articles from 7 to 7-septies of DPR 633/72
+  - key: J22
+    label: N2.2 - Not Subject - other cases
+  - key: K
+    label: Paid in other EU country
+  - key: M
+    label: Taxable - Article 151 point 1
+  - key: P
+    label: Taxable - Article 170 point 3
+  - key: V
+    label: Taxable - Fixed Assets
+  - key: Q
+    label: Taxable - Tax Free
+- field: EquAccount
+  description: Equalization Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsIGIC
+  description: IGIC
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ServSupply
+  description: Service Supply
+  type: VarChar
+  size: 1
+  related: OSSP
+- field: Inactive
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxCtgrBL
+  description: Tax Type (Black List)
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Excluded
+  - key: T
+    label: Taxable
+  - key: X
+    label: Exempt
+  - key: N
+    label: Not Taxable
+  - key: S
+    label: Non-Subject
+- field: R349Code
+  description: Report 349 Code
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: E
+  - key: '2'
+    label: A
+  - key: '3'
+    label: T
+  - key: '4'
+    label: S
+  - key: '5'
+    label: I
+  - key: '6'
+    label: M
+  - key: '7'
+    label: H
+- field: VatRevAcc
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CashDisAcc
+  description: Cash Discount Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DpmTaxOAcc
+  description: Down Paymnt Tax Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatDedAcc
+  description: VAT Deductible Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CstmExpAcc
+  description: Customs VAT Expense Account
+  type: nVarChar
+  size: 15
+- field: CstmAlcAcc
+  description: Customs VAT Allocation Account
+  type: nVarChar
+  size: 15
+- field: TaxRegion
+  description: Tax Country Region
+  type: nVarChar
+  size: 5
+  default: PT
+  constraints:
+  - key: PT
+    label: Continental Portugal
+  - key: PT-AC
+    label: Azores Islands
+  - key: PT-MA
+    label: Madeira Islands
+- field: ExemReason
+  description: Tax Exemption Reason
+  type: nVarChar
+  size: 3
+- field: Agent
+  description: Agent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OpCode
+  description: Tax Operation Code
+  type: nVarChar
+  size: 7
+- field: Export
+  description: Export
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Section
+  description: VAT Section
+  type: nVarChar
+  size: 3
+- field: SplitPaymt
+  description: Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitPayAc
+  description: Split Payment Account
+  type: nVarChar
+  size: 15
+- field: TaxAgent
+  description: Tax Agent (Section 3)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SectionLim
+  description: VAT Section (under limit)
+  type: nVarChar
+  size: 3
+- field: VatSubjCod
+  description: VAT Subject Code
+  type: nVarChar
+  size: 10
+- field: VatType
+  description: Type of VAT
+  type: Int
+  size: 11
+  default: -1
+- field: VatCategor
+  description: VAT Category
+  type: Int
+  size: 11
+  default: -1
+- field: Parag44
+  description: Paragraph 44
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ProrataDed
+  description: Pro-rata deductible
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExcFrmTaxS
+  description: Exclude from Tax Summary Report Total A/R or A/P Net Amounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CstmActing
+  description: Customer Accounting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CstmActOut
+  description: Customer Accounting Corresponding Tax Code
+  type: nVarChar
+  size: 8
+- field: StdTaxCode
+  description: Standard Tax Code
+  type: nVarChar
+  size: 35
+- field: AcqRevTax
+  description: Acquisition/Reverse Corresponding Tax Code
+  type: nVarChar
+  size: 8
+- field: ExReasonHU
+  description: Tax Exemption Reason
+  type: nVarChar
+  size: 30
+- field: ExRemarkHU
+  description: Tax Exemption Remark
+  type: nVarChar
+  size: 50
+- field: EBVatCateg
+  description: VAT Category
+  type: Int
+  size: 11
+- field: SAFTTaxCod
+  description: SAF-T Tax Code
+  type: nVarChar
+  size: 10
+  default: NOR
+  constraints:
+  - key: RED
+    label: Reduced Tax
+  - key: INT
+    label: Middle Tax
+  - key: NOR
+    label: Normal Tax
+  - key: ISE
+    label: Exempt
+  - key: OUT
+    label: Others
+- field: EBVatExCau
+  description: VAT Exemption Cause
+  type: Int
+  size: 11
+  related: OVEC
+- field: VatClasTyp
+  description: VAT Expense Class. Type
+  type: Int
+  size: 11
+  related: OECP
+- field: VatClasCat
+  description: VAT Expense Class. Category
+  type: Int
+  size: 11
+  related: OECC
+- field: SAFTTxCdEx
+  description: SAF-T Tax Code
+  type: nVarChar
+  size: 10
+  related: OSTX
+  default: NOR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LogInstanc
+- key: GROUP_NAME
+  unique: false
+  fields:
+  - Name
+  - LogInstanc

@@ -1,0 +1,32 @@
+table: UDO1
+description: User-Defined Objects - Child
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDO1.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: SonNum
+  description: Child No.
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 19
+  related: OUTB
+- field: LogName
+  description: Log Table Name
+  type: nVarChar
+  size: 20
+- field: SonName
+  description: Child Name
+  type: nVarChar
+  size: 100
+  default: ''' '''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - SonNum

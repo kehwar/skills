@@ -1,0 +1,21 @@
+table: OJPE
+description: Local Era Calendar
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OJPE.htm
+fields:
+- field: Code
+  description: Local Era Code
+  type: VarChar
+  size: 1
+- field: EraName
+  description: Local Era Name
+  type: nVarChar
+  size: 20
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

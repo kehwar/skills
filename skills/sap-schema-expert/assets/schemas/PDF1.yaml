@@ -1,0 +1,150 @@
+table: PDF1
+description: Payment Draft - Checks
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PDF1.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OPDF
+- field: LineID
+  description: Row Number
+  type: Int
+  size: 11
+- field: DueDate
+  description: Check Date
+  type: Date
+  size: 8
+- field: CheckNum
+  description: Check Number
+  type: Int
+  size: 11
+- field: BankCode
+  description: Account No.
+  type: nVarChar
+  size: 30
+  default: '-1'
+- field: Branch
+  description: Branch Number
+  type: nVarChar
+  size: 50
+- field: AcctNum
+  description: Account Number
+  type: nVarChar
+  size: 50
+- field: Details
+  description: Details
+  type: nVarChar
+  size: 254
+- field: Trnsfrable
+  description: Negotiable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckSum
+  description: Check Amount
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Check Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Flags
+  description: Flags
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '24'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CountryCod
+  description: Country/Region Code
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: CheckAct
+  description: Checking Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CheckAbs
+  description: Check ID Entry
+  type: Int
+  size: 11
+  related: OCHO
+- field: BnkActKey
+  description: Bank Account Internal ID
+  type: Int
+  size: 11
+  related: DSC1
+- field: ManualChk
+  description: Manual Check
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FiscalID
+  description: Fiscal ID
+  type: nVarChar
+  size: 100
+- field: OrigIssdBy
+  description: Orginally Issued By
+  type: nVarChar
+  size: 254
+- field: Endorse
+  description: Endorse
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EndorsChNo
+  description: Endorsable Check No.
+  type: Int
+  size: 11
+  related: OCHH
+- field: EnAcctNum
+  description: Encryption of Account Number
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: ECheck
+  description: E-Check
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - LineID

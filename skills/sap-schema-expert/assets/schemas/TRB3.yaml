@@ -1,0 +1,20 @@
+table: TRB3
+description: Tax Report Wizard - Selected Tax Categories
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRB3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRB
+- field: NfTaxId
+  description: ID of Nota Fiscal Tax Category
+  type: Int
+  size: 11
+  related: ONFT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - NfTaxId

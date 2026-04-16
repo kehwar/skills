@@ -1,0 +1,179 @@
+table: OEJB
+description: Wizard Run Details for ERV-JAb
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OEJB.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: WizardName
+  description: Wizard Name
+  type: nVarChar
+  size: 100
+- field: FromDate
+  description: From Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Date
+  type: Date
+  size: 8
+- field: PFromDate
+  description: Previous Year From Date
+  type: Date
+  size: 8
+- field: PToDate
+  description: Previous Year To Date
+  type: Date
+  size: 8
+- field: DateOfRun
+  description: Date of Run
+  type: Date
+  size: 8
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: ActYearCl
+  description: Classifictn in Actual Yr
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Small
+  - key: M
+    label: Medium
+  - key: L
+    label: Large
+- field: FormFinSt
+  description: Form of Financial Statement
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Small GmbH (UGB Form 2,3)
+  - key: '2'
+    label: Small GmbH with Balance Sheet
+  - key: '3'
+    label: Medium Large GmbH
+  - key: '4'
+    label: AG (Eng. PLC)
+- field: EBSTmpl
+  description: E-Balance Sheet Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: EPaLTmpl
+  description: E-P&L Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: OverwrFinS
+  description: Overwrite Financial Statement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Reference
+  description: Reference
+  type: nVarChar
+  size: 25
+- field: HBCode
+  description: House Bank Code
+  type: Int
+  size: 11
+  related: DSC1
+- field: PayRef
+  description: Payment Reference
+  type: nVarChar
+  size: 12
+- field: SndrRole
+  description: Sender Role
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: 1 - Sole Company Representative and Signatory
+  - key: '2'
+    label: 2 - Sole Authorized Company Representative
+  - key: '3'
+    label: 3 - One of Authorized Company Representatives
+- field: CRegNumber
+  description: Commercial Register Number
+  type: nVarChar
+  size: 7
+- field: LFBSheetD
+  description: Legal Form on Actl Bal Sht Dte
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: AG
+    label: Public Limited Company (AG)
+  - key: SC
+    label: European Cooperative Society (SCE)
+  - key: SE
+    label: Company under European Law (SE, Societa Europaea)
+  - key: GEN
+    label: Industrial Cooperative Society
+  - key: GES
+    label: Limited Liability Company (GmbH)
+  - key: KG
+    label: Limited Partnership
+  - key: OG
+    label: Open Company
+- field: LFBSheetPr
+  description: Lgl Form on Bal Sht Dte Prv Yr
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: AG
+    label: Public Limited Company (AG)
+  - key: SC
+    label: European Cooperative Society (SCE)
+  - key: SE
+    label: Company under European Law (SE, Societa Europaea)
+  - key: GEN
+    label: Industrial Cooperative Society
+  - key: GES
+    label: Limited Liability Company (GmbH)
+  - key: KG
+    label: Limited Partnership
+  - key: OG
+    label: Open Company
+- field: RegNum
+  description: Reg. No. of Partner Company
+  type: nVarChar
+  size: 7
+- field: CmpanyName
+  description: Company Name
+  type: Text
+  size: 16
+- field: XMLFile
+  description: XML File Storage
+  type: Text
+  size: 16
+- field: TimeOfRun
+  description: Time of Run
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId

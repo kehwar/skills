@@ -1,0 +1,181 @@
+table: DRF26
+description: Draft - E-Way Bill Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DRF26.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODRF
+- field: SuplyType
+  description: EWB Transaction Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: O
+    label: Outward
+  - key: I
+    label: Inward
+- field: SubSplyTyp
+  description: EWB Sub-Type
+  type: Int
+  size: 11
+  related: OEST
+- field: DocType
+  description: EWB Doc. Type
+  type: nVarChar
+  size: 3
+  related: OEDT
+- field: TransMode
+  description: EWB Transportation Mode
+  type: Int
+  size: 11
+  related: OETM
+- field: Distance
+  description: EWB Transport Distance
+  type: Num
+  size: 19.6
+- field: TransDocNo
+  description: EWB Transporter Doc. No.
+  type: nVarChar
+  size: 16
+- field: TransDate
+  description: EWB Transportation Date
+  type: Date
+  size: 8
+- field: VehicleTyp
+  description: EWB Vehicle Type
+  type: nVarChar
+  size: 2
+  related: OEVT
+- field: VehicleNo
+  description: EWB Vehicle Number
+  type: nVarChar
+  size: 15
+- field: EWayBillNo
+  description: EWB No.
+  type: nVarChar
+  size: 20
+- field: EwbDate
+  description: E-Way Bill Date
+  type: Date
+  size: 8
+- field: FrmTraName
+  description: EWB Consignor Name
+  type: nVarChar
+  size: 200
+- field: FrmAddres1
+  description: EWB Consignor Address 1
+  type: nVarChar
+  size: 120
+- field: FrmAddres2
+  description: EWB Consignor Address 2
+  type: nVarChar
+  size: 120
+- field: FrmZipCode
+  description: EWB Consignor Zip Code
+  type: nVarChar
+  size: 20
+- field: ActFrmStat
+  description: Dispatch State of EWB Consignor
+  type: nVarChar
+  size: 2
+- field: ToTraName
+  description: EWB Consignee Name
+  type: nVarChar
+  size: 200
+- field: ToAddres1
+  description: EWB Consignee Address 1
+  type: nVarChar
+  size: 120
+- field: ToAddres2
+  description: EWB Consignee Address 2
+  type: nVarChar
+  size: 120
+- field: ToZipCode
+  description: EWB Consignee Zip Code
+  type: nVarChar
+  size: 20
+- field: ActToState
+  description: Ship-To State of EWB Consignee
+  type: nVarChar
+  size: 2
+- field: FrmGSTN
+  description: EWB Consignor GSTN
+  type: nVarChar
+  size: 15
+- field: FrmState
+  description: Bill-To State of EWB Consignor
+  type: nVarChar
+  size: 2
+- field: ToGSTN
+  description: EWB Consignee GSTN
+  type: nVarChar
+  size: 15
+- field: ToState
+  description: Bill-To State of EWB Consignee
+  type: nVarChar
+  size: 2
+- field: MainHsnEnt
+  description: EWB Main HSN Entry
+  type: Int
+  size: 11
+  related: OCHP
+- field: FrmPlace
+  description: EWB Consignor Place
+  type: nVarChar
+  size: 50
+- field: ToPlace
+  description: EWB Consignee Place
+  type: nVarChar
+  size: 50
+- field: TransID
+  description: EWB Transporter ID
+  type: nVarChar
+  size: 15
+- field: TransName
+  description: EWB Transporter Name
+  type: nVarChar
+  size: 25
+- field: ExpireDate
+  description: EWB Expiration Date
+  type: Date
+  size: 8
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '112'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: TspEntry
+  description: Transporter Abs. Entry
+  type: Int
+  size: 11
+  related: OTSP
+- field: TspLine
+  description: Transportation Line
+  type: Int
+  size: 11
+- field: TransType
+  description: Transaction Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: Regular
+  - key: '2'
+    label: Bill To-Ship To
+  - key: '3'
+    label: Bill From-Dispatch From
+  - key: '4'
+    label: Combination of 2 and 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

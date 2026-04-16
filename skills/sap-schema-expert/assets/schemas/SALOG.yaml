@@ -1,0 +1,212 @@
+table: SALOG
+description: add-ons change log table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SALOG.htm
+fields:
+- field: Id
+  description: Log ID
+  type: Int
+  size: 11
+  default: -1
+- field: Operation
+  description: DB Operation
+  type: nVarChar
+  size: 20
+- field: AddOnId
+  description: AddOn ID
+  type: Int
+  size: 11
+- field: NameSpace
+  description: Partner Name Space
+  type: nVarChar
+  size: 20
+- field: PName
+  description: Partner Name
+  type: nVarChar
+  size: 40
+- field: AName
+  description: AddOn Name
+  type: nVarChar
+  size: 40
+- field: EName
+  description: AddOn Exe name
+  type: nVarChar
+  size: 128
+- field: CData
+  description: Partner Contact Data
+  type: nVarChar
+  size: 80
+- field: AddOnChk
+  description: AddOn Exe Check Sum
+  type: nVarChar
+  size: 32
+- field: InstName
+  description: AddOn Installer Name
+  type: nVarChar
+  size: 128
+- field: InstChkSum
+  description: AddOn Installer Check Sum
+  type: nVarChar
+  size: 32
+- field: InstTime
+  description: Installation estimation time
+  type: Int
+  size: 11
+- field: AddOnVer
+  description: AddOn Version
+  type: nVarChar
+  size: 20
+- field: ForceFlag
+  description: AddOn Install force flag
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UnInstName
+  description: AddOn Uninstaller Name
+  type: nVarChar
+  size: 128
+- field: UnInstChk
+  description: AddOn UnInstaller Check Sum
+  type: nVarChar
+  size: 32
+- field: UnInstPar
+  description: UnInstaller params
+  type: nVarChar
+  size: 200
+- field: InstIsUn
+  description: Is Installer is UnInstaller
+  type: VarChar
+  size: 1
+- field: AGroup
+  description: AddOn Group
+  type: VarChar
+  size: 1
+- field: IParams
+  description: Installer Params
+  type: nVarChar
+  size: 200
+- field: UnInstTime
+  description: Uninstallation estimation time
+  type: Int
+  size: 11
+  default: 0
+- field: AutoAssign
+  description: Automatic Company Assignment
+  type: VarChar
+  size: 1
+  default: N
+- field: Visible
+  description: AddOn is visible in AddOnAdmin
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Yes, visible
+  - key: N
+    label: ''
+- field: SelfUpgrd
+  description: Don`t install/uninstal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Yes, don`t install/uninstall
+  - key: N
+    label: No, perform install/uninstall
+- field: InstSil
+  description: Use silent mode in install
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Silent mode supported
+  - key: N
+    label: Silent mode not supported
+- field: UnInstSil
+  description: Use silent mode in uninstall
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Silent mode supported
+  - key: N
+    label: Silent mode not supported
+- field: UpgSil
+  description: Use silent mode in upgrade
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Silent mode supported
+  - key: N
+    label: Silent mode not supported
+- field: InstPFChk
+  description: Checksum of install param file
+  type: nVarChar
+  size: 32
+- field: UnInstPFCh
+  description: Checksum of uninstall par file
+  type: nVarChar
+  size: 32
+- field: UpgPFChk
+  description: Checksum of upgrade param file
+  type: nVarChar
+  size: 32
+- field: UpgName
+  description: Addon upgrader name
+  type: nVarChar
+  size: 128
+- field: UpgTime
+  description: Estimated upgrade time
+  type: Int
+  size: 11
+  default: 0
+- field: UpgParams
+  description: Upgrader params
+  type: nVarChar
+  size: 200
+- field: UpgChkSum
+  description: Addon upgrader checksum
+  type: nVarChar
+  size: 32
+- field: IsAdd64
+  description: Is Addon Installer 64bit
+  type: VarChar
+  size: 1
+  default: N
+- field: AddPlat
+  description: Platform of addon installer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: x86
+  - key: X
+    label: x64
+- field: ClientType
+  description: Client type supported by the addon
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: W
+    label: Windows desktop
+  - key: B
+    label: Browser access
+  - key: A
+    label: All
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

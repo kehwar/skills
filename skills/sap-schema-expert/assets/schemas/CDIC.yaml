@@ -1,0 +1,22 @@
+table: CDIC
+description: Dictionary
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CDIC.htm
+fields:
+- field: Namespace
+  description: Namespace
+  type: nVarChar
+  size: 50
+- field: _Key
+  description: Key
+  type: nVarChar
+  size: 50
+- field: _Value
+  description: Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Namespace
+  - _Key

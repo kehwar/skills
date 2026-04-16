@@ -1,0 +1,47 @@
+table: DAR3
+description: Data Archive - Handwritten Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DAR3.htm
+fields:
+- field: ArcEntry
+  description: Data Archive Entry
+  type: Int
+  size: 11
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+- field: DocAbs
+  description: Doc. No.
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  default: ''' '''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ArcEntry
+  - Line_ID
+- key: DOC_NUM
+  unique: false
+  fields:
+  - DocType
+  - DocSubType
+  - DocNum
+  - PIndicator

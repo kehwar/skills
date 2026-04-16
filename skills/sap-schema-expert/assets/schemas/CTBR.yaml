@@ -1,0 +1,49 @@
+table: CTBR
+description: Toolbars
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CTBR.htm
+fields:
+- field: UserSign
+  description: ''
+  type: Int
+  size: 6
+  related: OUSR
+- field: ToolbarId
+  description: ''
+  type: Int
+  size: 11
+- field: Docking
+  description: ''
+  type: Int
+  size: 6
+- field: LeftID
+  description: ''
+  type: Int
+  size: 6
+- field: TopID
+  description: ''
+  type: Int
+  size: 6
+- field: RightID
+  description: ''
+  type: Int
+  size: 6
+- field: BottomID
+  description: ''
+  type: Int
+  size: 6
+- field: VisibleID
+  description: ''
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserSign
+  - ToolbarId

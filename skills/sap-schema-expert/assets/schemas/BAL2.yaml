@@ -1,0 +1,34 @@
+table: BAL2
+description: Period indicators for opening Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/BAL2.htm
+fields:
+- field: PeriodID
+  description: Period Indicator
+  type: Int
+  size: 11
+- field: DateFrom
+  description: Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Date To
+  type: Date
+  size: 8
+- field: FiscalYear
+  description: Fiscal Year
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PeriodID
+- key: SECONDARY
+  unique: true
+  fields:
+  - DateFrom
+  - DateTo

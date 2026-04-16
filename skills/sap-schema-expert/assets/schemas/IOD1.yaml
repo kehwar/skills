@@ -1,0 +1,206 @@
+table: IOD1
+description: Inventory Opening Balance Draft - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IOD1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OIOD
+- field: DocLineNum
+  description: Row Number in Document
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: InvntryUom
+  description: Inventory UoM
+  type: nVarChar
+  size: 100
+- field: OnHandBef
+  description: Quantity Stored in Warehouse
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Quantity - Delta
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Rate
+  description: Currency Price
+  type: Num
+  size: 19.6
+- field: IOffIncAcc
+  description: Inventory Offset Increase Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DOffDecAcc
+  description: Inventory Offset Decrease Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Document Total (FC)
+  type: Num
+  size: 19.6
+- field: DocTotalSy
+  description: Document Total (SC)
+  type: Num
+  size: 19.6
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '310000001'
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BarCode
+  description: Bar Code
+  type: nVarChar
+  size: 254
+- field: InvUoM
+  description: Inventory UoM
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InvUoMQty
+  description: Inventory UoM Qty
+  type: Num
+  size: 19.6
+- field: BinEntry
+  description: Bin Location Entry
+  type: Int
+  size: 11
+  related: OBIN
+- field: FirmCode
+  description: Manufacturer
+  type: Int
+  size: 6
+  related: OMRC
+- field: SuppCatNum
+  description: Mfr Catalog No.
+  type: nVarChar
+  size: 50
+- field: CardCode
+  description: Preferred Vendor
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+- field: ItmsGrpCod
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+  default: 100
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: BinNegQty
+  description: Allow Bin Negative Quantity
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: ActPrice
+  description: Actual Price
+  type: Num
+  size: 19.6
+- field: PostValueL
+  description: Posted Value LC
+  type: Num
+  size: 19.6
+- field: PostValueS
+  description: Posted Value SC
+  type: Num
+  size: 19.6
+- field: PPTaxExRe
+  description: Plastic Packaging Tax Exemption Reason
+  type: nVarChar
+  size: 2
+- field: PlPaWght
+  description: Plastic Packaging Weight
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - DocLineNum
+- key: ITEM_CODE
+  unique: false
+  fields:
+  - ItemCode

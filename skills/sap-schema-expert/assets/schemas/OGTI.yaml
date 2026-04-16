@@ -1,0 +1,124 @@
+table: OGTI
+description: GTS Invoice
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OGTI.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: MappingNum
+  description: GTS Mapping No.
+  type: nVarChar
+  size: 20
+- field: Voiding
+  description: Voiding Flag
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Normal
+  - key: '1'
+    label: Voided
+- field: ItemList
+  description: Item List
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Without Item List
+  - key: '1'
+    label: With Item List
+- field: CategNum
+  description: GTS Cat. No.
+  type: nVarChar
+  size: 20
+- field: GtsInvNum
+  description: GTS Invoice No.
+  type: nVarChar
+  size: 30
+- field: ItemRowNum
+  description: Item List Row Number
+  type: Int
+  size: 11
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: FiscaMonth
+  description: Fiscal Month
+  type: Int
+  size: 6
+- field: DocAmount
+  description: Document Amount
+  type: Num
+  size: 19.6
+- field: VatPercent
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: BpName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: BpTaxRgNum
+  description: BP Tax Registration No.
+  type: nVarChar
+  size: 20
+- field: BpAddrTel
+  description: BP Address and Telephone
+  type: nVarChar
+  size: 80
+- field: BpBankNum
+  description: BP Bank Number
+  type: nVarChar
+  size: 60
+- field: SellerName
+  description: Seller Name
+  type: nVarChar
+  size: 80
+- field: SelTaxReg
+  description: Seller Tax Registration No.
+  type: nVarChar
+  size: 80
+- field: SelAddTel
+  description: Seller Address and Tel.
+  type: nVarChar
+  size: 80
+- field: SelBankAct
+  description: Seller Bank Account
+  type: nVarChar
+  size: 80
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 160
+- field: Issuer
+  description: Issuer
+  type: nVarChar
+  size: 8
+- field: Checker
+  description: Checker
+  type: nVarChar
+  size: 8
+- field: Payee
+  description: Payee
+  type: nVarChar
+  size: 8
+- field: InBndFile
+  description: 'Inbound File: Full Name'
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,70 @@
+table: FML1
+description: Tax Formula Parameter Declaration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/FML1.htm
+fields:
+- field: FmlId
+  description: Formula ID
+  type: Int
+  size: 11
+  related: OFML
+- field: DispOrder
+  description: Display Order
+  type: Int
+  size: 11
+- field: VarName
+  description: Variable Name
+  type: nVarChar
+  size: 64
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Input
+  - key: '2'
+    label: Output
+  - key: '3'
+    label: In Out
+- field: Parameter
+  description: Parameter
+  type: Text
+  size: 16
+- field: DataType
+  description: Data Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: T
+    label: Tax Amounts
+  - key: S
+    label: Amounts
+  - key: P
+    label: Prices
+  - key: Q
+    label: Quantities
+  - key: '%'
+    label: Percents
+  - key: I
+    label: Integer
+  - key: A
+    label: String
+  - key: B
+    label: Boolean
+  - key: M
+    label: Measures
+  - key: W
+    label: WTax
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FmlId
+  - DispOrder

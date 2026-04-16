@@ -1,0 +1,49 @@
+table: ECDW1
+description: ECD Wizard - Rows 1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECDW1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Template Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: B
+    label: Balance Sheet
+  - key: P
+    label: Profit and Loss
+- field: ExNumData1
+  description: Extra Numeric Data 1
+  type: Int
+  size: 11
+- field: ExNumData2
+  description: Extra Numeric Data 2
+  type: Int
+  size: 11
+- field: ExNumData3
+  description: Extra Numeric Data 3
+  type: Int
+  size: 11
+- field: ExStrData1
+  description: Extra String Data 1
+  type: nVarChar
+  size: 254
+- field: ExStrData2
+  description: Extra String Data 2
+  type: nVarChar
+  size: 254
+- field: ExStrData3
+  description: Extra String Data 3
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - DocType
+  - ExNumData1
+  - ExNumData2

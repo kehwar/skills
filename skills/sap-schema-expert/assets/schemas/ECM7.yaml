@@ -1,0 +1,129 @@
+table: ECM7
+description: Export Mapping Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECM7.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Code
+  description: Protocol Code
+  type: nVarChar
+  size: 8
+  related: OECM
+- field: Priority
+  description: Determination Priority
+  type: Int
+  size: 11
+- field: BPCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: Serie
+  description: Digital Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: -1
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '204'
+    label: A/P Down Payment
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '24'
+    label: Incoming Payment
+  - key: '46'
+    label: Outgoing Payment
+  - key: '67'
+    label: Inventory Transfers
+  - key: '15'
+    label: Deliveries
+  - key: '16'
+    label: Returns
+  - key: '14'
+    label: A/R Credit Memos
+  - key: '13'
+    label: A/R Invoices
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: ''
+  - key: AR
+    label: All A/R Documents
+  - key: AP
+    label: All A/P Documents
+- field: ExportFmt
+  description: Export Format
+  type: Int
+  size: 11
+  related: OLLF
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: FileNP
+  description: File Name and Path
+  type: Text
+  size: 16
+- field: VersionNum
+  description: Version Number
+  type: Int
+  size: 11
+- field: EIIAction
+  description: EII Invoice Action
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Send
+  - key: D
+    label: Decision
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

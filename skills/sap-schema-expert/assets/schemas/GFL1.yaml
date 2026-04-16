@@ -1,0 +1,45 @@
+table: GFL1
+description: Grid Filter Rules
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/GFL1.htm
+fields:
+- field: FormID
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: GridID
+  description: Grid ID
+  type: nVarChar
+  size: 11
+- field: UserCode
+  description: User Code
+  type: Int
+  size: 6
+- field: FilterID
+  description: Filter ID
+  type: Int
+  size: 11
+- field: GridColumn
+  description: Grid Column
+  type: Int
+  size: 6
+- field: FilterRule
+  description: FilterRule
+  type: Int
+  size: 6
+- field: Value
+  description: Value
+  type: nVarChar
+  size: 254
+- field: ValueTo
+  description: ValueTo
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormID
+  - GridID
+  - UserCode
+  - FilterID
+  - GridColumn

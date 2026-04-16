@@ -1,0 +1,39 @@
+table: OBBI
+description: Brazil Beverage Indexer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBBI.htm
+fields:
+- field: TableCode
+  description: Beverage Table Code
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: BrandCode
+  description: Beverage Commercial Brand Code
+  type: Int
+  size: 11
+  related: OBNI
+- field: GroupCode
+  description: Beverage Group Code
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ID
+  description: ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+- key: TBL_TM_GRP
+  unique: true
+  fields:
+  - TableCode
+  - BrandCode
+  - GroupCode

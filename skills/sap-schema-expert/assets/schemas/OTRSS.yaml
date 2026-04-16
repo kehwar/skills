@@ -1,0 +1,18 @@
+table: OTRSS
+description: Tax Replacement State Subscription
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTRSS.htm
+fields:
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: IEST
+  description: IEST
+  type: nVarChar
+  size: 14
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - State

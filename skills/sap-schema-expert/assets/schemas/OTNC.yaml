@@ -1,0 +1,26 @@
+table: OTNC
+description: Transaction Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTNC.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TransCat
+  description: Transaction Category
+  type: nVarChar
+  size: 100
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: TRANS
+  unique: true
+  fields:
+  - TransCat

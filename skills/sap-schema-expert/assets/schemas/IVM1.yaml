@@ -1,0 +1,31 @@
+table: IVM1
+description: Invoice Mapping Object Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/IVM1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OIVM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+- field: DocEntry
+  description: Document Entry
+  type: Int
+  size: 11
+- field: GtsStatus
+  description: GTS Status
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

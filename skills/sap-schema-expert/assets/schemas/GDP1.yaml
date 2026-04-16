@@ -1,0 +1,84 @@
+table: GDP1
+description: General Data Protection Wizard - Personal Fields Setup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/GDP1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PfsAbs
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: 50
+- field: RefObjType
+  description: Referenced Object Type
+  type: nVarChar
+  size: 20
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: R
+    label: Sales A/R
+  - key: P
+    label: Purchase A/P
+- field: OrigType
+  description: Original Type
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: User Defined
+  - key: S
+    label: Sensitive
+  - key: P
+    label: Personal
+  - key: N
+    label: Not Personal
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: S
+    label: Sensitive
+  - key: P
+    label: Personal
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: MaxType
+  description: Max. Type
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: User Defined
+  - key: S
+    label: Sensitive
+  - key: P
+    label: Personal
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - PfsAbs

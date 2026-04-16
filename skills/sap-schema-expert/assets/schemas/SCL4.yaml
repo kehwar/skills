@@ -1,0 +1,140 @@
+table: SCL4
+description: Expense Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/SCL4.htm
+fields:
+- field: SrcvCallID
+  description: Service Call No.
+  type: Int
+  size: 11
+  related: OSCL
+- field: Line
+  description: Row
+  type: Int
+  size: 6
+  default: -1
+- field: PartType
+  description: Part Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Inventory
+  - key: N
+    label: Travel/Labor
+- field: DocAbs
+  description: Document Internal Number
+  type: Int
+  size: 11
+- field: Object
+  description: Document Type
+  type: nVarChar
+  size: 20
+  default: '13'
+  constraints:
+  - key: '13'
+    label: A/R Invoice
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '67'
+    label: Inventory Transfer
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '0'
+    label: ''
+  - key: '17'
+    label: Sales Order
+  - key: '23'
+    label: Sales Quotation
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '21'
+    label: Goods Return
+  - key: '234000032'
+    label: Goods Return Request
+  - key: '234000031'
+    label: Return Request
+- field: DocPstDate
+  description: Document Posting Date
+  type: Date
+  size: 8
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: User Signature 2
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: DocNumber
+  description: Document No.
+  type: Int
+  size: 11
+- field: Transfered
+  description: Transfered
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: StckTrnDir
+  description: Inventory Transaction Direction
+  type: VarChar
+  size: 1
+  constraints:
+  - key: T
+    label: Transfer to Technician
+  - key: N
+    label: Transfer from Technician
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrcvCallID
+  - Line
+  - PartType
+  - DocAbs
+  - Object

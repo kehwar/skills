@@ -1,0 +1,2818 @@
+table: OCRD
+description: Business Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OCRD.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CardType
+  description: BP Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Vendor
+  - key: L
+    label: Lead
+- field: GroupCode
+  description: Group Code
+  type: Int
+  size: 6
+  related: OCRG
+- field: CmpPrivate
+  description: Type of Business
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Company
+  - key: I
+    label: Private
+  - key: G
+    label: Government
+  - key: E
+    label: Employee
+  - key: S
+    label: Sole Taxable Subject
+- field: Address
+  description: Bill-to Street
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Bill-to Zip Code
+  type: nVarChar
+  size: 20
+- field: MailAddres
+  description: Ship-to Street
+  type: nVarChar
+  size: 100
+- field: MailZipCod
+  description: Ship-to Zip Code
+  type: nVarChar
+  size: 20
+- field: Phone1
+  description: Telephone 1
+  type: nVarChar
+  size: 50
+- field: Phone2
+  description: Telephone 2
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax Number
+  type: nVarChar
+  size: 50
+- field: CntctPrsn
+  description: Contact Person
+  type: nVarChar
+  size: 90
+- field: Notes
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: Balance
+  description: Account Balance
+  type: Num
+  size: 19.6
+- field: ChecksBal
+  description: Open Checks Balance in FC
+  type: Num
+  size: 19.6
+- field: DNotesBal
+  description: Open Deliveries/GRPO Balance
+  type: Num
+  size: 19.6
+- field: OrdersBal
+  description: Open Orders Balance
+  type: Num
+  size: 19.6
+- field: GroupNum
+  description: Payment Terms Code
+  type: Int
+  size: 6
+  related: OCTG
+  default: -1
+- field: CreditLine
+  description: Credit Limit
+  type: Num
+  size: 19.6
+- field: DebtLine
+  description: Payable Limit
+  type: Num
+  size: 19.6
+- field: Discount
+  description: Discount %
+  type: Num
+  size: 19.6
+- field: VatStatus
+  description: Tax Definition
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Liable
+  - key: N
+    label: Exempted
+  - key: E
+    label: EU
+- field: LicTradNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: DdctStatus
+  description: Liable for Ded. at Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DdctPrcnt
+  description: Withholding Tax Deduction %
+  type: Num
+  size: 19.6
+- field: ValidUntil
+  description: Expiration Date for -% of Deduction
+  type: Date
+  size: 8
+- field: Chrctrstcs
+  description: Properties
+  type: Int
+  size: 11
+- field: ExMatchNum
+  description: Last Ext. Reconciliation No.
+  type: Int
+  size: 11
+- field: InMatchNum
+  description: Last Int. Reconciliation No.
+  type: Int
+  size: 11
+- field: ListNum
+  description: Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+- field: DNoteBalFC
+  description: Open DN Balance in BP Curr.
+  type: Num
+  size: 19.6
+- field: OrderBalFC
+  description: Open Orders Bal. in BP Curr.
+  type: Num
+  size: 19.6
+- field: DNoteBalSy
+  description: Open Deliveries/GRPO Balance in SC
+  type: Num
+  size: 19.6
+- field: OrderBalSy
+  description: Open Orders Balance in SC
+  type: Num
+  size: 19.6
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BalTrnsfrd
+  description: Balances transferred
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IntrstRate
+  description: Interest % on Liabilities
+  type: Num
+  size: 19.6
+- field: Commission
+  description: Commission % for Customer
+  type: Num
+  size: 19.6
+- field: CommGrCode
+  description: Commission Group
+  type: Int
+  size: 6
+  related: OCOG
+  default: 0
+- field: Free_Text
+  description: Free Text
+  type: Text
+  size: 16
+- field: SlpCode
+  description: Sales Employee Code
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: PrevYearAc
+  description: Previous Year Balance
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Currency
+  description: BP Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: RateDifAct
+  description: Rate Differences Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalanceSys
+  description: Account Balance in SC
+  type: Num
+  size: 19.6
+- field: BalanceFC
+  description: BP Balance in FC
+  type: Num
+  size: 19.6
+- field: Protected
+  description: Protected BP
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Cellular
+  description: Mobile Phone
+  type: nVarChar
+  size: 50
+- field: AvrageLate
+  description: Average Payment Delay in Days
+  type: Int
+  size: 6
+- field: City
+  description: Bill-to City
+  type: nVarChar
+  size: 100
+- field: County
+  description: Bill-to County
+  type: nVarChar
+  size: 100
+- field: Country
+  description: Bill-to Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: MailCity
+  description: Ship-to City
+  type: nVarChar
+  size: 100
+- field: MailCounty
+  description: Ship-to County
+  type: nVarChar
+  size: 100
+- field: MailCountr
+  description: Ship-to Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: E_Mail
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: Picture
+  description: Picture
+  type: nVarChar
+  size: 200
+- field: DflAccount
+  description: Default Account
+  type: nVarChar
+  size: 50
+- field: DflBranch
+  description: Default Branch
+  type: nVarChar
+  size: 50
+- field: BankCode
+  description: Default Bank
+  type: nVarChar
+  size: 30
+  default: '-1'
+- field: AddID
+  description: ID No. 2
+  type: nVarChar
+  size: 64
+- field: Pager
+  description: Pager
+  type: nVarChar
+  size: 30
+- field: FatherCard
+  description: Consolidating Business Partner
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardFName
+  description: Foreign Name
+  type: nVarChar
+  size: 200
+- field: FatherType
+  description: Parent Summary Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Payment Consolidation
+  - key: D
+    label: Delivery Consolidation
+- field: QryGroup1
+  description: Property 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup2
+  description: Property 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup3
+  description: Property 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup4
+  description: Property 4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup5
+  description: Property 5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup6
+  description: Property 6
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup7
+  description: Property 7
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup8
+  description: Property 8
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup9
+  description: Property 9
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup10
+  description: Property 10
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup11
+  description: Property 11
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup12
+  description: Property 12
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup13
+  description: Property 13
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup14
+  description: Property 14
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup15
+  description: Property 15
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup16
+  description: Property 16
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup17
+  description: Property 17
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup18
+  description: Property 18
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup19
+  description: Property 19
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup20
+  description: Property 20
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup21
+  description: Property 21
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup22
+  description: Property 22
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup23
+  description: Property 23
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup24
+  description: Property 24
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup25
+  description: Property 25
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup26
+  description: Property 26
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup27
+  description: Property 27
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup28
+  description: Property 28
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup29
+  description: Property 29
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup30
+  description: Property 30
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup31
+  description: Property 31
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup32
+  description: Property 32
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup33
+  description: Property 33
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup34
+  description: Property 34
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup35
+  description: Property 35
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup36
+  description: Property 36
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup37
+  description: Property 37
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup38
+  description: Property 38
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup39
+  description: Property 39
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup40
+  description: Property 40
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup41
+  description: Property 41
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup42
+  description: Property 42
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup43
+  description: Property 43
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup44
+  description: Property 44
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup45
+  description: Property 45
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup46
+  description: Property 46
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup47
+  description: Property 47
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup48
+  description: Property 48
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup49
+  description: Property 49
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup50
+  description: Property 50
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup51
+  description: Property 51
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup52
+  description: Property 52
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup53
+  description: Property 53
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup54
+  description: Property 54
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup55
+  description: Property 55
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup56
+  description: Property 56
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup57
+  description: Property 57
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup58
+  description: Property 58
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup59
+  description: Property 59
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup60
+  description: Property 60
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup61
+  description: Property 61
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup62
+  description: Property 62
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup63
+  description: Property 63
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup64
+  description: Property 64
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DdctOffice
+  description: Deduction Approval Office
+  type: nVarChar
+  size: 10
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: ExportCode
+  description: Data Export Code
+  type: nVarChar
+  size: 8
+- field: DscntObjct
+  description: Object for Discounts
+  type: Int
+  size: 6
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '52'
+    label: Groups
+  - key: '8'
+    label: Properties
+  - key: '43'
+    label: Companies
+  - key: '4'
+    label: Items
+- field: DscntRel
+  description: Discounts Ratio
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Lowest Discount
+  - key: H
+    label: Highest Discount
+  - key: A
+    label: Average Disc.
+  - key: S
+    label: Discount Totals
+  - key: M
+    label: Discount Multiples
+- field: SPGCounter
+  description: SPG Counter
+  type: Int
+  size: 6
+  default: 0
+- field: SPPCounter
+  description: SPP Counter
+  type: Int
+  size: 11
+  default: 0
+- field: DdctFileNo
+  description: Tax Deduction File Number
+  type: nVarChar
+  size: 9
+- field: SCNCounter
+  description: SCN Counter
+  type: Int
+  size: 6
+- field: MinIntrst
+  description: Min. Interest Letter Amount
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: OprCount
+  description: Open Opportunities
+  type: Int
+  size: 11
+- field: ExemptNo
+  description: Exempt No.
+  type: nVarChar
+  size: 50
+- field: Priority
+  description: Priority
+  type: Int
+  size: 11
+  related: OBPP
+  default: -1
+- field: CreditCard
+  description: Credit Cards
+  type: Int
+  size: 6
+  related: OCRC
+  default: -1
+- field: CrCardNum
+  description: Credit Card No.
+  type: nVarChar
+  size: 254
+- field: CardValid
+  description: Credit Card Validity
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LocMth
+  description: LC Reconciliation
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: validTo
+  description: Active To
+  type: Date
+  size: 8
+- field: frozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: frozenFrom
+  description: Inactive From
+  type: Date
+  size: 8
+- field: frozenTo
+  description: Inactive To
+  type: Date
+  size: 8
+- field: sEmployed
+  description: Self-Employed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MTHCounter
+  description: MTH Counter
+  type: Int
+  size: 11
+- field: BNKCounter
+  description: BNK Counter
+  type: Int
+  size: 11
+- field: DdgKey
+  description: Withholding Tax Deduction Grp
+  type: Int
+  size: 11
+  related: ODDG
+  default: -1
+- field: DdtKey
+  description: Current Deduction Hierarchy
+  type: Int
+  size: 11
+  default: -1
+- field: ValidComm
+  description: Active Remarks
+  type: nVarChar
+  size: 30
+- field: FrozenComm
+  description: Inactive Remarks
+  type: nVarChar
+  size: 30
+- field: chainStore
+  description: Belongs to Retail Store
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DiscInRet
+  description: Allow Doc Discount in Returns
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: State1
+  description: Bill-to State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: State2
+  description: Ship-to State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: VatGroup
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '2'
+- field: Indicator
+  description: Indicator
+  type: nVarChar
+  size: 2
+  related: OIDC
+- field: ShipType
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+- field: DebPayAcct
+  description: Accounts Receivable/Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ShipToDef
+  description: Ship-to-Default
+  type: nVarChar
+  size: 50
+- field: Block
+  description: Bill-to Block
+  type: nVarChar
+  size: 100
+- field: MailBlock
+  description: Ship-to Block
+  type: nVarChar
+  size: 100
+- field: Password
+  description: Password
+  type: nVarChar
+  size: 32
+- field: ECVatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: Deleted
+  description: Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IBAN
+  description: IBAN
+  type: nVarChar
+  size: 50
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FormCode
+  description: 1099 Form Code
+  type: Int
+  size: 11
+  related: OTNN
+- field: Box1099
+  description: 1099 Box
+  type: nVarChar
+  size: 20
+- field: PymCode
+  description: Payment Method Code
+  type: nVarChar
+  size: 15
+  related: OPYM
+  default: '-1'
+- field: BackOrder
+  description: Backorder
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PartDelivr
+  description: Partial Delivery
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DunnLevel
+  description: Dunning Level
+  type: Int
+  size: 11
+  related: ODUN
+- field: DunnDate
+  description: Dunning Date
+  type: Date
+  size: 8
+- field: BlockDunn
+  description: Block Dunning
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BankCountr
+  description: Bank Country
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: CollecAuth
+  description: Collection Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DME
+  description: DME Identification
+  type: nVarChar
+  size: 5
+- field: InstrucKey
+  description: Instruction Key
+  type: nVarChar
+  size: 30
+- field: SinglePaym
+  description: Single Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ISRBillId
+  description: ISR Biller ID
+  type: nVarChar
+  size: 9
+- field: PaymBlock
+  description: Payment Block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: RefDetails
+  description: Reference Details
+  type: nVarChar
+  size: 20
+- field: HouseBank
+  description: House Bank
+  type: nVarChar
+  size: 30
+  default: '-1'
+- field: OwnerIdNum
+  description: ID Number
+  type: nVarChar
+  size: 15
+- field: PyBlckDesc
+  description: Payment Block Description
+  type: Int
+  size: 11
+  related: OPYB
+  default: -1
+- field: HousBnkCry
+  description: House Bank Country
+  type: nVarChar
+  size: 3
+- field: HousBnkAct
+  description: House Bank Account
+  type: nVarChar
+  size: 50
+- field: HousBnkBrn
+  description: House Bank Branch
+  type: nVarChar
+  size: 50
+- field: ProjectCod
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: SysMatchNo
+  description: Last Sys. Reconciliation No.
+  type: Int
+  size: 11
+  default: -1
+- field: VatIdUnCmp
+  description: Unified Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: AgentCode
+  description: Agent Code
+  type: nVarChar
+  size: 32
+  related: OAGP
+- field: TolrncDays
+  description: Tolerance Days
+  type: Int
+  size: 6
+- field: SelfInvoic
+  description: Self Invoice
+  type: VarChar
+  size: 1
+- field: DeferrTax
+  description: Deferred Tax
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LetterNum
+  description: Tax Exemption Letter No.
+  type: nVarChar
+  size: 50
+- field: MaxAmount
+  description: Max. Exemption Amount
+  type: Num
+  size: 19.6
+- field: FromDate
+  description: Exemption Validity Date From
+  type: Date
+  size: 8
+- field: ToDate
+  description: Exemption Validity Date To
+  type: Date
+  size: 8
+- field: WTLiable
+  description: Subject to Withholding Tax
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: ''
+    label: None
+- field: CrtfcateNO
+  description: Certificate No.
+  type: nVarChar
+  size: 20
+- field: ExpireDate
+  description: Expiration Date
+  type: Date
+  size: 8
+- field: NINum
+  description: Registration No.
+  type: nVarChar
+  size: 20
+- field: AccCritria
+  description: Accrual
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: Equ
+  description: Equalization Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HldCode
+  description: Holidays Name
+  type: nVarChar
+  size: 20
+  related: OHLD
+- field: ConnBP
+  description: Linked Business Partner
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: MltMthNum
+  description: Last Multi. Reconciliation No.
+  type: Int
+  size: 11
+- field: TypWTReprt
+  description: BP Type for WTax Report
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Company
+  - key: P
+    label: Person
+- field: VATRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: RepName
+  description: Representative Name
+  type: nVarChar
+  size: 15
+- field: Industry
+  description: Industry
+  type: Text
+  size: 16
+- field: Business
+  description: Business
+  type: Text
+  size: 16
+- field: WTTaxCat
+  description: Withholding Tax Cat.
+  type: Text
+  size: 16
+- field: IsDomestic
+  description: Is Domestic
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Domestic
+  - key: N
+    label: Foreign
+- field: IsResident
+  description: Is Resident
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Resident
+  - key: N
+    label: Non-Resident
+- field: AutoCalBCG
+  description: Auto Calculated Bank Charges
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: OtrCtlAcct
+  description: Other Receivable/Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AliasName
+  description: Alias Name
+  type: Text
+  size: 16
+- field: Building
+  description: Bill-to Building/Floor/Room
+  type: Text
+  size: 16
+- field: MailBuildi
+  description: Ship to Building/Floor/Room
+  type: Text
+  size: 16
+- field: BoEPrsnt
+  description: Customer Bill of Exchang Pres
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BoEDiscnt
+  description: Customer BoE Discounted
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BoEOnClct
+  description: Bill of Exchange on Collection
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UnpaidBoE
+  description: Unpaid Bill of Exchange
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ITWTCode
+  description: Income Tax WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: DunTerm
+  description: Dunning Term
+  type: nVarChar
+  size: 25
+  related: ODUT
+- field: ChannlBP
+  description: Channel BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DfTcnician
+  description: Default Technician
+  type: Int
+  size: 11
+  related: OHEM
+- field: Territory
+  description: Territory
+  type: Int
+  size: 11
+  related: OTER
+- field: BillToDef
+  description: Bill-to Default
+  type: nVarChar
+  size: 50
+- field: DpmClear
+  description: Payment Advances
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IntrntSite
+  description: Web Site
+  type: nVarChar
+  size: 100
+- field: LangCode
+  description: Language Code
+  type: Int
+  size: 11
+  related: OLNG
+- field: HousActKey
+  description: House Bank Account Key
+  type: Int
+  size: 11
+  related: DSC1
+- field: Profession
+  description: Profession
+  type: nVarChar
+  size: 50
+- field: CDPNum
+  description: Closing Date Procedure Number
+  type: Int
+  size: 6
+  related: OCDP
+- field: DflBankKey
+  description: Default Bank Key
+  type: Int
+  size: 11
+  related: ODSC
+- field: BCACode
+  description: Bank Charges Allocation Codes
+  type: nVarChar
+  size: 3
+  related: OBCA
+- field: UseShpdGd
+  description: Use Shipped Goods Account
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RegNum
+  description: Company Reg. No. (CRN)
+  type: nVarChar
+  size: 32
+- field: VerifNum
+  description: WTax Verification No.
+  type: nVarChar
+  size: 32
+- field: BankCtlKey
+  description: Default Bank Internal ID
+  type: nVarChar
+  size: 2
+- field: HousCtlKey
+  description: House Bank Control Number
+  type: nVarChar
+  size: 2
+- field: AddrType
+  description: Bill-to Address Type
+  type: nVarChar
+  size: 100
+- field: InsurOp347
+  description: 347 Insurance Operation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: MailAddrTy
+  description: Ship-to Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNo
+  description: Bill-to Street No.
+  type: nVarChar
+  size: 100
+- field: MailStrNo
+  description: Ship-to Street No.
+  type: nVarChar
+  size: 100
+- field: TaxRndRule
+  description: Tax Rounding Rule
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Company Default
+  - key: R
+    label: Round Off
+  - key: C
+    label: Round Up
+  - key: F
+    label: Round Down
+- field: VendTID
+  description: Vender Type ID
+  type: Int
+  size: 11
+  related: OVTP
+- field: ThreshOver
+  description: Threshold Overlook
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SurOver
+  description: Surcharge Overlook
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VendorOcup
+  description: Vendor Occupation
+  type: nVarChar
+  size: 15
+- field: OpCode347
+  description: 347 Operation Code
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Goods or Services Acquisitions
+  - key: D
+    label: Public Entities Acquisitions
+  - key: G
+    label: Travel Agent Purchases
+  - key: B
+    label: Sales or Services Revenues
+  - key: E
+    label: Public Subsidies
+  - key: F
+    label: Travel Agent Sales
+- field: DpmIntAct
+  description: DPM Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResidenNum
+  description: Residence Number
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Spanish Fiscal ID
+  - key: '2'
+    label: VAT Registration Number
+  - key: '3'
+    label: Passport
+  - key: '4'
+    label: Fiscal ID Issued by the Country of Residence
+  - key: '5'
+    label: Certificate of Fiscal Residence
+  - key: '6'
+    label: Other Document
+  - key: '7'
+    label: Not Registered
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: PlngGroup
+  description: Planning Group
+  type: nVarChar
+  size: 10
+- field: VatIDNum
+  description: VAT ID Number
+  type: nVarChar
+  size: 32
+- field: Affiliate
+  description: Affiliate
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MivzExpSts
+  description: Mivzak Export Status
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Not Exported
+  - key: U
+    label: Exported
+  - key: D
+    label: Deleted
+- field: HierchDdct
+  description: Hierarchical Deduction
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CertWHT
+  description: Withholding Tax Certified
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CertBKeep
+  description: Bookkeeping Certified
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WHShaamGrp
+  description: Withholding Shaam Group
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Services and Agriculture Products
+  - key: '2'
+    label: Construction and Transportation
+  - key: '3'
+    label: Insurance Commissions
+  - key: '4'
+    label: Withholding Tax Instructions
+  - key: '5'
+    label: Interest Exchange Rate Differences
+  - key: '6'
+    label: Rental Fees
+- field: IndustryC
+  description: Industry
+  type: Int
+  size: 11
+  related: OOND
+- field: DatevAcct
+  description: DATEV Account
+  type: nVarChar
+  size: 9
+- field: DatevFirst
+  description: First Data Entry
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GTSRegNum
+  description: GTS Registration Number
+  type: nVarChar
+  size: 20
+- field: GTSBankAct
+  description: GTS Bank Account
+  type: nVarChar
+  size: 80
+- field: GTSBilAddr
+  description: GTS Billing Address
+  type: nVarChar
+  size: 80
+- field: HsBnkSwift
+  description: House Bank BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: HsBnkIBAN
+  description: House Bank IBAN
+  type: nVarChar
+  size: 50
+- field: DflSwift
+  description: Default Bank BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: AutoPost
+  description: Automatic Posting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: B
+    label: Interest and Fee
+  - key: I
+    label: Interest Only
+  - key: F
+    label: Fee Only
+- field: IntrAcc
+  description: Interest Account
+  type: nVarChar
+  size: 15
+- field: FeeAcc
+  description: Fee Account
+  type: nVarChar
+  size: 15
+- field: CpnNo
+  description: Campaign No.
+  type: Int
+  size: 11
+  related: OCPN
+- field: NTSWebSite
+  description: E-Tax Web Site
+  type: Int
+  size: 6
+  related: OTWS
+- field: DflIBAN
+  description: Default Bank IBAN
+  type: nVarChar
+  size: 50
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: EDocExpFrm
+  description: Electronic Doc. Export Format
+  type: Int
+  size: 11
+- field: TaxIdIdent
+  description: Tax ID Category
+  type: VarChar
+  size: 1
+  default: '3'
+  constraints:
+  - key: '1'
+    label: Self-Employed
+  - key: '2'
+    label: Company
+  - key: '3'
+    label: Registered Business
+  - key: '5'
+    label: International Company
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: DiscRel
+  description: Disc. Relations
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Lowest Discount
+  - key: H
+    label: Highest Discount
+  - key: A
+    label: Average
+  - key: S
+    label: Total
+  - key: M
+    label: Discount Multiples
+- field: NoDiscount
+  description: No Discounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SCAdjust
+  description: SC Adjustment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DflAgrmnt
+  description: Default Blanket Agreement No.
+  type: Int
+  size: 11
+  related: OOAT
+- field: GlblLocNum
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: SenderID
+  description: EDI Message Sender ID
+  type: nVarChar
+  size: 50
+- field: RcpntID
+  description: EDI Message Recipient ID
+  type: nVarChar
+  size: 50
+- field: MainUsage
+  description: Main Usage
+  type: Int
+  size: 11
+- field: SefazCheck
+  description: Check BP Status on SEFAZ
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChecksBalL
+  description: Open Checks Balance in LC
+  type: Num
+  size: 19.6
+- field: ChecksBalS
+  description: Open Checks Balance in SC
+  type: Num
+  size: 19.6
+- field: DateFrom
+  description: Relationship Initial Date
+  type: Date
+  size: 8
+- field: DateTill
+  description: Relationship Final Date
+  type: Date
+  size: 8
+- field: RelCode
+  description: Relationship Code
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: '01'
+    label: Matriz no exterior
+  - key: '02'
+    label: Filial, inclusive agï¿½ncia ou dependï¿½ncia, no exterior
+  - key: '03'
+    label: Coligada, inclusive equiparada
+  - key: '04'
+    label: Controladora
+  - key: '05'
+    label: Controlada (exceto subsidiï¿½ria integral)
+  - key: '06'
+    label: Subsidiï¿½ria integral
+  - key: '07'
+    label: Controlada em conjunto
+  - key: 08
+    label: Entidade de Propï¿½sito Especï¿½fico (conforme definiï¿½ï¿½o da CVM)
+  - key: 09
+    label: Participante do conglomerado, conforme norma especï¿½fica do ï¿½rgï¿½o
+      regulador, exceto as que se enquadrem nos tipos precedentes
+  - key: '10'
+    label: Vinculadas (Art. 23 da Lei 9.430/96), exceto as que se enquadrem nos tipos
+      precedentes
+  - key: '11'
+    label: Localizada em paï¿½s com tributaï¿½ï¿½o favorecida (Art. 24 da Lei 9.430/96),
+      exceto as que se enquadrem nos tipos precedentes
+- field: OKATO
+  description: OKATO
+  type: nVarChar
+  size: 11
+- field: OKTMO
+  description: OKTMO
+  type: nVarChar
+  size: 12
+- field: KBKCode
+  description: KBK Budget Classification Code
+  type: nVarChar
+  size: 20
+- field: TypeOfOp
+  description: Type of Operation
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: P
+    label: Professional Services
+  - key: R
+    label: Renting Assets
+  - key: O
+    label: Others
+  - key: D
+    label: Disposal of Goods
+  - key: S
+    label: Import of Goods and Services
+  - key: V
+    label: Import by Virtual Transfer
+  - key: G
+    label: Global Operations
+- field: OwnerCode
+  description: BP Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: MandateID
+  description: Mandate ID
+  type: nVarChar
+  size: 35
+- field: SignDate
+  description: Date of Signature
+  type: Date
+  size: 8
+- field: Remark1
+  description: Remark 1
+  type: Int
+  size: 11
+  related: ORMK
+- field: ConCerti
+  description: Concessional Certificate
+  type: nVarChar
+  size: 20
+- field: TpCusPres
+  description: Type of End-User Presence
+  type: Int
+  size: 11
+  related: OBNI
+  default: 9
+- field: RoleTypCod
+  description: Role Type Code
+  type: nVarChar
+  size: 2
+- field: BlockComm
+  description: Block Sending Marketing
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: EmplymntCt
+  description: Employment Category
+  type: nVarChar
+  size: 3
+  related: OETC
+- field: ExcptnlEvt
+  description: Exceptional Event
+  type: nVarChar
+  size: 2
+  related: OEPE
+- field: ExpnPrfFnd
+  description: Professional Funds Expenses
+  type: Num
+  size: 19.6
+- field: EdrsFromBP
+  description: Endorsable Checks from This BP
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EdrsToBP
+  description: This BP Accepts Endorsed Checks
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateTS
+  description: Creatn Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: EDocGenTyp
+  description: Electr. Doc. Generation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+  - key: S
+    label: Send
+  - key: R
+    label: Send - Later
+- field: eStreet
+  description: Street
+  type: nVarChar
+  size: 38
+- field: eStreetNum
+  description: Street Number
+  type: nVarChar
+  size: 4
+- field: eBuildnNum
+  description: Building Number
+  type: Int
+  size: 11
+- field: eZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 10
+- field: eCityTown
+  description: City/Town/Village
+  type: nVarChar
+  size: 48
+- field: eCountry
+  description: Country
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: eDistrict
+  description: District
+  type: nVarChar
+  size: 3
+- field: RepFName
+  description: Representative First Name
+  type: nVarChar
+  size: 20
+- field: RepSName
+  description: Representative Surname
+  type: nVarChar
+  size: 36
+- field: RepCmpName
+  description: Company Name
+  type: nVarChar
+  size: 36
+- field: RepFisCode
+  description: Representative Fiscal Code
+  type: nVarChar
+  size: 16
+- field: RepAddID
+  description: Representative Additional ID
+  type: nVarChar
+  size: 28
+- field: PECAddr
+  description: PEC Address
+  type: nVarChar
+  size: 254
+- field: IPACodePA
+  description: Receiver Code for Public Administration
+  type: nVarChar
+  size: 32
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+- field: EffecPrice
+  description: Effective Price
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Default Priority
+  - key: L
+    label: Lowest Price
+  - key: H
+    label: Highest Price
+- field: TxExMxVdTp
+  description: Exemption Max validate type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Apply to Individual Documents
+  - key: A
+    label: Apply to Accumulated Document Amount
+- field: MerchantID
+  description: Merchant ID
+  type: nVarChar
+  size: 15
+- field: UseBilAddr
+  description: Determine GST by Using Bill to
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NaturalPer
+  description: Natural Person
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+  - key: B
+    label: Blocked
+  - key: U
+    label: Unblocked
+- field: EnAddID
+  description: Encryption of ID No. 2
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnDflAccnt
+  description: Encryption of Default Account
+  type: Text
+  size: 16
+- field: EnDflIBAN
+  description: Encryption of Default IBAN
+  type: Text
+  size: 16
+- field: EnERD4In
+  description: Enable ERD for Incoming Payments
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnERD4Out
+  description: Enable ERD for Outgoing Payments
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DflCustomr
+  description: Default Customer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not a default customer
+  - key: D
+    label: Default Customer
+  - key: P
+    label: Partially erased
+  - key: C
+    label: Default customer who has been partially erased
+- field: TspEntry
+  description: Default Transporter
+  type: Int
+  size: 11
+  related: OTSP
+- field: TspLine
+  description: Default Transportation Line
+  type: Int
+  size: 11
+- field: FCERelevnt
+  description: FCE Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FCEVldte
+  description: FCE Validate Base Delivery
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AggregDoc
+  description: Aggregate Document
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EffcAllSrc
+  description: Considers All Price Sources
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EBVatExCau
+  description: VAT Exemption Cause
+  type: Int
+  size: 11
+  related: OVEC
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: LegalText
+  description: Legal Text
+  type: nVarChar
+  size: 254
+- field: VatResDate
+  description: VAT Verfication Response Date
+  type: Date
+  size: 8
+- field: VatResCode
+  description: VAT Verfication Response Code
+  type: Int
+  size: 11
+  related: ORVC
+- field: EnIBAN
+  description: Encryption of IBAN
+  type: Text
+  size: 16
+- field: DefaultCur
+  description: Default Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: VatResName
+  description: VAT Verfication Response Name
+  type: nVarChar
+  size: 254
+- field: VatResAddr
+  description: VAT Verfication Response Addr
+  type: nVarChar
+  size: 254
+- field: CertDetail
+  description: Certificate Details
+  type: nVarChar
+  size: 100
+- field: EORINumber
+  description: EORI Number
+  type: nVarChar
+  size: 17
+- field: FCEPmnMean
+  description: Use FCEs as Payment Means
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DefCommDDt
+  description: Defer Commitment Limit on Due Date
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: Month End
+  - key: H
+    label: Half Month
+  - key: S
+    label: Month Start
+- field: DefCommMon
+  description: Defer Commitment Limit on Due Date - Months
+  type: Int
+  size: 6
+- field: DefCommDay
+  description: Defer Commitment Limit on Due Date - Days
+  type: Int
+  size: 6
+- field: ExLettDate
+  description: Exemption Letter Registration Date
+  type: Date
+  size: 8
+- field: NotRel4MI
+  description: Not Relevant for Monthly Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnHBnkAcct
+  description: Encryption of House Bank Account
+  type: Text
+  size: 16
+- field: EnVatIDNum
+  description: Encrypt VAT ID Number
+  type: Text
+  size: 16
+- field: EnLicTradN
+  description: Encrypt TAX ID Number
+  type: Text
+  size: 16
+- field: SirenNo
+  description: SIREN No.
+  type: nVarChar
+  size: 9
+- field: SiretNo
+  description: SIRET No.
+  type: nVarChar
+  size: 32
+- field: VATEX
+  description: VAT Exemption Reason
+  type: nVarChar
+  size: 32
+  constraints:
+  - key: VATEX-EU-79-C
+    label: Exempt based on article 79, point c of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132
+    label: Exempt based on article 132 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1A
+    label: Exempt based on article 132, section 1 (a) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1B
+    label: Exempt based on article 132, section 1 (b) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1C
+    label: Exempt based on article 132, section 1 (c) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1D
+    label: Exempt based on article 132, section 1 (d) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1E
+    label: Exempt based on article 132, section 1 (e) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1F
+    label: Exempt based on article 132, section 1 (f) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1G
+    label: Exempt based on article 132, section 1 (g) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1H
+    label: Exempt based on article 132, section 1 (h) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1I
+    label: Exempt based on article 132, section 1 (i) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1J
+    label: Exempt based on article 132, section 1 (j) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1K
+    label: Exempt based on article 132, section 1 (k) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1L
+    label: Exempt based on article 132, section 1 (l) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1M
+    label: Exempt based on article 132, section 1 (m) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1N
+    label: Exempt based on article 132, section 1 (n) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1O
+    label: Exempt based on article 132, section 1 (o) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1P
+    label: Exempt based on article 132, section 1 (p) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-132-1Q
+    label: Exempt based on article 132, section 1 (q) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143
+    label: Exempt based on article 143 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1A
+    label: Exempt based on article 143, section 1 (a) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1B
+    label: Exempt based on article 143, section 1 (b) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1C
+    label: Exempt based on article 143, section 1 (c) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1D
+    label: Exempt based on article 143, section 1 (d) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1E
+    label: Exempt based on article 143, section 1 (e) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1F
+    label: Exempt based on article 143, section 1 (f) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1FA
+    label: Exempt based on article 143, section 1 (fa) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1G
+    label: Exempt based on article 143, section 1 (g) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1H
+    label: Exempt based on article 143, section 1 (h) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1I
+    label: Exempt based on article 143, section 1 (i) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1J
+    label: Exempt based on article 143, section 1 (j) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1K
+    label: Exempt based on article 143, section 1 (k) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-143-1L
+    label: Exempt based on article 143, section 1 (l) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-144
+    label: Exempt based on article 144 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-146-1E
+    label: Exempt based on article 146, section 1 (e) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148
+    label: Exempt based on article 148 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-A
+    label: Exempt based on article 148, section (a) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-B
+    label: Exempt based on article 148, section (b) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-C
+    label: Exempt based on article 148, section (c) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-D
+    label: Exempt based on article 148, section (d) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-E
+    label: Exempt based on article 148, section (e) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-F
+    label: Exempt based on article 148, section (f) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-148-G
+    label: Exempt based on article 148, section (g) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151
+    label: Exempt based on article 151 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1A
+    label: Exempt based on article 151, section 1 (a) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1AA
+    label: Exempt based on article 151, section 1 (aa) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1B
+    label: Exempt based on article 151, section 1 (b) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1C
+    label: Exempt based on article 151, section 1 (c) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1D
+    label: Exempt based on article 151, section 1 (d) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-151-1E
+    label: Exempt based on article 151, section 1 (e) of Council Directive 2006/112/EC.
+  - key: VATEX-EU-159
+    label: Exempt based on article 159 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-309
+    label: Exempt based on article 309 of Council Directive 2006/112/EC.
+  - key: VATEX-EU-AE
+    label: Reverse Charge
+  - key: VATEX-EU-D
+    label: Intra-Community acquisition from second-hand means of transport.
+  - key: VATEX-EU-F
+    label: Intra-Community acquisition of second-hand goods.
+  - key: VATEX-EU-G
+    label: Export outside the EU
+  - key: VATEX-EU-I
+    label: Intra-Community acquisition of works of art
+  - key: VATEX-EU-IC
+    label: Intra-Community supply
+  - key: VATEX-EU-O
+    label: Not subject to VAT
+  - key: VATEX-EU-J
+    label: Intra-Community acquisition of collectors items and antiques
+  - key: VATEX-FR-FRANCHISE
+    label: France domestic VAT franchise in base
+  - key: VATEX-FR-CNWVAT
+    label: France domestic Credit Notes without VAT, due to supplier forfeit of VAT
+      for discount.
+- field: RoutingCod
+  description: Routing Code
+  type: nVarChar
+  size: 100
+- field: PubDirStat
+  description: Public Directory Status
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: AP
+    label: Active Private Entity
+  - key: AU
+    label: Active Public Entity
+  - key: IP
+    label: Inactive Private Entity
+  - key: IU
+    label: Inactive Public Entity
+  - key: NR
+    label: Not Registered
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+- key: CARD_NAME
+  unique: false
+  fields:
+  - CardName
+- key: CARD_TYPE
+  unique: false
+  fields:
+  - CardType
+- key: FATHER
+  unique: false
+  fields:
+  - FatherCard
+- key: TERMS
+  unique: false
+  fields:
+  - GroupNum
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency
+- key: COM_GROUP
+  unique: false
+  fields:
+  - CommGrCode
+- key: PRICE_LIST
+  unique: false
+  fields:
+  - ListNum
+- key: PAY_ACCT
+  unique: false
+  fields:
+  - DebPayAcct
+- key: ABS_ENTRY
+  unique: true
+  fields:
+  - DocEntry
+- key: OWNER_CODE
+  unique: false
+  fields:
+  - OwnerCode

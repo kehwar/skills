@@ -1,0 +1,347 @@
+table: OSWA
+description: Specific Withholding Amounts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSWA.htm
+fields:
+- field: PymntRsnCd
+  description: Payment Reason Code
+  type: nVarChar
+  size: 3
+  related: OPTR
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: FllTxInAdv
+  description: Full WTax Taxation in Advance
+  type: Num
+  size: 19.6
+- field: AmntsOnhld
+  description: WTax Amount on Hold
+  type: Num
+  size: 19.6
+- field: RTAsWth
+  description: Regional IRPEF Held as WTax
+  type: Num
+  size: 19.6
+- field: RTAsAdv
+  description: Regional IRPEF - In Advance
+  type: Num
+  size: 19.6
+- field: SspndRegTx
+  description: Regional Suspended Tax - IRPEF
+  type: Num
+  size: 19.6
+- field: MTAsWth
+  description: Municipal Tax as WTax - IRPEF
+  type: Num
+  size: 19.6
+- field: MTAsAdv
+  description: Municipal Tax Held as Advance
+  type: Num
+  size: 19.6
+- field: SspndMTTx
+  description: Suspended Municipal Tax
+  type: Num
+  size: 19.6
+- field: TxblPrYr
+  description: Taxable Amt - Previous Year
+  type: Num
+  size: 19.6
+- field: WTHPrYr
+  description: WTax Amount - Previous Year
+  type: Num
+  size: 19.6
+- field: ScrtyCntrP
+  description: Social Security Tax Payer
+  type: Num
+  size: 19.6
+- field: ScrtyCntrS
+  description: Social Security Supplier
+  type: Num
+  size: 19.6
+- field: ExpsRmbrsd
+  description: Expenses Reimbursed
+  type: Num
+  size: 19.6
+- field: WTHRmbrsd
+  description: WTax Reimbursed
+  type: Num
+  size: 19.6
+- field: DlvryIdNo
+  description: Delivery Identification No.
+  type: nVarChar
+  size: 100
+- field: SnglCrtfNo
+  description: Single Certification No.
+  type: nVarChar
+  size: 17
+- field: ErnYr
+  description: Earning Year
+  type: Int
+  size: 6
+- field: Advanced
+  description: Advanced
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTHTypCd
+  description: WTax Type Code
+  type: nVarChar
+  size: 2
+  related: OWXT
+- field: GrssAmount
+  description: Gross Amount Due to Supplier
+  type: Num
+  size: 19.6
+- field: NtSbjctFrg
+  description: Amount Not Subject to WT
+  type: Num
+  size: 19.6
+- field: TxblAmnt
+  description: Taxable Amount
+  type: Num
+  size: 19.6
+- field: WTHAmnt
+  description: Withholding Tax Amount
+  type: Num
+  size: 19.6
+- field: SSFiscalCd
+  description: Social Security Fiscal C..(29)
+  type: nVarChar
+  size: 16
+- field: SSIName
+  description: Social Security Institut..(30)
+  type: nVarChar
+  size: 100
+- field: SSICode
+  description: Social Security Institut..(31)
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '2'
+    label: ENPAM
+  - key: '4'
+    label: ENPAPI
+- field: CompanyCd
+  description: Company Code(32)
+  type: nVarChar
+  size: 16
+- field: Category
+  description: Category(33)
+  type: nVarChar
+  size: 3
+  related: OWCT
+- field: EmpeSSCntr
+  description: Employee social security..(34)
+  type: Num
+  size: 19.6
+- field: EmprSSCntr
+  description: Employer social security..(35)
+  type: Num
+  size: 19.6
+- field: OthCntrbts
+  description: Other Contributions(36)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VOthCntrbt
+  description: Value of Other Contribut..(37)
+  type: Num
+  size: 19.6
+- field: OthAmntDue
+  description: Other amounts due(38)
+  type: Num
+  size: 19.6
+- field: OthAmntPd
+  description: Other amounts paid(39)
+  type: Num
+  size: 19.6
+- field: AmntPdBfBr
+  description: Amount Paid before Bankr..(41)
+  type: Num
+  size: 19.6
+- field: AmntPdByTr
+  description: Amount Paid by Trustee(42)
+  type: Num
+  size: 19.6
+- field: FiscalCode
+  description: Fiscal Code(52)
+  type: nVarChar
+  size: 16
+- field: TxblAmntE
+  description: Taxable Amount(53)
+  type: Num
+  size: 19.6
+- field: TaxAmount
+  description: Tax Amount(54)
+  type: Num
+  size: 19.6
+- field: TxAmntInAd
+  description: Tax Amount in Advance(55)
+  type: Num
+  size: 19.6
+- field: SspndWTHTx
+  description: Suspended WTH Tax(56)
+  type: Num
+  size: 19.6
+- field: AdRgTxIRPH
+  description: Additional Regional tax..(57)
+  type: Num
+  size: 19.6
+- field: AdRgTxIRPA
+  description: Additional Regional tax..(58)
+  type: Num
+  size: 19.6
+- field: SspdRgnlTx
+  description: Suspended Regional Tax(59)
+  type: Num
+  size: 19.6
+- field: AdCtTxIRWT
+  description: Additional City tax to I..(60)
+  type: Num
+  size: 19.6
+- field: AdCtTxIWTA
+  description: Additional City Tax to I..(61)
+  type: Num
+  size: 19.6
+- field: SspndCtTx
+  description: Suspended City Tax(62)
+  type: Num
+  size: 19.6
+- field: FsCdTrdPty
+  description: Fiscal Code Third Party(71)
+  type: nVarChar
+  size: 16
+- field: FCdTrdPtyS
+  description: Fiscal Code Third Party..(72)
+  type: nVarChar
+  size: 16
+- field: FscCdExpr
+  description: Fiscal Code Expropriation(73)
+  type: nVarChar
+  size: 16
+- field: FsCdMnDbS
+  description: Fiscal Code of Main Deb..(101)
+  type: nVarChar
+  size: 16
+- field: AmntPdS
+  description: Amount Paid(102)
+  type: Num
+  size: 19.6
+- field: WHTApdS
+  description: WHT Applied(103)
+  type: Num
+  size: 19.6
+- field: WHTNApdS
+  description: WHT not Applied(104)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FsCdMnDbR
+  description: Fiscal Code of Main Deb..(105)
+  type: nVarChar
+  size: 16
+- field: AmntPdR
+  description: Amount Paid(106)
+  type: Num
+  size: 19.6
+- field: WHTApdR
+  description: WHT Applied(107)
+  type: Num
+  size: 19.6
+- field: WHTNApdR
+  description: WHT not Applied(108)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AmntPdA
+  description: Amount Paid(131)
+  type: Num
+  size: 19.6
+- field: TxAppldA
+  description: Tax Applied(132)
+  type: Num
+  size: 19.6
+- field: AmntPdB
+  description: Amount Paid(133)
+  type: Num
+  size: 19.6
+- field: TxAppldB
+  description: Tax Applied(134)
+  type: Num
+  size: 19.6
+- field: AmntPdC
+  description: Amount Paid(135)
+  type: Num
+  size: 19.6
+- field: TxAppldC
+  description: Tax Applied(136)
+  type: Num
+  size: 19.6
+- field: AmntPdD
+  description: Amount Paid(137)
+  type: Num
+  size: 19.6
+- field: TxAppldD
+  description: Tax Applied(138)
+  type: Num
+  size: 19.6
+- field: AmtPvdNTxS
+  description: Amounts provided and no..(104)
+  type: Num
+  size: 19.6
+- field: AmtPvdNTxR
+  description: Amounts provided and no..(108)
+  type: Num
+  size: 19.6
+- field: CUSplit
+  description: CU Split
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SmRnNtWTx
+  description: Returned Amount After Deduction of WTax
+  type: Num
+  size: 19.6
+- field: WHTRelCode
+  description: Relation Type (31)
+  type: nVarChar
+  size: 3
+  related: OWRT
+- field: AmtDedUsed
+  description: Deductible amount used (40)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PymntRsnCd
+  - CardCode
+  - CUSplit

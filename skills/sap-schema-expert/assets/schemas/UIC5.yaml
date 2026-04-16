@@ -1,0 +1,52 @@
+table: UIC5
+description: Customized Folders in Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC5.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: FormId
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: ItemId
+  description: Item ID
+  type: nVarChar
+  size: 20
+- field: Left
+  description: Left
+  type: Int
+  size: 6
+- field: Right
+  description: Right
+  type: Int
+  size: 6
+- field: Top
+  description: Top
+  type: Int
+  size: 6
+- field: Bottom
+  description: Bottom
+  type: Int
+  size: 6
+- field: CurPan
+  description: Current Pane
+  type: Int
+  size: 6
+- field: Caption
+  description: Caption
+  type: nVarChar
+  size: 50
+- field: GroupItem
+  description: Group Item
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+  - FormId
+  - ItemId

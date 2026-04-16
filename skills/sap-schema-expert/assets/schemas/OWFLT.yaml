@@ -1,0 +1,25 @@
+table: OWFLT
+description: List View Filters
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWFLT.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 50
+- field: FilterName
+  description: Filter Name
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

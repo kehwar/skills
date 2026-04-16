@@ -1,0 +1,26 @@
+table: ORSG
+description: Resource Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ORSG.htm
+fields:
+- field: ResTypCod
+  description: Number
+  type: Int
+  size: 6
+- field: ResGrpNam
+  description: Property Name
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: User Signature
+  type: nVarChar
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResTypCod
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - ResGrpNam

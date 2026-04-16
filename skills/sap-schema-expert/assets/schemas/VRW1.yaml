@@ -1,0 +1,19 @@
+table: VRW1
+description: VAT Reposting Wizard - Rows 1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/VRW1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: VatGroup
+  description: VAT Group Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - VatGroup

@@ -1,0 +1,59 @@
+table: OSRT
+description: Korean Summary Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSRT.htm
+fields:
+- field: AbsId
+  description: Abstract ID
+  type: Int
+  size: 11
+- field: SumRptId
+  description: Summary Report ID
+  type: nVarChar
+  size: 100
+- field: SumRptDate
+  description: Summary Report Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Business Place ID
+  type: Int
+  size: 11
+- field: FromDate
+  description: From Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Date
+  type: Date
+  size: 8
+- field: RptType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: V
+    label: Vendor
+  - key: C
+    label: Customer
+- field: version
+  description: Report Generation Version
+  type: nVarChar
+  size: 50
+- field: SumSubId
+  description: Summary Report Sub ID
+  type: nVarChar
+  size: 254
+- field: SumRptType
+  description: Summary Report Type
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: SUM_RPT_ID
+  unique: true
+  fields:
+  - SumRptId

@@ -1,0 +1,71 @@
+table: EBL1
+description: E-Balance Report Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/EBL1.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ReportType
+  description: Report Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: E-General Information GCD (Global Common Document)
+  - key: '2'
+    label: e-Balance Sheet
+  - key: '3'
+    label: e-Profit and Loss
+  - key: '4'
+    label: E-Taxable Profit and Loss
+  - key: '5'
+    label: E-Income Usage
+  - key: '6'
+    label: E-Assets History Sheet
+  - key: '7'
+    label: Shareholder
+  - key: '8'
+    label: Account Verification
+  - key: '-1'
+    label: Global Common Data
+  - key: '-2'
+    label: Global Common Report Data
+- field: Selected
+  description: Selected
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Mandatory
+  description: Mandatory
+  type: VarChar
+  size: 1
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: XBRL
+- field: DocContent
+  description: Document Content
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

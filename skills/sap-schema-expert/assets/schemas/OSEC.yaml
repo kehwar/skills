@@ -1,0 +1,33 @@
+table: OSEC
+description: Sections
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OSEC.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 15
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: eCode
+  description: eCode
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - Code
+- key: ECODE
+  unique: true
+  fields:
+  - eCode

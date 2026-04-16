@@ -1,0 +1,106 @@
+table: RADM
+description: Resource Administration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RADM.htm
+fields:
+- field: DevGroup
+  description: Development Group
+  type: nVarChar
+  size: 3
+- field: ResVersion
+  description: Resource Version
+  type: nVarChar
+  size: 5
+- field: ReleaseDte
+  description: Rsleade Date
+  type: Date
+  size: 8
+- field: RelFrzDate
+  description: GUI Freeze Date for Release
+  type: Date
+  size: 8
+- field: Sp1Date
+  description: SP1 Date
+  type: Date
+  size: 8
+- field: Sp1FrzDate
+  description: GUI Freeze Date for SP1
+  type: Date
+  size: 8
+- field: Sp2Date
+  description: SP2 Date
+  type: Date
+  size: 8
+- field: Sp2FrzDate
+  description: GUI Freeze Date for SP2
+  type: Date
+  size: 8
+- field: DbLocked
+  description: Is DB Locked for Edit
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Not Locked
+  - key: '1'
+    label: GUI Freeze (Translations)
+  - key: '2'
+    label: Read Only
+  - key: '3'
+    label: Full Lock
+- field: DbVersion
+  description: Resource DB Version
+  type: nVarChar
+  size: 10
+- field: CreateDate
+  description: Creation Date of DB
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time of DB
+  type: Int
+  size: 11
+  default: 0
+- field: CanLogin
+  description: Can Users Login
+  type: VarChar
+  size: 1
+- field: ValidPath
+  description: Valid Path For Running
+  type: nVarChar
+  size: 100
+- field: P4Path
+  description: P4 Version Path
+  type: nVarChar
+  size: 100
+- field: MDVersion
+  description: Metadata Version
+  type: Int
+  size: 11
+  default: -1
+- field: VerScpDate
+  description: Version Scope Date
+  type: Date
+  size: 8
+- field: VerScpTime
+  description: Version Scope Time
+  type: Int
+  size: 11
+  default: 0
+- field: TransVer
+  description: Translation Version
+  type: nVarChar
+  size: 10
+- field: Flags
+  description: Resource flags
+  type: nVarChar
+  size: 100
+- field: WpFileName
+  description: Wallpaper File Name
+  type: nVarChar
+  size: 100
+  default: NotSet
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResVersion

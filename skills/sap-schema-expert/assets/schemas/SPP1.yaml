@@ -1,0 +1,88 @@
+table: SPP1
+description: Special Prices - Data Areas
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/SPP1.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OSPP
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OSPP
+- field: LINENUM
+  description: Row Number
+  type: Int
+  size: 6
+- field: Price
+  description: Special Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Discount
+  description: Discount %
+  type: Num
+  size: 19.6
+- field: ListNum
+  description: Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+  default: 0
+- field: FromDate
+  description: Date From
+  type: Date
+  size: 8
+- field: ToDate
+  description: Date To
+  type: Date
+  size: 8
+- field: AutoUpdt
+  description: Auto Update
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Expand
+  description: Item Details
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - ItemCode
+  - LINENUM
+- key: CARD
+  unique: false
+  fields:
+  - CardCode
+- key: ITEM
+  unique: false
+  fields:
+  - ItemCode
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency

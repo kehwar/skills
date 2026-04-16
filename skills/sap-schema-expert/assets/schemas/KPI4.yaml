@@ -1,0 +1,25 @@
+table: KPI4
+description: Key Performance Indicator Discrete Value
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/KPI4.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FltEntry
+  description: Parameter Or Filter Number
+  type: Int
+  size: 11
+- field: Value
+  description: Discrete Value
+  type: nVarChar
+  size: 50
+- field: Desc
+  description: Discrete Value Description
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

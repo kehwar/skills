@@ -1,0 +1,61 @@
+table: ASC5
+description: Service Call Activities - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/ASC5.htm
+fields:
+- field: SrvcCallId
+  description: Service Call No.
+  type: Int
+  size: 11
+  related: OSCL
+- field: Line
+  description: Row No.
+  type: Int
+  size: 6
+  default: -1
+- field: ClgID
+  description: Activity Code
+  type: Int
+  size: 11
+  related: OCLG
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: User Signature 2
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrvcCallId
+  - Line
+  - LogInstanc

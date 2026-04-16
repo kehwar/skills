@@ -1,0 +1,121 @@
+table: OOCR
+description: Distribution Rule
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Sales_Opportunities/OOCR.htm
+fields:
+- field: OcrCode
+  description: Factor Code
+  type: nVarChar
+  size: 8
+- field: OcrName
+  description: Factor Description
+  type: nVarChar
+  size: 30
+- field: OcrTotal
+  description: Total Factor
+  type: Num
+  size: 19.6
+- field: Direct
+  description: Direct
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DimCode
+  description: In Which Dimension
+  type: Int
+  size: 6
+  related: ODIM
+  default: 1
+- field: AbsEntry
+  description: Numerator
+  type: Int
+  size: 11
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: IsFixedAmt
+  description: Distribute by Fixed Amount
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DTVId
+  description: Datev Identifier
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OcrCode

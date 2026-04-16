@@ -1,0 +1,28 @@
+table: OMPF
+description: Message Preferences
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMPF.htm
+fields:
+- field: MessageUid
+  description: Message UID
+  type: Int
+  size: 11
+- field: FormUid
+  description: Form UID
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SelctedBtn
+  description: Selected Button
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageUid
+  - FormUid
+  - UserSign

@@ -1,0 +1,106 @@
+table: PWZ5
+description: Payment Wizard - Rows 5
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PWZ5.htm
+fields:
+- field: IdEntry
+  description: ID Entry
+  type: Int
+  size: 11
+  related: OPWZ
+- field: InvID
+  description: Inv ID
+  type: Int
+  size: 11
+- field: Amount
+  description: Invoice Amount
+  type: Num
+  size: 19.6
+- field: CardCode
+  description: Card Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Card Name
+  type: nVarChar
+  size: 200
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: ErrDisc
+  description: Error Discription
+  type: nVarChar
+  size: 254
+- field: ErrorLine
+  description: ErrorLine
+  type: Int
+  size: 11
+- field: WriteErr
+  description: WriteErr
+  type: VarChar
+  size: 1
+  default: Y
+- field: Object
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '0'
+- field: InstlmntID
+  description: Installment ID
+  type: Int
+  size: 6
+  default: 1
+- field: invNum
+  description: Invoice No.
+  type: Int
+  size: 11
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+- field: LineType
+  description: Line Type
+  type: VarChar
+  size: 1
+  default: G
+- field: DueBal
+  description: Balance Due
+  type: Num
+  size: 19.6
+- field: DueBalFC
+  description: Balance Due (FC)
+  type: Num
+  size: 19.6
+- field: DueBalSys
+  description: Balance Due (SC)
+  type: Num
+  size: 19.6
+- field: ValDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdEntry
+  - InvID
+  - ErrorLine
+  - Object
+  - InstlmntID

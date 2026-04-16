@@ -1,0 +1,73 @@
+table: SOUT
+description: '[SOUT]'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SOUT.htm
+fields:
+- field: LogNum
+  description: ??' ?????
+  type: Int
+  size: 11
+- field: Company
+  description: Company
+  type: nVarChar
+  size: 128
+- field: USER_CODE
+  description: User code
+  type: nVarChar
+  size: 8
+- field: Object
+  description: Object
+  type: Int
+  size: 11
+- field: ObjectAbs
+  description: ObjectAbs
+  type: Int
+  size: 11
+- field: SubDate
+  description: Submission date
+  type: Date
+  size: 8
+- field: SubTime
+  description: Submission time
+  type: Int
+  size: 6
+- field: ActDate
+  description: Action date
+  type: Date
+  size: 8
+- field: ActTime
+  description: Action time
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Check in
+  - key: P
+    label: In process
+  - key: E
+    label: Error
+  - key: S
+    label: Success
+  - key: I
+    label: Success with info
+- field: ErrCode
+  description: Error code
+  type: Int
+  size: 11
+- field: ErrMessage
+  description: Error message
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogNum
+- key: STATUS
+  unique: false
+  fields:
+  - Status

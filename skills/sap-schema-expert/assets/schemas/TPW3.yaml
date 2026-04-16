@@ -1,0 +1,67 @@
+table: TPW3
+description: Utilization and Payment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/TPW3.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry No
+  type: Int
+  size: 11
+  related: OTPW
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+  related: TPW2
+- field: CrTaxCtgry
+  description: Credit Tax Category
+  type: Int
+  size: 11
+- field: CrTaxType
+  description: Credit Tax Type
+  type: Int
+  size: 11
+- field: CrUtiliz
+  description: Credit Utilized Amount
+  type: Num
+  size: 19.6
+- field: CrUtilizFC
+  description: Credit Utilized Amount FC
+  type: Num
+  size: 19.6
+- field: CrUtilizSC
+  description: Credit Utilized Amount SC
+  type: Num
+  size: 19.6
+- field: PymMeth
+  description: Payment Method
+  type: nVarChar
+  size: 15
+- field: PymAmnt
+  description: Payment Amount
+  type: Num
+  size: 19.6
+- field: PymAmntFC
+  description: Payment Amount (FC)
+  type: Num
+  size: 19.6
+- field: PymAmntSC
+  description: Payment Amount (SC)
+  type: Num
+  size: 19.6
+- field: MatType
+  description: Material Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+  - CrTaxCtgry
+  - CrTaxType
+  - MatType

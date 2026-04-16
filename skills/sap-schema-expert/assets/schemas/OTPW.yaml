@@ -1,0 +1,88 @@
+table: OTPW
+description: Tax Payment Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OTPW.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: WizNumber
+  description: Wizard Number
+  type: Int
+  size: 11
+- field: WizName
+  description: Wizard Name
+  type: nVarChar
+  size: 50
+- field: WizStatus
+  description: Wizard Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+- field: CreateDate
+  description: Wizard Creation Date
+  type: Date
+  size: 8
+- field: SaveDate
+  description: Wizard Save Date
+  type: Date
+  size: 8
+- field: ExecDate
+  description: Wizard Execution Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: Series
+  description: Wizard Series
+  type: Int
+  size: 11
+- field: JETransId
+  description: Journal Entry Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: WizDate
+  description: Wizard Date
+  type: Date
+  size: 8
+- field: RG23APart2
+  description: RG23A Part 2
+  type: Int
+  size: 11
+- field: RG23CPart2
+  description: RG23C Part 2
+  type: Int
+  size: 11
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - WizName

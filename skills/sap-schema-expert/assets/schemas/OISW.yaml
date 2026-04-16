@@ -1,0 +1,407 @@
+table: OISW
+description: Intrastat Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OISW.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: DeclDescr
+  description: Description
+  type: nVarChar
+  size: 200
+- field: DateFrom
+  description: Starting Date of Declaration
+  type: Date
+  size: 8
+- field: DateTo
+  description: Ending Date of Declaration
+  type: Date
+  size: 8
+- field: RunDate
+  description: Date of Run
+  type: Date
+  size: 8
+- field: ImpExpInd
+  description: Import Export Indicator
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Import
+  - key: E
+    label: Export
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+  - key: D
+    label: Deleted
+  - key: A
+    label: Archived
+- field: MsgType
+  description: Message Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: New Declaration
+  - key: '9'
+    label: Nil Declaration
+  - key: '3'
+    label: Correction Declaration
+- field: TtlDocVal
+  description: Total Document Value
+  type: Num
+  size: 19.6
+- field: DocCount
+  description: Total Number of Documents
+  type: Int
+  size: 11
+- field: CompName
+  description: Company Name
+  type: nVarChar
+  size: 200
+- field: CompDeclID
+  description: Company Declaration ID
+  type: nVarChar
+  size: 32
+- field: CompStreet
+  description: Company Street
+  type: nVarChar
+  size: 100
+- field: CompCity
+  description: Company City
+  type: nVarChar
+  size: 100
+- field: CompZip
+  description: Company Zip Code
+  type: nVarChar
+  size: 20
+- field: CompCntry
+  description: Company Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: DeclCntry
+  description: Declaration Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: CntPersID
+  description: Contact Person ID
+  type: Int
+  size: 11
+  related: OHEM
+- field: CntPerson
+  description: Contact Person
+  type: nVarChar
+  size: 250
+- field: CntEmail
+  description: Contact E-Mail
+  type: nVarChar
+  size: 100
+- field: CntPhone
+  description: Contact Phone
+  type: nVarChar
+  size: 50
+- field: CntFax
+  description: Contact Fax
+  type: nVarChar
+  size: 50
+- field: VATRegNo
+  description: VAT Reg. No. of Trader
+  type: nVarChar
+  size: 100
+- field: VATRegEx
+  description: VAT Reg. No. Extension
+  type: nVarChar
+  size: 10
+- field: DeclNum
+  description: Sequential Declaration Number
+  type: nVarChar
+  size: 14
+- field: DeclNoEx
+  description: No. of Declaration in Period
+  type: Int
+  size: 11
+- field: HeaderId
+  description: Header ID
+  type: Int
+  size: 11
+- field: DeclStat
+  description: Declaration Status
+  type: VarChar
+  size: 1
+- field: DeclDept
+  description: Declaring Department
+  type: Int
+  size: 6
+- field: DeclCurr
+  description: Declaration Currency
+  type: nVarChar
+  size: 3
+- field: ObligLvl
+  description: Degree of Obligation
+  type: VarChar
+  size: 1
+- field: TaxState
+  description: Federal State of Tax Office
+  type: nVarChar
+  size: 3
+- field: CustOffc
+  description: Customs Registration Office
+  type: nVarChar
+  size: 100
+- field: CustOffID
+  description: Customs Registration Office ID
+  type: nVarChar
+  size: 2
+- field: DeclSerNo
+  description: Declaration Sequence Number
+  type: nVarChar
+  size: 3
+- field: IntCtrlRef
+  description: Interchange Control Reference
+  type: nVarChar
+  size: 99
+- field: Addr1_3p
+  description: Third-Party Address Part 1
+  type: nVarChar
+  size: 100
+- field: Addr2_3p
+  description: Third-Party Address Part 2
+  type: nVarChar
+  size: 100
+- field: Addr3_3p
+  description: Third-Party Address Part 3
+  type: nVarChar
+  size: 100
+- field: Addr4_3p
+  description: Third-Party Address Part 4
+  type: nVarChar
+  size: 100
+- field: CntPers_3p
+  description: Third-Party Contact Person
+  type: nVarChar
+  size: 250
+- field: CntPhon_3p
+  description: Third-Party Contact Phone
+  type: nVarChar
+  size: 20
+- field: CntFax_3p
+  description: Third-Party Contact Fax
+  type: nVarChar
+  size: 20
+- field: FreeTxt1
+  description: Free Text Line 1
+  type: nVarChar
+  size: 70
+- field: FreeTxt2
+  description: Free Text Line 2
+  type: nVarChar
+  size: 70
+- field: FreeTxt3
+  description: Free Text Line 3
+  type: nVarChar
+  size: 70
+- field: FreeTxt4
+  description: Free Text Line 4
+  type: nVarChar
+  size: 70
+- field: FreeTxt5
+  description: Free Text Line 5
+  type: nVarChar
+  size: 70
+- field: ValidKey
+  description: Validation Key Identification
+  type: nVarChar
+  size: 35
+- field: ISDeclOffc
+  description: Intrastat Declaration Office
+  type: nVarChar
+  size: 10
+- field: ReleaseVer
+  description: Release Version
+  type: nVarChar
+  size: 13
+- field: UserSign
+  description: Created by User
+  type: Int
+  size: 6
+- field: PosCredVal
+  description: Positive Credit Memo Values
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncPrevDoc
+  description: Include Previous Documents
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DeclPeriod
+  description: Declaration Period
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Monthly
+  - key: Q
+    label: Quarterly
+- field: Box1
+  description: 'Box 1: Periodicity'
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None of the Other Cases
+  - key: '8'
+    label: First Month of Quarter
+  - key: '9'
+    label: First and Second Months of Quarter
+- field: Box2
+  description: 'Box 2: Company Activity'
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None of the Other Cases
+  - key: '7'
+    label: First Declaration
+  - key: '8'
+    label: Stop Activity/Change of Federal Tax ID
+  - key: '9'
+    label: First Declaration After Federal Tax ID Change
+- field: GroupData
+  description: Group Display Data
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CstRecSt
+  description: Custom Section
+  type: nVarChar
+  size: 6
+- field: TaxCodeExt
+  description: Tax Code Extension
+  type: nVarChar
+  size: 99
+- field: ExportPath
+  description: Export Path
+  type: Text
+  size: 16
+- field: LLEFMAbs
+  description: EFM Template ID
+  type: Int
+  size: 11
+- field: SimpProc
+  description: Simplified Procedure
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DspNMass
+  description: Require All Data
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExlDocQt
+  description: Exclude Docs W/ Qty Less Than
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocQtLm
+  description: Document Quantity Limit
+  type: Num
+  size: 19.6
+- field: ExlDocAm
+  description: Exclude Docs W/ Amt Less Than
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocAmLm
+  description: Document Amount Limit
+  type: Num
+  size: 19.6
+- field: RunTime
+  description: Time of Run
+  type: Int
+  size: 6
+- field: AddonRun
+  description: Upgraded Add-On Run
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseDecl
+  description: Base Declaration
+  type: Int
+  size: 11
+  related: ODCI
+- field: GroupTrans
+  description: Group Transactions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncGRandDL
+  description: Include Goods Receipt and Deliveries
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,32 @@
+table: SDRQ
+description: Drag&Relate - Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SDRQ.htm
+fields:
+- field: ObjTo
+  description: ObjectTo
+  type: nVarChar
+  size: 4
+- field: ObjFrom
+  description: ObjectFrom
+  type: nVarChar
+  size: 4
+- field: JoinStr
+  description: Join String
+  type: nVarChar
+  size: 254
+- field: FilterStr
+  description: Filter String
+  type: nVarChar
+  size: 128
+- field: ServerType
+  description: Server Type
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjTo
+  - ObjFrom
+  - ServerType

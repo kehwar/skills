@@ -1,0 +1,34 @@
+table: OKPF
+description: KPI Factor
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OKPF.htm
+fields:
+- field: FactorId
+  description: KPI Factor No.
+  type: nVarChar
+  size: 3
+- field: FactorName
+  description: KPI Factor Name
+  type: nVarChar
+  size: 100
+- field: CatId
+  description: Numerator
+  type: Int
+  size: 6
+- field: TemplateId
+  description: Template
+  type: Int
+  size: 11
+- field: IsSys
+  description: Is System
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FactorId

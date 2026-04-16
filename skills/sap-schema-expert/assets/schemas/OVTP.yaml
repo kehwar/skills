@@ -1,0 +1,30 @@
+table: OVTP
+description: Vendor Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OVTP.htm
+fields:
+- field: ABSEntry
+  description: Primary Key
+  type: Int
+  size: 11
+- field: VendorType
+  description: Vendor Type
+  type: nVarChar
+  size: 32
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 120
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ABSEntry
+- key: TYPE
+  unique: false
+  fields:
+  - VendorType

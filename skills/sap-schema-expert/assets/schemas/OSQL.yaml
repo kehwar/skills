@@ -1,0 +1,56 @@
+table: OSQL
+description: SQL query
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSQL.htm
+fields:
+- field: SqlCode
+  description: SQL query code
+  type: nVarChar
+  size: 254
+- field: SqlName
+  description: SQL query name
+  type: nVarChar
+  size: 254
+- field: SqlText
+  description: SQL text
+  type: Text
+  size: 16
+- field: ParamList
+  description: List of bound parameter names
+  type: nVarChar
+  size: 254
+- field: ParamDetai
+  description: Parameter details
+  type: nVarChar
+  size: 254
+- field: InternalS
+  description: Internal SQL text
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '2'
+- field: CreateDate
+  description: Created On
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Updated On
+  type: Date
+  size: 8
+- field: DataVers
+  description: Data version
+  type: Int
+  size: 11
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SqlCode

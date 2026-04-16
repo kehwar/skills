@@ -1,0 +1,35 @@
+table: UFD1
+description: User Fields - Values Definitions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UFD1.htm
+fields:
+- field: TableID
+  description: Table
+  type: nVarChar
+  size: 21
+- field: FieldID
+  description: Field
+  type: Int
+  size: 6
+- field: IndexID
+  description: Index
+  type: Int
+  size: 6
+- field: FldValue
+  description: Value
+  type: nVarChar
+  size: 254
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: FldDate
+  description: Date Value
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableID
+  - FieldID
+  - IndexID

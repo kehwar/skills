@@ -1,0 +1,35 @@
+table: DTV9
+description: Datev Run Temp Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DTV9.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+  related: ODTV
+- field: SubTaskId
+  description: Sub Task Number
+  type: Int
+  size: 11
+- field: TaskType
+  description: Sub Task Type
+  type: nVarChar
+  size: 10
+- field: JsForData
+  description: Json for Converted Data
+  type: Text
+  size: 16
+- field: JsOKInfo
+  description: Json for Info with OK
+  type: Text
+  size: 16
+- field: JsErrInfo
+  description: Json for Info with Error
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId
+  - SubTaskId

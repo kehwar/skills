@@ -1,0 +1,357 @@
+table: AEXD
+description: Freight Setup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AEXD.htm
+fields:
+- field: ExpnsCode
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: ExpnsName
+  description: Name
+  type: nVarChar
+  size: '20'
+- field: RevAcct
+  description: Revenue Account
+  type: nVarChar
+  size: '15'
+  related: OACT
+- field: ExpnsAcct
+  description: Expense Account
+  type: nVarChar
+  size: '15'
+  related: OACT
+- field: TaxLiable
+  description: Tax Liable
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevFixSum
+  description: Fixed Amount - Revenues
+  type: Num
+  size: '19.6'
+- field: ExpFixSum
+  description: Fixed Amount - Expenses
+  type: Num
+  size: '19.6'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Incr.
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+  related: OUSR
+- field: VatGroupI
+  description: Output Tax Group
+  type: nVarChar
+  size: '8'
+  related: OVTG
+- field: VatGroupO
+  description: Input Tax Group
+  type: nVarChar
+  size: '8'
+  related: OVTG
+- field: DistrbMthd
+  description: Distribution Method
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: E
+    label: Equally
+  - key: T
+    label: Row Total
+- field: In1099
+  description: Include in 1099
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpOfstAct
+  description: Freight Clearing Account
+  type: nVarChar
+  size: '15'
+  related: OACT
+- field: WTLiable
+  description: WTax Liable
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseMethod
+  description: Drawing Method
+  type: VarChar
+  size: '1'
+  default: T
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: T
+    label: Total
+  - key: A
+    label: All
+- field: Stock
+  description: Stock
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LstPchPrce
+  description: Last Purchase Price
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalseRpt
+  description: Sales Analysis Report
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PchRpt
+  description: Purchase Analysis Report
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevExmAcct
+  description: Revenues Exempted Account
+  type: nVarChar
+  size: '15'
+  related: OACT
+- field: ExpnsExAct
+  description: Expense Exempted Account
+  type: nVarChar
+  size: '15'
+  related: OACT
+- field: RevRetAct
+  description: Revenue Returns Account
+  type: nVarChar
+  size: '15'
+- field: ExpnsType
+  description: Freight Type
+  type: VarChar
+  size: '1'
+  constraints:
+  - key: '1'
+    label: Shipping
+  - key: '2'
+    label: Insurance
+  - key: '3'
+    label: Other
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: '8'
+  related: OOCR
+- field: TaxDisMthd
+  description: Tax Distribution Method
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: E
+    label: Equally
+  - key: T
+    label: Row Total
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: '8'
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: '8'
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: '8'
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: '8'
+  related: OOCR
+- field: OcrCodeX
+  description: Distribution Rule X
+  type: nVarChar
+  size: '100'
+  related: OOCR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: '8'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+- field: Project
+  description: Project
+  type: nVarChar
+  size: '20'
+  related: OPRJ
+- field: Intrastat
+  description: Intrastat Relevant
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrsFreight
+  description: Gross Freight
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SacCode
+  description: SAC Code
+  type: nVarChar
+  size: '8'
+- field: FreighType
+  description: Freight Type
+  type: VarChar
+  size: '1'
+  default: S
+  constraints:
+  - key: S
+    label: Standard
+  - key: B
+    label: Bollo
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: '11'
+  default: '1'
+- field: DocFreight
+  description: Document Operation Freight
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ProdctType
+  description: SAF-T Product Type
+  type: VarChar
+  size: '1'
+  default: S
+  constraints:
+  - key: P
+    label: Products
+  - key: S
+    label: Services
+  - key: O
+    label: Other
+  - key: I
+    label: Taxes
+- field: ProdTypeEx
+  description: SAF-T Product Type
+  type: nVarChar
+  size: '10'
+  related: OSPT
+  default: S
+- field: IsActive
+  description: Active
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ExpnsCode
+  - LogInstanc

@@ -1,0 +1,33 @@
+table: ILM1
+description: Srl & Batch Det of Inv Log Msg
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ILM1.htm
+fields:
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+  related: OILM
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SysNumber
+  description: System Number
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: MdAbsEntry
+  description: MD Abs Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID
+  - ItemCode
+  - SysNumber

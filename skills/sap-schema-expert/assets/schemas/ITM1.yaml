@@ -1,0 +1,128 @@
+table: ITM1
+description: Items - Prices
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITM1.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PriceList
+  description: Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+- field: Price
+  description: List Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Currency for List Price
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Ovrwritten
+  description: Manual Price Entry
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Factor
+  description: Factor
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+- field: AddPrice1
+  description: Additional Price (1)
+  type: Num
+  size: 19.6
+- field: Currency1
+  description: Currency for Add. Price 1
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: AddPrice2
+  description: Additional Price (2)
+  type: Num
+  size: 19.6
+- field: Currency2
+  description: Currency for Add. Price 2
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Ovrwrite1
+  description: Manual Price Entry (1)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Ovrwrite2
+  description: Manual Price Entry (2)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BasePLNum
+  description: Base Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: PriceType
+  description: Price Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: I
+    label: Inventory UoM Price
+  - key: P
+    label: Pricing Unit Price
+  - key: M
+    label: Both I and P
+  - key: O
+    label: Other UoM Price
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - PriceList
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency
+- key: PRICE_LIST
+  unique: false
+  fields:
+  - PriceList
+- key: MANUAL
+  unique: false
+  fields:
+  - Ovrwritten

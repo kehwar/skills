@@ -1,0 +1,87 @@
+table: AVEB
+description: VAT Exemptions for Business Partners - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AVEB.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc
+- key: BP_CODE
+  unique: true
+  fields:
+  - CardCode
+  - LogInstanc

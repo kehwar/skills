@@ -1,0 +1,173 @@
+table: AADT
+description: Fixed Assets Account Determination - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AADT.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 15
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: BalanceAct
+  description: Asset Balance Sheet Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ClrAcqAct
+  description: Acquisition Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevResvAct
+  description: Revaluation Reserve
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OrdDprAct
+  description: Ordinary Depreciation
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OrdDprAcc
+  description: Accumulated Ordinary Depr.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UnpDprAct
+  description: Unplanned Depreciation
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UnpDprAcc
+  description: Accumulated Unplanned Depr.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SpDprAct
+  description: Special Depreciation
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SpDprAcc
+  description: Accumulated Special Depr.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaRevNAct
+  description: Revenue from Asset Sales (Net)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReExpNAct
+  description: Retirement with Expense (Net)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReRevNAct
+  description: Retirement with Revenue (Net)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReNBVeAct
+  description: NBV Retirement Expense (Gross)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReNBVrAct
+  description: NBV Retirement Revenue (Gross)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ClrDscAct
+  description: Cash Discount Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevReAct
+  description: Revenue Account for Retirement
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: ClearAccRe
+  description: Revenue Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevResvClr
+  description: Revaluation Reserve Clearing
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: RevAct
+  description: Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevLossAct
+  description: Revaluation Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LogInstanc

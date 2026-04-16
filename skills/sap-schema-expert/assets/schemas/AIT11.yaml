@@ -1,0 +1,54 @@
+table: AIT11
+description: Asset Item Period Control
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIT11.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: DprSt
+  description: Depreciation Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: factor
+  description: Factor
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ActualUnit
+  description: Actual Units
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - PeriodCat
+  - DprArea
+  - VisOrder
+  - LogInstanc

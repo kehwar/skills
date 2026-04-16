@@ -1,0 +1,80 @@
+table: AKL2
+description: Pick List for SnB and Bin Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AKL2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OPKL
+- field: PickEntry
+  description: Row Number
+  type: Int
+  size: 11
+- field: Pkl2LinNum
+  description: PKL2 Line Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ManagedBy
+  description: Management Method
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '10000044'
+    label: BTN
+  - key: '10000045'
+    label: SRN
+  - key: '-1'
+    label: NOB
+- field: SnBEntry
+  description: SnB Abs. Entry
+  type: Int
+  size: 11
+- field: BinAbs
+  description: Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: AllowNeg
+  description: Allow Negative Entry [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RelQtty
+  description: Released Quantity
+  type: Num
+  size: 19.6
+- field: PickQtty
+  description: Picked Quantity
+  type: Num
+  size: 19.6
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '156'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - PickEntry
+  - Pkl2LinNum
+  - LogInstanc

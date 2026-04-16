@@ -1,0 +1,17 @@
+table: OJWT
+description: JWTID
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OJWT.htm
+fields:
+- field: USERLINK
+  description: USER LINK
+  type: nVarChar
+  size: 254
+- field: JWTID
+  description: JWT ID
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USERLINK

@@ -1,0 +1,339 @@
+table: OACD
+description: Credit Memo
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OACD.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: DocStatus
+  description: Document Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Posted
+  - key: D
+    label: Draft
+  - key: C
+    label: Canceled
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: Reference
+  description: Reference
+  type: nVarChar
+  size: 32
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: SysRate
+  description: System Rate
+  type: Num
+  size: 19.6
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Document Total (FC)
+  type: Num
+  size: 19.6
+- field: DocTotalSy
+  description: Document Total (SC)
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: TransType
+  description: Original Document
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '13'
+    label: A/R Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '18'
+    label: A/P Invoice
+  - key: '46'
+    label: Outgoing Payment
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '1470000049'
+    label: Capitalization
+  - key: '1470000060'
+    label: Fixed Assets Credit Memo
+  - key: '-1'
+    label: All Transactions
+  - key: '1470000075'
+    label: Manual Depreciation
+  - key: '1470000090'
+    label: Fixed Assets Transfer
+  - key: '1470000094'
+    label: Retirement
+- field: CreatedBy
+  description: Original
+  type: Int
+  size: 11
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 254
+- field: AssetDate
+  description: Asset Value Date
+  type: Date
+  size: 8
+- field: CurSource
+  description: Base Currency
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Local Currency
+  - key: S
+    label: System Currency
+  - key: F
+    label: Foreign Currency
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 15
+  default: PL
+  constraints:
+  - key: PL
+    label: Ordinary Depreciation
+  - key: UP
+    label: Unplanned Depreciation
+  - key: SD
+    label: Special Depreciation
+  - key: AP
+    label: Appreciation
+  - key: TR
+    label: Asset Transfer
+  - key: NC
+    label: Sales
+  - key: SC
+    label: Scrapping
+  - key: TC
+    label: Asset Class Transfer
+- field: PrjSmarz
+  description: Summarize by Project
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DstRlSmarz
+  description: Summarize by Distribution Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ManDprType
+  description: Manual Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CancelDate
+  description: Cancelation Date
+  type: Date
+  size: 8
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BaseRef
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: LVARetire
+  description: Low Value Asset Retirement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CancelOpt
+  description: Cancelation Option
+  type: Int
+  size: 6
+  default: 1
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VatRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: GdsMovType
+  description: Goods Movement Type
+  type: nVarChar
+  size: 2
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+- field: Letter
+  description: Letter
+  type: VarChar
+  size: 1
+- field: FolNumFrom
+  description: Folio Number From
+  type: Int
+  size: 11
+- field: FolNumTo
+  description: Folio Number To
+  type: Int
+  size: 11
+- field: FolSeries
+  description: Folio Series
+  type: Int
+  size: 11
+  related: OFNS
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: INDEX
+  unique: true
+  fields:
+  - DocNum
+  - PIndicator
+- key: TRANS_TYPE
+  unique: false
+  fields:
+  - TransType
+  - CreatedBy

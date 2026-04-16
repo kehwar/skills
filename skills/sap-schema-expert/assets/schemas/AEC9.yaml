@@ -1,0 +1,25 @@
+table: AEC9
+description: Electronic Document Company VAT Calendar
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AEC9.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: DeadlineDt
+  description: Deadline Date
+  type: Date
+  size: 8
+- field: DueDt
+  description: Due Date
+  type: Date
+  size: 8
+- field: PaymentDt
+  description: Payment Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

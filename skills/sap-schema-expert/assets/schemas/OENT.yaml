@@ -1,0 +1,234 @@
+table: OENT
+description: Shipping Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OENT.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OUSR
+- field: BaseDocNum
+  description: Base Document Number
+  type: Int
+  size: 11
+  related: OUSR
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Copy
+  - key: N
+    label: Original
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: FreZoneNum
+  description: ID Number
+  type: nVarChar
+  size: 8
+- field: Shiper
+  description: Sender
+  type: nVarChar
+  size: 100
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: FromCntry
+  description: Country/Region - Origin
+  type: nVarChar
+  size: 100
+- field: ToCntry
+  description: Country/Region - Destination
+  type: nVarChar
+  size: 100
+- field: FromPort
+  description: Origin Port
+  type: nVarChar
+  size: 100
+- field: ToPort
+  description: Destination Port
+  type: nVarChar
+  size: 100
+- field: AirPlane
+  description: Ship/Aircraft
+  type: nVarChar
+  size: 50
+- field: AirPlanNum
+  description: No. of Ships/Aircraft
+  type: nVarChar
+  size: 40
+- field: TotalFob
+  description: Total
+  type: Num
+  size: 19.6
+- field: Taxes
+  description: Taxes
+  type: Num
+  size: 19.6
+- field: Insurance
+  description: Insurance
+  type: Num
+  size: 19.6
+- field: Others
+  description: Other
+  type: Num
+  size: 19.6
+- field: TotalCif
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: GroupNum
+  description: Payment Terms Code
+  type: Int
+  size: 6
+  related: OCTG
+- field: DocTime
+  description: Document Time
+  type: Int
+  size: 6
+- field: SlpCode
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: TrnspCode
+  description: Delivery Code
+  type: Int
+  size: 6
+  related: OSHP
+  default: -1
+- field: PartSupply
+  description: Delivery of Goods
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ImportEnt
+  description: Landed Costs
+  type: Int
+  size: 11
+  related: OIPF
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: NumForPrn
+  description: Base Doc. No. for Printing
+  type: nVarChar
+  size: 100
+  related: OUSR
+- field: PurPackMsr
+  description: Packaging UoM Name
+  type: nVarChar
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: BaseDocObj
+  description: Base Document Object Type
+  type: Int
+  size: 6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: NUM
+  unique: false
+  fields:
+  - DocNum
+- key: BASE_DOC
+  unique: false
+  fields:
+  - BaseDocNum
+  - BaseDocObj
+- key: OBJECT
+  unique: false
+  fields:
+  - ObjType
+- key: SERIES
+  unique: false
+  fields:
+  - Series

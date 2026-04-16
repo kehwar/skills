@@ -1,0 +1,42 @@
+table: SCAB
+description: Appl CABs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SCAB.htm
+fields:
+- field: Version
+  description: Version
+  type: Int
+  size: 11
+- field: Flags
+  description: Flags
+  type: nVarChar
+  size: 50
+  default: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+- field: ApplCab
+  description: Appl. CAB
+  type: Text
+  size: 16
+- field: DbCab
+  description: Metadata CAB
+  type: Text
+  size: 16
+- field: ComOBSCab
+  description: Com OBS CAB
+  type: Text
+  size: 16
+- field: ComUICab
+  description: Com UI CAB
+  type: Text
+  size: 16
+- field: ApplCab64
+  description: Appl. CAB (64bit)
+  type: Text
+  size: 16
+- field: DbCab64
+  description: Metadata CAB (64bit)
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Version

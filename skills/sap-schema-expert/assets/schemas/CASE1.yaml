@@ -1,0 +1,243 @@
+table: CASE1
+description: Internal Recon. Upgrade 2007A
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CASE1.htm
+fields:
+- field: AbsEntry
+  description: Header Internal ID
+  type: Int
+  size: 11
+  related: CASE
+- field: LineId
+  description: Inconsistent Amt Number
+  type: Int
+  size: 11
+  default: 0
+- field: ShortName
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: Account
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OrigAbsEnt
+  description: Original Doc. Internal ID
+  type: Int
+  size: 11
+- field: OrigObjTyp
+  description: Original Doc. Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: All
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '24'
+    label: Incoming Payment
+  - key: '30'
+    label: Journal Entry
+  - key: '46'
+    label: Outgoing Payment
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+- field: OrigDocNum
+  description: Original Document Number
+  type: Int
+  size: 11
+- field: OrigInsNum
+  description: Original Installment Number
+  type: Int
+  size: 11
+- field: OrigTrnsId
+  description: Original JE Trans. No.
+  type: Int
+  size: 11
+  related: OJDT
+- field: OrigTrnsLn
+  description: Original JE Row No.
+  type: Int
+  size: 11
+- field: LnkRecnAbs
+  description: Linked Recon. Doc. Internal ID
+  type: Int
+  size: 11
+- field: LnkRecnObj
+  description: Destination Object Type
+  type: Int
+  size: 11
+- field: LnkRecnNum
+  description: Destination Document Number
+  type: Int
+  size: 11
+- field: LnkRecnIns
+  description: Destination Installment Number
+  type: Int
+  size: 11
+- field: LnkRecnTrn
+  description: Linked and Recon. JE Trans No.
+  type: Int
+  size: 11
+  related: OJDT
+- field: LnkRecnLn
+  description: Linked and Recon. JE Row No.
+  type: Int
+  size: 11
+- field: InconsType
+  description: Type of Inconsistency
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: '1'
+    label: Invoice Linked to Reconciled Payment
+  - key: '2'
+    label: Credit Memo Linked to Reconciled Payment
+  - key: '3'
+    label: Canceled Reconciliation
+  - key: '4'
+    label: Partial Exchange Rate Difference Recognition
+  - key: '5'
+    label: Payment Linked to Reconciled Transaction
+  - key: '6'
+    label: Journal Entry Linked to Reconciled Payment
+  - key: '7'
+    label: Unbalanced Reconciliation
+  - key: '8'
+    label: Invoice/Credit Linked to Credit/Invoice
+  - key: '9'
+    label: Balancing Upgrade Journal Transaction
+  - key: '10'
+    label: Canceled Payment or Journal Entry
+  - key: '11'
+    label: Cancellation of Payment/JE within Payment
+  - key: '12'
+    label: Unreconciled Balance Rows in Multiple BPs Reconciliation
+  - key: '13'
+    label: Missing Exchange Rate Difference behind Multiple BPs Reconciliation
+  - key: '14'
+    label: Double Application of Payments of Down Payment Request
+  - key: '15'
+    label: Exchange Difference Recognition of Payments of DPM Requests
+  - key: '16'
+    label: Reconciliation of Payments Associated with DPM Request
+  - key: '17'
+    label: Unbalanced Multiple BP Reconciliation
+  - key: '18'
+    label: Amount Differences
+  - key: '19'
+    label: Double application of invoice after linking of down payment
+  - key: '20'
+    label: Canceled payment of down payment request
+  - key: '21'
+    label: Credit Memo based on a Year Transfered invoice
+  - key: '22'
+    label: Payment of a year transfer document
+  - key: '23'
+    label: Processing of Payment Linked to Transactions
+  - key: '24'
+    label: Consolidating Business Partner
+  - key: '25'
+    label: Multiple Control Accounts
+  - key: '26'
+    label: Different Control Accounts in a Canceled Payment
+  - key: '0'
+    label: None
+- field: ReconNum
+  description: Reconciliation Number
+  type: Int
+  size: 11
+- field: NewRcnNum
+  description: New Reconciliation No.
+  type: Int
+  size: 11
+  related: OITR
+- field: CredDeb
+  description: Credit or Debit
+  type: VarChar
+  size: 1
+- field: Amount
+  description: Inconsistent Amount
+  type: Num
+  size: 19.6
+- field: AmountFC
+  description: Inconsistent Amount (FC)
+  type: Num
+  size: 19.6
+- field: AmountSC
+  description: Inconsistent Amount (SC)
+  type: Num
+  size: 19.6
+- field: TransId
+  description: Balancing Trans. Internal ID
+  type: Int
+  size: 11
+  related: OJDT
+- field: TransLine
+  description: Balancing Transaction Row No.
+  type: Int
+  size: 11
+- field: X
+  description: x
+  type: Num
+  size: 19.6
+- field: Y
+  description: Y
+  type: Num
+  size: 19.6
+- field: Z
+  description: Z
+  type: Num
+  size: 19.6
+- field: LnkObjAbsE
+  description: Linked Doc. Internal ID
+  type: Int
+  size: 11
+- field: LinkObjTyp
+  description: Linked Document Type
+  type: Int
+  size: 11
+- field: LinkDocNum
+  description: Linked Document Number
+  type: Int
+  size: 11
+- field: LinkInsNum
+  description: Linked Doc. Installment Number
+  type: Int
+  size: 11
+- field: LinkTrnsId
+  description: Linked Doc. JE Trans. No.
+  type: Int
+  size: 11
+  related: OJDT
+- field: LinkTrnsLn
+  description: Linked Doc. JE Row No.
+  type: Int
+  size: 11
+- field: TrnsTtlAmt
+  description: Balancing Trans. Total Amount
+  type: Num
+  size: 19.6
+- field: TrnsTtlFc
+  description: Balancing Trans. Total Amt FC
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

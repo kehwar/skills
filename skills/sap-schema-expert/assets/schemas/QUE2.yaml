@@ -1,0 +1,45 @@
+table: QUE2
+description: Queue Elements
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/QUE2.htm
+fields:
+- field: queueID
+  description: Queue ID
+  type: nVarChar
+  size: 20
+  related: OQUE
+- field: objType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: elementId
+  description: Element ID
+  type: Int
+  size: 11
+- field: elementNum
+  description: Element Number
+  type: Int
+  size: 11
+- field: priority
+  description: Priority
+  type: Int
+  size: 11
+- field: createDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: createTime
+  description: Creation Time
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - queueID
+  - elementNum
+- key: OBJ_ELEM
+  unique: true
+  fields:
+  - queueID
+  - objType
+  - elementId

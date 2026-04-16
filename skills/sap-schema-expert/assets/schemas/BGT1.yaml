@@ -1,0 +1,107 @@
+table: BGT1
+description: Budget - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BGT1.htm
+fields:
+- field: BudgId
+  description: Budget Key
+  type: Int
+  size: 11
+  related: OBGT
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: DebLTotal
+  description: Monthly Budget - Deb.
+  type: Num
+  size: 19.6
+- field: CredLTotal
+  description: Monthly Budget - Cr.
+  type: Num
+  size: 19.6
+- field: DebSTotal
+  description: Monthly Budget - SC Deb.
+  type: Num
+  size: 19.6
+- field: CredSTotal
+  description: Monthly Budget - SC Cr.
+  type: Num
+  size: 19.6
+- field: DebRLTotal
+  description: Monthly Bal. - Deb.
+  type: Num
+  size: 19.6
+- field: CrdRLTotal
+  description: Monthly Bal. - Cr.
+  type: Num
+  size: 19.6
+- field: DebRSTotal
+  description: Monthly Bal. - SC Deb.
+  type: Num
+  size: 19.6
+- field: CrdRSTotal
+  description: Monthly Bal. - SC Cred.
+  type: Num
+  size: 19.6
+- field: FtrIDRLSum
+  description: Fut. Monthly Incomes SC Cr.
+  type: Num
+  size: 19.6
+- field: FtrIDRSSum
+  description: Fut. Monthly Incomes SC Deb.
+  type: Num
+  size: 19.6
+- field: FtrICRLSum
+  description: Fut. Incomes - Cr.
+  type: Num
+  size: 19.6
+- field: FtrICRSSum
+  description: Fut. Incomes - Sys. Cr.
+  type: Num
+  size: 19.6
+- field: FtrODRLSum
+  description: Fut. Expen - Local Deb.
+  type: Num
+  size: 19.6
+- field: FtrODRSSum
+  description: Fut.Expen - SC Deb.
+  type: Num
+  size: 19.6
+- field: FtrOCRLSum
+  description: Fut.Expen - Local Cr.
+  type: Num
+  size: 19.6
+- field: FtrOCRSSum
+  description: Fut.Expen - Sys. Cr.
+  type: Num
+  size: 19.6
+- field: MonthPrcnt
+  description: '% of annual budget amount'
+  type: Num
+  size: 19.6
+- field: LineMemo
+  description: Row Details
+  type: nVarChar
+  size: 50
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+  related: OBGS
+  default: 1
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BudgId
+  - Line_ID

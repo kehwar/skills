@@ -1,0 +1,30 @@
+table: CFUS
+description: Functionality Usage Statistics
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CFUS.htm
+fields:
+- field: FuncName
+  description: Function Name
+  type: nVarChar
+  size: 100
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+- field: Count
+  description: Total No. of Records
+  type: Int
+  size: 11
+- field: Since
+  description: Since Date
+  type: Date
+  size: 8
+- field: LastUse
+  description: Last Use Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FuncName
+  - UserCode

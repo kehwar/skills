@@ -1,0 +1,85 @@
+table: WMNU
+description: WMNU
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WMNU.htm
+fields:
+- field: ObjCode
+  description: Object Code
+  type: Int
+  size: 11
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 20
+- field: FatherID
+  description: Father Menu ID
+  type: Int
+  size: 11
+- field: BrothetID
+  description: Older Brother Menu ID
+  type: Int
+  size: 11
+- field: KeyNum
+  description: m_KeyNum
+  type: nVarChar
+  size: 100
+- field: ExCommand
+  description: m_exCommand
+  type: nVarChar
+  size: 100
+- field: Params
+  description: m_params
+  type: nVarChar
+  size: 100
+- field: ParamsEx
+  description: m_paramsEx
+  type: nVarChar
+  size: 100
+- field: MatchFlag
+  description: m_matchFlag
+  type: nVarChar
+  size: 100
+- field: Dag
+  description: m_dag
+  type: nVarChar
+  size: 100
+- field: Form
+  description: m_form
+  type: nVarChar
+  size: 100
+- field: RetProc
+  description: m_paRetProc
+  type: nVarChar
+  size: 100
+- field: InitMode
+  description: m_initialMode
+  type: nVarChar
+  size: 100
+- field: Message
+  description: m_message
+  type: nVarChar
+  size: 100
+- field: KeyStr
+  description: m_keyStr
+  type: nVarChar
+  size: 100
+- field: SubType
+  description: m_subType
+  type: nVarChar
+  size: 100
+- field: Condition
+  description: local setting condition
+  type: nVarChar
+  size: 254
+- field: FormProc
+  description: Draw Form Proc
+  type: nVarChar
+  size: 100
+- field: StrList
+  description: StrList Num
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjCode

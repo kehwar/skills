@@ -1,0 +1,141 @@
+table: USR5
+description: User Access Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/USR5.htm
+fields:
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+  related: OUSR
+- field: Action
+  description: Performed Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Logon Succeeded
+  - key: F
+    label: Logon Failed
+  - key: O
+    label: Logoff
+  - key: C
+    label: Created
+  - key: S
+    label: Superuser Selected
+  - key: D
+    label: Superuser Deselected
+  - key: L
+    label: Locked
+  - key: U
+    label: Unlocked
+  - key: P
+    label: Password Changed
+  - key: N
+    label: Screen Unlock Failed
+  - key: T
+    label: Temporary User Change
+  - key: R
+    label: Removed
+- field: ActionBy
+  description: User Who Performed the Action
+  type: nVarChar
+  size: 25
+- field: ClientIP
+  description: IP Address of Client Computer
+  type: nVarChar
+  size: 200
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: Time
+  description: Time
+  type: Int
+  size: 11
+  default: 0
+- field: ClientName
+  description: Hostname of Client Computer
+  type: nVarChar
+  size: 200
+- field: ProcessID
+  description: Process ID of B1 Application
+  type: Int
+  size: 11
+  default: -1
+- field: SessionID
+  description: Connection Session ID
+  type: Int
+  size: 11
+  default: -1
+- field: ReasonID
+  description: Reason ID
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: 'Planned: Initial System Configuration'
+  - key: '2'
+    label: 'Planned: System Configuration Change'
+  - key: '3'
+    label: 'Planned: System Maintenance'
+  - key: '4'
+    label: 'Planned: Knowledge Transfer to End-User'
+  - key: '11'
+    label: 'Unplanned: Root Cause Analysis'
+  - key: '12'
+    label: 'Unplanned: Knowledge Transfer to End-User'
+  - key: '13'
+    label: 'Unplanned: System Maintenance'
+  - key: '14'
+    label: 'Unplanned: System Configuration Change'
+  - key: '51'
+    label: System Maintenance
+  - key: '52'
+    label: Root Cause Analysis
+  - key: '53'
+    label: Consulting / Support
+  - key: '54'
+    label: Other
+- field: ReasonDesc
+  description: Reason Description
+  type: nVarChar
+  size: 250
+- field: WinSessnID
+  description: Client Windows Session ID
+  type: Int
+  size: 11
+  default: -1
+- field: WinUsrName
+  description: User Name of Windows User
+  type: nVarChar
+  size: 100
+- field: ProcName
+  description: Process Name of Logged-On App.
+  type: nVarChar
+  size: 80
+- field: AliveDurtn
+  description: Time Logged-On User Keep Alive
+  type: Int
+  size: 11
+  default: 0
+- field: LogoutTime
+  description: User Logout Time
+  type: Int
+  size: 11
+- field: Source
+  description: Login Terminal
+  type: nVarChar
+  size: 100
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserCode
+  - Action
+  - Date
+  - Time
+  - SessionID

@@ -1,0 +1,40 @@
+table: OADF
+description: Address Formats
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OADF.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 6
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 50
+- field: Format
+  description: Format
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SuppBkLine
+  description: Suppress Blank Lines
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: ADF_NAME
+  unique: true
+  fields:
+  - Name

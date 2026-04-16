@@ -1,0 +1,85 @@
+table: OTAX
+description: VAT Transactions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OTAX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: Correction A/R Invoice
+  - key: '166'
+    label: Correction A/R Invoice Reversals
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '163'
+    label: Correction A/P Invoice
+  - key: '164'
+    label: Correction A/P Invoice Reversals
+  - key: '46'
+    label: Outgoing Payment
+  - key: '24'
+    label: Incoming Payment
+  - key: '57'
+    label: Check for Payment
+  - key: '30'
+    label: Journal Transaction
+  - key: '67'
+    label: Warehouse Transfer
+  - key: '25'
+    label: Deposit
+  - key: '321'
+    label: Internal Reconciliation
+  - key: '76'
+    label: Deposit Temporary
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '69'
+    label: Import file
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: OrdinLNum
+  description: Ordial Num (BTF & Canceled)
+  type: Int
+  size: 11
+  default: -1
+- field: Cancelled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcObjAbs
+  - OrdinLNum

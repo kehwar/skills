@@ -1,0 +1,102 @@
+table: IWZ3
+description: Items Last Revaluation Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/IWZ3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OIWZ
+- field: ItemCode
+  description: Item Number
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: RevalPrice
+  description: Revaluated Price
+  type: Num
+  size: 19.6
+- field: BaseCurr
+  description: Item Base Currency
+  type: nVarChar
+  size: 3
+- field: RevalDate
+  description: Revaluation Date
+  type: Date
+  size: 8
+- field: RevalSum
+  description: Revaluation Sum
+  type: Num
+  size: 19.6
+- field: BasePrice
+  description: Base Price
+  type: Num
+  size: 19.6
+- field: RealAcct
+  description: Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevalOfsac
+  description: Reval. Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevalType
+  description: Revaluation Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Inventory Reval. Type
+  - key: C
+    label: COGS Revaluation Type
+- field: ExeLine
+  description: Executed Row
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevCancel
+  description: Revaluation Cancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: RvCaclDate
+  description: Reval. Acct Cancellation Date
+  type: Date
+  size: 8
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: BalanceBef
+  description: Balance Before Revaluation
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ItemCode
+  - WhCode
+- key: ABS
+  unique: false
+  fields:
+  - AbsEntry

@@ -1,0 +1,35 @@
+table: OBNI
+description: Brazil Numeric Indexer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBNI.htm
+fields:
+- field: IndexType
+  description: Indexer Type
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: Descr
+  description: Beverage Brand
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ID
+  description: ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+- key: IND_CODE_K
+  unique: true
+  fields:
+  - IndexType
+  - Code

@@ -1,0 +1,24 @@
+table: CRD5
+description: BP Payment Dates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CRD5.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: PmntDate
+  description: Payment Date
+  type: nVarChar
+  size: 2
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - PmntDate

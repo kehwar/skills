@@ -1,0 +1,36 @@
+table: OTNN
+description: 1099 Forms
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTNN.htm
+fields:
+- field: FormCode
+  description: Form Code
+  type: Int
+  size: 11
+- field: Form1099
+  description: 1099 Form
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormCode
+- key: NAME
+  unique: true
+  fields:
+  - Form1099

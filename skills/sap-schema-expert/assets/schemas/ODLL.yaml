@@ -1,0 +1,25 @@
+table: ODLL
+description: Bar Code Algorithm File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODLL.htm
+fields:
+- field: DllEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DllName
+  description: DLL Name
+  type: nVarChar
+  size: 254
+- field: DllDesp
+  description: DLL Description
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DllEntry
+- key: NAME
+  unique: true
+  fields:
+  - DllName

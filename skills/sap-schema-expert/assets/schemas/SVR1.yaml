@@ -1,0 +1,24 @@
+table: SVR1
+description: Saved Reconciliations - Transaction List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/SVR1.htm
+fields:
+- field: acctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: transID
+  description: Transaction ID
+  type: Int
+  size: 11
+  related: OJDT
+- field: transLine
+  description: Transaction Row
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - acctCode
+  - transID
+  - transLine

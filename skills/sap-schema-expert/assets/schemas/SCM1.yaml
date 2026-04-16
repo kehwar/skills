@@ -1,0 +1,72 @@
+table: SCM1
+description: 'Special Ledger - Analytical Accounting Configuration Rule Conditions:
+  Material'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/SCM1.htm
+fields:
+- field: RuleID
+  description: Rule Identification Number
+  type: Int
+  size: 6
+  related: OSCM
+- field: CondNum
+  description: Condition Number
+  type: Int
+  size: 6
+- field: Value1
+  description: Static Value
+  type: nVarChar
+  size: 200
+- field: Table1
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: Field1
+  description: Table Field Name
+  type: nVarChar
+  size: 200
+- field: Cond1
+  description: Value Selection Condition
+  type: nVarChar
+  size: 200
+- field: Group1
+  description: Group by Clause
+  type: nVarChar
+  size: 100
+- field: Relation
+  description: Comparison Operator
+  type: nVarChar
+  size: 50
+- field: Value2
+  description: Static Value
+  type: nVarChar
+  size: 200
+- field: Table2
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: Field2
+  description: Table Field Name
+  type: nVarChar
+  size: 200
+- field: Cond2
+  description: Comparison Operator
+  type: nVarChar
+  size: 200
+- field: Group2
+  description: Group by Clause
+  type: nVarChar
+  size: 100
+- field: ExtCond1
+  description: Extended Special Data
+  type: nVarChar
+  size: 200
+- field: ExtCond2
+  description: Extended Special Data
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RuleID
+  - CondNum

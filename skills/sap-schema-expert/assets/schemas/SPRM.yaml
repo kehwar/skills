@@ -1,0 +1,29 @@
+table: SPRM
+description: '[SPRM]'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SPRM.htm
+fields:
+- field: AbsEntry
+  description: Abs entry
+  type: Int
+  size: 11
+- field: SaCoName
+  description: SAP company name
+  type: nVarChar
+  size: 128
+- field: MySAPCard
+  description: My SAP card
+  type: nVarChar
+  size: 128
+- field: MeInSAP
+  description: Me in SAP
+  type: nVarChar
+  size: 128
+- field: AttUser
+  description: Attending user
+  type: nVarChar
+  size: 128
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

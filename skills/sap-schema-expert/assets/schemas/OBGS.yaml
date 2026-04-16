@@ -1,0 +1,135 @@
+table: OBGS
+description: Budget Scenario
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBGS.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: BaseId
+  description: Basic Budget
+  type: Int
+  size: 11
+- field: InitRate
+  description: Initial Ratio Percentage
+  type: Num
+  size: 19.6
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FinancYear
+  description: Start of Fiscal Year
+  type: Date
+  size: 8
+- field: IsMain
+  description: Main
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: RoundSys
+  description: Rounding Method
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: No Rounding
+  - key: '1'
+    label: Round to Full Decimal Amount
+  - key: '2'
+    label: Round to Full Amount
+  - key: '3'
+    label: Round to Full Tens Amount
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: OcrCode
+  description: Dimension 1
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Dimension 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Dimension 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Dimension 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Dimension 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: SECOND
+  unique: true
+  fields:
+  - Name
+  - FinancYear
+- key: INTER_KEY
+  unique: false
+  fields:
+  - BaseId

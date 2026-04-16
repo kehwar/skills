@@ -1,0 +1,19 @@
+table: SHS1
+description: Fields that can automatically refresh user-defined values
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/SHS1.htm
+fields:
+- field: IndexID
+  description: Index
+  type: Int
+  size: 11
+  related: CSHS
+- field: FieldID
+  description: Field
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IndexID
+  - FieldID

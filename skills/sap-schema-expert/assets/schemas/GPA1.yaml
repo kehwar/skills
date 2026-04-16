@@ -1,0 +1,302 @@
+table: GPA1
+description: Gross Profit Adjustment - Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA1.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OGPA
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocAbs
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Document Line Number
+  type: Int
+  size: 11
+- field: ManagedBy
+  description: Managed By
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '10000044'
+    label: Batch Numbers
+  - key: '10000045'
+    label: Serial Numbers
+  - key: '-1'
+    label: ''
+- field: Selected
+  description: Choose
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DistNumber
+  description: Batch Number
+  type: nVarChar
+  size: 36
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: CogsAcct
+  description: COGS Account Code
+  type: nVarChar
+  size: 15
+- field: CogsAmnt
+  description: COGS Amount
+  type: Num
+  size: 19.6
+- field: SalesAmnt
+  description: Sales Amount
+  type: Num
+  size: 19.6
+- field: GrssProfit
+  description: Row Gross Profit
+  type: Num
+  size: 19.6
+- field: COGSByCC
+  description: COGS By Current Cost
+  type: Num
+  size: 19.6
+- field: GPByCC
+  description: Gross Profit By Current Cost
+  type: Num
+  size: 19.6
+- field: DeltaGP
+  description: Delta Gross Profit
+  type: Num
+  size: 19.6
+- field: SalesPrice
+  description: Sales Price
+  type: Num
+  size: 19.6
+- field: BatchQt
+  description: Batch Quantity
+  type: Num
+  size: 19.6
+- field: SnBAbs
+  description: SnB Abs. Entry
+  type: Int
+  size: 11
+- field: AccTotal
+  description: Acct Total
+  type: Num
+  size: 19.6
+- field: AccQty
+  description: Acct Qty
+  type: Num
+  size: 19.6
+- field: ActionType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 5
+  constraints:
+  - key: '0'
+    label: TRANSACTION_UNKNOWN
+  - key: '1'
+    label: TRANSACTION_IN
+  - key: '2'
+    label: TRANSACTION_OUT
+  - key: '3'
+    label: TRANSACTION_SET
+  - key: '4'
+    label: TRANSACTION_COMPLETE
+  - key: '5'
+    label: EMPTY_TRANSACTION
+  - key: '6'
+    label: TRANSACTION_REVALUATION
+  - key: '7'
+    label: TRANSACTION_REVALUATION_INCREASE
+  - key: '8'
+    label: TRANSACTION_REVALUATION_DECREASE
+  - key: '9'
+    label: TRANSACTION_CLOSE_IN
+  - key: '10'
+    label: TRANSACTION_CLOSE_OUT
+  - key: '11'
+    label: TRANSACTION_NEGATIVE_REVALUATION
+  - key: '12'
+    label: TRANSACTION_NULLIFY
+  - key: '13'
+    label: TRANSACTION_RESERVE_CI_IN
+  - key: '14'
+    label: TRANSACTION_RESERVE_CI_OUT
+  - key: '15'
+    label: TRANSACTION_RESERVE_CI_REVAL_INC
+  - key: '16'
+    label: TRANSACTION_RESERVE_CI_REVAL_DEC
+  - key: '17'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_INCREASE
+  - key: '18'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_DECREASE
+- field: SBAccTotal
+  description: SnB Acct Total
+  type: Num
+  size: 19.6
+- field: SBAccQty
+  description: SnB Acct Qty
+  type: Num
+  size: 19.6
+- field: BaseType
+  description: Base Type
+  type: nVarChar
+  size: 20
+- field: Execute
+  description: Execute
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SBCogsAmnt
+  description: SnB COGS Amount
+  type: Num
+  size: 19.6
+- field: SBSaleAmnt
+  description: SnB Sales Amount
+  type: Num
+  size: 19.6
+- field: SBGrssProf
+  description: SnB Gross Profit
+  type: Num
+  size: 19.6
+- field: SBGrPrPerc
+  description: SnB Gross Profit Percentage
+  type: Num
+  size: 19.6
+- field: GrPrPerc
+  description: Gross Profit Percentage
+  type: Num
+  size: 19.6
+- field: GPPercByCC
+  description: Gross Profit Percentage By Current Cost
+  type: Num
+  size: 19.6
+- field: DeltaGPLn
+  description: Delta gross profit calculated for the document line
+  type: Num
+  size: 19.6
+- field: Applied
+  description: Applied Adjustment
+  type: Num
+  size: 19.6
+- field: SBAccTtAdj
+  description: SnB Acct Total Adjustment
+  type: Num
+  size: 19.6
+- field: IsMixed
+  description: Is Mixed Based Document
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CogsAmByCC
+  description: Total COGS Amount By Current Cost
+  type: Num
+  size: 19.6
+- field: GrssPrByCC
+  description: Total Gross Profit By Current Cost
+  type: Num
+  size: 19.6
+- field: LineType
+  description: Wizard Line Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Normal
+  - key: C
+    label: Chained
+  - key: I
+    label: Non Based Correction Invoice
+- field: ChDocType
+  description: Chained Document Type
+  type: nVarChar
+  size: 20
+- field: ChDocAbs
+  description: Chained Document Abs. Entry
+  type: Int
+  size: 11
+- field: WasQty
+  description: Was Line Quantity
+  type: Num
+  size: 19.6
+- field: WasCogs
+  description: Was Line COGS Amount
+  type: Num
+  size: 19.6
+- field: WasSales
+  description: Was Line Sales Amount
+  type: Num
+  size: 19.6
+- field: WasPrice
+  description: Was Line Sales Price
+  type: Num
+  size: 19.6
+- field: WasGrProf
+  description: Was Line Gross Profit
+  type: Num
+  size: 19.6
+- field: BaseAbs
+  description: Base Document Abs Entry
+  type: Int
+  size: 11
+- field: WasNewCogs
+  description: Was Line New Cogs
+  type: Num
+  size: 19.6
+- field: ChDocLine
+  description: Chained Document Line
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

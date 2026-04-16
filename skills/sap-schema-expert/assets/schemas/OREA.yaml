@@ -1,0 +1,21 @@
+table: OREA
+description: Return Action
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OREA.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Action
+  description: Return Action
+  type: nVarChar
+  size: 228
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: ACTION
+  unique: true
+  fields:
+  - Action

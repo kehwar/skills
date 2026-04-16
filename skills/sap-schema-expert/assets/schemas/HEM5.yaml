@@ -1,0 +1,126 @@
+table: HEM5
+description: Employee Data Ownership Authorization
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HEM5.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+  related: OHEM
+- field: Object
+  description: The Object Number
+  type: nVarChar
+  size: 20
+- field: Peer
+  description: Peer Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: Manager
+  description: Manager Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: Subord
+  description: Subordinate Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: Dept
+  description: Department Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: Branch
+  description: Branch Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: Team
+  description: Team Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: AC
+  description: Cache Access Counter
+  type: Int
+  size: 11
+  default: 0
+- field: Cmpny
+  description: Company Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Full
+  - key: R
+    label: Read Only
+  - key: N
+    label: None
+  - key: U
+    label: Undefined Type
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - Object

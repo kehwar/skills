@@ -1,0 +1,58 @@
+table: HEM1
+description: Absence Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HEM1.htm
+fields:
+- field: empID
+  description: Employee ID
+  type: Int
+  size: 11
+  related: OHEM
+- field: line
+  description: Absence Information Row
+  type: Int
+  size: 6
+- field: fromDate
+  description: Absence from
+  type: Date
+  size: 8
+- field: toDate
+  description: Absence to
+  type: Date
+  size: 8
+- field: reason
+  description: Reason
+  type: nVarChar
+  size: 20
+- field: approvedBy
+  description: Approved By
+  type: nVarChar
+  size: 20
+- field: cnfrmrNum
+  description: Confirmer Number
+  type: Int
+  size: 11
+  related: OHEM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: type
+  description: Absence Type
+  type: Int
+  size: 11
+  related: PMC5
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnType
+  description: Encrypt Absence Type
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - line

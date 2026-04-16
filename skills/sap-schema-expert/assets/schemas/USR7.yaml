@@ -1,0 +1,32 @@
+table: USR7
+description: Group User Association
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/USR7.htm
+fields:
+- field: UserId
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: GroupId
+  description: Group ID
+  type: Int
+  size: 6
+  related: OUGR
+- field: Category
+  description: Group Category
+  type: nVarChar
+  size: 155
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserId
+  - GroupId

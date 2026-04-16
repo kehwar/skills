@@ -1,0 +1,25 @@
+table: XTOKN
+description: OIDC Offline Token
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XTOKN.htm
+fields:
+- field: UUID
+  description: UUID
+  type: nVarChar
+  size: 40
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+- field: RefreToken
+  description: Refresh Token
+  type: Text
+  size: 16
+- field: LastActive
+  description: Last Active
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UUID

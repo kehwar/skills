@@ -1,0 +1,17 @@
+table: OLTI
+description: Legal Text Items
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OLTI.htm
+fields:
+- field: LineCode
+  description: Format Code
+  type: nVarChar
+  size: 30
+- field: XMLPath
+  description: XML Path
+  type: nVarChar
+  size: 150
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LineCode

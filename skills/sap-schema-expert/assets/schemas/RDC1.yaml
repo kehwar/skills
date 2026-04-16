@@ -1,0 +1,52 @@
+table: RDC1
+description: Multilingual Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/RDC1.htm
+fields:
+- field: DocCode
+  description: Doc. Code
+  type: nVarChar
+  size: 8
+  related: RDOC
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: DocName
+  description: Doc. Name
+  type: nVarChar
+  size: 64
+- field: LangCode
+  description: Language Code
+  type: Int
+  size: 11
+- field: Template
+  description: Report Template Data
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Create Time
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocCode
+  - LineNum
+- key: UniqueIdx
+  unique: true
+  fields:
+  - DocCode
+  - LangCode

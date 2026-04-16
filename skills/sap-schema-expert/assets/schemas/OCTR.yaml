@@ -1,0 +1,460 @@
+table: OCTR
+description: Service Contracts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OCTR.htm
+fields:
+- field: ContractID
+  description: Contract No.
+  type: Int
+  size: 11
+- field: CstmrCode
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CstmrName
+  description: Business Partner Name
+  type: nVarChar
+  size: 200
+- field: CntctCode
+  description: Contact Person Code
+  type: Int
+  size: 11
+  related: OCPR
+- field: Owner
+  description: Owner
+  type: Int
+  size: 6
+  related: OUSR
+- field: Status
+  description: Contract Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: A
+    label: Approved
+  - key: F
+    label: On Hold
+  - key: D
+    label: Draft
+  - key: T
+    label: Terminated
+- field: CntrcTmplt
+  description: Contract Template
+  type: nVarChar
+  size: 20
+  related: OCTT
+- field: CntrcType
+  description: Contract Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: C
+    label: Business Partner
+  - key: G
+    label: Item Group
+  - key: S
+    label: Serial Number
+- field: Renewal
+  description: Renewal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemindVal
+  description: Reminder Time
+  type: Int
+  size: 6
+- field: RemindUnit
+  description: Remind Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: W
+    label: Week(s)
+  - key: M
+    label: Month(s)
+- field: Duration
+  description: Duration of Coverage
+  type: Int
+  size: 6
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: ResponsVal
+  description: Resolution Time
+  type: Int
+  size: 6
+- field: ResponsUnt
+  description: Resolution Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: H
+    label: Hour(s)
+- field: Descriptio
+  description: Description
+  type: nVarChar
+  size: 254
+- field: SrcDocType
+  description: Source Document Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: Q
+    label: Sales Quotation
+  - key: O
+    label: Sales Order
+  - key: D
+    label: Delivery
+  - key: I
+    label: A/R Invoice
+- field: DocNum
+  description: Source Document
+  type: Int
+  size: 11
+- field: MonEnabled
+  description: Monday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TueEnabled
+  description: Tuesday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WedEnabled
+  description: Wednesday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ThuEnabled
+  description: Thursday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FriEnabled
+  description: Friday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SatEnabled
+  description: Saturday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SunEnabled
+  description: Sunday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MonStart
+  description: Monday Start
+  type: Int
+  size: 6
+  default: 800
+- field: MonEnd
+  description: Monday End
+  type: Int
+  size: 6
+  default: 1700
+- field: TueStart
+  description: Tuesday Start
+  type: Int
+  size: 6
+  default: 800
+- field: TueEnd
+  description: Tuesday End
+  type: Int
+  size: 6
+  default: 1700
+- field: WedStart
+  description: Wednesday Start
+  type: Int
+  size: 6
+  default: 800
+- field: WedEnd
+  description: Wednesday End
+  type: Int
+  size: 6
+  default: 1700
+- field: ThuStart
+  description: Thursday Start
+  type: Int
+  size: 6
+  default: 800
+- field: ThuEnd
+  description: Thursday End
+  type: Int
+  size: 6
+  default: 1700
+- field: FriStart
+  description: Friday Start
+  type: Int
+  size: 6
+  default: 800
+- field: FriEnd
+  description: Friday End
+  type: Int
+  size: 6
+  default: 1700
+- field: SatStart
+  description: Saturday Start
+  type: Int
+  size: 6
+  default: 0
+- field: SatEnd
+  description: Saturday End
+  type: Int
+  size: 6
+  default: 2359
+- field: SunStrart
+  description: Sunday Start
+  type: Int
+  size: 6
+  default: 0
+- field: SunEnd
+  description: Sunday End
+  type: Int
+  size: 6
+  default: 2359
+- field: InclParts
+  description: Include Parts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: InclWork
+  description: Include Labor
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: InclTravel
+  description: Include Travel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Remarks1
+  description: Template Remarks
+  type: Text
+  size: 16
+- field: Remarks2
+  description: Remarks
+  type: Text
+  size: 16
+- field: RemindFlg
+  description: Reminder Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CTR1Count
+  description: CTR1 Counter
+  type: Int
+  size: 11
+  default: 0
+- field: DocEntry
+  description: Linked Document No.
+  type: Int
+  size: 11
+- field: RemTmDays
+  description: Remind Time in Days
+  type: Int
+  size: 11
+- field: ResTmHours
+  description: Response Time in Hours
+  type: Int
+  size: 11
+- field: InclHldays
+  description: Include Holidays
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SrvcType
+  description: Service Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Regular
+  - key: W
+    label: Warranty
+- field: TermDate
+  description: Termination Date
+  type: Date
+  size: 8
+- field: ResponseV
+  description: Response Time
+  type: Int
+  size: 6
+- field: ResponseU
+  description: Response Unit
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: H
+    label: Hour(s)
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: BPType
+  description: BP Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchasing
+- field: OwnerCode
+  description: Service Contract Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ObjType
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '190'
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ContractID

@@ -1,0 +1,222 @@
+table: RAMI
+description: RAMI
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RAMI.htm
+fields:
+- field: ErrUID
+  description: Error Message Unique ID
+  type: nVarChar
+  size: 11
+- field: StrlNum
+  description: String List Number
+  type: Int
+  size: 11
+- field: StrIdx
+  description: String Index
+  type: Int
+  size: 11
+- field: GuidStr
+  description: GUID String
+  type: nVarChar
+  size: 32
+  default: 3A51AF1A405C41479530D05FF95A3FBA
+- field: MsgDef
+  description: Message Define
+  type: nVarChar
+  size: 100
+- field: MsgType
+  description: Message Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Error
+  - key: W
+    label: Warning
+  - key: N
+    label: Info
+  - key: S
+    label: Success
+  - key: O
+    label: None
+- field: MsgArea
+  description: Message Area
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: AP_AR
+    label: Sales and Purchurse orders
+  - key: RPT
+    label: Reports
+  - key: PROD
+    label: Production
+  - key: LGST
+    label: ItemMasterData
+  - key: INVT
+    label: Inventory
+  - key: FIN
+    label: Financial
+  - key: BANK
+    label: Banking
+  - key: CARD
+    label: BP Master Data
+  - key: AUTH
+    label: Authorization
+  - key: ADMIN
+    label: Administration
+  - key: SDK
+    label: SDK UI
+  - key: LCNS
+    label: License
+  - key: ADDON
+    label: Add-On manager
+  - key: FORM
+    label: Form Infrastructure
+  - key: DB
+    label: DB Infrastructure
+  - key: CORE
+    label: Core Layer
+  - key: INST
+    label: Installation and Upgrade
+- field: ScnExp
+  description: Scenarion Explanation
+  type: Text
+  size: 16
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 20
+- field: SonTable
+  description: Son Table
+  type: nVarChar
+  size: 20
+- field: Alias
+  description: Alias
+  type: nVarChar
+  size: 10
+- field: FormID
+  description: Form ID
+  type: Int
+  size: 11
+- field: PaneID
+  description: Pane Id
+  type: Int
+  size: 6
+  default: 0
+- field: ItemID
+  description: Item ID
+  type: Int
+  size: 11
+  default: -1
+- field: CreateDate
+  description: Creation date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+- field: UserSign
+  description: User Sign
+  type: Int
+  size: 11
+- field: SolExp
+  description: Solution Explanation
+  type: Text
+  size: 16
+- field: CsnId
+  description: CSN Note Id
+  type: nVarChar
+  size: 30
+- field: DispType
+  description: Display Type
+  type: nVarChar
+  size: 30
+  default: SBAR
+  constraints:
+  - key: SBAR
+    label: Sbar
+  - key: NOTE
+    label: Note
+  - key: DIALOG_OKCancelType
+    label: Dialog OK Cancel
+  - key: DIALOG_YesNoCancelType
+    label: Dialog Yes No Cancel
+  - key: DIALOG_YesNoType
+    label: Dialog Yes No
+  - key: DIALOG_YesAllNoAllCancelType
+    label: Dialog Yes All No All Cancel
+  - key: DIALOG_ErrorOkType
+    label: Dialog Error Ok
+  - key: DIALOG_ContinueSaveType
+    label: Dialog Continue Save
+  - key: DIALOG_RemoveCancelType
+    label: Dialog Remove Cancel
+  - key: DIALOG_ContinueCancelType
+    label: Dialog Continue Cancel
+  - key: DIALOG_ContinueCancelNoType
+    label: Dialog Continue Cancel No
+  - key: DIALOG_AddCancelType
+    label: Dialog Add Cancel
+  - key: DIALOG_ContinueStopType
+    label: Dialog Continue Stop
+  - key: DIALOG_YesCancelType
+    label: Dialog Yes Cancel
+  - key: DIALOG_ContinueOpenType
+    label: Dialog Continue Open
+  - key: DIALOG_OpenContinueCancelType
+    label: Dialog Open Continue Cancel
+  - key: DIALOG_YesYesAllNoType
+    label: Dialog Yes Yes All No
+  - key: DIALOG_YesYesAllNoAllType
+    label: Dialog Yes Yes All No All
+- field: ColmID
+  description: Column ID
+  type: Int
+  size: 11
+  default: -1
+- field: IsDeleted
+  description: Is Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ErrUID
+- key: GUID
+  unique: false
+  fields:
+  - GuidStr
+- key: CodeDefine
+  unique: true
+  fields:
+  - MsgDef
+- key: String
+  unique: true
+  fields:
+  - StrlNum
+  - StrIdx
+- key: ObjectId
+  unique: false
+  fields:
+  - ObjName
+  - SonTable
+  - Alias

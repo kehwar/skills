@@ -1,0 +1,34 @@
+table: NNM5
+description: Document Numbering - Removed Serial Numbers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NNM5.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+  default: --
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Series
+  - ObjectCode
+  - DocSubType
+  - Number
+- key: SERIES
+  unique: false
+  fields:
+  - Series
+  - Number

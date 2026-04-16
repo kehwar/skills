@@ -1,0 +1,34 @@
+table: PYM1
+description: Currency Selection
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PYM1.htm
+fields:
+- field: PymCode
+  description: Payment Method Code
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: CurrCode
+  description: Currency Code
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: CurrName
+  description: Currency Name
+  type: nVarChar
+  size: 20
+- field: Choose
+  description: Choose
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PymCode
+  - CurrCode

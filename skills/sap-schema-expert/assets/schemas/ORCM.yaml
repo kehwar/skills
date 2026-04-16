@@ -1,0 +1,193 @@
+table: ORCM
+description: Recommendation Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/ORCM.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjAbs
+  description: Document Internal Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Document Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: DueDate
+  description: Order Due Date
+  type: Date
+  size: 8
+- field: OrderType
+  description: Order Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Purchase Order
+  - key: W
+    label: Production Order
+  - key: T
+    label: Inventory Transfer Request
+  - key: Q
+    label: Purchase Quotation
+  - key: R
+    label: Purchase Request
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: UOM
+  description: Buy or Inventory UoM
+  type: nVarChar
+  size: 100
+- field: CardCode
+  description: Preferred Vendor
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Warehouse
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Price
+  description: Price After Discount
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Origin
+  description: Order Origin
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: MRP
+- field: Status
+  description: Order Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Opened
+  - key: A
+    label: Accepted
+  - key: P
+    label: Processed
+  - key: D
+    label: Deleted
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DocDate
+  description: Generation Date
+  type: Date
+  size: 8
+- field: DocTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: BPLid
+  description: Business Place ID
+  type: Int
+  size: 11
+  default: -1
+- field: PriceBefDi
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: DiscPrcnt
+  description: Discount % Per Row
+  type: Num
+  size: 19.6
+- field: ReleasDate
+  description: Release Date
+  type: Date
+  size: 8
+- field: PriceAftV
+  description: Price after VAT
+  type: Num
+  size: 19.6
+- field: FromWhse
+  description: From Warehouse
+  type: nVarChar
+  size: 8
+- field: FstReqDate
+  description: First Request Date
+  type: Date
+  size: 8
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+- field: NumPerMsr
+  description: UoM Value
+  type: Num
+  size: 19.6
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: OOAT
+- field: AgrLnNum
+  description: Agreement Row Number
+  type: Int
+  size: 11
+- field: UseDiscnt
+  description: Use BP Special Price
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+- field: RouDatCalc
+  description: Routing Date Calculation
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: On Start Date
+  - key: D
+    label: On End Date
+  - key: F
+    label: Start Date Onwards
+  - key: B
+    label: End Date Backwards
+- field: UoMNum
+  description: UoM Item Per Unit Numerator
+  type: Num
+  size: 19.6
+- field: UoMDen
+  description: UoM Item Per Unit Denominator
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

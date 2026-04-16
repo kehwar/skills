@@ -1,0 +1,60 @@
+table: FAM1
+description: Fixed Asset Data Migration - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FAM1.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: OFAM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '1470000002'
+    label: Account Determination
+  - key: '1470000003'
+    label: Depreciation Areas
+  - key: '1470000004'
+    label: Depreciation Type Pools
+  - key: '1470000000'
+    label: Depreciation Types
+  - key: '1470000032'
+    label: Asset Classes
+  - key: '4'
+    label: Items
+  - key: '35'
+    label: Item Numbering
+- field: ObjectCode
+  description: Object Code
+  type: nVarChar
+  size: 20
+- field: ObjectName
+  description: Object Name
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Successful
+  - key: N
+    label: Failed
+- field: Message
+  description: Message
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - LineNum

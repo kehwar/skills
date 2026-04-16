@@ -1,0 +1,53 @@
+table: LOCL
+description: Localizations Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/LOCL.htm
+fields:
+- field: AbsKey
+  description: Abs Key
+  type: Int
+  size: 11
+- field: LocCode
+  description: Localization Code
+  type: nVarChar
+  size: 2
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 32
+- field: DfltLang
+  description: Default Language
+  type: Int
+  size: 11
+- field: B5IColctn
+  description: B5I Collection Name
+  type: nVarChar
+  size: 20
+- field: IncldInExp
+  description: Include In export
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncEnInExp
+  description: Include English In Export
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LocCode
+- key: ABS_KEY
+  unique: true
+  fields:
+  - AbsKey

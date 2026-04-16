@@ -1,0 +1,55 @@
+table: CULG
+description: Company Upgrade Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CULG.htm
+fields:
+- field: LogId
+  description: LogId
+  type: Int
+  size: 11
+- field: VersFrom
+  description: Version from
+  type: Int
+  size: 11
+- field: VersTo
+  description: Version to
+  type: Int
+  size: 11
+- field: TableId
+  description: Table ID
+  type: nVarChar
+  size: 4
+- field: OnCreate
+  description: Err. on creation
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Create
+  - key: Q
+    label: Query
+- field: ErrLevel
+  description: Error Level
+  type: nVarChar
+  size: 30
+- field: InQuery
+  description: '-'
+  type: nVarChar
+  size: 254
+- field: ErrMessage
+  description: '-'
+  type: nVarChar
+  size: 254
+- field: UpgStart
+  description: Start upgrade
+  type: nVarChar
+  size: 30
+- field: UserID
+  description: User Signature
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogId

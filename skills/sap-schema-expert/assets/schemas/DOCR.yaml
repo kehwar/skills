@@ -1,0 +1,421 @@
+table: DOCR
+description: DOCR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DOCR.htm
+fields:
+- field: DocCode
+  description: Code
+  type: nVarChar
+  size: 8
+- field: DocName
+  description: Report Name
+  type: nVarChar
+  size: 64
+- field: Author
+  description: Author
+  type: nVarChar
+  size: 32
+- field: Notes
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: Width
+  description: Width
+  type: Int
+  size: 6
+  default: 595
+- field: Height
+  description: Height
+  type: Int
+  size: 6
+  default: 842
+- field: LMargin
+  description: Left Margin
+  type: Int
+  size: 6
+  default: 10
+- field: RMargin
+  description: Right Margin
+  type: Int
+  size: 6
+  default: 30
+- field: TMargin
+  description: Top Margin
+  type: Int
+  size: 6
+  default: 10
+- field: BMargin
+  description: Bottom Margin
+  type: Int
+  size: 6
+  default: 10
+- field: CanChange
+  description: Changable
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: 'TRUE'
+  - key: '0'
+    label: 'FALSE'
+- field: PaperSize
+  description: Paper Size
+  type: nVarChar
+  size: 100
+  default: A4 210 x 297 mm
+- field: Oreint
+  description: Orientation
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Vertical
+  - key: L
+    label: Horizontal
+- field: GridSize
+  description: Grid Size
+  type: Int
+  size: 6
+  default: 10
+- field: GridType
+  description: Grid Type
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Compbination
+  - key: '2'
+    label: Continuous line
+  - key: '3'
+    label: Broken line
+  - key: '4'
+    label: Dots
+- field: ShowGrid
+  description: Display Grid
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: 'TRUE'
+  - key: '0'
+    label: 'FALSE'
+- field: SnapGrid
+  description: Next to Grid
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: 'TRUE'
+  - key: '0'
+    label: 'FALSE'
+- field: Picture
+  description: Picture
+  type: Text
+  size: 16
+- field: TypeCode
+  description: Type Code
+  type: nVarChar
+  size: 4
+- field: FrgnReport
+  description: Foreign Language Report
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'TRUE'
+  - key: '0'
+    label: 'FALSE'
+- field: CanSort
+  description: Sortable
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: 'TRUE'
+  - key: '0'
+    label: 'FALSE'
+- field: LeaderCode
+  description: Leader Report
+  type: nVarChar
+  size: 8
+- field: FollowCode
+  description: Follow-Up Report
+  type: nVarChar
+  size: 8
+- field: SwapOnScrn
+  description: Convert Font in Print Preview
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'FALSE'
+- field: ScreenFont
+  description: Preview Printing Font
+  type: nVarChar
+  size: 50
+  default: Arial
+- field: ScrFOffset
+  description: Change Font Size in Preview Pr
+  type: Int
+  size: 6
+  default: -1
+- field: SwpInEmail
+  description: Convert Font for E-mail
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'FALSE'
+- field: EmailFont
+  description: E-Mail Font
+  type: nVarChar
+  size: 50
+  default: Arial
+- field: EmFOffset
+  description: Change Font Size for E-Mail
+  type: Int
+  size: 6
+  default: -1
+- field: QString
+  description: Query
+  type: Text
+  size: 16
+- field: QType
+  description: Query Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Regular
+  - key: W
+    label: Wizard
+- field: Language
+  description: Language
+  type: Int
+  size: 6
+- field: RobjCode
+  description: Imp Exp Obj Code
+  type: Int
+  size: 11
+  default: 0
+- field: ExtName
+  description: Extension Name
+  type: Text
+  size: 16
+- field: ExtOnErr
+  description: Action Taken On Ext Error
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Stop
+  - key: I
+    label: Ignore
+  - key: P
+    label: Promt
+- field: NumRepArs
+  description: Number of Repetitive Areas
+  type: Int
+  size: 6
+  default: 1
+- field: AlgnFooter
+  description: Allign Footer to Buttom
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Local
+  description: Localization
+  type: nVarChar
+  size: 2
+- field: Numerator
+  description: Numerator
+  type: Int
+  size: 6
+- field: NextAppId
+  description: Next Item AppId
+  type: Int
+  size: 6
+  default: 1
+- field: Created
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Updated
+  description: Updated Date
+  type: Date
+  size: 8
+- field: UsrSgnStr
+  description: User Sign For Strings Change
+  type: Int
+  size: 11
+  default: -1
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: TimeFormat
+  description: Time Template
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Default
+  - key: '1'
+    label: 24H
+  - key: '2'
+    label: 12H
+- field: DateFormat
+  description: Date Template
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Default
+  - key: '1'
+    label: DD/MM/YY
+  - key: '2'
+    label: DD/MM/CCYY
+  - key: '3'
+    label: MM/DD/YY
+  - key: '4'
+    label: MM/DD/CCYY
+  - key: '5'
+    label: CCYY/MM/DD
+  - key: '6'
+    label: DD/Month/YYYY
+- field: DateSep
+  description: Date Separator
+  type: VarChar
+  size: 1
+- field: DecSep
+  description: Decimal Separator
+  type: VarChar
+  size: 1
+- field: ThousSep
+  description: Thousands Separator
+  type: VarChar
+  size: 1
+- field: Printer
+  description: Printer
+  type: nVarChar
+  size: 100
+- field: NumLayPage
+  description: Number of Layout Pages
+  type: Int
+  size: 11
+- field: NumCopy
+  description: Number of Copies
+  type: Int
+  size: 11
+  default: 1
+- field: GbiSupport
+  description: GBI settings supported
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Use1stPrtr
+  description: Use 1st page printer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Prtr1st
+  description: Printer for First Page
+  type: nVarChar
+  size: 100
+- field: Shading
+  description: Print item backgrounds
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ForceExpXX
+  description: Force Export XX Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+- field: UseSysPref
+  description: Use System Preference
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TypeCode
+  - Local
+  - Numerator
+  - Language
+  - ResCode
+  - RevCode
+- key: TYP_LOC_NM
+  unique: false
+  fields:
+  - TypeCode
+  - Local
+  - Numerator
+- key: TYPE_LOC
+  unique: false
+  fields:
+  - TypeCode
+  - Local
+- key: TYPE
+  unique: false
+  fields:
+  - TypeCode

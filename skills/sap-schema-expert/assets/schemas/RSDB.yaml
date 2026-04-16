@@ -1,0 +1,46 @@
+table: RSDB
+description: Resource DB List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSDB.htm
+fields:
+- field: AbsKey
+  description: Abs Key
+  type: Int
+  size: 11
+- field: ServerName
+  description: Server Name
+  type: nVarChar
+  size: 254
+- field: DbName
+  description: Resource DB Name
+  type: nVarChar
+  size: 64
+- field: Date
+  description: Creation date
+  type: Date
+  size: 8
+- field: Time
+  description: Creation Time
+  type: Date
+  size: 8
+- field: OrigDB
+  description: Original DB
+  type: Int
+  size: 11
+- field: MBServer
+  description: Master Base Server Name
+  type: nVarChar
+  size: 254
+- field: MBDbName
+  description: Master Base DB Name
+  type: nVarChar
+  size: 64
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsKey
+- key: SERVER_DB
+  unique: true
+  fields:
+  - ServerName
+  - DbName

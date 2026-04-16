@@ -1,0 +1,25 @@
+table: SXREL
+description: XLR Event Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXREL.htm
+fields:
+- field: EventId
+  description: EventId
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+- field: Text
+  description: Text
+  type: Text
+  size: 16
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EventId

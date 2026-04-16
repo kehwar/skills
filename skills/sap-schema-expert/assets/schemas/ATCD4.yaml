@@ -1,0 +1,42 @@
+table: ATCD4
+description: Withholding Tax Code Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ATCD4.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Tcd2Id
+  description: Determination Key Field ID
+  type: Int
+  size: 11
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 8
+- field: Type
+  description: WTax Code Type
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: R
+    label: AR Default WT Code
+  - key: P
+    label: AP Default WT Code
+  - key: L
+    label: Line Item WT Code
+- field: TcdId
+  description: Tax Determination Code
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc

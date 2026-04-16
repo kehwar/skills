@@ -1,0 +1,111 @@
+table: OFAM
+description: Fixed Asset Data Migration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFAM.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: WizardName
+  description: Migration Run Name
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Migration Run Date
+  type: Date
+  size: 8
+- field: AcctDtn
+  description: Migrate Account Determination
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DprArea
+  description: Migrate Depreciation Areas
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DprType
+  description: Migrate Depreciation Types
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AssetClass
+  description: Migrate Asset Classes
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AssetNum
+  description: Migrate Asset Numbering
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AssetItem
+  description: Migrate Asset Items
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UpdExstItm
+  description: Overwrite Existing Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Overwrite Existing Data
+  - key: N
+    label: Skip if Data Already Exists
+- field: Status
+  description: Status of Migration Run
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Successful
+  - key: P
+    label: Partially Successful
+  - key: F
+    label: Failed
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: FiscalYear
+  description: Migration Data to Fiscal Year
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId

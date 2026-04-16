@@ -1,0 +1,32 @@
+table: MDC2
+description: Master Data Cleanup - MD Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MDC2.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OMDC
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: UserAction
+  description: User Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: O
+    label: Original Recommendation
+  - key: D
+    label: Deactivate
+- field: DelContent
+  description: Delete Content List
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ObjectType

@@ -1,0 +1,211 @@
+table: RFRM
+description: FORM resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RFRM.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: Form name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Form number
+  type: Int
+  size: 11
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 64
+- field: TitleUpd
+  description: Title update
+  type: Date
+  size: 8
+- field: TitleLen
+  description: Title length
+  type: Int
+  size: 11
+- field: Type
+  description: Form type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: Resize Document
+  - key: '1'
+    label: Dialog Box
+  - key: '3'
+    label: No Title Document
+  - key: '4'
+    label: Fixed Document
+  - key: '5'
+    label: Resize No Title Document
+  - key: '6'
+    label: Toolbar
+- field: CloseBox
+  description: Close box
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'Yes'
+  - key: '1'
+    label: 'No'
+- field: DfltButton
+  description: Default button
+  type: Int
+  size: 11
+  default: 0
+- field: _Top
+  description: Top
+  type: Int
+  size: 11
+  default: 1
+- field: _Bottom
+  description: Bottom
+  type: Int
+  size: 11
+- field: _Left
+  description: Left
+  type: Int
+  size: 11
+- field: _Right
+  description: Right
+  type: Int
+  size: 11
+- field: DoColor
+  description: Use color table
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'Yes'
+  - key: '1'
+    label: 'No'
+- field: CT_SEED
+  description: CT_SEED
+  type: Int
+  size: 11
+- field: CT_RESERVE
+  description: CT_RESERVE
+  type: Int
+  size: 11
+- field: CT_SIZE
+  description: CT_SIZE
+  type: Int
+  size: 11
+- field: CT_S0_VAL
+  description: CT_S0_VALUE
+  type: Int
+  size: 11
+- field: CT_S0_RED
+  description: CT_S0_RED
+  type: Int
+  size: 11
+- field: CT_S0_GRN
+  description: CT_S0_GREEN
+  type: Int
+  size: 11
+- field: CT_S0_BLUE
+  description: CT_S0_BLUE
+  type: Int
+  size: 11
+- field: CT_S1_VAL
+  description: CT_S1_VALUE
+  type: Int
+  size: 11
+- field: CT_S1_RED
+  description: CT_S1_RED
+  type: Int
+  size: 11
+- field: CT_S1_GRN
+  description: CT_S1_GREEN
+  type: Int
+  size: 11
+- field: CT_S1_BLUE
+  description: CT_S1_BLUE
+  type: Int
+  size: 11
+- field: CT_S2_VAL
+  description: CT_S2_VALUE
+  type: Int
+  size: 11
+- field: CT_S2_RED
+  description: CT_S2_RED
+  type: Int
+  size: 11
+- field: CT_S2_GRN
+  description: CT_S2_GREEN
+  type: Int
+  size: 11
+- field: CT_S2_BLUE
+  description: CT_S2_BLUE
+  type: Int
+  size: 11
+- field: CT_S3_VAL
+  description: CT_S3_VALUE
+  type: Int
+  size: 11
+- field: CT_S3_RED
+  description: CT_S3_RED
+  type: Int
+  size: 11
+- field: CT_S3_GRN
+  description: CT_S3_GREEN
+  type: Int
+  size: 11
+- field: CT_S3_BLUE
+  description: CT_S3_BLUE
+  type: Int
+  size: 11
+- field: CT_S4_VAL
+  description: CT_S4_VALUE
+  type: Int
+  size: 11
+- field: CT_S4_RED
+  description: CT_S4_RED
+  type: Int
+  size: 11
+- field: CT_S4_GRN
+  description: CT_S4_GREEN
+  type: Int
+  size: 11
+- field: CT_S4_BLUE
+  description: CT_S4_BLUE
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+- key: NUM
+  unique: true
+  fields:
+  - Language
+  - Num
+- key: M_NAME
+  unique: false
+  fields:
+  - Name
+- key: M_NUM
+  unique: false
+  fields:
+  - Num

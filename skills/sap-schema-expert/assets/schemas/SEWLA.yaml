@@ -1,0 +1,17 @@
+table: SEWLA
+description: SEWLA
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWLA.htm
+fields:
+- field: MachineNam
+  description: Machine Name
+  type: nVarChar
+  size: 254
+- field: IsErr
+  description: Is Error InLog
+  type: nVarChar
+  size: 4
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MachineNam

@@ -1,0 +1,38 @@
+table: USR6
+description: User Branch Assignment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/USR6.htm
+fields:
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+  related: OUSR
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: DigCrtPath
+  description: Digital Certificate Path
+  type: Text
+  size: 16
+- field: AcsDsbldBP
+  description: Access Disabled BP
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserCode
+  - BPLId

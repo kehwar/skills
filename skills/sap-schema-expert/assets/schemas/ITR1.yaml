@@ -1,0 +1,175 @@
+table: ITR1
+description: Internal Reconciliation - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ITR1.htm
+fields:
+- field: ReconNum
+  description: Reconciliation Number
+  type: Int
+  size: 11
+  related: OITR
+- field: LineSeq
+  description: Row Number
+  type: Int
+  size: 11
+- field: ShortName
+  description: BP/Account Code
+  type: nVarChar
+  size: 15
+- field: TransId
+  description: Transaction Internal ID
+  type: Int
+  size: 11
+  related: OJDT
+- field: TransRowId
+  description: Transaction Row Number
+  type: Int
+  size: 11
+- field: SrcObjTyp
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '30'
+    label: Journal Transactions
+  - key: '13'
+    label: Invoices
+  - key: '18'
+    label: Purchases
+  - key: '24'
+    label: Receipts
+  - key: '46'
+    label: Outgoing Payments
+  - key: '14'
+    label: Revert Invoices
+  - key: '19'
+    label: Revert Purchases
+  - key: '203'
+    label: Down Payment Incoming
+  - key: '204'
+    label: Down Payment Outgoing
+  - key: '163'
+    label: Correction A/P Invoice
+  - key: '164'
+    label: Correction A/P Invoice Reversals
+  - key: '165'
+    label: Correction A/R Invoice
+  - key: '166'
+    label: Correction A/R Invoice Reversals
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+- field: ReconSum
+  description: Reconciliation Amount
+  type: Num
+  size: 19.6
+- field: ReconSumFC
+  description: Reconciliation Amount (FC)
+  type: Num
+  size: 19.6
+- field: ReconSumSC
+  description: Reconciliation Amount (SC)
+  type: Num
+  size: 19.6
+- field: FrgnCurr
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: SumMthCurr
+  description: Amt in Reconciliation Currency
+  type: Num
+  size: 19.6
+- field: IsCredit
+  description: Credit or Debit
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Credit
+  - key: D
+    label: Debit
+- field: Account
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CashDisSum
+  description: Cash Discount Amount
+  type: Num
+  size: 19.6
+- field: WTSum
+  description: Withholding Tax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: Withholding Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: Withholding Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: ExpSum
+  description: Freight Amount
+  type: Num
+  size: 19.6
+- field: ExpSumFC
+  description: Freight Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExpSumSC
+  description: Freight Amount (SC)
+  type: Num
+  size: 19.6
+- field: netBefDisc
+  description: Net Before Discount Sum
+  type: Num
+  size: 19.6
+- field: MIEntry
+  description: MI Entry Include this Recon.
+  type: Int
+  size: 11
+  default: 0
+- field: MIType
+  description: MI Type Include this Recon.
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '270'
+    label: A/R Monthly Invoice
+  - key: '140000014'
+    label: A/P Monthly Invoice
+- field: InstID
+  description: Installment ID
+  type: Int
+  size: 11
+  default: 0
+- field: IntrsStat
+  description: Interest Letter Status
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Not Sent
+  - key: S
+    label: Sent
+  - key: C
+    label: Closed
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ReconNum
+  - LineSeq
+- key: Journal
+  unique: false
+  fields:
+  - TransId
+  - TransRowId
+- key: Object
+  unique: false
+  fields:
+  - SrcObjTyp
+  - SrcObjAbs

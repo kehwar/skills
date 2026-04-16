@@ -1,0 +1,35 @@
+table: SXRRO
+description: XLR Relations
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRRO.htm
+fields:
+- field: RoleId
+  description: RoleId
+  type: nVarChar
+  size: 16
+- field: AppId
+  description: AppId
+  type: nVarChar
+  size: 225
+- field: DatabaseId
+  description: DatabaseId
+  type: nVarChar
+  size: 225
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 50
+- field: Descriptio
+  description: Description
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RoleId
+- key: second
+  unique: true
+  fields:
+  - AppId
+  - DatabaseId
+  - Name

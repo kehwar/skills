@@ -1,0 +1,479 @@
+table: QUT3
+description: Sales Quotation - Freight
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/QUT3.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OQUT
+- field: ExpnsCode
+  description: Freight Code
+  type: Int
+  size: 11
+  related: OEXD
+- field: LineTotal
+  description: Total
+  type: Num
+  size: 19.6
+- field: TotalFrgn
+  description: Total (FC)
+  type: Num
+  size: 19.6
+- field: TotalSumSy
+  description: Total (SC)
+  type: Num
+  size: 19.6
+- field: PaidToDate
+  description: Paid to Date
+  type: Num
+  size: 19.6
+- field: PaidFC
+  description: Paid (FC)
+  type: Num
+  size: 19.6
+- field: PaidSys
+  description: Paid (SC)
+  type: Num
+  size: 19.6
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '23'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: DistrbMthd
+  description: Distribution Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: E
+    label: Equally
+  - key: T
+    label: Row Total
+- field: TaxStatus
+  description: Tax Liable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatPrcnt
+  description: Row Tax %
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: VatSumFrgn
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatSumSy
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: DedVatSum
+  description: Deductible Tax Amount
+  type: Num
+  size: 19.6
+- field: DedVatSumF
+  description: Deductible Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: DedVatSumS
+  description: Deductible Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: IsAcquistn
+  description: Acquisition Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: TaxType
+  description: Tax Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Regular Tax
+  - key: N
+    label: No Tax
+  - key: U
+    label: Use Tax
+- field: WTLiable
+  description: WTax Liable
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatApplied
+  description: Vat Applied
+  type: Num
+  size: 19.6
+- field: VatAppldFC
+  description: Applied Tax (FC)
+  type: Num
+  size: 19.6
+- field: VatAppldSC
+  description: Applied Tax (SC)
+  type: Num
+  size: 19.6
+- field: EquVatPer
+  description: Equalization Tax %
+  type: Num
+  size: 19.6
+- field: EquVatSum
+  description: Total Equalization Tax
+  type: Num
+  size: 19.6
+- field: EquVatSumF
+  description: Total Equalization Tax (FC)
+  type: Num
+  size: 19.6
+- field: EquVatSumS
+  description: Total Equalization Tax (SC)
+  type: Num
+  size: 19.6
+- field: LineVat
+  description: Net Tax Amount
+  type: Num
+  size: 19.6
+- field: LineVatF
+  description: Net Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: LineVatS
+  description: Net Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseMethod
+  description: Drawing Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: T
+    label: Total
+  - key: A
+    label: All
+- field: Stock
+  description: Stock
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LstPchPrce
+  description: Last Purchase Price
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AnalysRpt
+  description: Analysis Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseAbsEnt
+  description: Base Abs Entry
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+- field: BaseRef
+  description: Base Document Reference
+  type: Int
+  size: 11
+- field: BaseLnNum
+  description: Base Document Row No.
+  type: Int
+  size: 11
+- field: LineNum
+  description: line num
+  type: Int
+  size: 11
+  default: -1
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: TrgType
+  description: Target Type
+  type: Int
+  size: 11
+- field: TrgAbsEnt
+  description: Target Doc. Internal No.
+  type: Int
+  size: 11
+  default: -1
+- field: StDstr
+  description: Stock Distributed Sum
+  type: Num
+  size: 19.6
+- field: StDstrSC
+  description: Stock Distributed Sum (SC)
+  type: Num
+  size: 19.6
+- field: StDstrFC
+  description: Stock Distributed Sum (FC)
+  type: Num
+  size: 19.6
+- field: FixCurr
+  description: Fixation Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: VatDscntPr
+  description: Tax Discount %
+  type: Num
+  size: 19.6
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: TaxDistMtd
+  description: Tax Distribution Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: None
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: E
+    label: Equally
+  - key: T
+    label: Row Total
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: VatGrpSrc
+  description: VAT Group Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Defined
+  - key: M
+    label: Manually Entered
+  - key: D
+    label: Determined
+- field: DrawnTotal
+  description: Drawn Total
+  type: Num
+  size: 19.6
+- field: DrawnFC
+  description: Drawn Total (FC)
+  type: Num
+  size: 19.6
+- field: DrawnSC
+  description: Drawn Total (SC)
+  type: Num
+  size: 19.6
+- field: GrsAmount
+  description: Gross Amount
+  type: Num
+  size: 19.6
+- field: GrsFC
+  description: Gross Amount (FC)
+  type: Num
+  size: 19.6
+- field: GrsSC
+  description: Gross Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseTotal
+  description: Base Total for Calculation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net Total
+  - key: G
+    label: Gross Total
+- field: RetReqLC
+  description: Return Request Amount
+  type: Num
+  size: 19.6
+- field: RetReqFC
+  description: Return Request Amount (FC)
+  type: Num
+  size: 19.6
+- field: RetReqSC
+  description: Return Request Amount (SC)
+  type: Num
+  size: 19.6
+- field: RRVatLC
+  description: Return Request VAT Amount
+  type: Num
+  size: 19.6
+- field: RRVatFC
+  description: Return Request VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: RRVatSC
+  description: Return Request VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: ExtTaxRate
+  description: External Tax Rate
+  type: Num
+  size: 19.6
+- field: ExtTaxSum
+  description: External Tax Amount
+  type: Num
+  size: 19.6
+- field: TaxAmtSrc
+  description: Tax Amount Source
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Internal System Calculation
+  - key: E
+    label: External Calculation
+- field: ExtTaxSumF
+  description: External Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExtTaxSumS
+  description: External Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CUSplit
+  description: CU Split
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocFreight
+  description: Included in Operating Profit
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+- key: DOCUMENT
+  unique: false
+  fields:
+  - DocEntry
+  - BaseAbsEnt

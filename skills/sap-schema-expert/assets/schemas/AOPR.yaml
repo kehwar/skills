@@ -1,0 +1,355 @@
+table: AOPR
+description: Opportunity
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Sales_Opportunities/AOPR.htm
+fields:
+- field: OpprId
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: SlpCode
+  description: Main Sales Emp.
+  type: Int
+  size: 11
+  related: OSLP
+- field: CprCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: Source
+  description: Source
+  type: Int
+  size: 11
+  related: OOSR
+- field: IntCat1
+  description: Interest - Field 1
+  type: Int
+  size: 11
+  related: OOIN
+- field: IntCat2
+  description: Interest - Field 2
+  type: Int
+  size: 11
+  related: OOIN
+- field: IntCat3
+  description: Interest - Field 3
+  type: Int
+  size: 11
+  related: OOIN
+- field: IntRate
+  description: Interest Level
+  type: Int
+  size: 11
+  related: OOIR
+- field: OpenDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: DifType
+  description: Closing Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: M
+    label: Months
+  - key: W
+    label: Weeks
+  - key: D
+    label: Days
+- field: PredDate
+  description: Predicted Closing Date
+  type: Date
+  size: 8
+- field: MaxSumLoc
+  description: Local Potential Amount
+  type: Num
+  size: 19.6
+- field: MaxSumSys
+  description: System Potential Amount
+  type: Num
+  size: 19.6
+- field: WtSumLoc
+  description: Weighted Amount (LC) - Document
+  type: Num
+  size: 19.6
+- field: WtSumSys
+  description: Weighted Amount (SC)
+  type: Num
+  size: 19.6
+- field: PrcnProf
+  description: Gross Profit %
+  type: Num
+  size: 19.6
+- field: SumProfL
+  description: Gross Profit Total - Local
+  type: Num
+  size: 19.6
+- field: SumProfS
+  description: Gross Profit Total - System
+  type: Num
+  size: 19.6
+- field: Memo
+  description: Remarks
+  type: Text
+  size: 16
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: L
+    label: Lost
+  - key: W
+    label: Won
+- field: StatusRem
+  description: Status Remarks
+  type: nVarChar
+  size: 30
+- field: Reason
+  description: Reason for Closing
+  type: Int
+  size: 11
+  related: OOFR
+- field: RealSumLoc
+  description: Total Amount - Local
+  type: Num
+  size: 19.6
+- field: RealSumSys
+  description: Total Amount - System
+  type: Num
+  size: 19.6
+- field: RealProfL
+  description: Closing Gross Profit - Local
+  type: Num
+  size: 19.6
+- field: RealProfS
+  description: Closing Gross Profit - System
+  type: Num
+  size: 19.6
+- field: CloPrcnt
+  description: Closing Percentage
+  type: Num
+  size: 19.6
+- field: StepLast
+  description: Current Stage No.
+  type: Int
+  size: 6
+  related: OOST
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Transfered
+  description: Transferred to Next Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CloseDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: LastSlp
+  description: Last Sales Emp.
+  type: Int
+  size: 11
+  related: OSLP
+- field: Name
+  description: Opportunity Name
+  type: nVarChar
+  size: 100
+- field: Territory
+  description: Territory
+  type: Int
+  size: 11
+  related: OTER
+- field: Industry
+  description: Industry
+  type: Int
+  size: 11
+  related: OOND
+- field: ChnCrdCode
+  description: BP Channel Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ChnCrdName
+  description: BP Channel Name
+  type: nVarChar
+  size: 200
+- field: PrjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: CardGroup
+  description: BP Group
+  type: Int
+  size: 6
+  related: OCRD
+- field: ChnCrdCon
+  description: BP Channel Contact
+  type: Int
+  size: 11
+  related: OCPR
+- field: Owner
+  description: Data Ownership field
+  type: Int
+  size: 11
+  related: OHEM
+- field: attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: DocType
+  description: Linked Document Type
+  type: nVarChar
+  size: 9
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '23'
+    label: Quotations
+  - key: '17'
+    label: Sales Orders
+  - key: '15'
+    label: Delivery Notes
+  - key: '13'
+    label: Sales Invoices
+  - key: '540000006'
+    label: Purchase Quotations
+  - key: '22'
+    label: Purchase Orders
+  - key: '20'
+    label: Goods Receipt POs
+  - key: '18'
+    label: Purchase Invoices
+- field: DocNum
+  description: Linked Document Number
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Linked Document Entry
+  type: Int
+  size: 11
+- field: DocChkbox
+  description: Document Checkbox
+  type: VarChar
+  size: 1
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: OpprType
+  description: Opportunity Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchasing
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year of Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OpprId
+  - LogInstanc

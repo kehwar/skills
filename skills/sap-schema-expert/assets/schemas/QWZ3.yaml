@@ -1,0 +1,82 @@
+table: QWZ3
+description: Query Condition Fields
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/QWZ3.htm
+fields:
+- field: Code
+  description: Query Code
+  type: nVarChar
+  size: 8
+- field: Numerator
+  description: Internal Number
+  type: Int
+  size: 11
+- field: OpenBrackt
+  description: Open Brackets Counter
+  type: Int
+  size: 11
+- field: FileCode
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldAlias
+  description: Field Alias
+  type: nVarChar
+  size: 30
+- field: Operation
+  description: Operation
+  type: Int
+  size: 11
+- field: CondVal
+  description: Cond. Val.
+  type: nVarChar
+  size: 254
+- field: CondEndVal
+  description: Cond. and Val.
+  type: nVarChar
+  size: 254
+- field: CompareFld
+  description: Compare Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseRes
+  description: Use Res.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CompTblIdx
+  description: Compare Table Index
+  type: nVarChar
+  size: 20
+- field: CompFldNum
+  description: Compare Field Number
+  type: nVarChar
+  size: 254
+- field: Relatship
+  description: Relationship
+  type: Int
+  size: 11
+- field: ClosBrackt
+  description: Close Brackets Counter
+  type: Int
+  size: 11
+- field: Free_Text
+  description: Free Text
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Numerator

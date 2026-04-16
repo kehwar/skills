@@ -1,0 +1,42 @@
+table: TNN1
+description: 1099 Boxes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TNN1.htm
+fields:
+- field: FormCode
+  description: Form Code
+  type: Int
+  size: 11
+  related: OTNN
+- field: Box1099
+  description: 1099 Box
+  type: nVarChar
+  size: 20
+- field: BoxDescr
+  description: Box Description
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: Min1099Amt
+  description: Minimum 1099 Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormCode
+  - Box1099

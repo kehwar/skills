@@ -1,0 +1,91 @@
+table: RIN19
+description: A/R Credit Memo - Bin Allocation Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/RIN19.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ORIN
+- field: BinAllocSe
+  description: Bin Allocation Sequence
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: SubLineNum
+  description: Subline Number
+  type: Int
+  size: 11
+  default: -1
+- field: SnBType
+  description: SnB Type
+  type: Int
+  size: 11
+  default: -1
+- field: SnBMDAbs
+  description: SnB Master Data Internal No.
+  type: Int
+  size: 11
+  default: -1
+- field: BinAbs
+  description: Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '14'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: AllowNeg
+  description: Allow Negative Entry [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BinActTyp
+  description: Bin Action Type
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Transaction In
+  - key: '2'
+    label: Transaction Out
+  - key: '4'
+    label: SnB Complete
+  - key: '8'
+    label: Bin First Then SnB
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - BinAllocSe

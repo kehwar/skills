@@ -1,0 +1,18 @@
+table: SLIC
+description: SLIC
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLIC.htm
+fields:
+- field: LSRV
+  description: license server path
+  type: nVarChar
+  size: 254
+  default: '-1'
+- field: AliasUpd
+  description: Installation Date
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LSRV

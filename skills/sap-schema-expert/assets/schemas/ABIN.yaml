@@ -1,0 +1,384 @@
+table: ABIN
+description: Bin Location - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ABIN.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: BinCode
+  description: Bin Location Code
+  type: nVarChar
+  size: 228
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: SysBin
+  description: System Bin
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SL1Abs
+  description: Sublevel-1 Internal Number
+  type: Int
+  size: 11
+  related: OBSL
+- field: SL1Code
+  description: Sublevel-1 Code
+  type: nVarChar
+  size: 50
+- field: SL2Abs
+  description: Sublevel-2 Internal Number
+  type: Int
+  size: 11
+  related: OBSL
+- field: SL2Code
+  description: Sublevel-2 Code
+  type: nVarChar
+  size: 50
+- field: SL3Abs
+  description: Sublevel-3 Internal Number
+  type: Int
+  size: 11
+  related: OBSL
+- field: SL3Code
+  description: Sublevel-3 Code
+  type: nVarChar
+  size: 50
+- field: SL4Abs
+  description: Sublevel-4 Internal Number
+  type: Int
+  size: 11
+  related: OBSL
+- field: SL4Code
+  description: Sublevel-4 Code
+  type: nVarChar
+  size: 50
+- field: Attr1Abs
+  description: Attribute-1 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr1Val
+  description: Attribute-1 Value
+  type: nVarChar
+  size: 20
+- field: Attr2Abs
+  description: Attribute-2 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr2Val
+  description: Attribute-2 Value
+  type: nVarChar
+  size: 20
+- field: Attr3Abs
+  description: Attribute-3 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr3Val
+  description: Attribute-3 Value
+  type: nVarChar
+  size: 20
+- field: Attr4Abs
+  description: Attribute-4 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr4Val
+  description: Attribute-4 Value
+  type: nVarChar
+  size: 20
+- field: Attr5Abs
+  description: Attribute-5 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr5Val
+  description: Attribute-5 Value
+  type: nVarChar
+  size: 20
+- field: Attr6Abs
+  description: Attribute-6 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr6Val
+  description: Attribute-6 Value
+  type: nVarChar
+  size: 20
+- field: Attr7Abs
+  description: Attribute-7 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr7Val
+  description: Attribute-7 Value
+  type: nVarChar
+  size: 20
+- field: Attr8Abs
+  description: Attribute-8 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr8Val
+  description: Attribute-8 Value
+  type: nVarChar
+  size: 20
+- field: Attr9Abs
+  description: Attribute-9 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr9Val
+  description: Attribute-9 Value
+  type: nVarChar
+  size: 20
+- field: Attr10Abs
+  description: Attribute-10 Internal Number
+  type: Int
+  size: 11
+  related: OBAT
+- field: Attr10Val
+  description: Attribute-10 Value
+  type: nVarChar
+  size: 20
+- field: Disabled
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 50
+- field: BarCode
+  description: Bar Code
+  type: nVarChar
+  size: 100
+- field: AltSortCod
+  description: Alternative Sort Code
+  type: nVarChar
+  size: 50
+- field: ItmRtrictT
+  description: Item Restriction Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '1'
+    label: Specific Item
+  - key: '2'
+    label: Single Item Only
+  - key: '3'
+    label: Specific Item Group
+  - key: '4'
+    label: Single Item Group Only
+- field: SpcItmCode
+  description: Specific Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SpcItmGrpC
+  description: Specific Item Group Code
+  type: Int
+  size: 6
+  related: OITB
+- field: SngBatch
+  description: Batch Restriction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: Y
+    label: Single Batch
+- field: RtrictType
+  description: Restricted Transactions Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '1'
+    label: All Transactions
+  - key: '2'
+    label: Inbound Transactions
+  - key: '3'
+    label: Outbound Transactions
+  - key: '4'
+    label: All Except Inventory Transfer and Counting Transactions
+- field: RtrictResn
+  description: Reason for Restriction
+  type: nVarChar
+  size: 254
+- field: RtrictDate
+  description: Last Updated On
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Transfered
+  description: Year Transfer [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: Deleted
+  description: Deleted
+  type: VarChar
+  size: 1
+  default: N
+- field: MinLevel
+  description: Minimum Qty
+  type: Num
+  size: 19.6
+- field: MaxLevel
+  description: Maximum Qty
+  type: Num
+  size: 19.6
+- field: ReceiveBin
+  description: Receiving Bin Location
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NoAutoAllc
+  description: Excl. fr. Auto Alloc. on Issue
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MaxWeight1
+  description: Maximum Weight 1
+  type: Num
+  size: 19.6
+- field: Wght1Unit
+  description: Unit of Maximum Weight 1
+  type: Int
+  size: 6
+  related: OWGT
+- field: MaxWeight2
+  description: Maximum Weight 2
+  type: Num
+  size: 19.6
+- field: Wght2Unit
+  description: Unit of Maximum Weight 2
+  type: Int
+  size: 6
+  related: OWGT
+- field: UoMRtrict
+  description: UoM Restriction
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '1'
+    label: Specific UoM
+  - key: '2'
+    label: Single UoM Only
+  - key: '3'
+    label: Specific UoM Group
+  - key: '4'
+    label: Single UoM Group Only
+- field: SpcUoMCode
+  description: Specified UoM Code
+  type: Int
+  size: 11
+  related: OUOM
+- field: SpcUGPCode
+  description: Specified UoM Group Code
+  type: Int
+  size: 11
+  related: OUGP
+- field: SngUoMCode
+  description: Single UoM Code
+  type: Int
+  size: 11
+  related: OUOM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

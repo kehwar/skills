@@ -1,0 +1,74 @@
+table: CCS1
+description: Cycle Count Determination- Subtable
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/CCS1.htm
+fields:
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: Entry
+  description: Entry
+  type: Int
+  size: 11
+- field: CycleCode
+  description: Cycle Code
+  type: Int
+  size: 6
+- field: Alert
+  description: Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DestUser
+  description: Destination User
+  type: Int
+  size: 6
+- field: NextDate
+  description: Next Counting Date
+  type: Date
+  size: 8
+- field: Time
+  description: Time
+  type: Int
+  size: 6
+- field: ExcldZrQty
+  description: Exclude Zero Quantity
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Alerted
+  description: Alerted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ChangExist
+  description: Change Existing Items in DI
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WhsCode
+  - Entry

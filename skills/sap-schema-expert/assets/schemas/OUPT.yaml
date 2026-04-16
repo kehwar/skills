@@ -1,0 +1,60 @@
+table: OUPT
+description: User Autorization Tree
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUPT.htm
+fields:
+- field: AbsId
+  description: Authorization ID
+  type: nVarChar
+  size: 20
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 64
+- field: Options
+  description: Options
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Full/Read/None
+  - key: '1'
+    label: Full/None
+- field: FathId
+  description: Parent ID
+  type: nVarChar
+  size: 20
+  related: OUPT
+- field: VisOrder
+  description: Display Order
+  type: Int
+  size: 6
+- field: Levels
+  description: Levels
+  type: Int
+  size: 6
+  default: 1
+- field: IsItem
+  description: IS Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Action
+  description: Action
+  type: Int
+  size: 6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId

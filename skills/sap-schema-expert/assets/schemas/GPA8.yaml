@@ -1,0 +1,59 @@
+table: GPA8
+description: Product Cost Adjustment - MRV Document Lines
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA8.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OGPA
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: ProdCode
+  description: Product Code
+  type: nVarChar
+  size: 20
+- field: ProdDescr
+  description: Product Description
+  type: nVarChar
+  size: 200
+- field: DistNumber
+  description: Batch Number
+  type: nVarChar
+  size: 36
+- field: SnBAbs
+  description: SnB Abs. Entry
+  type: Int
+  size: 11
+- field: ManagedBy
+  description: Managed By
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '10000044'
+    label: Batch Numbers
+  - key: '10000045'
+    label: Serial Numbers
+  - key: '-1'
+    label: ''
+- field: IncrAcct
+  description: G/L Increase Account
+  type: nVarChar
+  size: 15
+- field: DecrAcct
+  description: G/L Decrease Account
+  type: nVarChar
+  size: 15
+- field: DebCredAmt
+  description: Debit/Credit Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

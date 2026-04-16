@@ -1,0 +1,53 @@
+table: EJB1
+description: ERV-JAb Wizard Signing Persons
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/EJB1.htm
+fields:
+- field: WizardID
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: OEJB
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 20
+- field: FirstName
+  description: First Name
+  type: nVarChar
+  size: 38
+- field: Surname
+  description: Surname
+  type: nVarChar
+  size: 38
+- field: CommID
+  description: Commercial ID
+  type: nVarChar
+  size: 3
+- field: DateOfBrth
+  description: Date of Birth
+  type: Date
+  size: 8
+- field: DateOfSign
+  description: Date of Signing
+  type: Date
+  size: 8
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OEJD
+- field: LineNumEJD
+  description: Row Number EJD1
+  type: Int
+  size: 11
+  related: EJD1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardID
+  - LineNum

@@ -1,0 +1,25 @@
+table: OCRT
+description: CRDB Tables Tree List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OCRT.htm
+fields:
+- field: ID
+  description: ID
+  type: Int
+  size: 11
+- field: NodeStr
+  description: Node String List
+  type: nVarChar
+  size: 20
+- field: FatherID
+  description: Parent ID
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

@@ -1,0 +1,84 @@
+table: OHMM
+description: SAP HANA Model Management
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OHMM.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ModelAuth
+  description: Model Author
+  type: nVarChar
+  size: 100
+- field: ModelName
+  description: Model Name
+  type: nVarChar
+  size: 100
+- field: ModelVer
+  description: Model Version
+  type: nVarChar
+  size: 100
+- field: Desc
+  description: Description
+  type: Text
+  size: 16
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Imported
+  - key: D
+    label: Deployed
+  - key: T
+    label: In Task
+- field: InfoFile
+  description: Info File
+  type: Text
+  size: 16
+- field: UpdateBy
+  description: Last Updated User's Code
+  type: Int
+  size: 11
+- field: ChangeBy
+  description: Last Changed SAP HANA User
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Created at Date
+  type: nVarChar
+  size: 100
+- field: CreateTime
+  description: Created at Time
+  type: Int
+  size: 11
+- field: ChangeDate
+  description: Changed at Date
+  type: nVarChar
+  size: 100
+- field: ChangeTime
+  description: Changed at Time
+  type: Int
+  size: 11
+- field: TaskId
+  description: Task ID
+  type: Int
+  size: 11
+- field: DeployDate
+  description: Deployment Date
+  type: Date
+  size: 8
+- field: DeployTime
+  description: Deployment Time
+  type: Int
+  size: 11
+- field: Language
+  description: Deployment Language
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

@@ -1,0 +1,31 @@
+table: AIT2
+description: Items - Multiple Preferred Vendors - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIT2.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: VendorCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - VendorCode
+  - LogInstanc

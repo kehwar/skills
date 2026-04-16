@@ -1,0 +1,64 @@
+table: XROBJ
+description: XLR Company Report Objects
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/XROBJ.htm
+fields:
+- field: RepObjId
+  description: RepObjId
+  type: nVarChar
+  size: 38
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 50
+- field: Descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: Creator
+  description: Creator
+  type: nVarChar
+  size: 50
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: ModifyDate
+  description: ModifyDate
+  type: Date
+  size: 8
+- field: ObjType
+  description: ObjType
+  type: Int
+  size: 11
+- field: XmlId
+  description: XmlId
+  type: nVarChar
+  size: 38
+- field: XlsId
+  description: XlsID
+  type: nVarChar
+  size: 38
+- field: VariablesI
+  description: VariablesID
+  type: nVarChar
+  size: 38
+- field: Reference
+  description: Reference
+  type: Text
+  size: 16
+- field: RefType
+  description: RefType
+  type: Int
+  size: 11
+  default: 0
+- field: Global
+  description: Global
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RepObjId
+  - Global

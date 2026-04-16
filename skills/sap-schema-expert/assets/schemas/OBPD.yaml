@@ -1,0 +1,103 @@
+table: OBPD
+description: Blocked Personal Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBPD.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DatSubType
+  description: Data Subject Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: OCRD
+    label: Business Partner
+  - key: OCPR
+    label: Contact Person
+  - key: OHEM
+    label: Employee
+  - key: OUSR
+    label: User
+  - key: CPN1
+    label: Campaign - BP
+  - key: OUDO
+    label: User-Defined Object
+- field: DatSubKey
+  description: Data Subject Key No.1
+  type: nVarChar
+  size: 15
+- field: DatSubKey2
+  description: Data Subject Key No.2
+  type: nVarChar
+  size: 50
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 21
+- field: KeyValue1
+  description: Key Value No.1
+  type: nVarChar
+  size: 50
+- field: KeyValue2
+  description: Key Value No.2
+  type: nVarChar
+  size: 50
+- field: KeyValue3
+  description: Key Value No.3
+  type: nVarChar
+  size: 50
+- field: KeyValue4
+  description: Key Value No.4
+  type: nVarChar
+  size: 50
+- field: KeyValue5
+  description: Key Value No.5
+  type: nVarChar
+  size: 50
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: 52
+- field: EncryptVal
+  description: Encryption Value
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encryption Initialization Vector
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: DATA_SUBJ
+  unique: false
+  fields:
+  - DatSubType
+  - DatSubKey
+  - DatSubKey2
+- key: TABL_FIELD
+  unique: false
+  fields:
+  - TableName
+  - KeyValue1
+  - KeyValue2
+  - KeyValue3
+  - KeyValue4
+  - KeyValue5
+  - FieldName

@@ -1,0 +1,54 @@
+table: ITL1
+description: Srl & Batch Details in Transac
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITL1.htm
+fields:
+- field: LogEntry
+  description: Log Internal ID
+  type: Int
+  size: 11
+  related: OITL
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SysNumber
+  description: System Number
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: AllocQty
+  description: Allocated Quantity
+  type: Num
+  size: 19.6
+- field: MdAbsEntry
+  description: MD Abs Entry
+  type: Int
+  size: 11
+- field: ReleaseQty
+  description: Release Quantity
+  type: Num
+  size: 19.6
+- field: PickedQty
+  description: Picked Quantity
+  type: Num
+  size: 19.6
+- field: OrderedQty
+  description: Ordered Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry
+  - ItemCode
+  - SysNumber
+- key: SNB_SYSID
+  unique: false
+  fields:
+  - ItemCode
+  - SysNumber

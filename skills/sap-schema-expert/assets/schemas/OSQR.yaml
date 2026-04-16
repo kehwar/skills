@@ -1,0 +1,49 @@
+table: OSQR
+description: Standard Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSQR.htm
+fields:
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: QCategory
+  description: Query Group
+  type: Int
+  size: 11
+- field: QName
+  description: Query Name
+  type: nVarChar
+  size: 100
+- field: QString
+  description: Query
+  type: Text
+  size: 16
+- field: QType
+  description: Query Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Regular
+  - key: W
+    label: Wizard
+  - key: G
+    label: Report Generator
+- field: ColumnSize
+  description: Column Size
+  type: nVarChar
+  size: 100
+- field: DBType
+  description: DB Type
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IntrnalKey
+- key: QNAME_K
+  unique: true
+  fields:
+  - QName

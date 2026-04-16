@@ -1,0 +1,73 @@
+table: MIN3
+description: Grouped Tax Rows of MI
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/MIN3.htm
+fields:
+- field: Entry
+  description: Monthly Invoice Entry
+  type: Int
+  size: 11
+  related: OMIN
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: VatPercent
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: CrditDebit
+  description: Credit or Debit Transaction
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Credit
+  - key: D
+    label: Debit
+- field: BaseSum
+  description: Base Sum
+  type: Num
+  size: 19.6
+- field: BaseSumSc
+  description: Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: BaseSumFc
+  description: Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: VAT Sum
+  type: Num
+  size: 19.6
+- field: VatSumSc
+  description: VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: VatSumFc
+  description: VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: TODedBaseS
+  description: Tax Only Deducted Base Sum
+  type: Num
+  size: 19.6
+- field: TODedBaSSC
+  description: Tax Only Deducted Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: TODedBaSFC
+  description: Tax Only Deducted Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: LnDataNum
+  description: Row Number in Tax Data
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Entry
+  - LnDataNum

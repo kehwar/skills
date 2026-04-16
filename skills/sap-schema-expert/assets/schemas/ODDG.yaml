@@ -1,0 +1,64 @@
+table: ODDG
+description: Withholding Tax Deduction Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ODDG.htm
+fields:
+- field: Numerator
+  description: Group Key
+  type: Int
+  size: 11
+- field: DdgCode
+  description: Group Code
+  type: nVarChar
+  size: 2
+  related: ODGL
+- field: DdgName
+  description: Group Name
+  type: nVarChar
+  size: 30
+- field: DdctPrcnt
+  description: Max. Red. in %
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Numerator
+- key: NAME
+  unique: true
+  fields:
+  - DdgCode
+  - DdgName

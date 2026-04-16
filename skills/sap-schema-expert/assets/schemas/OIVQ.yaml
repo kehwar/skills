@@ -1,0 +1,117 @@
+table: OIVQ
+description: FIFO Queue Working Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIVQ.htm
+fields:
+- field: TreeID
+  description: Tree ID
+  type: Int
+  size: 11
+  default: 0
+- field: ParentID
+  description: Parent ID
+  type: Int
+  size: 11
+  default: -1
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: TransSeq
+  description: Transaction Sequence No.
+  type: Int
+  size: 11
+  related: OIVL
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+- field: OpenQty
+  description: Open Quantity
+  type: Num
+  size: 19.6
+- field: OpenValue
+  description: Open Value
+  type: Num
+  size: 19.6
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: StockActio
+  description: Stock Action Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt
+  - key: '21'
+    label: Goods Return
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '-2'
+    label: Opening Balance
+  - key: '58'
+    label: Inventory Update
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfer
+  - key: '68'
+    label: Work Instructions
+  - key: '-1'
+    label: All Transactions
+  - key: '162'
+    label: Inventory Revaluation
+  - key: '69'
+    label: Landed Costs
+- field: RemMethod
+  description: Quantity Removal Method
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Unspecified
+  - key: I
+    label: Issue
+  - key: R
+    label: Revaluation
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: TRANS_SEQ
+  unique: true
+  fields:
+  - TransSeq
+  - LayerID
+- key: TreeOpenQt
+  unique: false
+  fields:
+  - TreeID
+  - OpenQty

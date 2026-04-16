@@ -1,0 +1,108 @@
+table: IVLG
+description: Inventory Revaluation Log File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IVLG.htm
+fields:
+- field: AbsEntry
+  description: Internal Unique Key
+  type: Int
+  size: 11
+- field: UtilVer
+  description: Inventory Revaluation Utility
+  type: Int
+  size: 11
+- field: B1Ver
+  description: B1 Version
+  type: Int
+  size: 11
+- field: SrcDBVer
+  description: Source Database Version
+  type: Int
+  size: 11
+- field: DestDBName
+  description: Destination Database Name
+  type: nVarChar
+  size: 128
+- field: DestDBPath
+  description: Destination Database Path
+  type: Text
+  size: 16
+- field: FromDoc
+  description: Document From
+  type: Int
+  size: 11
+  related: OINM
+- field: FromSysDat
+  description: System Date From
+  type: Date
+  size: 8
+- field: ToDoc
+  description: Last calculated document
+  type: Int
+  size: 11
+  related: OINM
+- field: ToSysDate
+  description: To System Date
+  type: Date
+  size: 8
+- field: CustDbUpd
+  description: Customer DB was updated
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: HistTblCrt
+  description: History tables created
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: SuccRecalc
+  description: Successful recalculation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Comment
+  description: Recalculation Comment
+  type: nVarChar
+  size: 100
+- field: EnblFromTo
+  description: Enabling From-To Function
+  type: VarChar
+  size: 1
+  default: N
+- field: StrFld
+  description: General String Field
+  type: nVarChar
+  size: 50
+- field: NumFld
+  description: Include Custom from OIPF
+  type: Int
+  size: 11
+- field: LoadCust
+  description: Load Customs on Item Value
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: '"Load Customs on Item Value" is selected'
+  - key: N
+    label: '"Load Customs on Item Value" is not selected'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

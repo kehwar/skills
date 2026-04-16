@@ -1,0 +1,43 @@
+table: GBI12
+description: GBI Row 12 - Shareholder's Rights and Interests Changing Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI12.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: ShrId
+  description: SHR Report History ID
+  type: Int
+  size: 11
+- field: RowNum
+  description: Row Number in Saved Report
+  type: Int
+  size: 11
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 254
+- field: LineNum
+  description: Line number
+  type: nVarChar
+  size: 6
+- field: CurAmount
+  description: Amount for Current Period
+  type: Num
+  size: 19.6
+- field: PreAmount
+  description: Amount for Previous Period
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

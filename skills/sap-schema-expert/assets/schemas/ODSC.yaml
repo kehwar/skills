@@ -1,0 +1,186 @@
+table: ODSC
+description: Bank Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ODSC.htm
+fields:
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+- field: BankName
+  description: Bank Name
+  type: nVarChar
+  size: 250
+- field: DfltAcct
+  description: Account for Outgoing Checks
+  type: nVarChar
+  size: 50
+- field: DfltBranch
+  description: Branch for Outgoing Checks
+  type: nVarChar
+  size: 50
+- field: NextChckNo
+  description: Next Check Number
+  type: Int
+  size: 11
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SwiftNum
+  description: BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: IBAN
+  description: IBAN
+  type: nVarChar
+  size: 50
+- field: CountryCod
+  description: Country/Region Code
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: PostOffice
+  description: Post Office
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AliasName
+  description: Alias Name
+  type: nVarChar
+  size: 50
+- field: AbsEntry
+  description: Absolute entry
+  type: Int
+  size: 11
+- field: DfltActKey
+  description: Default Bank Account Key
+  type: Int
+  size: 11
+  related: DSC1
+- field: NextNum
+  description: Our Number in Next Boleto
+  type: Int
+  size: 11
+- field: BsPstDate
+  description: Posting Date Definition
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: S
+    label: Statement Date
+  - key: L
+    label: Row Date
+  - key: V
+    label: Due Date
+  - key: C
+    label: Current Date
+- field: BsValDate
+  description: Due Date Definition
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: S
+    label: Statement Date
+  - key: L
+    label: Row Date
+  - key: V
+    label: Due Date
+  - key: C
+    label: Current Date
+- field: BnkOpCode
+  description: Bank Operation Code List
+  type: Int
+  size: 11
+  related: OBOC
+- field: BsDocDate
+  description: Document Date Definition
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: S
+    label: Statement Date
+  - key: L
+    label: Row Date
+  - key: V
+    label: Due Date
+  - key: C
+    label: Current Date
+- field: TaxIdNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnDfltAcct
+  description: Encryption of Default Account
+  type: Text
+  size: 16
+- field: DigPayment
+  description: Digital Payments
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - CountryCod
+  - BankCode

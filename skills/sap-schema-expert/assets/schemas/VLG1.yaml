@@ -1,0 +1,65 @@
+table: VLG1
+description: Validation of Recalc. From To
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/VLG1.htm
+fields:
+- field: AbsEntry
+  description: Internal Unique Key
+  type: Int
+  size: 11
+  related: IVLG
+- field: RecNum
+  description: Record Number
+  type: Int
+  size: 11
+- field: FromSysDat
+  description: From System Date
+  type: Date
+  size: 8
+- field: FromDocNum
+  description: From Document Number
+  type: Int
+  size: 11
+  related: OINM
+- field: FromDocTyp
+  description: From Document Type
+  type: Int
+  size: 6
+- field: ToSysDate
+  description: To System Date
+  type: Date
+  size: 8
+- field: ToDocNum
+  description: To Document Number
+  type: Int
+  size: 11
+  related: OINM
+- field: ToDocType
+  description: To Document Type
+  type: Int
+  size: 6
+- field: CalRecOINM
+  description: Calculated Record in OINM
+  type: Int
+  size: 11
+- field: LastCalcTS
+  description: Last Calculated Trans. Seq.
+  type: Int
+  size: 11
+- field: SumTranVal
+  description: Sum of Transaction Value
+  type: Num
+  size: 19.6
+- field: StrFld
+  description: General String Field
+  type: nVarChar
+  size: 50
+- field: NumFld
+  description: General Number Field
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - RecNum

@@ -1,0 +1,106 @@
+table: OBGD
+description: Budget Cost Assess. Mthd
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBGD.htm
+fields:
+- field: BgdCode
+  description: Division Code
+  type: Int
+  size: 11
+- field: BgdName
+  description: Description
+  type: nVarChar
+  size: 30
+- field: BgdTotal
+  description: Budget Amount
+  type: Num
+  size: 19.6
+- field: Month1
+  description: January
+  type: Num
+  size: 19.6
+- field: Month2
+  description: February
+  type: Num
+  size: 19.6
+- field: Month3
+  description: March
+  type: Num
+  size: 19.6
+- field: Month4
+  description: April
+  type: Num
+  size: 19.6
+- field: Month5
+  description: May
+  type: Num
+  size: 19.6
+- field: Month6
+  description: June
+  type: Num
+  size: 19.6
+- field: Month7
+  description: July
+  type: Num
+  size: 19.6
+- field: Month8
+  description: August
+  type: Num
+  size: 19.6
+- field: Month9
+  description: September
+  type: Num
+  size: 19.6
+- field: Month10
+  description: October
+  type: Num
+  size: 19.6
+- field: Month11
+  description: November
+  type: Num
+  size: 19.6
+- field: Month12
+  description: December
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BgdCode
+- key: NAME
+  unique: true
+  fields:
+  - BgdName

@@ -1,0 +1,20 @@
+table: PWZ7
+description: Payment Wizard 7-Selected Branches
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/PWZ7.htm
+fields:
+- field: IdNumber
+  description: ID Number
+  type: Int
+  size: 11
+  related: OPWZ
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdNumber
+  - BPLId

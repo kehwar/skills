@@ -1,0 +1,43 @@
+table: MLS1
+description: Distribution Lists - Recipients
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MLS1.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+  related: OMLS
+- field: LineNum
+  description: Addressee Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+- field: ObjCode
+  description: Object Code
+  type: nVarChar
+  size: 50
+- field: ObjName
+  description: Name
+  type: nVarChar
+  size: 155
+- field: E_Mail
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: PortNum
+  description: Mobile Phone Number
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax Number
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum

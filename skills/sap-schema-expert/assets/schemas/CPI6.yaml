@@ -1,0 +1,300 @@
+table: CPI6
+description: Documents History - Installments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/CPI6.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OCPI
+- field: InstlmntID
+  description: Installment ID
+  type: Int
+  size: 6
+  default: 1
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '163'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Status
+  description: Installment Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: DunnLevel
+  description: Dunning Level
+  type: Int
+  size: 11
+  default: 0
+- field: InsTotal
+  description: Total Installment
+  type: Num
+  size: 19.6
+- field: InsTotalFC
+  description: Total Installment (FC)
+  type: Num
+  size: 19.6
+- field: InsTotalSy
+  description: Total Installment (SC)
+  type: Num
+  size: 19.6
+- field: PaidToDate
+  description: Paid to Date
+  type: Num
+  size: 19.6
+- field: PaidFC
+  description: Paid (FC)
+  type: Num
+  size: 19.6
+- field: PaidSys
+  description: Paid (SC)
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: VatSumFC
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatSumSy
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: VatPaid
+  description: Tax Paid to Date
+  type: Num
+  size: 19.6
+- field: VatPaidFC
+  description: Tax Paid (FC)
+  type: Num
+  size: 19.6
+- field: VatPaidSys
+  description: Tax Paid (SC)
+  type: Num
+  size: 19.6
+- field: TotalExpns
+  description: Total Freight Charges
+  type: Num
+  size: 19.6
+- field: TotalExpFC
+  description: Total Freight Charges (FC)
+  type: Num
+  size: 19.6
+- field: TotalExpSC
+  description: Total Freight Charges (SC)
+  type: Num
+  size: 19.6
+- field: ExpAppl
+  description: Applied Freight Charges
+  type: Num
+  size: 19.6
+- field: ExpApplFC
+  description: Applied Freight Charges (FC)
+  type: Num
+  size: 19.6
+- field: ExpApplSC
+  description: Applied Freight Charges (SC)
+  type: Num
+  size: 19.6
+- field: WTSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: WTApplied
+  description: Applied WTax
+  type: Num
+  size: 19.6
+- field: WTAppliedF
+  description: Applied WTax (FC)
+  type: Num
+  size: 19.6
+- field: WTAppliedS
+  description: Applied WTax (SC)
+  type: Num
+  size: 19.6
+- field: TotalBlck
+  description: Total Reserved Amount
+  type: Num
+  size: 19.6
+- field: TotalBlckF
+  description: Total Reserved Amount (FC)
+  type: Num
+  size: 19.6
+- field: TotalBlckS
+  description: Total Reserved Amount (SC)
+  type: Num
+  size: 19.6
+- field: VATBlck
+  description: Reserved Tax Amount
+  type: Num
+  size: 19.6
+- field: VATBlckFC
+  description: Reserved Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VATBlckSC
+  description: Reserved Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: ExpnsBlck
+  description: Reserved Freight Amount
+  type: Num
+  size: 19.6
+- field: ExpnsBlckF
+  description: Reserved Freight Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExpnsBlckS
+  description: Reserved Freight Amount (SC)
+  type: Num
+  size: 19.6
+- field: WTBlocked
+  description: Reserved WTax Amount
+  type: Num
+  size: 19.6
+- field: WTBlockedF
+  description: Reserved WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTBlockedS
+  description: Reserved WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: InstPrcnt
+  description: Installment %
+  type: Num
+  size: 19.6
+- field: DunWizBlck
+  description: Wizard dunning block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DunDate
+  description: Last Dunning Date
+  type: Date
+  size: 8
+- field: Paid
+  description: Paid
+  type: Num
+  size: 19.6
+- field: PaidFrgn
+  description: Paid (FC)
+  type: Num
+  size: 19.6
+- field: PaidSc
+  description: Paid (SC)
+  type: Num
+  size: 19.6
+- field: reserved
+  description: Reserved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: TaxOnExp
+  description: Tax on Expenses
+  type: Num
+  size: 19.6
+- field: TaxOnExpFc
+  description: Tax on Expenses (FC)
+  type: Num
+  size: 19.6
+- field: TaxOnExpSc
+  description: Tax on Expenses (SC)
+  type: Num
+  size: 19.6
+- field: TaxOnExpAp
+  description: Applied Tax on Expenses
+  type: Num
+  size: 19.6
+- field: TaxOnExApF
+  description: Applied Tax on Expenses (FC)
+  type: Num
+  size: 19.6
+- field: TaxOnExApS
+  description: Applied Tax on Expenses (SC)
+  type: Num
+  size: 19.6
+- field: TaxOnExBlo
+  description: Reserved Tax on Freight Amount
+  type: Num
+  size: 19.6
+- field: TaxOnExBlF
+  description: Reserved Tax on Freight Amt FC
+  type: Num
+  size: 19.6
+- field: TaxOnExBlS
+  description: Reserved Tax on Freight Amt SC
+  type: Num
+  size: 19.6
+- field: LvlUpdDate
+  description: Dunning Level Update Date
+  type: Date
+  size: 8
+- field: Ordered
+  description: Payment Ordered
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PaidDpm
+  description: Paid by Down Payment
+  type: Num
+  size: 19.6
+- field: PaidDpmFc
+  description: Paid by Down Payment (FC)
+  type: Num
+  size: 19.6
+- field: PaidDpmSc
+  description: Paid by Down Payment (SC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - InstlmntID

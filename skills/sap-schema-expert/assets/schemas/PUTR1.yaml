@@ -1,0 +1,47 @@
+table: PUTR1
+description: Pre-Upgrade Test Result Line
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PUTR1.htm
+fields:
+- field: SerialNum
+  description: Serial Number
+  type: Int
+  size: 11
+- field: TestID
+  description: Test ID
+  type: Int
+  size: 11
+- field: TestDesc
+  description: Test Description
+  type: nVarChar
+  size: 254
+- field: Result
+  description: Result
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Success
+  - key: E
+    label: Error
+  - key: W
+    label: Warning
+  - key: K
+    label: Skipped
+- field: BeginTime
+  description: Start Time
+  type: nVarChar
+  size: 20
+- field: EndTime
+  description: End Time
+  type: nVarChar
+  size: 20
+- field: SAPNote
+  description: SAP Note Link
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SerialNum
+  - TestID

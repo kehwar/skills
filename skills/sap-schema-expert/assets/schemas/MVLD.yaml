@@ -1,0 +1,38 @@
+table: MVLD
+description: MVLD
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MVLD.htm
+fields:
+- field: guid
+  description: Guid
+  type: nVarChar
+  size: 36
+- field: fatherId
+  description: Father Id
+  type: nVarChar
+  size: 36
+- field: lineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: value
+  description: Value
+  type: nVarChar
+  size: 254
+- field: note
+  description: Note
+  type: nVarChar
+  size: 254
+- field: noteSid
+  description: Note String Id
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - fatherId
+  - lineNum
+- key: GUID
+  unique: true
+  fields:
+  - guid

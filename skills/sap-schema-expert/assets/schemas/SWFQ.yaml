@@ -1,0 +1,66 @@
+table: SWFQ
+description: SWFQ
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SWFQ.htm
+fields:
+- field: SequenceID
+  description: Sequence ID
+  type: Int
+  size: 11
+- field: SourceDB
+  description: Source DB
+  type: nVarChar
+  size: 100
+- field: Timestamp
+  description: Timestamp
+  type: nVarChar
+  size: 20
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 30
+- field: TransType
+  description: Transaction Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Add
+  - key: U
+    label: Update
+  - key: C
+    label: Cancel
+  - key: D
+    label: Delete
+- field: FieldsInKe
+  description: Number of fields in key
+  type: Int
+  size: 11
+- field: FieldNames
+  description: Key Field Names
+  type: nVarChar
+  size: 254
+- field: FieldValue
+  description: Key Field Values
+  type: nVarChar
+  size: 254
+- field: UserID
+  description: UserID
+  type: nVarChar
+  size: 25
+- field: TaskID
+  description: TaskID
+  type: nVarChar
+  size: 64
+- field: TrigEvntID
+  description: Trigger Event ID
+  type: nVarChar
+  size: 64
+- field: TrigParams
+  description: Trigger parameters
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SequenceID

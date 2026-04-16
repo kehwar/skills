@@ -1,0 +1,163 @@
+table: OUQR
+description: Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OUQR.htm
+fields:
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: QCategory
+  description: Query Category
+  type: Int
+  size: 11
+  related: OQCN
+- field: QName
+  description: Query Description
+  type: nVarChar
+  size: 100
+- field: QString
+  description: Query
+  type: Text
+  size: 16
+- field: QType
+  description: Query Type
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: R
+    label: Regular
+  - key: W
+    label: Wizard
+  - key: G
+    label: Report Generator
+  - key: S
+    label: Stored Procedure
+- field: ColumnSize
+  description: Column Size
+  type: nVarChar
+  size: 100
+- field: DBType
+  description: DB Type
+  type: Int
+  size: 11
+- field: QLastDate
+  description: Last Upload Date
+  type: Date
+  size: 8
+- field: QLastTime
+  description: Last Upload Time
+  type: Int
+  size: 6
+- field: Xslt
+  description: XSLT Transformation
+  type: Text
+  size: 16
+- field: MenuItem
+  description: Specify Menu Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MenuCapt
+  description: Menu Caption
+  type: nVarChar
+  size: 254
+- field: FatherMenu
+  description: Parent Menu ID
+  type: Int
+  size: 11
+- field: MenuPos
+  description: Menu Position
+  type: Int
+  size: 6
+- field: MenuUid
+  description: Menu UID
+  type: nVarChar
+  size: 32
+- field: CommandID
+  description: Menu Command ID
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: LastUpdate
+  description: Last Update Time
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Created On
+  type: Date
+  size: 8
+- field: ChangeDate
+  description: Change Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creatn Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: UserSign
+  description: Created By
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updated By
+  type: Int
+  size: 6
+- field: AnaActive
+  description: Analytics Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DisplTile
+  description: Display UDQ as Tile
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseNmParam
+  description: Include Parameters
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IntrnalKey
+  - QCategory
+- key: QNAME_K
+  unique: true
+  fields:
+  - QName
+  - QCategory

@@ -1,0 +1,49 @@
+table: SEWH1
+description: SEWH1
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWH1.htm
+fields:
+- field: MachineNam
+  description: Machine Name
+  type: nVarChar
+  size: 254
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: ID
+  description: AddOn ID
+  type: Int
+  size: 11
+- field: Name
+  description: AddOn Name
+  type: nVarChar
+  size: 40
+- field: Version
+  description: AddOn Version
+  type: nVarChar
+  size: 13
+- field: Status
+  description: AddOn Status
+  type: nVarChar
+  size: 50
+- field: InstStatus
+  description: AddOn Installation Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: I
+    label: Installed
+  - key: P
+    label: Pending
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MachineNam
+  - CompDbNam
+  - ID

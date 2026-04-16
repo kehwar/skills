@@ -1,0 +1,33 @@
+table: OPTF
+description: BoE Portfolio
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OPTF.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PtfId
+  description: Internal Portfolio ID
+  type: nVarChar
+  size: 3
+- field: PtfCode
+  description: Portfolio Code
+  type: nVarChar
+  size: 2
+- field: PtfNum
+  description: Portfolio Number
+  type: nVarChar
+  size: 4
+- field: PtfDespt
+  description: Description
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: ID
+  unique: true
+  fields:
+  - PtfId

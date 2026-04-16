@@ -1,0 +1,474 @@
+table: OGAR
+description: G/L Account Advanced Rules
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OGAR.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: FinancYear
+  description: Beginning of Financial Year
+  type: Date
+  size: 8
+- field: Year
+  description: Financial Year
+  type: Int
+  size: 6
+- field: PeriodName
+  description: Period Name
+  type: nVarChar
+  size: 20
+- field: SubType
+  description: Sub-Period Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Year
+  - key: Q
+    label: Quarters
+  - key: M
+    label: Months
+  - key: D
+    label: Days
+- field: PeriodNum
+  description: Number of Periods
+  type: Int
+  size: 11
+- field: F_RefDate
+  description: Posting Date From
+  type: Date
+  size: 8
+- field: T_RefDate
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: F_DueDate
+  description: Due Date From
+  type: Date
+  size: 8
+- field: T_DueDate
+  description: Due Date To
+  type: Date
+  size: 8
+- field: F_TaxDate
+  description: Document Date From
+  type: Date
+  size: 8
+- field: T_TaxDate
+  description: Document Date To
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmsGrpCod
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: BPGrpCod
+  description: BP Group
+  type: Int
+  size: 6
+  related: OCRG
+- field: LicTradNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+  default: '!^|'
+  constraints:
+  - key: '!^|'
+    label: All
+  - key: '!^|E'
+    label: Empty
+  - key: '!^|F'
+    label: Filled
+  - key: Enter Tax ID
+    label: Enter Tax ID
+- field: ShipCountr
+  description: Ship-to Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ShipState
+  description: Ship-To State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: RuleCode
+  description: Advanced Rule Code
+  type: nVarChar
+  size: 20
+- field: GLMethod
+  description: Get G/L Account By
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: General
+  - key: W
+    label: Warehouse
+  - key: C
+    label: Item Group
+- field: Transfered
+  description: Year Transfer [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FromDate
+  description: From Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Date
+  type: Date
+  size: 8
+- field: DfltExpn
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltIncom
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExmptIncom
+  description: Tax Exempt Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockAct
+  description: Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: COGM_Act
+  description: Cost of Goods Sold Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AlocCstAct
+  description: Allocation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VariancAct
+  description: Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PricDifAct
+  description: Price Difference Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: NegStckAct
+  description: Negative Inventory Adj. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltLoss
+  description: Inventory Offset - Decr. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltProfit
+  description: Inventory Offset - Incr. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RturnngAct
+  description: Sales Returns Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ECIncome
+  description: Revenue Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ECExepnses
+  description: Expense Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ForgnIncm
+  description: Revenue Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ForgnExpn
+  description: Expense Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchseAct
+  description: Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PaReturnAc
+  description: Purchase Return Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PaOffsetAc
+  description: Purchase Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExDiffAct
+  description: Exchange Rate Differences Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalanceAct
+  description: Goods Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecresGlAc
+  description: G/L Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncresGlAc
+  description: G/L Increase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipAcct
+  description: WIP Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipVarAcct
+  description: WIP Inventory Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipOffset
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockOffst
+  description: Inventory Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockRvAct
+  description: Inventory Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkRvOfAct
+  description: Inventory Reval. Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostRevAct
+  description: COGS Revaluation Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostOffAct
+  description: COGS Revaluation Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpClrAct
+  description: Expense Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpOfstAct
+  description: Expense Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkInTnAct
+  description: Stock In Transit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ShpdGdsAct
+  description: Shipped Goods Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatRevAct
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMAct
+  description: Sales Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMAct
+  description: Purchase Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMExpAct
+  description: Tax Exempt Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMFrnAct
+  description: Sales Credit Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMFrnAct
+  description: Purchase Credit Acct - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMEUAct
+  description: Sales Credit Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMEUAct
+  description: Purchase Credit Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurBalAct
+  description: Purchase Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhICenAct
+  description: Incoming CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhOCenAct
+  description: Outgoing CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Active
+  description: Is Rule Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CmpPrivate
+  description: Company/Private/Government
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: All
+  - key: C
+    label: Company
+  - key: I
+    label: Private
+  - key: G
+    label: Government
+- field: VatGroup
+  description: Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Usage
+  description: Usage Code for Document
+  type: Int
+  size: 11
+  related: OUSG
+- field: FreeChrgSA
+  description: Free of Charge Sales Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FreeChrgPU
+  description: Free of Charge Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UDF1
+  description: User Defined Field 1
+  type: nVarChar
+  size: 254
+- field: UDF2
+  description: User Defined Field 2
+  type: nVarChar
+  size: 254
+- field: UDF3
+  description: User Defined Field 3
+  type: nVarChar
+  size: 254
+- field: UDF4
+  description: User Defined Field 4
+  type: nVarChar
+  size: 254
+- field: UDF5
+  description: User Defined Field 5
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

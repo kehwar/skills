@@ -1,0 +1,63 @@
+table: GPA2
+description: Gross Profit Adjustments - Parameters
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA2.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Name
+  description: Wizard Parameters Name
+  type: nVarChar
+  size: 100
+- field: Descript
+  description: Wizard Parameters Description
+  type: nVarChar
+  size: 100
+- field: PostDateFr
+  description: Sales Doc. Posting Date From
+  type: Date
+  size: 8
+- field: PostDateTo
+  description: Sales Doc. Posting Date To
+  type: Date
+  size: 8
+- field: ItemCodeFr
+  description: Item No. From
+  type: nVarChar
+  size: 50
+- field: ItemCodeTo
+  description: Item No. To
+  type: nVarChar
+  size: 50
+- field: ItmsGrpCod
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+  default: 100
+- field: AdditFilt
+  description: Additional Filters
+  type: VarChar
+  size: 1
+- field: SearchCond
+  description: Find Items Search Condition
+  type: VarChar
+  size: 1
+- field: PropList
+  description: Item Properties List
+  type: nVarChar
+  size: 100
+- field: DisplInact
+  description: Display Inactive Items
+  type: VarChar
+  size: 1
+- field: UseGroups
+  description: Find items with only the selected properties
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,29 @@
+table: UDAB
+description: UDAB
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UDAB.htm
+fields:
+- field: guid
+  description: Guid
+  type: nVarChar
+  size: 36
+- field: fatherId
+  description: Father Id
+  type: nVarChar
+  size: 36
+- field: name
+  description: Dashboard Name
+  type: nVarChar
+  size: 50
+- field: type
+  description: Dashboard Type
+  type: VarChar
+  size: 1
+- field: scriptId
+  description: Script Id
+  type: nVarChar
+  size: 36
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - guid

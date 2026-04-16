@@ -1,0 +1,96 @@
+table: FRC1
+description: Extend Cat. f. Financial Rep.
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FRC1.htm
+fields:
+- field: CatId
+  description: Numerator
+  type: Int
+  size: 6
+- field: TemplateId
+  description: Template
+  type: Int
+  size: 11
+  related: OFRT
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VisOrder
+  description: Display Order
+  type: Int
+  size: 6
+- field: CFWId
+  description: Cash Flow Line Item ID
+  type: Int
+  size: 11
+  related: OCFW
+- field: CalcMethod
+  description: Calculation Method
+  type: nVarChar
+  size: 30
+  constraints:
+  - key: BOP
+    label: Beginning of Period
+  - key: EOP
+    label: End of Period
+  - key: CPID
+    label: Current Period In Debit
+  - key: CPIC
+    label: Current Period In Credit
+  - key: CPIB
+    label: Current Period In Both
+- field: SlpCode
+  description: Sales Unit Code
+  type: Int
+  size: 11
+  related: OSLP
+- field: PrcCode
+  description: Cost Center Code
+  type: nVarChar
+  size: 8
+  related: OPRC
+- field: CalMethod2
+  description: Calculation Method 2
+  type: nVarChar
+  size: 30
+- field: CalMethod3
+  description: Calculation Method 3
+  type: nVarChar
+  size: 30
+- field: Linked
+  description: Linked
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Balance
+  - key: D
+    label: Debit
+  - key: C
+    label: Credit
+- field: Sign
+  description: Sign
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: ''
+  - key: P
+    label: Positive
+  - key: N
+    label: Negative
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TemplateId
+  - CatId
+  - AcctCode
+  - VisOrder
+- key: ACCNT_CODE
+  unique: false
+  fields:
+  - AcctCode

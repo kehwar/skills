@@ -1,0 +1,25 @@
+table: DMW1
+description: Query List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DMW1.htm
+fields:
+- field: PacCode
+  description: Package Code
+  type: Int
+  size: 11
+  related: ODMW
+- field: QueryCode
+  description: Query Code
+  type: Int
+  size: 11
+  related: OUQR
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PacCode
+  - QueryCode

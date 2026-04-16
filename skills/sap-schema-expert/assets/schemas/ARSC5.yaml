@@ -1,0 +1,32 @@
+table: ARSC5
+description: Resources - Preferred Vendors - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ARSC5.htm
+fields:
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: VendorCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '290'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - VendorCode
+  - LogInstanc

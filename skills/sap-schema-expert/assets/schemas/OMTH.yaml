@@ -1,0 +1,125 @@
+table: OMTH
+description: Reconciliation History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OMTH.htm
+fields:
+- field: MthAcctCod
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: IsInternal
+  description: Reconciliation Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: I
+    label: Internal
+  - key: E
+    label: External
+- field: MatchNum
+  description: Reconciliation No.
+  type: Int
+  size: 11
+- field: Totals
+  description: Recon. Amount (One Side)
+  type: Num
+  size: 19.6
+- field: IsCard
+  description: Select BP or Account
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: G/L Account
+  - key: C
+    label: BP
+- field: MatchType
+  description: Reconciliation Type
+  type: nVarChar
+  size: 2
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Manual
+  - key: '1'
+    label: Ref. 1
+  - key: '2'
+    label: Ref. 2
+  - key: '3'
+    label: Ref. 3
+  - key: '4'
+    label: Posting Date
+  - key: '5'
+    label: Due Date
+  - key: '6'
+    label: Ref. 1 + Posting Date
+  - key: '7'
+    label: Ref. 2 + Posting Date
+  - key: '8'
+    label: Ref. 3 + Posting Date
+  - key: '9'
+    label: Ref. 1 + Due Date
+  - key: '10'
+    label: Ref. 2 + Due Date
+  - key: '11'
+    label: Ref. 3 + Due Date
+  - key: '12'
+    label: By Total
+- field: TransId
+  description: Reconciliation Transaction No.
+  type: Int
+  size: 11
+  default: -1
+- field: MatchDate
+  description: Reconciliation Date
+  type: Date
+  size: 8
+- field: CurrType
+  description: Currency Type
+  type: nVarChar
+  size: 3
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MthAcctCod
+  - IsInternal
+  - MatchNum

@@ -1,0 +1,91 @@
+table: MTH1V
+description: Journal Entries of External Reconciliation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/MTH1V.htm
+fields:
+- field: MthAcctCod
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: IsInternal
+  description: Reconciliation Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: I
+    label: Internal
+  - key: E
+    label: External
+- field: MatchNum
+  description: Reconciliation No.
+  type: Int
+  size: 11
+- field: TransID
+  description: Transaction No.
+  type: Int
+  size: 11
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 200
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 200
+- field: Ref3Line
+  description: Reference 3
+  type: nVarChar
+  size: 200
+- field: Debit
+  description: Debit Amount
+  type: Num
+  size: 19.6
+- field: Credit
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: SYSDeb
+  description: System Debit Amount
+  type: Num
+  size: 19.6
+- field: SYSCred
+  description: System Credit Amount
+  type: Num
+  size: 19.6
+- field: FCDebit
+  description: Foreign Debit Amount
+  type: Num
+  size: 19.6
+- field: FCCredit
+  description: Foreign Credit Amount
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+- field: LineMemo
+  description: Row Details
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MthAcctCod
+  - IsInternal
+  - MatchNum
+  - TransID
+  - Line_ID

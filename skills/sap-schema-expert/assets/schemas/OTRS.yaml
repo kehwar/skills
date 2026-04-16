@@ -1,0 +1,101 @@
+table: OTRS
+description: Tax Report Saving Object
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OTRS.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: ReportType
+  description: Report Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: VAT Report (UK)
+- field: PeriodType
+  description: Report Period Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: Year
+  - key: Q
+    label: Quarter
+  - key: B
+    label: Bi-Monthly
+  - key: M
+    label: Month
+  - key: P
+    label: Period
+  - key: F
+    label: Fiscal Year
+  - key: G
+    label: Fiscal Quarter
+- field: PeriodNum
+  description: Report Period Number
+  type: Int
+  size: 11
+- field: Year
+  description: Report Year
+  type: Int
+  size: 6
+- field: AdjustNum
+  description: Report Adjustment Number
+  type: Int
+  size: 6
+- field: ApUserSign
+  description: Approved By (User Signature)
+  type: Int
+  size: 6
+- field: ApDate
+  description: Approval Date
+  type: Date
+  size: 8
+- field: ApTime
+  description: Approval Time
+  type: Int
+  size: 6
+- field: DeclType
+  description: Declaration Type
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Original
+  - key: S
+    label: Substitute
+  - key: C
+    label: Complementary
+- field: SCDateFrom
+  description: Selection Criteria - Date From
+  type: Date
+  size: 8
+- field: SCDateTo
+  description: Selection Criteria - Date To
+  type: Date
+  size: 8
+- field: BosCode
+  description: Box Set Code
+  type: Int
+  size: 11
+  related: OBOS
+- field: BatchNum
+  description: Journal Voucher No.
+  type: Int
+  size: 11
+  related: OBTD
+- field: GstRtType
+  description: GTS Return Type
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

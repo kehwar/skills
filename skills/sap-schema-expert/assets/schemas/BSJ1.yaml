@@ -1,0 +1,84 @@
+table: BSJ1
+description: Backend Scheduling Sub Tasks
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/BSJ1.htm
+fields:
+- field: ID
+  description: Job ID
+  type: Int
+  size: 11
+  related: OBSJ
+- field: TaskID
+  description: Sub Task ID
+  type: Int
+  size: 11
+- field: Type
+  description: Task Type
+  type: nVarChar
+  size: 50
+- field: Params
+  description: Parameters
+  type: Text
+  size: 16
+- field: RunAs
+  description: Run As User
+  type: Int
+  size: 6
+  related: OUSR
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Scheduled
+  - key: R
+    label: Running
+  - key: E
+    label: Error
+  - key: F
+    label: Finished
+  - key: P
+    label: Pending
+  - key: C
+    label: Creating
+- field: PostTask
+  description: Post-Task
+  type: Int
+  size: 11
+- field: PreTask
+  description: Pre-Task
+  type: Int
+  size: 11
+- field: LastDate
+  description: Last Running Date
+  type: Date
+  size: 8
+- field: LastTime
+  description: Last Running Time
+  type: Int
+  size: 6
+- field: Duration
+  description: Duration
+  type: Num
+  size: 19.6
+- field: Retry
+  description: Retry Times
+  type: Int
+  size: 11
+  default: 0
+- field: TimeOut
+  description: Time out
+  type: Int
+  size: 11
+  default: 20
+- field: Message
+  description: Status Message
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+  - TaskID

@@ -1,0 +1,39 @@
+table: IMGLG
+description: Group Message Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/IMGLG.htm
+fields:
+- field: Id
+  description: Internal Number
+  type: Identity
+  size: 11
+- field: From
+  description: Message Sender
+  type: nVarChar
+  size: 25
+- field: GrpId
+  description: Group ID
+  type: Int
+  size: 11
+- field: Msg
+  description: Message Content
+  type: Text
+  size: 16
+- field: Time
+  description: Time
+  type: Date
+  size: 8
+- field: Nty
+  description: Is Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

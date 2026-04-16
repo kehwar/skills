@@ -1,0 +1,68 @@
+table: CRD9
+description: OCRD Extension
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CRD9.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 25
+  related: OCRD
+- field: ISTransMod
+  description: Intrastat Transport Mode
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISIncoterm
+  description: Intrastat Incoterms
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISState
+  description: Intrastat State
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISNatTrans
+  description: Intrastat Nature of Trans.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISStatProc
+  description: Intrastat Statistical Proc.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISCustProc
+  description: Intrastat Customs Proc.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISCRYOrig
+  description: Intrastat Country Origin
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ISPort
+  description: Intrastat Port of Entry/Exit
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISDomFrgld
+  description: Intrastat Domestic/Foreign ID
+  type: VarChar
+  size: 1
+- field: ISRelevant
+  description: Intrastat Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode

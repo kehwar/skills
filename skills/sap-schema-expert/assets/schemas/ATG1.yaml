@@ -1,0 +1,46 @@
+table: ATG1
+description: Installment Layout - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ATG1.htm
+fields:
+- field: CTGCode
+  description: Payment Method Code
+  type: Int
+  size: 6
+  related: OCTG
+- field: IntsNo
+  description: Installment No.
+  type: Int
+  size: 6
+- field: InstMonth
+  description: Installment Month
+  type: Int
+  size: 6
+  default: 0
+- field: InstDays
+  description: Installment Days
+  type: Int
+  size: 6
+  default: 0
+- field: InstPrcnt
+  description: Installment %
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CTGCode
+  - IntsNo
+  - LogInstanc
+- key: ABS_ENTRY
+  unique: true
+  fields:
+  - CTGCode
+  - InstMonth
+  - InstDays
+  - LogInstanc

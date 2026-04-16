@@ -1,0 +1,29 @@
+table: OFAT
+description: Microsoft 365 Integration Authorization
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFAT.htm
+fields:
+- field: ID
+  description: ID
+  type: nVarChar
+  size: 254
+- field: USER_ID
+  description: User Code
+  type: nVarChar
+  size: 254
+- field: OFUSERNAME
+  description: Microsoft Account
+  type: nVarChar
+  size: 254
+- field: AUTH_TOKEN
+  description: Authorization Token
+  type: Text
+  size: 16
+- field: ID_TOKEN
+  description: Token
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

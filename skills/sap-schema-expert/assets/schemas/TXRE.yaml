@@ -1,0 +1,17 @@
+table: TXRE
+description: Tax Exemption Reason
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TXRE.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 3
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

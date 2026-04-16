@@ -1,0 +1,670 @@
+table: TAX1
+description: VAT Transactions - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/TAX1.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+  related: OTAX
+- field: LineSeq
+  description: Row Sequence
+  type: Int
+  size: 11
+- field: SrcArrType
+  description: Source Array Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '1'
+    label: Main
+  - key: '12'
+    label: Array1
+  - key: '13'
+    label: Array2
+  - key: '14'
+    label: Array3
+  - key: '15'
+    label: Array4
+  - key: '16'
+    label: Array5
+  - key: '17'
+    label: Array6
+  - key: '18'
+    label: Array7
+  - key: '24'
+    label: Array13
+- field: SrcLineNum
+  description: Source Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: SrcGrpNum
+  description: Source Group Number
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '0'
+    label: Group1
+  - key: '1'
+    label: Group2
+  - key: '2'
+    label: Group3
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: StaCode
+  description: Tax Authority Code
+  type: nVarChar
+  size: 8
+  related: OSTA
+- field: StaType
+  description: Tax Authority Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: StaIndex
+  description: Tax Authority seq index
+  type: Int
+  size: 11
+- field: IsLiable
+  description: Is Tax Liable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxType
+  description: Tax Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Regular
+  - key: U
+    label: Use Tax
+  - key: N
+    label: No Tax
+  - key: O
+    label: Tax Offset Transaction
+  - key: R
+    label: Reverse Tax Offset Transaction
+  - key: P
+    label: DPM Request Tax Offset Transaction
+  - key: D
+    label: Deferred Tax Offset Transaction
+- field: IsAcq
+  description: Acquisition Tax Liable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Isdeferred
+  description: Deferred Tax [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ValueDate
+  description: Due Date for Payment
+  type: Date
+  size: 8
+- field: VatPercent
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: NdPercent
+  description: Non Deductible %
+  type: Num
+  size: 19.6
+- field: EqPercent
+  description: Equalization Percent
+  type: Num
+  size: 19.6
+- field: BaseObjTyp
+  description: Base Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: Correction A/R Invoice
+  - key: '166'
+    label: Correction A/R Invoice Reversals
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '163'
+    label: Correction A/P Invoice
+  - key: '164'
+    label: Correction A/P Invoice Reversals
+  - key: '46'
+    label: Outgoing Payment
+  - key: '24'
+    label: Incoming Payment
+  - key: '57'
+    label: Check for Payment
+  - key: '30'
+    label: Journal Transaction
+  - key: '67'
+    label: Warehouse Transfer
+  - key: '25'
+    label: Deposit
+  - key: '321'
+    label: Internal Reconciliation
+  - key: '76'
+    label: Deposit Temporary
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '69'
+    label: Import file
+- field: BaseAbs
+  description: Base Document Internal No.
+  type: Int
+  size: 11
+  default: -1
+- field: BaseArrTyp
+  description: Base Array Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '1'
+    label: Main
+  - key: '12'
+    label: Array1
+  - key: '13'
+    label: Array2
+  - key: '14'
+    label: Array3
+  - key: '15'
+    label: Array4
+  - key: '16'
+    label: Array5
+  - key: '17'
+    label: Array6
+  - key: '18'
+    label: Array7
+  - key: '24'
+    label: Array13
+- field: BaseLinNum
+  description: Base Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: BaseGrpNum
+  description: Base Group No.
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '0'
+    label: Group1
+  - key: '1'
+    label: Group2
+  - key: '2'
+    label: Group3
+- field: BaseSum
+  description: Base Sum
+  type: Num
+  size: 19.6
+- field: BaseSumSc
+  description: Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: BaseSumFc
+  description: Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: VAT Sum
+  type: Num
+  size: 19.6
+- field: VatSumSc
+  description: VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: VatSumFc
+  description: VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: DeductSum
+  description: Deduct VAT Sum
+  type: Num
+  size: 19.6
+- field: DedctSumSC
+  description: Deduct VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: DedctSumFC
+  description: Deduct VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: EqSum
+  description: Equalization Sum
+  type: Num
+  size: 19.6
+- field: EqSumSC
+  description: Equalization Sum (SC)
+  type: Num
+  size: 19.6
+- field: EqSumFC
+  description: Equalization Sum (FC)
+  type: Num
+  size: 19.6
+- field: TaxAcct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DefAcct
+  description: Deferred Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: NdAcct
+  description: Non Deduct. Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AcqAcct
+  description: Acquisition Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpAcct
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CrditDebit
+  description: Credit Or Debit Transaction
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Credit
+  - key: D
+    label: Debit
+- field: PostingTyp
+  description: Sales or Purchase
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchase
+- field: BasePaid
+  description: Applied Base Sum
+  type: Num
+  size: 19.6
+- field: BasePaidSC
+  description: Applied Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: BasePaidFC
+  description: Applied Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: VatPaid
+  description: Applied VAT Sum
+  type: Num
+  size: 19.6
+- field: VatPaidSC
+  description: Applied VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: VatPaidFC
+  description: Applied VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: DeductPaid
+  description: Applied Deduct Sum
+  type: Num
+  size: 19.6
+- field: DdctPaidSC
+  description: Applied Deduct Sum (SC)
+  type: Num
+  size: 19.6
+- field: DdctPaidFC
+  description: Applied Deduct Sum (FC)
+  type: Num
+  size: 19.6
+- field: EqPaid
+  description: Applied Equalization Sum
+  type: Num
+  size: 19.6
+- field: EqPaidSC
+  description: Applied Equalization Sum (SC)
+  type: Num
+  size: 19.6
+- field: EqPaidFC
+  description: Applied Equalization Sum (FC)
+  type: Num
+  size: 19.6
+- field: TransAcct
+  description: Transaction Acccount
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LnDataNum
+  description: Row Number in Tax Data
+  type: Int
+  size: 11
+  default: -1
+- field: InPrice
+  description: Included in Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Exempt
+  description: Exempt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InGrossRev
+  description: Included in Gross Revenue
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PostStatus
+  description: Posting Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsItmLevel
+  description: Is Item Level Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: MinTAmt
+  description: Min. Taxable Amount
+  type: Num
+  size: 19.6
+- field: MinTAmtSC
+  description: Min. Taxable Amount (SC)
+  type: Num
+  size: 19.6
+- field: MinTAmtFC
+  description: Min. Taxable Amount (FC)
+  type: Num
+  size: 19.6
+- field: MaxTAmt
+  description: Max. Taxable Amount
+  type: Num
+  size: 19.6
+- field: MaxTAmtSC
+  description: Max. Taxable Amount (SC)
+  type: Num
+  size: 19.6
+- field: MaxTAmtFC
+  description: Max. Taxable Amount (FC)
+  type: Num
+  size: 19.6
+- field: FlatTAmt
+  description: Flat Tax Amount
+  type: Num
+  size: 19.6
+- field: FlatTAmtSC
+  description: Flat Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: FlatTAmtFC
+  description: Flat Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: EqTaxAcct
+  description: Equalization Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Reposted
+  description: Reposted in Transfer Wizard
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Unencumbrd
+  description: Unencumbered
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsSplitPay
+  description: Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitPayAc
+  description: Split Payment Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TaxOnRI
+  description: Tax On Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RvsChrgPrc
+  description: Reverse Charge %
+  type: Num
+  size: 19.6
+- field: RvsChrgSum
+  description: Reverse Charge Sum
+  type: Num
+  size: 19.6
+- field: RvsChrgSC
+  description: Reverse Charge Sum (SC)
+  type: Num
+  size: 19.6
+- field: RvsChrgFC
+  description: Reverse Charge Sum (FC)
+  type: Num
+  size: 19.6
+- field: GstPayAct
+  description: GST Payable Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RvsPaid
+  description: Applied Reverse Charge Sum
+  type: Num
+  size: 19.6
+- field: RvsPaidSC
+  description: Applied Reverse Charge (SC)
+  type: Num
+  size: 19.6
+- field: RvsPaidFC
+  description: Applied Reverse Charge (FC)
+  type: Num
+  size: 19.6
+- field: InFirstIns
+  description: Included in First Installment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GstRecvAct
+  description: GST Receivable Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IsCstmAct
+  description: Apply Customer Accounting Tax Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CAOutCode
+  description: Customer Accounting Output Tax Code
+  type: nVarChar
+  size: 8
+- field: CABasSum
+  description: Customer Accounting Reverse Base Sum
+  type: Num
+  size: 19.6
+- field: CABasSumSc
+  description: Customer Accounting Reverse Base Sum (SC)
+  type: Num
+  size: 19.6
+- field: CABasSumFc
+  description: Customer Accounting Reverse Base Sum (FC)
+  type: Num
+  size: 19.6
+- field: CAVatSum
+  description: Customer Accounting Reverse VAT Sum
+  type: Num
+  size: 19.6
+- field: CAVatSumSc
+  description: Customer Accounting Reverse VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: CAVatSumFc
+  description: Customer Accounting Reverse VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: CAOutAcct
+  description: Customer Accounting Output Tax Account
+  type: nVarChar
+  size: 15
+- field: ExtVatPcnt
+  description: External VAT Percent
+  type: Num
+  size: 19.6
+- field: ExtVatSum
+  description: External VAT Amount
+  type: Num
+  size: 19.6
+- field: VatSumSrc
+  description: VAT Sum Source
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Internal System Calculation
+  - key: E
+    label: External Calculation
+- field: ExtVatSumF
+  description: External VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExtVatSumS
+  description: External VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: AcqRevTax
+  description: Acquisition/Reverse Corresponding Tax Code
+  type: nVarChar
+  size: 8
+- field: VatExmPrc
+  description: VAT Exemption %
+  type: Num
+  size: 19.6
+- field: VatExmBase
+  description: VAT Base %
+  type: Num
+  size: 19.6
+- field: RevCharge
+  description: Reverse Charge
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineSeq

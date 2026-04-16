@@ -1,0 +1,48 @@
+table: ONFN
+description: Nota Fiscal Numbering
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ONFN.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+- field: AutoKey
+  description: Automatic Key
+  type: Int
+  size: 11
+  default: 0
+- field: DfltSeq
+  description: Default Sequence
+  type: Int
+  size: 6
+  default: 0
+- field: UpdCounter
+  description: Update Counter
+  type: Int
+  size: 6
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: ''
+  - key: GA
+    label: GST Tax Invoice
+  - key: GD
+    label: GST Debit Memo
+  - key: RV
+    label: Refund Voucher
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectCode
+  - DocSubType

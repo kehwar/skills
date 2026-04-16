@@ -1,0 +1,82 @@
+table: IVRU
+description: Inventory Valuation Utility
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IVRU.htm
+fields:
+- field: AbsEntry
+  description: Successive No.
+  type: Int
+  size: 11
+- field: SourceDB
+  description: Source Database
+  type: nVarChar
+  size: 128
+- field: UtilityDB
+  description: Utility DB
+  type: nVarChar
+  size: 128
+- field: IVLGEntry
+  description: IVLG Entry
+  type: Int
+  size: 11
+  related: IVLG
+- field: UpdDate
+  description: Update Date and Time
+  type: Date
+  size: 8
+- field: TblHINM
+  description: HINM Name
+  type: nVarChar
+  size: 30
+- field: TblHITM
+  description: HITM Name
+  type: nVarChar
+  size: 30
+- field: TblHITW
+  description: HITW Name
+  type: nVarChar
+  size: 30
+- field: TblFINM
+  description: FINM Name
+  type: nVarChar
+  size: 30
+- field: TblFITM
+  description: FITM Name
+  type: nVarChar
+  size: 30
+- field: TblFITW
+  description: FITW Name
+  type: nVarChar
+  size: 30
+- field: TrSeqHINM
+  description: Last HINM Trans. Seq. No.
+  type: Int
+  size: 11
+- field: TrSeqOINM
+  description: Last OINM Trans. Seq. No.
+  type: Int
+  size: 11
+- field: TrIdUtil
+  description: Last OJDT Trans. No. Utility
+  type: Int
+  size: 11
+- field: TrIdProd
+  description: Last OJDT Trans. No. Productiv
+  type: Int
+  size: 11
+- field: Comment
+  description: Comment
+  type: nVarChar
+  size: 100
+- field: StrFld
+  description: General String Field
+  type: nVarChar
+  size: 50
+- field: NumFld
+  description: General Number Field
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

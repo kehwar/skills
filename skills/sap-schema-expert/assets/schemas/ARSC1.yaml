@@ -1,0 +1,45 @@
+table: ARSC1
+description: Resources - Warehouses - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ARSC1.htm
+fields:
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  default: '290'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - WhsCode
+  - LogInstanc
+- key: WHS
+  unique: false
+  fields:
+  - WhsCode

@@ -1,0 +1,78 @@
+table: OACG
+description: Account Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OACG.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 40
+- field: Source
+  description: Source
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Balance Sheet
+  - key: P
+    label: Profit and Loss
+  - key: C
+    label: Trial Balance
+  - key: O
+    label: Other
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DateSource
+  description: Date Source
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Document Date
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: nVarChar
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: SECOND
+  unique: true
+  fields:
+  - Source
+  - Name

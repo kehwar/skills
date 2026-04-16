@@ -1,0 +1,34 @@
+table: XRREL
+description: XLR Company Report Objects
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/XRREL.htm
+fields:
+- field: ParentId
+  description: ParentId
+  type: nVarChar
+  size: 38
+- field: ChildId
+  description: ChildId
+  type: nVarChar
+  size: 38
+- field: RelType
+  description: RelType
+  type: Int
+  size: 11
+  default: 1
+- field: SeqNo
+  description: SeqNo
+  type: Int
+  size: 11
+  default: 0
+- field: Global
+  description: Global
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParentId
+  - ChildId
+  - Global

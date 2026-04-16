@@ -1,0 +1,32 @@
+table: MAP2
+description: Mapping Input and Output Relation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MAP2.htm
+fields:
+- field: MapID
+  description: Mapping ID
+  type: Int
+  size: 11
+  related: OMAP
+- field: CodeIn
+  description: Input Code
+  type: Int
+  size: 11
+- field: CodeOut
+  description: Output Code
+  type: Int
+  size: 11
+- field: Sequence
+  description: Run Sequence
+  type: Int
+  size: 11
+- field: Name
+  description: Parameter Name
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MapID
+  - CodeIn
+  - CodeOut

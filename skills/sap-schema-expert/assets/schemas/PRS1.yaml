@@ -1,0 +1,56 @@
+table: PRS1
+description: Detail Lines of Print Sequence Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/PRS1.htm
+fields:
+- field: SeqID
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 6
+- field: ObjectID
+  description: Document Object ID
+  type: Int
+  size: 11
+- field: LaytCode
+  description: Report Code
+  type: nVarChar
+  size: 8
+- field: NumCopy
+  description: Number of Copies
+  type: Int
+  size: 6
+- field: UsrQuery
+  description: User Query to Customize
+  type: Int
+  size: 11
+- field: SubDocType
+  description: Document Subtype
+  type: Int
+  size: 6
+- field: Printer
+  description: Printer
+  type: nVarChar
+  size: 100
+- field: Prtr1st
+  description: Printer for First Page
+  type: nVarChar
+  size: 100
+- field: Use1stPrtr
+  description: Use 1st Page Printer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SeqID
+  - LineNum

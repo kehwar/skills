@@ -1,0 +1,583 @@
+table: DPO12
+description: Down Payment - Tax Extension
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DPO12.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODPO
+- field: TaxId0
+  description: Tax ID 0
+  type: nVarChar
+  size: 100
+- field: TaxId1
+  description: Tax ID 1
+  type: nVarChar
+  size: 100
+- field: TaxId2
+  description: Tax ID 2
+  type: nVarChar
+  size: 100
+- field: TaxId3
+  description: Tax ID 3
+  type: nVarChar
+  size: 100
+- field: TaxId4
+  description: Tax ID 4
+  type: nVarChar
+  size: 100
+- field: TaxId5
+  description: Tax ID 5
+  type: nVarChar
+  size: 100
+- field: TaxId6
+  description: Tax ID 6
+  type: nVarChar
+  size: 100
+- field: TaxId7
+  description: Tax ID 7
+  type: nVarChar
+  size: 100
+- field: TaxId8
+  description: Tax ID 8
+  type: nVarChar
+  size: 100
+- field: TaxId9
+  description: Tax ID 9
+  type: nVarChar
+  size: 100
+- field: State
+  description: State Code
+  type: nVarChar
+  size: 3
+- field: County
+  description: County Code
+  type: nVarChar
+  size: 7
+- field: Incoterms
+  description: Incoterms
+  type: nVarChar
+  size: 3
+- field: Vehicle
+  description: Vehicle ID
+  type: nVarChar
+  size: 10
+- field: VidState
+  description: Vehicle ID (State)
+  type: nVarChar
+  size: 3
+- field: NfRef
+  description: NF Reference
+  type: nVarChar
+  size: 254
+- field: Carrier
+  description: Carrier Code
+  type: nVarChar
+  size: 15
+- field: QoP
+  description: Quantity of Packs
+  type: Int
+  size: 11
+- field: PackDesc
+  description: Pack Description
+  type: nVarChar
+  size: 10
+- field: Brand
+  description: Brand
+  type: nVarChar
+  size: 20
+- field: NoSU
+  description: Number of Shipping Unit
+  type: Int
+  size: 11
+- field: NetWeight
+  description: Net Weight
+  type: Num
+  size: 19.6
+- field: GrsWeight
+  description: Gross Weight
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '204'
+- field: TaxId10
+  description: Assessee Type
+  type: nVarChar
+  size: 100
+- field: TransCat
+  description: Transaction Category
+  type: nVarChar
+  size: 100
+- field: FormNo
+  description: Form No.
+  type: nVarChar
+  size: 100
+- field: TaxId11
+  description: Tax ID 11
+  type: nVarChar
+  size: 100
+- field: StreetS
+  description: Street
+  type: nVarChar
+  size: 100
+- field: BlockS
+  description: Block
+  type: nVarChar
+  size: 100
+- field: BuildingS
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: CityS
+  description: City
+  type: nVarChar
+  size: 100
+- field: ZipCodeS
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: CountyS
+  description: County
+  type: nVarChar
+  size: 100
+- field: StateS
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CountryS
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: AddrTypeS
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNoS
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: StreetB
+  description: Street
+  type: nVarChar
+  size: 100
+- field: BlockB
+  description: Block
+  type: nVarChar
+  size: 100
+- field: BuildingB
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: CityB
+  description: City
+  type: nVarChar
+  size: 100
+- field: ZipCodeB
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: CountyB
+  description: County
+  type: nVarChar
+  size: 100
+- field: StateB
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CountryB
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: AddrTypeB
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNoB
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: ImpORExp
+  description: Import or Export
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: ''
+  - key: Y
+    label: ''
+- field: Vat
+  description: VAT
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No VAT Support
+  - key: Y
+    label: VAT Support
+- field: AltCrdNamB
+  description: Alternative BP Name
+  type: nVarChar
+  size: 200
+- field: AltTaxIdB
+  description: Alternative Tax ID
+  type: nVarChar
+  size: 32
+- field: Address2S
+  description: Address Name 2
+  type: nVarChar
+  size: 50
+- field: Address3S
+  description: Address Name 3
+  type: nVarChar
+  size: 50
+- field: Address2B
+  description: Address Name 2
+  type: nVarChar
+  size: 50
+- field: Address3B
+  description: Address Name 3
+  type: nVarChar
+  size: 50
+- field: MainUsage
+  description: Main Usage Code of Document
+  type: Int
+  size: 11
+  related: OUSG
+- field: GlbLocNumS
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: GlbLocNumB
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: CollectDT
+  description: Date and Time of Collection
+  type: nVarChar
+  size: 20
+- field: TransprtDT
+  description: Transport Starting Date
+  type: Date
+  size: 8
+- field: TransprtRS
+  description: Transport Reason
+  type: nVarChar
+  size: 100
+- field: TaxId12
+  description: Tax ID 12
+  type: nVarChar
+  size: 50
+- field: TaxId13
+  description: Deductee Ref. No. in India
+  type: nVarChar
+  size: 100
+- field: ImpExpNo
+  description: Import/Export Bill No.
+  type: nVarChar
+  size: 100
+- field: ImpExpDate
+  description: Import/Export Date
+  type: Date
+  size: 8
+- field: BpGSTType
+  description: GST Regn Type of BP
+  type: Int
+  size: 11
+- field: BpGSTN
+  description: GST Regn No of BP
+  type: nVarChar
+  size: 15
+- field: BpStateCod
+  description: State Code of Business Partner
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: BPStatGSTN
+  description: GST State Code of BP
+  type: nVarChar
+  size: 2
+- field: LocGSTType
+  description: GST Regn Type of Location
+  type: Int
+  size: 11
+- field: LocGSTN
+  description: GST Regn No of Location
+  type: nVarChar
+  size: 15
+- field: LocStatCod
+  description: State Code of Location
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: LocStaGSTN
+  description: GST State Code of Location
+  type: nVarChar
+  size: 2
+- field: BpCountry
+  description: Country/Region Code of BP
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: OrigImpNo
+  description: Original Bill of Entry No.
+  type: nVarChar
+  size: 100
+- field: OrigImpDat
+  description: Original Bill of Entry Date
+  type: Date
+  size: 8
+- field: ExportType
+  description: Exporting Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Imports/Exports
+  - key: S
+    label: SEZ Developer
+  - key: U
+    label: SEZ Unit
+  - key: D
+    label: Deemed Imports/Exports
+- field: PortCode
+  description: Port Code
+  type: nVarChar
+  size: 100
+- field: BoEValue
+  description: Bill of Entry Value
+  type: Num
+  size: 19.6
+- field: IsIGSTAct
+  description: Supply under IGST Account
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ClaimRefun
+  description: Claim Refund
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxRateDif
+  description: Differential % of Tax Rate
+  type: Int
+  size: 11
+  constraints:
+  - key: '65'
+    label: ''
+  - key: '100'
+    label: ''
+- field: BPGdsIssP
+  description: Goods Issue Place BP
+  type: nVarChar
+  size: 15
+- field: CNPJGIP
+  description: Goods Issue Place CNPJ
+  type: nVarChar
+  size: 100
+- field: CPFGIP
+  description: Goods Issue Place CPF
+  type: nVarChar
+  size: 100
+- field: StreetGIP
+  description: Goods Issue Place Street
+  type: nVarChar
+  size: 100
+- field: StrtNoGIP
+  description: Goods Issue Place Street No.
+  type: nVarChar
+  size: 100
+- field: BldngGIP
+  description: Goods Issue Place Building
+  type: Text
+  size: 16
+- field: ZipGIP
+  description: Goods Issue Place Zip Code
+  type: nVarChar
+  size: 20
+- field: BlockGIP
+  description: Goods Issue Place Block
+  type: nVarChar
+  size: 100
+- field: CityGIP
+  description: Goods Issue Place City
+  type: nVarChar
+  size: 100
+- field: CountyGIP
+  description: Goods Issue Place County
+  type: nVarChar
+  size: 100
+- field: StateGIP
+  description: Goods Issue Place State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CountryGIP
+  description: Goods Issue Place Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: PhoneGIP
+  description: Goods Issue Place Phone
+  type: nVarChar
+  size: 20
+- field: EMailGIP
+  description: Goods Issue Place E-Mail
+  type: nVarChar
+  size: 100
+- field: DptDateGIP
+  description: Goods Issue Place Departure Date
+  type: Date
+  size: 8
+- field: BPDelivryP
+  description: Delivery Place BP
+  type: nVarChar
+  size: 15
+- field: CNPJDlvryP
+  description: Delivery Place CNPJ
+  type: nVarChar
+  size: 100
+- field: CPFDlvryP
+  description: Delivery Place CPF
+  type: nVarChar
+  size: 100
+- field: StrtDlvryP
+  description: Delivery Place Street
+  type: nVarChar
+  size: 100
+- field: StrNoDlvrP
+  description: Delivery Place Street No.
+  type: nVarChar
+  size: 100
+- field: BldDlvryP
+  description: Delivery Place Building
+  type: Text
+  size: 16
+- field: ZipDlvryP
+  description: Delivery Place Zip Code
+  type: nVarChar
+  size: 20
+- field: BlckDlvryP
+  description: Delivery Place Block
+  type: nVarChar
+  size: 100
+- field: CityDlvryP
+  description: Delivery Place City
+  type: nVarChar
+  size: 100
+- field: CntyDlvryP
+  description: Delivery Place County
+  type: nVarChar
+  size: 100
+- field: StatDlvryP
+  description: Delivery Place State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CtryDlvryP
+  description: Delivery Place Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: FoneDlvryP
+  description: Delivery Place Phone
+  type: nVarChar
+  size: 20
+- field: MailDlvryP
+  description: Delivery Place E-Mail
+  type: nVarChar
+  size: 100
+- field: DpDtDlvryP
+  description: Delivery Place Departure Date
+  type: Date
+  size: 8
+- field: AuthedCNPJ
+  description: Authorized CNPJ or CPF
+  type: nVarChar
+  size: 250
+- field: TaxId14
+  description: ITR Filing
+  type: nVarChar
+  size: 250
+- field: StreetR
+  description: Street for Return
+  type: nVarChar
+  size: 100
+- field: BlockR
+  description: Block for Return
+  type: nVarChar
+  size: 100
+- field: BuildingR
+  description: Building / Floor / Room for Return
+  type: Text
+  size: 16
+- field: CityR
+  description: City for Return
+  type: nVarChar
+  size: 100
+- field: ZipCodeR
+  description: Zip Code for Return
+  type: nVarChar
+  size: 20
+- field: CountyR
+  description: County for Return
+  type: nVarChar
+  size: 100
+- field: StateR
+  description: State for Return
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CountryR
+  description: Country/Region for Return
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: AddrTypeR
+  description: Address Type for Return
+  type: nVarChar
+  size: 100
+- field: StreetNoR
+  description: Street No. for Return
+  type: nVarChar
+  size: 100
+- field: Address2R
+  description: Address Name 2 for Return
+  type: nVarChar
+  size: 50
+- field: Address3R
+  description: Address Name 3 for Return
+  type: nVarChar
+  size: 50
+- field: GlbLocNumR
+  description: Global Location Number for Return
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry

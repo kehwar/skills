@@ -1,0 +1,44 @@
+table: AIT5
+description: Asset Item Projects - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIT5.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+- field: Project
+  description: Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - LineNum
+  - LogInstanc

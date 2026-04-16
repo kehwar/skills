@@ -1,0 +1,23 @@
+table: XRXLS
+description: XLR company XLS
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/XRXLS.htm
+fields:
+- field: XlsId
+  description: XlsID
+  type: nVarChar
+  size: 40
+- field: Xls
+  description: Xls
+  type: Text
+  size: 16
+- field: Global
+  description: Global
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - XlsId
+  - Global

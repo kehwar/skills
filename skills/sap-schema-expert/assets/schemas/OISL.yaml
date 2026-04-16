@@ -1,0 +1,64 @@
+table: OISL
+description: Simulation Log File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OISL.htm
+fields:
+- field: LogEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TaskType
+  description: Type of Task
+  type: nVarChar
+  size: 20
+- field: RunID
+  description: Simulation Run
+  type: Int
+  size: 11
+- field: Version
+  description: B1 Main Release Version
+  type: Int
+  size: 11
+- field: PatchLevel
+  description: B1 Patch Level Version
+  type: nVarChar
+  size: 50
+- field: LastMsgID
+  description: Last OILM Message ID
+  type: Int
+  size: 11
+- field: FinishDate
+  description: Finish Date
+  type: Date
+  size: 8
+- field: FinishTime
+  description: Finish Time
+  type: Int
+  size: 6
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: In Progress
+  - key: F
+    label: Failed
+  - key: S
+    label: Successful
+- field: InitMap
+  description: Initialize MAP Items
+  type: VarChar
+  size: 1
+- field: InitStd
+  description: Initialize STD Items
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry

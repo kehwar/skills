@@ -1,0 +1,125 @@
+table: OTRO
+description: Transportation Document
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OTRO.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: NextNum
+  description: Consecutive Number
+  type: Int
+  size: 11
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: EDocGenTyp
+  description: Electronic Doc. Generation Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+- field: EDocExpFrm
+  description: Electronic Doc. Export Format
+  type: Int
+  size: 11
+- field: TranspNum
+  description: Transportation Number
+  type: nVarChar
+  size: 100
+- field: Expiration
+  description: Expiration Date
+  type: Date
+  size: 8
+- field: Vehicle
+  description: Vehicle ID
+  type: nVarChar
+  size: 10
+- field: TrailerID
+  description: Trailer ID
+  type: nVarChar
+  size: 10
+- field: Carrier
+  description: Carrier Code
+  type: nVarChar
+  size: 15
+- field: IssueGate
+  description: Issue Gate
+  type: Int
+  size: 11
+  default: 0
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: CANCELED
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Weight
+  description: Weight
+  type: Num
+  size: 19.6
+- field: WghtUnit
+  description: Unit of Weight
+  type: Int
+  size: 6
+- field: TotalLC
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: COTcode
+  description: COT Code
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NEXT_NUM_U
+  unique: true
+  fields:
+  - NextNum
+  - WhsCode
+  - IssueGate

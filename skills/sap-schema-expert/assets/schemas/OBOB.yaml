@@ -1,0 +1,51 @@
+table: OBOB
+description: Business Object Brief
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBOB.htm
+fields:
+- field: ObjectId
+  description: Object ID
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 30
+- field: PrimaryKey
+  description: Primary Key
+  type: nVarChar
+  size: 30
+- field: TitleField
+  description: Title Field
+  type: nVarChar
+  size: 100
+- field: DescField
+  description: Description Field
+  type: nVarChar
+  size: 100
+- field: DeviceType
+  description: Device Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Desktop
+  - key: M
+    label: Mobile
+- field: UsedBy
+  description: The record is used by BO list/Quick Access/Both
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: All
+  - key: B
+    label: BO List
+  - key: R
+    label: Recent Updates
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectId

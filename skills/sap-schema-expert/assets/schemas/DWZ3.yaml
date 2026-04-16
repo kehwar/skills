@@ -1,0 +1,115 @@
+table: DWZ3
+description: Dunning Wizard Array 3 - Recommended Service Invoice
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DWZ3.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Card Code
+  type: nVarChar
+  size: 15
+- field: LetterNum
+  description: Letter Number
+  type: Int
+  size: 11
+- field: AddChecked
+  description: Add Checked
+  type: VarChar
+  size: 1
+  default: Y
+- field: DocAbs
+  description: Internal Document Number
+  type: Int
+  size: 11
+- field: IntrAmt
+  description: Interest Amount (LC)
+  type: Num
+  size: 19.6
+- field: IntrAmtFC
+  description: Interest Amount (FC)
+  type: Num
+  size: 19.6
+- field: IntrAmtSC
+  description: Interest Amount (SC)
+  type: Num
+  size: 19.6
+- field: FeeAmt
+  description: Fee Amount (LC)
+  type: Num
+  size: 19.6
+- field: FeeAmtFC
+  description: Fee Amount (FC)
+  type: Num
+  size: 19.6
+- field: FeeAmtSC
+  description: Fee Amount (SC)
+  type: Num
+  size: 19.6
+- field: InVatGroup
+  description: Interest VAT Group
+  type: nVarChar
+  size: 8
+- field: InTaxCode
+  description: Interest Tax Code
+  type: nVarChar
+  size: 8
+- field: FeVatGroup
+  description: Fee VAT Group
+  type: nVarChar
+  size: 8
+- field: FeTaxCode
+  description: Fee Tax Code
+  type: nVarChar
+  size: 8
+- field: VatPrcnt
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: Executed
+  description: Executed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Message
+  description: Message
+  type: nVarChar
+  size: 254
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: BPLId
+  description: BPL ID Assigned to Invoice
+  type: Int
+  size: 11
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+- field: SACIntrst
+  description: SAC for Interest
+  type: Int
+  size: 11
+- field: SACFee
+  description: SAC for Fee
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - CardCode
+  - LetterNum

@@ -1,0 +1,21 @@
+table: CSTN
+description: Workstation ID
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CSTN.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: Computer
+  description: Station ID
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: COMPUTER
+  unique: true
+  fields:
+  - Computer

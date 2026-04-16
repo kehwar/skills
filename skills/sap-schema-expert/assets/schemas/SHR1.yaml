@@ -1,0 +1,51 @@
+table: SHR1
+description: Shareholder's Rights and Interests Report History - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/SHR1.htm
+fields:
+- field: ShrId
+  description: SHR Identity
+  type: Int
+  size: 11
+  related: OSHR
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: CatId
+  description: Category Identity
+  type: Int
+  size: 6
+- field: LineNum
+  description: Line Number
+  type: nVarChar
+  size: 6
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 254
+- field: Level
+  description: Level Number
+  type: Int
+  size: 6
+- field: IndentChar
+  description: Number of Characters to Indent
+  type: nVarChar
+  size: 6
+- field: Formula
+  description: Formula?
+  type: VarChar
+  size: 1
+- field: CurAmount
+  description: Current Period Amount
+  type: Num
+  size: 19.6
+- field: PreAmount
+  description: Previous Period Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ShrId
+  - RowId

@@ -1,0 +1,50 @@
+table: OZRD
+description: POS Daily Summary
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OZRD.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: POSEquipNo
+  description: POS Equipment No.
+  type: nVarChar
+  size: 20
+  related: OPOS
+- field: ResetCntr
+  description: Reset Counter
+  type: Int
+  size: 11
+- field: SummaryCnt
+  description: Summary Counter
+  type: Int
+  size: 11
+- field: OperCntr
+  description: Operation Counter
+  type: Int
+  size: 11
+- field: TotalSum
+  description: Total Sum
+  type: Num
+  size: 19.6
+- field: GrossSale
+  description: Gross Sale Sum
+  type: Num
+  size: 19.6
+- field: PISSum
+  description: PIS Sum
+  type: Num
+  size: 19.6
+- field: COFINSSum
+  description: COFINS Sum
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

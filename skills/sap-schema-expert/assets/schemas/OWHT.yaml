@@ -1,0 +1,395 @@
+table: OWHT
+description: Withholding Tax
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OWHT.htm
+fields:
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+- field: WTName
+  description: WTax Name
+  type: nVarChar
+  size: 50
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+- field: BaseType
+  description: Base Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: G
+    label: Gross
+  - key: N
+    label: Net
+  - key: V
+    label: VAT
+  - key: U
+    label: UoM
+- field: PrctBsAmnt
+  description: '% Base Amount'
+  type: Num
+  size: 19.6
+- field: OffclCode
+  description: Official Code
+  type: nVarChar
+  size: 15
+- field: Account
+  description: Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: MinTaxAmt
+  description: Minimum Taxable Amount
+  type: Num
+  size: 19.6
+- field: IsPrgrss
+  description: Progressive Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Progressive Tax
+  - key: N
+    label: Not Progressive Tax
+- field: Type
+  description: Withholding Type
+  type: VarChar
+  size: 1
+  default: V
+  constraints:
+  - key: V
+    label: VAT Withholding
+  - key: I
+    label: Income Tax Withholding
+- field: RoundType
+  description: Rounding Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: T
+    label: Truncated AU
+  - key: C
+    label: Commercial Values
+  - key: N
+    label: No Rounding
+- field: WTTypeId
+  description: Type
+  type: Int
+  size: 11
+  related: OWTT
+- field: WTCurrency
+  description: Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Section
+  description: Section
+  type: Int
+  size: 11
+  related: OSEC
+- field: Threshold
+  description: Cumulative Threshold
+  type: Num
+  size: 19.6
+- field: Surcharge
+  description: Surcharge
+  type: Num
+  size: 19.6
+- field: Concess
+  description: Concessional
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Assessee
+  description: Assessee
+  type: Int
+  size: 11
+  related: ONOA
+- field: ApTdsAcc
+  description: A/P TDS Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApSurAcc
+  description: A/P Surcharge Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApCessAcc
+  description: A/P Cess Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApHscAcc
+  description: A/P HSC Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArTdsAcc
+  description: A/R TDS Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArSurAcc
+  description: A/R Surcharge Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArCessAcc
+  description: A/R Cess Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArHscAcc
+  description: A/R HSC Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: ReturnType
+  description: Return Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: '26'
+  - key: B
+    label: '27'
+  - key: C
+    label: 27EQ
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: Inactive
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InCSTCode
+  description: CST Code Incoming
+  type: Int
+  size: 11
+  related: OTSC
+  default: -1
+- field: OutCSTCode
+  description: CST Code Outgoing
+  type: Int
+  size: 11
+  related: OTSC
+  default: -1
+- field: CalBaseN
+  description: Nature of Calculation Base
+  type: nVarChar
+  size: 2
+  related: OBSI
+- field: PymntRsnCd
+  description: Payment Reason Code
+  type: nVarChar
+  size: 3
+  related: OSWA
+- field: DIOTRpt
+  description: DIOT Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TDSType
+  description: TDS Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: eTDS
+  - key: D
+    label: GST TDS
+  - key: C
+    label: GST TCS
+  - key: S
+    label: TCS
+- field: ApIgstAcc
+  description: A/P IGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApCgstAcc
+  description: A/P CGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApSgstAcc
+  description: A/P SGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArIgstAcc
+  description: A/R IGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArCgstAcc
+  description: A/R CGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArSgstAcc
+  description: A/R SGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApUtgstAcc
+  description: A/P UTGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApCsgstAcc
+  description: A/P Cess GST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArUtgstAcc
+  description: A/R UTGST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArCsgstAcc
+  description: A/R Cess GST Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TransThres
+  description: Transaction Threshold
+  type: Num
+  size: 19.6
+  default: 0
+- field: EBWTaxCate
+  description: Withholding Tax Category
+  type: Int
+  size: 11
+  related: OWHC
+- field: ArTcsInAcc
+  description: A/R TCS Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArSurInAcc
+  description: A/R Surcharge Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArCesInAcc
+  description: A/R Cess Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ArHscInAcc
+  description: A/R HSC Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApTcsInAcc
+  description: A/P TCS Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApSurInAcc
+  description: A/P Surcharge Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApCesInAcc
+  description: A/P Cess Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ApHscInAcc
+  description: A/P HSC Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LnWTInAcc
+  description: Interim Account for Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: NoDedThrsh
+  description: Apply Tax Exemption After Threshold
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseInAPDPR
+  description: Use in A/P Down Payment Requests
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WTCode
+- key: WT_NAME
+  unique: false
+  fields:
+  - WTName

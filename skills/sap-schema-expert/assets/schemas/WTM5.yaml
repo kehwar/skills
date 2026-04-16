@@ -1,0 +1,20 @@
+table: WTM5
+description: Approval Templates - Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WTM5.htm
+fields:
+- field: WtmCode
+  description: Code
+  type: Int
+  size: 11
+  related: OWTM
+- field: QueryId
+  description: User Query Id
+  type: Int
+  size: 11
+  related: OUQR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WtmCode
+  - QueryId

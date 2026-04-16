@@ -1,0 +1,40 @@
+table: AHT1
+description: Team Members - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/AHT1.htm
+fields:
+- field: teamID
+  description: Team ID
+  type: Int
+  size: 11
+  related: OHTM
+- field: line
+  description: Row
+  type: Int
+  size: 6
+- field: empID
+  description: Employee ID
+  type: Int
+  size: 11
+  related: OHEM
+- field: role
+  description: Role in Team
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: L
+    label: Leader
+  - key: M
+    label: Member
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - teamID
+  - empID
+  - LogInstanc

@@ -1,0 +1,39 @@
+table: SXRRE
+description: XLR Relations
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRRE.htm
+fields:
+- field: relid
+  description: relid
+  type: Identity
+  size: 11
+- field: objidfrom
+  description: objidfrom
+  type: Int
+  size: 11
+  default: 0
+- field: propdefid
+  description: propdefid
+  type: Int
+  size: 11
+  default: 0
+- field: seqno
+  description: seqno
+  type: Int
+  size: 11
+  default: 0
+- field: objidto
+  description: objidto
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - relid
+- key: second
+  unique: true
+  fields:
+  - objidfrom
+  - propdefid
+  - seqno

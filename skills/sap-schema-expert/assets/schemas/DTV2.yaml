@@ -1,0 +1,31 @@
+table: DTV2
+description: Datev Run Lines Accounts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DTV2.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+  related: ODTV
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: IntAccount
+  description: Account Number
+  type: nVarChar
+  size: 15
+- field: Text
+  description: Run results
+  type: Text
+  size: 16
+- field: Detail
+  description: Run Details
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId
+  - LineId

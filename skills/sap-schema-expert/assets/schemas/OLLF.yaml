@@ -1,0 +1,236 @@
+table: OLLF
+description: Legal List Format
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OLLF.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Electronic File Name
+  type: nVarChar
+  size: 100
+- field: Descr
+  description: Electronic File Description
+  type: nVarChar
+  size: 250
+- field: MenuGuid
+  description: GUID of Menu Entry
+  type: nVarChar
+  size: 32
+- field: Version
+  description: Electronic File Version
+  type: nVarChar
+  size: 5
+- field: SchVersion
+  description: Electronic File Schema Version
+  type: nVarChar
+  size: 5
+- field: OutPath
+  description: Output Path
+  type: Text
+  size: 16
+- field: FrmId
+  description: OFRM Internal ID
+  type: Int
+  size: 11
+  related: OFRM
+- field: UpdateNum
+  description: Update Count
+  type: Int
+  size: 11
+  default: 0
+- field: MenuName
+  description: Menu Name
+  type: nVarChar
+  size: 100
+- field: MenuPath
+  description: Menu Path
+  type: nVarChar
+  size: 250
+- field: Assigned
+  description: Format Status
+  type: nVarChar
+  size: 10
+  default: N
+  constraints:
+  - key: A
+    label: Assigned
+  - key: N
+    label: Not Assigned
+  - key: D
+    label: Deleted
+- field: SboVersion
+  description: Compatible Release Version
+  type: nVarChar
+  size: 13
+- field: Type
+  description: Format Type
+  type: nVarChar
+  size: 5
+  default: L
+  constraints:
+  - key: AR
+    label: Electronic Document
+  - key: L
+    label: Generic Electronic File
+  - key: LI
+    label: Generic Electronic File for Intrastat
+  - key: ARA
+    label: Electronic Authority Report
+  - key: INTER
+    label: Internally Used
+  - key: IM
+    label: Electronic Document - Input Message
+  - key: GD
+    label: General Electronic Document
+  - key: GWS
+    label: General Mapping for Web Service
+  - key: GI
+    label: General Mapping for Document Import
+  - key: NFeD
+    label: NF-e Invoice Document
+  - key: NFeC
+    label: NF-e Cancelation Document
+  - key: NFeS
+    label: NF-e Number Skipping Request
+  - key: NFeWS
+    label: Web Service Mapping
+  - key: CFDD
+    label: CFDi Electronic Document
+  - key: CFDP
+    label: CFDi Electronic Payment & Reconciliation Document
+  - key: CFDT
+    label: CFDI Electronic Transfer Document
+  - key: CFDIM
+    label: CFDI Electronic Input Message Document
+  - key: CFDWS
+    label: CFDi Electronic Mapping for Web Service
+  - key: EETD
+    label: EET Electronic Document
+  - key: EETWS
+    label: EET Electronic Mapping for Web Service
+  - key: FPAD
+    label: FatturaPA Electronic Document
+  - key: FPAPD
+    label: '"FatturaPA" Electronic Purchasing Document'
+  - key: FPAI
+    label: FatturaPA Electronic Document for Import
+  - key: FPAWS
+    label: FatturaPA Electronic Mapping for Web Service
+  - key: MTDR
+    label: Making Tax Digital Report Submission
+  - key: MTDWS
+    label: Making Tax Digital Mapping for Web Service
+  - key: EISD
+    label: Electronic Document
+  - key: EISWS
+    label: Electronic Document Web Service
+  - key: IISD1
+    label: Electronic Document for IIS INV
+  - key: IISD2
+    label: Electronic Document for IIS PCH
+  - key: IISD3
+    label: Electronic Document for IIS Deferred
+  - key: IISD4
+    label: Electronic Document for IIS JE
+  - key: IISD5
+    label: Electronic Document for IIS JE Received
+  - key: IISWS
+    label: Electronic Document for IIS Web Service
+  - key: ANND1
+    label: Electronic Document for IIS Annual
+  - key: ANND2
+    label: Electronic Document for IIS Annual Cancel
+  - key: ANNWS
+    label: Electronic Document for IIS Annual Web Service
+  - key: PPLD
+    label: Electronic Document for PEPPOL Invoice
+  - key: PPLWS
+    label: Electronic Document for PEPPOL Web Service
+  - key: PPLCM
+    label: Electronic Document for PEPPOL Credit Note
+  - key: PPLI
+    label: Electronic Document for PEPPOL Import
+  - key: EBKD
+    label: Electronic Document for E-Books
+  - key: EBKI
+    label: Electronic Document for E-Books Income Classification
+  - key: EBKE
+    label: Electronic Document for E-Books Expense Classification
+  - key: EBKR
+    label: Electronic Document for E-Books Request Documents
+  - key: EBKRS
+    label: Electronic Document for E-Books Request Submitted Documents
+  - key: EBKC
+    label: Electronic Document for Cancellation
+  - key: EBKW
+    label: Electronic Document for E-Books Web Service
+  - key: DOXD
+    label: Electronic Document for Document Information Extraction
+  - key: DOXI
+    label: Electronic Document for Document Information Extraction Import
+  - key: EWBD
+    label: Electronic Document for E-Way Bill
+  - key: EINVD
+    label: Electronic Document for E-Billing
+  - key: RTIED
+    label: Electronic Document for RTIE
+  - key: RCTED
+    label: Electronic Correction Document for RTIE
+  - key: RTIWS
+    label: Electronic Document for RTIE Web Service
+  - key: AFED
+    label: Electronic Documents for Argentina
+  - key: TROD
+    label: Electronic Transportation Documents for Argentina
+  - key: AFEWS
+    label: Electronic Documents for Argentina Web Service
+  - key: KSeF
+    label: KSeF Document for Poland
+  - key: GST58
+    label: GST Returns for BAS Report F5 F8
+  - key: GST7
+    label: GST Returns for BAS Report F7
+  - key: SAFT
+    label: Report SAF-T for Portugal
+  - key: SkatR
+    label: Electronic Document for RSU Gateway Report Submission
+  - key: ILED
+    label: Electronic Document for Israel
+  - key: PTSig
+    label: Portugal E-docs Signing Process
+  - key: FEAP
+    label: Portugal Electronic Invoicing in Public Administration
+  - key: VFact
+    label: Veri*factu Document for Spain
+  - key: XMLD
+    label: Electronic Document PDF with XML Attachment
+  - key: CAEAR
+    label: Electronic Document for Argentina CAEA Request
+  - key: FReIN
+    label: Electronic Invoice in France
+- field: SubType
+  description: Format Subtype
+  type: nVarChar
+  size: 6
+  constraints:
+  - key: ''
+    label: None
+  - key: I
+    label: Intrastat
+  - key: N
+    label: Normal Generic File Format
+- field: FileName
+  description: File Name
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name

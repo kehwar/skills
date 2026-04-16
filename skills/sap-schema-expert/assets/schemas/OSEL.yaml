@@ -1,0 +1,27 @@
+table: OSEL
+description: Selection Lists
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSEL.htm
+fields:
+- field: UserID
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: FilterName
+  description: Filter Name
+  type: nVarChar
+  size: 30
+  default: _
+- field: FormNum
+  description: Form Number
+  type: nVarChar
+  size: 20
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

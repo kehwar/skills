@@ -1,0 +1,122 @@
+table: OBTC
+description: Internal Bank Operation Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OBTC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  default: 0
+- field: InOpCode
+  description: Internal Bank Operation Code Name
+  type: nVarChar
+  size: 15
+- field: PstTrans
+  description: Posting Transaction
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Bank Transfer
+  - key: '2'
+    label: Incoming Bill of Exchange
+  - key: '3'
+    label: Outgoing Bill of Exchange
+  - key: '4'
+    label: Outgoing Checks
+  - key: '5'
+    label: Deposit
+- field: BPorAct
+  description: BP or Account
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: BP
+  - key: A
+    label: Account
+- field: PstMethod
+  description: BP Posting Method
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: A
+    label: G/L Account from/to Bank Account
+  - key: C
+    label: Business Partner from/to Bank Account
+  - key: J
+    label: Bank Interim Account from/to Bank Account
+  - key: E
+    label: External Reconciliation
+  - key: I
+    label: Ignore
+- field: ActFee
+  description: Account Fee
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ProjFee
+  description: Project Fee
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: PrftCntFee
+  description: Fee Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Descript
+  description: Operation Description
+  type: nVarChar
+  size: 40
+- field: PrftCntFe2
+  description: Fee Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCntFe3
+  description: Fee Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCntFe4
+  description: Fee Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCntFe5
+  description: Fee Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE_NAME
+  unique: true
+  fields:
+  - InOpCode

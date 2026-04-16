@@ -1,0 +1,50 @@
+table: OWTA
+description: Withholding Tax Accumulation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OWTA.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: PmntDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: WTTypeId
+  description: WT Type Id
+  type: Int
+  size: 11
+- field: AccmAmnt
+  description: WT Accumulated Amount
+  type: Num
+  size: 19.6
+- field: AccmAmntFC
+  description: WT Accumulated Amount FC
+  type: Num
+  size: 19.6
+- field: AccmAmntSC
+  description: WT Accumulated Amount SC
+  type: Num
+  size: 19.6
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - CardCode
+  - PmntDate
+  - WTTypeId
+  - BPLId

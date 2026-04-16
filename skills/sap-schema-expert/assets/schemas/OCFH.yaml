@@ -1,0 +1,38 @@
+table: OCFH
+description: Cash Flow Statement History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OCFH.htm
+fields:
+- field: CFHId
+  description: Cash Flow History Identity
+  type: Int
+  size: 11
+- field: CFHName
+  description: Saved Cash Flow Name
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserName
+  description: User Name
+  type: nVarChar
+  size: 30
+- field: CreateDate
+  description: Recording Date
+  type: Date
+  size: 8
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CFHId

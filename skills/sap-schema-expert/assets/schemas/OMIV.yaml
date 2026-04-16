@@ -1,0 +1,95 @@
+table: OMIV
+description: A/P Monthly Invoice
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OMIV.htm
+fields:
+- field: Entry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Number
+  description: Monthly Invoice Number
+  type: Int
+  size: 11
+- field: Date
+  description: Issued Date
+  type: Date
+  size: 8
+- field: BPCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+- field: BPName
+  description: Vendor Name
+  type: nVarChar
+  size: 200
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+- field: LastBilled
+  description: Last Billed
+  type: Num
+  size: 19.6
+- field: Paid
+  description: Paid in the Period
+  type: Num
+  size: 19.6
+- field: CarryForw
+  description: Carry Forward
+  type: Num
+  size: 19.6
+- field: CurAmount
+  description: Current Amount
+  type: Num
+  size: 19.6
+- field: BillAmount
+  description: Billing Amount
+  type: Num
+  size: 19.6
+- field: OBPaid
+  description: OB Paid in this Period
+  type: Num
+  size: 19.6
+- field: OBLstJENum
+  description: OB Last JE Num in the Period
+  type: Int
+  size: 11
+- field: Predeces
+  description: The Former MI Num
+  type: Int
+  size: 11
+- field: Successor
+  description: The Latter MI Num
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: Cancelled
+  description: Is Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: Y
+    label: ''
+- field: Address
+  description: Bill To
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Entry
+- key: Number
+  unique: true
+  fields:
+  - Number

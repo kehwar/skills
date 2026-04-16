@@ -1,0 +1,13 @@
+table: OPID
+description: Period Indicator
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OPID.htm
+fields:
+- field: Indicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Indicator

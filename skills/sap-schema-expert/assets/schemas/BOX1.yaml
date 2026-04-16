@@ -1,0 +1,71 @@
+table: BOX1
+description: Box Definition - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BOX1.htm
+fields:
+- field: BoxCode
+  description: Group Code
+  type: nVarChar
+  size: 30
+- field: BoxMember
+  description: Box Code
+  type: nVarChar
+  size: 30
+  related: OBOX
+- field: VATMember
+  description: VAT Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: FormulSign
+  description: Formula Sign
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: +
+  - key: M
+    label: '-'
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Box Declaration
+  - key: S
+    label: BAS Reporting
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: TaxType
+  description: Acquisition / Reverse Tax Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: I
+    label: Input Tax
+  - key: O
+    label: Output Tax
+  - key: B
+    label: Input Tax and Output Tax
+- field: BosCode
+  description: Box Set Code
+  type: Int
+  size: 11
+  related: OBOS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoxCode
+  - ReportType
+  - SeqNum
+  - BosCode

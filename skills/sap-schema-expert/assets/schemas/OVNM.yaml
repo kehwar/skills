@@ -1,0 +1,49 @@
+table: OVNM
+description: VAT Report Numbering
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OVNM.htm
+fields:
+- field: NumId
+  description: Numbering ID
+  type: Int
+  size: 11
+- field: NumName
+  description: Numbering Name
+  type: nVarChar
+  size: 10
+- field: First
+  description: First Number
+  type: nVarChar
+  size: 9
+- field: Next
+  description: Next Number
+  type: nVarChar
+  size: 9
+- field: Last
+  description: Last Number
+  type: nVarChar
+  size: 9
+- field: YrDepend
+  description: Year-Dependent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Year-Dependent
+  - key: N
+    label: Year-Indepedent
+- field: DefaultNum
+  description: Default Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Default Numbering
+  - key: N
+    label: No Default Numbering
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - NumId

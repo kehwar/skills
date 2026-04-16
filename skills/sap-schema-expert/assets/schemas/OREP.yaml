@@ -1,0 +1,51 @@
+table: OREP
+description: Web Client Reports
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OREP.htm
+fields:
+- field: Guid
+  description: Report Guid
+  type: nVarChar
+  size: 32
+- field: RepName
+  description: Report Name
+  type: nVarChar
+  size: 120
+- field: Author
+  description: Report Author
+  type: nVarChar
+  size: 155
+- field: Type
+  description: Report Type
+  type: nVarChar
+  size: 50
+- field: Category
+  description: Report Category
+  type: nVarChar
+  size: 120
+- field: IsSystem
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Meta
+  description: Report Meta
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

@@ -1,0 +1,875 @@
+table: ECM6
+description: Electronic Protocol DI API Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECM6.htm
+fields:
+- field: Code
+  description: Communication Type or Protocol
+  type: Int
+  size: 11
+  related: OECM
+  constraints:
+  - key: '0'
+    label: Invalid
+  - key: '1'
+    label: GEN
+  - key: '2'
+    label: EET
+  - key: '3'
+    label: CFDI
+  - key: '4'
+    label: FPA
+  - key: '5'
+    label: MTD
+  - key: '6'
+    label: EWB
+  - key: '7'
+    label: PEPPOL
+  - key: '8'
+    label: HOI
+  - key: '9'
+    label: MYF
+  - key: '10'
+    label: EIS
+  - key: '11'
+    label: IIS
+  - key: '12'
+    label: IIS_ANNUAL
+  - key: '13'
+    label: DIGIPOORT
+  - key: '14'
+    label: E-Books
+  - key: '15'
+    label: DOX
+  - key: '16'
+    label: RTIE
+  - key: '17'
+    label: E-Billing
+  - key: '18'
+    label: Tax Service
+  - key: '19'
+    label: AFE
+  - key: '20'
+    label: Doc. Sign.
+  - key: '21'
+    label: KSeF
+  - key: '22'
+    label: GSTReturn
+  - key: '23'
+    label: PT Doc. Sign.
+  - key: '24'
+    label: Skat DK
+  - key: '25'
+    label: EII
+  - key: '27'
+    label: PT eInvoicing
+  - key: '28'
+    label: PT Electronic Communications
+  - key: '29'
+    label: Veri*factu
+  - key: '30'
+    label: BAS
+  - key: '31'
+    label: PDF with XML Attachment
+  - key: '32'
+    label: FReINV
+- field: GenType
+  description: Generation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+  - key: F
+    label: Generate - Offline
+- field: MapID
+  description: Electronic Document Format Mapping
+  type: Int
+  size: 11
+  related: OLLF
+- field: MapID_WS
+  description: eDoc Web Service Format Mapping
+  type: Int
+  size: 11
+  related: OLLF
+- field: TestMode
+  description: Testing Mode Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: ParamLogic
+  description: Logic Value Parameter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ParamStr
+  description: String Value Parameter
+  type: nVarChar
+  size: 254
+- field: ParamLText
+  description: Long Text Parameter
+  type: Text
+  size: 16
+- field: ActStatus
+  description: Action Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: Pending
+  - key: E
+    label: Error
+  - key: O
+    label: OK
+  - key: S
+    label: Sent
+  - key: R
+    label: Document Error
+  - key: W
+    label: Waiting
+  - key: A
+    label: Authorized
+  - key: I
+    label: In Process
+  - key: J
+    label: Rejected
+  - key: D
+    label: Denied
+  - key: C
+    label: Canceled
+  - key: B
+    label: Aborted
+  - key: Q
+    label: Queued
+  - key: M
+    label: Imported
+  - key: G
+    label: Warning
+  - key: o
+    label: Not Approved
+  - key: e
+    label: Reverse Charge
+  - key: u
+    label: Continued
+  - key: f
+    label: Further Objection
+  - key: a
+    label: Canceling
+  - key: n
+    label: Continuing
+  - key: b
+    label: Further Objection in Progress
+  - key: d
+    label: Resending
+  - key: w
+    label: Pending to CAEA
+  - key: k
+    label: Queued
+  - key: z
+    label: Updating Response
+- field: ParamUqc
+  description: User Query Category
+  type: Int
+  size: 11
+  related: OQCN
+- field: ParamInt
+  description: Integer Number
+  type: Int
+  size: 11
+- field: ParamPAC
+  description: Authority Code
+  type: nVarChar
+  size: 16
+  related: OPAC
+- field: ParamTgl
+  description: Toggle Value Parameter
+  type: VarChar
+  size: 1
+- field: ParamMon
+  description: Money Value Parameter (Including Currency)
+  type: nVarChar
+  size: 254
+- field: ParamLink
+  description: Hyperlink Parameter
+  type: Text
+  size: 16
+- field: Frequency
+  description: Frequency
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: Daily
+  - key: '7'
+    label: Weekly
+  - key: '14'
+    label: Fortnightly
+  - key: '30'
+    label: Monthly
+  - key: '90'
+    label: Quarterly
+- field: Source
+  description: Document Source
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Business Logic
+  - key: I
+    label: Import
+- field: ReportID
+  description: Report ID
+  type: nVarChar
+  size: 50
+- field: AssignedID
+  description: Assigned ID
+  type: nVarChar
+  size: 50
+- field: Confirm
+  description: Confirmation
+  type: nVarChar
+  size: 5
+- field: PayMethod
+  description: Payment Method
+  type: nVarChar
+  size: 50
+  default: '01'
+  constraints:
+  - key: '01'
+    label: Efectivo
+  - key: '02'
+    label: Cheque nominativo
+  - key: '03'
+    label: Transferencia electrï¿½nica de fondos
+  - key: '04'
+    label: Tarjeta de crï¿½dito
+  - key: '05'
+    label: Monedero electrï¿½nico
+  - key: '06'
+    label: Dinero electrï¿½nico
+  - key: 08
+    label: Vales de despensa
+  - key: '12'
+    label: Daciï¿½n en pago
+  - key: '13'
+    label: Pago por subrogaciï¿½n
+  - key: '14'
+    label: Pago por consignaciï¿½n
+  - key: '15'
+    label: Condonaciï¿½n
+  - key: '17'
+    label: Compensaciï¿½n
+  - key: '23'
+    label: Novaciï¿½n
+  - key: '24'
+    label: Confusiï¿½n
+  - key: '25'
+    label: Remisiï¿½n de deuda
+  - key: '26'
+    label: Prescripciï¿½n o caducidad
+  - key: '27'
+    label: A satisfacciï¿½n del acreedor
+  - key: '28'
+    label: Tarjeta de dï¿½bito
+  - key: '29'
+    label: Tarjeta de servicios
+  - key: '30'
+    label: Aplicaciï¿½n de anticipos
+  - key: '31'
+    label: Intermediario pagos
+  - key: '99'
+    label: Por definir
+- field: CancStatus
+  description: Cancelation Status
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: T
+    label: ''
+  - key: N
+    label: New Request
+  - key: S
+    label: Request Sent
+  - key: A
+    label: Approved
+  - key: R
+    label: Rejected
+  - key: E
+    label: Error
+  - key: C
+    label: Canceled
+  - key: I
+    label: In Process
+  - key: U
+    label: Sent To Authorities
+- field: CancRecons
+  description: Canceled Reconciliations
+  type: nVarChar
+  size: 30
+- field: EntryTypes
+  description: Filter Entry Types
+  type: nVarChar
+  size: 30
+- field: EntryStats
+  description: Filter Entry Statuses
+  type: nVarChar
+  size: 30
+- field: EntryCncSt
+  description: Filter Entries by Cancellation Status
+  type: nVarChar
+  size: 30
+- field: MaxLines
+  description: Filter Max Lines
+  type: Int
+  size: 6
+  default: 0
+- field: BPLId
+  description: Filter Branch ID
+  type: Int
+  size: 11
+  default: -1
+- field: DateFrom
+  description: Filter Date From
+  type: Date
+  size: 8
+- field: TimeFrom
+  description: Filter Time From
+  type: Int
+  size: 11
+- field: DateTo
+  description: Filter Date To
+  type: Date
+  size: 8
+- field: TimeTo
+  description: Filter Time To
+  type: Int
+  size: 11
+- field: FromEntry
+  description: Filter From Entry
+  type: Int
+  size: 11
+- field: Ascending
+  description: Order Ascending
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CodeStr
+  description: Code as a string
+  type: nVarChar
+  size: 8
+- field: GUID
+  description: Filter GUID
+  type: nVarChar
+  size: 100
+- field: LogType
+  description: Filter Log Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: ''
+    label: INVALID
+  - key: S
+    label: Send
+  - key: R
+    label: Receive
+  - key: I
+    label: Import
+  - key: N
+    label: Note
+  - key: W
+    label: Warning
+  - key: E
+    label: Error
+  - key: D
+    label: WS Data
+  - key: B
+    label: Authorities Process Starts
+  - key: F
+    label: Authorities Process Finished
+- field: LogMessage
+  description: Log Message
+  type: Text
+  size: 16
+- field: LogData
+  description: Log Data
+  type: Text
+  size: 16
+- field: EDocType
+  description: E-Doc Type
+  type: Int
+  size: 11
+  related: OUNCL
+- field: EDocNum
+  description: E-Doc Number
+  type: nVarChar
+  size: 100
+- field: ROText1
+  description: Read Only Text 1
+  type: nVarChar
+  size: 254
+- field: ProcTarget
+  description: Processing Target
+  type: nVarChar
+  size: 40
+- field: ParticipID
+  description: E-Doc Number
+  type: nVarChar
+  size: 128
+- field: PositMARK
+  description: MARK of Positive Value Invoice
+  type: nVarChar
+  size: 100
+- field: NegatMARK
+  description: MARK of Negative Value Invoice
+  type: nVarChar
+  size: 100
+- field: EbookRelvt
+  description: Is E-Books Relevant
+  type: VarChar
+  size: 1
+- field: PInvType
+  description: Type Abs of Pos. Value Invoice
+  type: Int
+  size: 11
+  related: OEIT
+- field: PInvCode
+  description: Type of Pos. Value Invoice
+  type: nVarChar
+  size: 254
+- field: NInvType
+  description: Type Abs of Neg. Value Invoice
+  type: Int
+  size: 11
+  related: OEIT
+- field: NInvCode
+  description: Type of Neg. Value Invoice
+  type: nVarChar
+  size: 254
+- field: BlobCntTyp
+  description: Blob Content Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: XML
+  - key: '1'
+    label: Zipped XML
+  - key: '2'
+    label: JSON
+  - key: '3'
+    label: Zipped JSON
+  - key: '4'
+    label: Text
+- field: ZipUnzip
+  description: Zip or Unzip Blob Content
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: KeepPrefix
+  description: Keep Prefix in Blob Content
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocFunc
+  description: Document Function
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: ??? - ????-???????
+  - key: '2'
+    label: ?????? - ????-??????? ? o???????
+  - key: '3'
+    label: ??? - o???????
+  - key: '4'
+    label: ???? - ???????????????? ????-???????
+  - key: '5'
+    label: ??????? - ???????????????? ????-??????? ? o???????
+  - key: '6'
+    label: ??? - o???????
+- field: EIRN
+  description: IRN of E-Billing
+  type: nVarChar
+  size: 254
+- field: PKP
+  description: ''
+  type: Text
+  size: 16
+- field: BKP
+  description: ''
+  type: Text
+  size: 16
+- field: SignMsg
+  description: ''
+  type: Text
+  size: 16
+- field: SignDigest
+  description: ''
+  type: Text
+  size: 16
+- field: FechaTimbr
+  description: ''
+  type: nVarChar
+  size: 30
+- field: SelloSAT
+  description: ''
+  type: Text
+  size: 16
+- field: RFCofPAC
+  description: ''
+  type: nVarChar
+  size: 100
+- field: PACSATCert
+  description: ''
+  type: nVarChar
+  size: 100
+- field: SeqNum
+  description: ''
+  type: Int
+  size: 11
+- field: SndDateSDI
+  description: ''
+  type: Date
+  size: 8
+- field: Progressiv
+  description: ''
+  type: nVarChar
+  size: 20
+- field: ExportFile
+  description: ''
+  type: Text
+  size: 16
+- field: Descriptn
+  description: Protocol Description
+  type: nVarChar
+  size: 200
+- field: CFDiExport
+  description: ''
+  type: nVarChar
+  size: 2
+  default: '01'
+  constraints:
+  - key: '01'
+    label: No aplica
+  - key: '02'
+    label: Definitiva
+  - key: '03'
+    label: Temporal
+  - key: '04'
+    label: Definitiva con clave distinta a A1 o cuando no existe enajenaciï¿½n en
+      tï¿½rminos del CFF
+- field: TaxProvidr
+  description: Tax Service Provider
+  type: nVarChar
+  size: 100
+- field: CancReason
+  description: Cancellation Reason
+  type: nVarChar
+  size: 2
+- field: CancResp
+  description: Cancellation Response
+  type: nVarChar
+  size: 3
+- field: EBAckNo
+  description: AckNo of E-Billing
+  type: nVarChar
+  size: 20
+- field: EBAckDate
+  description: AckDt of E-Billing
+  type: nVarChar
+  size: 30
+- field: EBSignINV
+  description: SignedINV of E-Billing
+  type: Text
+  size: 16
+- field: EBSignedQC
+  description: SignedQC of E-Billing
+  type: Text
+  size: 16
+- field: EBRespSta
+  description: Status of E-Billing
+  type: nVarChar
+  size: 10
+- field: FCEID
+  description: FCE ID
+  type: nVarChar
+  size: 20
+- field: FCEApprSt
+  description: Approval Status
+  type: nVarChar
+  size: 30
+- field: FCEDcApSt
+  description: Doc. Approval Status
+  type: nVarChar
+  size: 30
+- field: FCEPaidVal
+  description: Paid Value
+  type: nVarChar
+  size: 50
+- field: FCETotalV
+  description: Total Value
+  type: nVarChar
+  size: 50
+- field: FCEDocDate
+  description: AFIP Doc. Date
+  type: nVarChar
+  size: 100
+- field: FCECBU
+  description: CBU
+  type: nVarChar
+  size: 254
+- field: FCEApprDt
+  description: Approval Date
+  type: nVarChar
+  size: 100
+- field: FCEDcApDt
+  description: Doc. Approval Date
+  type: nVarChar
+  size: 100
+- field: FCEInitAmt
+  description: Initial Amount
+  type: nVarChar
+  size: 50
+- field: FCERetent
+  description: Retentions
+  type: nVarChar
+  size: 50
+- field: FCEDocRate
+  description: Doc. Exchange Rate
+  type: nVarChar
+  size: 50
+- field: CancRef
+  description: Cancellation Reference
+  type: nVarChar
+  size: 50
+- field: GenTypeAP
+  description: Generation Type for A/P
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+- field: AutProcess
+  description: Authorities Process
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: None
+  - key: A
+    label: Approval Process
+  - key: R
+    label: Rejection Process
+- field: IsEncryptd
+  description: Protocol Encryption Enabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FEAPInvTyp
+  description: FE-AP Invoice Type
+  type: nVarChar
+  size: 2
+  default: '01'
+  constraints:
+  - key: '01'
+    label: Invoice
+  - key: '02'
+    label: Debit Memo
+  - key: '03'
+    label: Invoice Receipt
+  - key: '04'
+    label: Simplified Invoice
+  - key: '05'
+    label: Credit Memo
+- field: FEAPOutID
+  description: FE-AP Outbound Financial Doc. ID
+  type: nVarChar
+  size: 100
+- field: SttsReason
+  description: Status Reason
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: NON
+    label: No Issues
+  - key: REF
+    label: Incorrect references
+  - key: LEG
+    label: Incorrect legal information
+  - key: REC
+    label: Unknown receiver
+  - key: QUA
+    label: Insufficient item quality
+  - key: DEL
+    label: Issues with delivery
+  - key: PRI
+    label: Incorrect prices
+  - key: QTY
+    label: Incorrect quantity
+  - key: ITM
+    label: Incorrect items
+  - key: PAY
+    label: Incorrect payment terms
+  - key: UNR
+    label: Not recognized
+  - key: FIN
+    label: Incorrect financials
+  - key: PPD
+    label: Partially Paid
+  - key: OTH
+    label: Other
+- field: SttsDescr
+  description: Status Description
+  type: nVarChar
+  size: 254
+- field: PostPerInv
+  description: Post Per Invoice
+  type: VarChar
+  size: 1
+- field: PosiQRPath
+  description: Positive QR Path
+  type: nVarChar
+  size: 200
+- field: NegaQRPath
+  description: Negative QR Path
+  type: nVarChar
+  size: 200
+- field: CartaPorte
+  description: Complemento Carta Porte ID
+  type: nVarChar
+  size: 50
+- field: CartDocTyp
+  description: Carta Porte Document Types
+  type: nVarChar
+  size: 200
+- field: CartDocSet
+  description: Apply from Document settings
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogNum
+  description: Log Number
+  type: Int
+  size: 11
+- field: C5Relevant
+  description: Corner 5 Relevant
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocUUID
+  description: Document UUID
+  type: nVarChar
+  size: 128
+- field: TransUUID
+  description: Transmission UUID
+  type: nVarChar
+  size: 128
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DsptchDate
+  description: Dispatch Date
+  type: Date
+  size: 8
+- field: DsptchTime
+  description: Dispatch Time
+  type: Int
+  size: 11
+- field: Sensitive
+  description: Value is Sensitive
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+  - key: ''
+    label: None
+- field: ETypeDesc
+  description: E-Doc Type Description
+  type: nVarChar
+  size: 254
+- field: MapIDC5
+  description: Electronic Document Format Mapping C5
+  type: Int
+  size: 11
+  related: OLLF
+- field: CAEA
+  description: CAEA Number
+  type: nVarChar
+  size: 14
+- field: CAEAEnable
+  description: CAEA Enabled
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CodeStr

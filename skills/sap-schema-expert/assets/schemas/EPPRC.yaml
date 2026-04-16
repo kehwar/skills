@@ -1,0 +1,29 @@
+table: EPPRC
+description: EPPRC
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EPPRC.htm
+fields:
+- field: PrcId
+  description: Plugin processor id
+  type: nVarChar
+  size: 60
+- field: AsmName
+  description: FK to EPASM table
+  type: nVarChar
+  size: 100
+- field: PrcType
+  description: the type name of the processor
+  type: nVarChar
+  size: 160
+- field: OutSerName
+  description: default service
+  type: nVarChar
+  size: 160
+- field: OutOprName
+  description: default service operation
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcId

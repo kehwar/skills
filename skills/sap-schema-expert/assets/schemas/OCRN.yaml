@@ -1,0 +1,565 @@
+table: OCRN
+description: Currency Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCRN.htm
+fields:
+- field: CurrCode
+  description: Currency Code
+  type: nVarChar
+  size: 3
+- field: CurrName
+  description: Currency
+  type: nVarChar
+  size: 20
+- field: ChkName
+  description: Name on Printed Checks
+  type: nVarChar
+  size: 20
+- field: Chk100Name
+  description: Name of 100's on checks
+  type: nVarChar
+  size: 20
+- field: DocCurrCod
+  description: Name on Printed Docs.
+  type: nVarChar
+  size: 3
+- field: FrgnName
+  description: English
+  type: nVarChar
+  size: 20
+- field: F100Name
+  description: English Hundredth Name
+  type: nVarChar
+  size: 20
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: RoundSys
+  description: Rounding
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: No Rounding
+  - key: '4'
+    label: Round to Five Hundredth
+  - key: '1'
+    label: Round to Ten Hundredth
+  - key: '2'
+    label: Round to One
+  - key: '3'
+    label: Round to Ten
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: Decimals
+  description: Decimals
+  type: Int
+  size: 6
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '0'
+    label: Without Decimals
+  - key: '1'
+    label: 1 Digit
+  - key: '2'
+    label: 2 Digits
+  - key: '3'
+    label: 3 Digits
+  - key: '4'
+    label: 4 Digits
+  - key: '5'
+    label: 5 Digits
+  - key: '6'
+    label: 6 Digits
+- field: ISRCalc
+  description: ISR Calculation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RoundPym
+  description: Rounding in Pmnt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConvUnit
+  description: Is a Conventional Unit
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseCurr
+  description: Base Currency for Conv. Unit
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Factor
+  description: Factor
+  type: Num
+  size: 19.6
+- field: ChkNamePl
+  description: Plural for Int.Description
+  type: nVarChar
+  size: 20
+- field: Chk100NPl
+  description: Plural for Hundredth Name
+  type: nVarChar
+  size: 20
+- field: FrgnNamePl
+  description: Plural for English
+  type: nVarChar
+  size: 20
+- field: F100NamePl
+  description: Plural for Eng. Hundredth Name
+  type: nVarChar
+  size: 20
+- field: ISOCurrCod
+  description: ISO Currency Code
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: AED
+    label: United Arab Emirates, Dirhams
+  - key: AFN
+    label: Afghanistan, Afghanis
+  - key: ALL
+    label: Albania, Leke
+  - key: AMD
+    label: Armenia, Drams
+  - key: ANG
+    label: Netherlands Antilles, Guilders (also called Florins)
+  - key: AOA
+    label: Angola, Kwanzas
+  - key: ARS
+    label: Argentina, Pesos
+  - key: AUD
+    label: Australia, Dollars
+  - key: AWG
+    label: Aruba, Guilders (also called Florins)
+  - key: AZM
+    label: Azerbaijan, Manats [obsolete]
+  - key: AZN
+    label: Azerbaijan, New Manats
+  - key: BAM
+    label: Bosnia and Herzegovina, Convertible Marks
+  - key: BBD
+    label: Barbados, Dollars
+  - key: BDT
+    label: Bangladesh, Taka
+  - key: BGN
+    label: Bulgaria, Leva
+  - key: BHD
+    label: Bahrain, Dinars
+  - key: BIF
+    label: Burundi, Francs
+  - key: BMD
+    label: Bermuda, Dollars
+  - key: BND
+    label: Brunei, Ringgits
+  - key: BOB
+    label: Bolivia, Bolivianos
+  - key: BRL
+    label: Brazil, Brazilian Reals
+  - key: BSD
+    label: Bahamas, Dollars
+  - key: BTN
+    label: Bhutan, Ngultrum
+  - key: BWP
+    label: Botswana, Pulas
+  - key: BYN
+    label: Belarus, Rubles
+  - key: BYR
+    label: Belarus, Rubles
+  - key: BZD
+    label: Belize, Dollars
+  - key: CAD
+    label: Canada, Dollars
+  - key: CDF
+    label: Congo/Kinshasa, Congolese Francs
+  - key: CHF
+    label: Switzerland, Francs
+  - key: CLP
+    label: Chile, Pesos
+  - key: CNY
+    label: China, Yuan Renminbi
+  - key: COP
+    label: Colombia, Pesos
+  - key: CRC
+    label: Costa Rica, Colones
+  - key: CUP
+    label: Cuba, Pesos
+  - key: CVE
+    label: Cape Verde, Escudos
+  - key: CYP
+    label: Cyprus, Pounds
+  - key: CZK
+    label: Czech Republic, Koruny
+  - key: DJF
+    label: Djibouti, Francs
+  - key: DKK
+    label: Denmark, Kroner
+  - key: DOP
+    label: Dominican Republic, Pesos
+  - key: DZD
+    label: Algeria, Algerian Dinars
+  - key: EEK
+    label: Estonia, Krooni
+  - key: EGP
+    label: Egypt, Pounds
+  - key: ERN
+    label: Eritrea, Nakfa
+  - key: ETB
+    label: Ethiopia, Birr
+  - key: EUR
+    label: EU Member Countries, Euro
+  - key: FJD
+    label: Fiji, Dollars
+  - key: FKP
+    label: Falkland Islands (Malvinas), Pounds
+  - key: GBP
+    label: United Kingdom, Pounds
+  - key: GEL
+    label: Georgia, Lari
+  - key: GGP
+    label: Guernsey, Pounds
+  - key: GHC
+    label: Ghana, Cedis
+  - key: GHS
+    label: Ghana, Cedis
+  - key: GIP
+    label: Gibraltar, Pounds
+  - key: GMD
+    label: Gambia, Dalasi
+  - key: GNF
+    label: Guinea, Francs
+  - key: GTQ
+    label: Guatemala, Quetzales
+  - key: GYD
+    label: Guyana, Dollars
+  - key: HKD
+    label: Hong Kong, Dollars
+  - key: HNL
+    label: Honduras, Lempiras
+  - key: HRK
+    label: Croatia, Kuna
+  - key: HTG
+    label: Haiti, Gourdes
+  - key: HUF
+    label: Hungary, Forint
+  - key: IDR
+    label: Indonesia, Rupiahs
+  - key: ILS
+    label: Israel, New Shekels
+  - key: IMP
+    label: Isle of Man, Pounds
+  - key: INR
+    label: India, Rupees
+  - key: IQD
+    label: Iraq, Dinars
+  - key: IRR
+    label: Iran, Rials
+  - key: ISK
+    label: Iceland, Kronur
+  - key: JEP
+    label: Jersey, Pounds
+  - key: JMD
+    label: Jamaica, Dollars
+  - key: JOD
+    label: Jordan, Dinars
+  - key: JPY
+    label: Japan, Yen
+  - key: KES
+    label: Kenya, Shillings
+  - key: KGS
+    label: Kyrgyzstan, Soms
+  - key: KHR
+    label: Cambodia, Riels
+  - key: KMF
+    label: Comoros, Francs
+  - key: KPW
+    label: Korea (North), Won
+  - key: KRW
+    label: Korea (South), Won
+  - key: KWD
+    label: Kuwait, Dinars
+  - key: KYD
+    label: Cayman Islands, Dollars
+  - key: KZT
+    label: Kazakhstan, Tenge
+  - key: LAK
+    label: Laos, Kips
+  - key: LBP
+    label: Lebanon, Pounds
+  - key: LKR
+    label: Sri Lanka, Rupees
+  - key: LRD
+    label: Liberia, Dollars
+  - key: LSL
+    label: Lesotho, Maloti
+  - key: LTL
+    label: Lithuania, Litai
+  - key: LVL
+    label: Latvia, Lati
+  - key: LYD
+    label: Libya, Dinars
+  - key: MAD
+    label: Morocco, Dirhams
+  - key: MDL
+    label: Moldova, Lei
+  - key: MGA
+    label: Madagascar, Ariary
+  - key: MKD
+    label: Macedonia, Denars
+  - key: MMK
+    label: Myanmar (Burma), Kyats
+  - key: MNT
+    label: Mongolia, Tugriks
+  - key: MOP
+    label: Macau, Patacas
+  - key: MRO
+    label: Mauritania, Ouguiyas
+  - key: MTL
+    label: Malta, Liri
+  - key: MUR
+    label: Mauritius, Rupees
+  - key: MVR
+    label: Maldives (Maldive Islands), Rufiyaa
+  - key: MWK
+    label: Malawi, Kwachas
+  - key: MXN
+    label: Mexico, Pesos
+  - key: MYR
+    label: Malaysia, Ringgits
+  - key: MZM
+    label: Mozambique, Meticais [obsolete]
+  - key: MZN
+    label: Mozambique, Meticais [newer unit, same name]
+  - key: NAD
+    label: Namibia, Dollars
+  - key: NGN
+    label: Nigeria, Nairas
+  - key: NIO
+    label: Nicaragua, Cordobas
+  - key: NOK
+    label: Norway, Krone
+  - key: NPR
+    label: Nepal, Nepal Rupees
+  - key: NZD
+    label: New Zealand, Dollars
+  - key: OMR
+    label: Oman, Rials
+  - key: PAB
+    label: Panama, Balboa
+  - key: PEN
+    label: Peru, Nuevos Soles
+  - key: PGK
+    label: Papua New Guinea, Kina
+  - key: PHP
+    label: Philippines, Pesos
+  - key: PKR
+    label: Pakistan, Rupees
+  - key: PLN
+    label: Poland, Zlotych
+  - key: PYG
+    label: Paraguay, Guarani
+  - key: QAR
+    label: Qatar, Rials
+  - key: ROL
+    label: Romania, Lei [obsolete]
+  - key: RON
+    label: Romania, New Lei
+  - key: RSD
+    label: Serbia, Dinars
+  - key: RUB
+    label: Russia, Rubles
+  - key: RWF
+    label: Rwanda, Rwandan Francs
+  - key: SAR
+    label: Saudi Arabia, Riyals
+  - key: SBD
+    label: Solomon Islands, Dollars
+  - key: SCR
+    label: Seychelles, Rupees
+  - key: SDD
+    label: Sudan, Dinars [obsolete]
+  - key: SDG
+    label: Sudan, Pounds
+  - key: SEK
+    label: Sweden, Kronor
+  - key: SGD
+    label: Singapore, Dollars
+  - key: SHP
+    label: Saint Helena, Pounds
+  - key: SIT
+    label: Slovenia, Tolars [obsolete]
+  - key: SKK
+    label: Slovakia, Koruny
+  - key: SLL
+    label: Sierra Leone, Leones
+  - key: SOS
+    label: Somalia, Shillings
+  - key: SPL
+    label: Seborga, Luigini
+  - key: SRD
+    label: Suriname, Dollars
+  - key: STD
+    label: Sao Tome and Principe, Dobras
+  - key: SVC
+    label: El Salvador, Colones
+  - key: SYP
+    label: Syria, Pounds
+  - key: SZL
+    label: Swaziland, Emalangeni
+  - key: THB
+    label: Thailand, Baht
+  - key: TJS
+    label: Tajikistan, Somoni
+  - key: TMT
+    label: Turkmenistan, Manats
+  - key: TND
+    label: Tunisia, Dinars
+  - key: TOP
+    label: Tonga, Pa'anga
+  - key: TRY
+    label: Turkey, New Lira
+  - key: TTD
+    label: Trinidad and Tobago, Dollars
+  - key: TVD
+    label: Tuvalu, Tuvalu Dollars
+  - key: TWD
+    label: Taiwan, New Dollars
+  - key: TZS
+    label: Tanzania, Shillings
+  - key: UAH
+    label: Ukraine, Hryvnia
+  - key: UGX
+    label: Uganda, Shillings
+  - key: USD
+    label: United States of America, Dollars
+  - key: UYU
+    label: Uruguay, Pesos
+  - key: UZS
+    label: Uzbekistan, Sums
+  - key: VEB
+    label: Venezuela, Bolivares
+  - key: VND
+    label: Viet Nam, Dong
+  - key: VUV
+    label: Vanuatu, Vatu
+  - key: WST
+    label: Samoa, Tala
+  - key: XAF
+    label: Communaute Financiere Africaine BEAC, Francs
+  - key: XAG
+    label: Silver, Ounces
+  - key: XAU
+    label: Gold, Ounces
+  - key: XCD
+    label: East Caribbean Dollars
+  - key: XDR
+    label: International Monetary Fund (IMF) Special Drawing Rights
+  - key: XOF
+    label: Communaute Financiere Africaine BCEAO, Francs
+  - key: XPD
+    label: Palladium Ounces
+  - key: XPF
+    label: Comptoirs Francais du Pacifique Francs
+  - key: XPT
+    label: Platinum, Ounces
+  - key: YER
+    label: Yemen, Rials
+  - key: ZAR
+    label: South Africa, Rand
+  - key: ZMW
+    label: Zambia, Kwacha
+  - key: ZMK
+    label: Zambia, Kwacha
+  - key: ZWD
+    label: Zimbabwe, Zimbabwe Dollars
+- field: MaxInDiff
+  description: Incoming Amt Diff. Allowed
+  type: Num
+  size: 19.6
+- field: MaxOutDiff
+  description: Outgoing Amt Diff. Allowed
+  type: Num
+  size: 19.6
+- field: MaxInPcnt
+  description: Incoming % Diff. Allowed
+  type: Num
+  size: 19.6
+- field: MaxOutPcnt
+  description: Outgoing % Diff. Allowed
+  type: Num
+  size: 19.6
+- field: ISOCurrNum
+  description: ISO Currency Number
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CurrCode
+- key: CUR_NAME
+  unique: false
+  fields:
+  - CurrName

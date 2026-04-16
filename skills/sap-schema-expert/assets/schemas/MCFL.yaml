@@ -1,0 +1,35 @@
+table: MCFL
+description: MCFL
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MCFL.htm
+fields:
+- field: guid
+  description: ''
+  type: nVarChar
+  size: 36
+- field: fatherId
+  description: ''
+  type: nVarChar
+  size: 36
+- field: lineNum
+  description: ''
+  type: Int
+  size: 11
+- field: columnId
+  description: ''
+  type: nVarChar
+  size: 36
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - fatherId
+  - lineNum
+- key: GUID
+  unique: true
+  fields:
+  - guid
+- key: COLUMN
+  unique: true
+  fields:
+  - fatherId
+  - columnId

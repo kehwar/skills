@@ -1,0 +1,57 @@
+table: OREQ
+description: External System Call Request
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OREQ.htm
+fields:
+- field: AbsEntry
+  description: Request ID
+  type: Int
+  size: 11
+- field: Category
+  description: Request Category
+  type: Int
+  size: 11
+- field: Status
+  description: Request Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: In Process
+  - key: S
+    label: Completed
+  - key: C
+    label: Comfirmed
+  - key: F
+    label: Failed
+- field: CreateDate
+  description: Request Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Request Creation Time
+  type: Int
+  size: 11
+- field: LstUpdDate
+  description: Latest Update Date
+  type: Date
+  size: 8
+- field: LstUpdTime
+  description: Latest Update Time
+  type: Int
+  size: 11
+- field: UserSign
+  description: Latest Update User Code
+  type: nVarChar
+  size: 8
+- field: Port
+  description: Port
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

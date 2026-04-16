@@ -1,0 +1,47 @@
+table: RDMS
+description: Dictionary Master
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RDMS.htm
+fields:
+- field: Num
+  description: String number
+  type: Int
+  size: 11
+- field: Internal
+  description: Internal
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 250
+- field: SBOCode
+  description: SBO Code
+  type: nVarChar
+  size: 30
+- field: StringType
+  description: String Type
+  type: nVarChar
+  size: 4
+- field: MaxLen
+  description: Maximum Length
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Num
+- key: SBO_CODE
+  unique: true
+  fields:
+  - SBOCode

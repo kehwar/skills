@@ -1,0 +1,75 @@
+table: GTI1
+description: GTS Invoice Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GTI1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OGTI
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: DisctLine
+  description: Discount Flag
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Normal
+  - key: '1'
+    label: Discount Line
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 60
+- field: ItemSpec
+  description: Item Specification
+  type: nVarChar
+  size: 30
+- field: Uom
+  description: Unit of Measurement
+  type: nVarChar
+  size: 16
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: NetAmount
+  description: Net Amount
+  type: Num
+  size: 19.6
+- field: VatPercent
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: UnitPrice
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: UnitPricTp
+  description: Unit Price Type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Net
+  - key: '1'
+    label: Gross
+- field: ItemTaxCat
+  description: Item Tax Category
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

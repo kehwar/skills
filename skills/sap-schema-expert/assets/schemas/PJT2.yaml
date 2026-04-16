@@ -1,0 +1,52 @@
+table: PJT2
+description: Project Plan Steps Time Record
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/PJT2.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: StepCode
+  description: Step Code
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: Owner
+  description: Owner
+  type: nVarChar
+  size: 254
+  related: OHEM
+- field: Duration
+  description: Duration
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - StepCode
+  - LineNum

@@ -1,0 +1,510 @@
+table: ABOE
+description: Bill of Exchange for Payment - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ABOE.htm
+fields:
+- field: BoeKey
+  description: Bill of Exchange Key
+  type: Int
+  size: 11
+- field: BoeNum
+  description: Bill of Exchange No.
+  type: Int
+  size: 11
+- field: BoeStatus
+  description: Bill of Exchange Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+  - key: D
+    label: Deposited
+  - key: P
+    label: Paid
+  - key: C
+    label: Canceled
+  - key: L
+    label: Closed
+  - key: F
+    label: Failed
+  - key: V
+    label: BoE to Vendor
+- field: BoeType
+  description: Bill of Exchange Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Incoming
+  - key: O
+    label: Outgoing
+- field: DpsBankCod
+  description: Deposit Bank Code
+  type: nVarChar
+  size: 30
+- field: DpsCntrCod
+  description: Deposit Country/Region Code
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: DueDate
+  description: Bill of Exchange Due Date
+  type: Date
+  size: 8
+- field: DpstAcct
+  description: Bank Account No.
+  type: nVarChar
+  size: 50
+- field: DpstBranch
+  description: Branch for Payments
+  type: nVarChar
+  size: 50
+- field: Details
+  description: Details
+  type: nVarChar
+  size: 50
+- field: TransRef
+  description: Journal Entry Reference
+  type: nVarChar
+  size: 8
+- field: PmntDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: PmntNum
+  description: Payment No.
+  type: Int
+  size: 11
+- field: BoeSum
+  description: Bill of Exchange Amount
+  type: Num
+  size: 19.6
+- field: BoeSumSC
+  description: Bill of Exchange Amount (SC)
+  type: Num
+  size: 19.6
+- field: BoeSumFC
+  description: Bill of Exchange Amount (FC)
+  type: Num
+  size: 19.6
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: BoeAcct
+  description: BP Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Currency
+  description: Bill of Exchange Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: TotalWords
+  description: Total in Words
+  type: nVarChar
+  size: 100
+- field: Signature
+  description: Signature
+  type: nVarChar
+  size: 155
+- field: TransNum
+  description: Transaction No.
+  type: Int
+  size: 11
+  default: 0
+- field: LinesSum
+  description: Row Totals
+  type: Num
+  size: 19.6
+- field: DdctPrcnt
+  description: '% Withholding Tax Ded.'
+  type: Num
+  size: 19.6
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: VatTotal
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: VatTotalSC
+  description: Total Tax (SC)
+  type: Num
+  size: 19.6
+- field: VatTotalFC
+  description: Total Tax (FC)
+  type: Num
+  size: 19.6
+- field: VatCalcult
+  description: Calculate Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: SumRfndCln
+  description: Deduction Refund Amount
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PrintedBy
+  description: Printed By
+  type: Int
+  size: 6
+- field: Transfered
+  description: Transferred to next year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: BPBankCod
+  description: BP Bank Code
+  type: nVarChar
+  size: 30
+- field: BPBankNam
+  description: BP Bank Name
+  type: nVarChar
+  size: 250
+- field: BPBankAct
+  description: BP Bank Account
+  type: nVarChar
+  size: 50
+- field: BPBankBrnc
+  description: BP Bank Branch
+  type: nVarChar
+  size: 50
+- field: BPBankCtr
+  description: BP Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: RefNum
+  description: Reference No.
+  type: nVarChar
+  size: 254
+- field: IsReconcld
+  description: Reconciled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: PayMethCod
+  description: Payment Method Code
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: DepositNum
+  description: Deposit Number
+  type: Int
+  size: 11
+- field: PymMethNam
+  description: Payment Method Name
+  type: nVarChar
+  size: 100
+- field: DeductSum
+  description: Deduction Amount
+  type: Num
+  size: 19.6
+- field: ControlKey
+  description: Control Key
+  type: nVarChar
+  size: 2
+- field: AgentCode
+  description: Agent Code
+  type: nVarChar
+  size: 32
+  related: OAGP
+- field: ReconcilNu
+  description: External Reconciliation No.
+  type: Int
+  size: 11
+- field: DepositTyp
+  description: Deposit Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Collection
+  - key: D
+    label: Discounted
+- field: CreatStatu
+  description: Creation Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 254
+- field: PayEngSt1
+  description: Payment Engine Status 1
+  type: VarChar
+  size: 1
+- field: PayEngSt2
+  description: Payment Engine Status 2
+  type: VarChar
+  size: 1
+- field: PayEngSt3
+  description: Payment Engine Status 3
+  type: nVarChar
+  size: 3
+- field: StampTax
+  description: Stamp Tax Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: StmpTxAmnt
+  description: Stamp Tax Amount
+  type: Num
+  size: 19.6
+- field: DpsActKey
+  description: Bank Account Internal ID
+  type: Int
+  size: 11
+  related: DSC1
+- field: OutBnkKey
+  description: Outgoing Bank Account Key
+  type: Int
+  size: 11
+  related: DSC1
+- field: Portfolio
+  description: Portfolio
+  type: nVarChar
+  size: 8
+  related: OPFT
+- field: VndCodeCEE
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: VndNameCEE
+  description: Vendor Name
+  type: nVarChar
+  size: 200
+- field: OurNum
+  description: Our Number
+  type: Int
+  size: 11
+- field: BarcodeNum
+  description: Bar Code Number
+  type: nVarChar
+  size: 120
+- field: BarcodeRep
+  description: Bar Code Representation
+  type: nVarChar
+  size: 100
+- field: OurNumChk
+  description: Our Number Check Digit
+  type: VarChar
+  size: 1
+- field: FolioPref
+  description: Folio Prefix String
+  type: nVarChar
+  size: 4
+- field: FolioNum
+  description: Folio Number
+  type: Int
+  size: 11
+- field: LPgFolioN
+  description: Folio No. for Last Page in Doc.
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: IntrstAmnt
+  description: Interest Amount
+  type: Num
+  size: 19.6
+- field: DiscAmnt
+  description: Discount Amount
+  type: Num
+  size: 19.6
+- field: FineAmnt
+  description: Fine Amount
+  type: Num
+  size: 19.6
+- field: IntrstDate
+  description: BoE Interest Date
+  type: Date
+  size: 8
+- field: DiscDate
+  description: BoE Discount Date
+  type: Date
+  size: 8
+- field: FineDate
+  description: BoE Fine Date
+  type: Date
+  size: 8
+- field: PostType
+  description: Posting Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: D
+    label: Default
+  - key: A
+    label: Alternative
+- field: IOFAmnt
+  description: IOF Amount
+  type: Num
+  size: 19.6
+- field: ServFeeAm
+  description: Service Fee Amount
+  type: Num
+  size: 19.6
+- field: OtherExAm
+  description: Other Expenses Amount
+  type: Num
+  size: 19.6
+- field: OtherInAm
+  description: Other Incomes Amount
+  type: Num
+  size: 19.6
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: EnBPBnkAct
+  description: Encryption of BP Bank Account
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EnDpstAcct
+  description: Encryption of Bank Account No.
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoeKey
+  - LogInstanc
+- key: VPM_NUM
+  unique: false
+  fields:
+  - PmntNum
+- key: TRANS_NUM
+  unique: false
+  fields:
+  - TransNum
+- key: DPS_NUM
+  unique: false
+  fields:
+  - DepositNum
+- key: BOE_NUM
+  unique: true
+  fields:
+  - BoeNum
+  - BoeType
+  - LogInstanc

@@ -1,0 +1,52 @@
+table: OTCD
+description: Tax Code Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTCD.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TcdType
+  description: Determination Type
+  type: nVarChar
+  size: 2
+  default: MI
+  constraints:
+  - key: MI
+    label: Material Item
+  - key: SI
+    label: Service Item
+  - key: SD
+    label: Service Document
+  - key: WT
+    label: Withholding Tax
+- field: DftArCode
+  description: Default Sales Tax Code
+  type: nVarChar
+  size: 8
+- field: DftApCode
+  description: Default Purchase Tax Code
+  type: nVarChar
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Update User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: TCD_TYPE
+  unique: true
+  fields:
+  - TcdType

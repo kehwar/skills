@@ -1,0 +1,33 @@
+table: SEWUA
+description: SEWUA
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWUA.htm
+fields:
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: NoUdfDb
+  description: number of UDFs
+  type: Int
+  size: 11
+- field: NoTblUdf
+  description: UDFs per table
+  type: Int
+  size: 11
+- field: NoAutoFMS
+  description: Auto Refresh in use
+  type: Int
+  size: 11
+- field: NoRegFMS
+  description: No FMS with Refresh Regular
+  type: Int
+  size: 11
+- field: NoCustTmpl
+  description: No of customised Document
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbNam

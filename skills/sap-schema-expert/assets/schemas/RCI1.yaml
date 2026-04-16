@@ -1,0 +1,32 @@
+table: RCI1
+description: Recipient List - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/RCI1.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+  related: ORCI
+- field: LineNum
+  description: Addressee Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '12'
+    label: User
+  - key: '171'
+    label: Employee
+- field: ObjCode
+  description: Object Code
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum

@@ -1,0 +1,71 @@
+table: SPRG
+description: Application Start
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/SPRG.htm
+fields:
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+  default: '-1'
+- field: Name
+  description: Application Name
+  type: nVarChar
+  size: 128
+- field: FileName
+  description: File Name
+  type: nVarChar
+  size: 254
+- field: Path
+  description: Application Route
+  type: Text
+  size: 16
+- field: Params
+  description: Application Parameters
+  type: Text
+  size: 16
+- field: OPRTION
+  description: Operation Method
+  type: nVarChar
+  size: 50
+  default: open
+  constraints:
+  - key: open
+    label: Open
+  - key: edit
+    label: Edit
+  - key: explore
+    label: Find Folder
+  - key: find
+    label: Find File
+  - key: print
+    label: Print
+  - key: properties
+    label: Properties
+- field: WIN_STYLE
+  description: Windows Type
+  type: nVarChar
+  size: 2
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Hide
+  - key: '1'
+    label: Standard
+  - key: '3'
+    label: Enlarge
+  - key: '5'
+    label: Operate as Previous
+  - key: '6'
+    label: Reduce
+  - key: '9'
+    label: Restore
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LineNum
+  - UserCode

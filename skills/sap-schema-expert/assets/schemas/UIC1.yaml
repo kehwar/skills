@@ -1,0 +1,31 @@
+table: UIC1
+description: Customized Forms in Templates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC1.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: FormId
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: Width
+  description: Form Width
+  type: Int
+  size: 6
+- field: Height
+  description: Form Height
+  type: Int
+  size: 6
+- field: MenuId
+  description: Menu ID
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+  - FormId

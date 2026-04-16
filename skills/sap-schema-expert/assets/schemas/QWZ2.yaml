@@ -1,0 +1,104 @@
+table: QWZ2
+description: Query Result Fields
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/QWZ2.htm
+fields:
+- field: Code
+  description: Query Code
+  type: nVarChar
+  size: 8
+- field: Numerator
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FileCode
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldAlias
+  description: Field Alias
+  type: nVarChar
+  size: 10
+- field: Title
+  description: Field Title
+  type: nVarChar
+  size: 30
+- field: SortOrder
+  description: Sort Order
+  type: Int
+  size: 11
+- field: SortType
+  description: Sort Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GroupBy
+  description: Group By
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AgregType
+  description: Agreggate Function
+  type: Int
+  size: 11
+- field: CalcField
+  description: Calculation Field
+  type: nVarChar
+  size: 254
+- field: IsCalc
+  description: Is Calculation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TmpAlias
+  description: New Alias in Res. Table
+  type: nVarChar
+  size: 11
+- field: TmpDescr
+  description: New Description in Res. Table
+  type: nVarChar
+  size: 30
+- field: Fld2Alias
+  description: Field 2 Number
+  type: nVarChar
+  size: 10
+- field: FileCode2
+  description: Field 2 Table Name
+  type: nVarChar
+  size: 20
+- field: Agreg2Type
+  description: Field 2 Aggregate Function
+  type: Int
+  size: 11
+- field: FldOp
+  description: Formula Operation
+  type: Int
+  size: 11
+- field: FldCnstVal
+  description: Field Const. Val.
+  type: nVarChar
+  size: 254
+- field: Fld2CnsVal
+  description: Field 2 Const. Val.
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Numerator

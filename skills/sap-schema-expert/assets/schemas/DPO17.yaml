@@ -1,0 +1,104 @@
+table: DPO17
+description: A/P Down Payment - Import Process
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DPO17.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODPO
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '204'
+- field: ImpDocType
+  description: Type of Importation Document
+  type: VarChar
+  size: 1
+  related: OBSI
+- field: ImpDocNum
+  description: Importation Document Number
+  type: nVarChar
+  size: 10
+- field: DateOfReg
+  description: Date of Registry DI/DSI/DA
+  type: Date
+  size: 8
+- field: CustClrDat
+  description: Date of Customs Clearance
+  type: Date
+  size: 8
+- field: ConcActNum
+  description: Drawback Concession Acct No.
+  type: nVarChar
+  size: 30
+- field: AdditNum
+  description: Additional Number
+  type: nVarChar
+  size: 30
+- field: AddItmDV
+  description: Additional Item Discount Value
+  type: Num
+  size: 19.6
+- field: tpVTransp
+  description: Overland Transport Route
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Maritime
+  - key: '2'
+    label: Waterway
+  - key: '3'
+    label: Lakeside
+  - key: '4'
+    label: Air
+  - key: '5'
+    label: Post
+  - key: '6'
+    label: Train
+  - key: '7'
+    label: Road
+  - key: '8'
+    label: Network Transmission
+  - key: '9'
+    label: Own Means
+  - key: '10'
+    label: Input/Output Fictitious
+  - key: '11'
+    label: Courier
+  - key: '12'
+    label: Hand Carry
+- field: DrawSReg
+  description: Drawback - Suspension Regime
+  type: nVarChar
+  size: 11
+- field: AddFrNavyA
+  description: Additional Freight to Navy Authority
+  type: Num
+  size: 19.6
+- field: TypeOfImp
+  description: Type of Import
+  type: VarChar
+  size: 1
+- field: nSeqAdic
+  description: Additional Item Sequential Number
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

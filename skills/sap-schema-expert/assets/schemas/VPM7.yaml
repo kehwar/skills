@@ -1,0 +1,70 @@
+table: VPM7
+description: Outgoing Payments - Tax Amount per Document
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/VPM7.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OVPM
+- field: LineSeq
+  description: Row Sequence
+  type: Int
+  size: 11
+- field: InvoiceSeq
+  description: Invoice Sequence Number
+  type: Int
+  size: 11
+- field: ValueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Inv4Seq
+  description: INV4 Sequence Number
+  type: Int
+  size: 11
+- field: TaxSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: TaxSumFrgn
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: TaxSumSys
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseSum
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: BaseSumFrg
+  description: Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseSumSys
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '46'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - LineSeq

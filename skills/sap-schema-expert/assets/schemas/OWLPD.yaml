@@ -1,0 +1,159 @@
+table: OWLPD
+description: Launchpad
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWLPD.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: ThemeId
+  description: Theme Id
+  type: nVarChar
+  size: 254
+- field: DisQikView
+  description: Display Quick View or not
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NtfShowDay
+  description: Notification Show Days Setting
+  type: Int
+  size: 11
+- field: EnUsDfVl
+  description: Enable User Define Value
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UsDfVlDly
+  description: User Defined Value Delay
+  type: Int
+  size: 11
+- field: WebSgtEb
+  description: 'B1 WebClient Suggest: Enable'
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrContLog
+  description: Activity Reminder High Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrRclFlag
+  description: Execute Recurring Transactions Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrdsplRate
+  description: Exchange Rate Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HiPrBanEn
+  description: High-Priority Banner Notification Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrAprvDsnc
+  description: Approval Decision Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrReqAprvl
+  description: Requests for Approval Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrRnwBlktA
+  description: Renew Blanket Agreement Reminders Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrSvcClRem
+  description: Service Call Reminders Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrSvcClAsn
+  description: Service Call Assignments Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrWzdTsk
+  description: Wizard Tasks Notification Priority
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

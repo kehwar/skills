@@ -1,0 +1,34 @@
+table: CDRO
+description: Drag & Relate - Output Fields
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CDRO.htm
+fields:
+- field: ObjectId
+  description: Object ID
+  type: nVarChar
+  size: 4
+- field: FieldId
+  description: Field ID
+  type: Int
+  size: 6
+- field: DescStr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 6
+  default: 0
+- field: UserSign
+  description: User Form
+  type: Int
+  size: 6
+  related: OUSR
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectId
+  - FieldId
+  - UserSign

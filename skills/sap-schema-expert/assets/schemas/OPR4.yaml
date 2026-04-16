@@ -1,0 +1,37 @@
+table: OPR4
+description: Opportunity - Interests
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Sales_Opportunities/OPR4.htm
+fields:
+- field: OprId
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: Line
+  description: Row No.
+  type: Int
+  size: 6
+- field: IntId
+  description: Interest ID
+  type: Int
+  size: 11
+  related: OOIN
+- field: Prmry
+  description: Primary Interest
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OprId
+  - Line

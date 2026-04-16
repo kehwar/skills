@@ -1,0 +1,109 @@
+table: ITM8
+description: Asset Item Balances
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITM8.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: APC
+  description: APC
+  type: Num
+  size: 19.6
+- field: APCHist
+  description: Historical APC
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Asset Quantity
+  type: Num
+  size: 19.6
+- field: OrDpAcc
+  description: Accumulated Ordinary Depr.
+  type: Num
+  size: 19.6
+- field: UnDpAcc
+  description: Accumulated Unplanned Depr.
+  type: Num
+  size: 19.6
+- field: SpDpKey1
+  description: Special Depreciation 01
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDpAcc1
+  description: Accumulated Special Depr. 01
+  type: Num
+  size: 19.6
+- field: SpDpKey2
+  description: Special Depreciation 02
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDpAcc2
+  description: Accumulated Special Depr. 02
+  type: Num
+  size: 19.6
+- field: SpDpKey3
+  description: Special Depreciation 03
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDpAcc3
+  description: Accumulated Special Depr. 03
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+- field: SalvageVal
+  description: Salvage Value
+  type: Num
+  size: 19.6
+- field: OrDpAcc1
+  description: Ordinary Depr. Accumulation 01
+  type: Num
+  size: 19.6
+- field: WriteUpAcc
+  description: Accumulated Write-Up
+  type: Num
+  size: 19.6
+- field: IsMaSalVal
+  description: Manually Changed Salvage Value
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AppreAcc
+  description: Accumulated Appreciation
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - PeriodCat
+  - DprArea

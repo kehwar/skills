@@ -1,0 +1,97 @@
+table: APRJ
+description: Project Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/APRJ.htm
+fields:
+- field: PrjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+- field: PrjName
+  description: Project Name
+  type: nVarChar
+  size: 100
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: DTVId
+  description: Datev Identifier
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrjCode
+  - LogInstanc

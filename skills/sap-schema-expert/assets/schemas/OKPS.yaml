@@ -1,0 +1,44 @@
+table: OKPS
+description: KPI Set
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OKPS.htm
+fields:
+- field: KpsCode
+  description: KPI Set Code
+  type: nVarChar
+  size: 15
+- field: KpsName
+  description: KPI Set Name
+  type: nVarChar
+  size: 100
+- field: KpsType
+  description: KPI Set Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Single
+  - key: Q
+    label: Quarterly
+  - key: M
+    label: Monthly
+  - key: P
+    label: Multiple
+- field: FieldsNum
+  description: KPI Set Fields Number
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date - History
+  type: Date
+  size: 8
+- field: UserSign
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - KpsCode

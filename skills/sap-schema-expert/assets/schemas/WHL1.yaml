@@ -1,0 +1,17 @@
+table: WHL1
+description: Register of VAT Payers - List of Hashed Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WHL1.htm
+fields:
+- field: HashData
+  description: Hash Data
+  type: nVarChar
+  size: 128
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HashData

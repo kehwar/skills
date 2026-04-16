@@ -1,0 +1,17 @@
+table: SEWU
+description: SEWU
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWU.htm
+fields:
+- field: S_USER
+  description: S-Username
+  type: nVarChar
+  size: 16
+- field: S_PASS
+  description: S-Password
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - S_USER

@@ -1,0 +1,102 @@
+table: OSSG
+description: Service App Setting groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSSG.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: CustGroup
+  description: Customized Group
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnEditTime
+  description: Enable Edit Time
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnReject
+  description: Enable Reject
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnResign
+  description: Enable Resign
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnFollowup
+  description: Enable Follow-up
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnSign
+  description: Enable Signature
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnStarRat
+  description: Enable Star Rating
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnActDura
+  description: Enable Actual Duration
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AdBoardId
+  description: Advanced Dashboard ID
+  type: Int
+  size: 11
+  related: OXAP
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

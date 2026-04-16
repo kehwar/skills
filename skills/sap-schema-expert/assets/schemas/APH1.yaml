@@ -1,0 +1,178 @@
+table: APH1
+description: Project Management - Stages - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/APH1.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OPHA
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: StageID
+  description: Stage ID
+  type: Int
+  size: 11
+  related: PMC2
+- field: POS
+  description: Position
+  type: Int
+  size: 11
+- field: START
+  description: Start Date
+  type: Date
+  size: 8
+- field: CLOSE
+  description: Closing Date
+  type: Date
+  size: 8
+- field: FINISHDATE
+  description: Finished Date
+  type: Date
+  size: 8
+- field: Task
+  description: Task Type
+  type: Int
+  size: 11
+- field: DSCRIPTION
+  description: Description
+  type: Text
+  size: 16
+- field: EXPCOSTS
+  description: Planned Cost
+  type: Num
+  size: 19.6
+- field: InvAmtAR
+  description: Invoiced Amount (A/R)
+  type: Num
+  size: 19.6
+- field: OpenAmtAR
+  description: Open Amount (A/R)
+  type: Num
+  size: 19.6
+- field: InvAmtAP
+  description: Invoiced Amount (A/P)
+  type: Num
+  size: 19.6
+- field: OpenAmtAP
+  description: Open Amount (A/P)
+  type: Num
+  size: 19.6
+- field: PERCENT
+  description: Contribution Rate - Percentage
+  type: Num
+  size: 19.6
+- field: FINISH
+  description: Finished
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OWNER
+  description: Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: StageDep1
+  description: Stage Dependence (1)
+  type: Int
+  size: 11
+- field: StageDep2
+  description: Stage Dependence (2)
+  type: Int
+  size: 11
+- field: StageDep3
+  description: Stage Dependence (3)
+  type: Int
+  size: 11
+- field: StageDep4
+  description: Stage Dependence (4)
+  type: Int
+  size: 11
+- field: StDp1Type
+  description: Stage Dependence (1) project type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Project
+  - key: S
+    label: Subproject
+- field: StDp2Type
+  description: Stage Dependence (2) project type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Project
+  - key: S
+    label: Subproject
+- field: StDp3Type
+  description: Stage Dependence (3) project type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Project
+  - key: S
+    label: Subproject
+- field: StDp4Type
+  description: Stage Dependence (4) project type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Project
+  - key: S
+    label: Subproject
+- field: StDp1Abs
+  description: Stage Dependence (1) project key
+  type: Int
+  size: 11
+- field: StDp2Abs
+  description: Stage Dependence (2) project key
+  type: Int
+  size: 11
+- field: StDp3Abs
+  description: Stage Dependence (3) project key
+  type: Int
+  size: 11
+- field: StDp4Abs
+  description: Stage Dependence (4) project key
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: UniqueID
+  description: Unique ID
+  type: nVarChar
+  size: 50
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+  - LogInstanc

@@ -1,0 +1,52 @@
+table: ANCM
+description: NCM Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ANCM.htm
+fields:
+- field: AbsEntry
+  description: ID
+  type: Int
+  size: '11'
+- field: NcmCode
+  description: NCM Code
+  type: nVarChar
+  size: '15'
+- field: Descrip
+  description: Description
+  type: nVarChar
+  size: '254'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: '8'
+- field: GroupCode
+  description: Group Code
+  type: VarChar
+  size: '1'
+  default: '0'
+- field: Group
+  description: NCM Group
+  type: Int
+  size: '6'
+  related: ONCG
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc
+- key: CODE
+  unique: true
+  fields:
+  - NcmCode
+  - GroupCode
+  - LogInstanc

@@ -1,0 +1,50 @@
+table: AWL3
+description: Notes of Tasks - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AWL3.htm
+fields:
+- field: WFInstID
+  description: Workflow Instance ID
+  type: Int
+  size: 11
+- field: TaskID
+  description: Task ID
+  type: Int
+  size: 11
+  related: OWLS
+- field: LineID
+  description: Line ID
+  type: Int
+  size: 11
+- field: Note
+  description: Note
+  type: Text
+  size: 16
+- field: Creator
+  description: Creator
+  type: nVarChar
+  size: 25
+- field: NoteDate
+  description: Note Date
+  type: Date
+  size: 8
+- field: Access
+  description: Accessibility
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: W
+    label: Workflow
+  - key: T
+    label: Task
+- field: LogIns
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID
+  - LineID
+  - LogIns

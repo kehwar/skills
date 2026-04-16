@@ -1,0 +1,94 @@
+table: ODSL
+description: Schedule Row Detail
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODSL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Reserve Invoice
+  - key: '17'
+    label: Sales Order
+  - key: '18'
+    label: A/P Reserve Invoice
+  - key: '22'
+    label: Purchase Order
+  - key: '163'
+    label: A/P Correction Reserve Invoice
+  - key: '165'
+    label: A/R Correction Reserve Invoice
+  - key: '202'
+    label: Production Order
+  - key: '1250000001'
+    label: Warehouse Transfer Request
+- field: DocEntry
+  description: Associated Doc. Entry
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Associated Doc Row No.
+  type: Int
+  size: 11
+- field: SchdLine
+  description: Schedule Row No.
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: CfmDate
+  description: Confirmation Date
+  type: Date
+  size: 8
+- field: CfmQty
+  description: Confirmation Quantity
+  type: Num
+  size: 19.6
+- field: FixedCfm
+  description: Fixed Confirmation Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReqQty
+  description: Required Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SCHD_LINE
+  unique: true
+  fields:
+  - ObjType
+  - DocEntry
+  - DocLineNum
+  - SchdLine
+- key: DOCLINESLD
+  unique: false
+  fields:
+  - ObjType
+  - DocEntry
+  - DocLineNum

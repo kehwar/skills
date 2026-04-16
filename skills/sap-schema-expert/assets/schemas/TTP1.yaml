@@ -1,0 +1,38 @@
+table: TTP1
+description: ToolTip Preview - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/TTP1.htm
+fields:
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ObjectId
+  description: Object ID
+  type: Int
+  size: 11
+- field: DataKey
+  description: Data Key
+  type: nVarChar
+  size: 50
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: IsVisible
+  description: Visible
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserSign
+  - ObjectId
+  - DataKey

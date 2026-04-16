@@ -1,0 +1,134 @@
+table: AMR1
+description: Inventory Revaluation - History - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AMR1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OMRV
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Dscription
+  description: Item/Service Description
+  type: nVarChar
+  size: 200
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: RIncmAcct
+  description: Inv. Reval. Increment Account
+  type: nVarChar
+  size: 15
+- field: RDcrmAcct
+  description: Inv. Reval. Decrement Account
+  type: nVarChar
+  size: 15
+- field: RToStock
+  description: Reval. Amount Posted to Stock
+  type: Num
+  size: 19.6
+- field: RActPrice
+  description: Inv. Reval. Actual Price
+  type: Num
+  size: 19.6
+- field: ROnHand
+  description: In Stock at Reval.
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '162'
+- field: EvalSystem
+  description: Cost Accounting Method
+  type: VarChar
+  size: 1
+  related: OITM
+  constraints:
+  - key: A
+    label: Moving Average
+  - key: S
+    label: Standard
+  - key: F
+    label: FIFO
+  - key: B
+    label: Serial/Batch
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: UnitMsr
+  description: Unit of Measure
+  type: nVarChar
+  size: 100
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - LogInstanc
+  - ObjType
+- key: ITEM_WHS
+  unique: false
+  fields:
+  - ItemCode
+  - WhsCode
+- key: ITEM
+  unique: false
+  fields:
+  - ItemCode

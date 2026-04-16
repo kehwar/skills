@@ -1,0 +1,40 @@
+table: RDCT
+description: Dictionary
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RDCT.htm
+fields:
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Num
+  description: String number
+  type: Int
+  size: 11
+- field: String
+  description: String
+  type: nVarChar
+  size: 250
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Num
+- key: STRING
+  unique: false
+  fields:
+  - Language
+  - String
+- key: NUM
+  unique: false
+  fields:
+  - Num

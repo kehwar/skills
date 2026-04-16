@@ -1,0 +1,35 @@
+table: GBI9
+description: GBI Row 9 - Enterprise's Profit and Loss Statement
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI9.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: RepItm
+  description: Report Item
+  type: nVarChar
+  size: 60
+- field: RepItmNo
+  description: Report Item Number
+  type: nVarChar
+  size: 3
+- field: PeriodAmt
+  description: Period Amount
+  type: Num
+  size: 19.6
+- field: YearAmt
+  description: Year Accumulated Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

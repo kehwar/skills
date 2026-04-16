@@ -1,0 +1,53 @@
+table: NNM4
+description: Electronic Series
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NNM4.htm
+fields:
+- field: ESeries
+  description: Electronic Series
+  type: Int
+  size: 6
+  default: 0
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: SeriesName
+  description: Series Name
+  type: nVarChar
+  size: 8
+- field: InitialNum
+  description: Initial Number
+  type: nVarChar
+  size: 20
+  default: '0'
+- field: NextNumber
+  description: Next Number for Use
+  type: nVarChar
+  size: 20
+  default: '0'
+- field: LastNum
+  description: Last Number Allowed
+  type: nVarChar
+  size: 20
+- field: Prefix
+  description: Prefix
+  type: nVarChar
+  size: 10
+- field: ApprovYear
+  description: Approval Year
+  type: Int
+  size: 11
+- field: ApprovNum
+  description: Approval Number
+  type: Int
+  size: 11
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ESeries
+  - InitialNum

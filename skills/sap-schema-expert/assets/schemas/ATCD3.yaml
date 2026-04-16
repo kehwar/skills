@@ -1,0 +1,46 @@
+table: ATCD3
+description: Tax Code Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ATCD3.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Tcd2Id
+  description: Determination Key Field ID
+  type: Int
+  size: 11
+  related: TCD2
+- field: EfctFrom
+  description: Effective From
+  type: Date
+  size: 8
+- field: EfctTo
+  description: Effective To
+  type: Date
+  size: 8
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: TcdId
+  description: Tax Determination Code
+  type: Int
+  size: 11
+  related: OTCD
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc
+- key: TCD3_UNI
+  unique: true
+  fields:
+  - Tcd2Id
+  - EfctFrom
+  - LogInstanc

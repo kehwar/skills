@@ -1,0 +1,79 @@
+table: AMR3
+description: Inventory Revaluation SNB
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/AMR3.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Row Number
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: SNBNum
+  description: Serial and Batch Number
+  type: nVarChar
+  size: 36
+- field: AdmisDate
+  description: Admission Date
+  type: Date
+  size: 8
+- field: ExpiryDate
+  description: Expiration Date
+  type: Date
+  size: 8
+- field: CurrCost
+  description: Current Cost
+  type: Num
+  size: 19.6
+- field: NewCost
+  description: New Cost
+  type: Num
+  size: 19.6
+- field: DebCred
+  description: Debit Credit Value
+  type: Num
+  size: 19.6
+- field: SNBOpenQty
+  description: SNB Open Quantity
+  type: Num
+  size: 19.6
+- field: RToStock
+  description: Reval. Amount Posted to Stock
+  type: Num
+  size: 19.6
+- field: SnbSysNum
+  description: SNB System Number
+  type: Int
+  size: 11
+- field: SnbAbsEnt
+  description: SNB Abs. Entry
+  type: Int
+  size: 11
+- field: SnbQty
+  description: SNB Quantity
+  type: Num
+  size: 19.6
+- field: SnbCostT
+  description: SNB Cost Total
+  type: Num
+  size: 19.6
+- field: SnbLotNum
+  description: SNB Lot Number
+  type: nVarChar
+  size: 36
+- field: SnbMfn
+  description: SNB Manufacture Attribute
+  type: nVarChar
+  size: 36
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - BaseLine
+  - LineNum

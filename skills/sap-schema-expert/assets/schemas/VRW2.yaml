@@ -1,0 +1,171 @@
+table: VRW2
+description: VAT Reposting Wizard - Rows 2
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/VRW2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TaxInvID
+  description: A/P Tax Invoice ID
+  type: Int
+  size: 11
+  related: OTPI
+- field: VatGroup
+  description: VAT Group Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: Selected
+  description: Selected Line
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LineStatus
+  description: Line Status
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: C
+    label: Canceled
+  - key: R
+    label: Regular
+- field: DebitAcc
+  description: Debit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: NetAmount
+  description: Net Amount
+  type: Num
+  size: 19.6
+- field: JETransID
+  description: Journal Entry Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 200
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 200
+- field: Ref3
+  description: Reference 3
+  type: nVarChar
+  size: 200
+- field: Remarks
+  description: Journal Entry Remarks
+  type: nVarChar
+  size: 254
+- field: TrnsCode
+  description: Code
+  type: nVarChar
+  size: 4
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: ARINVAbs
+  description: First A/R Invoice Abs Entry
+  type: Int
+  size: 11
+  default: 0
+- field: ARDocNumAb
+  description: A/R Document No.
+  type: nVarChar
+  size: 20
+- field: ARAbsEntry
+  description: A/R Document Abs Entry
+  type: Int
+  size: 11
+  default: 0
+- field: ARObjType
+  description: A/R Document Object Type
+  type: nVarChar
+  size: 20
+- field: ARDocDate
+  description: A/R Document Date
+  type: Date
+  size: 8
+- field: CstmrCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+- field: CstmrName
+  description: Customer Name
+  type: nVarChar
+  size: 200
+- field: TpiDocNum
+  description: A/P Tax Invoice No.
+  type: Int
+  size: 11
+- field: TpiDocDate
+  description: A/P Tax Invoice Posting Date
+  type: Date
+  size: 8
+- field: VendorCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+- field: VendorName
+  description: Vendor Name
+  type: nVarChar
+  size: 200
+- field: ARDocMemo
+  description: A/R Document Remarks
+  type: nVarChar
+  size: 254
+- field: TpiMemo
+  description: A/P Tax Invoice Remarks
+  type: nVarChar
+  size: 254
+- field: GrsAmt
+  description: Gross Amount
+  type: Num
+  size: 19.6
+- field: VatAcc
+  description: VAT Account
+  type: nVarChar
+  size: 15
+- field: OpenVatAmt
+  description: Open VAT Amount
+  type: Num
+  size: 19.6
+- field: OpenNetAmt
+  description: Open Net Amount
+  type: Num
+  size: 19.6
+- field: OpenGrsAmt
+  description: Open Gross Amount
+  type: Num
+  size: 19.6
+- field: RepstedVat
+  description: Reposted VAT
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - TaxInvID
+  - VatGroup
+  - ARINVAbs

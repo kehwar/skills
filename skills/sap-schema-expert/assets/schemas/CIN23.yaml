@@ -1,0 +1,72 @@
+table: CIN23
+description: A/P Invoice - Selected Asset Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/CIN23.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OCIN
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: AssetCode
+  description: Selected Asset Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: Amount
+  description: Amount
+  type: Num
+  size: 19.6
+- field: AmountSC
+  description: Amount (SC)
+  type: Num
+  size: 19.6
+- field: SerialNo
+  description: Serial Number
+  type: nVarChar
+  size: 30
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '132'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - VisOrder
+- key: ASSETS
+  unique: false
+  fields:
+  - DocEntry
+  - LineNum
+  - AssetCode

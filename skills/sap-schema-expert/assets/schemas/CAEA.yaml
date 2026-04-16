@@ -1,0 +1,55 @@
+table: CAEA
+description: CAEA Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CAEA.htm
+fields:
+- field: Regime
+  description: Regime
+  type: VarChar
+  size: 1
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Period
+  description: CAEA Period
+  type: Int
+  size: 11
+- field: Orden
+  description: CAEA Order
+  type: Int
+  size: 11
+- field: Status
+  description: CAEA Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New Created
+  - key: S
+    label: Request Sent
+  - key: E
+    label: Error Received
+  - key: U
+    label: Not Used
+  - key: T
+    label: Reporting Pending
+  - key: P
+    label: Partially Reported
+  - key: F
+    label: Fully Reported
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: PERIOD
+  unique: false
+  fields:
+  - Regime
+  - Period
+  - Orden

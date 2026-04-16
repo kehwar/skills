@@ -1,0 +1,64 @@
+table: CIF1
+description: Country Specific Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CIF1.htm
+fields:
+- field: FldAbsEnt
+  description: Field ID
+  type: Int
+  size: 11
+  related: OCIF
+- field: Country
+  description: Country/Region Code
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: TransCRY
+  description: Transaction Country/Region
+  type: nVarChar
+  size: 3
+  default: XX
+- field: IsMandImp
+  description: Field is mandatory for import
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsMandExp
+  description: Field is mandatory for export
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsReqAllIm
+  description: Field is required for import
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsReqAllEx
+  description: Field is required for export
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FldAbsEnt
+  - Country
+  - TransCRY

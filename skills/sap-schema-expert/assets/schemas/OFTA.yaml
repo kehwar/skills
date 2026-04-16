@@ -1,0 +1,37 @@
+table: OFTA
+description: Microsoft 365 Integration Template Management
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFTA.htm
+fields:
+- field: ID
+  description: ID
+  type: nVarChar
+  size: 254
+- field: BOTYPE
+  description: BO Type
+  type: nVarChar
+  size: 254
+- field: DOCTYPE
+  description: Doc Type
+  type: nVarChar
+  size: 254
+- field: TEMPFORMAT
+  description: Template Format
+  type: nVarChar
+  size: 254
+- field: USER_ID
+  description: User Code
+  type: nVarChar
+  size: 254
+- field: ACTIONTIME
+  description: Action Time
+  type: Date
+  size: 8
+- field: ACTIONTYPE
+  description: Action Type
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

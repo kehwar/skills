@@ -1,0 +1,63 @@
+table: SXRPD
+description: XLR Property Definitions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRPD.htm
+fields:
+- field: propdefid
+  description: propdefid
+  type: Int
+  size: 11
+- field: classid
+  description: classid
+  type: Int
+  size: 11
+- field: seqno
+  description: seqno
+  type: Int
+  size: 11
+  default: 0
+- field: name
+  description: name
+  type: nVarChar
+  size: 50
+- field: category
+  description: category
+  type: nVarChar
+  size: 50
+  default: '''General'''
+- field: descriptio
+  description: description
+  type: nVarChar
+  size: 254
+- field: type
+  description: type
+  type: Int
+  size: 11
+  default: 0
+- field: minoccurs
+  description: minoccurs
+  type: Int
+  size: 11
+  default: 0
+- field: maxoccurs
+  description: maxoccurs
+  type: Int
+  size: 11
+  default: 999999
+- field: classrefid
+  description: classrefid
+  type: Int
+  size: 11
+  default: 0
+- field: enumid
+  description: enumid
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - propdefid

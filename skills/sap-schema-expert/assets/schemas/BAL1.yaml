@@ -1,0 +1,78 @@
+table: BAL1
+description: Opening Balance Instances
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/BAL1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+- field: OBDate
+  description: Date of Opening Balance (first day of next fiscal period)
+  type: Date
+  size: 8
+- field: InAmount
+  description: Total Received Value
+  type: Num
+  size: 19.6
+- field: InQty
+  description: Total Received Quantity
+  type: Num
+  size: 19.6
+- field: OutQty
+  description: Total Issued Quantity
+  type: Num
+  size: 19.6
+- field: InAmntLWA
+  description: Last Non-zero Total Received Value
+  type: Num
+  size: 19.6
+- field: InQtyLWA
+  description: Last Non-zero Total Received Quantity
+  type: Num
+  size: 19.6
+- field: LastTrnsID
+  description: Last Transaction ID
+  type: Int
+  size: 11
+- field: WasPrevOB
+  description: OB from Start of Fiscal Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: CrossPRev
+  description: Cross Period Revaluation from Next Period
+  type: Num
+  size: 19.6
+- field: WasUpdPrCB
+  description: Update previous Closing Balance with cross period revaluations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - Instance

@@ -1,0 +1,182 @@
+table: USR1
+description: Short Cut
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/USR1.htm
+fields:
+- field: STATUS
+  description: Status
+  type: VarChar
+  size: 1
+- field: USERLINK
+  description: User Link
+  type: Int
+  size: 6
+  related: OUSR
+- field: MODIF01
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF02
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF03
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF04
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF05
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF06
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF07
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF08
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF09
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF10
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF11
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF12
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: MODIF13
+  description: Modifiers
+  type: nVarChar
+  size: 2
+- field: ATOMID01
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID02
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID03
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID04
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID05
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID06
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID07
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID08
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID09
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID10
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID11
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID12
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: ATOMID13
+  description: Autom. ID
+  type: Int
+  size: 11
+- field: STRID01
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID02
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID03
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID04
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID05
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID06
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID07
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID08
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID09
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID10
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID11
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID12
+  description: String ID
+  type: Int
+  size: 11
+- field: STRID13
+  description: String ID
+  type: Int
+  size: 11
+- field: RESERVED
+  description: RESERVED
+  type: nVarChar
+  size: 16
+- field: FILLER
+  description: Filler
+  type: nVarChar
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USERLINK

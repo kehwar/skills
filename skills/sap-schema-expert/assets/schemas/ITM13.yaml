@@ -1,0 +1,281 @@
+table: ITM13
+description: Asset Attributes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITM13.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: AttriTxt1
+  description: Attribute 1
+  type: nVarChar
+  size: 100
+- field: AttriTxt2
+  description: Attribute 2
+  type: nVarChar
+  size: 100
+- field: AttriTxt3
+  description: Attribute 3
+  type: nVarChar
+  size: 100
+- field: AttriTxt4
+  description: Attribute 4
+  type: nVarChar
+  size: 100
+- field: AttriTxt5
+  description: Attribute 5
+  type: nVarChar
+  size: 100
+- field: AttriTxt6
+  description: Attribute 6
+  type: nVarChar
+  size: 100
+- field: AttriTxt7
+  description: Attribute 7
+  type: nVarChar
+  size: 100
+- field: AttriTxt8
+  description: Attribute 8
+  type: nVarChar
+  size: 100
+- field: AttriTxt9
+  description: Attribute 9
+  type: nVarChar
+  size: 100
+- field: AttriTxt10
+  description: Attribute 10
+  type: nVarChar
+  size: 100
+- field: AttriTxt11
+  description: Attribute 11
+  type: nVarChar
+  size: 100
+- field: AttriTxt12
+  description: Attribute 12
+  type: nVarChar
+  size: 100
+- field: AttriTxt13
+  description: Attribute 13
+  type: nVarChar
+  size: 100
+- field: AttriTxt14
+  description: Attribute 14
+  type: nVarChar
+  size: 100
+- field: AttriTxt15
+  description: Attribute 15
+  type: nVarChar
+  size: 100
+- field: AttriTxt16
+  description: Attribute 16
+  type: nVarChar
+  size: 100
+- field: AttriTxt17
+  description: Attribute 17
+  type: nVarChar
+  size: 100
+- field: AttriTxt18
+  description: Attribute 18
+  type: nVarChar
+  size: 100
+- field: AttriTxt19
+  description: Attribute 19
+  type: nVarChar
+  size: 100
+- field: AttriTxt20
+  description: Attribute 20
+  type: nVarChar
+  size: 100
+- field: AttriTxt21
+  description: Attribute 21
+  type: nVarChar
+  size: 100
+- field: AttriTxt22
+  description: Attribute 22
+  type: nVarChar
+  size: 100
+- field: AttriTxt23
+  description: Attribute 23
+  type: nVarChar
+  size: 100
+- field: AttriTxt24
+  description: Attribute 24
+  type: nVarChar
+  size: 100
+- field: AttriTxt25
+  description: Attribute 25
+  type: nVarChar
+  size: 100
+- field: AttriTxt26
+  description: Attribute 26
+  type: nVarChar
+  size: 100
+- field: AttriTxt27
+  description: Attribute 27
+  type: nVarChar
+  size: 100
+- field: AttriTxt28
+  description: Attribute 28
+  type: nVarChar
+  size: 100
+- field: AttriTxt29
+  description: Attribute 29
+  type: nVarChar
+  size: 100
+- field: AttriTxt30
+  description: Attribute 30
+  type: nVarChar
+  size: 100
+- field: AttriTxt31
+  description: Attribute 31
+  type: nVarChar
+  size: 100
+- field: AttriTxt32
+  description: Attribute 32
+  type: nVarChar
+  size: 100
+- field: AttriInt33
+  description: Attribute 33
+  type: Int
+  size: 11
+- field: AttriInt34
+  description: Attribute 34
+  type: Int
+  size: 11
+- field: AttriInt35
+  description: Attribute 35
+  type: Int
+  size: 11
+- field: AttriInt36
+  description: Attribute 36
+  type: Int
+  size: 11
+- field: AttriInt37
+  description: Attribute 37
+  type: Int
+  size: 11
+- field: AttriInt38
+  description: Attribute 38
+  type: Int
+  size: 11
+- field: AttriInt39
+  description: Attribute 39
+  type: Int
+  size: 11
+- field: AttriInt40
+  description: Attribute 40
+  type: Int
+  size: 11
+- field: AttriInt41
+  description: Attribute 41
+  type: Int
+  size: 11
+- field: AttriInt42
+  description: Attribute 42
+  type: Int
+  size: 11
+- field: AttriDt43
+  description: Attribute 43
+  type: Date
+  size: 8
+- field: AttriDt44
+  description: Attribute 44
+  type: Date
+  size: 8
+- field: AttriDt45
+  description: Attribute 45
+  type: Date
+  size: 8
+- field: AttriDt46
+  description: Attribute 46
+  type: Date
+  size: 8
+- field: AttriDt47
+  description: Attribute 47
+  type: Date
+  size: 8
+- field: AttriAm48
+  description: Attribute 48
+  type: Num
+  size: 19.6
+- field: AttriAm49
+  description: Attribute 49
+  type: Num
+  size: 19.6
+- field: AttriAm50
+  description: Attribute 50
+  type: Num
+  size: 19.6
+- field: AttriAm51
+  description: Attribute 51
+  type: Num
+  size: 19.6
+- field: AttriAm52
+  description: Attribute 52
+  type: Num
+  size: 19.6
+- field: AttriAm53
+  description: Attribute 53
+  type: Num
+  size: 19.6
+- field: AttriAm54
+  description: Attribute 54
+  type: Num
+  size: 19.6
+- field: AttriPr55
+  description: Attribute 55
+  type: Num
+  size: 19.6
+- field: AttriPr56
+  description: Attribute 56
+  type: Num
+  size: 19.6
+- field: AttriPr57
+  description: Attribute 57
+  type: Num
+  size: 19.6
+- field: AttriPr58
+  description: Attribute 58
+  type: Num
+  size: 19.6
+- field: AttriPr59
+  description: Attribute 59
+  type: Num
+  size: 19.6
+- field: AttriQTY60
+  description: Attribute 60
+  type: Num
+  size: 19.6
+- field: AttriQTY61
+  description: Attribute 61
+  type: Num
+  size: 19.6
+- field: AttriQTY62
+  description: Attribute 62
+  type: Num
+  size: 19.6
+- field: AttriQTY63
+  description: Attribute 63
+  type: Num
+  size: 19.6
+- field: AttriQTY64
+  description: Attribute 64
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode

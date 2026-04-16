@@ -1,0 +1,34 @@
+table: SEWDQ
+description: SEWDQ
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWDQ.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry
+  type: Int
+  size: 11
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: QueryStr
+  description: The query processed string
+  type: Text
+  size: 16
+- field: NumCol
+  description: Number of column in answer
+  type: Int
+  size: 11
+- field: NumRow
+  description: Number of rows in answer
+  type: Int
+  size: 11
+- field: ResStr
+  description: The format restult string
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - CompDbNam

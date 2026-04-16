@@ -1,0 +1,25 @@
+table: SLSP
+description: SLSP
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLSP.htm
+fields:
+- field: CompID
+  description: Component ID
+  type: nVarChar
+  size: 36
+- field: CompType
+  description: Component Type
+  type: nVarChar
+  size: 50
+- field: CompIdent
+  description: Component Identity
+  type: nVarChar
+  size: 254
+- field: TimeStamp
+  description: Time Stamp
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompID

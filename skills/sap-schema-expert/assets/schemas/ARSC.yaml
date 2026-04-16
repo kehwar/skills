@@ -1,0 +1,1033 @@
+table: ARSC
+description: Resource Master Data - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ARSC.htm
+fields:
+- field: ResCode
+  description: Internal Code
+  type: nVarChar
+  size: 50
+- field: VisResCode
+  description: Resource No.
+  type: nVarChar
+  size: 50
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: CodeBars
+  description: Bar Code
+  type: nVarChar
+  size: 254
+- field: ResName
+  description: Resource Description
+  type: nVarChar
+  size: 200
+- field: FrgnName
+  description: Description in Foreign Lang.
+  type: nVarChar
+  size: 200
+- field: ResType
+  description: Resource Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Machine
+  - key: L
+    label: Labor
+  - key: O
+    label: Other
+- field: ResGrpCod
+  description: Resource Group
+  type: Int
+  size: 6
+  related: ORSB
+  default: 1
+- field: UnitOfMsr
+  description: Unit of Measure
+  type: nVarChar
+  size: 100
+- field: PrchseRes
+  description: Purchase Resource [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SellRes
+  description: Sales Resource [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ProdRes
+  description: Production Resource [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardCode
+  description: Preferred Vendor
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: NoDiscount
+  description: No Discounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IssueMthd
+  description: Issue Method
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Backflush
+  - key: M
+    label: Manual
+- field: StdCost1
+  description: Resource Cost 1
+  type: Num
+  size: 19.6
+- field: StdCost2
+  description: Resource Cost 2
+  type: Num
+  size: 19.6
+- field: StdCost3
+  description: Resource Cost 3
+  type: Num
+  size: 19.6
+- field: StdCost4
+  description: Resource Cost 4
+  type: Num
+  size: 19.6
+- field: StdCost5
+  description: Resource Cost 5
+  type: Num
+  size: 19.6
+- field: StdCost6
+  description: Resource Cost 6
+  type: Num
+  size: 19.6
+- field: StdCost7
+  description: Resource Cost 7
+  type: Num
+  size: 19.6
+- field: StdCost8
+  description: Resource Cost 8
+  type: Num
+  size: 19.6
+- field: StdCost9
+  description: Resource Cost 9
+  type: Num
+  size: 19.6
+- field: StdCost10
+  description: Resource Cost 10
+  type: Num
+  size: 19.6
+- field: validFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: validTo
+  description: Active To
+  type: Date
+  size: 8
+- field: frozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: frozenFrom
+  description: Inactive From
+  type: Date
+  size: 8
+- field: frozenTo
+  description: Inactive To
+  type: Date
+  size: 8
+- field: DfltWH
+  description: Default Warehouse
+  type: nVarChar
+  size: 8
+- field: QueryGroup
+  description: Properties
+  type: Int
+  size: 11
+  default: 0
+- field: PicturName
+  description: Picture
+  type: nVarChar
+  size: 200
+- field: UserText
+  description: Item Remarks
+  type: Text
+  size: 16
+- field: QryGroup1
+  description: Property 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup2
+  description: Property 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup3
+  description: Property 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup4
+  description: Property 4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup5
+  description: Property 5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup6
+  description: Property 6
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup7
+  description: Property 7
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup8
+  description: Property 8
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup9
+  description: Property 9
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup10
+  description: Property 10
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup11
+  description: Property 11
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup12
+  description: Property 12
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup13
+  description: Property 13
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup14
+  description: Property 14
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup15
+  description: Property 15
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup16
+  description: Property 16
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup17
+  description: Property 17
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup18
+  description: Property 18
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup19
+  description: Property 19
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup20
+  description: Property 20
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup21
+  description: Property 21
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup22
+  description: Property 22
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup23
+  description: Property 23
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup24
+  description: Property 24
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup25
+  description: Property 25
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup26
+  description: Property 26
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup27
+  description: Property 27
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup28
+  description: Property 28
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup29
+  description: Property 29
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup30
+  description: Property 30
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup31
+  description: Property 31
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup32
+  description: Property 32
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup33
+  description: Property 33
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup34
+  description: Property 34
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup35
+  description: Property 35
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup36
+  description: Property 36
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup37
+  description: Property 37
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup38
+  description: Property 38
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup39
+  description: Property 39
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup40
+  description: Property 40
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup41
+  description: Property 41
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup42
+  description: Property 42
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup43
+  description: Property 43
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup44
+  description: Property 44
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup45
+  description: Property 45
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup46
+  description: Property 46
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup47
+  description: Property 47
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup48
+  description: Property 48
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup49
+  description: Property 49
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup50
+  description: Property 50
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup51
+  description: Property 51
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup52
+  description: Property 52
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup53
+  description: Property 53
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup54
+  description: Property 54
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup55
+  description: Property 55
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup56
+  description: Property 56
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup57
+  description: Property 57
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup58
+  description: Property 58
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup59
+  description: Property 59
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup60
+  description: Property 60
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup61
+  description: Property 61
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup62
+  description: Property 62
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup63
+  description: Property 63
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QryGroup64
+  description: Property 64
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Date of Creation
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: ValidComm
+  description: Active Remarks
+  type: nVarChar
+  size: 30
+- field: FrozenComm
+  description: Inactive Remarks
+  type: nVarChar
+  size: 30
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '290'
+- field: Deleted
+  description: Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: LastPurPrc
+  description: Last Purchase Price
+  type: Num
+  size: 19.6
+- field: LastPurCur
+  description: Last Purchase Currency
+  type: nVarChar
+  size: 3
+- field: LastPurDat
+  description: Last Purchase Date
+  type: Date
+  size: 8
+- field: LstEvlPric
+  description: Last Evaluated Price
+  type: Num
+  size: 19.6
+- field: LstEvlDate
+  description: Date of Last Reval. Price
+  type: Date
+  size: 8
+- field: NumResUnit
+  description: No. of Resource Units
+  type: Int
+  size: 11
+  default: 1
+- field: TimeResUn
+  description: Time per Resource Units
+  type: Int
+  size: 11
+- field: ResAlloc
+  description: Resource Allocation
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: On Start Date
+  - key: D
+    label: On End Date
+  - key: F
+    label: Start Date Forwards
+  - key: B
+    label: End Date Backwards
+- field: LinkItm
+  description: Linked Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: RelCap1
+  description: Relevant to single run capacity 1
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RelCap2
+  description: Relevant to single run capacity 2
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RelCap3
+  description: Relevant to single run capacity 3
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RelCap4
+  description: Relevant to single run capacity 4
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResCode
+  - LogInstanc
+- key: ITEM_NAME
+  unique: false
+  fields:
+  - ResName
+- key: SALE
+  unique: false
+  fields:
+  - PrchseRes
+- key: PURCHASE
+  unique: false
+  fields:
+  - SellRes
+- key: PRODUCTION
+  unique: false
+  fields:
+  - ProdRes

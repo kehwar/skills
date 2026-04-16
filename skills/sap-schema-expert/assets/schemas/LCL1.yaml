@@ -1,0 +1,18 @@
+table: LCL1
+description: Localization languages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/LCL1.htm
+fields:
+- field: LoclKey
+  description: Locl Key
+  type: Int
+  size: 11
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LoclKey
+  - Language

@@ -1,0 +1,39 @@
+table: PCI1
+description: Process Checklist Element Extended Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/PCI1.htm
+fields:
+- field: InstancePk
+  description: Instance Primary Key
+  type: Int
+  size: 11
+  related: OPCI
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: BPMNElId
+  description: BPMN Model Element ID
+  type: nVarChar
+  size: 254
+- field: BPMNElDes
+  description: BPMN Model Element Description
+  type: nVarChar
+  size: 254
+- field: ParamType
+  description: Parameter Type
+  type: nVarChar
+  size: 254
+- field: ParamKey
+  description: Parameter Key
+  type: nVarChar
+  size: 254
+- field: ParamVal
+  description: Parameter Value
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - InstancePk
+  - LineNum

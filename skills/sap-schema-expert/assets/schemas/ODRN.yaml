@@ -1,0 +1,173 @@
+table: ODRN
+description: Depreciation Run
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ODRN.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: DprArea
+  description: Depreciation Area ID
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: S
+    label: Depreciation Posted
+  - key: N
+    label: No Depreciation Posted
+  - key: C
+    label: Canceled
+  - key: F
+    label: Failed
+  - key: D
+    label: ''
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: PeriodCat
+  description: Period Category ID
+  type: nVarChar
+  size: 10
+- field: PostPeriod
+  description: Posting Subperiod
+  type: Int
+  size: 11
+- field: KeyDate
+  description: Key Date
+  type: Date
+  size: 8
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 32
+- field: NumOfJEs
+  description: No. of Journal Entries
+  type: Int
+  size: 11
+- field: SumOfDpr
+  description: Sum of Depreciation
+  type: Num
+  size: 19.6
+- field: SumByPro
+  description: Summarize by Project
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SumByDistr
+  description: Summarize by Distribution Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TransType
+  description: Generate Document
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: None
+  - key: '18'
+    label: A/P Invoice
+- field: TransAbs
+  description: Generate Doc. Abs. Entry
+  type: Int
+  size: 11
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VatRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year of Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: NUM
+  unique: false
+  fields:
+  - DocNum

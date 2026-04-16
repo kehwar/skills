@@ -1,0 +1,51 @@
+table: SEWUS
+description: SEWUS
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWUS.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry
+  type: Int
+  size: 11
+- field: CompanyNam
+  description: CompanyName
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+- field: CustNumber
+  description: Customer Number
+  type: VarChar
+  size: 1
+- field: CompDbName
+  description: Company DB Name
+  type: nVarChar
+  size: 200
+- field: EwaUserCod
+  description: Ewa User Code
+  type: nVarChar
+  size: 16
+- field: EwaUserNam
+  description: Ewa User Name
+  type: nVarChar
+  size: 16
+- field: EwaUserSup
+  description: Ewa Is super user
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

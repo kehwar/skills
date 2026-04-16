@@ -1,0 +1,36 @@
+table: ECLGT
+description: ECLGT
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ECLGT.htm
+fields:
+- field: Id
+  description: transaction id
+  type: nVarChar
+  size: 100
+- field: TableName
+  description: db table name
+  type: nVarChar
+  size: 50
+- field: TableId
+  description: id field within db table
+  type: nVarChar
+  size: 100
+- field: CfgCol
+  description: column within db table
+  type: nVarChar
+  size: 50
+- field: OldValue
+  description: ''
+  type: nVarChar
+  size: 254
+- field: NewValue
+  description: ''
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+  - TableName
+  - TableId
+  - CfgCol

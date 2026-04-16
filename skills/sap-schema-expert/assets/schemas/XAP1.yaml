@@ -1,0 +1,26 @@
+table: XAP1
+description: Page of XAPP
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XAP1.htm
+fields:
+- field: AbsEntry
+  description: Key of page
+  type: Int
+  size: 11
+- field: XAPEntry
+  description: Foreign key of XAPP
+  type: Int
+  size: 11
+- field: Name
+  description: Page name
+  type: nVarChar
+  size: 250
+- field: Default
+  description: Is default or not
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

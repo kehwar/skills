@@ -1,0 +1,36 @@
+table: OIST
+description: BoE Instruction
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OIST.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: InstrCode
+  description: Instruction
+  type: nVarChar
+  size: 2
+- field: InstrDespt
+  description: Description
+  type: nVarChar
+  size: 128
+- field: IsCancel
+  description: Is Cancellation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - InstrCode
+  - IsCancel

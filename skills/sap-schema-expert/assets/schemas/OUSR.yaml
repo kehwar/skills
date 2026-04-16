@@ -1,0 +1,953 @@
+table: OUSR
+description: Users
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUSR.htm
+fields:
+- field: USERID
+  description: User Signature
+  type: Int
+  size: 6
+- field: PASSWORD
+  description: User Password
+  type: nVarChar
+  size: 254
+  default: '0'
+- field: PASSWORD1
+  description: User Password
+  type: nVarChar
+  size: 8
+- field: PASSWORD2
+  description: User Password
+  type: nVarChar
+  size: 8
+- field: INTERNAL_K
+  description: Internal Number
+  type: Int
+  size: 6
+- field: USER_CODE
+  description: User Code
+  type: nVarChar
+  size: 25
+- field: U_NAME
+  description: User Name
+  type: nVarChar
+  size: 155
+- field: GROUPS
+  description: User Group
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Regular
+  - key: '99'
+    label: Deleted
+- field: PASSWORD4
+  description: Password
+  type: nVarChar
+  size: 254
+- field: ALLOWENCES
+  description: User Confirmation
+  type: Text
+  size: 16
+- field: SUPERUSER
+  description: Superuser
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DISCOUNT
+  description: Max. Discount
+  type: Num
+  size: 19.6
+- field: PASSWORD3
+  description: User Password
+  type: nVarChar
+  size: 8
+- field: Info1File
+  description: Info1File
+  type: nVarChar
+  size: 4
+- field: Info1Field
+  description: Info1Field
+  type: Int
+  size: 6
+- field: Info2File
+  description: Info2File
+  type: nVarChar
+  size: 4
+- field: Info2Field
+  description: Info2Field
+  type: Int
+  size: 6
+- field: Info3File
+  description: Info3File
+  type: nVarChar
+  size: 4
+- field: Info3Field
+  description: Info3Field
+  type: Int
+  size: 6
+- field: Info4File
+  description: Info4File
+  type: nVarChar
+  size: 4
+- field: Info4Field
+  description: Info4Field
+  type: Int
+  size: 6
+- field: dType
+  description: dType
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: X
+    label: ''
+  - key: H
+    label: SHA1
+  - key: S
+    label: SHA256
+- field: E_Mail
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: PortNum
+  description: Mobile Phone Number
+  type: nVarChar
+  size: 50
+- field: OutOfOffic
+  description: Out of Office
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SendEMail
+  description: Send E-Mail
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SendSMS
+  description: Send SMS
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DfltsGroup
+  description: Defaults
+  type: nVarChar
+  size: 8
+  related: OUDG
+- field: CashLimit
+  description: Cash Amount Limit
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MaxCashSum
+  description: Max. Cash Total
+  type: Num
+  size: 19.6
+- field: Fax
+  description: Fax Number
+  type: nVarChar
+  size: 50
+- field: SendFax
+  description: Send Fax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Locked
+  description: User Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Department
+  description: Department
+  type: Int
+  size: 6
+  related: OUDP
+  default: -2
+- field: Branch
+  description: Branch
+  type: Int
+  size: 6
+  related: OUBR
+  default: -2
+- field: UserPrefs
+  description: User Preferences
+  type: Text
+  size: 16
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+- field: Charset
+  description: Font Language
+  type: Int
+  size: 6
+- field: OpenCdt
+  description: Open Window for Credit Reference
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CdtPrvDays
+  description: Vouchers from Last Days
+  type: Int
+  size: 11
+  default: 1
+- field: DsplyRates
+  description: Display Rate Table on start up
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AuImpRates
+  description: Import Currency Rates Automatically
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OpenDps
+  description: Open Postdated Checks Window
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RcrFlag
+  description: Display Transactions Scheduled for Today
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckFiles
+  description: File Check
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OpenCredit
+  description: Open Postdated Credit Vouchers Window
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: Always
+  - key: N
+    label: 'No'
+  - key: D
+    label: By Date
+- field: CreditDay1
+  description: Credit Handling Day 1
+  type: Int
+  size: 6
+  default: 1
+- field: CreditDay2
+  description: Credit Handling Day 2
+  type: Int
+  size: 6
+  default: 15
+- field: WallPaper
+  description: Wallpaper
+  type: Text
+  size: 16
+- field: WllPprDsp
+  description: Wallpaper Display
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Centralized
+  - key: '2'
+    label: Full Screen
+  - key: '3'
+    label: Tile
+- field: AdvImagePr
+  description: Extended Image Processing
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Partial
+  - key: O
+    label: Without
+  - key: Y
+    label: Full
+- field: ContactLog
+  description: Today's Activity Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LastWarned
+  description: Last Warned Date
+  type: Date
+  size: 8
+- field: AlertPolFr
+  description: Message Check Frequency
+  type: Int
+  size: 6
+  default: 5
+- field: ScreenLock
+  description: Screen Lock Delay
+  type: Int
+  size: 6
+  default: 30
+- field: ShowNewMsg
+  description: Open Message on Arrival
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Picture
+  description: Picture
+  type: nVarChar
+  size: 200
+- field: Position
+  description: Position
+  type: nVarChar
+  size: 90
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: Tel1
+  description: Telephone 1
+  type: nVarChar
+  size: 50
+- field: Tel2
+  description: Telephone 2
+  type: nVarChar
+  size: 50
+- field: GENDER
+  description: Gender
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: Female
+  - key: M
+    label: Male
+- field: Birthday
+  description: Birthday
+  type: Date
+  size: 8
+- field: EnbMenuFlt
+  description: Enable Forbidden Menu Items
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: objType
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '12'
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: userSign
+  description: Creating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: OneLogPwd
+  description: At first logon change password
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: Password should not be changed at first login
+  - key: Y
+    label: Password should be changed at first login
+- field: lastLogin
+  description: Last Logon Date
+  type: Date
+  size: 8
+- field: LastPwds
+  description: Last Passwords 1
+  type: Text
+  size: 16
+- field: LastPwds2
+  description: Last Passwords 2
+  type: nVarChar
+  size: 254
+  default: '0'
+- field: LastPwdSet
+  description: Last Password Change
+  type: Date
+  size: 8
+- field: FailedLog
+  description: Failed Login Count
+  type: Int
+  size: 11
+  default: 0
+- field: PwdNeverEx
+  description: Password Never Expires
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalesDisc
+  description: Max. Sales Discount
+  type: Num
+  size: 19.6
+- field: PurchDisc
+  description: Max. Purchase Discount
+  type: Num
+  size: 19.6
+- field: LstLogoutD
+  description: Last Logoff Date
+  type: Date
+  size: 8
+- field: LstLoginT
+  description: Last Logon Time
+  type: Int
+  size: 11
+- field: LstLogoutT
+  description: Last Logoff Time
+  type: Int
+  size: 11
+- field: LstPwdChT
+  description: Last Password Change Time
+  type: Int
+  size: 11
+- field: LstPwdChB
+  description: Last Password Changed By
+  type: nVarChar
+  size: 25
+- field: RclFlag
+  description: Display Recurring Transactions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MobileUser
+  description: Mobile User
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MobileIMEI
+  description: Mobile IMEI
+  type: nVarChar
+  size: 64
+- field: PrsWkCntEb
+  description: Personal Work Center Enable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SnapShotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: STData
+  description: User Password Salt
+  type: nVarChar
+  size: 40
+- field: SupportUsr
+  description: Support User
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: NoSTPwdNum
+  description: Password encrypted w/o Salt (cryptography)
+  type: Int
+  size: 6
+  default: 0
+- field: DomainUser
+  description: Domain user name bound in SLD
+  type: nVarChar
+  size: 50
+- field: CUSAgree
+  description: CUS Agreement
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EmailSig
+  description: E-Mail Signature
+  type: Text
+  size: 16
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: DigCrtPath
+  description: Digital Certificate Path
+  type: Text
+  size: 16
+- field: ShowNewTsk
+  description: Open Worklist on Task Arrival
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IntgrtEb
+  description: Enable Setting Integration
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AllBrnchF
+  description: Allow Viewing of All (Including Unassigned To) Branches in Financial
+    Reports
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EvtNotify
+  description: Allow Event Notification
+  type: VarChar
+  size: 1
+  default: Y
+- field: IgnDtOwn
+  description: Ignore Data Ownership for this user
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnterAsTab
+  description: Use Numeric Keypad Enter Key as Tab Key
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DotAsSep
+  description: Use Del Key As Separator
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MouseOnly
+  description: Document Operation by Mouse Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Color
+  description: Company Color
+  type: Int
+  size: 6
+  constraints:
+  - key: '0'
+    label: Combined
+  - key: '1'
+    label: Classic
+  - key: '2'
+    label: Gray
+  - key: '3'
+    label: Violet
+  - key: '4'
+    label: Blue
+  - key: '5'
+    label: Green
+  - key: '6'
+    label: Yellow
+  - key: '7'
+    label: Orange
+  - key: '8'
+    label: Red
+  - key: '9'
+    label: Brown
+- field: SkinType
+  description: Skin Type
+  type: nVarChar
+  size: 254
+- field: Font
+  description: Font
+  type: nVarChar
+  size: 50
+- field: FontSize
+  description: Font Size
+  type: Int
+  size: 11
+- field: NaturalPer
+  description: Natural Person
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+  - key: B
+    label: Blocked
+  - key: U
+    label: Unblocked
+- field: AutoAsnBPL
+  description: Auto. Assign Branches
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: HandleEDoc
+  description: Can Process Electronic Documents
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShowLicBal
+  description: Show License Balloon
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LicBaHDate
+  description: License Balloon Hiding Date
+  type: Date
+  size: 8
+- field: ShowFstMsg
+  description: Show Only Part of Message
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShowMsgNum
+  description: The Number of Message to Show
+  type: Int
+  size: 11
+  default: 100
+- field: LastClean
+  description: Last Cleanup Date
+  type: Date
+  size: 8
+- field: CleanChb
+  description: Checkbox of Message Cleanup
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CleanIbx
+  description: Checkbox of Cleanup Inbox
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CleanObx
+  description: Checkbox of Cleanup Outbox
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CleanSnt
+  description: Checkbox of Cleanup Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: validFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: validTo
+  description: Active To
+  type: Date
+  size: 8
+- field: frozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: frozenFrom
+  description: Inactive From
+  type: Date
+  size: 8
+- field: frozenTo
+  description: Inactive To
+  type: Date
+  size: 8
+- field: ValidComm
+  description: Remarks for Active Period
+  type: nVarChar
+  size: 30
+- field: FrozenComm
+  description: Remarks for Inactive Period
+  type: nVarChar
+  size: 30
+- field: AprvDsnc
+  description: Approval Decision Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReqAprvl
+  description: Requests for Approval Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RnwBlktA
+  description: Renew Blanket Agreement Reminders Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SvcClRem
+  description: Service Call Reminders Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SvcClAsn
+  description: Service Call Assignments Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WzdTsk
+  description: Wizard Tasks Notification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USERID
+- key: PASSWORD
+  unique: false
+  fields:
+  - PASSWORD
+- key: USER_CODE
+  unique: true
+  fields:
+  - USER_CODE
+- key: INTERNAL
+  unique: true
+  fields:
+  - INTERNAL_K

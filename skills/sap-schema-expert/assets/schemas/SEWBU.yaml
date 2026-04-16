@@ -1,0 +1,61 @@
+table: SEWBU
+description: SEWBU
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWBU.htm
+fields:
+- field: AbsEntry
+  description: AbsEntry
+  type: Int
+  size: 11
+- field: CompanyNam
+  description: CompanyName
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+- field: CustNumber
+  description: Customer Number
+  type: VarChar
+  size: 1
+- field: CompDbName
+  description: Company DB Name
+  type: nVarChar
+  size: 200
+- field: DateFrom
+  description: Bck Date From
+  type: nVarChar
+  size: 10
+- field: StartDate
+  description: Bck start date
+  type: nVarChar
+  size: 10
+- field: FinishDate
+  description: Bck finish date
+  type: nVarChar
+  size: 10
+- field: Size
+  description: Bck size
+  type: Int
+  size: 11
+- field: LogSize
+  description: Bck Log Size
+  type: Int
+  size: 11
+- field: DbVersion
+  description: Db Version
+  type: nVarChar
+  size: 32
+- field: CodePage
+  description: Code Page
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

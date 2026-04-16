@@ -1,0 +1,39 @@
+table: OFAI
+description: Microsoft 365 Application Identity
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFAI.htm
+fields:
+- field: ID
+  description: ID
+  type: nVarChar
+  size: 254
+- field: APP_ID
+  description: Microsoft 365 Application ID
+  type: nVarChar
+  size: 254
+- field: APP_PASS
+  description: Microsoft 365 Application Secret
+  type: nVarChar
+  size: 254
+- field: SUP_ACCT
+  description: Supported Account Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: S
+    label: Single Tenant
+  - key: M
+    label: Multiple Tenant
+  - key: A
+    label: Multiple Tenant and Personal Account
+  - key: P
+    label: Personal Account Only
+- field: TENANT_ID
+  description: Microsoft 365 Tenant ID
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

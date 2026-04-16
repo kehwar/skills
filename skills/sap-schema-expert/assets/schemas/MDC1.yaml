@@ -1,0 +1,87 @@
+table: MDC1
+description: Master Data Cleanup - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MDC1.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OMDC
+- field: LineID
+  description: Line ID
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: ObjectKey
+  description: Object Key
+  type: nVarChar
+  size: 20
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 200
+- field: LastDate
+  description: Last Transaction Date
+  type: Date
+  size: 8
+- field: Action
+  description: Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Remove
+  - key: D
+    label: Deactivate
+- field: ObjectCode
+  description: Object Code
+  type: nVarChar
+  size: 100
+- field: ActFailed
+  description: Action Failed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OrigAction
+  description: Original Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Remove
+  - key: D
+    label: Deactivate
+- field: SubObjType
+  description: Subobject Type
+  type: nVarChar
+  size: 20
+- field: SubObjKey
+  description: Subobject Key
+  type: nVarChar
+  size: 50
+- field: SubObjNam1
+  description: Subobject Name 1
+  type: nVarChar
+  size: 50
+- field: SubObjNam2
+  description: Subobject Name 2
+  type: nVarChar
+  size: 50
+- field: SubObjNam3
+  description: Subobject Name 3
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID

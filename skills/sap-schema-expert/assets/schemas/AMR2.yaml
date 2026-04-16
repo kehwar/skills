@@ -1,0 +1,110 @@
+table: AMR2
+description: Inventory Revaluation FIFO Rows (Archive)
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AMR2.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: MRV1
+- field: BaseLine
+  description: Base Row Number
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: RToStock
+  description: Reval. Amount Posted to Stock
+  type: Num
+  size: 19.6
+- field: RActPrice
+  description: Inventory Reval. Current Cost
+  type: Num
+  size: 19.6
+- field: INMTransNm
+  description: INM Transaction Number
+  type: Int
+  size: 11
+  related: OINM
+- field: INMInst
+  description: INM Instance
+  type: Int
+  size: 11
+  related: OINM
+- field: INMTransTy
+  description: INM Transaction Type
+  type: Int
+  size: 11
+  related: OINM
+  default: -1
+- field: INMCreatBy
+  description: INM Document Key Created
+  type: Int
+  size: 11
+  related: OINM
+- field: INMBaseRef
+  description: INM Base Reference
+  type: nVarChar
+  size: 11
+  related: OINM
+- field: INMDocDate
+  description: INM Posting Date
+  type: Date
+  size: 8
+  related: OINM
+- field: INMOpenQty
+  description: INM Open Quantity
+  type: Num
+  size: 19.6
+  related: OINM
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '162'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: IVLTransSe
+  description: IVL Transaction Sequence No.
+  type: Int
+  size: 11
+  default: -1
+- field: IVLLayerID
+  description: IVL Layer ID
+  type: Int
+  size: 11
+  default: -1
+- field: INMLineNum
+  description: INM Row Number in Document
+  type: Int
+  size: 11
+  related: OINM
+- field: INMSubLine
+  description: INM Subrow Number
+  type: Int
+  size: 11
+  related: OINM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - BaseLine
+  - LineNum

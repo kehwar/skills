@@ -1,0 +1,110 @@
+table: VRT2
+description: Tax Invoice Report Grid Info
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/VRT2.htm
+fields:
+- field: TxInvRptNo
+  description: Tax Invoice Report No.
+  type: nVarChar
+  size: 10
+  related: OVRT
+- field: GridRow
+  description: Grid Row Number
+  type: Int
+  size: 11
+- field: BPLId
+  description: Business Place ID
+  type: Int
+  size: 11
+- field: BPCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: BPName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: DocDate
+  description: Doc. Date
+  type: Date
+  size: 8
+- field: ItemNo
+  description: Item Number
+  type: nVarChar
+  size: 50
+- field: ItemDes
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: ItemQty
+  description: Item Quantity
+  type: Num
+  size: 19.6
+- field: ItemPrice
+  description: Item Price
+  type: Num
+  size: 19.6
+- field: BaseAmt
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: TaxAmt
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: LineType
+  description: Row Type
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Unique Document ID
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '203'
+    label: A/R Down Payment
+- field: LineNum
+  description: Item Row Number
+  type: Int
+  size: 11
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: LegacyData
+  description: Legacy Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TxInvRptNo
+  - GridRow

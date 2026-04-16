@@ -1,0 +1,260 @@
+table: OCHH
+description: Check Register
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OCHH.htm
+fields:
+- field: CheckKey
+  description: Check Key
+  type: Int
+  size: 11
+- field: CheckNum
+  description: Check Number
+  type: Int
+  size: 11
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+- field: Branch
+  description: Branch Number
+  type: nVarChar
+  size: 50
+- field: CashCheck
+  description: Check Register Account
+  type: nVarChar
+  size: 15
+- field: CheckDate
+  description: Check Date
+  type: Date
+  size: 8
+- field: Details
+  description: Details
+  type: nVarChar
+  size: 20
+- field: CardCode
+  description: BP/Account Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: RcptDate
+  description: Receipt Date
+  type: Date
+  size: 8
+- field: RcptNum
+  description: Receipt Number
+  type: Int
+  size: 11
+  related: ORCT
+- field: CheckSum
+  description: Check Amount
+  type: Num
+  size: 19.6
+- field: Trnsfrable
+  description: Negotiable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Deposited
+  description: Deposited
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: C
+    label: As Cash
+  - key: N
+    label: 'No'
+  - key: S
+    label: As Postdated
+- field: Converted
+  description: Endorsed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Vendor
+  description: Endorsed for
+  type: nVarChar
+  size: 15
+- field: TransNum
+  description: Payment Transaction
+  type: Int
+  size: 11
+- field: DepNum2
+  description: Postdated Deposit Key
+  type: Int
+  size: 11
+  related: ODPT
+  default: 0
+- field: DpstAbs
+  description: Payment Internal ID
+  type: Int
+  size: 11
+  related: ODPS
+- field: BankAcct
+  description: Deposit Account
+  type: nVarChar
+  size: 15
+- field: AcctNum
+  description: Account Number
+  type: nVarChar
+  size: 50
+- field: Currency
+  description: Check Currency
+  type: nVarChar
+  size: 3
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RcptLineId
+  description: Row Number in Receipt
+  type: Int
+  size: 11
+- field: Transfered
+  description: Postponed to Next Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: UserID
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: BankCountr
+  description: Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: CanceJEAbs
+  description: Cancellation Journal Entry
+  type: Int
+  size: 11
+  related: OJDT
+- field: TempJEAbs
+  description: Temp. Journal Entry
+  type: Int
+  size: 11
+- field: CardName
+  description: BP/Account Name
+  type: nVarChar
+  size: 200
+- field: FiscalID
+  description: Fiscal ID
+  type: nVarChar
+  size: 100
+- field: OrigIssdBy
+  description: Orginally Issued By
+  type: nVarChar
+  size: 254
+- field: RejeByBank
+  description: Rejected by Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnAcctNum
+  description: Encryption of Account Number
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CheckKey
+- key: RECEIPT
+  unique: false
+  fields:
+  - RcptNum
+  - RcptLineId
+- key: DEP_ABS1
+  unique: false
+  fields:
+  - DpstAbs
+- key: CHECK_NUM
+  unique: false
+  fields:
+  - CheckNum
+- key: DEP_ABS2
+  unique: false
+  fields:
+  - DepNum2

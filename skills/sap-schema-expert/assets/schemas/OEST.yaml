@@ -1,0 +1,41 @@
+table: OEST
+description: EWB Sub-Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OEST.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SubID
+  description: EWB Sub-Type Code
+  type: Int
+  size: 11
+- field: SubType
+  description: Sub supply type of e-way bill
+  type: nVarChar
+  size: 50
+- field: SuplyType
+  description: EWB Supply Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Both
+  - key: I
+    label: Inward
+  - key: O
+    label: Outward
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SUB_TYPE
+  unique: true
+  fields:
+  - SubID
+- key: SUPLY_TYPE
+  unique: false
+  fields:
+  - SuplyType

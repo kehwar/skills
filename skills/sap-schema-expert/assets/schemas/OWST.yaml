@@ -1,0 +1,41 @@
+table: OWST
+description: Confirmation Level
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWST.htm
+fields:
+- field: WstCode
+  description: Stage
+  type: Int
+  size: 11
+  related: OWST
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Remarks
+  description: Description
+  type: nVarChar
+  size: 100
+- field: MaxReqr
+  description: No. of Authorizers
+  type: Int
+  size: 6
+  default: 1
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: MaxRejReqr
+  description: No. of Rejects
+  type: Int
+  size: 6
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WstCode
+- key: NAME
+  unique: true
+  fields:
+  - Name

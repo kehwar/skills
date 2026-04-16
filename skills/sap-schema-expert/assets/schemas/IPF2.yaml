@@ -1,0 +1,136 @@
+table: IPF2
+description: Landed Costs - Costs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IPF2.htm
+fields:
+- field: DocEntry
+  description: Landed Costs Internal ID
+  type: Int
+  size: 11
+  related: OIPF
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: AlcCode
+  description: Cost Code
+  type: nVarChar
+  size: 2
+  related: OALC
+- field: OhType
+  description: Load by
+  type: VarChar
+  size: 1
+  constraints:
+  - key: F
+    label: Cash Value Before Customs
+  - key: C
+    label: Cash Value After Customs
+  - key: Q
+    label: Quantity
+  - key: W
+    label: Weight
+  - key: V
+    label: Volume
+  - key: A
+    label: Equal
+  - key: L
+    label: Legal Cost
+- field: CostSum
+  description: Total Costs
+  type: Num
+  size: 19.6
+- field: CostSumFC
+  description: Total Costs (FC)
+  type: Num
+  size: 19.6
+- field: Factor
+  description: Factor
+  type: Num
+  size: 19.6
+- field: CostType
+  description: Cost Type
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: Fixed Costs
+  - key: V
+    label: Variable Costs
+  - key: L
+    label: Legal Costs
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LaCAllcAcc
+  description: Landed Costs Alloc. Account
+  type: nVarChar
+  size: 15
+- field: CostSumSC
+  description: Total Costs (SC)
+  type: Num
+  size: 19.6
+- field: InCustCalc
+  description: Included in Customs Calc
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OpenCost
+  description: Open Costs
+  type: Num
+  size: 19.6
+- field: OpenCostFC
+  description: Open Costs (FC)
+  type: Num
+  size: 19.6
+- field: OpenCostSC
+  description: Open Costs (SC)
+  type: Num
+  size: 19.6
+- field: AgentCode
+  description: Subst. Code
+  type: nVarChar
+  size: 15
+- field: AgentName
+  description: Subst. Name
+  type: nVarChar
+  size: 100
+- field: CostCateg
+  description: Cost Category
+  type: VarChar
+  size: 1
+  constraints:
+  - key: V
+    label: Customs VAT
+  - key: E
+    label: Excise Cost
+  - key: D
+    label: Customs Duty
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - AlcCode
+  - CostType
+- key: NUM
+  unique: false
+  fields:
+  - DocEntry
+  - LineNum

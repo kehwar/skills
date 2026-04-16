@@ -1,0 +1,238 @@
+table: OCTG
+description: Payment Terms
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OCTG.htm
+fields:
+- field: GroupNum
+  description: Group Number
+  type: Int
+  size: 6
+- field: PymntGroup
+  description: Payment Terms Code
+  type: nVarChar
+  size: 100
+- field: PayDuMonth
+  description: Start From
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: E
+    label: Month End
+  - key: H
+    label: Half Month
+  - key: Y
+    label: Month Start
+  - key: N
+    label: Selected Date
+- field: ExtraMonth
+  description: Number of Additional Months
+  type: Int
+  size: 6
+  default: 0
+- field: ExtraDays
+  description: Number of Additional Days
+  type: Int
+  size: 6
+  default: 0
+- field: PaymntsNum
+  description: Number of Payments
+  type: Int
+  size: 6
+- field: CredLimit
+  description: Max. Credit
+  type: Num
+  size: 19.6
+- field: VolumDscnt
+  description: Total Discount %
+  type: Num
+  size: 19.6
+- field: LatePyChrg
+  description: Interest % on Receivables
+  type: Num
+  size: 19.6
+- field: ObligLimit
+  description: Commitment Limit
+  type: Num
+  size: 19.6
+- field: ListNum
+  description: Price List
+  type: Int
+  size: 6
+  related: OPLN
+- field: Payments
+  description: Partial Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NumOfPmnts
+  description: Number of Payments
+  type: Int
+  size: 6
+  default: 1
+- field: Payment1
+  description: First Partial Payment
+  type: Num
+  size: 19.6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: OpenRcpt
+  description: Open Incoming Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: '3'
+    label: Cash
+  - key: '1'
+    label: Checks
+  - key: '4'
+    label: Credit
+  - key: '2'
+    label: Bank Transfer
+  - key: '5'
+    label: Bill of Exchange
+- field: DiscCode
+  description: Discount Code
+  type: nVarChar
+  size: 20
+  related: OCDC
+- field: DunningCod
+  description: Dunning Code
+  type: nVarChar
+  size: 20
+  related: ORIT
+- field: BslineDate
+  description: Due Date Based on
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: P
+    label: Posting Date
+  - key: S
+    label: System Date
+  - key: T
+    label: Document Date
+  - key: C
+    label: Closing Date
+- field: InstNum
+  description: No. of Installments
+  type: Int
+  size: 6
+- field: TolDays
+  description: No. of Tolerance Days
+  type: Int
+  size: 6
+- field: VATFirst
+  description: Apply Tax on 1st Installment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: T
+    label: Tax Only
+- field: CrdMthd
+  description: Credit Method
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: F
+    label: First Installment
+  - key: L
+    label: Last Installment
+  - key: E
+    label: Equally
+- field: CshRelev
+  description: Cash Relevant Transaction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign2
+  description: Update User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: PDueMonEnd
+  description: End On
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: E
+    label: End of Month
+  - key: H
+    label: Middle of Month
+  - key: Y
+    label: Start of Month
+  - key: N
+    label: None
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupNum
+- key: ABS_ENTRY
+  unique: true
+  fields:
+  - PymntGroup

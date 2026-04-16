@@ -1,0 +1,25 @@
+table: OCFX
+description: Cash Flow Forecast Object Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCFX.htm
+fields:
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: Level
+  description: Level
+  type: Int
+  size: 11
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 100
+- field: Group
+  description: Group
+  type: nVarChar
+  size: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjType

@@ -1,0 +1,91 @@
+table: OLGL
+description: Legal Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OLGL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '540000073'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PrintDate
+  description: Date of Printing
+  type: Date
+  size: 8
+- field: PrintTime
+  description: Time of Printing
+  type: Int
+  size: 6
+- field: PrBrand
+  description: Printer Brand
+  type: nVarChar
+  size: 30
+- field: PrType
+  description: Printer Type
+  type: nVarChar
+  size: 30
+- field: PrModel
+  description: Printer Model
+  type: nVarChar
+  size: 30
+- field: PrFwVer
+  description: Printer Firmware Version
+  type: nVarChar
+  size: 30
+- field: PrDllVer
+  description: Printer DLL Version
+  type: nVarChar
+  size: 30
+- field: FisSeries
+  description: Fiscal Series
+  type: nVarChar
+  size: 30
+- field: FisNumber
+  description: Fiscal Number
+  type: nVarChar
+  size: 30
+- field: DocNumber
+  description: Document Number
+  type: nVarChar
+  size: 30
+- field: FisUser
+  description: Fiscal User ID
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SRC_DOC
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcObjAbs

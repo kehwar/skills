@@ -1,0 +1,666 @@
+table: OPEX
+description: Payment Results Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OPEX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PayRunDate
+  description: Date of Payment Run
+  type: Date
+  size: 8
+- field: VendorNum
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+- field: CustNum
+  description: Customer Code
+  type: nVarChar
+  size: 15
+- field: PaymMethod
+  description: Payment Means
+  type: nVarChar
+  size: 15
+- field: PaymDocNum
+  description: Payment Document No.
+  type: Int
+  size: 11
+- field: FiscalYear
+  description: Fiscal Year
+  type: Date
+  size: 8
+- field: Country
+  description: Company Country/Region
+  type: nVarChar
+  size: 3
+- field: CompTaxNum
+  description: Company Tax Number
+  type: nVarChar
+  size: 32
+- field: PayeeName
+  description: Payee Name
+  type: nVarChar
+  size: 200
+- field: PayeeZip
+  description: Payee Zip Code
+  type: nVarChar
+  size: 20
+- field: PayeeCity
+  description: Payee City
+  type: nVarChar
+  size: 100
+- field: PayeeStree
+  description: Payee Street
+  type: nVarChar
+  size: 100
+- field: PayCountry
+  description: Payee Country/Region
+  type: nVarChar
+  size: 3
+- field: PayeeState
+  description: Payee State
+  type: nVarChar
+  size: 3
+- field: PayBnkName
+  description: Payee Bank Name
+  type: nVarChar
+  size: 250
+- field: PayBankZip
+  description: Payee Bank Zip Code
+  type: nVarChar
+  size: 20
+- field: PayBnkCity
+  description: Payee Bank City
+  type: nVarChar
+  size: 100
+- field: PayBnkStr
+  description: Payee Bank Street
+  type: nVarChar
+  size: 100
+- field: PayBnkCntr
+  description: Payee Bank Country/Region
+  type: nVarChar
+  size: 3
+- field: PayBankAct
+  description: Payee Bank Account
+  type: nVarChar
+  size: 50
+- field: PayBnkCode
+  description: Payee Bank Code
+  type: nVarChar
+  size: 30
+- field: PayBnkCtrl
+  description: Payee Bank Control Number
+  type: nVarChar
+  size: 2
+- field: PayBnkSwif
+  description: Payee Bank BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: PayBnkIBAN
+  description: Payee Bank IBAN
+  type: nVarChar
+  size: 50
+- field: PymPostDat
+  description: Payment Posting Date
+  type: Date
+  size: 8
+- field: PymBnkAcct
+  description: Payment Bank Account
+  type: nVarChar
+  size: 50
+- field: PymBnkCntr
+  description: Payment Bank Country/Region
+  type: nVarChar
+  size: 3
+- field: PymBnkCode
+  description: Payment Bank Code
+  type: nVarChar
+  size: 30
+- field: PymBnkIBAN
+  description: Payment Bank IBAN
+  type: nVarChar
+  size: 50
+- field: PymGLAcct
+  description: Payment G/L Account
+  type: nVarChar
+  size: 15
+- field: Currency
+  description: Main Currency
+  type: nVarChar
+  size: 3
+- field: PymDocAmnt
+  description: Payment Document Amount (LC)
+  type: Num
+  size: 19.6
+- field: PymDocCurr
+  description: Payment Document Currency
+  type: nVarChar
+  size: 3
+- field: PymDcAmtFC
+  description: Payment Document Amount (FC)
+  type: Num
+  size: 19.6
+- field: PymCshDsct
+  description: Cash Discount in Payment Doc
+  type: Num
+  size: 19.6
+- field: PyCshDscFC
+  description: Cash Discount in Payment Doc
+  type: Num
+  size: 19.6
+- field: PymNumOfPa
+  description: Number of Items Paid
+  type: Int
+  size: 11
+- field: PymDocRate
+  description: Payment Document Exchange Rate
+  type: Num
+  size: 19.6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: PaymWizCod
+  description: Payment Wizard Code
+  type: Int
+  size: 11
+  related: OPWZ
+- field: InstrucKey
+  description: Instruction Key
+  type: nVarChar
+  size: 30
+- field: CllctAutho
+  description: Collection Authorization
+  type: VarChar
+  size: 1
+- field: PayBnkPost
+  description: Payee Bank Post Office
+  type: VarChar
+  size: 1
+- field: PayBnkChNo
+  description: Payee Bank Next Check No.
+  type: Int
+  size: 11
+- field: PayBnkHsBk
+  description: Payee Bank House Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PayBnkBlck
+  description: Payee Bank Block
+  type: nVarChar
+  size: 100
+- field: PayBnkCnty
+  description: Payee Bank County
+  type: nVarChar
+  size: 100
+- field: PayBnkStat
+  description: Payee Bank State
+  type: nVarChar
+  size: 3
+- field: PayBnkBISR
+  description: Payee Bank BISR
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PayBnkUsr1
+  description: Payee Bank User No. 1
+  type: nVarChar
+  size: 25
+- field: PayBnkUsr2
+  description: Payee Bank User No. 2
+  type: nVarChar
+  size: 25
+- field: PayBnkUsr3
+  description: Payee Bank User No. 3
+  type: nVarChar
+  size: 25
+- field: PayBnkUsr4
+  description: Payee Bank User No. 4
+  type: nVarChar
+  size: 25
+- field: PaymFormat
+  description: Payment Format
+  type: nVarChar
+  size: 20
+- field: CompName
+  description: Company Name
+  type: nVarChar
+  size: 200
+- field: CompAddres
+  description: Company Address
+  type: nVarChar
+  size: 254
+- field: CompISRBil
+  description: Company ISR Biller ID
+  type: nVarChar
+  size: 9
+- field: VendISRBil
+  description: Vendor ISR Biller ID
+  type: nVarChar
+  size: 9
+- field: AddIdNum
+  description: Additional ID No.
+  type: nVarChar
+  size: 32
+- field: CompOrgNum
+  description: Company Organization No.
+  type: nVarChar
+  size: 100
+- field: PayBnkBrnc
+  description: Payee Bank Branch
+  type: nVarChar
+  size: 50
+- field: PymBnkBrnc
+  description: Payment Bank Branch
+  type: nVarChar
+  size: 50
+- field: UserName
+  description: User Name
+  type: nVarChar
+  size: 155
+- field: UserEmail
+  description: User E-Mail
+  type: nVarChar
+  size: 100
+- field: UserPortNo
+  description: User Mobile Phone No.
+  type: nVarChar
+  size: 50
+- field: UserFax
+  description: User Fax No.
+  type: nVarChar
+  size: 50
+- field: Department
+  description: User Department
+  type: Int
+  size: 6
+- field: DebitMemo
+  description: Debit Memo
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: EuInTrnsfr
+  description: EU Internal Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FilePath
+  description: File Path
+  type: Text
+  size: 16
+- field: OrderParty
+  description: Ordering Party
+  type: nVarChar
+  size: 30
+- field: PymCtrlKey
+  description: Payment Bank Control Number
+  type: nVarChar
+  size: 2
+- field: PayeeTaxNo
+  description: Payee Tax Number
+  type: nVarChar
+  size: 32
+- field: PymKeyCode
+  description: Payment Key Code
+  type: nVarChar
+  size: 6
+- field: PayRefDtls
+  description: Payee Reference Details
+  type: nVarChar
+  size: 20
+- field: FormatName
+  description: Format Name
+  type: nVarChar
+  size: 100
+- field: CheckPmnt
+  description: Payment Done with Check
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PymBnkUsr1
+  description: Payment Bank User No. 1
+  type: nVarChar
+  size: 25
+- field: PymBnkUsr2
+  description: Payment Bank User No. 2
+  type: nVarChar
+  size: 25
+- field: PymBnkUsr3
+  description: Payment Bank User No. 3
+  type: nVarChar
+  size: 25
+- field: PymBnkUsr4
+  description: Payment Bank User No. 4
+  type: nVarChar
+  size: 25
+- field: CompStreet
+  description: Company Street
+  type: nVarChar
+  size: 100
+- field: CompBlock
+  description: Company Block
+  type: nVarChar
+  size: 100
+- field: CompCity
+  description: Company City
+  type: nVarChar
+  size: 100
+- field: CompZip
+  description: Company Zip Code
+  type: nVarChar
+  size: 20
+- field: CompCounty
+  description: Company County
+  type: nVarChar
+  size: 100
+- field: CompState
+  description: Company State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: PymBCACode
+  description: Payment Bank Charges
+  type: nVarChar
+  size: 3
+  related: OBCA
+- field: PaymDocTyp
+  description: Payment Document Object Type
+  type: nVarChar
+  size: 20
+- field: PayOrderNo
+  description: Payment Order Number
+  type: Int
+  size: 11
+  related: OIPO
+- field: FreeText1
+  description: Free Text 1
+  type: nVarChar
+  size: 254
+- field: FreeText2
+  description: Free Text 2
+  type: nVarChar
+  size: 254
+- field: FreeText3
+  description: Free Text 3
+  type: nVarChar
+  size: 254
+- field: PymBnkSwif
+  description: Payment Bank Swift Code
+  type: nVarChar
+  size: 50
+- field: PayBnkUIC
+  description: Payee Bank UIC Code
+  type: nVarChar
+  size: 3
+- field: LineType
+  description: Line Type
+  type: VarChar
+  size: 1
+  default: G
+  constraints:
+  - key: G
+    label: General
+  - key: O
+    label: Pay on Account
+  - key: T
+    label: Pay to Account
+- field: BoeKey
+  description: Bill of Exchange Key
+  type: Int
+  size: 11
+  related: OBOE
+- field: BoeCurrSta
+  description: BoE Current Status
+  type: VarChar
+  size: 1
+- field: BoeDate
+  description: Bill of Exchange Date
+  type: Date
+  size: 8
+- field: BoeDueDate
+  description: BoE Due Date
+  type: Date
+  size: 8
+- field: Instruct1
+  description: BoE Instruction 1
+  type: nVarChar
+  size: 2
+- field: Instruct2
+  description: BoE Instruction 2
+  type: nVarChar
+  size: 2
+- field: BoeCancIns
+  description: BoE Cancel Instruction
+  type: nVarChar
+  size: 2
+- field: BoeOccCode
+  description: BoE Occurrence Code
+  type: nVarChar
+  size: 2
+- field: BoePtfID
+  description: BoE Internal Portfolio ID
+  type: nVarChar
+  size: 3
+- field: BoeOurNum
+  description: Our Number in Next BoE
+  type: Int
+  size: 11
+- field: BoeIntrAm
+  description: BoE Interest Amount
+  type: Num
+  size: 19.6
+- field: BoeDiscD
+  description: BoE Discount Date
+  type: Date
+  size: 8
+- field: BoeDisAmnt
+  description: BoE Discount Amount
+  type: Num
+  size: 19.6
+- field: BoeFineD
+  description: BoE Fine Date
+  type: Date
+  size: 8
+- field: BoeFineAmt
+  description: BoE Fine Amount
+  type: Num
+  size: 19.6
+- field: BoeIntrstD
+  description: BoE Interest Date
+  type: Date
+  size: 8
+- field: BoeIOFAmt
+  description: BoE IOF Amount
+  type: Num
+  size: 19.6
+- field: BoeMovCode
+  description: BoE Movement Code
+  type: nVarChar
+  size: 10
+- field: BarcodeRep
+  description: Barcode Representation
+  type: nVarChar
+  size: 100
+- field: PONumber
+  description: External Payment Order Number
+  type: Int
+  size: 11
+- field: POSeries
+  description: External Payment Order Series
+  type: Int
+  size: 11
+- field: PaPriority
+  description: Payment Priority
+  type: VarChar
+  size: 1
+  default: '6'
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '2'
+    label: ''
+  - key: '3'
+    label: ''
+  - key: '4'
+    label: ''
+  - key: '5'
+    label: ''
+  - key: '6'
+    label: ''
+- field: PaymType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: E
+    label: Electronic
+  - key: P
+    label: Mail
+  - key: T
+    label: Telegraph
+  - key: X
+    label: Express
+- field: RecipStatu
+  description: Recipient Status
+  type: nVarChar
+  size: 2
+- field: BudegetId
+  description: VAT Budget Classification Code
+  type: nVarChar
+  size: 100
+- field: OKATO
+  description: OKATO
+  type: nVarChar
+  size: 11
+- field: PymReason
+  description: Payment Reason
+  type: nVarChar
+  size: 2
+- field: PostPeriod
+  description: Posting Period Code
+  type: nVarChar
+  size: 10
+- field: BaseDocTyp
+  description: Base Document Type
+  type: nVarChar
+  size: 2
+- field: BaseDocDat
+  description: Base Document Date
+  type: Date
+  size: 8
+- field: TaxPymType
+  description: Tax Payment Type
+  type: nVarChar
+  size: 2
+- field: OKTMO
+  description: OKTMO
+  type: nVarChar
+  size: 12
+- field: SeqType
+  description: Sequence Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: OOFF
+    label: OOFF
+  - key: FRST
+    label: FRST
+  - key: RCUR
+    label: RCUR
+  - key: FNAL
+    label: FNAL
+- field: PymDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: PymBnkName
+  description: Payment Bank Name
+  type: nVarChar
+  size: 250
+- field: UIPCode
+  description: UIP Code
+  type: nVarChar
+  size: 25
+- field: UserId
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: SpltPmtVAT
+  description: Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnBnkAct
+  description: Encryption of Payee Bank Acct
+  type: Text
+  size: 16
+- field: EnBnkIBan
+  description: Encryption of Payee Bank IBAN
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EnPmBnkAct
+  description: Encryption of Payment Bank Account
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

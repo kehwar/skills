@@ -1,0 +1,81 @@
+table: HMM1
+description: Child Table of OHMM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/HMM1.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OHMM
+- field: LineNum
+  description: Child No.
+  type: Int
+  size: 11
+- field: ViewType
+  description: View Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Attribute View
+  - key: C
+    label: Calculation View
+  - key: Y
+    label: Analytic View
+  - key: P
+    label: Procedure
+- field: ViewName
+  description: View Name
+  type: nVarChar
+  size: 100
+- field: MenuDesc
+  description: Menu Description
+  type: nVarChar
+  size: 254
+- field: MenuEnable
+  description: Menu Enable
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IAEnable
+  description: Interactive Analysis Enable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SLEnable
+  description: Enable Service Layer
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SLExpose
+  description: Expose Service Layer
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+- key: UNIQUEVIEW
+  unique: true
+  fields:
+  - ViewName

@@ -1,0 +1,57 @@
+table: TDR1
+description: Can Be Archive
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TDR1.htm
+fields:
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+- field: KeySeg1
+  description: Key Segment 1
+  type: nVarChar
+  size: 15
+- field: KeySeg2
+  description: Key Segment 2
+  type: nVarChar
+  size: 15
+- field: KeySeg3
+  description: Key Segment 3
+  type: nVarChar
+  size: 15
+- field: KeySeg4
+  description: Key Segment 4
+  type: nVarChar
+  size: 15
+- field: KeySeg5
+  description: Key Segment 5
+  type: nVarChar
+  size: 15
+- field: KeySeg6
+  description: Key Segment 6
+  type: nVarChar
+  size: 15
+- field: KeySeg7
+  description: Key Segment 7
+  type: nVarChar
+  size: 15
+- field: KeySeg8
+  description: Key Segment 8
+  type: nVarChar
+  size: 15
+- field: KeySeg9
+  description: Key Segment 9
+  type: nVarChar
+  size: 15
+- field: KeySeg10
+  description: Key Segment 10
+  type: nVarChar
+  size: 15
+- field: DocAbs
+  description: Document Internal ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Line_ID

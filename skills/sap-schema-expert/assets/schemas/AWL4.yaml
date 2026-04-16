@@ -1,0 +1,44 @@
+table: AWL4
+description: Task Output Data - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AWL4.htm
+fields:
+- field: WFInstID
+  description: Workflow Instance ID
+  type: nVarChar
+  size: 64
+- field: TaskID
+  description: Task ID
+  type: Int
+  size: 11
+  related: OWLS
+- field: LineID
+  description: Line ID
+  type: nVarChar
+  size: 6
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: ObjKey
+  description: Object Key
+  type: nVarChar
+  size: 100
+- field: LogIns
+  description: Log Instance
+  type: Int
+  size: 11
+- field: OutParamID
+  description: Object ID in WF Engine
+  type: nVarChar
+  size: 64
+- field: ObjSubType
+  description: Object Subtype
+  type: nVarChar
+  size: 64
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID
+  - LineID
+  - LogIns

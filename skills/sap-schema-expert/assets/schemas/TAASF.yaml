@@ -1,0 +1,54 @@
+table: TAASF
+description: Result of TaaS Tax Code Fix
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TAASF.htm
+fields:
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: Internal
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: DocDate
+  description: Doc. Date
+  type: Date
+  size: 8
+- field: StaCode
+  description: Tax Authorities Code
+  type: nVarChar
+  size: 8
+- field: StaType
+  description: Tax Authorities Type
+  type: Int
+  size: 11
+- field: OldRate
+  description: Old Rate
+  type: Num
+  size: 19.6
+- field: NewRate
+  description: New Rate
+  type: Num
+  size: 19.6
+- field: FixType
+  description: Fix Type
+  type: VarChar
+  size: 1
+- field: IsOK
+  description: Is OK
+  type: VarChar
+  size: 1
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+indexes:
+- key: DUMMY
+  unique: true
+  fields:
+  - LogInstanc
+  - Internal

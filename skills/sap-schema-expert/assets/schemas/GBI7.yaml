@@ -1,0 +1,139 @@
+table: GBI7
+description: GBI Row 7 - Accounting Vouchers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI7.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: DocDate
+  description: Document Date
+  type: nVarChar
+  size: 8
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 12
+- field: JrnEntryNo
+  description: Journal Entry Number
+  type: nVarChar
+  size: 20
+- field: LnNo
+  description: Line Number
+  type: Int
+  size: 11
+- field: Remark
+  description: Details of Each Line
+  type: nVarChar
+  size: 50
+- field: AcctNo
+  description: G/L Account Number
+  type: nVarChar
+  size: 15
+- field: Currency
+  description: Transaction Currency
+  type: nVarChar
+  size: 3
+- field: Debit
+  description: Debit Amount
+  type: Num
+  size: 19.6
+- field: Credit
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: FCDebit
+  description: Debit Foreign Currency Amount
+  type: Num
+  size: 19.6
+- field: FCCredit
+  description: Credit Foreign Currency Amount
+  type: Num
+  size: 19.6
+- field: Rate
+  description: Exchange Rate
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: UnitPrice
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: EvaGrp
+  description: Evaluation Group
+  type: nVarChar
+  size: 254
+- field: SettMeth
+  description: Settlement Method
+  type: nVarChar
+  size: 20
+- field: BillType
+  description: Bill Type
+  type: nVarChar
+  size: 20
+- field: BillNo
+  description: Bill Number
+  type: nVarChar
+  size: 30
+- field: BillDate
+  description: Bill Date
+  type: nVarChar
+  size: 8
+- field: AttmtNum
+  description: Number of Attachments
+  type: Int
+  size: 6
+- field: Creator
+  description: Creator of the Voucher
+  type: nVarChar
+  size: 155
+- field: Approver
+  description: Approver of the Voucher
+  type: nVarChar
+  size: 155
+- field: Bookkeeper
+  description: Bookkeeper
+  type: nVarChar
+  size: 155
+- field: Cashier
+  description: Cashier
+  type: nVarChar
+  size: 155
+- field: Posted
+  description: Posted Sign
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '0'
+    label: ''
+- field: Reversed
+  description: Reversed Sign
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '0'
+    label: ''
+- field: DocNum
+  description: Document Number
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

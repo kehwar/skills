@@ -1,0 +1,2027 @@
+table: OFLT
+description: Report - Selection Criteria
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OFLT.htm
+fields:
+- field: FormNum
+  description: Form Number
+  type: nVarChar
+  size: 20
+- field: QueryStr
+  description: Query
+  type: nVarChar
+  size: 250
+- field: ItmOrCrd
+  description: Items or BP
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardInclud
+  description: BP Area
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardFrom1
+  description: From BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardTo1
+  description: To BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardExclud
+  description: Excluding BP
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardFrom2
+  description: BP Rejected
+  type: nVarChar
+  size: 15
+- field: CardTo2
+  description: BP Rejected
+  type: nVarChar
+  size: 15
+- field: ClienGroup
+  description: Customer Group
+  type: Int
+  size: 6
+- field: VendGroup
+  description: Vendor Group
+  type: Int
+  size: 6
+- field: ClntQryGrp
+  description: Customer Properties
+  type: nVarChar
+  size: 250
+- field: VeQryGroup
+  description: Vendor Properties
+  type: nVarChar
+  size: 250
+- field: ItmInclud
+  description: Item Range
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItmFrom1
+  description: From Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmTo1
+  description: To Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmExclud
+  description: Excluding Materials
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItmFrom2
+  description: Item Rejected
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmTo2
+  description: Item Rejected
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmGroup
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: ItQryGroup
+  description: Item Properties
+  type: nVarChar
+  size: 250
+- field: WhsInclude
+  description: Warehouse Range
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WhsFrom1
+  description: From Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: WhsTo1
+  description: To Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: WhsExclude
+  description: Excluding Warehouses
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WhsFrom2
+  description: Warehouse Rejected
+  type: nVarChar
+  size: 8
+- field: WhsTo2
+  description: Warehouse Rejected
+  type: nVarChar
+  size: 8
+- field: FromAcct
+  description: From Account
+  type: nVarChar
+  size: 15
+- field: ToAcct
+  description: To Account
+  type: nVarChar
+  size: 15
+- field: GroupMask
+  description: Group Mask
+  type: nVarChar
+  size: 12
+- field: FromDate
+  description: From Posting Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: To Posting Date
+  type: Date
+  size: 8
+- field: FrmDueDate
+  description: Due Date From
+  type: Date
+  size: 8
+- field: ToDueDate
+  description: Due Date To
+  type: Date
+  size: 8
+- field: FromDate3
+  description: From Date 3
+  type: Date
+  size: 8
+- field: ToDate3
+  description: To Date 3
+  type: Date
+  size: 8
+- field: FromDate4
+  description: From Date 4
+  type: Date
+  size: 8
+- field: ToDate4
+  description: To Date 4
+  type: Date
+  size: 8
+- field: SourceType
+  description: Original Journal
+  type: Int
+  size: 6
+  default: -1
+  constraints:
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt
+  - key: '21'
+    label: Goods Returns
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '69'
+    label: Landed Costs
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Vendor Payment
+  - key: '57'
+    label: Checks for Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '-2'
+    label: Opening Balance
+  - key: '-3'
+    label: Closing Balance
+  - key: '30'
+    label: Journal Entry
+  - key: '58'
+    label: Stock Update
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfers
+  - key: '68'
+    label: Work Instructions
+  - key: '162'
+    label: Inventory Valuation
+  - key: '-1'
+    label: All Transactions
+- field: FrmTrnsNum
+  description: From Transaction No.
+  type: Int
+  size: 11
+- field: ToTrnsNum
+  description: To Transaction No.
+  type: Int
+  size: 11
+- field: FromRef1
+  description: From Reference 1
+  type: nVarChar
+  size: 100
+- field: ToRef1
+  description: To Reference 1
+  type: nVarChar
+  size: 100
+- field: FromRef2
+  description: From Reference 2
+  type: nVarChar
+  size: 100
+- field: ToRef2
+  description: To Reference 2
+  type: nVarChar
+  size: 100
+- field: FrmTrnsCod
+  description: From Transaction Code
+  type: nVarChar
+  size: 4
+- field: ToTrnsCod
+  description: To Transaction Code
+  type: nVarChar
+  size: 4
+- field: FromSum
+  description: From Amount
+  type: Num
+  size: 19.6
+- field: ToSum
+  description: To Amount
+  type: Num
+  size: 19.6
+- field: FrmFRNAmnt
+  description: From FC Amount
+  type: Num
+  size: 19.6
+- field: ToFRNAmnt
+  description: To FC Amount
+  type: Num
+  size: 19.6
+- field: MemoIn
+  description: Details Contained
+  type: nVarChar
+  size: 50
+- field: SortField1
+  description: Sort Field 1
+  type: Int
+  size: 6
+  default: -1
+- field: Break1
+  description: Subtotal by Sort 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SortField2
+  description: Sort Field 2
+  type: Int
+  size: 6
+  default: -1
+- field: Break2
+  description: Subtotal by Sort 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SortField3
+  description: Sort Field 3
+  type: Int
+  size: 6
+  default: -1
+- field: Break3
+  description: Subtotal by Sort 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Display
+  description: Display
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Postings Only
+  - key: T
+    label: Totals Only
+  - key: B
+    label: Postings + Totals
+- field: PrntCutDat
+  description: Print Date Selection Criteria
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox0
+  description: Check box 0
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox1
+  description: Check box 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox2
+  description: Check box 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox3
+  description: Check box 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox4
+  description: Check box 4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox5
+  description: Check box 5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox6
+  description: Check box 6
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox7
+  description: Check box 7
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox8
+  description: Check box 8
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox9
+  description: Check box 9
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShowZero
+  description: Display Zero Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DateCheck
+  description: Confirm Date Range
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DueCheck
+  description: Confirm Due Date Range
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CutCheck
+  description: Confirm Date Selectn Criteria
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CutByObj
+  description: Selection Criteria by Object
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC1
+  description: C1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC2
+  description: C2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC3
+  description: C3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC4
+  description: C4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC5
+  description: C5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC6
+  description: C6
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC7
+  description: C7
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC8
+  description: C8
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC9
+  description: C9
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC10
+  description: C10
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC11
+  description: C11
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC12
+  description: C12
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC13
+  description: C13
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC14
+  description: C14
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC15
+  description: C15
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC16
+  description: C16
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FromAmount
+  description: From Amount
+  type: Num
+  size: 19.6
+- field: ToAmount
+  description: To Amount
+  type: Num
+  size: 19.6
+- field: FrmSalsMan
+  description: From Sales Employee
+  type: Int
+  size: 11
+- field: ToSalsMan
+  description: To Sales Employee
+  type: Int
+  size: 11
+- field: USER_CHK1
+  description: User CheckBox 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: USER_CHK2
+  description: User CheckBox 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: USER_CHK3
+  description: User CheckBox 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: USER_CHK4
+  description: System Currrency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: USER_CHK5
+  description: System and Local Currency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseSort
+  description: Sort
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Sort1Up
+  description: Sort1
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Ascending
+  - key: N
+    label: Descending
+- field: Sort2Up
+  description: Sort2
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Ascending
+  - key: N
+    label: Descending
+- field: Sort3Up
+  description: Sort3
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Ascending
+  - key: N
+    label: Descending
+- field: FromAmnt2
+  description: From Quantity Release
+  type: Num
+  size: 19.6
+- field: ToAmount2
+  description: For Quantity Release
+  type: Num
+  size: 19.6
+- field: TaxDateFro
+  description: Lower Limit for Tax Data
+  type: Date
+  size: 8
+- field: TaxDateTo
+  description: Top Limit for Document Dates
+  type: Date
+  size: 8
+- field: FinancYear
+  description: Start of Fiscal Year
+  type: Date
+  size: 8
+- field: BdgtScenar
+  description: Budget Scenario
+  type: Int
+  size: 11
+- field: CompFolder
+  description: Company Database
+  type: nVarChar
+  size: 200
+- field: CheckBox10
+  description: Exapan Check Box 1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FROM_FC
+  description: Foreign Currency from
+  type: Num
+  size: 19.6
+- field: TO_FC
+  description: Foreign Currency to
+  type: Num
+  size: 19.6
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+- field: TaxCheck
+  description: Confirm Document Date Range
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DateType
+  description: Selection Criteria Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Posting Date
+  - key: D
+    label: Due Date
+  - key: T
+    label: Document Date
+- field: DateType2
+  description: Selection Criteria Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Posting Date
+  - key: D
+    label: Due Date
+  - key: T
+    label: Document Date
+- field: FromPrject
+  description: From Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: ToProject
+  description: To Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: TemplateId
+  description: Template
+  type: Int
+  size: 11
+  default: 0
+- field: ShowLeads
+  description: Display Leads
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MthDate
+  description: Reconciliation Date
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AccntntCod
+  description: External Code
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: BlcNunFrom
+  description: Block Number From
+  type: nVarChar
+  size: 100
+- field: BlcNunTo
+  description: Block Number To
+  type: nVarChar
+  size: 100
+- field: ImpLogFrom
+  description: Import Log From
+  type: nVarChar
+  size: 20
+- field: ImpLogTo
+  description: Import Log To
+  type: nVarChar
+  size: 20
+- field: FolderNum
+  description: Folder Number
+  type: VarChar
+  size: 1
+  default: '1'
+- field: MainField
+  description: Main Field
+  type: Int
+  size: 6
+  default: 23
+- field: TransMode
+  description: Transaction Mode
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MonthMode
+  description: Month Totals Mode
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox11
+  description: Expan Check Box 11
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FromIdc
+  description: Indicator From
+  type: nVarChar
+  size: 2
+- field: ToIdc
+  description: Indicator To
+  type: nVarChar
+  size: 2
+- field: IgnoreAdj
+  description: Ignore Adjustments
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RefNumFrom
+  description: From Reference No.
+  type: nVarChar
+  size: 254
+- field: RefNumTo
+  description: To Reference No.
+  type: nVarChar
+  size: 254
+- field: PymNumfrom
+  description: Payment No. From
+  type: Int
+  size: 11
+- field: PymNumTo
+  description: To Payment No.
+  type: Int
+  size: 11
+- field: BankFrom
+  description: From Bank Code
+  type: nVarChar
+  size: 30
+- field: BankTo
+  description: To Bank Code
+  type: nVarChar
+  size: 30
+- field: DpstFrom
+  description: From Deposit Code
+  type: Int
+  size: 11
+- field: DpstTo
+  description: To Deposit Code
+  type: Int
+  size: 11
+- field: DpstType
+  description: Deposit Type
+  type: VarChar
+  size: 1
+- field: ObjectC17
+  description: Obj C17
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC18
+  description: Obj C18
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC19
+  description: Obj C19
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjAbs
+  description: Document Internal Number
+  type: Int
+  size: 11
+- field: AddBTF
+  description: Add Journal Vouchers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FilePath
+  description: File Path
+  type: Text
+  size: 16
+- field: DpsBnkActF
+  description: From Deposit Bank Account
+  type: nVarChar
+  size: 50
+- field: DpsBnkActT
+  description: To Deposit Bank Account
+  type: nVarChar
+  size: 50
+- field: FromKey
+  description: From Key
+  type: Int
+  size: 11
+- field: ToKey
+  description: To Key
+  type: Int
+  size: 11
+- field: ObjectC20
+  description: Object C20
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC21
+  description: Object C21
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC22
+  description: Object C22
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC23
+  description: Object C23
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjectC25
+  description: Object C25
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: USER_CHK6
+  description: Include CB in P/L Accounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OcrChkDim2
+  description: Checkbox for Dimension 2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OcrChkDim3
+  description: Checkbox for Dimension 3
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OcrChkDim4
+  description: Checkbox for Dimension 4
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OcrChkDim5
+  description: Checkbox for Dimension 5
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OcrFrom2
+  description: From Costing Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrFrom3
+  description: From Costing Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrFrom4
+  description: From Costing Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrFrom5
+  description: From Costing Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrTo2
+  description: To Costing Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrTo3
+  description: To Costing Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrTo4
+  description: To Costing Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrTo5
+  description: To Costing Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: TaxAdjRep
+  description: Object C24
+  type: Text
+  size: 16
+- field: ObjectC26
+  description: Object C26
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CBFilter
+  description: Closing Balances Filter
+  type: VarChar
+  size: 1
+  default: '2'
+  constraints:
+  - key: '1'
+    label: Closing Balance of Life-to-Date
+  - key: '2'
+    label: Closing Balance Before Selected Period Only
+- field: OBIncluded
+  description: Add Opening Balance for Period
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OBFilter
+  description: Opening Balances Filter
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Opening Balance from Start of Company Activity
+  - key: '2'
+    label: Opening Balance from Start of Fiscal Year
+- field: ExportCurr
+  description: Export Currency
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Local Currency
+  - key: S
+    label: System Currency
+- field: CBIncluded
+  description: Add Closing Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SlpFrom
+  description: Slp From
+  type: nVarChar
+  size: 155
+- field: SlpTo
+  description: Slp To
+  type: nVarChar
+  size: 155
+- field: CBUDF
+  description: User-Defined Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CBREF
+  description: Reference Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBoxB
+  description: Checkbox for Branch
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FilterName
+  description: Filter Name
+  type: nVarChar
+  size: 30
+  default: _
+- field: JDTFixedF
+  description: JE Fixed Fields
+  type: Int
+  size: 6
+- field: JDT1FixedF
+  description: JE Line Fixed Fields
+  type: Int
+  size: 6
+- field: JDTUserF
+  description: JE User Fields
+  type: Int
+  size: 6
+- field: JDT1UserF
+  description: JE Line User Fields
+  type: Int
+  size: 6
+- field: BPFilter
+  description: BP Filter Enabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AcctFltr
+  description: Account Filter Enabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ZeroLCAmt
+  description: Show Zero LC Amount Lines
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitByBin
+  description: Split By Bin Location
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitBySnb
+  description: Split By Batch/Serial
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox12
+  description: Check Box 12
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox13
+  description: Check Box 13
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox14
+  description: Check Box 14
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox15
+  description: Check Box 15
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox16
+  description: Check Box 16
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox17
+  description: Check Box 17
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox18
+  description: Check Box 18
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox19
+  description: Check Box 19
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox20
+  description: Check Box 20
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox21
+  description: Check Box 21
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox22
+  description: Check Box 22
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox23
+  description: Check Box 23
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox24
+  description: Check Box 24
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox25
+  description: Check Box 25
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox26
+  description: Check Box 26
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox27
+  description: Check Box 27
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox28
+  description: Check Box 28
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox29
+  description: Check Box 29
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox30
+  description: Check Box 30
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox31
+  description: Check Box 31
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox32
+  description: Check Box 32
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox33
+  description: Check Box 33
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BatchFrom
+  description: Batch From
+  type: nVarChar
+  size: 36
+- field: BatchTo
+  description: Batch To
+  type: nVarChar
+  size: 36
+- field: BatAttr1F
+  description: Batch Attr. 1 From
+  type: nVarChar
+  size: 36
+- field: BatAttr1T
+  description: Batch Attr. 1 To
+  type: nVarChar
+  size: 36
+- field: BatAttr2F
+  description: Batch Attr. 2 From
+  type: nVarChar
+  size: 36
+- field: BatAttr2T
+  description: Batch Attr. 2 To
+  type: nVarChar
+  size: 36
+- field: SerialNoF
+  description: Serial Number From
+  type: nVarChar
+  size: 36
+- field: SerialNoT
+  description: Serial Number To
+  type: nVarChar
+  size: 36
+- field: MfrSerailF
+  description: Mfr Serial Number From
+  type: nVarChar
+  size: 36
+- field: MfrSerailT
+  description: Mfr Serial Number To
+  type: nVarChar
+  size: 36
+- field: LotNumberF
+  description: Lot Number From
+  type: nVarChar
+  size: 36
+- field: LotNumberT
+  description: Lot Number To
+  type: nVarChar
+  size: 36
+- field: BinLocFrom
+  description: Bin Location From
+  type: nVarChar
+  size: 228
+- field: BinLocTo
+  description: Bin Location To
+  type: nVarChar
+  size: 228
+- field: AltSrtCodF
+  description: Alternative Sort Code From
+  type: nVarChar
+  size: 50
+- field: AltSrtCodT
+  description: Alternative Sort Code To
+  type: nVarChar
+  size: 50
+- field: BinSbl1F
+  description: Bin Sublevel 1 From
+  type: nVarChar
+  size: 50
+- field: BinSbl1To
+  description: Bin Sublevel 1 To
+  type: nVarChar
+  size: 50
+- field: BinSbl2F
+  description: Bin Sublevel 2 From
+  type: nVarChar
+  size: 50
+- field: BinSbl2To
+  description: Bin Sublevel 2 To
+  type: nVarChar
+  size: 50
+- field: BinSbl3F
+  description: Bin Sublevel 3 From
+  type: nVarChar
+  size: 50
+- field: BinSbl3To
+  description: Bin Sublevel 3 To
+  type: nVarChar
+  size: 50
+- field: BinSbl4F
+  description: Bin Sublevel 4 From
+  type: nVarChar
+  size: 50
+- field: BinSbl4To
+  description: Bin Sublevel 4 To
+  type: nVarChar
+  size: 50
+- field: BinAttr1F
+  description: Bin Attribute 1 From
+  type: nVarChar
+  size: 20
+- field: BinAttr1To
+  description: Bin Attribute 1 To
+  type: nVarChar
+  size: 20
+- field: BinAttr2F
+  description: Bin Attribute 2 From
+  type: nVarChar
+  size: 20
+- field: BinAttr2To
+  description: Bin Attribute 2 To
+  type: nVarChar
+  size: 20
+- field: BinAttr3F
+  description: Bin Attribute 3 From
+  type: nVarChar
+  size: 20
+- field: BinAttr3To
+  description: Bin Attribute 3 To
+  type: nVarChar
+  size: 20
+- field: BinAttr4F
+  description: Bin Attribute 4 From
+  type: nVarChar
+  size: 20
+- field: BinAttr4To
+  description: Bin Attribute 4 To
+  type: nVarChar
+  size: 20
+- field: BinAttr5F
+  description: Bin Attribute 5 From
+  type: nVarChar
+  size: 20
+- field: BinAttr5To
+  description: Bin Attribute 5 To
+  type: nVarChar
+  size: 20
+- field: BinAttr6F
+  description: Bin Attribute 6 From
+  type: nVarChar
+  size: 20
+- field: BinAttr6To
+  description: Bin Attribute 6 To
+  type: nVarChar
+  size: 20
+- field: BinAttr7F
+  description: Bin Attribute 7 From
+  type: nVarChar
+  size: 20
+- field: BinAttr7To
+  description: Bin Attribute 7 To
+  type: nVarChar
+  size: 20
+- field: BinAttr8F
+  description: Bin Attribute 8 From
+  type: nVarChar
+  size: 20
+- field: BinAttr8To
+  description: Bin Attribute 8 To
+  type: nVarChar
+  size: 20
+- field: BinAttr9F
+  description: Bin Attribute 9 From
+  type: nVarChar
+  size: 20
+- field: BinAttr9To
+  description: Bin Attribute 9 To
+  type: nVarChar
+  size: 20
+- field: BinAttr10F
+  description: Bin Attribute 10 From
+  type: nVarChar
+  size: 20
+- field: BinAttr10T
+  description: Bin Attribute 10 To
+  type: nVarChar
+  size: 20
+- field: EnfBinFltr
+  description: Enforced Bin Filter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: E
+    label: Enforced Bin Location
+  - key: U
+    label: Unenforced Bin Location
+  - key: B
+    label: Both
+  - key: N
+    label: Bin not activated
+- field: ExItemFrom
+  description: Expand from Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ExItemTo
+  description: Expand to Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ExBPFrom
+  description: Expand from BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ExBPTo
+  description: Expand to BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CheckBox34
+  description: Check Box 34
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckBox35
+  description: Check Box 35
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlAgreem
+  description: Checkbox for Blanket Agreement
+  type: VarChar
+  size: 1
+  default: N
+- field: BAFrom
+  description: Blanket Agreement From
+  type: nVarChar
+  size: 8
+- field: BATo
+  description: Blanket Agreement To
+  type: nVarChar
+  size: 8
+- field: AdjTrans
+  description: Adjustment Transactions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TitAcctLvl
+  description: Title Account Level
+  type: Int
+  size: 11
+  default: 2
+- field: CCDFrom1
+  description: CCD Number from condition 1
+  type: nVarChar
+  size: 40
+- field: CCDTo1
+  description: CCD Number to Condition 1
+  type: nVarChar
+  size: 40
+- field: CCDFrom2
+  description: CCD Number from Condition 2
+  type: nVarChar
+  size: 40
+- field: CCDTo2
+  description: CCD Number to Condition 2
+  type: nVarChar
+  size: 40
+- field: ArchJrnal
+  description: Archiving Journal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardFrom3
+  description: From BP
+  type: nVarChar
+  size: 15
+- field: CardTo3
+  description: To BP
+  type: nVarChar
+  size: 15
+- field: OBBranch
+  description: Divide Totals by Branch
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AccumDbCr
+  description: Accumulated Debit/Credit
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RscFrom1
+  description: From Resource
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: RscTo1
+  description: To Resource
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: RscGroup
+  description: Resource Group
+  type: Int
+  size: 6
+  related: ORSB
+- field: RouteStage
+  description: Use Route Stage
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExRSTFrom
+  description: From Route Stage
+  type: Int
+  size: 11
+  related: ORST
+- field: ExRSTTo
+  description: To Route Stage
+  type: Int
+  size: 11
+  related: ORST
+- field: StgSeqNum
+  description: Use Stage Sequence Number
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExSSNFrom
+  description: From Stage Sequence Number
+  type: Int
+  size: 11
+- field: ExSSNTo
+  description: To Stage Sequence Number
+  type: Int
+  size: 11
+- field: IsPostDate
+  description: Posting date is used
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormNum
+  - UserSign
+  - FilterName

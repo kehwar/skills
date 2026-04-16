@@ -1,0 +1,111 @@
+table: OCRG
+description: Card Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OCRG.htm
+fields:
+- field: GroupCode
+  description: Group No.
+  type: Int
+  size: 6
+- field: GroupName
+  description: Group Name
+  type: nVarChar
+  size: 100
+- field: GroupType
+  description: Group Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer Group
+  - key: S
+    label: Vendor Group
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PriceList
+  description: Price List
+  type: Int
+  size: 6
+  related: OPLN
+- field: DiscRel
+  description: Effective Discount Groups
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Lowest Discount
+  - key: H
+    label: Highest Discount
+  - key: A
+    label: Average
+  - key: S
+    label: Total
+  - key: M
+    label: Discount Multiples
+- field: EffecPrice
+  description: Effective Price
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Default Priority
+  - key: L
+    label: Lowest Price
+  - key: H
+    label: Highest Price
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode
+- key: GROUP_TYPE
+  unique: false
+  fields:
+  - GroupType
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - GroupName

@@ -1,0 +1,265 @@
+table: WOR1
+description: Production Order - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WOR1.htm
+fields:
+- field: DocEntry
+  description: Document Internal Number
+  type: Int
+  size: 11
+  related: OWOR
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+- field: BaseQty
+  description: Base Quantity
+  type: Num
+  size: 19.6
+- field: PlannedQty
+  description: Planned Quantity - Rows
+  type: Num
+  size: 19.6
+- field: IssuedQty
+  description: Issued Quantity
+  type: Num
+  size: 19.6
+- field: IssueType
+  description: Production Order Issue Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: M
+    label: Manual
+  - key: B
+    label: Backflush
+- field: wareHouse
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: WipActCode
+  description: WIP Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CompTotal
+  description: Total Completed Sum
+  type: Num
+  size: 19.6
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+  default: 0
+- field: UomCode
+  description: UoM Code
+  type: nVarChar
+  size: 20
+- field: ItemType
+  description: Item Type
+  type: Int
+  size: 11
+  default: 4
+  constraints:
+  - key: '4'
+    label: Item
+  - key: '290'
+    label: Resource
+  - key: '-18'
+    label: Text
+- field: AdditQty
+  description: Additional Quantity
+  type: Num
+  size: 19.6
+- field: LineText
+  description: Row Text
+  type: Text
+  size: 16
+- field: PickStatus
+  description: Pick Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Picked
+  - key: N
+    label: Not Picked
+  - key: R
+    label: Release for Picking
+  - key: P
+    label: Partially Picked
+- field: PickQty
+  description: Pick Quantity
+  type: Num
+  size: 19.6
+- field: PickIdNo
+  description: Pick List ID Number
+  type: Int
+  size: 11
+- field: ReleaseQty
+  description: Released Quantity
+  type: Num
+  size: 19.6
+- field: ResAlloc
+  description: Resource Allocation
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: On Start Date
+  - key: D
+    label: On End Date
+  - key: F
+    label: Start Date Forwards
+  - key: B
+    label: End Date Backwards
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: StageId
+  description: Stage ID
+  type: Int
+  size: 11
+- field: BaseQtyNum
+  description: Base Quantity Numerator
+  type: Num
+  size: 19.6
+- field: BaseQtyDen
+  description: Base Quantity Denominator
+  type: Num
+  size: 19.6
+- field: ReqDays
+  description: Required Days
+  type: Num
+  size: 19.6
+  default: 0
+- field: RtCalcProp
+  description: Routing Calculation Proportion
+  type: Num
+  size: 19.6
+  default: 100
+- field: Status
+  description: Stage Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Planned
+  - key: I
+    label: In Progress
+  - key: C
+    label: Complete
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: AlwProcDoc
+  description: Allow Procurement Doc.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PoDocType
+  description: Procmnt Doc. Type
+  type: Int
+  size: 11
+- field: PoDocNum
+  description: Procmnt Doc. No.
+  type: Int
+  size: 11
+- field: PoDocEntry
+  description: Procmnt Doc. Internal ID
+  type: Int
+  size: 11
+- field: PoLineNum
+  description: Procmnt Doc. Row No.
+  type: Int
+  size: 11
+- field: PoQuantity
+  description: Procmnt Quantity
+  type: Num
+  size: 19.6
+- field: PPTaxExRe
+  description: Plastic Packaging Tax Exemption Reason
+  type: nVarChar
+  size: 2
+- field: PlPaWght
+  description: Plastic Packaging Weight
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+- key: VISORDER
+  unique: true
+  fields:
+  - DocEntry
+  - VisOrder
+- key: ITEM_WHS
+  unique: false
+  fields:
+  - ItemCode
+  - wareHouse

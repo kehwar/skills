@@ -1,0 +1,51 @@
+table: APDT
+description: Predefined Text
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/APDT.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TextCode
+  description: Text Code
+  type: nVarChar
+  size: 20
+- field: Text
+  description: TEXT
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Date Created
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

@@ -1,0 +1,232 @@
+table: OUDO
+description: User-Defined Object
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUDO.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 19
+  related: OUTB
+- field: LogTable
+  description: Log Table Name
+  type: nVarChar
+  size: 20
+- field: TYPE
+  description: Object Type
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Master Data
+  - key: '3'
+    label: Document
+- field: MngSeries
+  description: Manage Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanDelete
+  description: Delete
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanClose
+  description: Close
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanCancel
+  description: Cancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtName
+  description: Extension Name
+  type: nVarChar
+  size: 254
+- field: CanFind
+  description: Find
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanYrTrnsf
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanDefForm
+  description: Create Default Form
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanLog
+  description: Log
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OvrWrtDll
+  description: Overwrite DLL File
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UIDFormat
+  description: Unique Form ID Format
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CanArchive
+  description: Archive
+  type: VarChar
+  size: 1
+  default: N
+- field: MenuItem
+  description: Specify Menu Item
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MenuCapt
+  description: Menu Caption
+  type: nVarChar
+  size: 254
+- field: FatherMenu
+  description: Parent Menu ID
+  type: Int
+  size: 11
+- field: Position
+  description: Menu Position
+  type: Int
+  size: 6
+- field: CanNewForm
+  description: Create Enhanced Form
+  type: VarChar
+  size: 1
+  default: Y
+- field: IsRebuild
+  description: If Needed, Rebuild New Form
+  type: VarChar
+  size: 1
+  default: Y
+- field: NewFormSrf
+  description: 'Enhanced Form: SRF File'
+  type: Text
+  size: 16
+- field: MenuUid
+  description: Menu UID
+  type: nVarChar
+  size: 32
+- field: LstUpdDate
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: LstUpdTime
+  description: Last Update Time
+  type: Int
+  size: 11
+- field: CanApprove
+  description: Approve
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TemplateID
+  description: Workflow Template ID
+  type: Int
+  size: 11
+  related: OWMG
+- field: ApplyPerm
+  description: Apply Authorization for UDO
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnableDPP
+  description: Personal Data Protection
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: TABLE
+  unique: true
+  fields:
+  - TableName

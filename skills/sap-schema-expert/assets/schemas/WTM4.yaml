@@ -1,0 +1,87 @@
+table: WTM4
+description: Approval Templates - Terms
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WTM4.htm
+fields:
+- field: WtmCode
+  description: Code
+  type: Int
+  size: 11
+  related: OWTM
+- field: CondId
+  description: Condition No.
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '1'
+    label: Deviation from Credit Limit
+  - key: '2'
+    label: Deviation from Commitment
+  - key: '3'
+    label: Gross Profit %
+  - key: '4'
+    label: Discount %
+  - key: '5'
+    label: Deviation from Budget
+  - key: '7'
+    label: Quantity
+  - key: '8'
+    label: Item Code
+  - key: '9'
+    label: Total
+  - key: '6'
+    label: Total Document
+  - key: '10'
+    label: Counted Quantity
+  - key: '11'
+    label: Variance
+  - key: '12'
+    label: Variance %
+  - key: '13'
+    label: Operating Profit %
+  - key: '14'
+    label: Net Income %
+  - key: '0'
+    label: Undefined Type
+- field: opCode
+  description: Ratio
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '1'
+    label: Greater Than
+  - key: '2'
+    label: Greater or Equal
+  - key: '3'
+    label: Less Than
+  - key: '4'
+    label: Less or Equal
+  - key: '5'
+    label: Equal
+  - key: '6'
+    label: Does not Equal
+  - key: '7'
+    label: In Range
+  - key: '8'
+    label: Not in Range
+  - key: '0'
+    label: Undefined Type
+- field: opValue
+  description: Value
+  type: nVarChar
+  size: 90
+- field: DecSep
+  description: Decimal Separator
+  type: VarChar
+  size: 1
+- field: ThousSep
+  description: Thousandths Separator
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WtmCode
+  - CondId

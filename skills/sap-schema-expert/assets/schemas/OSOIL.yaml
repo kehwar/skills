@@ -1,0 +1,29 @@
+table: OSOIL
+description: Statement of Import Wizard Run
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSOIL.htm
+fields:
+- field: SOIWNum
+  description: Statement No.
+  type: nVarChar
+  size: 100
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: SOINum
+  description: SOI
+  type: Int
+  size: 11
+- field: AbsEntry
+  description: Abs Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SOIWNum
+- key: SECONDARY
+  unique: true
+  fields:
+  - AbsEntry

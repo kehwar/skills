@@ -1,0 +1,39 @@
+table: OTWS
+description: E-Tax Web Site
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OTWS.htm
+fields:
+- field: AbsEntry
+  description: E-Tax Internal ID
+  type: Int
+  size: 6
+- field: TwsName
+  description: E-Tax Web Site Name
+  type: nVarChar
+  size: 64
+- field: TwsURL
+  description: E-Tax Web Site URL
+  type: Text
+  size: 16
+- field: TwsDescrip
+  description: E-Tax Web Site Description
+  type: nVarChar
+  size: 200
+- field: UserSign
+  description: User Signature - Create
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: TWSNAME
+  unique: false
+  fields:
+  - TwsName

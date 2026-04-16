@@ -1,0 +1,190 @@
+table: APMG
+description: Project Management Document - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/APMG.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: OWNER
+  description: Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: NAME
+  description: Project Name
+  type: nVarChar
+  size: 254
+- field: START
+  description: Project Start Date
+  type: Date
+  size: 8
+- field: FINISHED
+  description: Deduction - Percentage
+  type: Num
+  size: 19.6
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: TYP
+  description: Project Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: External
+  - key: I
+    label: Internal
+- field: CARDCODE
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CARDNAME
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CONTACT
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: TERRITORY
+  description: Business Partner Territory
+  type: Int
+  size: 11
+  related: OTER
+- field: EMPLOYEE
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: WithPhases
+  description: Project with Phases
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: STATUS
+  description: Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Started
+  - key: P
+    label: Paused
+  - key: T
+    label: Stopped
+  - key: F
+    label: Finished
+  - key: N
+    label: Canceled
+- field: DUEDATE
+  description: Due Date
+  type: Date
+  size: 8
+- field: CLOSING
+  description: Closing Date
+  type: Date
+  size: 8
+- field: FIPROJECT
+  description: Financial Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: RISK
+  description: Risk Level
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Low
+  - key: M
+    label: Medium
+  - key: H
+    label: High
+- field: INDUSTRY
+  description: Industry Code
+  type: Int
+  size: 11
+  related: OOND
+- field: REASON
+  description: Comments
+  type: Text
+  size: 16
+- field: Free_Text
+  description: Free Text
+  type: Text
+  size: 16
+- field: BPLid
+  description: Business Place ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: Attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

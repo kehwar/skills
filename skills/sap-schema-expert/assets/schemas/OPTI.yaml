@@ -1,0 +1,78 @@
+table: OPTI
+description: Point of Issue
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OPTI.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 5
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Domestic Printing
+  - key: E
+    label: Domestic Electronic
+  - key: F
+    label: Fiscal
+  - key: X
+    label: Export Printing
+  - key: T
+    label: Export Electronic
+- field: SOpDate
+  description: Start Operating Date
+  type: Date
+  size: 8
+- field: EndOpDate
+  description: End Operating Date
+  type: Date
+  size: 8
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: EDocExpFrm
+  description: Electronic Doc. Export Format
+  type: Int
+  size: 11
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: EDocGenTyp
+  description: Electronic Doc. Generation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: CAEA - Generate Later
+- field: CAEARqtFrm
+  description: CAEA Request Format
+  type: Int
+  size: 11
+- field: Regime
+  description: Regime of eDoc Format
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '1'
+    label: RG2485
+  - key: '2'
+    label: RG2904
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

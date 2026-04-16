@@ -1,0 +1,65 @@
+table: OEJD
+description: Company Details for ERV-JAb
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OEJD.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CRegNum
+  description: Commercial Register Number
+  type: nVarChar
+  size: 7
+- field: LFBSheet
+  description: Legal Form on Actl Bal Sht Dte
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: AG
+    label: Public Limited Company (AG)
+  - key: SC
+    label: European Cooperative Society (SCE)
+  - key: SE
+    label: Company under European Law (SE, Societa Europaea)
+  - key: GEN
+    label: Industrial Cooperative Society
+  - key: GES
+    label: Limited Liability Company (GmbH)
+  - key: KG
+    label: Limited Partnership
+  - key: OG
+    label: Open Company
+- field: LFBSheetPr
+  description: Lgl Form on Bal Sht Dte Prv Yr
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: AG
+    label: Public Limited Company (AG)
+  - key: SC
+    label: European Cooperative Society (SCE)
+  - key: SE
+    label: Company under European Law (SE, Societa Europaea)
+  - key: GEN
+    label: Industrial Cooperative Society
+  - key: GES
+    label: Limited Liability Company (GmbH)
+  - key: KG
+    label: Limited Partnership
+  - key: OG
+    label: Open Company
+  - key: CNE
+    label: Company does not exist
+- field: RegNum
+  description: Reg. No. of Partner Company
+  type: nVarChar
+  size: 7
+- field: CmpanyName
+  description: Company Name
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,109 @@
+table: OTRB
+description: Tax Report Wizard for Brazil
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OTRB.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: GPCId
+  description: Government Payment Code
+  type: Int
+  size: 11
+  related: OGPC
+- field: GPCCode
+  description: Government Payment Code
+  type: nVarChar
+  size: 6
+- field: Year
+  description: Reporting Year
+  type: Int
+  size: 6
+- field: PrdType
+  description: Period Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Q
+    label: Quarter
+  - key: M
+    label: Month
+  - key: H
+    label: Half Month
+  - key: T
+    label: Ten Days
+- field: PrdNum
+  description: Period Number
+  type: Int
+  size: 11
+- field: PrdDate
+  description: Period Date To
+  type: Date
+  size: 8
+- field: RunName
+  description: Wizard Run Name
+  type: nVarChar
+  size: 100
+- field: RunDate
+  description: Wizard Run Date
+  type: Date
+  size: 8
+- field: Status
+  description: Wizard Run Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+  - key: C
+    label: Canceled
+- field: StateTax
+  description: State Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - RunName

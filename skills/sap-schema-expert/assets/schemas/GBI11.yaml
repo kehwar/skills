@@ -1,0 +1,39 @@
+table: GBI11
+description: GBI Row 11 - Devalue Provision of Enterprise Assets
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI11.htm
+fields:
+- field: HistoryId
+  description: History ID
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 100
+- field: BOPBalance
+  description: Balance at Beginning of Period
+  type: Num
+  size: 19.6
+- field: CurDebit
+  description: Current Period in Debit
+  type: Num
+  size: 19.6
+- field: CurCredit
+  description: Current Period in Credit
+  type: Num
+  size: 19.6
+- field: EOPBalance
+  description: Balance at End of Period
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

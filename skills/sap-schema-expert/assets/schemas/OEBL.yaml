@@ -1,0 +1,35 @@
+table: OEBL
+description: E-Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OEBL.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: WizardName
+  description: Wizard Name
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Saved
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

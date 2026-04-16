@@ -1,0 +1,92 @@
+table: ATX1
+description: Tax Invoice - History - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ATX1.htm
+fields:
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+  - key: J
+    label: Journal Entry
+  - key: C
+    label: Correction Invoice
+  - key: L
+    label: Landed Cost
+- field: RefEntry1
+  description: Ref.1 Document Key
+  type: Int
+  size: 11
+- field: RefEntry2
+  description: Ref.1 Document Key
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: Int
+  size: 6
+  related: ADP1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: RefType
+  description: Ref. Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '18'
+    label: A/P Invoice
+  - key: '30'
+    label: Journal Entry
+  - key: '24'
+    label: Incoming Payment
+  - key: '204'
+    label: A/P Down Payment
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '69'
+    label: Landed Cost
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BaseEntry
+  - LineNum
+  - LogInstanc
+  - ObjType

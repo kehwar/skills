@@ -1,0 +1,35 @@
+table: RIT1
+description: Interest Rates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/RIT1.htm
+fields:
+- field: Code
+  description: Object Code
+  type: nVarChar
+  size: 20
+  related: ORIT
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Days
+  description: Number of Tolerance Days
+  type: Int
+  size: 6
+- field: IntrstPrct
+  description: Interest %
+  type: Num
+  size: 19.6
+- field: FixedSum
+  description: Fixed Interest Amount
+  type: Num
+  size: 19.6
+- field: FixSumCurr
+  description: Fixed Amount Currency
+  type: nVarChar
+  size: 3
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineNum

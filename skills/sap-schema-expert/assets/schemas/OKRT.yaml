@@ -1,0 +1,34 @@
+table: OKRT
+description: Tax Report Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OKRT.htm
+fields:
+- field: AbsEntry
+  description: Tax Report Type ID
+  type: Int
+  size: 11
+- field: TaxRepType
+  description: Tax Report Type Name
+  type: nVarChar
+  size: 254
+- field: Descrip
+  description: Tax Report Type Description
+  type: nVarChar
+  size: 254
+- field: SumRepType
+  description: Summary VAT Report Type
+  type: Int
+  size: 11
+  related: OSVT
+- field: NameDesc
+  description: Tax Report Type Name + Desc
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: TAX_REP_TY
+  unique: true
+  fields:
+  - TaxRepType

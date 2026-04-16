@@ -1,0 +1,21 @@
+table: ODGL
+description: Deduction Group List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ODGL.htm
+fields:
+- field: GroupCode
+  description: Group Code
+  type: nVarChar
+  size: 2
+- field: GroupName
+  description: Group Name
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode

@@ -1,0 +1,112 @@
+table: AEC4
+description: Import Mapping Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AEC4.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+  related: OECM
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '204'
+    label: A/P Down Payment
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '24'
+    label: Incoming Payment
+  - key: '46'
+    label: Outgoing Payment
+- field: ObjXPath
+  description: Object Type XPath
+  type: nVarChar
+  size: 254
+- field: FieldType
+  description: Field Type
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: T
+    label: Federal Tax ID
+  - key: A
+    label: Additional ID
+  - key: U
+    label: Unified Federal Tax ID
+  - key: C
+    label: CNPJ
+  - key: L
+    label: Alias Name
+  - key: I
+    label: IBAN
+  - key: N
+    label: BP Name
+- field: FieldXPath
+  description: Field XPath
+  type: nVarChar
+  size: 254
+- field: ImportFmt
+  description: Import Format
+  type: Int
+  size: 11
+  related: OLLF
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: DflDSerie
+  description: Default Digital Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: -1
+- field: VersionNum
+  description: Version Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

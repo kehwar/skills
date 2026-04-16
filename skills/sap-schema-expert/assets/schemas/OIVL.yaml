@@ -1,0 +1,465 @@
+table: OIVL
+description: Whse Journal
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIVL.htm
+fields:
+- field: TransType
+  description: Transaction Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt
+  - key: '21'
+    label: Goods Return
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '-2'
+    label: Opening Balance
+  - key: '58'
+    label: Inventory Update
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfer
+  - key: '68'
+    label: Work Instructions
+  - key: '-1'
+    label: All Transactions
+  - key: '162'
+    label: Inventory Revaluation
+  - key: '69'
+    label: Landed Costs
+  - key: '310000001'
+    label: Initial Quantity
+  - key: '10000071'
+    label: Inventory Posting
+- field: CreatedBy
+  description: Document Key Created
+  type: Int
+  size: 11
+- field: BASE_REF
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: DocLineNum
+  description: Row Number in Document
+  type: Int
+  size: 11
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: InQty
+  description: Receipt Quantity
+  type: Num
+  size: 19.6
+- field: OutQty
+  description: Issue Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Rate
+  description: Currency Price
+  type: Num
+  size: 19.6
+- field: TrnsfrAct
+  description: Transfer Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PriceDifAc
+  description: Price Difference Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VarianceAc
+  description: Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReturnAct
+  description: Returning Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExcRateAct
+  description: Exchange Rate Differences Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ClearAct
+  description: Goods Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostAct
+  description: COGS Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipAct
+  description: WIP Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OpenStock
+  description: Open Sum Inventory Value
+  type: Num
+  size: 19.6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: PriceDiff
+  description: Price Difference Value
+  type: Num
+  size: 19.6
+- field: TransSeq
+  description: Transaction Sequence No.
+  type: Int
+  size: 11
+  default: 0
+- field: InvntAct
+  description: Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SubLineNum
+  description: Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: AppObjLine
+  description: Applied Object Line
+  type: Int
+  size: 11
+  default: -1
+- field: Expenses
+  description: Inventory Expenses
+  type: Num
+  size: 19.6
+- field: OpenExp
+  description: Open Expenses Value
+  type: Num
+  size: 19.6
+- field: Allocation
+  description: Allocation Amount
+  type: Num
+  size: 19.6
+- field: OpenAlloc
+  description: Open Allocation Value
+  type: Num
+  size: 19.6
+- field: ExpAlloc
+  description: Expenses Allocation Value
+  type: Num
+  size: 19.6
+- field: OExpAlloc
+  description: Open Expenses Allocation Value
+  type: Num
+  size: 19.6
+- field: OpenPDiff
+  description: Open Price Diff. Value
+  type: Num
+  size: 19.6
+- field: ExchDiff
+  description: Exchange Rate Difference Value
+  type: Num
+  size: 19.6
+- field: OpenEDiff
+  description: Open Exchange Rate Diff. Value
+  type: Num
+  size: 19.6
+- field: NegInvAdjs
+  description: Negative Inventory Adjustment Value
+  type: Num
+  size: 19.6
+- field: OpenNegInv
+  description: Open Negative Adjustment
+  type: Num
+  size: 19.6
+- field: NegStckAct
+  description: Negative Inventory Adj. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BTransVal
+  description: Base Transaction Value
+  type: Num
+  size: 19.6
+- field: VarVal
+  description: Variance Value
+  type: Num
+  size: 19.6
+- field: BExpVal
+  description: Base Freight Value
+  type: Num
+  size: 19.6
+- field: CogsVal
+  description: COGS Value
+  type: Num
+  size: 19.6
+- field: BNegAVal
+  description: Base Negative Adjustment Amt
+  type: Num
+  size: 19.6
+- field: IOffIncAcc
+  description: Inventory Offset Increase Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IOffIncVal
+  description: Inv. Offset Increase Value
+  type: Num
+  size: 19.6
+- field: DOffDecAcc
+  description: Inventory Offset Decrease Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DOffDecVal
+  description: Inv. Offset Decrease Value
+  type: Num
+  size: 19.6
+- field: DecAcc
+  description: G/L Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecVal
+  description: G/L Decrease Value
+  type: Num
+  size: 19.6
+- field: WipVal
+  description: WIP Inventory Value
+  type: Num
+  size: 19.6
+- field: WipVarAcc
+  description: WIP Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipVarVal
+  description: WIP Variance Value
+  type: Num
+  size: 19.6
+- field: IncAct
+  description: G/L Increase Account
+  type: nVarChar
+  size: 15
+- field: IncVal
+  description: G/L Increase Value
+  type: Num
+  size: 19.6
+- field: ExpCAcc
+  description: Expense Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostMethod
+  description: Costing Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: A
+    label: Moving Average
+  - key: S
+    label: Standard
+  - key: F
+    label: FIFO
+  - key: B
+    label: Serial/Batch
+  - key: N
+    label: None
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+  related: OILM
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 11
+- field: LocCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: Y
+    label: Year Transfer
+- field: PostStatus
+  description: Posting Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: P
+    label: Partial
+  - key: C
+    label: Complete
+- field: SumStock
+  description: Sum Stock Value
+  type: Num
+  size: 19.6
+- field: OpenCogs
+  description: Open COGS Value
+  type: Num
+  size: 19.6
+- field: OpenQty
+  description: Open Quantity
+  type: Num
+  size: 19.6
+- field: TreeID
+  description: Tree ID
+  type: Int
+  size: 11
+  default: -1
+- field: ParentID
+  description: Parent ID
+  type: Int
+  size: 11
+  default: -1
+- field: PAOffAcc
+  description: Purchase Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PAOffVal
+  description: Purchase Offset Value
+  type: Num
+  size: 19.6
+- field: OpenPAOff
+  description: Open Purchase Offset Value
+  type: Num
+  size: 19.6
+- field: PAAcc
+  description: Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PAVal
+  description: Purchase Account Value
+  type: Num
+  size: 19.6
+- field: OpenPA
+  description: Open Purchase Value
+  type: Num
+  size: 19.6
+- field: LinkArc
+  description: Linked To Archived Doc
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: BSubLineNo
+  description: Base Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: WipDebCred
+  description: 'WIP Account: Debit/Credit Side'
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TransSeq
+- key: ITEM
+  unique: false
+  fields:
+  - ItemCode
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency
+- key: DOCDATE
+  unique: false
+  fields:
+  - DocDate
+- key: DOCENTRY
+  unique: false
+  fields:
+  - CreatedBy
+  - TransType
+  - DocLineNum
+- key: MESSAGEID
+  unique: false
+  fields:
+  - MessageID
+- key: TREEID
+  unique: false
+  fields:
+  - TreeID

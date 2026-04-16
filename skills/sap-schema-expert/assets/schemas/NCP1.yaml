@@ -1,0 +1,39 @@
+table: NCP1
+description: New Cockpit Tile
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/NCP1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PageEntry
+  description: Page Number
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 20
+- field: WidgetId
+  description: Widget ID
+  type: Int
+  size: 11
+- field: Size
+  description: Size
+  type: nVarChar
+  size: 10
+  default: 1x1
+- field: Index
+  description: Index
+  type: Int
+  size: 11
+  default: 0
+- field: Settings
+  description: Settings
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,42 @@
+table: OSRL
+description: Serial Numbers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OSRL.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: SerialNum
+  description: Serial Number
+  type: nVarChar
+  size: 17
+- field: CardCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DocNum
+  description: Invoice Number
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - SerialNum
+- key: INV_NUM
+  unique: false
+  fields:
+  - DocNum
+  - ItemCode
+- key: CARD_KEY
+  unique: false
+  fields:
+  - CardCode

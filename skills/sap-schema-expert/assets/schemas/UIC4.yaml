@@ -1,0 +1,25 @@
+table: UIC4
+description: Forms in Assigned Templates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC4.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: FormId
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserID
+  - FormId
+  - TPLId

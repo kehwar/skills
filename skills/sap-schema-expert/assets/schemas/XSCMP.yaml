@@ -1,0 +1,22 @@
+table: XSCMP
+description: XApp Company Assignment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XSCMP.htm
+fields:
+- field: XID
+  description: XID
+  type: nVarChar
+  size: 64
+- field: COMPANY
+  description: COMPANY
+  type: nVarChar
+  size: 128
+- field: ACTIVATE
+  description: ACTIVATE
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - XID
+  - COMPANY

@@ -1,0 +1,26 @@
+table: OWFST
+description: Web Client Form Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWFST.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 100
+- field: FormId
+  description: Form Id
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '17'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

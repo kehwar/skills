@@ -1,0 +1,116 @@
+table: OCPT
+description: Cockpit Main Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OCPT.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Cockpit Code
+  type: Int
+  size: 6
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: IsDefault
+  description: Is Default
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: UserSign
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsPublic
+  description: Public
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Strategy
+  description: Layout Strategy
+  type: nVarChar
+  size: 20
+- field: _Top
+  description: Client Top
+  type: Int
+  size: 11
+- field: _Left
+  description: Client Left
+  type: Int
+  size: 11
+- field: _Width
+  description: Client Width
+  type: Int
+  size: 11
+- field: _Height
+  description: Client Height
+  type: Int
+  size: 11
+- field: Date
+  description: Publication Date
+  type: Date
+  size: 8
+- field: Time
+  description: Publication Time
+  type: Int
+  size: 6
+- field: Mnfacturer
+  description: Provider
+  type: nVarChar
+  size: 50
+- field: Pubby
+  description: Published By
+  type: nVarChar
+  size: 30
+- field: Disabled
+  description: Disabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: User
+  - key: T
+    label: Template
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - Code
+  - UserSign
+- key: NAME
+  unique: true
+  fields:
+  - Name
+  - UserSign

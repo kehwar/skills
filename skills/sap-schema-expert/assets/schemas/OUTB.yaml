@@ -1,0 +1,81 @@
+table: OUTB
+description: User Tables
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUTB.htm
+fields:
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: TblNum
+  description: Table number
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '0'
+  constraints:
+  - key: '0'
+    label: No Object
+  - key: '1'
+    label: Master Data
+  - key: '2'
+    label: Master Data Rows
+  - key: '3'
+    label: Document
+  - key: '4'
+    label: Document Rows
+  - key: '5'
+    label: No Object with Auto. Increment
+- field: UsedInObj
+  description: Used in Object
+  type: nVarChar
+  size: 20
+- field: LogTable
+  description: Log Table
+  type: nVarChar
+  size: 20
+- field: Archivable
+  description: Archivable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ArchivDate
+  description: Archive Date
+  type: nVarChar
+  size: 18
+- field: DisplyMenu
+  description: Display Menu
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ApplyPerm
+  description: Apply Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableName

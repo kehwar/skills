@@ -1,0 +1,53 @@
+table: OFTP
+description: Microsoft 365 Integration Doc. Export
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OFTP.htm
+fields:
+- field: TASKID
+  description: Task ID
+  type: nVarChar
+  size: 254
+- field: USER_ID
+  description: User Code
+  type: nVarChar
+  size: 254
+- field: CURR
+  description: Current
+  type: Int
+  size: 11
+- field: TOTAL
+  description: Total
+  type: Int
+  size: 11
+- field: ERROR_CODE
+  description: Error Code
+  type: nVarChar
+  size: 254
+- field: STATE
+  description: State
+  type: nVarChar
+  size: 254
+- field: STARTTIME
+  description: Start Time
+  type: Date
+  size: 8
+- field: FILE_NAME
+  description: File Name
+  type: nVarChar
+  size: 254
+- field: RESULT
+  description: Result
+  type: Text
+  size: 16
+- field: ONETTOKEN
+  description: One Time Token
+  type: Text
+  size: 16
+- field: TASKTYPE
+  description: Task Type
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TASKID

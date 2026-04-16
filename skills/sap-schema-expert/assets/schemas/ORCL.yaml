@@ -1,0 +1,52 @@
+table: ORCL
+description: Recurring Transaction Instances
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ORCL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RcpEntry
+  description: Template Entry
+  type: Int
+  size: 11
+  related: ORCP
+- field: Instance
+  description: Recurrence Instance
+  type: Int
+  size: 11
+  default: 0
+- field: PlanDate
+  description: Scheduled Date
+  type: Date
+  size: 8
+- field: Status
+  description: Recurrence Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Executed
+  - key: E
+    label: Executed
+  - key: R
+    label: Removed
+- field: DocObjType
+  description: Document Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '13'
+    label: Invoice
+  - key: '112'
+    label: Draft
+- field: DocEntry
+  description: Created Doc Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

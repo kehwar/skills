@@ -1,0 +1,27 @@
+table: WHL3
+description: Register of VAT Payers - BPs Compared with OWHL
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WHL3.htm
+fields:
+- field: LastDate
+  description: Last Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: NIP
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: BankAcc
+  description: Bank Account
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - NIP
+  - BankAcc

@@ -1,0 +1,57 @@
+table: PDN8
+description: Goods Receipt PO - Items in Package
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/PDN8.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OPDN
+- field: PackageNum
+  description: Package Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '20'
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+  default: 0
+- field: unitMsr
+  description: Unit
+  type: nVarChar
+  size: 100
+- field: NumPerMsr
+  description: UoM Value
+  type: Num
+  size: 19.6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - PackageNum
+  - ItemCode
+  - UomEntry
+  - NumPerMsr

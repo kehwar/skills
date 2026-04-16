@@ -1,0 +1,91 @@
+table: OMIN
+description: A/R Monthly Invoice
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OMIN.htm
+fields:
+- field: Entry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Number
+  description: Monthly Invoice Number
+  type: Int
+  size: 11
+- field: Date
+  description: Monthly Invoice Issue Date
+  type: Date
+  size: 8
+- field: BPCode
+  description: BP Code of Monthly Invoice
+  type: nVarChar
+  size: 15
+- field: BPName
+  description: BP Name of Monthly Invoice
+  type: nVarChar
+  size: 200
+- field: Currency
+  description: Currency of Monthly Invoice
+  type: nVarChar
+  size: 3
+- field: LastBilled
+  description: Last Billed
+  type: Num
+  size: 19.6
+- field: Paid
+  description: Paid in the Period
+  type: Num
+  size: 19.6
+- field: CarryForw
+  description: Carry Balance Forward
+  type: Num
+  size: 19.6
+- field: CurAmount
+  description: Current Amount
+  type: Num
+  size: 19.6
+- field: BillAmount
+  description: Billing Amount
+  type: Num
+  size: 19.6
+- field: OBPaid
+  description: OB Paid in This Period
+  type: Num
+  size: 19.6
+- field: OBLstJENum
+  description: 'Last JE # for OB at Currnt Dte'
+  type: Int
+  size: 11
+- field: Predeces
+  description: Former Monthly Invoice Number
+  type: Int
+  size: 11
+- field: Successor
+  description: Latter Monthly Invoice Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: Cancelled
+  description: is Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: Y
+    label: ''
+- field: Address
+  description: Bill To
+  type: nVarChar
+  size: 254
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Entry

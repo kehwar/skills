@@ -1,0 +1,137 @@
+table: APKL
+description: Pick List - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/APKL.htm
+fields:
+- field: AbsEntry
+  description: Absolute entry
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 155
+- field: OwnerCode
+  description: Owner Code
+  type: Int
+  size: 6
+  related: OUSR
+- field: OwnerName
+  description: Owner Name
+  type: nVarChar
+  size: 155
+- field: PickDate
+  description: Pick Date
+  type: Date
+  size: 8
+- field: Remarks
+  description: Remarks
+  type: Text
+  size: 16
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShipType
+  description: Shipping Type
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Released
+  - key: Y
+    label: Picked
+  - key: P
+    label: Partially Picked
+  - key: D
+    label: Partially Delivered
+  - key: C
+    label: Closed
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Copy
+  - key: N
+    label: Original
+- field: LogInstac
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '156'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UseBaseUn
+  description: Inventory UoM
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QRCodeSrc
+  description: QR Code Source
+  type: Text
+  size: 16
+- field: QRCodeSPGn
+  description: QR Code Source Generated from Stored Procedure
+  type: Text
+  size: 16
+- field: CreateTS
+  description: Create Time Incl. Secs.
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: Pick List
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstac

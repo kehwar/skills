@@ -1,0 +1,126 @@
+table: EBK1
+description: E-Books - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EBK1.htm
+fields:
+- field: AbsEntry
+  description: E-Books Abs. Entry
+  type: Int
+  size: 11
+  related: OEBK
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: NetValue
+  description: Net Value
+  type: Num
+  size: 19.6
+- field: VatCatgory
+  description: VAT Category
+  type: Int
+  size: 11
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: WithheldAm
+  description: Withheld Amount
+  type: Num
+  size: 19.6
+- field: WhPrctCat
+  description: Withheld Percent Category
+  type: Int
+  size: 11
+- field: ExClassTyp
+  description: Expense Classification Type
+  type: Int
+  size: 11
+  related: OECP
+- field: ExClassCat
+  description: Expense Classification Cat.
+  type: Int
+  size: 11
+  related: OECC
+- field: VATClassTy
+  description: VAT Classification Type
+  type: Int
+  size: 11
+  related: OECP
+- field: VATClassCa
+  description: VAT Classification Category
+  type: Int
+  size: 11
+  related: OECC
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatExmpCat
+  description: VAT Exemption Category
+  type: Int
+  size: 11
+  related: OVEC
+- field: RecType
+  description: Record Type
+  type: Int
+  size: 11
+  related: OREC
+- field: StampDutyC
+  description: Stamp Duty Category
+  type: Int
+  size: 11
+  related: OSDC
+- field: StampDutyA
+  description: Stamp Duty Amount
+  type: Num
+  size: 19.6
+- field: OtherTaxCt
+  description: Other Taxes Category
+  type: Int
+  size: 11
+  related: OEOT
+- field: OtherTaxAt
+  description: Othe Taxes Amount
+  type: Num
+  size: 19.6
+- field: FeesCtegr
+  description: Fees Category
+  type: Int
+  size: 11
+  related: OEFC
+- field: FeesAmount
+  description: Fees Amount
+  type: Num
+  size: 19.6
+- field: DiscOption
+  description: Discount Option
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: LineType
+  description: Details or Taxes
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: Invoice Details
+  - key: '2'
+    label: Taxes
+- field: UnderLyAmt
+  description: Underlying Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+  - VatCatgory

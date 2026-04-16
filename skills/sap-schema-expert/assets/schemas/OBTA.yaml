@@ -1,0 +1,304 @@
+table: OBTA
+description: Brazil - Tax Adjustment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBTA.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Canceled
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: TaxCat
+  description: Tax Category
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Referred Collection Document
+  - key: '2'
+    label: Other Obligations, Adjustments, and Information Originating from Fiscal
+      Documents
+  - key: '3'
+    label: Adjustment of ICMS Appraisal
+  - key: '4'
+    label: Adjustment and Additional Information of ICMS Appraisal
+  - key: '5'
+    label: Adjustment of ICMS and Identification of Fiscal Documents
+  - key: '6'
+    label: ICMS Obligations to Pay or Paid - Own Operations
+  - key: '7'
+    label: Adjustment of ICMS-ST Appraisal
+  - key: '8'
+    label: Adjustment and Additional Information of ICMS-ST Appraisal
+  - key: '9'
+    label: Adjustment of ICMS-ST and Identification of Fiscal Documents
+  - key: '10'
+    label: ICMS-ST Obligations to Pay or Paid - Own Operations
+  - key: '11'
+    label: Adjustment of IPI Appraisal
+  - key: '12'
+    label: Adjustment of PIS Appraisal
+  - key: '13'
+    label: Adjustment of COFINS appraisal
+- field: Oper
+  description: Operation
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Other Debits
+  - key: '2'
+    label: Chargeback of Debits
+  - key: '3'
+    label: Other Credits
+  - key: '4'
+    label: Credit Chargeback
+  - key: '5'
+    label: Tax Deductions Calculated
+- field: RefVisType
+  description: Referenced Document ID
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: A/R Invoices
+  - key: '2'
+    label: A/P Invoices
+  - key: '3'
+    label: A/R Credit Memos
+  - key: '4'
+    label: A/P Credit Memos
+  - key: '5'
+    label: Deliveries
+  - key: '6'
+    label: Goods Receipt PO
+  - key: '7'
+    label: A/R Reserve Invoices
+  - key: '8'
+    label: A/P Reserve Invoices
+  - key: '9'
+    label: External Document
+- field: RefObjType
+  description: Referenced Document Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '13'
+    label: A/R Invoices
+  - key: '18'
+    label: A/P Invoices
+  - key: '14'
+    label: A/R Credit Memos
+  - key: '19'
+    label: A/P Credit Memos
+  - key: '15'
+    label: Deliveries
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '-1'
+    label: External Document
+- field: RefDocEnt
+  description: Referenced Document Entry
+  type: Int
+  size: 11
+- field: RefDocNum
+  description: Referenced Document Number
+  type: Int
+  size: 11
+- field: StateUf
+  description: State - UF
+  type: nVarChar
+  size: 2
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: CodDa
+  description: Collection Document
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: GNRE
+  - key: '2'
+    label: Other Document
+- field: NumDa
+  description: Document Number
+  type: nVarChar
+  size: 20
+- field: CodAut
+  description: Bank Authentication
+  type: nVarChar
+  size: 30
+- field: VlDa
+  description: Total Value
+  type: Num
+  size: 19.6
+- field: VlDaSc
+  description: Total Value SC
+  type: Num
+  size: 19.6
+- field: DtVcto
+  description: Due Date
+  type: Date
+  size: 8
+- field: DtPgto
+  description: Payment Date
+  type: Date
+  size: 8
+- field: CodAj
+  description: ICMS Code
+  type: nVarChar
+  size: 10
+- field: DescCompAj
+  description: Remarks
+  type: nVarChar
+  size: 120
+- field: BcIcms
+  description: ICMS Base Amount
+  type: Num
+  size: 19.6
+- field: BcIcmsSc
+  description: ICMS Base Amount SC
+  type: Num
+  size: 19.6
+- field: AliqIcms
+  description: ICMS Rate
+  type: Num
+  size: 19.6
+- field: VlIcms
+  description: ICMS Value
+  type: Num
+  size: 19.6
+- field: VlIcmsSc
+  description: ICMS Value SC
+  type: Num
+  size: 19.6
+- field: VlOutros
+  description: Other Values
+  type: Num
+  size: 19.6
+- field: CodAjApur
+  description: Adjustment Code
+  type: nVarChar
+  size: 10
+- field: NumProc
+  description: Procedure Docket Number
+  type: nVarChar
+  size: 10
+- field: IndProc
+  description: Procedure Docket Indicator
+  type: VarChar
+  size: 1
+- field: Ser
+  description: Fiscal Document Serial
+  type: nVarChar
+  size: 3
+- field: Sub
+  description: Fiscal Document Subserial
+  type: nVarChar
+  size: 3
+- field: NumDoc
+  description: Fiscal Document Number
+  type: Int
+  size: 11
+- field: DtDoc
+  description: Fiscal Document Issue Date
+  type: Date
+  size: 8
+- field: CodMod
+  description: Model Document Number
+  type: nVarChar
+  size: 6
+- field: CodPart
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CodRec
+  description: Revenue Code
+  type: nVarChar
+  size: 15
+- field: GLAcct
+  description: G/L Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NUM
+  unique: true
+  fields:
+  - DocNum

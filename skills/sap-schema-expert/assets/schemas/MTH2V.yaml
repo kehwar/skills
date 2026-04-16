@@ -1,0 +1,59 @@
+table: MTH2V
+description: Bank Statements of External Reconciliation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/MTH2V.htm
+fields:
+- field: MthAcctCod
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: IsInternal
+  description: Reconciliation Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: I
+    label: Internal
+  - key: E
+    label: External
+- field: MatchNum
+  description: Reconciliation No.
+  type: Int
+  size: 11
+- field: BnkAcctCod
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: Sequence
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Ref
+  description: Reference
+  type: nVarChar
+  size: 27
+- field: DebAmount
+  description: Debit Amount
+  type: Num
+  size: 19.6
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MthAcctCod
+  - IsInternal
+  - MatchNum
+  - Sequence
+- key: SECONDARY
+  unique: true
+  fields:
+  - BnkAcctCod
+  - Sequence

@@ -1,0 +1,68 @@
+table: DPO14
+description: A/P Down Payment - Assembly - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/DPO14.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODPO
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: ChildNum
+  description: Child Number
+  type: Int
+  size: 11
+  default: -1
+- field: ItemCode
+  description: Item no.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: TotalQty
+  description: Total Quantity
+  type: Num
+  size: 19.6
+- field: OpenQty
+  description: Remaining Open Quantity
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: object type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '204'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: BaseChildN
+  description: Base Child Number
+  type: Int
+  size: 11
+  default: -1
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - ChildNum

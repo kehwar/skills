@@ -1,0 +1,183 @@
+table: ODTV
+description: Datev Run
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODTV.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+- field: Status
+  description: Datev Run Status
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: In Preparation
+  - key: '2'
+    label: Scheduled
+  - key: '3'
+    label: Running
+  - key: '4'
+    label: Finished
+  - key: '5'
+    label: Failed
+- field: Descrp
+  description: Description
+  type: nVarChar
+  size: 30
+- field: ExportPath
+  description: Export Path
+  type: nVarChar
+  size: 254
+- field: Updater
+  description: Updater
+  type: nVarChar
+  size: 25
+- field: GLAccounts
+  description: Accounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Suppliers
+  description: Suppliers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Customers
+  description: Customers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Journals
+  description: Journals
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AllJETypes
+  description: All Journal Entries
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Manual
+  description: Manual Journal Entries
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Purchase
+  description: Purchase Invoices/Credit Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Sales
+  description: Sales Invoices/Credit Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DateType
+  description: Date Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: StartFisc
+  description: Start of the Fiscal Year
+  type: Date
+  size: 8
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: RunType
+  description: DATEV Run Type
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: Full Run
+  - key: D
+    label: Delta Run
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId

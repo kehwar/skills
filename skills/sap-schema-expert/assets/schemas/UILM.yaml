@@ -1,0 +1,593 @@
+table: UILM
+description: IVI Inventory Log Message
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/UILM.htm
+fields:
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Doc Number
+  type: Int
+  size: 11
+- field: TransType
+  description: Transaction Type
+  type: Int
+  size: 11
+  default: -1
+- field: DocLineNum
+  description: Doc Row Number
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity in Doc
+  type: Num
+  size: 19.6
+- field: EffectQty
+  description: Stock Effective Qty
+  type: Num
+  size: 19.6
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: TotalLC
+  description: Inventory Total LC
+  type: Num
+  size: 19.6
+- field: TotalFC
+  description: Inventory Total FC
+  type: Num
+  size: 19.6
+- field: TotalSC
+  description: Inventory Total SC
+  type: Num
+  size: 19.6
+- field: BaseAbsEnt
+  description: Internal ID of Base Document
+  type: Int
+  size: 11
+- field: BaseType
+  description: Base Transaction Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '17'
+    label: Sales Order
+  - key: '18'
+    label: A/P Invoice
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '22'
+    label: Purchase Order
+  - key: '23'
+    label: Sales Quotation
+  - key: '59'
+    label: Goods Receipt
+  - key: '67'
+    label: Inventory Transfer
+  - key: '69'
+    label: Landed Costs
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '202'
+    label: Production Order
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+- field: BaseCurr
+  description: Base Currency
+  type: nVarChar
+  size: 3
+- field: Currency
+  description: Doc Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: AccumType
+  description: Accumulator Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ACCUM_EMPTY
+  - key: '1'
+    label: ACCUM_ON_HAND
+  - key: '2'
+    label: ACCUM_COMMITTED
+  - key: '3'
+    label: ACCUM_ON_ORDER
+  - key: '4'
+    label: ACCUM_CONSIGNATION
+  - key: '5'
+    label: ACCUM_COUNTED
+- field: ActionType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 5
+  constraints:
+  - key: '0'
+    label: TRANSACTION_UNKNOWN
+  - key: '1'
+    label: TRANSACTION_IN
+  - key: '2'
+    label: TRANSACTION_OUT
+  - key: '3'
+    label: TRANSACTION_SET
+  - key: '4'
+    label: TRANSACTION_COMPLETE
+  - key: '5'
+    label: EMPTY_TRANSACTION
+  - key: '6'
+    label: TRANSACTION_REVALUATION
+  - key: '7'
+    label: TRANSACTION_REVALUATION_INCREASE
+  - key: '8'
+    label: TRANSACTION_REVALUATION_DECREASE
+  - key: '9'
+    label: TRANSACTION_CLOSE_IN
+  - key: '10'
+    label: TRANSACTION_CLOSE_OUT
+  - key: '11'
+    label: TRANSACTION_NEGATIVE_REVALUATION
+  - key: '12'
+    label: TRANSACTION_NULLIFY
+  - key: '13'
+    label: TRANSACTION_RESERVE_CI_IN
+  - key: '14'
+    label: TRANSACTION_RESERVE_CI_OUT
+  - key: '15'
+    label: TRANSACTION_RESERVE_CI_REVAL_INC
+  - key: '16'
+    label: TRANSACTION_RESERVE_CI_REVAL_DEC
+  - key: '17'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_INCREASE
+  - key: '18'
+    label: TRANSACTION_REVAL_PRICE_CHANGE_DECREASE
+- field: ExpensesLC
+  description: Expenses (LC)
+  type: Num
+  size: 19.6
+- field: ExpensesFC
+  description: Expenses (FC)
+  type: Num
+  size: 19.6
+- field: ExpensesSC
+  description: Expenses (SC)
+  type: Num
+  size: 19.6
+- field: DocDueDate
+  description: Doc. Due Date
+  type: Date
+  size: 8
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: BPCardCode
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DocDate
+  description: Doc Date
+  type: Date
+  size: 8
+- field: DocRate
+  description: Doc. Rate
+  type: Num
+  size: 19.6
+- field: Comment
+  description: Comment
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 50
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 100
+- field: BaseLine
+  description: Base Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: SnBType
+  description: Serials and Batches Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '0'
+    label: Batch Numbers Management
+  - key: '1'
+    label: Serial Number Management
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: DocPrice
+  description: Doc Price
+  type: Num
+  size: 19.6
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: Dscription
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: TreeType
+  description: BOM Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not a BOM
+  - key: A
+    label: Assembly
+  - key: S
+    label: Sales
+  - key: I
+    label: BOM Component Item
+  - key: P
+    label: Production
+  - key: T
+    label: Template
+- field: ApplObj
+  description: Applied Object
+  type: Int
+  size: 11
+  default: -1
+- field: AppObjAbs
+  description: Applied Object Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: AppObjType
+  description: Applied Object Type
+  type: VarChar
+  size: 1
+- field: AppObjLine
+  description: Applied Object Row
+  type: Int
+  size: 11
+  default: -1
+- field: BASE_REF
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: TransSeqRf
+  description: Transaction Sequence Ref
+  type: Int
+  size: 11
+  default: -1
+- field: LayerIDRef
+  description: Layer ID Reference
+  type: Int
+  size: 11
+  default: -1
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: PriceRate
+  description: Price Rate
+  type: Num
+  size: 19.6
+- field: PriceCurr
+  description: Price Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: CIShbQty
+  description: Corr. Inv. Doc. Should Be Qty
+  type: Num
+  size: 19.6
+- field: SubLineNum
+  description: Sub Line Number
+  type: Int
+  size: 11
+  default: -1
+- field: PrjCode
+  description: Project code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: SlpCode
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: UseDocPric
+  description: Use Document Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VendorNum
+  description: Vendor Catalog No.
+  type: nVarChar
+  size: 50
+- field: SerialNum
+  description: Serial Number
+  type: nVarChar
+  size: 17
+- field: BlockNum
+  description: Block Number
+  type: nVarChar
+  size: 100
+- field: ImportLog
+  description: Import Log
+  type: nVarChar
+  size: 20
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: DocPrcRate
+  description: Document Price Rate
+  type: Num
+  size: 19.6
+- field: DocPrcCurr
+  description: Document Price Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: CgsOcrCod
+  description: COGS Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: CgsOcrCod2
+  description: COGS Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: CgsOcrCod3
+  description: COGS Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: CgsOcrCod4
+  description: COGS Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: CgsOcrCod5
+  description: COGS Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: BSubLineNo
+  description: Base Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: AppSubLine
+  description: Applied Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SysRate
+  description: System Rate
+  type: Num
+  size: 19.6
+- field: ExFromRpt
+  description: Exclude from Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Ref3
+  description: Reference 3
+  type: nVarChar
+  size: 100
+- field: EnSetCost
+  description: Enable Set Item Cost in Return
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RetCost
+  description: Return Cost in A/R Return
+  type: Num
+  size: 19.6
+- field: DocAction
+  description: Document Action Type
+  type: Int
+  size: 11
+- field: UseShpdGd
+  description: Use Shipped Goods Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: AddTotalLC
+  description: Additional Total LC
+  type: Num
+  size: 19.6
+- field: AddExpLC
+  description: Additional Expenses LC
+  type: Num
+  size: 19.6
+- field: IsNegLnQty
+  description: Negative Line Quantity
+  type: VarChar
+  size: 1
+  default: N
+- field: StgSeqNum
+  description: Stage Sequence Number
+  type: Int
+  size: 11
+- field: StgEntry
+  description: Stage Entry
+  type: Int
+  size: 11
+- field: StgDesc
+  description: Stage Description
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID
+- key: CARD
+  unique: false
+  fields:
+  - BPCardCode
+- key: DocLine
+  unique: false
+  fields:
+  - TransType
+  - DocEntry
+  - DocLineNum
+  - SubLineNum
+- key: APPOBJ
+  unique: false
+  fields:
+  - ApplObj
+  - AppObjAbs
+  - AppObjType
+  - AppObjLine
+- key: BASEOBJ
+  unique: false
+  fields:
+  - BaseType
+  - BaseAbsEnt
+  - BaseLine
+  - BSubLineNo
+- key: EntryType
+  unique: false
+  fields:
+  - DocEntry
+  - TransType
+  - MessageID

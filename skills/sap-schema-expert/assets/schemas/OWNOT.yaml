@@ -1,0 +1,33 @@
+table: OWNOT
+description: Notifications
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWNOT.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: Date
+  description: Activity Date
+  type: Date
+  size: 8
+- field: Read
+  description: Read/Unread status
+  type: VarChar
+  size: 1
+- field: Dismissed
+  description: Dismissed or not
+  type: VarChar
+  size: 1
+- field: NotiType
+  description: Notification Type
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

@@ -1,0 +1,66 @@
+table: WOR3
+description: Production Order - Closure
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WOR3.htm
+fields:
+- field: DocEntry
+  description: Document Internal Number
+  type: Int
+  size: 11
+  related: OWOR
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: RToStock
+  description: Reval. Amount Posted to Stock
+  type: Num
+  size: 19.6
+- field: RToStockSc
+  description: Reval. Amt Posted to Stock SC
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: IVLTransSe
+  description: IVL Transaction Sequence No.
+  type: Int
+  size: 11
+- field: IVLLayerID
+  description: IVL Layer ID
+  type: Int
+  size: 11
+- field: SnbSysNum
+  description: SNB System Number
+  type: Int
+  size: 11
+- field: SnbAbsEnt
+  description: SNB Abs. Entry
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: INMSubLine
+  description: INM Subrow Number
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - LayerID

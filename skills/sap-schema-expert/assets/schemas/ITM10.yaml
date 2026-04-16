@@ -1,0 +1,134 @@
+table: ITM10
+description: OITM Extension
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITM10.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ISCommCode
+  description: Commodity Code
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISSubMasUn
+  description: Intrastat Additional Measure
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISFactor
+  description: IS Factor Additional Measure
+  type: Num
+  size: 19.6
+- field: ISOrCSTImp
+  description: IS Destination State for Impor.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISOrCSTExp
+  description: IS State of Origin for Export
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISNaTraImp
+  description: IS Nature of Trans. Import
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISNaTraExp
+  description: IS Nature of Trans. Export
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISStProImp
+  description: IS Statistical Procedure Imp.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISStProExp
+  description: IS Statistical Procedure Exp.
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISOriCntry
+  description: Intrastat Country of Origin
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ISSerCode
+  description: Intrastat Service Code
+  type: Int
+  size: 11
+  related: ODCI
+- field: ISItemType
+  description: Intrastat Item Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: S
+    label: Service
+- field: ISSerSupMt
+  description: IS Service Supply Method
+  type: nVarChar
+  size: 12
+  default: I
+  constraints:
+  - key: I
+    label: Immediate
+  - key: R
+    label: To More Resumptions
+- field: ISSerPayMt
+  description: IS Service Payment Method
+  type: nVarChar
+  size: 12
+  default: X
+  constraints:
+  - key: A
+    label: Accredited to Bank Account
+  - key: B
+    label: Bank Transfer
+  - key: X
+    label: Other
+- field: ISOrCRYImp
+  description: IS Destination Country for Imp.
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ISOrCRYExp
+  description: IS Origin Country for Export
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: ISUseWeigh
+  description: Use Wt in Add. Measure Calc.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ISRelevant
+  description: Intrastat Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ISStatCode
+  description: Statistical Code
+  type: nVarChar
+  size: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode

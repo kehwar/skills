@@ -1,0 +1,38 @@
+table: DGP4
+description: Business Place List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DGP4.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ODGP
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: BPLId
+  description: Business Place ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Business Place Name
+  type: nVarChar
+  size: 200
+- field: Checked
+  description: Checked
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

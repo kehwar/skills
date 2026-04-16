@@ -1,0 +1,64 @@
+table: AIT6
+description: Asset Item Distribution Rules
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIT6.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Costing Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Costing Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Costing Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Costing Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - LineNum
+  - LogInstanc

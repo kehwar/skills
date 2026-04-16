@@ -1,0 +1,167 @@
+table: GPA5
+description: Product Cost Adjustment - Recalculation of Product Cost
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA5.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OGPA
+- field: LineId
+  description: Row No.
+  type: Int
+  size: 11
+- field: Selected
+  description: Choose
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LnType
+  description: Choose
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: P
+    label: Product Serial/Batch Line
+  - key: O
+    label: Production Order Line
+- field: ProdCode
+  description: Product Code
+  type: nVarChar
+  size: 50
+- field: ProdDescr
+  description: Product Description
+  type: nVarChar
+  size: 200
+- field: PODocAbs
+  description: PO Document Abs. Entry
+  type: Int
+  size: 11
+- field: PODocNum
+  description: PO Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Choose
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Issue for Production
+  - key: R
+    label: Receipt from Production
+- field: DocAbs
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Document Line Number
+  type: Int
+  size: 11
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+- field: ItemDescr
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: DistNumber
+  description: Batch Number
+  type: nVarChar
+  size: 36
+- field: SnBAbs
+  description: SnB Abs. Entry
+  type: Int
+  size: 11
+- field: ManagedBy
+  description: Managed By
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '10000044'
+    label: Batch Numbers
+  - key: '10000045'
+    label: Serial Numbers
+  - key: '-1'
+    label: ''
+- field: LnQty
+  description: Line Quantity
+  type: Num
+  size: 19.6
+- field: SnBQty
+  description: Serial/Batch Quantity
+  type: Num
+  size: 19.6
+- field: LnCost
+  description: Line Cost
+  type: Num
+  size: 19.6
+- field: DebCred
+  description: Debited or Credited
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Debited
+  - key: C
+    label: Credited
+- field: LnTotal
+  description: Line Total
+  type: Num
+  size: 19.6
+- field: SnBTotal
+  description: SnB Total
+  type: Num
+  size: 19.6
+- field: SBAccTotal
+  description: Serial/Batch Accumulated Total
+  type: Num
+  size: 19.6
+- field: SBAccQty
+  description: Serial/Batch Accumulated Quantity
+  type: Num
+  size: 19.6
+- field: ACAccTotal
+  description: Actual Cost Accumulated Total
+  type: Num
+  size: 19.6
+- field: ACAccQty
+  description: Actual Cost Accumulated Quantity
+  type: Num
+  size: 19.6
+- field: Applied
+  description: Applied Adjustment
+  type: Num
+  size: 19.6
+- field: Variance
+  description: Variance to Apply
+  type: Num
+  size: 19.6
+- field: MRVAdjust
+  description: MRV Adjustment
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

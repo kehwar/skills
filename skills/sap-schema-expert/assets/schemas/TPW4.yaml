@@ -1,0 +1,30 @@
+table: TPW4
+description: VAT Refund
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/TPW4.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry No
+  type: Int
+  size: 11
+  related: OTPW
+- field: RefundAcct
+  description: Refund Account Code
+  type: nVarChar
+  size: 15
+- field: RefundAmnt
+  description: Refund Amount
+  type: Num
+  size: 19.6
+- field: RfndAmntFC
+  description: Refund Amount FC
+  type: Num
+  size: 19.6
+- field: RfndAmntSC
+  description: Refund Amount SC
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

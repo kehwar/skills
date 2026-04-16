@@ -1,0 +1,473 @@
+table: OMSN
+description: MRP Scenarios
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/OMSN.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: MsnCode
+  description: MRP Scenario Code
+  type: nVarChar
+  size: 30
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: GrpPeriods
+  description: Group Data into Periods of
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Days
+  - key: W
+    label: Weeks
+  - key: M
+    label: Months
+- field: PeriodsLen
+  description: Group Data into Periods of
+  type: Int
+  size: 11
+  default: 1
+- field: StartDate
+  description: Report Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: Report End Date
+  type: Date
+  size: 8
+- field: MaxLdTime
+  description: Maximum Cumulative Lead Time
+  type: Int
+  size: 11
+- field: HldaysProd
+  description: Holidays for Production
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HldaysPurc
+  description: Holidays for Purchase
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItmFrom
+  description: Items Codes From
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmTo
+  description: Items Codes To
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItmGrp
+  description: Items Groups
+  type: Int
+  size: 11
+  related: OITB
+- field: ItmQryGrp
+  description: Item Summary Report Group
+  type: nVarChar
+  size: 250
+- field: ExistStock
+  description: Consider Existing Inventory
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PurchOrder
+  description: Consider Purchase Orders
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalesOrder
+  description: Consider Sales Orders
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WorkOrder
+  description: Consider Work Orders
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MinStckLvl
+  description: Minimum Inventory Level
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FCTAbs
+  description: Forecast Absolute Entry
+  type: Int
+  size: 11
+  related: OFCT
+- field: SortBy
+  description: Sort By
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Assembly Sequence
+  - key: C
+    label: Item Number
+  - key: N
+    label: Item Description
+  - key: G
+    label: Item Group
+- field: ItmReq
+  description: Items Without Requirement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Simulation
+  description: Is Scenario a Simulation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateBy
+  description: Update By
+  type: nVarChar
+  size: 20
+- field: LastExecDa
+  description: Last Execute Date
+  type: Date
+  size: 8
+- field: AllItems
+  description: All Items
+  type: VarChar
+  size: 1
+  default: Y
+- field: ByCompany
+  description: By Company
+  type: VarChar
+  size: 1
+  default: Y
+- field: IncHisData
+  description: Include Historical Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ResInv
+  description: Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Wtrq
+  description: Inventory Transfer Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InvtLevel
+  description: Inventory Level
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: ''
+  - key: R
+    label: Required
+  - key: I
+    label: Minimum
+  - key: A
+    label: Maximum
+  - key: M
+    label: Minimum - Maximum
+- field: RcmPO
+  description: Recommend Purchase Order
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RcmWO
+  description: Recommend Production Order
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RcmWTRQ
+  description: Recommend ITRQ
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RCMDefWhs
+  description: Recommend to Default Warehouse
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OnlyNettbl
+  description: Only Nettable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpandedPO
+  description: Expanded Purchase Order
+  type: VarChar
+  size: 1
+  default: N
+- field: ExpandedSO
+  description: Expanded Sales Order
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RcmCalDate
+  description: Recommendation Calculated Date
+  type: Date
+  size: 8
+- field: RcmCalTime
+  description: Recommendation Calculated Time
+  type: Int
+  size: 11
+- field: PurchOAT
+  description: Blanket Purchase Agreement
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalesOAT
+  description: Blanket Sales Agreement
+  type: VarChar
+  size: 1
+  default: Y
+- field: Rots
+  description: Recurring Order Transactions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdResINV
+  description: Expanded Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+- field: ExpdWOR
+  description: Expanded Production Order
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IgnoreCLT
+  description: Ignore Cumulative Lead Time
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PurchReq
+  description: Consider Purchase Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PurchQuota
+  description: Consider Purchase Quotations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalesQuota
+  description: Consider Sales Quotations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdPurReq
+  description: Expanded Purchase Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdPQuota
+  description: Expanded Purchase Quotations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdSQuota
+  description: Expanded Sales Quotations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdPAgree
+  description: Expanded Purchase Agreements
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdSAgree
+  description: Expanded Sales Agreements
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExpdTraReq
+  description: Expanded Transfer Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DisSelItem
+  description: Display Selected Item Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: MSN_CODE
+  unique: true
+  fields:
+  - MsnCode

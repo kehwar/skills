@@ -1,0 +1,47 @@
+table: GBI4
+description: GBI Row 4 - Business Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI4.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: BPNo
+  description: BP Number
+  type: nVarChar
+  size: 30
+- field: BPName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: CatNo
+  description: Category Number
+  type: Int
+  size: 6
+- field: Loc
+  description: Location Area
+  type: nVarChar
+  size: 103
+- field: Tel
+  description: Telephone
+  type: nVarChar
+  size: 50
+- field: Address
+  description: Street/PO Box
+  type: nVarChar
+  size: 100
+- field: CreditRank
+  description: Credit Rank
+  type: nVarChar
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

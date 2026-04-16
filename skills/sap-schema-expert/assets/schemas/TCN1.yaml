@@ -1,0 +1,53 @@
+table: TCN1
+description: Tracking Note - Line Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/TCN1.htm
+fields:
+- field: AbsEntry
+  description: Abs. Entry
+  type: Int
+  size: 11
+  related: OTCN
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCCDNum
+  description: Item CCD Number
+  type: nVarChar
+  size: 20
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: CntrOrigin
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: AccQtyAP
+  description: Accumulated A/P Quantity
+  type: Num
+  size: 19.6
+- field: AccQtyAR
+  description: Accumulated A/R Quantity
+  type: Num
+  size: 19.6
+- field: AccRelQty
+  description: Accumulated Relocated Quantity
+  type: Num
+  size: 19.6
+- field: CstGrpCode
+  description: Customs Group
+  type: Int
+  size: 6
+  related: OARG
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

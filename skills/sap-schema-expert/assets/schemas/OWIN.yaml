@@ -1,0 +1,67 @@
+table: OWIN
+description: Workflow Engine Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWIN.htm
+fields:
+- field: Id
+  description: ID
+  type: Int
+  size: 11
+- field: WFInstId
+  description: Workflow Instance ID
+  type: Int
+  size: 11
+- field: TaskId
+  description: Task ID
+  type: Int
+  size: 11
+- field: ProcDefId
+  description: Process Definition ID
+  type: nVarChar
+  size: 250
+- field: FlowElemId
+  description: Flow Element ID
+  type: nVarChar
+  size: 250
+- field: InfoType
+  description: Information Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: E
+    label: Error
+  - key: W
+    label: Warning
+  - key: I
+    label: Information
+  - key: O
+    label: Other
+- field: InfoCode
+  description: Predefined Information Code
+  type: nVarChar
+  size: 10
+- field: Desc
+  description: Description
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Create Time
+  type: Int
+  size: 11
+- field: IsRead
+  description: Info. read by SAP Business One?
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

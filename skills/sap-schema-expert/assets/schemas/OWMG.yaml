@@ -1,0 +1,77 @@
+table: OWMG
+description: Workflow Manager
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWMG.htm
+fields:
+- field: ID
+  description: Workflow ID
+  type: Identity
+  size: 11
+- field: TemplateID
+  description: Template ID
+  type: Int
+  size: 11
+- field: TmplateKey
+  description: Template Key
+  type: nVarChar
+  size: 254
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: Version
+  description: Version
+  type: nVarChar
+  size: 13
+- field: MAXIns
+  description: Maximum Number of Instances
+  type: Int
+  size: 11
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Inactive
+  - key: A
+    label: Active
+  - key: E
+    label: Activation failed
+  - key: M
+    label: Importing
+  - key: P
+    label: Imported
+  - key: F
+    label: Import failed
+  - key: D
+    label: Deleted
+- field: XMLFile
+  description: XML File
+  type: Text
+  size: 16
+- field: Desc
+  description: Description
+  type: Text
+  size: 16
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: StartType
+  description: Start Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual Start
+  - key: T
+    label: Timer Start
+  - key: C
+    label: Conditional Start
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

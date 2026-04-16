@@ -1,0 +1,62 @@
+table: OWFI
+description: Workflow - Instances
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWFI.htm
+fields:
+- field: WFInstID
+  description: WF Instance ID
+  type: Identity
+  size: 11
+- field: ExecID
+  description: WF Instance on Engine
+  type: Int
+  size: 11
+- field: TemplateID
+  description: WF Template ID
+  type: Int
+  size: 11
+- field: Creator
+  description: Creator
+  type: nVarChar
+  size: 25
+- field: Status
+  description: Status
+  type: nVarChar
+  size: 8
+  constraints:
+  - key: S
+    label: Setup
+  - key: F
+    label: Completed
+  - key: G
+    label: In Progress
+  - key: C
+    label: Cancelling
+  - key: Q
+    label: Canceled
+  - key: E
+    label: Error
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 6
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 6
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: IsAutoStar
+  description: Is auto start instance
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WFInstID

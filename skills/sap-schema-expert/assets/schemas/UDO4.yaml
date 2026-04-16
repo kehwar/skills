@@ -1,0 +1,41 @@
+table: UDO4
+description: User-Defined Objects - Child Table Columns
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDO4.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: ColumnNum
+  description: Form Column Number
+  type: Int
+  size: 11
+- field: SonNum
+  description: Child No.
+  type: Int
+  size: 11
+- field: ColAlias
+  description: Form Column Alias
+  type: nVarChar
+  size: 52
+- field: ColDesc
+  description: Form Column Description
+  type: nVarChar
+  size: 80
+- field: ColIsUsed
+  description: Form Column Used or Not
+  type: VarChar
+  size: 1
+  default: N
+- field: ColEdit
+  description: Form Column Actived or Not
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - SonNum
+  - ColumnNum

@@ -1,0 +1,459 @@
+table: RFTL
+description: FITL resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RFTL.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update dateS
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: FITL name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Item number
+  type: Int
+  size: 11
+- field: ItemType
+  description: Item type
+  type: Int
+  size: 11
+  constraints:
+  - key: '4'
+    label: Button
+  - key: '121'
+    label: Check box
+  - key: '114'
+    label: Edit popup
+  - key: '16'
+    label: Edit text
+  - key: '118'
+    label: Extended edit
+  - key: '99'
+    label: Folder
+  - key: '101'
+    label: FwdBck button
+  - key: '123'
+    label: Graph
+  - key: '124'
+    label: Icon
+  - key: '116'
+    label: Link button
+  - key: '127'
+    label: Matrix
+  - key: '120'
+    label: Media
+  - key: '103'
+    label: Multi page
+  - key: '115'
+    label: Pane button
+  - key: '104'
+    label: Pane popup
+  - key: '117'
+    label: Picture
+  - key: '98'
+    label: Pipe
+  - key: '125'
+    label: Popup
+  - key: '119'
+    label: Preview
+  - key: '112'
+    label: Progress
+  - key: '122'
+    label: Radio button
+  - key: '100'
+    label: Rectangle
+  - key: '113'
+    label: Select popup
+  - key: '8'
+    label: Static text
+  - key: '102'
+    label: User group
+  - key: '0'
+    label: User item
+- field: Enabled
+  description: Enabled
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: _Top
+  description: Top
+  type: Int
+  size: 11
+- field: _Bottom
+  description: Bottom
+  type: Int
+  size: 11
+- field: _Left
+  description: Left
+  type: Int
+  size: 11
+- field: _Right
+  description: Right
+  type: Int
+  size: 11
+- field: ItemRes
+  description: Item resource
+  type: Int
+  size: 11
+- field: Font
+  description: Font number
+  type: Int
+  size: 11
+- field: FontSize
+  description: Font size
+  type: Int
+  size: 11
+- field: Attributes
+  description: Attributes
+  type: Int
+  size: 11
+- field: Style
+  description: Style
+  type: Int
+  size: 11
+- field: Mode
+  description: Mode
+  type: Int
+  size: 11
+- field: VarNum
+  description: Variable number
+  type: Int
+  size: 11
+- field: AttrVar
+  description: Attribute variable
+  type: Int
+  size: 11
+- field: NewLineVar
+  description: New line variable
+  type: Int
+  size: 11
+- field: ProcVar
+  description: Proc variable
+  type: Int
+  size: 11
+- field: LinkVar
+  description: Link variable
+  type: Int
+  size: 11
+- field: DragVar
+  description: Drag variable
+  type: Int
+  size: 11
+- field: FileCode
+  description: File code
+  type: nVarChar
+  size: 8
+- field: FieldNum
+  description: Field number
+  type: Int
+  size: 11
+- field: IndexType
+  description: Index type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Variable
+  - key: '1'
+    label: Static
+- field: IndexVal
+  description: Index value
+  type: Int
+  size: 11
+- field: FatIdxType
+  description: Father index type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Variable
+  - key: '1'
+    label: Static
+- field: FatIdxVal
+  description: Father index value
+  type: Int
+  size: 11
+- field: Editable
+  description: Editable
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Invisible
+  description: Invisible
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: SuppressZe
+  description: Suppress zeros
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DfltButton
+  description: Default button
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DataRequir
+  description: Data required
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: ForceUpper
+  description: Force upper
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: RightJust
+  description: Right justified
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: UserType
+  description: User type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Override
+  description: Override validation
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Sentence
+  description: Sentencing
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: ShowType
+  description: Show type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Value + Description
+  - key: '1'
+    label: Value only
+  - key: '2'
+    label: Description only
+- field: DispDecr
+  description: Display description
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: TabOrder
+  description: TAB order
+  type: Int
+  size: 11
+- field: LinkTo
+  description: Link to item
+  type: Int
+  size: 11
+- field: DragEntity
+  description: Drag entity
+  type: Int
+  size: 11
+- field: FromPane
+  description: From pane
+  type: Int
+  size: 11
+- field: ToPane
+  description: To pane
+  type: Int
+  size: 11
+- field: Class
+  description: Class
+  type: Int
+  size: 11
+- field: ItemString
+  description: Item string
+  type: nVarChar
+  size: 64
+- field: StringUpd
+  description: String update date
+  type: Date
+  size: 8
+- field: StringLen
+  description: String length
+  type: Int
+  size: 11
+- field: ItemDesc
+  description: Item description
+  type: nVarChar
+  size: 30
+- field: DescUpd
+  description: Description update date
+  type: Date
+  size: 8
+- field: DescLen
+  description: Description length
+  type: Int
+  size: 11
+- field: FrameRed
+  description: Frame red
+  type: Int
+  size: 11
+- field: FrameGreen
+  description: Frame green
+  type: Int
+  size: 11
+- field: FrameBlue
+  description: Frame blue
+  type: Int
+  size: 11
+- field: BodyRed
+  description: Body red
+  type: Int
+  size: 11
+- field: BodyGreen
+  description: Body green
+  type: Int
+  size: 11
+- field: BodyBlue
+  description: Body blue
+  type: Int
+  size: 11
+- field: TextRed
+  description: Text red
+  type: Int
+  size: 11
+- field: TextGreen
+  description: Text green
+  type: Int
+  size: 11
+- field: TextBlue
+  description: Text blue
+  type: Int
+  size: 11
+- field: ThumbRed
+  description: Thumb red
+  type: Int
+  size: 11
+- field: ThumbGreen
+  description: Thumb green
+  type: Int
+  size: 11
+- field: ThumbBlue
+  description: Thumb blue
+  type: Int
+  size: 11
+- field: TxtFgRed
+  description: Text foreground red
+  type: Int
+  size: 11
+- field: TxtFgGreen
+  description: Text foreground green
+  type: Int
+  size: 11
+- field: TxtFgBlue
+  description: Text foreground blue
+  type: Int
+  size: 11
+- field: TxtBgRed
+  description: Text background red
+  type: Int
+  size: 11
+- field: TxtBgGreen
+  description: Text background green
+  type: Int
+  size: 11
+- field: TxtBgBlue
+  description: Text background green
+  type: Int
+  size: 11
+- field: UniqueID
+  description: Unique ID
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+  - Num
+- key: M_NAME
+  unique: false
+  fields:
+  - Name
+  - Num
+- key: STRING
+  unique: false
+  fields:
+  - ItemString
+- key: UNIQUE_ID
+  unique: true
+  fields:
+  - Language
+  - Name
+  - UniqueID

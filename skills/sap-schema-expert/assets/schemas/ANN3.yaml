@@ -1,0 +1,36 @@
+table: ANN3
+description: Documents Numbering -Belgium Series - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ANN3.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: '20'
+  related: ONNM
+- field: Series
+  description: Series
+  type: Int
+  size: '11'
+  default: '0'
+- field: DocSubType
+  description: VAT Code for Tax Invoice Report
+  type: nVarChar
+  size: '2'
+  default: --
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: '11'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectCode
+  - DocSubType
+  - Series
+  - logInstanc
+- key: SERIES
+  unique: false
+  fields:
+  - Series
+  - logInstanc

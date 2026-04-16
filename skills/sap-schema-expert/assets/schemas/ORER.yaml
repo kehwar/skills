@@ -1,0 +1,21 @@
+table: ORER
+description: Return Reason
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ORER.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Reason
+  description: Return Reason
+  type: nVarChar
+  size: 228
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: REASON
+  unique: true
+  fields:
+  - Reason

@@ -1,0 +1,65 @@
+table: SFDK
+description: SFDK
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SFDK.htm
+fields:
+- field: ID
+  description: Feedback DI
+  type: Int
+  size: 11
+- field: WindowID
+  description: Window ID
+  type: nVarChar
+  size: 254
+- field: DBName
+  description: Company DB Name
+  type: nVarChar
+  size: 200
+- field: UserSign
+  description: User Sign
+  type: Int
+  size: 11
+- field: Date
+  description: Feedback Date
+  type: Date
+  size: 8
+- field: Time
+  description: Feedback Time
+  type: Int
+  size: 6
+- field: Version
+  description: Version including patch number
+  type: nVarChar
+  size: 254
+- field: LOC
+  description: Localization
+  type: nVarChar
+  size: 3
+- field: UILang
+  description: UI Language
+  type: nVarChar
+  size: 3
+- field: Feedback
+  description: Feedback
+  type: Int
+  size: 6
+- field: GUID
+  description: GUID
+  type: nVarChar
+  size: 32
+- field: StrLID
+  description: String List ID
+  type: nVarChar
+  size: 11
+- field: StrIID
+  description: String Index ID
+  type: nVarChar
+  size: 11
+- field: MsgText
+  description: Message text
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

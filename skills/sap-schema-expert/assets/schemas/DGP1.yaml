@@ -1,0 +1,38 @@
+table: DGP1
+description: Customer List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DGP1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ODGP
+- field: CardCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Customer Name
+  type: nVarChar
+  size: 200
+- field: Checked
+  description: Checked
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CtrlAcct
+  description: Control Account
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - CardCode

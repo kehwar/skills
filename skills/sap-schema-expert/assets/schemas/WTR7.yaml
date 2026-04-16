@@ -1,0 +1,47 @@
+table: WTR7
+description: Inventory Transfer - Delivery Packages
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WTR7.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OWTR
+- field: PackageNum
+  description: Package Number
+  type: Int
+  size: 11
+- field: PackageTyp
+  description: Package Type
+  type: nVarChar
+  size: 30
+- field: Weight
+  description: Weight
+  type: Num
+  size: 19.6
+- field: WeightUnit
+  description: UoM
+  type: Int
+  size: 6
+  related: OWGT
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '67'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - PackageNum

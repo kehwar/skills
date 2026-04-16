@@ -1,0 +1,188 @@
+table: AWLS
+description: Workflow - Task Details - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AWLS.htm
+fields:
+- field: WFInstID
+  description: Workflow Instance ID
+  type: Int
+  size: 11
+  related: OWFI
+- field: TaskID
+  description: Task ID
+  type: Int
+  size: 11
+- field: WFID
+  description: Workflow ID
+  type: nVarChar
+  size: 64
+- field: WFName
+  description: Workflow Name
+  type: nVarChar
+  size: 100
+- field: TaskDesc
+  description: Task Description
+  type: nVarChar
+  size: 100
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: Operation
+  description: Operation
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Add
+  - key: U
+    label: Update
+  - key: D
+    label: Delete
+- field: ObjKey
+  description: Object Key
+  type: nVarChar
+  size: 100
+- field: EnterDate
+  description: Enter Date
+  type: Date
+  size: 8
+- field: EnterTime
+  description: Enter Time
+  type: Int
+  size: 6
+- field: TaskType
+  description: Task Type
+  type: VarChar
+  size: 1
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: DueTime
+  description: Due Time
+  type: Int
+  size: 6
+- field: UpdateDate
+  description: Update Date - History
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time - History
+  type: Int
+  size: 6
+- field: Owner
+  description: Owner
+  type: nVarChar
+  size: 25
+- field: Priority
+  description: Priority
+  type: Int
+  size: 6
+  default: 2
+  constraints:
+  - key: '1'
+    label: High
+  - key: '2'
+    label: Medium
+  - key: '3'
+    label: Low
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: S
+    label: Setup
+  - key: W
+    label: To Be Picked
+  - key: P
+    label: Picking
+  - key: G
+    label: In Progress
+  - key: D
+    label: Completing
+  - key: F
+    label: Completed
+  - key: N
+    label: Suspended
+  - key: C
+    label: Cancelling
+  - key: Q
+    label: Canceled
+  - key: O
+    label: Forwarding
+  - key: E
+    label: Error
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+- field: Deleted
+  description: Deleted - History
+  type: VarChar
+  size: 1
+- field: DuraDays
+  description: Duration Days
+  type: Int
+  size: 11
+- field: DuraHours
+  description: Duration Hours
+  type: Int
+  size: 6
+- field: TaskName
+  description: Task Name
+  type: nVarChar
+  size: 100
+- field: isPicked
+  description: Is Picked
+  type: VarChar
+  size: 1
+  default: N
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: WorkListId
+  description: Worklist ID
+  type: Int
+  size: 11
+- field: ObjSubType
+  description: Object Subtype
+  type: nVarChar
+  size: 64
+- field: ForwardTo
+  description: User to Forward
+  type: nVarChar
+  size: 25
+- field: WasRead
+  description: Line Read
+  type: VarChar
+  size: 1
+  default: N
+- field: TrigParams
+  description: Trigger Parameters
+  type: Text
+  size: 16
+- field: Key
+  description: Task ID in XML
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID
+  - LogIns

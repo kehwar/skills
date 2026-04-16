@@ -1,0 +1,20 @@
+table: TRB1
+description: Tax Report Wizard Selected States
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRB1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRB
+- field: State
+  description: State Code
+  type: nVarChar
+  size: 3
+  related: OCST
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - State

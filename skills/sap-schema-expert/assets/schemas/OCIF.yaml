@@ -1,0 +1,33 @@
+table: OCIF
+description: Configuration of Intrastat Fields
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCIF.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: ISTable
+  description: Intrastat Wizard Table
+  type: nVarChar
+  size: 4
+- field: ISField
+  description: Intrastat Wizard Field Alias
+  type: nVarChar
+  size: 10
+- field: FieldDesc
+  description: Field Description
+  type: nVarChar
+  size: 200
+- field: FlLocation
+  description: Field Location
+  type: nVarChar
+  size: 200
+- field: FldSource
+  description: Source of the Field Value
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

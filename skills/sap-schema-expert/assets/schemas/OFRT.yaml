@@ -1,0 +1,136 @@
+table: OFRT
+description: Financial Report Templates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFRT.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: DocType
+  description: Template Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Balance Sheet
+  - key: P
+    label: Profit and Loss
+  - key: C
+    label: Trial Balance
+  - key: F
+    label: Statement of Cash Flows
+  - key: S
+    label: Sales Unit
+  - key: T
+    label: Form 6111
+  - key: A
+    label: Cost Accounting
+  - key: E
+    label: Asset Devalue Provision
+  - key: R
+    label: Shareholder's Rights and Interests Changing
+  - key: D
+    label: Profit Distribution
+  - key: V
+    label: VAT Payable Detail
+  - key: L
+    label: e-Balance Sheet
+  - key: O
+    label: e-Profit and Loss
+  - key: H
+    label: Asset History Sheet
+  - key: G
+    label: Others
+  - key: I
+    label: Taxable Profit and Loss
+  - key: J
+    label: Appropriation of Net Profit
+  - key: K
+    label: E-Asset History Sheet
+- field: FRTCounter
+  description: Financial Report Template Counter
+  type: Int
+  size: 6
+- field: MoveChk1
+  description: Move Chk1
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MoveChk2
+  description: Move Chk2
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MoveTo_1
+  description: Move To 1
+  type: Int
+  size: 6
+  default: 0
+- field: MoveTo_2
+  description: Move To 2
+  type: Int
+  size: 6
+  default: 0
+- field: Title_1
+  description: Title 1
+  type: nVarChar
+  size: 100
+- field: Title_2
+  description: Title 2
+  type: nVarChar
+  size: 100
+- field: ShowMiss
+  description: Display Missing Accounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ToTitle_1
+  description: Move To Title 1
+  type: Int
+  size: 6
+  default: 0
+- field: ToTitle_2
+  description: Move To Title 2
+  type: Int
+  size: 6
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DimCode
+  description: In Which Dimension
+  type: Int
+  size: 11
+  related: ODIM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: SECOND
+  unique: true
+  fields:
+  - DocType
+  - Name

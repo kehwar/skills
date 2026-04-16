@@ -1,0 +1,30 @@
+table: TPW5
+description: Challan Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/TPW5.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry No
+  type: Int
+  size: 11
+  related: OTPW
+- field: ChlnDate
+  description: Challan Date
+  type: Date
+  size: 8
+- field: ChlnNo
+  description: Challan No
+  type: nVarChar
+  size: 50
+- field: ChlnBank
+  description: Challan Bank
+  type: nVarChar
+  size: 100
+- field: ChlnMemo
+  description: Challan Memo
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

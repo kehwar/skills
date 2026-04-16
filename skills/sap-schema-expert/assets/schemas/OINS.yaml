@@ -1,0 +1,308 @@
+table: OINS
+description: Customer Equipment Card
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OINS.htm
+fields:
+- field: insID
+  description: Equipment Card No.
+  type: Int
+  size: 11
+- field: customer
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: custmrName
+  description: Business Partner Name
+  type: nVarChar
+  size: 200
+- field: contactCod
+  description: Contact Person Code
+  type: Int
+  size: 11
+  related: OCPR
+- field: directCsmr
+  description: Direct Customer
+  type: nVarChar
+  size: 15
+- field: drctCsmNam
+  description: Direct Customer Name
+  type: nVarChar
+  size: 200
+- field: manufSN
+  description: Mfr Serial No.
+  type: nVarChar
+  size: 36
+- field: internalSN
+  description: Serial Number
+  type: nVarChar
+  size: 36
+- field: warranty
+  description: Warranty
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: wrrntyStrt
+  description: Warranty Start Date
+  type: Date
+  size: 8
+- field: wrrntyEnd
+  description: Warranty End Date
+  type: Date
+  size: 8
+- field: responsVal
+  description: Time Required for Response
+  type: Int
+  size: 6
+- field: responsUnt
+  description: Time Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: H
+    label: Hour(s)
+  - key: D
+    label: Day(s)
+- field: itemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: itemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: itemGroup
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: manufDate
+  description: Manufacture Date
+  type: Date
+  size: 8
+- field: delivery
+  description: Delivery Key
+  type: Int
+  size: 11
+  related: ODLN
+- field: deliveryNo
+  description: Delivery Number
+  type: Int
+  size: 11
+- field: invoice
+  description: Invoice Key
+  type: Int
+  size: 11
+  related: OINV
+- field: invoiceNum
+  description: Invoice Number
+  type: Int
+  size: 11
+- field: dlvryDate
+  description: Delivery Date
+  type: Date
+  size: 8
+- field: cntctPhone
+  description: Contact Phone
+  type: nVarChar
+  size: 20
+- field: street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: zip
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: city
+  description: City
+  type: nVarChar
+  size: 100
+- field: county
+  description: County
+  type: nVarChar
+  size: 100
+- field: country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: state
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: instLction
+  description: Installation Location
+  type: nVarChar
+  size: 254
+- field: contract
+  description: Contract
+  type: Int
+  size: 11
+  related: OCTR
+- field: cntrctStrt
+  description: Contract Start Date
+  type: Date
+  size: 8
+- field: cntrctEnd
+  description: Contract End Date
+  type: Date
+  size: 8
+- field: attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: objType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '176'
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: userSign
+  description: Creating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: Building
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: status
+  description: Status
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Active
+  - key: R
+    label: Returned
+  - key: T
+    label: Terminated
+  - key: L
+    label: Loaned
+  - key: I
+    label: In Repair Lab
+- field: replcIns
+  description: The CEC this replaced
+  type: Int
+  size: 11
+  related: OINS
+- field: repByIns
+  description: The CEC this is replaced by
+  type: Int
+  size: 11
+  related: OINS
+- field: technician
+  description: Default Technician
+  type: Int
+  size: 11
+  related: OHEM
+- field: territory
+  description: Default Territory
+  type: Int
+  size: 11
+  related: OTER
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+- field: AddrType
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: StreetNo
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: BPType
+  description: BP Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchasing
+  - key: B
+    label: Sales & Purchasing
+- field: OwnerCode
+  description: Equipment Card Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - insID
+- key: C_ITM_SN_S
+  unique: false
+  fields:
+  - customer
+  - itemCode
+  - internalSN
+  - status
+- key: ITM_MNFSN
+  unique: false
+  fields:
+  - itemCode
+  - manufSN
+- key: ITM_INTSN
+  unique: false
+  fields:
+  - itemCode
+  - internalSN

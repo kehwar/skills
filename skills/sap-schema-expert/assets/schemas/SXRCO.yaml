@@ -1,0 +1,58 @@
+table: SXRCO
+description: XLR Context
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRCO.htm
+fields:
+- field: ContextId
+  description: ContextId
+  type: Int
+  size: 11
+- field: B1User
+  description: B1User
+  type: nVarChar
+  size: 50
+- field: Password
+  description: Password
+  type: nVarChar
+  size: 50
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+- field: Applicatio
+  description: ApplicationId
+  type: Int
+  size: 11
+- field: LogonDate
+  description: LogonDate
+  type: Date
+  size: 8
+- field: ExpiryDate
+  description: ExpiryDate
+  type: Date
+  size: 8
+- field: Constrain
+  description: Constraint
+  type: nVarChar
+  size: 250
+- field: DB
+  description: DB
+  type: nVarChar
+  size: 250
+- field: ForceCust
+  description: ForceCustomConnect
+  type: Int
+  size: 11
+  default: 0
+- field: Roles
+  description: Roles
+  type: nVarChar
+  size: 250
+- field: InvalidTer
+  description: InvalidTerms
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ContextId

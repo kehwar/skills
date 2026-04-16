@@ -1,0 +1,350 @@
+table: ORCP
+description: Recurring Transaction Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ORCP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Template Code
+  type: nVarChar
+  size: 8
+- field: Dscription
+  description: Description
+  type: nVarChar
+  size: 50
+- field: IsRemoved
+  description: Is Removed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocObjType
+  description: Linked Document Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '234000031'
+    label: Returns Request
+  - key: '16'
+    label: Return
+  - key: '-203'
+    label: A/R Down Payment Request
+  - key: '203'
+    label: A/R Down Payment Invoice
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '-13'
+    label: A/R Reserve Invoice
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '234000032'
+    label: Goods Returns Request
+  - key: '21'
+    label: Goods Return
+  - key: '-204'
+    label: A/P Down Payment Request
+  - key: '204'
+    label: A/P Down Payment Invoice
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '-18'
+    label: A/P Reserve Invoice
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '1250000001'
+    label: Inventory Transfer Request
+  - key: '67'
+    label: Inventory Transfer
+- field: DraftEntry
+  description: Linked Draft Entry
+  type: Int
+  size: 11
+  related: ODRF
+- field: Frequency
+  description: Frequency
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: D
+    label: Daily
+  - key: W
+    label: Weekly
+  - key: X
+    label: Every 2 Weeks
+  - key: M
+    label: Monthly
+  - key: P
+    label: Every 2 Months
+  - key: Q
+    label: Quarterly
+  - key: S
+    label: Semiannually
+  - key: A
+    label: Annually
+  - key: O
+    label: One Time
+- field: Remind
+  description: Sub-Frequency
+  type: Int
+  size: 6
+  default: 1001
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '1'
+    label: On Sunday
+  - key: '2'
+    label: On Monday
+  - key: '3'
+    label: On Tuesday
+  - key: '4'
+    label: On Wednesday
+  - key: '5'
+    label: On Thursday
+  - key: '6'
+    label: On Friday
+  - key: '7'
+    label: On Saturday
+  - key: '101'
+    label: Every 1
+  - key: '102'
+    label: Every 2
+  - key: '103'
+    label: Every 3
+  - key: '104'
+    label: Every 4
+  - key: '105'
+    label: Every 5
+  - key: '106'
+    label: Every 6
+  - key: '107'
+    label: Every 7
+  - key: '108'
+    label: Every 8
+  - key: '109'
+    label: Every 9
+  - key: '110'
+    label: Every 10
+  - key: '111'
+    label: Every 11
+  - key: '112'
+    label: Every 12
+  - key: '113'
+    label: Every 13
+  - key: '114'
+    label: Every 14
+  - key: '115'
+    label: Every 15
+  - key: '116'
+    label: Every 16
+  - key: '117'
+    label: Every 17
+  - key: '118'
+    label: Every 18
+  - key: '119'
+    label: Every 19
+  - key: '120'
+    label: Every 20
+  - key: '121'
+    label: Every 21
+  - key: '122'
+    label: Every 22
+  - key: '123'
+    label: Every 23
+  - key: '124'
+    label: Every 24
+  - key: '125'
+    label: Every 25
+  - key: '126'
+    label: Every 26
+  - key: '127'
+    label: Every 27
+  - key: '128'
+    label: Every 28
+  - key: '129'
+    label: Every 29
+  - key: '130'
+    label: Every 30
+  - key: '131'
+    label: Every 31
+  - key: '145'
+    label: Every 45
+  - key: '160'
+    label: Every 60
+  - key: '1001'
+    label: On 1
+  - key: '1002'
+    label: On 2
+  - key: '1003'
+    label: On 3
+  - key: '1004'
+    label: On 4
+  - key: '1005'
+    label: On 5
+  - key: '1006'
+    label: On 6
+  - key: '1007'
+    label: On 7
+  - key: '1008'
+    label: On 8
+  - key: '1009'
+    label: On 9
+  - key: '1010'
+    label: On 10
+  - key: '1011'
+    label: On 11
+  - key: '1012'
+    label: On 12
+  - key: '1013'
+    label: On 13
+  - key: '1014'
+    label: On 14
+  - key: '1015'
+    label: On 15
+  - key: '1016'
+    label: On 16
+  - key: '1017'
+    label: On 17
+  - key: '1018'
+    label: On 18
+  - key: '1019'
+    label: On 19
+  - key: '1020'
+    label: On 20
+  - key: '1021'
+    label: On 21
+  - key: '1022'
+    label: On 22
+  - key: '1023'
+    label: On 23
+  - key: '1024'
+    label: On 24
+  - key: '1025'
+    label: On 25
+  - key: '1026'
+    label: On 26
+  - key: '1027'
+    label: On 27
+  - key: '1028'
+    label: On 28
+  - key: '1029'
+    label: On 29
+  - key: '1030'
+    label: On 30
+  - key: '1031'
+    label: On 31
+- field: StartDate
+  description: Execution Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: Execution End Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateUser
+  description: Created by User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UpdateUser
+  description: Updated by User
+  type: nVarChar
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: PriceUpdat
+  description: Prices Update
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

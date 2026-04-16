@@ -1,0 +1,52 @@
+table: MSN2
+description: MRP Run Results
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/MSN2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PeriodID
+  description: Period ID
+  type: Int
+  size: 11
+- field: Initial
+  description: Initial Quantity
+  type: Num
+  size: 19.6
+- field: InitialOrg
+  description: Original Initial Quantity
+  type: Num
+  size: 19.6
+- field: InStock
+  description: Incoming Stock
+  type: Num
+  size: 19.6
+- field: OutStock
+  description: Outgoing Stock
+  type: Num
+  size: 19.6
+- field: Final
+  description: Final Quantity
+  type: Num
+  size: 19.6
+- field: FinalOrg
+  description: Original Final Quantity
+  type: Num
+  size: 19.6
+- field: Requests
+  description: Requests
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - PeriodID
+  - ItemCode

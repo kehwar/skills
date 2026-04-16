@@ -1,0 +1,85 @@
+table: OSLT
+description: Service Call Solutions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OSLT.htm
+fields:
+- field: SltCode
+  description: Solution Code
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: StatusNum
+  description: Status
+  type: Int
+  size: 11
+  related: OSST
+- field: Owner
+  description: Owner
+  type: Int
+  size: 11
+  related: OUSR
+- field: CreatedBy
+  description: Created By
+  type: Int
+  size: 11
+  related: OUSR
+- field: DateCreate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateBy
+  description: Last Update by
+  type: Int
+  size: 11
+  related: OUSR
+- field: DateUpdate
+  description: Last Update Date
+  type: Date
+  size: 8
+- field: Subject
+  description: Subject
+  type: nVarChar
+  size: 254
+- field: Symptom
+  description: Symptom
+  type: nVarChar
+  size: 254
+- field: Cause
+  description: Cause
+  type: nVarChar
+  size: 254
+- field: Descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: Attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SltCode

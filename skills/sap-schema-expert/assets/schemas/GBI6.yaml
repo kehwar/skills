@@ -1,0 +1,83 @@
+table: GBI6
+description: GBI Row 6 - G/L Account Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI6.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: Currency
+  description: Account Currency
+  type: nVarChar
+  size: 3
+- field: EvalGrp
+  description: Group for Calculating
+  type: nVarChar
+  size: 254
+- field: PerBBal
+  description: Period Begin Balance
+  type: Num
+  size: 19.6
+- field: PerBQty
+  description: Period Begin Quantity
+  type: Num
+  size: 19.6
+- field: PerBFCBal
+  description: Period Begin FC Balance
+  type: Num
+  size: 19.6
+- field: CPDAmt
+  description: Current Period Debit Amount
+  type: Num
+  size: 19.6
+- field: CPDQty
+  description: Current Period Debit Quantity
+  type: Num
+  size: 19.6
+- field: CPDFCAmt
+  description: Current Period Debit FC Amount
+  type: Num
+  size: 19.6
+- field: CPCAmt
+  description: Current Period Credit Amount
+  type: Num
+  size: 19.6
+- field: CPCQty
+  description: Current Period Credit Quantity
+  type: Num
+  size: 19.6
+- field: CPCFCAmt
+  description: Current Period Credit FC Amnt
+  type: Num
+  size: 19.6
+- field: PerEBal
+  description: Period End Balance
+  type: Num
+  size: 19.6
+- field: PerEQty
+  description: Period End Quantity
+  type: Num
+  size: 19.6
+- field: PerEFCBal
+  description: Period End FC Balance
+  type: Num
+  size: 19.6
+- field: AcctPeriod
+  description: Fiscal Month
+  type: nVarChar
+  size: 2
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

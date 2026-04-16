@@ -1,0 +1,40 @@
+table: WPM3
+description: Process Map External Action
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPM3.htm
+fields:
+- field: PrcMapId
+  description: Process Map ID
+  type: nVarChar
+  size: 40
+  related: OWPM
+- field: StepId
+  description: Step ID
+  type: nVarChar
+  size: 40
+- field: Guid
+  description: Guid of External Action
+  type: nVarChar
+  size: 40
+- field: InputField
+  description: Input Field
+  type: nVarChar
+  size: 50
+- field: Name
+  description: External Action Name
+  type: nVarChar
+  size: 254
+- field: Infor
+  description: Information
+  type: nVarChar
+  size: 254
+- field: Type
+  description: External Action Type
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcMapId
+  - StepId
+  - Guid

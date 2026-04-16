@@ -1,0 +1,58 @@
+table: OROC
+description: Retorno Operation Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OROC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: OccurCode
+  description: Occurrence Code
+  type: Int
+  size: 11
+- field: MovemnCode
+  description: Movement Code
+  type: Int
+  size: 6
+- field: BoeStatus
+  description: BoE Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+  - key: D
+    label: Deposited
+  - key: P
+    label: Paid
+  - key: C
+    label: Canceled
+  - key: L
+    label: Closed
+  - key: F
+    label: Failed
+  - key: V
+    label: BoE to Vendor
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 254
+- field: Color
+  description: Color
+  type: Int
+  size: 11
+- field: FileFormat
+  description: File Format
+  type: nVarChar
+  size: 100
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

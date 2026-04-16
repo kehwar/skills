@@ -1,0 +1,92 @@
+table: RPD18
+description: Goods Return - Export Process
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/RPD18.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ORPD
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '21'
+- field: ExpDocType
+  description: Type of Exportation Document
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: ExpDeclNum
+  description: Exportation Declaration Number
+  type: Int
+  size: 11
+- field: ExpDeclDat
+  description: Exportation Declaration Date
+  type: Date
+  size: 8
+- field: ExpNature
+  description: Nature of Exportation
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: ExpRegNum
+  description: Number of Exportation Registry
+  type: Int
+  size: 11
+- field: ExpRegDate
+  description: Date of Exportation Registry
+  type: Date
+  size: 8
+- field: LadBillNum
+  description: Bill of Lading Number
+  type: nVarChar
+  size: 19
+- field: LadBillDat
+  description: Date of Bill of Lading
+  type: Date
+  size: 8
+- field: MerchLeftD
+  description: Date Merchandise Left Customs
+  type: Date
+  size: 8
+- field: LadBillTyp
+  description: Type of Bill of Lading
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: DrawSReg
+  description: Drawback - Suspension Regime
+  type: nVarChar
+  size: 11
+- field: NatureExp
+  description: Nature of Export
+  type: nVarChar
+  size: 44
+- field: QultExpItm
+  description: Quantity of Exported Items
+  type: Num
+  size: 19.6
+- field: nSeqAdic
+  description: Additional Item Sequential Number
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

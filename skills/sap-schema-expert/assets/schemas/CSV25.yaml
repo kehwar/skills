@@ -1,0 +1,76 @@
+table: CSV25
+description: A/R Correction Invoice Reversal - Amt Per VAT Grp
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/CSV25.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODOC
+- field: VatGroup
+  description: Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatPrcnt
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: BaseAmnt
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: BaseAmntFC
+  description: Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseAmntSC
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: VatSumFrgn
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatSumSy
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: Discount by Tax
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Rate
+  description: Currency Rate
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '166'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - VatGroup
+  - Type

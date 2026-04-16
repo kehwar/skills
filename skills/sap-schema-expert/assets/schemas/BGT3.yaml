@@ -1,0 +1,58 @@
+table: BGT3
+description: Budget - Cost Accounting Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BGT3.htm
+fields:
+- field: BudgId
+  description: Budget Key
+  type: Int
+  size: 11
+  related: OBGT
+- field: OcrCode
+  description: Factor Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: DimCode
+  description: In Which Dimension
+  type: Int
+  size: 6
+  related: ODIM
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+  related: OBGS
+  default: 1
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+- field: DebLTotal
+  description: Monthly Budget - Deb.
+  type: Num
+  size: 19.6
+- field: CredLTotal
+  description: Monthly Budget - Cr.
+  type: Num
+  size: 19.6
+- field: DebSTotal
+  description: Monthly Budget - SC Deb.
+  type: Num
+  size: 19.6
+- field: CredSTotal
+  description: Monthly Budget - SC Cr.
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BudgId
+  - OcrCode
+  - DimCode
+  - Line_ID

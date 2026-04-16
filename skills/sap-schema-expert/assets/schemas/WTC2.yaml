@@ -1,0 +1,55 @@
+table: WTC2
+description: WTax Certificates - Docs in WT Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/WTC2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: BaseLineId
+  description: Base Line Number
+  type: Int
+  size: 11
+- field: LineId
+  description: Line Number
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocObjType
+  description: Doc. Object Type
+  type: nVarChar
+  size: 20
+- field: VatAmnt
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: DocTot
+  description: Doc. Total Amount
+  type: Num
+  size: 19.6
+- field: WTBaseAmnt
+  description: WTax Base Amount
+  type: Num
+  size: 19.6
+- field: WTAccAmnt
+  description: Accumulated Amount
+  type: Num
+  size: 19.6
+- field: WTPercpAm
+  description: WTax Perception Amount
+  type: Num
+  size: 19.6
+- field: WTPercent
+  description: WTax Rate
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - BaseLineId
+  - LineId

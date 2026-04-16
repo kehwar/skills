@@ -1,0 +1,74 @@
+table: VPM8
+description: Outgoing Payment - TDS Entries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/VPM8.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OVPM
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: InvType
+  description: Invoice Category
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: All Transactions
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '10000079'
+    label: TDS Adjustment
+- field: DocEntry
+  description: Invoice Internal ID
+  type: Int
+  size: 11
+- field: DocLine
+  description: Invoice Row Number
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '46'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: PaidEntry
+  description: Payment Internal ID
+  type: Int
+  size: 11
+  related: OVPM
+- field: PaidLine
+  description: Payment Row Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - LineNum
+- key: INVOICE
+  unique: false
+  fields:
+  - InvType
+  - DocEntry
+  - DocLine
+- key: PAYMENT
+  unique: false
+  fields:
+  - PaidEntry
+  - PaidLine

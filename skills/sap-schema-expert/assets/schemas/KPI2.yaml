@@ -1,0 +1,33 @@
+table: KPI2
+description: Key Performance Indicator Scope
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/KPI2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: KPIEntry
+  description: KPI Number
+  type: Int
+  size: 11
+- field: Type
+  description: KPI Scope Type
+  type: nVarChar
+  size: 250
+- field: From
+  description: From Value
+  type: Num
+  size: 19.6
+- field: To
+  description: To Value
+  type: Num
+  size: 19.6
+- field: Color
+  description: Color
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,41 @@
+table: RTL1
+description: Resource Transaction Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/RTL1.htm
+fields:
+- field: LogEntry
+  description: Log Entry ID
+  type: Int
+  size: 11
+- field: StdCostNum
+  description: Resource Standard Cost Number
+  type: Int
+  size: 11
+- field: BaseLogEnt
+  description: Base Log Entry ID
+  type: Int
+  size: 11
+  related: ORTL
+  default: -1
+- field: DocQty
+  description: Doc. Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: Total
+  description: Total
+  type: Num
+  size: 19.6
+- field: OpenTotal
+  description: Open Total
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry
+  - StdCostNum
+  - BaseLogEnt

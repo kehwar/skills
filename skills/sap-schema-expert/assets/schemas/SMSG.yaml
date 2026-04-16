@@ -1,0 +1,21 @@
+table: SMSG
+description: SMSG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/SMSG.htm
+fields:
+- field: Code
+  description: Internal Key
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: Unique key
+- field: Signature
+  description: E-Mail signature
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

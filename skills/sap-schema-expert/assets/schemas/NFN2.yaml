@@ -1,0 +1,35 @@
+table: NFN2
+description: NFSeq User Default
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NFN2.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+  related: ONFN
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: DocSubType
+  description: Document Sub-Type
+  type: nVarChar
+  size: 2
+  default: --
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectCode
+  - DocSubType
+  - UserSign
+  - SeqCode
+- key: USER
+  unique: false
+  fields:
+  - UserSign

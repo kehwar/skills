@@ -1,0 +1,55 @@
+table: OQRC
+description: QR Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OQRC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: FileContnt
+  description: QR Code Image Content
+  type: Text
+  size: 16
+- field: SrcObjType
+  description: Source Object Type
+  type: Int
+  size: 11
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: nVarChar
+  size: 20
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: 50
+- field: ExpAfter
+  description: Expire after defined days
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Secs
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcObjAbs
+  - FieldName

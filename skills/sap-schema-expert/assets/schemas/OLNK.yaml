@@ -1,0 +1,25 @@
+table: OLNK
+description: Help Links
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OLNK.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LnkAddr
+  description: Link Address
+  type: Text
+  size: 16
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Provider
+  description: Provider
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

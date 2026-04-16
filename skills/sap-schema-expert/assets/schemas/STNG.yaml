@@ -1,0 +1,22 @@
+table: STNG
+description: STNG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/STNG.htm
+fields:
+- field: lang
+  description: Language
+  type: Int
+  size: 11
+- field: num
+  description: Number
+  type: Int
+  size: 11
+- field: string
+  description: String
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - lang
+  - num

@@ -1,0 +1,46 @@
+table: NNM6
+description: Documents Numbering - Supplementary Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/NNM6.htm
+fields:
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+  related: ONNM
+- field: PeriodType
+  description: Sequence Period Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: Annually
+  - key: M
+    label: Monthly
+  - key: W
+    label: Weekly
+  - key: P
+    label: Permanent
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: Sequence
+  description: Current Sequence
+  type: Int
+  size: 11
+- field: FormatStr
+  description: Format String for Create Code
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectCode
+  - PeriodType
+  - StartDate
+  - EndDate

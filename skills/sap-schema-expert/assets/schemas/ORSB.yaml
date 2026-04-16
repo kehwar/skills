@@ -1,0 +1,181 @@
+table: ORSB
+description: Resource Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ORSB.htm
+fields:
+- field: ResGrpCod
+  description: Number
+  type: Int
+  size: 6
+- field: ResGrpNam
+  description: Group Name
+  type: nVarChar
+  size: 20
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Object
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '292'
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+- field: updateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: ResType
+  description: Resource Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Machine
+  - key: L
+    label: Labor
+  - key: O
+    label: Other
+- field: CostName1
+  description: Resource Std Cost 1
+  type: nVarChar
+  size: 254
+- field: CostVal1
+  description: Resource Std Cost 1
+  type: Num
+  size: 19.6
+- field: CostName2
+  description: Resource Std Cost 2
+  type: nVarChar
+  size: 254
+- field: CostVal2
+  description: Resource Std Cost 2
+  type: Num
+  size: 19.6
+- field: CostName3
+  description: Resource Std Cost 3
+  type: nVarChar
+  size: 254
+- field: CostVal3
+  description: Resource Std Cost 3
+  type: Num
+  size: 19.6
+- field: CostName4
+  description: Resource Std Cost 4
+  type: nVarChar
+  size: 254
+- field: CostVal4
+  description: Resource Std Cost 4
+  type: Num
+  size: 19.6
+- field: CostName5
+  description: Resource Std Cost 5
+  type: nVarChar
+  size: 254
+- field: CostVal5
+  description: Resource Std Cost 5
+  type: Num
+  size: 19.6
+- field: CostName6
+  description: Resource Std Cost 6
+  type: nVarChar
+  size: 254
+- field: CostVal6
+  description: Resource Std Cost 6
+  type: Num
+  size: 19.6
+- field: CostName7
+  description: Resource Std Cost 7
+  type: nVarChar
+  size: 254
+- field: CostVal7
+  description: Resource Std Cost 7
+  type: Num
+  size: 19.6
+- field: CostName8
+  description: Resource Std Cost 8
+  type: nVarChar
+  size: 254
+- field: CostVal8
+  description: Resource Std Cost 8
+  type: Num
+  size: 19.6
+- field: CostName9
+  description: Resource Std Cost 9
+  type: nVarChar
+  size: 254
+- field: CostVal9
+  description: Resource Std Cost 9
+  type: Num
+  size: 19.6
+- field: CostName10
+  description: Resource Std Cost 10
+  type: nVarChar
+  size: 254
+- field: CostVal10
+  description: Resource Std Cost 10
+  type: Num
+  size: 19.6
+- field: ResUoM
+  description: Resource Unit of Measurement
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ResGrpCod
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - ResGrpNam

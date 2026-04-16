@@ -1,0 +1,54 @@
+table: APJT
+description: Project Plan
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/APJT.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: TempType
+  description: Template Type
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: S
+    label: System Template
+  - key: N
+    label: Nonsystem Template
+- field: TempName
+  description: Template Name
+  type: nVarChar
+  size: '254'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '11'
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '11'
+  related: OUSR
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: '8'
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: '8'
+- field: TempDesc
+  description: Template Description
+  type: nVarChar
+  size: '254'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LogInstanc

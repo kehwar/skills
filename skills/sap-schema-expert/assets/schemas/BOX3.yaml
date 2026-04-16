@@ -1,0 +1,53 @@
+table: BOX3
+description: Box Definition - Choice
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BOX3.htm
+fields:
+- field: BoxCode
+  description: Group Code
+  type: nVarChar
+  size: 30
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: ''
+  - key: S
+    label: ''
+- field: Value
+  description: Value
+  type: nVarChar
+  size: 8
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 250
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: BosCode
+  description: Box Set Code
+  type: Int
+  size: 11
+  related: OBOS
+- field: IsDefault
+  description: Is Default
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoxCode
+  - ReportType
+  - Value
+  - BosCode

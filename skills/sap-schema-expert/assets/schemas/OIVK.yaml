@@ -1,0 +1,39 @@
+table: OIVK
+description: IVL Vs OINM Keys
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIVK.htm
+fields:
+- field: TransSeq
+  description: Transaction Sequence No.
+  type: Int
+  size: 11
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+- field: RootID
+  description: Root ID
+  type: Int
+  size: 11
+- field: TransNum
+  description: Transaction Number
+  type: Int
+  size: 11
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+  default: 0
+- field: INMTransSe
+  description: INM_Transaction Sequence No.
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - INMTransSe
+- key: TRANSSEQ
+  unique: true
+  fields:
+  - TransSeq
+  - LayerID

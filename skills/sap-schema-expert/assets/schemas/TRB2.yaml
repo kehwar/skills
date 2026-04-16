@@ -1,0 +1,20 @@
+table: TRB2
+description: Tax Report Wizard Selected Tax Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRB2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRB
+- field: StaType
+  description: Tax Authority Type
+  type: Int
+  size: 11
+  related: OSTT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - StaType

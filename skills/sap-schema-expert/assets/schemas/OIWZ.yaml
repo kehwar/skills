@@ -1,0 +1,241 @@
+table: OIWZ
+description: Inflation Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OIWZ.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: WizName
+  description: Wizard Name
+  type: nVarChar
+  size: 100
+- field: PostDateTo
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: WizType
+  description: Wizard Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '1'
+    label: G\L Account Revaluation Wizard
+  - key: '2'
+    label: Inventory Revaluation Wizard
+  - key: '3'
+    label: COGS Revaluation Wizard
+- field: IndexCode
+  description: Index Code
+  type: nVarChar
+  size: 3
+- field: IndexRate
+  description: Index Rate
+  type: Num
+  size: 19.6
+- field: CashAcct
+  description: Cash Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CashFrmBl
+  description: Cash from Balance
+  type: Num
+  size: 19.6
+- field: CashCancel
+  description: Cash Cancel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FromItem
+  description: Item Number To
+  type: nVarChar
+  size: 50
+- field: ToItem
+  description: Item Number To
+  type: nVarChar
+  size: 50
+- field: ItemGroup
+  description: Item Group
+  type: Int
+  size: 6
+- field: Properties
+  description: Item Properties
+  type: nVarChar
+  size: 250
+- field: RvalMethod
+  description: Inventory Revaluation Method
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Price Source
+  - key: I
+    label: Inflation Only
+- field: PriceSour
+  description: Price Source
+  type: Int
+  size: 6
+- field: TransAbs
+  description: Journal Entry Absolute Entry
+  type: Int
+  size: 11
+- field: UseDLN
+  description: Use Delivery Notes
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UsePCH
+  description: Use Invoices with Stock Trans.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UsePCHNoSt
+  description: Use Invoices without Trans.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseImport
+  description: Use Import Data
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CashDifBal
+  description: Cash Acct Difference Balance
+  type: Num
+  size: 19.6
+- field: CashExecut
+  description: Cash Executed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ActType
+  description: Account Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Post amount to adjustment account
+  - key: S
+    label: Post amount to inventory account
+- field: VarRate
+  description: Price Variance Rate
+  type: Num
+  size: 19.6
+- field: FilterExe
+  description: Filter Executed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CashErrRes
+  description: Cash Account Error Reason
+  type: Int
+  size: 11
+- field: CshRvToAct
+  description: Cash Revaluate to Account
+  type: nVarChar
+  size: 15
+- field: MarkVar
+  description: Mark Items with Varient Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChngPrice
+  description: Change Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UseSemestr
+  description: Revaluate by Semesters Index
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: CshLstRvBl
+  description: Cash Last Revaluation Balance
+  type: Num
+  size: 19.6
+- field: userSign
+  description: Creating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: userSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CshCanclD
+  description: Cash Acct Cancellation Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Active Branch
+  type: Int
+  size: 11
+  related: OBPL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

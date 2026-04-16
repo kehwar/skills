@@ -1,0 +1,218 @@
+table: FIX1
+description: Fixed Asset Transaction - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FIX1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OFIX
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: DprArea
+  description: Depreciation Area ID
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: PeriodCat
+  description: Period Category ID
+  type: nVarChar
+  size: 10
+- field: PostPeriod
+  description: Posting Subperiod
+  type: Int
+  size: 11
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: APC
+  description: APC
+  type: Num
+  size: 19.6
+- field: OrdDpr
+  description: Ordinary Depreciation
+  type: Num
+  size: 19.6
+- field: UnpDpr
+  description: Unplanned Depreciation
+  type: Num
+  size: 19.6
+- field: SpDprKey1
+  description: Special Depreciation Key 01
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDpr1
+  description: Special Depreciation 01
+  type: Num
+  size: 19.6
+- field: Qty
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: DprType
+  description: New Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: DprDate
+  description: New Depreciation Start Date
+  type: Date
+  size: 8
+- field: RemLife
+  description: New Remaining Life
+  type: Int
+  size: 11
+- field: SalvageVal
+  description: New Salvage Value
+  type: Num
+  size: 19.6
+- field: RecvAsst
+  description: Receiving Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: RetirDate
+  description: Retirement Date
+  type: Date
+  size: 8
+- field: SpDprKey2
+  description: Special Depreciation Key 02
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDpr2
+  description: Special Depreciation 02
+  type: Num
+  size: 19.6
+- field: SpDprKey3
+  description: Special Depreciation Key 03
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: TransType
+  description: Transaction Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: '0'
+    label: Unknown
+  - key: '110'
+    label: Acquisition
+  - key: '115'
+    label: Subacquisition
+  - key: '120'
+    label: Credit Memo
+  - key: '210'
+    label: Full Retirement
+  - key: '220'
+    label: Full Scrapping
+  - key: '230'
+    label: Partial Retirement
+  - key: '240'
+    label: Partial Scrapping
+  - key: '260'
+    label: Low Value Asset Full Retirement
+  - key: '270'
+    label: Low Value Asset Full Scrapping
+  - key: '310'
+    label: Full Transfer
+  - key: '320'
+    label: Partial Transfer
+  - key: '330'
+    label: Asset Class Transfer
+  - key: '410'
+    label: Manual Ordinary Depreciation
+  - key: '420'
+    label: Manual Unplanned Depreciation
+  - key: '430'
+    label: Manual Special Depreciation
+  - key: '440'
+    label: Appreciation
+  - key: '550'
+    label: Revaluation
+  - key: '510'
+    label: Change of Depreciation Type
+  - key: '520'
+    label: Change of Useful Life
+  - key: '530'
+    label: Change of Depreciation Start Date
+  - key: '540'
+    label: Change of Salvage Value
+  - key: '560'
+    label: Change of Period Control
+  - key: '570'
+    label: Change of Total Units
+- field: UsefulLife
+  description: New Useful Life
+  type: Int
+  size: 11
+- field: Appr
+  description: Appreciation
+  type: Num
+  size: 19.6
+- field: WriteUp
+  description: Write-Up
+  type: Num
+  size: 19.6
+- field: DeltaDays
+  description: Delta Remaining Life in Days
+  type: Int
+  size: 11
+- field: NewAstCls
+  description: New Asset Class
+  type: nVarChar
+  size: 20
+  related: OACS
+- field: HistOrdDpr
+  description: Historical Ordinary Depr.
+  type: Num
+  size: 19.6
+- field: SpDpr3
+  description: Special Depreciation 03
+  type: Num
+  size: 19.6
+- field: TransAmnt
+  description: Transaction Amount
+  type: Num
+  size: 19.6
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: ReTranType
+  description: Receiving Transaction Type
+  type: nVarChar
+  size: 4
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Unknown
+  - key: '110'
+    label: Acquisition
+  - key: '115'
+    label: Subacquisition
+- field: NewTtlUnit
+  description: New Total Unit
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+- key: SECONDARY
+  unique: false
+  fields:
+  - DprArea
+  - PeriodCat
+  - ItemCode

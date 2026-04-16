@@ -1,0 +1,76 @@
+table: OGPA
+description: Gross Profit Adjustment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OGPA.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Name
+  description: Gross Profit Adjustment Name
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Saved Recommendations
+  - key: S
+    label: Simulation
+  - key: E
+    label: Executed
+  - key: P
+    label: Saved Parameters
+- field: Remarks
+  description: Description
+  type: nVarChar
+  size: 254
+- field: WizType
+  description: Wizard Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Gross Profit Adjustment Wizard
+  - key: R
+    label: Production Cost Recalculation Wizard
+- field: nGPAdj
+  description: Number of Gross Profits Recalculated
+  type: Int
+  size: 11
+- field: nPCAdj
+  description: Number of Product Costs Recalculated
+  type: Int
+  size: 11
+- field: nGPFail
+  description: Number of Gross Profit Recalculations Failed
+  type: Int
+  size: 11
+- field: nPCFail
+  description: Number of Failed Product Cost Recalculations
+  type: Int
+  size: 11
+- field: nJECreate
+  description: Number of Journal Entries Created
+  type: Int
+  size: 11
+- field: nMRVCreate
+  description: Number of MRV Created
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

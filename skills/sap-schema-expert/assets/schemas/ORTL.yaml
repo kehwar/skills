@@ -1,0 +1,114 @@
+table: ORTL
+description: Resource Transaction Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ORTL.htm
+fields:
+- field: LogEntry
+  description: Log Entry ID
+  type: Int
+  size: 11
+- field: ResCode
+  description: Resource Code
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: DocType
+  description: Transact. Type
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: DocLine
+  description: Doc. Row Number
+  type: Int
+  size: 11
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Document Row Number
+  type: Int
+  size: 11
+- field: ActionType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: RESOURCE_TRANSACTION_UNKNOWN
+  - key: '1'
+    label: RESOURCE_TRANSACTION_IN
+  - key: '2'
+    label: RESOURCE_TRANSACTION_OUT
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: DocQty
+  description: Doc. Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Price
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: OpenQty
+  description: Open Quantity
+  type: Num
+  size: 19.6
+- field: DocNum
+  description: Document Number
+  type: nVarChar
+  size: 11
+- field: BaseDocNum
+  description: Base Document Number
+  type: nVarChar
+  size: 11
+- field: StgSeqNum
+  description: Stage Sequence Number
+  type: Int
+  size: 11
+- field: StgEntry
+  description: Stage Entry
+  type: Int
+  size: 11
+- field: StgDesc
+  description: Stage Description
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry

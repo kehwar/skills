@@ -1,0 +1,21 @@
+table: OWHC
+description: E-Books Withholding Tax Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OWHC.htm
+fields:
+- field: EBCateCode
+  description: Code
+  type: Int
+  size: 11
+- field: EBCateDesc
+  description: Description
+  type: nVarChar
+  size: 150
+- field: EBTax
+  description: Tax
+  type: nVarChar
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EBCateCode

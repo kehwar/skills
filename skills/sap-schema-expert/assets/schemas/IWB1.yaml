@@ -1,0 +1,33 @@
+table: IWB1
+description: Batch No. Quantities Backup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IWB1.htm
+fields:
+- field: AbsEntry
+  description: Abs. Entry
+  type: Int
+  size: 11
+  related: OIWB
+- field: LineNumber
+  description: Line Number
+  type: Int
+  size: 11
+- field: BtqAbs
+  description: Btq Abs. Entry
+  type: Int
+  size: 11
+  related: OBTQ
+- field: MdAbsEntry
+  description: MD Abs. Entry
+  type: Int
+  size: 11
+  related: OBTN
+- field: CountedQty
+  description: Counted Quantity
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNumber

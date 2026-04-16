@@ -1,0 +1,66 @@
+table: TRA1
+description: Transition - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/TRA1.htm
+fields:
+- field: DocEntry
+  description: Document Entry
+  type: Int
+  size: 11
+  related: OINV
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: PackQty
+  description: Packing Quantity
+  type: Num
+  size: 19.6
+- field: PurPackMsr
+  description: Packaging UoM Name
+  type: nVarChar
+  size: 8
+  default: Pack
+- field: ArsnalName
+  description: Storage Group Name
+  type: nVarChar
+  size: 20
+- field: ArsnalCode
+  description: Storage Group Code
+  type: nVarChar
+  size: 20
+- field: UnitMsr
+  description: Ref. UoM (Type)
+  type: nVarChar
+  size: 5
+  default: Unit
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Fraction
+  description: Remainder
+  type: Num
+  size: 19.6
+- field: Weight1
+  description: Weight
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Row Total
+  type: Num
+  size: 19.6
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

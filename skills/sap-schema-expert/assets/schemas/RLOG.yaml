@@ -1,0 +1,65 @@
+table: RLOG
+description: Resource Edit Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RLOG.htm
+fields:
+- field: AbsKey
+  description: Abs Key
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Sign
+  type: Int
+  size: 11
+- field: ResType
+  description: Resource Type
+  type: Int
+  size: 11
+- field: MasterKey
+  description: Master Key
+  type: nVarChar
+  size: 64
+- field: SlaveNum
+  description: Slave Num
+  type: nVarChar
+  size: 20
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: Time
+  description: Time
+  type: Int
+  size: 6
+- field: FldName
+  description: Field Name
+  type: nVarChar
+  size: 10
+- field: NewVal
+  description: New Value
+  type: nVarChar
+  size: 64
+- field: BatchNum
+  description: Batch Change Number
+  type: Int
+  size: 11
+- field: ResCode
+  description: Resource Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsKey
+  - ResCode
+- key: RESOURCE
+  unique: false
+  fields:
+  - ResType
+  - MasterKey
+  - SlaveNum
+- key: USER
+  unique: false
+  fields:
+  - UserSign

@@ -1,0 +1,55 @@
+table: DTV7
+description: Datev Run Attachments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/DTV7.htm
+fields:
+- field: RunId
+  description: Run Number
+  type: Int
+  size: 11
+  related: ODTV
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: Comment
+  description: Remark
+  type: Text
+  size: 16
+- field: Created
+  description: Created On
+  type: Date
+  size: 8
+- field: CreatedBy
+  description: Created By
+  type: nVarChar
+  size: 25
+- field: FileName
+  description: File name
+  type: nVarChar
+  size: 254
+- field: Path
+  description: File Path
+  type: nVarChar
+  size: 254
+- field: Size
+  description: File Size
+  type: Int
+  size: 11
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 100
+- field: Type
+  description: File Type
+  type: nVarChar
+  size: 100
+- field: Client
+  description: Client Creation
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RunId
+  - LineId

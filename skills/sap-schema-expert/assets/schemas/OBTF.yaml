@@ -1,0 +1,844 @@
+table: OBTF
+description: Journal Voucher Entry
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBTF.htm
+fields:
+- field: BatchNum
+  description: Journal Voucher No.
+  type: Int
+  size: 11
+  related: OBTD
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+- field: BtfStatus
+  description: Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: TransType
+  description: Origin
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '16'
+    label: Returns
+  - key: '203'
+    label: A/R Down Payment
+  - key: '15'
+    label: Delivery
+  - key: '13'
+    label: A/R Invoice
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '281'
+    label: A/P Tax Invoice
+  - key: '69'
+    label: Landed Costs
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '254000065'
+    label: Self Invoice
+  - key: '254000066'
+    label: Self Credit Memo
+  - key: '10000079'
+    label: TDS Adjustment
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Vendor Payment
+  - key: '57'
+    label: Checks for Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '182'
+    label: BoE Transaction
+  - key: '-2'
+    label: Opening Balance
+  - key: '-3'
+    label: Closing Balance
+  - key: '321'
+    label: Internal Reconciliation
+  - key: '10000046'
+    label: Data Archive
+  - key: '30'
+    label: Journal Entry
+  - key: '58'
+    label: Inventory List
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfers
+  - key: '68'
+    label: Work Instructions
+  - key: '162'
+    label: Inventory Valuation
+  - key: '202'
+    label: Production Order
+  - key: '1470000049'
+    label: Fixed Asset Capitalization
+  - key: '1470000060'
+    label: Fixed Asset Capitalization Credit Memo
+  - key: '1470000094'
+    label: Fixed Asset Retirement
+  - key: '1470000075'
+    label: Fixed Asset Manual Depreciation
+  - key: '1470000090'
+    label: Fixed Asset Transfer
+  - key: '1470000085'
+    label: Fixed Asset Revaluation
+  - key: '-1'
+    label: All Transactions
+  - key: '310000001'
+    label: Inventory Opening Balance
+  - key: '10000071'
+    label: Inventory Posting
+  - key: '254000061'
+    label: Input Service Distribution Invoice
+  - key: '254000062'
+    label: Input Service Distribution Recipient Invoice
+  - key: '254000063'
+    label: Input Service Distribution Credit Memo
+  - key: '254000064'
+    label: Input Service Distribution Recipient Credit Memo
+  - key: '-4'
+    label: Adj. for Manual Ext. Reconciliation
+- field: BaseRef
+  description: Origin No.
+  type: nVarChar
+  size: 11
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: Memo
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 200
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 200
+- field: CreatedBy
+  description: Origin
+  type: Int
+  size: 11
+- field: LocTotal
+  description: Total in Local Currency
+  type: Num
+  size: 19.6
+- field: FcTotal
+  description: Total in Foreign Currency
+  type: Num
+  size: 19.6
+- field: SysTotal
+  description: Total in System Currency
+  type: Num
+  size: 19.6
+- field: TransCode
+  description: Transaction Code
+  type: nVarChar
+  size: 4
+  related: OTRC
+- field: OrignCurr
+  description: Original Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: TransRate
+  description: Transaction Rate
+  type: Num
+  size: 19.6
+- field: BtfLine
+  description: Row in Voucher
+  type: Int
+  size: 11
+- field: TransCurr
+  description: Transaction Currency
+  type: nVarChar
+  size: 3
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: DueDate
+  description: Value Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Tax Date
+  type: Date
+  size: 8
+- field: PCAddition
+  description: PC Addition
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Recording Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: RefndRprt
+  description: Repayment Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '30'
+- field: Indicator
+  description: Indicator Code
+  type: nVarChar
+  size: 2
+  related: OIDC
+- field: AdjTran
+  description: Adjusting Transaction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevSource
+  description: Revaluation Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: FC
+  - key: S
+    label: System
+  - key: N
+    label: 'No'
+- field: StornoDate
+  description: Reversal Date
+  type: Date
+  size: 8
+- field: StornoToTr
+  description: Reverse Transaction
+  type: Int
+  size: 11
+- field: AutoStorno
+  description: Use Auto-Reverse
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Corisptivi
+  description: Transaction Values
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatDate
+  description: VAT Date
+  type: Date
+  size: 8
+- field: StampTax
+  description: Stamp Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  default: 0
+- field: Number
+  description: Number
+  type: Int
+  size: 11
+- field: AutoVAT
+  description: Automatic Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocSeries
+  description: Document Series
+  type: Int
+  size: 11
+- field: FolioPref
+  description: Folio Prefix String
+  type: nVarChar
+  size: 4
+- field: FolioNum
+  description: Folio Number
+  type: Int
+  size: 11
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: BlockDunn
+  description: Block Dunning Letter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ReportEU
+  description: Include in EU Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: VAT
+  - key: N
+    label: 'No'
+- field: Report347
+  description: Include in 347 Report
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocType
+  description: Transact. Type
+  type: nVarChar
+  size: 60
+  related: OJET
+- field: AttNum
+  description: Number of Attachments
+  type: Int
+  size: 11
+  default: 0
+- field: GenRegNo
+  description: Generate Reg. No. or Not
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RG23APart2
+  description: RG23A Part2 No
+  type: Int
+  size: 11
+- field: RG23CPart2
+  description: RG23C Part2 No
+  type: Int
+  size: 11
+- field: MatType
+  description: Material Type
+  type: Int
+  size: 11
+- field: Creator
+  description: Creator Name
+  type: nVarChar
+  size: 155
+- field: Approver
+  description: Approver Name
+  type: nVarChar
+  size: 155
+- field: Location
+  description: Loc.
+  type: Int
+  size: 11
+  related: OLCT
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: AutoWT
+  description: Automatic WTax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTApplied
+  description: Applied WTax
+  type: Num
+  size: 19.6
+- field: WTAppliedS
+  description: Applied WTax (SC)
+  type: Num
+  size: 19.6
+- field: WTAppliedF
+  description: Applied WTax (FC)
+  type: Num
+  size: 19.6
+- field: BaseAmnt
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: BaseAmntSC
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseAmntFC
+  description: Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseVtAt
+  description: WTax Base VAT Amount
+  type: Num
+  size: 19.6
+- field: BaseVtAtSC
+  description: WTax Base VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseVtAtFC
+  description: WTax Base VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: BaseTrans
+  description: Base Transaction Number
+  type: Int
+  size: 11
+- field: ResidenNum
+  description: Residence Number
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Spanish Fiscal ID
+  - key: '2'
+    label: VAT Registration Number
+  - key: '3'
+    label: Passport
+  - key: '4'
+    label: Fiscal ID Issued by the Country/Region of Residence
+  - key: '5'
+    label: Certificate of Fiscal Residence
+  - key: '6'
+    label: Other Document
+- field: OperatCode
+  description: Operation Code
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Summary Invoices Entry
+  - key: B
+    label: Summary Receipts Entry
+  - key: C
+    label: Invoice with Several VAT Rates
+  - key: D
+    label: Correction Invoice
+  - key: E
+    label: Due VAT Pending Invoice Issuance
+  - key: F
+    label: Expenses Incurred by Travel Agent for Customers
+  - key: G
+    label: Special Regulation for VAT Group
+  - key: H
+    label: Special Regulation for Gold Investment
+  - key: I
+    label: Reverse Charge Procedure
+  - key: J
+    label: Unsummarized Receipts
+  - key: K
+    label: Identification of Error Transactions
+  - key: X
+    label: Transactions with Entrepreneurs Issuing Receipts for Agricultural Compensation
+  - key: N
+    label: Service Invoicing by Travel Agencies on Behalf of Third Parties
+  - key: R
+    label: Business Office Rental
+  - key: S
+    label: Subsidies
+  - key: T
+    label: Incoming Payments for Industrial and Intellectual Property Rights
+  - key: U
+    label: Insurance Transactions
+  - key: V
+    label: Purchases from Travel Agencies
+  - key: W
+    label: Transactions Subject to Production, Service, and Import Taxes in Ceuta
+      and Melilla
+- field: Ref3
+  description: Reference 3
+  type: nVarChar
+  size: 200
+- field: SSIExmpt
+  description: SSI Exemption
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SignMsg
+  description: Signature Input Message
+  type: Text
+  size: 16
+- field: SignDigest
+  description: Signature Digest
+  type: Text
+  size: 16
+- field: CertifNum
+  description: Certification Number
+  type: nVarChar
+  size: 50
+- field: KeyVersion
+  description: Private Key Version
+  type: Int
+  size: 11
+- field: CUP
+  description: Unique Code of Project
+  type: Int
+  size: 11
+  related: OCUP
+- field: CIG
+  description: Contract Code Identification
+  type: Int
+  size: 11
+  related: OCIG
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: SPSrcType
+  description: Service Posting Source Type
+  type: Int
+  size: 11
+- field: SPSrcID
+  description: Service Posting Source ID
+  type: Int
+  size: 11
+- field: SPSrcDLN
+  description: Service Post. Source Delivery
+  type: Int
+  size: 11
+- field: DeferedTax
+  description: Deferred Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AgrNo
+  description: Blanket Agreement Number
+  type: Int
+  size: 11
+  related: OOAT
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: ECDPosTyp
+  description: ECD Posting Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Normal
+  - key: E
+    label: Statement
+- field: RptPeriod
+  description: Reporting Period
+  type: nVarChar
+  size: 5
+- field: RptMonth
+  description: Reporting Month
+  type: Date
+  size: 8
+- field: ExTransId
+  description: Exposed Transaction ID
+  type: Int
+  size: 11
+- field: PrlLinked
+  description: Is JE linked by MX Payroll
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+- field: Letter
+  description: Letter
+  type: VarChar
+  size: 1
+- field: FolNumFrom
+  description: Folio Number From
+  type: Int
+  size: 11
+- field: FolNumTo
+  description: Folio Number To
+  type: Int
+  size: 11
+- field: RepSection
+  description: Reporting Section
+  type: nVarChar
+  size: 3
+- field: ExclTaxRep
+  description: Exclude from Control Statement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsCoEntry
+  description: Cost Center Transfer form
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: EBookable
+  description: E-Books Enabled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: SAFTType
+  description: SAF-T Transaction Type
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: N
+    label: Normal
+  - key: '-'
+    label: '-'
+  - key: R
+    label: Adjustments of Tax Period
+  - key: A
+    label: Measurement of Results
+  - key: J
+    label: Adjustment
+  - key: I
+    label: Do Not Export
+- field: AllocNum
+  description: Allocation Number for IL
+  type: nVarChar
+  size: 50
+- field: SAFTTypeEx
+  description: SAF-T Transaction Type
+  type: nVarChar
+  size: 10
+  related: OSTE
+  default: '-'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BatchNum
+  - TransId
+- key: TRANS_TYPE
+  unique: false
+  fields:
+  - TransType
+  - CreatedBy
+- key: JDT_NUM
+  unique: false
+  fields:
+  - TransId
+- key: BTF_STATUS
+  unique: false
+  fields:
+  - BtfStatus

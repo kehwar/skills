@@ -1,0 +1,117 @@
+table: OBOT
+description: Bill Of Exchang Transaction
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OBOT.htm
+fields:
+- field: AbsEntry
+  description: BOE Transaction key
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: StatusFrom
+  description: Status from
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Sent
+  - key: G
+    label: Generated
+  - key: D
+    label: Deposit
+  - key: P
+    label: Paid
+  - key: F
+    label: Failed
+  - key: V
+    label: BoE to Vendor
+- field: StatusTo
+  description: Status To
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Canceled
+  - key: G
+    label: Generated
+  - key: D
+    label: Deposit
+  - key: P
+    label: Paid
+  - key: F
+    label: Failed
+  - key: L
+    label: Closed
+  - key: V
+    label: BoE to Vendor
+- field: TranDate
+  description: Transaction Date
+  type: Date
+  size: 8
+- field: TranTime
+  description: Transaction Time
+  type: Int
+  size: 6
+- field: Reconciled
+  description: was the Boe Reconciled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

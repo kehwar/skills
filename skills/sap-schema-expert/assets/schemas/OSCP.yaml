@@ -1,0 +1,35 @@
+table: OSCP
+description: Service Call Problem Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OSCP.htm
+fields:
+- field: prblmTypID
+  description: Problem Type ID
+  type: Int
+  size: 6
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - prblmTypID
+- key: NAME
+  unique: true
+  fields:
+  - Name

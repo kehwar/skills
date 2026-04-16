@@ -1,0 +1,38 @@
+table: EPOPR
+description: EPOPR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EPOPR.htm
+fields:
+- field: SrvId
+  description: FK to EPSRV table
+  type: Int
+  size: 11
+- field: OprName
+  description: name of service operation
+  type: nVarChar
+  size: 60
+- field: SyncMode
+  description: synch or a-sync mode of opr
+  type: nVarChar
+  size: 20
+- field: PrmMsgType
+  description: operation parameter type
+  type: nVarChar
+  size: 60
+- field: PrcId
+  description: FK to EPPRC table
+  type: nVarChar
+  size: 60
+- field: RetMsgType
+  description: operation returned type
+  type: nVarChar
+  size: 60
+- field: ParamName
+  description: Parameter name
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrvId
+  - OprName

@@ -1,0 +1,55 @@
+table: DGP2
+description: Expanded Selection Criteria
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DGP2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: ODGP
+- field: CondNum
+  description: Condition Number
+  type: Int
+  size: 11
+- field: SelFldID
+  description: Selection Field ID
+  type: nVarChar
+  size: 100
+- field: FromString
+  description: String Value From
+  type: nVarChar
+  size: 200
+- field: FromNumber
+  description: Number Value From
+  type: Int
+  size: 11
+- field: FromMoney
+  description: Amount Value From
+  type: Num
+  size: 19.6
+- field: FromDate
+  description: Date Value From
+  type: Date
+  size: 8
+- field: ToString
+  description: String Value To
+  type: nVarChar
+  size: 200
+- field: ToNumber
+  description: Number Value To
+  type: Int
+  size: 11
+- field: ToMoney
+  description: Amount Value To
+  type: Num
+  size: 19.6
+- field: ToDate
+  description: Date Value To
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - CondNum

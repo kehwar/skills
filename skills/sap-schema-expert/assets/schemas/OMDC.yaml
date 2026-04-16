@@ -1,0 +1,39 @@
+table: OMDC
+description: Master Data Cleanup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMDC.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Name
+  description: Master Data Cleanup Name
+  type: nVarChar
+  size: 100
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Saved
+  - key: E
+    label: Executed
+- field: UpdUser
+  description: Last Update User
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

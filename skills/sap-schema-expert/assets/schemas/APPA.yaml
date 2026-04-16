@@ -1,0 +1,95 @@
+table: APPA
+description: Password Administration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/APPA.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: '11'
+  default: '1'
+- field: SecLevel
+  description: Security Level
+  type: nVarChar
+  size: '20'
+  default: Low
+  constraints:
+  - key: Low
+    label: Low
+  - key: Medium
+    label: Medium
+  - key: High
+    label: High
+  - key: Custom
+    label: Custom
+- field: PwdExp
+  description: Password Expiration
+  type: Int
+  size: '11'
+  default: '90'
+- field: PwdMinLen
+  description: Password Minimum Length
+  type: Int
+  size: '11'
+  default: '4'
+- field: MinUppers
+  description: Password Min. Uppercase Chars.
+  type: Int
+  size: '11'
+  default: '0'
+- field: MinLowCase
+  description: Password Min. Lowercase Chars.
+  type: Int
+  size: '11'
+  default: '0'
+- field: MinDigits
+  description: Password Minimum Digits
+  type: Int
+  size: '11'
+  default: '0'
+- field: MinNonAlph
+  description: Password Min. Non-alphanumeric Char.
+  type: Int
+  size: '11'
+  default: '0'
+- field: NumPrevPwd
+  description: Pwd does not match pwd rules
+  type: Int
+  size: '11'
+  default: '0'
+- field: NumAuthLoc
+  description: No. of Authentications Before Acct is Locked
+  type: Int
+  size: '11'
+  default: '100'
+- field: PwdExample
+  description: Password Example
+  type: nVarChar
+  size: '128'
+  default: abcd
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: '8'
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: '11'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

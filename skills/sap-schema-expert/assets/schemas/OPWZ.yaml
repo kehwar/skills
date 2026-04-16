@@ -1,0 +1,480 @@
+table: OPWZ
+description: Payment Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OPWZ.htm
+fields:
+- field: IdNumber
+  description: ID Number
+  type: Int
+  size: 11
+- field: PmntDate
+  description: Date of Payment Run
+  type: Date
+  size: 8
+- field: NextDate
+  description: A/P Due Date To
+  type: Date
+  size: 8
+- field: OutgoType
+  description: Outgoing Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncomType
+  description: Incoming Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CheckPmntM
+  description: Check Payment Terms
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BnkTrnsPmM
+  description: Bank Transfer Payment Terms
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FilePath
+  description: File Path
+  type: Text
+  size: 16
+- field: PostDtFrom
+  description: Posting Date From
+  type: Date
+  size: 8
+- field: PostDtTo
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: ValDteFrom
+  description: Due Date From
+  type: Date
+  size: 8
+- field: ValDateTo
+  description: Due Date To
+  type: Date
+  size: 8
+- field: ApInvAmntF
+  description: A/P Invoice Amount From
+  type: Num
+  size: 19.6
+- field: ApInvAmntT
+  description: A/P Invoice Amount To
+  type: Num
+  size: 19.6
+- field: PchNoFrom
+  description: A/P Invoice No. From
+  type: Int
+  size: 11
+- field: PchNoTo
+  description: A/P Invoice No. To
+  type: Int
+  size: 11
+- field: InvNoFrom
+  description: A/R Invoice No. From
+  type: Int
+  size: 11
+- field: InvNoTo
+  description: A/R Invoice No. To
+  type: Int
+  size: 11
+- field: SelPriorit
+  description: Selection Priority
+  type: Int
+  size: 11
+- field: Status
+  description: Object Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Saved Wizard
+  - key: R
+    label: Recommended Wizard
+  - key: E
+    label: Executed Wizard
+  - key: H
+    label: Scheduled Wizard
+  - key: L
+    label: Scheduled Executing Wizard
+- field: WizardName
+  description: Wizard Name
+  type: nVarChar
+  size: 100
+- field: StatusDisc
+  description: Status
+  type: nVarChar
+  size: 100
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+- field: BoePmnMn
+  description: Bill of Exchange Paymt Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SeriesOut
+  description: Outgoing Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: 0
+- field: SeriesIn
+  description: Incoming Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: 0
+- field: TotalOut
+  description: Total Outgoing
+  type: Num
+  size: 19.6
+- field: TotalIn
+  description: Total Incoming
+  type: Num
+  size: 19.6
+- field: ViewIntBal
+  description: Include Interim Acct Balance
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SelMthd
+  description: Selection Method
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: M
+    label: By Monthly Invoice
+  - key: D
+    label: By Document Property
+- field: MINumFrom
+  description: Monthly Invoice No. From
+  type: Int
+  size: 11
+- field: MINumTo
+  description: Monthly Invoice No. To
+  type: Int
+  size: 11
+- field: MIDateFrom
+  description: Monthly Invoice Issued Date From
+  type: Date
+  size: 8
+- field: MIDateTo
+  description: Monthly Invoice Issued Date To
+  type: Date
+  size: 8
+- field: MIVNumFrom
+  description: A/P Monthly Invoice No. From
+  type: Int
+  size: 11
+- field: MIVNumTo
+  description: A/P Monthly Invoice No. To
+  type: Int
+  size: 11
+- field: MIVDateFro
+  description: A/P Monthly Invoice Date From
+  type: Date
+  size: 8
+- field: MIVDateTo
+  description: A/P Monthly Invoice Date To
+  type: Date
+  size: 8
+- field: APDocDtFrm
+  description: A/P Document Date From
+  type: Date
+  size: 8
+- field: APDocDtTo
+  description: A/P Document Date To
+  type: Date
+  size: 8
+- field: APDueDtFrm
+  description: A/P Due Date From
+  type: Date
+  size: 8
+- field: NxtPmntDat
+  description: Next Payment Run Date
+  type: Date
+  size: 8
+- field: MinPayAR
+  description: Minimum Incoming Payment
+  type: Num
+  size: 19.6
+- field: MinPayAP
+  description: Minimum Outgoing Payment
+  type: Num
+  size: 19.6
+- field: ShowAtCard
+  description: Display BP Ref. No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TolerDays
+  description: Tolerance Days
+  type: Int
+  size: 6
+- field: MinCashDis
+  description: Min. Cash Discount
+  type: Num
+  size: 19.6
+- field: NegBalBP
+  description: Include Negative Balance BP
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ManualJE
+  description: Include Manual JEs
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NegTrans
+  description: Include Negative Transactions
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CDTransApp
+  description: Apply to Cash Discount Trans.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CigTo
+  description: Contract Code ID To
+  type: Int
+  size: 11
+  related: OCIG
+- field: CupFrom
+  description: Unique Code of Project From
+  type: Int
+  size: 11
+  related: OCUP
+- field: CupTo
+  description: Unique Code of Project To
+  type: Int
+  size: 11
+  related: OCUP
+- field: CigFrom
+  description: Contract Code ID From
+  type: Int
+  size: 11
+  related: OCIG
+- field: BPLId
+  description: Active Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BoeDDFrom
+  description: BoE Due Date From
+  type: Date
+  size: 8
+- field: BoeDDTo
+  description: BoE Due Date To
+  type: Date
+  size: 8
+- field: BoeNumFrom
+  description: BoE No. From
+  type: Int
+  size: 11
+  related: OBOE
+- field: BoeNumTo
+  description: BoE No. To
+  type: Int
+  size: 11
+  related: OBOE
+- field: BoeStatus
+  description: Bill of Exchange Status
+  type: nVarChar
+  size: 32
+- field: HaExistBoe
+  description: Handle Existing BoE
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SeriesPOO
+  description: Outgoing Payment Order Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: 0
+- field: SeriesPOI
+  description: Incoming Payment Order Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: 0
+- field: SeqType
+  description: Sequence Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: OOFF
+    label: OOFF
+  - key: FRST
+    label: FRST
+  - key: RCUR
+    label: RCUR
+  - key: FNAL
+    label: FNAL
+- field: PayDueDate
+  description: Payment Due Date Determination
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Run Date
+  - key: D
+    label: Document Due Date
+- field: CentrPay
+  description: Centralized Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BA_AP_From
+  description: A/P Blanket Agreement From
+  type: Int
+  size: 11
+- field: BA_AP_To
+  description: A/P Blanket Agreement To
+  type: Int
+  size: 11
+- field: BA_AR_From
+  description: A/R Blanket Agreement From
+  type: Int
+  size: 11
+- field: BA_AR_To
+  description: A/R Blanket Agreement To
+  type: Int
+  size: 11
+- field: JobId
+  description: Job ID Number
+  type: Int
+  size: 11
+- field: ZeroBalBP
+  description: Include Zero Balance BP
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ZeroBalDoc
+  description: Zero Balance Document Types
+  type: nVarChar
+  size: 50
+  default: YNNNNYNNNNN
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdNumber
+- key: NAME
+  unique: true
+  fields:
+  - WizardName

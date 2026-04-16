@@ -1,0 +1,33 @@
+table: XAP3
+description: XAP Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XAP3.htm
+fields:
+- field: AbsEntry
+  description: Key of XAPP filter
+  type: Int
+  size: 11
+- field: XAPEntry
+  description: Foreign key of XAPP
+  type: Int
+  size: 11
+- field: Name
+  description: Name of filter
+  type: nVarChar
+  size: 250
+- field: Type
+  description: Type of filter
+  type: nVarChar
+  size: 250
+- field: Method
+  description: Filter method
+  type: nVarChar
+  size: 250
+- field: MultiValue
+  description: Allow multiple value
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

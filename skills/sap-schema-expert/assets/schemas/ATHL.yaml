@@ -1,0 +1,66 @@
+table: ATHL
+description: Thresholds
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ATHL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RecType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Annual Invoice Declaration
+  - key: B
+    label: Blacklist Country
+- field: EffecFrom
+  description: Effective From
+  type: Date
+  size: 8
+- field: Company
+  description: Company
+  type: nVarChar
+  size: 20
+- field: PrivInv
+  description: Private - Invoice
+  type: nVarChar
+  size: 20
+- field: PrivJE
+  description: Private - Journal Entry
+  type: nVarChar
+  size: 20
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: Tourism
+  description: Tourism
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

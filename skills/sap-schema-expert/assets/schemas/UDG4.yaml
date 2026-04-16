@@ -1,0 +1,46 @@
+table: UDG4
+description: User Defaults - Default POI for Folio Numbering Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDG4.htm
+fields:
+- field: Code
+  description: POI Code
+  type: nVarChar
+  size: 8
+- field: FNDAbs
+  description: Folio Numbering Document Abs Entry
+  type: Int
+  size: 11
+  related: OFND
+- field: ObjectCode
+  description: Document
+  type: nVarChar
+  size: 20
+- field: DocSubtype
+  description: Subdocument
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: ''
+  - key: DM
+    label: A/P Debit Memo
+  - key: DN
+    label: A/R Debit Memo
+  - key: IB
+    label: A/R Bill
+- field: DflPTICode
+  description: Default POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+- field: DflPtiFCE
+  description: Default POI Code for FCE
+  type: nVarChar
+  size: 5
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - FNDAbs

@@ -1,0 +1,62 @@
+table: AWEX
+description: Workflow Engine Execution Entity
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AWEX.htm
+fields:
+- field: Id
+  description: ID
+  type: Int
+  size: 11
+- field: IsActive
+  description: Is Active
+  type: Int
+  size: 6
+- field: IsConCurr
+  description: Is Concurrent
+  type: Int
+  size: 6
+- field: IsScope
+  description: Is Scope
+  type: Int
+  size: 6
+- field: ProcInstId
+  description: Process Instance ID
+  type: nVarChar
+  size: 100
+- field: BizKey
+  description: Business Key
+  type: nVarChar
+  size: 250
+- field: ParentId
+  description: Parent ID
+  type: Int
+  size: 11
+- field: ProcDefId
+  description: Process Definition ID
+  type: Int
+  size: 11
+- field: ActId
+  description: Activity ID
+  type: nVarChar
+  size: 250
+- field: DataContex
+  description: Data Context
+  type: Text
+  size: 16
+- field: B1WFInstId
+  description: Workflow Instance ID
+  type: Int
+  size: 11
+- field: logInst
+  description: Log Instance
+  type: Int
+  size: 11
+- field: LastUpdate
+  description: Last Update Date
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+  - logInst

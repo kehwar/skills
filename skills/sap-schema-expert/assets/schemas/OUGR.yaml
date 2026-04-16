@@ -1,0 +1,88 @@
+table: OUGR
+description: Authorization Group
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUGR.htm
+fields:
+- field: GroupId
+  description: Authorization Group ID
+  type: Int
+  size: 6
+- field: GroupName
+  description: Group Name
+  type: nVarChar
+  size: 155
+- field: GroupDec
+  description: Group Description
+  type: nVarChar
+  size: 155
+- field: Allowences
+  description: Allowances
+  type: Text
+  size: 16
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: GroupType
+  description: Group Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Authorization
+  - key: F
+    label: Form Settings
+  - key: T
+    label: Alerts
+  - key: U
+    label: UI Configuration Templates
+  - key: L
+    label: All
+- field: CockpitId
+  description: Cockpit Template ID
+  type: Int
+  size: 6
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: userSign
+  description: Creating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupId
+- key: NAME_KEY
+  unique: true
+  fields:
+  - GroupName

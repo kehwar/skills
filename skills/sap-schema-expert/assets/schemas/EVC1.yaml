@@ -1,0 +1,41 @@
+table: EVC1
+description: Event Subscription Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/EVC1.htm
+fields:
+- field: WebhookID
+  description: Webhook ID
+  type: nVarChar
+  size: 40
+- field: BizObject
+  description: Business Object
+  type: nVarChar
+  size: 64
+- field: TransType
+  description: Transaction Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Created
+  - key: U
+    label: Updated
+  - key: D
+    label: Deleted
+  - key: C
+    label: Canceled
+  - key: O
+    label: Reopened
+  - key: L
+    label: Closed
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WebhookID
+  - BizObject
+  - TransType

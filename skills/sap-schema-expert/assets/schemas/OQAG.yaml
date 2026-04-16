@@ -1,0 +1,62 @@
+table: OQAG
+description: Query Authorization Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OQAG.htm
+fields:
+- field: AUTHGRPID
+  description: Query Authorization Group ID
+  type: Int
+  size: 11
+- field: AUTHGRPCD
+  description: Group Code
+  type: nVarChar
+  size: 50
+- field: AUTHGRPN
+  description: Group Description
+  type: nVarChar
+  size: 254
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: Item Created By
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Item Updated By
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Date of Create
+  type: Date
+  size: 8
+- field: Deleted
+  description: Deleted Field
+  type: VarChar
+  size: 1
+  default: N
+- field: SnapShotID
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AUTHGRPID
+- key: NAME_KEY
+  unique: true
+  fields:
+  - AUTHGRPCD
+- key: DES_KEY
+  unique: true
+  fields:
+  - AUTHGRPN

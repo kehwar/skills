@@ -1,0 +1,46 @@
+table: HET1
+description: Employee Transfer Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HET1.htm
+fields:
+- field: TransferID
+  description: Foreign Key to OHET
+  type: Int
+  size: 11
+  related: OHET
+- field: empID
+  description: Foreign Key to OHEM
+  type: Int
+  size: 11
+  related: OHEM
+- field: Transfered
+  description: 'Timestamp: Status "Sent"'
+  type: Date
+  size: 8
+- field: Status
+  description: Processing Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: S
+    label: Sent
+  - key: A
+    label: Accepted
+  - key: E
+    label: Error
+- field: Comment
+  description: Any comments
+  type: Text
+  size: 16
+- field: TransTime
+  description: Time When Status Is "Sent"
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TransferID
+  - empID

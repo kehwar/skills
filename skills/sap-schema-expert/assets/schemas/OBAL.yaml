@@ -1,0 +1,70 @@
+table: OBAL
+description: Opening Balances
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OBAL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: PeriodID
+  description: Period Indicator
+  type: Int
+  size: 11
+  related: BAL2
+- field: EvalSystem
+  description: Valuation Method
+  type: VarChar
+  size: 1
+  default: W
+  constraints:
+  - key: A
+    label: Moving Average
+  - key: F
+    label: FIFO
+  - key: W
+    label: Weighted Average
+- field: DtSorting
+  description: Date Sorting Method
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: S
+    label: System Date
+  - key: P
+    label: Posting Date
+  - key: E
+    label: Effective Posting Date
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+  default: -1
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - ItemCode
+  - WhsCode
+  - PeriodID
+  - EvalSystem
+  - DtSorting
+  - LayerID

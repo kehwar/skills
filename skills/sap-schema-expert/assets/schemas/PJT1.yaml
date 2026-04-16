@@ -1,0 +1,94 @@
+table: PJT1
+description: Project Plan Steps
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/PJT1.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: StepCode
+  description: Step Code
+  type: Int
+  size: 11
+- field: Father
+  description: Father Step Code
+  type: Int
+  size: 11
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: Level
+  description: Node Level
+  type: Int
+  size: 11
+- field: StepName
+  description: Step Name
+  type: nVarChar
+  size: 254
+- field: StepInfo
+  description: Step Info
+  type: nVarChar
+  size: 254
+- field: StepNotes
+  description: Step Notes
+  type: nVarChar
+  size: 254
+- field: StepLink
+  description: Step Link to Menu ID
+  type: nVarChar
+  size: 32
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: IsComplete
+  description: Is Complete
+  type: VarChar
+  size: 1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: Owner
+  description: Owner
+  type: nVarChar
+  size: 254
+  related: OUSR
+- field: Status
+  description: Status
+  type: Int
+  size: 11
+  default: 0
+- field: Duration
+  description: Duration
+  type: Num
+  size: 19.6
+- field: PlanTime
+  description: Planned Time
+  type: Num
+  size: 19.6
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: TotalPTime
+  description: Total Planned Time
+  type: Num
+  size: 19.6
+- field: QueryID
+  description: Step Link Query ID
+  type: Int
+  size: 11
+  related: OUQR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - StepCode

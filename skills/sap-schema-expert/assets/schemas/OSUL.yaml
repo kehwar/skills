@@ -1,0 +1,76 @@
+table: OSUL
+description: Support User Login Record
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OSUL.htm
+fields:
+- field: ID
+  description: Main ID
+  type: Int
+  size: 11
+- field: RealName
+  description: Real Name
+  type: nVarChar
+  size: 100
+- field: LogReason
+  description: Login Reason
+  type: nVarChar
+  size: 100
+  constraints:
+  - key: A
+    label: Transaction Issue Analysis
+  - key: B
+    label: Setup Issue Analysis
+  - key: C
+    label: Data Issue Analysis
+  - key: D
+    label: Add-on Issue Analysis
+  - key: E
+    label: Customer Usage Assistance
+  - key: F
+    label: System Maintenance
+  - key: G
+    label: Consulting
+  - key: I
+    label: Add-on Access
+  - key: J
+    label: Root Cause Analysis
+  - key: K
+    label: Consulting / Support
+  - key: H
+    label: Other
+- field: LogDetail
+  description: Login Detail Information
+  type: Text
+  size: 16
+- field: Mac
+  description: MAC Address
+  type: nVarChar
+  size: 100
+- field: Machine
+  description: Machine Name
+  type: nVarChar
+  size: 100
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: ChkHash
+  description: Checked Hash Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

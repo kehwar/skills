@@ -1,0 +1,74 @@
+table: SIVE
+description: FIFO Based Sales Return
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/SIVE.htm
+fields:
+- field: TreeID
+  description: Tree ID
+  type: Int
+  size: 11
+  default: 0
+- field: ParentID
+  description: Parent ID
+  type: Int
+  size: 11
+  default: -1
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: TransSeq
+  description: Transaction Sequence No.
+  type: Int
+  size: 11
+  related: SIVL
+- field: LayerID
+  description: Layer ID
+  type: Int
+  size: 11
+- field: LayerInQty
+  description: Layer In Quantity
+  type: Num
+  size: 19.6
+- field: LayerOutQ
+  description: Layer Out Quantity
+  type: Num
+  size: 19.6
+- field: LayerVal
+  description: Layer Value
+  type: Num
+  size: 19.6
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: SITM
+- field: EntryTreeI
+  description: Entry Tree ID
+  type: Int
+  size: 11
+- field: LayerCogs
+  description: Layer - Cost of Goods Sold
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: TRANS_SEQ
+  unique: false
+  fields:
+  - TransSeq
+  - LayerID
+- key: TreeID
+  unique: false
+  fields:
+  - TreeID

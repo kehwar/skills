@@ -1,0 +1,33 @@
+table: SDRC
+description: Drag&Relate - Categories
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SDRC.htm
+fields:
+- field: ObjectId
+  description: ObjectId
+  type: nVarChar
+  size: 4
+- field: DescStr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: VisOrder
+  description: Visual order
+  type: Int
+  size: 6
+- field: PartOf
+  description: PartOf
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Docs
+  - key: R
+    label: Reports
+  - key: T
+    label: Tools
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectId

@@ -1,0 +1,32 @@
+table: UKD1
+description: User Sub-Keys Description
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UKD1.htm
+fields:
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: KeyId
+  description: Key Index
+  type: Int
+  size: 6
+- field: SubKeyId
+  description: Sub-Key Index
+  type: Int
+  size: 6
+- field: ColAlias
+  description: Column Alias
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableName
+  - KeyId
+  - SubKeyId
+- key: ALIAS
+  unique: false
+  fields:
+  - TableName
+  - ColAlias

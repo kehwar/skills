@@ -1,0 +1,46 @@
+table: OPRA
+description: Payroll G/L accounts Setup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OPRA.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CateType
+  description: Category Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: P
+    label: Perception
+  - key: D
+    label: Deduction
+  - key: N
+    label: Payroll Payable
+  - key: R
+    label: Rounding
+  - key: O
+    label: Other Payments
+- field: CateCode
+  description: Category Code
+  type: nVarChar
+  size: 8
+- field: Category
+  description: Category of Payroll
+  type: nVarChar
+  size: 254
+- field: Account
+  description: G/L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CATE_CODE
+  unique: true
+  fields:
+  - CateType
+  - CateCode

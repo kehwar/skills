@@ -1,0 +1,904 @@
+table: OEOY
+description: End-of-Year Transfer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OEOY.htm
+fields:
+- field: GenrlDefs
+  description: General Definitions
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ReFiles
+  description: Transfer Template Designer Files
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ActIndex
+  description: Transfer Accounts Index
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ActFromCod
+  description: From Code
+  type: nVarChar
+  size: 15
+- field: ActToCode
+  description: To Code
+  type: nVarChar
+  size: 15
+- field: ActGroup
+  description: ActGroup
+  type: nVarChar
+  size: 16
+  default: '255'
+- field: CrdIndex
+  description: Transfer Credit Card Index
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CrdFromCod
+  description: From Code
+  type: nVarChar
+  size: 15
+- field: CrdToCode
+  description: To Code
+  type: nVarChar
+  size: 15
+- field: CrdGrpCust
+  description: Customer Group
+  type: Int
+  size: 6
+- field: CrdGrpVndr
+  description: Vendor Group
+  type: Int
+  size: 6
+- field: CrdToknAnd
+  description: CrdToknAnd
+  type: VarChar
+  size: 1
+- field: CrdUseGrps
+  description: CrdUseGrps
+  type: VarChar
+  size: 1
+- field: CrdClsRang
+  description: CrdClsRang
+  type: VarChar
+  size: 1
+- field: CrdGrpData
+  description: Properties
+  type: nVarChar
+  size: 64
+- field: ItmIndex
+  description: Transfer Item Index
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ItmFromCod
+  description: From Code
+  type: nVarChar
+  size: 50
+- field: ItmToCode
+  description: To Code
+  type: nVarChar
+  size: 50
+- field: ItmGroup
+  description: Item Group
+  type: Int
+  size: 6
+- field: ItmToknAnd
+  description: ItmToknAnd
+  type: VarChar
+  size: 1
+- field: ItmUseGrps
+  description: ItmUseGrps
+  type: VarChar
+  size: 1
+- field: ItmClsRang
+  description: ItmClsRang
+  type: VarChar
+  size: 1
+- field: ItmGrpData
+  description: Properties
+  type: nVarChar
+  size: 64
+- field: TransfDoc
+  description: Documents Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: UnDpsChk
+  description: Transfer Undeposited Checks
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: DpsChk
+  description: Transfer Postdated Checks
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: UnDpsVouch
+  description: Transfer Unpaid Vouchers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: DpsVouch
+  description: Transfer Deffered Vouchers
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: WorkOrder
+  description: Open Work Instructions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: RcrTrt
+  description: Posting Templates & Rec. Trans
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Connection
+  description: Activities
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: SpcPrice
+  description: Special Prices
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Quotations
+  description: Transfer Open Sales Quotations
+  type: VarChar
+  size: 1
+  default: N
+- field: Orders
+  description: Transfer Open Orders
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: DlvrNotes
+  description: Transfer Open Delivery Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: DlvrInvocs
+  description: Transfer Open Invoices
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: P_Orders
+  description: Transfer Purchase Orders
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: P_Invoices
+  description: A/P Invoices
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ProdTree
+  description: Product Tree
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Subst
+  description: Customer/Vendor Catalog No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Import
+  description: Landed Costs
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Revert
+  description: Returns
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ActBlnc
+  description: Transfer Account Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ActRef1
+  description: Ref. 1 for Opening Bal. Trans.
+  type: nVarChar
+  size: 11
+- field: ActRef2
+  description: Ref. 2 for Opening Bal. Trans.
+  type: nVarChar
+  size: 11
+- field: ActRefDate
+  description: Posting Date for OB Transactions
+  type: Date
+  size: 8
+- field: ActDueDate
+  description: Due date for OB transaction
+  type: Date
+  size: 8
+- field: ActMemo
+  description: Journal Entry Details
+  type: nVarChar
+  size: 50
+- field: AOpnBlnAct
+  description: Opening Balances Account
+  type: nVarChar
+  size: 15
+- field: AEquetyAct
+  description: Retained Earnings Account
+  type: nVarChar
+  size: 15
+- field: ActExpLine
+  description: Transfer Split Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Unreconciled Internally
+  - key: N
+    label: ''
+  - key: E
+    label: Unreconciled Externally
+- field: ActBlncFrC
+  description: From Code
+  type: nVarChar
+  size: 15
+- field: ActBlncToC
+  description: To Code
+  type: nVarChar
+  size: 15
+- field: ActBlncGrp
+  description: ActBlncGrp
+  type: nVarChar
+  size: 16
+  default: YYY
+- field: ActZeroBln
+  description: Account Transactions with Zero Balance
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CrdBlnc
+  description: Transfer Credit Card Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CrdRef1
+  description: Ref. 1 for OB Transactions
+  type: nVarChar
+  size: 11
+- field: CrdRef2
+  description: Ref. 2 for OB Transactions
+  type: nVarChar
+  size: 11
+- field: CrdRefDate
+  description: Posting Date for OB Transactions
+  type: Date
+  size: 8
+- field: CrdDueDate
+  description: Due date for OB transaction
+  type: Date
+  size: 8
+- field: CrdMemo
+  description: Journal Entry Details
+  type: nVarChar
+  size: 50
+- field: COpnBlnAct
+  description: Opening Balances Account
+  type: nVarChar
+  size: 15
+- field: CrdExpLine
+  description: Transfer Split Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CrdBlncFrC
+  description: From Code
+  type: nVarChar
+  size: 15
+- field: CrdBlncToC
+  description: To Code
+  type: nVarChar
+  size: 15
+- field: CrdBlncGrC
+  description: Customer Group
+  type: Int
+  size: 6
+- field: CrdBlnGrpV
+  description: Vendor Group
+  type: Int
+  size: 6
+- field: CrdBTknAnd
+  description: CrdBTknAnd
+  type: VarChar
+  size: 1
+- field: CrdBUseGrp
+  description: CrdBUseGrp
+  type: VarChar
+  size: 1
+- field: CrdBClsRng
+  description: CrdBClsRng
+  type: VarChar
+  size: 1
+- field: CrdBGrpDat
+  description: Properties
+  type: nVarChar
+  size: 64
+- field: CrdZeroBln
+  description: Card Transactions with Zero Balance
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ItmBlnc
+  description: Transfer Item Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ItmRef1
+  description: Ref. 1 for Opening Bal. Trans.
+  type: nVarChar
+  size: 11
+- field: ItmRef2
+  description: Ref. 2 for Opening Bal. Trans.
+  type: nVarChar
+  size: 11
+- field: ItmRefDate
+  description: Posting Date for OB Transaction
+  type: Date
+  size: 8
+- field: ItmMemo
+  description: Journal Entry Details
+  type: nVarChar
+  size: 50
+- field: ItmBlncFrC
+  description: From Code
+  type: nVarChar
+  size: 50
+- field: ItmBlncToC
+  description: To Code
+  type: nVarChar
+  size: 50
+- field: ItmBlncGrp
+  description: Item Group
+  type: Int
+  size: 6
+- field: ItmBTknAnd
+  description: ItmBTknAnd
+  type: VarChar
+  size: 1
+- field: ItmBUseGrp
+  description: ItmBUseGrp
+  type: VarChar
+  size: 1
+- field: ItmBClsRng
+  description: ItmBClsRng
+  type: VarChar
+  size: 1
+- field: ItmBGrpDat
+  description: Properties
+  type: nVarChar
+  size: 64
+- field: ItmPlnNum
+  description: Transaction Price List
+  type: Int
+  size: 6
+  default: 1
+- field: ItmZeroPr
+  description: Transfer Items Without Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: FileReport
+  description: Create Report File
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CompName
+  description: Company Name for Transfering
+  type: nVarChar
+  size: 200
+- field: WasGnrlDef
+  description: Was general data transferred
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: P_DlvrNots
+  description: Transfer PO Del. Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Spg
+  description: Transfer Discount for Groups
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Pdn
+  description: Purchase Delivery Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: PdnClosed
+  description: Closed Purchase Delivery Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Rpd
+  description: Revert Purchase Delivery Notes
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ReportTemp
+  description: Report Templates
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Confirmat
+  description: Confirmation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: DocDraft
+  description: Document Drafts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: ChkOutDrft
+  description: Checks for Payment Drafts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: OptOpen
+  description: Open Opportunities
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: OptClosed
+  description: Closed Opportunities
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: SerBtchNum
+  description: Batch/Serial No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: CorrInvoic
+  description: Correction Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: UserGign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PaymDraf
+  description: Payment Draft
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: PaymentWiz
+  description: Saved Payment Wizard
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: AltItems
+  description: Alternative Items
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPIInvoice
+  description: A/R Down Payment Invoice
+  type: VarChar
+  size: 1
+  default: N
+- field: DPIRequest
+  description: A/R Down Payment Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Ctr
+  description: Service Contracts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Ins
+  description: Customer Equipment Card
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CorrAPInv
+  description: A/P Correction Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CorrAPRev
+  description: A/P Correction Invoice Reversal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CorrARInv
+  description: A/R Correction Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CorrARRev
+  description: A/R Correction Invoice Reversal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserObj
+  description: User Object
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: AdWrkOrdr
+  description: Advanced Work Order
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DPOInvoice
+  description: A/P Down Payment Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DPORequest
+  description: A/P Down Payment Request
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: P_Quotatio
+  description: Transfer Open Pur. Quotations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTQ
+  description: Inventory Transfer Requests
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Oat
+  description: Blanket Agreement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CPN
+  description: Campaign
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AdvRules
+  description: Transfer Advanced Rules
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Prq
+  description: Purchase Request
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompName

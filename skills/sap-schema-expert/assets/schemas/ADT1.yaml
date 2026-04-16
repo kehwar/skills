@@ -1,0 +1,52 @@
+table: ADT1
+description: Depreciation Types - Rows - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ADT1.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: Level
+  description: Level
+  type: Int
+  size: 11
+- field: Base
+  description: Base
+  type: nVarChar
+  size: 3
+  default: APC
+  constraints:
+  - key: APC
+    label: Acquisition Value
+  - key: NBV
+    label: Net Book Value
+- field: Years
+  description: Number of Years
+  type: Int
+  size: 11
+- field: Percentage
+  description: Percentage
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: Amount
+  description: Amount
+  type: Num
+  size: 19.6
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Level
+  - LogInstanc

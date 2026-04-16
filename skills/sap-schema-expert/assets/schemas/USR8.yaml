@@ -1,0 +1,20 @@
+table: USR8
+description: Point of Issue User Association
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/USR8.htm
+fields:
+- field: UserId
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserId
+  - PTICode

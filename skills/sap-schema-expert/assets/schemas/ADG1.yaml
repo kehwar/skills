@@ -1,0 +1,65 @@
+table: ADG1
+description: Discount Groups Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ADG1.htm
+fields:
+- field: AbsEntry
+  description: Unique Entry
+  type: Int
+  size: 11
+  related: OEDG
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '52'
+    label: Item Groups
+  - key: '8'
+    label: Item Properties
+  - key: '43'
+    label: Manufacturer
+  - key: '4'
+    label: Items
+- field: ObjKey
+  description: Object Key
+  type: nVarChar
+  size: 50
+- field: DiscType
+  description: Discount Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Discount
+  - key: P
+    label: Pay for/Get for Free
+- field: Discount
+  description: Discount
+  type: Num
+  size: 19.6
+- field: PayFor
+  description: Paid Qty
+  type: Num
+  size: 19.6
+- field: ForFree
+  description: Free Qty
+  type: Num
+  size: 19.6
+- field: UpTo
+  description: Max. Free Qty
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ObjType
+  - ObjKey
+  - LogInstanc

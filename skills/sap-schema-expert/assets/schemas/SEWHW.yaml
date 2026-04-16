@@ -1,0 +1,107 @@
+table: SEWHW
+description: SEWHW
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWHW.htm
+fields:
+- field: MachineNam
+  description: Machine Name
+  type: nVarChar
+  size: 254
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+- field: CustNumber
+  description: Customer Number
+  type: nVarChar
+  size: 100
+- field: OsType
+  description: OS Type
+  type: nVarChar
+  size: 64
+- field: OsVersion
+  description: OS Version
+  type: nVarChar
+  size: 32
+- field: VendorIden
+  description: Vendor Identity
+  type: nVarChar
+  size: 254
+- field: CpuType
+  description: CPU TYPE
+  type: nVarChar
+  size: 32
+- field: NumOfCPUs
+  description: Number Of CPUs
+  type: Int
+  size: 11
+- field: PhysMemory
+  description: Physical Memory
+  type: Int
+  size: 11
+- field: ServerFlag
+  description: Server Flag (Is Server?)
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: TotDskSpac
+  description: Total Disk Space
+  type: nVarChar
+  size: 16
+- field: FreDskSpac
+  description: Free Disk Space
+  type: nVarChar
+  size: 16
+- field: UseDskSpac
+  description: Used Disk Space
+  type: nVarChar
+  size: 16
+- field: CRRntmVer
+  description: CR Runtime Version
+  type: nVarChar
+  size: 100
+- field: BOBIPltVer
+  description: BO BI Platform Version
+  type: nVarChar
+  size: 100
+- field: CRDsgnrVer
+  description: CR Designer Version
+  type: nVarChar
+  size: 100
+- field: CRIntPgVer
+  description: CR Integration Package Version
+  type: nVarChar
+  size: 100
+- field: NETFrmVer
+  description: .NET Framework Version
+  type: nVarChar
+  size: 254
+- field: NETFrmSDKV
+  description: .NET Framework SDK Version
+  type: nVarChar
+  size: 254
+- field: MmrMngSett
+  description: Memory Management Settings
+  type: nVarChar
+  size: 254
+- field: B1ClntPltf
+  description: BusinessOne Client Platform
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MachineNam
+  - CompDbNam

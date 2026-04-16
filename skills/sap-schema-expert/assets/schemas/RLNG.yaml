@@ -1,0 +1,92 @@
+table: RLNG
+description: ????
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RLNG.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Code
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: Language name
+  type: nVarChar
+  size: 50
+- field: ShortName
+  description: Short name
+  type: nVarChar
+  size: 4
+- field: Direction
+  description: Direction
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Right to left
+  - key: '1'
+    label: Left to right
+- field: IsBase
+  description: Is base
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Charset
+  description: Charset
+  type: Int
+  size: 11
+- field: CodePage
+  description: Codepage
+  type: Int
+  size: 11
+- field: KBLayout
+  description: Keyboard layout
+  type: Int
+  size: 11
+- field: LangStr
+  description: Language String
+  type: nVarChar
+  size: 50
+- field: TransInB5I
+  description: Translated In B5I System
+  type: VarChar
+  size: 1
+  default: '0'
+- field: HelpLang
+  description: Online Help Language Code
+  type: nVarChar
+  size: 4
+- field: hasHotKey
+  description: The language has hot key
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Has HotKey
+  - key: N
+    label: Does not have HotKey
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: BASE
+  unique: false
+  fields:
+  - IsBase
+- key: SHORT_NAME
+  unique: true
+  fields:
+  - ShortName

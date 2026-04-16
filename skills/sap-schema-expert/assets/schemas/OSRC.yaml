@@ -1,0 +1,38 @@
+table: OSRC
+description: Service App Report Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSRC.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: SysRptName
+  description: System Report Name
+  type: nVarChar
+  size: 120
+- field: SysRptTemp
+  description: System Report Template
+  type: Text
+  size: 16
+- field: CusRptName
+  description: Customized Report Name
+  type: nVarChar
+  size: 120
+- field: CusRptTemp
+  description: Customized Report Template
+  type: Text
+  size: 16
+- field: RptChoice
+  description: Report Choice
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: System
+  - key: C
+    label: Customized
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

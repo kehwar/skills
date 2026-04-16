@@ -1,0 +1,177 @@
+table: AOA1
+description: Blanket Agreement - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/AOA1.htm
+fields:
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: AOAT
+- field: AgrLineNum
+  description: Agreement Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: ItemGroup
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: PlanQty
+  description: Planned Quantity
+  type: Num
+  size: 19.6
+- field: UnitPrice
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: CumQty
+  description: Cumulative Quantity
+  type: Num
+  size: 19.6
+- field: CumAmntFC
+  description: Cumulative Amount in FC
+  type: Num
+  size: 19.6
+- field: CumAmntLC
+  description: Cumulative Amount in LC
+  type: Num
+  size: 19.6
+- field: FreeTxt
+  description: Free Text
+  type: nVarChar
+  size: 100
+- field: InvntryUom
+  description: Inventory UoM
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: RetPortion
+  description: Goods Return Probability
+  type: Num
+  size: 19.6
+- field: WrrtyEnd
+  description: Date When Goods Expire
+  type: Date
+  size: 8
+- field: LineStatus
+  description: Row Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: PlanAmtLC
+  description: Planned Amount (LC)
+  type: Num
+  size: 19.6
+- field: PlanAmtFC
+  description: Planned Amount (FC)
+  type: Num
+  size: 19.6
+- field: Discount
+  description: Line Discount
+  type: Num
+  size: 19.6
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: UomCode
+  description: UoM Code
+  type: nVarChar
+  size: 20
+- field: NumPerMsr
+  description: UoM Value
+  type: Num
+  size: 19.6
+  default: 0
+- field: UndlvQty
+  description: Undeliverd Quantity
+  type: Num
+  size: 19.6
+- field: UndlvAmntL
+  description: Undeliverd Amount LC
+  type: Num
+  size: 19.6
+- field: UndlvAmntF
+  description: Undeliverd Amount FC
+  type: Num
+  size: 19.6
+- field: TrnspCode
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: TAXRate
+  description: TAX Rate
+  type: Num
+  size: 19.6
+- field: PlVatAmtLC
+  description: Planned VAT Amount (LC)
+  type: Num
+  size: 19.6
+- field: PlVatAmtFC
+  description: Planned VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: CumVtAmtLC
+  description: Cumulative VAT Amount (LC)
+  type: Num
+  size: 19.6
+- field: CumVtAmtFC
+  description: Cumulative VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: UoMNum
+  description: UoM Item Per Unit Numerator
+  type: Num
+  size: 19.6
+- field: UoMDen
+  description: UoM Item Per Unit Denominator
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AgrNo
+  - AgrLineNum
+  - LogInstanc

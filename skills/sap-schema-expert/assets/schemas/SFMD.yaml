@@ -1,0 +1,25 @@
+table: SFMD
+description: SFMD
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SFMD.htm
+fields:
+- field: Version
+  description: Version
+  type: Int
+  size: 11
+- field: Metadefs
+  description: Metadefs.bin
+  type: Text
+  size: 16
+- field: ClusterID
+  description: Cluster Identification
+  type: nVarChar
+  size: 3
+- field: PatchLevel
+  description: Application Patch Level
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Version

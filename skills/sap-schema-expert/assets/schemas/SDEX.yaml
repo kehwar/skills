@@ -1,0 +1,59 @@
+table: SDEX
+description: Dynamic Extensions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/SDEX.htm
+fields:
+- field: FormId
+  description: Form ID
+  type: Int
+  size: 11
+- field: ItemId
+  description: Item ID
+  type: Int
+  size: 11
+  default: 0
+- field: ColumnId
+  description: Column ID
+  type: Int
+  size: 11
+  default: 0
+- field: BefAppl
+  description: Application Before
+  type: Text
+  size: 16
+- field: AftAppl
+  description: Application After
+  type: Text
+  size: 16
+- field: BefScript
+  description: Is Script Before
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AftScript
+  description: Is Script After
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormId
+  - ItemId
+  - ColumnId

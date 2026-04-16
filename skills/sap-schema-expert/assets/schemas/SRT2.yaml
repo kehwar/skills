@@ -1,0 +1,46 @@
+table: SRT2
+description: Korean Summary Report - Rows2
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SRT2.htm
+fields:
+- field: SumRptId
+  description: Summary Rpt ID
+  type: nVarChar
+  size: 100
+- field: SeqNo
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: VATRegNum
+  description: VAT Reg. Number of BP
+  type: nVarChar
+  size: 12
+- field: CardCode
+  description: BP Code on OCRD
+  type: nVarChar
+  size: 15
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: TransNo
+  description: Total Trans Number under BP
+  type: Int
+  size: 11
+- field: BaseAmt
+  description: Total Base Amount under BP
+  type: Num
+  size: 19.6
+- field: TaxAmt
+  description: Total Tax Amount under BP
+  type: Num
+  size: 19.6
+- field: Remark
+  description: Line Item Remark, do not use
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SumRptId
+  - SeqNo

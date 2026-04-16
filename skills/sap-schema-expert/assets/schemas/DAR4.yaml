@@ -1,0 +1,101 @@
+table: DAR4
+description: Data Archive - Candidate
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DAR4.htm
+fields:
+- field: ArcEntry
+  description: Data Archive Entry
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocAbs
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: Total
+  description: Total
+  type: Num
+  size: 19.6
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Recommendation
+  - key: M
+    label: Marked
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: KeySeg1
+  description: Key Segment 1
+  type: nVarChar
+  size: 15
+- field: KeySeg2
+  description: Key Segment 2
+  type: nVarChar
+  size: 15
+- field: KeySeg3
+  description: Key Segment 3
+  type: nVarChar
+  size: 15
+- field: KeySeg4
+  description: Key Segment 4
+  type: nVarChar
+  size: 15
+- field: KeySeg5
+  description: Key Segment 5
+  type: nVarChar
+  size: 15
+- field: KeySeg6
+  description: Key Segment 6
+  type: nVarChar
+  size: 15
+- field: KeySeg7
+  description: Key Segment 7
+  type: nVarChar
+  size: 20
+- field: KeySeg8
+  description: Key Segment 8
+  type: nVarChar
+  size: 15
+- field: KeySeg9
+  description: Key Segment 9
+  type: nVarChar
+  size: 15
+- field: KeySeg10
+  description: Key Segment 10
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ArcEntry
+  - Line_ID
+- key: ABS_TYPE
+  unique: false
+  fields:
+  - DocAbs
+  - DocType

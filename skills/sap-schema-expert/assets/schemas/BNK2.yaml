@@ -1,0 +1,198 @@
+table: BNK2
+description: Bank Statement - Recommendation List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/BNK2.htm
+fields:
+- field: IdNumber
+  description: Bank Statement ID
+  type: Int
+  size: 11
+- field: BSLine
+  description: Bank Statement Line ID
+  type: Int
+  size: 11
+- field: ListLineID
+  description: List Line ID
+  type: Int
+  size: 6
+- field: DocID
+  description: Document Identifier
+  type: nVarChar
+  size: 35
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 6
+  constraints:
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Returns
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Payment Advice
+  - key: '57'
+    label: Checks for Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '-2'
+    label: Opening Balance
+  - key: '-3'
+    label: Closing Balance
+  - key: '30'
+    label: Journal Entry
+  - key: '58'
+    label: Whse Reconciliation
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfers
+  - key: '-1'
+    label: All transactions
+- field: AmntLC
+  description: Applied Amount (LC)
+  type: Num
+  size: 19.6
+- field: AmntFC
+  description: Applied Amount (FC)
+  type: Num
+  size: 19.6
+- field: IsDebit
+  description: Debit [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GLAct
+  description: G/L Account or BP Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PrftCenter
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: VatCode
+  description: VAT Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: Selected
+  description: Selected
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatLC
+  description: VAT or Discount Amount (LC)
+  type: Num
+  size: 19.6
+- field: VatFC
+  description: VAT or Discount Amount (FC)
+  type: Num
+  size: 19.6
+- field: Installmnt
+  description: Installment
+  type: Int
+  size: 11
+- field: InterimAct
+  description: Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: JdtLine
+  description: Journal Entry
+  type: Int
+  size: 11
+  related: OJDT
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: PrftCent2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrftCent5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: MatchLog
+  description: Matching Criteria Log
+  type: nVarChar
+  size: 254
+- field: DueBal
+  description: Balance Due
+  type: Num
+  size: 19.6
+- field: DueBalFC
+  description: Balance Due (FC)
+  type: Num
+  size: 19.6
+- field: AmntSC
+  description: Applied Amount (SC)
+  type: Num
+  size: 19.6
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdNumber
+  - BSLine
+  - ListLineID

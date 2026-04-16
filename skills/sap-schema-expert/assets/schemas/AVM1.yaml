@@ -1,0 +1,38 @@
+table: AVM1
+description: Systems for Value Mapping Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AVM1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PropID
+  description: Property ID
+  type: Int
+  size: 11
+- field: PropDesc
+  description: Property Description
+  type: nVarChar
+  size: 50
+- field: PropType
+  description: Property Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: String
+  - key: N
+    label: Numeric
+  - key: D
+    label: Date
+- field: PropValue
+  description: Property Value
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - PropID

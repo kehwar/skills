@@ -1,0 +1,57 @@
+table: OBRW
+description: Browser Widget
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OBRW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Browser Widget Name
+  type: nVarChar
+  size: 100
+- field: Type
+  description: Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Web Site
+  - key: '1'
+    label: App
+- field: Url
+  description: Web Site or Extreme Application URL
+  type: nVarChar
+  size: 254
+- field: App
+  description: Extreme Application Name
+  type: nVarChar
+  size: 100
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 254
+- field: ShowWebTil
+  description: Display Web Page Title
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Size
+  description: Widget Size
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name

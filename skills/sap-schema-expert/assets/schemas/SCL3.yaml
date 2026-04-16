@@ -1,0 +1,106 @@
+table: SCL3
+description: Service Call Travel/Labor Expenses
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/SCL3.htm
+fields:
+- field: SrcvCallID
+  description: Service Call No.
+  type: Int
+  size: 11
+  related: OSCL
+- field: Line
+  description: Row
+  type: Int
+  size: 6
+  default: -1
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: HourFrom
+  description: Delivered
+  type: Int
+  size: 6
+- field: HourTo
+  description: Returned
+  type: Int
+  size: 6
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Bill
+  description: Bill
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QtyToBill
+  description: Quantity to Bill
+  type: Num
+  size: 19.6
+- field: QtyToInv
+  description: Invoiced Qty
+  type: Num
+  size: 19.6
+- field: SaleUnits
+  description: Sale Units
+  type: nVarChar
+  size: 5
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: User Signature 2
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: Deliverd
+  description: Delivered
+  type: Num
+  size: 19.6
+- field: Returned
+  description: Returned
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrcvCallID
+  - Line

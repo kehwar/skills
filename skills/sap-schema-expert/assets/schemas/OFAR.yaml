@@ -1,0 +1,165 @@
+table: OFAR
+description: Fixed Asset Revaluation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFAR.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: AssetDate
+  description: Asset Value Date
+  type: Date
+  size: 8
+- field: Ref
+  description: Reference
+  type: nVarChar
+  size: 32
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 254
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VatRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: RevalPerc
+  description: Revaluation Percentage %
+  type: Num
+  size: 19.6
+- field: IfrsPsting
+  description: Ifrs posting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrjSmarz
+  description: Summarize by Project
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DstRlSmarz
+  description: Summarize by Distribution Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year of Transfer
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: INDEX
+  unique: true
+  fields:
+  - DocNum
+  - PIndicator

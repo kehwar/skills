@@ -1,0 +1,47 @@
+table: CHO2
+description: Checks for Payment - Print Status
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/CHO2.htm
+fields:
+- field: AbsEntry
+  description: Index
+  type: Int
+  size: 11
+- field: ChkNum
+  description: Check Number
+  type: Int
+  size: 11
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: D
+    label: Details
+  - key: V
+    label: Void
+  - key: N
+    label: Not Confirmed
+  - key: T
+    label: Not Printed
+  - key: O
+    label: Overflow
+- field: PrnBy
+  description: Printed By
+  type: Int
+  size: 6
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

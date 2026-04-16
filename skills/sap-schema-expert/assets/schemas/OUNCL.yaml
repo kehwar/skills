@@ -1,0 +1,85 @@
+table: OUNCL
+description: PEPPOL BIS Code Lists
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OUNCL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Codelist
+  description: Code List
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: Order Type Code
+  - key: '2'
+    label: Delivery Type Code
+  - key: '3'
+    label: Invoice Type Code
+  - key: '4'
+    label: Credit Note Type Code
+  - key: '5'
+    label: Standard Item Type Identification Code
+  - key: '6'
+    label: Item Commodity Classification Code
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: Descrip
+  description: Description
+  type: nVarChar
+  size: 254
+- field: SchemaCode
+  description: Schema Code
+  type: nVarChar
+  size: 20
+- field: SchemaDesc
+  description: Schema Description
+  type: nVarChar
+  size: 254
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsDefault
+  description: Is Default
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: Code
+  unique: true
+  fields:
+  - Codelist
+  - Code
+  - SchemaCode
+- key: IsDefault
+  unique: false
+  fields:
+  - IsDefault

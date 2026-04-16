@@ -1,0 +1,65 @@
+table: WPK1
+description: Dashboard Packages' Parameter or Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPK1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DsbrdEntry
+  description: Dashboard Entry
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 20
+- field: FldName
+  description: Field Name
+  type: nVarChar
+  size: 250
+- field: FldMethod
+  description: Field Method
+  type: nVarChar
+  size: 250
+- field: Operator
+  description: Operator
+  type: nVarChar
+  size: 250
+- field: DbType
+  description: Database Type
+  type: nVarChar
+  size: 250
+- field: SqlType
+  description: SQL Type
+  type: Int
+  size: 11
+- field: FromValue
+  description: From Value
+  type: nVarChar
+  size: 250
+- field: ToValue
+  description: To Value
+  type: nVarChar
+  size: 250
+- field: DftValue
+  description: Default Value
+  type: nVarChar
+  size: 250
+- field: ParamType
+  description: Parameter Type
+  type: nVarChar
+  size: 20
+- field: UdqPh
+  description: UDQ Parameter's Placeholder
+  type: nVarChar
+  size: 50
+- field: UdqOp
+  description: UDQ Parameter's Operator
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

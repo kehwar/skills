@@ -1,0 +1,36 @@
+table: AOA3
+description: 'Item Details: Activity'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/AOA3.htm
+fields:
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+  related: AOAT
+- field: AgrLnNum
+  description: Agreement Item Row Number
+  type: Int
+  size: 11
+- field: AgrEfctNum
+  description: 'Agreement Effective: Row No.'
+  type: Int
+  size: 11
+- field: ActivityID
+  description: Activity ID
+  type: Int
+  size: 11
+  related: OCLG
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AgrNo
+  - AgrLnNum
+  - AgrEfctNum
+  - ActivityID
+  - LogInstanc

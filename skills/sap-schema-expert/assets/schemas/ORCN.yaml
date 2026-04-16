@@ -1,0 +1,96 @@
+table: ORCN
+description: Retail Chains
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ORCN.htm
+fields:
+- field: ChainCode
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ChainName
+  description: Chain Name
+  type: nVarChar
+  size: 20
+- field: SuppNum
+  description: Vendor Code
+  type: nVarChar
+  size: 20
+- field: SuppName
+  description: Vendor Name
+  type: nVarChar
+  size: 20
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SavePath
+  description: File Path
+  type: Text
+  size: 16
+- field: UsePartSup
+  description: Use Goods Del.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseCode
+  description: Basic Grid Template
+  type: Int
+  size: 11
+  default: -1
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: ExportNum
+  description: Export Counter
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ChainCode
+- key: NAME
+  unique: true
+  fields:
+  - ChainName

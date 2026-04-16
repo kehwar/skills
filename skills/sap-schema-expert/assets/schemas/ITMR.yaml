@@ -1,0 +1,803 @@
+table: ITMR
+description: ITMR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ITMR.htm
+fields:
+- field: DocCode
+  description: Report
+  type: nVarChar
+  size: 8
+- field: ItemId
+  description: Item ID
+  type: Int
+  size: 6
+- field: Container
+  description: Parent Type
+  type: Int
+  size: 6
+- field: Type
+  description: Type
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Page header
+  - key: '2'
+    label: Start of report
+  - key: '3'
+    label: Repetitive area header
+  - key: '4'
+    label: Repetitive area
+  - key: '5'
+    label: Repetitive area footer
+  - key: '6'
+    label: End of report
+  - key: '7'
+    label: Page footer
+  - key: '10'
+    label: Text field
+  - key: '11'
+    label: Picture field
+  - key: '12'
+    label: User field
+- field: VISIBLE
+  description: Visible
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: SupZeros
+  description: Suppress Zeros
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: ItemLeft
+  description: Left Item
+  type: Int
+  size: 6
+- field: ItemTop
+  description: Top
+  type: Int
+  size: 6
+- field: Width
+  description: Width
+  type: Int
+  size: 6
+- field: Height
+  description: Height
+  type: Int
+  size: 6
+- field: LMargin
+  description: Left Margin
+  type: Int
+  size: 6
+  default: 0
+- field: RMargin
+  description: Right Margin
+  type: Int
+  size: 6
+  default: 0
+- field: TMargin
+  description: Top Margin
+  type: Int
+  size: 6
+  default: 0
+- field: BMargin
+  description: Bottom Margin
+  type: Int
+  size: 6
+  default: 0
+- field: LeftLine
+  description: Left Border Line Thickness
+  type: Int
+  size: 6
+  default: 0
+- field: RightLine
+  description: Right Border Line Thickness
+  type: Int
+  size: 6
+  default: 0
+- field: TopLine
+  description: Top Border Line Thickness
+  type: Int
+  size: 6
+  default: 0
+- field: BottomLine
+  description: Bottom Border Line Thickness
+  type: Int
+  size: 6
+  default: 0
+- field: Shadow
+  description: Shadow Thickness
+  type: Int
+  size: 6
+  default: 0
+- field: BGRed
+  description: Background - Red
+  type: Int
+  size: 11
+  default: 65535
+- field: BGGreen
+  description: Background - Green
+  type: Int
+  size: 11
+  default: 65535
+- field: BGBlue
+  description: Background - Blue
+  type: Int
+  size: 11
+  default: 65535
+- field: FGRed
+  description: Text - Red
+  type: Int
+  size: 11
+  default: 0
+- field: FGGreen
+  description: Text - Green
+  type: Int
+  size: 11
+  default: 0
+- field: FGBlue
+  description: Text - Blue
+  type: Int
+  size: 11
+  default: 0
+- field: MrkrRed
+  description: Bold - Red
+  type: Int
+  size: 11
+  default: 65535
+- field: MrkrGreen
+  description: Bold - Green
+  type: Int
+  size: 11
+  default: 65535
+- field: MrkrBlue
+  description: Bold - Blue
+  type: Int
+  size: 11
+  default: 65535
+- field: BrdrRed
+  description: Border - Red
+  type: Int
+  size: 11
+  default: 0
+- field: BrdrGreen
+  description: Border - Green
+  type: Int
+  size: 11
+  default: 0
+- field: BrdrBlue
+  description: Border - Blue
+  type: Int
+  size: 11
+  default: 0
+- field: FromPane
+  description: From Area
+  type: Int
+  size: 6
+  default: 0
+- field: ToPane
+  description: To Area
+  type: Int
+  size: 6
+  default: 0
+- field: ItemGroup
+  description: Group No.
+  type: Int
+  size: 6
+  default: 0
+- field: FontName
+  description: Font Name
+  type: nVarChar
+  size: 50
+  default: Arial
+- field: FontSize
+  description: Font Size
+  type: Int
+  size: 6
+  default: 12
+- field: TextStyle
+  description: Text Style
+  type: Int
+  size: 11
+- field: Justific
+  description: Horizontal Justification
+  type: VarChar
+  size: 1
+  default: '2'
+  constraints:
+  - key: '1'
+    label: Right
+  - key: '2'
+    label: Left
+  - key: '3'
+    label: Center
+  - key: '4'
+    label: Language Dependent
+- field: WRAP
+  description: Segment
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Allow overflow
+  - key: '1'
+    label: Fit to cell
+  - key: '2'
+    label: Devide to lines
+- field: PictSize
+  description: Picture Size
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Original size
+  - key: '1'
+    label: Size of box
+  - key: '2'
+    label: Adjust to box
+  - key: '3'
+    label: Adjust to box height
+  - key: '4'
+    label: Adjust to box width
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Static
+  - key: '2'
+    label: Var
+  - key: '3'
+    label: Data
+  - key: '4'
+    label: Calculation
+- field: ItemStr
+  description: String
+  type: Text
+  size: 16
+- field: VarNum
+  description: Variable No.
+  type: Int
+  size: 6
+- field: FileName
+  description: File Name
+  type: nVarChar
+  size: 20
+- field: FieldNum
+  description: Field No.
+  type: nVarChar
+  size: 10
+- field: ShowDescr
+  description: Display Description
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: CalcType
+  description: Calculation Type
+  type: nVarChar
+  size: 2
+  default: '1'
+  constraints:
+  - key: '0'
+    label: Formula
+  - key: '1'
+    label: Page number
+  - key: '17'
+    label: Total Pages
+  - key: '2'
+    label: Date
+  - key: '3'
+    label: Time
+  - key: '4'
+    label: Column total
+  - key: '5'
+    label: Column average
+  - key: '6'
+    label: General row no.
+  - key: '7'
+    label: Group row no.
+  - key: '8'
+    label: Sort field name
+  - key: '9'
+    label: Sort field content
+  - key: '10'
+    label: Continue
+  - key: '11'
+    label: Continued on next page
+  - key: '12'
+    label: Generation message
+  - key: '13'
+    label: Column summary for page
+  - key: '14'
+    label: Column average for page
+  - key: '15'
+    label: Column summary for report
+  - key: '16'
+    label: Column average for report
+  - key: '-1'
+    label: '[new formula String]'
+- field: ChangFlags
+  description: Changeable
+  type: Int
+  size: 11
+- field: ApplID
+  description: Item No.
+  type: Int
+  size: 6
+- field: CalcCol
+  description: Calculation Column
+  type: Int
+  size: 6
+- field: YJustific
+  description: Vertical Alignment
+  type: VarChar
+  size: 1
+  default: '3'
+  constraints:
+  - key: '1'
+    label: Top
+  - key: '2'
+    label: Bottom
+  - key: '3'
+    label: Center
+- field: SortLevel
+  description: Sort Level
+  type: Int
+  size: 6
+  default: 0
+- field: RevOrder
+  description: Reverse Sort
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: Descending
+  - key: '0'
+    label: Ascending
+- field: SortType
+  description: Sort Type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Alpha
+  - key: '1'
+    label: Numeric
+  - key: '2'
+    label: Money
+  - key: '3'
+    label: Date
+- field: IsUnique
+  description: Unique
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: IsGroup
+  description: Set as Group
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: NewPage
+  description: New Page
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: BarCode
+  description: Print as Barcode
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: Condition
+  description: Condition
+  type: Text
+  size: 16
+- field: LinkTo
+  description: Link to Item
+  type: Int
+  size: 6
+  default: 0
+- field: Operator1
+  description: Operator 1
+  type: Int
+  size: 6
+- field: Operator2
+  description: Operator 2
+  type: Int
+  size: 6
+- field: Operation
+  description: Operation
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: +
+  - key: '2'
+    label: '-'
+  - key: '3'
+    label: x
+  - key: '4'
+    label: /
+  - key: '5'
+    label: '%'
+  - key: '17'
+    label: Left
+  - key: '18'
+    label: Right
+  - key: '19'
+    label: Round
+  - key: '6'
+    label: $Concat
+  - key: '7'
+    label: $Right
+  - key: '8'
+    label: $Left
+  - key: '9'
+    label: $Sentence
+  - key: '16'
+    label: $Len
+  - key: '20'
+    label: $Currency
+  - key: '21'
+    label: $Number
+  - key: '10'
+    label: Less
+  - key: '11'
+    label: LessEq
+  - key: '12'
+    label: Equally
+  - key: '13'
+    label: Not eq
+  - key: '14'
+    label: GrEq
+  - key: '15'
+    label: Greater
+- field: BCStandard
+  description: Barcode Standard
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: EAN-13
+  - key: '1'
+    label: Code 39
+  - key: '2'
+    label: Code 128
+- field: SumInWords
+  description: Display Total as a Word
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: ExcFonting
+  description: Block Font Change
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: StrIndex
+  description: String Index
+  type: Int
+  size: 11
+  default: 0
+- field: ContIndex
+  description: Container Index
+  type: Int
+  size: 6
+  default: 0
+- field: ItemIndex
+  description: Item Index
+  type: Int
+  size: 6
+  default: 0
+- field: StrLength
+  description: String Length
+  type: Int
+  size: 6
+- field: StrFiller
+  description: String Filler
+  type: VarChar
+  size: 1
+- field: RelatedTo
+  description: Related to Item
+  type: Int
+  size: 6
+  default: 0
+- field: NextSeg
+  description: Next Segment Item Num
+  type: Int
+  size: 6
+  default: 0
+- field: HightAdjst
+  description: Height Adjustments
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DupRpttAre
+  description: Duplicate Repeatative Area
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LnsRpttAre
+  description: Num Lines In Repeatative Area
+  type: Int
+  size: 11
+  default: 0
+- field: RptDupDist
+  description: Distanse To Rptt Dup (pixels)
+  type: Int
+  size: 11
+  default: 0
+- field: ItemDesc
+  description: Item Description
+  type: nVarChar
+  size: 50
+- field: ExportXml
+  description: Export to xml
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 4
+- field: Local
+  description: Localization
+  type: nVarChar
+  size: 2
+- field: Numerator
+  description: Numerator
+  type: Int
+  size: 6
+- field: Language
+  description: Language
+  type: Int
+  size: 6
+- field: Created
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Updated
+  description: Updated Date
+  type: Date
+  size: 8
+- field: UsrSgnStr
+  description: User Sign For Strings Change
+  type: Int
+  size: 11
+  default: -1
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: IsRef
+  description: Is the item refered by another
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FieldId
+  description: Field Identifier
+  type: nVarChar
+  size: 20
+- field: FGEnabled
+  description: Grid Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BGEnabled
+  description: Background Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MKEnabled
+  description: Highlight Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BDEnabled
+  description: Frame Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HidEmpRptt
+  description: Hide Empty Area
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RpttFtrAll
+  description: Display Rep. Footer on All
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GbiDataTyp
+  description: Data Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: C n
+  - key: '2'
+    label: C.. n
+  - key: '3'
+    label: I.. n
+  - key: '4'
+    label: D w.d
+- field: GbiDataLen
+  description: Data Length
+  type: nVarChar
+  size: 6
+- field: PageBreak
+  description: Page Break
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '1'
+    label: Before Area
+  - key: '2'
+    label: After Area
+- field: IsLogo
+  description: Is Logo
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VarDefName
+  description: Variable Definition Name
+  type: nVarChar
+  size: 50
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocType
+  - Local
+  - Numerator
+  - Language
+  - ApplID
+  - ResCode
+  - RevCode
+- key: TP_LC_NM_L
+  unique: false
+  fields:
+  - DocType
+  - Local
+  - Numerator
+  - Language
+- key: TYP_LOC_NM
+  unique: false
+  fields:
+  - DocType
+  - Local
+  - Numerator
+- key: TYPE_LOC
+  unique: false
+  fields:
+  - DocType
+  - Local
+- key: TYPE
+  unique: false
+  fields:
+  - DocType

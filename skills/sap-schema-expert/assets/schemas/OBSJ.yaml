@@ -1,0 +1,148 @@
+table: OBSJ
+description: Backend scheduling job
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBSJ.htm
+fields:
+- field: ID
+  description: Job ID
+  type: Int
+  size: 11
+- field: Type
+  description: Job Type
+  type: nVarChar
+  size: 100
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Scheduled
+  - key: R
+    label: Running
+  - key: E
+    label: Error
+  - key: F
+    label: Finished
+  - key: P
+    label: Pending
+  - key: C
+    label: Creating
+  - key: K
+    label: Cancel
+- field: Schedule
+  description: Schedule Type
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Once
+- field: NextDate
+  description: Next Running Date
+  type: Date
+  size: 8
+- field: NextTime
+  description: Next Running Time
+  type: Int
+  size: 6
+- field: BFParams
+  description: Begin Function Parameters
+  type: Text
+  size: 16
+- field: EFParams
+  description: End Function Parameters
+  type: Text
+  size: 16
+- field: BFRetry
+  description: Begin Function Retry Times
+  type: Int
+  size: 11
+  default: 0
+- field: EFRetry
+  description: End Function Retry Times
+  type: Int
+  size: 11
+  default: 0
+- field: RunAs
+  description: Callback Run as User
+  type: Int
+  size: 6
+  related: OUSR
+- field: Message
+  description: Status Message
+  type: nVarChar
+  size: 200
+- field: RunType
+  description: Run Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: A
+    label: Automatic
+- field: RunAt
+  description: Execution For
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Scheduled Task
+  - key: A
+    label: Ad-Hoc Task
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 11
+- field: NavParam
+  description: Navigation Target Parameters
+  type: nVarChar
+  size: 200
+- field: JobType
+  description: Job Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '157'
+    label: Payment Wizard
+  - key: '1730000000'
+    label: EDF Wizard
+  - key: '234003336'
+    label: DATEV Export
+  - key: '-20000'
+    label: Test Wizard
+- field: RefEntry
+  description: Reference Entry
+  type: Int
+  size: 11
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

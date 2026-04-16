@@ -1,0 +1,104 @@
+table: CIVI
+description: IVI Config File
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/CIVI.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: EnableRun
+  description: Enable Run
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnblRunDt
+  description: Enable Run Date
+  type: Date
+  size: 8
+- field: MsgSource
+  description: Object ID of Message Source
+  type: Int
+  size: 11
+- field: IsOILMUpd
+  description: Is OILM Updated
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: EnblDays
+  description: Enable Valid In Days
+  type: Int
+  size: 11
+  default: 30
+- field: LstChkMsg
+  description: Last Checked OILM Message
+  type: Int
+  size: 11
+- field: LstMsgDate
+  description: Last Build Message Date
+  type: Date
+  size: 8
+- field: LstHndlMsg
+  description: Last Handled OILM Message
+  type: Int
+  size: 11
+- field: EnableUpd
+  description: Enable Update
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IgnPreUpd
+  description: Ignore Previous Update
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ForceRSP
+  description: Force RSP Precheck
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReorderFrm
+  description: 'Reorder 8.8 Messages: From Date'
+  type: Date
+  size: 8
+- field: ReorderTo
+  description: 'Reorder 8.8 Messages: To Date'
+  type: Date
+  size: 8
+- field: InitMap
+  description: Initialize MAP Items
+  type: VarChar
+  size: 1
+- field: InitStd
+  description: Initialize STD Items
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

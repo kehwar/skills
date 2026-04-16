@@ -1,0 +1,26 @@
+table: OXAP
+description: XAPP Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OXAP.htm
+fields:
+- field: AbsEntry
+  description: Key of XAPP
+  type: Int
+  size: 11
+- field: Name
+  description: Name of XAPP
+  type: nVarChar
+  size: 250
+- field: Default
+  description: Is default
+  type: VarChar
+  size: 1
+  default: N
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name

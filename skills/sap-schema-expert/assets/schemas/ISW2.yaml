@@ -1,0 +1,116 @@
+table: ISW2
+description: Intrastat Reported Items
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ISW2.htm
+fields:
+- field: WizAbsEnt
+  description: Wizard Run Key
+  type: Int
+  size: 11
+  related: OISW
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: CommCode
+  description: Commodity Code
+  type: nVarChar
+  size: 12
+- field: SerCode
+  description: Service Code
+  type: nVarChar
+  size: 12
+- field: AddMUnit
+  description: Additional Measure Unit
+  type: nVarChar
+  size: 50
+- field: FactorAM
+  description: Factor Additional Measure
+  type: Num
+  size: 19.6
+- field: OriRegSta
+  description: Region of Origin (for Export)
+  type: nVarChar
+  size: 12
+- field: DstRegSta
+  description: Destination Region (Import)
+  type: nVarChar
+  size: 12
+- field: CtryOrig
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: SerSupplM
+  description: Service Supply Method
+  type: nVarChar
+  size: 12
+  default: I
+  constraints:
+  - key: I
+    label: Immediate
+  - key: R
+    label: To More Resumptions
+- field: SerPymMeth
+  description: Service Payment Method
+  type: nVarChar
+  size: 12
+  default: X
+  constraints:
+  - key: A
+    label: Accredited to Bank Account
+  - key: B
+    label: Bank Transfer
+  - key: X
+    label: Other
+- field: ItemType
+  description: Item Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: S
+    label: Service
+  - key: N
+    label: Item not relevant to Intrastat
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 200
+- field: DestRegCry
+  description: Destination Country - Region
+  type: nVarChar
+  size: 3
+- field: OrigRegCry
+  description: Origin Region Country
+  type: nVarChar
+  size: 3
+- field: UseWeight
+  description: Use Wt in Add. Measure Calc.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: StatCode
+  description: Statistical Code
+  type: nVarChar
+  size: 2
+- field: NatOfTrans
+  description: Nature of Transaction
+  type: nVarChar
+  size: 50
+- field: StatProc
+  description: Statistical Procedure
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizAbsEnt
+  - ItemCode

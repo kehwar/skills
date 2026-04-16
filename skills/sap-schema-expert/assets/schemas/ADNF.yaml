@@ -1,0 +1,51 @@
+table: ADNF
+description: DNF Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ADNF.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: NCMEntry
+  description: NCM Code
+  type: Int
+  size: 11
+  related: ONCM
+- field: DNFCode
+  description: DNF Code
+  type: nVarChar
+  size: 5
+- field: DNFUoM
+  description: DNF UoM
+  type: nVarChar
+  size: 10
+- field: DNFFactor
+  description: DNF Factor
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc
+- key: NCM_DNF
+  unique: true
+  fields:
+  - NCMEntry
+  - DNFCode
+  - LogInstanc

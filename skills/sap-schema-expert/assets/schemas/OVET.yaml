@@ -1,0 +1,31 @@
+table: OVET
+description: VAT Exemption Types
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OVET.htm
+fields:
+- field: typeID
+  description: Type ID
+  type: Int
+  size: 6
+- field: TypeCode
+  description: Type Code
+  type: nVarChar
+  size: 2
+- field: TypeName
+  description: Type Name
+  type: nVarChar
+  size: 100
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - typeID

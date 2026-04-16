@@ -1,0 +1,106 @@
+table: CCPD
+description: Period-End Closing
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CCPD.htm
+fields:
+- field: PerAbs
+  description: Period Code
+  type: Int
+  size: 11
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: ProfitAct
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Memo
+  description: Row Details
+  type: nVarChar
+  size: 254
+- field: MarkLine
+  description: Select
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ActKeyLine
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LocBalLine
+  description: Current Balance
+  type: Num
+  size: 19.6
+- field: FcBalLine
+  description: Balance (Account Currency)
+  type: Num
+  size: 19.6
+- field: SysBalLine
+  description: Balance (SC)
+  type: Num
+  size: 19.6
+- field: ToPerAbs
+  description: To Period Code
+  type: Int
+  size: 11
+- field: CtrlAct
+  description: Control Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PL_ACCOUNT
+  description: P/L Account
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Ref1_l
+  description: Reference 1 for line
+  type: nVarChar
+  size: 100
+- field: Ref2_l
+  description: Reference 2 for line
+  type: nVarChar
+  size: 100
+- field: Ref3_l
+  description: Reference 3 for line
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PerAbs
+  - Line_ID

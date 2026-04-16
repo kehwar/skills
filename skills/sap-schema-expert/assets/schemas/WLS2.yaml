@@ -1,0 +1,53 @@
+table: WLS2
+description: Input data for tasks
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WLS2.htm
+fields:
+- field: WFInstID
+  description: Workflow Instance ID
+  type: Int
+  size: 11
+- field: TaskID
+  description: Task ID
+  type: Int
+  size: 11
+  related: OWLS
+- field: LineID
+  description: Line ID
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: ObjKey
+  description: Object Key
+  type: nVarChar
+  size: 100
+- field: Command
+  description: Command
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Based On
+  - key: M
+    label: Field Mapping
+- field: LogIns
+  description: Log Instance
+  type: Int
+  size: 11
+- field: ObjSubType
+  description: Object Subtype
+  type: nVarChar
+  size: 64
+- field: ObjDetail
+  description: Object Detail
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID
+  - LineID

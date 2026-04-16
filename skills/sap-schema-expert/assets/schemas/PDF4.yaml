@@ -1,0 +1,185 @@
+table: PDF4
+description: Payment Draft - Account List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PDF4.htm
+fields:
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  related: OPDF
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: AcctCode
+  description: Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SumApplied
+  description: Paid
+  type: Num
+  size: 19.6
+- field: AppliedFC
+  description: Paid in FC
+  type: Num
+  size: 19.6
+- field: AppliedSys
+  description: Paid in SC
+  type: Num
+  size: 19.6
+- field: Descrip
+  description: Details
+  type: nVarChar
+  size: 250
+- field: VatGroup
+  description: Tax Definition
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatPrcnt
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: AcctName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: GrossAmnt
+  description: Gross Amount
+  type: Num
+  size: 19.6
+- field: GrssAmntFC
+  description: Gross Amount (FC)
+  type: Num
+  size: 19.6
+- field: GrssAmntSC
+  description: Gross Amount (SC)
+  type: Num
+  size: 19.6
+- field: AmntBase
+  description: Base Amount
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: Exclude Tax
+  - key: I
+    label: Include Tax
+- field: VatAmnt
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: VatAmntFC
+  description: VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatAmntSC
+  description: VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: UserChaVat
+  description: User Changed VAT
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: TaxTypeID
+  description: Tax Type Component ID
+  type: Int
+  size: 11
+  related: OSTT
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Section
+  description: Section
+  type: Int
+  size: 11
+  related: OSEC
+- field: AsseType
+  description: Assessee Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Company
+  - key: P
+    label: Others
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: MatType
+  description: Material Type
+  type: Int
+  size: 11
+  default: 0
+- field: EquVatPer
+  description: Equalization Tax Rate
+  type: Num
+  size: 19.6
+- field: EquVatSum
+  description: Equalization VAT Amount
+  type: Num
+  size: 19.6
+- field: EquVatSumF
+  description: Equalization VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: EquVatSumS
+  description: Equalization VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - LineId

@@ -1,0 +1,112 @@
+table: OCFT
+description: Cash Flow Transactions - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OCFT.htm
+fields:
+- field: CFTId
+  description: Cash Flow Transaction ID
+  type: Int
+  size: 11
+- field: CFWId
+  description: Cash Flow Line Item ID
+  type: Int
+  size: 11
+  related: OCFW
+- field: Debit
+  description: Debit Amount
+  type: Num
+  size: 19.6
+- field: Credit
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: SysCredit
+  description: System Credit Amount
+  type: Num
+  size: 19.6
+- field: SysDebit
+  description: System Debit Amount
+  type: Num
+  size: 19.6
+- field: FCDebit
+  description: FC Debit Amount
+  type: Num
+  size: 19.6
+- field: FCCredit
+  description: FC Credit Amount
+  type: Num
+  size: 19.6
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+- field: Account
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BatchNum
+  description: Batch No.
+  type: Int
+  size: 11
+- field: JDTId
+  description: Journal Entry ID
+  type: Int
+  size: 11
+- field: JDTLineId
+  description: Journal Entry Line ID
+  type: Int
+  size: 11
+- field: TransType
+  description: Source Object
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '24'
+    label: Incoming Payment
+  - key: '46'
+    label: Vendor Payment
+  - key: '30'
+    label: Journal Entry
+  - key: '140'
+    label: Payment Draft
+  - key: '29'
+    label: Journal Vouchers List
+  - key: '25'
+    label: Deposit
+  - key: '76'
+    label: Postdated Check Deposit
+  - key: '182'
+    label: Bill of Exchange Transaction
+  - key: '42'
+    label: Bank Statement
+  - key: '157'
+    label: Payment Wizard
+- field: BaseRef
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: PaymentMen
+  description: Payment Means
+  type: nVarChar
+  size: 11
+- field: PaymentRef
+  description: Payment Reference
+  type: nVarChar
+  size: 11
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: ValueDate
+  description: Value Date
+  type: Date
+  size: 8
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CFTId

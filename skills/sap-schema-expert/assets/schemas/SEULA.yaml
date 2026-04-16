@@ -1,0 +1,42 @@
+table: SEULA
+description: SEULA
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEULA.htm
+fields:
+- field: Locale
+  description: Localization
+  type: nVarChar
+  size: 100
+- field: EULAType
+  description: EULA type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Productive
+  - key: E
+    label: Evaluation
+- field: EULADoc
+  description: EULA doc
+  type: Text
+  size: 16
+- field: Format
+  description: format
+  type: nVarChar
+  size: 50
+  default: TXT
+  constraints:
+  - key: TXT
+    label: Text Format
+  - key: PDF
+    label: PDF Format
+- field: CheckSum
+  description: checksum
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Locale
+  - EULAType

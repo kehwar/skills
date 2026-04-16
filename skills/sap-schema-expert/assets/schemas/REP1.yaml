@@ -1,0 +1,36 @@
+table: REP1
+description: Translation Metadata for Web Client Reports
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/REP1.htm
+fields:
+- field: Guid
+  description: Report Guid
+  type: nVarChar
+  size: 32
+  related: OREP
+- field: Name
+  description: Report Name
+  type: nVarChar
+  size: 250
+- field: Language
+  description: Language Code
+  type: Int
+  size: 11
+  related: OLNG
+- field: Property
+  description: Translate Property
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid
+  - Language

@@ -1,0 +1,120 @@
+table: ODCR
+description: Checking Rule
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODCR.htm
+fields:
+- field: RuleCode
+  description: Checking Rule Code
+  type: nVarChar
+  size: 2
+- field: RuleDesc
+  description: Checking Rule Description
+  type: nVarChar
+  size: 100
+- field: PastRcp
+  description: Include Past Plan Receipts
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AutoATP
+  description: ATP Check Automatically
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SLDUncfm
+  description: Schedule for Unconfirmed Qty
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AllowUncfm
+  description: Allow Unconfirmed Quantity
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CmltStrtg
+  description: Cumulation Strategy
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Required Qty on Creation; Confirmed Qty on Change
+  - key: C
+    label: Confirmed Qty on Creation and Change
+- field: DeliStrtg
+  description: Delivery Strategy
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Delivery Proposal
+  - key: O
+    label: One-Time Delivery
+  - key: C
+    label: Complete Delivery
+- field: MaxPrpsls
+  description: Max. No. of Proposals
+  type: Int
+  size: 11
+  default: 9
+- field: validFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+- field: validFrom
+  description: Active From
+  type: nVarChar
+  size: 8
+- field: validTo
+  description: Active To
+  type: nVarChar
+  size: 8
+- field: frozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+- field: frozenFrom
+  description: Inactive From
+  type: nVarChar
+  size: 8
+- field: frozenTo
+  description: Inactive To
+  type: nVarChar
+  size: 8
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RuleCode

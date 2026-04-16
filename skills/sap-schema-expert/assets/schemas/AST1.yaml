@@ -1,0 +1,63 @@
+table: AST1
+description: Sales Tax Codes - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AST1.htm
+fields:
+- field: STCCode
+  description: STC Code
+  type: nVarChar
+  size: '8'
+  related: OSTC
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: '11'
+  default: '0'
+- field: STACode
+  description: STA Code
+  type: nVarChar
+  size: '8'
+  related: OSTA
+- field: STAType
+  description: STA Type
+  type: Int
+  size: '11'
+  related: OSTA
+- field: TaxOnTCode
+  description: STA Tax on Tax Code
+  type: nVarChar
+  size: '8'
+  related: OSTA
+- field: TaxOnTType
+  description: STA Tax On Tax Type
+  type: Int
+  size: '11'
+  related: OSTA
+- field: EfctivRate
+  description: Effective Rate
+  type: Num
+  size: '19.6'
+- field: FmlId
+  description: Tax Formula ID
+  type: Int
+  size: '11'
+  related: OFML
+- field: CstCodeIn
+  description: CST Code Incoming
+  type: nVarChar
+  size: '20'
+- field: CstSuffix
+  description: CST Suffix for ICMS
+  type: nVarChar
+  size: '2'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - STCCode
+  - Line_ID
+  - LogInstanc

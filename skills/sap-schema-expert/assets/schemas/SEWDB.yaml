@@ -1,0 +1,61 @@
+table: SEWDB
+description: SEWDB
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWDB.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry
+  type: nVarChar
+  size: 8
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: CollectDat
+  description: DB Size Collect Date
+  type: nVarChar
+  size: 10
+- field: CompDbName
+  description: Company DB Name
+  type: nVarChar
+  size: 200
+- field: DbPath
+  description: Db Path
+  type: nVarChar
+  size: 254
+- field: PrevDbSize
+  description: Prev Db Size
+  type: nVarChar
+  size: 32
+- field: DbSize
+  description: Db Size
+  type: nVarChar
+  size: 32
+- field: TranLogSiz
+  description: Transaction Log Size
+  type: nVarChar
+  size: 32
+- field: TranLogPat
+  description: Transaction Log Path
+  type: nVarChar
+  size: 254
+- field: TotalDbSiz
+  description: Total Db Size
+  type: nVarChar
+  size: 16
+- field: FreDskSpac
+  description: Free Disk Space
+  type: nVarChar
+  size: 16
+- field: MaxDbSize
+  description: Max Db Size
+  type: nVarChar
+  size: 16
+- field: MaxLogSize
+  description: Max Log Size
+  type: nVarChar
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

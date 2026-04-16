@@ -1,0 +1,133 @@
+table: AEC1
+description: Parameters for Various Types of Electronic Communication
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AEC1.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+  related: OECM
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: StrIndex
+  description: String Index
+  type: Int
+  size: 6
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+  default: -1
+- field: ParamType
+  description: Parameter Type
+  type: nVarChar
+  size: 2
+  default: TX
+  constraints:
+  - key: TX
+    label: General Text
+  - key: TT
+    label: Title
+  - key: EM
+    label: E-Mail
+  - key: UR
+    label: URI Address
+  - key: SA
+    label: Server Address
+  - key: PT
+    label: Path
+  - key: FN
+    label: File Name
+  - key: LG
+    label: Logic Value - Yes/No
+  - key: NI
+    label: Number - Integer
+  - key: NR
+    label: Number - Real
+  - key: PW
+    label: Password
+  - key: OT
+    label: Other
+  - key: MP
+    label: Mapping
+  - key: GT
+    label: Generation Type
+  - key: CT
+    label: Certificate
+  - key: UQ
+    label: User Queries Category
+  - key: CB
+    label: Combo Box
+  - key: SP
+    label: Separator
+  - key: EF
+    label: External Function
+  - key: IU
+    label: B1i Server URL
+  - key: NM
+    label: Money
+  - key: LT
+    label: Long General Text
+- field: ParamVisib
+  description: Parameter is Visible
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ParamName
+  description: Parameter Name
+  type: nVarChar
+  size: 100
+- field: ParamValue
+  description: Parameter Value
+  type: Text
+  size: 16
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: ParamPrms
+  description: Parameter Parameters
+  type: nVarChar
+  size: 254
+- field: UIorder
+  description: UI Order
+  type: Int
+  size: 6
+- field: Type
+  description: UI Type
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - BPLId
+  - LineNum
+  - LogInstanc

@@ -1,0 +1,41 @@
+table: XRDBV
+description: XLR company DB version
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/XRDBV.htm
+fields:
+- field: DBObjVer
+  description: IXDBObjectsVersion
+  type: nVarChar
+  size: 20
+- field: DBObjVerDe
+  description: IXDBObjectsVersionDescr
+  type: nVarChar
+  size: 254
+- field: DBObjVerUp
+  description: IXDBObjectsVersionUpdated
+  type: Date
+  size: 8
+- field: ParVer
+  description: PartnerVersion
+  type: nVarChar
+  size: 20
+- field: ParVerDesc
+  description: PartnerVersionDescr
+  type: nVarChar
+  size: 254
+- field: ParVerUpd
+  description: PartnerVersionUpdated
+  type: Date
+  size: 8
+- field: Partner
+  description: Partner
+  type: nVarChar
+  size: 50
+- field: PartnerDBV
+  description: PartnerDBVersion
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DBObjVer

@@ -1,0 +1,86 @@
+table: GTM1
+description: GTS Mapping Object Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GTM1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OGTM
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 200
+- field: ItemUoM
+  description: Item UoM
+  type: nVarChar
+  size: 100
+- field: ItemSpec
+  description: Item Spec.
+  type: nVarChar
+  size: 30
+- field: ItemTaxCat
+  description: Item Tax Category
+  type: nVarChar
+  size: 4
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Amount
+  description: Amount
+  type: Num
+  size: 19.6
+- field: VatPercent
+  description: VAT Percent
+  type: Num
+  size: 19.6
+- field: DiscRate
+  description: Discount Rate
+  type: Num
+  size: 19.6
+- field: DiscAmount
+  description: Discount Amount
+  type: Num
+  size: 19.6
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: DiscVatAmt
+  description: Discount VAT Amount
+  type: Num
+  size: 19.6
+- field: UnitPrice
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: UPirceType
+  description: Unit Price Type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Net
+  - key: '1'
+    label: Gross
+- field: TaxCatCode
+  description: Item Tax Category Code
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

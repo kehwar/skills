@@ -1,0 +1,41 @@
+table: OSHR
+description: Shareholder's Rights and Interests Report History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OSHR.htm
+fields:
+- field: Id
+  description: Identity
+  type: Int
+  size: 11
+- field: Name
+  description: Report Name
+  type: nVarChar
+  size: 40
+- field: UserSign
+  description: Creater's code
+  type: Int
+  size: 6
+- field: UserName
+  description: Name of Creator
+  type: nVarChar
+  size: 20
+- field: CreateDate
+  description: Report Created On
+  type: Date
+  size: 8
+- field: StartDate
+  description: Date Range Start
+  type: Date
+  size: 8
+- field: EndDate
+  description: Date Range End
+  type: Date
+  size: 8
+- field: TemplateId
+  description: Template ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

@@ -1,0 +1,75 @@
+table: USR9
+description: User Print Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/USR9.htm
+fields:
+- field: DocCode
+  description: Code
+  type: nVarChar
+  size: 8
+- field: DocName
+  description: Name
+  type: nVarChar
+  size: 120
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+  related: OUSR
+- field: Action
+  description: Performed Action
+  type: VarChar
+  size: 1
+  constraints:
+  - key: P
+    label: Print
+  - key: E
+    label: Export
+- field: ActionBy
+  description: User Who Performed the Action
+  type: nVarChar
+  size: 25
+- field: SessionID
+  description: Connection Session ID
+  type: Int
+  size: 11
+  default: -1
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: Time
+  description: Time
+  type: Int
+  size: 11
+  default: 0
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 200
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+  default: -1
+- field: NCopies
+  description: Number of Copies
+  type: Int
+  size: 11
+  default: 0
+- field: Printer
+  description: Printer Name
+  type: nVarChar
+  size: 200
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserCode
+  - Action
+  - Date
+  - Time
+  - SessionID

@@ -1,0 +1,40 @@
+table: ZRD1
+description: POS Daily Summary - Totals
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ZRD1.htm
+fields:
+- field: AbsEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OZRD
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: Code
+  description: Totalizer Code
+  type: nVarChar
+  size: 8
+- field: Number
+  description: Totalizer Number
+  type: Int
+  size: 11
+- field: TotalSum
+  description: Total Sum
+  type: Num
+  size: 19.6
+- field: Descriptn
+  description: Description
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+- key: CODE
+  unique: true
+  fields:
+  - Code
+  - AbsEntry

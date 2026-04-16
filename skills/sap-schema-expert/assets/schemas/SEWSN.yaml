@@ -1,0 +1,38 @@
+table: SEWSN
+description: SEWSN
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWSN.htm
+fields:
+- field: MachineNam
+  description: Machine Name
+  type: nVarChar
+  size: 64
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: CollecStat
+  description: Collection Status
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: No Collection
+  - key: '1'
+    label: In Process
+  - key: '2'
+    label: Completed
+- field: SentUser
+  description: Sent User
+  type: nVarChar
+  size: 30
+- field: CompleDate
+  description: Completion Date
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MachineNam
+  - CompDbNam

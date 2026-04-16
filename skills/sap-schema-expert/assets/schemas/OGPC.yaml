@@ -1,0 +1,70 @@
+table: OGPC
+description: Government Payment Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OGPC.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 6
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: StateTax
+  description: Reporting by State
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Prdcity
+  description: Periodicity
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Monthly
+  - key: Q
+    label: Quarterly
+  - key: H
+    label: Semimonthly
+  - key: T
+    label: Every 10 Days
+- field: SPEDCtgory
+  description: SPED Category
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: ICMS
+  - key: '2'
+    label: ICMS-ST
+  - key: '3'
+    label: IPI
+  - key: '4'
+    label: ISS
+  - key: '5'
+    label: PIS
+  - key: '6'
+    label: COFINS
+  - key: '7'
+    label: PIS-ST
+  - key: '8'
+    label: COFINS-ST
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - Code

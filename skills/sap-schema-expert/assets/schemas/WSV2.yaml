@@ -1,0 +1,29 @@
+table: WSV2
+description: Web Client Linked View User Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WSV2.htm
+fields:
+- field: ParentId
+  description: Parent ID
+  type: nVarChar
+  size: 40
+  related: OWSV
+- field: UserId
+  description: User ID
+  type: Int
+  size: 11
+- field: IsActive
+  description: Is Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParentId
+  - UserId

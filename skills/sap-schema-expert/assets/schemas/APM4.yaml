@@ -1,0 +1,199 @@
+table: APM4
+description: Project Management - Stages - Documents - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/APM4.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: PMG1
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: StageID
+  description: Stage ID
+  type: Int
+  size: 11
+- field: TYP
+  description: Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Please select
+  - key: '112'
+    label: Document Draft
+  - key: '30'
+    label: Manual Journal Entry
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Return
+  - key: '203002'
+    label: A/R Down Payment Request
+  - key: '203'
+    label: A/R Down Payment Invoice
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '13002'
+    label: A/R Reserve Invoice
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '204002'
+    label: A/P Down Payment Request
+  - key: '204'
+    label: A/P Down Payment Invoice
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '18002'
+    label: A/P Reserve Invoice
+  - key: '191'
+    label: Service Call
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '234000032'
+    label: Goods Return Request
+  - key: '234000031'
+    label: Return Request
+- field: DOCNUM
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Total
+  description: Total
+  type: Num
+  size: 19.6
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: Status
+  description: Line status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: AmountCat
+  description: Category to which we will apply the amount from Total
+  type: VarChar
+  size: 1
+  constraints:
+  - key: I
+    label: Invoiced
+  - key: O
+    label: Open
+- field: Categorize
+  description: Category Open Amount/Invoiced A/R, A/P to which we will apply the amount
+    from journal entry
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: ''
+    label: Ignore
+  - key: OP
+    label: Open Amount (A/P)
+  - key: OR
+    label: Open Amount (A/R)
+  - key: IP
+    label: Invoiced (A/P)
+  - key: IR
+    label: Invoiced (A/R)
+- field: Operation
+  description: Operation which we will apply to the amount from the total
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Ignore
+  - key: A
+    label: Add
+  - key: S
+    label: Subtract
+- field: Chargeable
+  description: Chargeable [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Charged
+  description: Charged
+  type: Num
+  size: 19.6
+- field: ChargedQty
+  description: Charged Quantity
+  type: Num
+  size: 19.6
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: S
+    label: Service
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: PartTotal
+  description: Partially Invoiced Total
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+  - LogInstanc

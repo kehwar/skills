@@ -1,0 +1,118 @@
+table: OVRW
+description: VAT Reposting Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OVRW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: RunName
+  description: Wizard Run Name
+  type: nVarChar
+  size: 100
+- field: RunDate
+  description: Wizard Run Date
+  type: Date
+  size: 8
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Executed
+  - key: S
+    label: Saved
+  - key: D
+    label: Draft
+  - key: C
+    label: Canceled
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: LedgerType
+  description: Ledger Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Sales
+  - key: P
+    label: Purchase
+- field: DebitAcc
+  description: Debit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: JESeries
+  description: Journal Entry Series
+  type: nVarChar
+  size: 11
+  default: '0'
+- field: APTISeries
+  description: Invoice Series
+  type: nVarChar
+  size: 11
+  default: '0'
+- field: DateType
+  description: Date Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Posting Date
+  - key: D
+    label: Due Date
+  - key: T
+    label: Document Date
+- field: DateFrom
+  description: Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Date To
+  type: Date
+  size: 8
+- field: IncCorAlt
+  description: Include Corr. and Alter.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BPLId
+  description: This field is not used anymore
+  type: Int
+  size: 11
+  related: OBPL
+- field: RunType
+  description: Run Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: C
+    label: Automatic - Export - Confirmation Expected
+  - key: E
+    label: Automatic - Export - Confirmed/Not Confirmed
+  - key: S
+    label: Separate Accounting
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

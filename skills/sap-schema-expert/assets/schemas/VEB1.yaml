@@ -1,0 +1,84 @@
+table: VEB1
+description: VAT Exemptions for Business Partners Row
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/VEB1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ExmpDoc
+  description: Exemption Doc. No.
+  type: nVarChar
+  size: 40
+- field: IssueDate
+  description: Date of Issue
+  type: Date
+  size: 8
+- field: IssueTime
+  description: Time of Issue
+  type: Int
+  size: 11
+- field: ExmpType
+  description: Exemption Type
+  type: Int
+  size: 6
+  related: OVET
+- field: AllItems
+  description: Apply to All Items
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemDesc
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: Rate
+  description: Rate %
+  type: Num
+  size: 19.6
+- field: TaxCode
+  description: Exemption Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: AuthName
+  description: Name of Authorities
+  type: nVarChar
+  size: 160
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

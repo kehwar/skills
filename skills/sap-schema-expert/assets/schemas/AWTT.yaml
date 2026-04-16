@@ -1,0 +1,41 @@
+table: AWTT
+description: Withholding Tax Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AWTT.htm
+fields:
+- field: WTTypeId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: WTType
+  description: Type
+  type: nVarChar
+  size: 10
+- field: WTThresh
+  description: Min. WTax Amount
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WTTypeId
+  - LogInstanc
+- key: WT_TYPE
+  unique: true
+  fields:
+  - WTType
+  - LogInstanc

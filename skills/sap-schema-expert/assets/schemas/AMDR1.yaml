@@ -1,0 +1,74 @@
+table: AMDR1
+description: Manual Distribution Rule - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AMDR1.htm
+fields:
+- field: OcrCode
+  description: Factor Code
+  type: nVarChar
+  size: 8
+  related: OMDR
+- field: PrcCode
+  description: Cost Center Code
+  type: nVarChar
+  size: 8
+  related: OPRC
+- field: PrcAmount
+  description: Total in Cost Center
+  type: Num
+  size: 19.6
+- field: OcrTotal
+  description: Total Factor
+  type: Num
+  size: 19.6
+- field: Direct
+  description: Direct
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ValidFrom
+  description: Effective from
+  type: Date
+  size: 8
+  default: '19000101'
+  constraints:
+  - key: '19000101'
+    label: ''
+- field: ValidTo
+  description: Effective to
+  type: Date
+  size: 8
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - OcrCode
+  - PrcCode
+  - ValidFrom
+  - logInstanc
+- key: PROF_ID
+  unique: false
+  fields:
+  - PrcCode

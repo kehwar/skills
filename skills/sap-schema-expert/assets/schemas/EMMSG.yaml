@@ -1,0 +1,49 @@
+table: EMMSG
+description: EMMSG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EMMSG.htm
+fields:
+- field: ID
+  description: Message ID
+  type: nVarChar
+  size: 60
+- field: Service
+  description: Service
+  type: nVarChar
+  size: 160
+- field: Operation
+  description: Operation
+  type: nVarChar
+  size: 60
+- field: Sender
+  description: Sender ID
+  type: nVarChar
+  size: 50
+- field: Receiver
+  description: Receiver ID
+  type: nVarChar
+  size: 50
+- field: InOut
+  description: Incoming outgoing indicator
+  type: nVarChar
+  size: 10
+- field: BOType
+  description: Business object type
+  type: nVarChar
+  size: 100
+- field: BOID
+  description: Business object ID
+  type: nVarChar
+  size: 30
+- field: SboBoType
+  description: Business one object type
+  type: nVarChar
+  size: 100
+- field: SboBoID
+  description: Business one object ID
+  type: nVarChar
+  size: 30
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

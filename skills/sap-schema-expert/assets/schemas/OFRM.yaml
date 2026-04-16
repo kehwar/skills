@@ -1,0 +1,92 @@
+table: OFRM
+description: File Format
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OFRM.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: File Format Name
+  type: nVarChar
+  size: 100
+- field: Encoding
+  description: Encoding Type
+  type: nVarChar
+  size: 100
+- field: FilePath
+  description: Format Project
+  type: Text
+  size: 16
+- field: IsSystem
+  description: System Format
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FrmatType
+  description: Format Type
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: I
+    label: Bank Statements
+  - key: O
+    label: Payment File
+  - key: L
+    label: Legal List
+  - key: P
+    label: Predefined
+  - key: B
+    label: Boleto File
+  - key: R
+    label: Padron File
+- field: FileContnt
+  description: Format Project Content
+  type: Text
+  size: 16
+- field: FrmatStats
+  description: Format Status
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: A
+    label: Assigned
+  - key: U
+    label: Unassigned
+- field: PaymType
+  description: Payment Type
+  type: VarChar
+  size: 1
+  default: X
+  constraints:
+  - key: O
+    label: Outgoing
+  - key: I
+    label: Incoming
+  - key: X
+    label: ''
+- field: Hash
+  description: Binary Content Hash
+  type: nVarChar
+  size: 128
+- field: FileName
+  description: File Name
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME_TYPE
+  unique: false
+  fields:
+  - Name
+  - FrmatType

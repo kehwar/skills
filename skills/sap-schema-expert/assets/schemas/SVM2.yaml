@@ -1,0 +1,22 @@
+table: SVM2
+description: Systems for Value Mapping Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/SVM2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectId
+  description: Object ID
+  type: Int
+  size: 11
+- field: UDTName
+  description: Name of user defined table
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ObjectId

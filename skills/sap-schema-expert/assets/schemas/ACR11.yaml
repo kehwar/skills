@@ -1,0 +1,58 @@
+table: ACR11
+description: BP Tributary Info. - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/ACR11.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 25
+  related: OCRD
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 50
+- field: TributID
+  description: Tributary Info. ID
+  type: Int
+  size: 11
+- field: TributType
+  description: Tributary Type
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: TTStartDat
+  description: Tributary Type Start Date
+  type: Date
+  size: 8
+- field: TTEndDate
+  description: Tributary Type End Date
+  type: Date
+  size: 8
+- field: TribRegCod
+  description: Tributary Regime Code
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: TRCStartD
+  description: Tributary Reg. Code Start Date
+  type: Date
+  size: 8
+- field: TRCEndDate
+  description: Tributary Regime Code End Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - Address
+  - TributID
+  - LogInstanc

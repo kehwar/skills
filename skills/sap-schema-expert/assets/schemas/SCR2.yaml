@@ -1,0 +1,109 @@
+table: SCR2
+description: 'Special Ledger - Analytical Accounting Configuration Rule Goals: Revenues
+  & Expenses'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/SCR2.htm
+fields:
+- field: RuleID
+  description: Rule Identification Number
+  type: Int
+  size: 6
+  related: OSCR
+- field: GoalNum
+  description: Rule Goal Number
+  type: nVarChar
+  size: 6
+- field: TransTpVal
+  description: Transaction Type Number
+  type: Int
+  size: 6
+- field: TransTpFld
+  description: Transaction Type Table Field
+  type: nVarChar
+  size: 20
+- field: PrfCntVal
+  description: Distribution Rule Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PrfCntFld
+  description: Distribution Rule Table Field
+  type: nVarChar
+  size: 20
+- field: DebitAct
+  description: Debit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CreditAct
+  description: Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevSides
+  description: Revert Debit/Credit Sides
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SrcTable
+  description: Main Source Table
+  type: nVarChar
+  size: 10
+- field: SrcField
+  description: Main Source Table Field
+  type: nVarChar
+  size: 20
+- field: SrcFieldFC
+  description: Source Field, Foreign Currency
+  type: nVarChar
+  size: 20
+- field: SrcFieldSC
+  description: Source Field, System Currency
+  type: nVarChar
+  size: 20
+- field: Calc
+  description: Calculation Expression
+  type: nVarChar
+  size: 200
+- field: CalcFC
+  description: Expression for Foreign Calculation
+  type: nVarChar
+  size: 200
+- field: CalcSC
+  description: Expression for System Calculation
+  type: nVarChar
+  size: 200
+- field: CalcCond
+  description: Calculation Condition
+  type: nVarChar
+  size: 200
+- field: CalcCondFC
+  description: Condition for Foreign Calculation
+  type: nVarChar
+  size: 200
+- field: CalcCondSC
+  description: Condition for System Calculation
+  type: nVarChar
+  size: 200
+- field: CurrFld
+  description: Table Field with Currency
+  type: nVarChar
+  size: 20
+- field: CallProc
+  description: Recalculation Stored Procedure Name
+  type: nVarChar
+  size: 50
+- field: ExtCond
+  description: Extended Special Data
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RuleID
+  - GoalNum

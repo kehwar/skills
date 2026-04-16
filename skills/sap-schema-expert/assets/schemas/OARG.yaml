@@ -1,0 +1,112 @@
+table: OARG
+description: Customs Groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OARG.htm
+fields:
+- field: CstGrpCode
+  description: Code
+  type: Int
+  size: 6
+- field: CstGrpName
+  description: Name
+  type: nVarChar
+  size: 20
+- field: GroupNum
+  description: Number
+  type: nVarChar
+  size: 20
+- field: Custom
+  description: Customs
+  type: Num
+  size: 19.6
+- field: BuyTax
+  description: Purchase
+  type: Num
+  size: 19.6
+- field: OtherTax
+  description: Other
+  type: Num
+  size: 19.6
+- field: TotalTax
+  description: Total
+  type: Num
+  size: 19.6
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: cstAllcAcc
+  description: Customs Allocation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: cstExpAcc
+  description: Customs Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PortAddr
+  description: Local Clearance - Port Address
+  type: nVarChar
+  size: 50
+- field: PortState
+  description: Port State
+  type: nVarChar
+  size: 3
+- field: ExciExpAcc
+  description: Excise Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExciAlcAcc
+  description: Excise Allocation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CstGrpCode
+- key: GROUP_NAME
+  unique: true
+  fields:
+  - CstGrpName

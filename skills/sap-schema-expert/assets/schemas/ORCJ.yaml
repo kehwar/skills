@@ -1,0 +1,356 @@
+table: ORCJ
+description: Resource Capacity Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ORCJ.htm
+fields:
+- field: Id
+  description: Primary Key
+  type: Int
+  size: 11
+- field: ResCode
+  description: Internal Resource ID
+  type: nVarChar
+  size: 50
+  related: ORSC
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: CapDate
+  description: Capacity Date
+  type: Date
+  size: 8
+- field: CapType
+  description: Type of Capacity Entry
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Internal
+  - key: O
+    label: Ordered
+  - key: C
+    label: Committed
+  - key: U
+    label: Consumed
+- field: Capacity
+  description: Capacity
+  type: Num
+  size: 19.6
+- field: SrcObjType
+  description: Source Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '202'
+    label: Production Order
+  - key: '60'
+    label: Issue for Production
+  - key: '59'
+    label: Receipt from Production
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '13'
+    label: A/R Invoice
+  - key: '-13'
+    label: A/R Reserve Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '16'
+    label: Returns
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '18'
+    label: A/P Invoice
+  - key: '-18'
+    label: A/P Reserve Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '21'
+    label: Goods Return
+- field: SrcAbsEnt
+  description: Source Absolute Entry
+  type: Int
+  size: 11
+- field: SrcLine
+  description: Source Line Number
+  type: Int
+  size: 11
+- field: BaseObjTyp
+  description: Base Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '202'
+    label: Production Order
+- field: BaseAbsEnt
+  description: Base Absolute Entry
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Line Number
+  type: Int
+  size: 11
+- field: ActionType
+  description: Action Type
+  type: Int
+  size: 6
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '1'
+    label: Production Order - Create
+  - key: '2'
+    label: Production Order - Close
+  - key: '3'
+    label: Production Order - Reschedule
+  - key: '4'
+    label: Production Order - Add Line
+  - key: '5'
+    label: Production Order - Delete Line
+  - key: '6'
+    label: Production Order - Update Line
+  - key: '7'
+    label: Issue for Production - Create
+  - key: '8'
+    label: Receipt from Production - Create
+  - key: '9'
+    label: Sales Order - Create
+  - key: '10'
+    label: Sales Order - Close
+  - key: '11'
+    label: Sales Order - Cancel
+  - key: '12'
+    label: Sales Order - Add Line
+  - key: '13'
+    label: Sales Order - Delete Line
+  - key: '14'
+    label: Sales Order - Update Line
+  - key: '15'
+    label: Delivery - Create
+  - key: '16'
+    label: Delivery - Close
+  - key: '17'
+    label: Delivery - Cancel
+  - key: '18'
+    label: A/R Invoice - Create
+  - key: '19'
+    label: A/R Invoice - Cancel
+  - key: '20'
+    label: A/R Credit Memo - Create
+  - key: '21'
+    label: A/R Credit Memo - Cancel
+  - key: '22'
+    label: Correction A/R Invoice - Create
+  - key: '23'
+    label: Correction A/R Invoice Reversal - Create
+  - key: '24'
+    label: Returns - Create
+  - key: '25'
+    label: Returns - Cancel
+  - key: '26'
+    label: Returns - Close
+  - key: '27'
+    label: Purchase Order - Create
+  - key: '28'
+    label: Purchase Order - Close
+  - key: '29'
+    label: Purchase Order - Cancel
+  - key: '30'
+    label: Purchase Order - Add Line
+  - key: '31'
+    label: Purchase Order - Delete Line
+  - key: '32'
+    label: Purchase Order - Update Line
+  - key: '33'
+    label: Goods Receipt PO - Create
+  - key: '34'
+    label: Goods Receipt PO - Close
+  - key: '35'
+    label: Goods Receipt PO - Cancel
+  - key: '36'
+    label: A/P Invoice - Create
+  - key: '37'
+    label: A/P Invoice - Cancel
+  - key: '38'
+    label: A/P Credit Memo - Create
+  - key: '39'
+    label: A/P Credit Memo - Cancel
+  - key: '40'
+    label: Correction A/P Invoice - Create
+  - key: '41'
+    label: Correction A/P Invoice Reversal - Create
+  - key: '42'
+    label: Goods Return - Create
+  - key: '43'
+    label: Goods Return - Cancel
+  - key: '44'
+    label: Goods Return - Close
+  - key: '45'
+    label: A/R Invoice - Update
+  - key: '46'
+    label: A/P Invoice - Update
+  - key: '47'
+    label: A/R Reserve Invoice - Create
+  - key: '48'
+    label: A/R Reserve Invoice - Update
+  - key: '49'
+    label: A/R Reserve Invoice - Cancel
+  - key: '50'
+    label: A/P Reserve Invoice - Create
+  - key: '51'
+    label: A/P Reserve Invoice - Update
+  - key: '52'
+    label: A/P Reserve Invoice - Cancel
+- field: OwnObjTyp
+  description: Owning Doc. Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '202'
+    label: Production Order
+  - key: '60'
+    label: Issue for Production
+  - key: '59'
+    label: Receipt from Production
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '13'
+    label: A/R Invoice
+  - key: '-13'
+    label: A/R Reserve Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '16'
+    label: Returns
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '18'
+    label: A/P Invoice
+  - key: '-18'
+    label: A/P Reserve Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '21'
+    label: Goods Return
+- field: OwnAbsEnt
+  description: Owning Doc. Absolute Entry
+  type: Int
+  size: 11
+- field: OwnLine
+  description: Owning Doc. Line Number
+  type: Int
+  size: 11
+- field: RevdObjTyp
+  description: Reverted Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '60'
+    label: Issue for Production
+- field: RevdAbsEnt
+  description: Reverted Absolute Entry
+  type: Int
+  size: 11
+- field: RevdLine
+  description: Reverted Line Number
+  type: Int
+  size: 11
+- field: MemoSrc
+  description: Memo Source
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: '-'
+    label: ''
+  - key: C
+    label: Resource Capacity Form
+  - key: S
+    label: Set Daily Internal Capacities Form
+- field: Memo
+  description: Memo
+  type: Text
+  size: 16
+- field: SngRunCap
+  description: Single Run Capacity
+  type: Num
+  size: 19.6
+- field: MemoSrcSng
+  description: Memo Source of Single Run Capacity
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: '-'
+    label: ''
+  - key: C
+    label: Resource Capacity Form
+  - key: S
+    label: Set Daily Internal Capacities Form
+- field: MemoSng
+  description: Memo of Single Run Capacity
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+- key: RWDT
+  unique: false
+  fields:
+  - ResCode
+  - WhsCode
+  - CapDate
+  - CapType
+- key: BASE_DOC
+  unique: false
+  fields:
+  - BaseObjTyp
+  - BaseAbsEnt
+  - BaseLine
+- key: OWNING_DOC
+  unique: false
+  fields:
+  - OwnObjTyp
+  - OwnAbsEnt
+  - OwnLine

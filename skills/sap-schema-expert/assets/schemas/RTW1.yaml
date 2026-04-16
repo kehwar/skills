@@ -1,0 +1,238 @@
+table: RTW1
+description: 'Boleto Retorno Wizard: Import Table'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/RTW1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: BoeMatch
+  description: BoE Match
+  type: nVarChar
+  size: 10
+- field: BoeNo
+  description: BoE Number
+  type: nVarChar
+  size: 10
+- field: BoeDate
+  description: BoE Date
+  type: Date
+  size: 8
+- field: BoeDueDate
+  description: BoE Due Date
+  type: Date
+  size: 8
+- field: CreditDate
+  description: Credit Date
+  type: Date
+  size: 8
+- field: CurrBoeSt
+  description: Current BoE Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+  - key: D
+    label: Deposited
+  - key: P
+    label: Paid
+  - key: C
+    label: Canceled
+  - key: L
+    label: Closed
+  - key: F
+    label: Failed
+  - key: V
+    label: BoE to Vendor
+- field: ReqBoeSt
+  description: Requested BoE Status
+  type: VarChar
+  size: 1
+  constraints:
+  - key: G
+    label: Generated
+  - key: S
+    label: Sent
+  - key: D
+    label: Deposited
+  - key: P
+    label: Paid
+  - key: C
+    label: Canceled
+  - key: L
+    label: Closed
+  - key: F
+    label: Failed
+  - key: V
+    label: BoE to Vendor
+- field: Instruct1
+  description: BoE Instruction 1
+  type: nVarChar
+  size: 2
+- field: Instruct2
+  description: BoE Instruction 2
+  type: nVarChar
+  size: 2
+- field: CancelCode
+  description: Cancellation Code
+  type: nVarChar
+  size: 4
+- field: MovmntCode
+  description: Movement Code
+  type: Int
+  size: 6
+- field: OccurCode
+  description: Occurrence Code
+  type: Int
+  size: 6
+- field: OccurDate
+  description: Occurrence Date
+  type: Date
+  size: 8
+- field: Portfolio
+  description: Portfolio
+  type: VarChar
+  size: 1
+- field: OurNum
+  description: Our Number
+  type: Int
+  size: 11
+- field: ValueOfT
+  description: Value of Title
+  type: Num
+  size: 19.6
+- field: NetAmnt
+  description: Net Amount
+  type: Num
+  size: 19.6
+- field: PaidAmnt
+  description: Paid Amount
+  type: Num
+  size: 19.6
+- field: FineAmnt
+  description: Fine Amount
+  type: Num
+  size: 19.6
+- field: IntAmnt
+  description: Interest Amount
+  type: Num
+  size: 19.6
+- field: Discounts
+  description: Discount Amount
+  type: Num
+  size: 19.6
+- field: ServiceFee
+  description: Service Fee
+  type: Num
+  size: 19.6
+- field: IOFTax
+  description: IOF Tax
+  type: Num
+  size: 19.6
+- field: OtherCred
+  description: Other Credits
+  type: Num
+  size: 19.6
+- field: OtherExp
+  description: Other Expenses
+  type: Num
+  size: 19.6
+- field: OtherInc
+  description: Other Incomes
+  type: Num
+  size: 19.6
+- field: Errors
+  description: Errors
+  type: nVarChar
+  size: 8
+- field: RefNum
+  description: Reference No.
+  type: nVarChar
+  size: 254
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 254
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: BoEBPName
+  description: BoE BP Name
+  type: nVarChar
+  size: 200
+- field: MatchCode
+  description: Match Code
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: A
+    label: Automatic
+  - key: M
+    label: Manual
+  - key: N
+    label: Not Identified
+- field: Selected
+  description: Selected
+  type: VarChar
+  size: 1
+  default: N
+- field: BoeRec
+  description: BoE Record Number
+  type: Int
+  size: 11
+- field: RetIndex
+  description: RET File Record Index
+  type: Int
+  size: 11
+- field: Filtered
+  description: Filtered
+  type: VarChar
+  size: 1
+  default: Y
+- field: Executed
+  description: Executed
+  type: VarChar
+  size: 1
+  default: N
+- field: Failed
+  description: Failed
+  type: VarChar
+  size: 1
+  default: N
+- field: LastRun
+  description: Last Run
+  type: VarChar
+  size: 1
+  default: N
+- field: ErrorMsg
+  description: Error Message
+  type: nVarChar
+  size: 254
+- field: JETransId
+  description: JE Trans. ID
+  type: nVarChar
+  size: 10
+- field: CardCode
+  description: BoE BP Code
+  type: nVarChar
+  size: 15
+- field: PostType
+  description: Transaction Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Collection
+  - key: D
+    label: Discounted
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

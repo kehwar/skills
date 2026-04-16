@@ -1,0 +1,75 @@
+table: OACR
+description: Accrual Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OACR.htm
+fields:
+- field: Code
+  description: Accrual Type Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Accrual Type Name
+  type: nVarChar
+  size: 30
+- field: PostingAct
+  description: Posting Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CalcAcct
+  description: Calculation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: InterimAct
+  description: Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

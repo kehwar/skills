@@ -1,0 +1,132 @@
+table: OCDT
+description: Credit Card Payment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCDT.htm
+fields:
+- field: Code
+  description: Credit Card Payment Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Credit Card Payment Name
+  type: nVarChar
+  size: 30
+- field: TERM_TYPE
+  description: Credit Card Payment Types
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: D
+    label: By Dates
+  - key: F
+    label: After Time Period
+- field: After_Days
+  description: Payment After Days
+  type: Int
+  size: 6
+- field: After_Mnth
+  description: Payment After Months
+  type: Int
+  size: 6
+- field: Day_From1
+  description: From Day 1
+  type: Int
+  size: 6
+- field: Day_To1
+  description: To Day 1
+  type: Int
+  size: 6
+- field: Pay_Day1
+  description: Payment Date 1
+  type: Int
+  size: 6
+- field: Pay_Month1
+  description: No. of Months 1
+  type: Int
+  size: 6
+- field: Day_From2
+  description: From Day 2
+  type: Int
+  size: 6
+- field: Day_To2
+  description: To Day 2
+  type: Int
+  size: 6
+- field: Pay_Day2
+  description: Payment Date 2
+  type: Int
+  size: 6
+- field: Pay_Month2
+  description: No. of Months 2
+  type: Int
+  size: 6
+- field: Day_From3
+  description: From Day 3
+  type: Int
+  size: 6
+- field: Day_To3
+  description: To Day 3
+  type: Int
+  size: 6
+- field: Pay_Day3
+  description: Payment Date 3
+  type: Int
+  size: 6
+- field: Pay_Month3
+  description: No. of Months 3
+  type: Int
+  size: 6
+- field: Day_From4
+  description: From Day 4
+  type: Int
+  size: 6
+- field: Day_To4
+  description: To Day 4
+  type: Int
+  size: 6
+- field: Pay_Day4
+  description: Payment Date 4
+  type: Int
+  size: 6
+- field: Pay_Month4
+  description: No. of Months 4
+  type: Int
+  size: 6
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

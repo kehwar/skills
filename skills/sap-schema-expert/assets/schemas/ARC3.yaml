@@ -1,0 +1,152 @@
+table: ARC3
+description: Credit Vouchers History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ARC3.htm
+fields:
+- field: DocNum
+  description: Document No.
+  type: Int
+  size: 11
+  related: OVPM
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: CreditCard
+  description: Credit Card
+  type: Int
+  size: 6
+  related: OCRC
+  default: -1
+- field: CreditAcct
+  description: Credit Amount
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CrCardNum
+  description: Credit Card No.
+  type: nVarChar
+  size: 254
+- field: CardValid
+  description: Credit Card Valid Until
+  type: Date
+  size: 8
+- field: VoucherNum
+  description: Credit Voucher No.
+  type: nVarChar
+  size: 20
+- field: OwnerIdNum
+  description: ID Number
+  type: nVarChar
+  size: 15
+- field: OwnerPhone
+  description: Telephone
+  type: nVarChar
+  size: 50
+- field: CrTypeCode
+  description: Payment Method Code
+  type: Int
+  size: 6
+  related: OCRP
+  default: -1
+- field: NumOfPmnts
+  description: No. of Payments
+  type: Int
+  size: 6
+  default: 1
+- field: FirstDue
+  description: 1st Payment Date
+  type: Date
+  size: 8
+- field: FirstSum
+  description: First Partial Payment
+  type: Num
+  size: 19.6
+- field: AddPmntSum
+  description: Each Additional Payment
+  type: Num
+  size: 19.6
+- field: CreditSum
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: CreditCur
+  description: Credit Voucher Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: CreditRate
+  description: Credit Voucher Rate
+  type: Num
+  size: 19.6
+- field: ConfNum
+  description: Confirmation No.
+  type: nVarChar
+  size: 20
+- field: CreditType
+  description: Credit Transaction Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: U
+    label: Telephone Transaction
+  - key: S
+    label: Regular
+  - key: I
+    label: Internet Transaction
+- field: CredPmnts
+  description: No. of Credit Payments
+  type: Int
+  size: 6
+  default: 1
+- field: PlCrdStat
+  description: Pelecard Debit Status
+  type: nVarChar
+  size: 4
+  default: '-1'
+- field: MagnetStr
+  description: Magnetic Stripe Content
+  type: nVarChar
+  size: 40
+- field: SpiltCred
+  description: Split Credit Voucher Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConsolNum
+  description: Vendor Credit Code
+  type: Int
+  size: 11
+  related: OPVL
+  default: -1
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnOwnerId
+  description: Encryption of ID Number
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocNum
+  - LineID
+  - ObjType
+  - LogInstanc

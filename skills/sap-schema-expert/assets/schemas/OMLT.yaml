@@ -1,0 +1,64 @@
+table: OMLT
+description: Multi-Language Translation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMLT.htm
+fields:
+- field: TranEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldAlias
+  description: Field Alias
+  type: nVarChar
+  size: 50
+- field: PK
+  description: Primary Key of Object
+  type: nVarChar
+  size: 254
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TranEntry
+- key: Second
+  unique: true
+  fields:
+  - TableName
+  - FieldAlias
+  - PK

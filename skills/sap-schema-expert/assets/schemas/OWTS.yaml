@@ -1,0 +1,77 @@
+table: OWTS
+description: Workflow Engine Task Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWTS.htm
+fields:
+- field: Id
+  description: ID
+  type: Identity
+  size: 11
+- field: Owner
+  description: Owner
+  type: nVarChar
+  size: 254
+- field: OutputPar
+  description: Output Param.
+  type: Text
+  size: 16
+- field: EndTime
+  description: End Time
+  type: nVarChar
+  size: 50
+- field: StartTime
+  description: Start Time
+  type: nVarChar
+  size: 50
+- field: ProcDefId
+  description: Process Definition ID
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: ExeId
+  description: Execution ID
+  type: Int
+  size: 11
+- field: ProcInsId
+  description: Process Instance ID
+  type: Int
+  size: 11
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 254
+- field: InputPar
+  description: Input Parameter
+  type: Text
+  size: 16
+- field: DelReason
+  description: Delete Reason
+  type: nVarChar
+  size: 254
+- field: Assignee
+  description: Assignee
+  type: nVarChar
+  size: 254
+- field: LogInst
+  description: Log Instance
+  type: Int
+  size: 11
+- field: LastUpdate
+  description: Last Update Date and Time
+  type: nVarChar
+  size: 50
+- field: Key
+  description: Task ID in XML
+  type: nVarChar
+  size: 254
+- field: B1Task
+  description: B1 Task ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

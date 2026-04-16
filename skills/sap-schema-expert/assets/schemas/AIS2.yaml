@@ -1,0 +1,70 @@
+table: AIS2
+description: Input Service Distribution - Row Detail
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/AIS2.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OISD
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: TargetLoc
+  description: Target Location Code
+  type: Int
+  size: 11
+- field: TarLocName
+  description: Target Location Name
+  type: nVarChar
+  size: 100
+- field: TarStaType
+  description: Target GST Tax Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '-100'
+    label: CGST
+  - key: '-110'
+    label: SGST
+  - key: '-120'
+    label: IGST
+  - key: '-130'
+    label: Cess GST
+  - key: '-150'
+    label: UTGST
+- field: TarTaxAcct
+  description: Target Tax Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AllocAmnt
+  description: Allocated Amount
+  type: Num
+  size: 19.6
+- field: ITCType
+  description: ITC Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Eligible
+  - key: I
+    label: Ineligible
+- field: SubLineNum
+  description: Sub Row Number
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - TargetLoc
+  - TarTaxAcct
+  - TarStaType
+  - SubLineNum

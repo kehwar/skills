@@ -1,0 +1,21 @@
+table: WST1
+description: Confirmation Level - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WST1.htm
+fields:
+- field: WstCode
+  description: Code
+  type: Int
+  size: 11
+  related: OWST
+- field: UserID
+  description: User Code
+  type: Int
+  size: 11
+  related: OUSR
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WstCode
+  - UserID

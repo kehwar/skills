@@ -1,0 +1,150 @@
+table: OEBK
+description: E-Books
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OEBK.htm
+fields:
+- field: AbsEntry
+  description: E-Books Abs. Entry
+  type: Int
+  size: 11
+- field: MARK
+  description: MARK
+  type: nVarChar
+  size: 40
+- field: CancelMARK
+  description: Cancel MARK
+  type: nVarChar
+  size: 40
+- field: UID
+  description: UID
+  type: nVarChar
+  size: 50
+- field: IssueVATID
+  description: Issuer VAT Number
+  type: nVarChar
+  size: 64
+- field: CPVATID
+  description: Counterpart VAT Number
+  type: nVarChar
+  size: 64
+- field: Series
+  description: Series
+  type: nVarChar
+  size: 16
+- field: AA
+  description: AA
+  type: nVarChar
+  size: 200
+- field: IssueDate
+  description: Issue Date
+  type: Date
+  size: 8
+- field: InvoiceTyp
+  description: Invoice Type
+  type: nVarChar
+  size: 100
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 200
+- field: TlNetVal
+  description: Total Net Value
+  type: Num
+  size: 19.6
+- field: TlVatAmn
+  description: Total VAT Amount
+  type: Num
+  size: 19.6
+- field: TlWheldAmn
+  description: Total Withheld Amount
+  type: Num
+  size: 19.6
+- field: TlGrossVal
+  description: Total Gross Value
+  type: Num
+  size: 19.6
+- field: LinkDocTyp
+  description: Linked Doc. Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '18'
+    label: A/P Invoices
+  - key: '19'
+    label: A/P Credit Memos
+  - key: '30'
+    label: Journal Entries
+  - key: '0'
+    label: ''
+  - key: '-1'
+    label: ''
+- field: LinkDocEnt
+  description: Linked Doc. Entry
+  type: Int
+  size: 11
+- field: IsNegMark
+  description: Is Negative MARK
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: SourceECM8
+  description: LogNum of Source ECM8
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '234003013'
+  constraints:
+  - key: '234003013'
+    label: E-Books Expense
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: UID
+  unique: true
+  fields:
+  - UID
+- key: MARK
+  unique: true
+  fields:
+  - MARK

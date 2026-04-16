@@ -1,0 +1,17 @@
+table: PMC6
+description: Project Management Configuration - Tasks
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PMC6.htm
+fields:
+- field: TaskID
+  description: Task No.
+  type: Int
+  size: 11
+- field: Name
+  description: Task Name
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TaskID

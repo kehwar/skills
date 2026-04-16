@@ -1,0 +1,18 @@
+table: MSG1
+description: '[MSG1]'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MSG1.htm
+fields:
+- field: LogNum
+  description: ??' ?????
+  type: Int
+  size: 11
+- field: UserCode
+  description: ï¿½?? ?????
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogNum
+  - UserCode

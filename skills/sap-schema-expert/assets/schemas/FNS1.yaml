@@ -1,0 +1,32 @@
+table: FNS1
+description: Folio Numbering - Voided Series
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/FNS1.htm
+fields:
+- field: Series
+  description: Series ID
+  type: Int
+  size: 11
+  related: OFNS
+- field: FolNumFrom
+  description: Folio Number From
+  type: Int
+  size: 11
+- field: FolNumTo
+  description: Folio Number To
+  type: Int
+  size: 11
+- field: Reason
+  description: Reason For Number Skipping
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Series
+  - FolNumFrom
+- key: To
+  unique: true
+  fields:
+  - Series
+  - FolNumTo

@@ -1,0 +1,58 @@
+table: SINF
+description: Server Info
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SINF.htm
+fields:
+- field: Version
+  description: Version
+  type: Int
+  size: 11
+- field: Flags
+  description: Flags
+  type: nVarChar
+  size: 100
+- field: UpgCab
+  description: Upg CAB
+  type: Text
+  size: 16
+- field: AppDate
+  description: Application Date
+  type: Date
+  size: 8
+- field: ClusterID
+  description: Cluster Identification
+  type: nVarChar
+  size: 3
+- field: AppTime
+  description: Application Time
+  type: Int
+  size: 6
+- field: ShrPath
+  description: Shared folder path
+  type: Text
+  size: 16
+- field: Algo
+  description: Encryption Algorithm.
+  type: Int
+  size: 6
+- field: PatchLevel
+  description: Application Patch Level
+  type: nVarChar
+  size: 50
+- field: BuildDesc
+  description: Build Descriptor
+  type: nVarChar
+  size: 50
+- field: IsPALInit
+  description: Is PAL Initialize or Not
+  type: VarChar
+  size: 1
+  default: N
+- field: FP
+  description: Application Feature Pack
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Version

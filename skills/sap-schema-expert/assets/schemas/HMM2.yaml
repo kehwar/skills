@@ -1,0 +1,34 @@
+table: HMM2
+description: Child Table of OHHM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/HMM2.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OHMM
+- field: LineNum
+  description: Child No.
+  type: Int
+  size: 11
+- field: VerType
+  description: Version Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: H
+    label: SAP HANA Version
+  - key: A
+    label: SAP Business One Analytics Powered by HANA Version
+  - key: B
+    label: SAP Business One Version
+- field: Ver
+  description: Version
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

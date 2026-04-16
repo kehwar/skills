@@ -1,0 +1,40 @@
+table: OERN
+description: Excise Register Numbering
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OERN.htm
+fields:
+- field: NumTypeID
+  description: ID for numbering type
+  type: Int
+  size: 11
+- field: NumTypeNam
+  description: Name for numbering type
+  type: nVarChar
+  size: 30
+- field: FirstNum
+  description: First number
+  type: Int
+  size: 11
+  default: 1
+- field: NextNum
+  description: Next Number
+  type: Int
+  size: 11
+  default: 1
+- field: LastNum
+  description: Last Number
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ResetDate
+  description: Date of last reset
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - NumTypeID

@@ -1,0 +1,71 @@
+table: ACT1
+description: Service Contract - Items
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/ACT1.htm
+fields:
+- field: ContractID
+  description: Contract No.
+  type: Int
+  size: 11
+  related: OCTR
+- field: Line
+  description: Row
+  type: Int
+  size: 11
+- field: ManufSN
+  description: Mfr. Serial No.
+  type: nVarChar
+  size: 36
+- field: InternalSN
+  description: Serial Number
+  type: nVarChar
+  size: 36
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: ItemGroup
+  description: Item Group
+  type: Int
+  size: 6
+  related: OITB
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: ItmGrpName
+  description: Item Group Name
+  type: nVarChar
+  size: 20
+- field: InsID
+  description: Customer Equipment Card ID
+  type: Int
+  size: 11
+  related: OINS
+- field: TermDate
+  description: Termination Date
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ContractID
+  - Line
+  - LogInstanc

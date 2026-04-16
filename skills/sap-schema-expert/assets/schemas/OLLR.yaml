@@ -1,0 +1,59 @@
+table: OLLR
+description: Electronic Report Generation Result
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OLLR.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: EReportId
+  description: Electronic Report ID
+  type: Int
+  size: 11
+  related: OLLF
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Canceled
+  - key: E
+    label: Executed
+  - key: F
+    label: Failed
+- field: Log
+  description: Run Log
+  type: Text
+  size: 16
+- field: ReportInst
+  description: Electronic Report Instance
+  type: Int
+  size: 11
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: REPORT
+  unique: false
+  fields:
+  - EReportId

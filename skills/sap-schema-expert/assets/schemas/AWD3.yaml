@@ -1,0 +1,91 @@
+table: AWD3
+description: WTax Codes Details for BP
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/AWD3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OWTD
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+- field: KeyPart1
+  description: BP key part 1
+  type: nVarChar
+  size: 15
+- field: KeyPart2
+  description: BP key part 2
+  type: nVarChar
+  size: 15
+- field: DateFrom
+  description: Effective Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Effective Date To
+  type: Date
+  size: 8
+- field: Rate
+  description: Currency Rate
+  type: Num
+  size: 19.6
+- field: DetailType
+  description: Type of Detailed Information
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: A
+    label: Allowed
+  - key: S
+    label: Special Rate
+  - key: E
+    label: Exemption
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: P
+    label: Partner Implementation
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId
+  - LogInstanc
+- key: BP
+  unique: true
+  fields:
+  - WTCode
+  - KeyPart1
+  - KeyPart2
+  - DateFrom
+  - DetailType
+  - LogInstanc

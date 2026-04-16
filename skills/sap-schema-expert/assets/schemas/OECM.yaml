@@ -1,0 +1,73 @@
+table: OECM
+description: Electronic Communication Types or Protocols
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OECM.htm
+fields:
+- field: Code
+  description: Communication Type or Protocol
+  type: nVarChar
+  size: 8
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 200
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: UIOrder
+  description: UI Order
+  type: Int
+  size: 6
+- field: StrIndex
+  description: String Index
+  type: Int
+  size: 6
+- field: IsActive
+  description: Activation of Communication Type or Protocol
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LHost
+  description: Background Process Client Machine Name
+  type: nVarChar
+  size: 254
+- field: LPID
+  description: Background Process Client Process ID
+  type: Int
+  size: 11
+- field: LTimeout
+  description: Validity Time Stamp of Background Process Client Session
+  type: nVarChar
+  size: 14
+- field: RHost
+  description: Machine Name Requesting Control of Background eDoc Processing
+  type: nVarChar
+  size: 254
+- field: RPID
+  description: Process ID Requesting Control of Background eDoc Processing
+  type: Int
+  size: 11
+- field: RTimeout
+  description: Validity Time Stamp of Background Process Client Request
+  type: nVarChar
+  size: 14
+- field: IsHidden
+  description: Hide Electronic Protocol on UI Forms
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

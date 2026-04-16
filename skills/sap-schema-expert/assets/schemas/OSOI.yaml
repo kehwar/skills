@@ -1,0 +1,72 @@
+table: OSOI
+description: Statement of Import Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OSOI.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: Date
+  description: Run Date
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: AgrNoFrom
+  description: Agreement No. From
+  type: Int
+  size: 11
+- field: AgrNoTo
+  description: Agreement No. To
+  type: Int
+  size: 11
+- field: PDateFrm
+  description: Posting Date From
+  type: Date
+  size: 8
+- field: PDateTo
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: OrigWizId
+  description: Original Wizard ID
+  type: Int
+  size: 11
+- field: OrigSOINum
+  description: Original Statement No.
+  type: Int
+  size: 11
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Created
+  - key: C
+    label: Correction
+  - key: U
+    label: Updated
+  - key: D
+    label: Deleted
+- field: CorrType
+  description: Correction Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Replacement
+  - key: A
+    label: Adjustment
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId

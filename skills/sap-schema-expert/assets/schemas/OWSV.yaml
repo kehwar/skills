@@ -1,0 +1,63 @@
+table: OWSV
+description: Web Client Linked View
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWSV.htm
+fields:
+- field: Guid
+  description: GUID
+  type: nVarChar
+  size: 40
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 254
+- field: OwnerId
+  description: Owner ID
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 11
+- field: IsPublic
+  description: Is Public
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TgtObject
+  description: Target Object
+  type: nVarChar
+  size: 32
+- field: VariantId
+  description: Variant ID
+  type: nVarChar
+  size: 40
+- field: ApplyToDoc
+  description: Apply To Docs
+  type: nVarChar
+  size: 254
+- field: ViewType
+  description: Type of Linked View
+  type: nVarChar
+  size: 20
+  default: DetailedViewHeader
+  constraints:
+  - key: ListView
+    label: List View
+  - key: DetailedViewHeader
+    label: Detailed View Header
+  - key: DetailedViewRows
+    label: Detailed View Rows
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

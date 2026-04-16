@@ -1,0 +1,45 @@
+table: OCCD
+description: Cargo Customs Declaration Numbers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCCD.htm
+fields:
+- field: CCDNum
+  description: CCD Number
+  type: nVarChar
+  size: 40
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: CustBroker
+  description: Customs Broker
+  type: nVarChar
+  size: 15
+- field: DocNum
+  description: Imp./Exp. Document Number
+  type: nVarChar
+  size: 20
+- field: DocDate
+  description: Imp./Exp. Document Date
+  type: Date
+  size: 8
+- field: SupNum
+  description: Supply Agreement Number
+  type: nVarChar
+  size: 20
+- field: SupDate
+  description: Supply Agreement Date
+  type: Date
+  size: 8
+- field: CustTerm
+  description: Customs Terminal
+  type: nVarChar
+  size: 15
+- field: PayKey
+  description: Payment Internal ID
+  type: nVarChar
+  size: 4
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CCDNum

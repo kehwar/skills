@@ -1,0 +1,37 @@
+table: RUSR
+description: Resource Users
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RUSR.htm
+fields:
+- field: IUserCode
+  description: I User Code
+  type: nVarChar
+  size: 15
+- field: Name
+  description: User Name
+  type: nVarChar
+  size: 30
+- field: UserGroup
+  description: Authorization Group
+  type: Int
+  size: 11
+- field: Password
+  description: Password
+  type: nVarChar
+  size: 20
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserSign
+- key: I_USER
+  unique: true
+  fields:
+  - IUserCode
+- key: NAME
+  unique: true
+  fields:
+  - Name

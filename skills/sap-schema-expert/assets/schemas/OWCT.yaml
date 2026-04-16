@@ -1,0 +1,21 @@
+table: OWCT
+description: Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OWCT.htm
+fields:
+- field: CateCode
+  description: Code
+  type: nVarChar
+  size: 3
+- field: CateDesc
+  description: Description
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CateCode
+- key: CODE
+  unique: true
+  fields:
+  - CateCode

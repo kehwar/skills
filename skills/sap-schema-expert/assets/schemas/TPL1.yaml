@@ -1,0 +1,60 @@
+table: TPL1
+description: Template - Records
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TPL1.htm
+fields:
+- field: TplNum
+  description: Template Code
+  type: Int
+  size: 11
+  related: OTPL
+- field: LineNum
+  description: Line No.
+  type: Int
+  size: 11
+- field: FieldPos
+  description: Field Pos.
+  type: Int
+  size: 11
+- field: SrcArrType
+  description: Source Array Type
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '-1'
+    label: None
+  - key: '1'
+    label: Main
+  - key: '12'
+    label: Array 1
+  - key: '13'
+    label: Array 2
+  - key: '14'
+    label: Array 3
+  - key: '15'
+    label: Array 4
+  - key: '16'
+    label: Array 5
+  - key: '17'
+    label: Array 6
+  - key: '18'
+    label: Array 7
+  - key: '19'
+    label: Array 8
+  - key: '20'
+    label: Array 9
+  - key: '21'
+    label: Array 10
+  - key: '22'
+    label: Array 11
+- field: SrcObjType
+  description: Source Object Type
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TplNum
+  - LineNum

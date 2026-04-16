@@ -1,0 +1,852 @@
+table: AACT
+description: G/L Account - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AACT.htm
+fields:
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: AcctName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: CurrTotal
+  description: Current Balance
+  type: Num
+  size: 19.6
+- field: EndTotal
+  description: Opening Balance
+  type: Num
+  size: 19.6
+- field: Finanse
+  description: Cash Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Groups
+  description: Main Group
+  type: nVarChar
+  size: 8
+- field: Budget
+  description: Budget
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Frozen
+  description: Account on Hold [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Free_2
+  description: Free 2
+  type: VarChar
+  size: 1
+- field: Postable
+  description: Account Type [Active/Title]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Active Account
+  - key: N
+    label: Title Account
+- field: Fixed
+  description: Primary Account
+  type: VarChar
+  size: 1
+- field: Levels
+  description: Account Level
+  type: Int
+  size: 6
+  default: 2
+- field: ExportCode
+  description: Data Export Code
+  type: nVarChar
+  size: 10
+- field: GrpLine
+  description: Account Location in Group
+  type: Int
+  size: 11
+- field: FatherNum
+  description: Parent Account Key
+  type: nVarChar
+  size: 15
+- field: AccntntCod
+  description: External Code
+  type: nVarChar
+  size: 15
+- field: CashBox
+  description: Primary Account [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GroupMask
+  description: Group Mask
+  type: Int
+  size: 6
+  default: 1
+- field: RateTrans
+  description: Conversion Differences
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxIncome
+  description: Tax Definition
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExmIncome
+  description: Tax Definition
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtrMatch
+  description: External Reconciliation No.
+  type: Int
+  size: 11
+- field: IntrMatch
+  description: Internal Reconciliation No.
+  type: Int
+  size: 11
+- field: ActType
+  description: Account Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: I
+    label: Sales
+  - key: E
+    label: Expenditure
+  - key: N
+    label: Other
+- field: Transfered
+  description: Year Transferred [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlncTrnsfr
+  description: Balances Transferred [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OverType
+  description: Distribution Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: Y
+    label: 'Yes'
+- field: OverCode
+  description: Distribution Rule Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: SysMatch
+  description: System Reconciliation No.
+  type: Int
+  size: 11
+  default: -1
+- field: PrevYear
+  description: Transferred from Prev. Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ActCurr
+  description: Account Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: RateDifAct
+  description: Rate Differences Acct
+  type: nVarChar
+  size: 15
+- field: SysTotal
+  description: Balance (SC)
+  type: Num
+  size: 19.6
+- field: FcTotal
+  description: Balance (Account Currency)
+  type: Num
+  size: 19.6
+- field: Protected
+  description: Confidential Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RealAcct
+  description: Indexed Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Advance
+  description: Advance Payments
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: FrgnName
+  description: Foreign Name
+  type: nVarChar
+  size: 200
+- field: Details
+  description: Details - History
+  type: nVarChar
+  size: 254
+- field: ExtraSum
+  description: Additional Amount
+  type: Num
+  size: 19.6
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: RevalMatch
+  description: Revaluation Coordinated
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: LocMth
+  description: Reconciliation in LC
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MTHCounter
+  description: MTH Counter
+  type: Int
+  size: 11
+- field: BNKCounter
+  description: BNK Counter
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LocManTran
+  description: Control Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+- field: ValidFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ValidFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Active To
+  type: Date
+  size: 8
+- field: ValidComm
+  description: Active Remarks
+  type: nVarChar
+  size: 30
+- field: FrozenFor
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FrozenFrom
+  description: Inactive From
+  type: Date
+  size: 8
+- field: FrozenTo
+  description: Inactive To
+  type: Date
+  size: 8
+- field: FrozenComm
+  description: Inactive Remarks
+  type: nVarChar
+  size: 30
+- field: Counter
+  description: BP Bank Account
+  type: Int
+  size: 11
+  default: 0
+- field: Segment_0
+  description: Segment 0
+  type: nVarChar
+  size: 20
+- field: Segment_1
+  description: Segment 1
+  type: nVarChar
+  size: 20
+- field: Segment_2
+  description: Segment 2
+  type: nVarChar
+  size: 20
+- field: Segment_3
+  description: Segment 3
+  type: nVarChar
+  size: 20
+- field: Segment_4
+  description: Segment 4
+  type: nVarChar
+  size: 20
+- field: Segment_5
+  description: Segment 5
+  type: nVarChar
+  size: 20
+- field: Segment_6
+  description: Segment 6
+  type: nVarChar
+  size: 20
+- field: Segment_7
+  description: Segment 7
+  type: nVarChar
+  size: 20
+- field: Segment_8
+  description: Segment 8
+  type: nVarChar
+  size: 20
+- field: Segment_9
+  description: Segment 9
+  type: nVarChar
+  size: 20
+- field: FormatCode
+  description: Format Code
+  type: nVarChar
+  size: 210
+- field: CfwRlvnt
+  description: Cash Flow Relevant [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExchRate
+  description: Exchange Rate Differences
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevalAcct
+  description: Revaluation Account
+  type: nVarChar
+  size: 15
+- field: LastRevBal
+  description: Last Revaluation Balance
+  type: Num
+  size: 19.6
+- field: LastRevDat
+  description: Last Revaluation Date
+  type: Date
+  size: 8
+- field: DfltVat
+  description: Default VAT Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: VatChange
+  description: Allow Change VAT Group
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Category
+  description: Category
+  type: Int
+  size: 11
+  related: OACG
+- field: TransCode
+  description: Transaction Code
+  type: nVarChar
+  size: 4
+  related: OTRC
+- field: OverCode5
+  description: Loading Factor Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OverCode2
+  description: Loading Factor Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OverCode3
+  description: Loading Factor Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OverCode4
+  description: Loading Factor Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: DfltTax
+  description: Default Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: TaxPostAcc
+  description: Default Tax Posting Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: R
+    label: Sales Tax Account
+  - key: P
+    label: Purchasing Tax Account
+- field: AcctStrLe
+  description: Account Structure Level
+  type: nVarChar
+  size: 2
+- field: MeaUnit
+  description: Measurement Unit
+  type: nVarChar
+  size: 10
+- field: BalDirect
+  description: Direction of Balance
+  type: nVarChar
+  size: 4
+  default: '0'
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Credit
+  - key: '2'
+    label: Debit
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: PlngLevel
+  description: B1i Info for Integration
+  type: nVarChar
+  size: 2
+- field: MultiLink
+  description: Allow Multiple Linking
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PrjRelvnt
+  description: Project Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dim1Relvnt
+  description: Dimension 1 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dim2Relvnt
+  description: Dimension 2 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dim3Relvnt
+  description: Dimension 3 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dim4Relvnt
+  description: Dimension 4 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Dim5Relvnt
+  description: Dimension 5 Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AccrualTyp
+  description: Accrual Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: P
+    label: Posting Account
+  - key: C
+    label: Calculation Account
+  - key: I
+    label: Calculation Interim Account
+- field: DatevAcct
+  description: DATEV Account
+  type: nVarChar
+  size: 8
+- field: DatevAutoA
+  description: DATEV Automatic Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DatevFirst
+  description: First Data Entry
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SnapShotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: PCN874Rpt
+  description: PCN 874 Report Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SCAdjust
+  description: SC Adjustment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: SubLedgerN
+  description: Subledger No.
+  type: nVarChar
+  size: 60
+- field: VATRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: ActId
+  description: Account Identifier
+  type: nVarChar
+  size: 210
+- field: ClosingAcc
+  description: G/L Account Closing
+  type: nVarChar
+  size: 15
+- field: PurpCode
+  description: Account Purpose Code
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: '01'
+    label: Contas de ativo
+  - key: '02'
+    label: Contas de Passivo
+  - key: '03'
+    label: Patrimï¿½nio Lï¿½quido
+  - key: '04'
+    label: Contas de Resultado
+  - key: '05'
+    label: Contas de Compensaï¿½ï¿½o
+  - key: 09
+    label: Outras
+- field: RefCode
+  description: Referential Account Code
+  type: nVarChar
+  size: 30
+- field: BlocManPos
+  description: Block Manual Posting
+  type: VarChar
+  size: 1
+  default: N
+- field: PriAccCode
+  description: Primary Closing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CstAccOnly
+  description: Cost Account Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'YES'
+  - key: N
+    label: 'NO'
+- field: AlloweFrom
+  description: Account Balance Allowed From
+  type: Num
+  size: 19.6
+- field: AllowedTo
+  description: Account Balance Allowed To
+  type: Num
+  size: 19.6
+- field: BalanceA
+  description: Account Balance Allowed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'NO'
+  - key: Y
+    label: 'YES'
+- field: RmrkTmpt
+  description: Remark Text Template
+  type: Int
+  size: 11
+  related: OTTR
+- field: CemRelvnt
+  description: Cost Element Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CemCode
+  description: Cost Element Code
+  type: nVarChar
+  size: 20
+  related: OCEM
+- field: StdActCode
+  description: Standard Account Code
+  type: nVarChar
+  size: 35
+- field: TaxonCode
+  description: Taxonomy Code
+  type: nVarChar
+  size: 15
+- field: InClassTyp
+  description: Income Class. Type
+  type: Int
+  size: 11
+  related: OICP
+- field: InClassCat
+  description: Income Class. Category
+  type: Int
+  size: 11
+  related: OICC
+- field: ExClassTyp
+  description: Expense Class. Type
+  type: Int
+  size: 11
+  related: OECP
+- field: ExClassCat
+  description: Expense Class. Category
+  type: Int
+  size: 11
+  related: OECC
+- field: OffcCode
+  description: Official Account Code
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AcctCode
+  - LogInstanc

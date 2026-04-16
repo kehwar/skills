@@ -1,0 +1,33 @@
+table: CIGR
+description: Approval Process Ignore List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CIGR.htm
+fields:
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  constraints:
+  - key: D
+    label: Document
+  - key: O
+    label: Inventory Opening Balance
+  - key: P
+    label: Inventory Posting
+  - key: C
+    label: Inventory Counting
+  - key: V
+    label: Payment
+- field: TableName
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TableName
+  - FieldName

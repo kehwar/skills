@@ -1,0 +1,35 @@
+table: GBI15
+description: GBI Row 15 - Enterprise's VAT Payable Detail Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI15.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 100
+- field: LineNum
+  description: Line Number
+  type: nVarChar
+  size: 6
+- field: CurMonAmnt
+  description: Current Month Amount
+  type: Num
+  size: 19.6
+- field: CurYrAmnt
+  description: Current Year Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

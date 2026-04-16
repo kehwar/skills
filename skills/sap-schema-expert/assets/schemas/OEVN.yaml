@@ -1,0 +1,97 @@
+table: OEVN
+description: Event Notification
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OEVN.htm
+fields:
+- field: EventID
+  description: Event ID
+  type: nVarChar
+  size: 50
+- field: SourceDB
+  description: Event Source Database
+  type: nVarChar
+  size: 100
+- field: Status
+  description: Event Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: F
+    label: Failed
+  - key: P
+    label: Partially Delivered
+  - key: D
+    label: Delivered
+  - key: A
+    label: Archived
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 30
+- field: BizObject
+  description: Business Object
+  type: nVarChar
+  size: 64
+- field: TransType
+  description: Transaction Type
+  type: VarChar
+  size: 1
+- field: Operation
+  description: Transaction Operation
+  type: nVarChar
+  size: 64
+- field: FieldsInKe
+  description: Number of Key Fields
+  type: Int
+  size: 11
+- field: FieldNames
+  description: Names of Key Fields
+  type: nVarChar
+  size: 254
+- field: FieldValue
+  description: Values of Key Fields
+  type: nVarChar
+  size: 254
+- field: ReplayStat
+  description: Replay State
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: R
+    label: Replaying
+  - key: C
+    label: Completed
+- field: UserID
+  description: User ID
+  type: nVarChar
+  size: 25
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Timestamp
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Timestamp
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EventID

@@ -1,0 +1,24 @@
+table: WPM5
+description: Process Map Assigned User
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPM5.htm
+fields:
+- field: PrcMapId
+  description: Process Map ID
+  type: nVarChar
+  size: 40
+  related: OWPM
+- field: Guid
+  description: Guid of Assigend User
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcMapId
+  - Guid

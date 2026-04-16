@@ -1,0 +1,87 @@
+table: ODMW
+description: Data Migration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODMW.htm
+fields:
+- field: Code
+  description: Package Code
+  type: Int
+  size: 11
+- field: Name
+  description: Package Name
+  type: nVarChar
+  size: 20
+- field: CategoryId
+  description: Category ID
+  type: Int
+  size: 11
+  related: OQCN
+- field: DestPath
+  description: Dest. Path
+  type: Text
+  size: 16
+- field: Extantion
+  description: Exported
+  type: nVarChar
+  size: 5
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Delim
+  description: Include Title
+  type: nVarChar
+  size: 10
+  default: T
+  constraints:
+  - key: T
+    label: Tab
+  - key: K
+    label: ','
+  - key: D
+    label: ;
+  - key: S
+    label: Space
+- field: InclTitle
+  description: Set to Exported
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SetExp
+  description: New Records
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NewRecs
+  description: Save
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Summary
+  description: Summary
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: NAME
+  unique: true
+  fields:
+  - Name

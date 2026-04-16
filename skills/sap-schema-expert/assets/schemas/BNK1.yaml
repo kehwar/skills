@@ -1,0 +1,45 @@
+table: BNK1
+description: Bank Statement - Documents List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/BNK1.htm
+fields:
+- field: IdNumber
+  description: Bank Statement ID
+  type: Int
+  size: 11
+- field: BSLine
+  description: Bank Statement Line ID
+  type: Int
+  size: 11
+- field: ListLineID
+  description: List Line ID
+  type: Int
+  size: 6
+- field: DocID
+  description: Document Identifier
+  type: nVarChar
+  size: 35
+- field: AmntLC
+  description: Amount (LC)
+  type: Num
+  size: 19.6
+- field: AmnFC
+  description: Amount (FC)
+  type: Num
+  size: 19.6
+- field: IsDebit
+  description: Debit [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdNumber
+  - BSLine
+  - ListLineID

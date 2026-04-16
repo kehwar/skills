@@ -1,0 +1,40 @@
+table: FCT1
+description: Sales Forecast - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/FCT1.htm
+fields:
+- field: AbsID
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OFCT
+- field: LineID
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Date
+  description: Day Forecasted
+  type: Date
+  size: 8
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: WhsCode
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+  default: '-1'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsID
+  - ItemCode
+  - Date
+  - WhsCode

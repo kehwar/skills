@@ -1,0 +1,46 @@
+table: RCON
+description: Connection Map for CR Templates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RCON.htm
+fields:
+- field: DocCode
+  description: Internal Template Key
+  type: nVarChar
+  size: 8
+- field: ConnID
+  description: Connection ID
+  type: Int
+  size: 11
+- field: OldServer
+  description: Old Server Name
+  type: nVarChar
+  size: 64
+- field: OldDbName
+  description: Old Database Name
+  type: nVarChar
+  size: 64
+- field: NewServer
+  description: Mapped Server Name
+  type: nVarChar
+  size: 64
+- field: NewDbName
+  description: Mapped Database Name
+  type: nVarChar
+  size: 64
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 32
+- field: SubIndex
+  description: Subreport Index
+  type: Int
+  size: 6
+- field: SubName
+  description: Subreport Name
+  type: nVarChar
+  size: 64
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocCode
+  - ConnID

@@ -1,0 +1,23 @@
+table: VTR3
+description: Series Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/VTR3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectCode
+  description: Object Code
+  type: nVarChar
+  size: 15
+- field: SeriesCode
+  description: Series Code
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - SeriesCode
+  - ObjectCode

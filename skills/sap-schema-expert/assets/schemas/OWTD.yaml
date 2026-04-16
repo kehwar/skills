@@ -1,0 +1,137 @@
+table: OWTD
+description: Withholding Tax Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OWTD.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+- field: WTName
+  description: WTax Code Name
+  type: nVarChar
+  size: 50
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: Inactive
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: OffclCode
+  description: Official Code
+  type: nVarChar
+  size: 15
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+- field: BaseType
+  description: Base Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net
+  - key: V
+    label: VAT
+  - key: G
+    label: Gross
+  - key: H
+    label: Gross - VAT
+- field: WTTypeId
+  description: Type
+  type: Int
+  size: 11
+  related: OWTT
+- field: BaseMin
+  description: Min. Amount
+  type: Num
+  size: 19.6
+- field: PrctBsAmnt
+  description: '% Base Amount'
+  type: Num
+  size: 19.6
+- field: FmlId
+  description: Formula ID
+  type: Int
+  size: 11
+  related: OFML
+- field: Account
+  description: Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SlScProgr
+  description: Sliding Scale Progressive Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CalcWHTCrM
+  description: Calculate Withholding Tax in Automatic Credit Memo
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: WT_CODE
+  unique: true
+  fields:
+  - WTCode
+- key: WT_NAME
+  unique: false
+  fields:
+  - WTName

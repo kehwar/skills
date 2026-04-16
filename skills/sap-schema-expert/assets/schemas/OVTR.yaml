@@ -1,0 +1,691 @@
+table: OVTR
+description: Tax Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OVTR.htm
+fields:
+- field: AbsEntry
+  description: Abs Entry (Numerator)
+  type: Int
+  size: 11
+- field: ReportName
+  description: Report Name
+  type: nVarChar
+  size: 50
+- field: RptLayout
+  description: Report Layout
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Tax Register Book
+  - key: D
+    label: Tax Declaration
+  - key: B
+    label: Black List Country - Tax Declaration
+  - key: L
+    label: Black List Country - Tax Declaration 2013
+  - key: A
+    label: VAT Annual List
+  - key: I
+    label: Annual Invoice Declaration 2011
+  - key: N
+    label: Annual Invoice Declaration 2013
+  - key: P
+    label: Declaration of Purchases from San Marino
+  - key: E
+    label: Electronic Tax Declaration
+  - key: F
+    label: Electronic Tax Declaration 2018
+  - key: M
+    label: VAT Invoice Declaration 2017
+  - key: G
+    label: Electronic Tax Declaration 2019
+  - key: T
+    label: One-Stop Shop Declaration
+- field: FirstPrint
+  description: First Printed No.
+  type: Int
+  size: 11
+- field: FromDate
+  description: Date From
+  type: Date
+  size: 8
+- field: ToDate
+  description: Date To
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: RoundSum
+  description: Round Amounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+  - key: ''
+    label: .
+- field: Declration
+  description: Declaration Type
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Original
+  - key: S
+    label: Substitute
+  - key: C
+    label: Complementary
+- field: FilterType
+  description: Selection Criteria Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: V
+    label: Tax Report
+  - key: W
+    label: Withholding Tax Report
+  - key: T
+    label: Report 347
+  - key: E
+    label: 349 Report
+  - key: R
+    label: Reconciliation Report
+  - key: S
+    label: Stamp Tax
+  - key: U
+    label: Sales Report
+  - key: N
+    label: None
+  - key: B
+    label: Box Report
+  - key: O
+    label: Appendix O or P Selection
+  - key: A
+    label: Annual Sales Report
+  - key: F
+    label: VAT Refund Report
+  - key: C
+    label: Input/Output VAT Report
+- field: ExcludeWT
+  description: Exclude Withholding Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CustomerIn
+  description: Include Customers
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VendorIn
+  description: Include Vendors
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Period
+  description: Quarter, Year or Month
+  type: VarChar
+  size: 1
+  default: Q
+  constraints:
+  - key: Q
+    label: Quarter
+  - key: Y
+    label: Year
+  - key: M
+    label: Month
+  - key: S
+    label: .
+- field: Quarter
+  description: Quarter
+  type: Int
+  size: 11
+- field: Year
+  description: Year
+  type: Int
+  size: 11
+- field: DocType
+  description: A/P or A/R
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Purchasing Documents
+  - key: R
+    label: Sales Documents
+- field: CreditMemo
+  description: Credit Memos
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DocTypeIn
+  description: Include Document Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FirstReg
+  description: First Register Number
+  type: Int
+  size: 11
+- field: AccountIn
+  description: Include G/L Accounts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DeferTaxIn
+  description: Show Pmts with Deferred Tax
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ApndxOOrP
+  description: Appendix O or P Selection
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DispOBCB
+  description: Opening & Closing Balance
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FromSeries
+  description: From Tax Series Group
+  type: Int
+  size: 11
+- field: ToSeries
+  description: To Tax Series Group
+  type: Int
+  size: 11
+- field: canceltn
+  description: For EU Sales Report
+  type: VarChar
+  size: 1
+  default: N
+- field: HideNTrans
+  description: Hide Tax Codes with no Trans.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: SeriesIn
+  description: Include Series Filter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: UserCode
+  description: User Code
+  type: nVarChar
+  size: 25
+- field: FromCardCo
+  description: BP Code From
+  type: nVarChar
+  size: 15
+- field: ToCardCo
+  description: BP Code To
+  type: nVarChar
+  size: 15
+- field: SizeOfStru
+  description: Size of Structure
+  type: Int
+  size: 11
+- field: PostFrDate
+  description: Posting Date From
+  type: Date
+  size: 8
+- field: PostToDate
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: DocFrDate
+  description: Document Date From
+  type: Date
+  size: 8
+- field: DocToDate
+  description: Document Date To
+  type: Date
+  size: 8
+- field: FromDoc1Nu
+  description: Document 1 - From
+  type: nVarChar
+  size: 11
+- field: ToDoc1Nu
+  description: Document 1 - To
+  type: nVarChar
+  size: 11
+- field: Serie1
+  description: Invoice Numbering Series
+  type: nVarChar
+  size: 11
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Serie1CB
+  description: Inv. Numbering Series Filter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Doc1Type
+  description: Type of Document 1
+  type: Int
+  size: 11
+- field: FromDoc2Nu
+  description: Document 2 - From
+  type: nVarChar
+  size: 11
+- field: ToDoc2Nu
+  description: Document 2 - To
+  type: nVarChar
+  size: 11
+- field: Serie2
+  description: Credit Memo Numbering Series
+  type: nVarChar
+  size: 11
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Serie2CB
+  description: Corr. Inv. Rev. No. Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Doc2Type
+  description: Type of Document 2
+  type: Int
+  size: 11
+- field: FromDoc3Nu
+  description: Document 3 - From
+  type: nVarChar
+  size: 11
+- field: ToDoc3Nu
+  description: Document 3 - To
+  type: nVarChar
+  size: 11
+- field: Serie3
+  description: Corr. Inv. Numbering Series
+  type: nVarChar
+  size: 11
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Serie3CB
+  description: Corr. Inv. Num. Series Filter
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Doc3Type
+  description: Type of Document 3
+  type: Int
+  size: 11
+- field: FromDoc4Nu
+  description: Document 4 - From
+  type: nVarChar
+  size: 11
+- field: ToDoc4Nu
+  description: Document 4 - To
+  type: nVarChar
+  size: 11
+- field: Serie4
+  description: Corr. Inv. Rev. No. Series
+  type: nVarChar
+  size: 11
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Serie4CB
+  description: Corr. Inv. Reversal No. Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Doc4Type
+  description: Type of Document 4
+  type: Int
+  size: 11
+- field: FromDoc5Nu
+  description: Document 5 - From
+  type: nVarChar
+  size: 11
+- field: ToDoc5Nu
+  description: Document 5 - To
+  type: nVarChar
+  size: 11
+- field: Serie5
+  description: Down Payment Numbering Series
+  type: nVarChar
+  size: 11
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Serie5CB
+  description: Down Payment Numbering Series
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Doc5Type
+  description: Type of Document 5
+  type: Int
+  size: 11
+- field: DateRBtn
+  description: Report Period
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Interval
+  - key: D
+    label: Date
+- field: MarkDocsIn
+  description: Include Marketing Documents
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ExRate
+  description: Exchange Rate
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Posting
+  - key: R
+    label: For Reports
+- field: ExRateDate
+  description: Exchange Rate Date
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Posting Date
+  - key: D
+    label: Document Date
+  - key: V
+    label: VAT Date
+- field: TrsPerioTp
+  description: Report Period Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: Year
+  - key: Q
+    label: Quarter
+  - key: B
+    label: Bi-Monthly
+  - key: M
+    label: Month
+  - key: P
+    label: Period
+  - key: F
+    label: Fiscal Year
+  - key: G
+    label: Fiscal Quarter
+- field: TrsPerioNu
+  description: Report Period Number
+  type: Int
+  size: 11
+- field: TrsYear
+  description: Report Year
+  type: Int
+  size: 6
+- field: TrsAdjtNum
+  description: Report Adjustment Number
+  type: Int
+  size: 6
+- field: DateType
+  description: Date Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Posting Date
+  - key: D
+    label: Document Date
+  - key: V
+    label: VAT Date
+  - key: C
+    label: System Date
+- field: IncServDoc
+  description: Include Service Documents
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrpBySCode
+  description: Group by Sales Code
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncUnReDoc
+  description: Include Unreconciled Documents
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DoYearSum
+  description: Year Summary
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DefTaxOnly
+  description: Only Include Deferred Tax Docs
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExcElDoc
+  description: Exclude Electronic Documents
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: QtrByMnt
+  description: Quarter by Months
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OnlyExtnTx
+  description: Only External Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IncludeWTR
+  description: Include Inventory Transfers
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FromMark
+  description: MARK From
+  type: nVarChar
+  size: 40
+- field: ToMark
+  description: MARK To
+  type: nVarChar
+  size: 40
+- field: IsueFrDate
+  description: Issue Date From
+  type: Date
+  size: 8
+- field: IsueToDate
+  description: Issue Date To
+  type: Date
+  size: 8
+- field: FromVatNo
+  description: Issuer VAT No. From
+  type: nVarChar
+  size: 64
+- field: ToVatNo
+  description: Issuer VAT No. To
+  type: nVarChar
+  size: 64
+- field: FrInvType
+  description: Invoice Type From
+  type: nVarChar
+  size: 50
+- field: ToInvType
+  description: Invoice Type To
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - ReportName
+  - FilterType

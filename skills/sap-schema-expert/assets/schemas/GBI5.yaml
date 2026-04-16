@@ -1,0 +1,28 @@
+table: GBI5
+description: GBI Row 5 - Projects
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI5.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: PrjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: PrjName
+  description: Project Name
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

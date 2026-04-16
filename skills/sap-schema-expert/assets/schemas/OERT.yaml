@@ -1,0 +1,33 @@
+table: OERT
+description: Excise Register Numbering Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OERT.htm
+fields:
+- field: NumTypeId
+  description: Numbering Type ID
+  type: Int
+  size: 11
+- field: NumTypeNam
+  description: Numbering Type Name
+  type: nVarChar
+  size: 30
+- field: FirstNum
+  description: First Number
+  type: Int
+  size: 11
+- field: NextNum
+  description: Next Number
+  type: Int
+  size: 11
+- field: LastNum
+  description: Last Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - NumTypeId
+- key: TYPE_NAME
+  unique: true
+  fields:
+  - NumTypeNam

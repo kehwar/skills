@@ -1,0 +1,35 @@
+table: OHPS
+description: Employee Position
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHPS.htm
+fields:
+- field: posID
+  description: Item ID
+  type: Int
+  size: 11
+- field: name
+  description: Position Name
+  type: nVarChar
+  size: 20
+- field: descriptio
+  description: Description
+  type: Text
+  size: 16
+- field: LocFields
+  description: Activate Localization Fields
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - posID
+- key: NAME
+  unique: true
+  fields:
+  - name

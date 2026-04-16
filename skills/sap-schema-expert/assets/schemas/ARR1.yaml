@@ -1,0 +1,46 @@
+table: ARR1
+description: Input Service Distribution - Recipient Credit Memo
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ARR1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OIRI
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: StaType
+  description: GST Tax Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '-100'
+    label: CGST
+  - key: '-110'
+    label: SGST
+  - key: '-120'
+    label: IGST
+  - key: '-130'
+    label: Cess GST
+  - key: '-150'
+    label: UTGST
+- field: TaxAcct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+- field: RecAmnt
+  description: Received Amount
+  type: Num
+  size: 19.6
+- field: ElgAmnt
+  description: Eligible Amount
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

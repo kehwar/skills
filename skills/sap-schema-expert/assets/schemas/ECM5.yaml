@@ -1,0 +1,130 @@
+table: ECM5
+description: List of Related Documents for Actions in Electronic Communication
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECM5.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+  related: ECM2
+- field: LogNum
+  description: Log Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 11
+- field: DocAbs
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: UUID
+  description: UUID
+  type: nVarChar
+  size: 50
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Create Time - Incl. Sec.
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Sec.
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: Code
+  description: Communication Type or Protocol
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Invalid
+  - key: '1'
+    label: GEN
+  - key: '2'
+    label: EET
+  - key: '3'
+    label: CFDI
+  - key: '4'
+    label: FPA
+  - key: '5'
+    label: MTD
+  - key: '6'
+    label: EWB
+  - key: '7'
+    label: PEPPOL
+  - key: '8'
+    label: HOI
+  - key: '9'
+    label: MYF
+  - key: '10'
+    label: EIS
+  - key: '11'
+    label: IIS
+  - key: '12'
+    label: IIS_ANNUAL
+  - key: '13'
+    label: DIGIPOORT
+  - key: '14'
+    label: E-Books
+  - key: '16'
+    label: RTIE
+  - key: '17'
+    label: E-Billing
+  - key: '18'
+    label: Tax Service
+  - key: '19'
+    label: AFE
+  - key: '20'
+    label: Doc. Sign.
+  - key: '21'
+    label: KSeF
+  - key: '22'
+    label: GSTReturn
+  - key: '23'
+    label: PT Doc. Sign.
+  - key: '24'
+    label: Skat DK
+  - key: '25'
+    label: EII
+  - key: '27'
+    label: PT eInvoicing
+  - key: '28'
+    label: PT eCom
+  - key: '29'
+    label: Veri*factu
+  - key: '30'
+    label: BAS
+  - key: '32'
+    label: FReINV
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogNum

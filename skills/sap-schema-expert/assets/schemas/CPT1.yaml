@@ -1,0 +1,44 @@
+table: CPT1
+description: Cockpit Subtable
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CPT1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OCPT
+- field: SubEntry
+  description: Subnumber
+  type: Int
+  size: 11
+- field: _Title
+  description: Show Title
+  type: nVarChar
+  size: 20
+- field: WdtEntry
+  description: Widget Entry
+  type: Int
+  size: 11
+  related: OWDT
+- field: _Left
+  description: Left
+  type: Int
+  size: 6
+- field: _Right
+  description: Right
+  type: Int
+  size: 6
+- field: _Top
+  description: Top
+  type: Int
+  size: 6
+- field: _Bottom
+  description: Bottom
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - SubEntry

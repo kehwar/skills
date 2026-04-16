@@ -1,0 +1,46 @@
+table: CPN3
+description: Campaign - Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CPN3.htm
+fields:
+- field: CpnNo
+  description: Campaign No.
+  type: Int
+  size: 11
+  related: OCPN
+- field: CpnLineNum
+  description: Campaign Line Number
+  type: Int
+  size: 11
+- field: ParterId
+  description: Partners
+  type: Int
+  size: 11
+  related: OPRT
+- field: OrlCode
+  description: Relationship Code
+  type: Int
+  size: 11
+  related: OORL
+- field: RelatCard
+  description: Related BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 50
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CpnNo
+  - CpnLineNum

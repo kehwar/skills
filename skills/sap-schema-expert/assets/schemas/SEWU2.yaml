@@ -1,0 +1,22 @@
+table: SEWU2
+description: SEWU2
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWU2.htm
+fields:
+- field: CompDbNam
+  description: Company Db Name
+  type: nVarChar
+  size: 200
+- field: FMSFormId
+  description: FMS FORM ID
+  type: nVarChar
+  size: 20
+- field: NoFMS
+  description: Number Of FMS
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbNam
+  - FMSFormId

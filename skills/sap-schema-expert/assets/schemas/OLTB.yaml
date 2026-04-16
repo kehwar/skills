@@ -1,0 +1,51 @@
+table: OLTB
+description: Location-based Tax Bal Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OLTB.htm
+fields:
+- field: AbsId
+  description: Numerator
+  type: Int
+  size: 11
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: STAType
+  description: Tax Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: STACode
+  description: STA Code
+  type: nVarChar
+  size: 8
+  related: OSTA
+- field: BalaType
+  description: Balance Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: P
+    label: ''
+  - key: R
+    label: ''
+  - key: C
+    label: ''
+  - key: F
+    label: ''
+- field: Balance
+  description: Balance
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: index
+  unique: false
+  fields:
+  - LocCode
+  - STAType
+  - STACode

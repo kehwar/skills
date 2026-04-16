@@ -1,0 +1,60 @@
+table: RTW2
+description: 'Boleto Retorno Wizard: Import Archive'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/RTW2.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry
+  type: Int
+  size: 11
+- field: SequenceNo
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: StampDate
+  description: Time Stamp Date
+  type: Date
+  size: 8
+- field: RetFile
+  description: Retorno File
+  type: nVarChar
+  size: 254
+- field: Format
+  description: File Format Name
+  type: nVarChar
+  size: 100
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+- field: Account
+  description: Acct No.
+  type: nVarChar
+  size: 50
+- field: RunType
+  description: Run Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Draft
+  - key: X
+    label: Executed
+- field: RunRecords
+  description: Run Records
+  type: Int
+  size: 11
+- field: ImCardName
+  description: Import Card Name
+  type: VarChar
+  size: 1
+  default: N
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

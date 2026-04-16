@@ -1,0 +1,41 @@
+table: SLOG
+description: SLOG
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLOG.htm
+fields:
+- field: LogConfig
+  description: Log configuration
+  type: Text
+  size: 16
+- field: UseDBConf
+  description: Use DB configuration
+  type: VarChar
+  size: 1
+- field: ActLog
+  description: Activate Log
+  type: VarChar
+  size: 1
+- field: ModDate
+  description: DB log modification date
+  type: Date
+  size: 8
+- field: LogDefConf
+  description: Log Default configuration
+  type: Text
+  size: 16
+- field: ReposConf
+  description: Log Repository Configuration
+  type: Text
+  size: 16
+- field: AbsKey
+  description: Primary Key
+  type: Identity
+  size: 11
+- field: ModTime
+  description: DB log modification time
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsKey

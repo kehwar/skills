@@ -1,0 +1,122 @@
+table: OEVC
+description: Event Subscription
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OEVC.htm
+fields:
+- field: WebhookID
+  description: Webhook ID
+  type: nVarChar
+  size: 40
+- field: WebhookURL
+  description: Webhook URL
+  type: nVarChar
+  size: 254
+- field: AuthType
+  description: Authentication Type
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: N
+    label: None
+  - key: B
+    label: Basic
+  - key: O
+    label: OAuth
+  - key: H
+    label: HMAC
+- field: AuthCred
+  description: Authentication Credentials
+  type: Text
+  size: 16
+- field: Handshake
+  description: Webhook Handshake
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VerifyCert
+  description: Verify Webhook Endpoint Certificate
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: State
+  description: Webhook State
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Active
+  - key: I
+    label: Inactive
+  - key: X
+    label: Exceptional
+- field: WorkMode
+  description: Work Mode
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Standard
+  - key: R
+    label: Replay
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Timestamp
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Timestamp
+  type: Int
+  size: 11
+- field: LastSentDT
+  description: Last Sent Date
+  type: Date
+  size: 8
+- field: LastSentTM
+  description: Last Sent Timestamp
+  type: Int
+  size: 11
+- field: LastErrMsg
+  description: Last Error Message
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WebhookID
+- key: UNIQUE
+  unique: true
+  fields:
+  - WebhookURL

@@ -1,0 +1,141 @@
+table: CPI20
+description: Intrastat Expenses
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/CPI20.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OCPI
+- field: ExpnsCode
+  description: Freight Code
+  type: Int
+  size: 11
+  related: OEXD
+- field: TotalLC
+  description: Total
+  type: Num
+  size: 19.6
+- field: TotalFC
+  description: Total (FC)
+  type: Num
+  size: 19.6
+- field: TotalSC
+  description: Total (SC)
+  type: Num
+  size: 19.6
+- field: DistribM
+  description: Distribution Method
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: Q
+    label: Quantity
+  - key: V
+    label: Volume
+  - key: W
+    label: Weight
+  - key: E
+    label: Equally
+  - key: T
+    label: Row Total
+- field: DrawnLC
+  description: Drawn Total
+  type: Num
+  size: 19.6
+- field: DrawnFC
+  description: Drawn Total (FC)
+  type: Num
+  size: 19.6
+- field: DrawnSC
+  description: Drawn Total (SC)
+  type: Num
+  size: 19.6
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+  default: -1
+- field: BaseAbsEnt
+  description: Base Abs. Entry
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery Notes
+  - key: '16'
+    label: Return
+  - key: '13'
+    label: A/R Invoice
+  - key: '203'
+    label: Down Payment Incoming
+  - key: '204'
+    label: Down Payment Outgoing
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '18'
+    label: A/P Invoice
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '0'
+    label: ''
+  - key: '-1'
+    label: ''
+- field: BaseRef
+  description: Base Document Reference
+  type: Int
+  size: 11
+- field: BaseLnNum
+  description: Base Document Row No.
+  type: Int
+  size: 11
+  default: -1
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '163'
+- field: FixCurr
+  description: Fixation Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: AppliedLC
+  description: Applied
+  type: Num
+  size: 19.6
+- field: AppliedFC
+  description: Applied (FC)
+  type: Num
+  size: 19.6
+- field: AppliedSC
+  description: Applied (SC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

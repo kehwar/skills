@@ -1,0 +1,126 @@
+table: OVRT
+description: Tax Invoice Report
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OVRT.htm
+fields:
+- field: TxInvRptNo
+  description: Tax Invoice Rpt Number
+  type: nVarChar
+  size: 10
+- field: TxInvRptDt
+  description: Tax Invoice Rpt Create Date
+  type: Date
+  size: 8
+- field: SupBPLId
+  description: Supplier BPL ID
+  type: Int
+  size: 11
+- field: CardCode
+  description: Receipt BP Code
+  type: nVarChar
+  size: 15
+- field: BaseAmt
+  description: Total Base Amount(LC)
+  type: Num
+  size: 19.6
+- field: BlankNo
+  description: Blank Before Total Base Amount
+  type: Int
+  size: 11
+- field: TaxAmt
+  description: Total Tax Amount(LC)
+  type: Num
+  size: 19.6
+- field: Total
+  description: Total Base + Total Tax
+  type: Num
+  size: 19.6
+- field: BPAddress
+  description: Customer Pay to Address
+  type: nVarChar
+  size: 254
+- field: version
+  description: Report Generation Version
+  type: nVarChar
+  size: 50
+- field: ReportType
+  description: 'VAT: Tax Report Type ID'
+  type: Int
+  size: 11
+  related: OKRT
+- field: NTSApprov
+  description: NTS Approved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: NTSWebSite
+  description: E-Tax Web Site
+  type: Int
+  size: 6
+  related: OTWS
+  default: -1
+- field: NTSeTaxNo
+  description: E-Tax Number
+  type: nVarChar
+  size: 50
+- field: NTSApprNo
+  description: NTS Approval Number
+  type: nVarChar
+  size: 50
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: OriNTSAppr
+  description: Original NTS Approval Number
+  type: nVarChar
+  size: 50
+- field: CardName
+  description: Receipt BP Code
+  type: nVarChar
+  size: 200
+- field: RptStatus
+  description: Tax Invoice Report Status
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Saved
+  - key: C
+    label: Canceled
+  - key: R
+    label: Reversed
+- field: OriTaxInvN
+  description: Original Tax Invoice Number
+  type: nVarChar
+  size: 10
+- field: TxInvPrint
+  description: Tax Invoice Report Print Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: A
+    label: Aggregated
+  - key: I
+    label: Individual
+- field: Canceled
+  description: Tax Invoice Report is Canceled or Not
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TxInvRptNo

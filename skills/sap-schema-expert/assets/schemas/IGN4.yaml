@@ -1,0 +1,347 @@
+table: IGN4
+description: Goods Receipt - Tax Amount per Document
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IGN4.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OIGN
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: GroupNum
+  description: Group Number
+  type: Int
+  size: 11
+  default: -1
+- field: ExpnsCode
+  description: Expense Code
+  type: Int
+  size: 11
+  related: OEXD
+  default: -1
+- field: RelateType
+  description: Relation Type
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: Row
+  - key: '2'
+    label: Row Freight Charges
+  - key: '3'
+    label: Document Expenses
+  - key: '13'
+    label: Distributed Freights
+- field: StcCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: StaCode
+  description: Authority Code
+  type: nVarChar
+  size: 8
+  related: OSTA
+- field: staType
+  description: Authority Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: TaxRate
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: TaxAcct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TaxSum
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: TaxSumFrgn
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: TaxSumSys
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseSum
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: BaseSumFrg
+  description: Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseSumSys
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '13'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: TaxStatus
+  description: Tax Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Regular Tax
+  - key: N
+    label: No Tax
+  - key: U
+    label: Use Tax
+- field: VatApplied
+  description: VAT Applied
+  type: Num
+  size: 19.6
+- field: VatAppldFC
+  description: Applied Tax (FC)
+  type: Num
+  size: 19.6
+- field: VatAppldSC
+  description: Applied Tax (SC)
+  type: Num
+  size: 19.6
+- field: LineSeq
+  description: Line Sequence
+  type: Int
+  size: 11
+- field: DeferrAcct
+  description: Deferred Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+- field: BaseAbs
+  description: Base Doc Abs Entry
+  type: Int
+  size: 11
+  default: -1
+- field: BaseSeq
+  description: Base Doc. Line Sequence
+  type: Int
+  size: 11
+- field: DeductTax
+  description: Deductible Tax Amount
+  type: Num
+  size: 19.6
+- field: DdctTaxFrg
+  description: Deductible Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: DdctTaxSys
+  description: Deductible Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseAppld
+  description: Applied Base Amount
+  type: Num
+  size: 19.6
+- field: BaseApldFC
+  description: Applied Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: BaseApldSC
+  description: Applied Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: NonDdctPrc
+  description: Non Deductible %
+  type: Num
+  size: 19.6
+- field: NonDdctAct
+  description: Non Deductible Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TaxInPrice
+  description: Tax Included in Price?
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Exempt
+  description: Exempt?
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxExpAct
+  description: Expense Account for Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OnHoldTax
+  description: On Hold Tax Amount
+  type: Num
+  size: 19.6
+- field: OnHoldTaxF
+  description: On Hold Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: OnHoldTaxS
+  description: On Hold Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: InGrossRev
+  description: Included in Gross Revenue
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxSumOrg
+  description: Tax Amount Original
+  type: Num
+  size: 19.6
+- field: TaxSumOrgF
+  description: Tax Amount Original (FC)
+  type: Num
+  size: 19.6
+- field: TaxSumOrgS
+  description: Tax Amount Original (SC)
+  type: Num
+  size: 19.6
+- field: OpenTax
+  description: Open Service Tax
+  type: Num
+  size: 19.6
+- field: OpenTaxFC
+  description: Open Service Tax (FC)
+  type: Num
+  size: 19.6
+- field: OpenTaxSC
+  description: Open Service Tax (SC)
+  type: Num
+  size: 19.6
+- field: Unencumbrd
+  description: Unencumbered
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxOnRI
+  description: Tax On Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RvsChrgPrc
+  description: Reverse Charge %
+  type: Num
+  size: 19.6
+- field: RvsChrgTax
+  description: Reverse Charge Tax Amount
+  type: Num
+  size: 19.6
+- field: RvsChrgSC
+  description: Reverse Charge Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: RvsChrgFC
+  description: Reverse Charge Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: InFirstIns
+  description: Included in First Installment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExtTaxRate
+  description: External Tax Rate
+  type: Num
+  size: 19.6
+- field: ExtTaxSum
+  description: External Tax Amount
+  type: Num
+  size: 19.6
+- field: TaxAmtSrc
+  description: Tax Amount Source
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Internal System Calculation
+  - key: E
+    label: External Calculation
+- field: ExtTaxSumF
+  description: External Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExtTaxSumS
+  description: External Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: CESTrel
+  description: CEST Relevant
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineSeq
+- key: SCONDARY
+  unique: false
+  fields:
+  - DocEntry
+  - LineNum
+  - GroupNum
+  - ExpnsCode
+  - StcCode
+  - StaCode
+  - staType

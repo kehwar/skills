@@ -1,0 +1,30 @@
+table: OPOS
+description: POS Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OPOS.htm
+fields:
+- field: EquipNo
+  description: Equipment No.
+  type: nVarChar
+  size: 20
+- field: Model
+  description: Model
+  type: nVarChar
+  size: 20
+- field: ManufSN
+  description: Manufacturer Serial No.
+  type: nVarChar
+  size: 21
+- field: RegNo
+  description: Register No.
+  type: Int
+  size: 6
+- field: NFModel
+  description: Fiscal Document Model
+  type: nVarChar
+  size: 6
+  related: ONFM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EquipNo

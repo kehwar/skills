@@ -1,0 +1,42 @@
+table: BOC1
+description: External Bank Operation Code - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/BOC1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OBOC
+- field: ExOpCode
+  description: External Bank Operation Code
+  type: nVarChar
+  size: 40
+- field: OPDscrpt
+  description: Operation Description
+  type: nVarChar
+  size: 40
+- field: InOpCode
+  description: Internal Bank Operation Code
+  type: Int
+  size: 11
+  related: OBTC
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: LineId
+  description: Row
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ExOpCode
+- key: BY_LINE
+  unique: true
+  fields:
+  - AbsEntry
+  - LineId

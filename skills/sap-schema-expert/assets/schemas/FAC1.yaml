@@ -1,0 +1,83 @@
+table: FAC1
+description: Fixed Asset Parameter Change - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FAC1.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OFAC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: TransType
+  description: Transaction Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: '0'
+    label: Unknown
+  - key: '510'
+    label: Change of Depreciation Type
+  - key: '520'
+    label: Change of Useful Life
+  - key: '530'
+    label: Change of Depreciation Start Date
+  - key: '540'
+    label: Change of Salvage Value
+  - key: '560'
+    label: Change of Period Control
+- field: OldDprType
+  description: Old Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: NewDprType
+  description: New Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: OldUsfLife
+  description: Old Useful Life
+  type: Int
+  size: 11
+- field: NewUsfLife
+  description: New Useful Life
+  type: Int
+  size: 11
+- field: OldDprDate
+  description: Old Depreciation Start Date
+  type: Date
+  size: 8
+- field: NewDprDate
+  description: New Depreciation Start Date
+  type: Date
+  size: 8
+- field: OldSalVal
+  description: Old Salvage Value
+  type: Num
+  size: 19.6
+- field: NewSalVal
+  description: New Salvage Value
+  type: Num
+  size: 19.6
+- field: OldTtlUnit
+  description: Old Total Units
+  type: Int
+  size: 11
+- field: NewTtlUnit
+  description: New Total Units
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum

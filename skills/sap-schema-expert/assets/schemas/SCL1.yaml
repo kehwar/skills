@@ -1,0 +1,60 @@
+table: SCL1
+description: Service Call Solutions - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/SCL1.htm
+fields:
+- field: srvcCallID
+  description: Service Call No.
+  type: Int
+  size: 11
+  related: OSCL
+- field: line
+  description: Row No.
+  type: Int
+  size: 6
+  default: -1
+- field: solutionID
+  description: Solution ID
+  type: Int
+  size: 11
+  related: OSLT
+- field: objType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '191'
+- field: logInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: userSign
+  description: Creating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: createDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: VisOredr
+  description: Visual Order
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - srvcCallID
+  - line

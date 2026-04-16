@@ -1,0 +1,35 @@
+table: ODIM
+description: Cost Accounting Dimension
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ODIM.htm
+fields:
+- field: DimCode
+  description: Dimension Code
+  type: Int
+  size: 6
+- field: DimName
+  description: Dimension Name
+  type: nVarChar
+  size: 15
+- field: DimActive
+  description: Activated? [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DimDesc
+  description: Dimension Description
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DimCode
+- key: DIM_KEY
+  unique: false
+  fields:
+  - DimName

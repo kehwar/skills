@@ -1,0 +1,52 @@
+table: OCMF
+description: Common Functions of Fiori-Style Cockpit
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OCMF.htm
+fields:
+- field: UserID
+  description: User ID
+  type: Int
+  size: 6
+  related: OUSR
+- field: ItemIndex
+  description: Common Function Item Index
+  type: Int
+  size: 11
+- field: MenuUID
+  description: Menu UID
+  type: nVarChar
+  size: 50
+- field: GroupID
+  description: Authorization Group ID
+  type: Int
+  size: 6
+  related: OUGR
+- field: MenuType
+  description: Menu Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: System Menu
+  - key: O
+    label: Menu of User Defined Object
+  - key: Q
+    label: Menu of User Defined Query
+  - key: A
+    label: Menu added by UI API
+  - key: N
+    label: Menu added by Unknown Source
+- field: CmfMenuId
+  description: Common Function Menu ID
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UserID
+  - ItemIndex
+- key: INDEX
+  unique: false
+  fields:
+  - ItemIndex

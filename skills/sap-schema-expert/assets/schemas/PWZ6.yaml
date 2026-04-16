@@ -1,0 +1,63 @@
+table: PWZ6
+description: Payment Wizard Rows - 6
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/PWZ6.htm
+fields:
+- field: IdEntry
+  description: ID Number
+  type: Int
+  size: 11
+  related: OPWZ
+- field: CondNum
+  description: Condition Number
+  type: Int
+  size: 11
+- field: SelFldID
+  description: Selection Field ID
+  type: nVarChar
+  size: 100
+- field: FromString
+  description: From String Value
+  type: nVarChar
+  size: 200
+- field: FromNumber
+  description: From Number Value
+  type: Int
+  size: 11
+- field: FromMoney
+  description: From Amount Value
+  type: Num
+  size: 19.6
+- field: FromDate
+  description: From Date Value
+  type: Date
+  size: 8
+- field: FromMemo
+  description: From Memo Value
+  type: Text
+  size: 16
+- field: ToString
+  description: To String Value
+  type: nVarChar
+  size: 200
+- field: ToNumber
+  description: To Number Value
+  type: Int
+  size: 11
+- field: ToMoney
+  description: To Amount Value
+  type: Num
+  size: 19.6
+- field: ToDate
+  description: To Date Value
+  type: Date
+  size: 8
+- field: ToMemo
+  description: To Memo Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IdEntry
+  - CondNum

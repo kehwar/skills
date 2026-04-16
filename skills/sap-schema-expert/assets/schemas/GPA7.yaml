@@ -1,0 +1,39 @@
+table: GPA7
+description: Product Cost Adjustment - Journal Entry Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/GPA7.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+  related: OGPA
+- field: PostDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  default: 0
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 100
+- field: JERemarks
+  description: Journal Remarks
+  type: nVarChar
+  size: 254
+- field: MRVRef
+  description: MRV Entry Reference
+  type: nVarChar
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,70 @@
+table: CDPM
+description: Dynamic Permission
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CDPM.htm
+fields:
+- field: PermId
+  description: Permission ID
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: ObjectType
+  description: Object Type
+  type: Int
+  size: 11
+- field: ObjectKey
+  description: Object ID
+  type: nVarChar
+  size: 200
+- field: Father
+  description: Parent
+  type: Int
+  size: 11
+- field: PermOption
+  description: Permission Option
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Full/Read/None
+  - key: '1'
+    label: Full/None
+  - key: '2'
+    label: Full/None/Saved Queries
+- field: System
+  description: System Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Hidden
+  description: Hidden
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SortOrder
+  description: Sort Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PermId
+- key: OBJECT
+  unique: false
+  fields:
+  - ObjectType
+  - Name

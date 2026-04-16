@@ -1,0 +1,117 @@
+table: RTM1
+description: Rate Differences - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/RTM1.htm
+fields:
+- field: LineNum
+  description: Reconciliation Key
+  type: Int
+  size: 11
+- field: TransId
+  description: Journal Key
+  type: Int
+  size: 11
+  related: OJDT
+- field: JdtLine
+  description: Journal Row
+  type: Int
+  size: 11
+  default: 0
+- field: IsSysCurr
+  description: Is System Currency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AcctCode
+  description: G/L Account/BP Code
+  type: nVarChar
+  size: 15
+- field: Balance
+  description: Balance
+  type: Num
+  size: 19.6
+- field: FrnBlnc
+  description: Balance (FC)
+  type: Num
+  size: 19.6
+- field: Valid
+  description: Confirmed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevalRate
+  description: Revaluation Rate
+  type: Num
+  size: 19.6
+- field: Delta
+  description: Difference in LC
+  type: Num
+  size: 19.6
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+- field: JdtAcctCod
+  description: Journal Account Code
+  type: nVarChar
+  size: 15
+- field: BaseRef
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: JdtType
+  description: Journal Entry Type
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: P
+    label: Primary
+  - key: G
+    label: Generated
+  - key: W
+    label: Without Primary
+  - key: U
+    label: Undefined Type
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: CntBlnc
+  description: Converted Balance
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LineNum
+  - TransId
+  - JdtLine
+  - IsSysCurr
+- key: SYS_CURR
+  unique: false
+  fields:
+  - IsSysCurr

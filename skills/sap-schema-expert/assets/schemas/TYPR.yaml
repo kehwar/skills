@@ -1,0 +1,55 @@
+table: TYPR
+description: TYPR
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/TYPR.htm
+fields:
+- field: CODE
+  description: Report Type
+  type: nVarChar
+  size: 4
+- field: NAME
+  description: Type Name
+  type: nVarChar
+  size: 250
+- field: DEFLT_REP
+  description: Standard Report
+  type: nVarChar
+  size: 8
+- field: Local
+  description: Localization
+  type: nVarChar
+  size: 2
+- field: Created
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Updated
+  description: Updated Date
+  type: Date
+  size: 8
+- field: UsrSgnStr
+  description: User Sign For Strings Change
+  type: Int
+  size: 11
+  default: -1
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CODE
+  - Local
+  - ResCode
+  - RevCode
+- key: TYPE
+  unique: false
+  fields:
+  - CODE

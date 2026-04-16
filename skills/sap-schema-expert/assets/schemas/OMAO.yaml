@@ -1,0 +1,114 @@
+table: OMAO
+description: Mobile Add-On Setting
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMAO.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 200
+- field: URL
+  description: Entry URL
+  type: Text
+  size: 16
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Module
+  - key: H
+    label: Home
+- field: Provider
+  description: Provider
+  type: nVarChar
+  size: 200
+- field: ViewStyle
+  description: View Style
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Page - Universal
+  - key: F
+    label: Full Screen - iPad
+  - key: L
+    label: Landscape only - iPad
+- field: LogonMethd
+  description: Logon Method
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: B1i Framework
+  - key: S
+    label: Standard Logon
+  - key: N
+    label: No Control
+- field: LogonPyld
+  description: Logon Payload
+  type: nVarChar
+  size: 254
+  default: user={value1}&pwd={value2}
+- field: Enable
+  description: Enable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: System
+  description: System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: B1MobileAp
+  description: SAP Business One
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: B1SalesApp
+  description: SAP Business One Sales
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: B1SrvcApp
+  description: SAP Business One Service
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

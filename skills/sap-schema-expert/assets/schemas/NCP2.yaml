@@ -1,0 +1,31 @@
+table: NCP2
+description: New Cockpit Tile
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/NCP2.htm
+fields:
+- field: PageEntry
+  description: Page Number
+  type: Int
+  size: 11
+  related: ONCP
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 20
+  related: NCP1
+- field: ObjectType
+  description: Object Type
+  type: Int
+  size: 11
+  related: CDPM
+- field: ObjectKey
+  description: Object ID
+  type: nVarChar
+  size: 50
+  related: CDPM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PageEntry
+  - ObjectType
+  - ObjectKey

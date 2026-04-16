@@ -1,0 +1,57 @@
+table: OJST
+description: TDS Adjustment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OJST.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 50
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 11
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Generation Time
+  type: Int
+  size: 11
+- field: DepositNum
+  description: Deposit Number
+  type: Int
+  size: 11
+  related: OVPM
+- field: CertNum
+  description: Certificate Number
+  type: nVarChar
+  size: 31
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId

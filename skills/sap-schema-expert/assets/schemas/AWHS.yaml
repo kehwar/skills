@@ -1,0 +1,640 @@
+table: AWHS
+description: Warehouses - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AWHS.htm
+fields:
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: WhsName
+  description: Warehouse Name
+  type: nVarChar
+  size: 100
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: Grp_Code
+  description: Group Code
+  type: nVarChar
+  size: 4
+- field: BalInvntAc
+  description: Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaleCostAc
+  description: Cost of Goods Sold Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TransferAc
+  description: Allocation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: RevenuesAc
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VarianceAc
+  description: Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecreasAc
+  description: Inventory Offset - Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncreasAc
+  description: Inventory Offset - Increase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReturnAc
+  description: Sales Returns Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpensesAc
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EURevenuAc
+  description: Revenue Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EUExpensAc
+  description: Expense Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrRevenuAc
+  description: Revenue Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrExpensAc
+  description: Expense Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: Block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: County
+  description: County
+  type: nVarChar
+  size: 100
+  related: OCNT
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: State
+  description: Status
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+  related: OLCT
+- field: DropShip
+  description: Drop-Ship
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ExmptIncom
+  description: Exempt Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UseTax
+  description: Allow Use Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PriceDifAc
+  description: Price Difference Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExchangeAc
+  description: Exchange Rate Differences Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalanceAcc
+  description: Goods Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchaseAc
+  description: Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PAReturnAc
+  description: Purchase Return Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchOfsAc
+  description: Purchase Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FedTaxID
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: Building
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: ShpdGdsAct
+  description: Shipped Goods Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatRevAct
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecresGlAc
+  description: G/L Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncresGlAc
+  description: G/L Increase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Nettable
+  description: Nettable
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: StokRvlAct
+  description: Inventory Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkOffsAct
+  description: Inventory Revaluation Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipAcct
+  description: WIP Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipVarAcct
+  description: WIP Inventory Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostRvlAct
+  description: COGS Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CstOffsAct
+  description: COGS Revaluation Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpClrAct
+  description: Expense Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpOfstAct
+  description: Expense Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: objType
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '64'
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Date of Update - History
+  type: Date
+  size: 8
+- field: ARCMAct
+  description: Sales Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMFrnAct
+  description: Sales Credit Foreign Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMEUAct
+  description: Sales Credit EU Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMExpAct
+  description: Exempted Credits
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMAct
+  description: Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMFrnAct
+  description: Foreign Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMEUAct
+  description: EU Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevRetAct
+  description: Revenue Returns Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BPLid
+  description: Business Place ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: OwnerCode
+  description: Owner Code
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Company Item Property
+  - key: '2'
+    label: Third-Party Warehouse
+  - key: '3'
+    label: Third-Party Warehouse
+- field: NegStckAct
+  description: Negative Stock Adjustment Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkInTnAct
+  description: Stock In Transit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AddrType
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNo
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: PurBalAct
+  description: Purchase Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Excisable
+  description: Excisable [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WhICenAct
+  description: Incoming CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhOCenAct
+  description: Outgoing CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhShipTo
+  description: Ship-to Name (WH)
+  type: nVarChar
+  size: 100
+- field: WipOffset
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockOffst
+  description: Inventory Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StorKeeper
+  description: Storekeeper
+  type: Int
+  size: 11
+  related: OHEM
+- field: Shipper
+  description: Shipper
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: BinActivat
+  description: Bin Activated [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BinSeptor
+  description: Bin Separator
+  type: nVarChar
+  size: 5
+  default: '-'
+- field: DftBinAbs
+  description: Default Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: DftBinEnfd
+  description: Default Bin Enforced [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AutoIssMtd
+  description: Auto. Issue Method
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Single Choice
+  - key: '1'
+    label: Bin Location Code Order
+  - key: '2'
+    label: Alternative Sort Code Order
+  - key: '3'
+    label: Descending Quantity
+  - key: '4'
+    label: Ascending Quantity
+  - key: '7'
+    label: Ascending Quantity - Single Bin Preferred
+  - key: '5'
+    label: FIFO
+  - key: '6'
+    label: LIFO
+- field: ManageSnB
+  description: Drop-Ship Manage SnB
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: RecItemsBy
+  description: Receiving Bin Locations Method
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Bin Location Code Order
+  - key: '1'
+    label: Alternative Sort Code Order
+- field: RecBinEnab
+  description: Enable Receiving Bin Locations
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GlblLocNum
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: RecvEmpBin
+  description: Restrict Receipts to Empty Bin
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Inactive
+  description: Inactive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RecvMaxQty
+  description: Recv. up to Max. Qty
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AutoRecvMd
+  description: Auto. Receipt Method
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Default Bin Location
+  - key: '1'
+    label: Last Bin Location That Received Item
+  - key: '2'
+    label: Item's Current Bin Locations
+  - key: '3'
+    label: Item's Current and Historical Bin Locations
+- field: RecvMaxWT
+  description: Recv. up to Max. Weight
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RecvUpTo
+  description: Receive up to
+  type: nVarChar
+  size: 6
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Maximum Qty
+  - key: '1'
+    label: Maximum Weight
+  - key: '2'
+    label: Max. Qty and Weight
+- field: FreeChrgSA
+  description: Free of Charge Sales Account
+  type: nVarChar
+  size: 15
+- field: FreeChrgPU
+  description: Free of Charge Purchase Account
+  type: nVarChar
+  size: 15
+- field: TaxOffice
+  description: Tax Office
+  type: nVarChar
+  size: 50
+- field: Address2
+  description: Address Name 2
+  type: nVarChar
+  size: 50
+- field: Address3
+  description: Address Name 3
+  type: nVarChar
+  size: 50
+- field: External
+  description: External
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: LegalText
+  description: Legal Text
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WhsCode
+  - logInstanc

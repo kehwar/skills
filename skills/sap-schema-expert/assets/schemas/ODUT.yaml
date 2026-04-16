@@ -1,0 +1,142 @@
+table: ODUT
+description: Dunning Terms
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/ODUT.htm
+fields:
+- field: TermCode
+  description: Dunning Term Code
+  type: nVarChar
+  size: 25
+- field: TermName
+  description: Dunning Term Name
+  type: nVarChar
+  size: 100
+- field: GrpMethod
+  description: Grouping Method
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: I
+    label: One Letter per Invoice
+  - key: L
+    label: One Letter per Dunning Level
+  - key: B
+    label: One Letter per BP
+- field: YearDays
+  description: Days in Year
+  type: Int
+  size: 6
+  default: 360
+- field: MonthDays
+  description: Days in Month
+  type: Int
+  size: 6
+  default: 30
+- field: RemIntrst
+  description: Calc. Interest Rem/Orig Sum
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: XchgOrig
+  description: Exchange Rate Orig/Current
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: YearlyRate
+  description: Yearly Interest Rate
+  type: Num
+  size: 19.6
+- field: MaxLevel
+  description: Max Dunning Level
+  type: Int
+  size: 6
+  default: 0
+- field: TotalFee
+  description: All Total Fee
+  type: Num
+  size: 19.6
+- field: FeeCurr
+  description: All Fee Currency
+  type: nVarChar
+  size: 3
+- field: MinBalance
+  description: All Min. Balance
+  type: Num
+  size: 19.6
+- field: BalCurr
+  description: All Balance Currency
+  type: nVarChar
+  size: 3
+- field: CalcIntr
+  description: All Calc. Interest
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LetterFrmt
+  description: All Letter Format
+  type: nVarChar
+  size: 8
+- field: HiLtrFrmt
+  description: Apply Highest Letter Template
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DateCalInt
+  description: Base Date for Interest Calc.
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: From Due Date
+  - key: N
+    label: From Last Dunning Run
+- field: AutoPost
+  description: Automatic Posting
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: B
+    label: Interest and Fee
+  - key: I
+    label: Interest Only
+  - key: F
+    label: Fee Only
+- field: IntrAcc
+  description: Interest Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FeeAcc
+  description: Fee Account
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TermCode

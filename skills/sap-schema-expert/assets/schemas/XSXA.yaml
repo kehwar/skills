@@ -1,0 +1,33 @@
+table: XSXA
+description: XS XApp Registration Info
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XSXA.htm
+fields:
+- field: XID
+  description: XID
+  type: nVarChar
+  size: 64
+- field: NAME
+  description: NAME
+  type: nVarChar
+  size: 254
+- field: VERSION
+  description: VERSION
+  type: nVarChar
+  size: 64
+- field: PACKAGE
+  description: PACKAGE
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - XID
+- key: XS_NAME
+  unique: true
+  fields:
+  - NAME
+- key: XS_PACKAGE
+  unique: true
+  fields:
+  - PACKAGE

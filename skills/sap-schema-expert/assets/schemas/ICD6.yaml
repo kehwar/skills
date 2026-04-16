@@ -1,0 +1,41 @@
+table: ICD6
+description: Inventory Counting Draft - Team Counter - Row UoM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ICD6.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OINC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ChildNum
+  description: Child Number
+  type: Int
+  size: 11
+- field: CounterNum
+  description: Counter Number
+  type: Int
+  size: 11
+- field: UomQty
+  description: UoM Counted Qty
+  type: Num
+  size: 19.6
+- field: InvtQty
+  description: Counted Qty of Inventory UoM
+  type: Num
+  size: 19.6
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - ChildNum
+  - CounterNum

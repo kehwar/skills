@@ -1,0 +1,36 @@
+table: RHKY
+description: Hotkeys
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RHKY.htm
+fields:
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Num
+  description: Hotkey Number
+  type: Int
+  size: 11
+- field: FormName
+  description: Form name
+  type: nVarChar
+  size: 64
+- field: ItemNum
+  description: Item number
+  type: Int
+  size: 11
+- field: HkeyIndex
+  description: Hotkey Index in String
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Num
+- key: ITEM
+  unique: true
+  fields:
+  - Language
+  - FormName
+  - ItemNum

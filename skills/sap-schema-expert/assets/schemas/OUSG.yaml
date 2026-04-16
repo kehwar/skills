@@ -1,0 +1,144 @@
+table: OUSG
+description: Usage of Nota Fiscal
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUSG.htm
+fields:
+- field: ID
+  description: Usage ID
+  type: Int
+  size: 11
+- field: Usage
+  description: Usage
+  type: nVarChar
+  size: 20
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Incr.
+  - key: D
+    label: Data Doc.
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: nVarChar
+  size: 6
+  related: OUSR
+- field: PostTax
+  description: Post Tax in Price to Stock
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: 'Yes'
+  - key: '0'
+    label: 'No'
+- field: TaxOnly
+  description: Tax Only
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CFOPIIS
+  description: CFOP Incoming In-State
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: CFOPIOS
+  description: CFOP Incoming Out-State
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: CFOPII
+  description: CFOP Incoming Import
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: CFOPOIS
+  description: CFOP Outgoing In-State
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: CFOPOOS
+  description: CFOP Outgoing Out-State
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: CFOPOE
+  description: CFOP Outgoing Export
+  type: nVarChar
+  size: 6
+  related: OCFP
+- field: Descr
+  description: Usage Description
+  type: nVarChar
+  size: 100
+- field: FreeChrgBP
+  description: Free of Charge (BP)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ThirdParty
+  description: Third Party
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Adjustment
+  description: Adjustment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

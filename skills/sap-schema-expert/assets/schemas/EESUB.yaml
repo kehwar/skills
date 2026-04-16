@@ -1,0 +1,41 @@
+table: EESUB
+description: EESUB
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/EESUB.htm
+fields:
+- field: EventType
+  description: ''
+  type: nVarChar
+  size: 30
+- field: Processor
+  description: ''
+  type: nVarChar
+  size: 60
+- field: ReceiverId
+  description: ''
+  type: nVarChar
+  size: 50
+- field: ReturnAddr
+  description: ''
+  type: nVarChar
+  size: 254
+- field: SenderId
+  description: ''
+  type: nVarChar
+  size: 50
+- field: FilterName
+  description: ''
+  type: nVarChar
+  size: 60
+- field: FilterVal
+  description: ''
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EventType
+  - Processor
+  - ReturnAddr
+  - ReceiverId
+  - SenderId

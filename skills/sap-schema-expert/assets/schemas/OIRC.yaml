@@ -1,0 +1,51 @@
+table: OIRC
+description: Interactive Report Category
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OIRC.htm
+fields:
+- field: CategoryId
+  description: Category Id
+  type: Int
+  size: 11
+- field: ParentId
+  description: Parent Category Id
+  type: Int
+  size: 11
+  default: -1
+- field: Name
+  description: Category Name
+  type: nVarChar
+  size: 254
+- field: ResKey
+  description: Resource Key
+  type: nVarChar
+  size: 128
+- field: Comment
+  description: Comment
+  type: nVarChar
+  size: 254
+- field: System
+  description: System
+  type: VarChar
+  size: 1
+  default: N
+- field: CreateBy
+  description: Created By
+  type: nVarChar
+  size: 25
+- field: CreateDate
+  description: Creation Timestamp
+  type: Date
+  size: 8
+- field: ModifyBy
+  description: Modified By
+  type: nVarChar
+  size: 25
+- field: ModifyDate
+  description: Modification Timestamp
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CategoryId

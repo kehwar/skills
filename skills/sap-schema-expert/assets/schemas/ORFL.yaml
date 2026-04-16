@@ -1,0 +1,65 @@
+table: ORFL
+description: Already Displayed 347, 349 and WTax Reports
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ORFL.htm
+fields:
+- field: ReportType
+  description: Report Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: '347'
+  - key: '2'
+    label: '349'
+  - key: '3'
+    label: WT
+  - key: '4'
+    label: O & P
+  - key: '5'
+    label: Annual List
+  - key: '6'
+    label: Tax Report
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '13'
+    label: Invoice
+  - key: '14'
+    label: Revert Invoice
+  - key: '18'
+    label: Purchase
+  - key: '19'
+    label: Revert purchase
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row No.
+  type: Int
+  size: 11
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+- field: OrdinalNum
+  description: Ordinal Num (BTF & Cancelled)
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - ReportType
+  - DocType
+  - LineNum
+  - TaxCode
+  - OrdinalNum

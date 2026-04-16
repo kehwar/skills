@@ -1,0 +1,30 @@
+table: OBFI
+description: Brazil Fuel Indexer
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OBFI.htm
+fields:
+- field: Code
+  description: Fuel Code
+  type: nVarChar
+  size: 10
+- field: FGroupCode
+  description: Fuel Group Code
+  type: Int
+  size: 11
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ID
+  description: ID
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

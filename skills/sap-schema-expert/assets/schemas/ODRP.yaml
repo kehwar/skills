@@ -1,0 +1,171 @@
+table: ODRP
+description: Personal Data Retention Periods
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ODRP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PeriodCode
+  description: Period Code
+  type: nVarChar
+  size: 20
+- field: PeriodName
+  description: Period Description
+  type: nVarChar
+  size: 100
+- field: DatSubType
+  description: Data Subject Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: OCRD
+    label: Business Partner
+  - key: OCPR
+    label: Contact Person
+  - key: OHEM
+    label: Employee
+  - key: OUSR
+    label: User
+  - key: CPN1
+    label: Campaign - BP
+  - key: OUDO
+    label: User-Defined Object
+- field: ObjType
+  description: Object Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: All
+  - key: '2'
+    label: Business Partner
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery Notes
+  - key: '234000031'
+    label: Return Request
+  - key: '16'
+    label: Return
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '234000032'
+    label: Goods Return Request
+  - key: '21'
+    label: Goods Return
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '69'
+    label: Landed Costs
+  - key: '24'
+    label: Incoming Payments
+  - key: '46'
+    label: Outgoing Payments
+  - key: '57'
+    label: Checks for Payment
+- field: PeriodYear
+  description: Period Years
+  type: Int
+  size: 11
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Active
+  - key: N
+    label: Inactive
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTime
+  description: Update Time
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - PeriodCode

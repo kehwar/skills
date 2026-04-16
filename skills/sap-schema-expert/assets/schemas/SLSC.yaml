@@ -1,0 +1,53 @@
+table: SLSC
+description: Local Settings Components CABs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLSC.htm
+fields:
+- field: LocCode
+  description: LocalCode
+  type: nVarChar
+  size: 3
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Chart of accounts
+  - key: R
+    label: Reports
+  - key: O
+    label: Objects
+  - key: P
+    label: CR Report
+  - key: L
+    label: CR Layout
+  - key: H
+    label: HANA Content
+- field: DataCab
+  description: Data CAB
+  type: Text
+  size: 16
+- field: System
+  description: System package
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LocCode
+  - Code

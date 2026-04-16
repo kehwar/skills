@@ -1,0 +1,51 @@
+table: VRT1
+description: Tax Invoice Report - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/VRT1.htm
+fields:
+- field: TxInvRptNo
+  description: Tax Invoice Report No.
+  type: nVarChar
+  size: 10
+  related: OVRT
+- field: SeqNo
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: MD
+  description: Original Date of Line Item
+  type: Date
+  size: 8
+- field: ItemDesc
+  description: Description of Line Item
+  type: nVarChar
+  size: 200
+- field: Unit
+  description: Unit of Line Item
+  type: nVarChar
+  size: 100
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: UnitPrice
+  description: Unit Price
+  type: Num
+  size: 19.6
+- field: BaseAmt
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: TaxAmt
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TxInvRptNo
+  - SeqNo

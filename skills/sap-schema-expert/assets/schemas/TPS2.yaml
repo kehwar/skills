@@ -1,0 +1,29 @@
+table: TPS2
+description: Tax Parameter - Return Values
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TPS2.htm
+fields:
+- field: TpsId
+  description: Tax Parameter Set
+  type: Int
+  size: 11
+  related: OTPS
+- field: DispOrder
+  description: Display Order
+  type: Int
+  size: 11
+- field: TprId
+  description: ID of Return Values Mapping
+  type: Int
+  size: 11
+  related: OTPR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TpsId
+  - TprId
+- key: ORDER
+  unique: true
+  fields:
+  - TpsId
+  - DispOrder

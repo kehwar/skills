@@ -1,0 +1,66 @@
+table: OWPM
+description: Process Map
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWPM.htm
+fields:
+- field: Guid
+  description: GUID of Process Map
+  type: nVarChar
+  size: 40
+- field: Name
+  description: Process Map Name
+  type: nVarChar
+  size: 254
+- field: IsActive
+  description: Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Active
+  - key: N
+    label: Inactive
+  - key: D
+    label: Draft
+- field: Note
+  description: Note
+  type: nVarChar
+  size: 254
+- field: TileEnable
+  description: Display as Tile on Home Page
+  type: VarChar
+  size: 1
+  default: N
+- field: IsSystem
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: CreateBy
+  description: Create By
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateBy
+  description: Update By
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

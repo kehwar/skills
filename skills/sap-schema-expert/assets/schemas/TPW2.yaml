@@ -1,0 +1,51 @@
+table: TPW2
+description: Payable Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/TPW2.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry No
+  type: Int
+  size: 11
+  related: OTPW
+- field: LineNumber
+  description: Line Number
+  type: Int
+  size: 11
+- field: TaxCategry
+  description: Tax Category
+  type: Int
+  size: 11
+- field: TaxType
+  description: Tax Type
+  type: Int
+  size: 11
+- field: PyblAmnt
+  description: Payable Amount
+  type: Num
+  size: 19.6
+- field: PyblAmntFC
+  description: Payable Amount FC
+  type: Num
+  size: 19.6
+- field: PyblAmntSC
+  description: Payable Amount SC
+  type: Num
+  size: 19.6
+- field: PLAAmnt
+  description: P.L.A. Amount
+  type: Num
+  size: 19.6
+- field: PLAAmntFC
+  description: P.L.A. Amount (FC)
+  type: Num
+  size: 19.6
+- field: PLAAmntSC
+  description: P.L.A. Amount (SC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNumber

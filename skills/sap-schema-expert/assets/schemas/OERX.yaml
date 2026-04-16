@@ -1,0 +1,27 @@
+table: OERX
+description: Excise Register Numbering Ext
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OERX.htm
+fields:
+- field: ErnId
+  description: Excise Register Numbering ID
+  type: Int
+  size: 11
+- field: Location
+  description: Loc.
+  type: Int
+  size: 11
+  related: OLCT
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ErnId
+- key: LOC_KEY
+  unique: true
+  fields:
+  - Location

@@ -1,0 +1,24 @@
+table: UIC6
+description: Template Group Customization
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC6.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: GroupID
+  description: Group ID
+  type: Int
+  size: 6
+  related: OUGR
+- field: IsTemplate
+  description: Is Template
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+  - GroupID

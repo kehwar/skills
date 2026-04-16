@@ -1,0 +1,334 @@
+table: OCPR
+description: Contact Persons
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OCPR.htm
+fields:
+- field: CntctCode
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Name
+  description: Contact Person Name
+  type: nVarChar
+  size: 50
+- field: Position
+  description: Position
+  type: nVarChar
+  size: 90
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: Tel1
+  description: Telephone 1
+  type: nVarChar
+  size: 50
+- field: Tel2
+  description: Telephone 2
+  type: nVarChar
+  size: 50
+- field: Cellolar
+  description: Mobile Phone
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax
+  type: nVarChar
+  size: 50
+- field: E_MailL
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: Pager
+  description: Pager
+  type: nVarChar
+  size: 30
+- field: Notes1
+  description: Remark 1
+  type: nVarChar
+  size: 100
+- field: Notes2
+  description: Remark 2
+  type: nVarChar
+  size: 100
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Password
+  description: Password
+  type: nVarChar
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '11'
+- field: BirthPlace
+  description: Place of Birth
+  type: nVarChar
+  size: 100
+- field: BirthDate
+  description: Date of Birth
+  type: Date
+  size: 8
+- field: Gender
+  description: Gender
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: M
+    label: Male
+  - key: F
+    label: Female
+  - key: E
+    label: Not Specified
+  - key: '*'
+    label: Masked
+  - key: I
+    label: Not Valid for System
+- field: Profession
+  description: Profession
+  type: nVarChar
+  size: 50
+- field: updateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: updateTime
+  description: Update Time
+  type: Int
+  size: 11
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 10
+- field: BirthCity
+  description: City of Birth
+  type: nVarChar
+  size: 100
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FirstName
+  description: First Name
+  type: nVarChar
+  size: 50
+- field: MiddleName
+  description: Middle Name
+  type: nVarChar
+  size: 50
+- field: LastName
+  description: Last Name
+  type: nVarChar
+  size: 50
+- field: BirthState
+  description: State of Birth
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: ResidCity
+  description: City of Residence
+  type: nVarChar
+  size: 100
+- field: ResidCntry
+  description: Country/Region of Residence
+  type: nVarChar
+  size: 100
+- field: ResidState
+  description: State of Residence
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: NFeRcpn
+  description: NF-e Recipient
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EmlGrpCode
+  description: E-Mail Group Code
+  type: nVarChar
+  size: 20
+  related: OEGP
+- field: BlockComm
+  description: Block Sending Marketing
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FiscalCode
+  description: Fiscal Code for Resident
+  type: nVarChar
+  size: 16
+- field: CtyPrvsYr
+  description: City for Previous Year
+  type: nVarChar
+  size: 100
+- field: SttPrvsYr
+  description: State for Previous Year
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CtyCdPrvsY
+  description: City Code for Previous Year
+  type: nVarChar
+  size: 4
+- field: CtyCurYr
+  description: City for Current Year
+  type: nVarChar
+  size: 100
+- field: SttCurYr
+  description: State for Current Year
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CtyCdCurYr
+  description: City Code for Current Year
+  type: nVarChar
+  size: 4
+- field: NotResdSch
+  description: Not resident Schumacker
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CtyFsnCode
+  description: Fusione comuni
+  type: nVarChar
+  size: 100
+- field: NaturalPer
+  description: Natural Person
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+  - key: B
+    label: Blocked
+  - key: U
+    label: Unblocked
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time Incl. Sec.
+  type: Int
+  size: 11
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: CnnectAddr
+  description: Connected Address
+  type: nVarChar
+  size: 50
+- field: CnAddrType
+  description: Connected Address Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Ship To
+  - key: B
+    label: Bill To
+- field: Frgncntry
+  description: Stato Estero
+  type: nVarChar
+  size: 3
+- field: EnGender
+  description: Encryption of Gender
+  type: Text
+  size: 16
+- field: GenderEx
+  description: Gender
+  type: nVarChar
+  size: 15
+  related: OGDR
+  default: E
+- field: EnGenderEx
+  description: Encryption of GenderEx
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CntctCode
+- key: CARD
+  unique: true
+  fields:
+  - CardCode
+  - Name

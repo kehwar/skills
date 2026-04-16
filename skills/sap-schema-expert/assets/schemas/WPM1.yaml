@@ -1,0 +1,48 @@
+table: WPM1
+description: Process Map Step
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPM1.htm
+fields:
+- field: PrcMapId
+  description: Process Map ID
+  type: nVarChar
+  size: 40
+  related: OWPM
+- field: Guid
+  description: Guid of Step
+  type: nVarChar
+  size: 40
+- field: Name
+  description: Step Name
+  type: nVarChar
+  size: 254
+- field: Icon
+  description: Icon
+  type: nVarChar
+  size: 254
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 50
+- field: Type
+  description: Step Type
+  type: nVarChar
+  size: 50
+- field: ViewGuid
+  description: View Guid
+  type: nVarChar
+  size: 40
+  related: OWVT
+- field: ViewQuery
+  description: View Query
+  type: Text
+  size: 16
+- field: ListUrl
+  description: List Url
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcMapId
+  - Guid

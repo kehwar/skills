@@ -1,0 +1,224 @@
+table: OCYC
+description: Cycle
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OCYC.htm
+fields:
+- field: Code
+  description: Cycle Code
+  type: Int
+  size: 6
+- field: Name
+  description: Cycle Name
+  type: nVarChar
+  size: 20
+- field: Frequency
+  description: Frequency
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: Daily
+  - key: '1'
+    label: Weekly
+  - key: '2'
+    label: Every Four Weeks
+  - key: '3'
+    label: Monthly
+  - key: '4'
+    label: Quarterly
+  - key: '5'
+    label: Semiannually
+  - key: '6'
+    label: Annually
+  - key: '7'
+    label: None
+  - key: '8'
+    label: 'Every "X" Days:'
+- field: Day
+  description: Day
+  type: Int
+  size: 11
+- field: Hour
+  description: Hour
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: NextDate
+  description: Next Counting Date
+  type: Date
+  size: 8
+- field: Type
+  description: Cycle Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Cycle
+  - key: M
+    label: MRP
+- field: SubOption
+  description: Suboption
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Option 1
+  - key: '2'
+    label: Option 2
+- field: Interval
+  description: Interval
+  type: Int
+  size: 11
+  default: 1
+- field: EndType
+  description: Recurrence End Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No End Date
+  - key: C
+    label: By Counter
+  - key: D
+    label: By Date
+- field: MaxOccur
+  description: Max. Occurrences
+  type: Int
+  size: 11
+- field: SeEndDat
+  description: Series End Date
+  type: Date
+  size: 8
+- field: Sunday
+  description: Sunday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Monday
+  description: Monday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Tuesday
+  description: Tuesday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Wednesday
+  description: Wednesday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Thursday
+  description: Thursday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Friday
+  description: Friday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Saturday
+  description: Saturday
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DayInMonth
+  description: Repeat Day in Month
+  type: Int
+  size: 11
+- field: Week
+  description: Repeat Week in Month
+  type: Int
+  size: 11
+  constraints:
+  - key: '1'
+    label: First
+  - key: '2'
+    label: Second
+  - key: '3'
+    label: Third
+  - key: '4'
+    label: Fourth
+  - key: '5'
+    label: Last
+- field: DayOfWeek
+  description: Repeat Day of Week
+  type: Int
+  size: 11
+  constraints:
+  - key: '8'
+    label: Day
+  - key: '9'
+    label: Weekday
+  - key: '0'
+    label: Weekend Day
+  - key: '1'
+    label: Sunday
+  - key: '2'
+    label: Monday
+  - key: '3'
+    label: Tuesday
+  - key: '4'
+    label: Wednesday
+  - key: '5'
+    label: Thursday
+  - key: '6'
+    label: Friday
+  - key: '7'
+    label: Saturday
+- field: Month
+  description: Repeat Month
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: NAME
+  unique: true
+  fields:
+  - Name

@@ -1,0 +1,79 @@
+table: MSN3
+description: MRP Pegging Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/MSN3.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PeriodID
+  description: Period ID
+  type: Int
+  size: 11
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Row
+  type: Int
+  size: 11
+- field: BaseObj
+  description: Base Object Type
+  type: nVarChar
+  size: 20
+- field: BaseDocNum
+  description: Base Document Number
+  type: nVarChar
+  size: 16
+- field: BaseDue
+  description: Base Due Date
+  type: Date
+  size: 8
+- field: StockType
+  description: Stock Operation Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Stock Issue
+  - key: R
+    label: Stock Receipt
+- field: LineID
+  description: Row Number
+  type: Int
+  size: 11
+- field: ParentCode
+  description: Parent Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: StartDate
+  description: Period Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: Period End Date
+  type: Date
+  size: 8
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID

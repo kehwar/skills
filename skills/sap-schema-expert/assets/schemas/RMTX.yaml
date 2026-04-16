@@ -1,0 +1,93 @@
+table: RMTX
+description: MATX resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RMTX.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: MATX name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: MATX number
+  type: Int
+  size: 11
+- field: DoColor
+  description: Use color table
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: BorderRed
+  description: Border red
+  type: Int
+  size: 11
+- field: BorderGrn
+  description: Border green
+  type: Int
+  size: 11
+- field: BorderBlue
+  description: Border blue
+  type: Int
+  size: 11
+- field: BgRed
+  description: Background red
+  type: Int
+  size: 11
+- field: BgGreen
+  description: Background green
+  type: Int
+  size: 6
+- field: BgBlue
+  description: Background blue
+  type: Int
+  size: 11
+- field: CellHeight
+  description: Cell height
+  type: Int
+  size: 11
+- field: TitleHeigt
+  description: Title height
+  type: Int
+  size: 11
+- field: Width
+  description: Width
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+- key: NUM
+  unique: true
+  fields:
+  - Language
+  - Num
+- key: M_NAME
+  unique: false
+  fields:
+  - Name
+- key: M_NUM
+  unique: false
+  fields:
+  - Num

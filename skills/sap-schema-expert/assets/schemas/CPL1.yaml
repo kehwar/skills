@@ -1,0 +1,43 @@
+table: CPL1
+description: Quick Copy - Instance Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/CPL1.htm
+fields:
+- field: AbsEntry
+  description: Document Number
+  type: Int
+  size: 11
+  related: OCPL
+- field: LogId
+  description: Log ID
+  type: Int
+  size: 11
+- field: ObjectID
+  description: Object ID
+  type: nVarChar
+  size: 20
+- field: Instance
+  description: Instance Key
+  type: nVarChar
+  size: 254
+- field: ErrCode
+  description: Error Code
+  type: nVarChar
+  size: 20
+- field: MessageId
+  description: Message ID
+  type: nVarChar
+  size: 20
+- field: MessageDes
+  description: Message Description
+  type: nVarChar
+  size: 254
+- field: InstName
+  description: Instance Name
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogId

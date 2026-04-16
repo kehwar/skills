@@ -1,0 +1,416 @@
+table: ISW3
+description: Declaration Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ISW3.htm
+fields:
+- field: WizAbsEnt
+  description: Wizard Run Key
+  type: Int
+  size: 11
+  related: OISW
+- field: Line
+  description: Declaration Line
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: RowStatus
+  description: Row Status
+  type: VarChar
+  size: 1
+  default: O
+- field: CardCode
+  description: Business Partner Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ObjType
+  description: Document Type
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Document Line Number
+  type: Int
+  size: 11
+- field: RecpType
+  description: Receipt Type
+  type: VarChar
+  size: 1
+- field: DocBillDt
+  description: Document Billing Date
+  type: Date
+  size: 8
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: BPCtry
+  description: Sender or Receiver Country/Region
+  type: nVarChar
+  size: 3
+- field: TaxCodeExt
+  description: Tax Code Extension
+  type: nVarChar
+  size: 12
+- field: NetMassSgn
+  description: Net Mass Sign
+  type: VarChar
+  size: 1
+  default: +
+  constraints:
+  - key: +
+    label: Positive
+  - key: '-'
+    label: Negative
+- field: NetMass
+  description: Net Mass
+  type: Num
+  size: 19.6
+- field: NetMassUnt
+  description: Net Mass Unit
+  type: nVarChar
+  size: 12
+- field: SupMassSgn
+  description: Supplementary Mass Sign
+  type: VarChar
+  size: 1
+  default: +
+  constraints:
+  - key: +
+    label: Positive
+  - key: '-'
+    label: Negative
+- field: SupplMass
+  description: Supplementary Mass
+  type: Num
+  size: 19.6
+- field: SupplUnit
+  description: Supplementary Unit
+  type: nVarChar
+  size: 50
+- field: ValueSgn
+  description: Value Sign
+  type: VarChar
+  size: 1
+  default: +
+  constraints:
+  - key: +
+    label: Positive
+  - key: '-'
+    label: Negative
+- field: Value
+  description: Value
+  type: Num
+  size: 19.6
+- field: ValueFC
+  description: Value in Foreign Currency
+  type: Num
+  size: 19.6
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+- field: StatValSgn
+  description: Statistical Value Sign
+  type: VarChar
+  size: 1
+  constraints:
+  - key: +
+    label: Positive
+  - key: '-'
+    label: Negative
+- field: StatVal
+  description: Statistical Value
+  type: Num
+  size: 19.6
+- field: ReturnID
+  description: Return Identifier
+  type: VarChar
+  size: 1
+- field: Include
+  description: Include Line in Report
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsChanged
+  description: Changed Line Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DstRegCry
+  description: Destination Country - Region
+  type: nVarChar
+  size: 3
+- field: DstRegSta
+  description: Destination Region State
+  type: nVarChar
+  size: 12
+- field: OriRegCry
+  description: Origin Region Country
+  type: nVarChar
+  size: 3
+- field: OriRegSta
+  description: Origin Region State
+  type: nVarChar
+  size: 12
+- field: BpVATregNo
+  description: VAT Registration No.
+  type: nVarChar
+  size: 32
+- field: CtryOrig
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: Incoterms
+  description: Incoterms
+  type: nVarChar
+  size: 12
+- field: NatOfTrans
+  description: Nature of Transaction
+  type: nVarChar
+  size: 50
+- field: TransMode
+  description: Transport Mode
+  type: nVarChar
+  size: 12
+- field: PortEnEx
+  description: Port of Entry or Exit
+  type: nVarChar
+  size: 50
+- field: CustProc
+  description: Custom Procedure
+  type: nVarChar
+  size: 50
+- field: StatProc
+  description: Statistical Procedure
+  type: nVarChar
+  size: 50
+- field: DomFrgID
+  description: Domestic/Foreign Identifier
+  type: VarChar
+  size: 1
+- field: ItemType
+  description: Item Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: S
+    label: Service
+  - key: N
+    label: Item Not Relevant to Intrastat
+- field: CommCode
+  description: Commodity Code
+  type: nVarChar
+  size: 12
+- field: SerCode
+  description: Service Code
+  type: nVarChar
+  size: 12
+- field: SerSupplM
+  description: Service Supply Method
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Immediate
+  - key: R
+    label: To More Resumptions
+- field: SerPymMeth
+  description: Service Payment Method
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Accredited to Bank Account
+  - key: B
+    label: Bank Transfer
+  - key: X
+    label: Other
+- field: CorrDate
+  description: Correction Date
+  type: Date
+  size: 8
+- field: CorrSgn
+  description: Correction Sign
+  type: VarChar
+  size: 1
+  default: +
+  constraints:
+  - key: +
+    label: Positive
+  - key: '-'
+    label: Negative
+- field: ReferDoc
+  description: Referenced Document
+  type: Int
+  size: 11
+- field: ReferDocNo
+  description: Referenced Document No.
+  type: Int
+  size: 11
+- field: ReferItem
+  description: Referred Item
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: RefDocLine
+  description: Referenced Document Line
+  type: Int
+  size: 11
+- field: ChgID
+  description: Changed Data Record ID
+  type: nVarChar
+  size: 16
+- field: ChgUser
+  description: Changed By
+  type: nVarChar
+  size: 50
+- field: ChgTimest
+  description: Time Stamp of Change
+  type: Date
+  size: 8
+- field: Deleted
+  description: Deleted Indicator
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CstSecRc
+  description: Custom Section
+  type: nVarChar
+  size: 6
+- field: CorrMonth
+  description: Ref. Mo. of Summary to Correct
+  type: Int
+  size: 6
+- field: CorrYear
+  description: Ref. Yr of Summary to Correct
+  type: Int
+  size: 6
+- field: CorrDeclNo
+  description: No. of Declaration to Correct
+  type: Int
+  size: 11
+- field: CorRowNo
+  description: Row No. Inside Sec. 3 to Correct
+  type: Int
+  size: 11
+- field: DeclRowNo
+  description: Declaration File Row No.
+  type: Int
+  size: 11
+- field: CorrType
+  description: Referred Type of Receipt
+  type: Int
+  size: 11
+- field: CntryPay
+  description: State Code for Payment
+  type: nVarChar
+  size: 3
+- field: Triangular
+  description: Triangular Trade
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: CardName
+  description: Business Partner Name
+  type: nVarChar
+  size: 200
+- field: StatCode
+  description: Statistical Code
+  type: nVarChar
+  size: 2
+- field: DocEntry
+  description: Document Entry
+  type: Int
+  size: 11
+- field: NetValue
+  description: Net Value
+  type: Num
+  size: 19.6
+- field: NetValueFC
+  description: Net Value in FC
+  type: Num
+  size: 19.6
+- field: Freight
+  description: Freight Sum
+  type: Num
+  size: 19.6
+- field: FreighFC
+  description: Freight Sum in FC
+  type: Num
+  size: 19.6
+- field: RateFC
+  description: Currency Rate for FC
+  type: Num
+  size: 19.6
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 250
+- field: ProtocolN
+  description: Protocol Number
+  type: Int
+  size: 11
+- field: DropShip
+  description: Drop-Ship
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WhsZipCode
+  description: Warehouse Zip Code
+  type: nVarChar
+  size: 20
+- field: ValBefDsc
+  description: Value Before Discount
+  type: Num
+  size: 19.6
+- field: CoOQty
+  description: Country of Origin Quantity
+  type: Num
+  size: 19.6
+- field: CoOLineNum
+  description: CoO Line Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizAbsEnt
+  - Line

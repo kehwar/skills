@@ -1,0 +1,33 @@
+table: RCOD
+description: RCOD
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RCOD.htm
+fields:
+- field: DocCode
+  description: Base Doc Code
+  type: nVarChar
+  size: 8
+- field: TrnsDocCod
+  description: Translation Doc Code
+  type: nVarChar
+  size: 8
+- field: ClntDocCod
+  description: Client Doc Code
+  type: nVarChar
+  size: 8
+- field: LocMask
+  description: Localization Mask
+  type: nVarChar
+  size: 100
+- field: LangMask
+  description: Language Mask
+  type: nVarChar
+  size: 100
+- field: TranRequir
+  description: Translation Required
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocCode

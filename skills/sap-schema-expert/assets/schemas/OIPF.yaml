@@ -1,0 +1,365 @@
+table: OIPF
+description: Landed Costs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIPF.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: SuppName
+  description: Vendor Name
+  type: nVarChar
+  size: 200
+- field: AgentCode
+  description: Subst. Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: AgentName
+  description: Subst. Name
+  type: nVarChar
+  size: 200
+- field: DocStatus
+  description: Document Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: C
+    label: Closed
+  - key: O
+    label: Open
+- field: AgentNum
+  description: File Number
+  type: nVarChar
+  size: 16
+- field: Descr
+  description: Remarks
+  type: nVarChar
+  size: 250
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: ExpCustom
+  description: Projected Customs
+  type: Num
+  size: 19.6
+- field: ActCustom
+  description: Act. Import Duty
+  type: Num
+  size: 19.6
+- field: Vat1
+  description: Tax 2
+  type: Num
+  size: 19.6
+- field: Vat2
+  description: Tax 2
+  type: Num
+  size: 19.6
+- field: BeforeVat
+  description: Total Before Tax
+  type: Num
+  size: 19.6
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: CostSum
+  description: Total Costs
+  type: Num
+  size: 19.6
+- field: DocTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: Canceled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExCustomFC
+  description: Projected Customs (FC)
+  type: Num
+  size: 19.6
+- field: AcCustomFC
+  description: Act. Import Duty in FC
+  type: Num
+  size: 19.6
+- field: Vat1FC
+  description: Tax 1 (FC)
+  type: Num
+  size: 19.6
+- field: Vat2FC
+  description: Tax 2 (FC)
+  type: Num
+  size: 19.6
+- field: BeforVatFC
+  description: Total Before Tax (FC)
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Document Total (FC)
+  type: Num
+  size: 19.6
+- field: CostSumFC
+  description: Total Costs (FC)
+  type: Num
+  size: 19.6
+- field: CloseDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: Cost_Match
+  description: Expenses Diff. for Reconciliation
+  type: Num
+  size: 19.6
+- field: C_Match_FC
+  description: Expenses Diff. for Recon. (FC)
+  type: Num
+  size: 19.6
+- field: BillOfLad
+  description: Bill of Lading No.
+  type: nVarChar
+  size: 20
+- field: TrnspCode
+  description: Delivery Category
+  type: Int
+  size: 6
+  related: OSHP
+- field: CostFactor
+  description: Expenses Factor
+  type: Num
+  size: 19.6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+- field: JdtNum
+  description: Journal Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: JdtMemo
+  description: Transaction Details
+  type: nVarChar
+  size: 254
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '69'
+- field: ExCustomSC
+  description: Projected Customs (SC)
+  type: Num
+  size: 19.6
+- field: ActCustSC
+  description: Actual Customs (SC)
+  type: Num
+  size: 19.6
+- field: TtlCostSC
+  description: Total Expenditure (SC)
+  type: Num
+  size: 19.6
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: OpenForLaC
+  description: Open For Landed Costs
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: incCustom
+  description: Include Customs Expenses
+  type: VarChar
+  size: 1
+  default: Y
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: BuildDesc
+  description: Build Descriptor
+  type: nVarChar
+  size: 50
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: CustDate
+  description: Customs Date
+  type: Date
+  size: 8
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: OwnerCode
+  description: Document Owner
+  type: Int
+  size: 11
+  related: OHEM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - Instance
+  - Series
+- key: SUPPLIER
+  unique: false
+  fields:
+  - CardCode
+- key: AGENT
+  unique: false
+  fields:
+  - AgentCode
+  - AgentNum
+- key: CURRENCY
+  unique: false
+  fields:
+  - DocCur
+- key: SERIES
+  unique: false
+  fields:
+  - Series
+- key: OWNER_CODE
+  unique: false
+  fields:
+  - OwnerCode

@@ -1,0 +1,233 @@
+table: OPLN
+description: Price Lists
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OPLN.htm
+fields:
+- field: ListNum
+  description: Price List No.
+  type: Int
+  size: 6
+- field: ListName
+  description: Price List Name
+  type: nVarChar
+  size: 32
+- field: BASE_NUM
+  description: Base Price List
+  type: Int
+  size: 6
+  related: OPLN
+- field: Factor
+  description: Factor
+  type: Num
+  size: 19.6
+- field: RoundSys
+  description: Rounding Method
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: No Rounding
+  - key: '1'
+    label: Round to Full Decimal Amount
+  - key: '2'
+    label: Round to Full Amount
+  - key: '3'
+    label: Round to Full Tens Amount
+  - key: '4'
+    label: Fixed Ending
+  - key: '5'
+    label: Fixed Interval
+- field: GroupCode
+  description: Group No.
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Price List - Group No. 1
+  - key: '2'
+    label: Price List - Group No. 2
+  - key: '3'
+    label: Price List - Group No. 3
+  - key: '4'
+    label: Price List - Group No. 4
+  - key: '5'
+    label: Price List - Group No. 5
+  - key: '6'
+    label: Price List - Group No. 6
+  - key: '7'
+    label: Price List - Group No. 7
+  - key: '8'
+    label: Price List - Group No. 8
+  - key: '9'
+    label: Price List - Group No. 9
+  - key: '10'
+    label: Price List - Group No. 10
+  - key: '11'
+    label: Price List - Group No. 11
+  - key: '12'
+    label: Price List - Group No. 12
+  - key: '13'
+    label: Price List - Group No. 13
+  - key: '14'
+    label: Price List - Group No. 14
+  - key: '15'
+    label: Price List - Group No. 15
+  - key: '16'
+    label: Price List - Group No. 16
+  - key: '17'
+    label: Price List - Group No. 17
+  - key: '18'
+    label: Price List - Group No. 18
+  - key: '19'
+    label: Price List - Group No. 19
+  - key: '20'
+    label: Price List - Group No. 20
+  - key: '21'
+    label: Price List - Group No. 21
+  - key: '22'
+    label: Price List - Group No. 22
+  - key: '23'
+    label: Price List - Group No. 23
+  - key: '24'
+    label: Price List - Group No. 24
+  - key: '25'
+    label: Price List - Group No. 25
+  - key: '26'
+    label: Price List - Group No. 26
+  - key: '27'
+    label: Price List - Group No. 27
+  - key: '28'
+    label: Price List - Group No. 28
+  - key: '29'
+    label: Price List - Group No. 29
+  - key: '30'
+    label: Price List - Group No. 30
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: SPPCounter
+  description: SPP Counter
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: IsGrossPrc
+  description: Gross Price?
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Gross
+  - key: N
+    label: Net
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: ValidFor
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ValidFrom
+  description: Active From
+  type: Date
+  size: 8
+- field: ValidTo
+  description: Active To
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: PrimCurr
+  description: Primary Default Currency
+  type: nVarChar
+  size: 3
+- field: AddCurr1
+  description: Additional Default Currency 1
+  type: nVarChar
+  size: 3
+- field: AddCurr2
+  description: Additional Default Currency 2
+  type: nVarChar
+  size: 3
+- field: RoundRule
+  description: Rounding Rule
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Round to Closest
+  - key: C
+    label: Round Up
+  - key: F
+    label: Round Down
+- field: ExtAmount
+  description: Fixed Amount (Ending/Interval)
+  type: Num
+  size: 19.6
+- field: RndFrmtInt
+  description: Ending/Interval - Integer Part
+  type: nVarChar
+  size: 10
+- field: RndFrmtDec
+  description: Ending/Interval - Decimal Part
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ListNum
+- key: LIST_NAME
+  unique: true
+  fields:
+  - ListName

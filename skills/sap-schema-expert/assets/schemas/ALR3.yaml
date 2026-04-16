@@ -1,0 +1,36 @@
+table: ALR3
+description: Dynamic message data cells
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ALR3.htm
+fields:
+- field: Code
+  description: Internal Number
+  type: Int
+  size: '11'
+  related: OALR
+- field: Location
+  description: Number of Column in Message
+  type: Int
+  size: '11'
+- field: Line
+  description: Number of Column in Message
+  type: Int
+  size: '11'
+- field: Value
+  description: The column/row value
+  type: nVarChar
+  size: '254'
+- field: ObjType
+  description: The linked object
+  type: nVarChar
+  size: '20'
+- field: KeyStr
+  description: Key string in linked object
+  type: nVarChar
+  size: '254'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Location
+  - Line

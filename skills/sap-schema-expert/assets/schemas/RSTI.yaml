@@ -1,0 +1,55 @@
+table: RSTI
+description: STRI resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSTI.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: STRL name
+  type: nVarChar
+  size: 64
+  related: STRL
+- field: Num
+  description: String number
+  type: Int
+  size: 11
+- field: String
+  description: String
+  type: nVarChar
+  size: 250
+- field: StringLen
+  description: String length
+  type: Int
+  size: 11
+- field: UniqueID
+  description: Unique ID
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+  - Num
+- key: M_NUM
+  unique: false
+  fields:
+  - Name
+  - Num
+- key: UNIQUE_ID
+  unique: true
+  fields:
+  - Language
+  - Name
+  - UniqueID

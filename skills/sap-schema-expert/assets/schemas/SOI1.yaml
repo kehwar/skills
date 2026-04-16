@@ -1,0 +1,20 @@
+table: SOI1
+description: Statement of Import - Business Partners
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SOI1.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: OSOI
+- field: CardCode
+  description: BP Card Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - CardCode

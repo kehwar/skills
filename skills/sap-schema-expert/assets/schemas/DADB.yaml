@@ -1,0 +1,27 @@
+table: DADB
+description: Data Archive DSA Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DADB.htm
+fields:
+- field: AbsEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Number
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: OpenBal
+  description: Opening Balance
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

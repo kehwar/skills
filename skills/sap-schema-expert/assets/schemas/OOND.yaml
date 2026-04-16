@@ -1,0 +1,25 @@
+table: OOND
+description: Industries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Sales_Opportunities/OOND.htm
+fields:
+- field: IndCode
+  description: Industry Code
+  type: Int
+  size: 11
+- field: IndName
+  description: Industry Name
+  type: nVarChar
+  size: 40
+- field: IndDesc
+  description: Industry Description
+  type: nVarChar
+  size: 120
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IndCode
+- key: IND_NAME
+  unique: true
+  fields:
+  - IndName

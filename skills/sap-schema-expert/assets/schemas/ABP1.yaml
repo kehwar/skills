@@ -1,0 +1,30 @@
+table: ABP1
+description: Business Place Tax IDs
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ABP1.htm
+fields:
+- field: BPLId
+  description: BPL ID
+  type: Int
+  size: '11'
+  related: OBPL
+- field: DstState
+  description: Destination State
+  type: nVarChar
+  size: '3'
+  related: OCST
+- field: IENumber
+  description: I.E. Number
+  type: nVarChar
+  size: '32'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BPLId
+  - DstState
+  - LogInstanc

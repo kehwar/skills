@@ -1,0 +1,71 @@
+table: OCDC
+description: Cash Discount
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OCDC.htm
+fields:
+- field: Code
+  description: Cash Discount Code
+  type: nVarChar
+  size: 20
+- field: TableDesc
+  description: Cash Discount Name
+  type: nVarChar
+  size: 100
+- field: ByDate
+  description: By Date
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Freight
+  description: Freight
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Tax
+  description: Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatCrctn
+  description: VAT Correction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseDate
+  description: Base Date
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Posting Date
+  - key: S
+    label: System Date
+  - key: T
+    label: Document Date
+  - key: C
+    label: Closing Date
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

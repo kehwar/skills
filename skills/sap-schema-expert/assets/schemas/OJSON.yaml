@@ -1,0 +1,38 @@
+table: OJSON
+description: JSON Content Repository
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OJSON.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: F
+    label: Form Preference
+- field: Index1
+  description: User-Defined Indexes
+  type: nVarChar
+  size: 254
+- field: Content
+  description: JSON Content
+  type: Text
+  size: 16
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid
+- key: INDEX1
+  unique: true
+  fields:
+  - Type
+  - Index1

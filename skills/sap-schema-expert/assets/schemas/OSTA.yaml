@@ -1,0 +1,232 @@
+table: OSTA
+description: Sales Tax Authorities
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OSTA.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: SalesTax
+  description: Sales Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UseTax
+  description: Use Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PurchTax
+  description: Purchasing Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: deferrAcct
+  description: Deferred Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: NonDdctPrc
+  description: Non Deductible %
+  type: Num
+  size: 19.6
+- field: NonDdctAct
+  description: Non Deductible Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TaxInPrice
+  description: Included in Price
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Exempt
+  description: Exempt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: APExpAct
+  description: Purchasing Tax Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARExpAct
+  description: Sales Tax Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CredBala
+  description: 'Credit Balance: Raw Material'
+  type: Num
+  size: 19.6
+- field: CredFG
+  description: Credit for Finished Goods
+  type: Num
+  size: 19.6
+- field: CredCG
+  description: Credit for Capital Goods
+  type: Num
+  size: 19.6
+- field: InGrossRev
+  description: Included in Gross Revenue
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EfctDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: SvcTaxCr
+  description: Credit for Service Tax
+  type: Num
+  size: 19.6
+- field: MinAmount
+  description: Min. Taxable Amount
+  type: Num
+  size: 19.6
+- field: MaxAmount
+  description: Max. Taxable Amount
+  type: Num
+  size: 19.6
+- field: FlatAmount
+  description: Flat Tax Amount
+  type: Num
+  size: 19.6
+- field: TextCode
+  description: Text Code
+  type: Int
+  size: 6
+- field: UnencumTax
+  description: Unencumbered Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxOnRI
+  description: Tax On Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DIOTRptTyp
+  description: DIOT Report Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: 15% or 16% VAT
+  - key: B
+    label: 15% or 16% VAT on Import
+  - key: C
+    label: Exempt on Import
+  - key: D
+    label: 0% VAT
+  - key: E
+    label: Exempt
+  - key: F
+    label: VAT on Returns, Discounts, and Rebates
+  - key: G
+    label: Stimulus for Northern Border Region
+  - key: H
+    label: IEPS Tax
+  - key: I
+    label: Stimulus for Southern Border Region
+- field: IsSystem
+  description: Is System Tax Jurisdiction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RvsCrgPrc
+  description: Reverse Charge %
+  type: Num
+  size: 19.6
+- field: InFirstIns
+  description: Included in First Installment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SaleTaxRCM
+  description: Sales Tax RCM Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaleRCMClr
+  description: Sales Tax RCM Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatExempt
+  description: Apply VAT Exemption
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatExmPrc
+  description: VAT Exemption %
+  type: Num
+  size: 19.6
+- field: VatExmBase
+  description: Base VAT %
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Type

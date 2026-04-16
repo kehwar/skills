@@ -1,0 +1,62 @@
+table: TRB5
+description: Tax Report Wizard Reported Tax Sums
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRB5.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRB
+- field: State
+  description: State Code
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: CardCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: TransCrdt
+  description: Transferred Credit
+  type: Num
+  size: 19.6
+- field: TotalDbt
+  description: Total Reported Debit
+  type: Num
+  size: 19.6
+- field: TtlDbtSc
+  description: Total Reported Debit SC
+  type: Num
+  size: 19.6
+- field: TotalCrdt
+  description: Total Reported Credit
+  type: Num
+  size: 19.6
+- field: TtlCrdtSc
+  description: Total Reported Credit SC
+  type: Num
+  size: 19.6
+- field: TotalDed
+  description: Total Reported Tax Deductions
+  type: Num
+  size: 19.6
+- field: TtlDedSc
+  description: Total Reported Tax Deductions SC
+  type: Num
+  size: 19.6
+- field: BlncDue
+  description: Balance Due
+  type: Num
+  size: 19.6
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - State

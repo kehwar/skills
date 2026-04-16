@@ -1,0 +1,108 @@
+table: OCRP
+description: Payment Methods
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCRP.htm
+fields:
+- field: CrTypeCode
+  description: Payment Method Code
+  type: Int
+  size: 6
+- field: CrTypeName
+  description: Name
+  type: nVarChar
+  size: 30
+- field: CreditCard
+  description: Assigned to Credit Card
+  type: Int
+  size: 6
+  related: OCRC
+- field: DueTerms
+  description: Payment Code
+  type: nVarChar
+  size: 8
+  related: OCDT
+- field: MinCredit
+  description: Minimum Credit Amount
+  type: Num
+  size: 19.6
+- field: MinToPay
+  description: Minimum Payment Amount
+  type: Num
+  size: 19.6
+- field: MaxValid
+  description: Max. Qty Without Approval
+  type: Num
+  size: 19.6
+- field: InstalMent
+  description: Installment Payments Possible
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: C
+    label: Cr
+  - key: L
+    label: Rd
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CrTypeCode
+- key: NAME
+  unique: true
+  fields:
+  - CrTypeName
+- key: CRED_CODE
+  unique: false
+  fields:
+  - CreditCard
+- key: INSTALMENT
+  unique: false
+  fields:
+  - InstalMent

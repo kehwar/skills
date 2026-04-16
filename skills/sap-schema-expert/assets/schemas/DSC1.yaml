@@ -1,0 +1,438 @@
+table: DSC1
+description: House Bank Accounts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/DSC1.htm
+fields:
+- field: BankCode
+  description: Bank Code
+  type: nVarChar
+  size: 30
+- field: Account
+  description: Acct No.
+  type: nVarChar
+  size: 50
+- field: Branch
+  description: Branch
+  type: nVarChar
+  size: 50
+- field: NextCheck
+  description: Next Check No.
+  type: Int
+  size: 11
+- field: GLAccount
+  description: G/L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Free
+  description: Free
+  type: VarChar
+  size: 1
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: Block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: County
+  description: County
+  type: nVarChar
+  size: 100
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: BISR
+  description: BISR
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ControlKey
+  description: Control Key
+  type: nVarChar
+  size: 2
+- field: UsrNumber1
+  description: User No. 1
+  type: nVarChar
+  size: 25
+- field: UsrNumber2
+  description: User No. 2
+  type: nVarChar
+  size: 25
+- field: UsrNumber3
+  description: User No. 3
+  type: nVarChar
+  size: 25
+- field: UsrNumber4
+  description: User No. 4
+  type: nVarChar
+  size: 25
+- field: IBAN
+  description: IBAN
+  type: nVarChar
+  size: 50
+- field: DscountBOE
+  description: Debt of Discounted BoE
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TolrnceDay
+  description: Tolerance Days
+  type: Int
+  size: 11
+- field: MinAmntBOE
+  description: Min. Amount of Bill of Exchange
+  type: Num
+  size: 19.6
+- field: MaxAmntBOE
+  description: Max. Amount of Bill of Exchange
+  type: Num
+  size: 19.6
+- field: DscntLimit
+  description: Discount Limit
+  type: Num
+  size: 19.6
+- field: DaysInAdva
+  description: Days in Advance
+  type: Int
+  size: 11
+- field: BankCollec
+  description: Bank on Collection
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BankDiscou
+  description: Bank on Discounted
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BranchName
+  description: Branch Name
+  type: nVarChar
+  size: 50
+- field: AliasName
+  description: Alias Name
+  type: nVarChar
+  size: 50
+- field: CompanyCod
+  description: Company Code
+  type: nVarChar
+  size: 10
+- field: AcctType
+  description: Account Type
+  type: VarChar
+  size: 1
+- field: Building
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: BIK
+  description: BIK
+  type: nVarChar
+  size: 15
+- field: AcctName
+  description: Bank Account Name
+  type: nVarChar
+  size: 250
+- field: CorresAcct
+  description: Correspondent Account
+  type: nVarChar
+  size: 30
+- field: Phone
+  description: Telephone No.
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax
+  type: nVarChar
+  size: 50
+- field: GLIntriAct
+  description: G/L Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ChkPaper
+  description: Paper Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: B
+    label: Blank Paper
+  - key: S
+    label: Overflow Prenumbered Check Stock
+  - key: P
+    label: Overflow Blank Paper
+  - key: D
+    label: Default
+- field: MaxChkLine
+  description: Maximum Lines
+  type: Int
+  size: 6
+- field: TmpltName
+  description: Template Name
+  type: nVarChar
+  size: 8
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: BankKey
+  description: Bank Internal ID
+  type: Int
+  size: 11
+  related: ODSC
+- field: LockChk
+  description: Lock Checks Printing
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OurNum
+  description: Our Number in Next Boleto
+  type: Int
+  size: 11
+- field: AgreeNum
+  description: Agreement Number
+  type: nVarChar
+  size: 10
+- field: AccountChk
+  description: Account Check Digit
+  type: VarChar
+  size: 1
+- field: ISRType
+  description: ISR Type
+  type: Int
+  size: 6
+  default: 2
+  constraints:
+  - key: '1'
+    label: ISR
+  - key: '2'
+    label: BISR
+  - key: '3'
+    label: ISR+
+  - key: '4'
+    label: BISR+
+- field: ISRBillerI
+  description: ISR Biller ID
+  type: nVarChar
+  size: 9
+- field: CustIdNum
+  description: Customer ID Number
+  type: nVarChar
+  size: 10
+  default: '0'
+- field: InSeri
+  description: Incoming Payment Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: -1
+- field: OutSeri
+  description: Outgoing Payment Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: -1
+- field: JDTSeri
+  description: Journal Entry Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: -1
+- field: FilePlug
+  description: Import File Name
+  type: nVarChar
+  size: 50
+- field: ImpStmt
+  description: Imported Bank Statement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Create New - From File
+  - key: N
+    label: Create New - Manually
+- field: PreNumber
+  description: Prenumbered Check
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AddrType
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNo
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UsrLogSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: SwiftNum
+  description: BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: FineAcct
+  description: Fine Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IntrstAcct
+  description: Interest Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DscntAcct
+  description: Discount Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SvcFeeAcct
+  description: Service Fee Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BranchChk
+  description: Branch Check Digit
+  type: nVarChar
+  size: 5
+- field: RetFile
+  description: Retorno File Format
+  type: nVarChar
+  size: 50
+- field: IOFTaxAcct
+  description: IOF Tax Account
+  type: nVarChar
+  size: 15
+- field: OthExpAcct
+  description: Other Expenses Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OthIncAcct
+  description: Other Incomes Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CollCode
+  description: Collection Code
+  type: nVarChar
+  size: 50
+- field: FileSeqNNo
+  description: File Sequence Next Number
+  type: Int
+  size: 11
+- field: RefCoLevel
+  description: Reference control level
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: S
+    label: Soft Control
+  - key: H
+    label: Hard Control
+  - key: V
+    label: Hard Control with variable length
+  - key: F
+    label: Hard Control with fixed length
+- field: RefFixLen1
+  description: Reference fixed length 1
+  type: Int
+  size: 6
+- field: RefFixLen2
+  description: Reference fixed length 2
+  type: Int
+  size: 6
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: NoValidBal
+  description: No Validation for Starting/Ending Balance
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ECheck
+  description: E-Check
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnAccount
+  description: Encryption of Acct No.
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - Country
+  - BankCode
+  - Account

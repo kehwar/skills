@@ -1,0 +1,41 @@
+table: SEWST
+description: SEWST
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWST.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 30
+- field: U_SentDate
+  description: Sent Date
+  type: nVarChar
+  size: 10
+- field: U_SentTime
+  description: Sent Time
+  type: nVarChar
+  size: 8
+- field: U_UserID
+  description: User ID
+  type: nVarChar
+  size: 8
+- field: U_RCode
+  description: Return Code
+  type: nVarChar
+  size: 3
+- field: U_RInfo
+  description: Return info
+  type: nVarChar
+  size: 254
+- field: U_AutoSent
+  description: Is schedule sent or manual
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

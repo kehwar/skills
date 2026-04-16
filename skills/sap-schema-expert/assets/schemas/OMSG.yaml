@@ -1,0 +1,32 @@
+table: OMSG
+description: Messaging Service Settings
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OMSG.htm
+fields:
+- field: USERID
+  description: User Signature
+  type: Int
+  size: 6
+  default: -1
+- field: Signature
+  description: E-Mail signature
+  type: Text
+  size: 16
+- field: UseCompSig
+  description: Use Company Signature
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DummySig
+  description: Dummy Signature
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - USERID

@@ -1,0 +1,160 @@
+table: ACQ1
+description: Capitalization - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ACQ1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OACQ
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Line Total
+  type: Num
+  size: 19.6
+- field: TotalFrgn
+  description: Line Total (FC)
+  type: Num
+  size: 19.6
+- field: TotalSys
+  description: Line Total (SC)
+  type: Num
+  size: 19.6
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: Remarks
+  description: Remarks
+  type: nVarChar
+  size: 100
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: NewItemCod
+  description: New Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: Partial
+  description: Partial
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: APC
+  description: APC
+  type: Num
+  size: 19.6
+- field: NewAstCls
+  description: New Asset Class
+  type: nVarChar
+  size: 20
+  related: OACS
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: TransType
+  description: Transaction Type
+  type: nVarChar
+  size: 4
+  constraints:
+  - key: '0'
+    label: Unknown
+  - key: '110'
+    label: Acquisition
+  - key: '115'
+    label: Subacquisition
+  - key: '120'
+    label: Credit Memo
+  - key: '130'
+    label: APC Write-Up
+  - key: '210'
+    label: Full Retirement
+  - key: '220'
+    label: Full Scrapping
+  - key: '230'
+    label: Partial Retirement
+  - key: '240'
+    label: Partial Scrapping
+  - key: '310'
+    label: Full Transfer
+  - key: '320'
+    label: Partial Transfer
+  - key: '410'
+    label: Manual Ordinary Depreciation
+  - key: '420'
+    label: Manual Unplanned Depreciation
+  - key: '430'
+    label: Manual Special Depreciation
+  - key: '440'
+    label: Appreciation
+  - key: '510'
+    label: Change of Depreciation Type
+  - key: '520'
+    label: Change of Useful Life
+  - key: '530'
+    label: Change of Depreciation Start Date
+  - key: '540'
+    label: Change of Salvage Value
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

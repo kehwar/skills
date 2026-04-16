@@ -1,0 +1,94 @@
+table: OALC
+description: Loading Expenses
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OALC.htm
+fields:
+- field: AlcCode
+  description: Code
+  type: nVarChar
+  size: 2
+- field: AlcName
+  description: Name
+  type: nVarChar
+  size: 30
+- field: OhType
+  description: Allocation By
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: Cash Value Before Customs
+  - key: C
+    label: Cash Value After Customs
+  - key: Q
+    label: Quantity
+  - key: W
+    label: Weight
+  - key: V
+    label: Volume
+  - key: A
+    label: Equal
+  - key: L
+    label: Legal Cost
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Data Doc.
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LaCAllcAcc
+  description: Landed Costs Alloc. Account
+  type: nVarChar
+  size: 15
+- field: CostCateg
+  description: Cost Category
+  type: VarChar
+  size: 1
+  constraints:
+  - key: V
+    label: Customs VAT
+  - key: E
+    label: Excise Cost
+  - key: D
+    label: Customs Duty
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AlcCode
+- key: GROUP_NAME
+  unique: false
+  fields:
+  - AlcName

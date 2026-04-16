@@ -1,0 +1,156 @@
+table: ASH1
+description: Time Sheet - Rows - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ASH1.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: ActType
+  description: Activity Type
+  type: Int
+  size: 11
+  related: PMC5
+- field: LaborItem
+  description: Labor Item No.
+  type: nVarChar
+  size: 50
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Workorder
+  description: Workorder Doc. Entry
+  type: Int
+  size: 11
+  related: OWOR
+- field: WorAbs
+  description: Workorder Abs. Entry
+  type: Int
+  size: 11
+- field: ServCall
+  description: Service Call ID
+  type: Int
+  size: 11
+  related: OSCL
+- field: CostCenter
+  description: Cost Center
+  type: nVarChar
+  size: 8
+- field: FiProject
+  description: Financial Project
+  type: nVarChar
+  size: 20
+- field: Location
+  description: Location
+  type: Int
+  size: 11
+- field: GPSData
+  description: GPS Data
+  type: nVarChar
+  size: 50
+- field: Branch
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: Break
+  description: Break
+  type: Int
+  size: 11
+- field: NonBillTm
+  description: Nonbillable Time
+  type: Int
+  size: 11
+- field: EffectTm
+  description: Effective Time
+  type: Int
+  size: 11
+- field: BillableTm
+  description: Billable Time
+  type: Int
+  size: 11
+- field: FullDay
+  description: Full Day
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ProjectID
+  description: Project or Subproject ID
+  type: Int
+  size: 11
+- field: Subproject
+  description: Subproject ID
+  type: Int
+  size: 11
+- field: StageID
+  description: Stage ID
+  type: Int
+  size: 11
+- field: Charged
+  description: Charged
+  type: Num
+  size: 19.6
+- field: Chargeable
+  description: Chargeable [Yes/No]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: BreakHr
+  description: Break Hours
+  type: Num
+  size: 19.6
+- field: NonBillHr
+  description: Non-Billable Hours
+  type: Num
+  size: 19.6
+- field: EffectHr
+  description: Effective Hours
+  type: Num
+  size: 19.6
+- field: BillableHr
+  description: Billable Hours
+  type: Num
+  size: 19.6
+- field: EnActType
+  description: Encrypt Activity Type
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+  - LogInstanc

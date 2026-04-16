@@ -1,0 +1,39 @@
+table: OCCS
+description: Cycle Count Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OCCS.htm
+fields:
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+- field: CycleType
+  description: Cycle Type
+  type: VarChar
+  size: 1
+  default: G
+  constraints:
+  - key: G
+    label: Item Group
+  - key: S
+    label: Sublevel
+- field: CycleBy
+  description: Cycle By
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: Item Group
+  - key: '1'
+    label: Warehouse Sublevel 1
+  - key: '2'
+    label: Warehouse Sublevel 2
+  - key: '3'
+    label: Warehouse Sublevel 3
+  - key: '4'
+    label: Warehouse Sublevel 4
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WhsCode

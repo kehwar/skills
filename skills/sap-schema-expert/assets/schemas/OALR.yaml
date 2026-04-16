@@ -1,0 +1,119 @@
+table: OALR
+description: Alerts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OALR.htm
+fields:
+- field: Code
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Alert
+  - key: M
+    label: Message
+- field: Priority
+  description: Priority
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: '-'
+  - key: '1'
+    label: ''
+  - key: '2'
+    label: mHighPriority
+- field: TCode
+  description: Template Code
+  type: Int
+  size: 11
+  related: OALT
+- field: Subject
+  description: Subject
+  type: nVarChar
+  size: 254
+- field: UserText
+  description: MEMO
+  type: Text
+  size: 16
+- field: DataCols
+  description: No. of Columns
+  type: Int
+  size: 11
+- field: DataParams
+  description: Data
+  type: Text
+  size: 16
+- field: MsgData
+  description: Data
+  type: Text
+  size: 16
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Attachment
+  description: Attached File
+  type: Text
+  size: 16
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: AltType
+  description: Alert Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: C
+    label: Inventory Cycle
+- field: WddData
+  description: Data of Approval Process
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: USER
+  unique: false
+  fields:
+  - UserSign

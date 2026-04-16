@@ -1,0 +1,17 @@
+table: OBPP
+description: BP Priorities
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OBPP.htm
+fields:
+- field: PrioCode
+  description: Priority
+  type: Int
+  size: 11
+- field: PrioDesc
+  description: Priority Description
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrioCode

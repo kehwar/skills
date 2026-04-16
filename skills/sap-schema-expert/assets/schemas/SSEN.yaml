@@ -1,0 +1,49 @@
+table: SSEN
+description: SSEN
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SSEN.htm
+fields:
+- field: ID
+  description: Session ID
+  type: nVarChar
+  size: 254
+- field: ServerName
+  description: Server Name
+  type: nVarChar
+  size: 254
+- field: Port
+  description: Port Number
+  type: Int
+  size: 11
+- field: ReqEnter
+  description: Request Enter Time
+  type: Int
+  size: 11
+- field: ReqLeave
+  description: Request Leave Time
+  type: Int
+  size: 11
+- field: DBServer
+  description: DB Server Name
+  type: nVarChar
+  size: 254
+- field: DBName
+  description: Company DB Name
+  type: nVarChar
+  size: 254
+- field: UserCode
+  description: Company User Code
+  type: nVarChar
+  size: 64
+- field: UserPwd
+  description: Company User
+  type: nVarChar
+  size: 254
+- field: Language
+  description: Language Code
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID

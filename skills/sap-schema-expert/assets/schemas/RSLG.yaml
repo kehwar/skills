@@ -1,0 +1,42 @@
+table: RSLG
+description: Resource Merge Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSLG.htm
+fields:
+- field: SourceDB
+  description: Source DB
+  type: Int
+  size: 11
+- field: TargetDB
+  description: Target DB
+  type: Int
+  size: 11
+- field: RSName
+  description: Resource Name
+  type: nVarChar
+  size: 64
+- field: RSType
+  description: Resource Type
+  type: Int
+  size: 11
+- field: RSStatus
+  description: Resourc Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: D
+    label: Difference
+  - key: C
+    label: Conflict
+  - key: M
+    label: Merged
+  - key: N
+    label: No Differences
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SourceDB
+  - TargetDB
+  - RSName
+  - RSType

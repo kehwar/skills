@@ -1,0 +1,125 @@
+table: OTSH
+description: Time Sheet - Header
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OTSH.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: ProjectID
+  description: Project No.
+  type: Int
+  size: 11
+  related: OPMG
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: Employee
+  - key: U
+    label: User
+  - key: O
+    label: External
+- field: UserID
+  description: Employee/User ID
+  type: Int
+  size: 11
+  related: OHEM
+- field: LastName
+  description: Last Name
+  type: nVarChar
+  size: 50
+- field: FirstName
+  description: First Name
+  type: nVarChar
+  size: 50
+- field: Department
+  description: Department
+  type: Int
+  size: 6
+- field: DateFrom
+  description: Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Date To
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Production Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: UserCode
+  description: Employee/User Code
+  type: nVarChar
+  size: 50
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: OwnerCode
+  description: Owner
+  type: Int
+  size: 11
+  related: OHEM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

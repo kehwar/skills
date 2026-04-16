@@ -1,0 +1,306 @@
+table: OITL
+description: Inventory Transactions Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OITL.htm
+fields:
+- field: LogEntry
+  description: Log Internal ID
+  type: Int
+  size: 11
+- field: TransId
+  description: Transaction ID
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: ManagedBy
+  description: Management Method
+  type: Int
+  size: 11
+  default: 4
+  constraints:
+  - key: '10000044'
+    label: BTN
+  - key: '10000045'
+    label: SRN
+  - key: '4'
+    label: ITM
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+- field: DocLine
+  description: Doc. Row Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Transact. Type
+  type: Int
+  size: 11
+  default: -1
+- field: DocNum
+  description: Doc. Number
+  type: Int
+  size: 11
+- field: BaseEntry
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: BaseLine
+  description: Base Document Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '13'
+    label: A/R Invoice
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '17'
+    label: Sales Order
+  - key: '18'
+    label: A/P Invoice
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '21'
+    label: Goods Return
+  - key: '22'
+    label: Purchase Order
+  - key: '23'
+    label: Sales Quotation
+  - key: '59'
+    label: Goods Receipt
+  - key: '67'
+    label: Inventory Transfer
+  - key: '69'
+    label: Landed Costs
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '202'
+    label: Production Order
+  - key: '203'
+    label: A/R Down Payment
+  - key: '204'
+    label: A/P Down Payment
+- field: ApplyEntry
+  description: Applied Document Internal ID
+  type: Int
+  size: 11
+- field: ApplyLine
+  description: Applied Document Line Number
+  type: Int
+  size: 11
+- field: ApplyType
+  description: Applied Document Type
+  type: Int
+  size: 11
+  default: -1
+- field: DocDate
+  description: Doc. Posting Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: DocQty
+  description: Doc. Quantity
+  type: Num
+  size: 19.6
+- field: StockQty
+  description: Stock Affecting Quantity
+  type: Num
+  size: 19.6
+- field: DefinedQty
+  description: SnB Defined Quantity
+  type: Num
+  size: 19.6
+- field: StockEff
+  description: Stock Effect
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ACCUM_EMPTY
+  - key: '1'
+    label: ACCUM_ON_HAND
+  - key: '2'
+    label: ACCUM_COMMITTED
+  - key: '3'
+    label: ACCUM_ON_ORDER
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: LocType
+  description: Location Type
+  type: Int
+  size: 6
+- field: LocCode
+  description: Location Code
+  type: nVarChar
+  size: 8
+- field: AppDocNum
+  description: Applied Document Number
+  type: Int
+  size: 11
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: Transfered
+  description: Year Tranfer
+  type: VarChar
+  size: 1
+  default: N
+- field: Instance
+  description: INSTANCE
+  type: Int
+  size: 6
+  default: 0
+- field: SubLineNum
+  description: Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: BSubLineNo
+  description: Base Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: AppSubLine
+  description: Applied Subrow Number
+  type: Int
+  size: 11
+  default: -1
+- field: ActBaseTp
+  description: Actual Base Type
+  type: Int
+  size: 11
+  default: -1
+- field: ActBaseEnt
+  description: Actual Base Entry
+  type: Int
+  size: 11
+- field: ActBaseLn
+  description: Actual Base Line
+  type: Int
+  size: 11
+  default: -1
+- field: ActBasSubL
+  description: Actual Base Subline
+  type: Int
+  size: 11
+  default: -1
+- field: AllocateTp
+  description: Allocate Document Type
+  type: Int
+  size: 11
+  default: -1
+- field: AllocatEnt
+  description: Allocate Document Entry
+  type: Int
+  size: 11
+  default: -1
+- field: AllocateLn
+  description: Allocate Document Line
+  type: Int
+  size: 11
+  default: -1
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LogEntry
+- key: DOC_INFO
+  unique: false
+  fields:
+  - ManagedBy
+  - DocType
+  - DocEntry
+  - DocLine
+  - SubLineNum
+- key: BASEREF
+  unique: false
+  fields:
+  - BaseType
+  - BaseEntry
+  - BaseLine
+  - BSubLineNo
+- key: APPLYREF
+  unique: false
+  fields:
+  - ApplyType
+  - ApplyEntry
+  - ApplyLine
+  - AppSubLine
+- key: TRANSID
+  unique: false
+  fields:
+  - TransId
+- key: ACTUAL_INF
+  unique: false
+  fields:
+  - ManagedBy
+  - ActBaseTp
+  - ActBaseEnt
+  - ActBaseLn
+  - ActBasSubL
+- key: ALLOC_REF
+  unique: false
+  fields:
+  - AllocateTp
+  - AllocatEnt
+  - AllocateLn
+- key: DOC_REF
+  unique: false
+  fields:
+  - DocType
+  - DocEntry
+  - DocLine
+  - LogEntry
+- key: ITEM_CODE
+  unique: false
+  fields:
+  - ItemCode
+  - LocCode
+  - ManagedBy
+  - Instance
+  - ApplyEntry
+  - ApplyType
+  - LogEntry

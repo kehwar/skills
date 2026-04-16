@@ -1,0 +1,25 @@
+table: SHLP
+description: Server Help
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SHLP.htm
+fields:
+- field: LangCode
+  description: Language Code
+  type: nVarChar
+  size: 5
+- field: HelpImage
+  description: Help Image
+  type: Text
+  size: 16
+- field: Version
+  description: Help Version
+  type: Int
+  size: 11
+- field: helpPath
+  description: Help Path
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - LangCode

@@ -1,0 +1,20 @@
+table: QUE1
+description: Queue Members
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/QUE1.htm
+fields:
+- field: queueID
+  description: Queue ID
+  type: nVarChar
+  size: 20
+  related: OQUE
+- field: member
+  description: Member Name
+  type: Int
+  size: 11
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - queueID
+  - member

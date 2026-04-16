@@ -1,0 +1,389 @@
+table: OWOR
+description: Production Order
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OWOR.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+  default: 0
+- field: ItemCode
+  description: Product No.
+  type: nVarChar
+  size: 50
+  related: OITT
+- field: Status
+  description: Production Order Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Planned
+  - key: R
+    label: Released
+  - key: L
+    label: Closed
+  - key: C
+    label: Canceled
+- field: Type
+  description: Production Order Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Standard
+  - key: P
+    label: Special
+  - key: D
+    label: Disassembly
+- field: PlannedQty
+  description: Planned Quantity - Header
+  type: Num
+  size: 19.6
+- field: CmpltQty
+  description: Completed Quantity
+  type: Num
+  size: 19.6
+- field: RjctQty
+  description: Rejected Quantity
+  type: Num
+  size: 19.6
+- field: PostDate
+  description: Order Date
+  type: Date
+  size: 8
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: OriginAbs
+  description: Production Order Origin Entry
+  type: Int
+  size: 11
+- field: OriginNum
+  description: Production Order Origin Number
+  type: Int
+  size: 11
+- field: OriginType
+  description: Production Order Origin
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: R
+    label: MRP
+  - key: S
+    label: Sales Order
+  - key: U
+    label: Upgrade
+  - key: P
+    label: Production Order
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: CloseDate
+  description: Closing Date
+  type: Date
+  size: 8
+- field: RlsDate
+  description: Release Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Warehouse
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Uom
+  description: Inv. UoM in Production Order
+  type: nVarChar
+  size: 100
+- field: LineDirty
+  description: Line Modified
+  type: Int
+  size: 11
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 254
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Copy
+  - key: N
+    label: Original
+- field: OcrCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: OcrCode2
+  description: Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+  default: 0
+- field: PickRmrk
+  description: Pick Remarks
+  type: nVarChar
+  size: 254
+- field: SysCloseDt
+  description: System Closing Date
+  type: Date
+  size: 8
+- field: SysCloseTm
+  description: System Closing Time
+  type: Int
+  size: 6
+- field: CloseVerNm
+  description: Closing Version Number
+  type: nVarChar
+  size: 13
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '202'
+- field: ProdName
+  description: Product Description
+  type: nVarChar
+  size: 200
+- field: Priority
+  description: Priority
+  type: Int
+  size: 6
+  default: 100
+- field: RouDatCalc
+  description: Routing Date Calculation
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: On Start Date
+  - key: D
+    label: On End Date
+  - key: F
+    label: Start Date Forwards
+  - key: B
+    label: End Date Backwards
+- field: UpdAlloc
+  description: Update Allocation
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: C
+    label: Calculated
+  - key: R
+    label: Run Calculation
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+  related: OATC
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AsChild
+  description: Parent set as component
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Parent set as component
+  - key: N
+    label: Parent not set as component
+- field: LinkToObj
+  description: Linked To
+  type: nVarChar
+  size: 20
+  default: '17'
+  constraints:
+  - key: '202'
+    label: Production Order
+  - key: '17'
+    label: Sales Order
+- field: ProcItms
+  description: Procure Items
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReopOriDoc
+  description: Reopen Origin. Doc Cancel
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - PIndicator

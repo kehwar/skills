@@ -1,0 +1,81 @@
+table: OGBI
+description: 'GB Interface: Common Info'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OGBI.htm
+fields:
+- field: AbsEntry
+  description: Numerator
+  type: Int
+  size: 11
+- field: RepNo
+  description: Report Number
+  type: nVarChar
+  size: 20
+- field: RepCompany
+  description: Report Company Name
+  type: nVarChar
+  size: 60
+- field: RepPeriod
+  description: Report Period
+  type: nVarChar
+  size: 8
+- field: Currency
+  description: Currency Unit
+  type: nVarChar
+  size: 10
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: CreateDate
+  description: Report Creation Date
+  type: nVarChar
+  size: 8
+- field: RepType
+  description: Report Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: ''
+  - key: '1'
+    label: Electronic Account Book
+  - key: '2'
+    label: G/L Account Master Records
+  - key: '3'
+    label: Departments
+  - key: '16'
+    label: Employees
+  - key: '4'
+    label: Business Partners
+  - key: '5'
+    label: Projects
+  - key: '6'
+    label: G/L Account Balance
+  - key: '7'
+    label: Accounting Vouchers
+  - key: '8'
+    label: Enterprise's Balance Sheet
+  - key: '9'
+    label: Enterprise's Profit and Loss Statement
+  - key: '10'
+    label: Enterprise's Cash Flow Statement
+  - key: '11'
+    label: Devalue Provision of Enterprise Assets
+  - key: '12'
+    label: Shareholder's Rights and Interests Changing Report
+  - key: '13'
+    label: Enterprise's Profit Distribution Report
+  - key: '14'
+    label: Small Enterprise's Cash Flow Statement
+  - key: '15'
+    label: Enterprise's VAT Payable Detail Report
+- field: RepEntity
+  description: Report Entity
+  type: nVarChar
+  size: 60
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

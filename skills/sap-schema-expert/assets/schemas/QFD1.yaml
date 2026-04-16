@@ -1,0 +1,125 @@
+table: QFD1
+description: Query Fields Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/QFD1.htm
+fields:
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: FieldName
+  description: Field Name
+  type: nVarChar
+  size: 80
+- field: FieldDesc
+  description: Field Description
+  type: nVarChar
+  size: 100
+- field: OrigTable
+  description: Original Table
+  type: nVarChar
+  size: 100
+- field: OrigField
+  description: Original Field
+  type: nVarChar
+  size: 50
+- field: EditType
+  description: Edit Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '-'
+    label: None
+  - key: T
+    label: Tax
+  - key: R
+    label: Rate
+  - key: P
+    label: Price
+  - key: S
+    label: Sum
+  - key: N
+    label: Unit
+  - key: Q
+    label: Quantity
+  - key: '%'
+    label: Percent
+  - key: M
+    label: Measure
+- field: StatType
+  description: Statistical Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Dimension
+  - key: M
+    label: Measure
+- field: AggrType
+  description: Aggregation Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: S
+    label: Sum
+  - key: A
+    label: Average
+  - key: C
+    label: Count
+  - key: M
+    label: Minimum
+  - key: X
+    label: Maximum
+- field: LinkTable
+  description: Linked Table
+  type: nVarChar
+  size: 100
+- field: DeciPlace
+  description: Decimal Places
+  type: Int
+  size: 6
+  default: 2
+  constraints:
+  - key: '0'
+    label: No Decimals
+  - key: '1'
+    label: One Decimal
+  - key: '2'
+    label: Two Decimals
+  - key: '3'
+    label: Three Decimals
+  - key: '4'
+    label: Four Decimals
+  - key: '5'
+    label: Five Decimals
+  - key: '6'
+    label: No Rounding
+  - key: '7'
+    label: Amounts
+  - key: '8'
+    label: Prices
+  - key: '9'
+    label: Rates
+  - key: '10'
+    label: Quantities
+  - key: '11'
+    label: Units
+  - key: '12'
+    label: Percent
+- field: DbType
+  description: Database Type
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IntrnalKey
+  - LineNum

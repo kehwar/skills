@@ -1,0 +1,31 @@
+table: WSV1
+description: Web Client Linked View Filter
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WSV1.htm
+fields:
+- field: Guid
+  description: GUID
+  type: nVarChar
+  size: 40
+- field: ParentId
+  description: Parent Id
+  type: nVarChar
+  size: 40
+  related: OWSV
+- field: FlterFld
+  description: Filter Name
+  type: nVarChar
+  size: 254
+- field: BindField
+  description: Bind Field
+  type: nVarChar
+  size: 254
+- field: CardId
+  description: Card Id
+  type: nVarChar
+  size: 40
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParentId
+  - Guid

@@ -1,0 +1,26 @@
+table: XSSE
+description: XS Session
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/XSSE.htm
+fields:
+- field: SID
+  description: SID
+  type: nVarChar
+  size: 32
+- field: XKEY
+  description: XKEY
+  type: nVarChar
+  size: 50
+- field: VALUE
+  description: VALUE
+  type: Text
+  size: 16
+- field: UPDATETIME
+  description: UPDATETIME
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SID
+  - XKEY

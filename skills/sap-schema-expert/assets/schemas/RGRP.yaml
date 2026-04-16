@@ -1,0 +1,25 @@
+table: RGRP
+description: users groups
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RGRP.htm
+fields:
+- field: GroupCode
+  description: Group Code
+  type: Int
+  size: 11
+- field: GroupName
+  description: Group Name
+  type: nVarChar
+  size: 20
+- field: Perms
+  description: Permissions
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GroupCode
+- key: NAME
+  unique: true
+  fields:
+  - GroupName

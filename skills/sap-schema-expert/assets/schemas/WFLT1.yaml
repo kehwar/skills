@@ -1,0 +1,34 @@
+table: WFLT1
+description: List View Filters Conditions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WFLT1.htm
+fields:
+- field: ParentId
+  description: Parent Id
+  type: nVarChar
+  size: 40
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: Order
+  description: Order
+  type: Int
+  size: 11
+- field: ColName
+  description: Column Name
+  type: nVarChar
+  size: 50
+- field: CompExpr
+  description: Compare Expression
+  type: nVarChar
+  size: 50
+- field: Value
+  description: Value
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParentId
+  - Guid

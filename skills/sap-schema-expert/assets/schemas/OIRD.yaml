@@ -1,0 +1,54 @@
+table: OIRD
+description: Report Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OIRD.htm
+fields:
+- field: ReportId
+  description: Report Id
+  type: nVarChar
+  size: 254
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+  default: 1
+- field: CategoryId
+  description: Category Id
+  type: Int
+  size: 11
+- field: Revision
+  description: Revision
+  type: nVarChar
+  size: 10
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 254
+- field: Definition
+  description: Report Definition
+  type: Text
+  size: 16
+- field: System
+  description: System
+  type: VarChar
+  size: 1
+- field: CreateBy
+  description: Created By
+  type: nVarChar
+  size: 25
+- field: CreateDate
+  description: Creation Timestamp
+  type: Date
+  size: 8
+- field: ModifyBy
+  description: Modified By
+  type: nVarChar
+  size: 25
+- field: ModifyDate
+  description: Modification Timestamp
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ReportId

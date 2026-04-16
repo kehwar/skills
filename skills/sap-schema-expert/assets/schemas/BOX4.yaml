@@ -1,0 +1,48 @@
+table: BOX4
+description: Box Definition - Contra Accounts of Accounts
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/BOX4.htm
+fields:
+- field: ReportType
+  description: Report Type
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: ''
+  - key: S
+    label: ''
+- field: EffecDate
+  description: Effective From
+  type: Date
+  size: 8
+- field: BoxCode
+  description: Group Code
+  type: nVarChar
+  size: 30
+- field: Account
+  description: Account
+  type: nVarChar
+  size: 15
+- field: ContraAct
+  description: Offset Account
+  type: nVarChar
+  size: 15
+- field: SeqNum
+  description: Sequence Number
+  type: Int
+  size: 11
+- field: BosCode
+  description: Box Set Code
+  type: Int
+  size: 11
+  related: OBOS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - BoxCode
+  - ReportType
+  - Account
+  - BosCode
+  - ContraAct

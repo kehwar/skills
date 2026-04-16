@@ -1,0 +1,33 @@
+table: HEM6
+description: Employee Roles
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HEM6.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+  related: OHEM
+- field: line
+  description: Employee Role Row
+  type: Int
+  size: 6
+- field: roleID
+  description: Role ID
+  type: Int
+  size: 11
+  related: OHTY
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - line

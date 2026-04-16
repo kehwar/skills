@@ -1,0 +1,27 @@
+table: WPM2
+description: Process Map Relation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPM2.htm
+fields:
+- field: PrcMapId
+  description: Process Map ID
+  type: nVarChar
+  size: 40
+  related: OWPM
+- field: Guid
+  description: Guid of Relation
+  type: nVarChar
+  size: 40
+- field: FromId
+  description: From ID
+  type: nVarChar
+  size: 40
+- field: ToId
+  description: To ID
+  type: nVarChar
+  size: 40
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcMapId
+  - Guid

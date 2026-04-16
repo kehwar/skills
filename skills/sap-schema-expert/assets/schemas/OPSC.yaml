@@ -1,0 +1,22 @@
+table: OPSC
+description: Product Source Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OPSC.htm
+fields:
+- field: Code
+  description: Source Code
+  type: Int
+  size: 6
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 100
+- field: GroupCode
+  description: Group Code
+  type: Int
+  size: 6
+  related: OPSG
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

@@ -1,0 +1,75 @@
+table: OUTX
+description: Unreported VAT Transactions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OUTX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '15'
+    label: Delivery notes
+  - key: '16'
+    label: Revert Delivery Notes
+  - key: '17'
+    label: Sales Order
+  - key: '20'
+    label: Goods Receipt
+  - key: '21'
+    label: Goods Return
+  - key: '22'
+    label: Purchase order
+  - key: '23'
+    label: Sales Quotation
+  - key: '112'
+    label: Document Draft
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '28'
+    label: Journal Batches
+  - key: '140'
+    label: Payment Draft
+  - key: '123'
+    label: Checks for Payment Drafts
+  - key: '540000006'
+    label: Purchase Quotation
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+  default: -1
+- field: OrdinLNum
+  description: Ordial Num (BTF & Canceled)
+  type: Int
+  size: 11
+  default: -1
+- field: Cancelled
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - SrcObjType
+  - SrcObjAbs
+  - OrdinLNum

@@ -1,0 +1,18 @@
+table: UQR1
+description: Queries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/UQR1.htm
+fields:
+- field: InternlKey
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Module
+  description: Module
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - InternlKey
+  - Module

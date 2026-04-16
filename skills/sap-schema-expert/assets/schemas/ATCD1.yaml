@@ -1,0 +1,107 @@
+table: ATCD1
+description: Key Fields for Determination
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ATCD1.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: TcdId
+  description: Tax Determination Code
+  type: Int
+  size: '11'
+  related: OTCD
+- field: KeyFld_1
+  description: Key Fields 1
+  type: Int
+  size: '11'
+  default: '0'
+- field: KeyFld_2
+  description: Key Fields 2
+  type: Int
+  size: '11'
+  default: '0'
+- field: KeyFld_3
+  description: Key Fields 3
+  type: Int
+  size: '11'
+  default: '0'
+- field: Priority
+  description: Priority
+  type: Int
+  size: '11'
+  default: '0'
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: '100'
+- field: KeyFld_4
+  description: Key Fields 4
+  type: Int
+  size: '11'
+  default: '0'
+- field: UDFTable_1
+  description: UDF Table Name 1
+  type: nVarChar
+  size: '20'
+- field: UDFAlias_1
+  description: UDF Field Alias 1
+  type: nVarChar
+  size: '18'
+- field: UDFTable_2
+  description: UDF Table Name 2
+  type: nVarChar
+  size: '20'
+- field: UDFAlias_2
+  description: UDF Field Alias 2
+  type: nVarChar
+  size: '18'
+- field: UDFTable_3
+  description: UDF Table Name 3
+  type: nVarChar
+  size: '20'
+- field: UDFAlias_3
+  description: UDF Field Alias 3
+  type: nVarChar
+  size: '18'
+- field: UDFTable_4
+  description: UDF Table Name 4
+  type: nVarChar
+  size: '20'
+- field: UDFAlias_4
+  description: UDF Field Alias 4
+  type: nVarChar
+  size: '18'
+- field: KeyFld_5
+  description: Key Fields 5
+  type: Int
+  size: '11'
+  default: '0'
+- field: UDFTable_5
+  description: UDF Table Name 5
+  type: nVarChar
+  size: '20'
+- field: UDFAlias_5
+  description: UDF Field Alias 5
+  type: nVarChar
+  size: '18'
+- field: LegalText
+  description: Legal Text
+  type: nVarChar
+  size: '250'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc
+- key: TCD1_UNI
+  unique: true
+  fields:
+  - TcdId
+  - Priority
+  - LogInstanc

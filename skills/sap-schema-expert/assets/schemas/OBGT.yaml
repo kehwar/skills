@@ -1,0 +1,123 @@
+table: OBGT
+description: Budget
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OBGT.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: BgdCode
+  description: Division Code
+  type: Int
+  size: 11
+  related: OBGD
+- field: FatherCode
+  description: Parent Account Key
+  type: nVarChar
+  size: 15
+- field: FthrPrcnt
+  description: Parent Acct %
+  type: Num
+  size: 19.6
+- field: DebLTotal
+  description: Total Annual Budget - Debit (LC)
+  type: Num
+  size: 19.6
+- field: CredLTotal
+  description: Total Annual Budget - Credit (LC)
+  type: Num
+  size: 19.6
+- field: DebSTotal
+  description: Total Annual Budget - Debit (SC)
+  type: Num
+  size: 19.6
+- field: CredSTotal
+  description: Total Annual Budget - Credit (SC)
+  type: Num
+  size: 19.6
+- field: DebRLTotal
+  description: Budget Balance - Debit (LC)
+  type: Num
+  size: 19.6
+- field: CrdRLTotal
+  description: Budget Balance - Credit (LC)
+  type: Num
+  size: 19.6
+- field: DebRSTotal
+  description: Budget Balance - Debit (SC)
+  type: Num
+  size: 19.6
+- field: CrdRSTotal
+  description: Budget Balance - Credit (SC)
+  type: Num
+  size: 19.6
+- field: FtrIDRLSum
+  description: Future Annual Revenues - Debit (LC)
+  type: Num
+  size: 19.6
+- field: FtrIDRSSum
+  description: Future Annual Revenues - Credit (SC)
+  type: Num
+  size: 19.6
+- field: FtrICRLSum
+  description: Future Revenues - Debit (LC)
+  type: Num
+  size: 19.6
+- field: FtrICRSSum
+  description: Future Revenues - Debit (SC)
+  type: Num
+  size: 19.6
+- field: FtrODRLSum
+  description: Future Annual Expenses - Credit (LC)
+  type: Num
+  size: 19.6
+- field: FtrOCRLSum
+  description: Future Annual Expenses - Debit (LC)
+  type: Num
+  size: 19.6
+- field: FtrODRSSum
+  description: Future Annual Expenses - Credit (SC)
+  type: Num
+  size: 19.6
+- field: FtrOCRSSum
+  description: Future Annual Expenses - Debit (SC)
+  type: Num
+  size: 19.6
+- field: FinancYear
+  description: Start of Fiscal Year
+  type: Date
+  size: 8
+- field: Instance
+  description: Instance
+  type: Int
+  size: 11
+  related: OBGS
+  default: 1
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: SCNCounter
+  description: SCN Counter
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: ACCNT_CODE
+  unique: true
+  fields:
+  - AcctCode
+  - FinancYear
+  - Instance
+- key: INTER_KEY
+  unique: false
+  fields:
+  - FatherCode

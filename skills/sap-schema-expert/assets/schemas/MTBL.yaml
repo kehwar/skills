@@ -1,0 +1,100 @@
+table: MTBL
+description: MetaData Tables
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/MTBL.htm
+fields:
+- field: Name
+  description: Table Name
+  type: nVarChar
+  size: 5
+- field: ViewOrder
+  description: View Order
+  type: Int
+  size: 6
+  default: 30
+  constraints:
+  - key: '-1'
+    label: Invisible
+  - key: '10'
+    label: Administration
+  - key: '20'
+    label: Administration Plus
+  - key: '30'
+    label: Master Data
+  - key: '40'
+    label: Document Line
+  - key: '50'
+    label: Document
+  - key: '60'
+    label: Log File
+  - key: '70'
+    label: Payment Line
+  - key: '80'
+    label: Payments
+- field: Type
+  description: Table Type
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: User OM
+  - key: '2'
+    label: User
+  - key: '3'
+    label: System OM
+  - key: '4'
+    label: System
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 254
+- field: Category
+  description: Category
+  type: Int
+  size: 6
+  default: 0
+- field: SubCateg
+  description: Sub Category
+  type: Int
+  size: 6
+  default: 0
+- field: Dirty
+  description: Dirty
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Created
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update Date
+  type: Date
+  size: 8
+- field: InfoCtgory
+  description: Information Category
+  type: Int
+  size: 6
+  default: 0
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name
+  - ResCode
+  - RevCode

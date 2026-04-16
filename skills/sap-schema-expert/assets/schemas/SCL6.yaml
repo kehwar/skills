@@ -1,0 +1,291 @@
+table: SCL6
+description: Service Call Scheduling
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/SCL6.htm
+fields:
+- field: SrcvCallID
+  description: Service Call No.
+  type: Int
+  size: 11
+  related: OSCL
+- field: Line
+  description: Row
+  type: Int
+  size: 6
+- field: Technician
+  description: Technician
+  type: Int
+  size: 11
+  related: OHEM
+- field: HandledBy
+  description: Handled by User
+  type: Int
+  size: 6
+  related: OUSR
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Duration
+  description: Service Call Duration
+  type: Num
+  size: 19.6
+- field: Location
+  description: Location
+  type: Int
+  size: 6
+  related: OCLO
+  default: -1
+- field: AddressId
+  description: Address Code
+  type: nVarChar
+  size: 50
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: Reminder
+  description: Reminder
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemQty
+  description: Reminder Quantity
+  type: Num
+  size: 19.6
+- field: DisplInCal
+  description: Display in Calendar
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Unsched
+  description: Unscheduled Call
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DurType
+  description: Duration UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: RemType
+  description: Reminder UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: RemDate
+  description: Reminder Date
+  type: Date
+  size: 8
+- field: RemSent
+  description: Reminder Sent
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemTime
+  description: Reminder Time
+  type: Int
+  size: 6
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: Room
+  description: Room
+  type: nVarChar
+  size: 50
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: Address2
+  description: Address Name 2
+  type: nVarChar
+  size: 50
+- field: Address3
+  description: Address Name 3
+  type: nVarChar
+  size: 50
+- field: AddrType
+  description: Address Type
+  type: nVarChar
+  size: 100
+- field: StreetNo
+  description: Street No.
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: Block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: County
+  description: County
+  type: nVarChar
+  size: 100
+- field: TaxOffice
+  description: Tax Office
+  type: nVarChar
+  size: 50
+- field: GlblLocNum
+  description: Global Location Number
+  type: nVarChar
+  size: 50
+- field: ActualDur
+  description: Actual Duration
+  type: Num
+  size: 19.6
+- field: ActDurType
+  description: Actual Duration UoM
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: S
+    label: Seconds
+  - key: M
+    label: Minutes
+  - key: H
+    label: Hours
+  - key: D
+    label: Days
+- field: Close
+  description: Close
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: AddrTypeBS
+  description: Address Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: S
+    label: Ship To
+  - key: B
+    label: Bill To
+- field: SignName
+  description: Signature Name
+  type: nVarChar
+  size: 100
+- field: SaleOrders
+  description: Sales Orders
+  type: nVarChar
+  size: 100
+- field: ChkInDate
+  description: Check in Date
+  type: Date
+  size: 8
+- field: ChkInTime
+  description: Check in Time
+  type: Int
+  size: 11
+- field: ChkInLoc
+  description: Check in Location
+  type: nVarChar
+  size: 254
+- field: ChkLontitu
+  description: Check in Longitude
+  type: nVarChar
+  size: 14
+- field: ChkLatitu
+  description: Check in Latitude
+  type: nVarChar
+  size: 13
+- field: ChkOutDate
+  description: Check out Date
+  type: Date
+  size: 8
+- field: ChkOutTime
+  description: Check out Time
+  type: Int
+  size: 11
+- field: SignData
+  description: Signature Data
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SrcvCallID
+  - Line

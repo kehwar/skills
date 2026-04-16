@@ -1,0 +1,34 @@
+table: SDRF
+description: Drag&Relate - Files
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SDRF.htm
+fields:
+- field: ObjectId
+  description: ObjectId
+  type: nVarChar
+  size: 4
+- field: DescStr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: FatherId
+  description: FatherId
+  type: nVarChar
+  size: 4
+- field: VisLevel
+  description: Visual level
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: ''
+  - key: '2'
+    label: ''
+- field: VisOrder
+  description: Visual order
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ObjectId

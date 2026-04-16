@@ -1,0 +1,53 @@
+table: OCDP
+description: Closing Date Procedure
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCDP.htm
+fields:
+- field: ClsDateNum
+  description: Closing Date Procedure Number
+  type: Int
+  size: 6
+- field: ClsDtCode
+  description: Closing Date Procedure Code
+  type: nVarChar
+  size: 30
+- field: BsLineDate
+  description: Base Row Date
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: P
+    label: Posting Date
+  - key: S
+    label: System Date
+- field: DueMonth
+  description: Start From
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: E
+    label: Month End
+  - key: H
+    label: Half Month
+  - key: Y
+    label: Month Start
+  - key: N
+    label: ''
+- field: ExtraMonth
+  description: Extra Month
+  type: Int
+  size: 6
+- field: ExtraDay
+  description: Extra Day
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ClsDateNum
+- key: ABS_ENTRY
+  unique: true
+  fields:
+  - ClsDtCode

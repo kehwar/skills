@@ -1,0 +1,120 @@
+table: AEC3
+description: Statuses and Logs for Actions in Electronic Communication
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/AEC3.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+  related: ECM2
+- field: LogNum
+  description: Log Number
+  type: Int
+  size: 11
+- field: LogType
+  description: Log Type
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: S
+    label: Send
+  - key: R
+    label: Receive
+  - key: I
+    label: Import
+  - key: N
+    label: Note
+  - key: W
+    label: Warning
+  - key: E
+    label: Error
+  - key: D
+    label: WS Data
+  - key: B
+    label: Authorities Process Starts
+  - key: F
+    label: Authorities Process Finished
+- field: LogMessage
+  description: Log Message
+  type: Text
+  size: 16
+- field: LogData
+  description: Log Data
+  type: Text
+  size: 16
+- field: LogOpDate
+  description: Log Operation Date
+  type: Date
+  size: 8
+- field: LogOpTS
+  description: Log Operation Time - Incl. Secs
+  type: Int
+  size: 11
+- field: ExportFmt
+  description: Export Format
+  type: Int
+  size: 11
+  related: OLLF
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Secs
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: ExportFile
+  description: Export File
+  type: Text
+  size: 16
+- field: AutProcess
+  description: Authorities Process
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: None
+  - key: A
+    label: Approval Process
+  - key: R
+    label: Rejection Process
+- field: Sensitive
+  description: Log is Sensitive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogNum
+  - LogInstanc

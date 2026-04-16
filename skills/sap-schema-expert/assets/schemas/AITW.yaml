@@ -1,0 +1,381 @@
+table: AITW
+description: Items - Warehouse - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AITW.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: OnHand
+  description: In Stock
+  type: Num
+  size: 19.6
+- field: IsCommited
+  description: Defined
+  type: Num
+  size: 19.6
+- field: OnOrder
+  description: Ordered
+  type: Num
+  size: 19.6
+- field: Consig
+  description: Consignment Goods WH
+  type: Num
+  size: 19.6
+- field: Counted
+  description: Counted Quantity
+  type: Num
+  size: 19.6
+- field: WasCounted
+  description: Counted Yes/No
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: MinStock
+  description: Min. Stock
+  type: Num
+  size: 19.6
+- field: MaxStock
+  description: Max. Stock
+  type: Num
+  size: 19.6
+- field: MinOrder
+  description: Min. Order
+  type: Num
+  size: 19.6
+- field: AvgPrice
+  description: Average Price
+  type: Num
+  size: 19.6
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BalInvntAc
+  description: Inventory Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaleCostAc
+  description: Cost Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TransferAc
+  description: Transfers Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevenuesAc
+  description: Revenues Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VarianceAc
+  description: Variance Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecreasAc
+  description: Inventory Offset - Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncreasAc
+  description: Inventory Offset - Increase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReturnAc
+  description: Sales Returns
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpensesAc
+  description: Expenses Acct.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EURevenuAc
+  description: Sales Revenue - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EUExpensAc
+  description: EU Expenses Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrRevenuAc
+  description: Sales Revenue - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrExpensAc
+  description: Foreign Expenses Acc.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExmptIncom
+  description: Exempt Revenues Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PriceDifAc
+  description: Price Differences Acc.
+  type: nVarChar
+  size: 15
+- field: ExchangeAc
+  description: Exchange Rate Differences Acc.
+  type: nVarChar
+  size: 15
+- field: BalanceAcc
+  description: Goods Clearing Acc.
+  type: nVarChar
+  size: 15
+- field: PurchaseAc
+  description: Purchase Acc.
+  type: nVarChar
+  size: 15
+- field: PAReturnAc
+  description: PA Return Acc.
+  type: nVarChar
+  size: 15
+- field: PurchOfsAc
+  description: Purchase Offset Acc.
+  type: nVarChar
+  size: 15
+- field: ShpdGdsAct
+  description: Shipped Goods Account
+  type: nVarChar
+  size: 15
+- field: VatRevAct
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+- field: StockValue
+  description: Stock Value
+  type: Num
+  size: 19.6
+- field: DecresGlAc
+  description: Decrease GL Acc.
+  type: nVarChar
+  size: 15
+- field: IncresGlAc
+  description: Increase GL Acc.
+  type: nVarChar
+  size: 15
+- field: StokRvlAct
+  description: Stock Inflation Adjust Account
+  type: nVarChar
+  size: 15
+- field: StkOffsAct
+  description: Stock Inflation Offset Account
+  type: nVarChar
+  size: 15
+- field: WipAcct
+  description: WIP Material Account
+  type: nVarChar
+  size: 15
+- field: WipVarAcct
+  description: WIP Material Variance Account
+  type: nVarChar
+  size: 15
+- field: CostRvlAct
+  description: Cost Inflation Account
+  type: nVarChar
+  size: 15
+- field: CstOffsAct
+  description: Cost Inflation Offset Account
+  type: nVarChar
+  size: 15
+- field: ExpClrAct
+  description: Expenses Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpOfstAct
+  description: Expense Offsetting Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Object
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '31'
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Update Date - History
+  type: Date
+  size: 8
+- field: ARCMAct
+  description: Sales Credit Acct
+  type: nVarChar
+  size: 15
+- field: ARCMFrnAct
+  description: Sales Credit Foreign Acct
+  type: nVarChar
+  size: 15
+- field: ARCMEUAct
+  description: Sales Credit EU Acct
+  type: nVarChar
+  size: 15
+- field: ARCMExpAct
+  description: Exempted Credits
+  type: nVarChar
+  size: 15
+- field: APCMAct
+  description: Purchase Credit Acct
+  type: nVarChar
+  size: 15
+- field: APCMFrnAct
+  description: Foreign Purchase Credit Acct
+  type: nVarChar
+  size: 15
+- field: APCMEUAct
+  description: EU Purchase Credit Acct
+  type: nVarChar
+  size: 15
+- field: RevRetAct
+  description: Revenue Returns Account
+  type: nVarChar
+  size: 15
+- field: NegStckAct
+  description: Negative Stock Adjustment Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkInTnAct
+  description: Stock In Transit Acct
+  type: nVarChar
+  size: 15
+- field: PurBalAct
+  description: Purchase Balance Account
+  type: nVarChar
+  size: 15
+- field: WhICenAct
+  description: Incoming CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhOCenAct
+  description: Outgoing CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipOffset
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockOffst
+  description: Inventory Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DftBinAbs
+  description: Default Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: DftBinEnfd
+  description: Default Bin Enforced [Y/N]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Freezed
+  description: Item Frozen in Warehouse
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FreezeDoc
+  description: INC Document Frozen By
+  type: Int
+  size: 11
+  related: OINC
+- field: FreeChrgSA
+  description: Free of Charge Sales Account
+  type: nVarChar
+  size: 15
+- field: FreeChrgPU
+  description: Free of Charge Purchase Account
+  type: nVarChar
+  size: 15
+- field: IndEscala
+  description: Indicator for Relevant Scale
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CNJPMan
+  description: CNPJ of Manufacturer
+  type: nVarChar
+  size: 14
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - WhsCode
+  - logInstanc
+- key: ITEM
+  unique: false
+  fields:
+  - ItemCode
+- key: WHS
+  unique: false
+  fields:
+  - WhsCode
+- key: COUNTED
+  unique: false
+  fields:
+  - WasCounted

@@ -1,0 +1,156 @@
+table: ASTC
+description: Sales Tax Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ASTC.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: '8'
+- field: Name
+  description: Name
+  type: nVarChar
+  size: '100'
+- field: Rate
+  description: Rate
+  type: Num
+  size: '19.6'
+- field: Freight
+  description: Freight
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: '6'
+  related: OUSR
+- field: ValidForAR
+  description: Valid for A/R
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ValidForAP
+  description: Valid for A/P
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TfcId
+  description: Formula Combination ID
+  type: Int
+  size: '11'
+  related: OTFC
+- field: Lock
+  description: Inactive
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxIcms
+  description: Taxation For ICMS
+  type: nVarChar
+  size: '2'
+- field: IsItmLevel
+  description: Single Item Level Tax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CfopIn
+  description: CFOP Incoming Code
+  type: nVarChar
+  size: '6'
+  related: OCFP
+- field: CfopOut
+  description: CFOP Outgoing Code
+  type: nVarChar
+  size: '6'
+  related: OCFP
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: '8'
+- field: FADebit
+  description: FA Debit
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsSystem
+  description: Is System Tax Code
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatExempt
+  description: Apply VAT Exemption
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HashInpNm
+  description: Hash Input Name
+  type: nVarChar
+  size: '100'
+- field: CheckDate
+  description: Check Date
+  type: Date
+  size: '8'
+- field: EfctDate
+  description: Effective From
+  type: Date
+  size: '8'
+- field: Provider
+  description: Tax Service Provider
+  type: nVarChar
+  size: '50'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LogInstanc

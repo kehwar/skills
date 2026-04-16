@@ -1,0 +1,58 @@
+table: ATCD2
+description: Key Field Values
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ATCD2.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: Tcd1Id
+  description: Tax Determination ID
+  type: Int
+  size: '11'
+  related: TCD1
+- field: DispOrder
+  description: Display Order
+  type: Int
+  size: '11'
+- field: KeyFld_1_V
+  description: Key Fields 1 Value
+  type: nVarChar
+  size: '50'
+- field: KeyFld_2_V
+  description: Key Fields 2 Value
+  type: nVarChar
+  size: '50'
+- field: KeyFld_3_V
+  description: Key Fields 3 Value
+  type: nVarChar
+  size: '50'
+- field: KeyFld_4_V
+  description: Key Fields 4 Value
+  type: nVarChar
+  size: '50'
+- field: KeyFld_5_V
+  description: Key Fields 5 Value
+  type: nVarChar
+  size: '50'
+- field: TcdId
+  description: Tax Determination Code
+  type: Int
+  size: '11'
+  related: OTCD
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc
+- key: TCD2_UNI
+  unique: true
+  fields:
+  - Tcd1Id
+  - DispOrder
+  - LogInstanc

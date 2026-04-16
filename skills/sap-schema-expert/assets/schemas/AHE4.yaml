@@ -1,0 +1,49 @@
+table: AHE4
+description: Previous Employment
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/AHE4.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+  related: OHEM
+- field: line
+  description: Previous Employment Row
+  type: Int
+  size: 6
+- field: fromDate
+  description: Employment from
+  type: Date
+  size: 8
+- field: toDate
+  description: Employment to
+  type: Date
+  size: 8
+- field: employer
+  description: Employer
+  type: nVarChar
+  size: 50
+- field: position
+  description: Position
+  type: nVarChar
+  size: 50
+- field: remarks
+  description: Previous Employment
+  type: Text
+  size: 16
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - line
+  - LogInstanc

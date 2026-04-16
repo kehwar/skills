@@ -1,0 +1,792 @@
+table: AADP1
+description: Object Settings - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AADP1.htm
+fields:
+- field: PrintId
+  description: Print No.
+  type: nVarChar
+  size: '4'
+  related: OADP
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: '11'
+  default: '13'
+  constraints:
+  - key: '1470000049'
+    label: Capitalization
+  - key: '1470000071'
+    label: Depreciation Run
+  - key: '1470000090'
+    label: Fixed Asset Transfer
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery
+  - key: '234000031'
+    label: Return Request
+  - key: '16'
+    label: Returns
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '234000032'
+    label: Goods Return Request
+  - key: '21'
+    label: Goods Return
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '69'
+    label: Landed Costs
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Outgoing Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '57'
+    label: Check for Payment
+  - key: '30'
+    label: Journal Entry
+  - key: '28'
+    label: Journal Voucher
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '1250000001'
+    label: Inventory Transfer Request
+  - key: '67'
+    label: Inventory Transfer
+  - key: '68'
+    label: Work Instructions
+  - key: '202'
+    label: Production Order
+  - key: '162'
+    label: Inventory Revaluation
+  - key: '156'
+    label: Pick List
+  - key: '1470000065'
+    label: Inventory Counting
+  - key: '10000071'
+    label: Inventory Posting
+  - key: '310000001'
+    label: Inventory Opening Balances
+  - key: '191'
+    label: Service Call
+  - key: '190'
+    label: Service Contract
+  - key: '176'
+    label: Equipment Card
+  - key: '88'
+    label: Entrada
+  - key: '89'
+    label: Salida
+  - key: '90'
+    label: Traspaso
+  - key: '132'
+    label: Correction Invoice
+  - key: '234000021'
+    label: Project Management Document
+- field: Copies
+  description: No. of Copies
+  type: Int
+  size: '6'
+  default: '1'
+- field: PrintOnAdd
+  description: Add & Print
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ExprtOnAdd
+  description: Add & Export
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RoundSums
+  description: Rounding Amounts
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Remark
+  description: Standard Remarks
+  type: Text
+  size: '16'
+- field: PrintSums
+  description: Print Totals
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VndrNum
+  description: Print Mfr Catalog No.
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PrnDscnt
+  description: Print Discount Data
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitTran1
+  description: Split Transaction 1
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitTran2
+  description: Split Transaction 2
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitTran3
+  description: Split Transaction 3
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShowBothNu
+  description: Print Mfr Catalog No. Instead
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseRmrk
+  description: Display Base Remarks
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: HandCopies
+  description: No. of Copies for Manual Doc.
+  type: Int
+  size: '6'
+  default: '1'
+- field: EngKBItem
+  description: Switch to English Keyboard when Entering an Item
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EngKBCard
+  description: Switch to English Keyboard When Entering a BP
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OrdrPicDef
+  description: Set Pick Order as Default
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SpltTrBOE1
+  description: Split Bill of Exchange Transaction
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LineNumPPg
+  description: Row Item Number Per Page
+  type: Int
+  size: '6'
+  default: '5'
+- field: JENumPPg
+  description: Journal Entry Number Per Page
+  type: Int
+  size: '6'
+  default: '2'
+- field: CashPay
+  description: Remark for Cash Payments
+  type: Text
+  size: '16'
+- field: NonCashPay
+  description: Remark for Non-Cash Payments
+  type: Text
+  size: '16'
+- field: MaxUOPay
+  description: Max. Under/Overpayment Amount
+  type: Num
+  size: '19.6'
+- field: CkeckPaper
+  description: Paper for Checks
+  type: VarChar
+  size: '1'
+  default: S
+  constraints:
+  - key: B
+    label: Blank Paper
+  - key: S
+    label: Overflow Check Stock
+  - key: P
+    label: Overflow Blank Paper
+- field: AllowFuPos
+  description: Allow Future Posting
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ErdOutMode
+  description: ERD Mode for Outgoing Payments
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ErdIncMode
+  description: ERD Mode for Incoming Payments
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChkDupRef
+  description: Check Duplicate BP Reference Number
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: Without Warning
+  - key: W
+    label: Warning Only
+  - key: B
+    label: Block Release
+- field: CpyCVRef
+  description: Copy BP Reference Number
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BatchSerPr
+  description: Batch/Serial No. Print Definitions
+  type: VarChar
+  size: '1'
+  default: A
+  constraints:
+  - key: A
+    label: Document and Batch/Serial No.
+  - key: D
+    label: Document Only
+  - key: B
+    label: Batch/Serial No. Only
+- field: YearTrans
+  description: Display Transaction in Payment
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ReconJeSer
+  description: Reconciliation JE Series
+  type: Int
+  size: '6'
+  default: '0'
+- field: ReopOrder
+  description: Enable Reopen Orders by Return
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ForceReOrd
+  description: Always Reopen Orders by Return
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PrintRows
+  description: Print Rows
+  type: VarChar
+  size: '1'
+  default: A
+  constraints:
+  - key: A
+    label: All Rows
+  - key: M
+    label: All Modified Rows
+  - key: T
+    label: Modified Rows Excl. Tax Amount
+- field: orderblock
+  description: Block Early Posting Date
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RecomPkg
+  description: Recommend Packaging
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Enitemcost
+  description: Enable Setting Item Cost
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ClosePQ
+  description: Close Related PQ
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CpyPRPrice
+  description: Enable Copying PR Price
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnSetCost
+  description: Enable Setting Cost By Default
+  type: VarChar
+  size: '1'
+  default: N
+- field: DftPLChk
+  description: Default Price List Check
+  type: VarChar
+  size: '1'
+  default: N
+- field: DfltPLSel
+  description: Default Price List Selection
+  type: Int
+  size: '6'
+  default: '-1'
+- field: EmailOnAdd
+  description: Add & Email
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PDFOnAdd
+  description: Add & Export to PDF
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EmailSbj
+  description: E-Mail Subject
+  type: nVarChar
+  size: '254'
+- field: EmailBody
+  description: Email Body
+  type: Text
+  size: '16'
+- field: BlockWHT08
+  description: Block Payment in Local Currency WHT 08
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockExprt
+  description: Block Export to Word
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BlockPrint
+  description: Block Printing Documents
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BlockMail
+  description: Block Email Document
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BlockToPDF
+  description: Block Export to PDF
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BlockFax
+  description: Block Sent to Fax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PoDropPrss
+  description: PO Drop-Ship Process
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShowCash
+  description: Allow Cash Accounts Only
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PRUseBPTax
+  description: Purchase Request use BP Tax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnblTtlEgD
+  description: Apply Exchange Rate of Drawn Down Payments
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnblUpdUDF
+  description: Enable Updating UDF
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnblDpmTax
+  description: Enable Tax Calculation in Down Payment Invoices
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChkRefBP
+  description: Validate on Customer Level
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ChkRefYear
+  description: Validate on Fiscal Year Level
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BspDpmType
+  description: Down Payment Type for BSP
+  type: VarChar
+  size: '1'
+  default: E
+  constraints:
+  - key: E
+    label: ''
+  - key: R
+    label: Down Payment Request
+  - key: I
+    label: Down Payment Invoice
+- field: ReopenByC
+  description: Enable the Displaying of Base Document Items When Target Documents
+    Are Canceled
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ForceReByC
+  description: Always Display Base Document Items When Target Documents Are Canceled
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: OpenSnB
+  description: Open SnB form for Bin First Item when Auto Allocation
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BItmDscUpd
+  description: Block Item Description Updated in the Copied Lines
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DeferrTax
+  description: Deferred Tax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: CtlActSlct
+  description: Allow Control Account Selection
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SepDiscDpm
+  description: Separate Discount % and DPM % Fields
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DiffCigCup
+  description: Allow Different CIG and CUP Codes in One Payment
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NotDeferTa
+  description: Do Not Apply Deferred Tax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EmailSignD
+  description: E-Mail Signed Document
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DftPriList
+  description: Default Price List
+  type: Int
+  size: '6'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrintId
+  - ObjType
+  - LogInstanc

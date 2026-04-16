@@ -1,0 +1,33 @@
+table: TFC1
+description: Tax Type Combination - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/TFC1.htm
+fields:
+- field: TfcId
+  description: TFC ID
+  type: Int
+  size: 11
+  related: OTFC
+- field: DispOrder
+  description: Display Order
+  type: Int
+  size: 11
+- field: TypeId
+  description: Tax Type ID
+  type: Int
+  size: 11
+  related: OSTT
+- field: FmlId
+  description: Formula ID
+  type: Int
+  size: 11
+  related: OFML
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TfcId
+  - DispOrder
+- key: TAXTYPE
+  unique: false
+  fields:
+  - TypeId

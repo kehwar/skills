@@ -1,0 +1,38 @@
+table: ATS1
+description: Transporter - Transportations
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ATS1.htm
+fields:
+- field: AbsEntry
+  description: Transporter Abs. Entry
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: TransMode
+  description: Mode
+  type: Int
+  size: 11
+  related: OETM
+- field: VehicleTyp
+  description: Vehicle Type
+  type: nVarChar
+  size: 2
+  related: OEVT
+- field: VehicleNo
+  description: Vehicle Number
+  type: nVarChar
+  size: 15
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+  - LogInstanc

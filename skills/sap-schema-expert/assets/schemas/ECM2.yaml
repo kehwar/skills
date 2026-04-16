@@ -1,0 +1,499 @@
+table: ECM2
+description: Electronic Transactions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/ECM2.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+  related: OECM
+- field: ParentID
+  description: Parent ID
+  type: Int
+  size: 11
+  related: ECM2
+- field: ActType
+  description: Action Type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '1'
+    label: Setup
+  - key: '2'
+    label: Report
+  - key: '3'
+    label: A/R Document
+  - key: '4'
+    label: A/P Document
+  - key: '5'
+    label: A/R Draft Document
+  - key: '6'
+    label: A/P Draft Document
+  - key: '7'
+    label: Other
+  - key: '8'
+    label: Skip
+  - key: '9'
+    label: Contingency
+  - key: '10'
+    label: BP Check
+  - key: '11'
+    label: Incoming Payment
+  - key: '12'
+    label: Outgoing Payment
+  - key: '13'
+    label: Internal Reconciliation
+  - key: '14'
+    label: Transportation Document
+  - key: '15'
+    label: Inventory Transfer
+  - key: '16'
+    label: VAT Obligations
+  - key: '17'
+    label: VAT Declarations
+  - key: '18'
+    label: VAT Liabilities
+  - key: '19'
+    label: VAT Payments
+  - key: '20'
+    label: Delivery
+  - key: '21'
+    label: Return
+  - key: '22'
+    label: A/R Invoice
+  - key: '23'
+    label: A/R Credit Memo
+  - key: '24'
+    label: Goods Receipt PO
+  - key: '25'
+    label: Goods Return
+  - key: '26'
+    label: A/P Invoice
+  - key: '27'
+    label: A/P Credit Memo
+  - key: '28'
+    label: Draft Incoming Payment
+  - key: '29'
+    label: Draft Outgoing Payment
+  - key: '30'
+    label: Journal Entry
+  - key: '31'
+    label: E-Books Expense
+  - key: '35'
+    label: Company VAT Calendar
+  - key: '36'
+    label: Provisional VAT Returns
+  - key: '37'
+    label: Receipts for VAT Returns
+  - key: '38'
+    label: A/R Invoice
+  - key: '39'
+    label: A/R Credit Memo
+  - key: '40'
+    label: Delivery
+  - key: '41'
+    label: A/R Invoice Based on Delivery
+  - key: '42'
+    label: Series
+  - key: '43'
+    label: Invoices
+  - key: '44'
+    label: Goods Transfers
+  - key: '45'
+    label: Goods Issue
+  - key: '46'
+    label: Goods Receipt
+  - key: '47'
+    label: Pick List
+  - key: '48'
+    label: Draft Goods Issue
+  - key: '49'
+    label: Draft Goods Receipt
+  - key: '50'
+    label: Request CAEA
+- field: ActDesc
+  description: Action Description
+  type: nVarChar
+  size: 100
+- field: ActStatus
+  description: Action Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: Pending
+  - key: E
+    label: Error
+  - key: T
+    label: Temporary Error
+  - key: O
+    label: OK
+  - key: S
+    label: Sent
+  - key: R
+    label: Document Error
+  - key: W
+    label: Waiting
+  - key: A
+    label: Authorized
+  - key: I
+    label: In Process
+  - key: J
+    label: Rejected
+  - key: D
+    label: Denied
+  - key: C
+    label: Canceled
+  - key: B
+    label: Aborted
+  - key: Q
+    label: Queued
+  - key: M
+    label: Imported
+  - key: G
+    label: Warning
+  - key: V
+    label: Approved
+  - key: F
+    label: Approving
+  - key: H
+    label: Rejecting
+  - key: K
+    label: Generated
+  - key: Y
+    label: Ready to Process
+  - key: L
+    label: Determined
+  - key: X
+    label: Importing
+  - key: Z
+    label: Response Updated
+  - key: i
+    label: In Process to Intermediary
+  - key: s
+    label: Sent to Intermediary
+  - key: v
+    label: Approved by Intermediary
+  - key: g
+    label: Not Integrated with Customer
+  - key: c
+    label: Not Sent to Customer
+  - key: x
+    label: Error Sending to Customer
+  - key: t
+    label: Sent to Customer
+  - key: r
+    label: Received by Customer
+  - key: j
+    label: Rejected by Customer
+  - key: p
+    label: Paid by Customer
+  - key: l
+    label: Checking Integration Status
+  - key: o
+    label: Not Approved
+  - key: e
+    label: Reverse Charge
+  - key: u
+    label: Continued
+  - key: f
+    label: Further Objection
+  - key: a
+    label: Cancelling
+  - key: n
+    label: Continuing
+  - key: b
+    label: Further Objection in Progress
+  - key: d
+    label: Resending
+  - key: w
+    label: Pending to CAEA
+  - key: k
+    label: Queued
+  - key: z
+    label: Updating Response
+- field: IsRemoved
+  description: Is Removed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ActMessage
+  description: Action Message
+  type: nVarChar
+  size: 254
+- field: ActEnv
+  description: Action Environment Type
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: BPLId
+  description: Branch ID
+  type: Int
+  size: 11
+  related: OBPL
+  default: -1
+- field: Submits
+  description: Report - Number of Submissions
+  type: Int
+  size: 6
+- field: ObjectID
+  description: Object ID
+  type: nVarChar
+  size: 50
+- field: ReportID
+  description: Report ID
+  type: nVarChar
+  size: 50
+- field: SrcObjType
+  description: Source Object Type
+  type: nVarChar
+  size: 20
+- field: SrcObjAbs
+  description: Source Object Internal ID
+  type: Int
+  size: 11
+- field: Cancel
+  description: Cancelation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AssignedID
+  description: Assigned ID
+  type: nVarChar
+  size: 100
+- field: DocBtch
+  description: Document Batch
+  type: nVarChar
+  size: 50
+- field: DocBtchLn
+  description: Document Batch Line
+  type: Int
+  size: 6
+- field: GenType
+  description: Generation Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+  - key: F
+    label: Generate - Offline
+  - key: S
+    label: Send
+  - key: R
+    label: Send - Later
+- field: TestMode
+  description: Test Mode
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PeriodType
+  description: Report Period Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: ''
+    label: Ignore
+  - key: Y
+    label: Year
+  - key: Q
+    label: Quarter
+  - key: M
+    label: Month
+  - key: P
+    label: Period
+- field: PeriodNum
+  description: Report Period Number
+  type: Int
+  size: 11
+- field: Year
+  description: Report Year
+  type: Int
+  size: 6
+- field: DateFrom
+  description: Report - Date From
+  type: Date
+  size: 8
+- field: DateTo
+  description: Report - Date To
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTS
+  description: Creation Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: UpdateTS
+  description: Update Time - Incl. Secs
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 6
+- field: SchedJobID
+  description: Scheduled Job ID
+  type: Int
+  size: 11
+  related: OBSJ
+- field: GUID
+  description: GUID
+  type: nVarChar
+  size: 100
+- field: Authority
+  description: Authority Code
+  type: nVarChar
+  size: 16
+  related: OPAC
+- field: CancStatus
+  description: Cancelation Status
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: T
+    label: ''
+  - key: N
+    label: New Request
+  - key: S
+    label: Request Sent
+  - key: A
+    label: Approved
+  - key: R
+    label: Rejected
+  - key: E
+    label: Error
+  - key: C
+    label: Canceled
+  - key: I
+    label: In Process
+  - key: U
+    label: Sent To Authorities
+  - key: W
+    label: Canceled Without Approval
+- field: EDocType
+  description: E-Doc Type
+  type: Int
+  size: 11
+  related: OUNCL
+- field: EDocNum
+  description: E-Doc Number
+  type: nVarChar
+  size: 100
+- field: ProcTarget
+  description: Processing Target/Source
+  type: nVarChar
+  size: 40
+- field: Emergency
+  description: Emergency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SttsReason
+  description: Status Reason
+  type: nVarChar
+  size: 3
+  constraints:
+  - key: NON
+    label: No Issues
+  - key: REF
+    label: Incorrect references
+  - key: LEG
+    label: Incorrect legal information
+  - key: REC
+    label: Unknown receiver
+  - key: QUA
+    label: Insufficient item quality
+  - key: DEL
+    label: Issues with delivery
+  - key: PRI
+    label: Incorrect prices
+  - key: QTY
+    label: Incorrect quantity
+  - key: ITM
+    label: Incorrect items
+  - key: PAY
+    label: Incorrect payment terms
+  - key: UNR
+    label: Not recognized
+  - key: FIN
+    label: Incorrect financials
+  - key: PPD
+    label: Partially Paid
+  - key: OTH
+    label: Other
+- field: SttsDescr
+  description: Status Description
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: ACTION
+  unique: true
+  fields:
+  - Code
+  - AbsEntry
+- key: DOCREF
+  unique: false
+  fields:
+  - SrcObjType
+  - SrcObjAbs
+  - Code
+- key: GUID
+  unique: true
+  fields:
+  - GUID

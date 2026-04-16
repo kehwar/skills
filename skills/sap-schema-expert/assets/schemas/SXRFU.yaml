@@ -1,0 +1,17 @@
+table: SXRFU
+description: XLR Functions
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRFU.htm
+fields:
+- field: FunctionID
+  description: FunctionID
+  type: nVarChar
+  size: 254
+- field: FunctionTe
+  description: FunctionText
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FunctionID

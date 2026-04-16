@@ -1,0 +1,67 @@
+table: OCMN
+description: Customized Menu
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCMN.htm
+fields:
+- field: GUID
+  description: GUID
+  type: nVarChar
+  size: 32
+- field: Name
+  description: Menu Item Name
+  type: nVarChar
+  size: 100
+- field: Father
+  description: Menu Parent GUID
+  type: nVarChar
+  size: 32
+- field: Type
+  description: Menu Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: S
+    label: ''
+  - key: A
+    label: ''
+  - key: C
+    label: ''
+- field: SubMenu
+  description: Submenu Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: MenuUID
+  description: Menu UID
+  type: nVarChar
+  size: 50
+- field: ObjectType
+  description: Target Object Type
+  type: Int
+  size: 11
+- field: ObjectKey
+  description: Target Object ID
+  type: nVarChar
+  size: 200
+- field: PermFolder
+  description: Permission Folder ID
+  type: Int
+  size: 11
+- field: SortOrder
+  description: Sort Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - GUID
+- key: UID_KEY
+  unique: false
+  fields:
+  - MenuUID

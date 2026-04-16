@@ -1,0 +1,36 @@
+table: OASG
+description: Account Segmentation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OASG.htm
+fields:
+- field: AbsId
+  description: Numerator
+  type: Int
+  size: 6
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: Size
+  description: Size
+  type: Int
+  size: 6
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Alphanumeric
+  - key: N
+    label: Numeric
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId

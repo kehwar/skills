@@ -1,0 +1,87 @@
+table: ODPV
+description: Fixed Assets Depreciation Value
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ODPV.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: DprArea
+  description: Depreciation Area ID
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: FromDate
+  description: Period Start Date
+  type: Date
+  size: 8
+- field: ToDate
+  description: Period To Date
+  type: Date
+  size: 8
+- field: OrdDprPlan
+  description: Ordinary Depreciation Plan
+  type: Num
+  size: 19.6
+- field: OrdDprPost
+  description: Ordinary Depreciation Posted
+  type: Num
+  size: 19.6
+- field: OrdDprAct
+  description: Ordinary Depreciation Actual
+  type: Num
+  size: 19.6
+- field: SpDprKey
+  description: Special Depreciation Key
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: SpDprPlan
+  description: Special Depreciation Plan
+  type: Num
+  size: 19.6
+- field: SpDprPost
+  description: Special Depreciation Posted
+  type: Num
+  size: 19.6
+- field: SpDprAct
+  description: Special Depreciation Actual
+  type: Num
+  size: 19.6
+- field: SubPeriod
+  description: Sub-period
+  type: Int
+  size: 11
+- field: OrdDprPln1
+  description: Ordinary Depreciation Plan 1
+  type: Num
+  size: 19.6
+- field: OrdDprPst1
+  description: Ordinary Depreciation Posted 1
+  type: Num
+  size: 19.6
+- field: OrdDprAct1
+  description: Ordinary Depreciation Actual 1
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SECONDARY
+  unique: true
+  fields:
+  - ItemCode
+  - DprArea
+  - PeriodCat
+  - SubPeriod

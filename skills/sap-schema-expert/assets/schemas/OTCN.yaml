@@ -1,0 +1,48 @@
+table: OTCN
+description: Tracking Note
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OTCN.htm
+fields:
+- field: AbsEntry
+  description: Abs. Entry
+  type: Int
+  size: 11
+- field: CCDNum
+  description: CCD Number
+  type: nVarChar
+  size: 40
+- field: Date
+  description: Date
+  type: Date
+  size: 8
+- field: CustTerm
+  description: Customs Terminal
+  type: nVarChar
+  size: 15
+- field: CntrOrigin
+  description: Country/Region of Origin
+  type: nVarChar
+  size: 3
+- field: DirectImp
+  description: Direct Import
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CCD
+  unique: true
+  fields:
+  - CCDNum
+  - DirectImp

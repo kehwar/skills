@@ -1,0 +1,31 @@
+table: OWDBD
+description: Dashboard Overview
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWDBD.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: Content
+  description: Content
+  type: Text
+  size: 16
+- field: Sys
+  description: Sys
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

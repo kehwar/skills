@@ -1,0 +1,101 @@
+table: OWVT
+description: List View Variants
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWVT.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: Order
+  description: Order
+  type: Int
+  size: 11
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: ViewType
+  description: View Type
+  type: nVarChar
+  size: 50
+- field: SubVType
+  description: Sub View Type
+  type: nVarChar
+  size: 50
+- field: ViewId
+  description: View Id
+  type: nVarChar
+  size: 50
+  default: '-1'
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 50
+- field: FltBarLout
+  description: FilterBarLayout
+  type: Text
+  size: 16
+- field: SysFilter
+  description: System Filter
+  type: Text
+  size: 16
+- field: UserFilter
+  description: User Filter
+  type: Text
+  size: 16
+- field: CdtFilter
+  description: Condition Filter
+  type: Text
+  size: 16
+- field: IsPublic
+  description: Is Public
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsSys
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Name
+  description: Variant Name
+  type: nVarChar
+  size: 100
+- field: Version
+  description: Version
+  type: Int
+  size: 11
+- field: OvpCus
+  description: Overview Customization
+  type: Text
+  size: 16
+- field: ChartCus
+  description: Chart Customization
+  type: Text
+  size: 16
+- field: ReportCus
+  description: Report Customization
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid
+- key: GROUP
+  unique: false
+  fields:
+  - UserId
+  - ViewType
+  - ViewId
+  - ObjName

@@ -1,0 +1,45 @@
+table: UDV1
+description: Fields where user-defined values can be automatically refreshed
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDV1.htm
+fields:
+- field: IndexID
+  description: Index
+  type: Int
+  size: 11
+  related: CUDV
+- field: FieldID
+  description: Field
+  type: nVarChar
+  size: 60
+- field: CreateTS
+  description: Create Time
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Time
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IndexID
+  - FieldID

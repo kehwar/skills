@@ -1,0 +1,57 @@
+table: RTYP
+description: Document Type List
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/RTYP.htm
+fields:
+- field: CODE
+  description: Report Type
+  type: nVarChar
+  size: 4
+- field: NAME
+  description: Type Name
+  type: nVarChar
+  size: 250
+- field: DEFLT_REP
+  description: Standard Report
+  type: nVarChar
+  size: 8
+- field: ADD_NAME
+  description: Addon Name
+  type: nVarChar
+  size: 250
+- field: FRM_TYPE
+  description: Add-On Form Type
+  type: nVarChar
+  size: 250
+- field: MNU_ID
+  description: Menu Id
+  type: nVarChar
+  size: 250
+- field: IS_SYS
+  description: Is sytem type or not
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DEFLT_SEQ
+  description: Standard Sequence
+  type: Int
+  size: 11
+- field: TYPE
+  description: Type
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Layout
+  - key: P
+    label: Print Sequence
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CODE

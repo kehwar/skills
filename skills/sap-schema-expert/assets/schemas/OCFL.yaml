@@ -1,0 +1,229 @@
+table: OCFL
+description: Cash Flow Additional Trans.
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OCFL.htm
+fields:
+- field: Code
+  description: Code
+  type: Int
+  size: 11
+- field: DateID
+  description: Date
+  type: Date
+  size: 8
+- field: Dscription
+  description: Description
+  type: nVarChar
+  size: 50
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+- field: Credit
+  description: Incoming Total
+  type: Num
+  size: 19.6
+- field: CredCur
+  description: Entrance Currency
+  type: nVarChar
+  size: 3
+- field: Debit
+  description: Outgoing Amount
+  type: Num
+  size: 19.6
+- field: DebCur
+  description: Issue Currency
+  type: nVarChar
+  size: 3
+- field: SecLevel
+  description: Security Level
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Cash Account
+  - key: '5'
+    label: Credit
+  - key: '2'
+    label: Checks
+  - key: '3'
+    label: Customer Liabilities
+  - key: '6'
+    label: Bill of Exchange
+  - key: '4'
+    label: Payable to Vendors
+  - key: '7'
+    label: Customer Forecast
+  - key: '8'
+    label: Vendor Forecast
+- field: UserId
+  description: User ID
+  type: Int
+  size: 6
+- field: Frequency
+  description: Frequency
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: D
+    label: Daily
+  - key: W
+    label: Weekly
+  - key: M
+    label: Monthly
+  - key: Q
+    label: Quarterly
+  - key: S
+    label: Semiannually
+  - key: A
+    label: Annually
+  - key: O
+    label: One Time
+- field: Remind
+  description: Subfrequency
+  type: Int
+  size: 6
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '1'
+    label: On Sunday
+  - key: '2'
+    label: On Monday
+  - key: '3'
+    label: On Tuesday
+  - key: '4'
+    label: On Wednesday
+  - key: '5'
+    label: On Thursday
+  - key: '6'
+    label: On Friday
+  - key: '7'
+    label: On Saturday
+  - key: '101'
+    label: Every 1
+  - key: '102'
+    label: Every 2
+  - key: '103'
+    label: Every 3
+  - key: '104'
+    label: Every 4
+  - key: '105'
+    label: Every 5
+  - key: '106'
+    label: Every 6
+  - key: '107'
+    label: Every 7
+  - key: '108'
+    label: Every 8
+  - key: '109'
+    label: Every 9
+  - key: '110'
+    label: Every 10
+  - key: '115'
+    label: Every 15
+  - key: '130'
+    label: Every 30
+  - key: '145'
+    label: Every 45
+  - key: '160'
+    label: Every 60
+  - key: '1001'
+    label: On 1
+  - key: '1002'
+    label: On 2
+  - key: '1003'
+    label: On 3
+  - key: '1004'
+    label: On 4
+  - key: '1005'
+    label: On 5
+  - key: '1006'
+    label: On 6
+  - key: '1007'
+    label: On 7
+  - key: '1008'
+    label: On 8
+  - key: '1009'
+    label: On 9
+  - key: '1010'
+    label: On 10
+  - key: '1011'
+    label: On 11
+  - key: '1012'
+    label: On 12
+  - key: '1013'
+    label: On 13
+  - key: '1014'
+    label: On 14
+  - key: '1015'
+    label: On 15
+  - key: '1016'
+    label: On 16
+  - key: '1017'
+    label: On 17
+  - key: '1018'
+    label: On 18
+  - key: '1019'
+    label: On 19
+  - key: '1020'
+    label: On 20
+  - key: '1021'
+    label: On 21
+  - key: '1022'
+    label: On 22
+  - key: '1023'
+    label: On 23
+  - key: '1024'
+    label: On 24
+  - key: '1025'
+    label: On 25
+  - key: '1026'
+    label: On 26
+  - key: '1027'
+    label: On 27
+  - key: '1028'
+    label: On 28
+  - key: '1029'
+    label: On 29
+  - key: '1030'
+    label: On 30
+  - key: '1031'
+    label: On 31
+- field: EndDate
+  description: Execution End Date
+  type: Date
+  size: 8
+- field: OcrCode
+  description: Distribution Rule 1
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - UserId

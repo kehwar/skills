@@ -1,0 +1,27 @@
+table: OOIN
+description: Interest
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OOIN.htm
+fields:
+- field: Num
+  description: Sequence No.
+  type: Int
+  size: 11
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 30
+- field: SortOrder
+  description: Sort
+  type: Int
+  size: 6
+  default: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Num

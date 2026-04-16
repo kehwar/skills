@@ -1,0 +1,86 @@
+table: OTRC
+description: Journal Entry Codes
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OTRC.htm
+fields:
+- field: TrnsCode
+  description: Code
+  type: nVarChar
+  size: 4
+- field: TrnsCodDsc
+  description: Description
+  type: nVarChar
+  size: 20
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Pcn874Ctg
+  description: Trans. Category for PCN874
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: I
+    label: Import Log
+  - key: E
+    label: Export Log
+  - key: O
+    label: Other
+  - key: R
+    label: A/R Invoice - Palestinian Territory
+  - key: P
+    label: A/P Invoice - Palestinian Territory
+  - key: M
+    label: Self-Employed - Sales
+  - key: C
+    label: Self-Employed - Purchase
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TrnsCode
+- key: DESCRIP
+  unique: false
+  fields:
+  - TrnsCodDsc

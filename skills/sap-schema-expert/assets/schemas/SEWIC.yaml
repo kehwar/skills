@@ -1,0 +1,173 @@
+table: SEWIC
+description: SEWIC
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWIC.htm
+fields:
+- field: CompanyNam
+  description: CompanyName
+  type: nVarChar
+  size: 200
+- field: SmpTableId
+  description: Smp Table ID
+  type: nVarChar
+  size: 3
+- field: EwaSentDat
+  description: EWA Sent Date
+  type: nVarChar
+  size: 10
+- field: EwaSentTim
+  description: EWA Sent Time
+  type: nVarChar
+  size: 8
+- field: CustNumber
+  description: Customer Number
+  type: VarChar
+  size: 1
+- field: CustName
+  description: Customer Name
+  type: VarChar
+  size: 1
+- field: CustConPer
+  description: Customer contact person
+  type: VarChar
+  size: 1
+- field: CustEmail
+  description: Customer Email
+  type: nVarChar
+  size: 100
+- field: PartnerNam
+  description: Partner Name
+  type: nVarChar
+  size: 200
+- field: PartConPer
+  description: Partnercontact person
+  type: VarChar
+  size: 1
+- field: PartEmail
+  description: Partner Email
+  type: nVarChar
+  size: 100
+- field: PartEmail2
+  description: Partner Email 2
+  type: VarChar
+  size: 1
+- field: CompDbName
+  description: Company DB Name
+  type: nVarChar
+  size: 200
+- field: CompDbVer
+  description: Compnay DB Version
+  type: nVarChar
+  size: 32
+- field: SentUser
+  description: Sent User
+  type: nVarChar
+  size: 30
+- field: B1Version
+  description: B1 Version
+  type: nVarChar
+  size: 32
+- field: B1Suppack
+  description: B1 Support Pack
+  type: nVarChar
+  size: 128
+- field: B1Patch
+  description: B1 Patch
+  type: nVarChar
+  size: 128
+- field: UiApiVer
+  description: UI API Version
+  type: nVarChar
+  size: 32
+- field: InstallNum
+  description: Installation Number
+  type: nVarChar
+  size: 128
+- field: SystemNum
+  description: System Number
+  type: nVarChar
+  size: 128
+- field: LicenseNum
+  description: License Number
+  type: nVarChar
+  size: 128
+- field: SystemStat
+  description: System Status
+  type: VarChar
+  size: 1
+- field: DbType
+  description: DB Type
+  type: nVarChar
+  size: 64
+- field: DbVersion
+  description: DB Version
+  type: nVarChar
+  size: 32
+- field: CommLogPat
+  description: SBo-Common Log Path
+  type: nVarChar
+  size: 254
+- field: CommLogSiz
+  description: SBO-Common Log Size
+  type: Int
+  size: 11
+- field: CommRecovM
+  description: SBO-Common Recovery Model
+  type: nVarChar
+  size: 32
+- field: AOFramewor
+  description: Addon Framwork
+  type: VarChar
+  size: 1
+- field: AODtw
+  description: Addon DTW
+  type: VarChar
+  size: 1
+- field: AOSupTools
+  description: Addon Support Tools
+  type: nVarChar
+  size: 12
+- field: AODateV
+  description: Addon Date V
+  type: nVarChar
+  size: 12
+- field: AOAld
+  description: Addon Ald
+  type: nVarChar
+  size: 12
+- field: AOBcSets
+  description: Addon BC Sets
+  type: nVarChar
+  size: 12
+- field: AOElster
+  description: Addon Elster
+  type: nVarChar
+  size: 12
+- field: AOFixAsset
+  description: Addon Fixed Assets
+  type: nVarChar
+  size: 12
+- field: AOIntrStat
+  description: Addon Intra Stat
+  type: nVarChar
+  size: 12
+- field: AOOutlookI
+  description: Addon Outlook integration
+  type: nVarChar
+  size: 12
+- field: AOPayEngin
+  description: Addon Payment Engine
+  type: nVarChar
+  size: 12
+- field: AOStampIt
+  description: Addon Stamp it
+  type: nVarChar
+  size: 12
+- field: CompRecovM
+  description: Company Recover Model
+  type: nVarChar
+  size: 32
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CompDbName

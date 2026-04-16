@@ -1,0 +1,107 @@
+table: TPI4
+description: Purchase Tax Invoice - Linked Down Payments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/TPI4.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: DpmObjType
+  description: Down Payment Type
+  type: Int
+  size: 11
+- field: DpmDocEntr
+  description: Down Payment Entry
+  type: Int
+  size: 11
+- field: DpmDocNum
+  description: Down Payment No.
+  type: Int
+  size: 11
+- field: PmnObjType
+  description: Payment Type
+  type: Int
+  size: 11
+- field: PmnDocEntr
+  description: Payment Entry
+  type: Int
+  size: 11
+- field: PmnDocNum
+  description: Payment Number
+  type: Int
+  size: 11
+- field: PmnTaxDate
+  description: Payment Date
+  type: Date
+  size: 8
+- field: TrsfrDate
+  description: Transfer Date
+  type: Date
+  size: 8
+- field: TrsfrRef
+  description: Intended Purpose
+  type: nVarChar
+  size: 27
+- field: DrawnSum
+  description: Drawn Amount
+  type: Num
+  size: 19.6
+- field: DrawnSumFc
+  description: Drawn Amount (FC)
+  type: Num
+  size: 19.6
+- field: DrawnSumSc
+  description: Drawn Amount (SC)
+  type: Num
+  size: 19.6
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+- field: Vat
+  description: Tax Amount
+  type: Num
+  size: 19.6
+- field: VatFc
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatSc
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: Gross
+  description: Gross Amount
+  type: Num
+  size: 19.6
+- field: GrossFc
+  description: Gross Amount (FC)
+  type: Num
+  size: 19.6
+- field: GrossSc
+  description: Gross Amount (SC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+- key: DOC_ENTRY
+  unique: false
+  fields:
+  - DocEntry

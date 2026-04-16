@@ -1,0 +1,67 @@
+table: FAC2
+description: Fixed Asset Parameter Change - Period Control Change
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/FAC2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OFAC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: OldDprSt
+  description: Old Depreciation Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NewDprSt
+  description: New Depreciation Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OldFactor
+  description: Old Factor
+  type: Num
+  size: 19.6
+- field: NewFactor
+  description: New Factor
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineNum
+- key: PERCONTROL
+  unique: true
+  fields:
+  - AbsEntry
+  - DprArea
+  - PeriodCat
+  - VisOrder

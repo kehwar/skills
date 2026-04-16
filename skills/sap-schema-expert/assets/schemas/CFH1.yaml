@@ -1,0 +1,50 @@
+table: CFH1
+description: Cash Flow Statement Report - History - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CFH1.htm
+fields:
+- field: CFHId
+  description: Cash Flow History Identity
+  type: Int
+  size: 11
+  related: OCFH
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+- field: DispItem
+  description: Displayed Item Title
+  type: nVarChar
+  size: 100
+- field: Levels
+  description: Levels
+  type: Int
+  size: 6
+- field: LineNum
+  description: Cash Flow Line No.
+  type: nVarChar
+  size: 5
+- field: IndentChar
+  description: Indent Char.
+  type: nVarChar
+  size: 6
+  default: '4'
+- field: Amount
+  description: Amount
+  type: Num
+  size: 19.6
+- field: Formula
+  description: Formula Flag
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Non-Formula
+  - key: Y
+    label: Formula Node
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CFHId
+  - LineId

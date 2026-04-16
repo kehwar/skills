@@ -1,0 +1,28 @@
+table: SCRT
+description: SAP Crystal Reports Translations
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SCRT.htm
+fields:
+- field: DocCode
+  description: Doc. Code
+  type: nVarChar
+  size: 8
+- field: ItemId
+  description: Item ID
+  type: nVarChar
+  size: 220
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+  related: OLNG
+- field: String
+  description: String
+  type: nVarChar
+  size: 249
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocCode
+  - ItemId
+  - Language

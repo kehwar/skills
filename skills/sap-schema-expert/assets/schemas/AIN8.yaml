@@ -1,0 +1,53 @@
+table: AIN8
+description: Inventory Counting - Individual Counters - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AIN8.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OINC
+- field: CounterNum
+  description: Counter Number
+  type: Int
+  size: 11
+- field: CounteType
+  description: Type of Counter
+  type: Int
+  size: 11
+  default: 12
+  constraints:
+  - key: '12'
+    label: User
+  - key: '171'
+    label: Employee
+- field: CounterId
+  description: Counter ID
+  type: Int
+  size: 11
+- field: CounteName
+  description: Counter Name
+  type: nVarChar
+  size: 155
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - CounterNum
+  - LogIns
+- key: BUSINESS
+  unique: true
+  fields:
+  - DocEntry
+  - CounteType
+  - CounterId
+  - LogIns

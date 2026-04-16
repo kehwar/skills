@@ -1,0 +1,86 @@
+table: ITM7
+description: Asset Item Depreciation Params
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ITM7.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: DprArea
+  description: Depreciation Area
+  type: nVarChar
+  size: 15
+  related: ODPA
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: DprStart
+  description: Depreciation Start Date
+  type: Date
+  size: 8
+- field: DprEnd
+  description: Depreciation End Date
+  type: Date
+  size: 8
+- field: UsefulLife
+  description: Useful Life
+  type: Int
+  size: 11
+- field: RemainLife
+  description: Remaining Life
+  type: Num
+  size: 19.6
+- field: DprType
+  description: Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: DprTypeC
+  description: Depr. Type Calculation
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: UsefulLfeC
+  description: Useful Life Calculation
+  type: Int
+  size: 11
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '4'
+- field: RemainDays
+  description: Remaining Life in Days
+  type: Num
+  size: 19.6
+- field: TotalUnits
+  description: Total Units in Life
+  type: Int
+  size: 11
+- field: RemainUnit
+  description: Remaining Units
+  type: Int
+  size: 11
+- field: StanUnit
+  description: Standard Units
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItemCode
+  - PeriodCat
+  - DprArea

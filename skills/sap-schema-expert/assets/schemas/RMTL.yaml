@@ -1,0 +1,430 @@
+table: RMTL
+description: MITL resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RMTL.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: MITL name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Column number
+  type: Int
+  size: 11
+- field: ItemType
+  description: Item type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '16'
+    label: Edit text
+  - key: '105'
+    label: Bar
+  - key: '113'
+    label: Select popup
+  - key: '116'
+    label: Link button
+  - key: '121'
+    label: Check box
+  - key: '117'
+    label: Picture
+- field: Enabled
+  description: Enabled
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: CellType
+  description: CellType
+  type: Int
+  size: 11
+  default: 16
+  constraints:
+  - key: '0'
+    label: None
+  - key: '16'
+    label: Edit text
+  - key: '105'
+    label: Bar
+  - key: '113'
+    label: Select popup
+  - key: '116'
+    label: Link button
+  - key: '121'
+    label: Check box
+- field: CellRes
+  description: Cell resource
+  type: Int
+  size: 11
+- field: Font
+  description: Font number
+  type: Int
+  size: 11
+- field: FontSize
+  description: Font size
+  type: Int
+  size: 11
+- field: Attributes
+  description: Attributes
+  type: Int
+  size: 11
+- field: Style
+  description: Style
+  type: Int
+  size: 11
+- field: Mode
+  description: Mode
+  type: Int
+  size: 11
+- field: TitleType
+  description: Title type
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+  - key: '117'
+    label: Picture
+- field: TitleEnabl
+  description: Title enabled
+  type: VarChar
+  size: 1
+- field: TitleRes
+  description: Title resource
+  type: Int
+  size: 11
+- field: TitleFont
+  description: Title font number
+  type: Int
+  size: 11
+- field: TFontSize
+  description: Title font size
+  type: Int
+  size: 11
+- field: TitleAttr
+  description: Title attributes
+  type: Int
+  size: 11
+- field: TitleStyle
+  description: Title style
+  type: Int
+  size: 11
+- field: TitleMode
+  description: Title mode
+  type: Int
+  size: 11
+- field: VarNum
+  description: Variable number
+  type: Int
+  size: 11
+- field: LinkVar
+  description: Link variable
+  type: Int
+  size: 11
+- field: DragVar
+  description: Drag variable
+  type: Int
+  size: 11
+- field: FileCode
+  description: File code
+  type: nVarChar
+  size: 8
+- field: FieldNum
+  description: Field number
+  type: Int
+  size: 11
+- field: IndexType
+  description: Index type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Variable
+  - key: '1'
+    label: Static
+- field: IndexVal
+  description: Index value
+  type: Int
+  size: 11
+- field: FatIdxType
+  description: Father index type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Variable
+  - key: '1'
+    label: Static
+- field: FatIdxVal
+  description: Father index value
+  type: Int
+  size: 11
+- field: Editable
+  description: Editable
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: SuppressZe
+  description: Suppress zeros
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DataRequir
+  description: Data required
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: ForceUpper
+  description: Force upper
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: RightJust
+  description: Right justified
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: UserType
+  description: User type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Sentence
+  description: Sentencing
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: ShowType
+  description: Show type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Value + Description
+  - key: '1'
+    label: Value only
+  - key: '2'
+    label: Description only
+- field: DispDecr
+  description: Display description
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: LinkTo
+  description: Link to item
+  type: Int
+  size: 11
+- field: DragEntity
+  description: Drag entity
+  type: Int
+  size: 11
+- field: Class
+  description: Class
+  type: Int
+  size: 11
+- field: ItemString
+  description: Item string
+  type: nVarChar
+  size: 64
+- field: StringUpd
+  description: String update date
+  type: Date
+  size: 8
+- field: StringLen
+  description: String length
+  type: Int
+  size: 11
+- field: Title
+  description: Title string
+  type: nVarChar
+  size: 64
+- field: TitleUpd
+  description: Title updated
+  type: Date
+  size: 8
+- field: TitleLen
+  description: Title length
+  type: Int
+  size: 11
+- field: ItemDesc
+  description: Item description
+  type: nVarChar
+  size: 30
+- field: DescUpd
+  description: Description update date
+  type: Date
+  size: 8
+- field: DescLen
+  description: Description length
+  type: Int
+  size: 11
+- field: TxtFgRed
+  description: Text foreground red
+  type: Int
+  size: 11
+- field: TxtFgGreen
+  description: Text foreground green
+  type: Int
+  size: 11
+- field: TxtFgBlue
+  description: Text foreground blue
+  type: Int
+  size: 11
+- field: TxtBgRed
+  description: Text background red
+  type: Int
+  size: 11
+- field: TxtBgGreen
+  description: Text background green
+  type: Int
+  size: 11
+- field: TxtBgBlue
+  description: Text background green
+  type: Int
+  size: 11
+- field: TtlFgRed
+  description: Title foreground red
+  type: Int
+  size: 11
+- field: TtlFgGreen
+  description: Title foreground green
+  type: Int
+  size: 11
+- field: TtlFgBlue
+  description: Title foreground blue
+  type: Int
+  size: 11
+- field: TtlBgRed
+  description: Title background red
+  type: Int
+  size: 11
+- field: TtlBgGreen
+  description: Title background green
+  type: Int
+  size: 11
+- field: TtlBgBlue
+  description: Title background blue
+  type: Int
+  size: 11
+- field: Width
+  description: Width
+  type: Int
+  size: 11
+- field: UserLen
+  description: User length
+  type: Int
+  size: 11
+- field: SuppRepeat
+  description: Suppress repeating
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: AutoGraph
+  description: Auto graph
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: AutoCumm
+  description: Auto cummulative
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: UniqueID
+  description: Unique ID
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+  - Num
+- key: M_NAME
+  unique: false
+  fields:
+  - Name
+  - Num
+- key: UNIQUE_ID
+  unique: true
+  fields:
+  - Language
+  - Name
+  - UniqueID

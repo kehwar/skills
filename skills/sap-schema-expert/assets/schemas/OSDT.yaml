@@ -1,0 +1,46 @@
+table: OSDT
+description: AT Document Type
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OSDT.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 10
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 200
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: T
+    label: Transfer
+  - key: I
+    label: Invoice
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+- field: IsSys
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

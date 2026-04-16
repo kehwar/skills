@@ -1,0 +1,141 @@
+table: IEI9
+description: IEI - Drawn Dpm
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/IEI9.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: OIEI
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: BaseAbs
+  description: Base Document Internal ID
+  type: Int
+  size: 11
+- field: BaseLine
+  description: Base Document Row
+  type: Int
+  size: 11
+- field: TargetBase
+  description: Target or Base Document
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: B
+    label: Base
+  - key: T
+    label: Target
+- field: ObjType
+  description: Base Object Type
+  type: nVarChar
+  size: 20
+  default: '203'
+- field: DrawnSum
+  description: Net LC
+  type: Num
+  size: 19.6
+- field: DrawnSumFc
+  description: Net FC
+  type: Num
+  size: 19.6
+- field: DrawnSumSc
+  description: Net SC
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: ObjCode
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '140000010'
+- field: ApplDrawn
+  description: Applied Net LC
+  type: Num
+  size: 19.6
+- field: ApplDrawnF
+  description: Applied Net FC
+  type: Num
+  size: 19.6
+- field: ApplDrawnS
+  description: Applied Net SC
+  type: Num
+  size: 19.6
+- field: BaseDocNum
+  description: Base Document Number
+  type: Int
+  size: 11
+- field: BsDocDate
+  description: Base Posting Date
+  type: Date
+  size: 8
+- field: BsDueDate
+  description: Base Due Date
+  type: Date
+  size: 8
+- field: BsCardName
+  description: Base BP Name
+  type: nVarChar
+  size: 200
+- field: BsComments
+  description: Base Remarks
+  type: nVarChar
+  size: 254
+- field: Posted
+  description: Base Document Posted
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Vat
+  description: Tax LC
+  type: Num
+  size: 19.6
+- field: VatFc
+  description: Tax FC
+  type: Num
+  size: 19.6
+- field: VatSc
+  description: Tax SC
+  type: Num
+  size: 19.6
+- field: Gross
+  description: Gross LC
+  type: Num
+  size: 19.6
+- field: GrossFc
+  description: Gross FC
+  type: Num
+  size: 19.6
+- field: GrossSc
+  description: Gross SC
+  type: Num
+  size: 19.6
+- field: IsGross
+  description: Is Gross Line
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net Line
+  - key: Y
+    label: Gross Line
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

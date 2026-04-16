@@ -1,0 +1,68 @@
+table: SPP2
+description: Special Prices - Quantity Areas
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/SPP2.htm
+fields:
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OSPP
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OSPP
+- field: SPP1LNum
+  description: Dates Row Number
+  type: Int
+  size: 6
+- field: SPP2LNum
+  description: Row Number
+  type: Int
+  size: 6
+- field: Amount
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: Price
+  description: Special Price
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Price Currency
+  type: nVarChar
+  size: 3
+- field: Discount
+  description: Discount in %
+  type: Num
+  size: 19.6
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - ItemCode
+  - SPP1LNum
+  - SPP2LNum
+- key: CARD
+  unique: false
+  fields:
+  - CardCode
+- key: ITEM
+  unique: false
+  fields:
+  - ItemCode
+- key: CURRENCY
+  unique: false
+  fields:
+  - Currency

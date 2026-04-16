@@ -1,0 +1,61 @@
+table: TGPA
+description: Gross Profit Adjustment - Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/TGPA.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Identity
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemName
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: LineID
+  description: Line ID
+  type: Int
+  size: 11
+- field: Selected
+  description: Selected
+  type: VarChar
+  size: 1
+  default: N
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocAbs
+  description: Document Abs. Entry
+  type: Int
+  size: 11
+- field: DocLineNum
+  description: Document Line Number
+  type: Int
+  size: 11
+- field: ManagedBy
+  description: Managed By
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '10000044'
+    label: Batch Numbers
+  - key: '10000045'
+    label: Serial Numbers
+- field: SysNumber
+  description: System Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

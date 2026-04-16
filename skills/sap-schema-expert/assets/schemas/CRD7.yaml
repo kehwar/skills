@@ -1,0 +1,134 @@
+table: CRD7
+description: Fiscal IDs for BP Master Data
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CRD7.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 25
+  related: OCRD
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 50
+- field: TaxId0
+  description: Tax ID 0
+  type: nVarChar
+  size: 100
+- field: TaxId1
+  description: Tax ID 1
+  type: nVarChar
+  size: 100
+- field: TaxId2
+  description: Tax ID 2
+  type: nVarChar
+  size: 100
+- field: TaxId3
+  description: Tax ID 3
+  type: nVarChar
+  size: 100
+- field: TaxId4
+  description: Tax ID 4
+  type: nVarChar
+  size: 100
+- field: TaxId5
+  description: Tax ID 5
+  type: nVarChar
+  size: 100
+- field: TaxId6
+  description: Tax ID 6
+  type: nVarChar
+  size: 100
+- field: TaxId7
+  description: Tax ID 7
+  type: nVarChar
+  size: 100
+- field: TaxId8
+  description: Tax ID 8
+  type: nVarChar
+  size: 100
+- field: TaxId9
+  description: Tax ID 9
+  type: nVarChar
+  size: 100
+- field: CNAEId
+  description: Brazil CNAE Code
+  type: Int
+  size: 11
+  related: OCNA
+- field: TaxId10
+  description: Tax ID 10
+  type: nVarChar
+  size: 100
+- field: TaxId11
+  description: Tax ID 11
+  type: nVarChar
+  size: 100
+- field: AddrType
+  description: Address Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Ship To
+  - key: B
+    label: Bill To
+- field: ECCNo
+  description: E.C.C. No.
+  type: nVarChar
+  size: 40
+- field: CERegNo
+  description: C.E. Registration No.
+  type: nVarChar
+  size: 40
+- field: CERange
+  description: C.E. Range
+  type: nVarChar
+  size: 60
+- field: CEDivis
+  description: C.E. Division
+  type: nVarChar
+  size: 60
+- field: CEComRate
+  description: C.E. Commisionerate
+  type: nVarChar
+  size: 60
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: SefazDate
+  description: Date of Update from SEFAZ
+  type: Date
+  size: 8
+- field: TaxId12
+  description: Tax ID 12
+  type: nVarChar
+  size: 50
+- field: TaxId13
+  description: Deductee Ref. No. in India
+  type: nVarChar
+  size: 100
+- field: AToRetrNFe
+  description: Authorization to Retrieve NFe from SEFAZ
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TaxId14
+  description: ITR Filing
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - Address
+  - AddrType

@@ -1,0 +1,94 @@
+table: SRA2
+description: Scheduled Report Run Output
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SRA2.htm
+fields:
+- field: ActionCode
+  description: Action Code
+  type: Int
+  size: 11
+- field: Date
+  description: Date of Run
+  type: Date
+  size: 8
+- field: Time
+  description: Time of Run
+  type: Int
+  size: 11
+- field: Status
+  description: Status
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: S
+    label: Successful
+  - key: E
+    label: In progress
+  - key: F
+    label: Failure
+  - key: T
+    label: Results to Be Distributed
+  - key: '0'
+    label: Schedule Inactive
+  - key: '1'
+    label: Report Scheduled
+- field: ReturnCode
+  description: Return Code
+  type: Int
+  size: 11
+- field: ReturnStr
+  description: Return String
+  type: nVarChar
+  size: 250
+- field: ResDag
+  description: Result in DAG format
+  type: Text
+  size: 16
+- field: ResPdf
+  description: Result in PDF format
+  type: Text
+  size: 16
+- field: ResHtml
+  description: Result in HTML format
+  type: Text
+  size: 16
+- field: ResXml
+  description: Result in XML format
+  type: Text
+  size: 16
+- field: Results
+  description: Result Availability
+  type: nVarChar
+  size: 10
+  default: NNNN
+- field: ResLog
+  description: Report Creation Log
+  type: Text
+  size: 16
+- field: ErrScreen
+  description: Error Screenshot
+  type: Text
+  size: 16
+- field: EmailPfx
+  description: Email Subject Prefix
+  type: nVarChar
+  size: 254
+- field: SenderName
+  description: Sender Name
+  type: nVarChar
+  size: 100
+- field: SenderMail
+  description: Sender Email
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ActionCode
+  - Date
+  - Time
+- key: ACTIONCODE
+  unique: false
+  fields:
+  - ActionCode

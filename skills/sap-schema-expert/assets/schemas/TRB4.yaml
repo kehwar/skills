@@ -1,0 +1,35 @@
+table: TRB4
+description: Tax Report Wizard - Selected Tax Entries
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRB4.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OTRB
+- field: TaxSrcType
+  description: Tax Source Object TYpe
+  type: Int
+  size: 11
+  default: 10000011
+  constraints:
+  - key: '10000011'
+    label: VAT Transactions
+  - key: '243000003'
+    label: Brazil - Tax Adjustment
+- field: TaxEntry
+  description: Tax Entry
+  type: Int
+  size: 11
+- field: TaxLine
+  description: Tax Line
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - TaxSrcType
+  - TaxEntry
+  - TaxLine

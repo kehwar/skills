@@ -1,0 +1,99 @@
+table: TABL
+description: Table resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/TABL.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Name
+  description: Table name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Table number
+  type: Int
+  size: 11
+- field: DoColor
+  description: Use color table
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: BorderRed
+  description: Border red
+  type: Int
+  size: 11
+- field: BorderGrn
+  description: Border green
+  type: Int
+  size: 11
+- field: BorderBlue
+  description: Border blue
+  type: Int
+  size: 11
+- field: BgRed
+  description: Background red
+  type: Int
+  size: 11
+  default: 65535
+- field: BgGreen
+  description: Background green
+  type: Int
+  size: 11
+  default: 65535
+- field: BgBlue
+  description: Background blue
+  type: Int
+  size: 11
+  default: 65535
+- field: CellHeight
+  description: Cell height
+  type: Int
+  size: 11
+- field: TitleHeigt
+  description: Title height
+  type: Int
+  size: 11
+- field: Width
+  description: Width
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name
+  - ResCode
+  - RevCode
+- key: NUM
+  unique: true
+  fields:
+  - Num

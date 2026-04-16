@@ -1,0 +1,36 @@
+table: ODCC
+description: Dashboard Cache Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ODCC.htm
+fields:
+- field: AbsEntry
+  description: Abs Entry
+  type: Int
+  size: 11
+- field: Enable
+  description: Enable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Start
+  description: Start
+  type: Int
+  size: 11
+- field: CronString
+  description: Cron String
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

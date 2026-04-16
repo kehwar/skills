@@ -1,0 +1,38 @@
+table: ILM2
+description: Inventory Account Substitute
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/ILM2.htm
+fields:
+- field: MessageID
+  description: Message ID
+  type: Int
+  size: 11
+  related: OILM
+- field: AccountId
+  description: Account ID
+  type: Int
+  size: 6
+  default: -1
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DebitCredi
+  description: Debit or Credit
+  type: VarChar
+  size: 1
+  default: U
+  constraints:
+  - key: U
+    label: Unknown
+  - key: D
+    label: Debit
+  - key: C
+    label: Credit
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - MessageID
+  - AccountId
+  - DebitCredi

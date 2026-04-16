@@ -1,0 +1,56 @@
+table: CCFG
+description: Company Configuration
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CCFG.htm
+fields:
+- field: ConfigEntr
+  description: Internal Configuration ID
+  type: Int
+  size: 11
+- field: ConfigName
+  description: Configuration File Name
+  type: nVarChar
+  size: 250
+- field: ConfigDate
+  description: Configuration File Create Date
+  type: Date
+  size: 8
+- field: ConfigTime
+  description: Configuration File Create Time
+  type: Int
+  size: 6
+- field: UserCode
+  description: Configuration Created By
+  type: Int
+  size: 11
+- field: CreateBy
+  description: 'Created from Menu:'
+  type: Int
+  size: 11
+  constraints:
+  - key: '0'
+    label: Express Configuration Wizard
+  - key: '1'
+    label: Configuration Management
+- field: ServerName
+  description: 'Configuration Saved on Server:'
+  type: nVarChar
+  size: 250
+- field: CompanyDB
+  description: Company Database
+  type: nVarChar
+  size: 250
+- field: Internal
+  description: Internal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ConfigEntr

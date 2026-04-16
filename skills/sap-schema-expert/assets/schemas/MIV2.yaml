@@ -1,0 +1,102 @@
+table: MIV2
+description: A/P Monthly Invoice - Item
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/MIV2.htm
+fields:
+- field: MinvNum
+  description: Monthly Invoice Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+- field: DocDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: LineNum
+  description: Line number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+- field: ItemName
+  description: Item Name
+  type: nVarChar
+  size: 200
+- field: ItemPrice
+  description: Item Price
+  type: Num
+  size: 19.6
+- field: ItemCurr
+  description: Item Currency
+  type: nVarChar
+  size: 3
+- field: ItemRate
+  description: Currency Exchange Rate
+  type: Num
+  size: 19.6
+- field: ItemQuan
+  description: Item Quantity
+  type: Num
+  size: 19.6
+- field: ItemType
+  description: Item Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: E
+    label: Expense
+  - key: R
+    label: Rounding
+  - key: T
+    label: Tax Amount
+  - key: S
+    label: Service
+  - key: D
+    label: Down Payment Paid
+  - key: W
+    label: WTax Amount
+- field: ItemTotal
+  description: Net Total
+  type: Num
+  size: 19.6
+- field: TaxAmount
+  description: Tax Amount of Line Level
+  type: Num
+  size: 19.6
+- field: LineTotal
+  description: Gross Total
+  type: Num
+  size: 19.6
+- field: Entry
+  description: Monthly Invoice Entry
+  type: Int
+  size: 11
+  related: OMIV
+- field: AbsEntry
+  description: Document Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Entry
+  - DocType
+  - AbsEntry
+  - LineNum

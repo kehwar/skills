@@ -1,0 +1,306 @@
+table: OUDG
+description: User Defaults
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OUDG.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Warehouse
+  description: Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: SalePerson
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: ICTCard
+  description: BP for Invoice + Payment
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CashAcct
+  description: Cash Account
+  type: nVarChar
+  size: 15
+- field: CheckAcct
+  description: Current Account
+  type: nVarChar
+  size: 15
+- field: CreditCard
+  description: Credit Card
+  type: Int
+  size: 6
+  related: OCRC
+- field: PrintRcpt
+  description: Print Receipt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: A
+    label: Only When Adding
+  - key: Y
+    label: Always
+- field: ShortRcpt
+  description: Print Payment & Invoice in Succession
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Color
+  description: Windows Color
+  type: Int
+  size: 6
+  constraints:
+  - key: '0'
+    label: Combined
+  - key: '1'
+    label: Classic
+  - key: '2'
+    label: Gray
+  - key: '3'
+    label: Violet
+  - key: '4'
+    label: Blue
+  - key: '5'
+    label: Green
+  - key: '6'
+    label: Yellow
+  - key: '7'
+    label: Orange
+  - key: '8'
+    label: Red
+  - key: '9'
+    label: Brown
+- field: Address
+  description: Address
+  type: nVarChar
+  size: 254
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: PrintHeadr
+  description: Printing Header
+  type: nVarChar
+  size: 100
+- field: Phone1
+  description: Telephone Number 1
+  type: nVarChar
+  size: 50
+- field: Phone2
+  description: Telephone Number 2
+  type: nVarChar
+  size: 50
+- field: Fax
+  description: Fax Number
+  type: nVarChar
+  size: 50
+- field: E_Mail
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: FrgnAddr
+  description: Address in Foreign Language
+  type: nVarChar
+  size: 254
+- field: FrnPrntHdr
+  description: Printing Header in Foreign Lan
+  type: nVarChar
+  size: 100
+- field: FrgnPhone1
+  description: Telephone Number 1 (Foreign Lang.)
+  type: nVarChar
+  size: 50
+- field: FrgnPhone2
+  description: Telephone Number 2 (Foreign Lang.)
+  type: nVarChar
+  size: 50
+- field: FrgnFax
+  description: Fax Number (Foreign Lang.)
+  type: nVarChar
+  size: 50
+- field: DflTaxCode
+  description: Default Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: FreeZoneNo
+  description: Additional ID Number
+  type: nVarChar
+  size: 32
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: free1
+  description: Free1
+  type: VarChar
+  size: 1
+- field: UseTax
+  description: Use Tax
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AdrsFromWh
+  description: Use Warehouse Address in A/P Documents
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Language
+  description: Language
+  type: Int
+  size: 11
+  related: OLNG
+- field: Font
+  description: Font
+  type: nVarChar
+  size: 50
+- field: FontSize
+  description: Font Size
+  type: Int
+  size: 11
+- field: BPLId
+  description: Default Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: AssetInDoc
+  description: Allow Creation of Asset in Doc.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AttachPath
+  description: Attachments Path
+  type: Text
+  size: 16
+- field: DflPTICode
+  description: Default POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+- field: Free4
+  description: unused
+  type: VarChar
+  size: 1
+- field: Free2
+  description: unused
+  type: VarChar
+  size: 1
+- field: Free3
+  description: unused
+  type: VarChar
+  size: 1
+- field: DflPosCR
+  description: Default POS/Cash Register
+  type: Int
+  size: 11
+  related: OPCM
+- field: TimeFormat
+  description: Time Template
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: 24H
+  - key: '1'
+    label: 12H
+- field: DateFormat
+  description: Date Template
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: DD/MM/YY
+  - key: '1'
+    label: DD/MM/YYYY
+  - key: '2'
+    label: MM/DD/YY
+  - key: '3'
+    label: MM/DD/YYYY
+  - key: '4'
+    label: CCYY/MM/DD
+  - key: '5'
+    label: DD/Month/YYYY
+  - key: '6'
+    label: YY/MM/DD
+- field: DateSep
+  description: Date Separator
+  type: VarChar
+  size: 1
+- field: DecSep
+  description: Decimal Separator
+  type: VarChar
+  size: 1
+- field: ThousSep
+  description: Thousands Separator
+  type: VarChar
+  size: 1
+- field: WallPaper
+  description: Wallpaper
+  type: Text
+  size: 16
+- field: WllPprDsp
+  description: Wallpaper Display
+  type: nVarChar
+  size: 6
+  constraints:
+  - key: '1'
+    label: Centralized
+  - key: '2'
+    label: Full Screen
+  - key: '3'
+    label: Tile
+- field: SkinType
+  description: Skin Type
+  type: nVarChar
+  size: 254
+- field: CharMonth
+  description: Number of Characters in Month
+  type: Int
+  size: 11
+- field: HandleEDoc
+  description: Can Take Control of eDoc Processing in Electronic Document Monitor
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code

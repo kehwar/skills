@@ -1,0 +1,33 @@
+table: ALR2
+description: Dynamic message data row
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ALR2.htm
+fields:
+- field: Code
+  description: Internal Number
+  type: Int
+  size: '11'
+  related: OALR
+- field: Location
+  description: The order of columns in message
+  type: Int
+  size: '11'
+- field: ColName
+  description: The column name in message
+  type: nVarChar
+  size: '30'
+- field: Link
+  description: Link Indication
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - Location

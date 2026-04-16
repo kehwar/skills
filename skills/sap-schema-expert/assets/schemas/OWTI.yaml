@@ -1,0 +1,75 @@
+table: OWTI
+description: Workflow Timer Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWTI.htm
+fields:
+- field: Id
+  description: ID
+  type: Identity
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 50
+- field: TemplateId
+  description: Workflow Template ID
+  type: Int
+  size: 11
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: RepeatCnt
+  description: Repeat Event Count
+  type: Int
+  size: 11
+- field: Duration
+  description: Duration
+  type: nVarChar
+  size: 200
+- field: LastUpdate
+  description: Last Update Date and Time
+  type: nVarChar
+  size: 50
+- field: UnScheStDt
+  description: Start Date of Next Schedule
+  type: Date
+  size: 8
+- field: UnScheStTi
+  description: Start Time of Next Schedule
+  type: Int
+  size: 11
+- field: UnScheReCt
+  description: Unschedule Repeat Count
+  type: Int
+  size: 11
+- field: IsComplete
+  description: Is This Timer Completed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: JobHanType
+  description: Job Handler Type
+  type: nVarChar
+  size: 50
+- field: JobHanConf
+  description: Job Handler Configuration
+  type: Text
+  size: 16
+- field: IsActive
+  description: Is This an Active Timer
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

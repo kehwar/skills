@@ -1,0 +1,47 @@
+table: RDFL
+description: Document Standards
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/RDFL.htm
+fields:
+- field: DoumntDode
+  description: Code
+  type: nVarChar
+  size: 4
+- field: UserId
+  description: User Signature
+  type: Int
+  size: 11
+- field: DfltReport
+  description: Standard Report
+  type: nVarChar
+  size: 8
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+  default: '-1'
+- field: DfltSeq
+  description: Standard Sequence
+  type: Int
+  size: 11
+- field: TYPE
+  description: Type
+  type: VarChar
+  size: 1
+  default: L
+  constraints:
+  - key: L
+    label: Layout
+  - key: P
+    label: Print Sequence
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DoumntDode
+  - UserId
+  - CardCode
+- key: CODE
+  unique: false
+  fields:
+  - DoumntDode

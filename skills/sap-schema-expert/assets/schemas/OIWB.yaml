@@ -1,0 +1,42 @@
+table: OIWB
+description: Items - Warehouse Counting Data Backup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OIWB.htm
+fields:
+- field: AbsEntry
+  description: Abs. Entry
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item No.
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: Counted
+  description: Counted Quantity
+  type: Num
+  size: 19.6
+- field: WasCounted
+  description: Counted Yes/No
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: SYSTEM_KEY
+  unique: true
+  fields:
+  - ItemCode
+  - WhsCode

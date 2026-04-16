@@ -1,0 +1,329 @@
+table: WTX1
+description: WTax Transactions - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/WTX1.htm
+fields:
+- field: AbsEntry
+  description: Internal ID
+  type: Int
+  size: 11
+  related: OWTX
+- field: LineSeq
+  description: Row Sequence
+  type: Int
+  size: 11
+- field: SrcArrType
+  description: Source Array Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '1'
+    label: Main
+  - key: '12'
+    label: Array 1
+  - key: '13'
+    label: Array 2
+  - key: '14'
+    label: Array 3
+- field: SrcLineNum
+  description: Source Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: SrcGrpNum
+  description: Source Group Number
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '0'
+    label: Group 1
+  - key: '1'
+    label: Group 2
+  - key: '2'
+    label: Group 3
+- field: BaseObjTyp
+  description: Base Object Type
+  type: nVarChar
+  size: 20
+  default: '-1'
+- field: BaseAbs
+  description: Base Document Internal No.
+  type: Int
+  size: 11
+  default: -1
+- field: BaseArrTyp
+  description: Base Array Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '1'
+    label: Main
+  - key: '12'
+    label: Array 1
+  - key: '13'
+    label: Array 2
+  - key: '14'
+    label: Array 3
+  - key: '15'
+    label: Array 4
+  - key: '16'
+    label: Array 5
+  - key: '17'
+    label: Array 6
+  - key: '18'
+    label: Array 7
+  - key: '24'
+    label: Array 13
+- field: BaseLinNum
+  description: Base Row Number
+  type: Int
+  size: 11
+  default: -1
+- field: BaseGrpNum
+  description: Base Group No.
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: Default
+  - key: '0'
+    label: Group 1
+  - key: '1'
+    label: Group 2
+  - key: '2'
+    label: Group 3
+- field: WTaxAbsId
+  description: Tax Code ID
+  type: nVarChar
+  size: 8
+- field: Account
+  description: Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: Exemption
+  description: Exemption Rate
+  type: Num
+  size: 19.6
+- field: BaseType
+  description: Base Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Net
+  - key: V
+    label: VAT
+  - key: G
+    label: Gross
+  - key: H
+    label: Gross - VAT
+- field: BaseNetSum
+  description: Base Net Sum
+  type: Num
+  size: 19.6
+- field: BaseNetSC
+  description: Base Net Sum (SC)
+  type: Num
+  size: 19.6
+- field: BaseNetFC
+  description: Base Net Sum (FC)
+  type: Num
+  size: 19.6
+- field: BaseVatSum
+  description: Base VAT Sum
+  type: Num
+  size: 19.6
+- field: BaseVatSC
+  description: Base VAT Sum (SC)
+  type: Num
+  size: 19.6
+- field: BaseVatFC
+  description: Base VAT Sum (FC)
+  type: Num
+  size: 19.6
+- field: AccBaseSum
+  description: Accumulated Sum
+  type: Num
+  size: 19.6
+- field: AccBaseSC
+  description: Accumulated Sum (SC)
+  type: Num
+  size: 19.6
+- field: AccBaseFC
+  description: Accumulated Sum (FC)
+  type: Num
+  size: 19.6
+- field: AccWTaxSum
+  description: Accumulated WTax Sum
+  type: Num
+  size: 19.6
+- field: AccWTaxSC
+  description: Accumulated WTax Sum (SC)
+  type: Num
+  size: 19.6
+- field: AccWTaxFC
+  description: Accumulated WTax Sum (FC)
+  type: Num
+  size: 19.6
+- field: TxblSum
+  description: Taxable Sum
+  type: Num
+  size: 19.6
+- field: TxblSumSc
+  description: Taxable Sum (SC)
+  type: Num
+  size: 19.6
+- field: TxblSumFc
+  description: Taxable Sum (FC)
+  type: Num
+  size: 19.6
+- field: WTaxSum
+  description: WTax Sum
+  type: Num
+  size: 19.6
+- field: WTaxSumSc
+  description: WTax Sum (SC)
+  type: Num
+  size: 19.6
+- field: WTaxSumFc
+  description: WTax Sum (FC)
+  type: Num
+  size: 19.6
+- field: ApplSum
+  description: Applied Sum
+  type: Num
+  size: 19.6
+- field: ApplSumSc
+  description: Applied Sum (SC)
+  type: Num
+  size: 19.6
+- field: ApplSumFc
+  description: Applied Sum (FC)
+  type: Num
+  size: 19.6
+- field: CrditDebit
+  description: Credit or Debit Transaction
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Credit
+  - key: D
+    label: Debit
+- field: PostingTyp
+  description: Sales or Purchase
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: R
+    label: Sales
+  - key: P
+    label: Purchase
+- field: Category
+  description: Category
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: I
+    label: Invoice
+  - key: P
+    label: Payment
+- field: WTTypeId
+  description: Type
+  type: Int
+  size: 11
+- field: WhtType
+  description: Withholding Type
+  type: VarChar
+  size: 1
+  default: V
+  constraints:
+  - key: V
+    label: VAT Withholding
+  - key: G
+    label: Gross Income Withholding
+  - key: N
+    label: Income Tax Withholding
+  - key: S
+    label: Social Security Withholding
+  - key: I
+    label: Industry Specific Withholding
+  - key: D
+    label: District Specific Withholding
+- field: FmlId
+  description: Formula ID
+  type: Int
+  size: 11
+- field: BaseMin
+  description: Min. Amount
+  type: Num
+  size: 19.6
+- field: BaseMinSc
+  description: Min. Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseMinFc
+  description: Min. Amount (FC)
+  type: Num
+  size: 19.6
+- field: ResMin
+  description: Min.Ret./Perc. Amount
+  type: Num
+  size: 19.6
+- field: ResMinSc
+  description: Min.Ret./Perc. Amount (SC)
+  type: Num
+  size: 19.6
+- field: ResMinFc
+  description: Min.Ret./Perc. Amount (FC)
+  type: Num
+  size: 19.6
+- field: AddBas
+  description: Add to Base Amount
+  type: Num
+  size: 19.6
+- field: AddBasSc
+  description: Add to Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: AddBasFc
+  description: Add to Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: ABWVAT
+  description: Add to Base without VAT Amount
+  type: Num
+  size: 19.6
+- field: ABWVATSc
+  description: Add to Base without VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: ABWVATFc
+  description: Add to Base without VAT Amount (FC)
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineSeq

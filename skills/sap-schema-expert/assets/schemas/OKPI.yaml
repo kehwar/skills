@@ -1,0 +1,118 @@
+table: OKPI
+description: Key Performance Indicator Package
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OKPI.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: KPI Code
+  type: nVarChar
+  size: 250
+- field: Name
+  description: KPI Name
+  type: nVarChar
+  size: 250
+- field: Desc
+  description: Description
+  type: nVarChar
+  size: 254
+- field: ValueType
+  description: Value Type
+  type: nVarChar
+  size: 200
+- field: ValueQid
+  description: Value Query Number
+  type: Int
+  size: 11
+- field: ViewName
+  description: Value View Name
+  type: nVarChar
+  size: 250
+- field: ViewCtg
+  description: View Catalog
+  type: nVarChar
+  size: 250
+- field: ViewSyn
+  description: View Synonym
+  type: nVarChar
+  size: 250
+- field: TrendType
+  description: Trend Type
+  type: nVarChar
+  size: 250
+- field: TrendQid
+  description: Trend Query Number
+  type: Int
+  size: 11
+- field: GoalValue
+  description: Goal Value
+  type: Num
+  size: 19.6
+- field: GoalQid
+  description: Goal Query Number
+  type: nVarChar
+  size: 11
+- field: GoalDesc
+  description: Goal Description
+  type: nVarChar
+  size: 250
+- field: CalcFrml
+  description: Calculation Formula
+  type: nVarChar
+  size: 250
+- field: Visible
+  description: Visible For Front End
+  type: VarChar
+  size: 1
+  default: Y
+- field: SBetter
+  description: Smaller Value is Better
+  type: VarChar
+  size: 1
+  default: Y
+- field: Author
+  description: Creator
+  type: nVarChar
+  size: 32
+- field: Version
+  description: Version
+  type: nVarChar
+  size: 13
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Create Time
+  type: Int
+  size: 6
+- field: IsSystem
+  description: Is System
+  type: VarChar
+  size: 1
+  default: N
+- field: MeasUnit
+  description: Measuring Unit
+  type: nVarChar
+  size: 50
+  default: '0'
+- field: RevSign
+  description: Reverse Sign
+  type: VarChar
+  size: 1
+  default: N
+- field: Unit
+  description: Unit
+  type: nVarChar
+  size: 250
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name

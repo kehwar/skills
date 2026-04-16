@@ -1,0 +1,33 @@
+table: MABV
+description: Menu Abbreviation
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/MABV.htm
+fields:
+- field: absEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: pkgName
+  description: Package Name
+  type: nVarChar
+  size: 200
+- field: fileName
+  description: FileName
+  type: nVarChar
+  size: 200
+- field: imprtDate
+  description: Import Date
+  type: Date
+  size: 8
+- field: pkgPath
+  description: Package Path
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - absEntry
+- key: PKG_NAME
+  unique: true
+  fields:
+  - pkgName

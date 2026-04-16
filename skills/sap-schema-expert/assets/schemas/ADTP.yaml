@@ -1,0 +1,435 @@
+table: ADTP
+description: Fixed Assets Depreciation Types - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/ADTP.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 15
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: DprMeth
+  description: Depreciation Method
+  type: nVarChar
+  size: 2
+  default: 'NO'
+  constraints:
+  - key: 'NO'
+    label: No Depreciation
+  - key: SL
+    label: Straight Line
+  - key: SP
+    label: Straight Line Period Control
+  - key: DB
+    label: Declining Balance
+  - key: ML
+    label: Multilevel
+  - key: WO
+    label: Immediate Write-Off
+  - key: SD
+    label: Special Depreciation
+  - key: MD
+    label: Manual Depreciation
+  - key: CF
+    label: Accelerated
+- field: DprTo
+  description: Minimum Depreciated Value
+  type: Num
+  size: 19.6
+- field: Rounding
+  description: Round Year End Book Value
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: InclSalv
+  description: Include Salvage Value in Depr.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SalvPerc
+  description: Percentage for Salvage Value
+  type: Num
+  size: 19.6
+- field: PerAcq
+  description: Period Control for Acquisition
+  type: nVarChar
+  size: 2
+  default: PR
+  constraints:
+  - key: PR
+    label: Pro Rata Temporis
+  - key: HY
+    label: First Year Convention
+  - key: 6M
+    label: Half Year
+  - key: FY
+    label: Full Year
+- field: PerSubAcq
+  description: Period Control Subacquisition
+  type: nVarChar
+  size: 2
+  default: PR
+  constraints:
+  - key: PR
+    label: Pro Rata Temporis
+  - key: YR
+    label: Half Year Convention
+  - key: FY
+    label: Full Year
+- field: PerRet
+  description: Period Control for Retirement
+  type: nVarChar
+  size: 2
+  default: PR
+  constraints:
+  - key: PR
+    label: Pro Rata Temporis
+  - key: YR
+    label: Half Year Convention
+  - key: EL
+    label: After End of Useful Life
+- field: AcqPRTyp
+  description: Type of PRT for Acquisition
+  type: nVarChar
+  size: 3
+  default: EDB
+  constraints:
+  - key: EDB
+    label: Exact Daily Base
+  - key: FCP
+    label: First Day of Current Period
+  - key: FNP
+    label: First Day of Next Period
+- field: SubPRTyp
+  description: Type of PR for Subacquisition
+  type: nVarChar
+  size: 3
+  default: EDB
+  constraints:
+  - key: EDB
+    label: Exact Daily Base
+  - key: FCP
+    label: First Day of Current Period
+  - key: FNP
+    label: First Day of Next Period
+- field: RetPRTyp
+  description: Type of PR for Retirement
+  type: nVarChar
+  size: 3
+  default: EDB
+  constraints:
+  - key: EDB
+    label: Exact Daily Base
+  - key: LPP
+    label: Last Day of Prior Period
+  - key: LCP
+    label: Last Day of Current Period
+- field: PerDpRev
+  description: Depreciation to Be Reversed %
+  type: Num
+  size: 19.6
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+  default: '19000101'
+- field: ValidTo
+  description: Valid To
+  type: Date
+  size: 8
+  default: '20991231'
+- field: sCalcMeth
+  description: Calc. Method for Straight Line
+  type: nVarChar
+  size: 3
+  default: APC
+  constraints:
+  - key: APC
+    label: Acquisition Value/Total Useful Life
+  - key: PRC
+    label: Percentage of Acquisition Value
+  - key: NBV
+    label: Net Book Value/Remaining Life
+- field: sPercent
+  description: Percentage for Straight Line
+  type: Num
+  size: 19.6
+- field: dBase
+  description: Base for Declining Balance
+  type: nVarChar
+  size: 3
+  default: NBV
+  constraints:
+  - key: NBV
+    label: Net Book Value
+- field: dPercent
+  description: Percentage for Decl. Balance
+  type: Num
+  size: 19.6
+- field: dFactor
+  description: Factor for Declining Balance
+  type: Num
+  size: 19.6
+  default: 1
+- field: dAltDprTyp
+  description: Auto. Change Depreciation Type
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: maDecBase
+  description: Reduce Depreciation Base
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: spMeth
+  description: Calc. Method for Special Depr.
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Additional
+  - key: A
+    label: Alternative
+- field: spConcPer
+  description: Concession Period in Years
+  type: Int
+  size: 11
+- field: spMaxPerc
+  description: Maximum Percentage
+  type: Num
+  size: 19.6
+- field: spAdDpr
+  description: Normal Depreciation
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: spAlDpr
+  description: Alternative Depreciation
+  type: nVarChar
+  size: 15
+  related: ODTP
+- field: PoolID
+  description: Depreciation Type Pool ID
+  type: nVarChar
+  size: 2
+  related: ODPP
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: DprPer
+  description: Depreciation Periods
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Standard
+  - key: I
+    label: Individual
+  - key: U
+    label: Individual Usage
+- field: PerFactor
+  description: Period Factor
+  type: Num
+  size: 19.6
+  default: 1
+- field: spMaxAmnt
+  description: Maximum Amount
+  type: Num
+  size: 19.6
+- field: spMaxFlag
+  description: Max. [Percentage\Amount]
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Percentage
+  - key: A
+    label: Amount
+- field: CalcBase
+  description: Calculation Base
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Yearly
+  - key: M
+    label: Monthly
+- field: DeprEndLFY
+  description: Depr. End at Last Full Year
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AccuPriorP
+  description: Accu. Depr. of Prior Periods
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DeltaCoeff
+  description: Delta Coefficient
+  type: Int
+  size: 11
+  default: 0
+- field: MaxDepr
+  description: Maximum Depreciable Value
+  type: Num
+  size: 19.6
+- field: FactorFFY
+  description: Factor Only Relevant to FFY
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SnapshotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: PerTranSou
+  description: Period Control Transfer Source
+  type: nVarChar
+  size: 2
+  default: PR
+  constraints:
+  - key: PR
+    label: Pro Rata Temporis
+  - key: YR
+    label: Half Year Convention
+  - key: FY
+    label: Full Year
+- field: PerTranTar
+  description: Period Control Transfer Target
+  type: nVarChar
+  size: 2
+  default: PR
+  constraints:
+  - key: PR
+    label: Pro Rata Temporis
+  - key: YR
+    label: Half Year Convention
+  - key: EL
+    label: After End of Useful Life
+- field: TranSPRTyp
+  description: Type of PR for Transfer Source
+  type: nVarChar
+  size: 3
+  default: EDB
+  constraints:
+  - key: EDB
+    label: Exact Daily Base
+  - key: LPP
+    label: Last Day of Prior Period
+  - key: LCP
+    label: Last Day of Current Period
+- field: TranTPRTyp
+  description: Type of PR for Transfer Target
+  type: nVarChar
+  size: 3
+  default: EDB
+  constraints:
+  - key: EDB
+    label: Exact Daily Base
+  - key: FCP
+    label: First Day of Current Period
+  - key: FNP
+    label: First Day of Next Period
+- field: RoundMeth
+  description: Rounding Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Truncate to Integer
+  - key: U
+    label: Round Up to Integer
+  - key: D
+    label: Round Down to Integer
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LogInstanc

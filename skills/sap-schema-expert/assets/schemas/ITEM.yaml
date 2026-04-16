@@ -1,0 +1,447 @@
+table: ITEM
+description: Item Resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ITEM.htm
+fields:
+- field: Created
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update Date
+  type: Date
+  size: 8
+- field: Name
+  description: Form Name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: Item Number
+  type: Int
+  size: 11
+- field: ItemType
+  description: Item Type
+  type: Int
+  size: 11
+  constraints:
+  - key: '4'
+    label: Button
+  - key: '121'
+    label: Check box
+  - key: '114'
+    label: Edit popup
+  - key: '16'
+    label: Edit text
+  - key: '118'
+    label: Extended edit
+  - key: '99'
+    label: Folder
+  - key: '101'
+    label: FwdBck button
+  - key: '123'
+    label: Graph
+  - key: '124'
+    label: Icon
+  - key: '116'
+    label: Link button
+  - key: '127'
+    label: Grid
+  - key: '120'
+    label: Media
+  - key: '103'
+    label: Multi page
+  - key: '115'
+    label: Pane button
+  - key: '104'
+    label: Pane popup
+  - key: '117'
+    label: Picture
+  - key: '98'
+    label: Pipe
+  - key: '125'
+    label: Popup
+  - key: '119'
+    label: Preview
+  - key: '112'
+    label: Progress
+  - key: '122'
+    label: Radio button
+  - key: '100'
+    label: Rectangle
+  - key: '113'
+    label: Select popup
+  - key: '8'
+    label: Static text
+  - key: '102'
+    label: ActiveX
+  - key: '0'
+    label: User item
+  - key: '129'
+    label: Button Combo
+- field: Enabled
+  description: Enabled
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: _Top
+  description: Top
+  type: Int
+  size: 11
+- field: _Bottom
+  description: Bottom
+  type: Int
+  size: 11
+- field: _Left
+  description: Left
+  type: Int
+  size: 11
+- field: _Right
+  description: Right
+  type: Int
+  size: 11
+- field: Font
+  description: Font Number
+  type: Int
+  size: 11
+- field: FontSize
+  description: Font Size
+  type: Int
+  size: 11
+- field: Attributes
+  description: Attributes
+  type: Int
+  size: 11
+- field: Style
+  description: Style
+  type: Int
+  size: 11
+- field: Mode
+  description: Mode
+  type: Int
+  size: 11
+- field: VarNum
+  description: Variable Number
+  type: Int
+  size: 11
+- field: AttrVar
+  description: Attribute Variable
+  type: Int
+  size: 11
+- field: NewLineVar
+  description: New Line Variable
+  type: Int
+  size: 11
+- field: ProcVar
+  description: Proc Variable
+  type: Int
+  size: 11
+- field: LinkVar
+  description: Link Variable
+  type: Int
+  size: 11
+- field: DragVar
+  description: Drag Variable
+  type: Int
+  size: 11
+- field: FileCode
+  description: Table Name
+  type: nVarChar
+  size: 20
+- field: FieldNum
+  description: Field Alias
+  type: nVarChar
+  size: 10
+- field: Editable
+  description: Editable
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: Invisible
+  description: Invisible
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: SuppressZe
+  description: Suppress Zeros
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DfltButton
+  description: Default Button
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: DataRequir
+  description: Data Required
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: ForceUpper
+  description: Force Upper
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: RightJust
+  description: Right Justified
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+  - key: '2'
+    label: Language dependant
+  - key: '3'
+    label: Oppos Language
+- field: UserType
+  description: Data Binding Type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Data
+  - key: '1'
+    label: User Variable
+  - key: '2'
+    label: Multiple Data Type
+- field: ShowType
+  description: Show type
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: Value + Description
+  - key: '1'
+    label: Value only
+  - key: '2'
+    label: Description only
+- field: DispDecr
+  description: Display Description
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: TabOrder
+  description: TAB Order
+  type: Int
+  size: 11
+- field: LinkTo
+  description: Link to Item
+  type: Int
+  size: 11
+- field: DragEntity
+  description: Drag Entity
+  type: Int
+  size: 11
+- field: FromPane
+  description: From Pane
+  type: Int
+  size: 11
+- field: ToPane
+  description: To Pane
+  type: Int
+  size: 11
+- field: Class
+  description: Class
+  type: Int
+  size: 11
+- field: StrIndex
+  description: String Index
+  type: Int
+  size: 11
+  default: 0
+- field: HkeyIndex
+  description: Hotkey Index
+  type: Int
+  size: 11
+- field: DescIndex
+  description: Description Index
+  type: Int
+  size: 11
+  default: 0
+- field: FrameRed
+  description: Frame Red
+  type: Int
+  size: 11
+- field: FrameGreen
+  description: Frame Green
+  type: Int
+  size: 11
+- field: FrameBlue
+  description: Frame Blue
+  type: Int
+  size: 11
+- field: BodyRed
+  description: Body Red
+  type: Int
+  size: 11
+- field: BodyGreen
+  description: Body Green
+  type: Int
+  size: 11
+- field: BodyBlue
+  description: Body Blue
+  type: Int
+  size: 11
+- field: TextRed
+  description: Text Red
+  type: Int
+  size: 11
+- field: TextGreen
+  description: Text Green
+  type: Int
+  size: 11
+- field: TextBlue
+  description: Text Blue
+  type: Int
+  size: 11
+- field: ThumbRed
+  description: Thumb Red
+  type: Int
+  size: 11
+- field: ThumbGreen
+  description: Thumb Green
+  type: Int
+  size: 11
+- field: ThumbBlue
+  description: Thumb Blue
+  type: Int
+  size: 11
+- field: TxtFgRed
+  description: Text Foreground Red
+  type: Int
+  size: 11
+- field: TxtFgGreen
+  description: Text Foreground Green
+  type: Int
+  size: 11
+- field: TxtFgBlue
+  description: Text Foreground blue
+  type: Int
+  size: 11
+- field: TxtBgRed
+  description: Text Background Red
+  type: Int
+  size: 11
+- field: TxtBgGreen
+  description: Text Background Green
+  type: Int
+  size: 11
+- field: TxtBgBlue
+  description: Text Background Blue
+  type: Int
+  size: 11
+- field: UniqueID
+  description: Unique ID
+  type: nVarChar
+  size: 10
+- field: ItemString
+  description: Item String
+  type: nVarChar
+  size: 254
+- field: ItemDesc
+  description: Item Description
+  type: nVarChar
+  size: 254
+- field: HotkeyPos
+  description: Hotkey Position
+  type: Int
+  size: 11
+- field: WrapText
+  description: Wrap Text
+  type: VarChar
+  size: 1
+  default: '0'
+  constraints:
+  - key: '0'
+    label: 'No'
+  - key: '1'
+    label: 'Yes'
+- field: UsrSgnStr
+  description: User Sign For String Change
+  type: Int
+  size: 11
+  default: -1
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: FontName
+  description: Font Name
+  type: nVarChar
+  size: 32
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+- field: BindObjId
+  description: Bind Object Id
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name
+  - Num
+  - ResCode
+  - RevCode
+- key: STRING
+  unique: false
+  fields:
+  - StrIndex
+- key: UNIQUE_ID
+  unique: true
+  fields:
+  - Name
+  - UniqueID

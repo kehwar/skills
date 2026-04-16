@@ -1,0 +1,25 @@
+table: OCNA
+description: CNAE Code
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCNA.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CNAECode
+  description: Code
+  type: nVarChar
+  size: 9
+- field: Descrip
+  description: Description
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - CNAECode

@@ -1,0 +1,83 @@
+table: ONCP
+description: New Cockpit Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ONCP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 100
+- field: Owner
+  description: Owner
+  type: Int
+  size: 11
+  related: OUSR
+- field: GroupId
+  description: Group ID
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: 8
+- field: IsPublic
+  description: Public
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+- field: Pubby
+  description: Published By
+  type: nVarChar
+  size: 30
+- field: PubDate
+  description: Publication Date
+  type: Date
+  size: 8
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  default: T
+  constraints:
+  - key: U
+    label: User
+  - key: T
+    label: Template
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Date
+  description: Publication Date
+  type: Date
+  size: 8
+- field: Time
+  description: Publication Time
+  type: Int
+  size: 6
+- field: Mnfacturer
+  description: Provider
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: NAME
+  unique: true
+  fields:
+  - Name
+  - Owner

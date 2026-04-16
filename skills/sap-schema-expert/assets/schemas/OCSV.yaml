@@ -1,0 +1,2864 @@
+table: OCSV
+description: A/R Correction Invoice Reversal
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/OCSV.htm
+fields:
+- field: DocEntry
+  description: Numerator
+  type: Int
+  size: 11
+- field: DocNum
+  description: Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Item
+  - key: S
+    label: Service
+- field: CANCELED
+  description: Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Handwrtten
+  description: Manual Numbering
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Printed
+  description: Printed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: Copy
+  - key: N
+    label: Original
+  - key: A
+    label: Amended
+- field: DocStatus
+  description: Document Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: InvntSttus
+  description: Inventory Direction
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: Transfered
+  description: Year Transfer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '166'
+  constraints:
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: DocDueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: CardCode
+  description: Customer/Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: Customer/Vendor Name
+  type: nVarChar
+  size: 200
+- field: Address
+  description: Bill To
+  type: nVarChar
+  size: 254
+- field: NumAtCard
+  description: Customer/Vendor Ref. No.
+  type: nVarChar
+  size: 200
+- field: VatPercent
+  description: Tax Rate
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: VatSumFC
+  description: Tax Amount (FC)
+  type: Num
+  size: 19.6
+- field: DiscPrcnt
+  description: Discount % for Document
+  type: Num
+  size: 19.6
+- field: DiscSum
+  description: Total Discount
+  type: Num
+  size: 19.6
+- field: DiscSumFC
+  description: Total Discount (FC)
+  type: Num
+  size: 19.6
+- field: DocCur
+  description: Document Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: DocRate
+  description: Document Rate
+  type: Num
+  size: 19.6
+- field: DocTotal
+  description: Document Total
+  type: Num
+  size: 19.6
+- field: DocTotalFC
+  description: Document Total (FC)
+  type: Num
+  size: 19.6
+- field: PaidToDate
+  description: Paid to Date
+  type: Num
+  size: 19.6
+- field: PaidFC
+  description: Paid (FC)
+  type: Num
+  size: 19.6
+- field: GrosProfit
+  description: Gross Profit
+  type: Num
+  size: 19.6
+- field: GrosProfFC
+  description: Gross Profit (FC)
+  type: Num
+  size: 19.6
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 11
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 11
+- field: Comments
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: JrnlMemo
+  description: Journal Remarks
+  type: nVarChar
+  size: 254
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: ReceiptNum
+  description: Receipt Number
+  type: Int
+  size: 11
+- field: GroupNum
+  description: Payment Terms Code
+  type: Int
+  size: 6
+  related: OCTG
+- field: DocTime
+  description: Generation Time
+  type: Int
+  size: 6
+- field: SlpCode
+  description: Sales Employee
+  type: Int
+  size: 11
+  related: OSLP
+  default: -1
+- field: TrnspCode
+  description: Shipping Type
+  type: Int
+  size: 6
+  related: OSHP
+  default: -1
+- field: PartSupply
+  description: Partial Delivery
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Confirmed
+  description: Confirmed
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrossBase
+  description: Price List for Gross Profit
+  type: Int
+  size: 6
+  default: 0
+- field: ImportEnt
+  description: Landed Costs Internal ID
+  type: Int
+  size: 11
+- field: CreateTran
+  description: Create Journal Entry
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SummryType
+  description: Summary Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: No Summary
+  - key: I
+    label: By Items
+  - key: D
+    label: By Documents
+- field: UpdInvnt
+  description: Inventory Update
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: O
+    label: Orders from Vendors
+  - key: C
+    label: Customer Orders
+  - key: G
+    label: Consignment
+  - key: I
+    label: Inventory
+- field: UpdCardBal
+  description: Update Balances
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: O
+    label: Orders
+  - key: D
+    label: Deliveries
+  - key: B
+    label: Bookkeeping
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+  default: 0
+- field: Flags
+  description: Flags
+  type: Int
+  size: 11
+  default: 0
+- field: InvntDirec
+  description: Warehouse Direction
+  type: VarChar
+  size: 1
+  default: X
+  constraints:
+  - key: X
+    label: Release
+  - key: E
+    label: Receipt
+- field: CntctCode
+  description: Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: ShowSCN
+  description: Display BP Catalog Number
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FatherCard
+  description: BP Consolidation
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: SysRate
+  description: System Price
+  type: Num
+  size: 19.6
+- field: CurSource
+  description: Base Currency
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: L
+    label: Local Currency
+  - key: S
+    label: System Currency
+  - key: C
+    label: BP Currency
+- field: VatSumSy
+  description: Tax Amount (SC)
+  type: Num
+  size: 19.6
+- field: DiscSumSy
+  description: Total Discount (SC)
+  type: Num
+  size: 19.6
+- field: DocTotalSy
+  description: Document Total (SC)
+  type: Num
+  size: 19.6
+- field: PaidSys
+  description: Paid (SC)
+  type: Num
+  size: 19.6
+- field: FatherType
+  description: Parent Summary Type
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Payment Consolidation
+  - key: D
+    label: Delivery Consolidation
+- field: GrosProfSy
+  description: Gross Profit (SC)
+  type: Num
+  size: 19.6
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: IsICT
+  description: A/R Invoice + Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Volume
+  description: Volume
+  type: Num
+  size: 19.6
+- field: VolUnit
+  description: Volume Unit of Measure
+  type: Int
+  size: 6
+- field: Weight
+  description: Weight
+  type: Num
+  size: 19.6
+- field: WeightUnit
+  description: Weight UoM
+  type: Int
+  size: 6
+- field: Series
+  description: Series
+  type: Int
+  size: 11
+  related: NNM1
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: Filler
+  description: Filter
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Upgrade
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Auto Summary
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: StampNum
+  description: Stamp No.
+  type: nVarChar
+  size: 16
+- field: isCrin
+  description: Corrected Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: selfInv
+  description: Auto. Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: VatPaid
+  description: Tax Paid to Date
+  type: Num
+  size: 19.6
+- field: VatPaidFC
+  description: Tax Paid (FC)
+  type: Num
+  size: 19.6
+- field: VatPaidSys
+  description: Tax Paid (SC)
+  type: Num
+  size: 19.6
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: WddStatus
+  description: Authorization Status
+  type: VarChar
+  size: 1
+  default: '-'
+  constraints:
+  - key: '-'
+    label: Without
+  - key: W
+    label: Pending
+  - key: Y
+    label: Approved
+  - key: N
+    label: Rejected
+  - key: P
+    label: Generated
+  - key: A
+    label: Generated by Authorizer
+  - key: C
+    label: Canceled
+- field: draftKey
+  description: Document Draft Internal ID
+  type: Int
+  size: 11
+  related: ODRF
+  default: -1
+- field: TotalExpns
+  description: Total Expenses
+  type: Num
+  size: 19.6
+- field: TotalExpFC
+  description: Total Expenses (FC)
+  type: Num
+  size: 19.6
+- field: TotalExpSC
+  description: Total Expenses (SC)
+  type: Num
+  size: 19.6
+- field: DunnLevel
+  description: Dunning Level
+  type: Int
+  size: 11
+  related: ODUN
+- field: Address2
+  description: Ship To
+  type: nVarChar
+  size: 254
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: Exported
+  description: Exported
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: StationID
+  description: Workstation ID
+  type: Int
+  size: 11
+  related: CSTN
+- field: Indicator
+  description: Indicator
+  type: nVarChar
+  size: 2
+  related: OIDC
+- field: NetProc
+  description: Net Procedure
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AqcsTax
+  description: Acquisition Tax
+  type: Num
+  size: 19.6
+- field: AqcsTaxFC
+  description: Acquisition Tax (FC)
+  type: Num
+  size: 19.6
+- field: AqcsTaxSC
+  description: Acquisition Tax (SC)
+  type: Num
+  size: 19.6
+- field: CashDiscPr
+  description: Cash Discount Percentage
+  type: Num
+  size: 19.6
+- field: CashDiscnt
+  description: Cash Discount
+  type: Num
+  size: 19.6
+- field: CashDiscFC
+  description: Cash Discount (FC)
+  type: Num
+  size: 19.6
+- field: CashDiscSC
+  description: Cash Discount (SC)
+  type: Num
+  size: 19.6
+- field: ShipToCode
+  description: Ship-to Code
+  type: nVarChar
+  size: 50
+- field: LicTradNum
+  description: Licensed Dealer No.
+  type: nVarChar
+  size: 32
+- field: PaymentRef
+  description: Payment Reference No.
+  type: nVarChar
+  size: 27
+- field: WTSum
+  description: Withholding Tax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: RoundDif
+  description: Rounding Diff. Amount
+  type: Num
+  size: 19.6
+- field: RoundDifFC
+  description: Rounding Diff. Amount (FC)
+  type: Num
+  size: 19.6
+- field: RoundDifSy
+  description: Rounding Diff. Amount (SC)
+  type: Num
+  size: 19.6
+- field: CheckDigit
+  description: Control Digit
+  type: VarChar
+  size: 1
+- field: Form1099
+  description: 1099 Form
+  type: Int
+  size: 11
+  related: OTNN
+- field: Box1099
+  description: 1099 Box
+  type: nVarChar
+  size: 20
+- field: submitted
+  description: Submitted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PoPrss
+  description: PO Process
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Rounding
+  description: Rounding
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevisionPo
+  description: Split PO
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Segment
+  description: Segment
+  type: Int
+  size: 6
+  default: 0
+- field: ReqDate
+  description: Required Date
+  type: Date
+  size: 8
+- field: CancelDate
+  description: Cancelation Date
+  type: Date
+  size: 8
+- field: PickStatus
+  description: Pick Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Pick
+  description: Pick
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BlockDunn
+  description: Block Dunning
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PeyMethod
+  description: Payment Method
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: PayBlock
+  description: Payment Block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PayBlckRef
+  description: Payment Block Abs Entry
+  type: Int
+  size: 11
+  related: OPYB
+- field: MaxDscn
+  description: Maximum Discount
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Reserve
+  description: Reserved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Max1099
+  description: Max. 1099 Amount
+  type: Num
+  size: 19.6
+- field: CntrlBnk
+  description: Central Bank Indicator
+  type: nVarChar
+  size: 15
+  related: OCBI
+- field: PickRmrk
+  description: Pick Remarks
+  type: nVarChar
+  size: 254
+- field: ISRCodLine
+  description: ISR Coding Line
+  type: nVarChar
+  size: 53
+- field: ExpAppl
+  description: Exp applied
+  type: Num
+  size: 19.6
+- field: ExpApplFC
+  description: Exp applied FC
+  type: Num
+  size: 19.6
+- field: ExpApplSC
+  description: Exp applied DC
+  type: Num
+  size: 19.6
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: DeferrTax
+  description: Deferred Tax
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LetterNum
+  description: Tax Exemption Letter No.
+  type: nVarChar
+  size: 50
+- field: FromDate
+  description: Exemption Validity Date From
+  type: Date
+  size: 8
+- field: ToDate
+  description: Exemption Validity Date To
+  type: Date
+  size: 8
+- field: WTApplied
+  description: Applied Withholding Tax
+  type: Num
+  size: 19.6
+- field: WTAppliedF
+  description: Applied WTax (FC)
+  type: Num
+  size: 19.6
+- field: BoeReserev
+  description: Bill of Exchange Reserved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AgentCode
+  description: Agent Code
+  type: nVarChar
+  size: 32
+  related: OAGP
+- field: WTAppliedS
+  description: Applied WTax (SC)
+  type: Num
+  size: 19.6
+- field: EquVatSum
+  description: Total Equalization Tax
+  type: Num
+  size: 19.6
+- field: EquVatSumF
+  description: Total Equalization Tax (FC)
+  type: Num
+  size: 19.6
+- field: EquVatSumS
+  description: Total Equalization Tax (SC)
+  type: Num
+  size: 19.6
+- field: Installmnt
+  description: No. of Installments
+  type: Int
+  size: 6
+  default: 1
+- field: VATFirst
+  description: Apply Tax on 1st Installment
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NnSbAmnt
+  description: WTax Non-Subject Amount
+  type: Num
+  size: 19.6
+- field: NnSbAmntSC
+  description: WTax Non-Subject Amount (SC)
+  type: Num
+  size: 19.6
+- field: NbSbAmntFC
+  description: WTax Non-Subject Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExepAmnt
+  description: Withholding Tax Exempt Amount
+  type: Num
+  size: 19.6
+- field: ExepAmntSC
+  description: WTax Exempt Amount (FC)
+  type: Num
+  size: 19.6
+- field: ExepAmntFC
+  description: WTax Exempt Amount (FC)
+  type: Num
+  size: 19.6
+- field: VatDate
+  description: VAT Date
+  type: Date
+  size: 8
+- field: CorrExt
+  description: External Corrected Document No.
+  type: nVarChar
+  size: 25
+- field: CorrInv
+  description: Internal Corrected Document No.
+  type: Int
+  size: 11
+- field: NCorrInv
+  description: Next Correcting Document
+  type: Int
+  size: 11
+- field: CEECFlag
+  description: Block Creation Target Corr Inv
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BaseAmnt
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: BaseAmntSC
+  description: Base Amount (SC)
+  type: Num
+  size: 19.6
+- field: BaseAmntFC
+  description: Base Amount (FC)
+  type: Num
+  size: 19.6
+- field: CtlAccount
+  description: Control Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VATRegNum
+  description: VAT Registration Number
+  type: nVarChar
+  size: 32
+- field: TxInvRptNo
+  description: Tax Invoice Rpt Number
+  type: nVarChar
+  size: 10
+- field: TxInvRptDt
+  description: Tax Invoice Rpt Date
+  type: Date
+  size: 8
+- field: KVVATCode
+  description: VAT Code for Tax Invoice Rpt
+  type: Text
+  size: 16
+- field: WTDetails
+  description: Withholding Tax Details
+  type: nVarChar
+  size: 100
+- field: SumAbsId
+  description: Summary VAT Abstract ID
+  type: Int
+  size: 11
+  default: -1
+- field: SumRptDate
+  description: Summary VAT Report Date
+  type: Date
+  size: 8
+- field: PIndicator
+  description: Period Indicator
+  type: nVarChar
+  size: 10
+  related: OPID
+  default: ''' '''
+- field: ManualNum
+  description: Manual Number
+  type: nVarChar
+  size: 20
+- field: UseShpdGd
+  description: Use Shipped Goods Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BaseVtAt
+  description: BPL ID Assigned to Invoice
+  type: Num
+  size: 19.6
+- field: BaseVtAtSC
+  description: BPL Name
+  type: Num
+  size: 19.6
+- field: BaseVtAtFC
+  description: Tax Reg. Number
+  type: Num
+  size: 19.6
+- field: NnSbVAt
+  description: Tax Invoice Rpt Number
+  type: Num
+  size: 19.6
+- field: NnSbVAtSC
+  description: Tax Invoice Rpt Date
+  type: Num
+  size: 19.6
+- field: NbSbVAtFC
+  description: WTax Amount - VAT-exempt
+  type: Num
+  size: 19.6
+- field: ExptVAt
+  description: WTax Exempted VAT Amount
+  type: Num
+  size: 19.6
+- field: ExptVAtSC
+  description: WTax Exempted VAT Amount (SC)
+  type: Num
+  size: 19.6
+- field: ExptVAtFC
+  description: Withholding Tax Details
+  type: Num
+  size: 19.6
+- field: LYPmtAt
+  description: Last Year's Payments
+  type: Num
+  size: 19.6
+- field: LYPmtAtSC
+  description: Last Years Payments (SC)
+  type: Num
+  size: 19.6
+- field: LYPmtAtFC
+  description: Summary Tax Report Date
+  type: Num
+  size: 19.6
+- field: ExpAnSum
+  description: Period Indicator
+  type: Num
+  size: 19.6
+- field: ExpAnSys
+  description: Manual Number
+  type: Num
+  size: 19.6
+- field: ExpAnFrgn
+  description: Use Shipped Goods Account
+  type: Num
+  size: 19.6
+- field: DocSubType
+  description: VAT Code for Tax Invoice Rpt
+  type: nVarChar
+  size: 2
+  default: --
+  constraints:
+  - key: --
+    label: ''
+- field: DpmStatus
+  description: Summary VAT Abstract ID
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: DpmAmnt
+  description: Down Payment Amount LC
+  type: Num
+  size: 19.6
+- field: DpmAmntSC
+  description: Down Payment Amount SC
+  type: Num
+  size: 19.6
+- field: DpmAmntFC
+  description: Down Payment Amount FC
+  type: Num
+  size: 19.6
+- field: DpmDrawn
+  description: Drawn to Down Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DpmPrcnt
+  description: Down Payment Percent
+  type: Num
+  size: 19.6
+- field: PaidSum
+  description: Total Paid Sum
+  type: Num
+  size: 19.6
+- field: PaidSumFc
+  description: Total Paid Sum (FC)
+  type: Num
+  size: 19.6
+- field: PaidSumSc
+  description: Total Paid Sum (SC)
+  type: Num
+  size: 19.6
+- field: FolioPref
+  description: Folio Prefix String
+  type: nVarChar
+  size: 4
+- field: FolioNum
+  description: Folio Number
+  type: Int
+  size: 11
+- field: DpmAppl
+  description: Down Payment Applied LC
+  type: Num
+  size: 19.6
+- field: DpmApplFc
+  description: Down Payment Applied FC
+  type: Num
+  size: 19.6
+- field: DpmApplSc
+  description: Down Payment Applied SC
+  type: Num
+  size: 19.6
+- field: LPgFolioN
+  description: Folio No. for Last Page in Doc.
+  type: Int
+  size: 11
+- field: Header
+  description: Header
+  type: Text
+  size: 16
+- field: Footer
+  description: Footer
+  type: Text
+  size: 16
+- field: Posted
+  description: Down Payment Was Posted
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OwnerCode
+  description: Document Owner
+  type: Int
+  size: 11
+  related: OHEM
+- field: BPChCode
+  description: BP Channel Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: BPChCntc
+  description: BP Channel Contact Person
+  type: Int
+  size: 11
+  related: OCPR
+- field: PayToCode
+  description: Pay To
+  type: nVarChar
+  size: 50
+- field: IsPaytoBnk
+  description: Is Pay to Bank
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BnkCntry
+  description: Pay to Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: BankCode
+  description: Pay to Bank Code
+  type: nVarChar
+  size: 30
+- field: BnkAccount
+  description: Pay to Bank Account No.
+  type: nVarChar
+  size: 50
+- field: BnkBranch
+  description: Pay to Bank Branch
+  type: nVarChar
+  size: 50
+- field: isIns
+  description: Reserve Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TrackNo
+  description: Tracking Number
+  type: nVarChar
+  size: 30
+- field: VersionNum
+  description: Version Number
+  type: nVarChar
+  size: 13
+- field: LangCode
+  description: Language Code
+  type: Int
+  size: 11
+  related: OLNG
+- field: BPNameOW
+  description: BP_NAME_OVERWRITTEN
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BillToOW
+  description: BILL_TO_OVERWRITTEN
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ShipToOW
+  description: SHIP_TO_OVERWRITTEN
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RetInvoice
+  description: Credit Memo
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ClsDate
+  description: Document Closing Date
+  type: Date
+  size: 8
+- field: MInvNum
+  description: Monthly Invoice No.
+  type: Int
+  size: 11
+- field: MInvDate
+  description: Monthly Invoice Date
+  type: Date
+  size: 8
+- field: SeqCode
+  description: Sequence Code
+  type: Int
+  size: 6
+- field: Serial
+  description: Serial Number
+  type: Int
+  size: 11
+- field: SeriesStr
+  description: Series String
+  type: nVarChar
+  size: 3
+- field: SubStr
+  description: Subseries String
+  type: nVarChar
+  size: 3
+- field: Model
+  description: Nota Fiscal Model
+  type: nVarChar
+  size: 6
+  related: ONFM
+  default: '0'
+- field: TaxOnExp
+  description: Tax On Expenses Sum
+  type: Num
+  size: 19.6
+- field: TaxOnExpFc
+  description: Tax On Expenses Sum (FC)
+  type: Num
+  size: 19.6
+- field: TaxOnExpSc
+  description: Tax On Expenses Sum (SC)
+  type: Num
+  size: 19.6
+- field: TaxOnExAp
+  description: Tax On Expenses Applied
+  type: Num
+  size: 19.6
+- field: TaxOnExApF
+  description: Tax on Freight Applied (FC)
+  type: Num
+  size: 19.6
+- field: TaxOnExApS
+  description: Tax on Freight Applied (SC)
+  type: Num
+  size: 19.6
+- field: LastPmnTyp
+  description: Last Payment Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: R
+    label: Receipt
+  - key: V
+    label: Vendor Payment
+- field: LndCstNum
+  description: Landed Cost Number
+  type: Int
+  size: 11
+- field: UseCorrVat
+  description: Use Correction VAT Group
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BlkCredMmo
+  description: Block Creating Credit Memo Tgt
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: OpenForLaC
+  description: Open For Landed Costs
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Open for Landed Costs
+  - key: N
+    label: Closed for Landed Costs
+- field: Excised
+  description: Excised
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Close
+  - key: Y
+    label: With Payment of Duty
+  - key: N
+    label: Without Payment of Duty
+- field: ExcRefDate
+  description: Excise Ref. Date
+  type: Date
+  size: 8
+- field: ExcRmvTime
+  description: Excise Removal Time
+  type: nVarChar
+  size: 8
+- field: SrvGpPrcnt
+  description: Gross Profit Prcnt of Service
+  type: Num
+  size: 19.6
+- field: DepositNum
+  description: Deposit Number
+  type: Int
+  size: 11
+- field: CertNum
+  description: Certificate Number
+  type: nVarChar
+  size: 31
+- field: DutyStatus
+  description: Duty Status
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: With Payment of Duty
+  - key: N
+    label: Without Payment of Duty
+- field: AutoCrtFlw
+  description: Auto Create Follow-up Document
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: FlwRefDate
+  description: Follow-up Document Ref. Date
+  type: Date
+  size: 8
+- field: FlwRefNum
+  description: Follow-up Document Ref. Number
+  type: nVarChar
+  size: 100
+- field: VatJENum
+  description: VAT Journal Entry Number
+  type: Int
+  size: 11
+  default: -1
+- field: DpmVat
+  description: Down Payment Tax LC
+  type: Num
+  size: 19.6
+- field: DpmVatFc
+  description: Down Payment Tax FC
+  type: Num
+  size: 19.6
+- field: DpmVatSc
+  description: Down Payment Tax SC
+  type: Num
+  size: 19.6
+- field: DpmAppVat
+  description: Down Payment Applied Tax LC
+  type: Num
+  size: 19.6
+- field: DpmAppVatF
+  description: Down Payment Applied Tax FC
+  type: Num
+  size: 19.6
+- field: DpmAppVatS
+  description: Down Payment Applied Tax SC
+  type: Num
+  size: 19.6
+- field: InsurOp347
+  description: 347 Insurance Operation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: IgnRelDoc
+  description: Ignore Relevant Doc on Archive
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BuildDesc
+  description: Build Descriptor
+  type: nVarChar
+  size: 50
+- field: ResidenNum
+  description: Residence Number
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Spanish Fiscal ID
+  - key: '2'
+    label: VAT Registration Number
+  - key: '3'
+    label: Passport
+  - key: '4'
+    label: Fiscal ID Issued by the Country/Region of Residence
+  - key: '5'
+    label: Certificate of Fiscal Residence
+  - key: '6'
+    label: Other Document
+  - key: '7'
+    label: Not Registered
+- field: Checker
+  description: Checker
+  type: Int
+  size: 11
+  related: OHEM
+- field: Payee
+  description: Payee
+  type: Int
+  size: 11
+  related: OHEM
+- field: CopyNumber
+  description: Copy Number
+  type: Int
+  size: 11
+  default: 0
+- field: SSIExmpt
+  description: SSI Exemption
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PQTGrpSer
+  description: Pur Quotation Group Series
+  type: Int
+  size: 11
+- field: PQTGrpNum
+  description: Pur Quotation Group Number
+  type: Int
+  size: 11
+- field: PQTGrpHW
+  description: Pur Quotation Group Manual
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReopOriDoc
+  description: Reopen Origin. Order by Return
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReopManCls
+  description: Reop. Man. Closed/Canc. Orders
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocManClsd
+  description: Document Was Closed Manually
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: U
+    label: Unknown
+- field: ClosingOpt
+  description: Closing Option
+  type: Int
+  size: 6
+  default: 1
+- field: SpecDate
+  description: Posting Date Specified by User
+  type: Date
+  size: 8
+- field: Ordered
+  description: Payment Ordered
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: NTSApprov
+  description: NTS Approved
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: NTSWebSite
+  description: E-Tax Web Site
+  type: Int
+  size: 6
+  related: OTWS
+- field: NTSeTaxNo
+  description: E-Tax Number
+  type: nVarChar
+  size: 50
+- field: NTSApprNo
+  description: NTS Approval Number
+  type: nVarChar
+  size: 50
+- field: PayDuMonth
+  description: Start From
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: Month End
+  - key: H
+    label: Half Month
+  - key: Y
+    label: Month Start
+  - key: N
+    label: Selected Date
+- field: ExtraMonth
+  description: Number of Additional Months
+  type: Int
+  size: 6
+- field: ExtraDays
+  description: Number of Additional Days
+  type: Int
+  size: 6
+- field: CdcOffset
+  description: Cash Discount Offset
+  type: Int
+  size: 6
+  default: 0
+- field: SignMsg
+  description: Signature Input Message
+  type: Text
+  size: 16
+- field: SignDigest
+  description: Signature Digest
+  type: Text
+  size: 16
+- field: CertifNum
+  description: Certification Number
+  type: nVarChar
+  size: 50
+- field: KeyVersion
+  description: Private Key Version
+  type: Int
+  size: 11
+- field: EDocGenTyp
+  description: Electr. Doc. Generation Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+  - key: S
+    label: Send
+  - key: R
+    label: Send - Later
+- field: ESeries
+  description: Electronic Series
+  type: Int
+  size: 6
+  related: NNM4
+- field: EDocNum
+  description: Electronic Document Number
+  type: nVarChar
+  size: 50
+- field: EDocExpFrm
+  description: Electronic Doc. Export Format
+  type: Int
+  size: 11
+- field: OnlineQuo
+  description: Create Online Quotation
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: POSEqNum
+  description: POS Equipment Number
+  type: nVarChar
+  size: 20
+- field: POSManufSN
+  description: POS Manufacturer Serial Number
+  type: nVarChar
+  size: 20
+- field: POSCashN
+  description: POS Cashier Number
+  type: Int
+  size: 11
+- field: EDocStatus
+  description: Electronic Document Status
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: N
+    label: New
+  - key: P
+    label: Pending
+  - key: S
+    label: Sent
+  - key: E
+    label: Error
+  - key: C
+    label: OK
+- field: EDocCntnt
+  description: Electronic Document Content
+  type: Text
+  size: 16
+- field: EDocProces
+  description: Electronic Document Process
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: CFD
+  - key: I
+    label: CFDI
+- field: EDocErrCod
+  description: Electronic Document Error Code
+  type: nVarChar
+  size: 50
+- field: EDocErrMsg
+  description: Electronic Document Error Msg
+  type: Text
+  size: 16
+- field: EDocCancel
+  description: Electronic Document - Canceled
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: EDocTest
+  description: Electronic Document - Testing
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: EDocPrefix
+  description: Electronic Document - Prefix
+  type: nVarChar
+  size: 10
+- field: CUP
+  description: Unique Code of Project
+  type: Int
+  size: 11
+  related: OCUP
+- field: CIG
+  description: Contract Code Identification
+  type: Int
+  size: 11
+  related: OCIG
+- field: DpmAsDscnt
+  description: Discount Document with Dpm
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Attachment
+  description: Attachment
+  type: Text
+  size: 16
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+- field: SupplCode
+  description: Supplementary Code
+  type: nVarChar
+  size: 254
+- field: GTSRlvnt
+  description: Relevant To GTS
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BaseDisc
+  description: Base Discount LC
+  type: Num
+  size: 19.6
+- field: BaseDiscSc
+  description: Base Discount SC
+  type: Num
+  size: 19.6
+- field: BaseDiscFc
+  description: Base Discount FC
+  type: Num
+  size: 19.6
+- field: BaseDiscPr
+  description: Base Discount Percentage
+  type: Num
+  size: 19.6
+- field: CreateTS
+  description: Creatn Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UpdateTS
+  description: Update Full Time
+  type: Int
+  size: 11
+- field: SrvTaxRule
+  description: Apply Service Tax Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AnnInvDecR
+  description: Annual Inv. Declaration Ref.
+  type: Int
+  size: 11
+- field: Supplier
+  description: Supplier
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: Releaser
+  description: Goods Distribution Approver
+  type: Int
+  size: 11
+  related: OHEM
+- field: Receiver
+  description: Goods Release Approver
+  type: Int
+  size: 11
+  related: OHEM
+- field: ToWhsCode
+  description: To Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: AssetDate
+  description: Fixed Asset Value Date
+  type: Date
+  size: 8
+- field: Requester
+  description: User Requesting Goods
+  type: nVarChar
+  size: 25
+- field: ReqName
+  description: User Name
+  type: nVarChar
+  size: 155
+- field: Branch
+  description: Branch
+  type: Int
+  size: 6
+  related: OUBR
+- field: Department
+  description: Department
+  type: Int
+  size: 6
+  related: OUDP
+- field: Email
+  description: E-Mail
+  type: nVarChar
+  size: 100
+- field: Notify
+  description: Send Notification Needed
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReqType
+  description: Requester Type User/Employee
+  type: Int
+  size: 11
+  default: 12
+  constraints:
+  - key: '12'
+    label: User
+  - key: '171'
+    label: Employee
+- field: OriginType
+  description: Document Origin
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: R
+    label: MRP
+  - key: S
+    label: Sales Order
+  - key: D
+    label: Document Generation Wizard
+- field: IsReuseNum
+  description: Is Reusing Document Number
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsReuseNFN
+  description: Is Reusing Nota Fiscal Number
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DocDlvry
+  description: Document Delivery
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '0'
+    label: None
+  - key: '1'
+    label: Create Online Document
+  - key: '2'
+    label: Post to Ariba Network
+- field: PaidDpm
+  description: Paid by Down Payment
+  type: Num
+  size: 19.6
+- field: PaidDpmF
+  description: Paid by Down Payment (FC)
+  type: Num
+  size: 19.6
+- field: PaidDpmS
+  description: Paid by Down Payment (SC)
+  type: Num
+  size: 19.6
+- field: EnvTypeNFe
+  description: Environment Type NF-e
+  type: Int
+  size: 11
+  related: OBNI
+  default: -1
+- field: AgrNo
+  description: Agreement No.
+  type: Int
+  size: 11
+- field: IsAlt
+  description: Is Alteration
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AltBaseTyp
+  description: Alteration Base Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '13'
+    label: ''
+  - key: '18'
+    label: ''
+  - key: '163'
+    label: ''
+  - key: '165'
+    label: ''
+- field: AltBaseEnt
+  description: Alteration Base Entry
+  type: Int
+  size: 11
+- field: AuthCode
+  description: Authorization Code
+  type: nVarChar
+  size: 250
+- field: StDlvDate
+  description: Start Delivery Date
+  type: Date
+  size: 8
+- field: StDlvTime
+  description: Start Delivery Time
+  type: Int
+  size: 11
+- field: EndDlvDate
+  description: End Delivery Date
+  type: Date
+  size: 8
+- field: EndDlvTime
+  description: End Delivery Time
+  type: Int
+  size: 11
+- field: VclPlate
+  description: Vehicle Plate
+  type: nVarChar
+  size: 20
+- field: ElCoStatus
+  description: Elec. Comm. Status
+  type: nVarChar
+  size: 10
+  constraints:
+  - key: '0'
+    label: Approved
+  - key: '1'
+    label: Pending Approval
+  - key: '2'
+    label: Rejected
+- field: AtDocType
+  description: AT Document Type
+  type: nVarChar
+  size: 10
+- field: ElCoMsg
+  description: Elec. Comm. Message
+  type: nVarChar
+  size: 254
+- field: PrintSEPA
+  description: Print SEPA Direct Debit Prenotification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FreeChrg
+  description: Free of Charge BP
+  type: Num
+  size: 19.6
+- field: FreeChrgFC
+  description: Free of Charge BP FC
+  type: Num
+  size: 19.6
+- field: FreeChrgSC
+  description: Free of Charge BP SC
+  type: Num
+  size: 19.6
+- field: NfeValue
+  description: NF-e Value
+  type: Num
+  size: 19.6
+- field: FiscDocNum
+  description: Fiscal Document Number
+  type: nVarChar
+  size: 100
+- field: RelatedTyp
+  description: Related Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+- field: RelatedEnt
+  description: Related Entry
+  type: Int
+  size: 11
+- field: CCDEntry
+  description: CCD Abs. Entry
+  type: Int
+  size: 11
+- field: NfePrntFo
+  description: NF-e Printing Format
+  type: Int
+  size: 11
+  default: 0
+  constraints:
+  - key: '0'
+    label: No DANFE
+  - key: '1'
+    label: Portrait
+  - key: '2'
+    label: Landscape
+  - key: '3'
+    label: Simplified
+  - key: '4'
+    label: DANFE NFC-e
+  - key: '5'
+    label: Mail
+- field: ZrdAbs
+  description: POS Daily Summary Number
+  type: Int
+  size: 11
+  related: OZRD
+- field: POSRcptNo
+  description: POS Receipt Number
+  type: Int
+  size: 11
+- field: FoCTax
+  description: Free of Charge BP Tax
+  type: Num
+  size: 19.6
+- field: FoCTaxFC
+  description: Free of Charge BP Tax FC
+  type: Num
+  size: 19.6
+- field: FoCTaxSC
+  description: Free of Charge BP Tax SC
+  type: Num
+  size: 19.6
+- field: TpCusPres
+  description: Type of End-User Presence
+  type: Int
+  size: 11
+  related: OBNI
+- field: ExcDocDate
+  description: Excise Doc. Date
+  type: Date
+  size: 8
+- field: FoCFrght
+  description: Free of Charge Freight
+  type: Num
+  size: 19.6
+- field: FoCFrghtFC
+  description: Free of Charge Freight FC
+  type: Num
+  size: 19.6
+- field: FoCFrghtSC
+  description: Free of Charge Freight SC
+  type: Num
+  size: 19.6
+- field: InterimTyp
+  description: Interim Type
+  type: Int
+  size: 6
+  default: 0
+  constraints:
+  - key: '0'
+    label: None
+- field: PTICode
+  description: POI Code
+  type: nVarChar
+  size: 5
+  related: OPTI
+- field: Letter
+  description: Letter
+  type: VarChar
+  size: 1
+- field: FolNumFrom
+  description: Folio Number From
+  type: Int
+  size: 11
+- field: FolNumTo
+  description: Folio Number To
+  type: Int
+  size: 11
+- field: FolSeries
+  description: Folio Series
+  type: Int
+  size: 11
+  related: OFNS
+- field: SplitTax
+  description: Split Payment Tax
+  type: Num
+  size: 19.6
+- field: SplitTaxFC
+  description: Split Payment Tax FC
+  type: Num
+  size: 19.6
+- field: SplitTaxSC
+  description: Split Payment Tax SC
+  type: Num
+  size: 19.6
+- field: ToBinCode
+  description: To Bin Location
+  type: nVarChar
+  size: 228
+- field: PriceMode
+  description: Price Mode
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Net
+  - key: G
+    label: Gross
+  - key: M
+    label: Net and Gross
+- field: PoDropPrss
+  description: PO Drop-Ship Process
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PermitNo
+  description: Permit Number
+  type: nVarChar
+  size: 20
+- field: MYFtype
+  description: MYF type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: S1
+    label: MYF Wholesale Sales
+  - key: S2
+    label: Retail Sales
+  - key: P1
+    label: MYF Wholesale Purchases
+  - key: P3
+    label: Other Expense Transactions
+- field: DocTaxID
+  description: Document Tax ID
+  type: nVarChar
+  size: 32
+- field: DateReport
+  description: Date of Reporting
+  type: Date
+  size: 8
+- field: RepSection
+  description: Reporting Section
+  type: nVarChar
+  size: 3
+- field: ExclTaxRep
+  description: Exclude from Control Statement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PosCashReg
+  description: POS/Cash Register
+  type: Int
+  size: 11
+- field: DmpTransID
+  description: Trans ID for Down Payment
+  type: nVarChar
+  size: 20
+- field: ECommerBP
+  description: E-Commerce Operator
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: EComerGSTN
+  description: GST Regn No of E-Commerce
+  type: nVarChar
+  size: 15
+- field: Revision
+  description: Revision
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevRefNo
+  description: Original Ref. No.
+  type: nVarChar
+  size: 100
+- field: RevRefDate
+  description: Original Ref. Date
+  type: Date
+  size: 8
+- field: RevCreRefN
+  description: Original Credit/Debit Ref. No.
+  type: nVarChar
+  size: 100
+- field: RevCreRefD
+  description: Orign Credit/Debit Ref. Date
+  type: Date
+  size: 8
+- field: TaxInvNo
+  description: Tax Invoice No.
+  type: nVarChar
+  size: 100
+- field: FrmBpDate
+  description: From Vendor Date
+  type: Date
+  size: 8
+- field: GSTTranTyp
+  description: GST Transaction Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: --
+    label: Bill of Supply
+  - key: GA
+    label: GST Tax Invoice
+  - key: GD
+    label: GST Debit Memo
+- field: BaseType
+  description: Base Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+- field: BaseEntry
+  description: Base Document Internal Key
+  type: Int
+  size: 11
+- field: ComTrade
+  description: Commission Trade
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: ''
+  - key: S
+    label: Sales Agent
+  - key: P
+    label: Purchase Agent
+  - key: C
+    label: Consignor
+- field: UseBilAddr
+  description: Determine GST by Using Bill to
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IssReason
+  description: Reason for issuing note
+  type: Int
+  size: 6
+  default: 1
+  constraints:
+  - key: '1'
+    label: Sales Return
+  - key: '2'
+    label: Post sale discount
+  - key: '3'
+    label: Deficiency in service
+  - key: '4'
+    label: Correction in invoice
+  - key: '5'
+    label: Change in POS
+  - key: '6'
+    label: Finalization of Provisional Assessment
+  - key: '7'
+    label: Others
+- field: ComTradeRt
+  description: Commission Trade Return
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SplitPmnt
+  description: A/P Split Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SOIWizId
+  description: SOI Wizard ID
+  type: Int
+  size: 11
+  related: OSOI
+- field: SelfPosted
+  description: Self Invoice Created [Yes/No]
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnBnkAcct
+  description: Encryption of Pay to Bank Acct
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+  - key: B
+    label: Blocked
+  - key: U
+    label: Unblocked
+- field: SAPPassprt
+  description: Extended SAP Passport
+  type: Text
+  size: 16
+- field: EWBGenType
+  description: E-Way Bill Generation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: N
+    label: Not Relevant
+  - key: G
+    label: Generate
+  - key: L
+    label: Generate - Later
+- field: CtActTax
+  description: Customer Accounting Tax
+  type: Num
+  size: 19.6
+- field: CtActTaxFC
+  description: Customer Accounting Tax (FC)
+  type: Num
+  size: 19.6
+- field: CtActTaxSC
+  description: Customer Accounting Tax (SC)
+  type: Num
+  size: 19.6
+- field: EDocType
+  description: eDoc Type
+  type: VarChar
+  size: 1
+  default: F
+  constraints:
+  - key: F
+    label: FE
+  - key: C
+    label: FCE
+- field: QRCodeSrc
+  description: QR Code Source
+  type: Text
+  size: 16
+- field: AggregDoc
+  description: Aggregate Document
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DataVers
+  description: Data Version
+  type: Int
+  size: 11
+  default: 1
+- field: ShipState
+  description: Shipment State Code
+  type: nVarChar
+  size: 3
+  related: OCST
+- field: ShipPlace
+  description: Shipment Place Name
+  type: nVarChar
+  size: 60
+- field: CustOffice
+  description: Customs Office Name
+  type: nVarChar
+  size: 60
+- field: FCI
+  description: FCI Number
+  type: nVarChar
+  size: 36
+- field: NnSbCuAmnt
+  description: WTax Non-Subject CU Amount
+  type: Num
+  size: 19.6
+- field: NnSbCuSC
+  description: WTax Non-Subject CU Amount SC
+  type: Num
+  size: 19.6
+- field: NnSbCuFC
+  description: WTax Non-Subject CU Amount FC
+  type: Num
+  size: 19.6
+- field: ExepCuAmnt
+  description: WTax Exempt CU Amount
+  type: Num
+  size: 19.6
+- field: ExepCuSC
+  description: WTax Exempt CU Amount SC
+  type: Num
+  size: 19.6
+- field: ExepCuFC
+  description: WTax Exempt CU Amount FC
+  type: Num
+  size: 19.6
+- field: AddLegIn
+  description: Additional Legal Information
+  type: nVarChar
+  size: 100
+- field: LegTextF
+  description: Legal Text Format
+  type: Int
+  size: 11
+  related: OLTF
+- field: IndFinal
+  description: Indicator for Final Consumer
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DANFELgTxt
+  description: DANFE Legal Text
+  type: Text
+  size: 16
+- field: PostPmntWT
+  description: Post Payment Withholding Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: QRCodeSPGn
+  description: QR Code Source Generated from Stored Procedure
+  type: Text
+  size: 16
+- field: FCEPmnMean
+  description: Use FCEs as Payment Means
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ReqCode
+  description: Requester Code
+  type: nVarChar
+  size: 50
+- field: NotRel4MI
+  description: Not Relevant for Monthly Invoice
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Rel4PPTax
+  description: Relevant for Plastic Packaging Tax
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConfrmedBy
+  description: Confirmed By
+  type: Int
+  size: 11
+- field: ConfrmedOn
+  description: Confirmed On
+  type: Date
+  size: 8
+- field: ReqID
+  description: Requester ID
+  type: Int
+  size: 11
+- field: NonDdAmt
+  description: Non-Deductible Amount
+  type: Num
+  size: 19.6
+- field: NonDdAmtSC
+  description: Non-Deductible Amount (SC)
+  type: Num
+  size: 19.6
+- field: NonDdAmtFC
+  description: Non-Deductible Amount (FC)
+  type: Num
+  size: 19.6
+- field: BookeTdsBP
+  description: Book the eTDS to the Business Partner
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AllocNum
+  description: Allocation Number for IL
+  type: nVarChar
+  size: 50
+- field: DPayToAddr
+  description: Digital Pay To Address
+  type: nVarChar
+  size: 50
+- field: DigPayment
+  description: Digital Payments
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OperProfit
+  description: Operating Profit
+  type: Num
+  size: 19.6
+- field: OperProfFC
+  description: Operating Profit (FC)
+  type: Num
+  size: 19.6
+- field: OperProfSy
+  description: Operating Profit (SC)
+  type: Num
+  size: 19.6
+- field: NetIncome
+  description: Net Income
+  type: Num
+  size: 19.6
+- field: NetIncomFC
+  description: Net Income (FC)
+  type: Num
+  size: 19.6
+- field: NetIncomSy
+  description: Net Income (SC)
+  type: Num
+  size: 19.6
+- field: PDueMonEnd
+  description: End On
+  type: VarChar
+  size: 1
+  constraints:
+  - key: E
+    label: End of Month
+  - key: H
+    label: Middle of Month
+  - key: Y
+    label: Start of Month
+  - key: N
+    label: None
+- field: RShipToCod
+  description: Ship-to Code for Return
+  type: nVarChar
+  size: 50
+- field: Address3
+  description: Ship To for Return
+  type: nVarChar
+  size: 254
+- field: RShipToOW
+  description: Ship-to Address Overwritten for Return
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnLicTradN
+  description: Encrypt TAX ID Number
+  type: Text
+  size: 16
+- field: ListNum
+  description: Price List No.
+  type: Int
+  size: 6
+  related: OPLN
+- field: AplTaxOnFr
+  description: Apply Only Taxes in First Installment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: T
+    label: Tax Only
+- field: DocEmail
+  description: E-Mail
+  type: nVarChar
+  size: 254
+- field: SirenNo
+  description: SIREN No.
+  type: nVarChar
+  size: 9
+- field: SiretNo
+  description: SIRET No.
+  type: nVarChar
+  size: 32
+- field: CpyDtyStts
+  description: Copy Duty Status from Base
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RoutingCod
+  description: Routing Code
+  type: nVarChar
+  size: 100
+- field: DpmSpAmnt
+  description: Down Payment Split Amount LC
+  type: Num
+  size: 19.6
+- field: DpmSpAmtSC
+  description: Down Payment Split Amount SC
+  type: Num
+  size: 19.6
+- field: DpmSpAmtFC
+  description: Down Payment Split Amount FC
+  type: Num
+  size: 19.6
+- field: CmDpmPrcnt
+  description: Credit Memo Down Payment Percent
+  type: Num
+  size: 19.6
+- field: Suffix
+  description: Suffix
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+- key: AT_CARD
+  unique: false
+  fields:
+  - NumAtCard
+  - CardCode
+- key: CUSTOMER
+  unique: false
+  fields:
+  - CardCode
+- key: NUM
+  unique: true
+  fields:
+  - DocNum
+  - Instance
+  - Segment
+  - DocSubType
+  - PIndicator
+- key: DOC_STATUS
+  unique: false
+  fields:
+  - DocStatus
+  - CANCELED
+- key: FTHR_CARD
+  unique: false
+  fields:
+  - FatherCard
+  - FatherType
+- key: SERIES
+  unique: false
+  fields:
+  - Series
+- key: OWNER_CODE
+  unique: false
+  fields:
+  - OwnerCode
+- key: DATE_PIND
+  unique: false
+  fields:
+  - DocDate
+  - PIndicator
+- key: ESERIES
+  unique: false
+  fields:
+  - ESeries
+  - EDocNum

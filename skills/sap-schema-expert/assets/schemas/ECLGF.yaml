@@ -1,0 +1,26 @@
+table: ECLGF
+description: ECLGF
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/ECLGF.htm
+fields:
+- field: Id
+  description: Transaction Id
+  type: nVarChar
+  size: 100
+- field: FileName
+  description: The configuration file name
+  type: nVarChar
+  size: 254
+- field: FileHash
+  description: The file hash code
+  type: nVarChar
+  size: 100
+- field: XmlFile
+  description: The file saved as Xml
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+  - FileName

@@ -1,0 +1,39 @@
+table: OCSQ
+description: Column Sequences
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCSQ.htm
+fields:
+- field: AbsId
+  description: Numerator
+  type: Int
+  size: 11
+- field: SeqType
+  description: Sequence Type
+  type: nVarChar
+  size: 8
+- field: FormID
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: ColToken
+  description: Column Token
+  type: nVarChar
+  size: 20
+- field: VisualIndx
+  description: Tabs Layout
+  type: Int
+  size: 11
+- field: VisInForm
+  description: Visible in Form
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId

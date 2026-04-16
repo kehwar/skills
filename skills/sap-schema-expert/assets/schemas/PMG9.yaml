@@ -1,0 +1,140 @@
+table: PMG9
+description: Project Management - Charged Document Lines Log - Used by Billing Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/PMG9.htm
+fields:
+- field: AbsEntry
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineID
+  description: Row No.
+  type: Int
+  size: 11
+- field: BWRefID
+  description: Billing Wizard Reference ID
+  type: Int
+  size: 11
+- field: TargetType
+  description: Target Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '15'
+    label: Delivery
+  - key: '13'
+    label: A/R Invoice
+- field: TargetAbs
+  description: Target Document Abs. Entry
+  type: Int
+  size: 11
+- field: TargetNum
+  description: Target Document Number
+  type: Int
+  size: 11
+- field: TargetLine
+  description: Target Document Line Number
+  type: Int
+  size: 11
+- field: SubProjID
+  description: Subproject ID
+  type: Int
+  size: 11
+  default: -1
+- field: StageID
+  description: Stage ID
+  type: Int
+  size: 11
+- field: SourceType
+  description: Source Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '18'
+    label: A/P Invoice
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '13002'
+    label: A/R Reserve Invoice
+  - key: '15'
+    label: Delivery
+  - key: '33'
+    label: Activity
+  - key: '202'
+    label: Work Order
+  - key: '234000024'
+    label: Timesheet
+- field: SourceAbs
+  description: Source Document Abs. Entry
+  type: Int
+  size: 11
+- field: SourceNum
+  description: Source Document Number
+  type: Int
+  size: 11
+- field: SourceLine
+  description: Source Document Line Number
+  type: Int
+  size: 11
+- field: Charged
+  description: Charged
+  type: Num
+  size: 19.6
+- field: ChargedQty
+  description: Charged Quantity
+  type: Num
+  size: 19.6
+- field: DestType
+  description: Destination Table Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '234000021'
+    label: Project Management Document
+  - key: '234000022'
+    label: Project Management Subproject
+  - key: '234000024'
+    label: Time Sheet Document
+- field: DestArr
+  description: Destination Table Array
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '1'
+    label: Time Sheet Lines
+  - key: '4'
+    label: Stage Documents
+  - key: '6'
+    label: Stage Activities
+  - key: '7'
+    label: Stage Workorders
+- field: DestAbs
+  description: Destination Table Abs. Entry
+  type: Int
+  size: 11
+- field: DestLine
+  description: Destination Table Line Number
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - BWRefID
+  - TargetType
+  - TargetAbs
+  - LineID

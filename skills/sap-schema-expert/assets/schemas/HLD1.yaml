@@ -1,0 +1,28 @@
+table: HLD1
+description: Holiday Dates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/HLD1.htm
+fields:
+- field: HldCode
+  description: Holiday Code
+  type: nVarChar
+  size: 20
+  related: OHLD
+- field: StrDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: Rmrks
+  description: Remarks
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HldCode
+  - StrDate
+  - EndDate

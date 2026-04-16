@@ -1,0 +1,49 @@
+table: BOLG
+description: BO Audit Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/BOLG.htm
+fields:
+- field: Id
+  description: ID
+  type: nVarChar
+  size: 40
+- field: CompanyId
+  description: CompanyId
+  type: nVarChar
+  size: 32
+- field: UserName
+  description: User Name
+  type: nVarChar
+  size: 128
+- field: B1UserCode
+  description: B1UserCode
+  type: nVarChar
+  size: 32
+- field: SourceIp
+  description: SourceIp
+  type: nVarChar
+  size: 45
+- field: ComponenId
+  description: ComponentId
+  type: nVarChar
+  size: 96
+- field: ActionTs
+  description: ActionTimestamp
+  type: nVarChar
+  size: 32
+- field: Category
+  description: Category
+  type: nVarChar
+  size: 32
+- field: SubCategry
+  description: SubCategory
+  type: nVarChar
+  size: 32
+- field: ActionMsg
+  description: ActionMessage
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id

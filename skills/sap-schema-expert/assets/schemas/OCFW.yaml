@@ -1,0 +1,82 @@
+table: OCFW
+description: Cash Flow Line Item
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OCFW.htm
+fields:
+- field: CFWId
+  description: Cash Flow Line Item ID
+  type: Int
+  size: 11
+- field: CFWName
+  description: Cash Flow Line Item Name
+  type: nVarChar
+  size: 200
+- field: LineNum
+  description: Cash Flow Line No.
+  type: nVarChar
+  size: 5
+- field: Postable
+  description: Cash Flow Item [Active/Title]
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Active Item
+  - key: N
+    label: Header Item
+- field: FatherNum
+  description: Parent Item Key
+  type: Int
+  size: 11
+  related: OCFW
+- field: Levels
+  description: Cash Flow Item Level
+  type: Int
+  size: 6
+  default: 3
+- field: GroupMask
+  description: Group Mask
+  type: Int
+  size: 6
+  default: 1
+- field: GroupLine
+  description: Serial No. in Group
+  type: Int
+  size: 11
+- field: ExtrMatch
+  description: External Reconciliation No.
+  type: Int
+  size: 11
+- field: IntrMatch
+  description: Internal Reconciliation No.
+  type: Int
+  size: 11
+- field: RateDifCFW
+  description: Rate Differences CFW
+  type: Int
+  size: 11
+- field: DataSource
+  description: Data Source
+  type: Int
+  size: 6
+- field: Attr
+  description: Attribute
+  type: Int
+  size: 6
+- field: Direction
+  description: Direction
+  type: Int
+  size: 6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CFWId
+- key: INTER_KEY
+  unique: false
+  fields:
+  - FatherNum
+- key: INDEX_KEY
+  unique: true
+  fields:
+  - CFWName

@@ -1,0 +1,229 @@
+table: INC1
+description: Inventory Counting - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/INC1.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OINC
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 50
+  related: OITM
+- field: ItemDesc
+  description: Item Description
+  type: nVarChar
+  size: 200
+- field: Freeze
+  description: Item Freeze Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WhsCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: InWhsQty
+  description: In-Whse Qty on Count Date
+  type: Num
+  size: 19.6
+- field: Counted
+  description: Counted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CountQty
+  description: Counted Quantity
+  type: Num
+  size: 19.6
+- field: CountQtyT1
+  description: Counter 1 - Counted Quantity
+  type: Num
+  size: 19.6
+- field: CountQtyT2
+  description: '-'
+  type: Num
+  size: 19.6
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: BarCode
+  description: Bar Code
+  type: nVarChar
+  size: 254
+- field: InvUoM
+  description: Inventory UoM
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Difference
+  description: Difference
+  type: Num
+  size: 19.6
+- field: DiffPercen
+  description: Difference %
+  type: Num
+  size: 19.6
+- field: CountDate
+  description: Count Date
+  type: Date
+  size: 8
+- field: CountTime
+  description: Count Time
+  type: Int
+  size: 11
+- field: TargetRef
+  description: Target Document Reference
+  type: nVarChar
+  size: 16
+- field: TargetType
+  description: Target Document Type
+  type: Int
+  size: 11
+  default: -1
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '0'
+    label: ''
+  - key: '10000071'
+    label: Inventory Posting
+- field: TargetEntr
+  description: Target Document Internal ID
+  type: Int
+  size: 11
+- field: TargetLine
+  description: Target Document Row
+  type: Int
+  size: 11
+- field: ProjCode
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: OcrCode
+  description: Distribution Rule Code
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: LineStatus
+  description: Row Status
+  type: VarChar
+  size: 1
+  default: O
+  constraints:
+  - key: O
+    label: Open
+  - key: C
+    label: Closed
+- field: BinEntry
+  description: Bin Location Entry
+  type: Int
+  size: 11
+  related: OBIN
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: OcrCode2
+  description: Distribution Rule 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Distribution Rule 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Distribution Rule 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Distribution Rule 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: FirmCode
+  description: Manufacturer
+  type: Int
+  size: 6
+  related: OMRC
+- field: SuppCatNum
+  description: Mfr Catalog No.
+  type: nVarChar
+  size: 50
+- field: PrefVendor
+  description: Preferred Vendor
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: UgpEntry
+  description: UoM Group Entry
+  type: Int
+  size: 11
+  related: OUGP
+- field: IUomEntry
+  description: Inventory UoM Entry
+  type: nVarChar
+  size: 20
+  related: OUOM
+- field: CountDiff
+  description: Counters' Diff.
+  type: Num
+  size: 19.6
+- field: CountDiffP
+  description: Counters' Diff. (%)
+  type: Num
+  size: 19.6
+- field: UomCode
+  description: UoM Code for DI
+  type: nVarChar
+  size: 20
+  related: OUOM
+- field: UomQty
+  description: UoM Counted Qty for DI
+  type: Num
+  size: 19.6
+- field: PPTaxExRe
+  description: Plastic Packaging Tax Exemption Reason
+  type: nVarChar
+  size: 2
+- field: PlPaWght
+  description: Plastic Packaging Weight
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

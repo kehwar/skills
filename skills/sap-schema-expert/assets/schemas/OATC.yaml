@@ -1,0 +1,13 @@
+table: OATC
+description: Attachments
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OATC.htm
+fields:
+- field: AbsEntry
+  description: Absolute entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

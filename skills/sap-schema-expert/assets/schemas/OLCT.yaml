@@ -1,0 +1,265 @@
+table: OLCT
+description: Location
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OLCT.htm
+fields:
+- field: Code
+  description: Location Code
+  type: Int
+  size: 11
+- field: Location
+  description: Name
+  type: nVarChar
+  size: 100
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PanCirNo
+  description: PAN Circle No.
+  type: nVarChar
+  size: 32
+- field: PanWardNo
+  description: PAN Ward No.
+  type: nVarChar
+  size: 32
+- field: PanOfficer
+  description: PAN Assessing Officer
+  type: nVarChar
+  size: 32
+- field: TanCirNo
+  description: TAN Circle No.
+  type: nVarChar
+  size: 32
+- field: TanWardNo
+  description: TAN Ward No.
+  type: nVarChar
+  size: 32
+- field: TanOfficer
+  description: TAN Assessing Officer
+  type: nVarChar
+  size: 32
+- field: LstVatNo
+  description: LST/VAT Number
+  type: nVarChar
+  size: 100
+- field: CstNo
+  description: CST Number
+  type: nVarChar
+  size: 100
+- field: ExemptNo
+  description: Exemption Number
+  type: nVarChar
+  size: 100
+- field: TanNo
+  description: TAN Number
+  type: nVarChar
+  size: 100
+- field: ServTaxNo
+  description: Service Tax Number
+  type: nVarChar
+  size: 100
+- field: AsseType
+  description: Assessee Type
+  type: nVarChar
+  size: 100
+- field: CompType
+  description: Company Type
+  type: nVarChar
+  size: 100
+- field: NatOfBiz
+  description: Nature of Business
+  type: nVarChar
+  size: 100
+- field: TinNo
+  description: TIN Number
+  type: nVarChar
+  size: 100
+- field: PanNo
+  description: PAN Number
+  type: nVarChar
+  size: 10
+- field: RegType
+  description: Registration Type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: XM
+    label: XM
+  - key: XD
+    label: XD
+  - key: EM
+    label: EM
+  - key: ED
+    label: ED
+  - key: SD
+    label: SD
+- field: EccNo
+  description: ECC Number
+  type: nVarChar
+  size: 40
+- field: CeRegNo
+  description: CE Register Number
+  type: nVarChar
+  size: 40
+- field: CeRange
+  description: CE Range
+  type: nVarChar
+  size: 60
+- field: CeDivision
+  description: CE Division
+  type: nVarChar
+  size: 60
+- field: CeComRate
+  description: CE Commissionerate
+  type: nVarChar
+  size: 60
+- field: ManuCode
+  description: Manufaturer Code
+  type: nVarChar
+  size: 60
+- field: Jurisd
+  description: Jurisdiction
+  type: nVarChar
+  size: 60
+- field: Street
+  description: Street
+  type: nVarChar
+  size: 100
+- field: Block
+  description: Block
+  type: nVarChar
+  size: 100
+- field: ZipCode
+  description: Zip Code
+  type: nVarChar
+  size: 20
+- field: City
+  description: City
+  type: nVarChar
+  size: 100
+- field: County
+  description: County
+  type: nVarChar
+  size: 100
+- field: Country
+  description: Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: State
+  description: State
+  type: nVarChar
+  size: 3
+- field: Building
+  description: Building/Floor/Room
+  type: Text
+  size: 16
+- field: SSIExmpt
+  description: SSI Exemption
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SSIExmptSt
+  description: SSI Exemption Status
+  type: VarChar
+  size: 1
+  default: E
+  constraints:
+  - key: E
+    label: New Location
+  - key: N
+    label: Upgrade Not Changed
+  - key: C
+    label: Upgrade Changed
+- field: CitAddress
+  description: CIT Address
+  type: nVarChar
+  size: 254
+- field: CitCity
+  description: CIT City
+  type: nVarChar
+  size: 100
+- field: CitPinCode
+  description: CIT Pin Code
+  type: nVarChar
+  size: 10
+- field: OnHoldAct
+  description: Capital Goods On Hold Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GSTRegnNo
+  description: GSTIN
+  type: nVarChar
+  size: 15
+- field: GSTRelevt
+  description: GST Location Relevant
+  type: nVarChar
+  size: 2
+  default: N
+- field: GSTTDS
+  description: GSTIN TDS
+  type: nVarChar
+  size: 30
+- field: GSTISD
+  description: GSTIN ISD
+  type: nVarChar
+  size: 30
+- field: GSTType
+  description: GST Type
+  type: Int
+  size: 11
+  related: OGTY
+  constraints:
+  - key: '-1'
+    label: ''
+  - key: '1'
+    label: Regular/TDS/ISD
+  - key: '2'
+    label: Casual Taxable Person
+  - key: '3'
+    label: Composition Levy
+  - key: '4'
+    label: Government Department or PSU
+  - key: '5'
+    label: Non-Resident Taxable Person
+  - key: '6'
+    label: UN Agency or Embassy
+- field: VendorCode
+  description: Vendor Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CstmerCode
+  description: Customer Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: DropShip
+  description: Drop Ship Warehouse
+  type: nVarChar
+  size: 8
+  related: OWHS
+- field: IngClrAc
+  description: Ineligible ITC Clearing A/C
+  type: nVarChar
+  size: 15
+- field: IntBrClrAc
+  description: Inter-branch ITC Clearing A/C
+  type: nVarChar
+  size: 15
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+- key: LOCATION
+  unique: true
+  fields:
+  - Location

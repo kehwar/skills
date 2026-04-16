@@ -1,0 +1,47 @@
+table: RSTR
+description: STRL resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSTR.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Language
+  description: Language code
+  type: Int
+  size: 11
+- field: Name
+  description: STRL name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: STRL number
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Language
+  - Name
+- key: NUM
+  unique: true
+  fields:
+  - Language
+  - Num
+- key: M_NUM
+  unique: false
+  fields:
+  - Num
+- key: M_NAME
+  unique: false
+  fields:
+  - Name

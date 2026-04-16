@@ -1,0 +1,56 @@
+table: OCRW
+description: BP for IIS Annual
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OCRW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+- field: Year
+  description: Report Year
+  type: Int
+  size: 6
+- field: SentMeth
+  description: Method of Sending
+  type: VarChar
+  size: 1
+  constraints:
+  - key: D
+    label: Doc. Date
+  - key: T
+    label: Tax Date
+- field: SentValue
+  description: Sent Value
+  type: Num
+  size: 19.6
+- field: LastAMeth
+  description: Last Accepted Method
+  type: VarChar
+  size: 1
+  constraints:
+  - key: D
+    label: Doc. Date
+  - key: T
+    label: Tax Date
+- field: LastAValue
+  description: Last Accepted Value
+  type: Num
+  size: 19.6
+- field: ReportID
+  description: Report ID
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: BP_YEAR
+  unique: true
+  fields:
+  - CardCode
+  - Year

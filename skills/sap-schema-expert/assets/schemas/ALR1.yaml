@@ -1,0 +1,73 @@
+table: ALR1
+description: Queue of messages to be sent
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/ALR1.htm
+fields:
+- field: Code
+  description: Internal Number
+  type: Int
+  size: '11'
+  related: OALR
+- field: LineId
+  description: Row Number
+  type: Int
+  size: '11'
+- field: NameFrom
+  description: From
+  type: nVarChar
+  size: '155'
+- field: AddrFrom
+  description: Reply Address
+  type: nVarChar
+  size: '100'
+- field: NameTo
+  description: To
+  type: nVarChar
+  size: '155'
+- field: IsSMS
+  description: SMS
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: F
+    label: Fax
+  - key: O
+    label: MS365
+- field: Address
+  description: Address
+  type: nVarChar
+  size: '100'
+- field: Status
+  description: Status
+  type: VarChar
+  size: '1'
+  default: U
+  constraints:
+  - key: U
+    label: Not Sent
+  - key: P
+    label: In Process
+  - key: S
+    label: Sent
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: '20'
+- field: ObjCode
+  description: Object Code
+  type: nVarChar
+  size: '50'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - LineId
+- key: STATUS
+  unique: false
+  fields:
+  - Status

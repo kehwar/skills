@@ -1,0 +1,29 @@
+table: OWWT
+description: Workbench
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWWT.htm
+fields:
+- field: ID
+  description: Workbench Template ID
+  type: Int
+  size: 11
+- field: Category
+  description: Workbench Category
+  type: nVarChar
+  size: 40
+- field: Layout
+  description: Workbench Layout
+  type: Text
+  size: 16
+- field: Action
+  description: Workbench Actions
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ID
+- key: CATEGORY
+  unique: true
+  fields:
+  - Category

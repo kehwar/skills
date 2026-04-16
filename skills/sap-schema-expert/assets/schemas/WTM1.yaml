@@ -1,0 +1,21 @@
+table: WTM1
+description: Approval Templates - Producers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/WTM1.htm
+fields:
+- field: WtmCode
+  description: Code
+  type: Int
+  size: 11
+  related: OWTM
+- field: UserID
+  description: User Code
+  type: Int
+  size: 11
+  related: OUSR
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WtmCode
+  - UserID

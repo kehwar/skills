@@ -1,0 +1,49 @@
+table: RLCK
+description: resource locks table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RLCK.htm
+fields:
+- field: resType
+  description: Resource Type
+  type: Int
+  size: 11
+  default: 1
+  constraints:
+  - key: '1'
+    label: form resource
+  - key: '3'
+    label: Grid resource
+  - key: '5'
+    label: String list resource
+  - key: '18'
+    label: Report
+- field: masterKey
+  description: Master Key
+  type: nVarChar
+  size: 64
+- field: wrkstation
+  description: Work Station
+  type: nVarChar
+  size: 250
+- field: userSign
+  description: User Sign
+  type: Int
+  size: 11
+- field: date
+  description: Date
+  type: Date
+  size: 8
+- field: time
+  description: Time
+  type: Int
+  size: 11
+- field: count
+  description: Locks Count
+  type: Int
+  size: 11
+  default: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - resType
+  - masterKey

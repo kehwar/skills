@@ -1,0 +1,110 @@
+table: OCPL
+description: Quick Copy Log Manager
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OCPL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: nVarChar
+  size: 6
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: nVarChar
+  size: 6
+- field: CopySource
+  description: Copy Source
+  type: nVarChar
+  size: 254
+- field: CopyTarget
+  description: Copy Target
+  type: nVarChar
+  size: 254
+- field: UserName
+  description: User Name
+  type: nVarChar
+  size: 20
+- field: CopyMethod
+  description: Copy Method
+  type: Int
+  size: 6
+  constraints:
+  - key: '2'
+    label: Delete All Records Then Add New Records
+  - key: '4'
+    label: Update Existing Records Without Adding New Records
+  - key: '8'
+    label: Add New Records Without Updating Existing Records
+  - key: '16'
+    label: Add New Records and Update Existing Records
+  - key: '0'
+    label: N/A
+- field: FailRpn
+  description: Copy failed
+  type: Int
+  size: 6
+  constraints:
+  - key: '1'
+    label: Ignore All Errors and Copy Valid Records
+  - key: '2'
+    label: Obtain User Confirmation
+  - key: '3'
+    label: Terminate Copy Process When One or More Errors Occur
+  - key: '4'
+    label: Terminate Copy Process When Number of Errors Exceeds
+- field: MissingUDF
+  description: UDF missing
+  type: VarChar
+  size: 1
+  constraints:
+  - key: '2'
+    label: N/A
+  - key: '1'
+    label: Copy Records and Ignore Missing UDFs
+  - key: '0'
+    label: Do Not Copy Records with Missing UDFs
+- field: CopyType
+  description: Copy Type
+  type: Int
+  size: 6
+- field: ErrorNum
+  description: Error Number
+  type: nVarChar
+  size: 11
+- field: NullifyAct
+  description: Nullify Account
+  type: Int
+  size: 6
+  constraints:
+  - key: '2'
+    label: N/A
+  - key: '1'
+    label: Use Default Accounts in Target
+  - key: '0'
+    label: Use Accounts in Source
+- field: CopyEmtVal
+  description: Copy Empty Value
+  type: Int
+  size: 6
+  constraints:
+  - key: '2'
+    label: N/A
+  - key: '1'
+    label: Do Not Overwrite Target Fields and Keep Original Values
+  - key: '0'
+    label: Overwrite Target Fields with Empty Values
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

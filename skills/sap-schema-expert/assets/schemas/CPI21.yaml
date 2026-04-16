@@ -1,0 +1,210 @@
+table: CPI21
+description: A/P Correction Invoice - Document Reference Information
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/CPI21.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjectType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '163'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: RefType
+  description: Reference Types
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: System Document
+  - key: E
+    label: External Document
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: RefDocEntr
+  description: Referenced Internal Number
+  type: Int
+  size: 11
+- field: RefDocNum
+  description: Referenced Document Number
+  type: Int
+  size: 11
+- field: ExtDocNum
+  description: External Referenced Document Number
+  type: nVarChar
+  size: 100
+- field: RefObjType
+  description: Referenced Object Type
+  type: nVarChar
+  size: 20
+  constraints:
+  - key: '23'
+    label: Sales Quotation
+  - key: '17'
+    label: Sales Order
+  - key: '15'
+    label: Delivery Notes
+  - key: '234000031'
+    label: Return Request
+  - key: '16'
+    label: Return
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '280'
+    label: A/R Tax Invoice
+  - key: '1470000113'
+    label: Purchase Request
+  - key: '540000006'
+    label: Purchase Quotation
+  - key: '22'
+    label: Purchase Order
+  - key: '20'
+    label: Goods Receipt PO
+  - key: '234000032'
+    label: Goods Return Request
+  - key: '21'
+    label: Goods Return
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '281'
+    label: A/P Tax Invoice
+  - key: '69'
+    label: Landed Costs
+  - key: '24'
+    label: Incoming Payments
+  - key: '46'
+    label: Outgoing Payments
+  - key: '57'
+    label: Checks for Payment
+  - key: '321'
+    label: Internal Reconciliation
+  - key: '34'
+    label: Recurring Posting
+  - key: '30'
+    label: Journal Entry
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '162'
+    label: Inventory Revaluation
+  - key: '1470000065'
+    label: Inventory Counting
+  - key: '10000071'
+    label: Inventory Posting
+  - key: '1250000001'
+    label: Inventory Transfer Request
+  - key: '67'
+    label: Inventory Transfer
+  - key: '202'
+    label: Production Order
+  - key: '13001'
+    label: Original Invoice
+  - key: '-1'
+    label: External Document
+  - key: '20301'
+    label: Original Down Payment Invoice
+- field: AccessKey
+  description: Access Key
+  type: nVarChar
+  size: 100
+- field: IssueDate
+  description: Date of Issue
+  type: Date
+  size: 8
+- field: IssuerCNPJ
+  description: Issuer CNPJ
+  type: nVarChar
+  size: 100
+- field: IssuerCode
+  description: Fiscal Document Issuer UF Code
+  type: nVarChar
+  size: 10
+- field: Model
+  description: Fiscal Document Model
+  type: nVarChar
+  size: 6
+- field: Series
+  description: Fiscal Document Series
+  type: nVarChar
+  size: 3
+- field: Number
+  description: Fiscal Document Number
+  type: Int
+  size: 11
+- field: RefAccKey
+  description: Referenced CT-e Access Key
+  type: nVarChar
+  size: 100
+- field: RefAmount
+  description: Referenced Amount
+  type: Num
+  size: 19.6
+- field: SubSeries
+  description: Fiscal Document Subseries
+  type: nVarChar
+  size: 3
+- field: Remark
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: LinkRefTyp
+  description: Link Reference Type
+  type: nVarChar
+  size: 20
+  default: '00'
+  constraints:
+  - key: '00'
+    label: ''
+  - key: '01'
+    label: Nota de crï¿½dito de los documentos relacionados
+  - key: '02'
+    label: Nota de dï¿½bito de los documentos relacionados
+  - key: '03'
+    label: Devoluciï¿½n de mercancï¿½a sobre facturas o traslados previos
+  - key: '04'
+    label: Sustituciï¿½n de los CFDI previos
+  - key: '05'
+    label: Traslados de mercancias facturados previamente
+  - key: '06'
+    label: Factura generada por los traslados previos
+  - key: '07'
+    label: CFDI por aplicaciï¿½n de anticipo
+  - key: 08
+    label: Customs
+  - key: MX_08
+    label: Factura generada por pagos en parcialidades
+  - key: 09
+    label: Factura generada por pagos diferidos
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - RefType
+- key: DOC_ENTRY
+  unique: false
+  fields:
+  - DocEntry

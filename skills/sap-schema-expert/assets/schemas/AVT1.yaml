@@ -1,0 +1,59 @@
+table: AVT1
+description: Tax Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AVT1.htm
+fields:
+- field: Code
+  description: Group Code
+  type: nVarChar
+  size: 8
+- field: EffecDate
+  description: Effective from
+  type: Date
+  size: 8
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: EquVatPr
+  description: Equalization Tax %
+  type: Num
+  size: 19.6
+- field: MinAmount
+  description: Minimum Stamp Tax Amount
+  type: Num
+  size: 19.6
+- field: FixedAmout
+  description: Fixed Stamp Tax Amount
+  type: Num
+  size: 19.6
+- field: TaxType
+  description: Tax Type (VAT or Stamp)
+  type: VarChar
+  size: 1
+  default: V
+  constraints:
+  - key: V
+    label: VAT
+  - key: S
+    label: Stamp
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: DatevCode
+  description: DATEV Code
+  type: Int
+  size: 6
+- field: DTV13BCode
+  description: Datev Transactions Deliveries and Services
+  type: nVarChar
+  size: 50
+  related: ODTS
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - EffecDate
+  - LogInstanc

@@ -1,0 +1,33 @@
+table: SXRPR
+description: XLR Properties
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SXRPR.htm
+fields:
+- field: propid
+  description: propid
+  type: Identity
+  size: 11
+- field: objid
+  description: objid
+  type: Int
+  size: 11
+- field: propdefid
+  description: propdefid
+  type: Int
+  size: 11
+- field: ivalue
+  description: ivalue
+  type: Int
+  size: 11
+- field: fvalue
+  description: fvalue
+  type: Num
+  size: 19.6
+- field: cvalue
+  description: cvalue
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - propid

@@ -1,0 +1,80 @@
+table: OHLD
+description: Holiday Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/OHLD.htm
+fields:
+- field: HldCode
+  description: Holidays Name
+  type: nVarChar
+  size: 20
+- field: WndFrm
+  description: Weekend From
+  type: VarChar
+  size: 1
+  default: '6'
+  constraints:
+  - key: '1'
+    label: Sunday
+  - key: '2'
+    label: Monday
+  - key: '3'
+    label: Tuesday
+  - key: '4'
+    label: Wednesday
+  - key: '5'
+    label: Thursday
+  - key: '6'
+    label: Friday
+  - key: '7'
+    label: Saturday
+- field: WndTo
+  description: To
+  type: VarChar
+  size: 1
+  default: '1'
+  constraints:
+  - key: '1'
+    label: Sunday
+  - key: '2'
+    label: Monday
+  - key: '3'
+    label: Tuesday
+  - key: '4'
+    label: Wednesday
+  - key: '5'
+    label: Thursday
+  - key: '6'
+    label: Friday
+  - key: '7'
+    label: Saturday
+- field: isCurYear
+  description: Current Year
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ignrWnd
+  description: Ignore Weekend
+  type: VarChar
+  size: 1
+  default: N
+- field: WeekNoRule
+  description: Rule to Calculate Week Number
+  type: VarChar
+  size: 1
+  default: J
+  constraints:
+  - key: J
+    label: First week starts on January 1
+  - key: D
+    label: First week starts in first 4-day week
+  - key: F
+    label: First week starts in first full week
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HldCode

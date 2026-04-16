@@ -1,0 +1,48 @@
+table: OUAL
+description: User Action Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OUAL.htm
+fields:
+- field: Id
+  description: ID
+  type: Identity
+  size: 11
+- field: UserId
+  description: User Id
+  type: Int
+  size: 6
+  related: OUSR
+- field: ActionDate
+  description: Action Date
+  type: Date
+  size: 8
+- field: ActionTime
+  description: Action Time
+  type: Int
+  size: 11
+- field: ActionType
+  description: Action Type
+  type: VarChar
+  size: 1
+- field: ObjectId
+  description: Object Id
+  type: Int
+  size: 11
+- field: ObjectKey
+  description: Object Key
+  type: nVarChar
+  size: 64
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Id
+- key: TIME
+  unique: false
+  fields:
+  - ActionDate
+  - ActionTime
+- key: ID_KEY
+  unique: false
+  fields:
+  - ObjectId
+  - ObjectKey

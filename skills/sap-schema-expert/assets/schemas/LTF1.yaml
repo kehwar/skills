@@ -1,0 +1,24 @@
+table: LTF1
+description: Legal Text Format Lines
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/LTF1.htm
+fields:
+- field: DocEntry
+  description: Format ID
+  type: Int
+  size: 11
+  related: OLTF
+- field: LineNum
+  description: Line No.
+  type: Int
+  size: 11
+- field: LineCode
+  description: Format Code
+  type: nVarChar
+  size: 30
+  related: OLTI
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

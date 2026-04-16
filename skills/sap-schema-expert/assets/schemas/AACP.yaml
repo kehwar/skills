@@ -1,0 +1,919 @@
+table: AACP
+description: Periods Category-Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AACP.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  default: 0
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: FinancYear
+  description: Beginning of Financial Year
+  type: Date
+  size: 8
+- field: Year
+  description: Financial Year
+  type: Int
+  size: 6
+- field: PeriodName
+  description: Period Name
+  type: nVarChar
+  size: 20
+- field: SubType
+  description: Sub-Period Type
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Year
+  - key: Q
+    label: Quarters
+  - key: M
+    label: Months
+  - key: D
+    label: Days
+- field: PeriodNum
+  description: Number of Periods
+  type: Int
+  size: 11
+- field: F_RefDate
+  description: Posting Date From
+  type: Date
+  size: 8
+- field: T_RefDate
+  description: Posting Date To
+  type: Date
+  size: 8
+- field: F_DueDate
+  description: Due Date From
+  type: Date
+  size: 8
+- field: T_DueDate
+  description: Due Date To
+  type: Date
+  size: 8
+- field: F_TaxDate
+  description: Document Date From
+  type: Date
+  size: 8
+- field: T_TaxDate
+  description: Document Date To
+  type: Date
+  size: 8
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+- field: UpdateDate
+  description: Date of Update
+  type: Date
+  size: 8
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: LinkAct_1
+  description: Domestic Accounts Receivable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_2
+  description: Checks Received
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_3
+  description: Cash on Hand
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_4
+  description: Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_5
+  description: Sales Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_6
+  description: Customer's Deduction at Source
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ComissAct
+  description: Credit Card Deposit Fee
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_8
+  description: Purchase Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_9
+  description: Foreign Accounts Receivable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_10
+  description: Domestic Accounts Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_11
+  description: Foreign Accounts Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_12
+  description: Bank Transfer
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_13
+  description: Tax to Pay to
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_14
+  description: Tax Definition
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_15
+  description: Equipment and Assets
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_16
+  description: Withholding Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_17
+  description: Advances on Corp. Income Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_18
+  description: Opening Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltIncom
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExmptIncom
+  description: Tax Exempt Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltExpn
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ForgnIncm
+  description: Revenue Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ECIncome
+  description: Sales Revenue - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ForgnExpn
+  description: Expense Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltRateDi
+  description: Ex. Rate Diff. in All Currency
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecresGlAc
+  description: G/L Decrease Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_27
+  description: Automatic Reconciliation Diff.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DftStockOB
+  description: Account for Opening Whse Bal.
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_19
+  description: Cash Discount
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_20
+  description: Cash Discount Clearing
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_21
+  description: Realized Exchange Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_22
+  description: Cash Discount
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_23
+  description: Realized Exchange Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_24
+  description: Rounding Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_25
+  description: Realized Exchange Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_26
+  description: Realized Exchange Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncresGlAc
+  description: G/L Increase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RturnngAct
+  description: Sales Returns Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: COGM_Act
+  description: Cost of Goods Sold Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AlocCstAct
+  description: Allocation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VariancAct
+  description: Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PricDifAct
+  description: Price Difference Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CDownPymnt
+  description: Customer Down Payment Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VDownPymnt
+  description: Vendor Down Payment Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CBoERcvble
+  description: BoE Accounts Receivable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CBoEOnClct
+  description: Bill of Exchange on Collection
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CBoEPresnt
+  description: Bill of Exchange Presentation
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CBoEDiscnt
+  description: Bill of Exchange Discounted
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CUnpaidBoE
+  description: Unpaid Bill of Exchange
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VBoEPayble
+  description: BoE Accounts Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VAsstBoEPy
+  description: BoE Accounts Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: COpenDebts
+  description: Customer Doubtful Debts Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VOpenDebts
+  description: Vendor Doubtful Debts Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchseAct
+  description: Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PaReturnAc
+  description: Purchase Return Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PaOffsetAc
+  description: Purchase Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_28
+  description: Period-End Closing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExDiffAct
+  description: Exchange Rate Difference Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalanceAct
+  description: Goods Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BnkChgAct
+  description: Bank Charge Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_29
+  description: Other Receivable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: LinkAct_30
+  description: Other Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncmAcct
+  description: Def. Inv. Reval. Revenue Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpnAcct
+  description: Def. Inventory Reval. Expense
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatRevAct
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpClrAct
+  description: Expense Account for Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpOfstAct
+  description: Expense Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostRevAct
+  description: COGS Revaluation Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RepomoAct
+  description: REPOMO Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipVarAcct
+  description: WIP Inventory Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaleVatOff
+  description: Down Payment Tax Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurcVatOff
+  description: Down Payment Tax Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DpmSalAct
+  description: Payment Advances
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DpmPurAct
+  description: Payment Advances
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpVarAct
+  description: Expense and Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostOffAct
+  description: Cost of Sale Rev. Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ECExepnses
+  description: Expense Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockAct
+  description: Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DflInPrcss
+  description: Default for Stk Itm in Process
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltInCstm
+  description: Default for Stock Item in Cust
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltProfit
+  description: Inventory Offset - Incr. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltLoss
+  description: Inventory Offset - Decr. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VAssets
+  description: Vendor Asset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockRvAct
+  description: Inventory Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkRvOfAct
+  description: Invent Revaluation Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipAcct
+  description: WIP Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DfltCard
+  description: Invoice and Payment BP
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: ShpdGdsAct
+  description: Shipped Goods Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GlRvOffAct
+  description: G/L Revaluation Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OverpayAP
+  description: Overpayment A/P Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UndrpayAP
+  description: Underpayment A/P Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OverpayAR
+  description: Overpayment A/R Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UndrpayAR
+  description: Underpayment A/R Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMAct
+  description: Sales Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMExpAct
+  description: Tax Exempt Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMFrnAct
+  description: Sales Credit Account - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMEUAct
+  description: Sales Credit Acct - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMAct
+  description: Purchase Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMFrnAct
+  description: Purchase Credit Acct - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMEUAct
+  description: Purchase Credit Account - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: NegStckAct
+  description: Negative Inventory Adj. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkInTnAct
+  description: Stock In Transit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GLGainXdif
+  description: Realized Exchange Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GLLossXdif
+  description: Realized Exchange Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: AmountDiff
+  description: Amount Differences
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SlfInvIncm
+  description: Self Invoice Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SlfInvExpn
+  description: Self Invoice Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OnHoldAct
+  description: Capital Goods On Hold Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PlaAct
+  description: PLA
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ICClrAct
+  description: Incoming CENVAT Clearing Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OCClrAct
+  description: Outgoing CENVAT Clearing Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurBalAct
+  description: Purchase Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhICenAct
+  description: Incoming CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhOCenAct
+  description: Outgoing CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SalDpmInt
+  description: A/R DP Interim
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurDpmInt
+  description: A/P DP Interim
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExrateOnDt
+  description: Ex Rate on Def Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: 6
+  related: OUSR
+- field: EURecvAct
+  description: EU Accounts Receivable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EUPayAct
+  description: EU Accounts Payable
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipOffset
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockOffst
+  description: Inventory Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DunIntrst
+  description: Dunning Interest
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DunFee
+  description: Dunning Fee
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SnapShotId
+  description: Snapshot ID
+  type: Int
+  size: 11
+  default: 0
+- field: TDSInterst
+  description: TDS Interest Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TDSCharges
+  description: TDS Other Charges Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SrvTaxClr
+  description: Service Tax Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARConDiffG
+  description: Realized Conversion Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARConDiffL
+  description: Realized Conversion Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APConDiffG
+  description: Realized Conversion Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APConDiffL
+  description: Realized Conversion Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GLConDiffG
+  description: Realized Conversion Diff. Gain
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GLConDiffL
+  description: Realized Conversion Diff. Loss
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FreeChrgSA
+  description: Free of Charge Sales Account
+  type: nVarChar
+  size: 15
+- field: FreeChrgPU
+  description: Free of Charge Purchase Account
+  type: nVarChar
+  size: 15
+- field: TDSFee
+  description: TDS Fee Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResRevenue
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResExpense
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResSalesCr
+  description: Sales Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResPurchCr
+  description: Purchase Credit Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResNotInv
+  description: Res. Received Not Inv. Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp1
+  description: Std Cost Expense 1
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp2
+  description: Std Cost Expense 2
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp3
+  description: Std Cost Expense 3
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp4
+  description: Std Cost Expense 4
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp5
+  description: Std Cost Expense 5
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp6
+  description: Std Cost Expense 6
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp7
+  description: Std Cost Expense 7
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp8
+  description: Std Cost Expense 8
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdExp9
+  description: Std Cost Expense 9
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResStdEx10
+  description: Std Cost Expense 10
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResWipAct
+  description: Resource WIP Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResScrapAc
+  description: Scrap Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipOffPlAc
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ResOffPlAc
+  description: Resource Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ERDInARAct
+  description: Exchange Rate Interim Sales Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ERDInAPAct
+  description: Exchange Rate Interim Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CSDInARAct
+  description: Cash Discount Interim Sales Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CSDInAPAct
+  description: Cash Discount Interim Purchase Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GSTInAct
+  description: GST Input Interim Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GSTInterst
+  description: GST Interest Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GSTCharges
+  description: GST Other Charges Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: GSTFee
+  description: GST Fee Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WTInARAct
+  description: Interim Account for Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WTInAPAct
+  description: Interim Account for Tax
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WTExDifAct
+  description: Withholding Tax Exchange Rate Diff. Account
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LogInstanc

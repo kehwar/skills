@@ -1,0 +1,21 @@
+table: OFPC
+description: Fixed Assets Fiscal Year Change
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/OFPC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: PeriodCat
+  description: Period Category
+  type: nVarChar
+  size: 10
+- field: NextPeriod
+  description: Change to Period
+  type: nVarChar
+  size: 10
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

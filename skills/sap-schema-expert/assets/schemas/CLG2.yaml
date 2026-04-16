@@ -1,0 +1,40 @@
+table: CLG2
+description: Activity Multiple Recipients
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CLG2.htm
+fields:
+- field: ClgCode
+  description: Activity Number
+  type: Int
+  size: 11
+  related: OCLG
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  default: '12'
+  constraints:
+  - key: '12'
+    label: User
+  - key: '171'
+    label: Employee
+  - key: '234000033'
+    label: Recipient List
+- field: ObjCode
+  description: Object Code
+  type: nVarChar
+  size: 50
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ClgCode
+  - LineNum

@@ -1,0 +1,55 @@
+table: STRL
+description: String List resource
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/STRL.htm
+fields:
+- field: Created
+  description: Creation date
+  type: Date
+  size: 8
+- field: Updated
+  description: Update date
+  type: Date
+  size: 8
+- field: Name
+  description: STRL name
+  type: nVarChar
+  size: 64
+- field: Num
+  description: STRL number
+  type: Int
+  size: 11
+- field: MaxUnique
+  description: Max Unique
+  type: Int
+  size: 11
+- field: RobjCode
+  description: Imp Exp Obj Code
+  type: Int
+  size: 11
+  default: 0
+- field: UsrSgnAttr
+  description: User Sign For Attribs Change
+  type: Int
+  size: 11
+  default: -1
+- field: ResCode
+  description: Resource Code from RSBD
+  type: Int
+  size: 11
+  default: -1
+- field: RevCode
+  description: Revision Code
+  type: Int
+  size: 11
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Name
+  - ResCode
+  - RevCode
+- key: NUM
+  unique: true
+  fields:
+  - Num

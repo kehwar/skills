@@ -1,0 +1,33 @@
+table: OWSVS
+description: Web Client Linked View Sequence
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWSVS.htm
+fields:
+- field: SeqId
+  description: Sequence ID
+  type: nVarChar
+  size: 40
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 32
+- field: UserId
+  description: User ID
+  type: Int
+  size: 11
+- field: ViewType
+  description: Type of Linked View
+  type: nVarChar
+  size: 20
+  default: DetailedViewHeader
+  constraints:
+  - key: ListView
+    label: List View
+  - key: DetailedViewHeader
+    label: Detailed View Header
+  - key: DetailedViewRows
+    label: Detailed View Rows
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SeqId

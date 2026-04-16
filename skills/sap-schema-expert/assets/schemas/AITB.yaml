@@ -1,0 +1,485 @@
+table: AITB
+description: Item Groups - History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AITB.htm
+fields:
+- field: ItmsGrpCod
+  description: Number
+  type: Int
+  size: 6
+- field: ItmsGrpNam
+  description: Group Name
+  type: nVarChar
+  size: 100
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Changeable
+  - key: Y
+    label: Locked
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: BalInvntAc
+  description: Inventory Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SaleCostAc
+  description: Cost Of Goods Sold
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: TransferAc
+  description: Allocation Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevenuesAc
+  description: Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VarianceAc
+  description: Variance Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecreasAc
+  description: Inventory Offset - Decrease
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncreasAc
+  description: Inventory Offset - Increase
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ReturnAc
+  description: Sales Returns
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpensesAc
+  description: Expense Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EURevenuAc
+  description: Sales Revenue - EU
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: EUExpensAc
+  description: EU Expense Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrRevenuAc
+  description: Sales Revenue - Foreign
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FrExpensAc
+  description: Foreign Expense Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExmptIncom
+  description: Exempt Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CycleCode
+  description: Cycle Code
+  type: Int
+  size: 6
+  related: OCYC
+- field: Alert
+  description: Alert
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: PriceDifAc
+  description: Price Difference Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExchangeAc
+  description: Exchange Rate Differences Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalanceAcc
+  description: Goods Clearing Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchaseAc
+  description: Purchase Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PAReturnAc
+  description: PA Return Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurchOfsAc
+  description: Purchase Offset Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ShpdGdsAct
+  description: Shipped Goods Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: VatRevAct
+  description: VAT in Revenue Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: DecresGlAc
+  description: G/L Decrease Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IncresGlAc
+  description: G/L Increase Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: InvntSys
+  description: Inventory System
+  type: VarChar
+  size: 1
+  constraints:
+  - key: A
+    label: Moving Average
+  - key: S
+    label: Standard
+  - key: F
+    label: FIFO
+- field: PlaningSys
+  description: Planning Method
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: M
+    label: MRP
+  - key: N
+    label: None
+- field: PrcrmntMtd
+  description: Procurement Method
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: Buy
+  - key: M
+    label: Make
+- field: OrdrIntrvl
+  description: Order Interval
+  type: Int
+  size: 6
+  related: OCYC
+- field: OrdrMulti
+  description: Order Multiple
+  type: Num
+  size: 19.6
+- field: MinOrdrQty
+  description: Minimum Order Quantity
+  type: Num
+  size: 19.6
+- field: LeadTime
+  description: Lead Time
+  type: Int
+  size: 11
+- field: StokRvlAct
+  description: Inventory Revaluation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkOffsAct
+  description: Inventory Revaluation Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipAcct
+  description: WIP Material Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipVarAcct
+  description: WIP Material Variance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CostRvlAct
+  description: Cost of Sale Revaluation Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: CstOffsAct
+  description: Cost of Sales Reval. Offs. Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpClrAct
+  description: Expenses Clearing Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ExpOfstAct
+  description: Expense Offset Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Object
+  description: Object Type - History
+  type: nVarChar
+  size: 20
+  default: '52'
+- field: logInstanc
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: createDate
+  description: Creation Date - History
+  type: Date
+  size: 8
+- field: userSign2
+  description: Updating User - History
+  type: Int
+  size: 6
+  related: OUSR
+- field: updateDate
+  description: Update Date - History
+  type: Date
+  size: 8
+- field: ARCMAct
+  description: Sales Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMFrnAct
+  description: Sales Credit Foreign Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMEUAct
+  description: Sales Credit EU Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ARCMExpAct
+  description: Exempted Credits
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMAct
+  description: Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMFrnAct
+  description: Foreign Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: APCMEUAct
+  description: EU Purchase Credit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevRetAct
+  description: Revenue Returns Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: ItemClass
+  description: Service or Material
+  type: VarChar
+  size: 1
+  default: '2'
+  constraints:
+  - key: '1'
+    label: Service
+  - key: '2'
+    label: Material
+- field: OSvcCode
+  description: Outgoing Service Code
+  type: Int
+  size: 11
+  related: OSCD
+  default: -1
+- field: ISvcCode
+  description: Incoming Service Code
+  type: Int
+  size: 11
+  related: OSCD
+  default: -1
+- field: ServiceGrp
+  description: Service Group
+  type: Int
+  size: 11
+  related: OSGP
+  default: -1
+- field: NCMCode
+  description: NCM Code
+  type: Int
+  size: 11
+  related: ONCM
+  default: -1
+- field: MatType
+  description: Material Type
+  type: nVarChar
+  size: 3
+  related: OMTP
+  default: '1'
+- field: MatGrp
+  description: Material Group
+  type: Int
+  size: 11
+  related: OMGP
+  default: -1
+- field: ProductSrc
+  description: Product Source
+  type: nVarChar
+  size: 2
+  related: OPSC
+  default: '0'
+- field: NegStckAct
+  description: Negative Inventory Adjustment
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StkInTnAct
+  description: Stock In Transit Acct
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: PurBalAct
+  description: Purchase Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhICenAct
+  description: Incoming CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WhOCenAct
+  description: Outgoing CENVAT Account (WH)
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: WipOffset
+  description: WIP Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: StockOffst
+  description: Inventory Offset P&L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: UgpEntry
+  description: Default UoM Group Entry
+  type: Int
+  size: 11
+  related: OUGP
+- field: IUoMEntry
+  description: Default Inventory UoM
+  type: Int
+  size: 11
+  related: OUOM
+- field: ToleranDay
+  description: Tolerance Days
+  type: Int
+  size: 11
+- field: RuleCode
+  description: Checking Rule Code
+  type: nVarChar
+  size: 2
+  related: ODCR
+- field: CompoWH
+  description: Component Warehouse
+  type: VarChar
+  size: 1
+  default: B
+  constraints:
+  - key: B
+    label: From Bill of Materials Line
+  - key: P
+    label: From Parent Item Document Line
+- field: FreeChrgSA
+  description: Free of Charge Sales Account
+  type: nVarChar
+  size: 15
+- field: FreeChrgPU
+  description: Free of Charge Purchase Account
+  type: nVarChar
+  size: 15
+- field: RawMtrl
+  description: Raw Material
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ItmsGrpCod
+  - logInstanc
+- key: GROUP_NAME
+  unique: false
+  fields:
+  - ItmsGrpNam
+  - logInstanc

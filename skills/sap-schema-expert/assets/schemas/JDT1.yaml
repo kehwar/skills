@@ -1,0 +1,894 @@
+table: JDT1
+description: Journal Entry - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/JDT1.htm
+fields:
+- field: TransId
+  description: Transaction Key
+  type: Int
+  size: 11
+  related: OJDT
+- field: Line_ID
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: Account
+  description: Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Debit
+  description: Debit Amount
+  type: Num
+  size: 19.6
+- field: Credit
+  description: Credit Amount
+  type: Num
+  size: 19.6
+- field: SYSCred
+  description: System Credit Amount
+  type: Num
+  size: 19.6
+- field: SYSDeb
+  description: System Debit Amount
+  type: Num
+  size: 19.6
+- field: FCDebit
+  description: Debit Amount (FC)
+  type: Num
+  size: 19.6
+- field: FCCredit
+  description: Credit Amount (FC)
+  type: Num
+  size: 19.6
+- field: FCCurrency
+  description: Foreign Currency
+  type: nVarChar
+  size: 3
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: SourceID
+  description: Source Key
+  type: Int
+  size: 11
+- field: SourceLine
+  description: Source Row Number
+  type: Int
+  size: 6
+- field: ShortName
+  description: BP/Account Code
+  type: nVarChar
+  size: 15
+- field: IntrnMatch
+  description: Internal Reconciliation No.
+  type: Int
+  size: 11
+  default: 0
+- field: ExtrMatch
+  description: External Reconciliation No.
+  type: Int
+  size: 11
+  default: 0
+- field: ContraAct
+  description: Offset Account
+  type: nVarChar
+  size: 15
+- field: LineMemo
+  description: Row Details
+  type: nVarChar
+  size: 254
+- field: Ref3Line
+  description: Reference 3
+  type: nVarChar
+  size: 200
+- field: TransType
+  description: Original Journal
+  type: nVarChar
+  size: 20
+  default: '-1'
+  constraints:
+  - key: '15'
+    label: Delivery
+  - key: '16'
+    label: Returns
+  - key: '203'
+    label: A/R Down Payment
+  - key: '13'
+    label: A/R Invoice
+  - key: '14'
+    label: A/R Credit Memo
+  - key: '132'
+    label: Correction Invoice
+  - key: '20'
+    label: Goods Receipt
+  - key: '21'
+    label: Goods Return
+  - key: '204'
+    label: A/P Down Payment
+  - key: '18'
+    label: A/P Invoice
+  - key: '19'
+    label: A/P Credit Memo
+  - key: '69'
+    label: Landed Costs
+  - key: '163'
+    label: A/P Correction Invoice
+  - key: '24'
+    label: Incoming Payment
+  - key: '25'
+    label: Deposit
+  - key: '46'
+    label: Vendor Payment
+  - key: '57'
+    label: Checks for Payment
+  - key: '76'
+    label: Postdated Deposit
+  - key: '182'
+    label: BoE Transaction
+  - key: '-2'
+    label: Opening Balance
+  - key: '-3'
+    label: Closing Balance
+  - key: '30'
+    label: Journal Entry
+  - key: '58'
+    label: Stock Update
+  - key: '59'
+    label: Goods Receipt
+  - key: '60'
+    label: Goods Issue
+  - key: '67'
+    label: Inventory Transfers
+  - key: '68'
+    label: Work Instructions
+  - key: '162'
+    label: Inventory Valuation
+  - key: '-1'
+    label: All Transactions
+  - key: '321'
+    label: Internal Reconciliation
+  - key: '140000009'
+    label: Outgoing Excise Invoice
+  - key: '10000079'
+    label: TDS Adjustment
+  - key: '164'
+    label: A/P Correction Invoice Reversal
+  - key: '165'
+    label: A/R Correction Invoice
+  - key: '166'
+    label: A/R Correction Invoice Reversal
+  - key: '140000010'
+    label: Incoming Excise Invoice
+  - key: '202'
+    label: Production Order
+- field: RefDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: Ref2Date
+  description: Posting Date 3
+  type: Date
+  size: 8
+- field: Ref1
+  description: Reference 1
+  type: nVarChar
+  size: 200
+- field: Ref2
+  description: Reference 2
+  type: nVarChar
+  size: 200
+- field: CreatedBy
+  description: Origin
+  type: Int
+  size: 11
+- field: BaseRef
+  description: Base Reference
+  type: nVarChar
+  size: 11
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: TransCode
+  description: Transaction Code
+  type: nVarChar
+  size: 4
+  related: OTRC
+- field: ProfitCode
+  description: Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: SystemRate
+  description: System Price
+  type: Num
+  size: 19.6
+- field: MthDate
+  description: Reconciliation Date
+  type: Date
+  size: 8
+- field: ToMthSum
+  description: Reconciliation Total
+  type: Num
+  size: 19.6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: BatchNum
+  description: Journal Voucher No.
+  type: Int
+  size: 11
+  related: OBTD
+- field: FinncPriod
+  description: Posting Period
+  type: Int
+  size: 11
+  related: OFPR
+- field: RelTransId
+  description: Linked Transaction Key
+  type: Int
+  size: 11
+  default: -1
+- field: RelLineID
+  description: Linked Row No.
+  type: Int
+  size: 11
+  default: -1
+- field: RelType
+  description: Link Type
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Without Link
+  - key: D
+    label: WTax Deduction - Correction
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: BaseSum
+  description: Base Amount
+  type: Num
+  size: 19.6
+- field: VatRate
+  description: Tax %
+  type: Num
+  size: 19.6
+- field: Indicator
+  description: Indicator Code
+  type: nVarChar
+  size: 2
+  related: OIDC
+- field: AdjTran
+  description: Adjusting Trans. (Period 13)
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RevSource
+  description: Revaluation Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: F
+    label: Foreign Currency
+  - key: S
+    label: System
+  - key: N
+    label: 'No'
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '30'
+- field: VatDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: PaymentRef
+  description: Payment Reference No.
+  type: nVarChar
+  size: 27
+- field: SYSBaseSum
+  description: System Base Amount
+  type: Num
+  size: 19.6
+- field: MultMatch
+  description: Multiple BP Reconciliation No.
+  type: Int
+  size: 11
+  default: 0
+- field: VatLine
+  description: VAT Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: VatAmount
+  description: VAT Amount
+  type: Num
+  size: 19.6
+- field: SYSVatSum
+  description: System VAT Amount
+  type: Num
+  size: 19.6
+- field: Closed
+  description: Closed
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrossValue
+  description: Gross Value
+  type: Num
+  size: 19.6
+- field: CheckAbs
+  description: Internal Check Number
+  type: Int
+  size: 11
+- field: LineType
+  description: Line Type
+  type: Int
+  size: 11
+  default: 0
+- field: DebCred
+  description: Debit Credit Line Indicator
+  type: VarChar
+  size: 1
+  constraints:
+  - key: D
+    label: Debit
+  - key: C
+    label: Credit
+- field: SequenceNr
+  description: Assigned Sequence No.
+  type: Int
+  size: 11
+  default: 0
+- field: StornoAcc
+  description: Storno Account Code
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: BalDueDeb
+  description: Balance Due - Debit
+  type: Num
+  size: 19.6
+- field: BalDueCred
+  description: Balance Due - Credit
+  type: Num
+  size: 19.6
+- field: BalFcDeb
+  description: Balance Due (FC) - Debit
+  type: Num
+  size: 19.6
+- field: BalFcCred
+  description: Balance Due (FC) - Credit
+  type: Num
+  size: 19.6
+- field: BalScDeb
+  description: Balance Due (SC) - Debit
+  type: Num
+  size: 19.6
+- field: BalScCred
+  description: Balance Due (SC) - Credit
+  type: Num
+  size: 19.6
+- field: IsNet
+  description: Use Net Amount
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DunWizBlck
+  description: Wizard Dunning Block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: DunnLevel
+  description: Dunning Level
+  type: Int
+  size: 11
+  related: ODUN
+  default: 0
+- field: DunDate
+  description: Last Dunning Date
+  type: Date
+  size: 8
+- field: TaxType
+  description: Tax Type
+  type: Int
+  size: 6
+  default: 0
+- field: TaxPostAcc
+  description: Tax Posting Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: R
+    label: Sales Tax Account
+  - key: P
+    label: Purchasing Tax Account
+- field: StaCode
+  description: Authority Code
+  type: nVarChar
+  size: 8
+  related: OSTA
+- field: StaType
+  description: Authority Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: ValidFrom
+  description: Valid From
+  type: Date
+  size: 8
+  default: '19000101'
+- field: GrossValFc
+  description: Gross Value (FC)
+  type: Num
+  size: 19.6
+- field: LvlUpdDate
+  description: Dunning Level Update Date
+  type: Date
+  size: 8
+- field: OcrCode2
+  description: Costing Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Costing Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Costing Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Costing Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: MIEntry
+  description: MI Entry when include this OB
+  type: Int
+  size: 11
+  related: OMIN
+  default: 0
+- field: MIVEntry
+  description: A/P Monthly Invoice
+  type: Int
+  size: 11
+  related: OMIV
+  default: 0
+- field: ClsInTP
+  description: Tax Payment Wizard
+  type: Int
+  size: 11
+  related: OTPW
+  default: 0
+- field: CenVatCom
+  description: CENVAT Component
+  type: Int
+  size: 11
+  default: -1
+- field: MatType
+  description: Material Type
+  type: Int
+  size: 11
+  default: -1
+- field: PstngType
+  description: Posting Type
+  type: Int
+  size: 11
+  default: 0
+- field: ValidFrom2
+  description: Valid from2
+  type: Date
+  size: 8
+  default: '19000101'
+- field: ValidFrom3
+  description: Valid from3
+  type: Date
+  size: 8
+  default: '19000101'
+- field: ValidFrom4
+  description: Valid from4
+  type: Date
+  size: 8
+  default: '19000101'
+- field: ValidFrom5
+  description: Valid from5
+  type: Date
+  size: 8
+  default: '19000101'
+- field: Location
+  description: Loc.
+  type: Int
+  size: 11
+  related: OLCT
+- field: WTaxCode
+  description: Withholding Tax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: EquVatRate
+  description: Equalization Tax %
+  type: Num
+  size: 19.6
+- field: EquVatSum
+  description: Equalization Tax Amount
+  type: Num
+  size: 19.6
+- field: SYSEquSum
+  description: System Equalization Tax Amount
+  type: Num
+  size: 19.6
+- field: TotalVat
+  description: Total Tax
+  type: Num
+  size: 19.6
+- field: SYSTVat
+  description: System Total Tax
+  type: Num
+  size: 19.6
+- field: WTLiable
+  description: WTax-Liable
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTLine
+  description: WTax Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTApplied
+  description: Applied WTax
+  type: Num
+  size: 19.6
+- field: WTAppliedS
+  description: Applied WTax (SC)
+  type: Num
+  size: 19.6
+- field: WTAppliedF
+  description: Applied WTax (FC)
+  type: Num
+  size: 19.6
+- field: WTSum
+  description: WTax Amount
+  type: Num
+  size: 19.6
+- field: WTSumFC
+  description: WTax Amount (FC)
+  type: Num
+  size: 19.6
+- field: WTSumSC
+  description: WTax Amount (SC)
+  type: Num
+  size: 19.6
+- field: PayBlock
+  description: Payment Block
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PayBlckRef
+  description: Payment Block Abs Entry
+  type: Int
+  size: 11
+  related: OPYB
+- field: LicTradNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: InterimTyp
+  description: Interim Account Type
+  type: Int
+  size: 11
+  default: 0
+- field: DprId
+  description: Down Payment Request Key
+  type: Int
+  size: 11
+- field: MatchRef
+  description: Reconciliation Reference
+  type: nVarChar
+  size: 20
+- field: Ordered
+  description: Payment Ordered
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CUP
+  description: Unique Code of Project
+  type: Int
+  size: 11
+  related: OCUP
+- field: CIG
+  description: Contract Code Identification
+  type: Int
+  size: 11
+  related: OCIG
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPLName
+  description: Branch Name
+  type: nVarChar
+  size: 200
+- field: VatRegNum
+  description: VAT Reg. Number
+  type: nVarChar
+  size: 32
+- field: SLEDGERF
+  description: Subledger Flag
+  type: VarChar
+  size: 1
+- field: InitRef2
+  description: Initial Reference 2
+  type: nVarChar
+  size: 100
+- field: InitRef3Ln
+  description: Initial Reference 3
+  type: nVarChar
+  size: 27
+- field: ExpUUID
+  description: Expense UUID
+  type: nVarChar
+  size: 50
+- field: ExpOPType
+  description: Expense Operation Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: P
+    label: Professional Services
+  - key: R
+    label: Renting Assets
+  - key: O
+    label: Others
+  - key: D
+    label: Disposal of Goods
+  - key: S
+    label: Import of Goods and Services
+  - key: V
+    label: Import by Virtual Transfer
+  - key: G
+    label: Global Operations
+- field: ExTransId
+  description: Exposed Transaction ID
+  type: Int
+  size: 11
+- field: DocArr
+  description: Source of Posting
+  type: Int
+  size: 6
+- field: DocLine
+  description: Source Line Internal ID
+  type: Int
+  size: 11
+- field: MYFtype
+  description: MYF type
+  type: nVarChar
+  size: 2
+  constraints:
+  - key: S1
+    label: MYF Wholesale Sales
+  - key: S2
+    label: Retail Sales
+  - key: P1
+    label: MYF Wholesale Purchases
+  - key: P3
+    label: Other Expense Transactions
+- field: DocEntry
+  description: Source Document Entry
+  type: Int
+  size: 11
+- field: DocNum
+  description: Source Document Number
+  type: Int
+  size: 11
+- field: DocType
+  description: Source Document Type
+  type: nVarChar
+  size: 20
+- field: DocSubType
+  description: Document Subtype
+  type: nVarChar
+  size: 2
+- field: RmrkTmpt
+  description: Remark Text Template
+  type: Int
+  size: 11
+  related: OTTR
+- field: CemCode
+  description: Cost Element Code
+  type: nVarChar
+  size: 20
+  related: OCEM
+- field: InClassCat
+  description: Income Classification Category
+  type: Int
+  size: 11
+- field: InClassTyp
+  description: Income Classification Type
+  type: Int
+  size: 11
+- field: ExClassCat
+  description: Expense Classification Category
+  type: Int
+  size: 11
+- field: ExClassTyp
+  description: Expense Classification Type
+  type: Int
+  size: 11
+- field: VATClassCa
+  description: VAT Classification Category
+  type: Int
+  size: 11
+- field: VATClassTy
+  description: VAT Classification Type
+  type: Int
+  size: 11
+- field: EVatCate
+  description: VAT Category
+  type: Int
+  size: 11
+- field: EWtPercCat
+  description: Withheld Percentage Category
+  type: Int
+  size: 11
+- field: EWtAmount
+  description: Withheld Amount
+  type: Num
+  size: 19.6
+- field: EBVatExCau
+  description: VAT Exemption Cause
+  type: Int
+  size: 11
+  related: OVEC
+- field: OrgBPName
+  description: BP name at time of creation.
+  type: nVarChar
+  size: 200
+- field: OrgAccName
+  description: Account name at time of creation.
+  type: nVarChar
+  size: 200
+- field: AllocNum
+  description: Allocation Number for IL
+  type: nVarChar
+  size: 50
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: EnLicTradN
+  description: Encrypt TAX ID Number
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TransId
+  - Line_ID
+- key: SHORT_NAME
+  unique: false
+  fields:
+  - ShortName
+  - IntrnMatch
+- key: ACCOUNT
+  unique: false
+  fields:
+  - Account
+  - IntrnMatch
+- key: TRANS_TYPE
+  unique: false
+  fields:
+  - TransType
+- key: PROFIT_ID
+  unique: false
+  fields:
+  - ProfitCode
+- key: CURRENCY
+  unique: false
+  fields:
+  - FCCurrency
+- key: DUEDATE
+  unique: false
+  fields:
+  - DueDate
+- key: REFDATE
+  unique: false
+  fields:
+  - RefDate
+- key: INTRNMATCH
+  unique: false
+  fields:
+  - ShortName
+  - Account
+  - IntrnMatch
+- key: JDT1BASEL
+  unique: false
+  fields:
+  - TransType
+  - CreatedBy
+  - SourceLine
+- key: JDT1CHECKA
+  unique: false
+  fields:
+  - CheckAbs
+  - TransType

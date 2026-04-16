@@ -1,0 +1,38 @@
+table: CASE
+description: Internal Recon. Upgrade 2007A
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/CASE.htm
+fields:
+- field: AbsEntry
+  description: Intl ID for Inconsistent Amt
+  type: Int
+  size: 11
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CreateTime
+  description: Creation Time
+  type: Int
+  size: 6
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: Message
+  description: Show Message?
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: ''
+  - key: N
+    label: ''
+  - key: S
+    label: ''
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

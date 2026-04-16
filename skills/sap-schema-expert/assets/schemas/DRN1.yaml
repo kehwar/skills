@@ -1,0 +1,76 @@
+table: DRN1
+description: Depreciation Run - Posting
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/DRN1.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ODRN
+- field: AcctDtn
+  description: Account Determination
+  type: nVarChar
+  size: 15
+  related: OADT
+- field: TransId
+  description: Transaction Number
+  type: Int
+  size: 11
+  related: OJDT
+- field: OrdDprAct
+  description: Ordinary Depreciation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SpDprAct
+  description: Special Depreciation Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: SpBalAct
+  description: Special Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OrdBalAct
+  description: Ordinary Balance Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: OrdDprAmt
+  description: Ordinary Depreciation Amount
+  type: Num
+  size: 19.6
+- field: SpDprAmt
+  description: Special Depreciation Amount
+  type: Num
+  size: 19.6
+- field: RevResAct
+  description: Revaluation Reserve Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevResClr
+  description: Revaluation Reserve Clearing
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: RevReserve
+  description: Revaluation Reserve Amount
+  type: Num
+  size: 19.6
+- field: AssetClass
+  description: Asset Class
+  type: nVarChar
+  size: 20
+  related: OACS
+- field: CancelId
+  description: Cancelation Transaction No.
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - AssetClass

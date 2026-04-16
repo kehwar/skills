@@ -1,0 +1,17 @@
+table: RSLM
+description: SLIM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/RSLM.htm
+fields:
+- field: SBOCode
+  description: SBO Code
+  type: nVarChar
+  size: 15
+- field: SlimCode
+  description: Slim Code
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - SBOCode

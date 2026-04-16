@@ -1,0 +1,27 @@
+table: OTGG
+description: Target Group
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/OTGG.htm
+fields:
+- field: TargetCode
+  description: Target Group Code
+  type: nVarChar
+  size: 20
+- field: TargetName
+  description: Target Group Name
+  type: nVarChar
+  size: 100
+- field: TargetType
+  description: Target Group Type
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: C
+    label: Customer
+  - key: S
+    label: Vendor
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TargetCode

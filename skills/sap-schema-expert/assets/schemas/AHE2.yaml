@@ -1,0 +1,54 @@
+table: AHE2
+description: Education
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Human_Resources/AHE2.htm
+fields:
+- field: empID
+  description: Employee No.
+  type: Int
+  size: 11
+  related: OHEM
+- field: line
+  description: 'Education: Information Row'
+  type: Int
+  size: 6
+- field: fromDate
+  description: Education from
+  type: Date
+  size: 8
+- field: toDate
+  description: Education to
+  type: Date
+  size: 8
+- field: type
+  description: Education Type
+  type: Int
+  size: 11
+  related: OHED
+- field: institute
+  description: Institute
+  type: nVarChar
+  size: 100
+- field: major
+  description: Major
+  type: nVarChar
+  size: 50
+- field: diploma
+  description: Diploma
+  type: nVarChar
+  size: 50
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - empID
+  - line
+  - LogInstanc

@@ -1,0 +1,411 @@
+table: OBNK
+description: External Bank Statement Received
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OBNK.htm
+fields:
+- field: IdNumber
+  description: External Bank Statement No.
+  type: Int
+  size: 11
+  related: OBNH
+- field: AcctCode
+  description: Account Number
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Sequence
+  description: Sequence No.
+  type: Int
+  size: 11
+  default: 0
+- field: AcctName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: Ref
+  description: Reference
+  type: nVarChar
+  size: 35
+- field: DueDate
+  description: Due Date
+  type: Date
+  size: 8
+- field: Memo
+  description: Details
+  type: nVarChar
+  size: 254
+- field: DebAmount
+  description: Debit Amount (FC)
+  type: Num
+  size: 19.6
+- field: DebAmntCur
+  description: Currency for Accounts Payable
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: CredAmnt
+  description: Credit Amount (FC)
+  type: Num
+  size: 19.6
+- field: CredAmntCu
+  description: Credit Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: balance
+  description: Balance
+  type: Num
+  size: 19.6
+- field: BankMatch
+  description: Reconciliation No.
+  type: Int
+  size: 11
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: ExternCode
+  description: External Code
+  type: nVarChar
+  size: 30
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardName
+  description: BP Name
+  type: nVarChar
+  size: 200
+- field: StatemNo
+  description: Statement Number
+  type: Int
+  size: 11
+- field: DocNum
+  description: Invoice Document
+  type: nVarChar
+  size: 27
+- field: PaymCreat
+  description: Payment Created
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: LineStatus
+  description: Row Status
+  type: VarChar
+  size: 1
+- field: VisOrder
+  description: Visual Order
+  type: Int
+  size: 11
+- field: DocNumType
+  description: Doc. No. Source
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: P
+    label: Payment Reference No.
+  - key: I
+    label: ISR
+  - key: D
+    label: Doc Num
+- field: Memo2
+  description: Details 2
+  type: nVarChar
+  size: 254
+- field: PaymentRef
+  description: Payment Reference No.
+  type: nVarChar
+  size: 35
+- field: autoCreate
+  description: Manually/Automatically Create
+  type: VarChar
+  size: 1
+  default: M
+  constraints:
+  - key: M
+    label: Manual
+  - key: A
+    label: Automatic
+- field: BSLineDate
+  description: Bank Statement Entry Date
+  type: Date
+  size: 8
+- field: BSValuDate
+  description: Bank Statement Due Date
+  type: Date
+  size: 8
+- field: InOpCode
+  description: Internal Bank Operation Code
+  type: Int
+  size: 11
+  related: OBTC
+- field: Cleared
+  description: Cleared
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: OposAct
+  description: BP Bank Account
+  type: nVarChar
+  size: 50
+- field: DebAmntLC
+  description: Debit Amount (LC)
+  type: Num
+  size: 19.6
+- field: CredAmntLC
+  description: Credit Amount (LC)
+  type: Num
+  size: 19.6
+- field: ExchngRate
+  description: Exchange Rate
+  type: Num
+  size: 19.6
+- field: BPIBAN
+  description: IBAN of the BP Bank Account
+  type: nVarChar
+  size: 50
+- field: Fee
+  description: Fee on the Line
+  type: Num
+  size: 19.6
+- field: PmnPstDate
+  description: Payment Posting Date
+  type: Date
+  size: 8
+- field: PmnValDate
+  description: Payment Due Date
+  type: Date
+  size: 8
+- field: LnDocDate
+  description: Line Document Date
+  type: Date
+  size: 8
+- field: VatAmntLC
+  description: VAT Amount (LC)
+  type: Num
+  size: 19.6
+- field: VatAmntFC
+  description: VAT Amount (FC)
+  type: Num
+  size: 19.6
+- field: JDTID
+  description: Journal Entry ID
+  type: Int
+  size: 11
+  related: OJDT
+- field: PmntID
+  description: Payment ID
+  type: Int
+  size: 11
+- field: ObjCrtType
+  description: Document Type
+  type: Int
+  size: 6
+  default: 24
+- field: PstMethod
+  description: Posting Method
+  type: VarChar
+  size: 1
+  default: C
+  constraints:
+  - key: A
+    label: G/L Account from/to Bank Account
+  - key: C
+    label: BP from/to Bank Account
+  - key: J
+    label: Interim Account from/to Bank Account
+  - key: E
+    label: External Reconciliation
+  - key: I
+    label: Ignore
+- field: FeeAct
+  description: G/L Account for Fee
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: FeeProfitC
+  description: Fee Distribution Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: FeeProj
+  description: Project Fee
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BpBankCode
+  description: BP Bank Code
+  type: nVarChar
+  size: 30
+- field: FeeProfit2
+  description: Fee Distribution Rule2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: FeeProfit3
+  description: Fee Distribution Rule3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: FeeProfit4
+  description: Fee Distribution Rule4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: FeeProfit5
+  description: Fee Distribution Rule5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: ApplWTSum
+  description: Applied WTax Sum
+  type: Num
+  size: 19.6
+- field: InfoLog
+  description: Information Log
+  type: nVarChar
+  size: 254
+- field: LineOrigin
+  description: Row Origin
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: R
+    label: Regular
+  - key: A
+    label: Archive
+- field: BPSwift
+  description: BP BIC/SWIFT Code
+  type: nVarChar
+  size: 50
+- field: Source
+  description: Source
+  type: VarChar
+  size: 1
+  default: I
+  constraints:
+  - key: I
+    label: Imported
+  - key: A
+    label: Imported and Amended
+  - key: M
+    label: Manually Entered
+- field: PayOrderNo
+  description: Payment Order Number
+  type: Int
+  size: 11
+- field: TaxIDNum
+  description: Federal Tax ID
+  type: nVarChar
+  size: 32
+- field: PONumber
+  description: External Payment Order Number
+  type: Int
+  size: 11
+- field: FormatName
+  description: Format Name for Bank Statement
+  type: nVarChar
+  size: 254
+- field: FileCRC
+  description: Bank Statement File Hash Code
+  type: nVarChar
+  size: 32
+- field: FolioPref
+  description: Folio Prefix String
+  type: nVarChar
+  size: 4
+- field: FolioNum
+  description: Folio Number
+  type: Int
+  size: 11
+- field: BPLIdPmn
+  description: Branch for Payment ID
+  type: Int
+  size: 11
+  related: OBPL
+- field: BPAcctName
+  description: BP Bank Account Name
+  type: nVarChar
+  size: 250
+- field: EnOposAct
+  description: Encryption of BP Bank Account
+  type: Text
+  size: 16
+- field: EnBPIBAN
+  description: Encryption of BP Bank IBAN
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+- field: DPPStatus
+  description: Data Protection Status
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: None
+  - key: D
+    label: Erased
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: CtrlAcct
+  description: Control Account
+  type: nVarChar
+  size: 15
+  related: OACT
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AcctCode
+  - Sequence
+- key: MATCH_ID
+  unique: false
+  fields:
+  - BankMatch

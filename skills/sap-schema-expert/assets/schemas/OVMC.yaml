@@ -1,0 +1,67 @@
+table: OVMC
+description: Value Mapping Communication Object
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OVMC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: SYS_ID
+  description: Third Party System ID
+  type: Int
+  size: 11
+- field: ObjectId
+  description: Object ID
+  type: Int
+  size: 11
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 2
+  default: MD
+  constraints:
+  - key: MD
+    label: Master Data
+  - key: TR
+    label: Transaction
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: StartTime
+  description: Start Time
+  type: Int
+  size: 11
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: EndTime
+  description: End Time
+  type: Int
+  size: 11
+- field: Message
+  description: Message
+  type: Text
+  size: 16
+- field: Status
+  description: Communication Status
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Pending
+  - key: E
+    label: Error
+  - key: N
+    label: New
+  - key: S
+    label: Successful
+  - key: R
+    label: Rejected
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

@@ -1,0 +1,297 @@
+table: OCTT
+description: Contract Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Service/OCTT.htm
+fields:
+- field: TmpltName
+  description: Template Name
+  type: nVarChar
+  size: 20
+- field: Deleted
+  description: Deleted
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Renewal
+  description: Renewal
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: RemindVal
+  description: Remind Before Renewal
+  type: Int
+  size: 6
+- field: RemindUnit
+  description: Remind Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: W
+    label: Week(s)
+  - key: M
+    label: Month(s)
+- field: Duration
+  description: Duration of Coverage
+  type: Int
+  size: 6
+- field: ResponsVal
+  description: Resolution Value
+  type: Int
+  size: 6
+- field: ResponsUnt
+  description: Resolution Unit
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Day(s)
+  - key: H
+    label: Hour(s)
+- field: Descriptio
+  description: Description
+  type: nVarChar
+  size: 254
+- field: PriceList
+  description: Price List No.
+  type: Int
+  size: 6
+- field: CntrctType
+  description: Contract Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: C
+    label: Customer
+  - key: G
+    label: Item Group
+  - key: S
+    label: Serial Number
+- field: MonEnabled
+  description: Monday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: TueEnabled
+  description: Tuesday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WedEnabled
+  description: Wednesday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ThuEnabled
+  description: Thursday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FriEnabled
+  description: Friday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SatEnabled
+  description: Saturday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SunEnabled
+  description: Sunday Enabled
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MonStart
+  description: Monday Start
+  type: Int
+  size: 6
+  default: 800
+- field: MonEnd
+  description: Monday End
+  type: Int
+  size: 6
+  default: 1700
+- field: TueStart
+  description: Tuesday Start
+  type: Int
+  size: 6
+  default: 800
+- field: TueEnd
+  description: Tuesday End
+  type: Int
+  size: 6
+  default: 1700
+- field: WedStart
+  description: Wednesday Start
+  type: Int
+  size: 6
+  default: 800
+- field: WedEnd
+  description: Wednesday End
+  type: Int
+  size: 6
+  default: 1700
+- field: ThuStart
+  description: Thursday Start
+  type: Int
+  size: 6
+  default: 800
+- field: ThuEnd
+  description: Thursday End
+  type: Int
+  size: 6
+  default: 1700
+- field: FriStart
+  description: Friday Start
+  type: Int
+  size: 6
+  default: 800
+- field: FriEnd
+  description: Friday End
+  type: Int
+  size: 6
+  default: 1700
+- field: SatStart
+  description: Saturday Start
+  type: Int
+  size: 6
+  default: 0
+- field: SatEnd
+  description: Saturday End
+  type: Int
+  size: 6
+  default: 2359
+- field: SunStrart
+  description: Sunday Start
+  type: Int
+  size: 6
+  default: 0
+- field: SunEnd
+  description: Sunday End
+  type: Int
+  size: 6
+  default: 2359
+- field: InclParts
+  description: Include Parts
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: InclWork
+  description: Include Labor
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: InclTravel
+  description: Include Travel
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: Attachment
+  description: Attachments
+  type: Text
+  size: 16
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: Remark
+  description: Remarks
+  type: Text
+  size: 16
+- field: InclHldays
+  description: Include Holidays
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ResponseV
+  description: Response Value
+  type: Int
+  size: 6
+- field: ResponseU
+  description: Response Unit
+  type: VarChar
+  size: 1
+  default: H
+  constraints:
+  - key: H
+    label: Hour(s)
+  - key: D
+    label: Day(s)
+- field: AtcEntry
+  description: Attachment Entry
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TmpltName

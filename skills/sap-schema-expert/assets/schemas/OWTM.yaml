@@ -1,0 +1,71 @@
+table: OWTM
+description: Approval Templates
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OWTM.htm
+fields:
+- field: WtmCode
+  description: Code
+  type: Int
+  size: 11
+  related: OWTM
+- field: Name
+  description: Name
+  type: nVarChar
+  size: 20
+- field: Remarks
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Conds
+  description: Conditions
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Active
+  description: Active
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: PmptChg
+  description: Prompt Change
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: AppOnUpd
+  description: Apply on Update
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WtmCode
+- key: NAME
+  unique: true
+  fields:
+  - Name

@@ -1,0 +1,61 @@
+table: ORTW
+description: 'Boleto Retorno Wizard: Parameter Sets'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/ORTW.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: WDueDtFrom
+  description: Due Date From
+  type: Date
+  size: 8
+- field: WDueDtTo
+  description: Due Date To
+  type: Date
+  size: 8
+- field: WImpFile
+  description: Import File
+  type: Text
+  size: 16
+- field: WMatching
+  description: Boleto Matching
+  type: Int
+  size: 11
+- field: WBoletosAu
+  description: Boletos Automatic Count
+  type: Int
+  size: 11
+- field: WBoletosMn
+  description: Boletos Manual Count
+  type: Int
+  size: 11
+- field: WBoletosNI
+  description: Boletos Not Identified Count
+  type: Int
+  size: 11
+- field: WRelDate
+  description: Release Date
+  type: Date
+  size: 8
+- field: WCollDisc
+  description: Collection or Discounted
+  type: Int
+  size: 11
+- field: WBankAcc1
+  description: Bank Acct No. 1
+  type: nVarChar
+  size: 50
+- field: WBankAcc2
+  description: Bank Acct No. 2
+  type: nVarChar
+  size: 50
+- field: WFileForm2
+  description: File Format 2
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

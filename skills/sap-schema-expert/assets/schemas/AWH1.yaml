@@ -1,0 +1,100 @@
+table: AWH1
+description: Tax Definition
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/AWH1.htm
+fields:
+- field: WTCode
+  description: WTax Code
+  type: nVarChar
+  size: 4
+  related: OWHT
+- field: EffecDate
+  description: Effective from
+  type: Date
+  size: 8
+- field: Rate
+  description: Rate
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: TdsRate
+  description: TDS Rate
+  type: Num
+  size: 19.6
+- field: SurRate
+  description: Surcharge Rate
+  type: Num
+  size: 19.6
+- field: CessRate
+  description: Cess Rate
+  type: Num
+  size: 19.6
+- field: HscRate
+  description: HSC Rate
+  type: Num
+  size: 19.6
+- field: PmntTerms
+  description: Payment Terms
+  type: Int
+  size: 6
+  related: OCTG
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: IgstRate
+  description: IGST Rate
+  type: Num
+  size: 19.6
+- field: CgstRate
+  description: CGST Rate
+  type: Num
+  size: 19.6
+- field: SgstRate
+  description: SGST Rate
+  type: Num
+  size: 19.6
+- field: UtgstRate
+  description: UTGST Rate
+  type: Num
+  size: 19.6
+- field: CsgstRate
+  description: Cess GST Rate
+  type: Num
+  size: 19.6
+- field: UomEntry
+  description: UoM Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: UoMCode
+  description: UoM Code
+  type: nVarChar
+  size: 20
+- field: FixedAmnt
+  description: Fixed Amount
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Fixed Amount Currency
+  type: nVarChar
+  size: 3
+  related: OCRN
+- field: ItrNCRate
+  description: TDS ITR Noncompliance Rate
+  type: Num
+  size: 19.6
+- field: PanNCRate
+  description: TDS PAN Noncompliance Rate
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WTCode
+  - LineNum
+  - LogInstanc

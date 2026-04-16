@@ -1,0 +1,38 @@
+table: OCLC
+description: Change Logs Cleanup
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OCLC.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ClnpScn
+  description: Cleanup Scenario Name
+  type: nVarChar
+  size: 100
+- field: ClnpDate
+  description: Cleanup Date
+  type: Date
+  size: 8
+- field: UpTo
+  description: Clean Up Logs Until
+  type: Date
+  size: 8
+- field: Rmrks
+  description: Remarks
+  type: nVarChar
+  size: 254
+- field: CreateTS
+  description: Create Time - Incl. Secs
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

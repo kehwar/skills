@@ -1,0 +1,117 @@
+table: BEM2
+description: SAP Sustainability Footprint Management Transactional Data for Replication
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/BEM2.htm
+fields:
+- field: RowNumber
+  description: Row Number of the PFMCOP Doc. Type
+  type: Int
+  size: 11
+- field: BEMDocType
+  description: PFMCOP Doc. Type Code
+  type: Int
+  size: 11
+- field: BEMDocName
+  description: PFMCOP Doc. Type Name
+  type: nVarChar
+  size: 60
+- field: ScopeKey
+  description: Footprint Inventory Scope Identifier in PFMCOP
+  type: nVarChar
+  size: 36
+- field: RepId
+  description: Replication Identifier
+  type: nVarChar
+  size: 36
+- field: StartDate
+  description: Start Date
+  type: Date
+  size: 8
+- field: EndDate
+  description: End Date
+  type: Date
+  size: 8
+- field: CreateDate
+  description: Create Date
+  type: Date
+  size: 8
+- field: B1ObjCode
+  description: B1 Object Code
+  type: nVarChar
+  size: 20
+- field: ItemCode
+  description: Item Code
+  type: nVarChar
+  size: 60
+- field: WhseCode
+  description: Warehouse Code
+  type: nVarChar
+  size: 60
+- field: UomCode
+  description: Unit of Measure Code
+  type: nVarChar
+  size: 3
+- field: InQty
+  description: In Quantity
+  type: Num
+  size: 19.6
+- field: OutQty
+  description: Out Quantity
+  type: Num
+  size: 19.6
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: VendorCode
+  description: Vendor Code
+  type: nVarChar
+  size: 60
+- field: WOREntry
+  description: Production Order Internal Key
+  type: nVarChar
+  size: 60
+- field: RoleCode
+  description: Material Role Code
+  type: nVarChar
+  size: 2
+  default: MP
+  constraints:
+  - key: MP
+    label: Main Product
+  - key: BP
+    label: By-Product
+- field: RscCode
+  description: Resource Code
+  type: nVarChar
+  size: 60
+- field: RscQty
+  description: Resource Quantity
+  type: Num
+  size: 19.6
+- field: RscUomCode
+  description: Resource Quantity UoM Code
+  type: nVarChar
+  size: 3
+- field: Project
+  description: Project
+  type: nVarChar
+  size: 60
+- field: ToWhseCode
+  description: To Warehouse Code
+  type: nVarChar
+  size: 60
+- field: CostCenter
+  description: Cost Center
+  type: nVarChar
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RowNumber
+  - BEMDocType
+  - RepId
+- key: REP_ID
+  unique: false
+  fields:
+  - RepId

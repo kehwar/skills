@@ -1,0 +1,20 @@
+table: SOI2
+description: Statement of Import - Branches
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SOI2.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+  related: OSOI
+- field: BPLId
+  description: Assigned Branch
+  type: Int
+  size: 11
+  related: OBPL
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - BPLId

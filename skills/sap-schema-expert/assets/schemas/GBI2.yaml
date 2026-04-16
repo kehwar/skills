@@ -1,0 +1,51 @@
+table: GBI2
+description: GBI Row 2 - G/L Account Master Records
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/GBI2.htm
+fields:
+- field: HistoryId
+  description: History Key
+  type: Int
+  size: 11
+  related: OGBI
+- field: RowId
+  description: Row Number
+  type: Int
+  size: 11
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: AcctName
+  description: Account Name
+  type: nVarChar
+  size: 200
+- field: StrucLevel
+  description: Account Structure Level
+  type: Int
+  size: 11
+- field: EvalSign
+  description: Evaluation Sign
+  type: VarChar
+  size: 1
+- field: AddField
+  description: Possible Additional Fields
+  type: nVarChar
+  size: 60
+- field: AcctType
+  description: Account Type
+  type: nVarChar
+  size: 20
+- field: MesurUnit
+  description: Measurement Unit
+  type: nVarChar
+  size: 10
+- field: BlDirect
+  description: Direction of Balance
+  type: nVarChar
+  size: 4
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - HistoryId
+  - RowId

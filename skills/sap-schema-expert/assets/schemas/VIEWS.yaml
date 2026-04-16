@@ -1,0 +1,27 @@
+table: VIEWS
+description: SQL Company Views
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/VIEWS.htm
+fields:
+- field: ViewName
+  description: View Name
+  type: nVarChar
+  size: 100
+- field: ViewString
+  description: View String
+  type: Text
+  size: 16
+- field: ViewType
+  description: View Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: S
+    label: Static
+  - key: D
+    label: Dynamic
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ViewName

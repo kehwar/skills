@@ -1,0 +1,26 @@
+table: SLSPP
+description: SLSPP
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SLSPP.htm
+fields:
+- field: ParamID
+  description: Parameter ID
+  type: nVarChar
+  size: 36
+- field: CompID
+  description: Component ID
+  type: nVarChar
+  size: 36
+- field: ParamKey
+  description: Parameter Key
+  type: nVarChar
+  size: 50
+- field: ParamValue
+  description: Parameter Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParamID
+  - CompID

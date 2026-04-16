@@ -1,0 +1,178 @@
+table: AOB1
+description: Sent Messages - User History
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AOB1.htm
+fields:
+- field: AlertCode
+  description: Alert Code
+  type: Int
+  size: '11'
+  related: OALR
+- field: ObjType
+  description: Object
+  type: nVarChar
+  size: '20'
+  default: '12'
+  constraints:
+  - key: '-1'
+    label: Random
+  - key: '12'
+    label: User
+  - key: '11'
+    label: Contact Person
+- field: ObjCode
+  description: Object Code
+  type: nVarChar
+  size: '50'
+- field: ObjName
+  description: Name
+  type: nVarChar
+  size: '155'
+- field: SendIntrnl
+  description: Sent Internally
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Confirmed1
+  description: Confirmation 1
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: ConfDate1
+  description: Approval Time 1
+  type: Date
+  size: '8'
+- field: ConfTime1
+  description: Approval Time 1
+  type: Int
+  size: '6'
+- field: SendEMail
+  description: Sent E-mail
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: E_Mail
+  description: E-Mail
+  type: nVarChar
+  size: '100'
+- field: Info2
+  description: Information 2
+  type: Text
+  size: '16'
+- field: Confirmed2
+  description: Confirmation 2
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: E
+    label: Error
+- field: ConfDate2
+  description: Authorization Period 2
+  type: Date
+  size: '8'
+- field: ConfTime2
+  description: Authorization Period 2
+  type: Int
+  size: '6'
+- field: SendSMS
+  description: Sent SMS
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PortNum
+  description: Mobile Phone Number
+  type: nVarChar
+  size: '50'
+- field: Confirmed3
+  description: Confirmation 3
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: E
+    label: Error
+- field: ConfDate3
+  description: Approval Time 3
+  type: Date
+  size: '8'
+- field: ConfTime3
+  description: Approval Time 3
+  type: Int
+  size: '6'
+- field: SendFax
+  description: Sent Fax
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Fax
+  description: Fax Number
+  type: nVarChar
+  size: '50'
+- field: Confirmed4
+  description: Confirmation 4
+  type: VarChar
+  size: '1'
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+  - key: E
+    label: Error
+- field: ConfDate4
+  description: Confirmation Date 4
+  type: Date
+  size: '8'
+- field: ConfTime4
+  description: Confirmation Time 4
+  type: Int
+  size: '6'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AlertCode
+  - ObjType
+  - ObjCode
+- key: SEND_EM
+  unique: false
+  fields:
+  - SendEMail
+- key: CONFIRMED2
+  unique: false
+  fields:
+  - Confirmed2

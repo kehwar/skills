@@ -1,0 +1,44 @@
+table: EVN1
+description: Event Notification Details
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/EVN1.htm
+fields:
+- field: EventID
+  description: Event ID
+  type: nVarChar
+  size: 50
+- field: WebhookID
+  description: Webhook ID
+  type: nVarChar
+  size: 40
+- field: Status
+  description: Event Status
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: F
+    label: Failed
+  - key: D
+    label: Delivered
+- field: Retry
+  description: Retry Times
+  type: Int
+  size: 11
+- field: ReturnCode
+  description: Error Code
+  type: Int
+  size: 11
+- field: LastSentDT
+  description: Last Sent Date
+  type: Date
+  size: 8
+- field: LastSentTM
+  description: Last Sent Timestamp
+  type: Int
+  size: 11
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - EventID
+  - WebhookID

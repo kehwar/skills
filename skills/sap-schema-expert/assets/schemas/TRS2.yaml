@@ -1,0 +1,47 @@
+table: TRS2
+description: Tax Rpt Sav Obj Man Chgd Vals
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/TRS2.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: Object Type
+  type: nVarChar
+  size: 20
+- field: LineID
+  description: Internal Row Number
+  type: Int
+  size: 11
+- field: ParamCode
+  description: Parameter Code
+  type: nVarChar
+  size: 32
+- field: PrmValAmt
+  description: Parameter Value Amount
+  type: Num
+  size: 19.6
+- field: PrmValNum
+  description: Parameter Value Number
+  type: Int
+  size: 11
+- field: PrmValStr
+  description: Parameter Value String
+  type: nVarChar
+  size: 8
+- field: PrmValTxt
+  description: Parameter Value Text
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+  - LineID
+- key: SECONDARY
+  unique: true
+  fields:
+  - AbsEntry
+  - ParamCode

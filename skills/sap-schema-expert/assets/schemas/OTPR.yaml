@@ -1,0 +1,72 @@
+table: OTPR
+description: Tax Return Values
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OTPR.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: 11
+- field: Code
+  description: Return Value Code
+  type: nVarChar
+  size: 7
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 30
+- field: Display
+  description: Display
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FieldID
+  description: Field ID in CUFD
+  type: Int
+  size: 11
+  related: CUFD
+- field: Locked
+  description: Locked
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: Changeable
+- field: DataType
+  description: Data Type
+  type: VarChar
+  size: 1
+  default: S
+  constraints:
+  - key: T
+    label: Tax Amounts
+  - key: S
+    label: Amounts
+  - key: P
+    label: Prices
+  - key: Q
+    label: Quantities
+  - key: '%'
+    label: Percents
+  - key: I
+    label: Integer
+  - key: A
+    label: String
+  - key: M
+    label: Measures
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+- key: CODE
+  unique: true
+  fields:
+  - Code

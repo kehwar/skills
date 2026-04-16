@@ -1,0 +1,46 @@
+table: OBTL
+description: Bin Transaction Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/OBTL.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Int
+  size: 11
+- field: MessageID
+  description: ILM Message ID
+  type: Int
+  size: 11
+  related: OILM
+- field: BinAbs
+  description: Bin Internal Number
+  type: Int
+  size: 11
+  related: OBIN
+- field: SnBMDAbs
+  description: SnB Master Data Internal Number
+  type: Int
+  size: 11
+  default: -1
+- field: Quantity
+  description: Quantity
+  type: Num
+  size: 19.6
+- field: ITLEntry
+  description: ITL Log Internal ID
+  type: Int
+  size: 11
+  related: OITL
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: MESSAGE_ID
+  unique: false
+  fields:
+  - MessageID
+- key: BIN_ABS
+  unique: false
+  fields:
+  - BinAbs

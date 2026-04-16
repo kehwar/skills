@@ -1,0 +1,22 @@
+table: CUL1
+description: Customer Usage Statistics Log
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/CUL1.htm
+fields:
+- field: ParrentDoc
+  description: Parent Document
+  type: Int
+  size: 11
+- field: LineNum
+  description: Line Number
+  type: Int
+  size: 11
+- field: Param
+  description: Parameter
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ParrentDoc
+  - LineNum

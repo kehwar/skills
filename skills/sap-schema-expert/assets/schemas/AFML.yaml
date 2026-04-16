@@ -1,0 +1,71 @@
+table: AFML
+description: Tax Formula Master Table
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/AFML.htm
+fields:
+- field: AbsId
+  description: Internal Number
+  type: Int
+  size: '11'
+- field: Code
+  description: Code
+  type: nVarChar
+  size: '20'
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: '100'
+- field: SttId
+  description: Tax Type ID
+  type: Int
+  size: '11'
+  related: OSTT
+- field: FmlLang
+  description: Formula Language Free Text
+  type: Text
+  size: '16'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: '11'
+  default: '0'
+- field: UserSign2
+  description: Updating User
+  type: Int
+  size: '6'
+  related: OUSR
+- field: UpdateDate
+  description: Update Date
+  type: Date
+  size: '8'
+- field: FmlType
+  description: Formula Type
+  type: VarChar
+  size: '1'
+  default: T
+  constraints:
+  - key: T
+    label: Tax
+  - key: W
+    label: WTax
+- field: IsOrigFml
+  description: Original/Edited Formula
+  type: VarChar
+  size: '1'
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsId
+  - LogInstanc
+- key: CODE
+  unique: true
+  fields:
+  - FmlType
+  - Code
+  - LogInstanc

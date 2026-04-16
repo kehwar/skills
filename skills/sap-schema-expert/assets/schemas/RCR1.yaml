@@ -1,0 +1,169 @@
+table: RCR1
+description: Recurring Postings - Rows
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/RCR1.htm
+fields:
+- field: RcurCode
+  description: Recurring Postings Code
+  type: nVarChar
+  size: 8
+  related: ORCR
+- field: LineId
+  description: Row Number
+  type: Int
+  size: 11
+  default: 0
+- field: AcctCode
+  description: Account Code
+  type: nVarChar
+  size: 15
+- field: AcctDesc
+  description: Account Description
+  type: nVarChar
+  size: 200
+- field: Debit
+  description: Debit
+  type: Num
+  size: 19.6
+- field: Credit
+  description: Credit
+  type: Num
+  size: 19.6
+- field: Currency
+  description: Currency
+  type: nVarChar
+  size: 3
+- field: Instance
+  description: Instance
+  type: Int
+  size: 6
+- field: VatGroup
+  description: Tax Group
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: VatLine
+  description: VAT Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CtrlAcct
+  description: Control Account
+  type: nVarChar
+  size: 15
+- field: OcrCode
+  description: Distr. Rule
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: TaxType
+  description: Tax Type
+  type: Int
+  size: 6
+  default: 0
+- field: TaxPostAcc
+  description: Tax Posting Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: ''
+  - key: R
+    label: Sales Tax Account
+  - key: P
+    label: Purchasing Tax Account
+- field: StaCode
+  description: Authority Code
+  type: nVarChar
+  size: 8
+  related: OSTA
+- field: StaType
+  description: Authority Type
+  type: Int
+  size: 11
+  related: OSTT
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: OcrCode1
+  description: Costing Code 1
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode2
+  description: Costing Code 2
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode3
+  description: Costing Code 3
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode4
+  description: Costing Code 4
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: OcrCode5
+  description: Costing Code 5
+  type: nVarChar
+  size: 8
+  related: OOCR
+- field: WtLiable
+  description: WTax-Liable
+  type: VarChar
+  size: 1
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: WTaxLine
+  description: WTax Row
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrossValue
+  description: Gross Value
+  type: Num
+  size: 19.6
+- field: Project
+  description: Project Code
+  type: nVarChar
+  size: 20
+  related: OPRJ
+- field: BPLId
+  description: Branch
+  type: Int
+  size: 11
+  related: OBPL
+- field: CemCode
+  description: Cost Element Code
+  type: nVarChar
+  size: 20
+  related: OCEM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RcurCode
+  - Instance
+  - LineId

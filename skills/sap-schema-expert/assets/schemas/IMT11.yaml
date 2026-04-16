@@ -1,0 +1,39 @@
+table: IMT11
+description: Calculated expression's constituent with sign for specifying account
+  in specific template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IMT11.htm
+fields:
+- field: TemplateId
+  description: Template ID
+  type: Int
+  size: 6
+  related: IMT1
+  default: -1
+- field: AccountId
+  description: Account ID
+  type: Int
+  size: 6
+  related: IMT1
+  default: -1
+- field: Sign
+  description: Sing of the constituent
+  type: VarChar
+  size: 1
+  default: A
+  constraints:
+  - key: A
+    label: Add
+  - key: S
+    label: Sub
+- field: PoSt_ID
+  description: Id into Post Structure
+  type: Int
+  size: 6
+  default: -1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TemplateId
+  - AccountId
+  - PoSt_ID

@@ -1,0 +1,86 @@
+table: QFD2
+description: UDQ Parameters
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/QFD2.htm
+fields:
+- field: IntrnalKey
+  description: Internal Key
+  type: Int
+  size: 11
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ParamName
+  description: Parameter Name
+  type: nVarChar
+  size: 80
+- field: ParamDesc
+  description: Parameter Description
+  type: nVarChar
+  size: 100
+- field: StartIndex
+  description: Start Index
+  type: nVarChar
+  size: 254
+- field: SqlType
+  description: Parameter Type
+  type: Int
+  size: 6
+- field: SqlTypNm
+  description: Parameter Type Name
+  type: nVarChar
+  size: 50
+- field: DbTypeId
+  description: Database Type ID
+  type: VarChar
+  size: 1
+- field: DbSize
+  description: Database Size
+  type: Int
+  size: 11
+- field: DftValue
+  description: Default Value
+  type: nVarChar
+  size: 254
+- field: IsMulti
+  description: Is Multiple
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: Mandatory
+  description: Is Mandatory
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EditType
+  description: Edit Type
+  type: VarChar
+  size: 1
+- field: RTable
+  description: Related Table
+  type: nVarChar
+  size: 100
+- field: RColumn
+  description: Related Column
+  type: nVarChar
+  size: 100
+- field: ValidVal
+  description: Valid Values
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - IntrnalKey
+  - ParamName

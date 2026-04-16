@@ -1,0 +1,49 @@
+table: OWUAC
+description: Recent user activities
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWUAC.htm
+fields:
+- field: Guid
+  description: Guid
+  type: nVarChar
+  size: 40
+- field: AppId
+  description: App Id
+  type: Text
+  size: 16
+- field: AppType
+  description: App Type
+  type: nVarChar
+  size: 20
+- field: Count
+  description: Count
+  type: Int
+  size: 11
+- field: Timestamp
+  description: Timestamp
+  type: nVarChar
+  size: 20
+- field: Title
+  description: Title
+  type: nVarChar
+  size: 100
+- field: Url
+  description: Url
+  type: Text
+  size: 16
+- field: UsageArray
+  description: Usage Array
+  type: nVarChar
+  size: 100
+- field: UserId
+  description: User Id
+  type: Int
+  size: 11
+- field: RecentDay
+  description: Recent Day
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Guid

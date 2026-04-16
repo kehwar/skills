@@ -1,0 +1,40 @@
+table: WPM4
+description: Process Map Action
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/WPM4.htm
+fields:
+- field: PrcMapId
+  description: Process Map ID
+  type: nVarChar
+  size: 40
+  related: OWPM
+- field: StepId
+  description: Step ID
+  type: nVarChar
+  size: 40
+- field: Guid
+  description: Guid of Action
+  type: nVarChar
+  size: 40
+- field: ObjName
+  description: Object Name
+  type: nVarChar
+  size: 50
+- field: Name
+  description: Action Name
+  type: nVarChar
+  size: 254
+- field: Button
+  description: Button
+  type: nVarChar
+  size: 254
+- field: Type
+  description: Action Type
+  type: nVarChar
+  size: 50
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PrcMapId
+  - StepId
+  - Guid

@@ -1,0 +1,19 @@
+table: UDG3
+description: User Defaults - POS/Cash Register
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/UDG3.htm
+fields:
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 8
+- field: PosCashReg
+  description: POS/Cash Register
+  type: Int
+  size: 11
+  related: OPCM
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - Code
+  - PosCashReg

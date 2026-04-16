@@ -1,0 +1,79 @@
+table: OPRF
+description: Preferences
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/OPRF.htm
+fields:
+- field: FormNumber
+  description: User Form No.
+  type: Int
+  size: 11
+- field: ExPref1
+  description: Ex preferences 1
+  type: nVarChar
+  size: 254
+- field: ExPref2
+  description: Ex preferences 2
+  type: nVarChar
+  size: 254
+- field: ExPref3
+  description: Ex preferences 3
+  type: nVarChar
+  size: 254
+- field: ExPref4
+  description: Ex preferences 4
+  type: nVarChar
+  size: 254
+- field: ExPref5
+  description: Ex preferences 5
+  type: nVarChar
+  size: 254
+- field: ExPref6
+  description: Ex preferences 6
+  type: nVarChar
+  size: 254
+- field: ExPref7
+  description: Ex preferences 7
+  type: nVarChar
+  size: 254
+- field: ExPref8
+  description: Ex preferences 8
+  type: nVarChar
+  size: 254
+- field: ExPref9
+  description: Ex preferences 9
+  type: nVarChar
+  size: 254
+- field: ExPref10
+  description: Ex preferences 10
+  type: nVarChar
+  size: 254
+- field: ExPref11
+  description: Ex preferences 11
+  type: nVarChar
+  size: 254
+- field: ExPref12
+  description: Ex preferences 12
+  type: nVarChar
+  size: 254
+- field: ExPref13
+  description: Ex preferences 13
+  type: nVarChar
+  size: 254
+- field: ExPref14
+  description: Ex preferences 14
+  type: nVarChar
+  size: 254
+- field: ExPref15
+  description: Ex preferences 15
+  type: nVarChar
+  size: 254
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - FormNumber
+  - UserSign

@@ -1,0 +1,41 @@
+table: SEWAD
+description: SEWAD
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SEWAD.htm
+fields:
+- field: AbsEntry
+  description: Absolute Entry
+  type: Int
+  size: 11
+- field: DbName
+  description: DB Name (common/company)
+  type: nVarChar
+  size: 100
+- field: AddonId
+  description: Addon ID
+  type: Int
+  size: 11
+- field: AddonName
+  description: Addon Name
+  type: nVarChar
+  size: 128
+- field: AddonVer
+  description: Addon Version
+  type: nVarChar
+  size: 12
+- field: NameSpace
+  description: Partner Name Space
+  type: nVarChar
+  size: 20
+- field: PartName
+  description: Partner Name
+  type: nVarChar
+  size: 40
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: DBNAME
+  unique: false
+  fields:
+  - DbName

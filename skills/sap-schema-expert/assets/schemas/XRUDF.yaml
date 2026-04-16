@@ -1,0 +1,33 @@
+table: XRUDF
+description: XLR company UDF
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/XRUDF.htm
+fields:
+- field: UDFID
+  description: UDFID
+  type: Int
+  size: 11
+- field: ColumnId
+  description: ColumnId
+  type: nVarChar
+  size: 254
+- field: Module
+  description: Module
+  type: nVarChar
+  size: 254
+- field: AttributeT
+  description: AttributeType
+  type: Int
+  size: 11
+- field: Descriptio
+  description: Description
+  type: nVarChar
+  size: 254
+- field: MetaName
+  description: MetaName
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UDFID

@@ -1,0 +1,17 @@
+table: DBADM
+description: Read-Only DB User
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DBADM.htm
+fields:
+- field: ROUser
+  description: Read-Only User
+  type: nVarChar
+  size: 254
+- field: ROPass
+  description: Read-Only Password
+  type: nVarChar
+  size: 254
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ROUser

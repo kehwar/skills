@@ -1,0 +1,25 @@
+table: OWHL
+description: Register of VAT Payers
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/OWHL.htm
+fields:
+- field: ImportDate
+  description: Import Date
+  type: Date
+  size: 8
+- field: HashCount
+  description: Hash Count
+  type: Int
+  size: 11
+- field: Comment
+  description: Comments
+  type: nVarChar
+  size: 254
+- field: NextDate
+  description: Next Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - ImportDate

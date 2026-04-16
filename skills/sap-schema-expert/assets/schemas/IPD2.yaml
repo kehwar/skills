@@ -1,0 +1,98 @@
+table: IPD2
+description: Inventory Posting Draft - UoM
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/IPD2.htm
+fields:
+- field: DocEntry
+  description: Internal Number
+  type: Int
+  size: 11
+  related: OIPD
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ChildNum
+  description: Child Number
+  type: Int
+  size: 11
+- field: BarCode
+  description: Bar Code
+  type: nVarChar
+  size: 254
+- field: UomCode
+  description: UoM Code
+  type: nVarChar
+  size: 20
+  related: OUOM
+- field: UomQty
+  description: UoM Counted Qty
+  type: Num
+  size: 19.6
+- field: CountQty
+  description: Counted Qty - Inventory UoM
+  type: Num
+  size: 19.6
+- field: Tk1UomQty
+  description: Counter 1 UoM Counted Qty
+  type: Num
+  size: 19.6
+- field: Tk2UomQty
+  description: '-'
+  type: Num
+  size: 19.6
+- field: Tk1CntQty
+  description: Counter 1 Counted Qty of Inv.
+  type: Num
+  size: 19.6
+- field: Tk2CntQty
+  description: '-'
+  type: Num
+  size: 19.6
+- field: ItmsPerUnt
+  description: Items per Unit
+  type: Num
+  size: 19.6
+- field: LogIns
+  description: Log Instance - History
+  type: Int
+  size: 11
+- field: UgpEntry
+  description: UoM Group Abs. Entry
+  type: Int
+  size: 11
+  related: OUGP
+- field: TeamUomQty
+  description: Team UoM Counted Qty
+  type: Num
+  size: 19.6
+- field: TeamCntQty
+  description: Team Counted Qty
+  type: Num
+  size: 19.6
+- field: IUomEntry
+  description: Inventory UoM Entry
+  type: nVarChar
+  size: 20
+  related: OUOM
+- field: UomNum
+  description: Uom Item Per Unit Numerator
+  type: Num
+  size: 19.6
+- field: UomDen
+  description: Uom Item Per Unit Denominator
+  type: Num
+  size: 19.6
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - ChildNum
+- key: BUSINESS
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum
+  - BarCode
+  - UomCode

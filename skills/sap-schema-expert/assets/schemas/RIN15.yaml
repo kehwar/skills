@@ -1,0 +1,372 @@
+table: RIN15
+description: A/R Cr. Memo - Drawn Dpm Appld
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Marketing_Documents/RIN15.htm
+fields:
+- field: DocEntry
+  description: Document Internal ID
+  type: Int
+  size: 11
+  related: ORIN
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: ObjType
+  description: object type
+  type: nVarChar
+  size: 20
+  related: ADP1
+  default: '14'
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: VatGroup
+  description: VAT Group Code
+  type: nVarChar
+  size: 8
+  related: OVTG
+- field: StaCode
+  description: Tax Authority Code
+  type: nVarChar
+  size: 8
+- field: StaType
+  description: Tax Authority Type
+  type: Int
+  size: 11
+- field: StaIndex
+  description: Tax Authority Seq Index
+  type: Int
+  size: 11
+- field: BaseNet
+  description: Net LC
+  type: Num
+  size: 19.6
+- field: BaseNetFc
+  description: Net FC
+  type: Num
+  size: 19.6
+- field: BaseNetSc
+  description: Net SC
+  type: Num
+  size: 19.6
+- field: VatSum
+  description: Tax LC
+  type: Num
+  size: 19.6
+- field: VatSumFc
+  description: Tax FC
+  type: Num
+  size: 19.6
+- field: VatSumSc
+  description: Tax SC
+  type: Num
+  size: 19.6
+- field: DctSum
+  description: Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: DctSumFc
+  description: Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: DctSumSc
+  description: Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: EqSum
+  description: Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: EqSumFc
+  description: Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: EqSumSc
+  description: Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: ApplNet
+  description: Applied Net LC
+  type: Num
+  size: 19.6
+- field: ApplNetFc
+  description: Applied Net FC
+  type: Num
+  size: 19.6
+- field: ApplNetSc
+  description: Applied Net SC
+  type: Num
+  size: 19.6
+- field: ApplVat
+  description: Applied Tax LC
+  type: Num
+  size: 19.6
+- field: ApplVatFc
+  description: Applied Tax FC
+  type: Num
+  size: 19.6
+- field: ApplVatSc
+  description: Applied Tax SC
+  type: Num
+  size: 19.6
+- field: ApplDct
+  description: Applied Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: ApplDctFc
+  description: Applied Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: ApplDctSc
+  description: Applied Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: ApplEq
+  description: Applied Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: ApplEqFc
+  description: Applied Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: ApplEqSc
+  description: Applied Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: PaidNet
+  description: Paid Net LC
+  type: Num
+  size: 19.6
+- field: PaidNetFc
+  description: Paid Net FC
+  type: Num
+  size: 19.6
+- field: PaidNetSc
+  description: Paid Net SC
+  type: Num
+  size: 19.6
+- field: PaidVat
+  description: Paid Tax LC
+  type: Num
+  size: 19.6
+- field: PaidVatFc
+  description: Paid Tax FC
+  type: Num
+  size: 19.6
+- field: PaidVatSc
+  description: Paid Tax SC
+  type: Num
+  size: 19.6
+- field: PaidDct
+  description: Paid Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: PaidDctFc
+  description: Paid Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: PaidDctSc
+  description: Paid Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: PaidEq
+  description: Paid Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: PaidEqFc
+  description: Paid Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: PaidEqSc
+  description: Paid Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: DpApplNet
+  description: Dpm Appl Net LC
+  type: Num
+  size: 19.6
+- field: DpApplNetF
+  description: Dpm Appl Net FC
+  type: Num
+  size: 19.6
+- field: DpApplNetS
+  description: Dpm Appl Net SC
+  type: Num
+  size: 19.6
+- field: DpApplVat
+  description: Dpm Appl Tax LC
+  type: Num
+  size: 19.6
+- field: DpApplVatF
+  description: Dpm Appl Tax FC
+  type: Num
+  size: 19.6
+- field: DpApplVatS
+  description: Dpm Appl Tax SC
+  type: Num
+  size: 19.6
+- field: DpApplDct
+  description: Dpm Appl Deductible Sum LC
+  type: Num
+  size: 19.6
+- field: DpApplDctF
+  description: Dpm Appl Deductible Sum FC
+  type: Num
+  size: 19.6
+- field: DpApplDctS
+  description: Dpm Appl Deductible Sum SC
+  type: Num
+  size: 19.6
+- field: DpApplEq
+  description: Dpm Appl Equalization Sum LC
+  type: Num
+  size: 19.6
+- field: DpApplEqFc
+  description: Dpm Appl Equalization Sum FC
+  type: Num
+  size: 19.6
+- field: DpApplEqSc
+  description: Dpm Appl Equalization Sum SC
+  type: Num
+  size: 19.6
+- field: TaxCode
+  description: Tax Code
+  type: nVarChar
+  size: 8
+  related: OSTC
+- field: LineType
+  description: Row Type
+  type: VarChar
+  size: 1
+  default: D
+  constraints:
+  - key: D
+    label: Document
+  - key: R
+    label: Exchange Rate Rounding
+  - key: H
+    label: Document Header Rounding
+- field: BaseGrs
+  description: Gross LC
+  type: Num
+  size: 19.6
+- field: BaseGrsFc
+  description: Gross FC
+  type: Num
+  size: 19.6
+- field: BaseGrsSc
+  description: Gross SC
+  type: Num
+  size: 19.6
+- field: ApplGrs
+  description: Applied Gross LC
+  type: Num
+  size: 19.6
+- field: ApplGrsFc
+  description: Applied Gross FC
+  type: Num
+  size: 19.6
+- field: ApplGrsSc
+  description: Applied Gross SC
+  type: Num
+  size: 19.6
+- field: PaidGrs
+  description: Paid Gross LC
+  type: Num
+  size: 19.6
+- field: PaidGrsFc
+  description: Paid Gross FC
+  type: Num
+  size: 19.6
+- field: PaidGrsSc
+  description: Paid Gross SC
+  type: Num
+  size: 19.6
+- field: DpApplGrs
+  description: Dpm Appl Gross LC
+  type: Num
+  size: 19.6
+- field: DpApplGrsF
+  description: Dpm Appl Gross FC
+  type: Num
+  size: 19.6
+- field: DpApplGrsS
+  description: Dpm Appl Gross SC
+  type: Num
+  size: 19.6
+- field: RvsChrgSum
+  description: Reverse Charge Sum
+  type: Num
+  size: 19.6
+- field: RvsChrgSc
+  description: Reverse Charge Sum (SC)
+  type: Num
+  size: 19.6
+- field: RvsChrgFc
+  description: Reverse Charge Sum (FC)
+  type: Num
+  size: 19.6
+- field: ApplRvs
+  description: Applied Reverse Charge Sum LC
+  type: Num
+  size: 19.6
+- field: ApplRvsSc
+  description: Applied Reverse Charge Sum SC
+  type: Num
+  size: 19.6
+- field: ApplRvsFc
+  description: Applied Reverse Charge Sum FC
+  type: Num
+  size: 19.6
+- field: PaidRvs
+  description: Paid Reverse Charge Sum LC
+  type: Num
+  size: 19.6
+- field: PaidRvsSc
+  description: Paid Reverse Charge Sum SC
+  type: Num
+  size: 19.6
+- field: PaidRvsFc
+  description: Paid Reverse Charge Sum FC
+  type: Num
+  size: 19.6
+- field: DpApplRvs
+  description: Dpm Applied Reverse Charge LC
+  type: Num
+  size: 19.6
+- field: DpApplRvsS
+  description: Dpm Applied Reverse Charge SC
+  type: Num
+  size: 19.6
+- field: DpApplRvsF
+  description: Dpm Applied Reverse Charge FC
+  type: Num
+  size: 19.6
+- field: IsPrscGood
+  description: Is Prescribed Goods
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: IsCstmAct
+  description: Apply Customer Accounting Tax Rule
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - DocEntry
+  - LineNum

@@ -1,0 +1,73 @@
+table: UIC2
+description: Customized Forms in Template
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/UIC2.htm
+fields:
+- field: TPLId
+  description: Template ID
+  type: Int
+  size: 6
+  related: UICU
+- field: FormId
+  description: Form ID
+  type: nVarChar
+  size: 20
+- field: ItemId
+  description: Item ID
+  type: nVarChar
+  size: 70
+- field: Visible
+  description: Visible
+  type: VarChar
+  size: 1
+- field: VisibleCtl
+  description: Visible Control
+  type: VarChar
+  size: 1
+- field: Editable
+  description: Editable
+  type: VarChar
+  size: 1
+- field: EditbleCtl
+  description: Editable Control
+  type: VarChar
+  size: 1
+- field: Left
+  description: Left
+  type: Int
+  size: 6
+- field: Top
+  description: Top
+  type: Int
+  size: 6
+- field: Right
+  description: Right
+  type: Int
+  size: 6
+- field: Bottom
+  description: Bottom
+  type: Int
+  size: 6
+- field: FromPane
+  description: From Pane
+  type: Int
+  size: 6
+- field: ToPane
+  description: To Pane
+  type: Int
+  size: 6
+- field: UDF
+  description: UDF
+  type: VarChar
+  size: 1
+  default: N
+- field: TableName
+  description: TableName
+  type: nVarChar
+  size: 20
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - TPLId
+  - FormId
+  - ItemId

@@ -1,0 +1,49 @@
+table: SOI4
+description: Statement of Import - Invoices
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/SOI4.htm
+fields:
+- field: WizardId
+  description: Wizard ID
+  type: Int
+  size: 11
+- field: SOINum
+  description: Statement No.
+  type: Int
+  size: 11
+- field: DocType
+  description: Document Type
+  type: Int
+  size: 11
+- field: DocEntry
+  description: Document Abs Entry
+  type: Int
+  size: 11
+- field: DocNum
+  description: Doc. No.
+  type: Int
+  size: 11
+- field: DocDate
+  description: Posting Date
+  type: Date
+  size: 8
+- field: TaxDate
+  description: Document Date
+  type: Date
+  size: 8
+- field: NumAtCard
+  description: BP Reference No.
+  type: nVarChar
+  size: 200
+- field: InvEntry
+  description: Invoice Abs Entry
+  type: Int
+  size: 11
+  related: OINV
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - WizardId
+  - SOINum
+  - DocType
+  - DocEntry

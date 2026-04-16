@@ -1,0 +1,37 @@
+table: OTRX
+description: Transformation Documents
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Reports/OTRX.htm
+fields:
+- field: AbsEntry
+  description: Internal Number
+  type: Identity
+  size: 11
+- field: Code
+  description: Code
+  type: nVarChar
+  size: 20
+- field: Descr
+  description: Description
+  type: nVarChar
+  size: 250
+- field: Type
+  description: Type
+  type: nVarChar
+  size: 8
+  default: XSLT
+  constraints:
+  - key: XSLT
+    label: XSLT Document
+- field: Data
+  description: Data
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
+- key: CODE
+  unique: true
+  fields:
+  - Code

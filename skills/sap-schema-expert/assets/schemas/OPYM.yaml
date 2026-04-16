@@ -1,0 +1,499 @@
+table: OPYM
+description: Payment Methods for Payment Wizard
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Banking/OPYM.htm
+fields:
+- field: PayMethCod
+  description: Payment Method Code
+  type: nVarChar
+  size: 15
+- field: Descript
+  description: Description
+  type: nVarChar
+  size: 100
+- field: Type
+  description: Type
+  type: VarChar
+  size: 1
+  constraints:
+  - key: O
+    label: Outgoing
+  - key: I
+    label: Incoming
+- field: BankTransf
+  description: Payment Means
+  type: VarChar
+  size: 1
+  constraints:
+  - key: C
+    label: Check
+  - key: T
+    label: Bank Transfer
+  - key: B
+    label: Bill of Exchange
+- field: Address
+  description: Check Address
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BankDet
+  description: Check Bank Details
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CllctAutor
+  description: Check Collection Authorization
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FrgnPmntBl
+  description: Block Foreign Payment
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: FrgnBnkBl
+  description: Block Foreign Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: CurrRestr
+  description: Currency Restriction
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PostOffBnk
+  description: Post Office Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: MinAmount
+  description: Minimum Amount
+  type: Num
+  size: 19.6
+- field: MaxAmount
+  description: Maximum Amount
+  type: Num
+  size: 19.6
+- field: BnkDflt
+  description: Default Bank
+  type: nVarChar
+  size: 30
+- field: UserSign
+  description: User Signature
+  type: Int
+  size: 6
+  related: OUSR
+- field: DataSource
+  description: Data Source
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: Unknown
+  - key: I
+    label: Interface
+  - key: U
+    label: Update
+  - key: M
+    label: Import
+  - key: O
+    label: DI API
+  - key: S
+    label: Service Layer
+  - key: W
+    label: Web Client
+  - key: A
+    label: Doc. Generation Wizard
+  - key: D
+    label: Restore Wizard
+  - key: P
+    label: Partner Implementation
+  - key: T
+    label: Year Transfer
+- field: CreateDate
+  description: Creation Date
+  type: Date
+  size: 8
+- field: BankCountr
+  description: Bank Country/Region
+  type: nVarChar
+  size: 3
+  related: OCRY
+- field: DflAccount
+  description: Default Bank Account
+  type: nVarChar
+  size: 50
+- field: GLAccount
+  description: G/L Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: Branch
+  description: Bank Branch
+  type: nVarChar
+  size: 50
+- field: KeyCode
+  description: Key Code
+  type: nVarChar
+  size: 6
+- field: TrnsType
+  description: Transaction Type
+  type: nVarChar
+  size: 2
+- field: Format
+  description: File Format
+  type: nVarChar
+  size: 11
+  related: OFRM
+- field: AgtCollect
+  description: Agent Collection
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SendAccept
+  description: Send for Acceptance
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GrpByDate
+  description: Group By Date
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DepNorm
+  description: Deposit Norm
+  type: nVarChar
+  size: 8
+- field: DebitMemo
+  description: Debit Memo
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: GroupPmRef
+  description: Group by Payment Reference No.
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: GroupInv
+  description: Group Invoices by Pay
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: ValDateSel
+  description: Due Date Selection
+  type: VarChar
+  size: 1
+  default: P
+  constraints:
+  - key: P
+    label: Date of Payment Run
+  - key: I
+    label: Due Date of Invoice
+  - key: T
+    label: Payment Terms
+- field: PaymTerms
+  description: Payment Terms Code
+  type: Int
+  size: 6
+  related: OCTG
+- field: IntrimAcct
+  description: Post to G/L Interim Account
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: BnkActKey
+  description: Bank Account Key
+  type: Int
+  size: 11
+  related: DSC1
+- field: DocType
+  description: BoE Document Type
+  type: nVarChar
+  size: 2
+- field: Accepted
+  description: BoE Status - Accepted
+  type: VarChar
+  size: 1
+- field: PtfID
+  description: BoE Internal Portfolio ID
+  type: nVarChar
+  size: 3
+- field: PtfCode
+  description: BoE Portfolio Code
+  type: nVarChar
+  size: 2
+- field: PtfNum
+  description: BoE Portfolio Number
+  type: nVarChar
+  size: 4
+- field: CurCode
+  description: BoE Currency Code
+  type: nVarChar
+  size: 2
+- field: Instruct1
+  description: BoE Instruction 1
+  type: nVarChar
+  size: 2
+- field: Instruct2
+  description: BoE Instruction 2
+  type: nVarChar
+  size: 2
+- field: PaymntPlc
+  description: BoE Payment Place
+  type: nVarChar
+  size: 128
+- field: BoeDll
+  description: Bar Code DLL
+  type: nVarChar
+  size: 50
+- field: BankCtlKey
+  description: Bank Control No.
+  type: nVarChar
+  size: 2
+- field: Active
+  description: Status of the Payment Method
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: Active
+  - key: N
+    label: Inactive
+- field: BcgPcnt
+  description: Bank Charge Rate (%)
+  type: Num
+  size: 19.6
+- field: GrpByCur
+  description: Group Invoices by Currency
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: N
+    label: 'No'
+  - key: Y
+    label: 'Yes'
+- field: GrpByBank
+  description: Group Invoices by Pay-To Bank
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: DflIBAN
+  description: Bank IBAN
+  type: nVarChar
+  size: 50
+- field: DflSwift
+  description: Bank BIC/SWIFT
+  type: nVarChar
+  size: 50
+- field: BoeReport
+  description: BoE Report Code
+  type: nVarChar
+  size: 8
+- field: CancInstr
+  description: Cancellation Instruction
+  type: nVarChar
+  size: 2
+- field: OccurCode
+  description: Occurrence Code
+  type: nVarChar
+  size: 2
+- field: MovmntCode
+  description: Movement Code
+  type: nVarChar
+  size: 10
+- field: NegPymCode
+  description: Negative Payment Method Code
+  type: nVarChar
+  size: 15
+  related: OPYM
+- field: DirectDbt
+  description: Direct Debit
+  type: nVarChar
+  size: 5
+  constraints:
+  - key: CORE
+    label: ''
+  - key: B2B
+    label: ''
+  - key: COR1
+    label: ''
+- field: IssueIndic
+  description: Issue Indicator
+  type: VarChar
+  size: 1
+  default: R
+  constraints:
+  - key: '3'
+    label: ''
+  - key: R
+    label: ''
+- field: PrintSEPA
+  description: Print SEPA Prenotification
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: PmntType
+  description: Payment Type
+  type: nVarChar
+  size: 50
+  default: '01'
+  constraints:
+  - key: '01'
+    label: Efectivo
+  - key: '02'
+    label: Cheque nominativo
+  - key: '03'
+    label: Transferencia electrï¿½nica de fondos
+  - key: '04'
+    label: Tarjeta de crï¿½dito
+  - key: '05'
+    label: Monedero electrï¿½nico
+  - key: '06'
+    label: Dinero electrï¿½nico
+  - key: 08
+    label: Vales de despensa
+  - key: '12'
+    label: Daciï¿½n en pago
+  - key: '13'
+    label: Pago por subrogaciï¿½n
+  - key: '14'
+    label: Pago por consignaciï¿½n
+  - key: '15'
+    label: Condonaciï¿½n
+  - key: '17'
+    label: Compensaciï¿½n
+  - key: '23'
+    label: Novaciï¿½n
+  - key: '24'
+    label: Confusiï¿½n
+  - key: '25'
+    label: Remisiï¿½n de deuda
+  - key: '26'
+    label: Prescripciï¿½n o caducidad
+  - key: '27'
+    label: A satisfacciï¿½n del acreedor
+  - key: '28'
+    label: Tarjeta de dï¿½bito
+  - key: '29'
+    label: Tarjeta de servicios
+  - key: '30'
+    label: Aplicaciï¿½n de anticipos
+  - key: '31'
+    label: Intermediario pagos
+  - key: '99'
+    label: Por definir
+- field: GrpByAgrNo
+  description: Group Blanket Agreement
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: SpltPmtVAT
+  description: Split Payments for VAT
+  type: VarChar
+  size: 1
+  default: N
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: EnDflAcct
+  description: Encryption of Default Bank Account
+  type: Text
+  size: 16
+- field: EncryptIV
+  description: Encrypt IV
+  type: nVarChar
+  size: 100
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - PayMethCod

@@ -1,0 +1,29 @@
+table: ODPH
+description: Template for Demand Planning
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/MRP/ODPH.htm
+fields:
+- field: AbsEntry
+  description: Template Internal Number
+  type: Int
+  size: 11
+- field: UserSign
+  description: User Signature
+  type: nVarChar
+  size: 50
+- field: TmpltName
+  description: Template Name
+  type: nVarChar
+  size: 100
+- field: TmpltCnt
+  description: Template Content
+  type: Text
+  size: 16
+- field: CrtDate
+  description: Create Date
+  type: Date
+  size: 8
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

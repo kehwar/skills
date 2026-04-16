@@ -1,0 +1,56 @@
+table: SCR3
+description: 'Special Ledger - Analytical Accounting Configuration Rule Additional
+  Calculations: Revenues & Expenses'
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Finance/SCR3.htm
+fields:
+- field: RuleID
+  description: Rule Identification Number
+  type: Int
+  size: 6
+  related: OSCR
+- field: FldNum
+  description: Result Field Number
+  type: Int
+  size: 6
+- field: SrcTable
+  description: Main Source Table
+  type: nVarChar
+  size: 20
+- field: SrcField
+  description: Main Source Table Field
+  type: nVarChar
+  size: 20
+- field: CalcCase
+  description: Additional Calcul. Expression
+  type: nVarChar
+  size: 200
+- field: CalcTable
+  description: Main Calculation Expression
+  type: nVarChar
+  size: 200
+- field: CondCase
+  description: Additional Calcul. Condition
+  type: nVarChar
+  size: 200
+- field: CondTable
+  description: Main Calculation Condition
+  type: nVarChar
+  size: 200
+- field: Grouping
+  description: Group by Clause
+  type: nVarChar
+  size: 100
+- field: CallProc
+  description: Recalculation Stored Procedure Name
+  type: nVarChar
+  size: 50
+- field: ExtCond
+  description: Extended Special Data
+  type: nVarChar
+  size: 200
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - RuleID
+  - FldNum

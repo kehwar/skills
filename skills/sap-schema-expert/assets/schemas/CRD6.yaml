@@ -1,0 +1,19 @@
+table: CRD6
+description: BP's Payer Name
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Business_Partners/CRD6.htm
+fields:
+- field: CardCode
+  description: BP Code
+  type: nVarChar
+  size: 15
+  related: OCRD
+- field: CardPyName
+  description: Payer Name in Bank Statement
+  type: nVarChar
+  size: 48
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - CardCode
+  - CardPyName

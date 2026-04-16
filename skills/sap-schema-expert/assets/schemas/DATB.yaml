@@ -1,0 +1,49 @@
+table: DATB
+description: Data Archive Tax Balance
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Administration/DATB.htm
+fields:
+- field: AbsEntry
+  description: Numerator
+  type: Int
+  size: 11
+- field: LocCode
+  description: Location Code
+  type: Int
+  size: 11
+  related: OLCT
+- field: NfTaxId
+  description: ID of Nota Fiscal Tax Category
+  type: Int
+  size: 11
+  related: ONFT
+- field: TaxComId
+  description: Tax Component ID
+  type: Int
+  size: 11
+  related: OSTT
+- field: MatType
+  description: Material Type
+  type: Int
+  size: 11
+- field: ArchBal
+  description: Data Archived Balance
+  type: Num
+  size: 19.6
+- field: TaxAcct
+  description: Tax Account
+  type: nVarChar
+  size: 15
+  related: OACT
+- field: IsPLA
+  description: PLA Field
+  type: VarChar
+  size: 1
+- field: IsTaxCred
+  description: Tax Credit Field
+  type: VarChar
+  size: 1
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry

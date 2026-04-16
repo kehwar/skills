@@ -1,0 +1,69 @@
+table: AUG1
+description: UoM Group Detail
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/Inventory_and_Production/AUG1.htm
+fields:
+- field: UgpEntry
+  description: UoM Group Abs. Entry
+  type: Int
+  size: 11
+  related: OUGP
+- field: UomEntry
+  description: UoM Abs. Entry
+  type: Int
+  size: 11
+  related: OUOM
+- field: AltQty
+  description: Alternative Quantity
+  type: Num
+  size: 19.6
+- field: BaseQty
+  description: Base Quantity
+  type: Num
+  size: 19.6
+- field: LogInstanc
+  description: Log Instance
+  type: Int
+  size: 11
+  default: 0
+- field: LineNum
+  description: Row Number
+  type: Int
+  size: 11
+- field: WghtFactor
+  description: Weight Factor
+  type: Int
+  size: 6
+  related: OWGT
+  default: 0
+- field: UdfFactor
+  description: UDF Factor
+  type: Int
+  size: 11
+  default: -1
+- field: IsActive
+  description: Is Active or Not
+  type: VarChar
+  size: 1
+  default: Y
+  constraints:
+  - key: Y
+    label: 'Yes'
+  - key: N
+    label: 'No'
+- field: BaseUdfFtr
+  description: Base UDF Factor
+  type: Int
+  size: 11
+  default: -1
+- field: BaseWgtFtr
+  description: Base Weight Factor
+  type: Int
+  size: 6
+  default: 0
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - UgpEntry
+  - LineNum
+  - LogInstanc

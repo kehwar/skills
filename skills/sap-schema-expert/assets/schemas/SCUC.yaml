@@ -1,0 +1,25 @@
+table: SCUC
+description: SCUC
+source: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/General/SCUC.htm
+fields:
+- field: AbsEntry
+  description: AbsEntry
+  type: Identity
+  size: 11
+- field: Type
+  description: Type
+  type: Int
+  size: 11
+- field: Param
+  description: Parameter
+  type: nVarChar
+  size: 254
+- field: Value
+  description: Value
+  type: Text
+  size: 16
+indexes:
+- key: PRIMARY
+  unique: true
+  fields:
+  - AbsEntry
