@@ -127,6 +127,7 @@ MODULES: list[tuple[str, list[str]]] = [
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _load_path_yaml(resource: str, suffix: str = "") -> dict:
     """Load a path YAML file.  suffix is '' | '_id' | '_id_<Action>'."""
     fname = f"{resource}{suffix}.yaml"
@@ -166,7 +167,7 @@ def _get_action_functions(resource: str) -> list[str]:
     prefix = f"{resource}_id_"
     actions = []
     for fname in sorted(PATHS_DIR.glob(f"{prefix}*.yaml")):
-        action = fname.stem[len(prefix):]
+        action = fname.stem[len(prefix) :]
         actions.append(action)
     return actions
 
@@ -202,6 +203,7 @@ def _describe_key(resource: str) -> str:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
 
 def build() -> None:
     lines: list[str] = []
@@ -259,9 +261,7 @@ def build() -> None:
                 )
             for action in actions:
                 key_fmt = "'{key}'" if key_type == "string" else "{key}"
-                lines.append(
-                    f"| `/{resource}({key_fmt})/{action}` | POST |"
-                )
+                lines.append(f"| `/{resource}({key_fmt})/{action}` | POST |")
             lines.append("")
 
         lines.append("")
