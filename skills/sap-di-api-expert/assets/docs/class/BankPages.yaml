@@ -1,0 +1,122 @@
+name: BankPages
+title: BankPages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages.html
+description: 'BankPages is a business object that represents external bank statements in the Banking module. This object enables you to: - Add bank statements. Retrieve a bank statement by its key. Update bank statements. Save the object in XML format. Source table: OBNK .'
+remarks: 'Mandatory fields in SAP Business One: AccountCode , and CreditAmount or DebitAmount . To display the form in the application: - Select Banking --> Bank Statements and Reconciliations --> Process External Bank Statement .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Update.html
+properties:
+- name: AccountCode
+  description: 'Sets or returns the G/L account code of the business partner as defined in Chart of Accounts. Field name: AcctCode . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~AccountCode.html
+  field_name: AcctCode
+  length: 15
+- name: AccountName
+  description: 'Returns the G/L account name of the business partner as defined in Chart of Accounts. Field name: AcctName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~AccountName.html
+  field_name: AcctName
+  length: 100
+- name: BankMatch
+  description: 'Returns the status indicating whether or not the amount in the line of the bank statement is reconciled with amount in the line of the G/L account or business partner account. Field name: BankMatch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~BankMatch.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Browser.html
+- name: CardCode
+  description: 'Sets or returns the business partner identification number in SAP Business One. Field name: CardCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~CardCode.html
+  length: 15
+- name: CardName
+  description: 'Sets or returns the name of the existing business partner. Field name: CardName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~CardName.html
+  length: 100
+- name: CreditAmount
+  description: 'Sets or returns the amount in foreign currency to credit the account. Field name: CredAmnt . Mandatory field in SAP Business One, if the amount is to credit the account.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~CreditAmount.html
+  field_name: CredAmnt
+- name: DataSource
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~DataSource.html
+- name: DebitAmount
+  description: 'Sets or returns the amount in foreign currency to debit the account. Field name: DebAmount . Mandatory field in SAP Business One, if the amount is to debit the account.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~DebitAmount.html
+  field_name: DebAmount
+- name: DocNumberType
+  description: 'Sets or returns a boolean value that specifies the document type for identifying an invoice document. Field name: DocNumType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~DocNumberType.html
+  field_name: DocNumType
+- name: DueDate
+  description: 'Sets or returns the due date in a bank statement row. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~DueDate.html
+- name: ExternalCode
+  description: 'Sets or returns the external code. Field name: ExternCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~ExternalCode.html
+  field_name: ExternCode
+  length: 30
+- name: InvoiceNumber
+  description: 'Sets or returns the number of the invoice for payment. From release 2004, use the InvoiceNumberEx property, which is a string, instead of this property. Field name: DocNum . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~InvoiceNumber.html
+  field_name: DocNum
+  length: 27
+- name: InvoiceNumberEx
+  description: 'Sets or returns a string that specifies the number of the invoice for payment. Field name: ExternCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~InvoiceNumberEx.html
+  field_name: ExternCode
+  length: 30
+- name: Memo
+  description: 'Sets or returns the details of a line in the bank statement. Field name: Memo . Length: 255 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Memo.html
+  length: 255
+- name: PaymentCreated
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the payment was created. Field name: PaymCreat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~PaymentCreated.html
+  field_name: PaymCreat
+- name: PaymentReference
+  description: 'Sets or returns the payment reference that authorizes the payment process (according to the legal requirements). Field name: PaymentRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~PaymentReference.html
+  field_name: PaymentRef
+  length: 27
+- name: Reference
+  description: 'Sets or returns the reference number in the bank statement row. Length: 8 characters. Field name: PaymentRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Reference.html
+  field_name: PaymentRef
+  length: 8
+- name: Sequence
+  description: 'Returns the sequential number used, together with AccountCode , for identifying the bank account. Field name: Sequence .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~Sequence.html
+- name: StatementNumber
+  description: 'Sets or returns the number of the bank statement. Field name: IdNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~StatementNumber.html
+  field_name: IdNumber
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who enters the bank statement. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~UserSignature.html
+  field_name: UserSign
+- name: VisualOrder
+  description: 'Sets or returns the appearance order of the bank statement line. Field name: VisOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankPages~VisualOrder.html
+  field_name: VisOrder

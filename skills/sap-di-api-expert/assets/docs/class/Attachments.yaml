@@ -1,0 +1,20 @@
+name: Attachments
+title: Attachments Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments.html
+description: Attachments is a collection of one or more Attachment objects. From DI API version 2005, use the Attachments2 object.
+remarks: To remove an Attachment item, set its FileName property to NULL ("") and call the Update method of the calling object.
+methods:
+- name: Add
+  description: Adds a new Attachment item to the Attachments collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments~Add.html
+- name: Item
+  description: Retrieves an existing attachment item from the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments~Item.html
+- name: Refresh
+  description: Refreshen the attachments collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments~Refresh.html
+properties:
+- name: Count
+  description: Returns the number of Attachment items in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments~Count.html

@@ -1,0 +1,46 @@
+name: DiscountGroupLine
+title: DiscountGroupLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine.html
+description: DiscountGroupLine Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~ToXMLString.html
+properties:
+- name: AbsEntry
+  description: property AbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~AbsEntry.html
+- name: Discount
+  description: property Discount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~Discount.html
+- name: DiscountType
+  description: property DiscountType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~DiscountType.html
+- name: FreeQuantity
+  description: property FreeQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~FreeQuantity.html
+- name: MaximumFreeQuantity
+  description: property MaximumFreeQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~MaximumFreeQuantity.html
+- name: ObjectCode
+  description: property ObjectCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~ObjectCode.html
+- name: ObjectType
+  description: property ObjectType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~ObjectType.html
+- name: PaidQuantity
+  description: property PaidQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroupLine~PaidQuantity.html

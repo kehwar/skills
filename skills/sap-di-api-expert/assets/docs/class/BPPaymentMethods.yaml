@@ -1,0 +1,34 @@
+name: BPPaymentMethods
+title: BPPaymentMethods Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods.html
+description: 'BPPaymentMethods is a child object of the BusinessPartners object that represents the payment methods related to the business partner. Source table: CRD2 .'
+methods:
+- name: Add
+  description: Add a new PaymentMethod to the object. Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~Add.html
+- name: Delete
+  description: method Delete
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~Delete.html
+- name: SetCurrentLine
+  description: Sets the row specified by the parameter to be the current active row. Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~SetCurrentLine.html
+properties:
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~BPCode.html
+- name: Count
+  description: Returns the number of payment methods related to the business partner. Returns the total number of records in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~Count.html
+- name: PaymentMethodCode
+  description: 'Sets or returns the payment method related to the business partner. Field name: PymCode . This is a foreign key to the WizardPaymentMethods Object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~PaymentMethodCode.html
+  field_name: PymCode
+  length: 15
+- name: RowNumber
+  description: 'Returns the available row number. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~RowNumber.html
+  field_name: LineNum
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentMethods~UserFields.html

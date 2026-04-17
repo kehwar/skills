@@ -1,0 +1,25 @@
+name: TaxReportSeriesCollection
+title: TaxReportSeriesCollection Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection.html
+description: 'is a Data Collection of TaxReportSeries . Source table: VTR3 .'
+methods:
+- name: Add
+  description: Adds a new record to the Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~Item.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~ToXMLString.html
+properties:
+- name: Count
+  description: 'Returns the number of TaxReportSeries . in the TaxReportSeriesCollection data collection. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportSeriesCollection~Count.html

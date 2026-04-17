@@ -1,0 +1,31 @@
+name: CostCenterTypesService
+title: CostCenterTypesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService.html
+description: 'A cost center type is for selection by future reports and analyses. The CostCenterTypesService service enables you to add, look up, update, and remove cost center types. Source table: OCCT .'
+remarks: "To define cost center types, from the SAP Business One Main Menu , choose Financials --> Cost Accounting --> Cost Centers , in the Cost Center Type field, select Define New to open the Cost Center Type â\x80\x93 Setup window."
+methods:
+- name: AddCostCenterType
+  description: Adds a cost center type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~AddCostCenterType.html
+- name: DeleteCostCenterType
+  description: Deletes an existing cost center type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~DeleteCostCenterType.html
+- name: GetCostCenterType
+  description: Retrieves a cost center type. The cost center type is specified by its key, which is contained in the CostCenterTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~GetCostCenterType.html
+- name: GetCostCenterTypeList
+  description: Returns the CostCenterTypesParams data collection that identify all cost center types.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~GetCostCenterTypeList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CostCenterTypesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~GetDataInterfaceFromXMLString.html
+- name: UpdateCostCenterType
+  description: Updates an existing cost center type. The data for the cost center type, including the key of the cost center type to be updated, is contained in the CostCenterType object passed to the method. To update a cost center type, you must first retrieve it using the GetCostCenterType method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostCenterTypesService~UpdateCostCenterType.html

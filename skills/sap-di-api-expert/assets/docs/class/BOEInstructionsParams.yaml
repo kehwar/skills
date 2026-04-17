@@ -1,0 +1,25 @@
+name: BOEInstructionsParams
+title: BOEInstructionsParams Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams.html
+description: This is a data collection of BOEInstructionParams data structure.
+methods:
+- name: Add
+  description: Adds a new object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~Add.html
+- name: GetXMLSchema
+  description: Retreives the XML schema of the data structrue.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to a specified object in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the total objects in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsParams~Count.html

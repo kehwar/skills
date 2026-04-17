@@ -1,0 +1,30 @@
+name: ServiceCallStatusService
+title: ServiceCallStatusService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService.html
+description: 'The ServiceCallStatusService service enables you to add, look up and remove service call statuses in the service call status master data table. Service call statuses are used to specify the status of a service call. To see the list of service call statuses, select Service --> Service Call . The service call statuses are listed in the Call Status field. Source table: OSCS'
+methods:
+- name: AddServiceCallStatus
+  description: Adds a service call status.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~AddServiceCallStatus.html
+- name: DeleteServiceCallStatus
+  description: Deletes an existing service call status. The service call status is specified by its key ( statusID ), which is contained in the ServiceCallStatusParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~DeleteServiceCallStatus.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceCallStatusService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~GetDataInterfaceFromXMLString.html
+- name: GetServiceCallStatus
+  description: Retrieves a service call status. The service call status is specified by its key ( statusID ), which is contained in the ServiceCallStatusParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~GetServiceCallStatus.html
+- name: GetServiceCallStatusList
+  description: Retrieves the keys and names of all the service call statuses.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~GetServiceCallStatusList.html
+- name: UpdateServiceCallStatus
+  description: Updates an existing service call status. The data for the service call status, including the key of the status to be updated, is contained in the ServiceCallStatus passed to the method. To update a service call status, you must first retrieve it using the GetServiceCallStatus method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallStatusService~UpdateServiceCallStatus.html

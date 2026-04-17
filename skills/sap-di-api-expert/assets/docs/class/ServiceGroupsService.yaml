@@ -1,0 +1,31 @@
+name: ServiceGroupsService
+title: ServiceGroupsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService.html
+description: 'The ServiceGroupsService service enables you to add, look up, update, and remove service groups. Source table: OSGP .'
+remarks: Country-specific for Brazil only. To see the service groups, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Tax --> Item Classification --> Service Group .
+methods:
+- name: AddServiceGroup
+  description: Adds a service group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~AddServiceGroup.html
+- name: DeleteServiceGroup
+  description: Deletes an existing service group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~DeleteServiceGroup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceGroupsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~GetDataInterfaceFromXMLString.html
+- name: GetServiceGroup
+  description: Retrieves a service group. The service group is specified by its key, which is contained in the ServiceGroupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~GetServiceGroup.html
+- name: GetServiceGroupList
+  description: Returns the ServiceGroupsParams data collection that identify all service groups.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~GetServiceGroupList.html
+- name: UpdateServiceGroup
+  description: Updates an existing service group. The data for the service group, including the key of the service group to be updated, is contained in the ServiceGroup object passed to the method. To update a service group, you must first retrieve it using the GetServiceGroup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceGroupsService~UpdateServiceGroup.html

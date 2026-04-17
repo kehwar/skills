@@ -1,0 +1,25 @@
+name: ApprovalStageApprover
+title: ApprovalStageApprover Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover.html
+description: 'ApprovalStageApprover is a Data structure that define the user Id of the ApprovalStage approver. Source table: WST1 .'
+methods:
+- name: FromXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~ToXMLString.html
+properties:
+- name: UserID
+  description: 'Sets or returns the approver User code . Field name: UserID . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprover~UserID.html

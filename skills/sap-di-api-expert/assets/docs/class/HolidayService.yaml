@@ -1,0 +1,30 @@
+name: HolidayService
+title: HolidayService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService.html
+description: The HolidayService service enables you to add, look up, remove, and update holidays.
+methods:
+- name: AddHoliday
+  description: Adds a new holiday.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~AddHoliday.html
+- name: DeleteHoliday
+  description: Deletes an existing holiday.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~DeleteHoliday.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the HolidayService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~GetDataInterfaceFromXMLString.html
+- name: GetHoliday
+  description: Retrieves a holiday. The holiday is specified by its key, which is contained in the HolidayParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~GetHoliday.html
+- name: GetHolidayList
+  description: Returns the HolidaysParams data collection that identify all holidays.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~GetHolidayList.html
+- name: UpdateHoliday
+  description: Updates an existing holiday. The data for the holiday, including the key of the holiday to be updated, is contained in the Holiday object passed to the method. To update a holiday, you must first retrieve it using the GetHoliday method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HolidayService~UpdateHoliday.html

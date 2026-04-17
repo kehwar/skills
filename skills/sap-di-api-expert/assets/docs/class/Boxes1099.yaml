@@ -1,0 +1,35 @@
+name: Boxes1099
+title: Boxes1099 Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099.html
+description: 'Boxes1099 is a child object of the Forms1099 object. It enables to add 1099 reporting boxes to a specified 1099 Form type. Source table: TNN1 .'
+remarks: 'Country-specific for USA only. To display the form in the application: - Select Administration --> Setup -->Financials -->1099 Table . Double-click the number on the left of the 1099 Form type for which you want to add 1099 Boxes .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~SetCurrentLine.html
+properties:
+- name: Box1099
+  description: 'Sets or returns the name of the 1099 reporting box. Field name: Box1099 . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~Box1099.html
+  length: 20
+- name: BoxDescription
+  description: 'Sets or returns the description of the 1099 reporting box. Field name: BoxDescr . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~BoxDescription.html
+  field_name: BoxDescr
+  length: 100
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~Count.html
+- name: FormCode
+  description: 'Returns the identification key of the 1099 Form type as assigned by the system when adding a new 1099 Form type. Field name: FormCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~FormCode.html
+- name: Minimum1099Amount
+  description: Sets or returns the minimum amount to include in the 1099 report.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~Minimum1099Amount.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Boxes1099~UserFields.html

@@ -1,0 +1,246 @@
+name: WizardPaymentMethods
+title: WizardPaymentMethods Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods.html
+description: 'The WizardPaymentMethods object enables to define payment methods, such as check, bank transfer, or bill-of-exchange. Source table: OPYM .'
+remarks: 'The payment method then can be assigned to each business partner. During the payment run process (Payment Wizard), the payment method selected for a business partner will affect the way the system clears invoices. To display the form in the application: - Select Administration --> Setup --> Banking --> Payment Methods .'
+methods:
+- name: Add
+  description: Adds a payment method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Update.html
+properties:
+- name: Accepted
+  description: 'Sets or returns a string value that determines the BOE status, whether it is accepted or not. Field name: Accepted . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Accepted.html
+  length: 1
+- name: Active
+  description: 'Indicates whether or not the payment method is in use. Field: Active .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Active.html
+- name: AgentCollection
+  description: 'Determines whether or not to display only invoices related to agents in the Payment Wizard. Relevant for Bill of Exchange, payment mean and incoming payments only. Field name: AgtCollect .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~AgentCollection.html
+  field_name: AgtCollect
+- name: BankAccountKey
+  description: 'Returns the bank account key. Field name: BnkActKey . This is a foreign key to the HouseBankAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BankAccountKey.html
+  field_name: BnkActKey
+- name: BankChargeRate
+  description: 'Specify the bank charge rate as a percentage. For each payment in the payment wizard, the bank charge is calculated as the payment amount multiplied by the bank charge rate. Field: BcgPcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BankChargeRate.html
+- name: BankCountry
+  description: 'Sets or returns the house bank country. Field name: BankCountr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BankCountry.html
+  field_name: BankCountr
+  length: 3
+- name: BarcodeDll
+  description: 'Sets or returns the name and path of the BOE barcode reader DLL file. Field name: BoeDll . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BarcodeDll.html
+  field_name: BoeDll
+  length: 50
+- name: BlockForeignBank
+  description: 'Determines whether or not to block payment method for business partners for whom the BankCountry (BusinessPartners object) is different than the default country defined for the company BankCountry (AdminInfo). Field name: FrgnBnkBl .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BlockForeignBank.html
+  field_name: FrgnBnkBl
+- name: BlockForeignPayment
+  description: 'Determines whether or not to block payment method for business partners for whom the Bill to Country is different than the country defined for your company CompanyName (AdminInfo). Field name: FrgnPmntBl .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~BlockForeignPayment.html
+  field_name: FrgnPmntBl
+- name: Branch
+  description: 'Returns the House Bank Branch no. Field name: Branch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Branch.html
+  length: 50
+- name: Browser
+  description: Returns the DataBrowser object. Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Browser.html
+- name: CancelInstruction
+  description: property CancelInstruction
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CancelInstruction.html
+- name: CheckAddress
+  description: 'Determines whether or not to check if the Bill to Address of the business partner is defined in full mode (Name, Street/ P.O. Box, City, Zip Code, Country). Field name: Address .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CheckAddress.html
+  field_name: Address
+- name: CheckBankDetails
+  description: 'Determines whether or not to check if the business partner''s bank details: DefaultBankCode and DefaultAccount , are entered in full mode. ( BusinessPartners Object ) Field name: BankDet .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CheckBankDetails.html
+  field_name: BankDet
+- name: CollectionAuthorizationCheck
+  description: 'Determines whether or not the customer authorizes an automatic files collection from their bank account. Relevant for the OPEX file (PaymentRunExport). Field name: CllctAutor .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CollectionAuthorizationCheck.html
+  field_name: CllctAutor
+- name: CreationDate
+  description: 'Returns the creation date of a specified check. Field name: CreateDate . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CreationDate.html
+  field_name: CreateDate
+  length: 8
+- name: CurCode
+  description: 'Sets or returns the BOE currency code. Field name: CurCode . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CurCode.html
+  length: 2
+- name: CurrencyRestriction
+  description: 'Determines whether or not currency restriction exists for payment method. Field name: CurrRestr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CurrencyRestriction.html
+  field_name: CurrRestr
+- name: CurrencyRestrictions
+  description: Returns the CurrencyRestrictions object. Applicable when the CurrencyRestriction property is set to tYES .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~CurrencyRestrictions.html
+- name: DebitMemo
+  description: 'Returns whether DebitMemo exists for Payment Method.Determines whether or not to create a corresponding indication in the Payment Run Export (OPEX) file. The Debit Memo indication is required for the Payment Engine add-on. Field name: DebitMemo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DebitMemo.html
+- name: DefaultAccount
+  description: 'Sets or returns the default bank account number of the business partner. Field name: DflAccount . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DefaultAccount.html
+  field_name: DflAccount
+  length: 50
+- name: DefaultBank
+  description: 'Sets or returns the default bank number. Field name: BnkDflt . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DefaultBank.html
+  field_name: BnkDflt
+  length: 30
+- name: DepositNorm
+  description: 'Sets or returns the Bill of Exchange file format for presentation as defined for the banks for each country. Displayed in the OPEX file only. Field name: DepNorm . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DepositNorm.html
+  field_name: DepNorm
+  length: 8
+- name: Description
+  description: 'Sets and return the payment method description. Field name: Descript . Length: 100 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Description.html
+  field_name: Descript
+  length: 100
+- name: DirectDebit
+  description: property DirectDebit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DirectDebit.html
+- name: DocType
+  description: 'Sets or returns the BOE document type. Field name: DocType . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DocType.html
+  length: 2
+- name: DueDateSelection
+  description: 'Sets or returns a valid value that determines the due date type of the Bills of Exchange. Field name: ValDateSel .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~DueDateSelection.html
+  field_name: ValDateSel
+- name: Format
+  description: 'Sets and return the file format name of the payment. Field name: Format . Length: 100 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Format.html
+  length: 100
+- name: GLAccount
+  description: 'Sets or returns the G/L account assigned to the payment. Field name: GLAccount . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GLAccount.html
+  length: 15
+- name: GroupByDate
+  description: 'Determines whether or not to sort the Bills of Exchange payments by their due date. Field name: GrpByDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GroupByDate.html
+  field_name: GrpByDate
+- name: GroupByPaymentReference
+  description: 'Determines whether or not to sort the Bills of Exchange by their Payment Reference. Field name: GroupPmRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GroupByPaymentReference.html
+  field_name: GroupPmRef
+- name: GroupInvoicesByCurrency
+  description: 'Determines whether or not to enable grouping invoices according to their currencies. Field name: GrpByCur .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GroupInvoicesByCurrency.html
+  field_name: GrpByCur
+- name: GroupInvoicesbyPay
+  description: 'Determines whether or not to enable grouping invoices according to their target bank. Field name: GroupPmRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GroupInvoicesbyPay.html
+  field_name: GroupPmRef
+- name: GroupInvoicesByPayToBank
+  description: 'Determines whether or not to enable grouping invoices for vendors by pay-to bank addresses. Field name: GrpByBank .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~GroupInvoicesByPayToBank.html
+  field_name: GrpByBank
+- name: Instruction1
+  description: 'Sets or returns the first BOE instruction. Field name: Instruct1 . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Instruction1.html
+  field_name: Instruct1
+  length: 2
+- name: Instruction2
+  description: 'Sets or returns the second BOE instruction. Field name: Instruct2 . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Instruction2.html
+  field_name: Instruct2
+  length: 2
+- name: KeyCode
+  description: 'Sets and return the key of the payment method. Field name: KeyCode . Length: 6 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~KeyCode.html
+  length: 6
+- name: MaximumAmount
+  description: 'Sets or returns the maximum amount of incoming or outgoing payments in a single check ( Single Check Restrictions ). Field name: MaxAmount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~MaximumAmount.html
+  field_name: MaxAmount
+- name: MinimumAmount
+  description: 'Sets or returns the minimum amount of incoming or outgoing payments in a single check ( Single Check Restrictions ). Field name: MinAmount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~MinimumAmount.html
+  field_name: MinAmount
+- name: MovementCode
+  description: property MovementCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~MovementCode.html
+- name: OccurenceCode
+  description: property OccurenceCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~OccurenceCode.html
+- name: PaymentMeans
+  description: 'Sets or returns a valid value of BoPaymentMeansEnum that determines the payment means. Field name: BankTransf .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PaymentMeans.html
+  field_name: BankTransf
+- name: PaymentMethodCode
+  description: 'Sets or returns the payment method code. Field name: PayMethCod . Length:15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PaymentMethodCode.html
+  field_name: PayMethCod
+  length: 15
+- name: PaymentPlace
+  description: 'Sets or returns the BOE payment place. Field name: PaymntPlc . Length: 128 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PaymentPlace.html
+  field_name: PaymntPlc
+  length: 128
+- name: PaymentTermsCode
+  description: 'Sets or returns the payment terms for incoming payments related to the business partner. Field name: PaymTerms . This is a foreign key to the PaymentTermsTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PaymentTermsCode.html
+  field_name: PaymTerms
+- name: PortfolioID
+  description: 'Sets or returns the BOE internal portfolio ID. Field name: PtfID . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PortfolioID.html
+  field_name: PtfID
+  length: 3
+- name: PostOfficeBank
+  description: 'Sets or returns a valid value that determines wether or not the payment method is related to a post office bank. Field name: PostOffBnk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PostOfficeBank.html
+  field_name: PostOffBnk
+- name: PosttoGLInterimAccount
+  description: 'Determines whether or not to enable posting payments to a G/L intermediate account. Field name: IntrimAcct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~PosttoGLInterimAccount.html
+  field_name: IntrimAcct
+- name: ReportCode
+  description: property ReportCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~ReportCode.html
+- name: SendforAcceptance
+  description: 'Sets or returns a valid value that determines wether or not Send for Acceptanceis required. Field name: SendAccept .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~SendforAcceptance.html
+  field_name: SendAccept
+- name: TransactionType
+  description: 'Sets or returns the Transaction type. Field name: TrnsType . Length: 2 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~TransactionType.html
+  field_name: TrnsType
+  length: 2
+- name: Type
+  description: 'Sets or returns a valid value of BoPaymentTypeEnum that determines wether the payment is incoming or outgoing. Field name: Type .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~Type.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~UserFields.html
+- name: UserSignature
+  description: 'Returns the foreign key of the user who enters the payment method. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WizardPaymentMethods~UserSignature.html
+  field_name: UserSign

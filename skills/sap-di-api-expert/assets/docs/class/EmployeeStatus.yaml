@@ -1,0 +1,31 @@
+name: EmployeeStatus
+title: EmployeeStatus Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus.html
+description: EmployeeStatus Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~ToXMLString.html
+properties:
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~Description.html
+- name: Name
+  description: property Name
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~Name.html
+- name: StatusId
+  description: property StatusId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeStatus~StatusId.html

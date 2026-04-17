@@ -1,0 +1,1074 @@
+name: AdminInfo
+title: AdminInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo.html
+description: 'The AdminInfo is a data structure related to the CompanyService . It includes administration properties for system initialization (company details, document settings, and general settings), and various definitions, such as financials and banking. The properties default values vary according to the country localization. Source table: OADM .'
+remarks: 'The AdminInfo fields appear in various forms of the Administration module. For example: - Administration --> Setup --> Banking Administration --> Setup --> Financials Administration --> Authorizations --> General Authorizations Administration --> System Initialization --> Company Details Administration --> System Initialization --> Document Settings'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ToXMLString.html
+properties:
+- name: Account
+  description: property Account
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~Account.html
+- name: AccountSegmentsSeparator
+  description: 'Sets or returns the Separator character displayed between the account segments (for example:"-" or "_"). Country-specific for US. Field name: ActSep . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AccountSegmentsSeparator.html
+  field_name: ActSep
+  length: 1
+- name: AccuracyofQuantities
+  description: 'Sets or returns the respective number of decimal places displayed for quantities. This setting only affects the display. The system always calculates precisely to six decimal places. Field name: QtyDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AccuracyofQuantities.html
+  field_name: QtyDec
+- name: ActionWhenDeviateFromBAForAccounting
+  description: property ActionWhenDeviateFromBAForAccounting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ActionWhenDeviateFromBAForAccounting.html
+- name: ActionWhenDeviateFromBAForGRPO
+  description: property ActionWhenDeviateFromBAForGRPO
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ActionWhenDeviateFromBAForGRPO.html
+- name: ActionWhenDeviateFromBAForPO
+  description: property ActionWhenDeviateFromBAForPO
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ActionWhenDeviateFromBAForPO.html
+- name: AdditionalIdNumber
+  description: 'Sets or returns the additional ID number of the company. For example, the tax authority identifies the company as part of a group of companies by this number. Length: 32 characters. Field name: FreeZoneNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AdditionalIdNumber.html
+  field_name: FreeZoneNo
+  length: 32
+- name: Address
+  description: 'Sets or returns the company address in local language. Length: 254 characters. Field name: CompnyAddr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~Address.html
+  field_name: CompnyAddr
+  length: 254
+- name: AddressinForeignLanguage
+  description: 'Returns the company address in foreign language. Length: 254 characters. Field name: CmpnyAddrF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AddressinForeignLanguage.html
+  field_name: CmpnyAddrF
+  length: 254
+- name: AdressFromWH
+  description: 'Determines whether or not to display the full warehouse address in purchase documents. Field name: AdrsFromWH .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AdressFromWH.html
+  field_name: AdrsFromWH
+- name: AdvancesonCorpIncomeTax
+  description: 'Sets or returns the percentage that must be advanced on account of corporate income tax. Country-specific for Israel. Field name: DpsitPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AdvancesonCorpIncomeTax.html
+  field_name: DpsitPrcnt
+- name: AlertbyWarehouse
+  description: 'Determines whether or not the system checks the inventory in a specific warehouse or in all warehouses where the item is stored. Field name: WarnByWhs . tYES - the system checks the inventory level in the specified warehouse when the sales document is entered. If the current transaction results in this level falling below a set minimum, a warning message is displayed - even if the inventory for the item in all warehouses is greater than the minimum. tNO - the inventory level is checked in all warehouses where the item is stored.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AlertbyWarehouse.html
+  field_name: WarnByWhs
+- name: AlertTypeforWHStock
+  description: 'Determines the type of system''s response when the inventory level falls below this minimum as the result of a sales document, such as a delivery note or an invoice. Field name: LevelWarn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AlertTypeforWHStock.html
+  field_name: LevelWarn
+- name: AliasName
+  description: property AliasName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AliasName.html
+- name: AllowBPWithNoOwner
+  description: property AllowBPWithNoOwner
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AllowBPWithNoOwner.html
+- name: AllowClosedSalesQuotations
+  description: 'Determines whether sales quotation documents remain open or closed after being copied (in full) to a follow-up document. Field name: ClosedQuot .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AllowClosedSalesQuotations.html
+  field_name: ClosedQuot
+- name: AllowFuturePostingDate
+  description: 'Determines whether or not to allow future posting dates at the company level. Field name: AllowFuPos .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AllowFuturePostingDate.html
+  field_name: AllowFuPos
+- name: AllowInBoundPostingWithZeroPrice
+  description: property AllowInBoundPostingWithZeroPrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AllowInBoundPostingWithZeroPrice.html
+- name: AllowMultipleBAOnSamePeriod
+  description: property AllowMultipleBAOnSamePeriod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AllowMultipleBAOnSamePeriod.html
+- name: AltNameForApInvoice
+  description: 'Sets or returns the alternative name for A/P invoice documents. Length: 20 characters. Field name: A/P Invoice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AltNameForApInvoice.html
+  length: 20
+- name: AltNameforCreditMemo
+  description: 'Sets or returns the alternative name for A/P credit memo documents. Length: 20 characters. Field name: RpcName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AltNameforCreditMemo.html
+  field_name: RpcName
+  length: 20
+- name: AltNameForGoodsReceipt
+  description: 'Sets or returns the alternative name for goods receipt PO documents. Length: 20 characters. Field name: PdnName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AltNameForGoodsReceipt.html
+  field_name: PdnName
+  length: 20
+- name: AltNameForGoodsReturn
+  description: 'Sets or returns the alternative name for goods returns documents. Length: 20 characters. Field name: RpdName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AltNameForGoodsReturn.html
+  field_name: RpdName
+  length: 20
+- name: AltNameForPurchase
+  description: 'Sets or returns the alternative name for Purchase documents. Length: 20 characters. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AltNameForPurchase.html
+  length: 20
+- name: ApplicationOfIFRS
+  description: property ApplicationOfIFRS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ApplicationOfIFRS.html
+- name: ApplyBaseInactiveStatusToPeriodVolumeDiscounts
+  description: property ApplyBaseInactiveStatusToPeriodVolumeDiscounts
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ApplyBaseInactiveStatusToPeriodVolumeDiscounts.html
+- name: ApplyBaseInactiveStatusToPriceLists
+  description: property ApplyBaseInactiveStatusToPriceLists
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ApplyBaseInactiveStatusToPriceLists.html
+- name: ApplyBaseInactiveStatusToSpecialPrices
+  description: property ApplyBaseInactiveStatusToSpecialPrices
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ApplyBaseInactiveStatusToSpecialPrices.html
+- name: AttachmentEntryForFileStorage
+  description: 'Attachment entry for file storage Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AttachmentEntryForFileStorage.html
+  field_name: AtcEntry
+- name: AutoAddPackage
+  description: 'Indicates whether to add all package definitions each time you create a new item, or to automatically add a new package definition to existing items. Field name: AutoAddPkg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AutoAddPackage.html
+  field_name: AutoAddPkg
+- name: AutoAddUoM
+  description: 'Indicates whether to add all UoM (Unit of Measurement) group definitions each time you create a new item, or to automatically add a new UoM group definition to existing items. Field name: AutoAddUoM .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AutoAddUoM.html
+- name: AutoAssignOnlyValidAPBA
+  description: property AutoAssignOnlyValidAPBA
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AutoAssignOnlyValidAPBA.html
+- name: AutoAssignOnlyValidARBA
+  description: property AutoAssignOnlyValidARBA
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~AutoAssignOnlyValidARBA.html
+- name: BankCountry
+  description: 'Sets or returns the country of the default house bank (the company bank) as defined in the Banks object. Length: 3 characters. Field name: BankCountr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BankCountry.html
+  field_name: BankCountr
+  length: 3
+- name: BankStatementInstalled
+  description: Returns a boolean value specifying whether or not the BankStatementService is activated. Yes = service is activated (default for 2006 A new installation) No = service is not activated (default for upgraded companies).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BankStatementInstalled.html
+- name: BaseField
+  description: 'Determines the reference number to include in the Remarks area of sales documents, whether Base Document Number ( tYES ) or Customer/Vendor Reference Number ( tNO , in case the Customer/Vendor Reference Number does not exist in the base document, the Remarks field remains blank in the sales document). Field name: BaseFld .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BaseField.html
+  field_name: BaseFld
+- name: BlockBookkeeping
+  description: 'Determines whether or not to block deviation from budget in accounting transactions that involves a G/L account relevant to budget. Applicable in case the valid value of CalculateBudget is tYES and the valid value of BlockBudget is either bb_Block or bb_MonthlyAlertOnly (the system displays a warning about any deviation from budget). Field name: BdgtAcctng .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockBookkeeping.html
+  field_name: BdgtAcctng
+- name: BlockBudget
+  description: 'Determines how the system manages deviations from budget in documents. Applicable in case the valid value of CalculateBudget is tYES . Field name: BgtBlock .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockBudget.html
+  field_name: BgtBlock
+- name: BlockDelNotesforPurchase
+  description: 'Determines whether or not to block deviation from budget in goods receipt POs. Applicable in case the valid value of CalculateBudget is tYES and the valid value of BlockBudget is either bb_Block or bb_MonthlyAlertOnly (the system displays a warning about any deviation from budget). Field name: BdgtPDNDo . LDiscTotal'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockDelNotesforPurchase.html
+  field_name: BdgtPDNDo
+- name: BlockMultipleBAOnSameAPDocument
+  description: property BlockMultipleBAOnSameAPDocument
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockMultipleBAOnSameAPDocument.html
+- name: BlockMultipleBAOnSameARDocument
+  description: property BlockMultipleBAOnSameARDocument
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockMultipleBAOnSameARDocument.html
+- name: BlockPostingDateEditing
+  description: 'Determines whether or not to block posting dates editing for individual rows in Journal Entry documents. Field name: RefDNoEdit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockPostingDateEditing.html
+  field_name: RefDNoEdit
+- name: BlockPurchaseOrders
+  description: 'Determines whether or not to block deviation from budget in purchase orders. Applicable in case the valid value of CalculateBudget is tYES and the valid value of BlockBudget is either bb_Block or bb_MonthlyAlertOnly (the system displays a warning about any deviation from budget). Field name: BdgtPORDoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockPurchaseOrders.html
+  field_name: BdgtPORDoc
+- name: BlockStockNegativeQuantity
+  description: property BlockStockNegativeQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockStockNegativeQuantity.html
+- name: BlockSystemCurrencyEditing
+  description: 'Determines whether or not to block editing of total amounts in system currency in Journal Entry documents. Field name: SysCNoEdit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockSystemCurrencyEditing.html
+  field_name: SysCNoEdit
+- name: BlockTaxDate
+  description: 'Determines whether or not to block document date editing per row in Journal Entry documents. Field name: TaxDNoEdit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BlockTaxDate.html
+  field_name: TaxDNoEdit
+- name: BoletoFolderPath
+  description: property BoletoFolderPath
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BoletoFolderPath.html
+- name: BPTypeCode
+  description: 'Determines the string length of the Payment Reference, which is used in payment slips. Country-specific for Nordic countries. Field name: CaredType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BPTypeCode.html
+  field_name: CaredType
+- name: BudgetAlert
+  description: 'Determines the alert type in case of deviation from budget. Applicable in case the valid value of CalculateBudget is tYES and the valid value of BlockBudget is either bb_Block or bb_MonthlyAlertOnly . Field name: BgtWarning .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~BudgetAlert.html
+  field_name: BgtWarning
+- name: CalculateBudget
+  description: 'Determines whether or not to enable budget management. Field name: DoBudget .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CalculateBudget.html
+  field_name: DoBudget
+- name: CalculateGrossProfitperTra
+  description: 'Determines whether or not to enable gross profit calculation for sales documents. Field name: SaleProfit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CalculateGrossProfitperTra.html
+  field_name: SaleProfit
+- name: CalculateInWhseQtyBasedOnPostingDate
+  description: property CalculateInWhseQtyBasedOnPostingDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CalculateInWhseQtyBasedOnPostingDate.html
+- name: CalculateRowDiscount
+  description: 'Sets or returns a valid value that determines wether or not to calculate row discount. Field name: LDiscTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CalculateRowDiscount.html
+  field_name: LDiscTotal
+- name: CalculateTaxinSalesQuotati
+  description: 'Determines whether or not to calculate tax in sales-quotation documents. When set to tNO , the system does not calculate or display the tax in quotations. however, if the user creates an order that refers to a quotation, the system calculates the tax according to the rules for the customer and the item. Field name: AddVat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CalculateTaxinSalesQuotati.html
+  field_name: AddVat
+- name: CertificateNo
+  description: 'Sets or returns the certificate number of the withholding tax that applies to sales documents. Applicable when SHandleWT is set to tYES . Length: 20 characters. Field name: CrtfcateNO .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CertificateNo.html
+  field_name: CrtfcateNO
+  length: 20
+- name: ChangeDefReconAPAccounts
+  description: 'Determines whether or not to enable assignment of different control accounts to different vendors. Assignment of control accounts to each vendor can be done through the BusinessPartners object. The default value is tNO , which means the control accounts defined in the Control Accounts - Accounts Payable window are used for all vendors. Field name: ChCtrAPAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ChangeDefReconAPAccounts.html
+  field_name: ChCtrAPAct
+- name: ChangeDefReconARAccounts
+  description: 'Determines whether or not to enable assignment of different control accounts to different customers. Assignment of control accounts to each customer can be done through the BusinessPartners object. The default value is tNO , which means the control accounts defined in the Control Accounts - Accounts Receivable window are used for all customers. Field name: ChCtrARAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ChangeDefReconARAccounts.html
+  field_name: ChCtrARAct
+- name: ChangedExistingOrders
+  description: 'Determines whether or not to allow changes to existing sales orders. The default value is tYES. If set to tNO , sales orders, once created, cannot be modified. Field name: ChangeRdr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ChangedExistingOrders.html
+  field_name: ChangeRdr
+- name: ChartofAccountsTemplate
+  description: 'Determines the chart of accounts for the company. The available chart of accounts templates are according to the country localization. The default value is U , that means user defined chart of accounts. Modification to the template is allowed only when creating a new company database. Once the chart of accounts is applied, modification to template is not allowed. Field name: CompType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ChartofAccountsTemplate.html
+  field_name: CompType
+- name: CloseCountedRowsWithoutConfirmation
+  description: property CloseCountedRowsWithoutConfirmation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CloseCountedRowsWithoutConfirmation.html
+- name: CloseCountedRowsWithZeroDifference
+  description: property CloseCountedRowsWithZeroDifference
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CloseCountedRowsWithZeroDifference.html
+- name: Code
+  description: 'The key for the set of administration settings. For internal use. Field name: Code'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~Code.html
+- name: CommitmentRestriction
+  description: 'Determines whether or not to restrict the creation of sales documents for customers and prompt a warning message according to the specified MaxCommitment to the customer. The commitment limit applies to specified types of documents (A/R Invoice, Delivery, and Sales Order). Field name: ObligLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CommitmentRestriction.html
+  field_name: ObligLimit
+- name: CompanyColor
+  description: 'Sets or returns the number of the background color for active windows. Field name: Color .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CompanyColor.html
+  field_name: Color
+- name: CompanyName
+  description: 'Returns the company name (can be an abbreviation). This name appears at the top of the SAP Business One menu. However, this name is not used in printed documents. Field name: CompnyName . Length: 100 characters. Field name: CompnyName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CompanyName.html
+  field_name: CompnyName
+  length: 100
+- name: ConsiderDelNotesinSalesR
+  description: 'Determines whether or not to include delivery notes - for which invoices have not yet been issued - in the total for a specified restriction. Field name: AddDlnBlnc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ConsiderDelNotesinSalesR.html
+  field_name: AddDlnBlnc
+- name: ConsumeForecast
+  description: 'Determines whether to subtract (tYES) or to add (tNO) item quantities of sales orders and reverse invoices from the forecast. Field name: ConsumeFCT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ConsumeForecast.html
+  field_name: ConsumeFCT
+- name: ConsumptionMethod
+  description: 'Sets or returns the default method for forecast consumption, either Backward-to-Forward or Forward-to-Backward . Field name: ConsumeMtd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ConsumptionMethod.html
+  field_name: ConsumeMtd
+- name: ContinuousStockManagement
+  description: 'Determines whether or not to manage the inventory as Perpetual Inventory . Field name: ContInvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ContinuousStockManagement.html
+  field_name: ContInvnt
+- name: ContinuousStockSystem
+  description: 'Sets or returns the default inventory valuation method, either Moving Average , Standard Price , or FIFO . Applicable is case the value of ContinuousStockManagement is tYES . Field name: InvntSystm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ContinuousStockSystem.html
+  field_name: InvntSystm
+- name: CopyAttachmentsFromBaseToTarget
+  description: 'Copy automatically attachments from base to target document. Field name: CpyBaseAtc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CopyAttachmentsFromBaseToTarget.html
+  field_name: CpyBaseAtc
+- name: CopyAttachmentsFromBOM
+  description: 'Copy attachments automatically from BOM to production order. Field name: CpyBomAtc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CopyAttachmentsFromBOM.html
+  field_name: CpyBomAtc
+- name: CopyExchangeRateInCopyTo
+  description: 'Indicates whether to copy the exchange rate to the target document. Field name: CpyExhRate.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CopyExchangeRateInCopyTo.html
+  field_name: CpyExhRate
+- name: CopyOpenRowsToDelivery
+  description: property CopyOpenRowsToDelivery
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CopyOpenRowsToDelivery.html
+- name: CopySingleCounterToIndividualCounter
+  description: 'Indicates whether to copy the single counter to the individual counter (multiple counters). Field name: INCSingToV.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CopySingleCounterToIndividualCounter.html
+  field_name: INCSingToV
+- name: Country
+  description: 'Sets or returns the company Country . Field name: Country ). This a foreign key to the Countries table (OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~Country.html
+- name: CreateAutoVATLineinJDT
+  description: 'Determines whether or not to calculate VAT automatically based on the VAT group defined for the account. Field name: AutoVat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CreateAutoVATLineinJDT.html
+  field_name: AutoVat
+- name: CreateOnlineQuotation
+  description: property CreateOnlineQuotation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CreateOnlineQuotation.html
+- name: CreditBalancewithMinusSign
+  description: 'Determines whether credit balances are displayed as negative (tYES) or positive (tNO) amounts for G/L accounts and business partners. The default setting is tYES. That is, credit balances for G/L accounts and business partners are displayed as negative amounts. Field name: DispPosDeb .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CreditBalancewithMinusSign.html
+  field_name: DispPosDeb
+- name: CreditDepositType
+  description: 'Determines whether the credit vouchers are submitted automatically or manually. If credit vouchers are submitted manually, the system records the voucher date as the posting date. If credit vouchers are submitted automatically, they are entered by the system when the deposit is made, and the deposit date is recorded as the credit-voucher posting date. Field name: CreditDpst .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CreditDepositType.html
+  field_name: CreditDpst
+- name: CreditRestriction
+  description: 'Determines whether or not to restrict the creation of sales documents for customers and prompt a warning message according to the specified CreditLimit ;of the customer. The credit limit applies to specified types of documents (A/R Invoice, Delivery, and Sales Order). Field name: CreditLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CreditRestriction.html
+  field_name: CreditLimit
+- name: CustomerIdNumber
+  description: 'Sets the default customer ID number (applies only when ISRType is BISR). Used by the automatic payment system in Switzerland. Field name: CustmrDdct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CustomerIdNumber.html
+  field_name: CustmrDdct
+- name: CustomersDeductionatSource
+  description: 'Determines whether or not to withhold tax on amounts paid by customers. Country-specfic for Israel. Field name: CustmrDdct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~CustomersDeductionatSource.html
+  field_name: CustmrDdct
+- name: DataOwnershipManageBy
+  description: property DataOwnershipManageBy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DataOwnershipManageBy.html
+- name: DateSeparator
+  description: 'Sets the character displayed between the date fields. Field name: DateSep .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DateSeparator.html
+  field_name: DateSep
+- name: DateTemplate
+  description: 'Determines how dates are displayed. The setting does not affect how dates are entered. DD = day, with two digits. MM = month, with two digits. Month = month, in words. YY = year, with two digits. YYYY = year, with four digits. CCYY = year, begining with 20__ (21st century) Field name: DateFormat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DateTemplate.html
+  field_name: DateFormat
+- name: DaysBackward
+  description: 'Sets or returns the number of days to go backward while searching for a forecast to consume. Field name: DaysBack .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DaysBackward.html
+  field_name: DaysBack
+- name: DaysForward
+  description: 'Sets or returns the number of days to go forward while searching for a forecast to consume. Field name: DaysFwrd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DaysForward.html
+  field_name: DaysFwrd
+- name: DecimalSeparator
+  description: 'Determines the character that is used to separate an integer from decimals. In the U.S. and U.K., a dot is used; in German-speaking countries, a comma is generally used. Field name: DecSep .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DecimalSeparator.html
+  field_name: DecSep
+- name: DeductionFileNo
+  description: 'Sets and returns the Deduction File No. Length: 50 characters. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DeductionFileNo.html
+  length: 50
+- name: DefaultAccountCurrency
+  description: 'Determines whether or not default AcctCurrency is set for current account. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultAccountCurrency.html
+- name: DefaultBankAccount
+  description: 'Sets or returns the default BankAccount number. Field name: DflBnkAcct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultBankAccount.html
+  field_name: DflBnkAcct
+- name: DefaultBankAccountKey
+  description: 'Sets or returns the key of the default bank account. Field name: DflBnkCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultBankAccountKey.html
+  field_name: DflBnkCode
+- name: DefaultBankNo
+  description: 'Sets or returns the default bank number. Field name: DflBnkCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultBankNo.html
+  field_name: DflBnkCode
+- name: DefaultBranch
+  description: 'Sets or returns the default number of bank branch. Field name: DflBranch . Field name: DflBranch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultBranch.html
+  field_name: DflBranch
+- name: DefaultBudgetCostAssessMt
+  description: 'Sets or returns the default budget method key. Field name: BdgtDflt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultBudgetCostAssessMt.html
+  field_name: BdgtDflt
+- name: DefaultCustomerPaymentTerms
+  description: 'Sets or returns the default payment terms displayed when a new customer master record is entered. Field name: DfCustTerm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultCustomerPaymentTerms.html
+  field_name: DfCustTerm
+- name: DefaultCustomerPriceList
+  description: 'Set default Price List for Customer. Field name: DfltCustPL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultCustomerPriceList.html
+  field_name: DfltCustPL
+- name: DefaultDunningTerm
+  description: 'Sets or returns the default DunningTerm displayed when a new customer master record is entered. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultDunningTerm.html
+- name: DefaultforBatchStatus
+  description: 'Sets or returns the default batch status. The valid values are: Released , Not Accessible , and Locked. Field name: BtchStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultforBatchStatus.html
+  field_name: BtchStatus
+- name: DefaultTaxCode
+  description: 'Sets or returns the default sales tax Code . This is a foreign key to Code of the SalesTaxCodes object. Length: 8 characters. Field name: DflTaxCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultTaxCode.html
+  field_name: DflTaxCode
+  length: 8
+- name: DefaultVendorPaymentTerms
+  description: 'Sets or returns the default payment terms displayed when a new vendor master record is entered. Field name: DfVendTerm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultVendorPaymentTerms.html
+  field_name: DfVendTerm
+- name: DefaultVendorPriceList
+  description: 'Set default Price List for Vendor. Field name: DfltVendPL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultVendorPriceList.html
+  field_name: DfltVendPL
+- name: DefaultWarehouse
+  description: 'Sets or returns the DefaultWarehouse to be used for new items. Field name: DfltWhs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DefaultWarehouse.html
+  field_name: DfltWhs
+- name: DeferredTax
+  description: 'Determines whether or not the system allows DeferredTax . The deferred tax represents a tax on a current book year earnings that will be paid in a future year. Field name: DeferrTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DeferredTax.html
+  field_name: DeferrTax
+- name: DeferredTaxforVendors
+  description: 'Determines whether or not the system allows the use of Deferred Tax account by Vendors. Field name: defTaxVend .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DeferredTaxforVendors.html
+  field_name: defTaxVend
+- name: DirectIndirectRate
+  description: 'Determines the exchange rate posting: Direct or Indirect. That is, the method for calculating the amount of a transaction in local and foreign currencies. Once a journal entry is posted, this setting cannot be modified. Field name: DirectRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DirectIndirectRate.html
+  field_name: DirectRate
+- name: DisplayBatchQtyUoMBy
+  description: property DisplayBatchQtyUoMBy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayBatchQtyUoMBy.html
+- name: DisplayBookkeepingWindow
+  description: 'Determines whether or not to display account balance by control account. Field name: DspBokpWin .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayBookkeepingWindow.html
+  field_name: DspBokpWin
+- name: DisplayCancelDocInReport
+  description: 'Indicates whether or not to report cancelled and cancellation documents. Field name: CmdDisBoth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayCancelDocInReport.html
+  field_name: CmdDisBoth
+- name: DisplayCurrencyontheRight
+  description: 'Determines on which side of an amount the currency symbol is displayed. Field name: CurOnRight .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayCurrencyontheRight.html
+  field_name: CurOnRight
+- name: DisplayInactivePriceListInDocuments
+  description: property DisplayInactivePriceListInDocuments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayInactivePriceListInDocuments.html
+- name: DisplayInactivePriceListInReports
+  description: property DisplayInactivePriceListInReports
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayInactivePriceListInReports.html
+- name: DisplayInactivePriceListInSettings
+  description: property DisplayInactivePriceListInSettings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayInactivePriceListInSettings.html
+- name: DisplayPriceforPriceOnly
+  description: 'Determines whether or not to include VAT amount in sales quotations. Field name: TreePricOn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayPriceforPriceOnly.html
+  field_name: TreePricOn
+- name: DisplayRoundingRemark
+  description: 'Determines whether or not a note is displayed in the Remarks field of a foreign-currency invoice when the discount amount is different from the discount percentage due to rounding. Field name: RoundRmrk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DisplayRoundingRemark.html
+  field_name: RoundRmrk
+- name: DocConfirmation
+  description: 'Determines whether or not the system validates the authorization of purchase and sales documents. Field name: useDocWrf .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DocConfirmation.html
+  field_name: useDocWrf
+- name: DontOverwriteAtcWithSameName
+  description: 'Do not overwrite attachments with the same name. Field name: DnOvrwrAtc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~DontOverwriteAtcWithSameName.html
+  field_name: DnOvrwrAtc
+- name: ElectronicReportInfo
+  description: Setup values for electronic reports.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ElectronicReportInfo.html
+- name: eMail
+  description: 'Sets or returns the default email address of the user. Length: 100 characters. Field name: E_Mail .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~eMail.html
+  field_name: E_Mail
+  length: 100
+- name: EmployerReference
+  description: 'Sets or returns the Employer''s Reference. Country-Specific for UK. Field name: EmployerRf . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EmployerReference.html
+  field_name: EmployerRf
+  length: 32
+- name: EnableAdvancedGLAccountDetermination
+  description: 'Whether to manage the inventory G/L account determination according to a flexible and centralized method. Field name: NewAcctDe .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableAdvancedGLAccountDetermination.html
+  field_name: NewAcctDe
+- name: EnableApprovalProcedureInDI
+  description: 'Determines whether or not the approval procedure is enabled in DI. Field name: EnbApprDI .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableApprovalProcedureInDI.html
+  field_name: EnbApprDI
+- name: EnableAuthorizerUpdatePendingDraft
+  description: property EnableAuthorizerUpdatePendingDraft
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableAuthorizerUpdatePendingDraft.html
+- name: EnableBranches
+  description: property EnableBranches
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableBranches.html
+- name: EnableCentralizedIncomingPayments
+  description: property EnableCentralizedIncomingPayments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableCentralizedIncomingPayments.html
+- name: EnableCentralizedOutgoingPayments
+  description: property EnableCentralizedOutgoingPayments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableCentralizedOutgoingPayments.html
+- name: EnableDigitalPayments
+  description: property EnableDigitalPayments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableDigitalPayments.html
+- name: EnableExternalTax
+  description: property EnableExternalTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableExternalTax.html
+- name: EnableMultipleSchedulings
+  description: property EnableMultipleSchedulings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableMultipleSchedulings.html
+- name: EnablePaymentDueDates
+  description: property EnablePaymentDueDates
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnablePaymentDueDates.html
+- name: EnableSeparatePriceMode
+  description: property EnableSeparatePriceMode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableSeparatePriceMode.html
+- name: EnableUpdateBAPriceAndPlannedAmount
+  description: property EnableUpdateBAPriceAndPlannedAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableUpdateBAPriceAndPlannedAmount.html
+- name: EnableUpdateDocAfterApproval
+  description: property EnableUpdateDocAfterApproval
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableUpdateDocAfterApproval.html
+- name: EnableUpdateDraftDuringApproval
+  description: property EnableUpdateDraftDuringApproval
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EnableUpdateDraftDuringApproval.html
+- name: EORINumber
+  description: property EORINumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~EORINumber.html
+- name: ExcelFolderPath
+  description: 'Sets or returns the path to the Microsoft Excel documents exported from the SAP Business One application. Field name: ExcelPath . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ExcelFolderPath.html
+  field_name: ExcelPath
+  length: 16
+- name: ExpirationDate
+  description: 'Sets or returns the expiration date of the withholding tax certificate that applies to sales documents. Applicable when SHandleWT is set to tYES . Field name: DdctExpire .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ExpirationDate.html
+  field_name: DdctExpire
+- name: ExtendedAdminInfo
+  description: Provides access to extended administration properties.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ExtendedAdminInfo.html
+- name: FaxNumber
+  description: 'Sets or returns the recipient fax number. Length: 50 characters. Field name: Fax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FaxNumber.html
+  field_name: Fax
+  length: 50
+- name: FaxNumberForeignLang
+  description: 'Sets or returns the default fax number in foreign language. Field name: FaxF . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FaxNumberForeignLang.html
+  field_name: FaxF
+  length: 50
+- name: FCCheckAccount
+  description: 'Determines whether or not to the use of Foreign Currency Check Account is permitted. Field name: FcNoBlnc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FCCheckAccount.html
+  field_name: FcNoBlnc
+- name: FederalTaxID
+  description: 'Sets or returns the main federal tax ID of the company. Length: 32 characters. See also: Documents Object , Warehouses Object , BPAddresses Object . Field name: TaxIdNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FederalTaxID.html
+  field_name: TaxIdNum
+  length: 32
+- name: FederalTaxID2
+  description: 'Sets or returns the second federal tax ID (if relevant) of the company. Field name: TaxIdNum2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FederalTaxID2.html
+  field_name: TaxIdNum2
+- name: FederalTaxID3
+  description: 'Sets or returns the third federal tax ID (if relevant) of the company. Field name: TaxIdNum3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FederalTaxID3.html
+  field_name: TaxIdNum3
+- name: FileNumberinIncomeTax
+  description: 'Sets or returns the IRS file number of the company. Country-specfic for US only. Field name: IRSFileNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~FileNumberinIncomeTax.html
+  field_name: IRSFileNo
+- name: GeneralManager
+  description: 'The general manager (local). Field name: Manager1 Length: 100 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GeneralManager.html
+  field_name: Manager1
+  length: 100
+- name: GeneralManagerForeignLanguage
+  description: 'The general manager (foreign language). Field name: Manager1F Length: 100 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GeneralManagerForeignLanguage.html
+  field_name: Manager1F
+  length: 100
+- name: GLMethod
+  description: 'Sets or returns a valid value of BoGLMethods type that specifies the default G/L accounts for posting transactions related to the item. source: Warehouses , ItemGroups , or specified in the item level. Field name: GLMethod .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GLMethod.html
+- name: GrossProfitAfterSale
+  description: 'Determines whether or not to enable gross profit calculation for sales documents. See also CalculateGrossProfitperTra Field name: GrossBySal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GrossProfitAfterSale.html
+  field_name: GrossBySal
+- name: GrossProfitPercentForServiceDocuments
+  description: 'The default gross profit percentage rate for calculating gross profit in sales documents of service type. Field name: GPPrcntSrv'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GrossProfitPercentForServiceDocuments.html
+  field_name: GPPrcntSrv
+- name: GTSDefaultChecker
+  description: property GTSDefaultChecker
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSDefaultChecker.html
+- name: GTSDefaultPayee
+  description: property GTSDefaultPayee
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSDefaultPayee.html
+- name: GTSInboundFolder
+  description: property GTSInboundFolder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSInboundFolder.html
+- name: GTSMaxAmount
+  description: property GTSMaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSMaxAmount.html
+- name: GTSOutboundFolder
+  description: property GTSOutboundFolder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSOutboundFolder.html
+- name: GTSResponseToExceeding
+  description: property GTSResponseToExceeding
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSResponseToExceeding.html
+- name: GTSSeparateCode
+  description: property GTSSeparateCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~GTSSeparateCode.html
+- name: HolidaysName
+  description: 'Sets or returns a foreign key to the OHLD table that defines the holidays of one year. Field name: HldCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~HolidaysName.html
+  field_name: HldCode
+- name: IEMandatoryValidation
+  description: property IEMandatoryValidation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~IEMandatoryValidation.html
+- name: InstitutionCode
+  description: property InstitutionCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InstitutionCode.html
+- name: InventoryCountingHighlightCountersDifference
+  description: property InventoryCountingHighlightCountersDifference
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InventoryCountingHighlightCountersDifference.html
+- name: InventoryCountingHighlightMaxVariance
+  description: property InventoryCountingHighlightMaxVariance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InventoryCountingHighlightMaxVariance.html
+- name: InventoryCountingHighlightVariance
+  description: property InventoryCountingHighlightVariance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InventoryCountingHighlightVariance.html
+- name: InventoryPostingHighlightVariance
+  description: property InventoryPostingHighlightVariance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InventoryPostingHighlightVariance.html
+- name: InventoryPostingReleaseOnlySerialAndBatch
+  description: property InventoryPostingReleaseOnlySerialAndBatch
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~InventoryPostingReleaseOnlySerialAndBatch.html
+- name: IsPrinterConnected
+  description: property IsPrinterConnected
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~IsPrinterConnected.html
+- name: ISRBillerID
+  description: 'Sets or returns the ISRBillerId. (country-specific for Switzerland only). Length: 9 Characters. Field name: ISRBillerID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ISRBillerID.html
+  length: 9
+- name: IsRemoveUnpricedValue
+  description: property IsRemoveUnpricedValue
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~IsRemoveUnpricedValue.html
+- name: ISRType
+  description: 'Sets or returns the ISRType value. (country-specific for Switzerland only). See also: UseTax Field name: ISRBillerI .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ISRType.html
+  field_name: ISRBillerI
+- name: IssuePrimarilyBy
+  description: Specify whether you want to pick the serial or batch items for issuing according to their bin locations or their serial or batch information.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~IssuePrimarilyBy.html
+- name: LetterHeaderinForeignLangu
+  description: 'Sets or returns the header (full company name in foreign language) in printed documents. Length: 100 characters. Field name: PrintHdrF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~LetterHeaderinForeignLangu.html
+  field_name: PrintHdrF
+  length: 100
+- name: LocalCurrency
+  description: 'The currency of a company code (country currency) in which the local ledgers are managed. The company uses the local currency for reporting to the local tax authorities. Note: once a journal entry for an item or its master data record has been entered in SAP Business One, the local currency cannot be modified. Field name: MainCurncy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~LocalCurrency.html
+  field_name: MainCurncy
+- name: ManagingDirector
+  description: 'Sets or returns the Managing Director''s name. Length: 100 characters. Field name: Manager .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ManagingDirector.html
+  field_name: Manager
+  length: 100
+- name: ManagingDirectorForeignLan
+  description: 'Sets or returns the Managing Director''s name in Foreign Language. Field name: ManagerF . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ManagingDirectorForeignLan.html
+  field_name: ManagerF
+  length: 100
+- name: MaxDaysForCancel
+  description: 'The maximum number of days for cancelling marketing documents after posting. Field name: CnclMaxDay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MaxDaysForCancel.html
+  field_name: CnclMaxDay
+- name: MaxHistory
+  description: 'Determines the maximum number of records saved in the log file (default: 99). The log file saves the history of changes made in master records (items, business partners and G/L accounts) and in payments. Field name: MaxHistory .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MaxHistory.html
+- name: MaximumNumberOfDaysForDueDate
+  description: property MaximumNumberOfDaysForDueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MaximumNumberOfDaysForDueDate.html
+- name: MeasuringAccuracy
+  description: 'Determines the respective number of decimal places displayed for measurment units. This setting only affects the display. The system always calculates precisely to six decimal places. Field name: MeasureDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MeasuringAccuracy.html
+  field_name: MeasureDec
+- name: MinimumAmountfor347Report
+  description: 'Sets the minimum reporting threshhold amount to include in the 347 Report. Country-specfic for Spain. Field name: MinAmnt347 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MinimumAmountfor347Report.html
+  field_name: MinAmnt347
+- name: MultiCurrencyCheck
+  description: 'Determines whether or not to block Multi Currency Journal Entry . Field name: MultiCurr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MultiCurrencyCheck.html
+  field_name: MultiCurr
+- name: MultiLanguageSupportEnable
+  description: 'Determines whether or not to enable multi language support. See also: MultiLanguageTranslations . Field name: MultiCurr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~MultiLanguageSupportEnable.html
+  field_name: MultiCurr
+- name: NationalInsuranceNo
+  description: 'Sets or returns the national insurance number that applies to sales documents. Applicable when SHandleWT is set to tYES . Length: 20 characters. Field name: NINum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~NationalInsuranceNo.html
+  field_name: NINum
+  length: 20
+- name: NumberOfCharInMonth
+  description: property NumberOfCharInMonth
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~NumberOfCharInMonth.html
+- name: OrderBlock
+  description: 'Determines whether or not to block posting of documents that automatically create journal entries (invoices, credit memos, deposits, and payments). Field name: OrderBlock .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~OrderBlock.html
+- name: OrderingParty
+  description: 'Sets the ordering party ID for the Payment Engine add-on. Field name: OrderParty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~OrderingParty.html
+  field_name: OrderParty
+- name: OrganizationNumber
+  description: 'Determines the organization number, which is used for the payment generator (Country-specfic for some EU countries). Field name: OrgNumber Length: 100 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~OrganizationNumber.html
+  field_name: OrgNumber
+  length: 100
+- name: ParamFolderPath
+  description: 'Sets or returns the Parameters Folder Path . Field name: ParamPath . Length: 16 characters. Field name: ParamPath .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ParamFolderPath.html
+  field_name: ParamPath
+  length: 16
+- name: PBSGroupNumber
+  description: '>Determines the customer group number, which is used by the PBS (Country-specific for Denmark). Field name: PBSGroupNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PBSGroupNumber.html
+  field_name: PBSGroupNo
+- name: PBSNumber
+  description: 'Determines the customer identification number, which is used by the PBS. (Country-specific for Denmark.) Field name: PBSNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PBSNumber.html
+- name: PDefaultWTCode
+  description: 'Sets or returns the default withholding tax code that applies to purchase documents. This is a foreign key to WithholdingTaxCodes object. Applicable when WithholdingTax is set to tYES . Length: 4 characters. Field name: PDfltWT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PDefaultWTCode.html
+  field_name: PDfltWT
+  length: 4
+- name: PDfltITWT
+  description: 'Sets or returns Default Income Tax WTax Code for Purchase documents. Field name: CrdCommUse .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PDfltITWT.html
+  field_name: CrdCommUse
+- name: PercentageAccuracy
+  description: 'Sets or returns the percentage accuracy. Field name: PercentDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PercentageAccuracy.html
+  field_name: PercentDec
+- name: PeriodStatusAutoChange
+  description: 'Determines whether or not to automatically change the Period Status to ''Closing Period''. Field name: PStatAutCh .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PeriodStatusAutoChange.html
+  field_name: PStatAutCh
+- name: PeriodStatusChangeDelay
+  description: 'Sets or returns the delay in days for changing the Period Status to ''Closing Period''. Applicable when the PeriodStatusAutoChange property is set to Y. Field name: PStatDelay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PeriodStatusChangeDelay.html
+  field_name: PStatDelay
+- name: PhoneNumber1
+  description: 'Sets or returns the company''s first default phone number. Length: 50 characters. Field name: Phone1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PhoneNumber1.html
+  field_name: Phone1
+  length: 50
+- name: PhoneNumber1ForeignLang
+  description: 'Sets or returns the first default phone number in foreign language. Length: 50 characters. Field name: Phone1F .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PhoneNumber1ForeignLang.html
+  field_name: Phone1F
+  length: 50
+- name: PhoneNumber2
+  description: 'Sets or returns the second default phone number. Length: 50 characters. Field name: Phone2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PhoneNumber2.html
+  field_name: Phone2
+  length: 50
+- name: PhoneNumber2ForeignLang
+  description: 'Sets or returns the second default phone number in foreign language. Length: 50 characters. Field name: Phone2F .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PhoneNumber2ForeignLang.html
+  field_name: Phone2F
+  length: 50
+- name: PickList
+  description: 'Indicates whether to enforce the credit\commitment limit check when creating pick lists. Field name: PickLimit'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PickList.html
+  field_name: PickLimit
+- name: PriceAccuracy
+  description: 'Sets or returns the respective number of decimal places displayed for prices. This setting only affects the display. The system always calculates precisely to six decimal places. Field name: PriceDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PriceAccuracy.html
+  field_name: PriceDec
+- name: PriceListforCostPrice
+  description: 'Determines the price list on which the gross profit calculation is based. Applicable when CalculateGrossProfitperTra is set to tYES . Field name: CostPrcLst .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PriceListforCostPrice.html
+  field_name: CostPrcLst
+- name: PriceProceedMethod
+  description: property PriceProceedMethod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PriceProceedMethod.html
+- name: PriceSystem
+  description: 'Determines whether or not to enable selection of specific warehoses for stock revaluation. This field is applicable only ContinuousStockManagement is set to tYES . Field name: PriceSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PriceSystem.html
+  field_name: PriceSys
+- name: PrintingHeader
+  description: 'Sets or returns the header (full company name in local language) in printed documents. Length: 100 characters. Field name: PrintHeadr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PrintingHeader.html
+  field_name: PrintHeadr
+  length: 100
+- name: PurchaseApplyExhRatesLnWTax
+  description: 'Apply Purchasing Exchange Rate to WTax Field name: AplyAPExhR.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PurchaseApplyExhRatesLnWTax.html
+  field_name: AplyAPExhR
+- name: PurchaseLnWTax
+  description: 'Enable Withholding Tax in Document Rows for purchasing documents. Field name: EnAPWTLnMX.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PurchaseLnWTax.html
+  field_name: EnAPWTLnMX
+- name: PurchaseOrderConfirmed
+  description: 'Determines whether or not to enable drawing of purchase orders to target documents. Field name: PriceDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PurchaseOrderConfirmed.html
+  field_name: PriceDec
+- name: PurchasePostPaymentCategoryLnWTax
+  description: 'Post Purchase Payment Category WTax. Field name: PoAPPayCat.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~PurchasePostPaymentCategoryLnWTax.html
+  field_name: PoAPPayCat
+- name: QueryAccuracy
+  description: 'Determines the number of decimal places for calculated fields in queries. Field name: QueryDec.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~QueryAccuracy.html
+  field_name: QueryDec
+- name: RateAccuracy
+  description: 'Determines the respective number of decimal places displayed for exchange rates. This setting only affects the display. The system always calculates precisely to six decimal places. Field name: RateDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RateAccuracy.html
+  field_name: RateDec
+- name: RefreshInWhseQtyInDI
+  description: property RefreshInWhseQtyInDI
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RefreshInWhseQtyInDI.html
+- name: RemoveUpdatePricesBasedOnNonStandardPriceLists
+  description: property RemoveUpdatePricesBasedOnNonStandardPriceLists
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RemoveUpdatePricesBasedOnNonStandardPriceLists.html
+- name: ReportAccordingTo
+  description: property ReportAccordingTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ReportAccordingTo.html
+- name: RestrictDelNotesPO
+  description: 'Determines if delivery documents are blocked when a limit is applied to the customer and it has been exceeded. Field name: DlnLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RestrictDelNotesPO.html
+  field_name: DlnLimit
+- name: RestrictOrders
+  description: 'Determines if orders are blocked when a limit is applied to the customer and it has been exceeded. Field name: OrderLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RestrictOrders.html
+  field_name: OrderLimit
+- name: RestrictSales
+  description: 'Determines if all sales documents are blocked when a limit is applied to the customer and it has been exceeded. Field name: SalesLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RestrictSales.html
+  field_name: SalesLimit
+- name: ReuseDocumentNum
+  description: property ReuseDocumentNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ReuseDocumentNum.html
+- name: ReuseNotaFiscalNum
+  description: property ReuseNotaFiscalNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ReuseNotaFiscalNum.html
+- name: RoundingMethod
+  description: 'Determines whether the amounts in marketing documents are rounded by currency or by document. Field name: RoundMthd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RoundingMethod.html
+  field_name: RoundMthd
+- name: RoundTaxAmounts
+  description: 'Determines whether the amounts in marketing documents are rounded by currency or by document. Field name: RoundMthd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~RoundTaxAmounts.html
+  field_name: RoundMthd
+- name: SalesApplyExhRatesLnWTax
+  description: 'Apply Sales Exchange Rate to WTax. Field name: AplyARExhR.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SalesApplyExhRatesLnWTax.html
+  field_name: AplyARExhR
+- name: SalesLnWTax
+  description: 'Enable Withholding Tax in Document Rows for sales documents. Field name: EnARWTLnMX.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SalesLnWTax.html
+  field_name: EnARWTLnMX
+- name: SalesOrderConfirmed
+  description: 'Determines whether or not to enable drawing of sales orders to target documents. Field name: RdrConfrmd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SalesOrderConfirmed.html
+  field_name: RdrConfrmd
+- name: SalesPostPaymentCategoryLnWTax
+  description: 'Post Sales Payment Category WTax. Field name: PoARPayCat.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SalesPostPaymentCategoryLnWTax.html
+  field_name: PoARPayCat
+- name: SDefaultWTCode
+  description: 'Sets or returns the default withholding tax code that applies to sales documents. This is a foreign key to WithholdingTaxCodes object. Applicable when SHandleWT is set to tYES . Field name: SDfltWT . Length: 4 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SDefaultWTCode.html
+  field_name: SDfltWT
+  length: 4
+- name: SDfltITWT
+  description: 'Sets or returns Default Income Tax WTax Code for Sales documents. Field name: CrdCommUse .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SDfltITWT.html
+  field_name: CrdCommUse
+- name: SEPACreditorID
+  description: property SEPACreditorID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SEPACreditorID.html
+- name: Series
+  description: property Series
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~Series.html
+- name: ServiceCode
+  description: 'Determines whether or not to encrypt data when displaying confidential data. The data includes: G/L account balances, customer and vendor account balances, price lists, and gross profits for the transactions. When selected (Y), the system displays the Encoding Table button. The user can click this button to open the Encoding window for setting the encoding. A different display character can be defined for each character in the table. Field name: UseCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ServiceCode.html
+  field_name: UseCode
+- name: ServicePassword
+  description: 'Determines whether or not to encrypt data when displaying confidential data. The data includes: G/L account balances, customer and vendor account balances, price lists, and gross profits for the transactions. When set to tYES , the system displays the Encoding Table button. The user can click this button to open the Encoding window for setting the encoding. A different display character can be defined for each character in the table. Field name: UseCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ServicePassword.html
+  field_name: UseCode
+- name: SetCommissionbyCustomer
+  description: 'Determines whether or not to calculate commissions by customer specified in the document. Field name: CrdCommUse'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SetCommissionbyCustomer.html
+  field_name: CrdCommUse
+- name: SetCommissionbyItem
+  description: 'Determines whether or not to calculate commision by Item. Field name: ItmCommUse .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SetCommissionbyItem.html
+  field_name: ItmCommUse
+- name: SetCommissionbySE
+  description: 'Determines whether or not to calculate commision by sales emploee Field name: SlpCommUse .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SetCommissionbySE.html
+  field_name: SlpCommUse
+- name: SetItemsWarehouses
+  description: 'Determines whether or no to add all warehouses each time the user creates a new item; and automatically to add a newly defined warehouse to the existing items. Field name: AutoITW .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SetItemsWarehouses.html
+  field_name: AutoITW
+- name: SetResourcesWarehouses
+  description: property SetResourcesWarehouses
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SetResourcesWarehouses.html
+- name: SHandleWT
+  description: 'Determines whether or not to enable withholding tax in sales documents. Field name: SHandleWT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SHandleWT.html
+- name: SirenNo
+  description: property SirenNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SirenNo.html
+- name: SplitPO
+  description: 'Determines whether or not to split a purchase order that relates to more than one warehouse. If set to yes, the system enables to create seoarate purchase orders for each warehouse. Field name: RevisionPo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SplitPO.html
+  field_name: RevisionPo
+- name: StandardUnitofLength
+  description: 'Sets the default units of length measurement for items. When a new item is defined in SAP Business One, these measurement units are displayed automatically. See Also: Items . Field name: DefLengthU .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~StandardUnitofLength.html
+  field_name: DefLengthU
+- name: StartingInFiscalYear
+  description: property StartingInFiscalYear
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~StartingInFiscalYear.html
+- name: State
+  description: 'Sets or returns the state code of the company. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~State.html
+  length: 3
+- name: SystemCurrency
+  description: 'Currency in which the system manages all transactions parallel to the local currency. If the system currency is not identical to the local currency, an exchange rate has to be defined. In Accounting, every document is posted in both the system and the local currency. Company reports than can be generated for both local and system currencies. Field name: BankCountr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~SystemCurrency.html
+  field_name: BankCountr
+- name: TaxCollection
+  description: 'Sets or returns a valid value that determines wether or not to collect vat tax. Field name: VatCharge .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxCollection.html
+  field_name: VatCharge
+- name: TaxDefinition
+  description: 'Determines whether or not this company pays VAT. Field name: PayOutVat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxDefinition.html
+  field_name: PayOutVat
+- name: TaxDefinitionforVatitem
+  description: 'Determines the default tax group to be used when selling items. Field name: DfSVatItem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxDefinitionforVatitem.html
+  field_name: DfSVatItem
+- name: TaxDefinitionforVatservice
+  description: 'Determines the default tax group to be used when selling services. Field name: DfSVatServ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxDefinitionforVatservice.html
+  field_name: DfSVatServ
+- name: TaxGroupforPurchaseItem
+  description: 'Determines the default tax group to be used when purchasing items. Field name: DfPVatItem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxGroupforPurchaseItem.html
+  field_name: DfPVatItem
+- name: TaxGroupforServicePurchase
+  description: 'Determines the default tax group to be used when purchasing services. Field name: DfPVatServ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxGroupforServicePurchase.html
+  field_name: DfPVatServ
+- name: TaxOffice
+  description: 'Sets or returns the name of the tax authority. Field name: Revoffice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxOffice.html
+  field_name: Revoffice
+- name: TaxPercentage
+  description: 'Sets the percentage of tax the company is required to pay and collect. Country-specfic for Israel. Field name: VatPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxPercentage.html
+  field_name: VatPrcnt
+- name: TaxRateDetermination
+  description: property TaxRateDetermination
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TaxRateDetermination.html
+- name: ThousandsSeparator
+  description: 'Sets or returns the character that is used to separate thousands. In the U.S. and U.K., a comma is used; in German-speaking countries, a dot is generally used. Field name: ThousSep .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~ThousandsSeparator.html
+  field_name: ThousSep
+- name: TimeTemplate
+  description: 'Determines whether the system displays time in 12-hour or 24-hour format. Field name: TimeFormat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TimeTemplate.html
+  field_name: TimeFormat
+- name: TotalsAccuracy
+  description: 'Determines the respective number of decimal places displayed for amounts. This setting only affects the display. The system always calculates precisely to six decimal places. Field name: SumDec .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~TotalsAccuracy.html
+  field_name: SumDec
+- name: UniqueSerialNo
+  description: 'Determines by which value the system sets serial numbers as unique. The options are: 0 - None 2 - Manufacturer Serial Number 3 - Serial Number 4 - Lot Number Field name: SriUniqFld .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UniqueSerialNo.html
+  field_name: SriUniqFld
+- name: UniqueTaxPayerReference
+  description: 'Sets or returns the Unique Taxpayer Reference (UTR). Country-Specific for UK. Field name: TaxPayerRf . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UniqueTaxPayerReference.html
+  field_name: TaxPayerRf
+  length: 32
+- name: UseDefaultPriceList
+  description: 'Use Default Price List. Field name: UseDfltPL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UseDefaultPriceList.html
+  field_name: UseDfltPL
+- name: UseNegativeAmounts
+  description: 'Determines whether to use negative amounts or a debit/credit switch in reverse transaction. This setting can be changed at any time. Field name in the database: NegAmount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UseNegativeAmounts.html
+- name: UseParentWIPInComponents
+  description: property UseParentWIPInComponents
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UseParentWIPInComponents.html
+- name: UsePASystem
+  description: 'Determines whether or not to create a record for purchase account in journal entries that are related to continuous stock. Note: Once a journal entries has been made, this setting cannot be changed. Field name: UsePaSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UsePASystem.html
+  field_name: UsePaSys
+- name: UseProductionProfitAndLossAccount
+  description: 'The application uses the WIP accounts, inventory accounts, WIP offset accounts, and inventory offset accounts for journal entries of the component transactions between inventory and production. Field: UseProdPL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UseProductionProfitAndLossAccount.html
+- name: UserConversionCode
+  description: 'Determines whether or not to encrypt data when displaying confidential data. The data includes: G/L account balances, customer and vendor account balances, price lists, and gross profits for the transactions. When selected (Y), the system displays the Encoding Table button. The user can click this button to open the Encoding window for setting the encoding. A different display character can be defined for each character in the table. Field name: UseCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UserConversionCode.html
+  field_name: UseCode
+- name: UseTax
+  description: 'Determines the fields to be printed on invoices. Used by the automatic payment system in Switzerland. The options include:ISR = with pre-printed amounts. BISR = with pre-printed amounts. ISR+ = with blank amount fields. BISR+ = with blank amount fields. Field name: ISRType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~UseTax.html
+  field_name: ISRType
+- name: WeightUnitDefault
+  description: 'Sets the default units of weight measurement for items in the Item Master Data form. When a new item is defined in SAP Business One, these weight units are displayed automatically. Field name: DefWeightU .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WeightUnitDefault.html
+  field_name: DefWeightU
+- name: WholdingTaxDedHierarchy
+  description: 'Determines whether or not to use Withholding Tax deduction hierarch. Country specific for Israel. Field name: useDdctTrc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WholdingTaxDedHierarchy.html
+  field_name: useDdctTrc
+- name: WithholdingTaxDdctExpired
+  description: 'Sets or returns the date when withholding tax deduction expires. Field name: DdctExpire .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithholdingTaxDdctExpired.html
+  field_name: DdctExpire
+- name: WithholdingTaxDdctOffice
+  description: 'Sets or returns the withholding tax deduction office address. Length: 100 characters. Field name: DdctOffice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithholdingTaxDdctOffice.html
+  field_name: DdctOffice
+  length: 100
+- name: WithholdingTaxPHandle
+  description: 'Determines whether or not to enable withholding tax in purchasing documents. Set this field to ''Y'' or ''N''. Field name: PHandleWT Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithholdingTaxPHandle.html
+  field_name: PHandleWT
+  length: 1
+- name: WithholdingTaxTdctPercnt
+  description: 'Sets or returns the withholding tax deduction percent. Field name: DdctPercnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithholdingTaxTdctPercnt.html
+  field_name: DdctPercnt
+- name: WithholdingTaxVendorDdct
+  description: 'Determines wether or not vendor deduction exist. Field name: VendorDdct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithholdingTaxVendorDdct.html
+  field_name: VendorDdct
+- name: WithTax
+  description: 'Sets the percentage of tax that must be withheld from amounts paid to the company. Field name: IncomeTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WithTax.html
+  field_name: IncomeTax
+- name: WTAccumAmountAP
+  description: 'Sets the minimum limit for posting the WTax of outgoing payments in local currency, as defined by the government. Field name: WTAccumAmt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WTAccumAmountAP.html
+  field_name: WTAccumAmt
+- name: WTAccumAmountAR
+  description: 'Sets the minimum limit for posting the WTax of incoming payments in local currency, as defined by the government. Field name: WTAccAmtAR .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WTAccumAmountAR.html
+  field_name: WTAccAmtAR
+- name: WTLiableExpense
+  description: 'Not Used. Field name: ExWTLiab .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~WTLiableExpense.html
+  field_name: ExWTLiab
+- name: XMLFileFolderPath
+  description: 'Sets or returns the path to the XML files created with the Export Form to XML function. Field name: XmlPath'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdminInfo~XMLFileFolderPath.html
+  field_name: XmlPath

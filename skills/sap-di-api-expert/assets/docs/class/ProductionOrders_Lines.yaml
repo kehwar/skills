@@ -1,0 +1,143 @@
+name: ProductionOrders_Lines
+title: ProductionOrders_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines.html
+description: 'The ProductionOrders_Lines is a child object of the ProductionOrders object. Each line represents a component (item) of the product. Source table: WOR1 .'
+remarks: 'To display the form in the application: - Select Production --> Production Orders .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~SetCurrentLine.html
+properties:
+- name: AdditionalQuantity
+  description: 'The value is copied from the Additional Qty field in the Bill of Materials window; however, you can change it manually in the production order. Field name: AdditQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~AdditionalQuantity.html
+  field_name: AdditQty
+- name: BaseQuantity
+  description: 'Sets or returns the quantity of the items required for manufacturing a single product. The default value is retrieved from the Quantity property (ProductTrees object). Field name: BaseQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~BaseQuantity.html
+  field_name: BaseQty
+- name: BatchNumbers
+  description: property BatchNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~BatchNumbers.html
+- name: Count
+  description: Returns the total number of records in the table. Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~Count.html
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocumentAbsoluteEntry
+  description: Returns the production order number ( AbsoluteEntry ).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~DocumentAbsoluteEntry.html
+- name: EndDate
+  description: 'The latest date by which a component needs to be used in the production process. Field: EndDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~EndDate.html
+- name: IssuedQuantity
+  description: 'Sets or returns the total items quantity already issued for the production order. That is, BaseQuantity multiplied by PlannedQuantity (ProductionOrders object). Field name: IssuedQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~IssuedQuantity.html
+  field_name: IssuedQty
+- name: ItemName
+  description: property ItemName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~ItemName.html
+- name: ItemNo
+  description: 'Sets or returns the item code in the inventory. Length: 20 characters. Field name: ItemCode . This is a foreign key to the Items object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~ItemNo.html
+  field_name: ItemCode
+  length: 20
+- name: ItemType
+  description: 'The type of the production item. Field name: ItemType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~ItemType.html
+- name: LineNumber
+  description: 'Returns the current row number in the list. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~LineNumber.html
+  field_name: LineNum
+- name: LineText
+  description: 'Add text in the line. Field name: LineText . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~LineText.html
+  length: 16
+- name: LocationCode
+  description: 'The location for the items in this line of the production order. Field name: LocCode This is a foreign key to the WarehouseLocations object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~LocationCode.html
+  field_name: LocCode
+- name: PlannedQuantity
+  description: 'Sets or returns the total items quantity planned to be issued for the production order. For each component line, the value of this field is calculated according to the following formula: (Planned Quantity of the parent * Base Qty of the component) + Additional Qty of the component. Field name: PlannedQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~PlannedQuantity.html
+  field_name: PlannedQty
+- name: PlasticPackageExemptionReason
+  description: property PlasticPackageExemptionReason
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~PlasticPackageExemptionReason.html
+- name: ProductionOrderIssueType
+  description: 'Determines the method for issuing the components of the product from the inventory, whether Manual or Backflash (automatic). Field name: IssueType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~ProductionOrderIssueType.html
+  field_name: IssueType
+- name: Project
+  description: 'The project that relates to the components of the product. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~Project.html
+  length: 20
+- name: RequiredDays
+  description: 'The number of days required for a specific Resource to complete the Planned Quantity of a particular route stage. This field will be automatically calculated for a production order that has at least one route stage, one resource line, and whose Routing Date Calculation field is either Start Date Forwards or End Date Backwards . Field: ReqDays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~RequiredDays.html
+- name: ResourceAllocation
+  description: 'Determines how the resource allocation will occur, for a production order that has route stages. Field name: ResAlloc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~ResourceAllocation.html
+  field_name: ResAlloc
+- name: SerialNumbers
+  description: property SerialNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~SerialNumbers.html
+- name: StageID
+  description: property StageID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~StageID.html
+- name: StartDate
+  description: 'The earliest date on which the component is needed in the production process. Field name: StartDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~StartDate.html
+- name: UoMCode
+  description: 'The unique code for the UoM. Field name: UomCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~UoMCode.html
+  field_name: UomCode
+  length: 20
+- name: UoMEntry
+  description: 'The internal key of the UoM. Field name: UomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~UoMEntry.html
+  field_name: UomEntry
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~UserFields.html
+- name: VisualOrder
+  description: 'Returns the visual order number. The value for the first row is null, and from the second row the number starts from 1. Field name: VisOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~VisualOrder.html
+  field_name: VisOrder
+- name: Warehouse
+  description: 'Sets or returns the warehouse identification key from which the items are issued. Field name: wareHouse . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~Warehouse.html
+  field_name: wareHouse
+  length: 8
+- name: WeightOfRecycledPlastic
+  description: property WeightOfRecycledPlastic
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~WeightOfRecycledPlastic.html
+- name: WipAccount
+  description: 'If the production order lines are populated with components from a BOM, the account defined in the WIP Account field of the BOM for the relevant component populates this field. If theWIP Account field for the relevant component is blank in the BOM, this account is blank, too. You can manually update the account in this field before the production order closure. The value of this field is then copied into the Account Code field of the issue for production. Field name: WipActCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Lines~WipAccount.html
+  field_name: WipActCode

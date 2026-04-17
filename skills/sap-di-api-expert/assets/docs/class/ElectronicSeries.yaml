@@ -1,0 +1,52 @@
+name: ElectronicSeries
+title: ElectronicSeries Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries.html
+description: ElectronicSeries Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~ToXMLString.html
+properties:
+- name: ApprovalNumber
+  description: property ApprovalNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~ApprovalNumber.html
+- name: ApprovalYear
+  description: property ApprovalYear
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~ApprovalYear.html
+- name: ElectronicSeries
+  description: property ElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~ElectronicSeries.html
+- name: InitialNumber
+  description: property InitialNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~InitialNumber.html
+- name: LastNumber
+  description: property LastNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~LastNumber.html
+- name: Name
+  description: property Name
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~Name.html
+- name: NextNumber
+  description: property NextNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~NextNumber.html
+- name: Prefix
+  description: property Prefix
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~Prefix.html
+- name: Remarks
+  description: property Remarks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~Remarks.html
+- name: Series
+  description: property Series
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicSeries~Series.html

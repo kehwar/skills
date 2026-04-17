@@ -1,0 +1,181 @@
+name: StockTransfer_Lines
+title: StockTransfer_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines.html
+description: 'StockTransfer_Lines is a child object of the StockTransfer object that represents the line entries of each stock transfer. Each line contains detailed information about the way items are transferred from one warehouse to the other. Source table: WTR1 .'
+remarks: 'Mandatory fields in SAP Business One: ItemCode and WarehouseCode . To display the form in the application: - Select Inventory --> Inventory Transactions --> Inventory Transfer .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~SetCurrentLine.html
+properties:
+- name: AdditionalIdentifier
+  description: Field used for Taric No. for E-Books in Greece.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~AdditionalIdentifier.html
+- name: BaseEntry
+  description: 'Sets or returns the source Document ID. Field name: BaseEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~BaseEntry.html
+- name: BaseLine
+  description: 'Sets or returns the line number in the source document. Field name: BaseLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~BaseLine.html
+- name: BaseType
+  description: 'Sets or returns a valid value of InvBaseDocTypeEnum that determines the document type. Field name: BaseType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~BaseType.html
+- name: BatchNumbers
+  description: Returns the BatchNumbers child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~BatchNumbers.html
+- name: BinAllocations
+  description: The bin allocation of items or serial items or batch items.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~BinAllocations.html
+- name: CCDNumbers
+  description: property CCDNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~CCDNumbers.html
+- name: Count
+  description: Returns the total rows in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Count.html
+- name: Currency
+  description: 'Sets or returns the price currency used in the document row. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Currency.html
+  length: 3
+- name: DiscountPercent
+  description: 'Sets or returns the discount percentage of the item''s Price . Field name: DiscPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DiscountPercent.html
+  field_name: DiscPrcnt
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocEntry
+  description: 'The internal ID of the document. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~DocEntry.html
+- name: Factor
+  description: 'Sets or returns the value of the first factor for calculating the item''s quantity in the row. Field name: Factor1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Factor.html
+  field_name: Factor1
+- name: Factor2
+  description: 'Sets or returns the value of the first factor for calculating the item''s quantity in the row. Field name: Factor2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Factor2.html
+- name: Factor3
+  description: 'Sets or returns the value of the first factor for calculating the item''s quantity in the row. Field name: Factor3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Factor3.html
+- name: Factor4
+  description: 'Sets or returns the value of the first factor for calculating the item''s quantity in the row. Field name: Factor4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Factor4.html
+- name: FromWarehouseCode
+  description: 'The warehouse code from which the items are withdrawn. Field name: FromWhsCod. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~FromWarehouseCode.html
+  field_name: FromWhsCod
+  length: 8
+- name: InventoryQuantity
+  description: property InventoryQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~InventoryQuantity.html
+- name: ItemCode
+  description: 'Sets or returns the item code in the inventory. The item code must be unique. Mandatory property. Length: 20 characters. Field name: ItemCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~ItemCode.html
+  length: 20
+- name: ItemDescription
+  description: 'Sets or returns the item name/description. Field name: Dscription . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~ItemDescription.html
+  field_name: Dscription
+  length: 100
+- name: LineNum
+  description: 'Returns the current row number in the items list. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~LineNum.html
+- name: LineStatus
+  description: property LineStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~LineStatus.html
+- name: MeasureUnit
+  description: 'The measurement unit (e.g., inch, cm). Field name: unitMsr . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~MeasureUnit.html
+  field_name: unitMsr
+  length: 20
+- name: PickLists
+  description: Pick list information for lines.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~PickLists.html
+- name: PlasticPackageExemptionReason
+  description: 'Reason for exemption from tax; options are determined by the authorities. Field name: PPTaxExRe. Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~PlasticPackageExemptionReason.html
+  field_name: PPTaxExRe
+  length: 2
+- name: Price
+  description: 'Sets or returns the item price. Field name: Price .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Price.html
+- name: ProjectCode
+  description: 'Sets or returns the project code related to the stock transfer line. Field name: Project .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~ProjectCode.html
+  field_name: Project
+- name: Quantity
+  description: 'Sets or returns the quantity of the specified item. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Quantity.html
+- name: Rate
+  description: 'Sets or returns the currency exchange rate. Field name: Rate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~Rate.html
+- name: RemainingOpenInventoryQuantity
+  description: property RemainingOpenInventoryQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~RemainingOpenInventoryQuantity.html
+- name: RemainingOpenQuantity
+  description: property RemainingOpenQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~RemainingOpenQuantity.html
+- name: SerialNumber
+  description: 'Sets or returns the serial number of the item. Field: SerialNum . Length: 17 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~SerialNumber.html
+  length: 17
+- name: SerialNumbers
+  description: Returns the SerialNumbers object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~SerialNumbers.html
+- name: UnitPrice
+  description: 'Sets or returns this tax invoice raw unit price. Field name: UnitPrice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UnitPrice.html
+- name: UnitsOfMeasurment
+  description: 'The number of items per measurement unit. The measurement unit is defined in the MeasureUnit property. Field name: NumPerMsr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UnitsOfMeasurment.html
+  field_name: NumPerMsr
+- name: UoMCode
+  description: property UoMCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UoMCode.html
+- name: UoMEntry
+  description: property UoMEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UoMEntry.html
+- name: UseBaseUnits
+  description: 'Indicates whether to use the base units as defined in SAP Business One. Field name: UseBaseUn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UseBaseUnits.html
+  field_name: UseBaseUn
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~UserFields.html
+- name: VatGroup
+  description: 'Tax definition. Field name: VatGroup .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~VatGroup.html
+- name: VendorNum
+  description: 'Sets or returns the vendor number that supplied this item. Field name: VendorNum . Length: 17 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~VendorNum.html
+  length: 17
+- name: WarehouseCode
+  description: 'Sets or returns the warehouse code. Mandatory property. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~WarehouseCode.html
+  length: 8
+- name: WeightOfRecycledPlastic
+  description: Total weight of recycled plastic for row of marketing document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_Lines~WeightOfRecycledPlastic.html

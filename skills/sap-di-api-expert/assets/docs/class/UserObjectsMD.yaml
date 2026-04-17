@@ -1,0 +1,151 @@
+name: UserObjectsMD
+title: UserObjectsMD Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD.html
+description: 'The UserObjectsMD object represents the registration data settings, such as table name and supported services, of a user defined object. This object enables you to: - Add a user define object. Retrieve a user define object by its key. Update a user define object . Remove a user define object from the database. Save the object in XML format. Specify the menu location of the UDO. Source table: OUDO . IMPORTANT: After creating a new UDO in .NET, you must release the object by executing the following line of code, where myObject is a reference to the UserObjectsMD object:'
+remarks: 'Mandatory fields in SAP Business One: Code and TableName . To activate the registration wizard in the application: - Select Tools > User Defined Object > User Defined Object Registration . For more information, see the User Defined Object documentation.'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Remove.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Update.html
+properties:
+- name: ApplyAuthorization
+  description: You can control authorizations for user-defined objects (UDOs) in the General Authorizations window.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~ApplyAuthorization.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Browser.html
+- name: CanApprove
+  description: 'Indicates whether the UDO uses the Approve service, which enables a UDO record to be a request and to be approved by the specified workflow template. Field name: CanApprove'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanApprove.html
+- name: CanArchive
+  description: Indicates that the UDO records can be archived. The OnCanArchive virtual method in the implementation DLL for the UDO can specify conditions to limit which records are archived.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanArchive.html
+- name: CanCancel
+  description: 'Indicates whether the UDO uses the Cancel service, which enables users to cancel a UDO record. Field name: CanCancel'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanCancel.html
+- name: CanClose
+  description: 'Indicates whether the UDO uses the Close service, which enables a user to close a UDO record without creating a posting in accounting. Field name: CanClose'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanClose.html
+- name: CanCreateDefaultForm
+  description: 'Indicates whether the UDO uses the Default Form service, which creates a default form that has an ordinary table with selected fields. Field name: CanDefForm'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanCreateDefaultForm.html
+  field_name: CanDefForm
+- name: CanDelete
+  description: 'Indicates whether the UDO uses the Delete service, which enables a user to delete records from Master Data type objects. Field name: CanDelete'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanDelete.html
+- name: CanFind
+  description: 'Indicates whether the UDO uses the Find service, which enables the Choose from list dialog box in the application ( Find Form ). Field name: CanFind'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanFind.html
+- name: CanLog
+  description: 'Indicates whether the UDO uses the History Log service, which creates a history log table in the database. Field name: CanLog'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanLog.html
+- name: CanYearTransfer
+  description: 'Indicates whether the UDO uses the Year Transfer service, which enables the copying of the user tables to a new database. Field name: CanYrTrnsf'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~CanYearTransfer.html
+  field_name: CanYrTrnsf
+- name: ChildTables
+  description: Returns the UserObjectMD_ChildTables child tables.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~ChildTables.html
+- name: Code
+  description: 'Sets or returns the Object Unique ID. The Unique ID is the primary key of the user defined object and its child objects. Length: 20 characters (must include at least one alphabetical character). Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Code.html
+  length: 20
+- name: EnableEnhancedForm
+  description: 'Creates the UDO enhanced form (UDO form with header-line style). Field name: CanNewForm.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~EnableEnhancedForm.html
+  field_name: CanNewForm
+- name: EnhancedFormColumns
+  description: Returns the UserObjectMD_EnhancedFormColumns child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~EnhancedFormColumns.html
+- name: ExtensionName
+  description: 'Sets or returns the name and full path of your business logic implementation (DLL). Length: 254 characters. Field name: ExtName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~ExtensionName.html
+  field_name: ExtName
+  length: 254
+- name: FatherMenuID
+  description: 'The menu ID of the UDO menu''s father menu. Field name: FatherMenuID . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~FatherMenuID.html
+  length: 11
+- name: FindColumns
+  description: Returns the UserObjectMD_FindColumns child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~FindColumns.html
+- name: FormColumns
+  description: Returns the UserObjectMD_FormColumns child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~FormColumns.html
+- name: FormSRF
+  description: 'The *.srf file of the UDO enhanced form (UDO form with header-line style). Field name: NewFormSrf. Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~FormSRF.html
+  field_name: NewFormSrf
+  length: 16
+- name: LogTableName
+  description: 'Sets or returns the log table name. This table maintains a history log of all actions related to the main user table. Length: 19 characters. Field name: LogTable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~LogTableName.html
+  field_name: LogTable
+  length: 19
+- name: ManageSeries
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the user defined object can use the Manage Series service. This service enables document numbering. Field name: MngSeries .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~ManageSeries.html
+  field_name: MngSeries
+- name: MenuCaption
+  description: 'The caption of the UDO menu that appears on the SAP Business One main menu. Field name: MenuCapt . Length: 256 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~MenuCaption.html
+  field_name: MenuCapt
+  length: 256
+- name: MenuItem
+  description: 'Specifies whether to add a UDO menu into the SAP Business One main menu. Field name: MenuItem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~MenuItem.html
+- name: MenuUID
+  description: 'The UID of the UDO menu. Field name: MenuUid . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~MenuUID.html
+  field_name: MenuUid
+  length: 32
+- name: Name
+  description: 'Sets or returns the the object name that must include your name identifier. Length: 100 characters. Field name: Name .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Name.html
+  length: 100
+- name: ObjectType
+  description: 'Sets or returns a valid value of BoUDOObjType type that specifies the object type, Master Data or Document . Field name: TYPE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~ObjectType.html
+  field_name: TYPE
+- name: OverwriteDllfile
+  description: 'Sets or returns a valid value that determines whether or not to overwrite existing Dll file with new Dll file. Field name: OvrWrtDll .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~OverwriteDllfile.html
+  field_name: OvrWrtDll
+- name: PersonalDataProtection
+  description: property PersonalDataProtection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~PersonalDataProtection.html
+- name: Position
+  description: 'The position of the UDO menu under its father menu. Field name: Position . Length: 6 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~Position.html
+  length: 6
+- name: RebuildEnhancedForm
+  description: 'If needed, rebuild the UDO enhanced form (UDO form with header-line style). Field name: IsRebuild.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~RebuildEnhancedForm.html
+  field_name: IsRebuild
+- name: TableName
+  description: 'Sets or returns the the main User Table related to the user defined object. Length: 19 characters. Field name: TableName .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~TableName.html
+  length: 19
+- name: TemplateID
+  description: 'The ID of the workflow template for an approval UDO record. Field name: TemplateID . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~TemplateID.html
+  length: 11
+- name: UseUniqueFormType
+  description: Indicates whether every child form of a parent UDO gets a unique ID. If false, all child forms share the same ID.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectsMD~UseUniqueFormType.html

@@ -1,0 +1,40 @@
+name: PM_StageAttachement
+title: PM_StageAttachement Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement.html
+description: 'Source table: PMG1 .AtcEntry.'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~ToXMLString.html
+properties:
+- name: AbsEntry
+  description: property AbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~AbsEntry.html
+- name: AttachementDate
+  description: property AttachementDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~AttachementDate.html
+- name: FileExtension
+  description: property FileExtension
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~FileExtension.html
+- name: FileName
+  description: property FileName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~FileName.html
+- name: LineId
+  description: property LineID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~LineId.html
+- name: SourcePath
+  description: property SourcePath
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageAttachement~SourcePath.html

@@ -1,0 +1,63 @@
+name: PickLists_Lines
+title: PickLists_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines.html
+description: 'The PickLists_Lines is a child object of the PickLists object. Each line represents an order and its picking details in the pick list. Source table: PKL1 .'
+remarks: 'To display the form in the application: - Select Inventory --> Pick and Pack --> Pick List .'
+methods:
+- name: Add
+  description: Adds a new record to the PKL1 table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~SetCurrentLine.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the identification key of the pick list row as assinged by SAP Business One when adding a new enrty. Field name: AbsEntry . This is a foreign key to the PickLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: BaseObjectType
+  description: 'Sets or returns the type of object on which the pick lists entry is based. Field name: BaseObject .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~BaseObjectType.html
+  field_name: BaseObject
+- name: BatchNumbers
+  description: property BatchNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~BatchNumbers.html
+- name: BinAllocations
+  description: property BinAllocations
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~BinAllocations.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~Count.html
+- name: LineNumber
+  description: 'Returns the current row number in the pick list. Field name: PickEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~LineNumber.html
+  field_name: PickEntry
+- name: OrderEntry
+  description: 'Sets or returns the number of the sales order. Field name: OrderEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~OrderEntry.html
+- name: OrderRowID
+  description: 'Sets or returns the LineNum in the document. Field name: OrderLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~OrderRowID.html
+  field_name: OrderLine
+- name: PickedQuantity
+  description: 'Sets or returns the quantity of the items that were picked. Field name: PickQtty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~PickedQuantity.html
+  field_name: PickQtty
+- name: PickStatus
+  description: 'Returns a valid value that specifies the status of the order row in the pick list. Field name: PickStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~PickStatus.html
+- name: PreviouslyReleasedQuantity
+  description: 'Returns the quantity of the items that were released in the previous pick. Field name: PrevReleas .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~PreviouslyReleasedQuantity.html
+  field_name: PrevReleas
+- name: ReleasedQuantity
+  description: 'Sets or returns the quantity of the items that were released. Field name: RelQtty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~ReleasedQuantity.html
+  field_name: RelQtty
+- name: SerialNumbers
+  description: property SerialNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~SerialNumbers.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists_Lines~UserFields.html

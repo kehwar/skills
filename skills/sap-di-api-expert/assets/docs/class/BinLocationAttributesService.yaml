@@ -1,0 +1,31 @@
+name: BinLocationAttributesService
+title: BinLocationAttributesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService.html
+description: 'The BinLocationAttributesService service enables you to add, look up, update, and remove bin location attributes codes. Source table: OBAT .'
+remarks: To access the Bin Location Attribute Codes - Setup window, from the SAP Business One Main Menu , choose Administration --> Setup --> Inventory --> Bin Locations --> Bin Location Attribute Codes .
+methods:
+- name: Add
+  description: Adds a bin location attribute code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~Add.html
+- name: Delete
+  description: Deletes an existing bin location attribute code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~Delete.html
+- name: Get
+  description: Retrieves a bin location attribute code. The bin location attribute code is specified by its key, which is contained in the BinLocationAttributeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BinLocationAttributesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the BinLocationAttributeCollectionParams data collection that identifies all bin location attribute codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~GetList.html
+- name: Update
+  description: Updates an existing bin location attribute code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationAttributesService~Update.html

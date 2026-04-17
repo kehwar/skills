@@ -1,0 +1,25 @@
+name: RecipientCollection
+title: RecipientCollection Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection.html
+description: RecipientCollection is a collection of Recipient data structures. It represents the list of receipients of a message (replaces the Recipients object - backward compatibilty is maintained).
+methods:
+- name: Add
+  description: Adds a receipient to a message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to an existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the total number of Recipient s of a message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecipientCollection~Count.html

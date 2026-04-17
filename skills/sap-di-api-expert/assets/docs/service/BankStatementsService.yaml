@@ -1,0 +1,31 @@
+name: BankStatementsService
+title: BankStatementsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService.html
+description: 'This service manages bank statements drafts that can be posted in SAP Business One. The service lets you add, update, delete, get, and get list of bank statements. Source tables: OBNH , OBNK , BNK1 .'
+remarks: 'Country-specific: Austria, Belgium, Czech Republic, Germany, Denmark, Finland, France, Netherlands, Norway, and Sweden. In new 2006 A installations, the BankStatements service is activated by default. When upgrading to 2006 A, the service is disabled . To activate it: in Administration > System Initialization > Company Details , choose the Basic Initialization tab and select Install Bank Statement Process . You will not be able to use thise service if it is not activated. When the BankStatement service is activated, you can use both this service and the BankPages object (without account that are in the accounts list of House Bank).'
+methods:
+- name: AddBankStatement
+  description: Adds a bank statement row.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~AddBankStatement.html
+- name: DeleteBankStatement
+  description: Deletes the specified bank statement row.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~DeleteBankStatement.html
+- name: GetBankStatement
+  description: Returns an instance of BankStatement object according to the specified number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~GetBankStatement.html
+- name: GetBankStatementList
+  description: Returns a collection of bank statement rows by a specified filter. The filter is defined in BankStatementsFilter object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~GetBankStatementList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~GetDataInterfaceFromXMLString.html
+- name: UpdateBankStatement
+  description: Updates an existing bank statement.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementsService~UpdateBankStatement.html

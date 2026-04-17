@@ -1,0 +1,31 @@
+name: CostElement
+title: CostElement Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement.html
+description: CostElement Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~ToXMLString.html
+properties:
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~Code.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~Description.html
+- name: IsActive
+  description: property IsActive
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CostElement~IsActive.html

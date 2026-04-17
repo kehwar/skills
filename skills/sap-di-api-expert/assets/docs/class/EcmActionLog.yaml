@@ -1,0 +1,55 @@
+name: EcmActionLog
+title: EcmActionLog Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog.html
+description: EcmActionLog Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~ToXMLString.html
+properties:
+- name: ActionID
+  description: property ActionID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~ActionID.html
+- name: AuthorityProcess
+  description: "This is an obsolete API object which represents data from table ECM3 containing a list of important events which happened during e-document processing. For example, data which were sent to the authorities, authority response, error details, some parameters used during communication with authorities. \"AuthorityProcess\" denotes (for particular electronic document) the type of process which e-document is currently â\x80\x9Cinâ\x80\x9D â\x80\x93 document may be approved or rejected. This process is specific for e-communication protocols, some may use the process, others do not use the process."
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~AuthorityProcess.html
+- name: Data
+  description: property Data
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~Data.html
+- name: ExportFile
+  description: property ExportFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~ExportFile.html
+- name: ExportFormat
+  description: property ExportFormat
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~ExportFormat.html
+- name: IsSensitive
+  description: Distinction for if electronic protocol parameter is sensitive and encrypted in database or it is not sensitive.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~IsSensitive.html
+- name: LogDate
+  description: property LogDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~LogDate.html
+- name: LogID
+  description: property LogID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~LogID.html
+- name: LogTime
+  description: property LogTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~LogTime.html
+- name: Message
+  description: property Message
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~Message.html
+- name: Type
+  description: property Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EcmActionLog~Type.html

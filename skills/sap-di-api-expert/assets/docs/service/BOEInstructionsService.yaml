@@ -1,0 +1,30 @@
+name: BOEInstructionsService
+title: BOEInstructionsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService.html
+description: 'This service manages instructions in SAP Business One. Mandatory properties: InstructionCode , InstructionDesc . Source table: OIST .'
+methods:
+- name: AddBOEInstruction
+  description: Adds an Instruction with InstructionCode and InstructionDesc as specified in the BOEInstruction data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~AddBOEInstruction.html
+- name: DeleteBOEInstruction
+  description: Deletes Instruction with InstructionEntry specified in BOEInstructionParams.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~DeleteBOEInstruction.html
+- name: GetBOEInstruction
+  description: Returns an instance of the BOEInstruction data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~GetBOEInstruction.html
+- name: GetBOEInstructionList
+  description: Returns a collection of instances for the BOEInstruction data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~GetBOEInstructionList.html
+- name: GetDataInterface
+  description: Creates empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates data structure from specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates data structure from specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~GetDataInterfaceFromXMLString.html
+- name: UpdateBOEInstruction
+  description: Replaces InstructionCode and InstructionDesc of Instruction with the specified BOEInstruction data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstructionsService~UpdateBOEInstruction.html

@@ -1,0 +1,31 @@
+name: ISDInvoicesService
+title: ISDInvoicesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService.html
+description: 'Source table: OISI .'
+remarks: "For India localization only. To access Input Service Distribution Invoice documents, the path is Purchasing - A/P --> Input Service Distribution â\x80\x93 ISD --> ISD Invoice."
+methods:
+- name: Add
+  description: Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~Add.html
+- name: Cancel
+  description: Cancel
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~Cancel.html
+- name: Get
+  description: Get
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~Get.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: GetList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~GetList.html
+- name: Update
+  description: Update
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDInvoicesService~Update.html

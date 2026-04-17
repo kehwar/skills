@@ -1,0 +1,29 @@
+name: QueueMembers
+title: QueueMembers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers.html
+description: 'is a child object of Queue object and represents SAP Business One users that are members of the queue. Source tables: QUE1 .'
+remarks: 'To display the form in the application: - Select Administration --> Setup --> Service --> Queues . - Select a queue and then click Queue Members .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the number of queue members for the current queue.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~Count.html
+- name: MemberUserID
+  description: 'Sets or returns the Queue''s member user ID. Field name: member . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~MemberUserID.html
+  field_name: member
+- name: QueueID
+  description: 'Sets or returns a unique code for identifying the queue. Mandatory property. Field name: queueID . Length: 20 characters This is a foreign key to the Queue object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~QueueID.html
+  field_name: queueID
+  length: 20
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueueMembers~UserFields.html

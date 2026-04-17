@@ -1,0 +1,49 @@
+name: InternalReconciliationOpenTransRow
+title: InternalReconciliationOpenTransRow Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow.html
+description: InternalReconciliationOpenTransRow Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~ToXMLString.html
+properties:
+- name: CashDiscount
+  description: property CashDiscount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~CashDiscount.html
+- name: CreditOrDebit
+  description: property CreditOrDebit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~CreditOrDebit.html
+- name: ReconcileAmount
+  description: property ReconcileAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~ReconcileAmount.html
+- name: Selected
+  description: property Selected
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~Selected.html
+- name: ShortName
+  description: property ShortName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~ShortName.html
+- name: SrcObjAbs
+  description: property SrcObjAbs
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~SrcObjAbs.html
+- name: SrcObjTyp
+  description: property SrcObjTyp
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~SrcObjTyp.html
+- name: TransId
+  description: property TransId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~TransId.html
+- name: TransRowId
+  description: property TransRowId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransRow~TransRowId.html

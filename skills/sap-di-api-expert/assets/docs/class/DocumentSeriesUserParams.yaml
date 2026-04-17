@@ -1,0 +1,39 @@
+name: DocumentSeriesUserParams
+title: DocumentSeriesUserParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams.html
+description: 'The DocumentSeriesUserParams specifies the identification key combination ( Document , Series and Users ) for which Documents is related. Source table: NNM2 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~ToXMLString.html
+properties:
+- name: Document
+  description: 'Sets or returns the Document code. Field name: ObjectCode . For example: The Document property shall return 13 for A/R Invoice. Length: 20 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~Document.html
+  field_name: ObjectCode
+  length: 20
+- name: DocumentSubType
+  description: 'Sets or returns the Document Sub-Type . Field name: DocSubType . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~DocumentSubType.html
+  field_name: DocSubType
+  length: 2
+- name: Series
+  description: 'Sets or returns the Series Object, part of the document name. Field name: Series .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~Series.html
+- name: User
+  description: 'Sets or returns the User Id, This is a foreign key to the Users object. Field name: UserSign ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentSeriesUserParams~User.html
+  field_name: UserSign

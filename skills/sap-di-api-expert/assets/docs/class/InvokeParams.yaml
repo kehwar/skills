@@ -1,0 +1,9 @@
+name: InvokeParams
+title: InvokeParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InvokeParams.html
+description: Holds a single string value. This object is used to pass a parameter to or receive a return value from the InvokeMethod method of the GeneralService service.
+properties:
+- name: Value
+  description: A value to pass to the InvokeMethod method of the GeneralService service, or a value received from the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InvokeParams~Value.html

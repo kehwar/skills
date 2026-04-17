@@ -1,0 +1,73 @@
+name: SeriesService
+title: SeriesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService.html
+description: 'SeriesService manages the Series object, a component of the document numbering system. Source table: NNM1 (Documents Numbering - Series).'
+remarks: 'See the documentation for the SeriesService methods for more code samples. In general, to use a DI service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or - You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method.'
+methods:
+- name: AddElectronicSeries
+  description: AddElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~AddElectronicSeries.html
+- name: AddSeries
+  description: Adds a new Series to the series Service and returns the SeriesParams identification key.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~AddSeries.html
+- name: AttachSeriesToDocument
+  description: Attach a Series to a document, both defined by a DocumentSeriesParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~AttachSeriesToDocument.html
+- name: ChangeDocumentMenuName
+  description: Modifies the menu name for a specific document type/document subtype.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~ChangeDocumentMenuName.html
+- name: GetDataInterface
+  description: Creates an empty data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Get the data interface from an XML String.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDataInterfaceFromXMLString.html
+- name: GetDefaultElectronicSeries
+  description: GetDefaultElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDefaultElectronicSeries.html
+- name: GetDefaultSeries
+  description: Return the default Series object for a document identified by its DocumentTypeParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDefaultSeries.html
+- name: GetDocumentChangedMenuName
+  description: Retrieves the DocumentChangeMenuName object for modifying the menu name for a specific document type/document subtype.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDocumentChangedMenuName.html
+- name: GetDocumentSeries
+  description: Returns the SeriesCollection of all the Series that match a document identified by its DocumentTypeParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetDocumentSeries.html
+- name: GetElectronicSeries
+  description: GetElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetElectronicSeries.html
+- name: GetSeries
+  description: Returns a Series object identified by its SeriesParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~GetSeries.html
+- name: RemoveElectronicSeries
+  description: RemoveElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~RemoveElectronicSeries.html
+- name: RemoveSeries
+  description: Removes a Series identified by its SeriesParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~RemoveSeries.html
+- name: SetDefaultElectronicSeries
+  description: SetDefaultElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~SetDefaultElectronicSeries.html
+- name: SetDefaultSeriesForAllUsers
+  description: Set a Series , identified by its DocumentTypeParams , as a default Series for all users.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~SetDefaultSeriesForAllUsers.html
+- name: SetDefaultSeriesForCurrentUser
+  description: Set a Series , identified by its DocumentTypeParams , as a default Series for current user.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~SetDefaultSeriesForCurrentUser.html
+- name: SetDefaultSeriesForUser
+  description: Set a default Series for a specific user where the user Id, Series number and the document type are defined by DocumentSeriesUserParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~SetDefaultSeriesForUser.html
+- name: UnattachSeriesFromDocument
+  description: Disconnect a Series from a document where the Series and the document are identified by DocumentSeriesParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~UnattachSeriesFromDocument.html
+- name: UpdateElectronicSeries
+  description: UpdateElectronicSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~UpdateElectronicSeries.html
+- name: UpdateSeries
+  description: Replace a Series by another Series .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SeriesService~UpdateSeries.html

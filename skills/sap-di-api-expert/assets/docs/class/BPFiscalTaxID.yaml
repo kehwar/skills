@@ -1,0 +1,98 @@
+name: BPFiscalTaxID
+title: BPFiscalTaxID Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID.html
+description: 'BPFiscalTaxID is a child object of the BusinessPartners and indicates the Brazilian Fiscal IDs info for each business partner. You can retrieve or set this object by using the FiscalTaxID property of the BusinessPartners object. This object enables you to: - Add the Fiscal IDs of the business partner. - Define the Fiscal TAX IDs for Business Partner Master Data. Source table: CRD7'
+remarks: This Object is specific to Cluster 2B (Country specific property for Brazil only).
+methods:
+- name: Add
+  description: Adds a new record to the CRD7 table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~SetCurrentLine.html
+properties:
+- name: Address
+  description: 'Sets or returns the Business Partner address. Field name: Address . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~Address.html
+  length: 50
+- name: AddrType
+  description: Indicates the type of address for this fiscal ID.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~AddrType.html
+- name: AuthorizationForRetrieveFromSEFAZ
+  description: 'Authorization for retrieve from SEFAZ. Field name: AToRetrNFe .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~AuthorizationForRetrieveFromSEFAZ.html
+  field_name: AToRetrNFe
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~BPCode.html
+- name: CNAECode
+  description: 'Sets or returns the Brazil CNAE code. Field name: CNAEId . This is a foreign key to the CNAE (Change Notification Agent Code) table ( OCNA ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~CNAECode.html
+  field_name: CNAEId
+- name: Count
+  description: Returns the number of Fiscal IDs for current BusinessPartner .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~Count.html
+- name: TaxId0
+  description: 'Sets or returns the Fiscal Tax ID 0. Field name: TaxId0 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId0.html
+  length: 100
+- name: TaxId1
+  description: 'Sets or returns the Fiscal Tax ID 1. Field name: TaxId1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId1.html
+  length: 100
+- name: TaxId10
+  description: 'Sets or returns the Fiscal Tax ID 10. Field name: TaxId10 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId10.html
+  length: 100
+- name: TaxId11
+  description: 'Sets or returns the Fiscal Tax ID 11. Field name: TaxId11 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId11.html
+  length: 100
+- name: TaxId12
+  description: 'Sets or returns the Fiscal Tax ID 12. Field name: TaxId12 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId12.html
+  length: 50
+- name: TaxId13
+  description: 'Sets or returns the Deductee Ref. No. in India. Field name: TaxId13 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId13.html
+  length: 100
+- name: TaxId14
+  description: 'Sets or returns the ITR Filing. Field name: TaxId14 . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId14.html
+  length: 250
+- name: TaxId2
+  description: 'Sets or returns the Fiscal Tax ID 2. Field name: TaxId2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId2.html
+  length: 100
+- name: TaxId3
+  description: 'Sets or returns the Fiscal Tax ID 3. Field name: TaxId3 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId3.html
+  length: 100
+- name: TaxId4
+  description: 'Sets or returns the Fiscal Tax ID 4. Field name: TaxId4 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId4.html
+  length: 100
+- name: TaxId5
+  description: 'Sets or returns the Fiscal Tax ID 5. Field name: TaxId5 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId5.html
+  length: 100
+- name: TaxId6
+  description: 'Sets or returns the Fiscal Tax ID 6. Field name: TaxId6 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId6.html
+  length: 100
+- name: TaxId7
+  description: 'Sets or returns the Fiscal Tax ID 7. Field name: TaxId7 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId7.html
+  length: 100
+- name: TaxId8
+  description: 'Sets or returns the Fiscal Tax ID 8. Field name: TaxId8 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId8.html
+  length: 100
+- name: TaxId9
+  description: 'Sets or returns the Fiscal Tax ID 9. Field name: TaxId9 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~TaxId9.html
+  length: 100
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPFiscalTaxID~UserFields.html

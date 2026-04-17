@@ -1,0 +1,27 @@
+name: EBooksService
+title: EBooksService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService.html
+description: 'Source table: OEBK .'
+methods:
+- name: Get
+  description: Get
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~Get.html
+- name: GetByDocKey
+  description: Return the object which is linked with a certain document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~GetByDocKey.html
+- name: GetByMark
+  description: Return the object by EBK.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~GetByMark.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~GetDataInterfaceFromXMLString.html
+- name: Update
+  description: Update
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EBooksService~Update.html

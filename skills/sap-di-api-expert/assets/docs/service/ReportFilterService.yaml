@@ -1,0 +1,31 @@
+name: ReportFilterService
+title: ReportFilterService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService.html
+description: 'The Report Filter Service is a business object that manages the information displaied by tax report. This object enables user to: - Add new Tax report filter to the service. Delete a Tax report filter from the service. Get a list of all Tax report filter Ids that exists in the service. Update Tax report filter. Get Data interfaces. Source table: OVTR .'
+remarks: 'To use the service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or- You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method. To display the form in the application: - Select -- .'
+methods:
+- name: AddTaxReportFilter
+  description: Adds new TaxReportFilter to the ReportFilterService Object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~AddTaxReportFilter.html
+- name: DeleteTaxReportFilter
+  description: Delete the TaxReportFilter by it key.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~DeleteTaxReportFilter.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an empty data structure defined by data from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an empty data structure defined by data from an XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~GetDataInterfaceFromXMLString.html
+- name: GetTaxReportFilter
+  description: Get a TaxReportFilter by its TaxReportFilterParams identification key.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~GetTaxReportFilter.html
+- name: GetTaxReportFilterList
+  description: Returns a TaxReportFiltersParams object, a data collection of all the instances of TaxReportFilterParams Identification keys that match a given TaxReportFilterParams identification key.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~GetTaxReportFilterList.html
+- name: UpdateTaxReportFilter
+  description: Replace this TaxReportFilter Object with the target TaxReportFilter .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportFilterService~UpdateTaxReportFilter.html

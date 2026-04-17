@@ -1,0 +1,150 @@
+name: TaxReportFilter
+title: TaxReportFilter Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter.html
+description: 'TaxReportFilter is a data structure related to the TaxReportsService . Source table: OVTR .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ToXMLString.html
+properties:
+- name: AppendixOorPSelection
+  description: 'Sets or returns a valid value that determines whether or not this Appendix is O or P selection. Field name: ApndxOOrP .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~AppendixOorPSelection.html
+  field_name: ApndxOOrP
+- name: Cancellation
+  description: 'Sets or returns a valid value that determines whether or not cancelation is required for For EU Sales Report. Field name: ApndxOOrP .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Cancellation.html
+  field_name: ApndxOOrP
+- name: Code
+  description: 'Returns the Abs Entry (numerator) of this tax report. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Code.html
+  field_name: AbsEntry
+- name: DeclarationType
+  description: 'Sets or returns a valid value that determines whether this declaration type is original, substitute or complementary. Field name: Declration .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~DeclarationType.html
+  field_name: Declration
+- name: DiplayCreditMemosInSeparateColumn
+  description: 'Sets or returns a valid value that determines whether or not to display credit memos in separate column. Field name: CreditMemo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~DiplayCreditMemosInSeparateColumn.html
+  field_name: CreditMemo
+- name: DocumentType
+  description: 'Sets or returns a valid value that determines whether or not this document is an A/P Document or an A/R Document. Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~DocumentType.html
+  field_name: DocType
+- name: ExcludeWT
+  description: 'Sets or returns a valid value that determines whether or not to exclude withholding tax for this report. Field name: ExcludeWT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ExcludeWT.html
+- name: FilterType
+  description: 'Sets or returns a valid value that determines the Selection Criteria Type to be used with this report. Field name: Selection Criteria Type .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FilterType.html
+  field_name: Selection
+- name: FirstPrintedNumber
+  description: 'Sets or returns the first printed number in this report. Field name: FirstPrint .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FirstPrintedNumber.html
+  field_name: FirstPrint
+- name: FirstRegisterNumber
+  description: 'Sets or returns the first register number in this report. Field name: FirstReg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FirstRegisterNumber.html
+  field_name: FirstReg
+- name: FromDate
+  description: 'Sets or returns this report period start date. Field name: FromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FromDate.html
+- name: FromSeries
+  description: 'Sets or returns this report first Series. Field name: FromSeries .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~FromSeries.html
+- name: HideTaxWithoutTransaction
+  description: 'Determines whether or not to hide tax without Transaction. Field name: HideNTrans .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~HideTaxWithoutTransaction.html
+  field_name: HideNTrans
+- name: IncludeCustomers
+  description: 'Sets or returns a valid value that determines whether or not to include customers in this report. Field name: CustomerIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~IncludeCustomers.html
+  field_name: CustomerIn
+- name: IncludeDocumentType
+  description: 'Sets or returns a valid value that determines wether or not to include document type in report. Field name: DocTyp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~IncludeDocumentType.html
+  field_name: DocTyp
+- name: IncludeGLAccounts
+  description: 'Sets or returns a valid value that determines wether or not to include GL Accounts in this report. Field name: AccountIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~IncludeGLAccounts.html
+  field_name: AccountIn
+- name: IncludeSeriesFilter
+  description: 'Sets or returns a valid value that determines wether or not to include series filter in this report. Field name: SerieeIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~IncludeSeriesFilter.html
+  field_name: SerieeIn
+- name: IncludeVendors
+  description: 'Sets or returns a valid value that determines wether or not to include vendors in this report . Field name: VendorIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~IncludeVendors.html
+  field_name: VendorIn
+- name: Name
+  description: 'Sets or returns this report name. Field name: ReportName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Name.html
+  field_name: ReportName
+  length: 50
+- name: OpeningAndClosingBalance
+  description: 'Sets or returns the opening and closing balance of this report. Field name: DispOBCB .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~OpeningAndClosingBalance.html
+  field_name: DispOBCB
+- name: Period
+  description: 'Sets or returns the tax report filter period of this report. Field name: Period .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Period.html
+- name: Quarter
+  description: 'Sets or returns the quarter number of this report . Field name: quarter .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Quarter.html
+  field_name: quarter
+- name: QuarterOrDates
+  description: 'Sets or returns a valid value that determines wether this report period is defined by quarters or by start / end dates. Field name: DateRBtn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~QuarterOrDates.html
+  field_name: DateRBtn
+- name: ReportLayout
+  description: 'Sets or returns a valid value that determines the report layout, register book, declaration or base layout. Field name: RptLayout .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ReportLayout.html
+  field_name: RptLayout
+- name: RoundAmount
+  description: 'Sets or returns a valid value that determines wether or not to round this report amount. Field name: RoundSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~RoundAmount.html
+  field_name: RoundSum
+- name: ShowPaymentsWithDeferredTax
+  description: 'Sets or returns a valid value that determines wether or not . Field name: DeferTaxIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ShowPaymentsWithDeferredTax.html
+  field_name: DeferTaxIn
+- name: TaxDate
+  description: 'Sets or returns a valid value that determines wether or not to include tax date. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxDate.html
+- name: TaxReportAccounts
+  description: Returns the TaxReportAccounts object, a Data Collection of TaxReportAccount data structures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxReportAccounts.html
+- name: TaxReportBusinessPartners
+  description: Returns the TaxReportBusinessPartners object, a Data Collection of TaxReportBusinessPartner data structures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxReportBusinessPartners.html
+- name: TaxReportDocuments
+  description: Returns the TaxReportDocuments object, a Data Collection of TaxReportDocument data structures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxReportDocuments.html
+- name: TaxReportGroups
+  description: Returns the TaxReportGroups object, a Data Collection of TaxReportGroup data structures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxReportGroups.html
+- name: TaxReportSeriesCollection
+  description: Returns the TaxReportSeriesCollection object, a Data Collection of TaxReportSeries data structures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~TaxReportSeriesCollection.html
+- name: ToDate
+  description: 'Sets or returns the end date of this report period. Field name: ToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ToDate.html
+- name: ToSeries
+  description: 'Sets or returns the last Series of this report . Field name: ToSeries .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~ToSeries.html
+- name: Year
+  description: 'Sets or returns the year field of this document date. Field name: Year .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportFilter~Year.html

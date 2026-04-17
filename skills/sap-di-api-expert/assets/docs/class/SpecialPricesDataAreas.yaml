@@ -1,0 +1,68 @@
+name: SpecialPricesDataAreas
+title: SpecialPricesDataAreas Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas.html
+description: 'SpecialPricesDataAreas is a child object of SpecialPrices object and represents special prices that are valid only for specified periods such as, holidays and season sales. Source table: SPP1 .'
+remarks: 'To display the form in the application: - Select Inventory --> Price Lists --> Special Prices --> Special Prices for Business Partners . Double-click a line number in the Special Prices for Business Partners table.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~SetCurrentLine.html
+properties:
+- name: AutoUpdate
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the price is updated automatically when the discount or price list number are modified. Field name: AutoUpdt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~AutoUpdate.html
+  field_name: AutoUpdt
+- name: BPCode
+  description: 'Returns the identification code of the business partner for whom the special price applies. The BPCode returns from the CardCode property of the SpecialPrices object. Field name: CardCode . Length: 15 characters. This is a foreign key to the SpecialPrices object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~BPCode.html
+  field_name: CardCode
+  length: 15
+- name: Count
+  description: Returns the total rows in the table, that is the total number of records in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~Count.html
+- name: DateFrom
+  description: 'Sets or returns the start date of the special price. Field name: FromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~DateFrom.html
+  field_name: FromDate
+- name: Dateto
+  description: 'Sets or returns the end date of the special price. Field name: ToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~Dateto.html
+  field_name: ToDate
+- name: Discount
+  description: 'Sets or returns the discount percentage for an item for the specified period. Field name: Discount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~Discount.html
+- name: ItemNo
+  description: 'Returns the item code in the inventory for which the special price applies. The ItemNo returns from the ItemCode property of the SpecialPrices object. Field name: ItemCode . This is a foreign key to the SpecialPrices object. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~ItemNo.html
+  field_name: ItemCode
+  length: 20
+- name: PriceCurrency
+  description: 'Sets or returns the currency of the special price. The currency must match to the currency in the specified price list. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~PriceCurrency.html
+  field_name: Currency
+  length: 3
+- name: PriceListNo
+  description: 'Sets or returns the price list number. Field name: ListNum . This is a foreign key to the PriceLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~PriceListNo.html
+  field_name: ListNum
+- name: RowNumber
+  description: 'Returns the current available row number (0-based). Field name: LINENUM .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~RowNumber.html
+  field_name: LINENUM
+- name: SpecialPrice
+  description: 'Sets or returns the special price after discount. Field name: Price .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~SpecialPrice.html
+  field_name: Price
+- name: SpecialPricesQuantityAreas
+  description: Returns the SpecialPricesQuantityAreas child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~SpecialPricesQuantityAreas.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SpecialPricesDataAreas~UserFields.html

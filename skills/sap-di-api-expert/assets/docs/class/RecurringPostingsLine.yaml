@@ -1,0 +1,88 @@
+name: RecurringPostingsLine
+title: RecurringPostingsLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine.html
+description: RecurringPostingsLine Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~ToXMLString.html
+properties:
+- name: AccountCode
+  description: property AccountCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~AccountCode.html
+- name: AccountName
+  description: property AccountName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~AccountName.html
+- name: ControlAccount
+  description: property ControlAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~ControlAccount.html
+- name: CostElementCode
+  description: property CostElementCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostElementCode.html
+- name: CostingCode1
+  description: property CostingCode1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostingCode1.html
+- name: CostingCode2
+  description: property CostingCode2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostingCode2.html
+- name: CostingCode3
+  description: property CostingCode3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostingCode3.html
+- name: CostingCode4
+  description: property CostingCode4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostingCode4.html
+- name: CostingCode5
+  description: property CostingCode5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~CostingCode5.html
+- name: Credit
+  description: property Credit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~Credit.html
+- name: Currency
+  description: property Currency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~Currency.html
+- name: Debit
+  description: property Debit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~Debit.html
+- name: DistributionRule
+  description: property DistributionRule
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~DistributionRule.html
+- name: LineNumber
+  description: property LineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~LineNumber.html
+- name: ProjectCode
+  description: property ProjectCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~ProjectCode.html
+- name: RcrCode
+  description: property RcrCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~RcrCode.html
+- name: TaxCode
+  description: property TaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~TaxCode.html
+- name: TaxGroup
+  description: property TaxGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~TaxGroup.html
+- name: TaxPostingAccount
+  description: property TaxPostingAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~TaxPostingAccount.html
+- name: VatLine
+  description: property VatLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~VatLine.html
+- name: WTaxLiable
+  description: property WTaxLiable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~WTaxLiable.html
+- name: WTaxLine
+  description: property WTaxLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostingsLine~WTaxLine.html

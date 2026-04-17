@@ -1,0 +1,97 @@
+name: PM_SubprojectDocumentData
+title: PM_SubprojectDocumentData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData.html
+description: 'Source table: OPHA .'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~ToXMLString.html
+properties:
+- name: AbsEntry
+  description: property AbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~AbsEntry.html
+- name: ActualCost
+  description: property ActualCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~ActualCost.html
+- name: DueDate
+  description: property DueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~DueDate.html
+- name: FinishedPercent
+  description: property FinishedPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~FinishedPercent.html
+- name: Order
+  description: property Order
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~Order.html
+- name: Owner
+  description: property Owner
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~Owner.html
+- name: ParentID
+  description: property ParentID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~ParentID.html
+- name: PlannedCost
+  description: property PlannedCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PlannedCost.html
+- name: PMS_ActivitiesCollection
+  description: property PMS_ActivitiesCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_ActivitiesCollection.html
+- name: PMS_DocAttachements
+  description: property PMS_DocAttachements
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_DocAttachements.html
+- name: PMS_DocumentsCollection
+  description: property PMS_DocumentsCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_DocumentsCollection.html
+- name: PMS_OpenIssuesCollection
+  description: property PMS_OpenIssuesCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_OpenIssuesCollection.html
+- name: PMS_StageAttachements
+  description: property PMS_StageAttachements
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_StageAttachements.html
+- name: PMS_StagesCollection
+  description: property PMS_StagesCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_StagesCollection.html
+- name: PMS_SummaryData
+  description: property PMS_SummaryData
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_SummaryData.html
+- name: PMS_WorkOrdersCollection
+  description: property PMS_WorkOrdersCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~PMS_WorkOrdersCollection.html
+- name: ProjectID
+  description: property ProjectID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~ProjectID.html
+- name: StartDate
+  description: property StartDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~StartDate.html
+- name: SubprojectContribution
+  description: property SubprojectContribution
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectContribution.html
+- name: SubprojectDepth
+  description: property SubprojectDepth
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectDepth.html
+- name: SubprojectEndDate
+  description: property SubprojectEndDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectEndDate.html
+- name: SubprojectName
+  description: property SubprojectName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectName.html
+- name: SubprojectStatus
+  description: property SubprojectStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectStatus.html
+- name: SubprojectType
+  description: property SubprojectType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~SubprojectType.html
+- name: UserFields
+  description: property User Fields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_SubprojectDocumentData~UserFields.html

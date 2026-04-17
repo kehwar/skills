@@ -1,0 +1,55 @@
+name: CycleCountDeterminationSetup
+title: CycleCountDeterminationSetup Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup.html
+description: This object enables setting up cycle count determination.
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~ToXMLString.html
+properties:
+- name: Alert
+  description: 'Sets or returns a valid value that determines whether or not to activate alert. Field name: Alert .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~Alert.html
+- name: ChangeExistingItems
+  description: 'Changes existing items for cycle count determination. Field name: ChangeExist .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~ChangeExistingItems.html
+  field_name: ChangeExist
+- name: CycleCode
+  description: 'Sets or returns the cycle code. Field name: CycleCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~CycleCode.html
+- name: DestinationUser
+  description: 'Sets or returns the destination user. Field name: DestUser . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~DestinationUser.html
+  field_name: DestUser
+- name: Entry
+  description: 'If the CycleBy Property specified is a warehouse sublevel, the Entry property will be a foreign key to the WarehouseSublevelCode object. If the CycleBy Property specified is an item group, the Entry property will be a foreign key to the ItemGroups object. Field name: Entry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~Entry.html
+- name: ExcludeItemsWithZeroQuantity
+  description: 'Excludes items of zero quantity. Field name: ExcldZrQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~ExcludeItemsWithZeroQuantity.html
+  field_name: ExcldZrQty
+- name: NextCountingDate
+  description: 'Sets or returns the date of the upcoming inventory cycle. Field name: NextDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~NextCountingDate.html
+  field_name: NextDate
+- name: Time
+  description: 'Sets or returns the time of the upcoming inventory cycle. Field name: Time .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~Time.html
+- name: WarehouseCode
+  description: 'Sets or returns the code of the warehouse where the item is stored. Field name: WhsCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationSetup~WarehouseCode.html
+  field_name: WhsCode
+  length: 8

@@ -1,0 +1,34 @@
+name: BlanketAgreementsService
+title: BlanketAgreementsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService.html
+description: 'The BlanketAgreementsService service enables you to add, look up, cancel, and update blanket agreements. Source table: OOAT .'
+remarks: To open the blanket agreement window, choose Business Partners -> Blanket Agreement . To display the available blanket agreements, choose Business Partners -> Business Partner Reports -> Blanket Agreements List .
+methods:
+- name: AddBlanketAgreement
+  description: Adds a blanket agreement.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~AddBlanketAgreement.html
+- name: CancelBlanketAgreement
+  description: Cancels an existing blanket agreement.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~CancelBlanketAgreement.html
+- name: GetBlanketAgreement
+  description: Retrieves a blanket agreement. The blanket agreement is specified by its key, which is contained in the BlanketAgreementParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetBlanketAgreement.html
+- name: GetBlanketAgreementList
+  description: Returns the BlanketAgreementsParams data collection that identifies all blanket agreements.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetBlanketAgreementList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BlanketAgreementsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetDataInterfaceFromXMLString.html
+- name: GetRelatedDocuments
+  description: Retrieves the related documents of a blanket agreement.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~GetRelatedDocuments.html
+- name: UpdateBlanketAgreement
+  description: Updates an existing blanket agreement. The data for the blanket agreement, including the key of the blanket agreement to be updated, is contained in the BlanketAgreement object passed to the method. To update a blanket agreement, you must first retrieve it using the GetBlanketAgreement method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BlanketAgreementsService~UpdateBlanketAgreement.html

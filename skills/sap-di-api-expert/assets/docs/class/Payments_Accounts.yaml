@@ -1,0 +1,93 @@
+name: Payments_Accounts
+title: Payments_Accounts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts.html
+description: 'Payments_Accounts is a child object of the Payments object and represents the payments through account transfers in the Banking module. Source tables: RCT4 (incoming payments) and VPM4 (outgoing payments).'
+remarks: 'Mandatory fields in SAP Business One: AccountCode and SumPaid . For account segmentation add the string _SYS00 . To display the form in the application: - For RCT4 table, select Banking --> Incoming Payments --> Incoming Payments . - or - For VPM4 table, select Banking --> Outgoing Payments --> Payments to Vendors . - Select Account document type (instead of Customer or Vendor ).'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~SetCurrentLine.html
+properties:
+- name: AccountCode
+  description: 'Sets or returns the G/L account code of the business partner as defined in Chart of Accounts. Field name: AcctCode . Mandatory property. Length: 15 characters. This is a foreign key to the ChartOfAccounts Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~AccountCode.html
+  field_name: AcctCode
+  length: 15
+- name: AccountName
+  description: 'Returns the G/L account name of the business partner as defined in Chart of Accounts. Field name: AcctName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~AccountName.html
+  field_name: AcctName
+  length: 100
+- name: Count
+  description: Returns the number of lines in this document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~Count.html
+- name: Decription
+  description: 'Sets or returns a description about the account. Field name: Descrip . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~Decription.html
+  field_name: Descrip
+  length: 250
+- name: EqualizationVatAmount
+  description: 'Equalization tax amount. Field name: EquVatSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~EqualizationVatAmount.html
+  field_name: EquVatSum
+- name: GrossAmount
+  description: 'Sets or returns this payment account Gross amount. Field name: GrossAmnt'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~GrossAmount.html
+  field_name: GrossAmnt
+- name: LineNum
+  description: 'Returns the number of the current line. Field name: LineId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~LineNum.html
+  field_name: LineId
+- name: LocationCode
+  description: 'Returns the location code in incoming and outgoing payments. Applicable for cluster B . Field name: LocCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~LocationCode.html
+  field_name: LocCode
+- name: ProfitCenter
+  description: 'A distribution rule for dimension 1. Field name: OcrCode Length: 8 characters. This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProfitCenter.html
+  field_name: OcrCode
+  length: 8
+- name: ProfitCenter2
+  description: 'A distribution rule for dimension 2. Field name: OcrCode2 Length: 8 characters. This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProfitCenter2.html
+  field_name: OcrCode2
+  length: 8
+- name: ProfitCenter3
+  description: 'A distribution rule for dimension 3. Field name: OcrCode3 Length: 8 characters. This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProfitCenter3.html
+  field_name: OcrCode3
+  length: 8
+- name: ProfitCenter4
+  description: 'A distribution rule for dimension 4. Field name: OcrCode4 Length: 8 characters. This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProfitCenter4.html
+  field_name: OcrCode4
+  length: 8
+- name: ProfitCenter5
+  description: 'A distribution rule for dimension 5. Field name: OcrCode5 Length: 8 characters. This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProfitCenter5.html
+  field_name: OcrCode5
+  length: 8
+- name: ProjectCode
+  description: 'Sets or returns the project code. Field name: Project . Length: 8 characters. This is a foreign key to the OPRJ object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~ProjectCode.html
+  field_name: Project
+  length: 8
+- name: SumPaid
+  description: 'Sets or returns the amount paid. Field name: SumApplied . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~SumPaid.html
+  field_name: SumApplied
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~UserFields.html
+- name: VatAmount
+  description: 'Sets or returns the VAT amount of incoming or outgoing payments. Field name: VatAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~VatAmount.html
+  field_name: VatAmnt
+- name: VatGroup
+  description: 'Sets or returns the VAT group for this payment. Field name: VatGroup . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Accounts~VatGroup.html
+  length: 8

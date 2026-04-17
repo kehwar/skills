@@ -1,0 +1,57 @@
+name: MobileAppService
+title: MobileAppService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService.html
+description: MobileAppService Class
+methods:
+- name: GetCurrentServerDateTime
+  description: GetCurrentServerDateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetCurrentServerDateTime.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetDataInterfaceFromXMLString.html
+- name: GetDppChangeParams
+  description: GetDppChangeParams
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetDppChangeParams.html
+- name: GetEmployeeFullNames
+  description: GetFullEmployeeNames
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetEmployeeFullNames.html
+- name: GetSalesAppSetting
+  description: GetSalesAppSetting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetSalesAppSetting.html
+- name: GetServiceAppReport
+  description: GetServiceAppReport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetServiceAppReport.html
+- name: GetServiceAppReportContent
+  description: GetServiceAppReportContent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetServiceAppReportContent.html
+- name: GetTechnicianSchedulings
+  description: GetTechnicianSchedulings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetTechnicianSchedulings.html
+- name: GetTechnicianSettings
+  description: GetTechnicianSettings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetTechnicianSettings.html
+- name: GetTechnicianSettingsGroup
+  description: GetTechnicianSettingsGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~GetTechnicianSettingsGroup.html
+- name: UpdateSalesAppSetting
+  description: UpdateSalesAppSetting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~UpdateSalesAppSetting.html
+- name: UpdateServiceAppReport
+  description: UpdateServiceAppReport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~UpdateServiceAppReport.html
+- name: UpdateServiceAppReportContent
+  description: UpdateServiceAppReportContent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~UpdateServiceAppReportContent.html
+- name: UpdateTechnicianSettings
+  description: UpdateTechnicianSettings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~UpdateTechnicianSettings.html
+- name: UpdateTechnicianSettingsGroup
+  description: UpdateTechnicianSettingsGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAppService~UpdateTechnicianSettingsGroup.html

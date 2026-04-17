@@ -1,0 +1,37 @@
+name: SalesForecast_Lines
+title: SalesForecast_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines.html
+description: 'SalesForecast_Lines is a child object of SalesForecast object and represents sales forecast of items and their quantity for a specified day. Source table: FCT1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the SalesForecast_Lines list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~Count.html
+- name: ForecastedDay
+  description: 'Sets or returns the forecast date for the specified Quantity . Field name: Date .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~ForecastedDay.html
+  field_name: Date
+- name: ItemNo
+  description: 'Sets or returns the item code in the inventory. Field name: ItemCode . Length: 20 characters. This is a foreign key to the Items object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~ItemNo.html
+  field_name: ItemCode
+  length: 20
+- name: Quantity
+  description: 'Sets or returns the sales forecast quantity of ItemNo for the ForecastedDay . Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~Quantity.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~UserFields.html
+- name: Warehouse
+  description: property Warehouse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesForecast_Lines~Warehouse.html

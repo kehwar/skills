@@ -1,0 +1,28 @@
+name: ElectronicFileFormatsService
+title: ElectronicFileFormatsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService.html
+description: 'The ElectronicFileFormatsService service enables you to import, look up, and delete the generic electronic file formats in SAP Business One. Source table: OLLF .'
+remarks: To display the Electronic File Manager - Setup window, from SAP Business One, choose Administration --> Setup --> General --> Electronic File Manager - Setup .
+methods:
+- name: AddElectronicFileFormat
+  description: Adds a new electronic file format.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~AddElectronicFileFormat.html
+- name: DeleteElectronicFileFormat
+  description: Deletes an existing electronic file format.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~DeleteElectronicFileFormat.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ElectronicFileFormatsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~GetDataInterfaceFromXMLString.html
+- name: GetElectronicFileFormat
+  description: Retrieves an electronic file format. The electronic file format is specified by its key, which is contained in the ElectronicFileFormatParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~GetElectronicFileFormat.html
+- name: GetElectronicFileFormatList
+  description: Returns the ElectronicFileFormatsParams data collection that identify all electronic file formats.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicFileFormatsService~GetElectronicFileFormatList.html

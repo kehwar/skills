@@ -1,0 +1,91 @@
+name: DownPaymentsToDraw
+title: DownPaymentsToDraw Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw.html
+description: 'Represents down payments drawn into A/R or A/P invoices. The Documents.DownPaymentAmount property is updated with the total amount to draw. Source tables: INV9 , PCH9 , RIN9 , RPC9 , DRF9'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~SetCurrentLine.html
+properties:
+- name: AmountToDraw
+  description: 'The net amount (without tax) drawn to the invoice. Field name: DrawnSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~AmountToDraw.html
+  field_name: DrawnSum
+- name: AmountToDrawFC
+  description: 'The net amount (without tax) drawn to the invoice in foreign currency. Field name: DrawnSumFc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~AmountToDrawFC.html
+  field_name: DrawnSumFc
+- name: AmountToDrawSC
+  description: 'The net amount (without tax) drawn to the invoice in system currency. Field name: DrawnSumSc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~AmountToDrawSC.html
+  field_name: DrawnSumSc
+- name: Count
+  description: The number of downpayment lines in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~Count.html
+- name: Details
+  description: 'Set to the Remarks field in the down payment invoice. Field name: BsComments'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~Details.html
+  field_name: BsComments
+- name: DocEntry
+  description: 'An internal key to the down payment document. Field name: BaseAbs'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DocEntry.html
+  field_name: BaseAbs
+- name: DocInternalID
+  description: 'A key to the invoice for which the down payment is used. Field name: DocEntry'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DocInternalID.html
+  field_name: DocEntry
+- name: DocNumber
+  description: 'The document number of the down payment document. Field name: BaseDocNum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DocNumber.html
+  field_name: BaseDocNum
+- name: DownPaymentsToDrawDetails
+  description: The details for this drawn downpayment. A drawn downpayment can be applied to various tax groups and in different ways.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DownPaymentsToDrawDetails.html
+- name: DownPaymentType
+  description: 'Indicates whether the down payment document is an invoice or a request. Field name: Posted'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DownPaymentType.html
+  field_name: Posted
+- name: DueDate
+  description: 'Returns the due date of the down payment invoice. Field name: BsDueDate'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~DueDate.html
+  field_name: BsDueDate
+- name: GrossAmountToDraw
+  description: 'The gross amount (with tax) drawn to the invoice. Field name: Gross'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~GrossAmountToDraw.html
+  field_name: Gross
+- name: GrossAmountToDrawFC
+  description: 'The gross amount (with tax) drawn to the invoice in foreign currency. Field name: GrossFc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~GrossAmountToDrawFC.html
+  field_name: GrossFc
+- name: GrossAmountToDrawSC
+  description: 'The gross amount (with tax) drawn to the invoice in system currency. Field name: GrossSc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~GrossAmountToDrawSC.html
+  field_name: GrossSc
+- name: Name
+  description: 'The full name of the business partner. Field name: BsCardName'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~Name.html
+  field_name: BsCardName
+- name: PostingDate
+  description: 'The posting date of the down payment invoice. Field name: BsDocDate'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~PostingDate.html
+  field_name: BsDocDate
+- name: RowNum
+  description: 'The row number of the current drawn payment in the collection. Field name: LineNum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~RowNum.html
+  field_name: LineNum
+- name: Tax
+  description: 'The part of the drawn downpayment to be used for tax. Field name: Vat'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~Tax.html
+  field_name: Vat
+- name: TaxFC
+  description: 'The part of the drawn downpayment to be used for tax in foreign currency. Field name: VatFc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~TaxFC.html
+  field_name: VatFc
+- name: TaxSC
+  description: 'The part of the drawn downpayment to be used for tax in system currency. Field name: VatSc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DownPaymentsToDraw~TaxSC.html
+  field_name: VatSc

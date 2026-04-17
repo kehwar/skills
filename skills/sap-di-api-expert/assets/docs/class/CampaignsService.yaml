@@ -1,0 +1,34 @@
+name: CampaignsService
+title: CampaignsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService.html
+description: 'The CampaignsService service enables you to add, look up, update, cancel, and remove campaigns. Source table: OCPN .'
+remarks: 'Managing a promotional campaign typically involves the steps outlined below: - Creating and maintaining a TargetGroup - Creating a campaign using the Campaign Generation wizard To access the wizard, from the SAP Business One Main Menu , choose Business Partners --> Campaign Generation Wizard . - Managing the campaign data To access the Campaign window, from the SAP Business One Main Menu , choose Business Partners --> Campaign .'
+methods:
+- name: Add
+  description: Adds a campaign.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~Add.html
+- name: Cancel
+  description: Cancels an existing campaign.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~Cancel.html
+- name: Delete
+  description: Deletes an existing campaign.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~Delete.html
+- name: Get
+  description: Retrieves a campaign. The campaign is specified by its key, which is contained in the CampaignParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CampaignsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the CampaignsParams data collection that identifies all campaigns.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~GetList.html
+- name: Update
+  description: Updates an existing campaign.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CampaignsService~Update.html

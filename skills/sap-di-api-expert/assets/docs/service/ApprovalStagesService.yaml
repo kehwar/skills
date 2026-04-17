@@ -1,0 +1,31 @@
+name: ApprovalStagesService
+title: ApprovalStagesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService.html
+description: 'ApprovalStagesService is a business object that manages the Approval stages Process in SAP Business One environment. This object enables user to: - Add new Approval Stage to approval Process. Get Approval Stage from approval Process. Get a list of Approval Stages from approval Process. Remove Approval Stage from approval Process. Update Approval Stage within approval Process. Get Data interfaces. Source table: OWST .'
+remarks: 'To use the service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or- You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method. To display the form in the application: Select Administration --> Approval Procedure --> Approval Stages .'
+methods:
+- name: AddApprovalStage
+  description: Adds a new ApprovalStage to the ApprovalStages data collection Object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~AddApprovalStage.html
+- name: GetApprovalStage
+  description: Gets an ApprovalStage from the ApprovalStages data collection by it ApprovalStageParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~GetApprovalStage.html
+- name: GetApprovalStageList
+  description: Returns the ApprovalStagesParams Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~GetApprovalStageList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~GetDataInterfaceFromXMLString.html
+- name: RemoveApprovalStage
+  description: Remove an ApprovalStage from the ApprovalStages data collection by it ApprovalStageParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~RemoveApprovalStage.html
+- name: UpdateApprovalStage
+  description: Replace this ApprovalStage with updated Approval Stage.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStagesService~UpdateApprovalStage.html

@@ -1,0 +1,55 @@
+name: MobileAddOnSetting
+title: MobileAddOnSetting Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting.html
+description: MobileAddOnSetting Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~ToXMLString.html
+properties:
+- name: B1MobileApp
+  description: property B1MobileApp
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~B1MobileApp.html
+- name: B1SalesApp
+  description: property B1SalesApp
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~B1SalesApp.html
+- name: B1ServiceApp
+  description: property B1ServiceApp
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~B1ServiceApp.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Code.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Description.html
+- name: Enable
+  description: property Enable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Enable.html
+- name: LogonMethod
+  description: property LogonMethod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~LogonMethod.html
+- name: Provider
+  description: property Provider
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Provider.html
+- name: Type
+  description: property Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Type.html
+- name: Url
+  description: property Url
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~Url.html
+- name: ViewStyle
+  description: property ViewStyle
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MobileAddOnSetting~ViewStyle.html

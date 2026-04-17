@@ -1,0 +1,163 @@
+name: AdditionalExpenses
+title: AdditionalExpenses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses.html
+description: 'AdditionalExpenses is a business object that represents the additional expenses defined in the Administration module. These definitions are used by the Marketing Documents and Receipts . This object enables to calculate additional costs connected with a document, such as delivery changes and deposit tax. This object enables you to: - Add an additional expense. Retrieve an additional expense by its key. Update an additional expense. Save the object in XML format. Source table: OEXD .'
+remarks: 'To display the form in the application: - Select Administration --> System Initialization --> Document Settings . - In the General tab, select Manage Expenses In Documents . - Click Define Expenses .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Browser.html
+- name: DistributionMethod
+  description: 'Sets or returns a valid value of BoAeDistMthd type that specifies the distribution method of the additional expenses. Field name: DistrbMthd'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionMethod.html
+  field_name: DistrbMthd
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DistributionRule5.html
+  field_name: OcrCode5
+- name: DrawingMethod
+  description: 'The calculation method for freight per row. The calculation method is relevant when you copy rows from a base document to a target document. Field name: BaseMethod'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~DrawingMethod.html
+  field_name: BaseMethod
+- name: ExpensCode
+  description: 'Returns the unique ID (primary key) of the additional expense. SAP Business One assigns a sequential number when adding an additional expense. Field name: ExpnsCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~ExpensCode.html
+  field_name: ExpnsCode
+- name: ExpenseAccount
+  description: 'Sets or returns the expense account number. You can set only accounts that are defined as Expenses type in Chart of Accounts. Field name: ExpnsAcct Length: 15 characters This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~ExpenseAccount.html
+  field_name: ExpnsAcct
+  length: 15
+- name: ExpenseExemptedAccount
+  description: 'Sets or returns the expense exempted account. Field name: ExpnsExAct Length: 15 characters This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~ExpenseExemptedAccount.html
+  field_name: ExpnsExAct
+  length: 15
+- name: FixedAmountExpenses
+  description: 'Sets or returns the fixed amount of the expense. Field name: ExpFixSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~FixedAmountExpenses.html
+  field_name: ExpFixSum
+- name: FixedAmountRevenues
+  description: 'Sets or returns the fixed revenue amount of the expense. Field name: RevFixSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~FixedAmountRevenues.html
+  field_name: RevFixSum
+- name: FreightOffsetAccount
+  description: 'Sets or returns the freight offset account. Field name: ExpOfstAc Length: 15 characters This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~FreightOffsetAccount.html
+  field_name: ExpOfstAc
+  length: 15
+- name: FreightType
+  description: 'Indicates the type of freight expense. Field name: ExpnsType'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~FreightType.html
+  field_name: ExpnsType
+- name: FreightTypeForBollo
+  description: property FreightTypeForBollo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~FreightTypeForBollo.html
+- name: GrossFreight
+  description: property GrossFreight
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~GrossFreight.html
+- name: Includein1099
+  description: 'Sets or returns a valid value that determines wether or not to include the expense in the 1099 form. Field name: In1099'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Includein1099.html
+  field_name: In1099
+- name: InputVATGroup
+  description: 'Sets or returns the input VAT group. Field name: VatGroupi Length: 8 characters This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~InputVATGroup.html
+  field_name: VatGroupi
+  length: 8
+- name: LastPurchasePrice
+  description: 'Indicates whether to update the last purchase price list after adding an A/P invoice that includes a freight amount per row. Field name: LstPchPrce'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~LastPurchasePrice.html
+  field_name: LstPchPrce
+- name: Name
+  description: 'Sets or returns the expense name. Field name: ExpnsName Length: 20 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Name.html
+  field_name: ExpnsName
+  length: 20
+- name: OutputVATGroup
+  description: 'Sets or returns the output VAT group. Field name: VatGroupo Length: 8 characters This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~OutputVATGroup.html
+  field_name: VatGroupo
+  length: 8
+- name: Project
+  description: 'The project that relates to the freight. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Project.html
+  length: 20
+- name: RevenuesAccount
+  description: 'Sets or returns the revenues account. You can set only accounts that are defined as Revenues type in Chart of Accounts. Field name: RevAcct Length: 15 characters This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~RevenuesAccount.html
+  field_name: RevAcct
+  length: 15
+- name: RevenuesExemptedAccount
+  description: 'Sets or returns the revenues exempted account. Field name: RevExmAcct Length: 15 characters This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~RevenuesExemptedAccount.html
+  field_name: RevExmAcct
+  length: 15
+- name: SACCode
+  description: property SACCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~SACCode.html
+- name: SAFTProductType
+  description: 'Standard Audit File-Tax (SAF-T) product types according to the Portuguese tax authority. Field name: ProdctType.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~SAFTProductType.html
+  field_name: ProdctType
+- name: SAFTProductTypeEx
+  description: 'Standard Audit File-Tax (SAF-T) define-new option for product types according to the Portuguese tax authority. Field name: ProdTypeEx . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~SAFTProductTypeEx.html
+  field_name: ProdTypeEx
+  length: 10
+- name: Stock
+  description: 'Indicates whether to add the freight amount, either in the row level or the total level, to the item''s cost when working with perpetual inventory. Field name: Stock.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~Stock.html
+- name: TaxLiable
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the additional expense is VAT liable. Field name: TaxLiable'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~TaxLiable.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~UserFields.html
+- name: WTLiable
+  description: 'Returns the whether or not the additional expense is subject to withholding tax. Field name: TaxLiable Length: 1 character'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdditionalExpenses~WTLiable.html
+  field_name: TaxLiable
+  length: 1

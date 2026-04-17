@@ -1,0 +1,31 @@
+name: DNFCodeSetupService
+title: DNFCodeSetupService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService.html
+description: 'The DNFCodeSetupService service enables you to add, look up and remove DNF codes in the DNF codes master data table. NCM codes are assigned to items, and then DNF codes can be assigned to that NCM code for that item. To see the list of DNF codes, select Inventory --> Item Master Data. Select an NCM code, and then select Define New in the DNF Code field. Source table: ODNF'
+remarks: Relevant for Brazil only.
+methods:
+- name: AddDNFCodeSetup
+  description: Adds a DNF code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~AddDNFCodeSetup.html
+- name: DeleteDNFCodeSetup
+  description: Deletes an existing DNF code. The DNF code is specified by its key ( AbsEntry ), which is contained in the DNFCodeSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~DeleteDNFCodeSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DNFCodeSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~GetDataInterfaceFromXMLString.html
+- name: GetDNFCodeSetup
+  description: Retrieves a DNF code. The DNF code is specified by its key ( AbsEntry ), which is contained in the DNFCodeSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~GetDNFCodeSetup.html
+- name: GetDNFCodeSetupList
+  description: Retrieves the keys and names of all the DNF codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~GetDNFCodeSetupList.html
+- name: UpdateDNFCodeSetup
+  description: Updates an existing DNF code. The data for the DNF code, including the key of the DNF code to be updated, is contained in the DNFCodeSetup object passed to the method. To update a DNF code, you must first retrieve it using the GetDNFCodeSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DNFCodeSetupService~UpdateDNFCodeSetup.html

@@ -1,0 +1,84 @@
+name: CustomsGroups
+title: CustomsGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups.html
+description: 'The CustomsGroups object enables to define custom groups, which specify the customs duty for items purchased abroad that are liable for customs. Source table: OARG .'
+remarks: 'To display the form in the application: - Select Administration -->Setup -->Inventory -->Customs Groups .'
+methods:
+- name: Add
+  description: Adds a customs group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Browser.html
+- name: Code
+  description: 'Returns the key of the customs group as assigned by the system when adding a customs group. Field name: CstGrpCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Code.html
+  field_name: CstGrpCode
+- name: Customs
+  description: 'Sets or returns the customs percentage. Field name: Custom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Customs.html
+  field_name: Custom
+- name: CustomsAllocationAccount
+  description: 'The account to which the customs duty can be allocated. Field name: cstAllcAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~CustomsAllocationAccount.html
+  field_name: cstAllcAcc
+  length: 15
+- name: CustomsExpenseAccount
+  description: 'The account to which the customs expenses can be posted. Field name: cstExpAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~CustomsExpenseAccount.html
+  field_name: cstExpAcc
+  length: 15
+- name: Locked
+  description: 'Returns a valid value of BoYesNoEnum that determines wether or not the Custom Group is locked. Field name: Locked. .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Locked.html
+- name: Name
+  description: 'Sets or returns the customs group name. Field name: CstGrpName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Name.html
+  field_name: CstGrpName
+  length: 20
+- name: Number
+  description: 'Sets or returns the customs group number. Field name: GroupNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Number.html
+  field_name: GroupNum
+  length: 20
+- name: Other
+  description: 'Sets or returns the additional tax percentage. Field name: OtherTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Other.html
+  field_name: OtherTax
+- name: PortAddress
+  description: property PortAddress
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~PortAddress.html
+- name: PortState
+  description: property PortState
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~PortState.html
+- name: Purchase
+  description: 'Sets or returns the purchase tax percentage. Field name: BuyTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Purchase.html
+  field_name: BuyTax
+- name: Total
+  description: 'Sets or returns the total tax percentage. Field name: TotalTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~Total.html
+  field_name: TotalTax
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsGroups~UserFields.html

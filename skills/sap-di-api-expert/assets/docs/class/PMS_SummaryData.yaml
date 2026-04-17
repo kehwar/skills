@@ -1,0 +1,124 @@
+name: PMS_SummaryData
+title: PMS_SummaryData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData.html
+description: 'Source table: PHA8 .'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ToXMLString.html
+properties:
+- name: AccumInvoicedAmountPurchase
+  description: property AccumInvoicedAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumInvoicedAmountPurchase.html
+- name: AccumInvoicedAmountSales
+  description: property AccumInvoicedAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumInvoicedAmountSales.html
+- name: AccumOpenAmountPurchase
+  description: property AccumOpenAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumOpenAmountPurchase.html
+- name: AccumOpenAmountSales
+  description: property AccumOpenAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumOpenAmountSales.html
+- name: AccumPotentialSubprojectAmount
+  description: property AccumPotentialSubprojectAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumPotentialSubprojectAmount.html
+- name: AccumSubprojectBudget
+  description: property AccumSubprojectBudget
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumSubprojectBudget.html
+- name: AccumTotalPurchase
+  description: property AccumTotalPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumTotalPurchase.html
+- name: AccumTotalSales
+  description: property AccumTotalSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumTotalSales.html
+- name: AccumTotalVariancePurchase
+  description: property AccumTotalVariancePurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumTotalVariancePurchase.html
+- name: AccumTotalVarianceSales
+  description: property AccumTotalVarianceSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumTotalVarianceSales.html
+- name: AccumVariancePerceptionPurchase
+  description: property AccumVariancePerceptionPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumVariancePerceptionPurchase.html
+- name: AccumVariancePerceptionSales
+  description: property AccumVariancePerceptionSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~AccumVariancePerceptionSales.html
+- name: ActualAdditionalCost
+  description: property ActualAdditionalCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualAdditionalCost.html
+- name: ActualByProductCost
+  description: property ActualByProductCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualByProductCost.html
+- name: ActualClosingDate
+  description: property ActualClosingDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualClosingDate.html
+- name: ActualItemComponentCost
+  description: property ActualItemComponentCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualItemComponentCost.html
+- name: ActualProductCost
+  description: property ActualProductCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualProductCost.html
+- name: ActualResourceComponentCost
+  description: property ActualResourceComponentCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~ActualResourceComponentCost.html
+- name: DueDate
+  description: property DueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~DueDate.html
+- name: LineId
+  description: property LineID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~LineId.html
+- name: Overdue
+  description: property Overdue
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~Overdue.html
+- name: PotentialSubprojectAmount
+  description: property PotentialSubprojectAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~PotentialSubprojectAmount.html
+- name: SubprojectBudget
+  description: property SubprojectBudget
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~SubprojectBudget.html
+- name: SumInvoicedAmountPurchase
+  description: property SumInvoicedAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~SumInvoicedAmountPurchase.html
+- name: SumInvoicedAmountSales
+  description: property SumInvoicedAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~SumInvoicedAmountSales.html
+- name: SumOpenAmountPurchase
+  description: property SumOpenAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~SumOpenAmountPurchase.html
+- name: SumOpenAmountSales
+  description: property SumOpenAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~SumOpenAmountSales.html
+- name: TotalAmountPurchase
+  description: property TotalAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~TotalAmountPurchase.html
+- name: TotalAmountSales
+  description: property TotalAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~TotalAmountSales.html
+- name: TotalVariance
+  description: property TotalVariance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~TotalVariance.html
+- name: TotalVariancePurchase
+  description: property TotalVariancePurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~TotalVariancePurchase.html
+- name: TotalVarianceSales
+  description: property TotalVarianceSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~TotalVarianceSales.html
+- name: VariancePerceptionPurchase
+  description: property VariancePerceptionPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~VariancePerceptionPurchase.html
+- name: VariancePerceptionSales
+  description: property VariancePerceptionSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PMS_SummaryData~VariancePerceptionSales.html

@@ -1,0 +1,25 @@
+name: AccountCategoriesParams
+title: AccountCategoriesParams Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams.html
+description: A data collection of AccountCategoryParams .
+methods:
+- name: Add
+  description: Adds a new AccountCategoryParams object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to a specified AccountCategoryParams object in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of AccountCategoryParams instances in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoriesParams~Count.html

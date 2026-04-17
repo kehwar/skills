@@ -1,0 +1,111 @@
+name: PaymentTermsTypes
+title: PaymentTermsTypes Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes.html
+description: 'PaymentTermsTypes is a business object that represents the types of payment terms in the Banking module. The payment terms define typical agreements that apply to transactions with customers and vendors. This object enables you to: - Add a payment term type. Retrieve a payment term type by its key. Update a payment term type. Remove a payment term type. Save the object in XML format. Source table: OCTG .'
+remarks: 'Mandatory field in SAP Business One: PaymentTermsGroupName . To display the form in the application: - Select Business Partners --> Business Partner Master Data . - Select Payment Terms tab. - Click the arrow to open the Define Payment Terms window.'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~Update.html
+- name: UpdateWithBPs
+  description: method UpdateWithBPs
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~UpdateWithBPs.html
+properties:
+- name: BaselineDate
+  description: 'Sets or returns a valid value of BoBaselineDate type that specifies the reference date for executing a payment transaction. Field name: BslineDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~BaselineDate.html
+  field_name: BslineDate
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~Browser.html
+- name: CreditLimit
+  description: 'Sets or returns the maximum credit allowed. Field name: CredLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~CreditLimit.html
+  field_name: CredLimit
+- name: DiscountCode
+  description: 'Sets or returns the discount code (type) as defined in Cash Discount (based on the payment due date). Field name: DiscCode . Length: 20 characters. This is a foreign key to the Cash Discount table ( OCDC ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~DiscountCode.html
+  field_name: DiscCode
+  length: 20
+- name: DunningCode
+  description: 'Sets or returns the dunning code as defined in the Dunning System. The dunning code sets the type of interest calculation for late payments. Field name: DunningCod . Length: 20 characters. This is a foreign key to the Dunning Interest Rate table ( ORIT ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~DunningCode.html
+  field_name: DunningCod
+  length: 20
+- name: EndAt
+  description: property EndAt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~EndAt.html
+- name: GeneralDiscount
+  description: 'Sets or returns the general discount percentage for the total amount in a document. Field name: VolumDscnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~GeneralDiscount.html
+  field_name: VolumDscnt
+- name: GroupNumber
+  description: 'Returns the internal number, as assigned by the system, for the payment terms type. Field name: GroupNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~GroupNumber.html
+  field_name: GroupNum
+- name: InterestOnArrears
+  description: 'Sets or returns the interest for late payments. The value of this property is for information only. Field name: LatePyChrg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~InterestOnArrears.html
+  field_name: LatePyChrg
+- name: LoadLimit
+  description: 'Sets or returns the maximum allowed debt ( CreditLimit + Postdated Checks ). Field name: ObligLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~LoadLimit.html
+  field_name: ObligLimit
+- name: NumberOfAdditionalDays
+  description: 'Sets or returns the number of additional days for calculating the document due date. Field name: ExtraDays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~NumberOfAdditionalDays.html
+  field_name: ExtraDays
+- name: NumberOfAdditionalMonths
+  description: 'Sets or returns the number of additional months for calculating the document due date. Field name: ExtraMonth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~NumberOfAdditionalMonths.html
+  field_name: ExtraMonth
+- name: NumberOfInstallments
+  description: 'Returns the number of installments for the payment terms as defined in Installments in SAP Business One. Field name: InstNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~NumberOfInstallments.html
+  field_name: InstNum
+- name: NumberOfToleranceDays
+  description: 'Sets or returns the number of days earlier than the calculated due date to start expecting the payment. Field name: TolDays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~NumberOfToleranceDays.html
+  field_name: TolDays
+- name: OpenReceipt
+  description: 'Sets or returns a valid value of BoOpenIncPayment type that specifies default means of payment from customers.OpenRcpt Field name: OpenRcpt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~OpenReceipt.html
+  field_name: OpenRcpt
+- name: PaymentTermsGroupName
+  description: 'Sets or returns the name of the payment terms type. Field name: PymntGroup . Length: 100 characters. Mandatory field in SAP Business One.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~PaymentTermsGroupName.html
+  field_name: PymntGroup
+  length: 100
+- name: PriceListNo
+  description: 'Sets or returns the Price List index to link to the business partner. Field name: ListNum . This is a foreign key to the PriceLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~PriceListNo.html
+  field_name: ListNum
+- name: StartFrom
+  description: 'Sets or returns a valid value of BoPayTermDueTypes type that specifies start time for calculating the payment due date. Field name: PayDuMonth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~StartFrom.html
+  field_name: PayDuMonth
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentTermsTypes~UserFields.html

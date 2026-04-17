@@ -1,0 +1,111 @@
+name: ProductTrees_Lines
+title: ProductTrees_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines.html
+description: 'ProductTrees_Lines is a child object of the ProductTrees object and it represents the line entries of each product tree. This object is part of the Inventory and Production module. Source table: ITT1 .'
+remarks: 'Mandatory fields in SAP Business One: ItemCode . To display the form in the application: - Select Production --> Define Bill of Materials .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~SetCurrentLine.html
+properties:
+- name: AdditionalQuantity
+  description: property AdditionalQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~AdditionalQuantity.html
+- name: ChildNum
+  description: property ChildNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~ChildNum.html
+- name: Comment
+  description: 'Sets or returns comments for the item in the product tree line. Field name: Comment . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Comment.html
+  length: 254
+- name: Count
+  description: Returns the total item rows.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Count.html
+- name: Currency
+  description: 'Sets or returns the bill of materials currency. Field name: Currency . Length: 3 characters. Sets or returns the price currency used in the document row. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Currency.html
+  length: 3
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~DistributionRule5.html
+  field_name: OcrCode5
+- name: InventoryUOM
+  description: 'Returns the Unit of Measurement for the item in the product tree line (for example: box , case , piece) . Field name: Uom . Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~InventoryUOM.html
+  field_name: Uom
+  length: 5
+- name: IssueMethod
+  description: 'Sets or returns a valid value of BoIssueMethod that determines Specifies the methods for issuing items from the inventory: Backflash (automatic) Manual. Field name: IssueMthd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~IssueMethod.html
+  field_name: IssueMthd
+- name: ItemCode
+  description: 'Sets or returns the component item code. Field name: Code . Length: 254 characters. This is a foreign key to the Items object. Sets or returns the item code in the inventory. The item code must be unique. Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~ItemCode.html
+  field_name: Code
+  length: 254
+- name: ItemName
+  description: property ItemName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~ItemName.html
+- name: ItemType
+  description: property ItemType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~ItemType.html
+- name: LineText
+  description: property LineText
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~LineText.html
+- name: ParentItem
+  description: 'Sets or returns the code of the parent item (product tree). Field name: Father . Length: 20 characters. This is a foreign key to the ProductTrees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~ParentItem.html
+  field_name: Father
+  length: 20
+- name: Price
+  description: 'Sets or returns the item price before taxation. Field name: Price .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Price.html
+- name: PriceList
+  description: 'Sets or returns the price list key of the item. Field name: PriceList . This is a foreign key to the PriceLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~PriceList.html
+- name: Project
+  description: 'The project that relates to the bill of materials. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Project.html
+  length: 20
+- name: Quantity
+  description: 'Sets or returns the items quantity in the bill of material. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Quantity.html
+- name: StageID
+  description: property StageID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~StageID.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~UserFields.html
+- name: VisualOrder
+  description: property VisualOrder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~VisualOrder.html
+- name: Warehouse
+  description: 'Sets or returns the Warehouse identification key. Field name: Warehouse . Length: 8 characters. This is a foreign key to the Warehouses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~Warehouse.html
+  length: 8
+- name: WipAccount
+  description: property WipAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductTrees_Lines~WipAccount.html

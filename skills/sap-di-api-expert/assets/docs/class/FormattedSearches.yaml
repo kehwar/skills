@@ -1,0 +1,82 @@
+name: FormattedSearches
+title: FormattedSearches Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches.html
+description: 'The FormattedSearches object enables to assign a formatted search function to a specified field, so that SAP Business One users can enter values, originated by a pre-defined search process, to the field. The formatted search is applicable for any field in the system including user defined fields. Source table: CSHS .'
+remarks: 'The mandatory properties include the FormID , ItemID , and ColumnID . The combination of these properties determines the key of the field for which the formatted search is applicable. Additional mandatory properties are according to the value of the Action property. The following are examples of using the formatted search function: - Automatic entery of values into fields using various objects in the system. Entering values into fields using a pre-defined list of valid values. Automatic entery of values into fields by user-defined queries. Creating dependency between fields in the system. That is, the value of field X influence the value of field Y. Displaying fields that can only be displayed using queries such as, User Signature, Creation Date, Open Checks Balance (for business partner). To display the form in the application: - Open a document and click any field. From the menu bar, select Tools --> Search Function --> Define . The Define Formatted Search form opens. To view more fields, select the Search by Saved Query . General Guidelines Make sure to follow these guidelines, otherwise the system responds with the error -1003. - The formatted search query must refer to an existing field. For user-defined fields add the "U_" prefix. The SQL syntax must be correct. Add a Space character between the Equal sign (=) and the field/string before the Equal sign. To compare a field of Alpha type to a variable such as [0], use a single quotation mark '' ''[0]''. Values must exist for the specified field before activating the formatted search function. For more details, refer to SMB Portal (upper menu: Service and Support. left menu: Knowledge & Services --> Knowledge Base ). Look for the Formatted Search document.'
+methods:
+- name: Add
+  description: Assigns a formatted search function to a specified field.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Add.html
+- name: GetAsXML
+  description: GetAsXML
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Update.html
+properties:
+- name: Action
+  description: 'Determines the type of action to be taken by the system when activating the formatted search function. The options include: Without Search , Search in Existing Values , and Search By Saved Query . Field name: ActionT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Action.html
+  field_name: ActionT
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Browser.html
+- name: ByField
+  description: 'Determines whether the automatic refresh is activated when the field changes or when exiting an altered column. Applicable for Table fields only and when the Refresh property is set tYES . Field name: ByField .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~ByField.html
+- name: ByFieldEx
+  description: property ByFieldEx
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~ByFieldEx.html
+- name: ColumnID
+  description: 'Sets or returns the column identification key. Mandatory for Table fields. The default value: -1 ( Title field). Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~ColumnID.html
+  length: 11
+- name: FieldID
+  description: 'Sets or returns the field ID. Field name: FieldID . Length: 11 characters. Mandatory in case Action is set to bofsaQuery .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~FieldID.html
+  length: 11
+- name: FieldIDs
+  description: property FieldIDs
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~FieldIDs.html
+- name: ForceRefresh
+  description: 'Sets or returns a valid value that determines wether or not to refresh the data regularly or only to display the saved value. Field name: FrceRfrsh .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~ForceRefresh.html
+  field_name: FrceRfrsh
+- name: FormID
+  description: 'Sets or returns the form identification key. Field name: FormID . Mandatory property. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~FormID.html
+  length: 100
+- name: Index
+  description: 'Returns the primary key of the formatted search function as assigned by the system when adding the object. Field name: IndexID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Index.html
+  field_name: IndexID
+- name: ItemID
+  description: 'Sets or returns the ID of the field or the table in a form (primary key with FormID ). Field name: ItemID . Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~ItemID.html
+  length: 20
+- name: QueryID
+  description: 'Sets or returns the key of the query for the formatted search function. Field name: QueryId . Mandatory in case Action is set to bofsaQuery .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~QueryID.html
+  field_name: QueryId
+- name: Refresh
+  description: 'Sets or returns a valid value that determines wether or not to automatically refresh the data when the field value is modified. Field name: Refresh .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~Refresh.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~UserFields.html
+- name: UserValidValues
+  description: Returns the UserValidValues object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FormattedSearches~UserValidValues.html

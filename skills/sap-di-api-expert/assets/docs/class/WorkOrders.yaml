@@ -1,0 +1,131 @@
+name: WorkOrders
+title: WorkOrders Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders.html
+description: 'WorkOrders is a business object that represents the work orders in the Inventory and Production module. This object is applicable only if work orders are already exist in the Company database. From release 2005, this object is replaced by the ProductionOrders object. Source table: OWKO .'
+remarks: 'To display the form in the application (release 2004 only): - Select Production --> Work Order .'
+methods:
+- name: Add
+  description: Adds a new workorder.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Add.html
+- name: Cancel
+  description: Cancel a record from the object table. Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Cancel.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Update.html
+properties:
+- name: ActiveAccountCode
+  description: This property is not supported in this object. Supported only in WorkOrder_Lines .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~ActiveAccountCode.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Browser.html
+- name: Canceled
+  description: 'Determines whether or not the work order was canceled. Field name: Canceled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Canceled.html
+- name: Comment
+  description: 'Sets or returns remarks to the work order. Field name: Memo . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Comment.html
+  field_name: Memo
+  length: 254
+- name: ContactPerson
+  description: 'Sets or returns the code of the contact person. Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~ContactPerson.html
+  field_name: CntctCode
+- name: CustomerRefNo
+  description: 'Sets or returns the customer reference number related to the work order. Field name: NumInCustm . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~CustomerRefNo.html
+  field_name: NumInCustm
+  length: 16
+- name: ExpectedCompletionDate
+  description: 'Sets or returns the expected date for the product completion. Field name: ExpFinishD .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~ExpectedCompletionDate.html
+  field_name: ExpFinishD
+- name: FinancialPeriod
+  description: 'Returns the financial period. Field name: FinncPriod . This is a foreign key to the FinancePeriod object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~FinancialPeriod.html
+  field_name: FinncPriod
+- name: GenerationTime
+  description: 'Sets or returns the generation time of the work order. Field name: DocTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~GenerationTime.html
+  field_name: DocTime
+- name: InstructionNumber
+  description: 'Returns the instruction number. That is the work order serial number, which is incremented automatically when adding a work order. Field name: SerialNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~InstructionNumber.html
+  field_name: SerialNum
+- name: JournalRemarks
+  description: 'Sets or returns the journal remarks, of the G/L account, for the work order. Field name: JrnlMemo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~JournalRemarks.html
+  field_name: JrnlMemo
+  length: 50
+- name: Lines
+  description: Returns the WorkOrder_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Lines.html
+- name: OrderDate
+  description: 'Sets or returns the date for the work order. Field name: OrderDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~OrderDate.html
+- name: OrdererCode
+  description: 'Sets or returns the Contact code of the customer that ordered the work. Field name: CntctCode . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~OrdererCode.html
+  field_name: CntctCode
+  length: 11
+- name: OrdererName
+  description: 'Sets or returns the customer name as defined in the business partners master data. Field name: CustomName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~OrdererName.html
+  field_name: CustomName
+  length: 100
+- name: OrderNum
+  description: 'Returns the work order unique number (primary key) as assigned by SAP Business One. Field name: OrderNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~OrderNum.html
+- name: OrderTotal
+  description: 'Returns the total price of all the items specified in the work order. Field name: TotalOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~OrderTotal.html
+  field_name: TotalOrder
+- name: PriceListNum
+  description: 'Sets or returns the number of the price list for a specified item. Field name: PriceList . This is a foreign key to the PriceLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~PriceListNum.html
+  field_name: PriceList
+- name: ReceiverName
+  description: 'Sets or returns the name of the employee that receives the production instructions. Field name: FinishUser . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~ReceiverName.html
+  field_name: FinishUser
+  length: 8
+- name: Series
+  description: 'Sets or returns the auto-number series that generated the document number. Field name: Series . This is a foreign key to the Series object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Series.html
+- name: Status
+  description: 'Sets or returns a valid value of BoWorkOrderStat type that specifies the status of the work order. Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~Status.html
+- name: TotalCurrency
+  description: 'Returns the currency of the total price. Field name: TotalCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~TotalCurrency.html
+  field_name: TotalCurr
+  length: 3
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~UserFields.html
+- name: WorkFinishDate
+  description: 'Sets or returns the date for completing the product. Field name: FinishDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~WorkFinishDate.html
+  field_name: FinishDate
+- name: WorkStartDate
+  description: 'Sets or returns the date for starting the production. Field name: ProdctDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~WorkStartDate.html
+  field_name: ProdctDate
+- name: WorkSum
+  description: 'Not supported in this object. Supported only in WorkOrder_Lines . Field name: ActWorkSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrders~WorkSum.html
+  field_name: ActWorkSum

@@ -1,0 +1,51 @@
+name: AccountSegmentationCategories
+title: AccountSegmentationCategories Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories.html
+description: 'The AccountSegmentationCategories object represents the categories for each of the account segments in the Financials module. This object enables you to: - Add an account category to a segment. Retrieve an account segment category by its key. Update an account segment category. Save the object in XML format. Source table: OASC .'
+remarks: 'Applicable only when the EnableAccountSegmentation property of the CompanyInfo object is set to Y. Account segmentation is used mainly in USA. To display the form in the application: - Select Administration --> Setup -->Financials -->Account Segmentation . Double-click the number on the left of the account segmentation name.'
+methods:
+- name: Add
+  description: Adds an account segment category.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Browser.html
+- name: Code
+  description: 'Sets or returns the code of the account segmentation category. Field name: Code . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Code.html
+  length: 20
+- name: Name
+  description: 'Sets or returns the full name of the account segmentation category. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~Name.html
+  length: 100
+- name: SegmentID
+  description: 'Sets or returns the ID number of the account segmentation. This is a foreign key to the Numerator property of the AccountSegmentations object. Field name: SegmentId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~SegmentID.html
+  field_name: SegmentId
+- name: ShortName
+  description: 'Sets or returns the short name of the account segmentation category. Field name: ShortName . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~ShortName.html
+  length: 10
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountSegmentationCategories~UserFields.html

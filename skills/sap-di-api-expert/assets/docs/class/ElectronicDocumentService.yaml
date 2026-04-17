@@ -1,0 +1,72 @@
+name: ElectronicDocumentService
+title: ElectronicDocumentService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService.html
+description: Interface allows to use documents as electronic documents.
+methods:
+- name: AddEmergencyNumber
+  description: AddEmergencyNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~AddEmergencyNumber.html
+- name: AddImportEntry
+  description: Import electronic document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~AddImportEntry.html
+- name: AddLog
+  description: AddLog
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~AddLog.html
+- name: CreateEntry
+  description: Main service handling electronic documents, communication with authorities, and all related aspects. Service is responsible for managing ECM2, ECM3 (and other ECM) tables, which are used during electronic document creation, communication with authorities, and other related actions. "CreateEntry" creates records in ECM2 and ECM3 for particular documents, at this point the document becomes an electronic document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~CreateEntry.html
+- name: ExportEntryLog
+  description: ExportEntryLog
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~ExportEntryLog.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetDataInterfaceFromXMLString.html
+- name: GetDocMappingList
+  description: GetDocMappingList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetDocMappingList.html
+- name: GetEmergencyNumbers
+  description: GetEmergencyNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetEmergencyNumbers.html
+- name: GetEntry
+  description: GetEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetEntry.html
+- name: GetEntryList
+  description: GetEntryList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetEntryList.html
+- name: GetLastLog
+  description: GetLastLog
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetLastLog.html
+- name: GetLogs
+  description: GetLogs
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetLogs.html
+- name: GetMappingByHash
+  description: GetMappingByHash
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetMappingByHash.html
+- name: GetProtocol
+  description: GetProtocol
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetProtocol.html
+- name: GetProtocolParameter
+  description: Retrieve specific electronic protocol parameter from customer DB (table ECM1).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetProtocolParameter.html
+- name: GetProtocolParameters
+  description: GetProtocolParameters
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetProtocolParameters.html
+- name: GetProtocols
+  description: GetProtocols
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~GetProtocols.html
+- name: UpdateEntry
+  description: UpdateEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~UpdateEntry.html
+- name: UpdateExtendedProperties
+  description: UpdateExtendedProperties
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~UpdateExtendedProperties.html
+- name: UpdateProtocolParameter
+  description: UpdateProtocolParameter
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicDocumentService~UpdateProtocolParameter.html

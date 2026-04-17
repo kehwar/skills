@@ -1,0 +1,47 @@
+name: Message
+title: Message Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message.html
+description: 'Message is a data structure related to the MessagesService . It includes properties related to the message content, such as subject, text, attached file, and attached data. Source table: OALR .'
+remarks: 'The Message object replaces the Messages object. However, add-on that use the Messages object are valid. The major modification is in the way of attaching data to a message. That is, using the MessageDataColumn and MessageDataLine instead of AddDataColumn ( Messages . To display the form in the application: - From the main menu bar, click the Message/Alert Overview icon.'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~ToXMLString.html
+properties:
+- name: Attachment
+  description: 'Sets or returns the key of the attachment as assigned by SAP Business One when adding an attached file. Field name: Attachment .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~Attachment.html
+- name: MessageDataColumns
+  description: Sets or returns the MessageDataColumns collection, which represents the data attached to a message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~MessageDataColumns.html
+- name: Priority
+  description: 'Determines the priority flag of the message: Low, Normal, or High. Field name: Priority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~Priority.html
+- name: RecipientCollection
+  description: Sets or returns the RecipientCollection .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~RecipientCollection.html
+- name: Subject
+  description: 'Sets or returns the message subject. Field name: Subject . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~Subject.html
+  length: 50
+- name: Text
+  description: 'Sets or returns the message text. Field name: UserText . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~Text.html
+  field_name: UserText
+- name: User
+  description: 'Sets or returns the ID of the user that creates the message. Field name: UserSign . This is a foreign key to the Users object ( InternalKey ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Message~User.html
+  field_name: UserSign

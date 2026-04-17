@@ -1,0 +1,71 @@
+name: BillOfExchangeTransaction
+title: BillOfExchangeTransaction Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction.html
+description: 'BillOfExchangeTransaction is a business object that represents the Bill Of Exchange Transaction table in the Banking module. Bill Of Exchange is a commercial document used as a payment method in Spain, Portugal, Italy, and France. Use this object for Bill Of Exchange documents that their status was changed to Generated . Each status change of a Bill-of-exchange creates a transaction. This object enables you to: - Add a Bill Of Exchange Transaction. Retrieve a Bill Of Exchange Transaction. Save the Bill Of Exchange Transaction in XML format. Source table: OBOT .'
+remarks: 'Mandatory fields is SAP Business One: StatusFrom and StatusTo . To display the form in the application: - Select Banking --> Bill of Exchange --> Bill of Exchange Transactions .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~SaveXML.html
+properties:
+- name: BankPages
+  description: Returns the BillOfExchangeTrans_BankPages object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~BankPages.html
+- name: BOETransactionkey
+  description: 'Returns the unique ID of the bill-of-exchange transaction (primary key). SAP Business One assigns a sequential number when adding a bill-of-exchange transaction. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~BOETransactionkey.html
+  field_name: AbsEntry
+- name: Browser
+  description: returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~Browser.html
+- name: Deposits
+  description: Returns the BillOfExchangeTrans_Deposits object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~Deposits.html
+- name: IsBoeReconciled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the Bill Of Exchange is reconciled. Field name: Reconciled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~IsBoeReconciled.html
+  field_name: Reconciled
+- name: Lines
+  description: Returns the BillOfExchangeTransaction_Lines object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~Lines.html
+- name: PostingDate
+  description: 'Sets or returns the posting date of the Bill Of Exchange transaction. Field name: PostDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~PostingDate.html
+  field_name: PostDate
+- name: StatusFrom
+  description: 'Sets or returns a valid value of BoBOTFromStatus type that specifies the current status of the Bill Of Exchange. Mandatory field is SAP Business One. Field name: StatusFrom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~StatusFrom.html
+- name: StatusTo
+  description: 'Sets or returns a valid value of BoBOTToStatus type that specifies the required status of the Bill Of Exchange. Mandatory field is SAP Business One. Field name: StatusTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~StatusTo.html
+- name: TaxDate
+  description: 'Sets or returns the date for the tax calculation or payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~TaxDate.html
+- name: TransactionDate
+  description: 'Sets or returns the transaction date. Field name: TranDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~TransactionDate.html
+  field_name: TranDate
+- name: TransactionNumber
+  description: 'Returns the transaction code that SAP Business One creates for the Bill Of Exchange. Field name: TransId . This is a foreign key to the JournalEntries object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~TransactionNumber.html
+  field_name: TransId
+- name: TransactionTime
+  description: 'Returns the transaction time. Field name: TranTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~TransactionTime.html
+  field_name: TranTime
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction~UserFields.html

@@ -1,0 +1,79 @@
+name: RecurringPostings
+title: RecurringPostings Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings.html
+description: RecurringPostings Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~ToXMLString.html
+properties:
+- name: AutomaticVAT
+  description: property AutomaticVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~AutomaticVAT.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Code.html
+- name: DeferredTax
+  description: property DeferredTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~DeferredTax.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Description.html
+- name: Frequency
+  description: property Frequency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Frequency.html
+- name: Instance
+  description: property Instance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Instance.html
+- name: ManageWTax
+  description: property ManageWTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~ManageWTax.html
+- name: NextExecution
+  description: property NextExecution
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~NextExecution.html
+- name: RecurringPostingsDocumentReferenceCollection
+  description: property RecurringPostingsDocumentReferenceCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~RecurringPostingsDocumentReferenceCollection.html
+- name: RecurringPostingsLineCollection
+  description: property RecurringPostingsLineCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~RecurringPostingsLineCollection.html
+- name: Reference1
+  description: property Reference1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Reference1.html
+- name: Reference2
+  description: property Reference2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Reference2.html
+- name: Reference3
+  description: property Reference3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Reference3.html
+- name: Remarks
+  description: property Remarks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~Remarks.html
+- name: StampTax
+  description: property StampTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~StampTax.html
+- name: SubFrequency
+  description: property SubFrequency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~SubFrequency.html
+- name: TransactionCode
+  description: property TransactionCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~TransactionCode.html
+- name: ValidUntil
+  description: property ValidUntil
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~ValidUntil.html
+- name: ValidUntilDate
+  description: property ValidUntilDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecurringPostings~ValidUntilDate.html

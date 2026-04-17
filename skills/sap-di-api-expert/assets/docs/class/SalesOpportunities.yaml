@@ -1,0 +1,245 @@
+name: SalesOpportunities
+title: SalesOpportunities Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities.html
+description: 'SalesOpportunities is a business object that represents the sales opportunities data in SAP Business One. Sales opportunities include potential sale volumes that may arise from business with customers and interested parties. This object enables you to: - Add a sales opportunity. Retrieve a sales opportunity by its key. Update a sales opportunity with the progress of the sales activities and negotiations. Remove a sales opportunity. Save the object in XML format. Source table: OOPR .'
+remarks: 'Mandatory fields in SAP Business One: CardCode and StartDate . To display the form in the application: - Select Sales Opportunities --> Sales Opportunity .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Add.html
+- name: Close
+  description: Closes a record of the object in SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Update.html
+properties:
+- name: AttachmentEntry
+  description: 'Sets or returns the identification key of the attachment file, as assigned by SAP Business One when adding an Attachment Entry to alert message. Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~AttachmentEntry.html
+  field_name: AtcEntry
+- name: BPChanelCode
+  description: 'Sets or returns the distribution channel code for the sales opportunity. Field name: ChnCrdCode . Length: 15 characters. This is a foreign key to the BusinessPartners Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~BPChanelCode.html
+  field_name: ChnCrdCode
+  length: 15
+- name: BPChanelName
+  description: 'Sets or returns the distribution channel card name for the sales opportunity. Field name: ChnCrdName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~BPChanelName.html
+  field_name: ChnCrdName
+  length: 100
+- name: BPChannelContact
+  description: 'Sets or returns the contact person of the distribution channel for the sales opportunity. Field name: ChnCrdCon . This is a foreign key to the ContactEmployees Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~BPChannelContact.html
+  field_name: ChnCrdCon
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Browser.html
+- name: CardCode
+  description: 'Sets or returns the business partner code. Mandatory property. Length: 15 characters. Field name: CardCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~CardCode.html
+  length: 15
+- name: ClosingDate
+  description: 'The closing date of the sales opportunity. Field name: CloseDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ClosingDate.html
+  field_name: CloseDate
+- name: ClosingGrossProfitLocal
+  description: 'Returns the closing gross profit in local currency. Field name: RealProfL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ClosingGrossProfitLocal.html
+  field_name: RealProfL
+- name: ClosingGrossProfitSystem
+  description: 'Returns the closing gross profit in system currency. Field name: RealProfS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ClosingGrossProfitSystem.html
+  field_name: RealProfS
+- name: ClosingPercentage
+  description: 'Sets or returns the propability percentage for closing the sales opportunity. Field name: CloPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ClosingPercentage.html
+  field_name: CloPrcnt
+- name: ClosingType
+  description: 'Sets or returns a valid value of BoSoClosedInTypes type that specifies the date types (days, weeks, or months) for the ClosingDate . Field name: DifType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ClosingType.html
+  field_name: DifType
+- name: Competition
+  description: Returns the SalesOpportunitiesCompetition child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Competition.html
+- name: ContactPerson
+  description: 'Sets or returns the customer contact person code. Field name: CprCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ContactPerson.html
+  field_name: CprCode
+- name: CurrentStageNo
+  description: 'Returns the current stage number. Field name: StepLast . This is a foreign key to the SalesStages object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~CurrentStageNo.html
+  field_name: StepLast
+- name: CurrentStageNumber
+  description: property CurrentStageNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~CurrentStageNumber.html
+- name: CustomerName
+  description: 'Sets or returns the business partner name who is related to the sales opportunity. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~CustomerName.html
+  field_name: Name
+  length: 100
+- name: DataOwnershipfield
+  description: 'Sets or returns the employee ID who is responsible for the sales opportunity. Field name: Owner . This is a foreign key to the Employees table ( OHEM ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~DataOwnershipfield.html
+  field_name: Owner
+- name: DocumentCheckbox
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not restrict the search range for the business partner''s documents. Field name: DocChkbox .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~DocumentCheckbox.html
+  field_name: DocChkbox
+- name: GrossProfit
+  description: 'Sets or returns the gross profit percentage. Field name: PrcnProf .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~GrossProfit.html
+  field_name: PrcnProf
+- name: GrossProfitTotalLocal
+  description: 'Sets or returns the total gross profit in local currency. Field name: SumProfL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~GrossProfitTotalLocal.html
+  field_name: SumProfL
+- name: GrossProfitTotalSystem
+  description: 'Sets or returns the total gross profit in system currency. Field name: SumProfS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~GrossProfitTotalSystem.html
+  field_name: SumProfS
+- name: Industry
+  description: 'Sets or returns the industry ID number. Field name: Industry . This is a foreign key to the Industries object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Industry.html
+- name: InterestField1
+  description: 'Sets or returns the main interest range for the sales opportunity. Field name: IntCat1 . This is a foreign key to the Interest table ( ooin ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~InterestField1.html
+  field_name: IntCat1
+- name: InterestField2
+  description: 'Sets or returns the secondary interest range for the sales opportunity. Field name: IntCat2 . This is a foreign key to the Interest table ( ooin ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~InterestField2.html
+  field_name: IntCat2
+- name: InterestField3
+  description: 'Sets or returns the additional interest range for the sales opportunity. Field name: IntCat3 . This is a foreign key to the Interest table ( ooin ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~InterestField3.html
+  field_name: IntCat3
+- name: InterestLevel
+  description: 'Sets or returns the interest level (for example: warm, cold, general interest, and so on) for the sales opportunity. Field name: IntRate . This is a foreign key to the Interest table ( OOIR ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~InterestLevel.html
+  field_name: IntRate
+- name: Interests
+  description: Returns the SalesOpportunitiesInterests child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Interests.html
+- name: Lines
+  description: Returns the SalesOpportunitiesLines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Lines.html
+- name: LinkedDocumentNumber
+  description: 'Sets or returns the document number that is linked to the sales opportunity. Field name: DocNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~LinkedDocumentNumber.html
+  field_name: DocNum
+  length: 20
+- name: LinkedDocumentType
+  description: 'Sets or returns the type of the document that is linked to the sales opportunity. For example: sales quotation, sales order, delivery, or A/R invoice. Field name: DocType . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~LinkedDocumentType.html
+  field_name: DocType
+  length: 2
+- name: MaxLocalTotal
+  description: 'Sets or returns the total predicted sales in local currency. Field name: MaxSumLoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~MaxLocalTotal.html
+  field_name: MaxSumLoc
+- name: MaxSystemTotal
+  description: 'Sets or returns the total predicted sales in system currency. Field name: MaxSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~MaxSystemTotal.html
+  field_name: MaxSumSys
+- name: OpportunityName
+  description: 'Sets or returns the opportunity name. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~OpportunityName.html
+  field_name: Name
+  length: 100
+- name: OpportunityType
+  description: property OpportunityType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~OpportunityType.html
+- name: Partners
+  description: Returns the SalesOpportunitiesPartners child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Partners.html
+- name: PredictedClosingDate
+  description: 'Sets or returns the predicted closing date. Field name: PredDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~PredictedClosingDate.html
+  field_name: PredDate
+- name: ProjectCode
+  description: 'Sets or returns the project code as defined in the Projects object. This is a foreign key to the Projects table ( OPRJ ). Length: 8 characters. Field name: PrjCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ProjectCode.html
+  field_name: PrjCode
+  length: 8
+- name: ReasonForClosing
+  description: 'Sets or returns the reason for closing (exists only if the status is "Missed"). Field name: Reason . This is a foreign key to the Defect Cause table ( OOFR ), not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~ReasonForClosing.html
+  field_name: Reason
+- name: Reasons
+  description: Returns the SalesOpportunitiesReasons child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Reasons.html
+- name: Remarks
+  description: 'Sets or returns a memo type string that specifies remarks of the sales opportunity. Field name: Memo . Length:64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Remarks.html
+  field_name: Memo
+- name: SalesPerson
+  description: 'Sets or returns the sales person code. Field name: SlpCode . This is a foreign key to the SalesPersons object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~SalesPerson.html
+  field_name: SlpCode
+- name: SequentialNo
+  description: 'Returns the key identifier of the sales opportunity record. SAP Business One assigns this key number automatically when adding a sales opportunity. Field name: OpprId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~SequentialNo.html
+  field_name: OpprId
+- name: Source
+  description: 'Sets or returns the source of the sales opportunity, for example, Internet, exposition, consultant, and so on. Field name: Source This is a foreign key to the Information Source table ( OOSR ), which is exposed via the SalesOpportunitySourcesSetupService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Source.html
+- name: StartDate
+  description: 'Sets or returns the start date of the sales opportunity. Mandatory property. Field name: OpenDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~StartDate.html
+  field_name: OpenDate
+- name: Status
+  description: 'Sets or returns a valid value of BoSoOsStatus type that specifies the summary status of the sales opportunity (Open, Lost, or Won). Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Status.html
+- name: StatusRemarks
+  description: 'Sets or returns the status remarks. Length: 30 characters. Field name: StatusRem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~StatusRemarks.html
+  field_name: StatusRem
+  length: 30
+- name: Territory
+  description: 'Sets or returns the sales opportunity territory (segment of the market). Field name: Territory . This is a foreign key to the Territories object. Sets or returns the business partner territory as defined in SAP Business One. Relevant to business partners of customer type only. Field name: Territory . This is a foreign key to the Territories object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~Territory.html
+- name: TotalAmounSystem
+  description: 'Sets or returns the closing total amount of sales in system currency. Field name: RealSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~TotalAmounSystem.html
+  field_name: RealSumSys
+- name: TotalAmountLocal
+  description: 'Sets or returns the closing total amount of sales in local currency. Field name: SumProfL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~TotalAmountLocal.html
+  field_name: SumProfL
+- name: UpdateDate
+  description: property UpdateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~UpdateDate.html
+- name: UpdateTime
+  description: property UpdateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~UpdateTime.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who enters the sales opportunity details. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~UserSignature.html
+  field_name: UserSign
+- name: WeightedSumLC
+  description: 'Sets or returns the weighted predicted sales in local currency. Field name: WtSumLoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~WeightedSumLC.html
+  field_name: WtSumLoc
+- name: WeightedSumSC
+  description: 'Sets or returns the weighted predicted sales in system currency. Field name: WtSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunities~WeightedSumSC.html
+  field_name: WtSumSys

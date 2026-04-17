@@ -1,0 +1,28 @@
+name: CallMessageArgument
+title: CallMessageArgument Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument.html
+description: 'This object represents the list of arguments related to the response message. Source table: REQ3 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~ToXMLString.html
+properties:
+- name: Name
+  description: Sets or returns the name of the response message user-defined argument.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~Name.html
+- name: Value
+  description: Sets or returns the value of the response message user-defined argument.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessageArgument~Value.html

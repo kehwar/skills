@@ -1,0 +1,26 @@
+name: ApprovalTemplateUsers
+title: ApprovalTemplateUsers Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers.html
+description: 'ApprovalTemplateUsers is a Data Collection of ApprovalTemplateUser data structures. Source table: WTM1 .'
+methods:
+- name: Add
+  description: Adds a new ApprovalTemplateUser to the ApprovalTemplateUsers Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the ApprovalTemplateUser data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~Item.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~ToXMLString.html
+properties:
+- name: Count
+  description: 'Returns the number of ApprovalTemplateUser data structures in the ApprovalTemplateUsers data collection. Field name: NumOfDocs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUsers~Count.html
+  field_name: NumOfDocs

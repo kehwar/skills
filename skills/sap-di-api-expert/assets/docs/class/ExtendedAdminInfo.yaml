@@ -1,0 +1,133 @@
+name: ExtendedAdminInfo
+title: ExtendedAdminInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo.html
+description: 'Enables you to set and get additional administration properties, in addition to the properties accessed via the AdminInfo object. Source table: ADM1 .'
+properties:
+- name: AddressType
+  description: 'The address type for the company. Field name: AddrType. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AddressType.html
+  field_name: AddrType
+  length: 100
+- name: AllowInactiveItemsInInventoryCountingAndPosting
+  description: property AllowInactiveItemsInInventoryCountingAndPosting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AllowInactiveItemsInInventoryCountingAndPosting.html
+- name: AllowInactiveItemsInInventoryOpeningBalance
+  description: property AllowInactiveItemsInInventoryOpeningBalance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AllowInactiveItemsInInventoryOpeningBalance.html
+- name: AuthorityPassword
+  description: property AuthorityPassword
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AuthorityPassword.html
+- name: AuthorityUser
+  description: property AuthorityUser
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AuthorityUser.html
+- name: AutoAssignNewBranchToBP
+  description: property AutoAssignNewBranchToBP
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~AutoAssignNewBranchToBP.html
+- name: CNPJofITCompany
+  description: 'CNPJ of IT company responsible for NFe. Field name: CNPJOfIT. Length: 14 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CNPJofITCompany.html
+  field_name: CNPJOfIT
+  length: 14
+- name: CommercialRegister
+  description: property CommercialRegister
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CommercialRegister.html
+- name: CompanyQualificationCode
+  description: property CompanyQualificationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CompanyQualificationCode.html
+- name: ContactPerson
+  description: 'Contact person name. Field name: CnPerson. Length: 60 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ContactPerson.html
+  field_name: CnPerson
+  length: 60
+- name: ContactPersonEMail
+  description: 'Contact person Email. Field name: Email. Length: 60 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ContactPersonEMail.html
+  field_name: Email
+  length: 60
+- name: ContactPersonPhone
+  description: 'Contact person phone number. Field name: Telephone. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ContactPersonPhone.html
+  field_name: Telephone
+  length: 50
+- name: CooperativeAssociationTypeCode
+  description: property CooperativeAssociationTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CooperativeAssociationTypeCode.html
+- name: CopyRefDocFormOrigDocToDupDoc
+  description: To determine whether to copy document references from original documents to their duplicates or not.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CopyRefDocFormOrigDocToDupDoc.html
+- name: CreditContributionOriginCode
+  description: property CreditContributionOriginCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~CreditContributionOriginCode.html
+- name: DateOfIncorporation
+  description: property DateOfIncorporation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~DateOfIncorporation.html
+- name: DeclarerTypeCode
+  description: property DeclarerTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~DeclarerTypeCode.html
+- name: DocumentRemarksInclude
+  description: 'Determines the Remarks field when you copy a base marketing document to a target document. Field name: RmrksIncld .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~DocumentRemarksInclude.html
+  field_name: RmrksIncld
+- name: EconomicActivityTypeCode
+  description: property EconomicActivityTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~EconomicActivityTypeCode.html
+- name: ElectronicApprovalForGoodsTransEnabled
+  description: property ElectronicApprovalForGoodsTransEnabled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ElectronicApprovalForGoodsTransEnabled.html
+- name: ElectronicApprovalForInvoiceEnabled
+  description: property ElectronicApprovalForInvoiceEnabled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ElectronicApprovalForInvoiceEnabled.html
+- name: EnableIntrastat
+  description: property EnableIntrastat
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~EnableIntrastat.html
+- name: EnableSameURLforPaymentTypeService
+  description: 'Portugal localization: Checkbox-type setting allows you to use "URL for Invoice Type Service" field entry for payment service.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~EnableSameURLforPaymentTypeService.html
+- name: EnvironmentType
+  description: property EnvironmentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~EnvironmentType.html
+- name: GlobalLocationNumber
+  description: property GlobalLocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~GlobalLocationNumber.html
+- name: IPIPeriodCode
+  description: property IPIPeriodCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~IPIPeriodCode.html
+- name: IPITaxContributor
+  description: property IPITaxContributor
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~IPITaxContributor.html
+- name: NatureOfCompanyCode
+  description: property NatureOfCompanyCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~NatureOfCompanyCode.html
+- name: NoWarningForLinkTypeUDF
+  description: 'No warning for link-type UDF. Field name: NoWrnLkUdf.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~NoWarningForLinkTypeUDF.html
+  field_name: NoWrnLkUdf
+- name: OKDPNumber
+  description: property OKDPNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~OKDPNumber.html
+- name: Opting4ICMS
+  description: property Opting4ICMS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~Opting4ICMS.html
+- name: ProfitTaxationCode
+  description: property ProfitTaxationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~ProfitTaxationCode.html
+- name: SPEDProfile
+  description: property SPEDProfile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~SPEDProfile.html
+- name: STDCode
+  description: property STDCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~STDCode.html
+- name: STDCodeForeign
+  description: property STDCodeForeign
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~STDCodeForeign.html
+- name: StreetNo
+  description: 'The street number for the company. Field name: StreetNo. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~StreetNo.html
+  length: 100
+- name: URLforGoodsTransportService
+  description: property URLforGoodsTransportService
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~URLforGoodsTransportService.html
+- name: URLforInvoiceTypeService
+  description: property URLforInvoiceTypeService
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExtendedAdminInfo~URLforInvoiceTypeService.html

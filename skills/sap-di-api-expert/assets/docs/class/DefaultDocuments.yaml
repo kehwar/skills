@@ -1,0 +1,74 @@
+name: DefaultDocuments
+title: DefaultDocuments Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments.html
+description: 'The DefaultDocuments is a child object of the UserDefaultGroups object. It enables to set default settings for printing documents per user or users group. Source table: UDG1 .'
+remarks: 'If you set this object, the system uses these defaults instead of the Print Preferences ( OADP and ADP1 tables, which are not exposed through the DI API). The relatedness of the properties depends on the document type ( ObjectType ). For example, PrintTotal is related to document types such as, Goods Receipt and Sales Quatation. To display the form in the application: - Select Administration -->Setup -->General -->Users . From the Defaults field, click the Choose From List button. In the List of User Defaults , click the New button. In the User Defaults form, select the Print tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~SetCurrentLine.html
+properties:
+- name: AddExport
+  description: 'Determines the default for whether or not to also export the document to Microsoft Word format when the user clicks the Add button (adds the document to the system). Field name: ExprtOnAdd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~AddExport.html
+  field_name: ExprtOnAdd
+- name: AddPrint
+  description: 'Determines the default for whether or not to also print the document when the user clicks the Add button (adds the document to the system). Field name: PrintOnAdd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~AddPrint.html
+  field_name: PrintOnAdd
+- name: Code
+  description: 'Returns the code (primary key) of the user defaults group. Field name: Code . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~Code.html
+  length: 8
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~Count.html
+- name: EnglishKeyboardEnteringBPC
+  description: 'Determines the default for whether or not to switch the keyboard to English when entering a business partner code for the specified document type. Field name: EngKBCard .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~EnglishKeyboardEnteringBPC.html
+  field_name: EngKBCard
+- name: EnglishKeyboardEnteringItem
+  description: 'Determines the default for whether or not to switch the keyboard to English when entering an item code for the specified document type. Field name: EngKBCard .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~EnglishKeyboardEnteringItem.html
+  field_name: EngKBCard
+- name: NoofCopies
+  description: 'Sets or returns the number of copies (including original) to print when creating a new document of the specified document type. Field name: Copies .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~NoofCopies.html
+  field_name: Copies
+- name: NoofCopiesforManualDoc
+  description: 'Sets or returns the number of copies to print when creating a document with manual number assignment. The system treats a document with manual number assignment as a copy, not as an original document. Field name: HandCopies .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~NoofCopiesforManualDoc.html
+  field_name: HandCopies
+- name: ObjectType
+  description: 'Returns the document type number for which these defaults apply. For example, set the value 23 for sales quatation (see the ObjList field of the OADP table). Field name: ObjType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~ObjectType.html
+  field_name: ObjType
+  length: 20
+- name: PermanentRemark
+  description: 'Sets or returns the default permanent remark for printing in the specified document type. Field name: Remark . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~PermanentRemark.html
+  field_name: Remark
+  length: 16
+- name: PrintDiscountData
+  description: 'Determines the default for whether or not to print discount data in the specified document type. Field name: PrnDscnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~PrintDiscountData.html
+  field_name: PrnDscnt
+- name: PrintTotals
+  description: 'Sets or returns a valid value that determines wether or not to print the total amount in the document. Field name: PrintSums .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~PrintTotals.html
+  field_name: PrintSums
+- name: PrintVendorCatalogNo
+  description: 'Sets or returns a valid value that determines wether or not to print the manufacturer number instead of the item number in the specified document type. Field name: VndrNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~PrintVendorCatalogNo.html
+  field_name: VndrNum
+- name: TotalsRounding
+  description: 'Sets or returns a valid value that determines wether or not to round total amounts in the specified document type. Field name: RoundSums .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~TotalsRounding.html
+  field_name: RoundSums
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultDocuments~UserFields.html

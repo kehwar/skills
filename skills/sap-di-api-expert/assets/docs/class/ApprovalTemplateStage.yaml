@@ -1,0 +1,34 @@
+name: ApprovalTemplateStage
+title: ApprovalTemplateStage Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage.html
+description: 'ApprovalTemplateStage is a data structure related to the ApprovalTemplatesService . Source table: WTM2 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~ToXMLString.html
+properties:
+- name: ApprovalStageCode
+  description: 'Sets or returns the confirmation level of this approval. Field name: WstCode . This is a foreign key to the ApprovalStagesService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~ApprovalStageCode.html
+  field_name: WstCode
+- name: Remarks
+  description: 'Sets or returns the description of this Approval Template . Field name: Remarks . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~Remarks.html
+  length: 100
+- name: SortID
+  description: 'Sets or returns the Sort code. Field name: SortId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateStage~SortID.html
+  field_name: SortId

@@ -1,0 +1,37 @@
+name: BOEInstruction
+title: BOEInstruction Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction.html
+description: A data structure object holding properties for the BOEInstructionsService .
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~ToXMLString.html
+properties:
+- name: InstructionCode
+  description: 'Sets or returns a string specifying the instruction code. Field name: InstrCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~InstructionCode.html
+  field_name: InstrCode
+- name: InstructionDesc
+  description: 'Sets or returns a string specifying the instruction description. Field name: InstrDespt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~InstructionDesc.html
+  field_name: InstrDespt
+- name: InstructionEntry
+  description: 'Returns a number specifying the instruction entry. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~InstructionEntry.html
+  field_name: AbsEntry
+- name: IsCancelInstruction
+  description: property IsCancelInstruction
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEInstruction~IsCancelInstruction.html

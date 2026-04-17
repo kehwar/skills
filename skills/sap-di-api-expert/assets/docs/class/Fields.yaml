@@ -1,0 +1,13 @@
+name: Fields
+title: Fields Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Fields.html
+description: The Fields object is a collection of Field objects.
+methods:
+- name: Item
+  description: Retrieves a Field object by its position or by its alias.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Fields~Item.html
+properties:
+- name: Count
+  description: Returns the number of fields in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Fields~Count.html

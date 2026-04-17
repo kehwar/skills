@@ -1,0 +1,108 @@
+name: WithholdingTaxData
+title: WithholdingTaxData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData.html
+description: 'WithholdingTaxData is a child object of Documents object and represents the Withholding tax table related to the document. Source tables: INV5 , RIN5 , RDN5 , RDN5 , PCH5 , RPC5 , DPI5 , DPO5 , DRF5 . The WithholdingTaxData object is relevant only to the following document types: - Documents(oInvoices), Documents(oCorrectionInvoice), Documents(oCorrectionInvoiceReversal) - OINV Documents(oCreditNotes) - ORIN Documents(oReturns) - ORDN Documents(oPurchaseInvoices), Documents(oCorrectionPurchaseInvoice), Documents(oCorrectionPurchaseInvoiceReversal) - OPCH Documents(oPurchaseCreditNotes) - ORPC Documents(oDownPaymentsInput) - ODPI (not exposed through the DI API) Documents(oDownPaymentsOutput) - ODPO (not exposed through the DI API) Documents(oDrafts) - ODRF'
+remarks: 'The data for the Withholding tax table consists on WithholdingTaxCodes definitions. To define withholding tax codes in the application: - Select Administration --> Setup --> Financials --> Tax --> Withholding Tax . To display the form in the application: - Select a document (for example, select Sales - A/R --> A/R Invoice ). From the main menu, select Go to --> WT Table .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~SetCurrentLine.html
+properties:
+- name: BaseDocEntry
+  description: 'Sets or returns the source document ID. Field name: BaseAbsEnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~BaseDocEntry.html
+  field_name: BaseAbsEnt
+- name: BaseDocLine
+  description: 'Sets or returns the line number of the source document. Field name: BaseLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~BaseDocLine.html
+  field_name: BaseLine
+- name: BaseDocType
+  description: 'Sets or returns the source document type. Field name: BaseNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~BaseDocType.html
+  field_name: BaseNum
+- name: BaseDocumentReference
+  description: 'Returns the Base Document Reference number. Field name: BaseRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~BaseDocumentReference.html
+  field_name: BaseRef
+- name: BaseType
+  description: 'Returns the amount type (Gross, Net, or VAT) on which the withholding tax calculation is based. Field name: BaseType . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~BaseType.html
+  length: 1
+- name: Category
+  description: 'Returns a valid value that indicates the cause for posting the withholding tax, either Payment (P) or Invoice (I). Field name: Category . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Category.html
+  length: 1
+- name: Count
+  description: property Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Count.html
+- name: Criteria
+  description: 'Returns the type of accounting under which the withholding tax is recorded. Length: 1 character. Field name: Criteria .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Criteria.html
+  length: 1
+- name: GLAccount
+  description: 'Sets or returns the G/L account to which withholding tax is posted. Field name: Account . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~GLAccount.html
+  field_name: Account
+  length: 15
+- name: LineNum
+  description: 'Returns the number of the withholding tax data line. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~LineNum.html
+- name: Rate
+  description: 'Returns the rate for calculating the withholding tax amount. Field name: Rate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Rate.html
+- name: RoundingType
+  description: 'Returns the rounding method for calculating the withholding tax. Field name: RoundType . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~RoundingType.html
+  field_name: RoundType
+  length: 1
+- name: Status
+  description: 'Determines whether the withholding tax status is Open or Close . Field name: status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~Status.html
+  field_name: status
+- name: TargetAbsEntry
+  description: 'Returns the target sum before the withholding tax calculations. Field name: TrgAbsEntr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~TargetAbsEntry.html
+  field_name: TrgAbsEntr
+- name: TargetDocumentType
+  description: 'Returns the type of the target document. Field name: TrgType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~TargetDocumentType.html
+  field_name: TrgType
+- name: TaxableAmount
+  description: 'Sets or returns the amount (in local currency) that is subject to withholding. Field name: TaxbleAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~TaxableAmount.html
+  field_name: TaxbleAmnt
+- name: TaxableAmountFC
+  description: 'Sets or returns the amount (in foreign currency) that is subject to withholding. Field name: TxblAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~TaxableAmountFC.html
+  field_name: TxblAmntFC
+- name: TaxableAmountinSys
+  description: 'Sets or returns the amount (in system currency) that is subject to withholding. Field name: TxblAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~TaxableAmountinSys.html
+  field_name: TxblAmntSC
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~UserFields.html
+- name: WithholdingType
+  description: 'Returns the withholding tax type. Field name: Type . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~WithholdingType.html
+  field_name: Type
+  length: 1
+- name: WTAmount
+  description: 'Sets or returns the withholding tax amount in local currency. Field name: ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~WTAmount.html
+- name: WTAmountFC
+  description: 'Sets or returns the withholding tax amount in foreign currency. Field name: WTAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~WTAmountFC.html
+  field_name: WTAmntFC
+- name: WTAmountSys
+  description: 'Sets or returns the withholding tax amount in system currency. Field name: WTAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~WTAmountSys.html
+  field_name: WTAmntSC
+- name: WTCode
+  description: 'Sets or returns the withholding tax code. Field name: WTCode . Length: 4 characters. This is a foreign key to the WithholdingTaxCodes Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxData~WTCode.html
+  length: 4

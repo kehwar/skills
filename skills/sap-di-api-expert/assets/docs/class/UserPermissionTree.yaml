@@ -1,0 +1,69 @@
+name: UserPermissionTree
+title: UserPermissionTree Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree.html
+description: 'UserPermissionTree is a business object that represents the User Authorization Form . This object enables to manage user authorization for new forms (which their FormType property is defined in UserPermissionForms object). After adding a user permission tree to the Authorizations tree, you can set the UserPermission object. This object enables you to: - Add a user permission tree to the Authorizations tree. Retrieve a user permission tree by its key. Update a user permission tree. Remove a user permission tree from the Authorizations tree. Save the object in XML format. Source table: OUPT .'
+remarks: 'Mandatory field in SAP Business One: PermissionId . To display the form in the application: - Select Administration --> System Initialization --> Authorization --> User Authorization Form . See example of User Authorization Form . To manage user authorization for forms that are not forms, set the mUserPermission.IsItem = tYES and create the logic to support the item permission.'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Browser.html
+- name: DisplayOrder
+  description: 'Returns the display order of the user permission form in the tree (starts from 1). Field name: VisOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~DisplayOrder.html
+  field_name: VisOrder
+- name: IsItem
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the user permission relates to an item in the form, for example, button, secondary form, and menu item. Field name: IsItem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~IsItem.html
+- name: Levels
+  description: 'Returns the level (1 to 5) of the user permission in the tree. For parent user permissions, assign level 1. For child user permissions, assign level greater than 1. Field name: Levels .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Levels.html
+- name: Name
+  description: 'Sets or returns the name of the user permission. This name will appear in the General Authorization Tree. Field name: Name . Length: 40 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Name.html
+  length: 40
+- name: Options
+  description: 'Sets or returns a valid value of BoUPTOptions type that specifies the user permission options. Field name: Options .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~Options.html
+- name: ParentID
+  description: 'Sets or returns the identification key of the parent user permission. Mandatory field for child permission in a tree. Length: 20 characters. Field name: FathId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~ParentID.html
+  field_name: FathId
+  length: 20
+- name: PermissionID
+  description: 'Sets or returns the identification key of the user permission. Mandatory property. Length: 20 characters. Field name: AbsId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~PermissionID.html
+  field_name: AbsId
+  length: 20
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~UserFields.html
+- name: UserPermissionForms
+  description: Returns the UserPermissionForms child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~UserPermissionForms.html
+- name: UserSignature
+  description: 'Returns the ID code of the user who enters the user permission tree details. This user ID code is defined in the Users object. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionTree~UserSignature.html
+  field_name: UserSign

@@ -1,0 +1,37 @@
+name: CurrencyRestrictions
+title: CurrencyRestrictions Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions.html
+description: 'The CurrencyRestrictions is a child object of the WizardPaymentMethods object. This object enables to allow or restrict currencies in the payment method. Source table: PYM1 .'
+remarks: 'To display the form in the application: - Select Administration -->Setup -->Banking -->Payment Methods . Click the [...] button near the Currency Restriction field. The CurrencyRestrictions object is applicable when the CurrencyRestriction property of the WizardPaymentMethods object is set to tYES .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~SetCurrentLine.html
+properties:
+- name: Choose
+  description: 'Determines whether to allow (Y) or to restrict (N) the currency in the payment method. Field name: Choose .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~Choose.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~Count.html
+- name: CurrencyCode
+  description: 'Sets or returns the currency code as defined through the Currencies object. Field name: CurrCode . This is a foreign key to the Currencies object. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~CurrencyCode.html
+  field_name: CurrCode
+  length: 3
+- name: CurrencyName
+  description: 'Returns the currency name as defined through the Currencies object. Field name: CurrName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~CurrencyName.html
+  field_name: CurrName
+  length: 20
+- name: PaymentMethodCode
+  description: 'Returns the payment method code as defined in the WizardPaymentMethods object. Field name: PymCode . This is a foreign key to the WizardPaymentMethods object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~PaymentMethodCode.html
+  field_name: PymCode
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CurrencyRestrictions~UserFields.html

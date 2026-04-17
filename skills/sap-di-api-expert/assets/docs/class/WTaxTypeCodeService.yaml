@@ -1,0 +1,31 @@
+name: WTaxTypeCodeService
+title: WTaxTypeCodeService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService.html
+description: 'Source table: OWXT .'
+remarks: "For the Italy localization only. Navigation path: Business Partner Master Data â\x86\x92 Accounting â\x86\x92 Tax , select the checkbox Subject to Withholding Tax , choose the browser button next to the Specific WTax Amounts Setup field, and go to the column WTax Type Code ."
+methods:
+- name: AddWTaxTypeCode
+  description: AddWTaxTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~AddWTaxTypeCode.html
+- name: DeleteWTaxTypeCode
+  description: DeleteWTaxTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~DeleteWTaxTypeCode.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~GetDataInterfaceFromXMLString.html
+- name: GetWTaxTypeCode
+  description: GetWTaxTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~GetWTaxTypeCode.html
+- name: GetWTaxTypeCodeList
+  description: GetWTaxTypeCodeList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~GetWTaxTypeCodeList.html
+- name: UpdateWTaxTypeCode
+  description: UpdateWTaxTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WTaxTypeCodeService~UpdateWTaxTypeCode.html

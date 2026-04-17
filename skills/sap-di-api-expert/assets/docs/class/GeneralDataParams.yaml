@@ -1,0 +1,12 @@
+name: GeneralDataParams
+title: GeneralDataParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralDataParams.html
+description: Holds the keys to rows in database tables linked to a UDO data. This object is used to pass keys to and from GeneralService methods. Because it cannot be known the names of the properties that contain the key, properties of the GeneralDataParams object are set and retrieved with the generic SetProperty and GetProperty methods
+methods:
+- name: GetProperty
+  description: Gets a property of the GeneralDataParams object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralDataParams~GetProperty.html
+- name: SetProperty
+  description: Sets a property of the GeneralDataParams object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralDataParams~SetProperty.html

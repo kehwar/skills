@@ -1,0 +1,30 @@
+name: ServiceCallSolutionStatusService
+title: ServiceCallSolutionStatusService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService.html
+description: 'The ServiceCallSolutionStatusService service enables you to add, look up and remove service call solution statuses in the service call solution status master data table. Service call solution statuses are used to specify the status of a solution for a service call. To see the list of service call solution statuses, select Service --> Service Call, and then select the Solutions tab. Create a new solution or edit an existing solution. The service call solution statuses are listed in the Status field. Source table: OSST'
+methods:
+- name: AddServiceCallSolutionStatus
+  description: Adds a service call solution status.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~AddServiceCallSolutionStatus.html
+- name: DeleteServiceCallSolutionStatus
+  description: Deletes an existing service call solution status. The service call solution status is specified by its key ( Number ), which is contained in the ServiceCallSolutionStatusParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~DeleteServiceCallSolutionStatus.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceCallSolutionStatusService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~GetDataInterfaceFromXMLString.html
+- name: GetServiceCallSolutionStatus
+  description: Retrieves a service call solution status. The service call solution status is specified by its key ( Number ), which is contained in the ServiceCallSolutionStatusParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~GetServiceCallSolutionStatus.html
+- name: GetServiceCallSolutionStatusList
+  description: Retrieves the keys and names of all the service call solution statuses.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~GetServiceCallSolutionStatusList.html
+- name: UpdateServiceCallSolutionStatus
+  description: Updates an existing service call solution status. The data for the service call solution status, including the key of the solution status to be updated, is contained in the ServiceCallSolutionStatus passed to the method. To update a service call solution status, you must first retrieve it using the GetServiceCallSolutionStatus method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutionStatusService~UpdateServiceCallSolutionStatus.html

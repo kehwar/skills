@@ -1,0 +1,100 @@
+name: ItemUnitOfMeasurements
+title: ItemUnitOfMeasurements Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements.html
+description: 'Unit of measurement for the item. Source table: ITM12 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Count.html
+- name: DefaultBarcode
+  description: 'The default bar code. Field name: BcdEntDft .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~DefaultBarcode.html
+  field_name: BcdEntDft
+- name: DefaultPackage
+  description: 'The default package code. Field name: PkgCodeDft .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~DefaultPackage.html
+  field_name: PkgCodeDft
+- name: Height1
+  description: 'The height for the unit. Field name: Height1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Height1.html
+- name: Height1Unit
+  description: 'The height UoM. Field name: Hght1Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Height1Unit.html
+  field_name: Hght1Unit
+- name: Height2
+  description: 'The height for the unit. Field name: Height2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Height2.html
+- name: Height2Unit
+  description: 'The height UoM. Field name: Hght2Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Height2Unit.html
+  field_name: Hght2Unit
+- name: Length1
+  description: 'The length for the unit. Field name: Length1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Length1.html
+- name: Length1Unit
+  description: 'The length UoM. Field name: Len1Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Length1Unit.html
+  field_name: Len1Unit
+- name: Length2
+  description: 'The length for the unit. Field name: Length2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Length2.html
+- name: Length2Unit
+  description: 'The length UoM. Field name: Len2Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Length2Unit.html
+  field_name: Len2Unit
+- name: Packages
+  description: The item UoM package.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Packages.html
+- name: UoMEntry
+  description: 'The internal key of the UoM. Field name: UomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~UoMEntry.html
+  field_name: UomEntry
+- name: UoMType
+  description: The type of the UoM.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~UoMType.html
+- name: Volume
+  description: 'The volume for the unit. Field name: Volume .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Volume.html
+- name: VolumeUnit
+  description: 'The volume UoM. Field name: VolUnit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~VolumeUnit.html
+  field_name: VolUnit
+- name: Weight1
+  description: 'The weight for the unit. Field name: Weight1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Weight1.html
+- name: Weight1Unit
+  description: 'The weight UoM. Field name: Wght1Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Weight1Unit.html
+  field_name: Wght1Unit
+- name: Weight2
+  description: 'The weight for the unit. Field name: Weight2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Weight2.html
+- name: Weight2Unit
+  description: 'The weight UoM. Field name: Wght2Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Weight2Unit.html
+  field_name: Wght2Unit
+- name: Width1
+  description: 'The width for the unit. Field name: Width1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Width1.html
+- name: Width1Unit
+  description: 'The width UoM. Field name: Wdth1Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Width1Unit.html
+  field_name: Wdth1Unit
+- name: Width2
+  description: 'The width for the unit. Field name: Width2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Width2.html
+- name: Width2Unit
+  description: 'The width UoM. Field name: Wdth2Unit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemUnitOfMeasurements~Width2Unit.html
+  field_name: Wdth2Unit

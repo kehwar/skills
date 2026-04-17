@@ -1,0 +1,308 @@
+name: ItemsAttributeGroups
+title: ItemsAttributeGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups.html
+description: 'ItemsAttributeGroups is a child object of the Items object. You can manage the attributes of an asset. Source table: ITM13 .'
+remarks: To access the subtab, from the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data . Select the Fixed Assets tab and then the Additional Information subtab.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~SetCurrentLine.html
+properties:
+- name: Attribute1
+  description: 'Attribute 1. Field name: AttriTxt1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute1.html
+  field_name: AttriTxt1
+  length: 100
+- name: Attribute10
+  description: 'Attribute 10. Field name: AttriTxt10 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute10.html
+  field_name: AttriTxt10
+  length: 100
+- name: Attribute11
+  description: 'Attribute 11. Field name: AttriTxt11 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute11.html
+  field_name: AttriTxt11
+  length: 100
+- name: Attribute12
+  description: 'Attribute 12. Field name: AttriTxt12 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute12.html
+  field_name: AttriTxt12
+  length: 100
+- name: Attribute13
+  description: 'Attribute 13. Field name: AttriTxt13 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute13.html
+  field_name: AttriTxt13
+  length: 100
+- name: Attribute14
+  description: 'Attribute 14. Field name: AttriTxt14 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute14.html
+  field_name: AttriTxt14
+  length: 100
+- name: Attribute15
+  description: 'Attribute 15. Field name: AttriTxt15 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute15.html
+  field_name: AttriTxt15
+  length: 100
+- name: Attribute16
+  description: 'Attribute 16. Field name: AttriTxt16 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute16.html
+  field_name: AttriTxt16
+  length: 100
+- name: Attribute17
+  description: 'Attribute 17. Field name: AttriTxt17 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute17.html
+  field_name: AttriTxt17
+  length: 100
+- name: Attribute18
+  description: 'Attribute 18. Field name: AttriTxt18 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute18.html
+  field_name: AttriTxt18
+  length: 100
+- name: Attribute19
+  description: 'Attribute 19. Field name: AttriTxt19 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute19.html
+  field_name: AttriTxt19
+  length: 100
+- name: Attribute2
+  description: 'Attribute 2. Field name: AttriTxt2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute2.html
+  field_name: AttriTxt2
+  length: 100
+- name: Attribute20
+  description: 'Attribute 20. Field name: AttriTxt20 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute20.html
+  field_name: AttriTxt20
+  length: 100
+- name: Attribute21
+  description: 'Attribute 21. Field name: AttriTxt21 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute21.html
+  field_name: AttriTxt21
+  length: 100
+- name: Attribute22
+  description: 'Attribute 22. Field name: AttriTxt22 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute22.html
+  field_name: AttriTxt22
+  length: 100
+- name: Attribute23
+  description: 'Attribute 23. Field name: AttriTxt23 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute23.html
+  field_name: AttriTxt23
+  length: 100
+- name: Attribute24
+  description: 'Attribute 24. Field name: AttriTxt24 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute24.html
+  field_name: AttriTxt24
+  length: 100
+- name: Attribute25
+  description: 'Attribute 25. Field name: AttriTxt25 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute25.html
+  field_name: AttriTxt25
+  length: 100
+- name: Attribute26
+  description: 'Attribute 26. Field name: AttriTxt26 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute26.html
+  field_name: AttriTxt26
+  length: 100
+- name: Attribute27
+  description: 'Attribute 27. Field name: AttriTxt27 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute27.html
+  field_name: AttriTxt27
+  length: 100
+- name: Attribute28
+  description: 'Attribute 28. Field name: AttriTxt28 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute28.html
+  field_name: AttriTxt28
+  length: 100
+- name: Attribute29
+  description: 'Attribute 29. Field name: AttriTxt29 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute29.html
+  field_name: AttriTxt29
+  length: 100
+- name: Attribute3
+  description: 'Attribute 3. Field name: AttriTxt3 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute3.html
+  field_name: AttriTxt3
+  length: 100
+- name: Attribute30
+  description: 'Attribute 30. Field name: AttriTxt30 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute30.html
+  field_name: AttriTxt30
+  length: 100
+- name: Attribute31
+  description: 'Attribute 31. Field name: AttriTxt31 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute31.html
+  field_name: AttriTxt31
+  length: 100
+- name: Attribute32
+  description: 'Attribute 32. Field name: AttriTxt32 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute32.html
+  field_name: AttriTxt32
+  length: 100
+- name: Attribute33
+  description: 'Attribute 33. Field name: AttriInt33 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute33.html
+  field_name: AttriInt33
+- name: Attribute34
+  description: 'Attribute 34. Field name: AttriInt34 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute34.html
+  field_name: AttriInt34
+- name: Attribute35
+  description: 'Attribute 35. Field name: AttriInt35 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute35.html
+  field_name: AttriInt35
+- name: Attribute36
+  description: 'Attribute 36. Field name: AttriInt36 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute36.html
+  field_name: AttriInt36
+- name: Attribute37
+  description: 'Attribute 37. Field name: AttriInt37 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute37.html
+  field_name: AttriInt37
+- name: Attribute38
+  description: 'Attribute 38. Field name: AttriInt38 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute38.html
+  field_name: AttriInt38
+- name: Attribute39
+  description: 'Attribute 39. Field name: AttriInt39 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute39.html
+  field_name: AttriInt39
+- name: Attribute4
+  description: 'Attribute 4. Field name: AttriTxt4 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute4.html
+  field_name: AttriTxt4
+  length: 100
+- name: Attribute40
+  description: 'Attribute 40. Field name: AttriInt40 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute40.html
+  field_name: AttriInt40
+- name: Attribute41
+  description: 'Attribute 41. Field name: AttriInt41 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute41.html
+  field_name: AttriInt41
+- name: Attribute42
+  description: 'Attribute 42. Field name: AttriInt42 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute42.html
+  field_name: AttriInt42
+- name: Attribute43
+  description: 'Attribute 43. Field name: AttriDt43 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute43.html
+  field_name: AttriDt43
+- name: Attribute44
+  description: 'Attribute 44. Field name: AttriDt44 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute44.html
+  field_name: AttriDt44
+- name: Attribute45
+  description: 'Attribute 45. Field name: AttriDt45 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute45.html
+  field_name: AttriDt45
+- name: Attribute46
+  description: 'Attribute 46. Field name: AttriDt46 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute46.html
+  field_name: AttriDt46
+- name: Attribute47
+  description: 'Attribute 47. Field name: AttriDt47 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute47.html
+  field_name: AttriDt47
+- name: Attribute48
+  description: 'Attribute 4. Field name: AttriAm4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute48.html
+  field_name: AttriAm4
+- name: Attribute49
+  description: 'Attribute 49. Field name: AttriAm49 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute49.html
+  field_name: AttriAm49
+- name: Attribute5
+  description: 'Attribute 5. Field name: AttriTxt5 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute5.html
+  field_name: AttriTxt5
+  length: 100
+- name: Attribute50
+  description: 'Attribute 50. Field name: AttriAm50 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute50.html
+  field_name: AttriAm50
+- name: Attribute51
+  description: 'Attribute 51. Field name: AttriAm51 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute51.html
+  field_name: AttriAm51
+- name: Attribute52
+  description: 'Attribute 52. Field name: AttriAm52 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute52.html
+  field_name: AttriAm52
+- name: Attribute53
+  description: 'Attribute 53. Field name: AttriAm53 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute53.html
+  field_name: AttriAm53
+- name: Attribute54
+  description: 'Attribute 54. Field name: AttriAm54 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute54.html
+  field_name: AttriAm54
+- name: Attribute55
+  description: 'Attribute 55. Field name: AttriPr55 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute55.html
+  field_name: AttriPr55
+- name: Attribute56
+  description: 'Attribute 56. Field name: AttriPr56 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute56.html
+  field_name: AttriPr56
+- name: Attribute57
+  description: 'Attribute 57. Field name: AttriPr57 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute57.html
+  field_name: AttriPr57
+- name: Attribute58
+  description: 'Attribute 58. Field name: AttriPr58 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute58.html
+  field_name: AttriPr58
+- name: Attribute59
+  description: 'Attribute 59. Field name: AttriPr59 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute59.html
+  field_name: AttriPr59
+- name: Attribute6
+  description: 'Attribute 6. Field name: AttriTxt6 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute6.html
+  field_name: AttriTxt6
+  length: 100
+- name: Attribute60
+  description: 'Attribute 60. Field name: AttriQTY60 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute60.html
+  field_name: AttriQTY60
+- name: Attribute61
+  description: 'Attribute 61. Field name: AttriQTY61 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute61.html
+  field_name: AttriQTY61
+- name: Attribute62
+  description: 'Attribute 62. Field name: AttriQTY62 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute62.html
+  field_name: AttriQTY62
+- name: Attribute63
+  description: 'Attribute 63. Field name: AttriQTY63 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute63.html
+  field_name: AttriQTY63
+- name: Attribute64
+  description: 'Attribute 64. Field name: AttriQTY64 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute64.html
+  field_name: AttriQTY64
+- name: Attribute7
+  description: 'Attribute 7. Field name: AttriTxt7 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute7.html
+  field_name: AttriTxt7
+  length: 100
+- name: Attribute8
+  description: 'Attribute 8. Field name: AttriTxt8 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute8.html
+  field_name: AttriTxt8
+  length: 100
+- name: Attribute9
+  description: 'Attribute 9. Field name: AttriTxt9 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Attribute9.html
+  field_name: AttriTxt9
+  length: 100
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsAttributeGroups~Count.html

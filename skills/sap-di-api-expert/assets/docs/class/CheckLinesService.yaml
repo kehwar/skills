@@ -1,0 +1,22 @@
+name: CheckLinesService
+title: CheckLinesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService.html
+description: 'The CheckLinesService service enables you to get deposits for received checks. Source table: OCHH .'
+remarks: To view details on a deposited check, from SAP Business One, choose Banking --> Deposits --> Deposit --> Check .
+methods:
+- name: GetCheckLine
+  description: Retrieves a deposit for a received check. The check is specified by its key, which is contained in the CheckLineParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService~GetCheckLine.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CheckLinesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService~GetDataInterfaceFromXMLString.html
+- name: GetValidCheckLineList
+  description: Returns the CheckLinesParams data collection that identify all deposits of checks.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CheckLinesService~GetValidCheckLineList.html

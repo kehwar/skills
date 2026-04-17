@@ -1,0 +1,40 @@
+name: DocumentPackageItems
+title: DocumentPackageItems Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems.html
+description: 'A data structure holding the properties of items in a package. Access this structure via DocumentPackages.Items . Source table: DLN8 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the number of different items in the package.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~Count.html
+- name: ItemCode
+  description: Sets or returns the code of the item in the package.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~ItemCode.html
+- name: MeasureUnit
+  description: 'The measure unit. Field name: UnitMsr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~MeasureUnit.html
+  field_name: UnitMsr
+- name: Quantity
+  description: Sets or returns the quantity of an item in the package.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~Quantity.html
+- name: UnitsOfMeasurement
+  description: 'The quantity in the UoM. Field name: NumPerMsr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~UnitsOfMeasurement.html
+  field_name: NumPerMsr
+- name: UoMEntry
+  description: 'The internal key of the UoM. Field name: UomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~UoMEntry.html
+  field_name: UomEntry
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackageItems~UserFields.html

@@ -1,0 +1,37 @@
+name: DistributionListsService
+title: DistributionListsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService.html
+description: 'The DistributionListsService service enables you to add, look up, update, cancel, close or reopen distribution lists. Source table: OMLS and MLS1 .'
+remarks: Administration -> Configuration -> CRM -> Distribution Lists
+methods:
+- name: Add
+  description: Adds a distribution list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Add.html
+- name: Cancel
+  description: Cancel a distribution list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Cancel.html
+- name: Close
+  description: Close a distribution list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Close.html
+- name: Get
+  description: Retrieves a distribution list. The distribution list is specified by its key, which is contained in the DistributionListParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DistributionListsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the DistributionListParamsCollection data collection that identifies all distribution lists.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~GetList.html
+- name: Reopen
+  description: Reopens a closed distribution list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Reopen.html
+- name: Update
+  description: Updates an existing distribution list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionListsService~Update.html

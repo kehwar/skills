@@ -1,0 +1,34 @@
+name: TaxInvoice_Lines
+title: TaxInvoice_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines.html
+description: 'TaxInvoice_Lines is a child object of the TaxInvoices object that represents the line entries of each tax invoice document. Source table: TSI1 for sales invoices, TPI1 for purchase invoices, or TXD1 for journal entry.'
+remarks: Country-specific for Russia.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~SetCurrentLine.html
+properties:
+- name: BaseEntry
+  description: 'Returns the key of the source document. Field name: BaseEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~BaseEntry.html
+- name: BaseType
+  description: 'Returns a valid value of BoTaxInvoiceTypes type that specifies the type of the base document: Invoice, Payment, or Journal Entry. Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~BaseType.html
+  field_name: DocType
+- name: Count
+  description: Returns the total data rows in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~Count.html
+- name: LineNum
+  description: 'Returns the row number. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~LineNum.html
+- name: Reference
+  description: 'Sets or returns the key of the referenced document. Field name: RefEntry1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~Reference.html
+  field_name: RefEntry1
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_Lines~UserFields.html

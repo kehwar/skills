@@ -1,0 +1,43 @@
+name: UserObjectMD_FormColumns
+title: UserObjectMD_FormColumns Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns.html
+description: 'UserObjectMD_FormColumns is child object of the UserObjectsMD object that represents the default fields (columns) to display in the default form (UDO form with the matrix style). Source table: UDO3 .'
+remarks: 'If the user-defined object uses the default form service ( CanCreateDefaultForm ), then the mandatory field in SAP Business One is: SonNumber . When adding fields to a default form, the first field must be as follows: - For Master data object type - Code . - For Document object type - DocEntry .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~SetCurrentLine.html
+properties:
+- name: Code
+  description: 'Returns the Child Object Unique ID., inherited from Parent Object. This Unique ID is the primary key of the user defined object and its Parent object. Field name: Code . Length: 20 characters (must include at least one alphabetical character).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~Code.html
+  length: 20
+- name: Count
+  description: Returns the number of columns in the default form.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~Count.html
+- name: Editable
+  description: 'Indicates whether the form column is editable (active) or not. Field name: ColEdit.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~Editable.html
+  field_name: ColEdit
+- name: FormColumnAlias
+  description: 'Sets or returns the alias name of the default field to display in the default form. Field name: ColAlias . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~FormColumnAlias.html
+  field_name: ColAlias
+  length: 10
+- name: FormColumnDescription
+  description: 'Sets or returns the description of the default field to display in the default form. Field name: ColDesc . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~FormColumnDescription.html
+  field_name: ColDesc
+  length: 30
+- name: FormColumnNumber
+  description: 'Returns the number of the default field to display in the default form. SAP Business One creates a sequential number for each column that you add. Field name: ColumnNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~FormColumnNumber.html
+  field_name: ColumnNum
+- name: SonNumber
+  description: 'Sets or returns the number of the child user table to relate to the default user form. Field name: SonNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FormColumns~SonNumber.html
+  field_name: SonNum

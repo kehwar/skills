@@ -1,0 +1,314 @@
+name: ItemGroups
+title: ItemGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups.html
+description: 'ItemGroups is a business object that represents the item groups definition in the Inventory and Production module. This object enables you to: - Add an item group. Retrieve an item group by its key. Update an item group details. Remove an item group. Save the object in XML format. Source table: OITB'
+remarks: 'Mandatory field in SAP Business One: GroupName . To display the form in the application: - Select Administration --> Setup --> Inventory --> Item Groups . The item group definition includes: - General information about the group of items. G/L accounts, which are defined in ChartOfAccounts , used in Item Master Data - Inventory Data in case GLMethod property is set to Item Group (Item Class).'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Update.html
+properties:
+- name: Alert
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to activate an alert notification when the inventory count for the item group is due.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Alert.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Browser.html
+- name: ComponentWarehouse
+  description: property ComponentWarehouse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ComponentWarehouse.html
+- name: CostAccount
+  description: 'Sets or returns the G/L account associated with Costs . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~CostAccount.html
+  length: 15
+- name: CostInflationAccount
+  description: 'Sets or returns the G/L account associated with Cost Inflation . Field name: CostRvlAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~CostInflationAccount.html
+  field_name: CostRvlAct
+  length: 15
+- name: CostInflationOffsetAccount
+  description: 'Sets or returns the G/L account associated with Cost Inflation Offset . Field name: CstOffsAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~CostInflationOffsetAccount.html
+  field_name: CstOffsAct
+  length: 15
+- name: CycleCode
+  description: Sets or returns the inventory cycle code as defined in SAP BUsiness One (OCYC table, which is not exposed through the DI API).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~CycleCode.html
+- name: DecreaseGLAccount
+  description: 'Sets or returns the G/L account associated with Decrease G/L Account . Field name: DecresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~DecreaseGLAccount.html
+  field_name: DecresGlAc
+  length: 15
+- name: DecreasingAccount
+  description: 'Sets or returns the G/L account associated with decreased stock transactions (inventory offset). Field name: DecreasAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~DecreasingAccount.html
+  field_name: DecreasAc
+  length: 15
+- name: DefaultInventoryUoM
+  description: 'The default inventory UoM for the item group. Field name: IUomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~DefaultInventoryUoM.html
+  field_name: IUomEntry
+- name: DefaultUoMGroup
+  description: 'The default UoM (Unit of Measurement) group for the item group. Field name: UgpEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~DefaultUoMGroup.html
+  field_name: UgpEntry
+- name: EUExpensesAccount
+  description: 'Sets or returns the G/L account associated with EU Expenses Account . Field name: EUExpensAc . Field name: ExpensesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~EUExpensesAccount.html
+  field_name: EUExpensAc
+  length: 15
+- name: EUPurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated with EU Purchase Credit Account . Field name: APCMEUAct) . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~EUPurchaseCreditAcc.html
+  field_name: APCMEUAct
+  length: 15
+- name: EURevenuesAccount
+  description: 'Sets or returns the G/L account associated with EU Revenues . Field name: EURevenuAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~EURevenuesAccount.html
+  field_name: EURevenuAc
+  length: 15
+- name: ExchangeRateDifferencesAccount
+  description: 'Sets or returns the G/L account associated with Exchange Rate Differences between purchase delivery notes and A/P invoices. Field name: ExchangeAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExchangeRateDifferencesAccount.html
+  field_name: ExchangeAc
+  length: 15
+- name: ExemptedCredits
+  description: 'Sets or returns the G/L account associated to the Exempted Credits . Field name: ARCMExpAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExemptedCredits.html
+  field_name: ARCMExpAct
+  length: 15
+- name: ExemptRevenuesAccount
+  description: 'Sets or returns the G/L account associated with Exempted Revenues . Field name: ExmptIncom) . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExemptRevenuesAccount.html
+  field_name: ExmptIncom
+  length: 15
+- name: ExpenseClearingAct
+  description: 'Sets or returns the G/L account associated with Expenses clearing Account . Field name: ExpClrAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExpenseClearingAct.html
+  field_name: ExpClrAct
+  length: 15
+- name: ExpenseOffsetAccount
+  description: 'Sets or returns the G/L account associated to the Expense Offset Account . Field name: ExpOfstAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExpenseOffsetAccount.html
+  field_name: ExpOfstAct
+  length: 15
+- name: ExpensesAccount
+  description: 'Sets or returns the G/L account associated with Expense Account . Field name: ExpensesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ExpensesAccount.html
+  field_name: ExpensesAc
+  length: 15
+- name: ForeignExpensesAccount
+  description: 'Sets or returns the G/L account associated with Foreign Expenses account . Field name: FrExpensAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ForeignExpensesAccount.html
+  field_name: FrExpensAc
+  length: 15
+- name: ForeignPurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated with Foreign Purchase Credit Account . Field name: APCMFrnAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ForeignPurchaseCreditAcc.html
+  field_name: APCMFrnAct
+  length: 15
+- name: ForeignRevenuesAccount
+  description: 'Sets or returns the G/L account associated with Sales Revenue - Foreign Account. Field name: FrRevenuAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ForeignRevenuesAccount.html
+  field_name: FrRevenuAc
+  length: 15
+- name: GoodsClearingAccount
+  description: 'Sets or returns the G/L account associated with closing a purchase delivery note. Field name: BalanceAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~GoodsClearingAccount.html
+  field_name: BalanceAcc
+  length: 15
+- name: GroupName
+  description: 'Sets or returns the item group name. Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~GroupName.html
+  length: 20
+- name: IncreaseGLAccount
+  description: 'Sets or returns the G/L account associated to Increase G/L Account . Field name: IncresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~IncreaseGLAccount.html
+  field_name: IncresGlAc
+  length: 15
+- name: IncreasingAccount
+  description: 'Sets or returns the G/L account associated to increased stock transactions (inventory offset). Field name: IncresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~IncreasingAccount.html
+  field_name: IncresGlAc
+  length: 15
+- name: InventoryAccount
+  description: 'Sets or returns the G/L account associated to the inventory. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~InventoryAccount.html
+  length: 15
+- name: InventoryOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to an inventory account used within production transactions and for change of value of the inventory account during the production process. Field name: StockOffst. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~InventoryOffsetProfitAndLossAccount.html
+  field_name: StockOffst
+  length: 15
+- name: InventorySystem
+  description: Sets or returns a valid value of BoInventorySystem type that specifies the inventory evaluation method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~InventorySystem.html
+- name: ItemClass
+  description: property ItemClass
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ItemClass.html
+- name: LeadTime
+  description: Sets or returns the lead time in days for ordering items.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~LeadTime.html
+- name: MinimumOrderQuantity
+  description: Sets or returns the minimum quantity of items in a single order.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~MinimumOrderQuantity.html
+- name: NegativeInventoryAdjustmentAccount
+  description: 'Sets or returns this item groups''s Negative Inventory Adjustment Account. Field name: NegStckAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~NegativeInventoryAdjustmentAccount.html
+  field_name: NegStckAct
+  length: 15
+- name: Number
+  description: Returns the item group code as assigned by SAP Business One.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~Number.html
+- name: OrderInterval
+  description: Sets or returns the inventory cycle such as, every week on Monday, or every first day of the month. The inventory cycles are defined in SAP Business One (OCYC table, which is not exposed through the DI API).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~OrderInterval.html
+- name: OrderMultiple
+  description: Sets or returns the multiple quantity in addition to the minimum quantity of items in a single order.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~OrderMultiple.html
+- name: PAReturnAccount
+  description: 'Sets or returns the G/L account associated with Purchase Returning account . Field name: PAReturnAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PAReturnAccount.html
+  field_name: PAReturnAc
+  length: 15
+- name: PlanningSystem
+  description: 'Sets or returns a valid value of BoPlanningSystem type that specifies the inventory planning system: MRP or None .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PlanningSystem.html
+- name: PriceDifferencesAccount
+  description: 'Sets or returns the G/L account associated with Price Differences Account . Field name: PriceDifAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PriceDifferencesAccount.html
+  field_name: PriceDifAc
+  length: 15
+- name: ProcurementMethod
+  description: 'Sets or returns a valid value of BoProcurementMethod type that specifies the procurement method of items: Buy or Make .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ProcurementMethod.html
+- name: PurchaseAccount
+  description: 'Sets or returns the G/L account associated with Purchases . Field name: PurchaseAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PurchaseAccount.html
+  field_name: PurchaseAc
+  length: 15
+- name: PurchaseBalanceAccount
+  description: property PurchaseBalanceAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PurchaseBalanceAccount.html
+- name: PurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated to the Purchase Credit Account . Field name: APCMAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PurchaseCreditAcc.html
+  field_name: APCMAct
+  length: 15
+- name: PurchaseOffsetAccount
+  description: 'Sets or returns the G/L account associated with Purchase Offsetting . Field name: PurchOfsAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~PurchaseOffsetAccount.html
+  field_name: PurchOfsAc
+  length: 15
+- name: RawMaterial
+  description: property RawMaterial
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~RawMaterial.html
+- name: ReturningAccount
+  description: 'Sets or returns the G/L account associated with Purchase Returning Account . Field name: PAReturnAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ReturningAccount.html
+  field_name: PAReturnAc
+  length: 15
+- name: RevenuesAccount
+  description: 'Sets or returns the G/L account associated with Revenues Account . Field name: RevenuesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~RevenuesAccount.html
+  field_name: RevenuesAc
+  length: 15
+- name: SalesCreditAcc
+  description: 'Sets or returns the the G/L account associated to the Sales Credit Account . Field name: ARCMAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~SalesCreditAcc.html
+  field_name: ARCMAct
+  length: 15
+- name: SalesCreditEUAcc
+  description: 'Sets or returns the the G/L account associated to the Sales Credit EU Account . Field name: ARCMEUAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~SalesCreditEUAcc.html
+  field_name: ARCMEUAct
+  length: 15
+- name: SalesCreditForeignAcc
+  description: 'Sets or returns the the G/L account associated to the Sales Credit Foreign Account . Field name: ARCMFrnAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~SalesCreditForeignAcc.html
+  field_name: ARCMFrnAct
+  length: 15
+- name: ShippedGoodsAccount
+  description: 'Sets or returns the G/L account associated with shipped goods. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ShippedGoodsAccount.html
+  length: 15
+- name: StockInflationAdjustAccount
+  description: 'Sets or returns the G/L account associated with Stock Inflation Adjust . Length: 15 characters. Field name: IncreasAc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~StockInflationAdjustAccount.html
+  field_name: IncreasAc
+  length: 15
+- name: StockInflationOffsetAccount
+  description: 'Sets or returns the G/L account associated with Stock Inflation Offset . Field name: DecreasAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~StockInflationOffsetAccount.html
+  field_name: DecreasAc
+  length: 15
+- name: StockInTransitAccount
+  description: 'The stock in transit G/L account for this item group. Field name: StkInTnAct'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~StockInTransitAccount.html
+  field_name: StkInTnAct
+- name: ToleranceDays
+  description: property ToleranceDays
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~ToleranceDays.html
+- name: TransfersAccount
+  description: 'Sets or returns the G/L account associated with Stock Transfers . Field name: TransferAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~TransfersAccount.html
+  field_name: TransferAc
+  length: 15
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~UserFields.html
+- name: VarianceAccount
+  description: 'Sets or returns the G/L account associated with Variance Account . Field name: VarianceAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~VarianceAccount.html
+  field_name: VarianceAc
+  length: 15
+- name: VATInRevenueAccount
+  description: 'Sets or returns the G/L account associated with VAT in Revenues . Field name: VatRevAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~VATInRevenueAccount.html
+  field_name: VatRevAct
+  length: 15
+- name: WarehouseInfo
+  description: property WarehouseInfo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WarehouseInfo.html
+- name: WHIncomingCenvatAccount
+  description: 'Sets or returns the Incoming CENVAT Account (WH) for Account Setting in Item Group Definition. Applicable for cluster B only (country-specific for India). Field name: WhICenAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WHIncomingCenvatAccount.html
+  field_name: WhICenAct
+- name: WHOutgoingCenvatAccount
+  description: 'Sets or returns the Outgoing CENVAT Account (WH) for Account Setting in Item Groups Definition. Applicable for cluster B only (country-specific for India). Field name: WhOCenAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WHOutgoingCenvatAccount.html
+  field_name: WhOCenAct
+- name: WIPMaterialAccount
+  description: 'Sets or returns the G/L account associated to Work In Progress (WIP). Field name: WipAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WIPMaterialAccount.html
+  field_name: WipAcct
+  length: 15
+- name: WIPMaterialVarianceAccount
+  description: 'Sets or returns the G/L account associated to Work In Progress (WIP) differences. That is, the account for posting differences between the value of the row material (before production) and the value of the complete product (after production). Field name: WipVarAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WIPMaterialVarianceAccount.html
+  field_name: WipVarAcct
+  length: 15
+- name: WipOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to a WIP (work in progress) account used within production transactions and for change of value of the WIP account during the production process. Field name: WipOffset. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups~WipOffsetProfitAndLossAccount.html
+  field_name: WipOffset
+  length: 15

@@ -1,0 +1,24 @@
+name: CycleCountDeterminationsService
+title: CycleCountDeterminationsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService.html
+description: 'You can setup cycle count determinations via this service. Menu entry: Administration > Setup -> Inventory -> Cycle Count Determination'
+methods:
+- name: Get
+  description: Retrieves a CycleCountDetermination rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CycleCountDeterminationsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Retrieves the Data Interface from XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates data structure from specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the CycleCountDeterminationParamsCollectionCollection data collection that identifies all cycle count determination rules.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~GetList.html
+- name: Update
+  description: Adds an empty object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CycleCountDeterminationsService~Update.html

@@ -1,0 +1,52 @@
+name: UserLanguages
+title: UserLanguages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages.html
+description: 'The UserLanguages object represents the languages setup and enables to define new languages or modify the exisiting ones. Source table: OLNG .'
+remarks: 'Mandatory properties: LanguageShortName , LanguageFullName , and RelatedSystemLanguage . To display the form in the application: - Select Administration --> System Initialization -->Company Details -->Basic Initialization tab. Select the Multi-Language Support check box, then click the Update button. Select Administration --> Setup -->General -->Languages .'
+methods:
+- name: Add
+  description: Adds a new language definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~Browser.html
+- name: Code
+  description: 'Returns the language code as assigned by the system (numerator). Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~Code.html
+- name: LanguageFullName
+  description: 'Sets or returns the language full name, for example, English (US). Field name: Name . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~LanguageFullName.html
+  field_name: Name
+  length: 30
+- name: LanguageShortName
+  description: 'Sets or returns the language short name, for example, EN for English. Field name: ShortName . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~LanguageShortName.html
+  field_name: ShortName
+  length: 3
+- name: RelatedSystemLanguage
+  description: 'Sets or returns the key of the related language as defined in the system. For example, set the value 3 for English (US). Field name: SysLang .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~RelatedSystemLanguage.html
+  field_name: SysLang
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserLanguages~UserFields.html

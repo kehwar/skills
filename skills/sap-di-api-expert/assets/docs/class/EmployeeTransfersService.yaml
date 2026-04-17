@@ -1,0 +1,31 @@
+name: EmployeeTransfersService
+title: EmployeeTransfersService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService.html
+description: 'EmployeeTransfersService is a business object that manages employee master data transfers from SAP Business One to the DATEV HR client application. Source table: OHET .'
+remarks: 'To transfer employee information from SAP Business One: - Choose Human Resources --> Human Resources Reports --> Employee List . - Select the desired employee from the list. - Choose the Transfer button.'
+methods:
+- name: AddEmployeeTransfer
+  description: Adds an employee transfer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~AddEmployeeTransfer.html
+- name: DeleteEmployeeTransfer
+  description: Deletes an existing employee transfer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~DeleteEmployeeTransfer.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default settings/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~GetDataInterfaceFromXMLString.html
+- name: GetEmployeeTransfer
+  description: Retrieves an employee transfer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~GetEmployeeTransfer.html
+- name: GetEmployeeTransferList
+  description: Retrieves the list of employee transfers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~GetEmployeeTransferList.html
+- name: UpdateEmployeeTransfer
+  description: Updates an existing employee transfer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeTransfersService~UpdateEmployeeTransfer.html

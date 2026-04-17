@@ -1,0 +1,43 @@
+name: InternalReconciliationOpenTransParams
+title: InternalReconciliationOpenTransParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams.html
+description: InternalReconciliationOpenTransParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~ToXMLString.html
+properties:
+- name: AccountNo
+  description: property AccountNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~AccountNo.html
+- name: CardOrAccount
+  description: property CardOrAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~CardOrAccount.html
+- name: DateType
+  description: property DateType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~DateType.html
+- name: FromDate
+  description: property FromDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~FromDate.html
+- name: InternalReconciliationBPs
+  description: property InternalReconciliationBPs
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~InternalReconciliationBPs.html
+- name: ReconDate
+  description: property ReconDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~ReconDate.html
+- name: ToDate
+  description: property ToDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InternalReconciliationOpenTransParams~ToDate.html

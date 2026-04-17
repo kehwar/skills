@@ -1,0 +1,133 @@
+name: SalesTaxAuthorities
+title: SalesTaxAuthorities Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities.html
+description: 'SalesTaxAuthorities is a business object that represents the sales tax jurisdictions data for US and Canada localizations, or sales tax types for Latin America localization. In US and Canada localizations, the sales tax jurisdictions can be defined, for example, for each state , country , and city . In Latin America localization, the sales tax types are related to specific items, such as fuel and cigarettes, that are liable to tax ( Rate ) in addition to VAT. This object enables you to: - Add a sales tax authority. Retrieve a sales tax authority by its key. Update a sales tax authority data. Save the object in XML format. Source table: OSTA .'
+remarks: 'Mandatory field in SAP Business One: Code . To display the form in the application (US and Canada localizations): - Select Administration --> Setup --> Financials --> Tax --> Sales Tax Jurisdiction . A Selection Criteria dialog box opens. From the Define Sales Tax Jurisdiction Types - Selection Criteria select a tax jurisdiction type and click OK. To display the form in the application (Latin America localization): - Select Administration --> Setup --> Financials --> Tax --> Tax Types . From the Define Tax Types - Selection Criteria select a tax category and click OK.'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~SaveXML.html
+- name: Update
+  description: 'Field name: . Updates the object data in the company database.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Update.html
+properties:
+- name: AOrPTaxAccount
+  description: 'Sets or returns the G/L account for purchase (A/P) tax. Field name: PurchTax . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~AOrPTaxAccount.html
+  field_name: PurchTax
+  length: 15
+- name: AOrRTaxAccount
+  description: 'Sets or returns the G/L account for sales (A/R) tax. Field name: SalesTax . Length: 15 characters. This is a foreign key to the ChartOfAccounts object, not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~AOrRTaxAccount.html
+  field_name: SalesTax
+  length: 15
+- name: APExpAccount
+  description: property APExpAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~APExpAccount.html
+- name: ARExpAccount
+  description: property ARExpAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~ARExpAccount.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Browser.html
+- name: Code
+  description: 'Sets or returns the code of the tax authority. Mandatory in SAP Business One. Field name: Code . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Code.html
+  length: 8
+- name: DeferredTaxAccount
+  description: 'Sets or returns the G/L account for deferred tax. Field name: deferrAcct . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~DeferredTaxAccount.html
+  field_name: deferrAcct
+  length: 15
+- name: Exempt
+  description: property Exempt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Exempt.html
+- name: FlatTaxAmount
+  description: 'The maximum tax to be applied to a document for this jurisdiction, or the maximum tax to be applied for each item in a document for a jurisdiction if Single Item Tax ( IsItemLevel property of the SalesTaxCodes object) is selected for the tax code. Field name: FlatAmount'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~FlatTaxAmount.html
+  field_name: FlatAmount
+- name: InclInFirstInstallment
+  description: property InclInFirstInstallment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~InclInFirstInstallment.html
+- name: InclInGrossRevenue
+  description: property InclInGrossRevenue
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~InclInGrossRevenue.html
+- name: InclInPrice
+  description: property InclInPrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~InclInPrice.html
+- name: MaxTaxableAmount
+  description: 'Maximum amount for which to apply this tax. If the amount is above the value in this field, the tax is applied only to the value in this field. The maximum amount is by default compared to the document amount; if Single Item Tax is selected for the tax code ( IsItemLevel property of the SalesTaxCodes object), the maximum amount is compared to each item''s amount. Field name: MaxAmount'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~MaxTaxableAmount.html
+  field_name: MaxAmount
+- name: MinTaxableAmount
+  description: 'Minimum amount for which to apply this tax. If the amount is below the value in this field, the tax for this jurisdiction is 0. The minimum amount is by default compared to the document amount; if Single Item Tax is selected for the tax code ( IsItemLevel property of the SalesTaxCodes object), the minimum amount is compared to each item''s amount. Field name: MinAmount'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~MinTaxableAmount.html
+  field_name: MinAmount
+- name: Name
+  description: 'Sets or returns the name of the sales tax authority. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Name.html
+  length: 100
+- name: NonDeductibleAccount
+  description: 'Sets or returns the G/L account for non deductible tax amounts. Field name: NonDdctAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~NonDeductibleAccount.html
+  field_name: NonDdctAct
+  length: 15
+- name: NonDeductiblePrecent
+  description: 'Sets or returns the percentage of non deductible tax. Field name: NonDdctPrc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~NonDeductiblePrecent.html
+  field_name: NonDdctPrc
+- name: Rate
+  description: 'Sets or returns the tax percentage of the tax authority. Mandatory in SAP Business One. Field name: Rate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Rate.html
+- name: ReverseChargePercent
+  description: property ReverseChargePercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~ReverseChargePercent.html
+- name: SalesTaxRCMAccount
+  description: property SalesTaxRCMAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~SalesTaxRCMAccount.html
+- name: SalesTaxRCMClrAccount
+  description: property SalesTaxRCMClrAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~SalesTaxRCMClrAccount.html
+- name: TaxDefinitions
+  description: The tax definitions for this jurisdiction. A tax definition specifies a rate and the date from which it is in effect.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~TaxDefinitions.html
+- name: TextCode
+  description: property TextCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~TextCode.html
+- name: Type
+  description: 'Sets or returns the type of the sales tax authority as defined in SalesTaxAuthoritiesTypes object. Field name: Type . This is a foreign key to the SalesTaxAuthoritiesTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~Type.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who enters the object''s details. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~UserSignature.html
+  field_name: UserSign
+- name: UseTaxAccount
+  description: 'Sets or returns the G/L account for Use Tax. Field name: UseTax . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~UseTaxAccount.html
+  field_name: UseTax
+  length: 15
+- name: VATExemption
+  description: property VATExemption
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~VATExemption.html
+- name: VATExemptionBasePercent
+  description: property VATExemptionBasePercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~VATExemptionBasePercent.html
+- name: VATExemptionPercent
+  description: property VATExemptionPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthorities~VATExemptionPercent.html

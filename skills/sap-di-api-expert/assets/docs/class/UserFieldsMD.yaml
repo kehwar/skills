@@ -1,0 +1,89 @@
+name: UserFieldsMD
+title: UserFieldsMD Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD.html
+description: 'UserFieldsMD is a business object that enables you to manage user-defined fields in user and system tables. This object enables you to: - Add a user-defined field. Retrieve a user-defined field from the database by its key. Remove a user-defined field. Save the object in XML format. Source table: CUFD Mandatory properties: Name and TableName IMPORTANT: After creating a new user-defined field in .NET, you must release the object by executing the following line of code, where myObject is a reference to the UserFieldsMD object:'
+remarks: 'The DI API allows only one metadata object instance (with no other instances of any object type). This maintains data integrity by preventing any manipulation of a business object while modifying the object''s properties. If you add a mandatory user-defined field, you must also define a default value; otherwise, the following message appears: " Invalid object name; cannot add field ". To display the form in the application: - From the main menu bar, select Tools --> Customization Tools --> User-Defined Fields - Management .'
+methods:
+- name: Add
+  description: Adds a new user field to an exiting user table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~GetByKey.html
+- name: Remove
+  description: Removes a specified field from the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Browser.html
+- name: DefaultValue
+  description: 'Sets or returns the default value of the field. Field name: Dflt . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~DefaultValue.html
+  field_name: Dflt
+  length: 254
+- name: Description
+  description: 'Sets or returns the description of the field. Field name: Descr . Length: 80 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Description.html
+  field_name: Descr
+  length: 80
+- name: EditSize
+  description: 'Sets or returns the field maximum value entered by the user. This applies only when the Type property is set to db_Alpha or db_Numeric . Field name: EditSize .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~EditSize.html
+- name: FieldID
+  description: 'Returns the unique identification key of the field in the meta data table. Field name: FieldID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~FieldID.html
+- name: LinkedSystemObject
+  description: Links to an existing system object of SAP Business One.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~LinkedSystemObject.html
+- name: LinkedTable
+  description: 'Sets or returns a linked user table name, so that the user field will be used as a foreign key in the TableName . Field name: RTable . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~LinkedTable.html
+  field_name: RTable
+  length: 20
+- name: LinkedUDO
+  description: 'Links to a user-defined object (UDO) form of both Matrix style and Header Lines style. Field name: RelUDO. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~LinkedUDO.html
+  field_name: RelUDO
+  length: 20
+- name: Mandatory
+  description: 'Sets or returns a valid value that determines wether or not this User Field is mandatory in SAP Business One. Field name: Sys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Mandatory.html
+  field_name: Sys
+- name: Name
+  description: 'Sets or returns the field name. Field name: AliasID . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Name.html
+  field_name: AliasID
+  length: 50
+- name: Size
+  description: 'The actual size of the field. The value is automatically determined by the input of the EditSize property. Do not set any value in the Size property. Field name: SizeID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Size.html
+  field_name: SizeID
+- name: SubType
+  description: Returns or set the field sub-type, which specifies a specific format of the data type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~SubType.html
+- name: TableName
+  description: 'Sets or returns the name of the parent table that this field refers to. Length: 21 characters. Field name: TableID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~TableName.html
+  field_name: TableID
+  length: 21
+- name: Type
+  description: 'Sets or returns the data type, which describes the nature of the data, of the specified field . Field name: TypeID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~Type.html
+  field_name: TypeID
+- name: ValidValues
+  description: Returns the ValidValuesMD object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserFieldsMD~ValidValues.html

@@ -117,3 +117,30 @@ Use `assets/DI_API_INDEX.yaml` to find the correct `doc_path` for any name.
 
 > **Note:** If `assets/docs/` is empty, run `python scripts/build_index.py` to
 > scrape and cache the reference pages (requires network access to SAP Help Portal).
+
+---
+
+## Related skills
+
+| Skill | When to use |
+|---|---|
+| `sap-schema-expert` | Look up DB column names, table structure, and encoded values |
+| `sap-service-layer-expert` | Read/write SAP B1 data via REST API |
+| `sap-dtw-expert` | Bulk import/export via Data Transfer Workbench TSV files |
+
+### ⚠️ DI API uses COM property names — not raw DB column names
+
+The DI API, Service Layer, and DTW all share **COM property names** (SAPbobsCOM type library). These differ from the raw HANA database column names used in SQL queries.
+
+Always verify property names in `assets/docs/class/<ClassName>.yaml` — **do not assume the DB column name transfers directly**.
+
+Known divergences (non-exhaustive):
+
+| COM property name (DI API / Service Layer / DTW) | DB column (HANA SQL) |
+|---|---|
+| `FederalTaxID` | `OCRD.LicTradNum` |
+| `Mother` | `OCRD.FatherCard` |
+| `DiscountPercent` | `OINV.TradeDisc` |
+| `InventoryUOM` | `OITM.InvntryUom` |
+
+Service Layer and DTW share the same COM property names as the DI API — no remapping is needed between those three. Only when writing raw HANA SQL (via `sap-schema-expert`) do you need to convert COM property names to DB column names.

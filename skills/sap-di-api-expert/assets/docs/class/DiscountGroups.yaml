@@ -1,0 +1,34 @@
+name: DiscountGroups
+title: DiscountGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups.html
+description: 'Represents a set of item discounts for a specific business partner. Each business partner can be assigned a set of discounts, and each discount is associated with an item group, property, or manufacturer. If the business partner purchases an item that is associated with one of the specified groups, properties, or manufacturers, the business partner receives the corresponding discount. All of the ObjectEntry keys point to the same type of object -- either group ( ItemGroups object), property ( ItemProperties object ), or manufacturer ( Manufacturers object) -- depending on the DiscountBaseObject property of the BusinessPartners object. Source table: OEDG .'
+remarks: 'If a business partner has one type of discount groups, for example for item groups, you can define any type of discount groups, for example for item manufacturers, as follows: - Change the DiscountBaseObject of the BusinessPartners object to the new type (for example, item manufacturers). - Add new rows to the DiscountGroups subobject of the BusinessPartners object. - Update the BusinessPartners object. All rows in the DiscountGroups subobject related to the previous type are automatically deleted. For a list of ways for setting discounts and special prices, see SpecialPrices .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~SetCurrentLine.html
+properties:
+- name: BaseObjectType
+  description: The value of the DiscountBaseObject property for the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~BaseObjectType.html
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~BPCode.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~Count.html
+- name: DiscountPercentage
+  description: 'The discount for a matching item, in percent. Field name: Discount'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~DiscountPercentage.html
+  field_name: Discount
+- name: ObjectEntry
+  description: 'The key to an item group, property, or manufacturer. Any item assigned to the group, property, or manufacturer is assigned the discount in the DiscountPercentage property. The key represents either an item group, property, or manufacturer depending on the DiscountBaseObject property of the current BusinessPartners object. Field name: ObjKey'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DiscountGroups~ObjectEntry.html
+  field_name: ObjKey

@@ -1,0 +1,25 @@
+name: BOEDocumentTypes
+title: BOEDocumentTypes Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes.html
+description: This is a data collection of BOEDocumentType data structures.
+methods:
+- name: Add
+  description: Adds a new object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~Add.html
+- name: GetXMLSchema
+  description: Retreives the XML schema of the data structrue.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to a specified object in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the total objects in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypes~Count.html

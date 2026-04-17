@@ -1,0 +1,37 @@
+name: ApprovalRequestsService
+title: ApprovalRequestsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService.html
+description: 'ApprovalRequestsService is a business object that manages the approval requests process in the SAP Business One environment. This object enables users to do the following: - Get an approval request from the approval process. Get a list of approval requests from the approval process. Get a list of open approval requests from the approval process. Update an approval request within the approval process. Get data interfaces. Source table: OWDD .'
+remarks: 'From the SAP Business One application, you can do the following: - Approve draft documents in the Request for Approval window when you are reviewing messages in the Messages/Alert Overview window. - Approve draft documents in the Approval Decision Report window when you generate a report of the status of draft documents requiring approval. Approving draft documents from the Request for Approval window: - Choose Window --> Messages/Alert Overview . The Messages/Alert Overview window appears. - To display the details of the message in the Request for Document Approval area, select the required message. - To open the Request for Approval window, click the link arrow. - In the Decision list, select your decision for the approval request. - Choose the Update button. An internal message is sent to the document originator regarding the approval. Approving draft documents from the Approval Decision Report window:'
+methods:
+- name: CancelApprovalRequest
+  description: CancelApprovalRequest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~CancelApprovalRequest.html
+- name: GetAllApprovalRequestsList
+  description: Returns all approval requests in your company.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetAllApprovalRequestsList.html
+- name: GetApprovalRequest
+  description: Retrieves an ApprovalRequest . The approval request is specified by its key ( WddCode ), which is contained in the ApprovalRequestParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetApprovalRequest.html
+- name: GetApprovalRequestList
+  description: Returns approval requests of the logged-on user as authorizer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetApprovalRequestList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default settings/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetDataInterfaceFromXMLString.html
+- name: GetOpenApprovalRequestList
+  description: Returns the open approval requests of the logged-on user as authorizer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~GetOpenApprovalRequestList.html
+- name: RestoreApprovalRequest
+  description: RestoreApprovalRequest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~RestoreApprovalRequest.html
+- name: UpdateRequest
+  description: Reply this ApprovalRequest with the approval decision.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalRequestsService~UpdateRequest.html

@@ -1,0 +1,25 @@
+name: MessageDataLines
+title: MessageDataLines Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines.html
+description: MessageDataLines is a collection of the MessageDataLine data structures.
+methods:
+- name: Add
+  description: Adds a data structure ( Item in the collection) and returns a reference to it ( Index starting from 0).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to an existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~ToXMLString.html
+properties:
+- name: Count
+  description: Retrurns the number of MessageDataLine data structures in the data column.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLines~Count.html

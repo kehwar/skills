@@ -1,0 +1,83 @@
+name: SerialNumbers
+title: SerialNumbers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers.html
+description: 'SerialNumbers is a business object that represents the serial numbers and additional tracking information of items. This object is part of the Inventory and Production module. Source table: OSRN , OSRW , OSRQ , OITL , ITL1 .'
+remarks: 'This object helps you to track items using their serial number. A computer, for example, can be located by its serial number. The serial number can provide additional information regarding a specific item such as its manufacturing date, warranty data, location in warehouse, and so on. To display the form in the application: - Select Inventory --> Item Management --> Serial Number --> Serial Numbers Management . Set your selection criteria and click OK. (The form will appear only if Serial Numbers are defined for the selected items.) To de-allocate batches without actually remove them from stock (based Delivery), update SO so that it has no batches defined - it works this way in the UI and should work in DI the same - if not it should be fixed. Please note that batches allocated by Reserve Invoice canNOT be deallocated this way since we do not support Reserve Invoice updating. Batches allocated by Reserve Invoice can only be drawn to the Delivery/Invoice.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~SetCurrentLine.html
+properties:
+- name: BaseLineNumber
+  description: 'Sets or returns the Row No. in thhDocument. Field name: BaseLinNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~BaseLineNumber.html
+  field_name: BaseLinNum
+- name: BatchID
+  description: 'Sets or returns the unique batch number of an item. Field name: BatchId . Length: 32 characters. This is a foreign key to the SerialNumbers object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~BatchID.html
+  field_name: BatchId
+  length: 32
+- name: Count
+  description: Returns the total data rows in the SerialNumbers object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~Count.html
+- name: ExpiryDate
+  description: 'Sets or returns the expiration date for the item. Field name: ExpDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~ExpiryDate.html
+  field_name: ExpDate
+- name: InternalSerialNumber
+  description: 'Sets or returns the internal serial number for the item. Field name: IntrSerial . Length: 32 characters. This is a foreign key to the SerialNumbers object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~InternalSerialNumber.html
+  field_name: IntrSerial
+  length: 32
+- name: ItemCode
+  description: property ItemCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~ItemCode.html
+- name: Location
+  description: 'Sets or returns the location of the item, for example, in the warehouse. Field name: Located . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~Location.html
+  field_name: Located
+  length: 100
+- name: ManufactureDate
+  description: 'Sets or returns the manufacturing date for the batch. Field name: PrdDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~ManufactureDate.html
+  field_name: PrdDate
+- name: ManufacturerSerialNumber
+  description: 'Sets or returns the manufacturer''s serial number for the selected item. Field name: SuppSerial . Length: 32 characters. This is a foreign key to the SerialNumbers object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~ManufacturerSerialNumber.html
+  field_name: SuppSerial
+  length: 32
+- name: Notes
+  description: 'Sets or returns a memo type string that specifies comments for the item. Field name: Notes . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~Notes.html
+- name: Quantity
+  description: 'The total number of serial numbers for the item. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~Quantity.html
+- name: ReceptionDate
+  description: 'Sets or returns the reception date. Field name: InDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~ReceptionDate.html
+  field_name: InDate
+- name: SystemSerialNumber
+  description: 'Sets or returns the successive numerator starting from1 issued for each item with serial numbers management. This numerator progresses according to the creation of new units of the same sort (for the same item). This property is mandatory when using Serial Numbers for outgoing documents. Field name: SysSerial . This is a foreign key to the SerialNumbers object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~SystemSerialNumber.html
+  field_name: SysSerial
+- name: TrackingNote
+  description: property TrackingNote
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~TrackingNote.html
+- name: TrackingNoteLine
+  description: property TrackingNoteLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~TrackingNoteLine.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~UserFields.html
+- name: WarrantyEnd
+  description: 'Sets or returns the warranty end date for the items. Field name: GrntExp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~WarrantyEnd.html
+  field_name: GrntExp
+- name: WarrantyStart
+  description: 'Sets or returns the warranty start date for the items. Field name: GrntStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumbers~WarrantyStart.html
+  field_name: GrntStart

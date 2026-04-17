@@ -1,0 +1,226 @@
+name: Contacts
+title: Contacts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts.html
+description: 'Contacts is a business object that represents the activities with customers and vendors in the Business Partners module. This object enables you to: - Add an activity. Retrieve an activity by its key. Update an activity. Save the object in XML format. Source table: OCLG .'
+remarks: 'Mandatory fields in SAP Business One: CardCode (only if the activity is not personal) and ContactPersonCode . To display the form in the application: - Select Business Partners --> Activities . Auto-complete of the Activity Schedule Properties (new for release 2005) The schedule of the activity must be specified at the database level, therefore the system completes automatically the values of the properties that are related to the activity schedule. These properties include: - Start time - combination of StartDate and StartTime . Duration - combination of Duration and DurationType . End time - combination of EndDuedate and EndTime . When adding or updating an activity, there are five scenarios for the auto-complete operation according to the specified values: 1. If no value is specified (when adding only), then the system sets the following default values: - Start time - the current time when adding the activity. Duration - 15 minutes (0 minute when upgrading the system to release 2005). End time - the system calculates the values as follows: End time = Start time + Duration . 2. If all three values are specified (when adding or updating), then the system checks their validity, and if there is an error the system issues an error message ( -5002 - invalid object). 3. If two values are specified (or modified when updating), then the system calculates (or recalculates) the remaining value as follows: - Start time and End time are specified - the system calculates the Duration . Start time and Duration are specified - the system calculates the End time . Duration and End time are specified - when adding, the system sets Start time to default and recalculates the Duration . When updating, the Start time remains the same and the system recalculates the Duration . 4. If one value is specified (when adding only), then the system calculates the remaining values as follows: - Start time is specified - the system sets the Duration to default and calculates the End time . Duration is specified - the system sets the Start time to default and calculates the End time . End time is specified - the system sets the Start time to default and calculates the Duration . 5. If one value is modified (when updating only), then the system recalculates the remaining value as follows: - Start time is specified - the system recalculates the End time (for release 2005) or the Duration (for release 2004). Duration is specified - the system recalculates the End time . End time is specified - the system recalculates the Duration .'
+methods:
+- name: Add
+  description: Adds a new activity with a business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Update.html
+properties:
+- name: Activity
+  description: 'Sets or returns a valid value of BoActivities type that specifies activity with the business partner. Field name: Action .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Activity.html
+  field_name: Action
+- name: ActivityType
+  description: 'Sets or returns the type of the activity. Field name: CntctType . This is a foreign key to the ActivityTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ActivityType.html
+  field_name: CntctType
+- name: AttachmentEntry
+  description: 'Sets or returns the identification key of the attachment file, as assigned by SAP Business One when adding an Attachment Entry to alert message. Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Attachments
+  description: Returns the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Attachments.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Browser.html
+- name: CardCode
+  description: 'Sets or returns the business partner identification number in SAP Business One. Field name: CardCode . Mandatory field in SAP Business One only if the activity is not personal . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~CardCode.html
+  length: 15
+- name: City
+  description: 'Sets or returns the city where the Activity ( Meeting type only) with the business partner takes place. Field name: city . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~City.html
+  field_name: city
+  length: 100
+- name: Closed
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the activity is closed and no further processing is required. Field name: Closed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Closed.html
+- name: CloseDate
+  description: 'Sets or returns the closing date of the activity. Field name: CloseDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~CloseDate.html
+- name: ContactCode
+  description: 'Returns the identification key of the activity. Field name: CntctCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ContactCode.html
+  field_name: CntctCode
+- name: ContactDate
+  description: 'Sets or returns the contact date. Field name: CntctDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ContactDate.html
+  field_name: CntctDate
+- name: ContactPersonCode
+  description: 'Sets or returns the internal code for the contact person. Field name: CntctCode . Mandatory property. This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ContactPersonCode.html
+  field_name: CntctCode
+- name: ContactTime
+  description: 'Sets or returns the activity time. Field name: CntctTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ContactTime.html
+  field_name: CntctTime
+- name: Country
+  description: 'Sets or returns the country where the Activity ( Meeting type only) with the business partner takes place. Field name: country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Country.html
+  field_name: country
+  length: 3
+- name: Details
+  description: 'Sets or returns the details for the next action. Field name: Details . Length: 60 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Details.html
+  length: 60
+- name: DocEntry
+  description: 'Sets or returns the document entry key. Field name: DocEntry . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~DocEntry.html
+  length: 20
+- name: DocNum
+  description: 'Returns the number of the linked document. Field name: DocNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~DocNum.html
+  length: 20
+- name: DocType
+  description: 'Sets or returns the type of the document, such as invoice or purchase order, that is linked to the activity. Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~DocType.html
+- name: DocTypeEx
+  description: 'The document type that is linked to the activity. This property replaces the DocType property (integer). Length: 20 characters. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~DocTypeEx.html
+  field_name: DocNum
+  length: 20
+- name: Duration
+  description: 'Sets or returns the amount of time scheduled for the activity. Field name: Duration .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Duration.html
+- name: DurationType
+  description: 'Sets or returns a valid value of BoDurations type that specifies the duration type for the activity (minutes, hours, or days). Field name: DurType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~DurationType.html
+  field_name: DurType
+- name: Emailedflag
+  description: 'True/false upon mail sent for activity. Field name: emailed.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Emailedflag.html
+  field_name: emailed
+- name: EndDuedate
+  description: 'Sets or returns the due date for completing the activity. Field name: endDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~EndDuedate.html
+  field_name: endDate
+- name: EndTime
+  description: 'Sets or returns the end time (hh:mm) of the activity. Field name: ENDTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~EndTime.html
+  field_name: ENDTime
+- name: Fax
+  description: 'Sets or returns the fax number of the contact person. Field name: Fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Fax.html
+  length: 50
+- name: HandledBy
+  description: 'Sets or returns the name or title of the person who is responsible for entering the activity details. Field name: AttendUser . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~HandledBy.html
+  field_name: AttendUser
+- name: Inactiveflag
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the the activity is inactive. Field name: inactive .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Inactiveflag.html
+  field_name: inactive
+- name: Location
+  description: 'Sets or returns the code for the activity location. Field name: Location . This is a foreign key to the ActivityLocations object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Location.html
+- name: Notes
+  description: 'Sets or returns a memo type string that specifies remarks regarding the activity. Field name: Notes . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Notes.html
+  length: 16
+- name: ParentobjectId
+  description: 'Returns the source object ID of the activity: For Service Call object type: ServiceCallID . For Sales Opportunity object type: SequentialNo . Field name: parentId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ParentobjectId.html
+  field_name: parentId
+- name: Parentobjecttype
+  description: 'Returns the source object type of the activity: Sales Opportunity or Service Call. Field name: parentType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Parentobjecttype.html
+  field_name: parentType
+  length: 20
+- name: Personalflag
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether the the activity is personal or business. If business, you must set the business partner details ( CardCode ). Field name: personal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Personalflag.html
+  field_name: personal
+- name: Phone
+  description: 'Sets or returns the phone number of the contact person. Field name: Tel . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Phone.html
+  field_name: Tel
+  length: 50
+- name: PreviousActivity
+  description: 'Sets or returns the previous activity number ( ContactCode ) related to the current activity. Field name: prevActvty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~PreviousActivity.html
+  field_name: prevActvty
+- name: Priority
+  description: 'Sets or returns a valid value of BoMsgPriorities type that specifies the priority of the activity (low, normal, or high). Field name: Priority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Priority.html
+- name: Recontact
+  description: 'Sets or returns the date for the next activity. Field name: Recontact .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Recontact.html
+- name: Reminder
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not SAP Business One will send a reminder message to the user mailbox (''user'' means the current SAP Business One user). Field name: Reminder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Reminder.html
+- name: ReminderPeriod
+  description: 'Sets or returns the duration for sending the reminder message. Field name: RemTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ReminderPeriod.html
+  field_name: RemTime
+- name: ReminderType
+  description: 'Sets or returns a valid value of BoDurations type that specifies the duration types: minutes or hours. Field name: RemType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~ReminderType.html
+  field_name: RemType
+- name: Room
+  description: 'Sets or returns the room where the Activity ( Meeting type only) with the business partner takes place. Field name: room . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Room.html
+  field_name: room
+  length: 50
+- name: SalesEmployee
+  description: 'Sets or returns the code of the sales employee who is responsible for the activity. Field name: SlpCode . This is a foreign key to the SalesPersons object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~SalesEmployee.html
+  field_name: SlpCode
+- name: StartDate
+  description: 'Sets or returns the start date of the activity. Field name: Recontact.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~StartDate.html
+  field_name: Recontact
+- name: StartTime
+  description: 'Sets or returns the start time (hh:mm) of the activity. Field name: BeginTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~StartTime.html
+  field_name: BeginTime
+- name: State
+  description: 'Sets or returns the code of the state where the Activity ( Meeting type only) with the business partner takes place. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~State.html
+  length: 3
+- name: Status
+  description: 'Sets or returns the status of the Activity ( Task type only) as defined in ActivityStatus object. Field name: status . This is a foreign key to the ActivityStatus object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Status.html
+  field_name: status
+- name: Street
+  description: 'Sets or returns the street where the Activity ( Meeting type only) with the business partner takes place. Field name: street . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Street.html
+  field_name: street
+  length: 100
+- name: Subject
+  description: 'Sets or returns the subject of the activity. Field name: CntctSbjct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Subject.html
+  field_name: CntctSbjct
+- name: Tentativeflag
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the activity is tentative. Field name: tentative .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~Tentativeflag.html
+  field_name: tentative
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who created the activity. Field name: UserSign .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~UserSignature.html
+  field_name: UserSign
+- name: UserSignature2
+  description: 'Returns the ID of the user who updated the activity. Field name: UserSign2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Contacts~UserSignature2.html
+  field_name: UserSign2

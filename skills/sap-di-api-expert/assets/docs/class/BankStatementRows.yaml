@@ -1,0 +1,28 @@
+name: BankStatementRows
+title: BankStatementRows Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows.html
+description: A data collection of BankStatementRow objects.
+methods:
+- name: Add
+  description: Adds a new BankStatementRow object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~GetXMLSchema.html
+- name: Item
+  description: Returns reference to an existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~Item.html
+- name: Remove
+  description: Deletes the specified record from the data collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~Remove.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of objects in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRows~Count.html

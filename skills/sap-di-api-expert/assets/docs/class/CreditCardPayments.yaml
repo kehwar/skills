@@ -1,0 +1,121 @@
+name: CreditCardPayments
+title: CreditCardPayments Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments.html
+description: 'The CreditCardPayments object enables to define dates for incoming payments from the credit card company. Source table: OCDT .'
+remarks: 'Mandatory fields in SAP Business One: DueDateCode . To display the form in the application: - Select Administration --> Setup --> Banking --> Credit Card Payment .'
+methods:
+- name: Add
+  description: Adds a credit card due date payments definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~Browser.html
+- name: DueDateCode
+  description: 'Sets or returns the code of the credit card due date payments. Field name: Code . Mandatory property. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~DueDateCode.html
+  field_name: Code
+  length: 8
+- name: DueDateName
+  description: 'Sets or returns the name of the credit card due date payments. Field name: Name . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~DueDateName.html
+  field_name: Name
+  length: 30
+- name: DueDatesType
+  description: 'Determines whether the payment due dates are based on ddtAfterTimePeriod (after number of days and months) or ddtByDates (voucher date of receipt). Field name: TERM_TYPE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~DueDatesType.html
+  field_name: TERM_TYPE
+- name: FromDay1
+  description: 'Sets or returns the beginning day of the first period of voucher receipt. Field name: Day_From1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~FromDay1.html
+  field_name: Day_From1
+- name: FromDay2
+  description: 'Sets or returns the begining day of the second period of voucher receipt. Field name: Day_From2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~FromDay2.html
+  field_name: Day_From2
+- name: FromDay3
+  description: 'Sets or returns the begining day of the third period of voucher receipt. Field name: Day_From3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~FromDay3.html
+  field_name: Day_From3
+- name: FromDay4
+  description: 'Sets or returns the begining day of the fourth period of voucher receipt. Field name: Day_From4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~FromDay4.html
+  field_name: Day_From4
+- name: NoOfMonths1
+  description: 'Sets or returns the number of months to add to PaymentDay1 . Field name: Pay_Month1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~NoOfMonths1.html
+  field_name: Pay_Month1
+- name: NoOfMonths2
+  description: 'Sets or returns the number of months to add to PaymentDay2 . Field name: Pay_Month2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~NoOfMonths2.html
+  field_name: Pay_Month2
+- name: NoOfMonths3
+  description: 'Sets or returns the number of months to add to PaymentDay3 . Field name: Pay_Month3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~NoOfMonths3.html
+  field_name: Pay_Month3
+- name: NoOfMonths4
+  description: 'Sets or returns the number of months to add to PaymentDay4 . Field name: Pay_Month4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~NoOfMonths4.html
+  field_name: Pay_Month4
+- name: PaymentAfterDays
+  description: 'Sets or returns the number of days for payment after the voucher receipt. Field name: After_Days .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentAfterDays.html
+  field_name: After_Days
+- name: PaymentAfterMonths
+  description: 'Sets or returns the number of months to add to PaymentAfterDays . Field name: After_Mnth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentAfterMonths.html
+  field_name: After_Mnth
+- name: PaymentDay1
+  description: 'Sets or returns the payment day in the first payment period. For example, if the first payment period is from day 1 to day 7, the payment day can be 1 - 7. Field name: Pay_Day1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentDay1.html
+  field_name: Pay_Day1
+- name: PaymentDay2
+  description: 'Sets or returns the payment day in the second payment period. For example, if the first payment period is from day 8 to day 15, the payment day can be 8 - 15. Field name: Pay_Day2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentDay2.html
+  field_name: Pay_Day2
+- name: PaymentDay3
+  description: 'Sets or returns the payment day in the third payment period. Field name: Pay_Day3 . For example, if the first payment period is from day 16 to day 24, the payment day can be 16 - 24.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentDay3.html
+  field_name: Pay_Day3
+- name: PaymentDay4
+  description: 'Sets or returns the payment day in the forth payment period. Field name: Pay_Day4 . For example, if the first payment period is from day 25 to day 31, the payment day can be 25 - 31.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~PaymentDay4.html
+  field_name: Pay_Day4
+- name: ToDay1
+  description: 'Sets or returns the ending day of the first period of voucher receipt. Field name: Day_To1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~ToDay1.html
+  field_name: Day_To1
+- name: ToDay2
+  description: 'Sets or returns the ending day of the second period of voucher receipt. Field name: Day_To2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~ToDay2.html
+  field_name: Day_To2
+- name: ToDay3
+  description: 'Sets or returns the ending day of the third period of voucher receipt. Field name: Day_To3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~ToDay3.html
+  field_name: Day_To3
+- name: ToDay4
+  description: 'Sets or returns the ending day of the fourth period of voucher receipt. Field name: Day_To4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~ToDay4.html
+  field_name: Day_To4
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditCardPayments~UserFields.html

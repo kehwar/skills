@@ -1,0 +1,40 @@
+name: TaxCodeDeterminationTCDByUsage
+title: TaxCodeDeterminationTCDByUsage Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage.html
+description: TaxCodeDeterminationTCDByUsage Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~ToXMLString.html
+properties:
+- name: AbsId
+  description: property AbsId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~AbsId.html
+- name: FreightTaxCode
+  description: property FreightTaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~FreightTaxCode.html
+- name: PurchaseTaxCode
+  description: property PurchaseTaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~PurchaseTaxCode.html
+- name: TaxCode
+  description: property TaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~TaxCode.html
+- name: Type
+  description: property Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~Type.html
+- name: UsageCode
+  description: property UsageCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDByUsage~UsageCode.html

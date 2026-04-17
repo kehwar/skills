@@ -1,0 +1,46 @@
+name: CallMessage
+title: CallMessage Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage.html
+description: 'This object represents the response message to the request call. Source table: REQ1 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~ToXMLString.html
+properties:
+- name: CallMessageArguments
+  description: Returns the arguments of a single response message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~CallMessageArguments.html
+- name: CreationDate
+  description: Sets or returns the date when the message is created.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~CreationDate.html
+- name: CreationTime
+  description: Sets or returns the time when the message is created.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~CreationTime.html
+- name: ErrorCode
+  description: Sets or returns an error type of a message (agreed between the request sender and receiver).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~ErrorCode.html
+- name: ID
+  description: Returns the unique ID of a call message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~ID.html
+- name: MessageBody
+  description: Sets or returns the content of the message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~MessageBody.html
+- name: Status
+  description: 'Returns the status of the response message: Read or Unread.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~Status.html
+- name: Type
+  description: Returns the type of the call message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CallMessage~Type.html

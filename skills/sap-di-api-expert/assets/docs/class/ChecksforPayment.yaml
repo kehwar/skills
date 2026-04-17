@@ -1,0 +1,201 @@
+name: ChecksforPayment
+title: ChecksforPayment Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment.html
+description: 'Represents checks that are not tied to a document. SAP Business One updates the balances of vendor accounts each time you add a check for payment. This object is part of the Banking module. Checks tied to documents are represented by the Payments_Checks object. This object enables you to: - Add checks for payment. Retrieve a check details by its key. Update checks for payment. Save the object in XML format. Source table: OCHO .'
+remarks: 'Mandatory fields in SAP Business One: BankCode , CustomerAccountCode , CountryCode , and RowTotal (from ChecksforPaymentLines object). To display the form in the application: - Select Banking --> Outgoing Payments --> Checks for Payment .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Add.html
+- name: Cancel
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Cancel.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~GetByKey.html
+- name: Remove
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Update.html
+properties:
+- name: AccountNumber
+  description: 'Sets or returns the bank account number of the check for payment. Field name: AcctNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~AccountNumber.html
+  field_name: AcctNum
+  length: 50
+- name: Address
+  description: 'Sets or returns the mailing address of the vendor. Field name: Address . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Address.html
+  length: 254
+- name: AddressName
+  description: 'Sets or returns the name of the address (Bill To address, Main address, Ship To address, and so on). Field name: AddrName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~AddressName.html
+  field_name: AddrName
+  length: 50
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~AttachmentEntry.html
+- name: BankCode
+  description: 'Sets or returns the bank code of the check. Field name: BankNum . Mandatory property. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~BankCode.html
+  field_name: BankNum
+  length: 30
+- name: BankName
+  description: 'Returns the bank name of the payment check. Field name: BankName . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~BankName.html
+  length: 15
+- name: Branch
+  description: 'Sets or returns the branch number of the payment check. Field name: Branch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Branch.html
+  length: 50
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Browser.html
+- name: Canceled
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the check is canceled. Field name: Canceled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Canceled.html
+- name: CardOrAccount
+  description: 'Sets or returns a valid value of BoCpCardAcct type that specifies whether the payment check is to a vendor card or to a G/L account. Field name: CardOrAcct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CardOrAccount.html
+  field_name: CardOrAcct
+- name: CheckAmount
+  description: 'Returns the total amount of the check. This number must be positive. Field name: CheckSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CheckAmount.html
+  field_name: CheckSum
+- name: CheckCurrency
+  description: 'Returns the currency of the check. SAP Business One performs a validation check. Length: 3 characters. Field name: Currency .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CheckCurrency.html
+  field_name: Currency
+  length: 3
+- name: CheckDate
+  description: 'Sets or returns the due date for the check. Field name: CheckDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CheckDate.html
+- name: CheckKey
+  description: 'Returns the sequence number of the check for payment. Field name: CheckKey . This number is assigned by SAP Business One automatically.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CheckKey.html
+- name: CheckNumber
+  description: 'Sets or returns the check number for payment. Field name: CheckNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CheckNumber.html
+  field_name: CheckNum
+- name: CountryCode
+  description: 'Sets or returns the country code of the bank. Field name: CountryCod . Mandatory property. Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CountryCode.html
+  field_name: CountryCod
+  length: 3
+- name: CreateJournalEntry
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to create a journal entry when adding the current check. Field name: CreateJdt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CreateJournalEntry.html
+  field_name: CreateJdt
+- name: CreationDate
+  description: 'Returns the date of creation of the check. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CreationDate.html
+  field_name: CreateDate
+- name: CustomerAccountCode
+  description: 'Sets or returns the credited G/L account code. Field name: CheckAcct . Mandatory property. Length: 210 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~CustomerAccountCode.html
+  field_name: CheckAcct
+  length: 210
+- name: DeductionRefundAmount
+  description: 'Sets or returns the deduction refund amount. Field name: Deduction .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~DeductionRefundAmount.html
+  field_name: Deduction
+- name: Details
+  description: 'Sets or returns the journal remarks of the check for payment. Field name: Details . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Details.html
+  length: 50
+- name: DocumentReferences
+  description: Returns an instance of the document references of checks for payment.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~DocumentReferences.html
+- name: ECheck
+  description: 'Specifies whether the account is relevant for e-check functionality or not. Field name: ECheck .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~ECheck.html
+- name: JournalEntryReference
+  description: 'Sets or returns the reference number for a payment to a vendor (outgoing payment) that is already created in SAP Business One. If the reference number does not exist, SAP Business One sets the transaction key. Field name: TransRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~JournalEntryReference.html
+  field_name: TransRef
+- name: Lines
+  description: Returns ChecksforPaymentLines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Lines.html
+- name: ManualCheck
+  description: Sets or returns a valid value that specifies whether or not to set the check number manually. Used in case the check is not printed through SAP Business One, but written manually. Relevant for outgoing payments only.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~ManualCheck.html
+- name: PaymentDate
+  description: 'Sets or returns the posting date. If you do not set this date, SAP Business One sets the current date as the posting date for the transaction. Field name: PmntDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~PaymentDate.html
+  field_name: PmntDate
+- name: PaymentNo
+  description: 'Returns the payment number of the check. Field name: PmntNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~PaymentNo.html
+  field_name: PmntNum
+- name: PrintConfirm
+  description: 'Confirms whether a check is printed or not. Field name: PrnConfrm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~PrintConfirm.html
+  field_name: PrnConfrm
+- name: Printed
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the check was printed. Field name: Printed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Printed.html
+- name: PrintedBy
+  description: 'Returns the ID of the user that prints the check. Field name: PrintedBy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~PrintedBy.html
+- name: PrintStatus
+  description: The column Print Status in the Check Number Confirmation window.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~PrintStatus.html
+- name: Signature
+  description: 'Sets or returns the authorizing signature, such as the name of the responsible person, for approving the payment. Field name: Signature . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Signature.html
+  length: 30
+- name: TaxDate
+  description: 'Returns the date for the tax payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~TaxDate.html
+- name: TaxTotal
+  description: 'Returns the total tax, such as VAT, added to the payment. Field name: VatTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~TaxTotal.html
+  field_name: VatTotal
+- name: TotalinWords
+  description: 'Sets or returns the total amount is words. SAP Business One enters this value automatically according to the CheckAmount . Field name: TotalWords . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~TotalinWords.html
+  field_name: TotalWords
+  length: 100
+- name: TransactionNumber
+  description: 'Returns the transaction code that SAP Business One creates for the payment check. Field name: TransNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~TransactionNumber.html
+  field_name: TransNum
+- name: Transferable
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the check can be endorsed. If the value is set to No (not endorsable), SAP Business One includes the text "Non-negotiable" in the printout. Field name: Trnsfrable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~Transferable.html
+  field_name: Trnsfrable
+- name: UpdateDate
+  description: 'Returns the date when the check details were last updated. Field name: UpdateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~UpdateDate.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~UserFields.html
+- name: VendorCode
+  description: 'Sets or returns the vendor number or G/L account for the payment. SAP Business One validates this number. Field name: VendorCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~VendorCode.html
+  length: 15
+- name: VendorName
+  description: 'Returns the name of the vendor that appears in the "Pay to Order of" field of the check. Field name: VendorName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~VendorName.html
+  length: 100
+- name: WithholdingTaxAmount
+  description: property WithholdingTaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~WithholdingTaxAmount.html
+- name: WithholdingTaxPercentage
+  description: property WithholdingTaxPercentage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPayment~WithholdingTaxPercentage.html

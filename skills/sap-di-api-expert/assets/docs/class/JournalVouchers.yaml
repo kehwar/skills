@@ -1,0 +1,20 @@
+name: JournalVouchers
+title: JournalVouchers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalVouchers.html
+description: 'JournalVouchers is a business object that represents the journal vouchers in the Finance module. Use the JournalVouchers object as a draft for journal entries. That is, no values are created in the general ledger. The properties of the journal voucher are similar to the properties of JournalEntries and JournalEntries_Lines objects. Source table: OBTD . To display the form in the application: - Select Financials --> Journal Vouchers .'
+remarks: BtfLine field in OBTF table - Journal Voucher Entry is no longer in use.
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalVouchers~Add.html
+- name: LoadFromXML
+  description: method LoadFromXML
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalVouchers~LoadFromXML.html
+- name: SaveToXMLHierarchy
+  description: method SaveToXMLHierarchy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalVouchers~SaveToXMLHierarchy.html
+properties:
+- name: JournalEntries
+  description: Returns the JournalEntries object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalVouchers~JournalEntries.html

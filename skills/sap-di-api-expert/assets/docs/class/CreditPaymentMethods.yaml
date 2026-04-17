@@ -1,0 +1,68 @@
+name: CreditPaymentMethods
+title: CreditPaymentMethods Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods.html
+description: 'The CreditPaymentMethods object enables to define payment methods by credit cards. Source table: OCRP .'
+remarks: 'The methods for credit card payments are used by the Payments_CreditCards object. Mandatory field in SAP Business One: Name . To display the form in the application: - Select Administration --> Setup --> Banking --> Credit Card Payment Methods .'
+methods:
+- name: Add
+  description: Adds a credit card payment method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~Update.html
+properties:
+- name: AssignedtoCreditCard
+  description: 'Sets or returns the foreign key of the credit card assigned to the payment method. Field name: CreditCard . This is a foreign key to the CreditCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~AssignedtoCreditCard.html
+  field_name: CreditCard
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~Browser.html
+- name: InstallmentPaymentsPossible
+  description: 'Sets or returns a valid value that defines the options for installments available for the payment method. Field name: InstalMent .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~InstallmentPaymentsPossible.html
+  field_name: InstalMent
+- name: MaxQtyWithoutApproval
+  description: 'Sets or returns the maximum amount of incoming and outgoing payments without the approval of the credit card company. Field name: MaxValid .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~MaxQtyWithoutApproval.html
+  field_name: MaxValid
+- name: MinimumCreditAmount
+  description: 'Sets or returns the minimum amount for credit vouchers. Field name: MinCredit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~MinimumCreditAmount.html
+  field_name: MinCredit
+- name: MinimumPaymentAmount
+  description: 'Sets or returns the minimum amount for incoming and outgoing payments. Field name: MinToPay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~MinimumPaymentAmount.html
+  field_name: MinToPay
+- name: Name
+  description: 'Sets or returns the name of the credit payment method. Field name: CrTypeName . Mandatory property. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~Name.html
+  field_name: CrTypeName
+  length: 30
+- name: PaymentCode
+  description: 'Sets or returns the foreign key of the credit card payment due dates. Field name: DueTerms . This is a foreign key to the CreditCardPayments object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~PaymentCode.html
+  field_name: DueTerms
+- name: PaymentMethodCode
+  description: 'Returns the payment method code as assigned by the system when adding the payment method definition. Field name: CrTypeCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~PaymentMethodCode.html
+  field_name: CrTypeCode
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditPaymentMethods~UserFields.html

@@ -1,0 +1,65 @@
+name: ExportProcesses
+title: ExportProcesses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses.html
+description: 'Source table: DOC18 .'
+properties:
+- name: AdditionalItemSequentialNumber
+  description: 'Enter the Additional Item Sequential Number for the Export Process. Field name: nSeqAdic .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~AdditionalItemSequentialNumber.html
+  field_name: nSeqAdic
+- name: DrawbackSuspensionRegime
+  description: 'Specify the Drawback - Suspension Regime number that reflects the reduction of the production costs of exportable items, assuring direct gains on imports, cash gains and non-accrual of tax credits on purchases.. Field name: DrawSReg . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~DrawbackSuspensionRegime.html
+  field_name: DrawSReg
+  length: 11
+- name: ExportationDeclarationDate
+  description: 'Exportation Declaration Date. Field name: ExpDeclDat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationDeclarationDate.html
+  field_name: ExpDeclDat
+- name: ExportationDeclarationNumber
+  description: 'Exportation Declaration Number. Field name: ExpDeclNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationDeclarationNumber.html
+  field_name: ExpDeclNum
+- name: ExportationDocumentTypeCode
+  description: 'Type of Exportation Document. Field name: ExpDocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationDocumentTypeCode.html
+  field_name: ExpDocType
+- name: ExportationNatureCode
+  description: 'Nature of Exportation. Field name: ExpNature .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationNatureCode.html
+  field_name: ExpNature
+- name: ExportationRegistryDate
+  description: 'Date of Exportation Registry. Field name: ExpRegDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationRegistryDate.html
+  field_name: ExpRegDate
+- name: ExportationRegistryNumber
+  description: 'Number of Exportation Registry. Field name: ExpRegNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~ExportationRegistryNumber.html
+  field_name: ExpRegNum
+- name: LadingBillDate
+  description: 'Date of Bill of Lading. Field name: LadBillDat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~LadingBillDate.html
+  field_name: LadBillDat
+- name: LadingBillNumber
+  description: 'Bill of Lading Number. Field name: LadBillNum . Length: 19 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~LadingBillNumber.html
+  field_name: LadBillNum
+  length: 19
+- name: LadingBillTypeCode
+  description: 'Type of Bill of Lading. Field name: LadBillTyp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~LadingBillTypeCode.html
+  field_name: LadBillTyp
+- name: MerchandiseLeftCustomsDate
+  description: 'Date Merchandise Left Customs. Field name: MerchLeftD .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~MerchandiseLeftCustomsDate.html
+  field_name: MerchLeftD
+- name: NatureOfExport
+  description: 'Specify the Nature of Export for the Export Process. Field name: NatureExp . Length: 44 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~NatureOfExport.html
+  field_name: NatureExp
+  length: 44
+- name: QuantityOfExportedItems
+  description: 'Specify the Quantity of Exported Items for the Export Process.. Field name: QultExpItm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExportProcesses~QuantityOfExportedItems.html
+  field_name: QultExpItm

@@ -1,0 +1,82 @@
+name: TransportationDocumentData
+title: TransportationDocumentData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData.html
+description: TransportationDocumentData Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~ToXMLString.html
+properties:
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~AttachmentEntry.html
+- name: Canceled
+  description: property Canceled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~Canceled.html
+- name: CarrierCode
+  description: property CarrierCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~CarrierCode.html
+- name: COTCode
+  description: Code for transportation documents
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~COTCode.html
+- name: ElDocExportFormat
+  description: property ElDocExportFormat
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~ElDocExportFormat.html
+- name: ElDocGenType
+  description: property ElDocGenType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~ElDocGenType.html
+- name: ExpirationDate
+  description: property ExpirationDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~ExpirationDate.html
+- name: IssueGate
+  description: property IssueGate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~IssueGate.html
+- name: NextNumber
+  description: property NextNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~NextNumber.html
+- name: PostDate
+  description: property PostDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~PostDate.html
+- name: TrailerID
+  description: property TrailerID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TrailerID.html
+- name: TranspDocNumber
+  description: property TranspDocNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TranspDocNumber.html
+- name: TransportationDocumentLineDataCollection
+  description: property TransportationDocumentLineDataCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TransportationDocumentLineDataCollection.html
+- name: TransportationDocumentParamsCollection
+  description: property TransportationDocumentParamsCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TransportationDocumentParamsCollection.html
+- name: TransportationNumber
+  description: property TransportationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TransportationNumber.html
+- name: TransportedTotalLC
+  description: property TransportedTotalLC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~TransportedTotalLC.html
+- name: VehicleID
+  description: property VehicleID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~VehicleID.html
+- name: WarehouseCode
+  description: property WarehouseCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~WarehouseCode.html
+- name: Weight
+  description: property Weight
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~Weight.html
+- name: WeightUnit
+  description: property WeightUnit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TransportationDocumentData~WeightUnit.html

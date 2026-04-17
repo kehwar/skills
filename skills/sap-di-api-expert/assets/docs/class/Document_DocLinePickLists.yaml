@@ -1,0 +1,29 @@
+name: Document_DocLinePickLists
+title: Document_DocLinePickLists Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists.html
+description: 'Document_DocLinePickLists is a child object of Documents object and represents the pick list. Source table: PKL2 .'
+remarks: Inventory --> Pick and Pack --> Pick List
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~Add.html
+- name: Delete
+  description: method Delete
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~Count.html
+- name: PickListBatchAndBinLineNum
+  description: Shows the batch and bin location line number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~PickListBatchAndBinLineNum.html
+- name: PickListEntry
+  description: The row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~PickListEntry.html
+- name: PickListLineNum
+  description: The line number in the pick list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_DocLinePickLists~PickListLineNum.html

@@ -1,0 +1,52 @@
+name: Items_Prices
+title: Items_Prices Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices.html
+description: 'Items_Prices is a child object of the Items object that represents the items'' prices in the Inventory and Production module. This object enables you to specify prices for various price lists. Source table: ITM1'
+remarks: 'Mandatory fields in SAP Business One: Price and PriceList . To display the form in the application: - Select Inventory --> Item Master Data . Select a Price List , and set a price .'
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~SetCurrentLine.html
+properties:
+- name: AdditionalCurrency1
+  description: property AdditionalCurrency1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~AdditionalCurrency1.html
+- name: AdditionalCurrency2
+  description: property AdditionalCurrency2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~AdditionalCurrency2.html
+- name: AdditionalPrice1
+  description: property AdditionalPrice1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~AdditionalPrice1.html
+- name: AdditionalPrice2
+  description: property AdditionalPrice2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~AdditionalPrice2.html
+- name: BasePriceList
+  description: property BasePriceList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~BasePriceList.html
+- name: Count
+  description: Returns the number of prices for the current item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~Count.html
+- name: Currency
+  description: 'Sets or returns the price currency used in the document row. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~Currency.html
+  length: 3
+- name: Factor
+  description: property Factor
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~Factor.html
+- name: Price
+  description: Sets or returns the item price before taxation. Mandatory property.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~Price.html
+- name: PriceList
+  description: Returns the price list index for the item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~PriceList.html
+- name: PriceListName
+  description: 'Returns the price list name. Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~PriceListName.html
+  length: 32
+- name: UoMPrices
+  description: property UoMPrices
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~UoMPrices.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items_Prices~UserFields.html

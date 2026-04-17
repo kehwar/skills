@@ -1,0 +1,30 @@
+name: PredefinedTextsService
+title: PredefinedTextsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService.html
+description: 'The PredefinedTextsService service enables you to add, look up and remove predefined texts in the predefined texts master data table. Predefined texts are stored text strings that can be added as remarks in marketing documents. To see the list of predefined texts, select Administration --> Setup --> General --> Predefined Text . You can also view a table of all predefined texts by opening a marketing document, selecting Goto --> Opening and Closing Remarks , and clicking Insert Predefined Texts . Source table: OPDT'
+methods:
+- name: AddPredefinedText
+  description: Adds a predefined text.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~AddPredefinedText.html
+- name: DeletePredefinedText
+  description: Deletes an existing predefined text. The predefined text is specified by its key ( AbsEntry ), which is contained in the PredefinedTextParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~DeletePredefinedText.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the PredefinedTextsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~GetDataInterfaceFromXMLString.html
+- name: GetPredefinedText
+  description: Retrieves a predefined text. The predefined text is specified by its key ( AbsEntry ), which is contained in the PredefinedTextParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~GetPredefinedText.html
+- name: GetPredefinedTextList
+  description: Retrieves the keys and names of all the predefined texts.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~GetPredefinedTextList.html
+- name: UpdatePredefinedText
+  description: Updates an existing predefined text. The data for the predefined text, including the key of the predefined text to be updated, is contained in the PredefinedText passed to the method. To update a predefined text, you must first retrieve it using the GetPredefinedText method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PredefinedTextsService~UpdatePredefinedText.html

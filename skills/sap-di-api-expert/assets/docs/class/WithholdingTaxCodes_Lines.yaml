@@ -1,0 +1,91 @@
+name: WithholdingTaxCodes_Lines
+title: WithholdingTaxCodes_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines.html
+description: 'WithholdingTaxCodes_Lines is a child object of the WithholdingTaxCodes object. It enables to define the tax percentage and the effective from date for the withholding tax code. Source table: WHT1 .'
+remarks: 'Mandatory property: Effectivefrom Mandatory properties (for India): CessRate , HSCRate , SurchargeRate , TDSRate To display the form in the application: - Select Administration --> Setup --> Financials --> Tax --> Withholding Tax . Choose the Tax Definition button.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Add.html
+- name: Delete
+  description: method Delete
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~SetCurrentLine.html
+properties:
+- name: CessGSTRate
+  description: property CessGSTRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~CessGSTRate.html
+- name: CessRate
+  description: The cess rate.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~CessRate.html
+- name: CGSTRate
+  description: property CGSTRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~CGSTRate.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Count.html
+- name: Currency
+  description: 'Fixed amount currency. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Currency.html
+  length: 3
+- name: Effectivefrom
+  description: 'Sets or returns the date from which the withholding tax percentage is effective. Mandatory property. Field name: EffecDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Effectivefrom.html
+  field_name: EffecDate
+- name: FixedAmount
+  description: 'Fixed amount. Field name: FixedAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~FixedAmount.html
+  field_name: FixedAmnt
+- name: HSCRate
+  description: The HSC rate.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~HSCRate.html
+- name: IGSTRate
+  description: property IGSTRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~IGSTRate.html
+- name: ITRNonCompliantRate
+  description: 'TDS ITR noncompliance rate. Field name: ItrNCRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~ITRNonCompliantRate.html
+  field_name: ItrNCRate
+- name: LineNum
+  description: 'The ID (line number) of the withholding tax line. Field name: LineNum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~LineNum.html
+- name: PANNonCompliantRate
+  description: 'TDS PAN noncompliance rate. Field name: PanNCRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~PANNonCompliantRate.html
+  field_name: PanNCRate
+- name: ProgressiveTaxLines
+  description: property ProgressiveTaxLines
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~ProgressiveTaxLines.html
+- name: Rate
+  description: 'Sets or returns the percentage of the withholding tax. Field name: Rate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~Rate.html
+- name: SGSTRate
+  description: property SGSTRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~SGSTRate.html
+- name: SurchargeRate
+  description: The surcharge rate.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~SurchargeRate.html
+- name: TDSRate
+  description: 'The TDS rate. Field name: TdsRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~TDSRate.html
+  field_name: TdsRate
+- name: UoMCode
+  description: 'UoM code. Field name: UoMCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~UoMCode.html
+  length: 20
+- name: UoMEntry
+  description: 'UoM entry. Field name: UomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~UoMEntry.html
+  field_name: UomEntry
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~UserFields.html
+- name: UTGSTRate
+  description: property UTGSTRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~UTGSTRate.html
+- name: ValueRangeLines
+  description: property ValueRangeLines
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes_Lines~ValueRangeLines.html

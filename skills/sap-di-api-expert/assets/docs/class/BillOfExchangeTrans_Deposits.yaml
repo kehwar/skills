@@ -1,0 +1,38 @@
+name: BillOfExchangeTrans_Deposits
+title: BillOfExchangeTrans_Deposits Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits.html
+description: 'BillOfExchangeTrans_Deposits is a child object of the BillOfExchangeTransaction object and represents the deposits information for incoming payments. Source table: ODPS .'
+remarks: 'Mandatory fields is SAP Business One: BankAccount (bank code), BankCountry , and BankDepositAccount . To display the form in the application: - Select Banking --> Bill of Exchange . Select one of the Bill of Exchange sub-menus Management or Fund. Set your criteria and then click OK . The ODPS table also relates to Banking --> Deposits --> Deposit --> Bill of Exchange tab.'
+properties:
+- name: BankAccount
+  description: 'Sets or returns the bank code of the house bank for deposits. Field name: BanckAcct . Mandatory field is SAP Business One. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~BankAccount.html
+  field_name: BanckAcct
+  length: 30
+- name: BankBranch
+  description: 'Sets or returns the branch number of the house bank for deposits. Field name: DeposBrnch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~BankBranch.html
+  field_name: DeposBrnch
+  length: 50
+- name: BankCountry
+  description: 'Sets or returns the country of the of the house bank for deposits. Field name: BankCountr . Mandatory field is SAP Business One. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~BankCountry.html
+  field_name: BankCountr
+- name: BankDepositAccount
+  description: 'Sets or returns the account number of the house bank for deposits. Field name: BanckAcct . Mandatory field is SAP Business One. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~BankDepositAccount.html
+  field_name: BanckAcct
+  length: 50
+- name: DepositNorm
+  description: 'Sets or returns the file format for presentation as defined for the banks for each country. Field name: DepostNorm . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~DepositNorm.html
+  field_name: DepostNorm
+  length: 8
+- name: PostingType
+  description: 'Sets or returns a valid value of BoDepositPostingTypes type that specifies the posting type for the deposit transaction (at the due date or before the due date). Field name: FinncPriod .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~PostingType.html
+  field_name: FinncPriod
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTrans_Deposits~UserFields.html

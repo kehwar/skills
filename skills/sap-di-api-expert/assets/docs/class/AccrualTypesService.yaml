@@ -1,0 +1,31 @@
+name: AccrualTypesService
+title: AccrualTypesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService.html
+description: 'An accrual type is a set of conditions used to represent the differences between cost accounting and financial accounting. The AccrualTypesService service enables you to add, look up, update, and remove accrual types. Source table: OACR .'
+remarks: Accrual types are defined only for use in the cost accounting reconciliation report. They do not affect other reports. To define accrual types, in the SAP Business One application, choose Financials --> Cost Accounting --> Accrual Type .
+methods:
+- name: AddAccrualType
+  description: Adds an accrual type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~AddAccrualType.html
+- name: DeleteAccrualType
+  description: Deletes an existing accrual type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~DeleteAccrualType.html
+- name: GetAccrualType
+  description: Retrieves an accrual type. The accrual type is specified by its key, which is contained in the AccrualTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~GetAccrualType.html
+- name: GetAccrualTypeList
+  description: Returns the AccrualTypesParams data collection that identify all accrual types.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~GetAccrualTypeList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the AccrualTypesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~GetDataInterfaceFromXMLString.html
+- name: UpdateAccrualType
+  description: Updates an existing accrual type. The data for the accrual type, including the key of the accrual type to be updated, is contained in the AccrualType object passed to the method. To update an accrual type, you must first retrieve it using the GetAccrualType method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccrualTypesService~UpdateAccrualType.html

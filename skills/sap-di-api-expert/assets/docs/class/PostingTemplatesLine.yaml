@@ -1,0 +1,85 @@
+name: PostingTemplatesLine
+title: PostingTemplatesLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine.html
+description: PostingTemplatesLine Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~ToXMLString.html
+properties:
+- name: AccountCode
+  description: property AccountCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~AccountCode.html
+- name: AccountName
+  description: property AccountName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~AccountName.html
+- name: ControlAccount
+  description: property ControlAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~ControlAccount.html
+- name: CostElementCode
+  description: property CostElementCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostElementCode.html
+- name: CostingCode1
+  description: property CostingCode1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostingCode1.html
+- name: CostingCode2
+  description: property CostingCode2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostingCode2.html
+- name: CostingCode3
+  description: property CostingCode3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostingCode3.html
+- name: CostingCode4
+  description: property CostingCode4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostingCode4.html
+- name: CostingCode5
+  description: property CostingCode5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~CostingCode5.html
+- name: Credit
+  description: property Credit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~Credit.html
+- name: Debit
+  description: property Debit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~Debit.html
+- name: DistributionRule
+  description: property DistributionRule
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~DistributionRule.html
+- name: LineNumber
+  description: property LineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~LineNumber.html
+- name: ProjectCode
+  description: property ProjectCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~ProjectCode.html
+- name: TaxCode
+  description: property TaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~TaxCode.html
+- name: TaxGroup
+  description: property TaxGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~TaxGroup.html
+- name: TaxPostingAccount
+  description: property TaxPostingAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~TaxPostingAccount.html
+- name: TrtCode
+  description: property TrtCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~TrtCode.html
+- name: VatLine
+  description: property VatLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~VatLine.html
+- name: WTaxLiable
+  description: property WTaxLiable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~WTaxLiable.html
+- name: WTaxLine
+  description: property WTaxLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PostingTemplatesLine~WTaxLine.html

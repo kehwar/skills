@@ -1,0 +1,35 @@
+name: FIFOLayers
+title: FIFOLayers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers.html
+description: 'Specifies the FIFO layers to be updated, and the new values for the quantity and price. Source table: MRV2'
+remarks: A FIFO layer is identified by its LayerID and TransactionSequenceNum properties. For more information, see the Layer object.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~SetCurrentLine.html
+properties:
+- name: BaseLine
+  description: property BaseLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~BaseLine.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~Count.html
+- name: LayerID
+  description: A layer ID. Obtain the ID for a specific layer from the Layer object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~LayerID.html
+- name: LineTotal
+  description: The new total value for this FIFO layer. Only relevant when the revaluation method is inventory debit/credit (see RevalType property of the MaterialRevaluation object).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~LineTotal.html
+- name: Price
+  description: The new price for this FIFO layer. Only relevant when the revaluation method is price change (see RevalType property of the MaterialRevaluation object).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~Price.html
+- name: Quantity
+  description: The quantity of this FIFO layer to be revalued. Only relevant when the revaluation method is inventory debit/credit (see RevalType property of the MaterialRevaluation object).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~Quantity.html
+- name: TransactionSequenceNum
+  description: A layer transaction sequence number. Obtain the ID for a specific layer from the Layer object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FIFOLayers~TransactionSequenceNum.html

@@ -1,0 +1,34 @@
+name: UserObjectMD_FindColumns
+title: UserObjectMD_FindColumns Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns.html
+description: 'UserObjectMD_FindColumns is a child object of the UserObjectsMD object that represents the fields (columns) to display in the Find Form ( Choose From List form). Source table: UDO2 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~SetCurrentLine.html
+properties:
+- name: Code
+  description: 'Returns the Child Object Unique ID., inherited from Parent Object. This Unique ID is the primary key of the user defined object and its Parent object. Field name: Code . Length: 20 characters (must include at least one alphabetical character).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~Code.html
+  length: 20
+- name: ColumnAlias
+  description: 'Sets or returns the alias name of the field to display in the Find Form . Length: 10 characters. Field name: ColAlias .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~ColumnAlias.html
+  field_name: ColAlias
+  length: 10
+- name: ColumnDescription
+  description: 'Sets or returns the field description to display in the Find Form . Length: 30 characters. Field name: ColumnDesc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~ColumnDescription.html
+  field_name: ColumnDesc
+  length: 30
+- name: ColumnNumber
+  description: 'Returns the number of the field to display in the Find Form . SAP Business One creates a sequential number for each column that you add. Field name: ColumnNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~ColumnNumber.html
+  field_name: ColumnNum
+- name: Count
+  description: Returns the number of columns in the Find Form ( Choose From List form).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_FindColumns~Count.html

@@ -1,0 +1,60 @@
+name: ApprovalTemplate
+title: ApprovalTemplate Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate.html
+description: 'is a data structure related to the ApprovalTemplatesService . Source table: OWTM .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ToXMLString.html
+properties:
+- name: ApprovalTemplateDocuments
+  description: Returns the ApprovalTemplateDocuments Object, a Data Collection of all the documents attached to this approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ApprovalTemplateDocuments.html
+- name: ApprovalTemplateQueries
+  description: Returns the ApprovalTemplateQueries Object, a Data Collection of all the Queries attached to this approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ApprovalTemplateQueries.html
+- name: ApprovalTemplateStages
+  description: Returns the ApprovalTemplateStages Object, a Data Collection of all the stages attached to this approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ApprovalTemplateStages.html
+- name: ApprovalTemplateTerms
+  description: Returns the ApprovalTemplateTerms Object, a Data Collection of all the terms attached to this approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ApprovalTemplateTerms.html
+- name: ApprovalTemplateUsers
+  description: Returns the ApprovalTemplateUsers Object, a Data Collection of all the users attached to this approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~ApprovalTemplateUsers.html
+- name: Code
+  description: 'Returns this Approval Template Code. Field name: WtmCode . This is a key to the ApprovalTemplate object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~Code.html
+  field_name: WtmCode
+- name: IsActive
+  description: 'Determines whether or not this ApprovalTemplate is active. Field name: Active .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~IsActive.html
+  field_name: Active
+- name: IsActiveWhenUpdatingDocuments
+  description: property IsActiveWhenUpdatingDocuments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~IsActiveWhenUpdatingDocuments.html
+- name: Name
+  description: 'Sets or returns this Approval Template name. Field name: Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~Name.html
+  length: 20
+- name: Remarks
+  description: 'Sets or returns this Approval Template description. Field name: Remarks . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~Remarks.html
+  length: 100
+- name: UseTerms
+  description: 'Determines whether or not manual approval is required for this Approval Template. Field name: Conds .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplate~UseTerms.html
+  field_name: Conds

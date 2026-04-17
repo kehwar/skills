@@ -35,7 +35,7 @@ DOCS_DIR = ASSETS_DIR / "docs"
 INDEX_OUTPUT = ASSETS_DIR / "DI_API_INDEX.yaml"
 
 # Seconds to wait between HTTP requests (be polite to SAP servers)
-REQUEST_DELAY = 0.5
+REQUEST_DELAY = 1.0
 
 REQUEST_HEADERS = {
     "User-Agent": (

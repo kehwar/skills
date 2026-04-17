@@ -1,0 +1,44 @@
+name: MultiplePayment
+title: MultiplePayment Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment.html
+description: 'A data structure related to BankStatementService holding properties for a multiple payment on a bank statement line. Source table: BNK1 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~ToXMLString.html
+properties:
+- name: AmountFC
+  description: 'Sets or returns the payment amount in foriegn currency. Field name: AmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~AmountFC.html
+  field_name: AmntFC
+- name: AmountLC
+  description: 'Sets or returns the payment amount in local currency. Field name: AmntLC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~AmountLC.html
+  field_name: AmntLC
+- name: BankStatmentLineID
+  description: 'Returns the ID number of the bank statement line connected with the payment. Field name: BSLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~BankStatmentLineID.html
+  field_name: BSLine
+- name: DocumentIdentifier
+  description: 'Sets or returns the ID number of the bank statement document. Field name: DocID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~DocumentIdentifier.html
+  field_name: DocID
+- name: IsDebit
+  description: 'Sets or returns a boolean value specifying whether the payment is credit amount or debit amount. Field name: IsDebit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~IsDebit.html
+- name: ListLineID
+  description: 'Returns the ID number of the payment line. Field name: ListLineID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayment~ListLineID.html

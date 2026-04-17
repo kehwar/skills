@@ -1,0 +1,167 @@
+name: ContactEmployees
+title: ContactEmployees Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees.html
+description: 'ContactEmployees is a business object that represents the contact employees in the Business Partners module. This object enables you to add contact information of employees to the Business Partners master record. Source table: OCPR .'
+remarks: 'Mandatory fields in SAP Business One: Name . To display the form in the application: - Select Business Partners --> Business Partner Master Data --> Contact Persons tab.'
+methods:
+- name: Add
+  description: Adds a new contact employee.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~SetCurrentLine.html
+properties:
+- name: Active
+  description: Indicates whether or not the contact person for a particular business partner is available for selection in transactions.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Active.html
+- name: Address
+  description: 'Sets or returns the employee address. Field name: Address . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Address.html
+  length: 100
+- name: BlockSendingMarketingContent
+  description: 'Specifies whether or not to block sending marketing contnet to the contact employee. Field name: BlockComm . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~BlockSendingMarketingContent.html
+  field_name: BlockComm
+  length: 1
+- name: CardCode
+  description: 'Returns the business partner identification number. Field name: CardCode . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~CardCode.html
+  length: 15
+- name: CityOfBirth
+  description: 'Sets or returns the city of birth of the employee. Field name: BirthCity . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~CityOfBirth.html
+  field_name: BirthCity
+  length: 100
+- name: ConnectedAddressName
+  description: 'Description of the connected address. Field name: CnnectAddr . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~ConnectedAddressName.html
+  field_name: CnnectAddr
+  length: 50
+- name: ConnectedAddressType
+  description: 'Type of the connected address: B stands for bill to or pay to address; S stands for ship to address. Field name: CnAddrType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~ConnectedAddressType.html
+  field_name: CnAddrType
+- name: ContactEmployeeBlockSendingMarketingContents
+  description: Returns the ContactEmployeeBlockSendingMarketingContents object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~ContactEmployeeBlockSendingMarketingContents.html
+- name: Count
+  description: Returns the number of contact employees included in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Count.html
+- name: CreateDate
+  description: property CreateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~CreateDate.html
+- name: CreateTime
+  description: property CreateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~CreateTime.html
+- name: DateOfBirth
+  description: 'Sets or returns the employee birth date. Field name: BirthDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~DateOfBirth.html
+  field_name: BirthDate
+- name: E_Mail
+  description: 'Sets or returns the e-mail address of the contact employee. Field name: E_MailL . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~E_Mail.html
+  field_name: E_MailL
+  length: 100
+- name: EmailGroupCode
+  description: property EmailGroupCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~EmailGroupCode.html
+- name: Fax
+  description: 'Sets or returns the fax number of the contact employee. Field name: Fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Fax.html
+  length: 50
+- name: FirstName
+  description: property FirstName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~FirstName.html
+- name: ForeignCountry
+  description: 'Field name: Frgncntry . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~ForeignCountry.html
+  field_name: Frgncntry
+  length: 3
+- name: Gender
+  description: 'Sets or returns a valid value of BoGenderTypes that specifies the employee gender. Field name: Gender .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Gender.html
+- name: GenderEx
+  description: 'Sets or returns the gender type that you specified in addition to the system predefined contact employee gender type. Field name: SexEx . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~GenderEx.html
+  field_name: SexEx
+  length: 15
+- name: InternalCode
+  description: 'Returns the internal code of the contact employee. Field name: CntctCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~InternalCode.html
+  field_name: CntctCode
+- name: LastName
+  description: property LastName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~LastName.html
+- name: MiddleName
+  description: property MiddleName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~MiddleName.html
+- name: MobilePhone
+  description: 'Sets or returns the employee mobile phone number. Field name: Cellolar . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~MobilePhone.html
+  field_name: Cellolar
+  length: 50
+- name: Name
+  description: 'Sets or returns the employee name. Field name: Name . Mandatory property. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Name.html
+  length: 50
+- name: NaturalPer
+  description: 'This shows whether the business partner is natural person or not. Field name: NaturalPer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~NaturalPer.html
+- name: Pager
+  description: 'Sets or returns the pager number of the employee. Field name: Pager . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Pager.html
+  length: 30
+- name: Password
+  description: 'Sets or returns the employee access password to e-commerce applications. Field name: Password . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Password.html
+  length: 8
+- name: Phone1
+  description: 'Sets or returns the primary phone number of the employee. Field name: Tel1 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Phone1.html
+  field_name: Tel1
+  length: 50
+- name: Phone2
+  description: 'Sets or returns the secondary phone number of the employee. Field name: Tel2 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Phone2.html
+  field_name: Tel2
+  length: 50
+- name: PlaceOfBirth
+  description: 'Sets or returns the country of birth of the employee. Field name: BirthPlace . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~PlaceOfBirth.html
+  field_name: BirthPlace
+  length: 100
+- name: Position
+  description: 'Sets or returns the employee position in the company. Field name: Position . Length: 90 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Position.html
+  length: 90
+- name: Profession
+  description: 'Sets or returns the employee profession. Field name: Profession . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Profession.html
+  length: 50
+- name: Remarks1
+  description: 'Sets or returns remarks for the employee. Field name: Notes1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Remarks1.html
+  field_name: Notes1
+  length: 100
+- name: Remarks2
+  description: 'Sets or returns secondary remarks for the employee. Field name: Notes2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Remarks2.html
+  field_name: Notes2
+  length: 100
+- name: Title
+  description: 'Sets or returns the Contact Employee''s Title . Field name: Title . Field name: Title . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~Title.html
+  length: 10
+- name: UpdateDate
+  description: property UpdateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~UpdateDate.html
+- name: UpdateTime
+  description: property UpdateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~UpdateTime.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployees~UserFields.html

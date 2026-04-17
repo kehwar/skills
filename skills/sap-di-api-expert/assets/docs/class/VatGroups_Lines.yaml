@@ -1,0 +1,34 @@
+name: VatGroups_Lines
+title: VatGroups_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines.html
+description: 'VatGroups_Lines is a child object of the VatGroups_Lines object. It enables to define the tax percentage and the effective from date for the tax group. Source table: VTG1 .'
+remarks: 'Country-specific for Europe. Mandatory property: Effectivefrom . To display the form in the application: - Select Administration --> Setup --> Financials --> Tax --> Tax Groups . Click the Tax Definition button.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~Count.html
+- name: DatevCode
+  description: property DatevCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~DatevCode.html
+- name: Effectivefrom
+  description: 'Sets or returns the date from which the tax group''s percentage is effective. Mandatory property. Field name: EffecDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~Effectivefrom.html
+  field_name: EffecDate
+- name: EqualizationTax
+  description: 'Sets or returns the equalization tax percentage. Field name: EquVatPr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~EqualizationTax.html
+  field_name: EquVatPr
+- name: Rate
+  description: 'Sets or returns the percentage of the tax group. Field name: Rate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~Rate.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups_Lines~UserFields.html

@@ -1,0 +1,97 @@
+name: CompanyService
+title: CompanyService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService.html
+description: 'The CompanyService enables to manage the company administration data. This includes the following tables: - Administration data - OADM ( AdminInfo object). Company data - CINF ( CompanyInfo object). Posting Periods - OACT ( ChartOfAccounts object). Finance Periods - OFPR ( FinancePeriods object). You can also retrieve the status of the application features, whether these features are blocked or not, according to the installation type and localization (see GetFeaturesStatus method).'
+remarks: 'To use the service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or- You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method.'
+methods:
+- name: CreatePeriod
+  description: Returns the PeriodCategoryParams Identification Key (PeriodCategory Key) based on the PeriodCategory data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~CreatePeriod.html
+- name: CreatePeriodWithFinanceParams
+  description: Returns a PeriodCategoryParams Identification Key, extended with finance parameters derived by the FinancePeriodParams identification key (system number, period indicator).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~CreatePeriodWithFinanceParams.html
+- name: GetAdminInfo
+  description: Returns the AdminInfo data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetAdminInfo.html
+- name: GetAdvancedGLAccount
+  description: method GetAdvancedGLAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetAdvancedGLAccount.html
+- name: GetBlob
+  description: 'Gets the contents of a blob field in the SAP Business One database. NOTE: If you want to save a blob field to a file, we recommend that you use the SaveBlobToFile method.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetBlob.html
+- name: GetBusinessService
+  description: Creates a specified business service. Use this method for all types of services
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetBusinessService.html
+- name: GetCompanyInfo
+  description: Returns the CompanyInfo data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetCompanyInfo.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetDataInterfaceFromXMLString.html
+- name: GetFeaturesStatus
+  description: Returns the FeatureStatusCollection . A feature status can be either blocked or not.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetFeaturesStatus.html
+- name: GetFinancePeriod
+  description: Returns a FinancePeriod data structure according to the specified finance period key parameters.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetFinancePeriod.html
+- name: GetFinancePeriods
+  description: Returns the FinancePeriods collection according to the specified period category key parameters.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetFinancePeriods.html
+- name: GetGeneralService
+  description: Returns an instance of GeneralService for the specified user-defined object (UDO). The GeneralService instance can be used to add, retrieve and delete rows of the main table and child tables linked to the specified UDO.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetGeneralService.html
+- name: GetItemPrice
+  description: Returns the ItemPriceReturnParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetItemPrice.html
+- name: GetPathAdmin
+  description: Returns an object for setting and getting directory paths for storing various files.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetPathAdmin.html
+- name: GetPeriod
+  description: Returns the PeriodCategory data structure according to the specified period category key parameters.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetPeriod.html
+- name: GetPeriods
+  description: Returns the PeriodCategoryParamsCollection .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetPeriods.html
+- name: GetServiceMetaData
+  description: GetServiceMetaData
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~GetServiceMetaData.html
+- name: IsUserLicensed
+  description: IsUserLicensed
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~IsUserLicensed.html
+- name: LoadBlobFromFile
+  description: Loads a file into a blob field in the SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~LoadBlobFromFile.html
+- name: RoundDecimal
+  description: Rounds data to a specified number of decimal places or to a whole number if no decimal places are specified.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~RoundDecimal.html
+- name: SaveBlobToFile
+  description: Saves to a file the contents of a blob field in the SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~SaveBlobToFile.html
+- name: SetBlob
+  description: 'Sets a blob field in the SAP Business One database. NOTE: If you want to load a blob field to a file, we recommend that you use the LoadBlobFromFile method.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~SetBlob.html
+- name: UpdateAdminInfo
+  description: Updates the AdminInfo data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdateAdminInfo.html
+- name: UpdateCompanyInfo
+  description: Updates the CompanyInfo data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdateCompanyInfo.html
+- name: UpdateFinancePeriod
+  description: Updates the FinancePeriod data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdateFinancePeriod.html
+- name: UpdatePathAdmin
+  description: Updates the paths for storing various files.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdatePathAdmin.html
+- name: UpdatePeriod
+  description: Updates the PeriodCategory data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdatePeriod.html
+- name: UpdateUserLicense
+  description: Assigns an SAP Business One license to a user, or removes a license from a user.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyService~UpdateUserLicense.html

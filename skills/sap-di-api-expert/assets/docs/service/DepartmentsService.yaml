@@ -1,0 +1,30 @@
+name: DepartmentsService
+title: DepartmentsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService.html
+description: 'The DepartmentsService service enables you to add, look up and remove departments in the departments master data table. Users and employees can be assigned to departments. To see the list of departments, do one of the following: - Select Administration --> Setup --> G eneral --> Users, and then select Define New from the Department list. - Select Human Resources --> Employee Master Data , and then select Define New from the Department list. Source table: OUDP'
+methods:
+- name: AddDepartment
+  description: Adds a department.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~AddDepartment.html
+- name: DeleteDepartment
+  description: Deletes an existing department. The department is specified by its key ( Code ), which is contained in the DepartmentParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~DeleteDepartment.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DepartmentsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~GetDataInterfaceFromXMLString.html
+- name: GetDepartment
+  description: Retrieves a department. The department is specified by its key ( Code ), which is contained in the DepartmentParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~GetDepartment.html
+- name: GetDepartmentList
+  description: Retrieves the keys and names of all the departments.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~GetDepartmentList.html
+- name: UpdateDepartment
+  description: Updates an existing department. The data for the department, including the key of the department to be updated, is contained in the Department object passed to the method. To update a department, you must first retrieve it using the GetDepartment method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepartmentsService~UpdateDepartment.html

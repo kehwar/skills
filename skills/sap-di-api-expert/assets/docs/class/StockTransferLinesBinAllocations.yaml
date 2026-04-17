@@ -1,0 +1,38 @@
+name: StockTransferLinesBinAllocations
+title: StockTransferLinesBinAllocations Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations.html
+description: 'StockTransferLinesBinAllocations is a child object of the StockTransfer_Lines object that represents the bin allocation of items or serial items or batch items. Source table: INV19 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~SetCurrentLine.html
+properties:
+- name: AllowNegativeQuantity
+  description: 'Indicates whether to allow enter negative quantity. Field name: AllowNeg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~AllowNegativeQuantity.html
+  field_name: AllowNeg
+- name: BaseLineNumber
+  description: property BaseLineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~BaseLineNumber.html
+- name: BinAbsEntry
+  description: 'The internal number of the bin location. Field name: BinAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~BinAbsEntry.html
+  field_name: BinAbs
+- name: BinActionType
+  description: 'The type of the bin action. Field name: BinActTyp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~BinActionType.html
+  field_name: BinActTyp
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~Count.html
+- name: Quantity
+  description: 'The quantity allocated to the bin location. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~Quantity.html
+- name: SerialAndBatchNumbersBaseLine
+  description: 'The internal number of the serial and batch numbers master data. Field name: SnBMDAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransferLinesBinAllocations~SerialAndBatchNumbersBaseLine.html
+  field_name: SnBMDAbs

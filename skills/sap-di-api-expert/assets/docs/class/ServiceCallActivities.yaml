@@ -1,0 +1,31 @@
+name: ServiceCallActivities
+title: ServiceCallActivities Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities.html
+description: 'ServiceCallActivities is a child object of the ServiceCalls object in the Service module. The service call activities are associated with the Activities with Business Partners table. Source table: SCL5 .'
+remarks: 'Mandatory field in SAP Business One: ActivityCode . To display the form in the application: - Select Service --> Service Call . - Select the Activities tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~SetCurrentLine.html
+properties:
+- name: ActivityCode
+  description: 'Sets or returns the activity code. Mandatory property. Field name: ClgID . This is a foreign key to the Contacts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~ActivityCode.html
+  field_name: ClgID
+- name: Count
+  description: Returns the total rows in the activities table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~Count.html
+- name: LineNum
+  description: 'Returns the current row number. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~LineNum.html
+  field_name: Line
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallActivities~UserFields.html

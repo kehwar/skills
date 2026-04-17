@@ -1,0 +1,18 @@
+name: CommandParam
+title: CommandParam Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParam.html
+description: CommandParam is a child object of the Command object and used to retrieve single parameter of the stored procedure.
+properties:
+- name: Direction
+  description: Returns the direction of the parameter, In or Out . The Command object supports single Out parameter only.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParam~Direction.html
+- name: Name
+  description: Returns the parameter name.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParam~Name.html
+- name: Type
+  description: Returns the parameter field type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParam~Type.html
+- name: Value
+  description: Sets or returns the parameter value.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParam~Value.html

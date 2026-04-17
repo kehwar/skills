@@ -1,0 +1,31 @@
+name: PaymentBlocksService
+title: PaymentBlocksService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService.html
+description: 'The PaymentBlocksService service enables you to add, look up, update, and remove payment blocks. Source table: OPYB .'
+remarks: "To see the list of payment blocks: - From the SAP Business One Main Menu , choose Business Partner --> Business Partner Master Data --> Payment System . - Select Payment Blocks . - In the field on the right, choose Define New . The Payment Blocks â\x80\x93 Setup window appears."
+methods:
+- name: AddPaymentBlock
+  description: Adds a payment block.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~AddPaymentBlock.html
+- name: DeletePaymentBlock
+  description: Deletes an existing payment block.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~DeletePaymentBlock.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the PaymentBlocksService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~GetDataInterfaceFromXMLString.html
+- name: GetPaymentBlock
+  description: Retrieves a payment block. The payment block is specified by its key, which is contained in the PaymentBlockParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~GetPaymentBlock.html
+- name: GetPaymentBlockList
+  description: Returns the PaymentBlocksParams data collection that identify all payment blocks.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~GetPaymentBlockList.html
+- name: UpdatePaymentBlock
+  description: Updates an existing payment block. The data for the payment block, including the key of the payment block to be updated, is contained in the PaymentBlock object passed to the method. To update a payment block, you must first retrieve it using the GetPaymentBlock method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentBlocksService~UpdatePaymentBlock.html

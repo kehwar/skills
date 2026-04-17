@@ -1,0 +1,29 @@
+name: TeamMembers
+title: TeamMembers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers.html
+description: 'TeamMembers is a child object of the Teams object that represents the membership role in a team of an employee. An employee can be a Member or a Leader of more than one team. Source table: HTM1 .'
+remarks: 'To display the form in the application: - Select Human Resources --> Employee Master Data. Select the Membership tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~Count.html
+- name: EmployeeID
+  description: Sets or returns the employee ID as defined by EmployeesInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~EmployeeID.html
+- name: RoleInTeam
+  description: Sets or returns a valid value of BoRoleInTeam type that specifies whether the employee is a Member or a Leader of the team.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~RoleInTeam.html
+- name: TeamID
+  description: Returns the team identification key.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~TeamID.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TeamMembers~UserFields.html

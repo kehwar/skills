@@ -1,0 +1,84 @@
+name: FinancePeriod
+title: FinancePeriod Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod.html
+description: 'The FinancePeriod object is a data structure related to the CompanyService . The object is used to identify and define a new Finance Period. Source table: OFPR .'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~ToXMLString.html
+properties:
+- name: AbsoluteEntry
+  description: 'Sets or return the key of the period category as assigned by the system when creating a new period category. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: ActiveforFeed
+  description: 'Determines whether or not to enable adding documents to the finance period. However, a journal entries can be added. Field name: Free2 . Use the property PeriodStatus instead of ActiveforFeed.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~ActiveforFeed.html
+  field_name: Free2
+- name: AdditionalSubPeriods
+  description: 'Determines whether or not additional sub periods exists. Field name: Addition .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~AdditionalSubPeriods.html
+  field_name: Addition
+- name: Locked
+  description: 'Sets or returns a valid value that determines whether or not to lock the Finance Period for additional journal entries. Field name: Free3 . Use the property PeriodStatus instead of Locked.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~Locked.html
+  field_name: Free3
+- name: PeriodCode
+  description: 'Sets or returns the Period Code. Field name: Code . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PeriodCode.html
+  field_name: Code
+  length: 20
+- name: PeriodIndicator
+  description: 'Sets or returns the PeriodIndicator, a foreign key to OPID . Field name: Indicator ). Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PeriodIndicator.html
+  field_name: Indicator
+  length: 10
+- name: PeriodName
+  description: 'Sets or returns the Period Name . Field name: Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PeriodName.html
+  field_name: Name
+  length: 20
+- name: PeriodStatus
+  description: 'Sets or returns a valid value that specifies the finance period status. Each status indicates what transactions and documents can be posted within the date range of each posting period. Field name: PeriodStat )'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PeriodStatus.html
+  field_name: PeriodStat
+- name: PostingDateFrom
+  description: 'Sets or returns the Posting Period initiation date. Field name: F_RefDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PostingDateFrom.html
+  field_name: F_RefDate
+- name: PostingDateTo
+  description: 'Sets or returns the Posting Period termination date. Field name: T_RefDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~PostingDateTo.html
+  field_name: T_RefDate
+- name: SubNum
+  description: 'Returns the No. of Additional Sub-Period contained within the period. Field name: SubNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~SubNum.html
+- name: TaxDateFrom
+  description: 'Sets or returns the starting date for Tax calculation. Field name: F_TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~TaxDateFrom.html
+  field_name: F_TaxDate
+- name: TaxDateTo
+  description: 'Sets or returns the ending date for Tax calculation. Field name: T_TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~TaxDateTo.html
+  field_name: T_TaxDate
+- name: ValueDateFrom
+  description: 'Sets or returns the starting date for value calculation. Field name: F_DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~ValueDateFrom.html
+  field_name: F_DueDate
+- name: ValueDateTo
+  description: 'Sets or returns the ending date for value calculation. Field name: T_DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriod~ValueDateTo.html
+  field_name: T_DueDate

@@ -1,0 +1,64 @@
+name: IntrastatConfiguration
+title: IntrastatConfiguration Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration.html
+description: IntrastatConfiguration Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ToXMLString.html
+properties:
+- name: AbsEntry
+  description: property AbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~AbsEntry.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~Code.html
+- name: ConfID
+  description: property Configuration ID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ConfID.html
+- name: ConfType
+  description: property Configuration Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ConfType.html
+- name: Country
+  description: property Country
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~Country.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~Description.html
+- name: PercentageValue
+  description: property Percentage Value
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~PercentageValue.html
+- name: StatisticalCode
+  description: property Statistical Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~StatisticalCode.html
+- name: SupplementaryUnit
+  description: property Supplementary Unit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~SupplementaryUnit.html
+- name: TriangDeal
+  description: property Triangulate Deal
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~TriangDeal.html
+- name: ValidExport
+  description: property Valid for Export
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ValidExport.html
+- name: ValidFrom
+  description: property Valid From
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ValidFrom.html
+- name: ValidImport
+  description: property Valid for Import
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ValidImport.html
+- name: ValidTo
+  description: property Valid To
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~IntrastatConfiguration~ValidTo.html

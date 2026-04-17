@@ -1,0 +1,30 @@
+name: ServiceCallTypesService
+title: ServiceCallTypesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService.html
+description: 'The ServiceCallTypesService service enables you to add, look up and remove service call types in the service call type master data table. Service call types are used to classify service calls. To see the list of service call types, select Service --> Service Call, and then select the General tab. The service call types are listed in the Call Type field. Source table: OSCT'
+methods:
+- name: AddServiceCallType
+  description: Adds a service call type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~AddServiceCallType.html
+- name: DeleteServiceCallType
+  description: Deletes an existing service call type. The service call type is specified by its key ( callTypeID ), which is contained in the ServiceCallTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~DeleteServiceCallType.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceCallTypesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~GetDataInterfaceFromXMLString.html
+- name: GetServiceCallType
+  description: Retrieves a service call type. The service call type is specified by its key ( callTypeID ), which is contained in the ServiceCallTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~GetServiceCallType.html
+- name: GetServiceCallTypeList
+  description: Retrieves the keys and names of all the service call types.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~GetServiceCallTypeList.html
+- name: UpdateServiceCallType
+  description: Updates an existing service call type. The data for the service call type, including the key of the type to be updated, is contained in the ServiceCallType passed to the method. To update a service call type, you must first retrieve it using the GetServiceCallType method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallTypesService~UpdateServiceCallType.html

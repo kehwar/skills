@@ -1,0 +1,30 @@
+name: SalesOpportunityInterestsSetupService
+title: SalesOpportunityInterestsSetupService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService.html
+description: 'The SalesOpportunityInterestsSetupService service enables you to add, look up and remove interests in the interests master data table. Interests can be assigned to sales opportunities; the interest describes an area of interest to the sales opportunity. To see the list of interests, select Sales Opportunities --> Sales Opportunity, and then select the Potential tab. In the Description column of the Interest Range list, select Define New . The Reasons list is disabled if the Opportunity Status is Open . Source table: OOIN'
+methods:
+- name: AddSalesOpportunityInterestSetup
+  description: Adds an interest.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~AddSalesOpportunityInterestSetup.html
+- name: DeleteSalesOpportunityInterestSetup
+  description: Deletes an existing interest. The interest is specified by its key ( Num ), which is contained in the SalesOpportunityInterestSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~DeleteSalesOpportunityInterestSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SalesOpportunityInterestsSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~GetDataInterfaceFromXMLString.html
+- name: GetSalesOpportunityInterestSetup
+  description: Retrieves an interest. The interest is specified by its key ( Num ), which is contained in the SalesOpportunityInterestSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~GetSalesOpportunityInterestSetup.html
+- name: GetSalesOpportunityInterestSetupList
+  description: Retrieves the keys and names of all the interests.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~GetSalesOpportunityInterestSetupList.html
+- name: UpdateSalesOpportunityInterestSetup
+  description: Updates an existing interest. The data for the interest, including the key of the interest to be updated, is contained in the SalesOpportunityInterestSetup object passed to the method. To update an interest, you must first retrieve it using the GetSalesOpportunityInterestSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityInterestsSetupService~UpdateSalesOpportunityInterestSetup.html

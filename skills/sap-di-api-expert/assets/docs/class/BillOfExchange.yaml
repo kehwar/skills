@@ -1,0 +1,123 @@
+name: BillOfExchange
+title: BillOfExchange Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange.html
+description: 'BillOfExchange is a business object that represents the Bill Of Exchange table in the Banking module. Bill Of Exchange is a commercial document used as a payment method in Spain, Portugal, Italy, France, Belgium, and Chile. Source table: OBOE .'
+remarks: 'Mandatory fields in SAP Business One: BillOfExchangeDueDate and PaymentMethodCode . To display the form in the application: Definition: A Bill of Exchange is a signed, written order prepared by one party (drawer) who instructs another party (drawee) to pay a certain sum to a third party (payee) at a due date. The Bill of Exchange is used as a method of incoming or outgoing payment with a due date, as credit for the customer or as a flexible financing tool. Process of incoming payments : Process of outgoing payments :'
+properties:
+- name: BillOfExchangeDueDate
+  description: 'Sets or returns the due date of the Bill Of Exchange. Field name: DueDate . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~BillOfExchangeDueDate.html
+  field_name: DueDate
+- name: BillOfExchangeNo
+  description: 'Sets or returns the Bill Of Exchange number. Field name: BoeNum . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~BillOfExchangeNo.html
+  field_name: BoeNum
+  length: 11
+- name: BPBankAct
+  description: 'Sets or returns the bank account number of the business partner. Field name: DpstAcct . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~BPBankAct.html
+  field_name: DpstAcct
+  length: 50
+- name: BPBankCode
+  description: 'Sets or returns the bank code of the business partner. Field name: DpsBankCod . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~BPBankCode.html
+  field_name: DpsBankCod
+  length: 30
+- name: BPBankCountry
+  description: 'Sets or returns the country code of the business partner bank account. Field name: BPBankCtr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~BPBankCountry.html
+  field_name: BPBankCtr
+  length: 3
+- name: ControlKey
+  description: 'Returns the bank control key of the business partner. Field name: ControlKey . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~ControlKey.html
+  length: 2
+- name: Details
+  description: Not used.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~Details.html
+- name: DiscountAmount
+  description: property DiscountAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~DiscountAmount.html
+- name: DiscountDate
+  description: property DiscountDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~DiscountDate.html
+- name: FineAmount
+  description: property FineAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~FineAmount.html
+- name: FineDate
+  description: property FineDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~FineDate.html
+- name: FolioNumber
+  description: 'Sets or returns the additional number for a bill-of-exchange document. Country-specific field for Chile. Field name: FolioNum ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~FolioNumber.html
+  field_name: FolioNum
+- name: FolioPrefixString
+  description: 'Sets or returns the prefix string for the FolioNumber . Field name: FolioPref . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~FolioPrefixString.html
+  field_name: FolioPref
+  length: 2
+- name: InterestAmount
+  description: property InterestAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~InterestAmount.html
+- name: InterestDate
+  description: property InterestDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~InterestDate.html
+- name: IOFAmount
+  description: property IOFAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~IOFAmount.html
+- name: LastPageFolioNumber
+  description: 'Folio number of the last page of the marketing document in the Chile localization. Field name: LPgFolioN .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~LastPageFolioNumber.html
+  field_name: LPgFolioN
+- name: OtherExpensesAmount
+  description: property OtherExpensesAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~OtherExpensesAmount.html
+- name: OtherIncomesAmount
+  description: property OtherIncomesAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~OtherIncomesAmount.html
+- name: PaymentEngineStatus1
+  description: 'Sets or returns the status no. 1 of the Bill Of Exchange used in the Payment Engine add-on. Field name: PayEngSt1 . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~PaymentEngineStatus1.html
+  field_name: PayEngSt1
+  length: 1
+- name: PaymentEngineStatus2
+  description: 'Sets or returns the status no. 2 of the Bill Of Exchange used in the Payment Engine add-on. Field name: PayEngSt2 . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~PaymentEngineStatus2.html
+  field_name: PayEngSt2
+  length: 1
+- name: PaymentEngineStatus3
+  description: 'Sets or returns the status no. 3 of the Bill Of Exchange used in the Payment Engine add-on. Field name: PayEngSt3 . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~PaymentEngineStatus3.html
+  field_name: PayEngSt3
+  length: 3
+- name: PaymentMethodCode
+  description: 'Sets or returns the Payment Method Code as defined in SAP Business One. Field name: PayMethCod . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~PaymentMethodCode.html
+  field_name: PayMethCod
+  length: 15
+- name: ReferenceNo
+  description: 'Sets or returns the reference number for the Bill Of Exchange. Field name: RefNum . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~ReferenceNo.html
+  field_name: RefNum
+  length: 254
+- name: Remarks
+  description: 'Sets or returns the for the Bill Of Exchange. Field name: Comments . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~Remarks.html
+  field_name: Comments
+  length: 254
+- name: ServiceFeeAmount
+  description: property ServiceFeeAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~ServiceFeeAmount.html
+- name: StampTaxAmount
+  description: 'Sets or returns the amount of stamp tax required for the Bill Off Exchange approval. Field name: tmpTxAmnt . Field name: PayEngSt2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~StampTaxAmount.html
+  field_name: tmpTxAmnt
+- name: StampTaxCode
+  description: 'Sets or returns the Stamp Tax code. Field name: StampTax . Length: 8 Characters. Field name: StampTax . This is a foreign key to the VatGroups Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~StampTaxCode.html
+  field_name: StampTax
+  length: 8
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchange~UserFields.html

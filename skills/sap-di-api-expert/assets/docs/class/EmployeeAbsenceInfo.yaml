@@ -1,0 +1,50 @@
+name: EmployeeAbsenceInfo
+title: EmployeeAbsenceInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo.html
+description: 'EmployeeAbsenceInfo is a child object of the EmployeesInfo object and represents the employee absence information. Source table: HEM1 .'
+remarks: 'To display the form in the application: - Select Human Resources --> Employee Master Data - Select the Administration tab . - Click Absence .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~SetCurrentLine.html
+properties:
+- name: ApprovedBy
+  description: 'Sets or returns the person name that approves the absence. Field name: approvedBy . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~ApprovedBy.html
+  field_name: approvedBy
+  length: 20
+- name: ConfirmerNumber
+  description: 'Sets or returns the employee''s Confirmer Number. Field name: cnfrmrNum ). This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~ConfirmerNumber.html
+  field_name: cnfrmrNum
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~Count.html
+- name: EmployeeID
+  description: 'Sets or returns the employee ID, which SAP Business One generates automatically when adding a new employee. Field name: empID . This is a foreign key to the EmployeesInfo object. Sets or returns the employee ID, which SAP Business One generates automatically when adding a new employee. Field name: empID . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~EmployeeID.html
+  field_name: empID
+- name: FromDate
+  description: 'Sets or returns the start date of the employee absence period. Field name: fromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~FromDate.html
+  field_name: fromDate
+- name: LineNum
+  description: 'Returns the current row number in the employee absence information list. Field name: line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~LineNum.html
+  field_name: line
+- name: Reason
+  description: 'Sets or returns the reason for employee absence. Field name: reason . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~Reason.html
+  field_name: reason
+  length: 20
+- name: ToDate
+  description: 'Sets or returns the end date of the employee absence period. Field name: toDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~ToDate.html
+  field_name: toDate
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeAbsenceInfo~UserFields.html

@@ -1,0 +1,13 @@
+name: CommandParams
+title: CommandParams Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParams.html
+description: CommandParams is a collection of CommandParam objects.
+methods:
+- name: Item
+  description: Retrieves a single item, of a command parameter, from the stored procedure parameters collection .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParams~Item.html
+properties:
+- name: Count
+  description: Returns the total items in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CommandParams~Count.html

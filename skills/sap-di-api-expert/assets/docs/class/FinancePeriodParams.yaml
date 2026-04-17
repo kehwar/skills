@@ -1,0 +1,31 @@
+name: FinancePeriodParams
+title: FinancePeriodParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams.html
+description: The FinancePeriodParams specifies the identification key(system number, period indicator ) for which the CompanyService is related.
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~ToXMLString.html
+properties:
+- name: AbsoluteEntry
+  description: 'Sets or returns the System Number, a key to the CompanyService . Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: PeriodIndicator
+  description: 'Sets or returns the period indicator. Field name: Indicator . Length: 10 characters. This is a foreign key to the Period Indicators table OPID , which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancePeriodParams~PeriodIndicator.html
+  field_name: Indicator
+  length: 10

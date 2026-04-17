@@ -1,0 +1,22 @@
+name: ChangeLogsService
+title: ChangeLogsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService.html
+description: 'You can use the change log to gain an overview of changes in most windows of SAP Business One. Each time you update, for example, tax groups, withholding tax, house banks, freight, credit card, authorizations, sales, purchasing documents, production orders, charts of accounts, or UDOs, you can use the ChangeLogsService service to look up the change logs and show the differences between two change logs. Source table: OGCL .'
+remarks: To access the change log in the SAP Business One application, open a window and make changes, if necessary; then (with the window still open) choose Tools --> Change Log... . To display the differences between two change log instances, select the instances and choose the Show Differences button.
+methods:
+- name: GetChangeLog
+  description: Retrieves a change log. The change log is specified by its key, which is contained in the GetChangeLogParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService~GetChangeLog.html
+- name: GetChangeLogDifferences
+  description: Retrieves the differences between two change logs. The change log difference is specified by its key, which is contained in the ShowDifferenceParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService~GetChangeLogDifferences.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ChangeLogsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChangeLogsService~GetDataInterfaceFromXMLString.html

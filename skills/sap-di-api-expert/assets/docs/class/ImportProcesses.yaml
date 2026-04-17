@@ -1,0 +1,56 @@
+name: ImportProcesses
+title: ImportProcesses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses.html
+description: 'Source table: DOC17 .'
+properties:
+- name: AdditionalFreightToNavyAuthority
+  description: 'Enter the Additional Freight to Navy Authority amount. This amount is only relevant if you chose the 1 - Maritime option in the Transport Route field in the Import Process window. Field name: AddFrNavyA .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~AdditionalFreightToNavyAuthority.html
+  field_name: AddFrNavyA
+- name: AdditionalItemDiscountValue
+  description: 'Additional Item Discount Value. Field name: AddItmDV .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~AdditionalItemDiscountValue.html
+  field_name: AddItmDV
+- name: AdditionalItemSequentialNumber
+  description: 'Enter the Additional Item Sequential Number for the Import Process . Field name: nSeqAdic .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~AdditionalItemSequentialNumber.html
+  field_name: nSeqAdic
+- name: AdditionalNumber
+  description: 'Additional Number. Field name: AdditNum . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~AdditionalNumber.html
+  field_name: AdditNum
+  length: 30
+- name: CustomsClearanceDate
+  description: 'Date of Customs Clearance. Field name: CustClrDat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~CustomsClearanceDate.html
+  field_name: CustClrDat
+- name: DateOfRegistry_DI_DSI_DA
+  description: 'Date of Registry DI/DSI/DA. Field name: DateOfReg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~DateOfRegistry_DI_DSI_DA.html
+  field_name: DateOfReg
+- name: DrawbackRegimeConcessionAccountNumber
+  description: 'Drawback Concession Acct Number. Field name: ConcActNum . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~DrawbackRegimeConcessionAccountNumber.html
+  field_name: ConcActNum
+  length: 30
+- name: DrawbackSuspensionRegime
+  description: 'Drawback Suspension Regime. Field name: DrawSReg . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~DrawbackSuspensionRegime.html
+  field_name: DrawSReg
+  length: 11
+- name: ImportationDocumentNumber
+  description: 'Importation Document Number. Field name: ImpDocNum . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~ImportationDocumentNumber.html
+  field_name: ImpDocNum
+  length: 10
+- name: ImportationDocumentTypeCode
+  description: 'Type of Importation Document. Field name: ImpDocType . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~ImportationDocumentTypeCode.html
+  field_name: ImpDocType
+  length: 1
+- name: TypeOfImport
+  description: 'Type of Import. Field name: TypeOfImp . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ImportProcesses~TypeOfImport.html
+  field_name: TypeOfImp
+  length: 1

@@ -1,0 +1,115 @@
+name: PM_StageData
+title: PM_StageData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData.html
+description: 'Source table: PMG1 .'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~ToXMLString.html
+properties:
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~AttachmentEntry.html
+- name: CloseDate
+  description: property CloseDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~CloseDate.html
+- name: DependsOnStage1
+  description: property DependsOnStage1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStage1.html
+- name: DependsOnStage2
+  description: property DependsOnStage2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStage2.html
+- name: DependsOnStage3
+  description: property DependsOnStage3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStage3.html
+- name: DependsOnStage4
+  description: property DependsOnStage4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStage4.html
+- name: DependsOnStageID1
+  description: property DependsOnStageID1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStageID1.html
+- name: DependsOnStageID2
+  description: property DependsOnStageID2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStageID2.html
+- name: DependsOnStageID3
+  description: property DependsOnStageID3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStageID3.html
+- name: DependsOnStageID4
+  description: property DependsOnStageID4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~DependsOnStageID4.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~Description.html
+- name: ExpectedCosts
+  description: property ExpectedCosts
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~ExpectedCosts.html
+- name: FinishedDate
+  description: property FinishedDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~FinishedDate.html
+- name: InvoicedAmountPurchase
+  description: property InvoicedAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~InvoicedAmountPurchase.html
+- name: InvoicedAmountSales
+  description: property InvoicedAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~InvoicedAmountSales.html
+- name: IsFinished
+  description: property IsFinished
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~IsFinished.html
+- name: LineId
+  description: property LineID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~LineId.html
+- name: OpenAmountPurchase
+  description: property OpenAmountPurchase
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~OpenAmountPurchase.html
+- name: OpenAmountSales
+  description: property OpenAmountSales
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~OpenAmountSales.html
+- name: PercentualCompletness
+  description: property PercentualCompletness
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~PercentualCompletness.html
+- name: StageDependency1Type
+  description: property StageDependency1Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageDependency1Type.html
+- name: StageDependency2Type
+  description: property StageDependency2Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageDependency2Type.html
+- name: StageDependency3Type
+  description: property StageDependency3Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageDependency3Type.html
+- name: StageDependency4Type
+  description: property StageDependency4Type
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageDependency4Type.html
+- name: StageID
+  description: property StageID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageID.html
+- name: StageOwner
+  description: property StageOwner
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageOwner.html
+- name: StageType
+  description: property StageType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StageType.html
+- name: StartDate
+  description: property StartDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~StartDate.html
+- name: Task
+  description: property Task
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~Task.html
+- name: UniqueID
+  description: property UniqueID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~UniqueID.html
+- name: UserFields
+  description: User defined fields for Project Management stage.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_StageData~UserFields.html

@@ -1,0 +1,30 @@
+name: ReportTypesService
+title: ReportTypesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService.html
+description: 'The ReportTypesService service enables you to add, look up, and delete the report types in SAP Business One. Source table: RTYP .'
+methods:
+- name: AddReportType
+  description: Adds a new report type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~AddReportType.html
+- name: DeleteReportType
+  description: Deletes an existing report type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~DeleteReportType.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ReportTypesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~GetDataInterfaceFromXMLString.html
+- name: GetReportType
+  description: Retrieves a report type. The report type is specified by its key, which is contained in the ReportTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~GetReportType.html
+- name: GetReportTypeList
+  description: Returns the ReportTypesParams data collection that identify all report types.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~GetReportTypeList.html
+- name: UpdateReportType
+  description: Updates an existing report type. The data for the report type, including the key of the report type to be updated, is contained in the ReportType object passed to the method. To update a report type, you must first retrieve it using the GetReportType method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportTypesService~UpdateReportType.html

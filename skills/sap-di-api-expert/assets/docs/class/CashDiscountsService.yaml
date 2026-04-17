@@ -1,0 +1,30 @@
+name: CashDiscountsService
+title: CashDiscountsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService.html
+description: 'The CashDiscountsService service enables you to add, look up and remove cash discount policies. Each policy specifies a set of discounts and the conditions for applying the discount. To view the current cash discounts, select Administration --> Setup --> Business Partners --> Payment Terms , and select Define New in the Cash Discount Name field . Source table: OCDC'
+methods:
+- name: AddCashDiscount
+  description: Adds a cash discount.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~AddCashDiscount.html
+- name: DeleteCashDiscount
+  description: Deletes an existing cash discount. The cash discount is specified by its key ( Code ), which is contained in the CashDiscountParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~DeleteCashDiscount.html
+- name: GetCashDiscount
+  description: Retrieves a specific cash discount. The cash discount is specified by its key ( Code ), which is contained in the CashDiscountParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~GetCashDiscount.html
+- name: GetCashDiscountList
+  description: Retrieves the keys and names of all the cash discounts.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~GetCashDiscountList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CashDiscountsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~GetDataInterfaceFromXMLString.html
+- name: UpdateCashDiscount
+  description: Updates an existing cash discount. The data for the cash discount, including the key of the cash discount to be updated, is contained in the CashDiscount passed to the method. To update a cash discount, you must first retrieve it using the GetCashDiscount method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CashDiscountsService~UpdateCashDiscount.html

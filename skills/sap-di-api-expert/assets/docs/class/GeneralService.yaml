@@ -1,0 +1,42 @@
+name: GeneralService
+title: GeneralService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService.html
+description: The GeneralService provides access to UDOs. With the service, you can add, look up and remove rows from user-defined tables. You can also invoke custom methods on the UDO's custom business implementation DLL.
+methods:
+- name: Add
+  description: Adds a row to the database table of the current UDO. The data for the row is contained in the GeneralData object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~Add.html
+- name: Cancel
+  description: Cancels a row in the database table of the current UDO.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~Cancel.html
+- name: Close
+  description: Closes a row in the database table of the current UDO.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~Close.html
+- name: Delete
+  description: Deletes a row in the database table of the current UDO.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~Delete.html
+- name: DoCommand
+  description: DoCommand
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~DoCommand.html
+- name: GetByParams
+  description: Gets a row from the database table of the current UDO. The row is specified by passing its key to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~GetByParams.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the GeneralService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the keys for all the rows in the main table for a specific UDO. For example, if the UDO MealOrders was linked to the user-defined table @SM_OMOR table, and the service was instantiated for the MealOrders UDO, then this method would return the keys for all the rows in @SM_OMOR .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~GetList.html
+- name: InvokeMethod
+  description: 'Executes the InvokeMethod method of your UDO''s custom business implementation DLL. The InvokeMethod has the following signature: TCHAR* InvokeMethod(CSboBusinessObject * refObj, const TCHAR* sInput) The CSboBusinessObject object receives data from the GeneralData parameter of this method, which represents a record of this UDO. The TCHAR object receives the string from the InvokeParams parameter of this method. You can use the InvokeMethod method as a dispatcher to other methods in your DLL, and use this string to determine how to dispatch to other functions in the DLL.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~InvokeMethod.html
+- name: Update
+  description: Updates an existing row in the database table of the current UDO. The data for the row, including the key of the row to be updated, is contained in the GeneralData passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GeneralService~Update.html

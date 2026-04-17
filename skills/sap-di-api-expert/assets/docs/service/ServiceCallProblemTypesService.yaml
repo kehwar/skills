@@ -1,0 +1,30 @@
+name: ServiceCallProblemTypesService
+title: ServiceCallProblemTypesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService.html
+description: 'The ServiceCallProblemTypesService service enables you to add, look up and remove service call problem types in the service call problem type master data table. Service call problem types are used to classify service calls. To see the list of service call problem types, select Service --> Service Call, and then select the General tab. The service call problem types are listed in the Problem Type field. Source table: OSCP'
+methods:
+- name: AddServiceCallProblemType
+  description: Adds a service call problem type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~AddServiceCallProblemType.html
+- name: DeleteServiceCallProblemType
+  description: Deletes an existing service call problem type. The service call problem type is specified by its key ( prblmTypID ), which is contained in the ServiceCallProblemTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~DeleteServiceCallProblemType.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceCallProblemTypesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~GetDataInterfaceFromXMLString.html
+- name: GetServiceCallProblemType
+  description: Retrieves a service call problem type. The service call problem type is specified by its key ( prblmTypID ), which is contained in the ServiceCallProblemTypeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~GetServiceCallProblemType.html
+- name: GetServiceCallProblemTypeList
+  description: Retrieves the keys and names of all the service call problem types.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~GetServiceCallProblemTypeList.html
+- name: UpdateServiceCallProblemType
+  description: Updates an existing service call problem type. The data for the service call problem type, including the key of the problem type to be updated, is contained in the ServiceCallProblemType passed to the method. To update a service call problem type, you must first retrieve it using the GetServiceCallProblemType method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallProblemTypesService~UpdateServiceCallProblemType.html

@@ -1,0 +1,30 @@
+name: BranchesService
+title: BranchesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService.html
+description: 'The BranchesService service enables you to add, look up and remove branches in the branches master data table. Branches can be assigned to users and employees. To see the list of branches and create a new one, select Administration --> Setup --> General --> Users , and then select the Branch field. Source table: OUBR'
+methods:
+- name: AddBranch
+  description: Adds a branch.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~AddBranch.html
+- name: DeleteBranch
+  description: Deletes an existing branch. The branch is specified by its key ( Code ), which is contained in the BranchParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~DeleteBranch.html
+- name: GetBranch
+  description: Retrieves a specific branch. The branch is specified by its key ( Code ), which is contained in the BranchParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~GetBranch.html
+- name: GetBranchList
+  description: Retrieves the keys and names of all the branches.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~GetBranchList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BranchesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~GetDataInterfaceFromXMLString.html
+- name: UpdateBranch
+  description: Updates an existing branch. The data for the branch, including the key of the role to be updated, is contained in the Branch passed to the method. To update a branch, you must first retrieve it using the GetBranch method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BranchesService~UpdateBranch.html

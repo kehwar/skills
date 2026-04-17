@@ -1,0 +1,31 @@
+name: TargetGroupsService
+title: TargetGroupsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService.html
+description: 'The TargetGroupsService service enables you to add, look up, update, and remove target groups. Source table: OTTG .'
+remarks: "To create a target group, proceed as follows: - From the SAP Business One Main Menu , choose Administration --> Set Up --> Business Partners --> Target Group . - In the Target Group â\x80\x93 Set Up window, specify the Target Group Code and the Target Group Name for the new group and choose Update . - In the # column, double-click the gray sequence number area corresponding to the target group you created in step 2. The Target Group Details window appears."
+methods:
+- name: Add
+  description: Adds a target group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~Add.html
+- name: Delete
+  description: Deletes an existing target group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~Delete.html
+- name: Get
+  description: Retrieves a target group. The target group is specified by its key, which is contained in the TargetGroupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the TargetGroupsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the TargetGroupsParams data collection that identifies all target groups.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~GetList.html
+- name: Update
+  description: Updates an existing target group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TargetGroupsService~Update.html

@@ -1,0 +1,36 @@
+name: UserObjectMD_ChildTables
+title: UserObjectMD_ChildTables Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables.html
+description: 'UserObjectMD_ChildTables is child object of the UserObjectsMD object that represents child user tables and their related history log tables. Source table: UDO1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~SetCurrentLine.html
+properties:
+- name: Code
+  description: 'Returns the Child Object Unique ID., inherited from Parent Object. This Unique ID is the primary key of the user defined object and its Parent object. Field name: Code . Length: 20 characters (must include at least one alphabetical character).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~Code.html
+  length: 20
+- name: Count
+  description: Returns the number of child user tables in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~Count.html
+- name: LogTableName
+  description: 'Sets or returns the history log table name. This table maintains a history log of all actions related to the child user table. Field name: LogName . Length: 19 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~LogTableName.html
+  field_name: LogName
+  length: 19
+- name: ObjectName
+  description: The name of child UDO object when specifying a child table for a UDO object. This name is used to specify the child table in the Child method of the GeneralData object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~ObjectName.html
+- name: SonNumber
+  description: 'Returns the number of the child user table. SAP Business One creates a sequential number for each child user table that you add. Field name: SonNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~SonNumber.html
+  field_name: SonNum
+- name: TableName
+  description: 'Sets or returns the child table name to link to the user-defined object. Field name: TableName . Length: 19 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_ChildTables~TableName.html
+  length: 19

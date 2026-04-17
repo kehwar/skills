@@ -1,0 +1,163 @@
+name: ServiceCallSchedulings
+title: ServiceCallSchedulings Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings.html
+description: ServiceCallSchedulings Class
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Add.html
+- name: SetCurrentLine
+  description: method SetCurrentLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~SetCurrentLine.html
+properties:
+- name: ActualDuration
+  description: property ActualDuration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ActualDuration.html
+- name: ActualDurationType
+  description: property ActualDurationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ActualDurationType.html
+- name: Address2
+  description: property Address2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Address2.html
+- name: Address3
+  description: property Address3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Address3.html
+- name: AddressName
+  description: property AddressName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~AddressName.html
+- name: AddressText
+  description: property AddressText
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~AddressText.html
+- name: AddressType
+  description: property AddressType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~AddressType.html
+- name: AddressTypeBS
+  description: property AddressTypeBS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~AddressTypeBS.html
+- name: Block
+  description: property Block
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Block.html
+- name: CheckInDate
+  description: property CheckInDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckInDate.html
+- name: CheckInLatitude
+  description: property CheckInLatitude
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckInLatitude.html
+- name: CheckInLocation
+  description: property CheckInLocation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckInLocation.html
+- name: CheckInLongitude
+  description: property CheckInLongitude
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckInLongitude.html
+- name: CheckInTime
+  description: property CheckInTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckInTime.html
+- name: CheckOutDate
+  description: property CheckOutDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckOutDate.html
+- name: CheckOutTime
+  description: property CheckOutTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~CheckOutTime.html
+- name: City
+  description: property City
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~City.html
+- name: Count
+  description: property Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Count.html
+- name: Country
+  description: property Country
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Country.html
+- name: County
+  description: property County
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~County.html
+- name: DisplayInCalendar
+  description: property DisplayInCalendar
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~DisplayInCalendar.html
+- name: Duration
+  description: property Duration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Duration.html
+- name: DurationType
+  description: property DurationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~DurationType.html
+- name: EndDate
+  description: property EndDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~EndDate.html
+- name: EndTime
+  description: property EndTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~EndTime.html
+- name: GlobalLocNum
+  description: property GlobalLocNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~GlobalLocNum.html
+- name: HandledBy
+  description: property HandledBy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~HandledBy.html
+- name: IsClosed
+  description: property IsClosed
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~IsClosed.html
+- name: IsUnscheduled
+  description: property IsUnscheduled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~IsUnscheduled.html
+- name: LineNum
+  description: property LineNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~LineNum.html
+- name: Location
+  description: property Location
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Location.html
+- name: Remark
+  description: property Remark
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Remark.html
+- name: Reminder
+  description: property Reminder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Reminder.html
+- name: ReminderDate
+  description: property ReminderDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ReminderDate.html
+- name: ReminderPeriod
+  description: property ReminderPeriod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ReminderPeriod.html
+- name: ReminderSent
+  description: property ReminderSent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ReminderSent.html
+- name: ReminderTime
+  description: property ReminderTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ReminderTime.html
+- name: ReminderType
+  description: property ReminderType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ReminderType.html
+- name: Room
+  description: property Room
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Room.html
+- name: SalesOrders
+  description: property SalesOrders
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~SalesOrders.html
+- name: SignatureName
+  description: property SignatureName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~SignatureName.html
+- name: StartDate
+  description: property StartDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~StartDate.html
+- name: StartTime
+  description: property StartTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~StartTime.html
+- name: State
+  description: property State
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~State.html
+- name: Street
+  description: property Street
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Street.html
+- name: StreetNo
+  description: property StreetNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~StreetNo.html
+- name: TaxOffice
+  description: property TaxOffice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~TaxOffice.html
+- name: Technician
+  description: property Technician
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~Technician.html
+- name: UserFields
+  description: property UserFields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~UserFields.html
+- name: ZipCode
+  description: property ZipCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSchedulings~ZipCode.html

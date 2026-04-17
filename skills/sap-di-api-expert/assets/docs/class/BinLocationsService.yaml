@@ -1,0 +1,31 @@
+name: BinLocationsService
+title: BinLocationsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService.html
+description: 'The BinLocationsService service enables you to add, look up, update, and remove bin locations. Source table: OBIN .'
+remarks: To access the Bin Location Master Data window, from the SAP Business One Main Menu , choose Inventory --> Bin Locations --> Bin Location Master Data .
+methods:
+- name: Add
+  description: Adds a bin location.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~Add.html
+- name: Delete
+  description: Deletes an existing bin location.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~Delete.html
+- name: Get
+  description: Retrieves a bin location. The bin location is specified by its key, which is contained in the BinLocationParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BinLocationsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the BinLocationCollectionParams data collection that identifies all bin locations.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~GetList.html
+- name: Update
+  description: Updates an existing bin location.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationsService~Update.html

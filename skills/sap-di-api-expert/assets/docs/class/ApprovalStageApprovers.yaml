@@ -1,0 +1,25 @@
+name: ApprovalStageApprovers
+title: ApprovalStageApprovers Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers.html
+description: ApprovalStageApprovers is a Data Collection of ApprovalStageApprover data structures.
+methods:
+- name: Add
+  description: Adds a new ApprovalStageApprover to the ApprovalStageApprovers Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the ApprovalStageApprover data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of ApprovalStageApprover data structures, in the ApprovalStageApprovers data collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalStageApprovers~Count.html

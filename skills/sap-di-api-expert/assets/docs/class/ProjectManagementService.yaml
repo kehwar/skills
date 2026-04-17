@@ -1,0 +1,42 @@
+name: ProjectManagementService
+title: ProjectManagementService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService.html
+description: 'This service is for project management in SAP Business One. Source table: OPMG .'
+methods:
+- name: AddProject
+  description: AddProject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~AddProject.html
+- name: AddSubproject
+  description: AddSubproject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~AddSubproject.html
+- name: CancelProject
+  description: CancelProject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~CancelProject.html
+- name: DeleteSubproject
+  description: DeleteSubproject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~DeleteSubproject.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetDataInterfaceFromXMLString.html
+- name: GetProject
+  description: GetProject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetProject.html
+- name: GetSubproject
+  description: GetSubproject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetSubproject.html
+- name: GetSubprojectsList
+  description: GetSubprojectsList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~GetSubprojectsList.html
+- name: UpdateProject
+  description: UpdateProject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~UpdateProject.html
+- name: UpdateSubproject
+  description: UpdateSubproject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectManagementService~UpdateSubproject.html

@@ -1,0 +1,24 @@
+name: FixedAssetItemsService
+title: FixedAssetItemsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService.html
+description: The FixedAssetItemsService service enables you to look up and update the end balance of an asset.
+methods:
+- name: GetAssetEndBalance
+  description: GetAssetEndBalance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~GetAssetEndBalance.html
+- name: GetAssetValuesList
+  description: GetAssetValuesList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~GetAssetValuesList.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~GetDataInterfaceFromXMLString.html
+- name: UpdateAssetEndBalance
+  description: UpdateAssetEndBalance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FixedAssetItemsService~UpdateAssetEndBalance.html

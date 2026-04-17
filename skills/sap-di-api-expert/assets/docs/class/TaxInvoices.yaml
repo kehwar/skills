@@ -1,0 +1,156 @@
+name: TaxInvoices
+title: TaxInvoices Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices.html
+description: 'TaxInvoices is a business object that represents the header data of a Tax Invoice document. Source table: OTSI for sales invoices, OTPI for purchase invoices, or OTXD for journal entry according to the DocType valid value.'
+remarks: Country-specific for Russia.
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database. Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Add.html
+- name: Cancel
+  description: Cancels a record from the object table. Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Cancel.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from SAP Business One database. Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data. Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data. Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~SaveXML.html
+- name: Update
+  description: Updates the object data in the SAP Business One company database. Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Update.html
+properties:
+- name: Address
+  description: 'Sets or returns the Bill To address. Field name: Address . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Address.html
+  length: 254
+- name: Address2
+  description: 'Sets or returns the alternative Ship To address. Field name: Address2 . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Address2.html
+  length: 254
+- name: AlterationRevision
+  description: property AlterationRevision
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~AlterationRevision.html
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~BPLID.html
+- name: BPLName
+  description: property BPLName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~BPLName.html
+- name: Browser
+  description: Returns the DataBrowser object. Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Browser.html
+- name: CancelDate
+  description: 'Returns the Cancel Date of the tax invoice . Field name: CancelDate . The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CancelDate.html
+- name: CardCode
+  description: 'Sets or returns the business partner Customer Code . Field name: CardCode . This is a foreign key to the BusinessPartners object. Mandatory field in SAP Business One. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CardCode.html
+  length: 15
+- name: Comments
+  description: 'Sets or returns the Remarks regarding the tax invoice document. Field name: Comments . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Comments.html
+  length: 254
+- name: ContactPersonCode
+  description: 'Sets or returns the contact person code. Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~ContactPersonCode.html
+  field_name: CntctCode
+- name: CreationDate
+  description: 'Returns the creation date of the tax invoice document. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CreationDate.html
+  field_name: CreateDate
+- name: CurrencySource
+  description: 'Sets or returns a valid value of BoCurrencySources type that specifies the currency source: L - local S - system C - customer (business partner, default) Field name: CurSource .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CurrencySource.html
+  field_name: CurSource
+- name: CustomerOrVendorName
+  description: 'Sets or returns a string that specifies the business partner''s full name. Field name: CardName . Length: 100 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CustomerOrVendorName.html
+  field_name: CardName
+  length: 100
+- name: CustomerOrVendorRefNo
+  description: 'Sets or returns a string that specifies the business partner''s Reference number. Field name: NumAtCard . Length: 16 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~CustomerOrVendorRefNo.html
+  field_name: NumAtCard
+  length: 16
+- name: DocCurrency
+  description: 'Sets or returns the currency used in this document. Field name: DocCur . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocCurrency.html
+  field_name: DocCur
+  length: 3
+- name: DocDate
+  description: 'Sets or returns the document posting date. Field name: DocDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocDate.html
+- name: DocDueDate
+  description: 'Sets or returns the document value date. Field name: DocDueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocDueDate.html
+- name: DocEntry
+  description: 'Returns the document key. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocEntry.html
+- name: DocNum
+  description: 'Returns the document number. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocNum.html
+- name: DocType
+  description: 'Sets or returns a valid value of BoTaxInvoiceTypes that specifies the document type of the tax invoice. Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocType.html
+- name: DocumentReferences
+  description: Returns TaxInvoice_DocumentReferences child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocumentReferences.html
+- name: DocumentTotal
+  description: 'Sets or returns the Document Total value in document currency. Field name: DocTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~DocumentTotal.html
+  field_name: DocTotal
+- name: Lines
+  description: Returns TaxInvoice_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Lines.html
+- name: LinkedDownPayments
+  description: Returns TaxInvoice_LinkedDownPayments child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~LinkedDownPayments.html
+- name: OperationCodes
+  description: Returns TaxInvoice_OperationCodes child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~OperationCodes.html
+- name: PaymentRefDate
+  description: 'Sets or returns the Payment Ref. Date . Field name: PayRefDate . The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~PaymentRefDate.html
+  field_name: PayRefDate
+- name: PaymentRefNo
+  description: 'Sets or returns a string that specifies the the payment document number. Field name: PayRefNo . The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~PaymentRefNo.html
+  field_name: PayRefNo
+- name: Printed
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not this tax invoice document was printed. Field name: Printed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Printed.html
+- name: Segment
+  description: 'Returns the segment number of the tax invoice document. Field name: Segment .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Segment.html
+- name: Series
+  description: 'Returns the auto-numbering series that generated the document number. Field name: Series .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~Series.html
+- name: ShipToCode
+  description: 'Sets or returns the Ship To address name. Field name: ShipToCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~ShipToCode.html
+  length: 50
+- name: TaxDate
+  description: 'Sets or returns the document VAT date. Field name: VatDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~TaxDate.html
+  field_name: VatDate
+- name: TaxTotal
+  description: 'Returns a double integer that specifies the Tax Total amount in document currency. Field name: VatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~TaxTotal.html
+  field_name: VatSum
+- name: UpdateDate
+  description: 'Returns the document last update date. Field name: UpdateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~UpdateDate.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~UserFields.html
+- name: VATRegNum
+  description: property VATRegNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoices~VATRegNum.html

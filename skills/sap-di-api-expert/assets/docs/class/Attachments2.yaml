@@ -1,0 +1,39 @@
+name: Attachments2
+title: Attachments2 Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2.html
+description: 'The Attachments2 object enables to copy files from a source folder to the Attachments folder that is defined through the application. Files stored in the Attachments folder can be associated by the AttachmentEntry property of the following objects: Contacts , ContractTemplates , CustomerEquipmentCards , EmployeeInfo , KnowledgeBaseSolutions , Messages , Message, SalesOpportunities, and ServiceContracts . This object replaces the Attachment and Attachments objects. Source table: OATC .'
+remarks: 'The Attachments Path must be defined in the application before using this object. This path is stored in the AttachePath field of the OADP table, which is not exposed through the DI API. Mandatory property: Lines . You must set the Attachments2_Lines child object whith the following properties: SourcePath , FileName , and FileExtension . To define the Attachments Path in the application: - Select Administration -->System Initialization -->General Settings -->Path tab.'
+methods:
+- name: Add
+  description: Adds attachment files that are specified by the Attachments2_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~GetAsXML.html
+- name: GetByKey
+  description: Determines wether or not the object identified by its AbsoluteEntry exists. If the object exists, the method gets it.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~Update.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the identification key of the attachment file as assigned by SAP Business One when adding an attachment file. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~Browser.html
+- name: Lines
+  description: Returns the Attachments2_Lines child object (mandatory).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~Lines.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2~UserFields.html

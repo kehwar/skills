@@ -1,0 +1,51 @@
+name: Territories
+title: Territories Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories.html
+description: 'Territories is a business object that represents the territory segmentation. This object is part of the Business Partners module. Territories are segments of the market that are defined by attributes such as geographical locations, product lines, and so on. This object enables you to: - Add a territory segmentation. Retrieve a territory segmentation by its key. Update a territory segmentation. Remove a territory segmentation. Save the object in XML format. Source table: OTER .'
+remarks: 'Mandatory fields in SAP Business One: Description , LocationIndex , and Parent (only in case of a child territory). To display the form in the application: - Select Administration --> Setup --> General --> Define Territories .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Update.html
+properties:
+- name: Browser
+  description: Retrieves the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Browser.html
+- name: Description
+  description: 'Sets or returns the territory name. Mandatory property. Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Description.html
+  length: 200
+- name: Inactive
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the territory is inactive.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Inactive.html
+- name: LocationIndex
+  description: Sets or returns the territory location order in the hierarchal relationship (first, after specific territory, or last). Mandatory property.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~LocationIndex.html
+- name: Parent
+  description: Sets or returns the parent territory (in case of a child territory). Mandatory field in SAP Business One only in case of a child territory.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~Parent.html
+- name: TerritoryID
+  description: Returns the ID number (key) of the territory. SAP Business One creates a sequential number for each territory that you add.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~TerritoryID.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Territories~UserFields.html

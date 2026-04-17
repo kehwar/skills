@@ -1,0 +1,87 @@
+name: BudgetDistribution
+title: BudgetDistribution Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution.html
+description: 'BudgetDistribution is a business object that represents the budget distribution methods used by the budget management in the Finance module. This object enables you to: - Add a budget distribution method. Retrieve a budget distribution method by its key. Update a budget distribution method. Save the object in XML format. Source table: OBGD .'
+remarks: 'To initialize the budget management: - Select Administration --> System Initialization --> General Settings . In the Budget tab, select Budget Initialization . Set the budget initialization parameters and click OK. To display the form in the application: - Select Financials --> Budget --> Define Budget Distribution Method .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Add.html
+- name: Cancel
+  description: Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Cancel.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Update.html
+properties:
+- name: April
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~April.html
+- name: August
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~August.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Browser.html
+- name: BudgetAmount
+  description: 'Returns the total of the 12 monthly factors.Field name: BgdTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~BudgetAmount.html
+  field_name: BgdTotal
+- name: December
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~December.html
+- name: Description
+  description: 'Sets or returns the name of the budget distribution method. Field name: BgdName . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~Description.html
+  field_name: BgdName
+  length: 30
+- name: DivisionCode
+  description: 'Returns the budget distribution code. Field name: BgdCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~DivisionCode.html
+  field_name: BgdCode
+- name: February
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~February.html
+- name: January
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~January.html
+- name: July
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~July.html
+- name: June
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~June.html
+- name: March
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~March.html
+- name: May
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~May.html
+- name: November
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~November.html
+- name: October
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~October.html
+- name: September
+  description: Sets or returns the the monthly factor. The total monthly factors must match the BudgetAmount .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~September.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BudgetDistribution~UserFields.html

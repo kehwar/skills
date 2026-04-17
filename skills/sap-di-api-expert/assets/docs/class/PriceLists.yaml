@@ -1,0 +1,90 @@
+name: PriceLists
+title: PriceLists Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists.html
+description: 'PriceLists is a business object that represents the management of price lists in the Inventory module. A price list is used by Items_Prices object to set the item prices. An item can have several prices, with each based on a different price list, for example, purchase price list, sales price list, distributor price list, and so on. This object enables you to: - Add a price list. Retrieve a price list by its key. Update a price list. Delete a price list. Save the object in XML format. Source table: OPLN .'
+remarks: 'To display the form in the application: - Select Inventory --> Price Lists --> Price Lists .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~GetAsXML.html
+- name: GetByKey
+  description: Retrieves the values of the object's properties by the object's absolute key from the Company database. Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Update.html
+properties:
+- name: Active
+  description: property Active
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Active.html
+- name: BasePriceList
+  description: 'Sets or returns the base price list on which the price list ( PriceListName ) is based. Field name: BASE_NUM .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~BasePriceList.html
+  field_name: BASE_NUM
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Browser.html
+- name: DefaultAdditionalCurrency1
+  description: property DefaultAdditionalCurrency1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~DefaultAdditionalCurrency1.html
+- name: DefaultAdditionalCurrency2
+  description: property DefaultAdditionalCurrency2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~DefaultAdditionalCurrency2.html
+- name: DefaultPrimeCurrency
+  description: property DefaultPrimeCurrency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~DefaultPrimeCurrency.html
+- name: Factor
+  description: 'Sets or returns the factor for calculating prices of items based on the specified price list. Field name: Factor .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~Factor.html
+- name: FixedAmount
+  description: property FixedAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~FixedAmount.html
+- name: GroupNum
+  description: 'Sets or returns a valid value of BoPriceListGroupNum type that specifies the group number to which the price list is related. Field name: GroupCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~GroupNum.html
+  field_name: GroupCode
+- name: IsGrossPrice
+  description: property IsGrossPrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~IsGrossPrice.html
+- name: PriceListName
+  description: property PriceListName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~PriceListName.html
+- name: PriceListNo
+  description: 'Returns the price list unique ID. SAP Business One assigns a sequential number for each price list. Field name: ListNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~PriceListNo.html
+  field_name: ListNum
+- name: RoundingFormatDecimalPart
+  description: property RoundingFormatDecimalPart
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~RoundingFormatDecimalPart.html
+- name: RoundingFormatIntegerPart
+  description: property RoundingFormatIntegerPart
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~RoundingFormatIntegerPart.html
+- name: RoundingMethod
+  description: 'Sets or returns a valid value of BoRoundingMethod type that specifies the rounding method of the item price calculation. Field name: RoundSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~RoundingMethod.html
+  field_name: RoundSys
+- name: RoundingRule
+  description: property RoundingRule
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~RoundingRule.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~UserFields.html
+- name: ValidFrom
+  description: property ValidFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~ValidFrom.html
+- name: ValidTo
+  description: property ValidTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PriceLists~ValidTo.html

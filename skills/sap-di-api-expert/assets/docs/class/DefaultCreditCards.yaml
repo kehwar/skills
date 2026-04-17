@@ -1,0 +1,33 @@
+name: DefaultCreditCards
+title: DefaultCreditCards Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards.html
+description: 'The DefaultCreditCards is a child object of the UserDefaultGroups object. It enables to link G/L accounts to credit card codes. Source table: UDG2 .'
+remarks: 'To display the form in the application: - Select Administration -->Setup -->General -->Users . From the Defaults field, click the Choose From List button. In the List of User Defaults , click the New button. In the User Defaults form, select the Credit Cards tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~SetCurrentLine.html
+properties:
+- name: Code
+  description: 'Returns the code (primary key) of the user defaults group. Field name: Code . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~Code.html
+  length: 8
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~Count.html
+- name: CreditAccountCode
+  description: 'Sets or returns the G/L account code that is linked to the default credit card. Field name: AcctCode . Length: 15 characters. This is a foreign key to the Code of the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~CreditAccountCode.html
+  field_name: AcctCode
+  length: 15
+- name: CreditCardCode
+  description: 'Sets or returns the default credit card code. Field name: CreditCard . This is a foreign key to the CreditCardCode of the CreditCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~CreditCardCode.html
+  field_name: CreditCard
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultCreditCards~UserFields.html

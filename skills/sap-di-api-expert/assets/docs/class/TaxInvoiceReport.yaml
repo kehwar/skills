@@ -1,0 +1,70 @@
+name: TaxInvoiceReport
+title: TaxInvoiceReport Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport.html
+description: TaxInvoiceReport Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~ToXMLString.html
+properties:
+- name: BaseAmount
+  description: property BaseAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~BaseAmount.html
+- name: BPCode
+  description: property BPCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~BPCode.html
+- name: BPName
+  description: property BPName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~BPName.html
+- name: BusinessPlace
+  description: property BusinessPlace
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~BusinessPlace.html
+- name: Canceled
+  description: property Canceled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~Canceled.html
+- name: Date
+  description: property Date
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~Date.html
+- name: ETaxNo
+  description: property ETaxNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~ETaxNo.html
+- name: ETaxWebSite
+  description: property ETaxWebSite
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~ETaxWebSite.html
+- name: NTSApproval
+  description: property NTSApproval
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~NTSApproval.html
+- name: NTSApprovalNo
+  description: property NTSApprovalNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~NTSApprovalNo.html
+- name: OriginalNTSApprovalNo
+  description: property OriginalNTSApprovalNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~OriginalNTSApprovalNo.html
+- name: Remarks
+  description: property Remarks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~Remarks.html
+- name: ReportType
+  description: property ReportType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~ReportType.html
+- name: TaxAmount
+  description: property TaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~TaxAmount.html
+- name: TaxInvoiceReportLineCollection
+  description: property TaxInvoiceReportLineCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~TaxInvoiceReportLineCollection.html
+- name: TaxInvoiceReportNumber
+  description: property TaxInvoiceReportNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReport~TaxInvoiceReportNumber.html

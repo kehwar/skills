@@ -1,0 +1,90 @@
+name: Document_SpecialLines
+title: Document_SpecialLines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines.html
+description: 'This object represents text and subtotal lines in marketing documents. Source table: INV10 and IN10V (a virtual table for storing calculated values).'
+remarks: In text line, you can add remarks. In subtotal line, you can calculate subtotal of previous lines. Text and subtotal lines cannot be drawn from the base document.
+methods:
+- name: Add
+  description: Adds a new text or subtotal line to the document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Add.html
+- name: Delete
+  description: Deletes an existing text or subtotal line in the document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~SetCurrentLine.html
+properties:
+- name: AfterLineNumber
+  description: 'Returns or sets the line number after which the text or subtotal line will appear. This property is mandatory. You must set this property in incremental order. Table: INV10. Field name: AftLineNum.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~AfterLineNumber.html
+  field_name: AftLineNum
+- name: Count
+  description: Returns the number of special lines in the document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Count.html
+- name: Freight1
+  description: 'Returns a calculated value of the 1st freight expense in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight1.html
+- name: Freight1FC
+  description: 'Returns a calculated value of the 1st freight expense in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight1FC.html
+- name: Freight1SC
+  description: 'Returns a calculated value of the 1st freight expense in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight1SC.html
+- name: Freight2
+  description: 'Returns a calculated value of the 2nd freight expense in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight2.html
+- name: Freight2FC
+  description: 'Returns a calculated value of the 2nd freight expense in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight2FC.html
+- name: Freight2SC
+  description: 'Returns a calculated value of the 2nd freight expense in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight2SC.html
+- name: Freight3
+  description: 'Returns a calculated value of the 3rd freight expense in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight3.html
+- name: Freight3FC
+  description: 'Returns a calculated value of the 3rd freight expense in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight3FC.html
+- name: Freight3SC
+  description: 'Returns a calculated value of the 3rd freight expense in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Freight3SC.html
+- name: GrossTotal
+  description: 'Returns a calculated value of the gross total in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~GrossTotal.html
+- name: GrossTotalFC
+  description: 'Returns a calculated value of the gross total in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~GrossTotalFC.html
+- name: GrossTotalSC
+  description: 'Returns a calculated value of the gross total in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~GrossTotalSC.html
+- name: LineNum
+  description: Returns the text or subtotal line number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~LineNum.html
+- name: LineText
+  description: Returns or sets the string for text line.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~LineText.html
+- name: LineType
+  description: Sets or returns a value specifying the type of the special line (text line or subtotal line).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~LineType.html
+- name: OrderNumber
+  description: Returns the order of the text or subtotal line. The order of the line is specified by the order you have added the line in the DI API.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~OrderNumber.html
+- name: Subtotal
+  description: 'Returns a calculated value of the sub total in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~Subtotal.html
+- name: SubtotalFC
+  description: 'Returns a calculated value of the sub total in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~SubtotalFC.html
+- name: SubtotalSC
+  description: 'Returns a calculated value of the sub total in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~SubtotalSC.html
+- name: TaxAmount
+  description: 'Returns a calculated value of the tax amount in local currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~TaxAmount.html
+- name: TaxAmountFC
+  description: 'Returns a calculated value of the tax amount in foreign currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~TaxAmountFC.html
+- name: TaxAmountSC
+  description: 'Returns a calculated value of the tax amount in system currency. Source table: IN10V (virtual table).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_SpecialLines~TaxAmountSC.html

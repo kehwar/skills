@@ -1,0 +1,67 @@
+name: BPVatExemptionsLine
+title: BPVatExemptionsLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine.html
+description: BPVatExemptionsLine Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ToXMLString.html
+properties:
+- name: AbsoluteEntry
+  description: property AbsoluteEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~AbsoluteEntry.html
+- name: ApplyAllItems
+  description: property ApplyAllItems
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ApplyAllItems.html
+- name: AuthoritiesName
+  description: property AuthoritiesName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~AuthoritiesName.html
+- name: ExemptionDocNum
+  description: property ExemptionDocNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ExemptionDocNum.html
+- name: ExemptionType
+  description: property ExemptionType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ExemptionType.html
+- name: IssueDate
+  description: property IssueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~IssueDate.html
+- name: IssueTime
+  description: property IssueTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~IssueTime.html
+- name: ItemCode
+  description: property ItemCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ItemCode.html
+- name: ItemDescription
+  description: property ItemDescription
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ItemDescription.html
+- name: LineNumber
+  description: property LineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~LineNumber.html
+- name: TaxCode
+  description: property TaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~TaxCode.html
+- name: ValidFrom
+  description: property ValidFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ValidFrom.html
+- name: ValidTo
+  description: property ValidTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~ValidTo.html
+- name: VATRate
+  description: property VATRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~VATRate.html
+- name: VisualOrder
+  description: property VisualOrder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPVatExemptionsLine~VisualOrder.html

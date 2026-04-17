@@ -1,0 +1,53 @@
+name: Field
+title: Field Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field.html
+description: The Field object contains both standard and custom data access properties. This object enables you to manipulate the field data.
+remarks: All of the properties, except ValidValue and Value , are read only.
+methods:
+- name: IsNull
+  description: Returns true (Y) if the field is null and false (N) if the field contains a non-null value.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~IsNull.html
+- name: SetNullValue
+  description: Sets the field value to Null.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~SetNullValue.html
+properties:
+- name: DefaultValue
+  description: Returns the field default value.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~DefaultValue.html
+- name: Description
+  description: Returns the field description (when available).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Description.html
+- name: FieldID
+  description: Returns the field ID.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~FieldID.html
+- name: LinkedTable
+  description: Returns the table name linked to the field.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~LinkedTable.html
+- name: Mandatory
+  description: Returns a valid value of BoYesNoEnum type that specifies whether or not this field is mandatory in SAP Business One.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Mandatory.html
+- name: Name
+  description: Returns the field name.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Name.html
+- name: Size
+  description: Returns the actual field size.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Size.html
+- name: SubType
+  description: Returns a valid value of BoFldSubTypes type that specifies the sub-type of the field as defined in the SubType property of the UserFieldsMD object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~SubType.html
+- name: Table
+  description: property Table
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Table.html
+- name: Type
+  description: Returns the field data type as defined in the Type property of the UserFieldsMD object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Type.html
+- name: ValidValue
+  description: Sets or returns the actual value of the field (instead of the SQL query value).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~ValidValue.html
+- name: ValidValues
+  description: Returns the ValidValues object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~ValidValues.html
+- name: Value
+  description: Sets or returns the field SQL query value.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Field~Value.html

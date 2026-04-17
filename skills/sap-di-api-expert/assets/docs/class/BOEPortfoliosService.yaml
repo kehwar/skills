@@ -1,0 +1,30 @@
+name: BOEPortfoliosService
+title: BOEPortfoliosService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService.html
+description: 'This service manages Portfolios in SAP Business One. Mandatory properties: PortfolioCode , PortfolioDescription , PortfolioID , PortfolioNum . Source table: OPTF .'
+methods:
+- name: AddBOEPortfolio
+  description: Adds a Portfolio with data as specified in the BOEPortfolio data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~AddBOEPortfolio.html
+- name: DeleteBOEPortfolio
+  description: Deletes Portfolio with PortfolioEntry specified in BOEPortfolioParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~DeleteBOEPortfolio.html
+- name: GetBOEPortfolio
+  description: Returns an instance of the BOEPortfolio data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~GetBOEPortfolio.html
+- name: GetBOEPortfolioList
+  description: Returns a collection of instances for the BOEPortfolio data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~GetBOEPortfolioList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: BOEPortfoliosService Object
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~GetDataInterfaceFromXMLString.html
+- name: UpdateBOEPortfolio
+  description: Replaces fields of Portfolio with the specified BOEPortfolio data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfoliosService~UpdateBOEPortfolio.html

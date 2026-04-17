@@ -1,0 +1,143 @@
+name: PaymentRunExport_Lines
+title: PaymentRunExport_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines.html
+description: 'PaymentRunExport_Lines is a child object of the PaymentRunExport object and represents the line entries of each payment. Source table: PEX1 .'
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~SetCurrentLine.html
+properties:
+- name: BPDebitPayableAccount
+  description: 'Returns the account of the business partner debtor/payable Field name: . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~BPDebitPayableAccount.html
+  length: 15
+- name: Count
+  description: Returns the total rows in the payment run.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~Count.html
+- name: CustomerNumber
+  description: 'Returns the customer number. Field name: CustNum . Length: 15 characters. This is a foreign key to the'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~CustomerNumber.html
+  field_name: CustNum
+  length: 15
+- name: DateOfPaymentRun
+  description: 'Returns the date of the payment run. Field name: PayRunDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DateOfPaymentRun.html
+  field_name: PayRunDate
+- name: DocumentCurrency
+  description: 'Returns the document currency. Field name: DocCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentCurrency.html
+  field_name: DocCurr
+  length: 3
+- name: DocumentLocalCurrency
+  description: 'Returns the document local currency. Field name: DocLocCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentLocalCurrency.html
+  field_name: DocLocCurr
+  length: 3
+- name: DocumentNumber
+  description: 'Returns the Document Number of the payment in this line. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentNumber.html
+  field_name: DocNum
+- name: DocumentObjectType
+  description: 'Returns the document object type. Field name: ObjType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentObjectType.html
+  field_name: ObjType
+  length: 20
+- name: DocumentObjectTypeEx
+  description: Returns the document object type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentObjectTypeEx.html
+- name: DocumentPaymentTerms
+  description: 'Returns the document payment terms. Field name: DocPrmTerm . This is a foreign key to the PaymentTermsTypes Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentPaymentTerms.html
+  field_name: DocPrmTerm
+- name: DocumentPostingDate
+  description: 'Returns the document posting date. Field name: DocDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentPostingDate.html
+  field_name: DocDate
+- name: DocumentRate
+  description: 'Returns the document rate. Field name: DocRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentRate.html
+  field_name: DocRate
+- name: DocumentRemarks
+  description: 'Returns the document remarks. Field name: DocRemarks . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentRemarks.html
+  field_name: DocRemarks
+  length: 254
+- name: DocumentTaxAmount
+  description: 'Returns the document tax amount in local currency. Field name: DocTaxAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentTaxAmount.html
+  field_name: DocTaxAmnt
+- name: DocumentTaxAmountFC
+  description: 'Returns the document tax amount in foreign currency. Field name: DoxTxAmtFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentTaxAmountFC.html
+  field_name: DoxTxAmtFC
+- name: DocumentTaxDate
+  description: 'Returns the document tax date. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentTaxDate.html
+  field_name: TaxDate
+- name: DocumentTotal
+  description: 'Returns the document total in local currency. Field name: DocTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentTotal.html
+  field_name: DocTotal
+- name: DocumentTotalFC
+  description: 'Returns the document total in foreign currency. Field name: DocTotalFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~DocumentTotalFC.html
+  field_name: DocTotalFC
+- name: FiscalYear
+  description: 'Returns the fiscal year (date type). Field name: FiscalYear .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~FiscalYear.html
+- name: FreeText1
+  description: property FreeText1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~FreeText1.html
+- name: FreeText2
+  description: property FreeText2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~FreeText2.html
+- name: FreeText3
+  description: property FreeText3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~FreeText3.html
+- name: PaymentDocNum
+  description: 'Returns the payment document number. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentDocNum.html
+  field_name: DocNum
+- name: PaymentDocReference
+  description: 'Returns the payment document reference. Field name: DocPymRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentDocReference.html
+  field_name: DocPymRef
+  length: 27
+- name: PaymentMeans
+  description: 'Returns the payment method (check, bank transfer, etc.). Field name: PaymMethod . Length: 15 characters. This is a foreign key to the WizardPaymentMethods object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentMeans.html
+  field_name: PaymMethod
+  length: 15
+- name: PaymentNumber
+  description: 'Returns the payment number. Field name: PymNum . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentNumber.html
+  field_name: PymNum
+  length: 11
+- name: PaymentOrderNum
+  description: property PaymentOrderNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentOrderNum.html
+- name: PaymentTermsPeriod
+  description: 'Returns the payment terms period. Field name: PymTermPer . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentTermsPeriod.html
+  field_name: PymTermPer
+  length: 15
+- name: PaymentWizardCode
+  description: 'Returns the payment run ID (wizard code). Field name: PaymWizCod . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~PaymentWizardCode.html
+  field_name: PaymWizCod
+  length: 15
+- name: RowNumber
+  description: 'Returns the current available row number (starts from 1). Field name: LineId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~RowNumber.html
+  field_name: LineId
+- name: VendorNumber
+  description: 'Returns the vendor code. Field name: VendorNum . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~VendorNumber.html
+  field_name: VendorNum
+  length: 15
+- name: VendorRefNum
+  description: 'Returns the vendor reference number. Field name: VendRefNum . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentRunExport_Lines~VendorRefNum.html
+  field_name: VendRefNum
+  length: 16

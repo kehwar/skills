@@ -1,0 +1,28 @@
+name: MultiplePayments
+title: MultiplePayments Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments.html
+description: A data collection of MultiplePayment objects related to the BankStatementService .
+methods:
+- name: Add
+  description: Adds an object to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~GetXMLSchema.html
+- name: Item
+  description: Returns reference by index to existing multiple payment in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~Item.html
+- name: Remove
+  description: Deletes the specified record from the data collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~Remove.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of objects in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MultiplePayments~Count.html

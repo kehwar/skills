@@ -1,0 +1,28 @@
+name: TaxReplStateSubService
+title: TaxReplStateSubService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService.html
+description: 'The TaxReplStateSubService service enables you to add, look up, update, and remove tax replacement state subscription. Source table: OTRSS .'
+remarks: Administration -> System Initialization -> Company Details -> Localization Fields tab.
+methods:
+- name: Add
+  description: Adds tax replacement state subscription data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~Add.html
+- name: Delete
+  description: Deletes existing tax replacement state subscription data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~Delete.html
+- name: GetByParams
+  description: Retrieves tax replacement state subscription data. The tax replacement state subscription data is specified by its key, which is contained in the TaxReplStateSubParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~GetByParams.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the TaxReplStateSubService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~GetDataInterfaceFromXMLString.html
+- name: Update
+  description: Updates existing tax replacement state subscription data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReplStateSubService~Update.html

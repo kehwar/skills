@@ -1,0 +1,38 @@
+name: ChecksforPaymentPrintStatus
+title: ChecksforPaymentPrintStatus Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus.html
+description: 'Represents the print status of Checks for Payment. Source table: CHO2 .'
+remarks: 'To display the form in the application: Select Banking --> Outgoing Payments --> Check Number Confirmation .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~SetCurrentLine.html
+properties:
+- name: CheckNumber
+  description: 'The check number. Field name: ChkNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~CheckNumber.html
+  field_name: ChkNum
+- name: Count
+  description: 'The count of rows. Field name: LogInstanc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~Count.html
+  field_name: LogInstanc
+- name: DocEntry
+  description: 'The index (Primary Key). Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~DocEntry.html
+  field_name: AbsEntry
+- name: LineNumber
+  description: 'The row number (Primary Key). Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~LineNumber.html
+  field_name: LineNum
+- name: PrintedBy
+  description: 'The ID of a user. Field name: PrnBy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~PrintedBy.html
+  field_name: PrnBy
+- name: PrintStatus
+  description: 'The print status of checks. Field name: Status . Length: 1 characte. Values: D=Details, N=Not Confirmed, O=Overflow, T=Not Printed, V=Void.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentPrintStatus~PrintStatus.html
+  field_name: Status

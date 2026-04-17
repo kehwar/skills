@@ -1,0 +1,26 @@
+name: ApprovalTemplateTerms
+title: ApprovalTemplateTerms Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms.html
+description: 'ApprovalTemplateTerms is a Data Collection of ApprovalTemplateTerm data structures. Source table: WTM4 .'
+methods:
+- name: Add
+  description: Adds a new ApprovalTemplateterm data structure to the ApprovalTemplateTerms Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the ApprovalTemplateTerm data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~Item.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~ToXMLString.html
+properties:
+- name: Count
+  description: 'Returns the number of ApprovalTemplateTerm data structures in the ApprovalTemplateTerms data collection. Field name: NumOfDocs ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerms~Count.html
+  field_name: NumOfDocs

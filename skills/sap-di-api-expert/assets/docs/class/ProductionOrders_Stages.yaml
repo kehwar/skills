@@ -1,0 +1,56 @@
+name: ProductionOrders_Stages
+title: ProductionOrders_Stages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages.html
+description: 'The ProductionOrders_Stages is a child object of the ProductionOrders object. You can set the route stages to which to link the production order. Source table: WOR4 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~SetCurrentLine.html
+properties:
+- name: CalculationProportion
+  description: 'The percentage of resource capacity that will be consumed in a particular route stage. Field name: RtCalcProp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~CalculationProportion.html
+  field_name: RtCalcProp
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~Count.html
+- name: DocEntry
+  description: 'The internal ID of the production order. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~DocEntry.html
+- name: EndDate
+  description: 'The latest date by which a component needs to be used in the production process. Field name: EndDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~EndDate.html
+- name: Name
+  description: 'The stage name. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~Name.html
+  length: 100
+- name: RequiredDays
+  description: 'The number of days required for a specific Resource to complete the Planned Qty. of a particular route stage. Field name: ReqDays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~RequiredDays.html
+  field_name: ReqDays
+- name: SequenceNumber
+  description: 'The sequence number that is assigned to each route stage. The sequence indicates the precise order in which the routing stages must be performed during the production process. Field name: SeqNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~SequenceNumber.html
+  field_name: SeqNum
+- name: StageEntry
+  description: 'The internal ID of the stage. Field name: StgEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~StageEntry.html
+  field_name: StgEntry
+- name: StageID
+  description: 'The stage ID. Field name: StageId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~StageID.html
+  field_name: StageId
+- name: StartDate
+  description: 'The earliest date on which the component is needed in the production process. For a production order that has route stages, the Start Date for the first Route Stage type line (included in the calculation) is set to the production order header Start Date. And by default, the Start Date for the next Route Stage type line is the same as the calculated End Date of the previous route stage. You can manually change the Route Stage type line Start Date to any date that falls between or is equal to the production order header Start Date and Due Date. Field name: StartDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~StartDate.html
+- name: WaitingDays
+  description: 'The number of days to wait after the completion of the route stage. This field will not be visible by default. As soon as a Route Stage type line is created, you can manually enter the number of waiting days. Field name: WaitDays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_Stages~WaitingDays.html
+  field_name: WaitDays

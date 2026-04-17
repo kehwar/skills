@@ -1,0 +1,161 @@
+name: ElectronicProtocols
+title: ElectronicProtocols Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols.html
+description: 'Protocol for electronic documents and communication. Source table: ECM2 and ECM6 .'
+remarks: "Marketing documents â\x86\x92 Electronic Documents tab."
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~Add.html
+- name: ClearCartaPorteID
+  description: Method which removes unique identifier from the appendix in electronic protocol CFDi for Mexico.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~ClearCartaPorteID.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~SetCurrentLine.html
+properties:
+- name: CartaPorteID
+  description: '"Complemento Carta Porte" ID is used for the identification of folios for the Mexico authorities in CFDi. Field name: CartaPorte . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~CartaPorteID.html
+  field_name: CartaPorte
+  length: 50
+- name: CFDiCancellationReason
+  description: 'CFDi cancellation reason. Field name: CancReason . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~CFDiCancellationReason.html
+  field_name: CancReason
+  length: 2
+- name: CFDiCancellationReference
+  description: 'CFDi cancellation reference. Field name: CancRef . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~CFDiCancellationReference.html
+  field_name: CancRef
+  length: 50
+- name: CFDiCancellationResponse
+  description: 'CFDi cancellation response. Field name: CancResp . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~CFDiCancellationResponse.html
+  field_name: CancResp
+  length: 3
+- name: CFDiExport
+  description: 'CFDi Export. Field name: CFDiExport . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~CFDiExport.html
+  length: 2
+- name: Confirmation
+  description: property Confirmation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~Confirmation.html
+- name: Count
+  description: property Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~Count.html
+- name: EBillingAckDt
+  description: Date and time on which the invoice is registered.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingAckDt.html
+- name: EBillingAckNo
+  description: Transaction number
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingAckNo.html
+- name: EBillingIRN
+  description: The IRN of e-billing.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingIRN.html
+- name: EBillingResponseStatus
+  description: ACT for Active and CNL for Canceled.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingResponseStatus.html
+- name: EBillingSignedInvoice
+  description: Decrypted e-invoice data
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingSignedInvoice.html
+- name: EBillingSignedQRCode
+  description: Original encrypted QR code data
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBillingSignedQRCode.html
+- name: EBooksDispatchDate
+  description: 'Dispatch date on delivery document for E-Books. Field name: DsptchDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksDispatchDate.html
+  field_name: DsptchDate
+- name: EBooksDispatchTime
+  description: 'Dispatch time on delivery document for E-Books. Field name: DsptchTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksDispatchTime.html
+  field_name: DsptchTime
+- name: EBooksInvoiceType
+  description: property EBooksInvoiceType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksInvoiceType.html
+- name: EBooksInvoiceTypeofNegative
+  description: property EBooksInvoiceTypeofNegative
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksInvoiceTypeofNegative.html
+- name: EBooksMARK
+  description: property EBooksMARK
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksMARK.html
+- name: EBooksMARKofNegative
+  description: property EBooksMARKofNegative
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksMARKofNegative.html
+- name: EBooksQRCodePath
+  description: 'QR Code for A/R marketing document that links to information from the authorities. Field name: PosiQRPath . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksQRCodePath.html
+  field_name: PosiQRPath
+  length: 200
+- name: EBooksQRCodePathofNegative
+  description: 'QR Code for negative value A/R marketing document that links to information from the authorities. Field name: NegaQRPath . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksQRCodePathofNegative.html
+  field_name: NegaQRPath
+  length: 200
+- name: EBooksRelevant
+  description: property EBooksRelevant
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EBooksRelevant.html
+- name: EDocType
+  description: property EDocType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EDocType.html
+- name: EETBKP
+  description: property EETBKP
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EETBKP.html
+- name: EETPKP
+  description: property EETPKP
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~EETPKP.html
+- name: FechaTimbrado
+  description: property FechaTimbrado
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~FechaTimbrado.html
+- name: FPAProgressivo
+  description: property FPAProgressivo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~FPAProgressivo.html
+- name: FPASendDateSDI
+  description: property FPASendDateSDI
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~FPASendDateSDI.html
+- name: FPASequenceNumber
+  description: property FPASequenceNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~FPASequenceNumber.html
+- name: GenerationType
+  description: property GenerationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~GenerationType.html
+- name: MappingID
+  description: property MappingID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~MappingID.html
+- name: NoCertificadoSAT
+  description: property NoCertificadoSAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~NoCertificadoSAT.html
+- name: PaymentMethod
+  description: property PaymentMethod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~PaymentMethod.html
+- name: ProtocolCode
+  description: property ProtocolCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~ProtocolCode.html
+- name: ProtocolDescription
+  description: property ProtocolDescription
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~ProtocolDescription.html
+- name: RelatedDocuments
+  description: property RelatedDocuments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~RelatedDocuments.html
+- name: RfcProvCertif
+  description: property RfcProvCertif
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~RfcProvCertif.html
+- name: SelloSAT
+  description: property SelloSAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~SelloSAT.html
+- name: SignatureDigest
+  description: property SignatureDigest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~SignatureDigest.html
+- name: SignatureInputMessage
+  description: property SignatureInputMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~SignatureInputMessage.html
+- name: TestingMode
+  description: property TestingMode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~TestingMode.html
+- name: UserFields
+  description: Get User Fields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocols~UserFields.html

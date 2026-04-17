@@ -1,0 +1,31 @@
+name: AccountCategoryService
+title: AccountCategoryService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService.html
+description: 'This service allows you to manage account categories (add, delete, get by key, get list, and update) for use with the Copy Express add-on. Source table: OACG .'
+remarks: Country-specific for US and Canada. System categories cannot be deleted or updated.
+methods:
+- name: AddCategory
+  description: Adds an account category.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~AddCategory.html
+- name: DeleteCategory
+  description: Deletes a category from the Balance Sheet or Profit and Loss report.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~DeleteCategory.html
+- name: GetCategory
+  description: Returns an instance of AccountCategory object according to the specified AccountCatgoryParams object ( CategoryCode , CategoryName ).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~GetCategory.html
+- name: GetCategoryList
+  description: Returns an AccountCategoriesParams collection holding all existing instances of AccountCategory object in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~GetCategoryList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~GetDataInterfaceFromXMLString.html
+- name: UpdateCategory
+  description: Replaces an instance of AccountCategory object with a new one.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountCategoryService~UpdateCategory.html

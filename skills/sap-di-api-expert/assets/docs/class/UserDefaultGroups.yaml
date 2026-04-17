@@ -1,0 +1,176 @@
+name: UserDefaultGroups
+title: UserDefaultGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups.html
+description: 'The UserDefaultGroups object enables to define default values (such as, default documents, default address in printed documents, windows color, and so on). These default values can be applied to specific user or group of users by setting the Defaults property of the Users object. Source table: OUDG .'
+remarks: 'Mandatory field in SAP Business One: Code . If you set this object, the system uses these defaults instead of the company defaults. For example: - The Address setting is used instead of the Address setting of the AdminInfo object. The BPforInvoicePayment setting is used instead of the InvoicePaymentBP setting of the PeriodCategory object. To display the form in the application: - Select Administration -->Setup -->General -->Users . From the Defaults field, click the Choose From List button. In the List of User Defaults , click the New button.'
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Update.html
+properties:
+- name: AdditionalIdNumber
+  description: 'Sets or returns the default additional ID number of the company. Field name: FreeZoneNo . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~AdditionalIdNumber.html
+  field_name: FreeZoneNo
+  length: 32
+- name: Address
+  description: 'Sets or returns the default company address. Field name: Address . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Address.html
+  length: 254
+- name: AddressinForeignLanguage
+  description: 'Sets or returns the default company address in foreign language. Field name: FrgnAddr . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~AddressinForeignLanguage.html
+  field_name: FrgnAddr
+  length: 254
+- name: AssetInDoc
+  description: property AssetInDoc
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~AssetInDoc.html
+- name: BPforInvoicePayment
+  description: 'Sets or returns the default customer for A/R invoices and payments. This is a foreign key to CardCode ( BusinessPartners . Field name: ICTCard . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~BPforInvoicePayment.html
+  field_name: ICTCard
+  length: 15
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~BPLID.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Browser.html
+- name: CashAccount
+  description: 'Sets or returns the default G/L account for cash receipt. Field name: CashAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~CashAccount.html
+  field_name: CashAcct
+  length: 15
+- name: CheckingAcct
+  description: 'Sets or returns the default G/L account for incoming checks. Field name: CheckAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~CheckingAcct.html
+  field_name: CheckAcct
+  length: 15
+- name: Code
+  description: 'Sets or returns the code (primary key) of the user defaults group. Mandatory property. Field name: Code . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Code.html
+  length: 8
+- name: Country
+  description: 'Sets or returns the default country code. Field name: Country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Country.html
+  length: 3
+- name: DefaultCreditCards
+  description: Returns the DefaultCreditCards child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~DefaultCreditCards.html
+- name: DefaultDocuments
+  description: Returns the DefaultDocuments child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~DefaultDocuments.html
+- name: DefaultPTICode
+  description: property DefaultPTICode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~DefaultPTICode.html
+- name: DefaultPTICodes
+  description: property DefaultPTICodes
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~DefaultPTICodes.html
+- name: DefaultTaxCode
+  description: 'Sets or returns the default sales tax code. This is a foreign key to Code of the SalesTaxCodes object. Field name: DflTaxCode . Length: 8 charcters. This is a foreign key to the SalesTaxCodes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~DefaultTaxCode.html
+  field_name: DflTaxCode
+- name: eMail
+  description: 'Sets or returns the default e-mail address. Field name: E_Mail . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~eMail.html
+  field_name: E_Mail
+  length: 100
+- name: FaxNumber
+  description: 'Sets or returns the default fax number. Field name: Fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~FaxNumber.html
+  field_name: Fax
+  length: 50
+- name: FaxNumberForeignLang
+  description: 'Sets or returns the default fax number in foreign language. Field name: FrgnFax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~FaxNumberForeignLang.html
+  field_name: FrgnFax
+  length: 50
+- name: LanguageCode
+  description: property LanguageCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~LanguageCode.html
+- name: Name
+  description: 'Sets or returns the name of the user defaults group. Field name: Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Name.html
+  length: 20
+- name: PhoneNumber1
+  description: 'Sets or returns the first default phone number. Field name: Phone1 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PhoneNumber1.html
+  field_name: Phone1
+  length: 50
+- name: PhoneNumber1ForeignLang
+  description: 'Sets or returns the first default phone number in foreign language. Field name: FrgnPhone1 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PhoneNumber1ForeignLang.html
+  field_name: FrgnPhone1
+  length: 50
+- name: PhoneNumber2
+  description: 'Sets or returns the second default phone number. Field name: Phone2 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PhoneNumber2.html
+  field_name: Phone2
+  length: 50
+- name: PhoneNumber2ForeignLang
+  description: 'Sets or returns the second default phone number in foreign language. Field name: FrgnPhone2 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PhoneNumber2ForeignLang.html
+  field_name: FrgnPhone2
+  length: 50
+- name: PrintingHeader
+  description: 'Sets or returns the default header to print in all documents (for example, the company name). Field name: PrintHeadr . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PrintingHeader.html
+  field_name: PrintHeadr
+  length: 100
+- name: PrintingHeaderInForeignLangu
+  description: 'Sets or returns the default header in foreign language to print in all documents. Field name: FrnPrntHdr . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PrintingHeaderInForeignLangu.html
+  field_name: FrnPrntHdr
+  length: 100
+- name: PrintInvoiceandPaymentinS
+  description: 'Determines the default for whether or not to print invoices and payments in succession. Field name: ShortRcpt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PrintInvoiceandPaymentinS.html
+  field_name: ShortRcpt
+- name: PrintReceipt
+  description: 'Sets or returns a valid value of BoPrintReceiptEnum that determines when to print payment with invoice. Field name: PrintRcpt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~PrintReceipt.html
+  field_name: PrintRcpt
+- name: SalesEmployee
+  description: 'Sets or returns the default sales employee code that will be applied in documents, sales opportunities, and so on. Field name: SalePerson . This is a foreign key to SalesEmployeeCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~SalesEmployee.html
+  field_name: SalePerson
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~UserFields.html
+- name: UserSignature
+  description: 'Sets or returns the key of the user who defines the UseDefaultGroups object. Field name: UserSign . This is a foreign key to Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~UserSignature.html
+  field_name: UserSign
+- name: UseTax
+  description: 'Determines the default whether or not to enable Use Tax calculations. Country-specific for U.S. Field name: UseTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~UseTax.html
+- name: UseWarehouseAddressinAPD
+  description: 'Sets or returns a valid value that determines wether or not to use the warehouse address in purchase documents. Field name: AdrsFromWh .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~UseWarehouseAddressinAPD.html
+  field_name: AdrsFromWh
+- name: Warehouse
+  description: 'Sets or returns the default warehouse code that will be applied in documents. Length 8 characters. Field name: Warehouse . This is a foreign key to the Warehouses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~Warehouse.html
+- name: WindowsColor
+  description: 'Sets or returns the the default windows color. Field name: Color .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserDefaultGroups~WindowsColor.html
+  field_name: Color

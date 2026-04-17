@@ -1,0 +1,28 @@
+name: CESTCodeService
+title: CESTCodeService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService.html
+description: 'The CESTCodeService service enables you to add, look up, update and remove CEST code data. Source table: OCEST .'
+remarks: From the SAP Business One Main Menu , choose Inventory -> Item Master Data . On the General tab, define a new CEST code.
+methods:
+- name: Add
+  description: Adds a CEST code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~Add.html
+- name: Delete
+  description: Deletes an existing CEST code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~Delete.html
+- name: GetByParams
+  description: Retrieves a CEST code. The CEST code is specified by its key, which is contained in the CESTCodeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~GetByParams.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CESTCodeService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~GetDataInterfaceFromXMLString.html
+- name: Update
+  description: Updates an existing CEST code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CESTCodeService~Update.html

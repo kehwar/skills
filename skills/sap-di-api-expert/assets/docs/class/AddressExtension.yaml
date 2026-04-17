@@ -1,0 +1,324 @@
+name: AddressExtension
+title: AddressExtension Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension.html
+description: 'The Bill To and Ship To address for a marketing document. Source table: INV12 , RIN12, RDN12, RPC12, RPD12, RRR12, PRR12, DRF12'
+properties:
+- name: BillToAddress2
+  description: 'The Address Name 2 field of the bill-to address. It is used to provide more detailed address information. Field name: Address2B'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToAddress2.html
+  field_name: Address2B
+- name: BillToAddress3
+  description: 'The Address Name 3 field of the bill-to address. It is used to provide more detailed address information. Field name: Address3B'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToAddress3.html
+  field_name: Address3B
+- name: BillToAddressType
+  description: 'The address type for the Bill To address. For Brazil only. Field name: AddrTypeB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToAddressType.html
+  field_name: AddrTypeB
+- name: BillToBlock
+  description: 'The block of the Bill To address. Field name: BlockB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToBlock.html
+  field_name: BlockB
+- name: BillToBuilding
+  description: 'The building of the Bill To address. Field name: BuildingB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToBuilding.html
+  field_name: BuildingB
+- name: BillToCity
+  description: 'The city of the Bill To address. Field name: City B'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToCity.html
+  field_name: City
+- name: BillToCountry
+  description: 'The country of the Bill To address. Field name: CountryB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToCountry.html
+  field_name: CountryB
+- name: BillToCounty
+  description: 'The county of the Bill To address. Field name: CountyB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToCounty.html
+  field_name: CountyB
+- name: BillToGlobalLocationNumber
+  description: 'The Global Location Number of the bill-to address. Field name: GlbLocNumB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToGlobalLocationNumber.html
+  field_name: GlbLocNumB
+- name: BillToState
+  description: 'The state of the Bill To address. Field name: StateB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToState.html
+  field_name: StateB
+- name: BillToStreet
+  description: 'The street of the Bill To address. Field name: StreetB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToStreet.html
+  field_name: StreetB
+- name: BillToStreetNo
+  description: 'The street number of the Bill To address. Field name: StreetNoB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToStreetNo.html
+  field_name: StreetNoB
+- name: BillToZipCode
+  description: 'The zip code of the Bill To address. Field name: ZipCodeB'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~BillToZipCode.html
+  field_name: ZipCodeB
+- name: DeliveryPlaceBlock
+  description: 'Delivery Place Block. Field name: BlckDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceBlock.html
+  field_name: BlckDlvryP
+  length: 100
+- name: DeliveryPlaceBP
+  description: 'Delivery Place BP. Field name: BPDelivryP . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceBP.html
+  field_name: BPDelivryP
+  length: 15
+- name: DeliveryPlaceBuilding
+  description: 'Delivery Place Building. Field name: BldDlvryP . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceBuilding.html
+  field_name: BldDlvryP
+  length: 16
+- name: DeliveryPlaceCity
+  description: 'Delivery Place City. Field name: CityDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceCity.html
+  field_name: CityDlvryP
+  length: 100
+- name: DeliveryPlaceCNPJ
+  description: 'Delivery Place CNPJ. Field name: CNPJDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceCNPJ.html
+  field_name: CNPJDlvryP
+  length: 100
+- name: DeliveryPlaceCountry
+  description: 'Delivery Place Country. Field name: CtryDlvryP . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceCountry.html
+  field_name: CtryDlvryP
+  length: 3
+- name: DeliveryPlaceCounty
+  description: 'Delivery Place County. Field name: CntyDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceCounty.html
+  field_name: CntyDlvryP
+  length: 100
+- name: DeliveryPlaceCPF
+  description: 'Delivery Place CPF. Field name: CPFDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceCPF.html
+  field_name: CPFDlvryP
+  length: 100
+- name: DeliveryPlaceDepartureDate
+  description: 'Delivery Place Departure Date. Field name: DpDtDlvryP . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceDepartureDate.html
+  field_name: DpDtDlvryP
+  length: 8
+- name: DeliveryPlaceEMail
+  description: 'Delivery Place E-Mail. Field name: MailDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceEMail.html
+  field_name: MailDlvryP
+  length: 100
+- name: DeliveryPlacePhone
+  description: 'Delivery Place Phone. Field name: FoneDlvryP . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlacePhone.html
+  field_name: FoneDlvryP
+  length: 50
+- name: DeliveryPlaceState
+  description: 'Delivery Place State. Field name: StatDlvryP . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceState.html
+  field_name: StatDlvryP
+  length: 3
+- name: DeliveryPlaceStreet
+  description: 'Delivery Place Street. Field name: StrtDlvryP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceStreet.html
+  field_name: StrtDlvryP
+  length: 100
+- name: DeliveryPlaceStreetNo
+  description: 'Delivery Place Street Number. Field name: StrNoDlvrP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceStreetNo.html
+  field_name: StrNoDlvrP
+  length: 100
+- name: DeliveryPlaceZip
+  description: 'Delivery Place Zip Code. Field name: ZipDlvryP . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DeliveryPlaceZip.html
+  field_name: ZipDlvryP
+  length: 20
+- name: DocEntry
+  description: property DocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~DocEntry.html
+- name: GoodsIssuePlaceBlock
+  description: 'Goods Issue Place Block. Field name: BlockGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceBlock.html
+  field_name: BlockGIP
+  length: 100
+- name: GoodsIssuePlaceBP
+  description: 'Goods Issue Place BP. Field name: BPGdsIssP . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceBP.html
+  field_name: BPGdsIssP
+  length: 15
+- name: GoodsIssuePlaceBuilding
+  description: 'Goods Issue Place Building. Field name: BldngGIP . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceBuilding.html
+  field_name: BldngGIP
+  length: 16
+- name: GoodsIssuePlaceCity
+  description: 'Goods Issue Place City. Field name: CityGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceCity.html
+  field_name: CityGIP
+  length: 100
+- name: GoodsIssuePlaceCNPJ
+  description: 'Goods Issue Place CNPJ. Field name: CNPJGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceCNPJ.html
+  field_name: CNPJGIP
+  length: 100
+- name: GoodsIssuePlaceCountry
+  description: 'Goods Issue Place Country. Field name: CountryGIP . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceCountry.html
+  field_name: CountryGIP
+  length: 3
+- name: GoodsIssuePlaceCounty
+  description: 'Goods Issue Place County. Field name: CountyGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceCounty.html
+  field_name: CountyGIP
+  length: 100
+- name: GoodsIssuePlaceCPF
+  description: 'Goods Issue Place CPF. Field name: CPFGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceCPF.html
+  field_name: CPFGIP
+  length: 100
+- name: GoodsIssuePlaceDepartureDate
+  description: 'Goods Issue Place Departure Date. Field name: DptDateGIP . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceDepartureDate.html
+  field_name: DptDateGIP
+  length: 8
+- name: GoodsIssuePlaceEMail
+  description: 'Goods Issue Place E-Mail. Field name: EMailGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceEMail.html
+  field_name: EMailGIP
+  length: 100
+- name: GoodsIssuePlacePhone
+  description: 'Goods Issue Place Telephone. Field name: PhoneGIP . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlacePhone.html
+  field_name: PhoneGIP
+  length: 50
+- name: GoodsIssuePlaceState
+  description: 'Goods Issue Place State. Field name: StateGIP . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceState.html
+  field_name: StateGIP
+  length: 3
+- name: GoodsIssuePlaceStreet
+  description: 'Goods Issue Place Street. Field name: StreetGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceStreet.html
+  field_name: StreetGIP
+  length: 100
+- name: GoodsIssuePlaceStreetNo
+  description: 'Goods Issue Place Street Number. Field name: StrtNoGIP . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceStreetNo.html
+  field_name: StrtNoGIP
+  length: 100
+- name: GoodsIssuePlaceZip
+  description: 'Goods Issue Place Zip Code. Field name: ZipGIP . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~GoodsIssuePlaceZip.html
+  field_name: ZipGIP
+  length: 20
+- name: PlaceOfSupply
+  description: property PlaceOfSupply
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~PlaceOfSupply.html
+- name: PurchasePlaceOfSupply
+  description: property PurchasePlaceOfSupply
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~PurchasePlaceOfSupply.html
+- name: ShipToAddress2
+  description: 'The Address Name 2 field of the ship-to address. It is used to provide more detailed address information. Field name: Address2S'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddress2.html
+  field_name: Address2S
+- name: ShipToAddress2ForReturn
+  description: 'The Address Name 2 field of the ship-to address in return documents. It is used to provide more detailed address information. Field name: Address2R'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddress2ForReturn.html
+  field_name: Address2R
+- name: ShipToAddress3
+  description: 'The Address Name 3 field of the ship-to address. It is used to provide more detailed address information. Field name: Address3S'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddress3.html
+  field_name: Address3S
+- name: ShipToAddress3ForReturn
+  description: 'The Address Name 3 field of the ship-to address in return documents. It is used to provide more detailed address information. Field name: Address3R'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddress3ForReturn.html
+  field_name: Address3R
+- name: ShipToAddressType
+  description: 'The address type for the Ship To address. For Brazil only. Field name: AddrTypeS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddressType.html
+  field_name: AddrTypeS
+- name: ShipToAddressTypeForReturn
+  description: 'The Address Type field of the ship-to address for return documents. For Brazil only. Field name: AddrTypeR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToAddressTypeForReturn.html
+  field_name: AddrTypeR
+- name: ShipToBlock
+  description: 'The block of the Ship To address. Field name: BlockS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToBlock.html
+  field_name: BlockS
+- name: ShipToBlockForReturn
+  description: 'The block part of the ship-to address in return documents. Field name: BlockR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToBlockForReturn.html
+  field_name: BlockR
+- name: ShipToBuilding
+  description: 'The building of the Ship To address. Field name: BuildingS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToBuilding.html
+  field_name: BuildingS
+- name: ShipToBuildingForReturn
+  description: 'The building part of the ship-to address in return documents. Field name: BuildingR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToBuildingForReturn.html
+  field_name: BuildingR
+- name: ShipToCity
+  description: 'The city of the Ship To address. Field name: CityS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCity.html
+  field_name: CityS
+- name: ShipToCityForReturn
+  description: 'The city part of the ship-to address in return documents. Field name: CityR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCityForReturn.html
+  field_name: CityR
+- name: ShipToCountry
+  description: 'The country/region of the Ship To address. Field name: CountryS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCountry.html
+  field_name: CountryS
+- name: ShipToCountryForReturn
+  description: 'The country/region part of the ship-to address in return documents. Field name: CountryR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCountryForReturn.html
+  field_name: CountryR
+- name: ShipToCounty
+  description: 'The county of the Ship To address. Field name: CountyS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCounty.html
+  field_name: CountyS
+- name: ShipToCountyForReturn
+  description: 'The county part of the ship-to address in return documents. Field name: CountyR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToCountyForReturn.html
+  field_name: CountyR
+- name: ShipToGlobalLocationNumber
+  description: 'The Global Location Number of the ship-to address. Field name: GlbLocNumS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToGlobalLocationNumber.html
+  field_name: GlbLocNumS
+- name: ShipToGlobalLocationNumberForReturn
+  description: 'The Global Location Number part of the ship-to address in return documents. Field name: GlbLocNumR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToGlobalLocationNumberForReturn.html
+  field_name: GlbLocNumR
+- name: ShipToState
+  description: 'The state of the Ship To address. Field name: StateS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToState.html
+  field_name: StateS
+- name: ShipToStateForReturn
+  description: 'The state part of the ship-to address in return documents. Field name: StateR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToStateForReturn.html
+  field_name: StateR
+- name: ShipToStreet
+  description: 'The street of the Ship To address. Field name: StreetS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToStreet.html
+  field_name: StreetS
+- name: ShipToStreetForReturn
+  description: 'The street address or post office box address part of the ship-to address in return documents. Field name: StreetR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToStreetForReturn.html
+  field_name: StreetR
+- name: ShipToStreetNo
+  description: 'The street number of the Ship To address. Field name: StreetNoS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToStreetNo.html
+  field_name: StreetNoS
+- name: ShipToStreetNoForReturn
+  description: 'The street number part of the ship-to address in return documents. Field name: StreetNoR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToStreetNoForReturn.html
+  field_name: StreetNoR
+- name: ShipToZipCode
+  description: 'The zip code of the Ship To address. Field name: ZipCodeS'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToZipCode.html
+  field_name: ZipCodeS
+- name: ShipToZipCodeForReturn
+  description: 'The zip code part of the ship-to address in return documents. Field name: ZipCodeR'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~ShipToZipCodeForReturn.html
+  field_name: ZipCodeR
+- name: UserFields
+  description: property UserFields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressExtension~UserFields.html

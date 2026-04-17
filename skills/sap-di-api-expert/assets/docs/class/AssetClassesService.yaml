@@ -1,0 +1,31 @@
+name: AssetClassesService
+title: AssetClassesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService.html
+description: 'The AssetClassesService service enables you to create, update and view asset classes. Source table: OACS .'
+remarks: To open this window, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Fixed Assets --> Asset Classes .
+methods:
+- name: Add
+  description: Adds an asset class.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~Add.html
+- name: Delete
+  description: Deletes an existing asset class.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~Delete.html
+- name: Get
+  description: Retrieves an asset class. The asset class is specified by its key, which is contained in the AssetClassParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the AssetClassesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the AssetClassParamsCollection data collection that identifies all asset classes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~GetList.html
+- name: Update
+  description: Updates an existing asset class. The data for the asset class, including the key of the asset class to be updated, is contained in the AssetClass object passed to the method. To update an asset class, you must first retrieve it using the Get method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetClassesService~Update.html

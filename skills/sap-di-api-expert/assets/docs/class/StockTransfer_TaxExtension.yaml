@@ -1,0 +1,21 @@
+name: StockTransfer_TaxExtension
+title: StockTransfer_TaxExtension Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_TaxExtension.html
+description: 'StockTransfer_TaxExtension is a child object of the StockTransfer object. It represents the tax extension of stock tranfers. Applicable for cluster B only (country-specific for India). Source table: WTR12 .'
+properties:
+- name: FormNumber
+  description: 'Sets or returns the form number used for the transaction category in Warehouse Transfer. Field name: FormNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_TaxExtension~FormNumber.html
+  field_name: FormNo
+- name: SupportVAT
+  description: 'Sets or returns a valid value to identify Stock transfers created for Sales Tax purposes in Warehouse Transfer. Field name: Vat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_TaxExtension~SupportVAT.html
+  field_name: Vat
+- name: TransactionCategory
+  description: 'Sets or returns the transaction category. This property is a foreign key of Transaction Category table (OTNC - not exposed through the DI API). Field name: TransCat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_TaxExtension~TransactionCategory.html
+  field_name: TransCat
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_TaxExtension~UserFields.html

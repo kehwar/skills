@@ -1,0 +1,31 @@
+name: SectionsService
+title: SectionsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService.html
+description: 'The SectionsService service enables you to add, look up and remove sections in the section master data table. Sections are used to specify a type of business transaction subject to TDS (withholding tax). Source table: OSEC'
+remarks: For India only.
+methods:
+- name: AddSection
+  description: Adds a section.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~AddSection.html
+- name: DeleteSection
+  description: Deletes an existing section. The section is specified by its key ( AbsId ), which is contained in the SectionParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~DeleteSection.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SectionsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~GetDataInterfaceFromXMLString.html
+- name: GetSection
+  description: Retrieves a section. The section is specified by its key ( AbsId ), which is contained in the SectionParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~GetSection.html
+- name: GetSectionList
+  description: Retrieves the keys and codes of all the sections.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~GetSectionList.html
+- name: UpdateSection
+  description: Updates an existing section. The data for the section, including the key of the section to be updated, is contained in the Section passed to the method. To update a section, you must first retrieve it using the GetSection method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SectionsService~UpdateSection.html

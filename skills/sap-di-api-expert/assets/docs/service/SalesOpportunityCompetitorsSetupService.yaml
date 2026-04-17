@@ -1,0 +1,30 @@
+name: SalesOpportunityCompetitorsSetupService
+title: SalesOpportunityCompetitorsSetupService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService.html
+description: 'The SalesOpportunityCompetitorsSetupService service enables you to add, look up and remove competitors in the competitors master data table. Competitors can be assigned to sales opportunities. To see the list of competitors, select Sales Opportunities --> Sales Opportunity, select a sales opportunity and select the Competitors tab. In the Name column, select Define New . Source table: OCMT'
+methods:
+- name: AddSalesOpportunityCompetitorSetup
+  description: Adds a competitor.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~AddSalesOpportunityCompetitorSetup.html
+- name: DeleteSalesOpportunityCompetitorSetup
+  description: Deletes an existing competitor. The competitor is specified by its key ( CompetId ), which is contained in the SalesOpportunityCompetitorSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~DeleteSalesOpportunityCompetitorSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SalesOpportunityCompetitorsSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~GetDataInterfaceFromXMLString.html
+- name: GetSalesOpportunityCompetitorSetup
+  description: Retrieves a competitor. The competitor is specified by its key ( CompetId ), which is contained in the SalesOpportunityCompetitorSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~GetSalesOpportunityCompetitorSetup.html
+- name: GetSalesOpportunityCompetitorSetupList
+  description: Retrieves the keys and names of all the competitors.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~GetSalesOpportunityCompetitorSetupList.html
+- name: UpdateSalesOpportunityCompetitorSetup
+  description: Updates an existing competitor. The data for the competitor, including the key of the competitor to be updated, is contained in the SalesOpportunityCompetitorSetup object passed to the method. To update a competitor, you must first retrieve it using the GetSalesOpportunityCompetitorSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityCompetitorsSetupService~UpdateSalesOpportunityCompetitorSetup.html

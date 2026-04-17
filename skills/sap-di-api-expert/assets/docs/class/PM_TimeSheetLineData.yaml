@@ -1,0 +1,88 @@
+name: PM_TimeSheetLineData
+title: PM_TimeSheetLineData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData.html
+description: PM_TimeSheetLineData Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~ToXMLString.html
+properties:
+- name: ActivityType
+  description: property ActivityType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~ActivityType.html
+- name: BillableTime
+  description: property BillableTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~BillableTime.html
+- name: Branch
+  description: property Branch
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~Branch.html
+- name: Break
+  description: property Break
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~Break.html
+- name: CostCenter
+  description: property CostCenter
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~CostCenter.html
+- name: Date
+  description: property Date
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~Date.html
+- name: EffectiveTime
+  description: property EffectiveTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~EffectiveTime.html
+- name: EndTime
+  description: property EndTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~EndTime.html
+- name: FinancialProject
+  description: property FinancialProject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~FinancialProject.html
+- name: FullDay
+  description: property FullDay
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~FullDay.html
+- name: GPSData
+  description: property GPSData
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~GPSData.html
+- name: LaborItem
+  description: property LaborItem
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~LaborItem.html
+- name: LineId
+  description: property LineID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~LineId.html
+- name: Location
+  description: property Location
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~Location.html
+- name: NonBillableTime
+  description: property NonBillableTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~NonBillableTime.html
+- name: ProjectID
+  description: property ProjectID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~ProjectID.html
+- name: ServiceCall
+  description: property ServiceCall
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~ServiceCall.html
+- name: StageID
+  description: property StageID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~StageID.html
+- name: StartTime
+  description: property StartTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~StartTime.html
+- name: SubprojectID
+  description: property SubprojectID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~SubprojectID.html
+- name: UserFields
+  description: property User Fields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~UserFields.html
+- name: Workorder
+  description: property Workorder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PM_TimeSheetLineData~Workorder.html

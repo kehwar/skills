@@ -1,0 +1,243 @@
+name: WithholdingTaxCodes
+title: WithholdingTaxCodes Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes.html
+description: 'The WithholdingTaxCodes object enables to define the system withholding tax codes that can be applied to business partners, payments, and documents. Source table: OWHT .'
+remarks: 'To display the form in the application: - Select Administration --> Setup --> Financials --> Tax --> Withholding Tax . Mandatory properties (for India): APCessAccount , APHSCAccount , APSurchargeAccount , APTDSAccount , ARCessAccount , ARHSCAccount , ARSurchargeAccount , ARTDSAccount , Assessee , Location , ReturnType , Section'
+methods:
+- name: Add
+  description: Adds a withholding tax code definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Update.html
+properties:
+- name: Account
+  description: 'Sets or returns the G/L account for withholding tax postings. Field name: Account . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Account.html
+  length: 15
+- name: APCessAccount
+  description: 'An A/P cess account associated with this withholding tax code. Field name: ApCessAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APCessAccount.html
+  field_name: ApCessAcc
+- name: APCessGSTAccount
+  description: property APCessGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APCessGSTAccount.html
+- name: APCessInterimAccount
+  description: 'An A/P cess interim account associated with this withholding tax code. Field name: ApCesInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APCessInterimAccount.html
+  field_name: ApCesInAcc
+  length: 15
+- name: APCGSTAccount
+  description: property APCGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APCGSTAccount.html
+- name: APHSCAccount
+  description: 'An A/P HSC account associated with this withholding tax code. Field name: ApHscAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APHSCAccount.html
+  field_name: ApHscAcc
+- name: APHSCInterimAccount
+  description: 'An A/P HSC interim account associated with this withholding tax code. Field name: ApHscInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APHSCInterimAccount.html
+  field_name: ApHscInAcc
+  length: 15
+- name: APIGSTAccount
+  description: property APIGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APIGSTAccount.html
+- name: APSGSTAccount
+  description: property APSGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APSGSTAccount.html
+- name: APSurchargeAccount
+  description: 'An A/P surcharge account associated with this withholding tax code. Field name: ApSurAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APSurchargeAccount.html
+  field_name: ApSurAcc
+- name: APSurchargeInterimAccount
+  description: 'An A/P surcharge interim account associated with this withholding tax code. Field name: ApSurInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APSurchargeInterimAccount.html
+  field_name: ApSurInAcc
+  length: 15
+- name: APTCSInterimAccount
+  description: 'An A/P TCS interim account associated with this withholding tax code. Field name: ApTcsInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APTCSInterimAccount.html
+  field_name: ApTcsInAcc
+  length: 15
+- name: APTDSAccount
+  description: 'An A/P TDS account associated with this withholding tax code. Field name: ApTdsAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APTDSAccount.html
+  field_name: ApTdsAcc
+- name: APUTGSTAccount
+  description: property APUTGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~APUTGSTAccount.html
+- name: ARCessAccount
+  description: 'An A/R cess account associated with this withholding tax code. Field name: ArCessAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARCessAccount.html
+  field_name: ArCessAcc
+- name: ARCessGSTAccount
+  description: property ARCessGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARCessGSTAccount.html
+- name: ARCessInterimAccount
+  description: 'An A/R cess interim account associated with this withholding tax code. Field name: ArCesInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARCessInterimAccount.html
+  field_name: ArCesInAcc
+  length: 15
+- name: ARCGSTAccount
+  description: property ARCGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARCGSTAccount.html
+- name: ARHSCAccount
+  description: 'An A/R HSC account associated with this withholding tax code. Field name: ArHscAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARHSCAccount.html
+  field_name: ArHscAcc
+- name: ARHSCInterimAccount
+  description: 'An A/R HSC interim account associated with this withholding tax code. Field name: ArHscInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARHSCInterimAccount.html
+  field_name: ArHscInAcc
+  length: 15
+- name: ARIGSTAccount
+  description: property ARIGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARIGSTAccount.html
+- name: ARSGSTAccount
+  description: property ARSGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARSGSTAccount.html
+- name: ARSurchargeAccount
+  description: 'An A/R surcharge account associated with this withholding tax code. Field name: ArSurAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARSurchargeAccount.html
+  field_name: ArSurAcc
+- name: ARSurchargeInterimAccount
+  description: 'An A/R surcharge interim account associated with this withholding tax code. Field name: ArSurInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARSurchargeInterimAccount.html
+  field_name: ArSurInAcc
+  length: 15
+- name: ARTCSInterimAccount
+  description: 'An A/R TCS interim account associated with this withholding tax code. Field name: ArTcsInAcc Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARTCSInterimAccount.html
+  field_name: ArTcsInAcc
+  length: 15
+- name: ARTDSAccount
+  description: 'An A/R TDS account associated with this withholding tax code. Field name: ArTdsAcc This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARTDSAccount.html
+  field_name: ArTdsAcc
+- name: ARUTGSTAccount
+  description: property ARUTGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ARUTGSTAccount.html
+- name: Assessee
+  description: 'An assessee associated with this withholding tax code. Field name: Assessee This is a foreign key to the ONOA (Nature of Assessee) table.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Assessee.html
+- name: BaseAmount
+  description: 'Specifies the percentage of the base amount that is subject to withholding. Default value is 100%. Field name: PrctBsAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~BaseAmount.html
+  field_name: PrctBsAmnt
+- name: BaseType
+  description: 'Sets or returns the base amount type on which to calculate withholding tax (Gross, Net, or VAT). Field name: BaseType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~BaseType.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Browser.html
+- name: Category
+  description: 'Determines when the withholding tax code is posted: upon payment or upon invoice . Field name: Category .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Category.html
+- name: Concessional
+  description: 'Indicates whether concession rates are applied. Field name: Concess.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Concessional.html
+  field_name: Concess
+- name: CSTCodeIncomingID
+  description: property CSTCodeIncomingID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~CSTCodeIncomingID.html
+- name: CSTCodeOutgoingID
+  description: property CSTCodeOutgoingID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~CSTCodeOutgoingID.html
+- name: Currency
+  description: property Currency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Currency.html
+- name: EBooksWTaxCategory
+  description: property EBooksWTaxCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~EBooksWTaxCategory.html
+- name: Effectivefrom
+  description: property EffectiveFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Effectivefrom.html
+- name: Inactive
+  description: property Inactive
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Inactive.html
+- name: IsProgressiveTax
+  description: property IsProgressiveTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~IsProgressiveTax.html
+- name: Lines
+  description: Returns the WithholdingTaxCodes_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Lines.html
+- name: Location
+  description: 'The location associated with this withholding tax code. Field name: Location This is a foreign key to the WarehouseLocations object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Location.html
+- name: MinimumTaxableAmount
+  description: property MinimumTaxableAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~MinimumTaxableAmount.html
+- name: NatureOfCalculationBaseCode
+  description: property NatureOfCalculationBaseCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~NatureOfCalculationBaseCode.html
+- name: NonDeductThreshold
+  description: 'Apply tax exemption after threshold. Field name: NoDedThrsh .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~NonDeductThreshold.html
+  field_name: NoDedThrsh
+- name: OfficialCode
+  description: 'Sets or returns the code for the withholding tax declaration report. Field name: OffclCode . Length: 4 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~OfficialCode.html
+  field_name: OffclCode
+  length: 4
+- name: Rate
+  description: property Rate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Rate.html
+- name: ReturnType
+  description: 'The return type associated with this witholding tax code. Field name: ReturnType'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~ReturnType.html
+- name: RoundingType
+  description: 'Determines the rounding type - Truncated AU or Commercial Values - for the withholding tax calculation. Field name: RoundType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~RoundingType.html
+  field_name: RoundType
+- name: Section
+  description: 'A section associated with this witholding tax code. Field name: Section. This is a foreign key to the Section object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Section.html
+- name: Surcharge
+  description: 'A threshold limit for surcharges for this witholding tax code. Field name: Surcharge.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Surcharge.html
+- name: TdsType
+  description: property TdsType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~TdsType.html
+- name: Threshold
+  description: 'A threshold limit for this witholding tax code. Field name: Threshold.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~Threshold.html
+- name: TransactonThreshold
+  description: property TransactonThreshold
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~TransactonThreshold.html
+- name: TypeID
+  description: property TypeID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~TypeID.html
+- name: UseInAPDPR
+  description: Enables the usage of eTDS in A/P down payment requests.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~UseInAPDPR.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~UserFields.html
+- name: WithholdingType
+  description: 'Determines whether the withholding tax code relates to VAT Withholding or Income Tax Withholding . Field name: Type .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~WithholdingType.html
+  field_name: Type
+- name: WTCode
+  description: 'Sets or returns the withholding tax code (primary key). Field name: WTCode . Length: 4 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~WTCode.html
+  length: 4
+- name: WTName
+  description: 'Sets or returns the withholding tax name. Field name: WTName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxCodes~WTName.html
+  length: 50

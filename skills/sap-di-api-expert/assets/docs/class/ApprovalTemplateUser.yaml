@@ -1,0 +1,25 @@
+name: ApprovalTemplateUser
+title: ApprovalTemplateUser Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser.html
+description: 'ApprovalTemplateUser is a Data structure related to the ApprovalTemplatesService . Source table: WTM1 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~ToXMLString.html
+properties:
+- name: UserID
+  description: 'Sets or returns the user Id. of the user authorized to handle this approval template. Field name: UserID . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateUser~UserID.html

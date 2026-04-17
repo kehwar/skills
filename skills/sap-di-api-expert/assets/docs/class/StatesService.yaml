@@ -1,0 +1,30 @@
+name: StatesService
+title: StatesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService.html
+description: 'The StatesService service enables you to add, look up and remove states in the states master data table. States are assigned to business partners and other objects as part of the address information. Each state is associated with a specific country. To see the list of states, select Administration --> System Initialization --> Company Details --> General tab --> Local Language tab --> State combobox --> Define new Source table: OCST'
+methods:
+- name: AddState
+  description: Adds a state.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~AddState.html
+- name: DeleteState
+  description: Deletes an existing state. The state is specified by its key ( Code, Country ), which is contained in the StateParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~DeleteState.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the StatesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~GetDataInterfaceFromXMLString.html
+- name: GetState
+  description: Retrieves a state. The state is specified by its key ( Code, Country ), which is contained in the StateParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~GetState.html
+- name: GetStateList
+  description: Retrieves the keys and names of all the states.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~GetStateList.html
+- name: UpdateState
+  description: Updates an existing state. The data for the state, including the key of the state to be updated, is contained in the State passed to the method. To update a state, you must first retrieve it using the GetState method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StatesService~UpdateState.html

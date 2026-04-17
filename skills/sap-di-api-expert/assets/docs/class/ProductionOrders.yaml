@@ -1,0 +1,209 @@
+name: ProductionOrders
+title: ProductionOrders Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders.html
+description: 'The ProductionOrders object supports the creation and maintenance of production orders. This object replaces the WorkOrders object of release 2004. During upgrade to 2005, SAP Business One creates production orders based on the data of the existing work orders (OWKO, WKO1). Therefore, you must upgrade add-ons that use the WorkOrders object to use the ProductionOrders object. After the upgrade process work orders can be displayed only but cannot be maintained. Source table: OWOR .'
+remarks: 'Mandatory properties for creating a new production order: ItemNo and DueDate . To display the form in the application: - Select Production --> Production Orders .'
+methods:
+- name: Add
+  description: Adds a new record to the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Add.html
+- name: Cancel
+  description: Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Cancel.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Update.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the identification key of the production order as assigned by SAP Business One when adding one. Field name: DocEntry . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~AbsoluteEntry.html
+  field_name: DocEntry
+  length: 11
+- name: AttachmentEntry
+  description: 'Sets or returns the Attachment Entry . Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Browser.html
+- name: ClosingDate
+  description: 'Returns the date when the production order status is changed to Closed . Field name: CloseDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ClosingDate.html
+  field_name: CloseDate
+- name: CompletedQuantity
+  description: 'Returns the total quantity of the completed products that were received from production. Field name: CmpltQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~CompletedQuantity.html
+  field_name: CmpltQty
+- name: CreationDate
+  description: 'Returns the date of creation of the Production Order. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~CreationDate.html
+  field_name: CreateDate
+- name: CustomerCode
+  description: 'Sets or returns the customer code, which is the card code in the business partner master data. Mandatory field in SAP Business One. Field name: CardCode . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~CustomerCode.html
+  field_name: CardCode
+  length: 15
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocumentNumber
+  description: 'Returns the production order number, which is a sequential number, assigned by the system. Field name: DocNum . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DocumentNumber.html
+  field_name: DocNum
+  length: 11
+- name: DocumentReferences
+  description: property DocumentReferences
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DocumentReferences.html
+- name: DueDate
+  description: 'Sets or returns the planned completion date of the production order. The DueDate can be modified (read-write) while the ProductionOrderStatus is either Planned or Released (read-only when the status is Closed ). Mandatory for creating a new production order. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~DueDate.html
+- name: InventoryUOM
+  description: 'Returns the inventory Unit of Measurement for the product (for example: box, case, piece). Field name: Uom . Length: 20 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~InventoryUOM.html
+  field_name: Uom
+  length: 20
+- name: ItemNo
+  description: 'Sets or returns the key of the product. Mandatory for creating a new production order. Field name: ItemCode . Length: 20 characters. This is a foreign key to the ProductTrees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ItemNo.html
+  field_name: ItemCode
+  length: 20
+- name: JournalRemarks
+  description: 'Sets or returns the journal remarks for the G/L account that is related to the production order. Field name: JrnlMemo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~JournalRemarks.html
+  field_name: JrnlMemo
+  length: 50
+- name: Lines
+  description: Returns the ProductionOrders_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Lines.html
+- name: PickRemarks
+  description: 'The pick and pack remarks of a production order. Field name: PickRmrk . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~PickRemarks.html
+  field_name: PickRmrk
+  length: 254
+- name: PlannedQuantity
+  description: 'Sets or returns the planned quantity of the completed product. Field name: PlannedQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~PlannedQuantity.html
+  field_name: PlannedQty
+- name: PostingDate
+  description: 'Sets or returns the order date of the product. Field name: PostDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~PostingDate.html
+  field_name: PostDate
+- name: Printed
+  description: 'Returns a valid value that determines wether to use a printed copy or an original . Field name: Printed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Printed.html
+- name: Priority
+  description: 'The degree of importance of a production order, indicated by integer numbers. The default value is 100. You can manually change the number here. The smaller the number, the more important the production order. Field name: Priority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Priority.html
+- name: ProductDescription
+  description: 'The descritpion of the product. Field name: ProdName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductDescription.html
+  field_name: ProdName
+  length: 100
+- name: ProductionOrderOrigin
+  description: 'Sets or returns the origin type of the production order (Manual, MRP, or Sales Order). Field name: OriginType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductionOrderOrigin.html
+  field_name: OriginType
+- name: ProductionOrderOriginEntry
+  description: 'Sets or returns the key number of sales order that is linked to the production order. Field name: OriginAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductionOrderOriginEntry.html
+  field_name: OriginAbs
+- name: ProductionOrderOriginNumber
+  description: 'The sales order number that is linked to the production order. Field name: OriginNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductionOrderOriginNumber.html
+  field_name: OriginNum
+- name: ProductionOrderStatus
+  description: 'Sets or returns the status of the production order (Planned, Released, Closed, or Cancelled). Field name: Sets or returns the status of the production order (Planned, Released, Closed, or Cancelled). .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductionOrderStatus.html
+  field_name: Sets
+- name: ProductionOrderType
+  description: 'Set or returns the production order type (Standard, Special, or Disassembly). Field name: Type .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ProductionOrderType.html
+  field_name: Type
+- name: Project
+  description: 'The project that relates to the components of the product. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Project.html
+  length: 20
+- name: RejectedQuantity
+  description: 'Returns the total quantity of the rejected products that were received from production. Field name: RjctQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~RejectedQuantity.html
+  field_name: RjctQty
+- name: ReleaseDate
+  description: 'Returns the date when the production order status is changed to Released . Field name: RlsDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~ReleaseDate.html
+  field_name: RlsDate
+- name: Remarks
+  description: 'Sets or returns remarks related to the production order. Field name: Comments . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Remarks.html
+  field_name: Comments
+  length: 254
+- name: RoutingDateCalculation
+  description: 'Determines how the resource allocation will occur. Field name: RouDatCalc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~RoutingDateCalculation.html
+  field_name: RouDatCalc
+- name: SalesOrderLines
+  description: Returns the ProductionOrders_SalesOrderLines object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~SalesOrderLines.html
+- name: SAPPassport
+  description: property SAPPassport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~SAPPassport.html
+- name: Series
+  description: 'Sets or returns the key of the series that determines the production order number ( DocumentNumber ). Field name: Series .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Series.html
+- name: Stages
+  description: Returns the ProductionOrders_Stages child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Stages.html
+- name: StartDate
+  description: 'The start date of the production. You can change it manually, which may affect Due Date. Field name: StartDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~StartDate.html
+- name: TransactionNumber
+  description: 'Returns the transaction code that SAP Business One creates for the production order. Field name: TransId . This is a foreign key to the JournalEntries object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~TransactionNumber.html
+  field_name: TransId
+- name: UoMEntry
+  description: 'The internal key of the UoM. Field name: UomEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~UoMEntry.html
+  field_name: UomEntry
+- name: UpdateAllocation
+  description: property UpdateAllocation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~UpdateAllocation.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who manages the production order. Field name: UserSign .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~UserSignature.html
+  field_name: UserSign
+- name: Warehouse
+  description: 'Sets or returns the identification key of the warehouse that will receive the completed product. Length: 8 characters. Field name: Warehouse . This is a foreign key to the Warehouses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders~Warehouse.html
+  length: 8

@@ -1,0 +1,46 @@
+name: ReportLayoutsService
+title: ReportLayoutsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService.html
+description: 'The ReportLayoutsService service enables you to do the following: - Copy a PLD report layout from one company to another. - Add a Crystal Reports layout or standalone report. Source table: RDOC (report layouts) and RDFL (associates default report with user, business partners)'
+remarks: 'To work with report layouts in SAP Business One: - Open a marketing document form (for example, Sales A/R -- Sales Quotation ). Select Tools --> Print Layout Designer (or select the pencil icon on the toolbar). The Layout Designer - Selection Criteria form opens. Click Edit . The Report and Layout Manager opens. To work with the Print Layout Designer: - Open the Report and Layout Manager, as described above. - Select a PLD report layout. - Click Edit .'
+methods:
+- name: AddReportLayout
+  description: Adds a new report/report layout.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~AddReportLayout.html
+- name: AddReportLayoutToMenu
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~AddReportLayoutToMenu.html
+- name: DeleteReportLayout
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~DeleteReportLayout.html
+- name: DeleteReportLayoutAndMenu
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~DeleteReportLayoutAndMenu.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ReportLayoutsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetDataInterfaceFromXMLString.html
+- name: GetDefaultReport
+  description: Retrieves the default report layout for a specific document type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetDefaultReport.html
+- name: GetDefaultReportLayout
+  description: Retrieves the default report layout for a specific document type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetDefaultReportLayout.html
+- name: GetReportLayout
+  description: Retrieves a report layout.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetReportLayout.html
+- name: GetReportLayoutList
+  description: Retrieves the keys and names of all the report layouts.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~GetReportLayoutList.html
+- name: Print
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~Print.html
+- name: SetDefaultReport
+  description: Sets the specified report layout as default for a specific document type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~SetDefaultReport.html
+- name: UpdateLanguageReport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~UpdateLanguageReport.html
+- name: UpdatePrinterSettings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ReportLayoutsService~UpdatePrinterSettings.html

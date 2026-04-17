@@ -1,0 +1,31 @@
+name: ISDCreditMemosService
+title: ISDCreditMemosService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService.html
+description: 'Source table: OISC .'
+remarks: "The ISD Credit Memo has the exact same information as the ISD Invoice, but the posting of the ISD Credit Memo is opposite to the posting of the ISD Invoice. For India localization only. To access Input Service Distribution Invoice documents, the path is Purchasing - A/P --> Input Service Distribution â\x80\x93 ISD --> ISD Invoice."
+methods:
+- name: Add
+  description: Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~Add.html
+- name: Cancel
+  description: Cancel
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~Cancel.html
+- name: Get
+  description: Get
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~Get.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: GetList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~GetList.html
+- name: Update
+  description: Update
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDCreditMemosService~Update.html

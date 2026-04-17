@@ -1,0 +1,33 @@
+name: UserPermissionForms
+title: UserPermissionForms Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms.html
+description: 'UserPermissionForms is a child object of UserPermissionTree object and enables to add a user permission to a collection of forms. Source table: UPT1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total forms in the collection (rows).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~Count.html
+- name: DisplayOrder
+  description: 'Sets or returns the display order of the user permission form in the collection (starts from 1). Field name: VisOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~DisplayOrder.html
+  field_name: VisOrder
+- name: FormType
+  description: 'Sets or returns the form ID (primary key) linked to the user permission. Length: 20 characters. Field name: FormId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~FormType.html
+  field_name: FormId
+  length: 20
+- name: PermissionID
+  description: 'Returns the identification key of the user permission tree as defined in UserPermissionTree object. Length: 20 characters. Field name: PermId . This is a foreign key to the UserPermissionTree object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~PermissionID.html
+  field_name: PermId
+  length: 20
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserPermissionForms~UserFields.html

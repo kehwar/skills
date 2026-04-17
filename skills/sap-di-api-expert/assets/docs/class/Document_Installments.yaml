@@ -1,0 +1,60 @@
+name: Document_Installments
+title: Document_Installments Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments.html
+description: 'A child object of Documents object representing the installments feature in marketing documents. Source tables: INV6 , OPCH6 .'
+remarks: 'To access installments in the application: Sales-A/R > A/R invoice > Accounting tab > Installments .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~Add.html
+- name: Delete
+  description: Deletes a specific installments before added to the document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns a value specifying the number of installments.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~Count.html
+- name: DueDate
+  description: 'Returns or sets the due date of the installment. Field name: DueDate'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~DueDate.html
+- name: DunningLevel
+  description: 'Returns the dunning level. Field name: DunnLevel . This is a foreign key to the DunningLetters object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~DunningLevel.html
+  field_name: DunnLevel
+- name: InstallmentId
+  description: 'The ID of the installment. The value, which is a sequence number, is unique for the installments for a specific invoice. Field name: InstlmntID'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~InstallmentId.html
+  field_name: InstlmntID
+- name: LastDunningDate
+  description: Returns the date, in which the last dunning letter was sent.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~LastDunningDate.html
+- name: PaidToDate
+  description: 'The paid amount of the installment in local currency. Field name: PaidToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~PaidToDate.html
+- name: PaidToDateFC
+  description: 'The paid amount of the installment in foreign currency. Field name: PaidFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~PaidToDateFC.html
+  field_name: PaidFC
+- name: PaymentOrdered
+  description: 'Indicates whether the payment is ordered. Field name: Ordered .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~PaymentOrdered.html
+  field_name: Ordered
+- name: Percentage
+  description: 'Sets or returns the installments percentage within the total payment amount. Field name: InstPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~Percentage.html
+  field_name: InstPrcnt
+- name: Total
+  description: 'Sets or returns the total payment amount based on the specified percentage. Field name: InsTotal'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~Total.html
+  field_name: InsTotal
+- name: TotalFC
+  description: 'Total amount in foreign currency. Field name: InsTotalFC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~TotalFC.html
+  field_name: InsTotalFC
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Installments~UserFields.html

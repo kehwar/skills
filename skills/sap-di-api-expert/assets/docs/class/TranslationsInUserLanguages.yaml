@@ -1,0 +1,31 @@
+name: TranslationsInUserLanguages
+title: TranslationsInUserLanguages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages.html
+description: 'TranslationsInUserLanguages is a child object of the MultiLanguageTranslations object. It enables to set, in each row, a translated content in a specified user language. Source table: MLT1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~Count.html
+- name: KeyFromHeaderTable
+  description: 'Returns the key of the translated field value. Field name: TranEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~KeyFromHeaderTable.html
+  field_name: TranEntry
+- name: LanguageCodeOfUserLanguage
+  description: 'Sets or returns the user language code. This code must be one of the codes defined in the UserLanguages object. Field name: LangCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~LanguageCodeOfUserLanguage.html
+  field_name: LangCode
+- name: Translationscontent
+  description: 'Sets or returns the translated content for the specified field ( KeyFromHeaderTable ). Lentgh: 64,000 characters. Field name: Trans .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~Translationscontent.html
+  field_name: Trans
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TranslationsInUserLanguages~UserFields.html

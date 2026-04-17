@@ -1,0 +1,90 @@
+name: Country
+title: Country Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country.html
+description: 'A data structure object holding properties for the CountriesService object. Source table: OCRY .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~ToXMLString.html
+properties:
+- name: AddressFormat
+  description: 'Sets or returns the postal address format used by the country. The postal address format must be already presented in the Address Formats table (foreign key to OADF ). Field name: AddrFormat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~AddressFormat.html
+  field_name: AddrFormat
+- name: BankAccountDigits
+  description: 'Sets or returns the number of digits for the bank account number. Used for bank account validation. If greater than zero, it determines how many digits or characters has a valid bank account number for the specific country. If zero, the number of digits is not validated for bank account numbers for the specific country. Field name: BnkActDgts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~BankAccountDigits.html
+  field_name: BnkActDgts
+- name: BankBranchDigits
+  description: 'Sets or returns the number of digits for the bank branch number. Used for bank account validation. If greater than zero, it determines how many digits or characters has a valid bank branch number for the specific country. If zero, the number of digits is not validated for bank branch numbers for the specific country. Field name: BnkBchDgts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~BankBranchDigits.html
+  field_name: BnkBchDgts
+- name: BankCodeDigits
+  description: 'Sets or returns the number of digits for the bank code. Used for bank account validation. If greater than zero, it determines how many digits or characters has a valid bank branch number for the specific country. If zero, the number of digits is not validated for bank branch numbers for the specific country. Field name: BnkCodDgts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~BankCodeDigits.html
+  field_name: BnkCodDgts
+- name: BankControlKeyDigits
+  description: 'Sets or returns the number of digits for the bank control key. Used for bank account validation. If greater than zero, it determines how many digits or characters has a valid bank control key for the specific country. If zero, the number of digits is not validated for bank control key numbers for the specific country. Field name: BnkCtKDgts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~BankControlKeyDigits.html
+  field_name: BnkCtKDgts
+- name: Blacklisted
+  description: property Blacklisted
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~Blacklisted.html
+- name: Code
+  description: 'Sets or returns the country code. Field name: code . Character length: 3.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~Code.html
+  field_name: code
+- name: CodeForReports
+  description: 'Sets or returns the country code for the reports. Field name: ReportCode . Character length: 3.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~CodeForReports.html
+  field_name: ReportCode
+- name: DomesticAccountValidation
+  description: Sets or returns a valid value for special validation of specific countries' bank accounts. If set to one of the valid values, it activates a country specific bank account number validation algorithm. The algorithms usually performs additional validations that are more complex than simple number of digits checks. These algorithms are currently available for certain countries in SAP Business One. If empty or XX , not country specific bank account number validation is performed.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~DomesticAccountValidation.html
+- name: EAEU
+  description: property EAEU
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~EAEU.html
+- name: EU
+  description: Sets or returns a valid value that specifies whether or not the country is a member of the European Union.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~EU.html
+- name: IbanValidation
+  description: Sets or returns a valid value that specifies whether or not to perform IBAN validation for the specified country.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~IbanValidation.html
+- name: ISOAlpha2Code
+  description: '2 character ISO country code. Field name: ISO2Code . Length: 2.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~ISOAlpha2Code.html
+  field_name: ISO2Code
+- name: ISOAlpha3Code
+  description: '3 character ISO country code. Field name: ISO3Code . Length: 3.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~ISOAlpha3Code.html
+  field_name: ISO3Code
+- name: ISONumeric
+  description: '3 numeric ISO country code. Field name: ISONumeric . Length: 3.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~ISONumeric.html
+- name: Name
+  description: 'Sets or returns the name of the country. Field name: Name . Character length: 100.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~Name.html
+- name: NumberOfDigitsForTaxID
+  description: 'Sets or returns the number of digits of a valid Tax ID in the specified country. Field name: TaxIdDigts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~NumberOfDigitsForTaxID.html
+  field_name: TaxIdDigts
+- name: UICCountryCode
+  description: 'UIC country code. Field name: UICCode . Length: 3.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~UICCountryCode.html
+  field_name: UICCode
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Country~UserFields.html

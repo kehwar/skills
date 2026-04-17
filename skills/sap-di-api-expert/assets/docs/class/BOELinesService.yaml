@@ -1,0 +1,19 @@
+name: BOELinesService
+title: BOELinesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOELinesService.html
+description: 'The BOELinesService service enables you to get a deposit for bill of exchange. Source table: OBOE .'
+remarks: To view details on deposited bills of exchange, from SAP Business One, choose Banking --> Deposits --> Deposit . Then, select a deposit created for a bill of exchange.
+methods:
+- name: GetBOELine
+  description: Retrieves a deposit for bill of exchange. The bill of exchange is specified by its key, which is contained in the BOELineParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOELinesService~GetBOELine.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BOELinesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOELinesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOELinesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOELinesService~GetDataInterfaceFromXMLString.html

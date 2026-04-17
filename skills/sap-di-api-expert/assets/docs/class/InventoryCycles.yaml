@@ -1,0 +1,113 @@
+name: InventoryCycles
+title: InventoryCycles Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles.html
+description: 'The InventoryCycles object enables to setup cycles of inventory counts and order intervals. Inventory cycles setup enables to track inventory counts by issuing an alert each time a count is due. It also is used for planning the order intervals. Source table: OCYC .'
+remarks: 'To display the form in the application: - Select Administration -->Setup -->Inventory -->Inventory Cycles . To display the Inventory Cycles Setup for order interval: - Select Inventory -->Item Master Data -->Planning Data tab . - From the Order Interval field, select Define New .'
+methods:
+- name: Add
+  description: Adds a new inventory cycle.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~GetByKey.html
+- name: Remove
+  description: Remove a inventory cycle .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Remove.html
+- name: SaveToFile
+  description: Save the inventory cycle to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~SaveXML.html
+- name: Update
+  description: Updates an existing inventory cycle .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Browser.html
+- name: CycleCode
+  description: 'Sets or returns the cycle code. Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~CycleCode.html
+  field_name: Code
+- name: CycleName
+  description: 'Sets or returns the inventory cycle name. Field name: Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~CycleName.html
+  field_name: Name
+  length: 20
+- name: Day
+  description: 'Sets or returns one of the following according to the valid value of the Frequency property: Day of the week for weekly cycles ( bof_Weekly ). Day of the month for monthly cycles ( bof_Monthly ). Number of days for regular intervals, for example, every two days ( bof_EveryXDays ). Field name: Day .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Day.html
+- name: endType
+  description: 'Specifies how to stop the inventory cycle. Field name: EndType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~endType.html
+  field_name: EndType
+- name: Frequency
+  description: 'Sets or returns a valid value of the cycle interval. Field name: Frequency .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Frequency.html
+- name: Friday
+  description: 'Sets inventory cycle recurrence for Friday. Field name: Friday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Friday.html
+- name: Hour
+  description: 'Sets or returns the time for issuing an alert. Field name: Hour .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Hour.html
+- name: Interval
+  description: 'The interval period. Field name: Interval.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Interval.html
+- name: MaxOccurrence
+  description: 'The maximum number of times inventory cycles can occur. Field name: MaxOccur.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~MaxOccurrence.html
+  field_name: MaxOccur
+- name: Monday
+  description: 'Sets inventory cycle recurrence for Monday. Field name: Monday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Monday.html
+- name: NextCountingDate
+  description: 'Sets or returns the date of the upcoming inventory cycle. Field name: NextDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~NextCountingDate.html
+  field_name: NextDate
+- name: RecurrenceDayInMonth
+  description: 'Schedules inventory cycles that run on a specific date each month. Field name: DayInMonth.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~RecurrenceDayInMonth.html
+  field_name: DayInMonth
+- name: RecurrenceDayOfWeek
+  description: 'Schedules inventory cycles that run on a specific day each week. Field name: DayOfWeek.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~RecurrenceDayOfWeek.html
+  field_name: DayOfWeek
+- name: RecurrenceMonth
+  description: 'Sets inventory cycle recurrence on a monthly basis. Field name: Month.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~RecurrenceMonth.html
+  field_name: Month
+- name: RecurrenceSequenceSpecifier
+  description: 'Sets inventory cycle recurrence on a weekly basis. Field name: Week.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~RecurrenceSequenceSpecifier.html
+  field_name: Week
+- name: RepeatOption
+  description: 'Determines how inventory cycles repeat at regular intervals. Field name: SubOption.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~RepeatOption.html
+  field_name: SubOption
+- name: Saturday
+  description: 'Sets inventory cycle recurrence for Saturday. Field name: Saturday .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Saturday.html
+- name: SeriesEndDate
+  description: 'The end date of an inventory cycle series. Field name: SeEndDat.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~SeriesEndDate.html
+  field_name: SeEndDat
+- name: Sunday
+  description: 'Sets inventory cycle recurrence for Sunday. Field name: Sunday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Sunday.html
+- name: Thursday
+  description: 'Sets inventory cycle recurrence for Thursday. Field name: Thursday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Thursday.html
+- name: Tuesday
+  description: 'Sets inventory cycle recurrence for Tuesday. Field name: Tuesday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Tuesday.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~UserFields.html
+- name: Wednesday
+  description: 'Sets inventory cycle recurrence for Wednesday. Field name: Wednesday.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCycles~Wednesday.html

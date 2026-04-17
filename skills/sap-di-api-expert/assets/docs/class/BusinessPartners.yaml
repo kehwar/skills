@@ -1,0 +1,1025 @@
+name: BusinessPartners
+title: BusinessPartners Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners.html
+description: 'BusinessPartners is a business object that represents the Business Partners Master Data in the Business Partners module. This object enables you to: - Add a business partner record. Retrieve a business partner record by its key. Update a business partner record. Remove a business partner record. Save the object in XML format. Source table: OCRD .'
+remarks: 'To display the form in the application: - Select Business Partners --> Business Partner Master Data .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Add.html
+- name: Cancel
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Cancel.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Update.html
+- name: UpdateFromXML
+  description: Receives and processes the XML content. You can remove sub-object lines from the BusinessPartners object via the XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UpdateFromXML.html
+properties:
+- name: AcceptsEndorsedChecks
+  description: property AcceptsEndorsedChecks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AcceptsEndorsedChecks.html
+- name: AccountRecivablePayables
+  description: 'Returns the BPAccountReceivablePayble object. Field name: DebPayAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AccountRecivablePayables.html
+  field_name: DebPayAcct
+  length: 15
+- name: AccrualCriteria
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether the business partner reports on accrual basis or cash basis. Field name: AccCritria .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AccrualCriteria.html
+  field_name: AccCritria
+- name: AdditionalID
+  description: 'Sets or returns an additional ID number of the business partner (that is, in addition to the CardCode ). Field name: AddID . Length: 18 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AdditionalID.html
+  field_name: AddID
+  length: 18
+- name: Address
+  description: 'Sets or returns the street of the Bill To address, which is the address of the physical location of the business partner. Field name: Address . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Address.html
+  length: 100
+- name: Addresses
+  description: 'Returns the BPAddresses object. Field name: None .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Addresses.html
+  field_name: None
+- name: Affiliate
+  description: 'Indicates whether the business partner is an affiliate. Field name: Affiliate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Affiliate.html
+- name: AgentCode
+  description: property AgentCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AgentCode.html
+- name: AliasName
+  description: property AliasName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AliasName.html
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AttachmentEntry.html
+- name: AutomaticPosting
+  description: property AutomaticPosting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AutomaticPosting.html
+- name: AvarageLate
+  description: 'Sets or returns the average delay in days for the customer''s payments. Field name: AvrageLate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~AvarageLate.html
+  field_name: AvrageLate
+- name: BackOrder
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to enable partial items and partial quantities in sales order documents. Field name: BackOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BackOrder.html
+- name: BankChargesAllocationCode
+  description: 'Sets or returns the default bank charges allocation code. Field name: DflBCACode . This is a foreign key to the Bank Charges Allocation Codes object, OBCA , not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BankChargesAllocationCode.html
+  field_name: DflBCACode
+- name: BankCountry
+  description: 'Sets or returns the country of the business partner bank account. Field name: BankCountr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BankCountry.html
+  field_name: BankCountr
+  length: 3
+- name: BillofExchangeonCollection
+  description: 'Sets or returns the G/L account number for bill-of-exchange on collection. Field name: BoEOnClct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BillofExchangeonCollection.html
+  field_name: BoEOnClct
+  length: 15
+- name: BillToBuildingFloorRoom
+  description: 'Sets or returns a memo type string that specifies additional details of the Bill To address, such as building number, floor number, and room number. Field name: Building . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BillToBuildingFloorRoom.html
+  field_name: Building
+- name: BilltoDefault
+  description: 'Sets or returns the default Bill To address name. Field name: BillToDef . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BilltoDefault.html
+  field_name: BillToDef
+  length: 50
+- name: BillToState
+  description: 'Sets or returns the state of the Bill To address, which is the address of the physical location of the business partner. Field name: State1 . Length: 3 characters. This is a foreign key to the Countries table ( OCST - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BillToState.html
+  field_name: State1
+  length: 3
+- name: Block
+  description: 'Sets or returns the block of the Bill To address, which is the address of the physical location of the business partner. Field name: Block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Block.html
+  length: 100
+- name: BlockDunning
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to block dunning letters to the business partner. Field name: BlockDunn . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BlockDunning.html
+  field_name: BlockDunn
+  length: 1
+- name: BlockSendingMarketingContent
+  description: 'Specifies whether or not to block sending marketing contnet to the business partner. Field name: BlockComm . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BlockSendingMarketingContent.html
+  field_name: BlockComm
+  length: 1
+- name: BookkeepingCertified
+  description: property BookkeepingCertified
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BookkeepingCertified.html
+- name: Box1099
+  description: 'Sets or returns the number of Box 1099 on the Form 1099 where the payment should be entered. Field name: Box1099 . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Box1099.html
+  length: 20
+- name: BPBankAccounts
+  description: Returns the BPBankAccounts object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPBankAccounts.html
+- name: BPBlockSendingMarketingContents
+  description: Returns the BPBlockSendingMarketingContents object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPBlockSendingMarketingContents.html
+- name: BPBranchAssignment
+  description: property BPBranchAssignment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPBranchAssignment.html
+- name: BPCurrencies
+  description: property BPCurrencies
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPCurrencies.html
+- name: BPPaymentDates
+  description: Returns the BPPaymentDates object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPPaymentDates.html
+- name: BPPaymentMethods
+  description: Returns the BPPaymentMethods object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPPaymentMethods.html
+- name: BPWithholdingTax
+  description: Returns the BPWithholdingTax object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BPWithholdingTax.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Browser.html
+- name: BusinessType
+  description: property BusinessType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~BusinessType.html
+- name: CampaignNumber
+  description: property CampaignNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CampaignNumber.html
+- name: CardCode
+  description: 'Sets or returns the business partner identification key in SAP Business One. Field name: CardCode . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CardCode.html
+  length: 15
+- name: CardForeignName
+  description: 'Sets or returns the business partner''s foreign name. Field name: CardFName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CardForeignName.html
+  field_name: CardFName
+  length: 100
+- name: CardName
+  description: 'Sets or returns the business partner''s full name. Field name: CardFName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CardName.html
+  field_name: CardFName
+  length: 100
+- name: CardType
+  description: 'Sets or returns a valid value of BoCardTypes type that specifies the type of the business partner (customer, supplier, or lead). Field name: CardType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CardType.html
+- name: Cellular
+  description: 'Sets or returns the cellular phone number of the business partner. Field name: Cellular . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Cellular.html
+  length: 50
+- name: CertificateDetails
+  description: property CertificateDetails
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CertificateDetails.html
+- name: CertificateNumber
+  description: 'Sets or returns the number of the withholding tax certificate. Field name: CrtfcateNO . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CertificateNumber.html
+  field_name: CrtfcateNO
+  length: 20
+- name: ChannelBP
+  description: 'Sets or returns the distribution channel card code for the business partner (the distribution channel is also a business partner). Relevant to business partners of customer type only. Field name: ChannlBP . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ChannelBP.html
+  field_name: ChannlBP
+  length: 15
+- name: City
+  description: 'Sets or returns the city of the Bill To address, which is the address of the physical location of the business partner. Field name: City . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~City.html
+  length: 100
+- name: ClosingDateProcedureNumber
+  description: 'Sets or returns the Closing Date Procedure Number . This is a foreign key to the ClosingDateProcedure object. Field name: CDPNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ClosingDateProcedureNumber.html
+  field_name: CDPNum
+- name: CollectionAuthorization
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner has authorized automatic collections from its bank account. Field name: CollecAuth . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CollectionAuthorization.html
+  field_name: CollecAuth
+  length: 1
+- name: CommissionGroupCode
+  description: 'Sets or returns the commission group number for the business partner. Field name: CommGrCode . This is a foreign key to the CommissionGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CommissionGroupCode.html
+  field_name: CommGrCode
+- name: CommissionPercent
+  description: 'Sets or returns the commission percentage for the business partner. Field name: Commission .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CommissionPercent.html
+  field_name: Commission
+- name: CompanyPrivate
+  description: 'Sets or returns a valid value that determines wether the user is a Company or a Private person. Field name: CmpPrivate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CompanyPrivate.html
+  field_name: CmpPrivate
+- name: CompanyRegistrationNumber
+  description: 'Sets or returns the Company Registration Number (CRN) of the business partner. This number is used as a means of identification in contacts with government authorities and other organizations. Field name: RegNum ). Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CompanyRegistrationNumber.html
+  field_name: RegNum
+  length: 32
+- name: ConCerti
+  description: 'Concessional Certificate. Field name: ConCerti . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ConCerti.html
+  length: 20
+- name: ContactEmployees
+  description: Returns the ContactEmployees object that represents the employees responsible for this business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ContactEmployees.html
+- name: ContactPerson
+  description: 'Sets or returns the contact person for this Business Partner. Field name: CntctPrsn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ContactPerson.html
+  field_name: CntctPrsn
+- name: Country
+  description: 'Sets or returns the country of the Bill To address, which is the address of the physical location of the business partner. Field name: Country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Country.html
+  length: 3
+- name: County
+  description: 'Sets or returns the county of the Bill To address, which is the address of the physical location of the business partner. Field name: County . Length: 100 characters. This is a foreign key to the States table ( OCST - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~County.html
+  length: 100
+- name: CreateDate
+  description: 'The date when the business partner master data created. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreateDate.html
+- name: CreateTime
+  description: 'The timestamp of the business partner master data created is recorded in the hhmmss format. Field name: CreateTS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreateTime.html
+  field_name: CreateTS
+- name: CreditCardCode
+  description: 'Sets or returns the foreign key of the credit card as defined the CreditCards object. Field name: CreditCard . This is a foreign key to the CreditCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreditCardCode.html
+  field_name: CreditCard
+- name: CreditCardExpiration
+  description: 'Sets or returns expiration date for the business partner''s credit card. Field name: CardValid .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreditCardExpiration.html
+  field_name: CardValid
+- name: CreditCardNum
+  description: 'Sets or returns the business partner''s credit card number. Field name: CrCardNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreditCardNum.html
+  field_name: CrCardNum
+  length: 20
+- name: CreditLimit
+  description: 'Sets or returns the credit limit amount for a business partner. Field name: CreditLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CreditLimit.html
+  field_name: CreditLine
+- name: Currency
+  description: 'Sets or returns the currency used by a business partner in documents. Field name: CRD_CURR . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Currency.html
+  field_name: CRD_CURR
+  length: 3
+- name: CurrentAccountBalance
+  description: 'Returns the open balance for a specified business partner. Field name: Balance .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CurrentAccountBalance.html
+  field_name: Balance
+- name: CustomerBillofExchangDisc
+  description: 'Sets or returns the business partner''s G/L account number of type: Bill of Exchange Discounted . Field name: BoEDiscnt . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CustomerBillofExchangDisc.html
+  field_name: BoEDiscnt
+  length: 15
+- name: CustomerBillofExchangPres
+  description: 'Sets or returns the business partner''s G/L account number of type: Bill of Exchange Presentation . Field name: BoEDiscnt . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~CustomerBillofExchangPres.html
+  field_name: BoEDiscnt
+  length: 15
+- name: DatevAccount
+  description: property DatevAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DatevAccount.html
+- name: DatevFirstDataEntry
+  description: property DatevFirstDataEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DatevFirstDataEntry.html
+- name: DebitorAccount
+  description: 'Sets or returns the business partner''s accounts receivable/payable number (as defined in chart of accounts). Field name: DebPayAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DebitorAccount.html
+  field_name: DebPayAcct
+  length: 15
+- name: DeductibleAtSource
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the a business partner must deduct tax from payments. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeductibleAtSource.html
+- name: DeductionOffice
+  description: 'Sets or returns the tax office name that appears on the supplier''s tax deduction certificate. Field name: DdctOffice . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeductionOffice.html
+  field_name: DdctOffice
+  length: 10
+- name: DeductionPercent
+  description: 'Sets or returns the deduction percentage as specified in the tax deduction certificate provided by the supplier. Field name: DdctPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeductionPercent.html
+  field_name: DdctPrcnt
+- name: DeductionValidUntil
+  description: 'Sets or returns the expiration date of the tax deduction certificate provided by the supplier. Field name: ValidUntil .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeductionValidUntil.html
+  field_name: ValidUntil
+- name: DefaultAccount
+  description: 'Sets or returns the default bank account number of the business partner. Field name: DflAccount . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultAccount.html
+  field_name: DflAccount
+  length: 50
+- name: DefaultBankCode
+  description: 'Sets or returns the default bank code of the business partner. Field name: DflBankKey . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultBankCode.html
+  field_name: DflBankKey
+  length: 30
+- name: DefaultBlanketAgreementNumber
+  description: property DefaultBlanketAgreementNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultBlanketAgreementNumber.html
+- name: DefaultBranch
+  description: 'Sets or returns the default branch for the business partner. Field name: DflBranch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultBranch.html
+  field_name: DflBranch
+  length: 50
+- name: DefaultCurrency
+  description: property DefaultCurrency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultCurrency.html
+- name: DefaultTechnician
+  description: 'Sets or returns the default technician, as defined in SAP Business One, for the business partner. Relevant to business partners of customer type only. Field name: DfTcnician . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultTechnician.html
+  field_name: DfTcnician
+- name: DefaultTransporterEntry
+  description: property DefaultTransporterEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultTransporterEntry.html
+- name: DefaultTransporterLineNumber
+  description: property DefaultTransporterLineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DefaultTransporterLineNumber.html
+- name: DeferCommitmentLimitOnDueDate
+  description: 'Defer commitment limit on Due Date. Field name: DefCommDDt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeferCommitmentLimitOnDueDate.html
+  field_name: DefCommDDt
+- name: DeferCommitmentLimitOnDueDateDays
+  description: 'Field name: DefCommDay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeferCommitmentLimitOnDueDateDays.html
+  field_name: DefCommDay
+- name: DeferCommitmentLimitOnDueDateMonths
+  description: 'Field name: DefCommMon .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeferCommitmentLimitOnDueDateMonths.html
+  field_name: DefCommMon
+- name: DeferredTax
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner applies deferred tax. Field name: DeferrTax . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DeferredTax.html
+  field_name: DeferrTax
+  length: 1
+- name: DiscountBaseObject
+  description: 'Indicates whether the discounts specified by the DiscountGroups property are based on item groups, properties, or manufacturers. If you change the value, all rows of the DiscountGroups subobject whose BaseObjectType is not equal to the new value are deleted. Field name: DscntObjct'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DiscountBaseObject.html
+  field_name: DscntObjct
+- name: DiscountGroups
+  description: Returns a list of special item discounts based on each item's group, properties, or manufacturer. Each business partner has its own set of discounts. For more information, see DiscountGroups .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DiscountGroups.html
+- name: DiscountPercent
+  description: 'Sets or returns the discount percentage you specify for a customer, or the discount percentage a supplier specifies for you. Field name: Discount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DiscountPercent.html
+  field_name: Discount
+- name: DiscountRelations
+  description: 'Indicates how to calculate item discounts if more than one of the discounts specified by the DiscountGroups property applies to an item. This property is relevant only when the DiscountBaseObject is set to item properties. Field name: DscntRel'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DiscountRelations.html
+  field_name: DscntRel
+- name: DME
+  description: 'Sets or returns the DME identification/instruction key, which is relevant for the creation of the OPEX file by the Payment Engine add-on. Field name: DME .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DME.html
+- name: DownPaymentClearAct
+  description: 'Sets or returns the G/L account for down payment clearing. Field name: DpmClear . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DownPaymentClearAct.html
+  field_name: DpmClear
+  length: 15
+- name: DownPaymentInterimAccount
+  description: The G/L account for A/P down payments. When creating a vendor business partner, the DownPaymentInterimAccount property is automatically set to this account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DownPaymentInterimAccount.html
+- name: DunningDate
+  description: 'Returns the date for sending dunning letters. Field name: DunnDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DunningDate.html
+  field_name: DunnDate
+- name: DunningLevel
+  description: 'Returns the dunning level. Field name: DunnLevel . This is a foreign key to the DunningLetters object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DunningLevel.html
+  field_name: DunnLevel
+- name: DunningTerm
+  description: 'Sets or returns the Term Code as defined in Dunning Terms window in SAP Business One application (ODUT table, which is not exposed through the DI API). Field name: DunTerm . Length: 25 characters. This is a foreign key to the Dunning Terms table ( ODUT - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~DunningTerm.html
+  field_name: DunTerm
+  length: 25
+- name: EBooksVATExemptionCause
+  description: property EBooksVATExemptionCause
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EBooksVATExemptionCause.html
+- name: ECommerceMerchantID
+  description: property ECommerceMerchantID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ECommerceMerchantID.html
+- name: EDIRecipientID
+  description: property EDIRecipientID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDIRecipientID.html
+- name: EDISenderID
+  description: property EDISenderID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDISenderID.html
+- name: EDocBuildingNumber
+  description: property EDocBuildingNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocBuildingNumber.html
+- name: EDocCity
+  description: property EDocCity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocCity.html
+- name: EDocCountry
+  description: property EDocCountry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocCountry.html
+- name: EDocDistrict
+  description: property EDocDistrict
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocDistrict.html
+- name: EDocGenerationType
+  description: property EDocGenerationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocGenerationType.html
+- name: EDocPECAddress
+  description: property EDocPECAddress
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocPECAddress.html
+- name: EDocRepresentativeAdditionalId
+  description: property EDocRepresentativeAdditionalId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocRepresentativeAdditionalId.html
+- name: EDocRepresentativeCompany
+  description: property EDocRepresentativeCompany
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocRepresentativeCompany.html
+- name: EDocRepresentativeFirstName
+  description: property EDocRepresentativeFirstName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocRepresentativeFirstName.html
+- name: EDocRepresentativeFiscalCode
+  description: property EDocRepresentativeFiscalCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocRepresentativeFiscalCode.html
+- name: EDocRepresentativeSurname
+  description: property EDocRepresentativeSurname
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocRepresentativeSurname.html
+- name: EDocStreet
+  description: property EDocStreet
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocStreet.html
+- name: EDocStreetNumber
+  description: property EDocStreetNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocStreetNumber.html
+- name: EDocZipCode
+  description: property EDocZipCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EDocZipCode.html
+- name: EffectiveDiscount
+  description: property EffectiveDiscount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EffectiveDiscount.html
+- name: EffectivePrice
+  description: property EffectivePrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EffectivePrice.html
+- name: EffectivePriceConsidersPriceBeforeDiscount
+  description: property EffectivePriceConsidersPriceBeforeDiscount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EffectivePriceConsidersPriceBeforeDiscount.html
+- name: ElectronicProtocols
+  description: property ElectronicProtocols
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ElectronicProtocols.html
+- name: EmailAddress
+  description: 'Sets or returns the e-mail address of the business partner. Field name: E_Mail . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EmailAddress.html
+  field_name: E_Mail
+  length: 100
+- name: EndorsableChecksFromBP
+  description: property EndorsableChecksFromBP
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EndorsableChecksFromBP.html
+- name: EORINumber
+  description: 'EORI number. Field name: EORINumber . Length: 17 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~EORINumber.html
+  length: 17
+- name: Equalization
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner (customer type only) is liable to additional equalization tax. Field name: Equ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Equalization.html
+  field_name: Equ
+- name: ETaxWebSite
+  description: property ETaxWebSite
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ETaxWebSite.html
+- name: ExchangeRateForIncomingPayment
+  description: property ExchangeRateForIncomingPayment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExchangeRateForIncomingPayment.html
+- name: ExchangeRateForOutgoingPayment
+  description: property ExchangeRateForOutgoingPayment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExchangeRateForOutgoingPayment.html
+- name: ExemptionMaxAmountValidationType
+  description: property ExemptionMaxAmountValidationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExemptionMaxAmountValidationType.html
+- name: ExemptionValidityDateFrom
+  description: 'Returns the start date when the business partner is exempted from paying tax. Field name: FromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExemptionValidityDateFrom.html
+  field_name: FromDate
+- name: ExemptionValidityDateTo
+  description: 'Returns the ending date when the business partner is exempted from paying tax. Field name: ToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExemptionValidityDateTo.html
+  field_name: ToDate
+- name: ExemptNum
+  description: 'Sets or returns the number of the tax exemption. Field name: ExemptNo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExemptNum.html
+  field_name: ExemptNo
+  length: 50
+- name: ExpirationDate
+  description: 'Sets or returns the expiration date of the withholding tax certificate. Field name: ExpireDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExpirationDate.html
+  field_name: ExpireDate
+- name: ExportCode
+  description: 'Sets or returns the code used for data export. Field name: ExportCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ExportCode.html
+  length: 8
+- name: FatherCard
+  description: 'Sets or returns the card code of the parent business partner (for example, card code of the head office related to the current business partner). Field name: FatherCard . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FatherCard.html
+  length: 15
+- name: FatherType
+  description: 'Sets or returns a valid value of BoFatherCardTypes that specifies the method of handling deliveries and payments used by the parent business partner. Field name: FatherType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FatherType.html
+- name: Fax
+  description: 'Sets or returns the fax number of the business partner. Field name: Fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Fax.html
+  length: 50
+- name: FCEAsPaymentMeans
+  description: 'Use FCEs as Payment Means. Field name: FCEPmnMean .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FCEAsPaymentMeans.html
+  field_name: FCEPmnMean
+- name: FCERelevant
+  description: 'FCE relevant. Field name: FCERelevnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FCERelevant.html
+  field_name: FCERelevnt
+- name: FCEValidateBaseDelivery
+  description: 'FCE validate base delivery. Field name: FCEVldte .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FCEValidateBaseDelivery.html
+  field_name: FCEVldte
+- name: FederalTaxID
+  description: 'Sets or returns the federal tax ID number that is saved in documents and will be used for calculating the EU sales report. Field name: LicTradNum). Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FederalTaxID.html
+  field_name: LicTradNum
+  length: 32
+- name: FeeAccount
+  description: property FeeAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FeeAccount.html
+- name: FiscalTaxID
+  description: Returns the BPFiscalTaxID Object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FiscalTaxID.html
+- name: FormCode1099
+  description: 'Sets or returns the code of the Form 1099 . Field name: FormCode . This is a foreign key to the Forms1099 object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FormCode1099.html
+  field_name: FormCode
+- name: FreeText
+  description: 'Sets or returns a memo type string that specifies detailed information about the business partner (unlike the Notes property that contains a short notes of up to 100 characters). Field name: Free_Text . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FreeText.html
+  field_name: Free_Text
+- name: Frozen
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner record is locked for a specified period (on-hold period). Field name: frozenFor .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Frozen.html
+  field_name: frozenFor
+- name: FrozenFrom
+  description: 'Sets or returns the beginning date of the period the business partner card is locked (on-hold). Field name: frozenFrom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FrozenFrom.html
+  field_name: frozenFrom
+- name: FrozenRemarks
+  description: 'Sets or returns remarks about locking the business partner card. Field name: FrozenComm . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FrozenRemarks.html
+  field_name: FrozenComm
+  length: 30
+- name: FrozenTo
+  description: 'Sets or returns the ending date of the period the business partner card is locked (on-hold). Field name: frozenTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~FrozenTo.html
+  field_name: frozenTo
+- name: GlobalLocationNumber
+  description: property GlobalLocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GlobalLocationNumber.html
+- name: GroupCode
+  description: 'Sets or returns the group code for the business partner. Field name: GroupCode . This is a foreign key to the OCRG object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GroupCode.html
+- name: GTSBankAccountNo
+  description: property GTSBankAccountNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GTSBankAccountNo.html
+- name: GTSBillingAddrTel
+  description: property GTSBillingAddrTel
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GTSBillingAddrTel.html
+- name: GTSRegNo
+  description: property GTSRegNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~GTSRegNo.html
+- name: HierarchicalDeduction
+  description: property HierarchicalDeduction
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HierarchicalDeduction.html
+- name: HouseBank
+  description: 'Sets or returns the name of the house bank. Field name: HouseBank . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HouseBank.html
+  length: 30
+- name: HouseBankAccount
+  description: 'Sets or returns the account number of the house bank. Field name: HousBnkAct . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HouseBankAccount.html
+  field_name: HousBnkAct
+  length: 50
+- name: HouseBankBranch
+  description: 'Sets or returns the branch name of the house bank. Field name: HousBnkBrn . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HouseBankBranch.html
+  field_name: HousBnkBrn
+  length: 50
+- name: HouseBankCountry
+  description: 'Sets or returns the country code of the house bank. Field name: HousBnkCry . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HouseBankCountry.html
+  field_name: HousBnkCry
+  length: 3
+- name: HouseBankIBAN
+  description: 'The International Bank Account Number (IBAN) for the house back. Field name: HsBnkIban . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~HouseBankIBAN.html
+  field_name: HsBnkIban
+  length: 50
+- name: IBAN
+  description: 'Sets or returns the International Bank Account Number (IBAN) for the business partner. Field name: IBAN . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~IBAN.html
+  length: 50
+- name: Indicator
+  description: 'Sets or returns the Factoring Indicator for the business partner master record. Field name: Indicator . Length: 2 characters. This is a foreign key to the FactoringIndicators object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Indicator.html
+  length: 2
+- name: Industry
+  description: 'Industries related to the business partner. Field name: IndustryC. Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Industry.html
+  field_name: IndustryC
+  length: 11
+- name: IndustryType
+  description: property IndustryType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~IndustryType.html
+- name: InstructionKey
+  description: 'Sets or returns an instruction key that is used as an additional indicator of the business partner. This key is used in the payment run process. Field name: InstrucKey . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~InstructionKey.html
+  field_name: InstrucKey
+  length: 30
+- name: InsuranceOperation347
+  description: 'Indicates if this business partner is reported with the insurance operation type in 347 reports. Field name: InsurOp347'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~InsuranceOperation347.html
+  field_name: InsurOp347
+- name: InterestAccount
+  description: property InterestAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~InterestAccount.html
+- name: IntrastatExtension
+  description: property IntrastatExtension
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~IntrastatExtension.html
+- name: IntrestRatePercent
+  description: 'Sets or returns the interest percentage rate for delayed payments. In SAP Business One, called Interest on Arrears % . Field name: IntrstRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~IntrestRatePercent.html
+  field_name: IntrstRate
+- name: IPACodeForPA
+  description: property IPACodeForPA
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~IPACodeForPA.html
+- name: ISRBillerID
+  description: 'Sets or returns the ID of the ISR biller. Field name: ISRBillId . Length: 9 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ISRBillerID.html
+  field_name: ISRBillId
+  length: 9
+- name: LanguageCode
+  description: 'Sets or returns the Language Code used by the business partner. Field name: LangCode . This is the foreign key of the UserLanguages object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~LanguageCode.html
+  field_name: LangCode
+- name: LastMultiReconciliationNum
+  description: Not used.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~LastMultiReconciliationNum.html
+- name: LegalText
+  description: 'Legal text. Field name: LegalText . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~LegalText.html
+  length: 254
+- name: LinkedBusinessPartner
+  description: 'Sets or returns the business partner code that is connected to the current business partner. Field name: ConnBP . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~LinkedBusinessPartner.html
+  field_name: ConnBP
+  length: 15
+- name: MailAddress
+  description: 'Sets or returns the street of the Ship To address. Field name: MailAddres . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MailAddress.html
+  field_name: MailAddres
+  length: 100
+- name: MailCity
+  description: 'Sets or returns the city of the Ship To address. Field name: MailCity . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MailCity.html
+  length: 100
+- name: MailCountry
+  description: 'Sets or returns the country of the Ship To address. Field name: MailCounty . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MailCountry.html
+  field_name: MailCounty
+  length: 3
+- name: MailCounty
+  description: 'Sets or returns the county of the Ship To address. Field name: MailCounty . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MailCounty.html
+  length: 100
+- name: MailZipCode
+  description: 'Sets or returns the zip code of the Ship To address. Field name: MailZipCod . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MailZipCode.html
+  field_name: MailZipCod
+  length: 20
+- name: MainUsage
+  description: 'Sets or returns the main usage in the Brazil (BR) localization.. Field name: MainUsage .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MainUsage.html
+- name: MaxAmountOfExemption
+  description: 'Sets or returns the maximum amount of exemption defined in the exemption letter. Field name: MaxAmount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MaxAmountOfExemption.html
+  field_name: MaxAmount
+- name: MaxCommitment
+  description: 'Sets or returns the maximum allowed debt for payments from the business partner. Field name: DebtLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MaxCommitment.html
+  field_name: DebtLine
+- name: MinIntrest
+  description: 'Sets or returns the minimum interest rate for delayed payments. Field name: MinIntrst .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~MinIntrest.html
+  field_name: MinIntrst
+- name: NationalInsuranceNum
+  description: 'Sets or returns the national insurance number of the business partner. Field name: NINum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~NationalInsuranceNum.html
+  field_name: NINum
+  length: 20
+- name: NaturalPer
+  description: 'This shows whether the business partner is natural person or not. Field name: NaturalPer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~NaturalPer.html
+- name: NoDiscounts
+  description: property NoDiscounts
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~NoDiscounts.html
+- name: Notes
+  description: 'Sets or returns the short notes about the business partner. For example, "Customer entitled to preferred treatment" or "No checks". Field name: Notes . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Notes.html
+  length: 100
+- name: NotRelevantForMonthlyInvoice
+  description: 'Excludes marketing documents created for a particular business partner from the monthly invoice. Field name: NotRel4MI .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~NotRelevantForMonthlyInvoice.html
+  field_name: NotRel4MI
+- name: OpenChecksBalance
+  description: property OpenChecksBalance
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OpenChecksBalance.html
+- name: OpenDeliveryNotesBalance
+  description: 'Returns the open balance of delivery notes. Field name: DNotesBal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OpenDeliveryNotesBalance.html
+  field_name: DNotesBal
+- name: OpenOpportunities
+  description: 'Returns the sum of open sales opportunities for a specified customer. Field name: OprCount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OpenOpportunities.html
+  field_name: OprCount
+- name: OpenOrdersBalance
+  description: 'Returns the open balance for open orders. Field name: OrderBalFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OpenOrdersBalance.html
+  field_name: OrderBalFC
+- name: OperationCode347
+  description: 'Operation code for use in 347 reports. Field name: OpCode347'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OperationCode347.html
+  field_name: OpCode347
+- name: OtherReceivablePayable
+  description: 'Returns the additional receivable/payable account of the business partner. Field name: OtrCtlAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OtherReceivablePayable.html
+  field_name: OtrCtlAcct
+  length: 15
+- name: OwnerCode
+  description: property OwnerCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OwnerCode.html
+- name: OwnerIDNumber
+  description: 'Sets or returns the ID number of the credit card owner for payments. Field name: OwnerIdNum . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~OwnerIDNumber.html
+  field_name: OwnerIdNum
+  length: 15
+- name: Pager
+  description: 'Sets or returns the pager number of the contact person. Field name: Pager . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Pager.html
+  length: 30
+- name: PartialDelivery
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies, in the payment terms, whether or not to enable partial delivery. Field name: PartDelivr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PartialDelivery.html
+  field_name: PartDelivr
+- name: Password
+  description: 'Sets or returns the password to use with when connecting to B2B and B2C e-commerce applications. Field name: Password . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Password.html
+  length: 32
+- name: PaymentBlock
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to block a payment due to a reason specified in PaymentBlockDescription property. Field name: PaymBlock .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PaymentBlock.html
+  field_name: PaymBlock
+- name: PaymentBlockDescription
+  description: 'Sets or returns a description of the payment block reason as defined in SAP Business One in ''Define Payment Block'' table. Field name: PyBlckDesc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PaymentBlockDescription.html
+  field_name: PyBlckDesc
+- name: PayTermsGrpCode
+  description: 'Sets or returns the payment terms group number. Field name: GroupNum . This is a foreign key to the PaymentTermsTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PayTermsGrpCode.html
+  field_name: GroupNum
+- name: PeymentMethodCode
+  description: 'Sets or returns the code identifying the method for the movement of payment instructions (such as, check or bank transfer). Field name: PymCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PeymentMethodCode.html
+  field_name: PymCode
+  length: 15
+- name: Phone1
+  description: 'Sets or returns the main phone number of the business partner. Field name: Phone1 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Phone1.html
+  length: 50
+- name: Phone2
+  description: 'Sets or returns the secondary phone number of the business partner. Field name: Phone2 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Phone2.html
+  length: 50
+- name: Picture
+  description: 'Sets or returns a picture file name. Field name: Picture . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Picture.html
+  length: 200
+- name: PlanningGroup
+  description: 'The planning group related to the business partner that reflects certain characteristics, risks, or the type of business relationship. Field name: PlngGroup . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PlanningGroup.html
+  field_name: PlngGroup
+  length: 10
+- name: PriceListNum
+  description: 'Sets or returns the Price List index. Field name: ListNum . This is a foreign key to the PriceLists object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PriceListNum.html
+  field_name: ListNum
+- name: PriceMode
+  description: property PriceMode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PriceMode.html
+- name: Priority
+  description: 'Sets or returns a foreign key to the priority of the business partner payments. The priorities are defined in the BPPriorities object. Field name: Priority . This is a foreign key to the BPPriorities object .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Priority.html
+- name: Profession
+  description: 'Sets or returns the business partner profession. Field name: Profession . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Profession.html
+  length: 50
+- name: ProjectCode
+  description: 'Sets or returns the project code related to the business partner. Field name: ProjectCod . Length: 8 characters. This is a foreign key to the Project table ( OPRJ - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ProjectCode.html
+  field_name: ProjectCod
+  length: 8
+- name: Properties
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner belongs to one or more query groups. Field name: EMChrctrstcs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Properties.html
+  field_name: EMChrctrstcs
+- name: PublicDirectoryStatus
+  description: 'This field defines whether the company is relevant to e-Invoicing or e-Reporting. Field name: PubDirStat . <blank line> (default)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~PublicDirectoryStatus.html
+  field_name: PubDirStat
+- name: RateDiffAccount
+  description: 'Sets or returns the account number used for exchange rate differences. Field name: RateDifAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RateDiffAccount.html
+  field_name: RateDifAct
+  length: 15
+- name: ReferenceDetails
+  description: 'Sets or returns additional information to the house bank details of the business partner. Field name: RefDetails . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ReferenceDetails.html
+  field_name: RefDetails
+  length: 20
+- name: RelationshipCode
+  description: property RelationshipCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RelationshipCode.html
+- name: RelationshipDateFrom
+  description: property RelationshipDateFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RelationshipDateFrom.html
+- name: RelationshipDateTill
+  description: property RelationshipDateTill
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RelationshipDateTill.html
+- name: Remark1
+  description: 'Field name: Remark1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Remark1.html
+- name: RepresentativeName
+  description: property RepresentativeName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RepresentativeName.html
+- name: ResidenNumber
+  description: property ResidenNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ResidenNumber.html
+- name: RoutingCode
+  description: "This is a code used in Franceâ\x80\x99s e-invoicing system to route invoices to the correct recipient platform via the centralized Annuaire directory; it complements the mandatory SIREN number. Field name: RoutingCod ."
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~RoutingCode.html
+  field_name: RoutingCod
+- name: SalesPersonCode
+  description: 'Sets or returns the code (key) of the sales employee who contacts with the business partner (customer type only). Field name: SlpCode . This is a foreign key to the SalesPersons object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SalesPersonCode.html
+  field_name: SlpCode
+- name: Series
+  description: property Series
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Series.html
+- name: ShaamGroup
+  description: property ShaamGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ShaamGroup.html
+- name: ShippingType
+  description: 'Sets or returns the code of the shipping type (such as, Courier or Air Cargo). Field name: ShipType . This is a foreign key to the ShippingTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ShippingType.html
+  field_name: ShipType
+- name: ShipToBuildingFloorRoom
+  description: 'Sets or returns a memo type string that specifies additional details of the Ship To address, such as building number, floor number, and room number. Field name: MailBuildi . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ShipToBuildingFloorRoom.html
+  field_name: MailBuildi
+- name: ShipToDefault
+  description: 'Sets or returns the default Ship To address name. Field name: ShipToDef . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ShipToDefault.html
+  field_name: ShipToDef
+  length: 50
+- name: SinglePayment
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether the business partner must pay invoices in single payment or few partial payments. Field name: SinglePaym .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SinglePayment.html
+  field_name: SinglePaym
+- name: SirenNumber
+  description: 'This is a French business identifier. SIREN (9 digits) identifies a company. Field name: SirenNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SirenNumber.html
+  field_name: SirenNo
+- name: SiretNumber
+  description: 'This is a French business identifier. SIRET (14 digits) identifies a specific establishment. Field name: SiretNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SiretNumber.html
+  field_name: SiretNo
+- name: SubjectToWithholdingTax
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the transactions with the business partner are subject to Withholding tax. Field name: WTLiable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SubjectToWithholdingTax.html
+  field_name: WTLiable
+- name: SurchargeOverlook
+  description: 'Indicates whether the surcharge threshold specified in the withholding tax code is ignored. Field name: SurOver'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~SurchargeOverlook.html
+  field_name: SurOver
+- name: TaxExemptionLetterNum
+  description: 'Returns the number of the tax exemption letter. Used in invoice documents. Field name: LetterNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~TaxExemptionLetterNum.html
+  field_name: LetterNum
+  length: 20
+- name: TaxRoundingRule
+  description: 'Sets or returns a valid value that specifies the rounding rule type for tax amounts. The options include: Company Default, Rounding Off, Rounding Up, and Rounding Down. This property is applicable for cluster B only (country-specific for Japan and Korea).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~TaxRoundingRule.html
+- name: Territory
+  description: 'Sets or returns the business partner territory as defined in SAP Business One. Relevant to business partners of customer type only. Field name: Territory . This is a foreign key to the Territories object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Territory.html
+- name: ThresholdOverlook
+  description: 'Indicates whether the TDS threshold specified in the withholding tax code is ignored. Field name: ThreshOver'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ThresholdOverlook.html
+  field_name: ThreshOver
+- name: TypeOfOperation
+  description: property TypeOfOperation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~TypeOfOperation.html
+- name: TypeReport
+  description: 'Specifies the type of nature of assessee (for TDS withholding tax reports). Field name: TypWTReprt'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~TypeReport.html
+  field_name: TypWTReprt
+- name: UnifiedFederalTaxID
+  description: property UnifiedFederalTaxID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UnifiedFederalTaxID.html
+- name: UnpaidBillofExchange
+  description: 'Sets or returns G/L account number for the Unpaid Bill of Exchange payments. Field name: UnpaidBoE . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UnpaidBillofExchange.html
+  field_name: UnpaidBoE
+  length: 15
+- name: UpdateDate
+  description: 'The date when the business partner master data updated. Field name: UpdateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UpdateDate.html
+- name: UpdateTime
+  description: 'The timestamp of the business partner master data updated is recorded in the hhmmss format. Field name: UpdateTS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UpdateTime.html
+  field_name: UpdateTS
+- name: UseBillToAddrToDetermineTax
+  description: property UseBillToAddrToDetermineTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UseBillToAddrToDetermineTax.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UserFields.html
+- name: UseShippedGoodsAccount
+  description: property UseShippedGoodsAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~UseShippedGoodsAccount.html
+- name: Valid
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner record is active. Field name: validFor .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Valid.html
+  field_name: validFor
+- name: ValidFrom
+  description: 'Sets or returns the start date of the business partner activity period. Field name: validFor .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ValidFrom.html
+  field_name: validFor
+- name: ValidRemarks
+  description: 'Sets or returns the remarks for the business partner activity period. Field name: ValidComm . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ValidRemarks.html
+  field_name: ValidComm
+  length: 30
+- name: ValidTo
+  description: 'Sets or returns the end date of the business partner activity period. Field name: ValidTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ValidTo.html
+- name: VATExemptionReason
+  description: 'This is based on the PEPPOL VATEX code list, allowing you to select a standardized reason for VAT exemption in the Tax Exemption Letter section. Field name: VATEX .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VATExemptionReason.html
+  field_name: VATEX
+- name: VatGroup
+  description: 'Sets or returns the VAT group for the business partner. Field name: VatGroup . Length: 8 characters. This is a foreign key to the SalesTaxCodes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VatGroup.html
+  length: 8
+- name: VatGroupLatinAmerica
+  description: 'Sets or returns the VAT group for the business partner. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VatGroupLatinAmerica.html
+  length: 8
+- name: VatIDNum
+  description: property VatIDNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VatIDNum.html
+- name: VatLiable
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the transactions with the business partner are subject to VAT. Field name: VatStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VatLiable.html
+  field_name: VatStatus
+- name: VATRegistrationNumber
+  description: property VATRegistrationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VATRegistrationNumber.html
+- name: VerificationNumber
+  description: 'Sets or returns the verification number of the withholding tax. Country-specific for UK. Field name: VerifNum ). Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~VerificationNumber.html
+  field_name: VerifNum
+  length: 32
+- name: Website
+  description: 'Sets or returns the Internet address of the business partner. Field name: IntrntSite . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~Website.html
+  field_name: IntrntSite
+  length: 100
+- name: WithholdingTaxCertified
+  description: property WithholdingTaxCertified
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~WithholdingTaxCertified.html
+- name: WithholdingTaxDeductionGroup
+  description: 'The type of vendor for withholding tax purposes. Field name: DdgKey This is a foreign key to the DeductionTaxGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~WithholdingTaxDeductionGroup.html
+  field_name: DdgKey
+- name: WTCode
+  description: 'Sets or returns the withholding tax code assigned to the business partner. Field name: WTCode . Length: 4 characters. This is a foreign key to the WithholdingTaxCodes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~WTCode.html
+  length: 4
+- name: ZipCode
+  description: 'Sets or returns the zip code of the Bill To address, which is the address of the physical location of the business partner. Field name: ZipCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartners~ZipCode.html
+  length: 20

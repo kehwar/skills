@@ -1,0 +1,34 @@
+name: MessageDataColumn
+title: MessageDataColumn Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn.html
+description: 'MessageDataColumn is a data structure related to the MessagesService . It enables to add one data column to the data columns collection. The MessageDataColumn object contains the title of the column and whether or not it includes a link to a document. Source table: ALR2 .'
+remarks: 'To display the form in the application: - From the main menu bar, click the Message/Alert Overview icon. Select the Data tab.'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~ToXMLString.html
+properties:
+- name: ColumnName
+  description: 'Sets or returns the column name in the message. Field name: ColName . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~ColumnName.html
+  field_name: ColName
+  length: 30
+- name: Link
+  description: 'Determines whether or not to display a Link button in the data column. For example, link to a specified invoice. If the Link property is set to tYES , the object type ( Object ) and document key ( ObjectKey ) must be specified in the MessageDataLine object. Field name: Link .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~Link.html
+- name: MessageDataLines
+  description: Sets or returns the MessageDataLines collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumn~MessageDataLines.html

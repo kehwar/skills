@@ -1,0 +1,231 @@
+name: BankStatementRow
+title: BankStatementRow Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow.html
+description: 'A data structure related to the BankStatementService holding the properties of a bank statement line. Access this object via BankStatement.BankStatementRows . Source table: OBNK'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ToXMLString.html
+properties:
+- name: AccountName
+  description: 'Returns the G/L account name of the business partner as defined in Chart of Accounts. Field name: AcctName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~AccountName.html
+  field_name: AcctName
+  length: 100
+- name: AccountNumber
+  description: 'Sets or returns the G/L account code of the business partner as defined in Chart of Accounts. Field name: AcctCode . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~AccountNumber.html
+  field_name: AcctCode
+  length: 15
+- name: Balance
+  description: 'Returns or sets account balance. Field name: balance.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~Balance.html
+  field_name: balance
+- name: BankStmtDueDate
+  description: 'Sets or returns the statement due date. Field name: BSValuDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BankStmtDueDate.html
+  field_name: BSValuDate
+- name: BankStmtLineDate
+  description: 'Sets or returns the line date. Field name: BSLineDate.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BankStmtLineDate.html
+  field_name: BSLineDate
+- name: BPBankAccount
+  description: 'Sets or returns the business partner bank account. Field name: OposAct.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BPBankAccount.html
+  field_name: OposAct
+- name: BPBankCode
+  description: 'Sets or returns the business partner bank code. Field name: BpBankCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BPBankCode.html
+  field_name: BpBankCode
+- name: BPBICSwiftCode
+  description: "The BIC/SWIFT code of the business partner bank account as defined in the Business Partner Bank Accounts â\x80\x93 Setup window. Field name: BPswift . Length: 50 characters."
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BPBICSwiftCode.html
+  field_name: BPswift
+  length: 50
+- name: BPCode
+  description: 'Sets or returns the business partner identification number in SAP Business One. Field name: CardCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BPCode.html
+  field_name: CardCode
+  length: 15
+- name: BPName
+  description: 'Sets or returns the name of the existing business partner. Field name: CardName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~BPName.html
+  field_name: CardName
+  length: 100
+- name: CreateMethod
+  description: 'Returns a value specifying whether the statement was created automatically or manualy. Field name: autoCreate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~CreateMethod.html
+  field_name: autoCreate
+- name: CreditAmountFC
+  description: 'Sets or returns the amount in foreign currency to credit the account. Field name: CredAmnt . Mandatory field in SAP Business One, if the amount is to credit the account.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~CreditAmountFC.html
+  field_name: CredAmnt
+- name: CreditAmountLC
+  description: 'Sets or returns the amount in local currency to credit the account. Field name: CredAmntLC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~CreditAmountLC.html
+  field_name: CredAmntLC
+- name: CreditCurrency
+  description: 'Sets or returns the credit currency. Field name: CredAmntCu .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~CreditCurrency.html
+  field_name: CredAmntCu
+- name: DebitAmountFC
+  description: 'Sets or returns the amount in foreign currency to debit the account. Field name: DebAmount . Mandatory field in SAP Business One, if the amount is to debit the account.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~DebitAmountFC.html
+  field_name: DebAmount
+- name: DebitAmountLC
+  description: 'Sets or returns the amount in local currency to debit the account. Field name: DebAmountLC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~DebitAmountLC.html
+  field_name: DebAmountLC
+- name: Details
+  description: 'Sets or returns the details of a line in the bank statement. Field name: Memo . Length: 255 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~Details.html
+  field_name: Memo
+  length: 255
+- name: Details2
+  description: 'Sets or returns the details of a line in the bank statement. Field name: Memo2 . Length: 255 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~Details2.html
+  field_name: Memo2
+  length: 255
+- name: DocNumType
+  description: 'Sets or returns a boolean value that specifies the document type for identifying an invoice document. Field name: DocNumType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~DocNumType.html
+- name: DocumentType
+  description: 'Returns a value specifying the document type of the bank statement draft. Field name: ObjCrtType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~DocumentType.html
+  field_name: ObjCrtType
+- name: DueDate
+  description: 'Sets or returns the due date in a bank statement row. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~DueDate.html
+- name: ExchangeRate
+  description: 'Sets or returns the exchange rate for foreign currency. Field name: ExchngRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ExchangeRate.html
+  field_name: ExchngRate
+- name: ExternalBankStatementNo
+  description: 'Sets or returns the number of the bank statement. Field name: IdNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ExternalBankStatementNo.html
+  field_name: IdNumber
+- name: ExternalCode
+  description: 'Sets or returns the external code. Field name: ExternCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ExternalCode.html
+  field_name: ExternCode
+  length: 30
+- name: FeeDistributionRule
+  description: 'The distribution rule of the bank statement fee. Field name: FeeProfitC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeDistributionRule.html
+  field_name: FeeProfitC
+- name: FeeDistributionRule2
+  description: 'The multiple distribution rule of the bank statement fee. Field name: FeeProfit2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeDistributionRule2.html
+  field_name: FeeProfit2
+- name: FeeDistributionRule3
+  description: 'The multiple distribution rule of the bank statement fee. Field name: FeeProfit3 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeDistributionRule3.html
+  field_name: FeeProfit3
+- name: FeeDistributionRule4
+  description: 'The multiple distribution rule of the bank statement fee. Field name: FeeProfit4 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeDistributionRule4.html
+  field_name: FeeProfit4
+- name: FeeDistributionRule5
+  description: 'The multiple distribution rule of the bank statement fee. Field name: FeeProfit5 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeDistributionRule5.html
+  field_name: FeeProfit5
+- name: FeeOnTheLine
+  description: 'Sets or returns the fee amount on the statement. Field name: Fee .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeOnTheLine.html
+  field_name: Fee
+- name: FeeProfitCenter
+  description: 'Returns the profit center of the bank statement fee. Field name: FeeProfitC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeProfitCenter.html
+  field_name: FeeProfitC
+- name: FeeProject
+  description: 'Returns the project to which the fee is associated. Field name: FeeProj .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FeeProject.html
+  field_name: FeeProj
+- name: FolioNumber
+  description: property FolioNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FolioNumber.html
+- name: FolioPrefixString
+  description: property FolioPrefixString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~FolioPrefixString.html
+- name: GLAccountforFee
+  description: 'Returns the account for the fee. Field name: FeeAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~GLAccountforFee.html
+  field_name: FeeAct
+- name: IBANofBPBankAccount
+  description: 'Sets or returns the IBAN number of the business partner bank account. Field name: BPIBAN .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~IBANofBPBankAccount.html
+  field_name: BPIBAN
+- name: InternalBankOpCode
+  description: 'Returns the bank code in SAP Business One associated with the external bank code specified in BankStatementRow.ExternalCode . Field name: InOpCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~InternalBankOpCode.html
+  field_name: InOpCode
+- name: JournalEntryID
+  description: 'Returns the ID number of the bank statement journal entry. Field name: JDTID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~JournalEntryID.html
+  field_name: JDTID
+- name: MultiplePayments
+  description: Returns reference to multiple payments properties set to the bank statement line.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~MultiplePayments.html
+- name: PaymentID
+  description: Returns the ID number of the bank statement payment.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~PaymentID.html
+- name: PaymentReferenceNo
+  description: 'Sets or returns the payment reference that authorizes the payment process (according to the legal requirements). Field name: PaymentRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~PaymentReferenceNo.html
+  field_name: PaymentRef
+  length: 27
+- name: PostingMethod
+  description: 'Returns a value that specifies the posting method that the system uses to create transactions after they are identified by their internal code. Field name: PstMethod .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~PostingMethod.html
+  field_name: PstMethod
+- name: ReconciliationNo
+  description: 'Returns the statement reconciliation number. Field name: BankMatch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~ReconciliationNo.html
+  field_name: BankMatch
+- name: Reference
+  description: 'Sets or returns the reference number in the bank statement row. Length: 8 characters. Field name: PaymentRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~Reference.html
+  field_name: PaymentRef
+  length: 8
+- name: RowStatus
+  description: Returns the bank statement row status.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~RowStatus.html
+- name: SequenceNo
+  description: 'Returns the sequential number used, together with AccountCode , for identifying the bank account. Field name: Sequence .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~SequenceNo.html
+  field_name: Sequence
+- name: Source
+  description: property Source
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~Source.html
+- name: StatementNumber
+  description: 'Sets or returns the number of the bank statement. Field name: StatemNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~StatementNumber.html
+  field_name: StatemNo
+- name: UserFields
+  description: property UserFields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~UserFields.html
+- name: VATAmountFC
+  description: 'Sets or returns the amount of VAT in foreign currency. Field name: VatAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~VATAmountFC.html
+  field_name: VatAmntFC
+- name: VATAmountLC
+  description: 'Sets or returns the amount of VAT in local currency. Field name: VatAmntLC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~VATAmountLC.html
+  field_name: VatAmntLC
+- name: VisualOrder
+  description: 'Sets or returns the appearance order of the bank statement line. Field name: VisOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementRow~VisualOrder.html
+  field_name: VisOrder

@@ -1,0 +1,31 @@
+name: EmployeeRolesSetupService
+title: EmployeeRolesSetupService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService.html
+description: 'The EmployeeRolesSetupService service enables you to add, look up and remove roles in the employee roles master data table. To see the list of employee roles and create a new one, select Human Resources --> Employee Master Data , and select the Membership tab. Source table: OHTY'
+remarks: This service affects the employee roles master data. The role for a specific employee can be retrieved from the EmployeeRolesInfo object of an employee's EmployeesInfo object. System roles have their Locked field set to Y . System roles cannot be updated or deleted.
+methods:
+- name: AddEmployeeRoleSetup
+  description: Adds an employee role.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~AddEmployeeRoleSetup.html
+- name: DeleteEmployeeRoleSetup
+  description: Deletes an existing employee role. The role is specified by its key ( TypeID ), which is contained in the EmployeeRoleSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~DeleteEmployeeRoleSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the EmployeeRolesSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~GetDataInterfaceFromXMLString.html
+- name: GetEmployeeRoleSetup
+  description: Retrieves a specific employee role. The role is specified by its key ( TypeID ), which is contained in the EmployeeRoleSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~GetEmployeeRoleSetup.html
+- name: GetEmployeeRoleSetupList
+  description: Retrieves the keys and names of all the employee roles.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~GetEmployeeRoleSetupList.html
+- name: UpdateEmployeeRoleSetup
+  description: Updates an existing employee role. The data for the role, including the key of the role to be updated, is contained in the EmployeeRoleSetup passed to the method. To update a role, you must first retrieve it using the GetEmployeeRoleSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeRolesSetupService~UpdateEmployeeRoleSetup.html

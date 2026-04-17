@@ -1,0 +1,628 @@
+name: PeriodCategory
+title: PeriodCategory Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory.html
+description: 'The PeriodCategory object is a data structure related to the CompanyService . The PeriodCategory object provides two types of properties: Properties that access existing Accounts and function as foreign keys to ChartOfAccounts Object. Properties that defines new accounts by using Posting and Sub-Period definitions.'
+remarks: 'Mandatory field in SAP Business One: PeriodCategory . To create a new period category through the application: - Select Administration --> System Initialization --> General Settings --> Posting Periods tab. Click the New Period button. When creating a new period category, the system sets new G/L accounts related for this period category. To display the G/L Accounts related to the new period category: - Select Administration --> System Initialization --> General Settings --> Posting Periods tab. - Select the new period entry and then click the Set as Current button. - Select Administration --> Setup --> Financials --> G/L Account Determination .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ToXMLString.html
+properties:
+- name: AccountforCashReceipt
+  description: 'Sets or returns the code of the Cash Receipt account Field name: LinkAct_3 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~AccountforCashReceipt.html
+  field_name: LinkAct_3
+  length: 15
+- name: AccountforCreditMemoPayme
+  description: 'Sets or returns the code of the Credit Memo Payment account Field name: LinkAct_13 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~AccountforCreditMemoPayme.html
+  field_name: LinkAct_13
+  length: 15
+- name: AccountforOutgoingChecks
+  description: 'Sets or returns the code of the Account for Outgoing Checks account. Field name: LinkAct_2 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~AccountforOutgoingChecks.html
+  field_name: LinkAct_2
+  length: 15
+- name: AcountforOpeningWHBalance
+  description: 'Sets or returns the code of the Acount for Opening WH Balance account. Field name: DftStockOB . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~AcountforOpeningWHBalance.html
+  field_name: DftStockOB
+  length: 15
+- name: AllocationAcc
+  description: 'Sets or returns the code of the AllocationAcc account. Field name: AlocCstAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~AllocationAcc.html
+  field_name: AlocCstAct
+  length: 15
+- name: APCashDiscountAccount
+  description: 'Sets or returns the code of the A/P Cash Discount Account . Field name: LinkAct_19 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APCashDiscountAccount.html
+  field_name: LinkAct_19
+  length: 15
+- name: APCashDiscountInterim
+  description: property APCashDiscountInterim
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APCashDiscountInterim.html
+- name: APExRateInterim
+  description: property APExRateInterim
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APExRateInterim.html
+- name: APGainRealizedConversionDiff
+  description: 'Sets or returns the code of the A/P Gain Realized Conversion Diff. account. Field name: APConDiffG . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APGainRealizedConversionDiff.html
+  field_name: APConDiffG
+  length: 15
+- name: APGainRealizedExchngeDif
+  description: 'Sets or returns the code of the A/P Gain Realized Exch. Diff. account. Field name: LinkAct_25 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APGainRealizedExchngeDif.html
+  field_name: LinkAct_25
+  length: 15
+- name: APLossCashDiscountAccount
+  description: 'Sets or returns the code of the A/P Loss Cash Discount Account . Field name: LinkAct_20 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APLossCashDiscountAccount.html
+  field_name: LinkAct_20
+  length: 15
+- name: APLossRealizedConversionDiff
+  description: 'Sets or returns the code of the A/P Loss Realized Conversion Diff. account. Field name: APConDiffL . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APLossRealizedConversionDiff.html
+  field_name: APConDiffL
+  length: 15
+- name: APLossRealizedExchangeDif
+  description: 'Sets or returns the code of the A/P Loss Realized Exch. account. Field name: LinkAct_21 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~APLossRealizedExchangeDif.html
+  field_name: LinkAct_21
+  length: 15
+- name: ARCashDiscountAccount
+  description: 'Sets or returns the code of the A/R Cash Discount Account . Field name: LinkAct_22 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARCashDiscountAccount.html
+  field_name: LinkAct_22
+  length: 15
+- name: ARCashDiscountInterim
+  description: property ARCashDiscountInterim
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARCashDiscountInterim.html
+- name: ARExRateInterim
+  description: property ARExRateInterim
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARExRateInterim.html
+- name: ARGainRealizedConversionDiff
+  description: 'Sets or returns the code of the A/R Gain Realized Conversion Diff. account. Field name: ARConDiffG . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARGainRealizedConversionDiff.html
+  field_name: ARConDiffG
+  length: 15
+- name: ARGainRealizedExchngeDif
+  description: 'Sets or returns the code of the A/R Gain Realized Exchnge Dif .account. Field name: LinkAct_25 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARGainRealizedExchngeDif.html
+  field_name: LinkAct_25
+  length: 15
+- name: ARLossRealizedConversionDiff
+  description: 'Sets or returns the code of the A/R Loss Realized Conversion Diff. account. Field name: ARConDiffL . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARLossRealizedConversionDiff.html
+  field_name: ARConDiffL
+  length: 15
+- name: ARLossRealizedExchangeDi
+  description: 'Sets or returns the code of the A/R Loss Realized Exch. Diff. account. Field name: LinkAct_23 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ARLossRealizedExchangeDi.html
+  field_name: LinkAct_23
+  length: 15
+- name: BeginningofFinancialYear
+  description: 'Sets or returns the code of the A/P Gain Realized Exch. Diff. . account Field name: LinkAct_25 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~BeginningofFinancialYear.html
+  field_name: LinkAct_25
+  length: 15
+- name: BillofExchangeAccountsRece
+  description: 'Sets or returns the code of the A/R Gain Realized Exch. Diff. . account Field name: LinkAct_26 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~BillofExchangeAccountsRece.html
+  field_name: LinkAct_26
+  length: 15
+- name: BoEAccountsPayable
+  description: 'Sets or returns the code of the BoE Accounts Payable . account Field name: VAsstBoEPy . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~BoEAccountsPayable.html
+  field_name: VAsstBoEPy
+  length: 15
+- name: BoEAccountsPayable2
+  description: 'Sets or returns the code of the BoE Accounts Payable account. Field name: VAsstBoEPy . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~BoEAccountsPayable2.html
+  field_name: VAsstBoEPy
+  length: 15
+- name: CommissionAccountDefault
+  description: 'Sets or returns the code of the Commission Account Default account. Field name: ComissAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CommissionAccountDefault.html
+  field_name: ComissAct
+  length: 15
+- name: CostOfGoodsSold
+  description: 'Sets or returns the code of the Cost Of Goods Sold account. Field name: COGM_Act . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CostOfGoodsSold.html
+  field_name: COGM_Act
+  length: 15
+- name: CostofSaleRevaluationAcct
+  description: 'Sets or returns the code of the Cost of Sale Revaluation Acct . account Field name: CostRevAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CostofSaleRevaluationAcct.html
+  field_name: CostRevAct
+  length: 15
+- name: CostofSaleRevOffsetAcct
+  description: 'Sets or returns the code of the Cost of Sale Rev. Offset Acct account. Field name: CostOffAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CostofSaleRevOffsetAcct.html
+  field_name: CostOffAct
+  length: 15
+- name: CreditorsFollowUpAccount
+  description: 'Sets or returns the code of the Creditors Follow-Up Account . Field name: LinkAct_10 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CreditorsFollowUpAccount.html
+  field_name: LinkAct_10
+  length: 15
+- name: CustBillofExchangeonC
+  description: 'Sets or returns the code of the Customer BoE on Collection . Field name: CBoEOnClct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustBillofExchangeonC.html
+  field_name: CBoEOnClct
+  length: 15
+- name: CustomerBillofExchangePres
+  description: 'Sets or returns the code of the Customer Bill of Exchange Pres account. Field name: CBoEPresnt . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomerBillofExchangePres.html
+  field_name: CBoEPresnt
+  length: 15
+- name: CustomerBillofExchngeDisc
+  description: 'Sets or returns the code of the Customer Bill of Exchange Disc account. Field name: CBoEDiscnt . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomerBillofExchngeDisc.html
+  field_name: CBoEDiscnt
+  length: 15
+- name: CustomerDoubtfulDebtsAcct
+  description: 'Sets or returns the code of the Customer Doubtful Debts Acct account. Field name: COpenDebts . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomerDoubtfulDebtsAcct.html
+  field_name: COpenDebts
+  length: 15
+- name: CustomerDownPaymentsAccount
+  description: 'Sets or returns the code of the Down Payment Sales Clearing Ac account. Field name: CDownPymnt . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomerDownPaymentsAccount.html
+  field_name: CDownPymnt
+  length: 15
+- name: CustomersDeductionatSource
+  description: 'Sets or returns the code of the Customer''s Deduction at Source account. Field name: LinkAct_6 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomersDeductionatSource.html
+  field_name: LinkAct_6
+  length: 15
+- name: CustomerUnpaidBoE
+  description: 'Sets or returns the code of the Customer Unpaid BoE . account Field name: CUnpaidBoE . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~CustomerUnpaidBoE.html
+  field_name: CUnpaidBoE
+  length: 15
+- name: DebitorsFollowUpAccount
+  description: 'Sets or returns the code of the Debitors Follow-Up Account . Field name: LinkAct_1 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DebitorsFollowUpAccount.html
+  field_name: LinkAct_1
+  length: 15
+- name: DecreaseGLAcc
+  description: 'Sets or returns the code of the BoE Accounts Payable account. Field name: VAsstBoEPy . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DecreaseGLAcc.html
+  field_name: VAsstBoEPy
+  length: 15
+- name: DefaultSaleAccount
+  description: 'Sets or returns the code of the Default Sale Account account. Field name: DfltIncom . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DefaultSaleAccount.html
+  field_name: DfltIncom
+  length: 15
+- name: DownPaymentPClearingAcct
+  description: 'Sets or returns the code of the Down Payment Purchasing Clearing account. Field name: DpmPurAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DownPaymentPClearingAcct.html
+  field_name: DpmPurAct
+  length: 15
+- name: DownPaymentSClearingAcct
+  description: 'Sets or returns the code of the Down Payment Sales Clearing Ac account. Field name: DpmSalAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DownPaymentSClearingAcct.html
+  field_name: DpmSalAct
+  length: 15
+- name: DownPaymentVATAcctPurch
+  description: 'Sets or returns the code of the Down Payment VAT Acct Purchasing account. Field name: PurcVatOff . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DownPaymentVATAcctPurch.html
+  field_name: PurcVatOff
+  length: 15
+- name: DownPaymentVATAcctSale
+  description: 'Sets or returns the code of the Down Payment VAT Acct Sales account. Field name: SaleVatOff . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DownPaymentVATAcctSale.html
+  field_name: SaleVatOff
+  length: 15
+- name: DunningFeeAccount
+  description: property DunningFeeAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DunningFeeAccount.html
+- name: DunningInterestAccount
+  description: property DunningInterestAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~DunningInterestAccount.html
+- name: EOYControlAccount
+  description: 'Sets or returns the code of the EoY Control Account &. Field name: LinkAct_28 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~EOYControlAccount.html
+  field_name: LinkAct_28
+  length: 15
+- name: EUAccountsPayable
+  description: 'The EU accounts payable account. Field name: EUPayAct. This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~EUAccountsPayable.html
+  field_name: EUPayAct
+  length: 15
+- name: EUAccountsReceivable
+  description: 'The EU accounts payable account. Field name: EURecvAct. This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~EUAccountsReceivable.html
+  field_name: EURecvAct
+  length: 15
+- name: EUExpenseAccount
+  description: 'Sets or returns the code of the EU Expense Account . Field name: ECExepnses . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~EUExpenseAccount.html
+  field_name: ECExepnses
+  length: 15
+- name: EUPurchaseCreditAcc
+  description: 'Sets or returns the code of the EU Purchase Credit Acct account. Field name: APCMEUAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~EUPurchaseCreditAcc.html
+  field_name: APCMEUAct
+  length: 15
+- name: ExchangeRateDifferencesAcct
+  description: 'Sets or returns the code of the Exchange Rate Differences Acct account. Field name: ExDiffAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExchangeRateDifferencesAcct.html
+  field_name: ExDiffAct
+  length: 15
+- name: ExemptedCredits
+  description: 'Sets or returns the code of the Tax Exempt Credits account. Field name: ARCMExpAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExemptedCredits.html
+  field_name: ARCMExpAct
+  length: 15
+- name: ExhRatesDiffAcctLnWTax
+  description: property ExhRatesDiffAcctLnWTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExhRatesDiffAcctLnWTax.html
+- name: ExpenseAccountDefault
+  description: 'Sets or returns the code of the Expense Account Default account. Field name: DfltExpn . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExpenseAccountDefault.html
+  field_name: DfltExpn
+  length: 15
+- name: ExpenseClearingAccount
+  description: 'Sets or returns the code of the Expense Clearing Account . Field name: ExpClrAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExpenseClearingAccount.html
+  field_name: ExpClrAct
+  length: 15
+- name: ExpenseOffsetAccount
+  description: 'Sets or returns the code of the Expense Offset Account . Field name: ExpOfstAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExpenseOffsetAccount.html
+  field_name: ExpOfstAct
+  length: 15
+- name: ExpensesAccountForeign
+  description: 'Sets or returns the code of the Expenses Account Foreign account. Field name: ForgnExpn . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExpensesAccountForeign.html
+  field_name: ForgnExpn
+  length: 15
+- name: ExpenseVarianceAccount
+  description: 'Sets or returns the code of the Expense Variance Account . Field name: ExpVarAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ExpenseVarianceAccount.html
+  field_name: ExpVarAct
+  length: 15
+- name: FinancialYear
+  description: 'Sets or returns the beginning of financial year date. Field name: FinancYear .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FinancialYear.html
+  field_name: FinancYear
+- name: ForeignAccountsReceivables
+  description: 'Sets or returns the code of the Foreign Accounts Receivables account. This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ForeignAccountsReceivables.html
+  length: 15
+- name: ForeignPurchaseCreditAcc
+  description: 'Sets or returns the code of the Foreign Purchase Credit Acct account. Field name: APCMFrnAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ForeignPurchaseCreditAcc.html
+  field_name: APCMFrnAct
+  length: 15
+- name: FromDocumentDate
+  description: 'Sets or returns the code of the Document Date From account. Field name: F_TaxDate . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FromDocumentDate.html
+  field_name: F_TaxDate
+  length: 15
+- name: FromDueDate
+  description: 'Sets or returns the Due Date From of the account. Field name: F_DueDate . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FromDueDate.html
+  field_name: F_DueDate
+  length: 15
+- name: FromPostingDate
+  description: 'Sets or returns the code of the Posting Date From account. Field name: F_RefDate . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~FromPostingDate.html
+  field_name: F_RefDate
+  length: 15
+- name: GLGainRealizedConversionDiff
+  description: 'Sets or returns the code of the G /L Gain Realized Conversion Diff. account. Field name: GLConDiffG . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~GLGainRealizedConversionDiff.html
+  field_name: GLConDiffG
+  length: 15
+- name: GLLossRealizedConversionDiff
+  description: 'Sets or returns the code of the G /L Gain Realized Conversion Diff. account. Field name: GLConDiffG . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~GLLossRealizedConversionDiff.html
+  field_name: GLConDiffG
+  length: 15
+- name: GLRevaluationOffsetAccount
+  description: 'Sets or returns the code of the G/L Revaluation Offset Account account. Field name: GlRvOffAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~GLRevaluationOffsetAccount.html
+  field_name: GlRvOffAct
+  length: 15
+- name: GoodsClearingAcc
+  description: 'Sets or returns the code of the Goods Clearing Acct account. Field name: BalanceAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~GoodsClearingAcc.html
+  field_name: BalanceAct
+  length: 15
+- name: IncreaseGLAccount
+  description: 'Sets or returns the code of the G/L Increase Acct account. Field name: IncresGlAc . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~IncreaseGLAccount.html
+  field_name: IncresGlAc
+  length: 15
+- name: InputTaxAccount
+  description: 'Sets or returns the code of the Input Tax Account . Field name: LinkAct_14 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~InputTaxAccount.html
+  field_name: LinkAct_14
+  length: 15
+- name: InventoryOffsetDecrease
+  description: 'Sets or returns the code of the Inventory Offset - Decrease account. Field name: DfltLoss . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~InventoryOffsetDecrease.html
+  field_name: DfltLoss
+  length: 15
+- name: InventoryOffsetIncrease
+  description: 'Sets or returns the code of the Inventory Offset - Increase account. Field name: DfltProfit . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~InventoryOffsetIncrease.html
+  field_name: DfltProfit
+  length: 15
+- name: InventoryOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to an inventory account used within production transactions and for change of value of the inventory account during the production process. Field name: StockOffst. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~InventoryOffsetProfitAndLossAccount.html
+  field_name: StockOffst
+  length: 15
+- name: InvoicePaymentBP
+  description: 'Sets or returns the code of the Invoice and Payment BP account. Field name: DfltCard . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~InvoicePaymentBP.html
+  field_name: DfltCard
+  length: 15
+- name: NegativeInventoryAdjustmentAccount
+  description: 'Sets or returns the code of the Negative Stock Adjustment account. Field name: NegStckAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~NegativeInventoryAdjustmentAccount.html
+  field_name: NegStckAct
+  length: 15
+- name: NumberOfPeriods
+  description: 'Sets or returns the Number Of Sub Periods defined in current account. Field name: PeriodNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~NumberOfPeriods.html
+  field_name: PeriodNum
+- name: OpeningBalancesAccount
+  description: 'Sets or returns the code of the Opening Balance Account . Field name: LinkAct_18 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OpeningBalancesAccount.html
+  field_name: LinkAct_18
+  length: 15
+- name: OutgoingCashAccount
+  description: 'Sets or returns the code of the Outgoing Cash Account . Field name: LinkAct_12 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OutgoingCashAccount.html
+  field_name: LinkAct_12
+  length: 15
+- name: OutgoingChecksAccount
+  description: 'Sets or returns the code of the Account for Outgoing Checks . account Field name: LinkAct_2 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OutgoingChecksAccount.html
+  field_name: LinkAct_2
+  length: 15
+- name: OutgoingTaxAccount
+  description: 'Sets or returns the code of the outgoing tax account. Field name: LinkAct_5 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OutgoingTaxAccount.html
+  field_name: LinkAct_5
+  length: 15
+- name: OverpaymentsAPAccount
+  description: 'Sets or returns the code of the Overpayment A/P Account . Field name: OverpayAP . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OverpaymentsAPAccount.html
+  field_name: OverpayAP
+  length: 15
+- name: OverpaymentsARAccount
+  description: 'Sets or returns the code of the Overpayment A/P Account . Field name: OverpayAP . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~OverpaymentsARAccount.html
+  field_name: OverpayAP
+  length: 15
+- name: PeriodCategory
+  description: 'Sets or returns the Period Category of current account. Field name: PeriodCat . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PeriodCategory.html
+  field_name: PeriodCat
+  length: 10
+- name: PeriodName
+  description: 'Sets or returns the PeriodName of the account. Field name: period . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PeriodName.html
+  field_name: period
+  length: 20
+- name: PriceDifferenceAccount
+  description: 'Sets or returns the code of the Price Difference Account . Field name: PricDifAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PriceDifferenceAccount.html
+  field_name: PricDifAct
+  length: 15
+- name: PurchaseAccount
+  description: 'Sets or returns the code of the Purchase Account account. Field name: PurchseAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseAccount.html
+  field_name: PurchseAct
+  length: 15
+- name: PurchaseCreditAcc
+  description: 'Sets or returns the code of the Purchase Credit Acct . account Field name: APCMAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseCreditAcc.html
+  field_name: APCMAct
+  length: 15
+- name: PurchaseDownPaymentInterimAccount
+  description: The default G/L account for A/P down payments. When creating a vendor business partner, the DownPaymentInterimAccount property is automatically set to this account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseDownPaymentInterimAccount.html
+- name: PurchaseInterimAcctLnWTax
+  description: property PurchaseInterimAcctLnWTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseInterimAcctLnWTax.html
+- name: PurchaseOffsetAccount
+  description: 'Sets or returns the code of the Purchase Offset Account . Field name: PaOffsetAc . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseOffsetAccount.html
+  field_name: PaOffsetAc
+  length: 15
+- name: PurchaseReturnAccount
+  description: 'Sets or returns the code of the Purchase Return Account . Field name: PaReturnAc . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseReturnAccount.html
+  field_name: PaReturnAc
+  length: 15
+- name: PurchaseTax
+  description: 'Sets or returns the code of the . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~PurchaseTax.html
+  length: 15
+- name: RateDifferencesDefaultAcc
+  description: 'Sets or returns the code of the Rate Differences Default Acct account. Field name: DfltRateDi . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~RateDifferencesDefaultAcc.html
+  field_name: DfltRateDi
+  length: 15
+- name: ReconciliationDifference
+  description: 'Sets or returns the code of the Reconciliation Difference account. Field name: LinkAct_27 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ReconciliationDifference.html
+  field_name: LinkAct_27
+  length: 15
+- name: RepomoAccount
+  description: 'Sets or returns the code of the Repomo Account . Field name: RepomoAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~RepomoAccount.html
+  field_name: RepomoAct
+  length: 15
+- name: RevenuesAccountForeign
+  description: 'Sets or returns the code of the Revenue Account Foreign account. Field name: ForgnIncm . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~RevenuesAccountForeign.html
+  field_name: ForgnIncm
+  length: 15
+- name: RoundingAccount
+  description: 'Sets or returns the code of the Rounding Account account. Field name: LinkAct_24 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~RoundingAccount.html
+  field_name: LinkAct_24
+  length: 15
+- name: SalesCreditAcc
+  description: 'Sets or returns the code of the Sales Credit Acct account. Field name: ARCMAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesCreditAcc.html
+  field_name: ARCMAct
+  length: 15
+- name: SalesCreditEUAcc
+  description: 'Sets or returns the code of the Sales Credit EU Acct account. Field name: ARCMEUAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesCreditEUAcc.html
+  field_name: ARCMEUAct
+  length: 15
+- name: SalesCreditForeignAcc
+  description: 'Sets or returns the code of the Sales Credit Foreign Acct account. Field name: ARCMFrnAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesCreditForeignAcc.html
+  field_name: ARCMFrnAct
+  length: 15
+- name: SalesDownPaymentInterimAccount
+  description: The default G/L account for A/R down payments. When creating a customer business partner, the DownPaymentInterimAccount property is automatically set to this account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesDownPaymentInterimAccount.html
+- name: SalesInterimAcctLnWTax
+  description: property SalesInterimAcctLnWTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesInterimAcctLnWTax.html
+- name: SalesReturns
+  description: 'Sets or returns the code of the Sales Returns account. Field name: RturnngAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesReturns.html
+  field_name: RturnngAct
+  length: 15
+- name: SalesRevenueEU
+  description: 'Sets or returns the code of the Sales Revenue - EU account. Field name: ECIncome . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SalesRevenueEU.html
+  field_name: ECIncome
+  length: 15
+- name: SelfInvoiceExpenseAccount
+  description: 'Sets or returns the code of the Self Invoice Expense Account . Field name: SlfInvExpn . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SelfInvoiceExpenseAccount.html
+  field_name: SlfInvExpn
+  length: 15
+- name: SelfInvoiceRevenueAccount
+  description: 'Sets or returns the code of the Self Invoice Revenue Account . Field name: SlfInvIncm . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SelfInvoiceRevenueAccount.html
+  field_name: SlfInvIncm
+  length: 15
+- name: StockAccount
+  description: 'Sets or returns the code of the Inventory Revaluation Account . Field name: StockRvAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~StockAccount.html
+  field_name: StockRvAct
+  length: 15
+- name: StockInTransitAccount
+  description: The stock in transit G/L account for this posting period.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~StockInTransitAccount.html
+- name: StockRevaluationAccount
+  description: 'Sets or returns the code of the Inventory Revaluation Account . Field name: StockRvAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~StockRevaluationAccount.html
+  field_name: StockRvAct
+  length: 15
+- name: StockRevaluationOffsetAcct
+  description: 'Sets or returns the code of the Inventory Revaluation Account . Field name: StockRvAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~StockRevaluationOffsetAcct.html
+  field_name: StockRvAct
+  length: 15
+- name: SubPeriodType
+  description: 'Sets or returns the sub period type of current account. Field name: SubType . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~SubPeriodType.html
+  field_name: SubType
+  length: 1
+- name: TaxDefinition
+  description: 'Sets or returns the code of the Tax Definition . Field name: LinkAct_15 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~TaxDefinition.html
+  field_name: LinkAct_15
+  length: 15
+- name: TaxExemptRevenuesDefault
+  description: 'Sets or returns the code of the Tax-Exempt Revenue Default account. Field name: ExmptIncom . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~TaxExemptRevenuesDefault.html
+  field_name: ExmptIncom
+  length: 15
+- name: ToDocumentDate
+  description: 'Sets or returns the code of the Document Date To account. Field name: T_TaxDate . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ToDocumentDate.html
+  field_name: T_TaxDate
+  length: 15
+- name: ToDueDate
+  description: 'Sets or returns the code of the Due Date To account. Field name: T_DueDate . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ToDueDate.html
+  field_name: T_DueDate
+  length: 15
+- name: ToPostingDate
+  description: 'Sets or returns the code of the Posting Date To account. Field name: T_RefDate . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~ToPostingDate.html
+  field_name: T_RefDate
+  length: 8
+- name: UnderpaymentsAPAccount
+  description: 'Sets or returns the code of the Overpayment A/P Account . Field name: OverpayAR . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~UnderpaymentsAPAccount.html
+  field_name: OverpayAR
+  length: 15
+- name: UnderpaymentsARAccount
+  description: 'Sets or returns the code of the Underpayment A/R Account . Field name: UndrpayAR . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~UnderpaymentsARAccount.html
+  field_name: UndrpayAR
+  length: 15
+- name: VarianceAcc
+  description: 'Sets or returns the code of the Expense Variance Account. Field name: ExpVarAct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~VarianceAcc.html
+  field_name: ExpVarAct
+  length: 15
+- name: VendorAssetsAccount
+  description: 'Sets or returns the code of the Vendor Assets Account . Field name: VAssets . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~VendorAssetsAccount.html
+  field_name: VAssets
+  length: 15
+- name: VendorDoubtfulDebtsAcct
+  description: 'Sets or returns the code of the Vendor Doubtful Debts Acct account. Field name: VOpenDebts . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~VendorDoubtfulDebtsAcct.html
+  field_name: VOpenDebts
+  length: 15
+- name: VendorDownPaymentsAccount
+  description: 'Sets or returns the code of the Vendor Down Payments Account . Field name: VDownPymnt . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~VendorDownPaymentsAccount.html
+  field_name: VDownPymnt
+  length: 15
+- name: WIPMappingCollection
+  description: property WIPMappingCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~WIPMappingCollection.html
+- name: WIPMaterialAccount
+  description: 'Sets or returns the code of the WIP Material Variance Account . Field name: WipVarAcct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~WIPMaterialAccount.html
+  field_name: WipVarAcct
+  length: 15
+- name: WIPMaterialVarianceAccount
+  description: 'Sets or returns the code of the WIP Material Variance Account . Field name: WipVarAcct . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~WIPMaterialVarianceAccount.html
+  field_name: WipVarAcct
+  length: 15
+- name: WipOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to a WIP (work in progress) account used within production transactions and for change of value of the WIP account during the production process. Field name: WipOffset. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~WipOffsetProfitAndLossAccount.html
+  field_name: WipOffset
+  length: 15
+- name: WithholodingTax
+  description: 'Sets or returns the code of the Withholding Tax account. Field name: LinkAct_16 . This is a foreign key to the ChartOfAccounts object. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategory~WithholodingTax.html
+  field_name: LinkAct_16
+  length: 15

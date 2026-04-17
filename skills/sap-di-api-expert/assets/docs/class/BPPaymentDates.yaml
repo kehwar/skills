@@ -1,0 +1,31 @@
+name: BPPaymentDates
+title: BPPaymentDates Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates.html
+description: 'BPPaymentDates is a child object of BusinessPartners object that represents the payment days in the month for the business partner. Source table: CRD5 .'
+remarks: 'To display the form in the application: - Select Business Partners --> Business Partner Master Data . Select Payment Terms tab. Click Payment Dates .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~SetCurrentLine.html
+properties:
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~BPCode.html
+- name: Count
+  description: Returns the total number of records in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~Count.html
+- name: PaymentDate
+  description: 'Sets or returns the payment day in the month to the business partner. Field name: PmntDate . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~PaymentDate.html
+  field_name: PmntDate
+  length: 2
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPPaymentDates~UserFields.html

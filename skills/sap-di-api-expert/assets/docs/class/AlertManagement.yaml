@@ -1,0 +1,90 @@
+name: AlertManagement
+title: AlertManagement Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement.html
+description: 'AlertManagement is Data structure related to the AlertManagementService . Source table: OALT .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~ToXMLFile.html
+- name: ToXMLString
+  description: Exports data from the object to an XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~ToXMLString.html
+properties:
+- name: Active
+  description: 'Sets or returns valid value that determines whether or not this is Active Alert . Field name: Active .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Active.html
+- name: AlertManagementDocuments
+  description: Returns the AlertManagementDocuments object, a DataCollection that defines the Collection of documents attached to this alert.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~AlertManagementDocuments.html
+- name: AlertManagementRecipients
+  description: Returns the AlertManagementRecipients object, a DataCollection that defines the Collection of recipients attached to this alert.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~AlertManagementRecipients.html
+- name: Code
+  description: 'Returns the internal number of this alert. Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Code.html
+- name: DayOfExecution
+  description: 'Sets or Returns the number of days remains until the day of execution of this alert. Field name: ExecDaY .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~DayOfExecution.html
+  field_name: ExecDaY
+- name: ExecutionTime
+  description: 'Returns the time remaining until the execution hour of this alert. Field name: ExecTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~ExecutionTime.html
+  field_name: ExecTime
+- name: FrequencyInterval
+  description: 'Returns the time unit used to define the cycle Frequency of this alert. Field name: FrqncyIntr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~FrequencyInterval.html
+  field_name: FrqncyIntr
+- name: FrequencyType
+  description: 'Sets or returns a valid value that determines this allert frequency type. Field name: FrqncyType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~FrequencyType.html
+  field_name: FrqncyType
+- name: LastExecutionDate
+  description: 'Returns the last Execution Date of this alert. Field name: LastDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~LastExecutionDate.html
+  field_name: LastDate
+- name: LastExecutionTime
+  description: 'Returns the last Execution Time of this alert. Field name: LastTIME .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~LastExecutionTime.html
+  field_name: LastTIME
+- name: Name
+  description: 'Sets or returns the Name of this Alert. Field name: Name .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Name.html
+- name: NextExecutionDate
+  description: 'Returns the Next Date this alert will be activated. Field name: NextDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~NextExecutionDate.html
+  field_name: NextDate
+- name: NextExecutionTime
+  description: 'Returns the next time this alert will be activated. Field name: NextTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~NextExecutionTime.html
+  field_name: NextTime
+- name: Param
+  description: 'Sets or returns the Parameters that define this Alert. Field name: Params .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Param.html
+  field_name: Params
+- name: Priority
+  description: 'Sets or returns valid value for this alert Priority . Field name: Priority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Priority.html
+- name: QueryID
+  description: 'Sets or returns this query Id. Field name: QueryId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~QueryID.html
+  field_name: QueryId
+- name: SaveHistory
+  description: 'Determines whether or not to save history for this Alert. Field name: History .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~SaveHistory.html
+  field_name: History
+- name: Type
+  description: 'Sets or returns valid value that determines whether this alert is System Alert or User Alert . Field name: Type .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~Type.html
+- name: UserFields
+  description: Get User Fields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagement~UserFields.html

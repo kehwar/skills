@@ -1,0 +1,46 @@
+name: ActivitiesService
+title: ActivitiesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService.html
+description: 'The ActivitiesService service enables you to add, look up, remove, and update single activities and recurring activities. Source table: OCLG .'
+remarks: To display the form in the application, choose Business Partners --> Activities .
+methods:
+- name: AddActivity
+  description: Adds a new activity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~AddActivity.html
+- name: DeleteActivity
+  description: Deletes an existing activity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~DeleteActivity.html
+- name: DeleteSingleInstanceFromSeries
+  description: Deletes a single instance from an existing recurring activity series.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~DeleteSingleInstanceFromSeries.html
+- name: GetActivity
+  description: Retrieves an activity. The activity is specified by its key, which is contained in the ActivityParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetActivity.html
+- name: GetActivityList
+  description: Returns the ActivitiesParams data collection that identify all activities.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetActivityList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ActivitiesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetDataInterfaceFromXMLString.html
+- name: GetListByAttendUser
+  description: GetListByAttendUser
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetListByAttendUser.html
+- name: GetSingleInstanceFromSeries
+  description: Retrieves a single instance from a recurring activity series. The activity instance is specified by its key, which is contained in the ActivityInstanceParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetSingleInstanceFromSeries.html
+- name: GetTopNActivityInstances
+  description: Retrieves the top N activity instances.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~GetTopNActivityInstances.html
+- name: UpdateActivity
+  description: Updates an existing activity. The data for the activity, including the key of the activity to be updated, is contained in the Activity object passed to the method. To update an activity, you must first retrieve it using the GetActivity method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~UpdateActivity.html
+- name: UpdateSingleInstanceInSeries
+  description: Updates an existing single instance from a recurring activity series. The data for the activity, including the key of the activity to be updated, is contained in the Activity object passed to the method. To update an activity instance, you must first retrieve it using the GetSingleInstanceFromSeries method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ActivitiesService~UpdateSingleInstanceInSeries.html

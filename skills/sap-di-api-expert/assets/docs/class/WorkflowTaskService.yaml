@@ -1,0 +1,22 @@
+name: WorkflowTaskService
+title: WorkflowTaskService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService.html
+description: 'WorkflowTaskService is a business object that manages the tasks of the SAP Business One Workflow component. This object enables you to do the following: - Get workflow tasks owned by the current user and filter tasks by status. Complete a workflow approval task of a given task ID and other parameters. Source table: OWLS .'
+remarks: 'This service supports only the operations of approval tasks in this stage. To use the task service, proceed as follows: - Connect to a valid company. Call CompanyService , which is the main DI service that you must call before using any other service. Call the GetBusinessService method for the required service.'
+methods:
+- name: Complete
+  description: 'Completes a given approval task specified by WorkflowTaskCompleteParams ( TaskID ), adds notes, and triggers parameters for the task given in WorkflowTaskCompleteParams ( Note , TriggerParams ). This function, which is asynchronous, sends a signal to the workflow engine to complete the task specified by the " TaskID ". You can check the task status to ensure that the task has been completed successfully. Note : This function is available only for the approval tasks that possess all the follwing features: Type "U". Operation "P". Status "W" or "G".'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService~Complete.html
+- name: GetApprovalTaskList
+  description: 'Returns the WorkflowTaskCollection object. Note : A task will be listed only for its owner or candidate.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService~GetApprovalTaskList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the GeneralService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkflowTaskService~GetDataInterfaceFromXMLString.html

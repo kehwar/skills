@@ -1,0 +1,49 @@
+name: InventoryPostingCCDNumber
+title: InventoryPostingCCDNumber Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber.html
+description: InventoryPostingCCDNumber Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~ToXMLString.html
+properties:
+- name: BaseLineNumber
+  description: property BaseLineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~BaseLineNumber.html
+- name: CCDNumber
+  description: property CCDNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~CCDNumber.html
+- name: ChildNumber
+  description: property ChildNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~ChildNumber.html
+- name: CountryOfOrigin
+  description: property CountryOfOrigin
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~CountryOfOrigin.html
+- name: DocumentEntry
+  description: property DocumentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~DocumentEntry.html
+- name: Quantity
+  description: property Quantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~Quantity.html
+- name: SubLineNumber
+  description: property SubLineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~SubLineNumber.html
+- name: TrackingNote
+  description: property TrackingNote
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~TrackingNote.html
+- name: TrackingNoteLine
+  description: property TrackingNoteLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingCCDNumber~TrackingNoteLine.html

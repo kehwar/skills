@@ -1,0 +1,31 @@
+name: DepreciationTypesService
+title: DepreciationTypesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService.html
+description: 'The DepreciationTypesService service enables you to create, update, and view depreciation types. Source table: ODTP .'
+remarks: To access the Depreciation Types - Setup window, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Fixed Assets --> Depreciation Types .
+methods:
+- name: Add
+  description: Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~Add.html
+- name: Delete
+  description: Delete
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~Delete.html
+- name: Get
+  description: Get
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~Get.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: GetList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~GetList.html
+- name: Update
+  description: Update
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationTypesService~Update.html

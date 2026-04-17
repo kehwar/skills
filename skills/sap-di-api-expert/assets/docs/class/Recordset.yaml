@@ -1,0 +1,56 @@
+name: Recordset
+title: Recordset Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset.html
+description: Recordset is a raw data access object that enables you to select data from the database, navigate through the result set, and manipulate user tables , which are not exposed by the DI API. The main method of this object is DoQuery that enables you to run SQL queries with any DML action in its query string.
+remarks: 'The Recordset object includes two browsing mechanisms: the first mechanism applies to result sets that contain only one row (by the use of Select Top), which will retrieve only one record each time. Otherwise, the browsing will be performed on existing result set only. The Recordset object allows the following Data Manipulation Language (DML) operations: UPDATE, INSERT, and DELETE. DML operations are acceptable with the Recordset object for user tables only. For other business objects use only the relevant DI objects and not the Recordset object. Any DML operations on system tables pose a high risk for data corruption, and will not be supported. Use at your own risk. Before the Recordset object executes an SQL query, it validates the user permission (same user permission as in SAP Business One). Otherwise, the SQL query is blocked. The following Data Definition Language (DDL) actions are blocked: CREATE, DROP, ALTER, and TRUNCATE. The reason for that is, when upgrading the SAP Business One application, it ignores user tables that are not created using the DI meta data objects ( UserTablesMD and UserFieldsMD ). Only one expression can be specified in the select list when the sub-query is not introduced with EXISTS. Selecting Data Using the Recordset Object Retrieving a Field of a Recordset'
+methods:
+- name: DoQuery
+  description: Runs SQL queries.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~DoQuery.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~GetAsXML.html
+- name: GetFixedSchema
+  description: The schema for the XML returned by the GetFixedXML method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~GetFixedSchema.html
+- name: GetFixedXML
+  description: Returns the query data as XML based on a fixed schema. The GetAsXML also returns the data as XML, but the schema is dynamic and based on the specific query. With the GetFixedXML , the schema is fixed and is available with the GetFixedSchema method. You can use the schema, for example, to create a .NET object for handling the query XML. For more information, see Exchanging Data Using the DI API XML Capabilities .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~GetFixedXML.html
+- name: MoveFirst
+  description: Moves the curser to the first row in the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~MoveFirst.html
+- name: MoveLast
+  description: Moves the curser to the last row in the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~MoveLast.html
+- name: MoveNext
+  description: Moves the curser to the next row in the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~MoveNext.html
+- name: MovePrevious
+  description: Moves the curser to the previous row in the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~MovePrevious.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~SaveToFile.html
+- name: SaveXML
+  description: Saves the query data to an XML file or a string. For more information, see Exchanging Data Using the DI API XML Capabilities .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~SaveXML.html
+properties:
+- name: BoF
+  description: Returns a Boolean value that indicates whether or not the current row is the first row in the result set (Beginning of File).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~BoF.html
+- name: Command
+  description: Returns the Command object that enables to execute SQL stored procedures.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~Command.html
+- name: EoF
+  description: Returns a Boolean value that indicates whether or not the current row is the last row in the result set (End of File).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~EoF.html
+- name: Fields
+  description: Returns a Fields collection, which contains the fields of the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~Fields.html
+- name: RecordCount
+  description: Returns the number of records contained in the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~RecordCount.html
+- name: RecordSetAudit
+  description: For security enhancement, if this flag is set to true, the querying will be logged in table RSAT . By default, the flag is set to false.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recordset~RecordSetAudit.html

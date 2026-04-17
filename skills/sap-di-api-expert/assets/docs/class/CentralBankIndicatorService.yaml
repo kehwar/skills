@@ -1,0 +1,31 @@
+name: CentralBankIndicatorService
+title: CentralBankIndicatorService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService.html
+description: 'The CentralBankIndicatorService service enables you to add, look up, update, cancel, and remove central bank indicators. Source table: OCBI .'
+remarks: A/R Invoice --> Accounting tab --> Central Bank Ind .
+methods:
+- name: Add
+  description: Adds a central bank indicator.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~Add.html
+- name: Delete
+  description: Deletes an existing central bank indicator.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~Delete.html
+- name: Get
+  description: Retrieves a central bank indicator. The central bank indicator is specified by its key, which is contained in the CentralBankIndicatorParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CentralBankIndicatorService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the CentralBankIndicatorParamsCollection data collection that identifies all central bank indicators.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~GetList.html
+- name: Update
+  description: Updates an existing central bank indicator.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CentralBankIndicatorService~Update.html

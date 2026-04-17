@@ -1,0 +1,193 @@
+name: CustomerEquipmentCards
+title: CustomerEquipmentCards Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards.html
+description: 'CustomerEquipmentCards is a business object that represents the customer equipment cards in the Services module. This object enables you to: - Add a customer equipment card. Retrieve a customer equipment card by its key. Update a customer equipment card. Remove a customer equipment card. Save the object in XML format. Source table: OINS .'
+remarks: 'Mandatory fields in SAP Business One: ManufacturerSerialNum or InternalSerialNum (according to the definition of Unique Number in the General Settings in SAP Business One - SriUniqFld field in OADM table), ItemCode , and CustomerCode . To display the form in the application: - Select Service --> Customer Equipment Card .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~GetByKey.html
+- name: Remove
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Update.html
+properties:
+- name: AttachmentEntry
+  description: 'Sets or returns the identification key of the Attachment File as assigned by SAP Business One when adding an attachment file. Field name: AtcEntry . This is a foreign key to the Territories object. Sets or returns the identification key of the attachment file, as assigned by SAP Business One when adding an Attachment Entry to alert message. Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Attachments
+  description: Returns the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Attachments.html
+- name: Block
+  description: 'Sets or returns the block name in the address where the service is provided. Field name: block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Block.html
+  field_name: block
+  length: 100
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Browser.html
+- name: BuildingFloorRoom
+  description: 'Sets or returns the additional address details, such as building number, floor number, and room number. Field name: Building . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~BuildingFloorRoom.html
+  field_name: Building
+- name: BusinessPartners
+  description: property BusinessPartners
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~BusinessPartners.html
+- name: City
+  description: 'Sets or returns the city name in the address where the service is provided. Field name: city . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~City.html
+  field_name: city
+  length: 100
+- name: ContactEmployeeCode
+  description: 'Sets or returns the code of the contact person. Field name: contactCod . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ContactEmployeeCode.html
+  field_name: contactCod
+- name: ContactPhone
+  description: 'Returns the phone number of the contact person. Field name: cntctPhone . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ContactPhone.html
+  field_name: cntctPhone
+  length: 50
+- name: CountryCode
+  description: 'Sets or returns the country code in the address where the service is provided. Field name: country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~CountryCode.html
+  field_name: country
+  length: 3
+- name: County
+  description: 'Sets or returns the county name in the address where the service is provided. Field name: county . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~County.html
+  field_name: county
+  length: 100
+- name: CustomerCode
+  description: 'Sets or returns the customer code. Field name: customer . Mandatory field in SAP Business One. Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~CustomerCode.html
+  field_name: customer
+  length: 15
+- name: CustomerName
+  description: 'Sets or returns the customer name. Field name: custmrName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~CustomerName.html
+  field_name: custmrName
+  length: 100
+- name: DefaultTechnician
+  description: 'Sets or returns the default technician for this customer equipment card as defined in the technicians table. Field name: technician . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DefaultTechnician.html
+  field_name: technician
+- name: Defaultterritory
+  description: 'Sets or returns the default territory for this customer equipment card as defined in the territories table. Field name: territory . This is a foreign key to the Territories object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Defaultterritory.html
+  field_name: territory
+- name: DeliveryCode
+  description: 'Sets or returns the code of the delivery note document. Field name: delivery . This is a foreign key to the Documents object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DeliveryCode.html
+  field_name: delivery
+- name: DeliveryDate
+  description: 'Returns the delivery date of the item. Field name: dlvryDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DeliveryDate.html
+  field_name: dlvryDate
+- name: DeliveryNumber
+  description: 'Returns the number of the delivery note document. Field name: deliveryNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DeliveryNumber.html
+  field_name: deliveryNo
+- name: DirectCustomerCode
+  description: 'Sets or returns the code of the customer that bought the item. Field name: directCsmr . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DirectCustomerCode.html
+  field_name: directCsmr
+  length: 15
+- name: DirectCustomerName
+  description: 'Sets or returns the name of the customer that bought the item. Field name: custmrName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~DirectCustomerName.html
+  field_name: custmrName
+  length: 100
+- name: EquipmentCardNum
+  description: 'Returns the equipment card ID. Field name: insID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~EquipmentCardNum.html
+  field_name: insID
+- name: InstallLocation
+  description: 'Sets or returns the location where the item is installed. Field name: instLction . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~InstallLocation.html
+  field_name: instLction
+  length: 254
+- name: InternalSerialNum
+  description: 'Sets or returns the unique internal serial number of the item. Field name: internalSN . Mandatory field in SAP Business One in one of the following cases: If you do not set the ManufacturerSerialNum property. From version 2004, if the definition of Unique Number in General Settings in SAP Business One is Serial Number . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~InternalSerialNum.html
+  field_name: internalSN
+  length: 32
+- name: InvoiceCode
+  description: 'Sets or returns the invoice code. Field name: invoice . This is a foreign key to the Documents object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~InvoiceCode.html
+  field_name: invoice
+- name: InvoiceNumber
+  description: 'Returns the invoice number. Field name: invoiceNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~InvoiceNumber.html
+  field_name: invoiceNum
+- name: ItemCode
+  description: 'Sets or returns the item code. Field name: itemCode . Mandatory field in SAP Business One. Length: 20 characters. Items'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ItemCode.html
+  field_name: itemCode
+  length: 20
+- name: ItemDescription
+  description: 'Sets or returns the item description. Field name: itemName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ItemDescription.html
+  field_name: itemName
+  length: 100
+- name: ManufacturerSerialNum
+  description: 'Sets or returns the unique manufacturer serial number of the item. Field name: manufSN . Mandatory field in SAP Business One in one of the following cases: If you do not set the InternalSerialNum property. From version 2004, if the definition of Unique Number in General Settings in SAP Business One is Man. Serial No . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ManufacturerSerialNum.html
+  field_name: manufSN
+  length: 32
+- name: ReplacedBySN
+  description: 'Sets or returns the S/N of the replacement equipment ( Replaced By S/N ) that replaced the equipment of the Replace S/N equipment card. This enables concatenation of replacement equipments. Field name: repByIns . This is a foreign key to the CustomerEquipmentCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ReplacedBySN.html
+  field_name: repByIns
+- name: ReplaceSN
+  description: 'Sets or returns the S/N of the replacement equipment ( Replace S/N ) that replaced the equipment of the current equipment card. Field name: replcIns . This is a foreign key to the CustomerEquipmentCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ReplaceSN.html
+  field_name: replcIns
+- name: ServiceBPType
+  description: 'Sets or returns the service BP type, whether your company provides support services to its customers, or receives support services from your vendors. Field name: BPType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ServiceBPType.html
+  field_name: BPType
+- name: StateCode
+  description: 'Sets or returns the state code where the service is provided. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~StateCode.html
+  field_name: State
+  length: 3
+- name: StatusOfSerialNumber
+  description: 'Sets or returns a valid value of BoSerialNumberStatus type that specifies the current location of the equipment, for example at the customer premises, in the lab, and so on.Field name: status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~StatusOfSerialNumber.html
+  field_name: status
+- name: Street
+  description: 'Sets or returns the street name in the address where the service is provided. Field name: Street . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~Street.html
+  length: 100
+- name: StreetNo
+  description: 'Sets or returns the street number in the address where the service is provided. Field name: Street No. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~StreetNo.html
+  field_name: Street
+  length: 100
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~UserFields.html
+- name: ZipCode
+  description: 'Sets or returns the zip code in the address where the service is provided. Field name: zip . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomerEquipmentCards~ZipCode.html
+  field_name: zip
+  length: 20

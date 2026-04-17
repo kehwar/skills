@@ -1,0 +1,30 @@
+name: DistributionRulesService
+title: DistributionRulesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService.html
+description: 'The DistributionRulesService service enables you to add, look up and remove distribution rules for spreading a specific expense, account, journal entry, or other entity among profit centers. To see the list of distribution rules, select Financials --> Cost Accounting --> Distribution Rules. You can also select Financials --> Cost Accounting --> Profit Centers , and then click Open Table to see a list of all profit centers and distribution rules. Source table: OOCR'
+methods:
+- name: AddDistributionRule
+  description: Adds a distribution rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~AddDistributionRule.html
+- name: DeleteDistributionRule
+  description: Deletes an existing distribution rule. The distribution rule is specified by its key ( OcrCode ), which is contained in the DistributionRuleParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~DeleteDistributionRule.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DistributionRulesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~GetDataInterfaceFromXMLString.html
+- name: GetDistributionRule
+  description: Retrieves a distribution rule. The distribution rule is specified by its key ( OcrCode ), which is contained in the DistributionRuleParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~GetDistributionRule.html
+- name: GetDistributionRuleList
+  description: Retrieves the keys and names of all the distribution rules.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~GetDistributionRuleList.html
+- name: UpdateDistributionRule
+  description: Updates an existing distribution rule. The data for the distribution rule, including the key of the distribution rule to be updated, is contained in the DistributionRule object passed to the method. To update a distribution rule, you must first retrieve it using the GetDistributionRule method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DistributionRulesService~UpdateDistributionRule.html

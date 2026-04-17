@@ -1,0 +1,44 @@
+name: OpenningBalanceAccount
+title: OpenningBalanceAccount Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount.html
+description: OpenningBalanceAccount is a data structure related to the AccountsService and BusinessPartnersService . The data is stored temporarily in a virtual table.
+remarks: 'Mandatory property: OpenBalanceAccount . To display the form related to the data structure: - Select Administration --> System Initialization --> Openning Balances --> G/L Accounts Openning Balance. - Select Administration --> System Initialization --> Openning Balances --> Business Partners Openning Balance.'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~ToXMLString.html
+properties:
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~BPLID.html
+- name: Date
+  description: Sets or returns the posting date of the journal entry.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~Date.html
+- name: Details
+  description: 'Sets or returns details about the journal entry. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~Details.html
+  length: 50
+- name: OpenBalanceAccount
+  description: Sets or returns the openning balance account code from which to credit or debit G/L accounts or business partner accounts. Mandatory property.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~OpenBalanceAccount.html
+- name: Ref1
+  description: 'Sets or returns the first reference code of the journal entry. Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~Ref1.html
+  length: 11
+- name: Ref2
+  description: 'Sets or returns the second reference code of the journal entry. Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~OpenningBalanceAccount~Ref2.html
+  length: 11

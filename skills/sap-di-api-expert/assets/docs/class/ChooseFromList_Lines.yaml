@@ -1,0 +1,46 @@
+name: ChooseFromList_Lines
+title: ChooseFromList_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines.html
+description: 'ChooseFromList_Lines is a child object of ChooseFromList . Source table: CHFL .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the database table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~Count.html
+- name: DisplayedName
+  description: 'Sets or returns name displayed in the column header. Field name: DispName . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~DisplayedName.html
+  field_name: DispName
+  length: 30
+- name: FieldNo
+  description: 'Sets or returns column number in the specified database table. Field name: FldNum . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~FieldNo.html
+  field_name: FldNum
+  length: 10
+- name: GroupBy
+  description: 'Determines whether or not to group all the rows by the specified field. Field name: GroupBy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~GroupBy.html
+- name: ShowType
+  description: 'Determines whether to display the valid value description or the valid value. For example, for BP Type, set Y to display Customer or set N to display C . Field name: DispDesc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~ShowType.html
+  field_name: DispDesc
+- name: SortOrder
+  description: 'Sets or returns the sort order - Ascending or Descending - of the columns in the Choose from List form. Field name: SortOrder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~SortOrder.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~UserFields.html
+- name: Visible
+  description: 'Determines whether or not to display the column. Field name: Visible .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~Visible.html
+- name: VisualIndex
+  description: 'Sets or returns the display order number of the column. Field name: VisIndex .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChooseFromList_Lines~VisualIndex.html
+  field_name: VisIndex

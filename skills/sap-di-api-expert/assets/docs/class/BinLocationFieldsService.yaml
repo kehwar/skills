@@ -1,0 +1,25 @@
+name: BinLocationFieldsService
+title: BinLocationFieldsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService.html
+description: The BinLocationFieldsService service enables you to look up and update bin location fields.
+remarks: To open the Bin Location Field Activation window, from the SAP Business One Main Menu , choose Administration -> Setup -> Inventory -> Bin Locations -> Bin Location Field Activation .
+methods:
+- name: Get
+  description: Retrieves a bin location field. The bin location field is specified by its key, which is contained in the BinLocationFieldParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BinLocationFieldsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the BinLocationFieldCollectionParams data collection that identifies all bin location fields.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~GetList.html
+- name: Update
+  description: Updates an existing bin location field.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BinLocationFieldsService~Update.html

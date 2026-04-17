@@ -1,0 +1,26 @@
+name: AlertManagementDocuments
+title: AlertManagementDocuments Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments.html
+description: 'is a Data Collection of AlertManagementDocument data structures. Source table: OALT .'
+methods:
+- name: Add
+  description: Adds new AlertManagementDocument to the data-collection object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing AlertManagementDocument in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~Item.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~ToXMLFile.html
+- name: ToXMLString
+  description: Creates XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~ToXMLString.html
+properties:
+- name: Count
+  description: 'Returns the number of AlertManagementDocument in the AlertManagementDocuments data collection. Field name: NumOfDocs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementDocuments~Count.html
+  field_name: NumOfDocs

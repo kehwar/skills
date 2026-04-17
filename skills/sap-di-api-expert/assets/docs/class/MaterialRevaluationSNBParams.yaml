@@ -1,0 +1,46 @@
+name: MaterialRevaluationSNBParams
+title: MaterialRevaluationSNBParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams.html
+description: MaterialRevaluationSNBParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~ToXMLString.html
+properties:
+- name: AdmissionDate
+  description: property AdmissionDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~AdmissionDate.html
+- name: DebitCredit
+  description: property DebitCredit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~DebitCredit.html
+- name: ExpirationDate
+  description: property ExpirationDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~ExpirationDate.html
+- name: LotNumber
+  description: property LotNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~LotNumber.html
+- name: ManufactureNumber
+  description: property ManufactureNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~ManufactureNumber.html
+- name: NewCost
+  description: property NewCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~NewCost.html
+- name: SnbAbsEntry
+  description: property SnbAbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~SnbAbsEntry.html
+- name: SystemNumber
+  description: property SystemNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationSNBParams~SystemNumber.html

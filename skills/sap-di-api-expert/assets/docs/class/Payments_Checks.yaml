@@ -1,0 +1,87 @@
+name: Payments_Checks
+title: Payments_Checks Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks.html
+description: 'Represents checks that are tied to an outgoing payment document. Checks that are not tied to a document are represented by the ChecksforPayment object. Source tables: RCT1 (incoming payments) and VPM1 (outgoing payments).'
+remarks: 'Mandatory fields in SAP Business One: BankCode and CheckSum . To display the form in the application: - For RCT1 table, select Sales - A/R --> A/R Invoice . - or - For VPM1 table, select Purchasing - A/P --> A/P Invoice . On the toolbar, click the Payment Means icon (or press CTRL+Y). Select the Check tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~SetCurrentLine.html
+properties:
+- name: AccounttNum
+  description: 'Sets or returns the bank account number of the check. Field name: AcctNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~AccounttNum.html
+  field_name: AcctNum
+  length: 50
+- name: BankCode
+  description: 'Sets or returns the bank code of the check. Field name: BankCode . Mandatory property. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~BankCode.html
+  length: 30
+- name: Branch
+  description: 'Sets or returns the branch name of the bank. Field name: Branch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Branch.html
+  length: 50
+- name: CheckAbsEntry
+  description: 'Returns the absolute entry of this Check. Field name: CheckAbs . This is a foreign key to the Payments Object'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~CheckAbsEntry.html
+  field_name: CheckAbs
+- name: CheckAccount
+  description: 'Sets or returns the G/L account associated with this Check Account . Field name: CheckAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~CheckAccount.html
+  field_name: CheckAct
+  length: 15
+- name: CheckNumber
+  description: 'Sets or returns this check number . Field name: CheckNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~CheckNumber.html
+  field_name: CheckNum
+- name: CheckSum
+  description: 'Sets or returns the amount of the check. Mandatory property. Field name: CheckSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~CheckSum.html
+- name: Count
+  description: Returns the number of checks in this payment.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Count.html
+- name: CountryCode
+  description: 'Sets or returns the country code of the bank. Field name: CountryCod . Length: 3 characters. This is a foreign key to the Countries table ( OCRY ) - not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~CountryCode.html
+  field_name: CountryCod
+  length: 3
+- name: Details
+  description: 'Sets or returns a description of the check. Field name: Details . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Details.html
+  length: 254
+- name: DueDate
+  description: 'Sets or returns the due date of the check. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~DueDate.html
+- name: ECheck
+  description: 'Specify whether the account is relevant for e-check functionality or not. Field name: ECheck .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~ECheck.html
+- name: EndorsableCheckNo
+  description: property EndorsableCheckNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~EndorsableCheckNo.html
+- name: Endorse
+  description: property Endorse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Endorse.html
+- name: FiscalID
+  description: property FiscalID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~FiscalID.html
+- name: LineNum
+  description: 'Returns the number of the current line in the document. Field name: LineID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~LineNum.html
+  field_name: LineID
+- name: ManualCheck
+  description: 'Indicates that the check number was entered manually. Field name: ManualChk'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~ManualCheck.html
+  field_name: ManualChk
+- name: OriginallyIssuedBy
+  description: property OriginallyIssuedBy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~OriginallyIssuedBy.html
+- name: Trnsfrable
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the check can be transferred to a third-party. Field name: Trnsfrable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~Trnsfrable.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Checks~UserFields.html

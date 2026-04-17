@@ -1,0 +1,22 @@
+name: BatchNumberDetailsService
+title: BatchNumberDetailsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService.html
+description: 'The BatchNumberDetailsService service enables you to look up and update batch details for the item. Source table: OBTN , OITL , ITL1 .'
+remarks: To open the Batch Details window, from the SAP Business One Main Menu , choose Inventory --> Item Management --> Batches --> Batch Details.
+methods:
+- name: Get
+  description: Retrieves the batch details for the item. The batch details is specified by its key, which is contained in the BatchNumberDetailParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BatchNumberDetailsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService~GetDataInterfaceFromXMLString.html
+- name: Update
+  description: Updates the batch details for the item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumberDetailsService~Update.html

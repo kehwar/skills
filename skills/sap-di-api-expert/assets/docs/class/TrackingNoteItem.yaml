@@ -1,0 +1,52 @@
+name: TrackingNoteItem
+title: TrackingNoteItem Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem.html
+description: TrackingNoteItem Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~ToXMLString.html
+properties:
+- name: AccumulatedAPQuantity
+  description: property AccumulatedAPQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~AccumulatedAPQuantity.html
+- name: AccumulatedARQuantity
+  description: property AccumulatedARQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~AccumulatedARQuantity.html
+- name: AccumulatedRelocatedQuantity
+  description: property AccumulatedRelocatedQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~AccumulatedRelocatedQuantity.html
+- name: CountryOfOrigin
+  description: property CountryOfOrigin
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~CountryOfOrigin.html
+- name: CustomsGroupCode
+  description: property CustomsGroupCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~CustomsGroupCode.html
+- name: ItemCCDNumber
+  description: property ItemCCDNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~ItemCCDNumber.html
+- name: ItemCode
+  description: property ItemCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~ItemCode.html
+- name: Quantity
+  description: property Quantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~Quantity.html
+- name: TrackingNoteLineNumber
+  description: property TrackingNoteLineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~TrackingNoteLineNumber.html
+- name: TrackingNoteNumber
+  description: property TrackingNoteNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TrackingNoteItem~TrackingNoteNumber.html

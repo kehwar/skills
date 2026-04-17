@@ -1,0 +1,56 @@
+name: ItemsDepreciationParameters
+title: ItemsDepreciationParameters Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters.html
+description: 'ItemsDepreciationParameters is a child object of the Items object. You can specify depreciation parameters for a fixed asset. Source table: ITM7 .'
+remarks: To access the subtab, from the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data . Select the Fixed Assets tab and then the Overview subtab.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~Count.html
+- name: DepreciationArea
+  description: 'The depreciation area in which the asset''s depreciation takes effect. Field name: DprArea. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~DepreciationArea.html
+  field_name: DprArea
+  length: 15
+- name: DepreciationEndDate
+  description: 'The depreciation end date, which is calculated based on the depreciation start date and the useful life. Field name: DprEnd.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~DepreciationEndDate.html
+  field_name: DprEnd
+- name: DepreciationStartDate
+  description: 'The asset''s depreciation start date. Once you change the date, the system automatically recalculates the depreciation and updates the asset-relevant values. Field name: DprStart.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~DepreciationStartDate.html
+  field_name: DprStart
+- name: DepreciationType
+  description: 'The depreciation type in the depreciation area. Field name: DprType. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~DepreciationType.html
+  field_name: DprType
+  length: 15
+- name: FiscalYear
+  description: 'The fiscal year you have selected in the Fiscal Year field in the Asset Master Data window. Field name: PeriodCat. Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~FiscalYear.html
+  field_name: PeriodCat
+  length: 10
+- name: RemainingLife
+  description: 'The asset''s remaining life, which is calculated based on the useful life and the depreciation start date. Field name: RemainLife.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~RemainingLife.html
+  field_name: RemainLife
+- name: RemainingUnits
+  description: property RemainingUnits
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~RemainingUnits.html
+- name: StandardUnits
+  description: property StandardUnits
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~StandardUnits.html
+- name: TotalUnitsInUsefulLife
+  description: property TotalUnitsInUsefulLife
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~TotalUnitsInUsefulLife.html
+- name: UsefulLife
+  description: 'The asset''s useful life, in months. Field name: UsefulLife.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDepreciationParameters~UsefulLife.html

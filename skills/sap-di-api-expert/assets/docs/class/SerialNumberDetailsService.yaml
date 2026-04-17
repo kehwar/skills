@@ -1,0 +1,22 @@
+name: SerialNumberDetailsService
+title: SerialNumberDetailsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService.html
+description: 'The SerialNumberDetailsService service enables you to look up and update serial number details for the item. Source table: OSRN , OITL , ITL1 .'
+remarks: To access the Serial Number Details window, from the SAP Business One Main Menu , choose Inventory --> Item Management --> Serial Numbers --> Serial Number Details .
+methods:
+- name: Get
+  description: Retrieves the serial details for the item. The serial details is specified by its key, which is contained in the SerialNumberDetailParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SerialNumberDetailsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService~GetDataInterfaceFromXMLString.html
+- name: Update
+  description: Updates the serial details for the item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SerialNumberDetailsService~Update.html

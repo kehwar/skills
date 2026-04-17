@@ -1,0 +1,108 @@
+name: SalesOpportunitiesLines
+title: SalesOpportunitiesLines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines.html
+description: 'SalesOpportunityLines is a child object of the SalesOpportunities object and represents the stages of the sales opportunity. Source table: OPR1 .'
+remarks: 'To display the form in the application: - Select Sales Opportunities --> Sales Opportunity . Select the Stages tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~SetCurrentLine.html
+properties:
+- name: BPChanelCode
+  description: 'Sets or returns the distribution channel code for the stage of the sales opportunity. Field name: ChnCrdCode . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~BPChanelCode.html
+  field_name: ChnCrdCode
+  length: 15
+- name: BPChanelName
+  description: 'Sets or returns the distribution channel name for the stage of the sales opportunity. Field name: ChnCrdName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~BPChanelName.html
+  field_name: ChnCrdName
+  length: 100
+- name: BPChannelContact
+  description: 'Sets or returns the contact person of the distribution channel for the sales opportunity stage. Field name: ChnCrdCon . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~BPChannelContact.html
+  field_name: ChnCrdCon
+- name: ClosingDate
+  description: 'Sets or returns the actual date of closing the sales opportunity in the current stage. Field name: CloseDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~ClosingDate.html
+  field_name: CloseDate
+- name: Contact
+  description: 'Returns a valid value of BoYesNoEnum type that specifies the whether or not the sales opportunity of the current stage is active. Field name: Linked .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~Contact.html
+  field_name: Linked
+- name: ContactPerson
+  description: 'Sets or returns the contact person for the sales opportunity stage. Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~ContactPerson.html
+  field_name: CntctCode
+- name: Count
+  description: Returns the total rows in the SalesOpportunitiesLines list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~Count.html
+- name: DataOwnershipfield
+  description: 'Sets or returns the employee ID who is responsible for the sales opportunity stage. Field name: Owner . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~DataOwnershipfield.html
+  field_name: Owner
+- name: DocumentCheckbox
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not restrict the search range for the business partner''s documents. Field name: DocChkbox .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~DocumentCheckbox.html
+  field_name: DocChkbox
+- name: DocumentNumber
+  description: 'Sets or returns the document ID. Field name: DocNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~DocumentNumber.html
+  field_name: DocNumber
+- name: DocumentType
+  description: Sets or returns the type of Sales - A/R and Purchasing - A/P document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~DocumentType.html
+- name: LineNum
+  description: 'Returns the current row number in the sales opportunity table. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~LineNum.html
+  field_name: Line
+- name: MaxLocalTotal
+  description: 'Sets or returns the total predicted sales, in local currency, for the current stage. Field name: MaxSumLoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~MaxLocalTotal.html
+  field_name: MaxSumLoc
+- name: MaxSystemTotal
+  description: 'Sets or returns the total predicted sales, in system currency, for the current stage. Field name: MaxSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~MaxSystemTotal.html
+  field_name: MaxSumSys
+- name: PercentageRate
+  description: 'Sets or returns the probability percentage to complete the sales stage successfully. Field name: ClosePrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~PercentageRate.html
+  field_name: ClosePrcnt
+- name: Remarks
+  description: 'Sets or returns a memo type string that specifies remarks of the sales opportunity for the current stage. Field name: Memo . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~Remarks.html
+  field_name: Memo
+- name: SalesPerson
+  description: 'Sets or returns the sales person code. Field name: SlpCode . This is a foreign key to the SalesPersons object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~SalesPerson.html
+  field_name: SlpCode
+- name: SequenceNo
+  description: 'Returns the sales opportunity unique ID (primary key). Field name: OpportId . Returns the sales opportunity unique ID (primary key). Field name: OpportId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~SequenceNo.html
+  field_name: OpportId
+- name: StageKey
+  description: 'Sets or returns the foreign key of the sales stage. Field name: Step_Id . This is a foreign key to the SalesStages .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~StageKey.html
+  field_name: Step_Id
+- name: StartDate
+  description: 'Sets or returns the date of starting the sales opportunity in the current stage. Field name: OpenDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~StartDate.html
+  field_name: OpenDate
+- name: Status
+  description: 'Sets or returns a valid value of BoSoStatus type that specifies the sales opportunity status for the current stage (open, missed, or sold). Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~Status.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~UserFields.html
+- name: WeightedAmountLocal
+  description: 'Sets or returns the weighted sales, in local currency, for the current stage. Field name: WtSumLoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~WeightedAmountLocal.html
+  field_name: WtSumLoc
+- name: WeightedAmountSystem
+  description: 'Sets or returns the weighted sales, in system currency, for the current stage. Field name: WtSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesLines~WeightedAmountSystem.html
+  field_name: WtSumSys

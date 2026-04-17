@@ -1,0 +1,50 @@
+name: ServiceCallInventoryExpenses
+title: ServiceCallInventoryExpenses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses.html
+description: 'ServiceCallInventoryExpenses is a child object of the ServiceCalls object in the Service module. Source table: SCL4 .'
+remarks: 'To display the form in the application: - Select Service --> Service Call . - Select the Expenses tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the inventory expenses table associated with the service call.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~Count.html
+- name: DocEntry
+  description: 'Sets or returns the internal key of the document associated with the service call inventory expenses. Field name: DocAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~DocEntry.html
+  field_name: DocAbs
+- name: DocumentNumber
+  description: 'Sets or returns the number of the document associated with the service call inventory expenses. Field name: DocNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~DocumentNumber.html
+  field_name: DocNumber
+- name: DocumentPostingDate
+  description: 'Returns the date of the document posting. Field name: DocPstDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~DocumentPostingDate.html
+  field_name: DocPstDate
+- name: DocumentType
+  description: 'Sets or returns a valid value of BoSvcEpxDocTypes that specifies the document type associated with the service call inventory expenses. Field name: Object .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~DocumentType.html
+  field_name: Object
+- name: LineNum
+  description: 'Returns the current row number. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~LineNum.html
+  field_name: Line
+- name: PartType
+  description: 'Not supported. Field name: PartType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~PartType.html
+- name: StockTransferDirection
+  description: 'Sets or returns a valid value of BoStckTrnDir type that specifies the transfer direction of items related to the service call, to or from the technician. Field name: StckTrnDir .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~StockTransferDirection.html
+  field_name: StckTrnDir
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallInventoryExpenses~UserFields.html

@@ -1,0 +1,35 @@
+name: Messages
+title: Messages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages.html
+description: 'Messages is a business object that represents the messages in the Administration module. This object enables you to send messages through SAP Business One messaging service. You can use the MessagesService , which enables more functions than the Messages object. Source table: OALR .'
+remarks: 'To display the form in the application: - From the main menu bar, select File --> Send --> Send Message .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~Add.html
+- name: AddDataColumn
+  description: Links a business object to your message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~AddDataColumn.html
+properties:
+- name: AttachmentEntry
+  description: 'Sets or returns the identification key of the attachment file, as assigned by SAP Business One when adding an Attachment Entry to alert message. Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Attachments
+  description: Returns the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~Attachments.html
+- name: MessageText
+  description: 'Sets or returns a memo type string that specifies the message text. Field name: MsgData . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~MessageText.html
+  field_name: MsgData
+- name: Priority
+  description: 'Sets or returns a valid value that determines the message priority. Field name: ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~Priority.html
+- name: Recipients
+  description: Returns a Recipients object, which specifies the recipients of this message.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~Recipients.html
+- name: Subject
+  description: 'Sets or returns the message subject. Field name: Subject . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Messages~Subject.html
+  length: 50

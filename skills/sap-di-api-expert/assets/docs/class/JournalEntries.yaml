@@ -1,0 +1,263 @@
+name: JournalEntries
+title: JournalEntries Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries.html
+description: 'JournalEntries is a business object that represents the journal transactions in the Finance module. This object enables you to: - Add a journal transaction. Retrieve a journal transaction by its key. Update a journal transaction. Remove a journal transaction. Save the object in XML format. Source table: OJDT .'
+remarks: To display the form in the applicationl, select Financials --> Journal Entry .
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Add.html
+- name: Cancel
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Cancel.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~GetAsXML.html
+- name: GetByKey
+  description: Retrieves one SAP Business One object by its absolute key in the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~GetByKey.html
+- name: Remove
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SaveXML.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SetCurrentLine.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Update.html
+properties:
+- name: AdjustTransaction
+  description: property AdjustTransaction
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~AdjustTransaction.html
+- name: AllocationNumberIL
+  description: 'Allocation Number (used in Electronic Invoice for Israel). Field name: AllocNum . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~AllocationNumberIL.html
+  field_name: AllocNum
+  length: 10
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~AttachmentEntry.html
+- name: AutomaticWT
+  description: 'Indicates whether withholding tax is calculated for this journal entry. Field name: AutoWT'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~AutomaticWT.html
+  field_name: AutoWT
+- name: AutoVAT
+  description: 'Determines whether or not to use automatic VAT calculation. Field name: AutoVAT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~AutoVAT.html
+- name: BaseReference
+  description: 'The document number of the document that triggered the current journal entry ( DocNum property of the Documents object). Field name: BaseRef'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~BaseReference.html
+  field_name: BaseRef
+- name: BlanketAgreementNumber
+  description: property BlanketAgreementNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~BlanketAgreementNumber.html
+- name: BlockDunningLetter
+  description: 'Indicates whether to prevent dunning letter for this journal entry. Yes means no dunning letters are generated. Field name: BlockDunn'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~BlockDunningLetter.html
+  field_name: BlockDunn
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Browser.html
+- name: CertificationNumber
+  description: property CertificationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~CertificationNumber.html
+- name: Cig
+  description: property Cig
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Cig.html
+- name: Corisptivi
+  description: 'Indicates the journal entry is for a cash register transaction. Field name: Corisptivi'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Corisptivi.html
+- name: Count
+  description: Returns the total journal entries.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Count.html
+- name: Cup
+  description: property Cup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Cup.html
+- name: DeferredTax
+  description: 'Indicates whether to apply the deferred tax function associated with the selected tax group or tax code. Field name: DeferredTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~DeferredTax.html
+- name: DocumentType
+  description: property DocumentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~DocumentType.html
+- name: DueDate
+  description: 'Sets or returns the value date of the journal entry. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~DueDate.html
+- name: ECDPostingType
+  description: property ECDPostingType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ECDPostingType.html
+- name: ElectronicProtocols
+  description: property ElectronicProtocols
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ElectronicProtocols.html
+- name: ExcludeFromTaxReportControlStatementVAT
+  description: property ExcludeFromTaxReportControlStatementVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ExcludeFromTaxReportControlStatementVAT.html
+- name: ExposedTransNumber
+  description: property ExposedTransNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ExposedTransNumber.html
+- name: FolioNumber
+  description: 'Returns the Folio number assigned to the document that initiated the journal entry. It is updated automatically after printing the document. Remains empty for journal entries that result from cancellation of documents with Folio numbers, and for manual journal entries. Country-specific for Chile and Mexico. Field name: FolioNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~FolioNumber.html
+  field_name: FolioNum
+- name: FolioNumberFrom
+  description: property FolioNumberFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~FolioNumberFrom.html
+- name: FolioNumberTo
+  description: property FolioNumberTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~FolioNumberTo.html
+- name: FolioPrefixString
+  description: 'Returns the prefix of the FolioNumber . Country-specific for Chile and Mexico. Field name: FolioPref . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~FolioPrefixString.html
+  field_name: FolioPref
+  length: 2
+- name: Indicator
+  description: 'Sets or returns the Factoring Indicator for the journal entries master record. Field name: Indicator . Length: 2 characters. This is a foreign key to the FactoringIndicators object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Indicator.html
+  length: 2
+- name: IsCostCenterTransfer
+  description: property IsCostCenterTransfer
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~IsCostCenterTransfer.html
+- name: JdtNum
+  description: 'Returns the number of the journal transaction in the system. Field name: JDT_NUM .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~JdtNum.html
+  field_name: JDT_NUM
+- name: Letter
+  description: property Letter
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Letter.html
+- name: Lines
+  description: Returns the JournalEntries_Lines object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Lines.html
+- name: LocationCode
+  description: 'Sets or returns the location code in journal entries. Applicable for cluster B . Field name: LocCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~LocationCode.html
+  field_name: LocCode
+- name: Memo
+  description: 'Sets or returns details about the journal entry. Field name: Memo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Memo.html
+  length: 50
+- name: Number
+  description: 'Returns Number of entries in Journal. Field name: Number .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Number.html
+- name: OperationCode
+  description: property OperationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~OperationCode.html
+- name: Original
+  description: 'The document entry of the document that triggered the current journal entry ( DocEntry property of the Documents object). Field name: CreatedBy'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Original.html
+  field_name: CreatedBy
+- name: OriginalJournal
+  description: 'The type of document that triggered the current journal entry. Field name: TransType'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~OriginalJournal.html
+  field_name: TransType
+- name: PointOfIssueCode
+  description: property PointOfIssueCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~PointOfIssueCode.html
+- name: Printed
+  description: Returns a valid value that specifies the print status of the journal entry document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Printed.html
+- name: PrivateKeyVersion
+  description: property PrivateKeyVersion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~PrivateKeyVersion.html
+- name: ProjectCode
+  description: 'Sets or returns the project code related to the journal entry. Field name: Project , length: 8 characters. This is a foriegn key to Project Codes table, exposed via ProjectsService . In SAP Business One, you can relate business transactions to projects. This can help you to create cost/income analyzes reports based on projects.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ProjectCode.html
+  field_name: Project
+  length: 8
+- name: Reference
+  description: 'Sets or returns the first reference code of the journal entry. Field name: Ref1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Reference.html
+  field_name: Ref1
+  length: 100
+- name: Reference2
+  description: 'Sets or returns the second reference code of the journal entry. Field name: Ref2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Reference2.html
+  field_name: Ref2
+  length: 100
+- name: Reference3
+  description: 'Sets or returns the third reference code of the journal entry. Field name: Ref3. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Reference3.html
+  field_name: Ref3
+  length: 100
+- name: ReferenceDate
+  description: 'Sets or returns the posting date of the journal entry. Field name: RefDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ReferenceDate.html
+  field_name: RefDate
+- name: Report347
+  description: 'Sets or returns a valid value that determines whether or not to include the journal entry in the 347 report. Country-specific for Spain. Field name: Report347 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Report347.html
+- name: ReportEU
+  description: 'Sets or returns a valid value that determines whether or not to include the journal entry in the 349 report and/or the EU Sales report. Country-specific for Spain. Field name: ReportEU .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ReportEU.html
+- name: ReportingSectionControlStatementVAT
+  description: property ReportingSectionControlStatementVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ReportingSectionControlStatementVAT.html
+- name: ResidenceNumberType
+  description: property ResidenceNumberType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~ResidenceNumberType.html
+- name: SAFTTransactionType
+  description: 'Standard Audit File-Tax (SAF-T) transaction types according to the Portuguese tax authority. Field name: SAFTType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SAFTTransactionType.html
+  field_name: SAFTType
+- name: SAFTTransactionTypeEx
+  description: 'Standard Audit File-Tax (SAF-T) define-new option for transaction types according to the Portuguese tax authority. Field name: SAFTTypeEx . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SAFTTransactionTypeEx.html
+  field_name: SAFTTypeEx
+  length: 10
+- name: SAPPassport
+  description: property SAPPassport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SAPPassport.html
+- name: Series
+  description: 'Sets or returns the auto-number series that generated the Journal entry number. Field name: Series .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~Series.html
+- name: SignatureDigest
+  description: property SignatureDigest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SignatureDigest.html
+- name: SignatureInputMessage
+  description: property SignatureInputMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~SignatureInputMessage.html
+- name: StampTax
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to apply stamp tax instead of TaxGroup in the JournalEntries_Lines child object. Field name: StampTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~StampTax.html
+- name: StornoDate
+  description: 'Sets or returns the date for cancelling the transaction (creating a reverse transaction). Field name: StornoDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~StornoDate.html
+- name: TaxDate
+  description: 'Sets or returns the date for the tax calculation or payment. Field name: TaxDate . Sets or returns the date for the tax calculation or payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~TaxDate.html
+- name: TransactionCode
+  description: 'Sets or returns the transaction code as defined in SAP Business One. Field name: TransCode . Length: 4 characters. This is a foreign key to the Journal Entry Codes table ( OTRC ), not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~TransactionCode.html
+  field_name: TransCode
+  length: 4
+- name: UseAutoStorno
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to cancel the transaction (create a reverse transaction) in the date specified in the StornoDate property. Field name: AutoStorno .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~UseAutoStorno.html
+  field_name: AutoStorno
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~UserFields.html
+- name: VatDate
+  description: 'Sets or returns the date from which the tax rate for this VAT Group code applies. Field name: vatdate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~VatDate.html
+  field_name: vatdate
+- name: WithholdingTaxData
+  description: Withholding tax information for this journal entry.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~WithholdingTaxData.html
+- name: WTSum
+  description: 'The withholding tax amount. Field name: WTSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~WTSum.html
+- name: WTSumFC
+  description: 'The withholding tax amount in foreign currency. Field name: WTSumFC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~WTSumFC.html
+- name: WTSumSC
+  description: 'The withholding tax amount in foreign currency. Field name: WTSumSC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries~WTSumSC.html

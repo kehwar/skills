@@ -1,0 +1,462 @@
+name: Payments
+title: Payments Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments.html
+description: 'Payments is a business object that represents payment methods in the Banking module. This object defines the incoming payments from customers and outgoing payments to vendors. Available payment methods are cash, credit cards, checks, or bank transfers. Source tables: ORCT (incoming payments) and OVPM (outgoing payments).'
+remarks: 'Mandatory fields in SAP Business One: CardCode , CashSum , TransferAccount , and TransferSum . To display the form in the application: - For the ORCT table, select Banking --> Incoming Payments --> Incoming Payments . For the OVPM table, select Banking --> Outgoing Payments --> Payments to Vendors .'
+methods:
+- name: Add
+  description: Adds a new Payment object to SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Add.html
+- name: Cancel
+  description: Cancels a payment transaction. The cancellation date of the transaction is the original document date.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Cancel.html
+- name: CancelbyCurrentSystemDate
+  description: method CancelbyCurrentSystemDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CancelbyCurrentSystemDate.html
+- name: Close
+  description: Closes a record of the object in SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Close.html
+- name: GetApprovalTemplates
+  description: Gets the related approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~GetApprovalTemplates.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~GetByKey.html
+- name: HandleApprovalRequest
+  description: Handling of incoming payment object and received response from webservice.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~HandleApprovalRequest.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Remove.html
+- name: RequestApproveCancellation
+  description: method RequestApproveCancellation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~RequestApproveCancellation.html
+- name: SaveDraftToDocument
+  description: Converts an approved draft document to a valid document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SaveDraftToDocument.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Update.html
+properties:
+- name: AccountPayments
+  description: Returns the Payments_Accounts object that represents the payments through account transfers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~AccountPayments.html
+- name: Address
+  description: 'Sets or returns the Bill To address of the business partner. Field name: Address . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Address.html
+  length: 254
+- name: AllocationNumberIL
+  description: 'Allocation number. This field is only available in the Israel localization. Field name: AllocNum. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~AllocationNumberIL.html
+  field_name: AllocNum
+  length: 50
+- name: ApplyVAT
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to apply a tax to this payment. Field name: ApplyVAT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ApplyVAT.html
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~AttachmentEntry.html
+- name: AuthorizationStatus
+  description: 'Returns the status of the authorization for this payment. Field name: wddStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~AuthorizationStatus.html
+  field_name: wddStatus
+- name: BankAccount
+  description: 'Sets or returns the bank account number used for this payment. Field name: BankAcct . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BankAccount.html
+  field_name: BankAcct
+  length: 50
+- name: BankChargeAmount
+  description: 'Sets or returns the bank charge amount. Field name: BcgSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BankChargeAmount.html
+  field_name: BcgSum
+- name: BankChargeAmountInFC
+  description: 'Returns the bank charge amount in foreign currency. Field name: BcgSumFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BankChargeAmountInFC.html
+  field_name: BcgSumFC
+- name: BankChargeAmountInSC
+  description: 'Returns the bank charge amount in system currency. Field name: BcgSumSy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BankChargeAmountInSC.html
+  field_name: BcgSumSy
+- name: BankCode
+  description: 'Sets or returns the bank code for bank transfer. Field name: BankCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BankCode.html
+  length: 30
+- name: BillOfExchange
+  description: Returns the BillOfExchange object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillOfExchange.html
+- name: BillOfExchangeAgent
+  description: 'Sets or returns the code of the company employee responsible for the collection and management of bill of exchange transactions. Field name: BoeAgent . Length: 32 characters. This is a foreign key to the Agent Name table ( OAGP ), not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillOfExchangeAgent.html
+  field_name: BoeAgent
+  length: 32
+- name: BillOfExchangeAmount
+  description: 'Sets or returns the total amount of payment using a Bill Of Exchange document in local currency. Field name: BoeSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillOfExchangeAmount.html
+  field_name: BoeSum
+- name: BillOfExchangeAmountFC
+  description: 'Returns the total amount of payment using a Bill Of Exchange document in foreign currency. Field name: BoeSumFc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillOfExchangeAmountFC.html
+  field_name: BoeSumFc
+- name: BillOfExchangeAmountSC
+  description: 'Returns the total amount of payment using a Bill Of Exchange document in system currency. Field name: BoeSumSc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillOfExchangeAmountSC.html
+  field_name: BoeSumSc
+- name: BillofExchangeStatus
+  description: 'Sets or returns a valid value of BoBoeStatus type that specifies the status of the Bill Of Exchange. Field name: BoeStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BillofExchangeStatus.html
+  field_name: BoeStatus
+- name: BlanketAgreement
+  description: property BlanketAgreement
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BlanketAgreement.html
+- name: BoeAccount
+  description: 'Sets or returns the control G/L account that is used in the Bill Of Exchange transactions. Field name: BoeAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BoeAccount.html
+  field_name: BoeAcc
+  length: 15
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BPLID.html
+- name: BPLName
+  description: property BPLName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~BPLName.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Browser.html
+- name: Cancelled
+  description: Indicates whether the payment was cancelled.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Cancelled.html
+- name: CancelStatus
+  description: property CancelStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CancelStatus.html
+- name: CardCode
+  description: 'Sets or returns the business partner code or the account code. Field name: CardCode . Length: 15 characters. This is a foreign key to the BusinessPartnersService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CardCode.html
+  length: 15
+- name: CardName
+  description: 'Sets or returns the business partner''s full name. Field name: CardFName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CardName.html
+  field_name: CardFName
+  length: 100
+- name: CashAccount
+  description: 'Sets or returns the cash G/L account used for this payment. Field name: CashAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CashAccount.html
+  field_name: CashAcct
+  length: 15
+- name: CashSum
+  description: 'Sets or returns the amount of cash in the current payment in local currency. Field name: CashSum . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CashSum.html
+- name: CashSumFC
+  description: 'Returns the amount of cash in the current payment in foreign currency. Field name: CashSumFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CashSumFC.html
+- name: CashSumSys
+  description: 'Returns the amount of cash in the current payment in system currency. Field name: CheckSumSy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CashSumSys.html
+  field_name: CheckSumSy
+- name: CertificationNumber
+  description: property CertificationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CertificationNumber.html
+- name: CheckAccount
+  description: 'Sets or returns the check G/L account used for this payment. Field name: CheckAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CheckAccount.html
+  field_name: CheckAcct
+  length: 15
+- name: Checks
+  description: Returns the Payments_Checks child object that represents the payments through checks.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Checks.html
+- name: Cig
+  description: property Cig
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Cig.html
+- name: ContactPersonCode
+  description: 'Sets or returns the contact person code of the specified business partner in this payment. Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ContactPersonCode.html
+  field_name: CntctCode
+- name: ControlAccount
+  description: 'The control account for this document. Field name: BpAct This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ControlAccount.html
+  field_name: BpAct
+- name: CounterReference
+  description: 'Sets or returns reference information about the payment. Field name: CounterRef . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CounterReference.html
+  field_name: CounterRef
+  length: 8
+- name: CreditCards
+  description: Returns the Payments_CreditCards child object that represents the payments through credit cards.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~CreditCards.html
+- name: Cup
+  description: property Cup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Cup.html
+- name: DeductionPercent
+  description: 'Sets or returns the deduction percentage. Field name: DdctPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DeductionPercent.html
+  field_name: DdctPrcnt
+- name: DeductionSum
+  description: 'Sets or returns the calculated deduction amount. Field name: DdctSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DeductionSum.html
+  field_name: DdctSum
+- name: DigitalPayments
+  description: 'Indicates whether it uses digital payment. Field name: DigPayment .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DigitalPayments.html
+  field_name: DigPayment
+- name: DocCurrency
+  description: 'Sets or returns the document code of the currency used in this payment. Field name: DocCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocCurrency.html
+  field_name: DocCurr
+  length: 3
+- name: DocDate
+  description: 'Sets or returns the posting date of the payment document. Field name: VatDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocDate.html
+  field_name: VatDate
+- name: DocEntry
+  description: 'Returns the document entry key that uniquely identifies the payment document. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocEntry.html
+- name: DocNum
+  description: 'Sets or returns the payment document number. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocNum.html
+- name: DocObjectCode
+  description: Sets or returns a valid value of BoPaymentsObjectType type that specifies the payments document type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocObjectCode.html
+- name: DocRate
+  description: 'Sets or returns the exchange rate (greater than 0) related to the local currency. Field name: DocRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocRate.html
+- name: DocType
+  description: 'Sets or returns a valid value of BoRcptTypes type that specifies the payment recipient (replaces the DocTypte property). Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocType.html
+- name: DocTypte
+  description: Sets or returns a valid value of BoRcptTypes type that specifies the payment recipient.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocTypte.html
+- name: DocumentReferences
+  description: property DocumentReferences
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DocumentReferences.html
+- name: DueDate
+  description: 'Sets or returns the due date of the check. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~DueDate.html
+- name: EDocExportFormat
+  description: Document Export Format
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~EDocExportFormat.html
+- name: ElecCommMessage
+  description: Log Message
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ElecCommMessage.html
+- name: ElecCommStatus
+  description: Communication Status
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ElecCommStatus.html
+- name: ElectronicProtocols
+  description: property ElectronicProtocols
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ElectronicProtocols.html
+- name: HandWritten
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this payment is based on a handwritten document. Field name: Handwrtten .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~HandWritten.html
+  field_name: Handwrtten
+- name: Invoices
+  description: Returns the Payments_Invoices child object that represents the invoice data for this payment.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Invoices.html
+- name: IsPayToBank
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether to specify the bank details or only the PaytoCode for the outgoing payment. Field name: IsPaytoBnk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~IsPayToBank.html
+  field_name: IsPaytoBnk
+- name: JournalRemarks
+  description: 'Sets or returns the remarks to the journal entry of this payment. Field name: . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~JournalRemarks.html
+  length: 50
+- name: LocalCurrency
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the payment uses local currency. Field name: DiffCurr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~LocalCurrency.html
+  field_name: DiffCurr
+- name: LocationCode
+  description: 'Sets or returns the location code in incoming and outgoing payments. Applicable for cluster B . Field name: LocCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~LocationCode.html
+  field_name: LocCode
+- name: PaymentByWTCertif
+  description: property PaymentByWTCertif
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PaymentByWTCertif.html
+- name: PaymentPriority
+  description: 'Sets or returns a valid value of BoPaymentPriorities type that specifies the payment priority. Field name: PaPriority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PaymentPriority.html
+  field_name: PaPriority
+- name: PaymentReferenceNo
+  description: 'Sets or returns the number of the payment reference for the payment. Field name: PaymentRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PaymentReferenceNo.html
+  field_name: PaymentRef
+  length: 27
+- name: Payments_ApprovalRequests
+  description: Returns the Payments_ApprovalRequests object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Payments_ApprovalRequests.html
+- name: PaymentType
+  description: 'Sets or returns a valid value of Payment Type ( Object Type) . Field name: ObjType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PaymentType.html
+  field_name: ObjType
+- name: PayToBankAccountNo
+  description: 'Sets or returns the bank account number for the outgoing payment. Field name: PBnkAccnt . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PayToBankAccountNo.html
+  field_name: PBnkAccnt
+  length: 50
+- name: PayToBankBranch
+  description: 'Sets or returns the bank branch for the outgoing payment. Field name: PBnkBranch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PayToBankBranch.html
+  field_name: PBnkBranch
+  length: 50
+- name: PayToBankCode
+  description: 'Sets or returns the bank code for the outgoing payment. Field name: PBnkCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PayToBankCode.html
+  field_name: PBnkCode
+  length: 30
+- name: PayToBankCountry
+  description: 'Sets or returns the bank country for the outgoing payment. Field name: PBnkCnt . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PayToBankCountry.html
+  field_name: PBnkCnt
+  length: 3
+- name: PayToCode
+  description: 'Sets or returns the destination code for the outgoing payment. Field name: PayToCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PayToCode.html
+  length: 50
+- name: PrimaryFormItems
+  description: property PrimaryFormItems
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PrimaryFormItems.html
+- name: Printed
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the payment document was printed. Field name: Printed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Printed.html
+- name: PrivateKeyVersion
+  description: property PrivateKeyVersion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~PrivateKeyVersion.html
+- name: Proforma
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the payment refers to a Pro-Forma invoice. Field name: Proforma .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Proforma.html
+- name: ProjectCode
+  description: 'Sets or returns the project code that the payment refers to. Field name: PrjCode . Length: 8 characters. This is a foreign key to the Projects table ( OPRJ - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~ProjectCode.html
+  field_name: PrjCode
+  length: 8
+- name: Reference1
+  description: 'Sets or returns the first reference code of the payment. Field name: Ref1 . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Reference1.html
+  field_name: Ref1
+  length: 11
+- name: Reference2
+  description: 'Sets or returns the second reference code of the payment. Field name: Ref2 . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Reference2.html
+  field_name: Ref2
+  length: 8
+- name: Remarks
+  description: 'Sets or returns the remarks to this payment. Field name: Comments . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Remarks.html
+  field_name: Comments
+  length: 254
+- name: Series
+  description: 'Sets or returns the auto-number series that generated the document number. Field name: Series . This is a foreign key to the Series object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~Series.html
+- name: SignatureDigest
+  description: property SignatureDigest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SignatureDigest.html
+- name: SignatureInputMessage
+  description: property SignatureInputMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SignatureInputMessage.html
+- name: SplitVendorCreditRow
+  description: Splits journal entries of an outgoing payment in credit card installments.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~SplitVendorCreditRow.html
+- name: TaxDate
+  description: 'Sets or returns the date for the tax calculation or payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TaxDate.html
+- name: TaxGroup
+  description: 'Sets or returns the VAT group. Field name: VatGroup . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TaxGroup.html
+  field_name: VatGroup
+  length: 8
+- name: TransactionCode
+  description: 'Sets or returns the transaction code of incoming payment. Field name: TransCode . This is a foreign key to the Journal Entry Codes table ( OTRC ), not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransactionCode.html
+  field_name: TransCode
+- name: TransferAccount
+  description: 'Sets or returns the G/L account number for the payment Transfer Account . Field name: TrsfrAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransferAccount.html
+  field_name: TrsfrAcct
+  length: 15
+- name: TransferDate
+  description: 'Sets or returns the date of the payment transfer to the bank. Field name: TrsfrDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransferDate.html
+  field_name: TrsfrDate
+- name: TransferRealAmount
+  description: 'Sets or returns the Transfer Real Amount in payment document. Field name: TfrRealAmt . The object is applicable for SAP Business One 2004C CEE (country-specific for Russia).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransferRealAmount.html
+  field_name: TfrRealAmt
+- name: TransferReference
+  description: 'Sets or returns the reference information for the bank transfer payment means. Field name: TrsfrRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransferReference.html
+  field_name: TrsfrRef
+  length: 27
+- name: TransferSum
+  description: 'Sets or returns the total payments Transfer Amount . Field name: TrsfrSum . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~TransferSum.html
+  field_name: TrsfrSum
+- name: UnderOverpaymentdifference
+  description: 'Sets or returns the Under / Over payment Difference . Field name: UndOvDiff .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~UnderOverpaymentdifference.html
+  field_name: UndOvDiff
+- name: UnderOverpaymentdiffFC
+  description: property UnderOverpaymentdiffFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~UnderOverpaymentdiffFC.html
+- name: UnderOverpaymentdiffSC
+  description: 'Sets or returns the Under / Overpayment Difference in System Currency. Field name: UndOvDiffS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~UnderOverpaymentdiffSC.html
+  field_name: UndOvDiffS
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~UserFields.html
+- name: VatDate
+  description: 'Sets or returns the Vat payment date (Document Date) . Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~VatDate.html
+  field_name: TaxDate
+- name: VATRegNum
+  description: property VATRegNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~VATRegNum.html
+- name: WithholdingTaxCertificates
+  description: property WithholdingCertificate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WithholdingTaxCertificates.html
+- name: WithholdingTaxDataWTX
+  description: property WithholdingTaxDataWTX
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WithholdingTaxDataWTX.html
+- name: WTAccount
+  description: 'Returns the withholding account. Field name: WtAccount . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTAccount.html
+  field_name: WtAccount
+  length: 15
+- name: WTAmount
+  description: 'Sets or returns the total withholding tax amount (in local currency) related to the payment. Field name: WtSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTAmount.html
+  field_name: WtSum
+- name: WTAmountFC
+  description: 'Returns the total withholding tax amount (in foreign currency) related to the payment. Field name: WtSumFrgn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTAmountFC.html
+  field_name: WtSumFrgn
+- name: WTAmountSC
+  description: 'Returns the total withholding tax amount (in system currency) related to the payment. Field name: WtSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTAmountSC.html
+  field_name: WtSumSys
+- name: WtBaseSum
+  description: 'Sets or returns the Base sum for vat calculation. Field name: WtBaseSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WtBaseSum.html
+- name: WtBaseSumFC
+  description: 'Sets or returns the Withholding Tax Base Sum in Foreign Currency. Field name: WtBaseSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WtBaseSumFC.html
+  field_name: WtBaseSumF
+- name: WtBaseSumSC
+  description: 'Sets or returns the Withholding Tax Base Sum in System Currency. Field name: WtSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WtBaseSumSC.html
+  field_name: WtSumSys
+- name: WTCode
+  description: 'Sets or returns the withholding tax code assigend to the payment. Length: 4 characters. This is a foreign key to WithholdingTaxCodes object. Field name: WtCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTCode.html
+  field_name: WtCode
+  length: 4
+- name: WTTaxableAmount
+  description: 'Returns the withholding taxable amount of the payment. Field name: WtBaseAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments~WTTaxableAmount.html
+  field_name: WtBaseAmnt

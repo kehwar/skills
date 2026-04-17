@@ -1,0 +1,175 @@
+name: VatGroups
+title: VatGroups Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups.html
+description: 'The VatGroups object enables to define tax groups that can be assigned to business partners and items in sales and purchase documents. Source table: OVTG .'
+remarks: 'Country-specific for Europe. Mandatory properties: Code and Effectivefrom (VatGroups_Lines). To display the form in the application: - Select Administration --> Setup --> Financials --> Tax --> Tax Groups .'
+methods:
+- name: Add
+  description: Adds a tax group definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Update.html
+properties:
+- name: AcquisitionReverse
+  description: 'Determines whether or not the VAT group is related to Acquisition/Reverse. Field name: AcqstnRvrs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~AcquisitionReverse.html
+  field_name: AcqstnRvrs
+- name: AcquisitionReverseCorrespondingTaxCode
+  description: property AcquisitionReverseCorrespondingTaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~AcquisitionReverseCorrespondingTaxCode.html
+- name: AcquisitionTax
+  description: 'Sets or returns the G/L account for acquisition tax posting. Field name: AcqsTax . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~AcquisitionTax.html
+  field_name: AcqsTax
+  length: 15
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Browser.html
+- name: CashDiscountAccount
+  description: 'Sets or returns the account to which you want to post cash discount amounts. Field name: CashDisAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~CashDiscountAccount.html
+  field_name: CashDisAcc
+  length: 15
+- name: Category
+  description: 'Determines whether the tax group applies to sales documents (output tax) or to purchase documents (input tax). Field name: Category .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Category.html
+- name: Code
+  description: 'Sets or returns a tax group code (primary key). Field name: Code . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Code.html
+  length: 8
+- name: Correction
+  description: 'Determines whether or not the tax group is a correction tax group. Field name: Correction .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Correction.html
+- name: DeferredTaxAcc
+  description: 'Sets or returns the G/L account for deferred tax postings. Field name: DeferrAcc . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~DeferredTaxAcc.html
+  field_name: DeferrAcc
+  length: 15
+- name: DownPaymentTaxOffsetAccount
+  description: property DownPaymentTaxOffsetAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~DownPaymentTaxOffsetAccount.html
+- name: EBooksVatCategory
+  description: 'E-Books VAT category Field name: EBVatCateg .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EBooksVatCategory.html
+  field_name: EBVatCateg
+- name: EBooksVATExemptionCause
+  description: property EBooksVatExemptionCause
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EBooksVATExemptionCause.html
+- name: EBooksVatExpClassCategory
+  description: property EBooksVatExpClassCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EBooksVatExpClassCategory.html
+- name: EBooksVatExpClassType
+  description: property EBooksVatExpClassType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EBooksVatExpClassType.html
+- name: EqualizationTaxAccount
+  description: 'The G/L account for equalization tax. Field name: EquAccount'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EqualizationTaxAccount.html
+  field_name: EquAccount
+- name: EU
+  description: 'Determines whether or not the tax group applies to European Union countries. Field name: IsEC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~EU.html
+  field_name: IsEC
+- name: ExcludedTaxSummary
+  description: property ExcludedTaxSummary
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~ExcludedTaxSummary.html
+- name: GoodsShipment
+  description: 'Sets or returns the goods shipment indicator, which appears in the EU Sales Report. This property is applicable when TriangularDeal is not set. Field name: GoddsShip . Length: 1 numeric character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~GoodsShipment.html
+  field_name: GoddsShip
+- name: GroupDescription
+  description: 'Sets or returns the group description. This information could be used later as parameters in user queries. Field name: ReportCode . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~GroupDescription.html
+  field_name: ReportCode
+  length: 100
+- name: Inactive
+  description: property Inactive
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Inactive.html
+- name: Name
+  description: 'Sets or returns a tax group name. Field name: Name . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Name.html
+  length: 50
+- name: NonDeduct
+  description: 'Sets or returns the non-deductable tax percentange. Field name: NonDedct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~NonDeduct.html
+  field_name: NonDedct
+- name: NonDeductAcc
+  description: 'Sets or returns the G/L account for non-deductable tax postings. Field name: NonDedAcc . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~NonDeductAcc.html
+  field_name: NonDedAcc
+  length: 15
+- name: Report349Code
+  description: property Report349Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~Report349Code.html
+- name: SAFTTaxCode
+  description: 'Standard Audit File-Tax (SAF-T) tax codes according to the Portuguese tax authority. Field name: SAFTTaxCod . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~SAFTTaxCode.html
+  field_name: SAFTTaxCod
+  length: 10
+- name: SAFTTaxCodeEx
+  description: 'Standard Audit File-Tax (SAF-T) define-new option for tax code according to the Portuguese tax authority. Field name: SAFTTxCdEx . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~SAFTTaxCodeEx.html
+  field_name: SAFTTxCdEx
+  length: 10
+- name: ServiceSupply
+  description: 'Sets or returns the service supply indicator, which appears in the EU Sales Report. This property is applicable when TriangularDeal and GoodsShipment is not set. If you put a value in either TriangularDeal or GoodsShipment , it will cause the deletion of the value in ServiceSupply . Field name: ServSupply . Length: 1 numeric character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~ServiceSupply.html
+  field_name: ServSupply
+- name: StandardTaxCode
+  description: property StandardTaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~StandardTaxCode.html
+- name: TaxAccount
+  description: 'Sets or returns the G/L account for the tax group. Field name: Account . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~TaxAccount.html
+  field_name: Account
+  length: 15
+- name: TaxExemptionReason
+  description: Reason for exemption from tax; options are determined by the authorities.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~TaxExemptionReason.html
+- name: TaxRegion
+  description: property TaxRegion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~TaxRegion.html
+- name: TaxTypeBlackList
+  description: property TaxTypeBlackList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~TaxTypeBlackList.html
+- name: TriangularDeal
+  description: 'Sets or returns the triangular deal indicator, which enables to identify delivery of goods as part of triangular deals in the EU sales report. This property is applicable when GoodsShipment is not set. Field name: Indicator . Length: 1 numeric character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~TriangularDeal.html
+  field_name: Indicator
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~UserFields.html
+- name: VatCorrection
+  description: 'Sets or returns the tax group code (foreign key) that is used as a correction tax group. Field name: VatCrctn . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~VatCorrection.html
+  field_name: VatCrctn
+  length: 8
+- name: VATDeductibleAccount
+  description: property VATDeductibleAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~VATDeductibleAccount.html
+- name: VatGroups_Lines
+  description: Returns the VatGroups_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~VatGroups_Lines.html
+- name: VATInRevenueAccount
+  description: property VATInRevenueAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~VATInRevenueAccount.html
+- name: VATType
+  description: 'Type of VAT. Field name: VatType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~VatGroups~VATType.html
+  field_name: VatType

@@ -1,0 +1,34 @@
+name: ItemsProjects
+title: ItemsProjects Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects.html
+description: 'ItemsProjects is a child object of the Items object. You can assign projects to an asset to facilitate cost accounting. Source table: ITM5 .'
+remarks: For asset transactions that create journal entries, SAP Business One carries forward the relevant projects and distribution rules to the journal entries. To access the subtab, from the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data . Select the Fixed Assets tab and then the Cost Accounting subtab.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~Count.html
+- name: LineNumber
+  description: 'The current row number in the list. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~LineNumber.html
+  field_name: LineNum
+- name: Project
+  description: 'The projects to which you want to assign the asset. Field name: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~Project.html
+  length: 20
+- name: ValidFrom
+  description: 'The start date of the period during which you want to assign the asset to a project. Field name: ValidFrom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~ValidFrom.html
+- name: ValidTo
+  description: 'The end date of the period during which you want to assign the asset to a project. Field name: ValidTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsProjects~ValidTo.html

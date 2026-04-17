@@ -1,0 +1,124 @@
+name: BPAddresses
+title: BPAddresses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses.html
+description: 'BPAddresses is a child object of the BusinessPartners and represents the Ship To and Bill To addresses list of the business partner. This object is part of the Business Partner module. You can retrieve or set this object by using the Addresses property of the BusinessPartners object. This object enables you to add Ship To, Bill To, and multiple addresses to the business partner master data. Source table: CRD1 .'
+remarks: 'Mandatory field in SAP Business One: AddressName . To display the form in the application: - Select Business Partners --> Business Partner Master Data --> Addresses tab.'
+methods:
+- name: Add
+  description: Adds a new Address record. To save the information to the database, use the Add method in the BusinessPartners object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~SetCurrentLine.html
+properties:
+- name: AddressName
+  description: 'Sets or returns the name of the address (Bill To address, Main address, Ship To address, and so on). Field name: Address . Mandatory property. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~AddressName.html
+  field_name: Address
+  length: 50
+- name: AddressName2
+  description: 'Sets or returns the BP second, alternative Address. Field name: Address2 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~AddressName2.html
+  field_name: Address2
+  length: 50
+- name: AddressName3
+  description: 'Sets or returns the BP third, alternative Address. Field name: Address3 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~AddressName3.html
+  field_name: Address3
+  length: 50
+- name: AddressType
+  description: 'Sets or returns a valid value of BoAddressType type that specifies the type of the business partner''s address: Ship To or Bill To . Field name: AdresType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~AddressType.html
+  field_name: AdresType
+- name: Block
+  description: 'Sets or returns the block address. Field name: Block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Block.html
+  length: 100
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~BPCode.html
+- name: BuildingFloorRoom
+  description: 'Sets or returns the additional address details, such as building number, floor number, and room number. Field name: Building . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~BuildingFloorRoom.html
+  field_name: Building
+- name: City
+  description: 'Sets or returns the city. Field name: City . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~City.html
+  length: 100
+- name: Count
+  description: Returns the number of addresses in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Count.html
+- name: Country
+  description: 'Sets or returns the country code (for example, DE). Field name: City . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Country.html
+  field_name: City
+  length: 3
+- name: County
+  description: 'Sets or returns the county. Field name: County . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~County.html
+  length: 100
+- name: CreateDate
+  description: property CreateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~CreateDate.html
+- name: CreateTime
+  description: property CreateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~CreateTime.html
+- name: FederalTaxID
+  description: 'Sets or returns the federal tax ID of the business partner. Field name: LicTradNum . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~FederalTaxID.html
+  field_name: LicTradNum
+  length: 32
+- name: GlobalLocationNumber
+  description: property GlobalLocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~GlobalLocationNumber.html
+- name: GSTIN
+  description: property GSTIN
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~GSTIN.html
+- name: GstType
+  description: property GstType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~GstType.html
+- name: MYFType
+  description: property MYFType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~MYFType.html
+- name: Nationality
+  description: property Nationality
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Nationality.html
+- name: RowNum
+  description: The line number within the lines of the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~RowNum.html
+- name: State
+  description: 'Sets or returns the state code of the business partner. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~State.html
+  length: 3
+- name: Street
+  description: 'Sets or returns the street of the business partner address. Field name: Street . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~Street.html
+  length: 100
+- name: StreetNo
+  description: 'The street number. Field name: StreetNo'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~StreetNo.html
+- name: TaasEnabled
+  description: property TaasEnabled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~TaasEnabled.html
+- name: TaxCode
+  description: 'Sets or returns the sales tax code. Field name: TaxCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~TaxCode.html
+  length: 8
+- name: TaxOffice
+  description: property TaxOffice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~TaxOffice.html
+- name: TypeOfAddress
+  description: 'The address type. Field name: AddrType'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~TypeOfAddress.html
+  field_name: AddrType
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~UserFields.html
+- name: ZipCode
+  description: 'Sets or returns the zip code. Field name: ZipCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAddresses~ZipCode.html
+  length: 20

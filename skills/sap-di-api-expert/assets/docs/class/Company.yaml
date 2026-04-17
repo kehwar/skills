@@ -1,0 +1,197 @@
+name: Company
+title: Company Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company.html
+description: Company is the primary DI API object that represents a single SAP Business One company database. This object enables you to connect to the company database and to create business objects to use with the company database.
+remarks: The Company object is the only object of the DI API that you can create directly (for example, with New in Visual Basic). You can then use the Company object to create all other DI API objects. To enable your add-on to support the side-by-side model, see Versions Compatibility .
+methods:
+- name: AddTrustedEntity
+  description: Adds a trusted entity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~AddTrustedEntity.html
+- name: AuthenticateUser
+  description: 'Checks whether a pair of username and password exist and match in the current SAP Business One company . Note: this method is for superuser only.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~AuthenticateUser.html
+- name: ChangePassword
+  description: Changes the password of the actual user connected to SAP Business One. The system verifies whether the new password complies to the company password policy and if not, the system returns an error.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~ChangePassword.html
+- name: Connect
+  description: Connects to the SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Connect.html
+- name: DeleteTrustedEntity
+  description: Deletes a trusted entity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~DeleteTrustedEntity.html
+- name: Disconnect
+  description: Disconnects an active connection with the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Disconnect.html
+- name: EndTransaction
+  description: Ends a global transaction that started with the StartTransaction method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~EndTransaction.html
+- name: GetBusinessObject
+  description: Creates a new business object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetBusinessObject.html
+- name: GetBusinessObjectFromXML
+  description: Creates a new business object based on a valid XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetBusinessObjectFromXML.html
+- name: GetBusinessObjectXmlSchema
+  description: Retrieves the XML schema that is used by the object to validate the input XML files.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetBusinessObjectXmlSchema.html
+- name: GetCompanyDate
+  description: Get Company DATE
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetCompanyDate.html
+- name: GetCompanyList
+  description: Retrieves a list of the company databases located on the specified server.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetCompanyList.html
+- name: GetCompanyService
+  description: Creates a new CompanyService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetCompanyService.html
+- name: GetCompanyTime
+  description: Get Company Time
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetCompanyTime.html
+- name: GetContextCookie
+  description: Creates a cookie that consists of the current DI API session for Sign-on Procedure .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetContextCookie.html
+- name: GetDBServerDate
+  description: method GetDBServerDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetDBServerDate.html
+- name: GetDBServerTime
+  description: method GetDBServerTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetDBServerTime.html
+- name: GetLastError
+  description: Retrieves the error code and message for the last error for any object tied to the Company object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetLastError.html
+- name: GetLastErrorCode
+  description: Retrieves the last error code issued by any object related to the Company object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetLastErrorCode.html
+- name: GetLastErrorContext
+  description: method GetLastErrorContext
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetLastErrorContext.html
+- name: GetLastErrorDescription
+  description: Retrieves the description of the last error issued by any object related to the Company object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetLastErrorDescription.html
+- name: GetNewObjectCode
+  description: Retrieves the key of the last added record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetNewObjectCode.html
+- name: GetNewObjectKey
+  description: Retrieves the key of the last added record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetNewObjectKey.html
+- name: GetNewObjectType
+  description: Gets the last added object type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetNewObjectType.html
+- name: GetRegisteredServersList
+  description: Retrieves a list of servers registered with the System Landscape Directory (SLD) server. Use this method when creating a window for logging into SAP Business One. Create a dropdown list of servers and allow the user to select the server to which to connect.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetRegisteredServersList.html
+- name: GetTenantList
+  description: method GetTenantList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetTenantList.html
+- name: GetTrustedEntitiesAllowedList
+  description: method GetTrustedEntitiesAllowedList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetTrustedEntitiesAllowedList.html
+- name: GetXMLelementCount
+  description: Retrieves the number of business objects described in an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetXMLelementCount.html
+- name: GetXMLobjectType
+  description: Retrieves the type of business object described in an XML file on a specific offset specified by the Index parameter.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~GetXMLobjectType.html
+- name: IsDTCTransactionObjectSet
+  description: Checks whether or not the DTCTransactionObject is set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~IsDTCTransactionObjectSet.html
+- name: SetSboLoginContext
+  description: Decodes the encrypted connection information received from the UI API -- based on the cookie created by the GetContextCookie method -- and then sets the connection information for log on to the Company database. See Sign-on Procedure .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~SetSboLoginContext.html
+- name: StartTransaction
+  description: Starts a transaction, allowing you to perform data operations on several business objects. Use the EndTransaction method to end the transaction and free locked records, allowing other users to access them.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~StartTransaction.html
+properties:
+- name: AccessToken
+  description: When you enable Identity and Authentication Management as of SAP Business One 10.0 FP 2208, you can obtain an access token from the authorization server and use the access token to access some server resources.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~AccessToken.html
+- name: AddonIdentifier
+  description: Sets or returns a string identifier that your add-on must use to connect to SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~AddonIdentifier.html
+- name: Application
+  description: To connect with SAP Business One, you can set this property to a SAPbouiCOM.Application object, and then call the Connect method without specifying any other connection properties -- the properties are taken from the UI API Application object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Application.html
+- name: AttachMentPath
+  description: Returns the path to all the company's saved mail attachments and all contact related files.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~AttachMentPath.html
+- name: BitMapPath
+  description: Returns the path to all the picture files of the company, which are related to the Picture property of Items object, Picture property of BusinessPartners object, and documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~BitMapPath.html
+- name: CompanyDB
+  description: Sets or returns the name of the company SQL database .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~CompanyDB.html
+- name: CompanyID
+  description: Identifies a unique company.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~CompanyID.html
+- name: CompanyName
+  description: Returns the company name as defined in the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~CompanyName.html
+- name: Connected
+  description: Returns a Boolean value that specifies whether or not the Company object is connected to the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Connected.html
+- name: DbPassword
+  description: Sets or returns the password for establishing a connection to the database server. The field is not mandatory, as the database credentials are stored in the System Landscape Directory (SLD) server and you can use these values instead.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~DbPassword.html
+- name: DbServerType
+  description: The database type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~DbServerType.html
+- name: DbUserName
+  description: Sets or returns the user name for establishing a connection to the database server. The field is not mandatory, as the database credentials are stored in the System Landscape Directory (SLD) server and you can use these values instead.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~DbUserName.html
+- name: DTCTransactionObject
+  description: 'This interface supports Distributed Transactions for MS-SQL database that are controlled by MS-DTC engine (Microsoft Distributed Transaction Coordinator). DTC is a system service that coordinates transactions so that work can be committed as an atomic transaction even if it spans multiple resource managers on multiple computers, regardless of failures. This interface is applicable for the following environment: MS-SQL database server C/C++ interface ODBC connection type DI API only (and not by DI Server)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~DTCTransactionObject.html
+- name: ExcelDocsPath
+  description: Returns the path to the Microsoft Excel documents exported from the SAP Business One application.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~ExcelDocsPath.html
+- name: InTransaction
+  description: Returns a Boolean value that specifies whether or not the transaction is active.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~InTransaction.html
+- name: language
+  description: Sets or returns the resource language of the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~language.html
+- name: LicenseServer
+  description: Deprecated in DI API 9.2 PL05. Please use SLDServer instead. The DI API will continue to support this property for backward compatibility. The license server name and port for connecting to the company database. The value is in the format myServer:30000 . If no value is given, the default license server and port are used. If a server is given but no port is given, 30000 is used for the port.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~LicenseServer.html
+- name: MinimalSupportedVersion
+  description: Returns the minimal version of the Company database that the Add-on supports.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~MinimalSupportedVersion.html
+- name: Password
+  description: Sets or returns the SAP Business One password issued to the user.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Password.html
+- name: SecurityCode
+  description: property SecurityCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~SecurityCode.html
+- name: Server
+  description: Sets or returns the SQL server to which the object connects.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Server.html
+- name: SLDServer
+  description: Set the System Landscape Directory (SLD) server address to connect to the company database and to retrieve the real license address from the SLD server.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~SLDServer.html
+- name: UserName
+  description: Sets or returns the user ID, which is used for log on to the SAP Business One application.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~UserName.html
+- name: UserSignature
+  description: Returns the identification key of the active user who operates the system.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~UserSignature.html
+- name: UserTables
+  description: Returns the UserTables object, which is the interface to the tables defined by the user. This object allows you to access to the user tables as if they were regular business objects.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~UserTables.html
+- name: UseTrusted
+  description: Sets or returns a Boolean value that specifies whether the Company object uses NT authentication, or the internal SQL Server user ObsCommon, to establish a connection with the SQL Server.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~UseTrusted.html
+- name: Version
+  description: Returns the version of the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~Version.html
+- name: WordDocsPath
+  description: Returns the path to the Microsoft Word documents exported from the SAP Business One application. This directory also contains Microsoft Word templates, which are used for exporting data to Word documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~WordDocsPath.html
+- name: XMLAsString
+  description: Sets or returns a Boolean value that determines whether the XML data will be saved as a file or transferred as a string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~XMLAsString.html
+- name: XmlExportType
+  description: Sets or returns a valid value of BoXmlExportTypes that specifies the types for exporting data from the database to XML format.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~XmlExportType.html
+- name: XmlFiltered
+  description: To improve security, you can set the property to true and call the AddTrustedEntity, DeleteTrustedEntity, and GetTrustedEntitiesAllowedList to prevent XML injection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Company~XmlFiltered.html

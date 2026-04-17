@@ -1,0 +1,70 @@
+name: EmployeeSavingsPaymentInfo
+title: EmployeeSavingsPaymentInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo.html
+description: 'A child object of the EmployeesInfo object that represents the employee''s capital formation savings payments. Source table: HEM7 .'
+remarks: 'To display the form in the SAP Business One application: Choose Human Resources --> Employee Master Data , and select the Finance tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~SetCurrentLine.html
+properties:
+- name: AG
+  description: 'The company part of the capital formation savings payments contract. Field name: AG . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~AG.html
+  length: 20
+- name: AGcurrency
+  description: 'The currency for the company part of the capital formation savings payments contract. Field name: AGCurrency .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~AGcurrency.html
+  field_name: AGCurrency
+- name: AN
+  description: 'The employee part of the capital formation savings payments contract. Field name: AN . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~AN.html
+  length: 20
+- name: ANcurrency
+  description: 'The currency for the employee part of the capital formation savings payments contract. Field name: ANCurrency .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~ANcurrency.html
+  field_name: ANCurrency
+- name: BankAccount
+  description: 'The bank account recipient of the capital formation savings payments contract. Field name: BankAcct . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~BankAccount.html
+  field_name: BankAcct
+  length: 20
+- name: BankCode
+  description: 'The bank code recipient of the capital formation savings payments contract. Field name: BankCod e. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~BankCode.html
+  field_name: BankCod
+  length: 20
+- name: BankName
+  description: 'The bank name recipient of the capital formation savings payments contract. Field name: BankName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~BankName.html
+  length: 50
+- name: ContractName
+  description: 'The name of the capital formation savings payments contract. Field name: ConName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~ContractName.html
+  field_name: ConName
+  length: 50
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~Count.html
+- name: EmployeeID
+  description: 'The foreign key to the EmployeesInfo object. Field name: empID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~EmployeeID.html
+  field_name: empID
+- name: LineNum
+  description: Returns the current row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~LineNum.html
+- name: PaymentNotes
+  description: 'The payment notes of the capital formation savings payments contract. Field name: PmntNote s. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~PaymentNotes.html
+  field_name: PmntNote
+  length: 50
+- name: Sequence
+  description: 'The contract sequence. Field name: Sequence .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~Sequence.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeeSavingsPaymentInfo~UserFields.html

@@ -1,0 +1,37 @@
+name: DocumentPackages
+title: DocumentPackages Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages.html
+description: 'This object holds a collection of packaging types you can attach to items in Delivery or A/R Invoice documents. Access this object via Documents.Packages property. Source tables: DLN7 , DLN8 , INV7 , INV8 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns a value specifying the number of package types in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Count.html
+- name: Items
+  description: Returns a collection of items in the package. The collection holds the properties ItemCode, Quantity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Items.html
+- name: Number
+  description: Sets or returns the package type ID number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Number.html
+- name: TotalWeight
+  description: Returns the total weight of the package. The value is calculated according to the weight you specified in Items.SalesUnitWeight property.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~TotalWeight.html
+- name: Type
+  description: Sets or returns the package type.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Type.html
+- name: Units
+  description: Sets or returns the package unit of measurement.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~Units.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DocumentPackages~UserFields.html

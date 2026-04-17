@@ -1,0 +1,30 @@
+name: ValidValuesMD
+title: ValidValuesMD Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD.html
+description: 'ValidValuesMD enables you to add valid values to a specified user defined field ( UserFieldsMD ). Source table: UFD1 .'
+remarks: 'To display the form in the application: - From the main menu bar, select Tools --> Manage User Fields . Click User Tables .'
+methods:
+- name: Add
+  description: Adds a new valid value to the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~SetCurrentLine.html
+properties:
+- name: Count
+  description: Retrieves the number of the valid values in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~Count.html
+- name: Description
+  description: 'Sets or returns the description of the valid value. Field name: Descr . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~Description.html
+  field_name: Descr
+  length: 254
+- name: Value
+  description: 'Sets or returns the valid value. Field name: FldValue . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValuesMD~Value.html
+  field_name: FldValue
+  length: 254

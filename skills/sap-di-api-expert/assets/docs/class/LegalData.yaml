@@ -1,0 +1,67 @@
+name: LegalData
+title: LegalData Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData.html
+description: LegalData Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~ToXMLString.html
+properties:
+- name: DateOfPrinting
+  description: property DateOfPrinting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~DateOfPrinting.html
+- name: DocEntry
+  description: property DocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~DocEntry.html
+- name: DocumentNumber
+  description: property DocumentNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~DocumentNumber.html
+- name: FiscalNumber
+  description: property FiscalNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~FiscalNumber.html
+- name: FiscalSeries
+  description: property FiscalSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~FiscalSeries.html
+- name: FiscalUserID
+  description: property FiscalUserID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~FiscalUserID.html
+- name: LegalDataDetailCollection
+  description: property LegalDataDetailCollection
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~LegalDataDetailCollection.html
+- name: PrinterBrand
+  description: property PrinterBrand
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~PrinterBrand.html
+- name: PrinterDllVersion
+  description: property PrinterDllVersion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~PrinterDllVersion.html
+- name: PrinterFirmwareVersion
+  description: property PrinterFirmwareVersion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~PrinterFirmwareVersion.html
+- name: PrinterModel
+  description: property PrinterModel
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~PrinterModel.html
+- name: PrinterType
+  description: property PrinterType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~PrinterType.html
+- name: SourceObjectEntry
+  description: property SourceObjectEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~SourceObjectEntry.html
+- name: SourceObjectType
+  description: property SourceObjectType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~SourceObjectType.html
+- name: TimeOfPrinting
+  description: property TimeOfPrinting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LegalData~TimeOfPrinting.html

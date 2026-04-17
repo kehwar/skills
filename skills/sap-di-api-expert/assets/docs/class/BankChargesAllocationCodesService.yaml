@@ -1,0 +1,34 @@
+name: BankChargesAllocationCodesService
+title: BankChargesAllocationCodesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService.html
+description: 'The BankChargesAllocationCodesService service enables you to add, look up, update, and remove allocation codes for bank charges. Source table: OBCA .'
+remarks: To see the list of codes for the allocation of bank charges, from SAP Business One, choose Administration --> Setup --> Banking --> Bank Charges Allocation Codes .
+methods:
+- name: AddBankChargesAllocationCode
+  description: Adds a bank charges allocation code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~AddBankChargesAllocationCode.html
+- name: DeleteBankChargesAllocationCode
+  description: Deletes an existing bank charges allocation code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~DeleteBankChargesAllocationCode.html
+- name: GetBankChargesAllocationCode
+  description: Retrieves a bank charges allocation code. The bank charges allocation code is specified by its key, which is contained in the BankChargesAllocationCodeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~GetBankChargesAllocationCode.html
+- name: GetBankChargesAllocationCodeList
+  description: Returns the BankChargesAllocationCodesParams data collection that identify all bank charges allocation codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~GetBankChargesAllocationCodeList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BankChargesAllocationCodesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~GetDataInterfaceFromXMLString.html
+- name: SetDefaultBankChargesAllocationCode
+  description: Sets the default bank charges allocation code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~SetDefaultBankChargesAllocationCode.html
+- name: UpdateBankChargesAllocationCode
+  description: Updates an existing bank charges allocation code. The data for the bank charges allocation code, including the key of the bank charges allocation code to be updated, is contained in the BankChargesAllocationCode object passed to the method. To update a bank charges allocation code, you must first retrieve it using the GetBankChargesAllocationCode method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankChargesAllocationCodesService~UpdateBankChargesAllocationCode.html

@@ -1,0 +1,52 @@
+name: GLAccount
+title: GLAccount Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount.html
+description: GLAccount is a data structure related to the AccountsService . The data is stored temporarily in a virtual table.
+remarks: 'To display the form related to the data structure: - Select Administration --> System Initialization --> Openning Balances --> G/L Accounts Openning Balance.'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~ToXMLString.html
+properties:
+- name: Code
+  description: 'Sets or returns the G/L account code for which to create an opening balance. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~Code.html
+  length: 15
+- name: Credit
+  description: Sets or returns the amount to credit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~Credit.html
+- name: Debit
+  description: Sets or returns the amount to debit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~Debit.html
+- name: DueDate
+  description: Sets or returns the due date of the transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~DueDate.html
+- name: ForeignCredit
+  description: Sets or returns the amount, in foreign currency, to credit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~ForeignCredit.html
+- name: ForeignCurrency
+  description: 'Sets or returns the foreign currency code used in the transaction. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~ForeignCurrency.html
+  length: 3
+- name: ForeignDebit
+  description: Sets or returns the amount, in foreign currency, to debit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~ForeignDebit.html
+- name: SystemCredit
+  description: Sets or returns the amount, in system currency, to credit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~SystemCredit.html
+- name: SystemDebit
+  description: Sets or returns the amount, in system currency, to debit the G/L account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~GLAccount~SystemDebit.html

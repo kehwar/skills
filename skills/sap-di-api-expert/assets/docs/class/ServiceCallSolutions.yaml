@@ -1,0 +1,31 @@
+name: ServiceCallSolutions
+title: ServiceCallSolutions Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions.html
+description: 'ServiceCallSolutions is a child object of the ServiceCalls object in the Service module. The service call solutions are associated with the Knowledge Base Solutions table. Source table: SCL1 .'
+remarks: 'Mandatory field in SAP Business One: SolutionID . To display the form in the application: - Select Service --> Service Call . - Select the Solutions tab.'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the solutions table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~Count.html
+- name: LineNum
+  description: 'Returns the current row number. Field name: line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~LineNum.html
+  field_name: line
+- name: SolutionID
+  description: 'KnowledgeBaseSolutions Sets or returns the solution ID. Mandatory property. Field name: solutionID . This is a foreign key to the KnowledgeBaseSolutions object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~SolutionID.html
+  field_name: solutionID
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallSolutions~UserFields.html

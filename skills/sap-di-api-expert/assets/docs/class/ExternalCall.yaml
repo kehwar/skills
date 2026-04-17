@@ -1,0 +1,58 @@
+name: ExternalCall
+title: ExternalCall Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall.html
+description: 'ExternalCall object is a request initiated by SAP Business One application that requires to be processed by external applications (e.g. SAP Business One Intergration). Source table: OREQ .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~ToXMLString.html
+properties:
+- name: CallArguments
+  description: Returns the arguments affiliated to the original request call.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~CallArguments.html
+- name: CallMessages
+  description: Returns the response messages written back by the external application that processes the request call.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~CallMessages.html
+- name: Category
+  description: 'Sets or returns the category number defined between the request sender and receiver. The purpose for this field is to identify the type of the request call that a certain receiver may be interested in. Field name: Category .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~Category.html
+- name: CreationDate
+  description: 'Returns the date when the request call is created. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~CreationDate.html
+  field_name: CreateDate
+- name: CreationTime
+  description: 'Returns the time when the request call is created. Field name: CreateTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~CreationTime.html
+  field_name: CreateTime
+- name: ID
+  description: 'Returns the unique identity number of the request call (auto-increment). Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~ID.html
+  field_name: AbsEntry
+- name: LastUpdateDate
+  description: 'Returns the latest update date of the request call. Field name: LstUpdDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~LastUpdateDate.html
+  field_name: LstUpdDate
+- name: LastUpdateTime
+  description: 'Returns the latest update time of the request call. Field name: LstUpdTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~LastUpdateTime.html
+  field_name: LstUpdTime
+- name: LastUpdateUserCode
+  description: 'Sets or returns the code of the last user that updated the request call. Field name: UserSign .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~LastUpdateUserCode.html
+  field_name: UserSign
+- name: Status
+  description: 'Sets or returns the current status of the request call. The status is updated by the external application that processes the request call. Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCall~Status.html

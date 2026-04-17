@@ -1,0 +1,76 @@
+name: TaxInvoiceReportLine
+title: TaxInvoiceReportLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine.html
+description: TaxInvoiceReportLine Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ToXMLString.html
+properties:
+- name: BaseAmount
+  description: property BaseAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~BaseAmount.html
+- name: BPCode
+  description: property BPCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~BPCode.html
+- name: BPName
+  description: property BPName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~BPName.html
+- name: BusinessPlace
+  description: property BusinessPlace
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~BusinessPlace.html
+- name: Currency
+  description: property Currency
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~Currency.html
+- name: DocumentDate
+  description: property DocumentDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~DocumentDate.html
+- name: DocumentEntry
+  description: property DocumentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~DocumentEntry.html
+- name: DocumentType
+  description: property DocumentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~DocumentType.html
+- name: ItemDescription
+  description: property ItemDescription
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ItemDescription.html
+- name: ItemNo
+  description: property ItemNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ItemNo.html
+- name: ItemPrice
+  description: property ItemPrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ItemPrice.html
+- name: ItemQuantity
+  description: property ItemQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~ItemQuantity.html
+- name: Legacy
+  description: property Legacy
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~Legacy.html
+- name: LineNumber
+  description: property LineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~LineNumber.html
+- name: LineType
+  description: property LineType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~LineType.html
+- name: TaxAmount
+  description: property TaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~TaxAmount.html
+- name: TaxCode
+  description: property TaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~TaxCode.html
+- name: TaxInvoiceReportNumber
+  description: property TaxInvoiceReportNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoiceReportLine~TaxInvoiceReportNumber.html

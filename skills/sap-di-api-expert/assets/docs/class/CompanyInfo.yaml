@@ -1,0 +1,157 @@
+name: CompanyInfo
+title: CompanyInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo.html
+description: 'The CompanyInfo is a data structure related to the CompanyService . It includes initial parameters related to the company. The default values of part of the properties vary according to the country localization. Source table: CINF .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~ToXMLString.html
+properties:
+- name: AutoCreateCustomerEqCard
+  description: 'Determines whether or not to create automatically customer equipment card when assigning a unique serial number. Field name: AutoCrIns .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~AutoCreateCustomerEqCard.html
+  field_name: AutoCrIns
+- name: AutoSRICreationOnReceipt
+  description: 'Determines whether or not to create automatically consecutive serial numbers on receipt of items to the inventory (system numerartor). This flag is applicable only if the inventory management method is On Release Only . Field name: SriCreatIn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~AutoSRICreationOnReceipt.html
+  field_name: SriCreatIn
+- name: B1iTimeOut
+  description: property B1iTimeOut
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~B1iTimeOut.html
+- name: BaseDateForExchangeRate
+  description: 'Determines whether the exchange rate is based on the Posting Date (P) or the Tax Date (T). Field name: RateBase .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BaseDateForExchangeRate.html
+  field_name: RateBase
+- name: BISRBankAccount
+  description: 'BISRBnkAcDetermines whether the exchange rate is based on the Posting Date (P) or the Tax Date (T). Field name: BISRBnkAc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BISRBankAccount.html
+  field_name: BISRBnkAc
+- name: BISRBankActKey
+  description: 'Set or returns the BISR bank account key. Field name: BisBnkAcKy . This is a foreign key to the HouseBankAccounts object ( AbsoluteEntry ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BISRBankActKey.html
+  field_name: BisBnkAcKy
+- name: BISRBankCountry
+  description: 'Sets the country code (3 characters) of the company house bank (BISR bank in Switzerland companies). This flag is valid only when EnbPayRef is set to Y. Field name: BISBnkCnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BISRBankCountry.html
+  field_name: BISBnkCnt
+- name: BISRBankNo
+  description: 'Sets the code of the of the company house bank (BISR bank in Switzerland companies). This flag is valid only when EnbPayRef is set to Y. Field name: BISRBnkCd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BISRBankNo.html
+  field_name: BISRBnkCd
+- name: BISRBranch
+  description: 'Sets the branch number of the of the company house bank (BISR bank - applicable for Switzerland). This flag is valid only when EnbPayRef is set to Y. Field name: BISRBranch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BISRBranch.html
+- name: BlockStockNegativeQuantity
+  description: 'Determines whether or not to block documents that would cause negative inventory level. Field name: BlockZeroQ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~BlockStockNegativeQuantity.html
+  field_name: BlockZeroQ
+- name: CompanyName
+  description: 'Returns this company name . Field name: CompnyName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~CompanyName.html
+  field_name: CompnyName
+  length: 100
+- name: DataOwnershipIndication
+  description: 'Determines whether or not to block documents that would cause negative inventory level. Field name: BlockZeroQ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~DataOwnershipIndication.html
+  field_name: BlockZeroQ
+- name: DefaultDaysForOrdCanc
+  description: 'Sets the default number of days before cancelling a sales order. After this date the goods are not to be eccepted by the customer. The default value is 30 days after the Delivery Date. Field name: DaysOrdCnc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~DefaultDaysForOrdCanc.html
+  field_name: DaysOrdCnc
+- name: DefaultStampTax
+  description: 'Sets the default stamp tax code for incoming payments. Applicable for Portugal. Field name: stampTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~DefaultStampTax.html
+  field_name: stampTax
+- name: DisplayTransactionsByDflt
+  description: 'Determines whether or not to display all transactions by default for incoming and outgoing payments. Field name: DispTrByDf .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~DisplayTransactionsByDflt.html
+  field_name: DispTrByDf
+- name: EnableAccountSegmentation
+  description: 'Determines whether or not to enable account segmentation. Field name: EnbSgmnAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableAccountSegmentation.html
+  field_name: EnbSgmnAct
+- name: EnableBillOfExchange
+  description: 'Determines whether or not to enable bill-of-exchange payment method. Applicable for Spain, Italy, France, and Portugal. Field name: EnableBOE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableBillOfExchange.html
+  field_name: EnableBOE
+- name: EnableCheckQuantityInRDR
+  description: 'Determines whether or not to check automatically the availabllity of item quantities before adding the quantity in sales orders. The default setting is Y. In case the available quantity is less than the quantity specified in the sales order, the system displays several options. Field name: ChkQunty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableCheckQuantityInRDR.html
+  field_name: ChkQunty
+- name: EnableConversionDifferentAcct
+  description: 'Determines whether or not to enable the conversion different accounts. Field name: ConvDifAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableConversionDifferentAcct.html
+  field_name: ConvDifAct
+- name: EnableExpensesManagement
+  description: 'Determines whether or not to enable additional expenses management Field name: EnblExpns .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableExpensesManagement.html
+  field_name: EnblExpns
+- name: EnableStockRelNoCostPrice
+  description: 'Determines whether or not to allow stock release without the item cost price. Field name: RelStkNoPr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableStockRelNoCostPrice.html
+  field_name: RelStkNoPr
+- name: EnableTransactionNotification
+  description: property EnableTransactionNotification
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~EnableTransactionNotification.html
+- name: GroupLinesInVATCalculation
+  description: 'Returns a valid value that determines whether or not the Tax Engine System groups the lines when calculating the tax. Field name: CalcVatGrp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~GroupLinesInVATCalculation.html
+  field_name: CalcVatGrp
+- name: IEPSPayer
+  description: 'Determines whether or not the company is liable to IEPS Payer (indirect tax). Applicable for Mexico, Costa Rica, and Guatemala. Companies defined as liable for IEPS Payer must maintain special IEPS posting, printing forms and declaration for authorities in all A/R documents. Note: For Mexico only, when this filed is set to Y, the IEPS Payer option is available also in the Item Master Data -->General tab. Field name: IepsPayer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~IEPSPayer.html
+  field_name: IepsPayer
+- name: LanguageCode
+  description: property LanguageCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~LanguageCode.html
+- name: Localization
+  description: property Localization
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~Localization.html
+- name: MaxNumberOfDocumentsInPmt
+  description: 'Sets the maximum number of invoices for outgoing payments by check. Field name: MxDcsInPmt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~MaxNumberOfDocumentsInPmt.html
+  field_name: MxDcsInPmt
+- name: MaxRecordsInChooseFromList
+  description: 'Sets the maximum number of records to display in the Choose From List form. Field name: MaxChoose .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~MaxRecordsInChooseFromList.html
+  field_name: MaxChoose
+- name: MinimumAmountForAnnualList
+  description: 'Sets the minimum amount above which a document is included in the annual sales report. This report is used for VAT declaration regarding customers only. The report covers all the customers who have federal tax ID that starts with a Belgium ISO code, and all the sales transactions that are VAT liable such as A/R invoices, A/R credit memos, down payments and manual journal entries created for sales purposes. Applicable for Belgium. Field name: MinAmntAL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~MinimumAmountForAnnualList.html
+  field_name: MinAmntAL
+- name: MinimumAmountForAppndixOP
+  description: 'Sets the minimum amount above which a document is included in the annual sales report. This report is used for VAT declaration regarding customers only. The report covers all the customers who have federal tax ID that starts with a Belgium ISO code, and all the sales transactions that are VAT liable such as A/R invoices, A/R credit memos, down payments and manual journal entries created for sales purposes. Applicable for Belgium. Field name: MinAmntAL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~MinimumAmountForAppndixOP.html
+  field_name: MinAmntAL
+- name: MinimumBaseAmountPerDoc
+  description: 'Determines whether or not to enable generatiion of reports that include only documents with minimum base amount. Applicable for Portugal. Field name: MinBaseDoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~MinimumBaseAmountPerDoc.html
+  field_name: MinBaseDoc
+- name: PercentOfTotalAcquisition
+  description: 'Determines whether or not to enable generatiion of reports that include only documents with minimum base amount. Applicable for Portugal. Field name: MinBaseDoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~PercentOfTotalAcquisition.html
+  field_name: MinBaseDoc
+- name: SRIManagementSystem
+  description: 'Determines the default management method for serial numbers and batches. The options are: A - On Every Transaction. The user must assign serial or batch numbers on every inventory transaction. R - On Release Only. The user must assign serial or batch numbers only on release (it is optional for other transactions). Field name: SriMngSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~SRIManagementSystem.html
+  field_name: SriMngSys
+- name: TaxCalculationSystem
+  description: 'Returns a valid value that determines the type of tax calculation system to be used by the Tax Calculation Engine . Field name: TaxSysType ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~TaxCalculationSystem.html
+  field_name: TaxSysType
+- name: Version
+  description: 'Returns the version of SAP Business One application used by the company. Field name: Version .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CompanyInfo~Version.html

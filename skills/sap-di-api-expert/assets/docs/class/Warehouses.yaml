@@ -1,0 +1,424 @@
+name: Warehouses
+title: Warehouses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses.html
+description: 'Warehouses is a business object that represents the warehouses information in the Inventory module. This object enables you to: - Add a warehouse. Retrieve a warehouse by its key. Update a warehouse details. Remove a warehouse. Save the object in XML format. Source table: OWHS .'
+remarks: 'Mandatory field in SAP Business One: WarehouseCode . To display the form in the application: - Select Administration --> Setup --> Inventory --> Warehouses . The warehouse definition includes: - Warehouse type - Warehouse address - G/L accounts, which are defined in ChartOfAccounts , used in Item Master Data - Inventory Data in case GLMethod property is set to WH .'
+methods:
+- name: Add
+  description: Adds a new record to the Warehouses table. Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Add.html
+- name: GetAsXML
+  description: Retrieves the XML schema of the data structure. Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~GetAsXML.html
+- name: GetByKey
+  description: Retrieves the values of the object's properties by the object's absolute key from the Company database. Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~GetByKey.html
+- name: Remove
+  description: Removes a specified field from the table. Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data. Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Update.html
+properties:
+- name: AddressName2
+  description: property AddressName2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AddressName2.html
+- name: AddressName3
+  description: property AddressName3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AddressName3.html
+- name: AddressType
+  description: property AddressType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AddressType.html
+- name: AllowUseTax
+  description: 'Determines whether or not to Allow Use Tax for items in marketing documents. Field name: UseTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AllowUseTax.html
+  field_name: UseTax
+- name: AutoAllocOnIssue
+  description: 'The method by which items in bin locations are issued. Field name: AutoIssMtd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AutoAllocOnIssue.html
+  field_name: AutoIssMtd
+- name: AutoAllocOnReceipt
+  description: property AutoAllocOnReceipt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~AutoAllocOnReceipt.html
+- name: BinLocCodeSeparator
+  description: 'The separator of bin location codes. Field name: BinSeptor . Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~BinLocCodeSeparator.html
+  field_name: BinSeptor
+  length: 5
+- name: Block
+  description: 'Sets or returns the block subcomponent of the warehouse address. Field name: Block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Block.html
+  length: 100
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Browser.html
+- name: BuildingFloorRoom
+  description: 'Sets or returns the additional address details of the warehouse, such as building number, floor number, and room number. Field name: Building . Length: 64,000 characters. Building'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~BuildingFloorRoom.html
+  field_name: Building
+- name: BusinessPlaceID
+  description: 'Returns the business place ID related to the warehouse. Field name: BPLid .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~BusinessPlaceID.html
+  field_name: BPLid
+- name: City
+  description: 'Sets or returns the city subcomponent of the warehouse address. Field name: City . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~City.html
+  length: 100
+- name: CostInflationAccount
+  description: 'Sets or returns the G/L account associated with Cost Inflation . Field name: CostRvlAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~CostInflationAccount.html
+  field_name: CostRvlAct
+  length: 15
+- name: CostInflationOffsetAccount
+  description: 'Sets or returns the G/L account associated with Cost Inflation Offset . Field name: CstOffsAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~CostInflationOffsetAccount.html
+  field_name: CstOffsAct
+  length: 15
+- name: CostOfGoodsSold
+  description: 'Sets or returns the G/L account associated with Cost of Good Sold in continues stock system. Field name: SaleCostAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~CostOfGoodsSold.html
+  field_name: SaleCostAc
+  length: 15
+- name: Country
+  description: 'Sets or returns the country code subcomponent of the warehouse address. Field name: Country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Country.html
+  length: 3
+- name: County
+  description: 'Sets or returns the county subcomponent of the warehouse address. Field name: County . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~County.html
+  length: 100
+- name: DecreaseGLAccount
+  description: 'Sets or returns the G/L account associated with Decrease G/L Account . Field name: DecresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~DecreaseGLAccount.html
+  field_name: DecresGlAc
+  length: 15
+- name: DecreasingAccount
+  description: 'Sets or returns the G/L account associated with decreased stock transactions (inventory offset). Field name: DecreasAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~DecreasingAccount.html
+  field_name: DecreasAc
+  length: 15
+- name: DefaultBin
+  description: 'The default bin location in the warehouse for receiving items. Field name: DftBinAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~DefaultBin.html
+  field_name: DftBinAbs
+- name: DefaultBinEnforced
+  description: 'Indicates whether to enforce the use of the default bin location during receipt of items to the warehouse. That is, when you receive an item to the warehouse, you must place it in the default bin location. Field name: DftBinEnfd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~DefaultBinEnforced.html
+  field_name: DftBinEnfd
+- name: DropShip
+  description: 'Determines whether or not to the warehouse type is virtual (no address) or real (with address). Field name: DropShip .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~DropShip.html
+- name: EnableBinLocations
+  description: 'Enables bin locations for the warehouse. Field name: BinActivat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~EnableBinLocations.html
+  field_name: BinActivat
+- name: EnableReceivingBinLocations
+  description: 'Enables receiving bin locations for a warehouse. Field name: RecBinEnab .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~EnableReceivingBinLocations.html
+  field_name: RecBinEnab
+- name: EUExpensesAccount
+  description: 'Sets or returns the G/L account associated with EU Expenses Account . Field name: EUExpensAc . Field name: ExpensesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~EUExpensesAccount.html
+  field_name: EUExpensAc
+  length: 15
+- name: EUPurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated with EU Purchase Credit Acc. . Field name: APCMEUAct . Field name: APCMEUAct . Length: 15 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~EUPurchaseCreditAcc.html
+  field_name: APCMEUAct
+  length: 15
+- name: EURevenuesAccount
+  description: 'Sets or returns the G/L account associated with EU Revenues . Field name: EURevenuAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~EURevenuesAccount.html
+  field_name: EURevenuAc
+  length: 15
+- name: ExchangeRateDifferencesAccount
+  description: 'Sets or returns the G/L account associated with Exchange Rate Differences between purchase delivery notes and A/P invoices. Field name: ExchangeAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExchangeRateDifferencesAccount.html
+  field_name: ExchangeAc
+  length: 15
+- name: Excisable
+  description: 'Sets or returns the Excisable in Warehouses Definition. Applicable for cluster B only (country-specific for India). Field name: Excisable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Excisable.html
+- name: ExemptedCredits
+  description: 'Sets or returns the G/L account associated with Exempted Credits account . Field name: ARCMExpAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExemptedCredits.html
+  field_name: ARCMExpAct
+  length: 15
+- name: ExemptRevenuesAccount
+  description: 'Sets or returns the G/L account associated with Exempted Revenues . Field name: ExmptIncom) . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExemptRevenuesAccount.html
+  field_name: ExmptIncom
+  length: 15
+- name: ExpenseAccount
+  description: 'Sets or returns the G/L account associated with Expense Account . Field name: ExpensesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExpenseAccount.html
+  field_name: ExpensesAc
+  length: 15
+- name: ExpenseOffsetingAct
+  description: 'Sets or returns the G/L account associated with Expense Offset Account . Field name: ExpOfstAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExpenseOffsetingAct.html
+  field_name: ExpOfstAct
+  length: 15
+- name: ExpensesClearingAccount
+  description: 'Sets or returns the G/L account associated with Expenses clearing Account . Field name: ExpClrAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ExpensesClearingAccount.html
+  field_name: ExpClrAct
+  length: 15
+- name: External
+  description: property External
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~External.html
+- name: FederalTaxID
+  description: 'Sets or returns the Federal Tax ID related to the warehouse. Field name: FedTaxID . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~FederalTaxID.html
+  field_name: FedTaxID
+  length: 32
+- name: ForeignExpensesAccount
+  description: 'Sets or returns the G/L account associated with Foreign Expenses account . Field name: FrExpensAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ForeignExpensesAccount.html
+  field_name: FrExpensAc
+  length: 15
+- name: ForeignPurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated with Foreign Purchase Credit Account . Field name: APCMFrnAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ForeignPurchaseCreditAcc.html
+  field_name: APCMFrnAct
+  length: 15
+- name: ForeignRevenuesAcc
+  description: 'Sets or returns the G/L account associated with Sales Revenue - Foreign Account. Field name: FrRevenuAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ForeignRevenuesAcc.html
+  field_name: FrRevenuAc
+  length: 15
+- name: GlobalLocationNumber
+  description: property GlobalLocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~GlobalLocationNumber.html
+- name: GoodsClearingAcc
+  description: 'Sets or returns the G/L account associated with closing a purchase delivery note. Field name: BalanceAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~GoodsClearingAcc.html
+  field_name: BalanceAcc
+  length: 15
+- name: Inactive
+  description: property Inactive
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Inactive.html
+- name: IncreaseGLAccount
+  description: 'Sets or returns the G/L account associated to Increase G/L Account . Field name: IncresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~IncreaseGLAccount.html
+  field_name: IncresGlAc
+  length: 15
+- name: IncreasingAcc
+  description: 'Sets or returns the G/L account associated to increased stock transactions (inventory offset). Field name: IncresGlAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~IncreasingAcc.html
+  field_name: IncresGlAc
+  length: 15
+- name: InternalKey
+  description: 'Returns the internal key of the warehouse as assigned by SAP Business One when adding a warehouse. Field name: IntrnalKey .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~InternalKey.html
+  field_name: IntrnalKey
+- name: InventoryOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to an inventory account used within production transactions and for change of value of the inventory account during the production process. Field name: StockOffst. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~InventoryOffsetProfitAndLossAccount.html
+  field_name: StockOffst
+  length: 15
+- name: LegalText
+  description: 'Legal Text defined on the warehouse level. Field name: LegalText . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~LegalText.html
+  length: 250
+- name: Location
+  description: 'Sets or returns the code of the geographical area inside the warehouse. The locations can be defined through the WarehouseLocations object. Field name: location .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Location.html
+  field_name: location
+- name: ManageSerialAndBatchNumbers
+  description: property ManageSerialAndBatchNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ManageSerialAndBatchNumbers.html
+- name: NegativeInventoryAdjustmentAccount
+  description: 'Sets or returns the negative stock adjustment Account. Field name: NegStckAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~NegativeInventoryAdjustmentAccount.html
+  field_name: NegStckAct
+  length: 15
+- name: Nettable
+  description: property Nettable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Nettable.html
+- name: PriceDifferencesAccount
+  description: 'Sets or returns the G/L account associated with Price Differences Account . Field name: PriceDifAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PriceDifferencesAccount.html
+  field_name: PriceDifAc
+  length: 15
+- name: PurchaseAccount
+  description: 'Sets or returns the G/L account associated with Purchases . Field name: PurchaseAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PurchaseAccount.html
+  field_name: PurchaseAc
+  length: 15
+- name: PurchaseBalanceAccount
+  description: property PurchaseBalanceAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PurchaseBalanceAccount.html
+- name: PurchaseCreditAcc
+  description: 'Sets or returns the G/L account associated with Purchase Credit Account . Field name: APCMAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PurchaseCreditAcc.html
+  field_name: APCMAct
+  length: 15
+- name: PurchaseOffsetAccount
+  description: 'Sets or returns the G/L account associated with Purchase Offsetting . Field name: PurchOfsAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PurchaseOffsetAccount.html
+  field_name: PurchOfsAc
+  length: 15
+- name: PurchaseReturningAccount
+  description: 'Sets or returns the G/L account associated with Purchase Returning account . Field name: PAReturnAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~PurchaseReturningAccount.html
+  field_name: PAReturnAc
+  length: 15
+- name: ReceiveUpToMaxQuantity
+  description: property ReceiveUpToMaxQuantity
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ReceiveUpToMaxQuantity.html
+- name: ReceiveUpToMaxWeight
+  description: property ReceiveUpToMaxWeight
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ReceiveUpToMaxWeight.html
+- name: ReceiveUpToMethod
+  description: property ReceiveUpToMethod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ReceiveUpToMethod.html
+- name: ReceivingBinLocationsBy
+  description: 'The method by which items are received at receiving bin locations. Field name: RecItemsBy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ReceivingBinLocationsBy.html
+  field_name: RecItemsBy
+- name: RestrictReceiptToEmptyBinLocation
+  description: property RestrictReceiptToEmptyBinLocation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~RestrictReceiptToEmptyBinLocation.html
+- name: ReturningAccount
+  description: 'Sets or returns the G/L account associated with Purchase Returning Account . Field name: PAReturnAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ReturningAccount.html
+  field_name: PAReturnAc
+  length: 15
+- name: RevenuesAccount
+  description: 'Sets or returns the G/L account associated with Revenues Account . Field name: RevenuesAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~RevenuesAccount.html
+  field_name: RevenuesAc
+  length: 15
+- name: SalesCreditAcc
+  description: 'Sets or returns the G/L account associated with Sales Credit EU Account . Field name: ARCMEUAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~SalesCreditAcc.html
+  field_name: ARCMEUAct
+  length: 15
+- name: SalesCreditEUAcc
+  description: 'Sets or returns the G/L account associated with Sales Credit EU Account . Field name: ARCMEUAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~SalesCreditEUAcc.html
+  field_name: ARCMEUAct
+  length: 15
+- name: SalesCreditForeignAcc
+  description: 'Sets or returns the G/L account associated with Sales Credit EU Account . Field name: ARCMFrnAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~SalesCreditForeignAcc.html
+  field_name: ARCMFrnAct
+  length: 15
+- name: ShippedGoodsAccount
+  description: 'Sets or returns the G/L account associated with Shipping Goods Account . Field name: ShpdGdsAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ShippedGoodsAccount.html
+  field_name: ShpdGdsAct
+  length: 15
+- name: Shipper
+  description: property Shipper
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Shipper.html
+- name: State
+  description: 'Sets or returns the state code of the sub-component of the warehouse address. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~State.html
+  length: 3
+- name: StockAccount
+  description: 'Sets or returns the G/L account associated to stock in continues stock system. Length: 15 characters. Field name: BalInvntAc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~StockAccount.html
+  field_name: BalInvntAc
+  length: 15
+- name: StockInflationAdjustAccount
+  description: 'Sets or returns the G/L account associated with Stock Inflation Adjust . Length: 15 characters. Field name: IncreasAc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~StockInflationAdjustAccount.html
+  field_name: IncreasAc
+  length: 15
+- name: StockInflationOffsetAccount
+  description: 'Sets or returns the G/L account associated with Stock Inflation Offset . Field name: DecreasAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~StockInflationOffsetAccount.html
+  field_name: DecreasAc
+  length: 15
+- name: StockInTransitAccount
+  description: 'The stock in transit G/L account for this warehouse. Field name: StkInTnAct'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~StockInTransitAccount.html
+  field_name: StkInTnAct
+- name: Storekeeper
+  description: property Storekeeper
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Storekeeper.html
+- name: Street
+  description: 'Sets or returns the street subcomponent of the warehouse address. Field name: street . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~Street.html
+  field_name: street
+  length: 100
+- name: StreetNo
+  description: property StreetNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~StreetNo.html
+- name: TaxGroup
+  description: 'Sets or returns the sales tax code as defined in SalesTaxCodes object. Field name: VatGroup . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~TaxGroup.html
+  field_name: VatGroup
+  length: 8
+- name: TaxOffice
+  description: property TaxOffice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~TaxOffice.html
+- name: TransfersAcc
+  description: 'Sets or returns the G/L account associated with Stock Transfers . Field name: TransferAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~TransfersAcc.html
+  field_name: TransferAc
+  length: 15
+- name: UserFields
+  description: 'Returns the UserFields object. Field name: userSign2 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~UserFields.html
+  field_name: userSign2
+- name: VarianceAccount
+  description: 'Sets or returns the G/L account associated with Variance Account . Field name: VarianceAc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~VarianceAccount.html
+  field_name: VarianceAc
+  length: 15
+- name: VATInRevenueAccount
+  description: 'Sets or returns the G/L account associated with VAT in Revenues . Field name: VatRevAct . Length: 15 characters. This is a foreign key to the ChartOfAccounts Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~VATInRevenueAccount.html
+  field_name: VatRevAct
+  length: 15
+- name: WarehouseCode
+  description: 'Sets or returns the Warehouse identification key. Mandatory field. Field name: WhsCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WarehouseCode.html
+  field_name: WhsCode
+  length: 8
+- name: WarehouseName
+  description: 'Sets or returns the warehouse name. Field name: WhsName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WarehouseName.html
+  field_name: WhsName
+  length: 100
+- name: WHIncomingCenvatAccount
+  description: 'Sets or returns the Incoming CENVAT Account (WH) for Account Setting in Warehouses Definition. Applicable for cluster B only (country-specific for India). Field name: WhICenAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WHIncomingCenvatAccount.html
+  field_name: WhICenAct
+- name: WHOutgoingCenvatAccount
+  description: 'Sets or returns the Outgoing CENVAT Account (WH) for Account Setting in Warehouse Definition. Applicable for cluster B only (country-specific for India). Field name: WhOCenAct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WHOutgoingCenvatAccount.html
+  field_name: WhOCenAct
+- name: WHShipToName
+  description: 'Sets or returns the Ship-to Name (WH) in Warehouses Definition. Applicable for cluster B only (country-specific for India). Field name: WhShipTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WHShipToName.html
+  field_name: WhShipTo
+- name: WIPMaterialAccount
+  description: 'Sets or returns the G/L account associated to Work In Progress (WIP). Field name: WipAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WIPMaterialAccount.html
+  field_name: WipAcct
+  length: 15
+- name: WIPMaterialVarianceAccount
+  description: 'Sets or returns the G/L account associated to Work In Progress (WIP) differences. That is, the account for posting differences between the value of the row material (before production) and the value of the complete product (after production). Field name: WipVarAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WIPMaterialVarianceAccount.html
+  field_name: WipVarAcct
+  length: 15
+- name: WipOffsetProfitAndLossAccount
+  description: 'An offsetting account (contra-account) to a WIP (work in progress) account used within production transactions and for change of value of the WIP account during the production process. Field name: WipOffset. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~WipOffsetProfitAndLossAccount.html
+  field_name: WipOffset
+  length: 15
+- name: ZipCode
+  description: 'Sets or returns the Zip Code of the warehouse address. Field name: ZipCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Warehouses~ZipCode.html
+  length: 20

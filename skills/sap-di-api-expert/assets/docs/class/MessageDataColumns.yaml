@@ -1,0 +1,25 @@
+name: MessageDataColumns
+title: MessageDataColumns Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns.html
+description: MessageDataColumns is a collection of MessageDataColumn data stractures. This enables to attache data to a message, such as invoice or quatation, that exits in the company database. The MessageDataColumns collection represents the columns of the Data tab table of a message.
+methods:
+- name: Add
+  description: Adds a column to the data table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to an existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~ToXMLString.html
+properties:
+- name: Count
+  description: Specifies the number of columns in the data table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataColumns~Count.html

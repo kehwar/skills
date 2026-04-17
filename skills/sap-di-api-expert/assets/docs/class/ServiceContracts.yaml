@@ -1,0 +1,240 @@
+name: ServiceContracts
+title: ServiceContracts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts.html
+description: 'ServiceContracts is a business object that represents the service contracts table in the Service module of SAP Business One application. This object enables you to: - Add a service contract. Retrieve a service contract by its key. Update a service contract. Remove a service contract. Save the object in XML format. Source table: OCTR .'
+remarks: 'Mandatory fields in SAP Business One: CustomerCode , EndDate , and ResolutionTime . To display the form in the application: - Select Service --> Service Contract .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~GetByKey.html
+- name: Remove
+  description: 'Not supported. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Update.html
+properties:
+- name: AttachmentEntry
+  description: 'Sets or returns the identification key of the attachment file, as assigned by SAP Business One when adding an Attachment Entry to alert message. Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Attachments
+  description: Returns the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Attachments.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Browser.html
+- name: ContactCode
+  description: 'Sets or returns the code of the contact person (from the business partner master data). Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ContactCode.html
+  field_name: CntctCode
+- name: ContractID
+  description: 'Returns the ID of the service contract. Field name: ContractID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ContractID.html
+- name: ContractTemplate
+  description: 'Sets or returns the name of the contract template. Field name: CntrcTmplt . Length: 20 characters. This is a foreign key to the ContractTemplates object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ContractTemplate.html
+  field_name: CntrcTmplt
+  length: 20
+- name: ContractType
+  description: 'Sets or returns a valid value of BoContractTypes type that specifies the contract type: Customer, Item Group, or Serial Number. Field name: CntrcType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ContractType.html
+  field_name: CntrcType
+- name: CustomerCode
+  description: 'Sets or returns the customer code, which is the business partner code. Mandatory field in SAP Business One. Field name: CstmrCode . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~CustomerCode.html
+  field_name: CstmrCode
+  length: 15
+- name: CustomerName
+  description: 'Sets or returns the customer name, which is the business partner name. Field name: CstmrName . Length: 100 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~CustomerName.html
+  field_name: CstmrName
+  length: 100
+- name: Description
+  description: 'Sets or returns a string that describes the service contract. Field name: Descriptio . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Description.html
+  field_name: Descriptio
+  length: 254
+- name: DurationOfCoverage
+  description: 'Sets or returns the duration of the service contract coverage. Field name: duration .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~DurationOfCoverage.html
+  field_name: duration
+- name: EndDate
+  description: 'Sets or returns the end date of the service contract. Mandatory field in SAP Business One. Field name: EndDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~EndDate.html
+- name: FridayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Fridays to the contract coverage. Field name: FriEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~FridayEnabled.html
+  field_name: FriEnabled
+- name: FridayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Fridays. Field name: FriEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~FridayEnd.html
+  field_name: FriEnd
+- name: FridayStart
+  description: 'Sets or returns the beginning working hour, for the service coverage, on Fridays. Field name: FriStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~FridayStart.html
+  field_name: FriStart
+- name: IncludeHolidays
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include holidays to the service contract coverage. Field name: InclHldays .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~IncludeHolidays.html
+  field_name: InclHldays
+- name: IncludeLabor
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include technician''s work to the service contract coverage. Field name: InclWork .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~IncludeLabor.html
+  field_name: InclWork
+- name: IncludeParts
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include replacement parts (items) to the service contract coverage. Field name: InclParts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~IncludeParts.html
+  field_name: InclParts
+- name: IncludeTravel
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include travel to the service contract coverage. Field name: InclTravel .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~IncludeTravel.html
+  field_name: InclTravel
+- name: Lines
+  description: Returns the ServiceContract_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Lines.html
+- name: MondayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Mondays to the service contract coverage. Field name: WedEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~MondayEnabled.html
+  field_name: WedEnabled
+- name: MondayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Monday. Field name: MonEnd . Sets or returns the ending working hour, for the service coverage, on Mondays. Field name: MonEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~MondayEnd.html
+  field_name: MonEnd
+- name: MondayStart
+  description: 'Sets or returns the beginning working hour, for the service coverage, on Monday. Field name: MonStart . Sets or returns the beginning working hour, for the service coverage, on Mondays. Field name: MonStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~MondayStart.html
+  field_name: MonStart
+- name: Owner
+  description: 'Sets or returns the name or title of the employee that is responsible for the service contract. Field name: Owner . This is a foreign key to the Users Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Owner.html
+- name: Remarks
+  description: 'Sets or returns a memo type string that specifies remarks for the service contract (in addition to the remarks from the contract template). Length: 64,000 characters. Field name: Remarks1 .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Remarks.html
+  field_name: Remarks1
+- name: ReminderTime
+  description: 'Sets or returns the number of days, weeks, or months for the alert to appear prior to the termination of the contract. To enable this reminder, set the Renewal property to tYES . Field name: RemindVal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ReminderTime.html
+  field_name: RemindVal
+- name: RemindUnit
+  description: 'Sets or returns a valid value of BoRemindUnits type that specifies the units (days, weeks, or months) for the ReminderTime property. Field name: RemindUnit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~RemindUnit.html
+- name: Renewal
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to renew the service contract. Field name: Renewal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Renewal.html
+- name: ResolutionTime
+  description: 'Sets or returns the maximum time, in days or hours, to resolve a service call. Field name: ResponsVal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ResolutionTime.html
+  field_name: ResponsVal
+- name: ResolutionUnit
+  description: 'Sets or returns a valid value of BoResolutionUnits type that specifies the units, hours or days, for the ResolutionTime property. Field name: ResponsUnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ResolutionUnit.html
+  field_name: ResponsUnt
+- name: ResponseTime
+  description: 'Sets or returns the maximum time, in hours or days, to respond to a service call. Field name: ResponseV .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ResponseTime.html
+  field_name: ResponseV
+- name: ResponseUnit
+  description: 'Sets or returns a valid value of BoResponseUnit type that specifies the units, hours or days, for the ResponseTime property. Field name: ResponseU .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ResponseUnit.html
+  field_name: ResponseU
+- name: SaturdayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Saturdays to the service contract coverage. Field name: SatEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SaturdayEnabled.html
+  field_name: SatEnabled
+- name: SaturdayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Saturday. Field name: SatEnd . Sets or returns the ending working hour, for the service coverage, on Saturdays. Field name: SatEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SaturdayEnd.html
+  field_name: SatEnd
+- name: SaturdayStart
+  description: 'Sets or returns the starting working hour, for the service coverage, on Saturday. Field name: SatStart . Sets or returns the beginning working hour, for the service coverage, on Saturdays. Field name: SatStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SaturdayStart.html
+  field_name: SatStart
+- name: ServiceBPType
+  description: property ServiceBPType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ServiceBPType.html
+- name: ServiceType
+  description: 'Sets or returns a valid value of BoServiceTypes type that specifies the service type of the contract: Regular or Warranty. Field name: SrvcType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ServiceType.html
+  field_name: SrvcType
+- name: StartDate
+  description: 'Sets or returns the start date of the service contract. Field name: StartDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~StartDate.html
+- name: Status
+  description: 'Sets or returns a valid value of BoSvcContractStatus type that specifies the status of the service contract (approved, on-hold, or draft). Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~Status.html
+- name: SundayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Sundays to the service contract coverage. Field name: SunEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SundayEnabled.html
+  field_name: SunEnabled
+- name: SundayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Sunday. Field name: SunEnd . Sets or returns the ending working hour, for the service coverage, on Sundays. Field name: SunEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SundayEnd.html
+  field_name: SunEnd
+- name: SundayStart
+  description: 'Sets or returns the starting working hour, for the service coverage, on Sunday. Field name: SunStrart . Sets or returns the beginning working hour, for the service coverage, on Sundays. Field name: SunStrart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~SundayStart.html
+  field_name: SunStrart
+- name: TemplateRemarks
+  description: 'Returns a memo type string that specifies remarks for the contract template as defined in the Remarks property of the ContractTemplates object. Field name: Remarks1 . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~TemplateRemarks.html
+  field_name: Remarks1
+- name: TerminationDate
+  description: 'Sets or returns the termination date of the service contract. Field name: TermDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~TerminationDate.html
+  field_name: TermDate
+- name: ThursdayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Thursdays to the service contract coverage. Field name: ThuEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ThursdayEnabled.html
+  field_name: ThuEnabled
+- name: ThursdayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Thursdays. Field name: ThuEnd . Sets or returns the ending working hour, for the service coverage, on Thursdays. Field name: ThuEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ThursdayEnd.html
+  field_name: ThuEnd
+- name: ThursdayStart
+  description: 'Sets or returns the starting working hour, for the service coverage, on Thursdays. Field name: ThuStart . Sets or returns the beginning working hour of the company on Thursdays. Field name: ThuStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~ThursdayStart.html
+  field_name: ThuStart
+- name: TuesdayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Tuesdays to the service contract coverage. Field name: TueEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~TuesdayEnabled.html
+  field_name: TueEnabled
+- name: TuesdayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Tuesdays. Field name: TueEnd . Sets or returns the ending working hour, for the service coverage, on Tuesdays. Field name: ThuEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~TuesdayEnd.html
+  field_name: TueEnd
+- name: TuesdayStart
+  description: 'Sets or returns the starting working hour, for the service coverage, on Tuesdays. Field name: TueStart . Sets or returns the beginning working hour of the company on Tuesdays. Field name: ThuStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~TuesdayStart.html
+  field_name: TueStart
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~UserFields.html
+- name: WednesdayEnabled
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include Wednesdays to the service contract coverage. Field name: WedEnabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~WednesdayEnabled.html
+  field_name: WedEnabled
+- name: WednesdayEnd
+  description: 'Sets or returns the ending working hour, for the service coverage, on Wednesdays. Field name: WedEnd . Sets or returns the ending working hour, for the service coverage, on Wednesdays. Field name: WedEnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~WednesdayEnd.html
+  field_name: WedEnd
+- name: WednesdayStart
+  description: 'Sets or returns the starting working hour, for the service coverage, on Wednesdays. Field name: WedStart . Sets or returns the beginning working hour, for the service coverage, on Wednesdays. Field name: WedStart .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContracts~WednesdayStart.html
+  field_name: WedStart

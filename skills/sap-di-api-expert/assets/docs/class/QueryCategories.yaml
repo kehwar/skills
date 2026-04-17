@@ -1,0 +1,46 @@
+name: QueryCategories
+title: QueryCategories Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories.html
+description: 'QueryCategories is a business object that represents the query categories in the Queries Manager. This object enables you to: - Add a query category. Retrieve a query category by its key. Update a query category. Save the object in XML format. Source table: OQCN .'
+remarks: 'To display the form in the application: - From the main menu, select Tools --> Queries --> Queries Manager . In the Manage Categories dialog box , click Manage Categories .'
+methods:
+- name: Add
+  description: Adds a new category to the Query Categories table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Browser.html
+- name: Code
+  description: 'Returns the key of the query category. Field name: CategoryId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Code.html
+  field_name: CategoryId
+- name: Name
+  description: 'Sets or returns the name of the query category. Field name: CatName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Name.html
+  field_name: CatName
+  length: 50
+- name: Permissions
+  description: 'Sets or returns the permissions''s mask for this query category. Field name: PermMask . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~Permissions.html
+  field_name: PermMask
+  length: 20
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~QueryCategories~UserFields.html

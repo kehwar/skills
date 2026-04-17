@@ -1,0 +1,33 @@
+name: ItemGroups_WarehouseInfo
+title: ItemGroups_WarehouseInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo.html
+description: 'ItemGroups_WarehouseInfo is a child object of the ItemGroups object that represents the items in the warehouse. Source table: OIGW .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~Count.html
+- name: DefaultBin
+  description: 'The default bin location in the warehouse for receiving items. Field name: DftBinAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~DefaultBin.html
+  field_name: DftBinAbs
+- name: DefaultBinEnforced
+  description: 'Indicates whether to enforce the use of the default bin location during receipt of items to the warehouse. That is, when you receive an item to the warehouse, you must place it in the default bin location. Field name: DftBinEnfd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~DefaultBinEnforced.html
+  field_name: DftBinEnfd
+- name: ItemGroupCode
+  description: 'The item group code. Field name: ItmsGrpCod .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~ItemGroupCode.html
+  field_name: ItmsGrpCod
+- name: WarehouseCode
+  description: 'The warehouse code. Field name: WhsCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemGroups_WarehouseInfo~WarehouseCode.html
+  field_name: WhsCode
+  length: 8

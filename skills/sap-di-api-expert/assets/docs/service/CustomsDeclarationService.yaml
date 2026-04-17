@@ -1,0 +1,27 @@
+name: CustomsDeclarationService
+title: CustomsDeclarationService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService.html
+description: 'The CustomsDeclarationService enables to manage the Cargo Customs Declarations (CCD). The service enables to add, update, get and delete CCDs. Mandatory properties: CCDNum (primary key). Source table: OCCD .'
+methods:
+- name: AddCustomsDeclaration
+  description: Defines a new CCD entry.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~AddCustomsDeclaration.html
+- name: DeleteCustomsDeclaration
+  description: Deletes an existing CCD entry specified in CustomsDeclarationParams.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~DeleteCustomsDeclaration.html
+- name: GetCustomsDeclaration
+  description: Retrieves information about an existing CCD entry specified in CustomsDeclarationParams.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~GetCustomsDeclaration.html
+- name: GetDataInterface
+  description: Creates an empty data interface. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Retrieves the Data Interface from XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Retrieves the Data Interface from XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~GetDataInterfaceFromXMLString.html
+- name: UpdateCustomsDeclaration
+  description: Updates an existing CCD entry.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclarationService~UpdateCustomsDeclaration.html

@@ -1,0 +1,127 @@
+name: WithholdingTaxDataWTX
+title: WithholdingTaxDataWTX Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX.html
+description: WithholdingTaxDataWTX Class
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Add.html
+- name: SetCurrentLine
+  description: method SetCurrentLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~SetCurrentLine.html
+properties:
+- name: AccumBaseAmount
+  description: property AccumBaseAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumBaseAmount.html
+- name: AccumBaseAmountFC
+  description: property AccumBaseAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumBaseAmountFC.html
+- name: AccumBaseAmountSys
+  description: property AccumBaseAmountSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumBaseAmountSys.html
+- name: AccumWTaxAmount
+  description: property AccumWTaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumWTaxAmount.html
+- name: AccumWTaxAmountFC
+  description: property AccumWTaxAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumWTaxAmountFC.html
+- name: AccumWTaxAmountSys
+  description: property AccumWTaxAmountSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~AccumWTaxAmountSys.html
+- name: BaseDocEntry
+  description: property BaseDocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseDocEntry.html
+- name: BaseDocLine
+  description: property BaseDocLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseDocLine.html
+- name: BaseDocType
+  description: property BaseDocType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseDocType.html
+- name: BaseDocumentReference
+  description: property BaseDocumentReference
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseDocumentReference.html
+- name: BaseNetAmount
+  description: property BaseNetAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseNetAmount.html
+- name: BaseNetAmountFC
+  description: property BaseNetAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseNetAmountFC.html
+- name: BaseNetAmountSys
+  description: property BaseNetAmountSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseNetAmountSys.html
+- name: BaseType
+  description: property BaseType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseType.html
+- name: BaseVatAmount
+  description: property BaseVatAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseVatAmount.html
+- name: BaseVatAmountFC
+  description: property BaseVatAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseVatAmountFC.html
+- name: BaseVatAmountSys
+  description: property BaseVatAmountSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~BaseVatAmountSys.html
+- name: Category
+  description: property Category
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Category.html
+- name: Count
+  description: property Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Count.html
+- name: Criteria
+  description: property Criteria
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Criteria.html
+- name: ExemptRate
+  description: property ExemptRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~ExemptRate.html
+- name: GLAccount
+  description: property GLAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~GLAccount.html
+- name: LineNum
+  description: property LineNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~LineNum.html
+- name: Rate
+  description: property Rate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Rate.html
+- name: RoundingType
+  description: property RoundingType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~RoundingType.html
+- name: Status
+  description: property Status
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~Status.html
+- name: TargetAbsEntry
+  description: property TargetAbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~TargetAbsEntry.html
+- name: TargetDocumentType
+  description: property TargetDocumentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~TargetDocumentType.html
+- name: TaxableAmount
+  description: property TaxableAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~TaxableAmount.html
+- name: TaxableAmountFC
+  description: property TaxableAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~TaxableAmountFC.html
+- name: TaxableAmountinSys
+  description: property TaxableAmountinSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~TaxableAmountinSys.html
+- name: UserFields
+  description: property UserFields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~UserFields.html
+- name: WithholdingType
+  description: property WithholdingType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WithholdingType.html
+- name: WTAbsId
+  description: property WTAbsId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WTAbsId.html
+- name: WTAmount
+  description: property WTAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WTAmount.html
+- name: WTAmountFC
+  description: property WTAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WTAmountFC.html
+- name: WTAmountSys
+  description: property WTAmountSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WTAmountSys.html
+- name: WTCode
+  description: property WTCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WithholdingTaxDataWTX~WTCode.html

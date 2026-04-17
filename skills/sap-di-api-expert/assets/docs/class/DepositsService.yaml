@@ -1,0 +1,40 @@
+name: DepositsService
+title: DepositsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService.html
+description: 'The DepositsService service enables you to add, look up, update and cancel deposits for: - Cash - Checks - Credit card vouchers For Chile, France, Italy, Portugal, and Spain localizations, you can view deposited bills of exchange (BoE). Source table: ODPS .'
+remarks: To access the Deposit window from the SAP Business One application, choose Banking --> Deposits --> Deposit .
+methods:
+- name: AddDeposit
+  description: Adds a deposit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~AddDeposit.html
+- name: CancelCheckRow
+  description: Cancels a check that was received as an incoming payment together with the incoming payment document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~CancelCheckRow.html
+- name: CancelCheckRowbyCurrentSystemDate
+  description: CancelCheckRowbyCurrentSystemDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~CancelCheckRowbyCurrentSystemDate.html
+- name: CancelDeposit
+  description: Cancels an existing deposit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~CancelDeposit.html
+- name: CancelDepositbyCurrentSystemDate
+  description: CancelDepositbyCurrentSystemDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~CancelDepositbyCurrentSystemDate.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DepositsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~GetDataInterfaceFromXMLString.html
+- name: GetDeposit
+  description: Retrieves a deposit. The deposit is specified by its key, which is contained in the DepositParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~GetDeposit.html
+- name: GetDepositList
+  description: Returns the DepositsParams data collection that identify all deposits.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~GetDepositList.html
+- name: UpdateDeposit
+  description: Updates an existing deposit. The data for the deposit, including the key of the deposit to be updated, is contained in the Deposit object passed to the method. To update a deposit, you must first retrieve it using the GetDeposit method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepositsService~UpdateDeposit.html

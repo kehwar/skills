@@ -1,0 +1,25 @@
+name: UserKeysMD_Elements
+title: UserKeysMD_Elements Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements.html
+description: 'UserKeysMD_Elements is a child object of the UserKeysMD object. UserKeysMD_Elements defines the fields that combine the key index. Source table: UKD1 .'
+methods:
+- name: Add
+  description: Adds a field to an existing key index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements~SetCurrentLine.html
+properties:
+- name: ColumnAlias
+  description: 'Sets or returns the field name in the database. Field name: ColAlias . Length: 18 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements~ColumnAlias.html
+  field_name: ColAlias
+  length: 18
+- name: Count
+  description: Returns the total key indexes that exist in the collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements~Count.html
+- name: SubKeyIndex
+  description: 'Returns the internal key of the field. Used for reference only. Field name: SubKeyId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserKeysMD_Elements~SubKeyIndex.html
+  field_name: SubKeyId

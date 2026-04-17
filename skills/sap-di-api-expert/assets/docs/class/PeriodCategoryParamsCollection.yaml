@@ -1,0 +1,25 @@
+name: PeriodCategoryParamsCollection
+title: PeriodCategoryParamsCollection Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection.html
+description: PeriodCategoryParamsCollection is a collection of PeriodCategoryParams identification keys.
+methods:
+- name: Add
+  description: Adds a new record to the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~GetXMLSchema.html
+- name: Item
+  description: Returns a reference to an existing item in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of PeriodCategoryParams identification keys in the PeriodCategoryParamsCollection .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PeriodCategoryParamsCollection~Count.html

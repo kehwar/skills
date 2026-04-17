@@ -1,0 +1,71 @@
+name: DeductionTaxHierarchies
+title: DeductionTaxHierarchies Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies.html
+description: 'The DeductionTaxHierarchies object enables to define taxation levels to withhold from payments to vendors. This object is part of the Business Partners module. Source table: ODDT .'
+remarks: 'Country-specific for Israel. Mandatory properties: BPCode , HierarchyCode , ValidFrom , and ValidUntil . To display the form in the application: - Select Business Partners -->Business Partner Master Data -->Accounting tab -->Tax tab . Click the Hierarchies button.'
+methods:
+- name: Add
+  description: Adds a taxation level definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~Update.html
+properties:
+- name: AbsEntry
+  description: 'Returns ABS_ENTRY , the Primery key to the Withholding Tax Deduction Hierarchy (ODDT) table. Field name: ABS_ENTRY .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~AbsEntry.html
+  field_name: ABS_ENTRY
+- name: BPCode
+  description: 'Sets or returns the business partner identification key in SAP Business One. Field name: CardCode . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~BPCode.html
+  field_name: CardCode
+  length: 15
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~Browser.html
+- name: DeductionPercent
+  description: property DeductionPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~DeductionPercent.html
+- name: HierarchyCode
+  description: 'Sets or returns the hierarchy code. Field name: DateFrom . Mandatory property. Length: 10 characters. TrcCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~HierarchyCode.html
+  field_name: DateFrom
+  length: 10
+- name: HierarchyName
+  description: 'Sets or returns the hierarchy name. Field name: DateFrom . Length: 30 characters. TrcName'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~HierarchyName.html
+  field_name: DateFrom
+  length: 30
+- name: LastUpdated
+  description: property LastUpdated
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~LastUpdated.html
+- name: Lines
+  description: Returns the DeductionTaxHierarchies_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~Lines.html
+- name: MaximumTotal
+  description: property MaximumTotal
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~MaximumTotal.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~UserFields.html
+- name: ValidFrom
+  description: 'Sets or returns the validity start date of the withholding tax deduction certificate. Field name: DateFrom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~ValidFrom.html
+  field_name: DateFrom
+- name: ValidUntil
+  description: 'Sets or returns the validity end date of the withholding tax deduction certificate. Field name: DateTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies~ValidUntil.html
+  field_name: DateTo

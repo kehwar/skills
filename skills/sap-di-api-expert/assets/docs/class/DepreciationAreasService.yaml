@@ -1,0 +1,31 @@
+name: DepreciationAreasService
+title: DepreciationAreasService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService.html
+description: 'The DepreciationAreasService service enables you to create, update, and view depreciation areas. Source table: ODPA .'
+remarks: To open the Depreciation Areas - Setup window, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Fixed Assets --> Depreciation Areas .
+methods:
+- name: Add
+  description: Adds a depreciation area.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~Add.html
+- name: Delete
+  description: Deletes an existing depreciation area.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~Delete.html
+- name: Get
+  description: Retrieves a depreciation area. The depreciation area is specified by its key, which is contained in the DepreciationAreaParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DepreciationAreasService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the DepreciationAreaParamsCollection data collection that identifies all depreciation areas.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~GetList.html
+- name: Update
+  description: Updates an existing depreciation area. The data for the depreciation area, including the key of the depreciation area to be updated, is contained in the DepreciationArea object passed to the method. To update a depreciation area, you must first retrieve it using the Get method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DepreciationAreasService~Update.html

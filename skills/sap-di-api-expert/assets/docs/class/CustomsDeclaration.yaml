@@ -1,0 +1,57 @@
+name: CustomsDeclaration
+title: CustomsDeclaration Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration.html
+description: 'A data structure related with the CustomsDeclarationService holding the information about a Cargo Customs Declaration (CCD). Source table: OCCD .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~ToXMLString.html
+properties:
+- name: CCDNum
+  description: 'Sets or returns the unique CCD number. Field name: CCDNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~CCDNum.html
+- name: CustomsBroker
+  description: 'Sets or returns the customs broker (a valid business partner code from the OCRD table). Field name: CustBroker .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~CustomsBroker.html
+  field_name: CustBroker
+- name: CustomsTerminal
+  description: 'Sets or returns the customs terminal (a valid business partner code from the OCRD table). Field name: CustTerm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~CustomsTerminal.html
+  field_name: CustTerm
+- name: Date
+  description: 'Sets or returns the date of declaration. Field name: Date .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~Date.html
+- name: DocDate
+  description: 'Sets or returns the import or export document date. Field name: DocDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~DocDate.html
+- name: DocNum
+  description: 'Sets or returns the import or export document number. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~DocNum.html
+- name: PaymentKey
+  description: 'Sets or returns the payment key. Field name: PayKey .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~PaymentKey.html
+  field_name: PayKey
+- name: SupplyDate
+  description: 'Sets or returns the supply agreement date. Field name: SupDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~SupplyDate.html
+  field_name: SupDate
+- name: SupplyNum
+  description: 'Sets or returns the supply agreement number. Field name: SupNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~SupplyNum.html
+  field_name: SupNum
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CustomsDeclaration~UserFields.html

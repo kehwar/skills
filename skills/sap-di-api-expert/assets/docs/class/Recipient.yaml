@@ -1,0 +1,65 @@
+name: Recipient
+title: Recipient Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient.html
+description: 'Recipient is a data structure related to the MessagesService . It represents the data of a single recipient of a message or alert. Source table: AOB1 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~ToXMLString.html
+properties:
+- name: CellularNumber
+  description: 'Sets or returns the cellular phone number of the recipient. Field name: PortNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~CellularNumber.html
+  field_name: PortNum
+  length: 50
+- name: EmailAddress
+  description: 'Sets or returns the recipient email address. Field name: E_Mail . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~EmailAddress.html
+  field_name: E_Mail
+  length: 100
+- name: FaxNumber
+  description: 'Sets or returns the recipient fax number. Field name: Fax . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~FaxNumber.html
+  field_name: Fax
+  length: 20
+- name: NameTo
+  description: 'Sets or returns the recipient name. Field name: ObjName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~NameTo.html
+  field_name: ObjName
+  length: 100
+- name: SendEmail
+  description: 'Determines whether or not the message is sent to an email address. Field name: SendEMail .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~SendEmail.html
+  field_name: SendEMail
+- name: SendFax
+  description: 'Determines whether or not the message is sent by fax. Field name: SendFax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~SendFax.html
+- name: SendInternal
+  description: 'Determines whether or not the message is internal. That is, the message will be sent only to users (employees) that are defined in SAP Business One. Field name: SendIntrnl .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~SendInternal.html
+  field_name: SendIntrnl
+- name: SendSMS
+  description: 'Determines whether or not the message is sent by SMS. Field name: SendSMS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~SendSMS.html
+- name: UserCode
+  description: 'Sets or returns the user code of the recipient. Mandatory property. Field name: ObjCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~UserCode.html
+  field_name: ObjCode
+  length: 50
+- name: UserType
+  description: 'Sets or returns a valid value that specifies the type of recipient for the message. Mandatory property. Field name: ObjType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Recipient~UserType.html
+  field_name: ObjType

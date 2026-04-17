@@ -1,0 +1,34 @@
+name: ApprovalTemplateTerm
+title: ApprovalTemplateTerm Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm.html
+description: 'ApprovalTemplateTerm is a data structure related to the ApprovalTemplatesService . Source table: WTM4 .'
+methods:
+- name: FromXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the an XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~ToXMLString.html
+properties:
+- name: ConditionType
+  description: 'Sets or returns a valid value that defines the Deviation type that needs approval. Field name: CondId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~ConditionType.html
+  field_name: CondId
+- name: OperationType
+  description: 'Sets or returns the logical operation required to define the deviation that initiate this Approval Template. Field name: opCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~OperationType.html
+  field_name: opCode
+- name: Value
+  description: 'Sets or returns the value associated with this Approval Template. Field name: opValue .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateTerm~Value.html
+  field_name: opValue

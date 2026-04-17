@@ -1,0 +1,35 @@
+name: SalesOpportunitiesReasons
+title: SalesOpportunitiesReasons Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons.html
+description: 'SalesOpportunitiesReasons is a child object of the SalesOpportunities object and represents the reasons for failures of sales opportunity. Source table: OPR5 .'
+remarks: 'To display the form in the application: - Select Sales Opportunities --> Sales Opportunity . Select the Summary tab. Select the opportunity status Lost .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the SalesOpportunitiesReasons list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~Count.html
+- name: Reason
+  description: 'Sets or returns the reason ID for failure. This is a foreign key to the Defect Cause table ( OOFR ), which is exposed via the SalesOpportunityReasonsSetupService object. Field name: ReasondId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~Reason.html
+  field_name: ReasondId
+- name: RowNo
+  description: 'Returns the current available row number (starts from 1). Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~RowNo.html
+  field_name: Line
+- name: SequenceNo
+  description: 'Returns the sales opportunity unique ID (primary key). Field name: OpportId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~SequenceNo.html
+  field_name: OpportId
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesReasons~UserFields.html

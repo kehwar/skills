@@ -1,0 +1,19 @@
+name: AccountsService
+title: AccountsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountsService.html
+description: 'The AccountsService enables to transfer credit or debit amounts from a specified opening balance account to one or more G/L accounts. This service creates a journal entry lines. Mandatory properties: OpenBalanceAccount ( OpenningBalanceAccount object) Code ( GLAccount object).'
+remarks: 'To use the service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or- You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method.'
+methods:
+- name: CreateOpenBalance
+  description: Transfers credit or debit amounts from a specified opening balance account to one or more G/L accounts.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountsService~CreateOpenBalance.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from a specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AccountsService~GetDataInterfaceFromXMLString.html

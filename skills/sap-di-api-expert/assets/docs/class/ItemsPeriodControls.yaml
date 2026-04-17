@@ -1,0 +1,42 @@
+name: ItemsPeriodControls
+title: ItemsPeriodControls Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls.html
+description: 'ItemsPeriodControls is a child object of the Items object. You can define the depreciation calculation factors for different periods when you depreciate an asset using the straight line period control method with individual period control. Source table: ITM11 .'
+remarks: 'To access the Depreciation Period Control window, do the following: - From the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data , and select the Fixed Assets tab. On the Overview subtab of the Fixed Assets tab, select the row with the intended depreciation type in the Depreciation Parameters table and choose the Period Control pushbutton.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~SetCurrentLine.html
+properties:
+- name: ActualUnits
+  description: property ActualUnits
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~ActualUnits.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~Count.html
+- name: DepreciationArea
+  description: 'The depreciation area in which the asset''s depreciation takes effect. Field name: DprArea. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~DepreciationArea.html
+  field_name: DprArea
+  length: 15
+- name: DepreciationStatus
+  description: 'Indicates whether to depreciate the asset in the period. Field name: DprSt.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~DepreciationStatus.html
+  field_name: DprSt
+- name: Factor
+  description: 'The factor for the calculation of depreciation in the period. Field name: factor.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~Factor.html
+  field_name: factor
+- name: FiscalYear
+  description: 'The fiscal year you have selected in the Fiscal Year field in the Asset Master Data window. Field name: PeriodCat. Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~FiscalYear.html
+  field_name: PeriodCat
+  length: 10
+- name: SubPeriod
+  description: 'The sub period. Field name: VisOrder.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsPeriodControls~SubPeriod.html
+  field_name: VisOrder

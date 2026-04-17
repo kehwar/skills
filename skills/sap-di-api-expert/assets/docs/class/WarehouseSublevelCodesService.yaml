@@ -1,0 +1,31 @@
+name: WarehouseSublevelCodesService
+title: WarehouseSublevelCodesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService.html
+description: 'The WarehouseSublevelCodesService service enables you to add, look up, update, and remove warehouse sublevel codes. Source table: OBSL .'
+remarks: To access the Warehouse Sublevel Codes - Setup window, from the SAP Business One Main Menu , choose Administration --> Setup --> Inventory --> Bin Locations --> Warehouse Sublevel Codes .
+methods:
+- name: Add
+  description: Adds a warehouse sublevel code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~Add.html
+- name: Delete
+  description: Deletes an existing warehouse sublevel code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~Delete.html
+- name: Get
+  description: The warehouse sublevel code is specified by its key, which is contained in the WarehouseSublevelCodeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the WarehouseSublevelCodesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the WarehouseSublevelCodeCollectionParams data collection that identifies all warehouse sublevel codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~GetList.html
+- name: Update
+  description: Updates an existing warehouse sublevel code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseSublevelCodesService~Update.html

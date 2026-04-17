@@ -1,0 +1,56 @@
+name: SalesTaxCodes_Lines
+title: SalesTaxCodes_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines.html
+description: 'TaxCodes_Lines is a child object of the SalesTaxCodes object and represents the tax authorities/types from which the tax code is combined. Source table: STC1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~Count.html
+- name: CSTCodeIn
+  description: property CSTCodeIn
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~CSTCodeIn.html
+- name: CSTSuffix
+  description: property CSTSuffix
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~CSTSuffix.html
+- name: EffectiveRate
+  description: 'Returns the effective rate based on the rate of the specified tax authority/type ( Rate ) and tax-on-tax calculation ( STATaxonTaxCode and STATaxOnTaxType ). Field name: EfctivRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~EffectiveRate.html
+  field_name: EfctivRate
+- name: FormulaId
+  description: property FormulaId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~FormulaId.html
+- name: RowNumber
+  description: 'Returns the current available row number (starts from 1). Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~RowNumber.html
+  field_name: Line_ID
+- name: STACode
+  description: 'Sets or returns the code of the tax authority. Field name: e . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~STACode.html
+  length: 8
+- name: STATaxonTaxCode
+  description: 'Sets or returns the code of the tax authority on which the tax-on-tax is based. Field name: TaxOnTCod . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~STATaxonTaxCode.html
+  field_name: TaxOnTCod
+  length: 8
+- name: STATaxOnTaxType
+  description: 'Sets or returns the type of the sales tax authority on which the tax-on-tax is based. Field name: TaxOnTType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~STATaxOnTaxType.html
+  field_name: TaxOnTType
+- name: STAType
+  description: 'Sets or returns the type of the sales tax authority on which the tax rate of the current line is based. Field name: STAType . This is a foreign key to the SalesTaxAuthorities object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~STAType.html
+- name: STCCode
+  description: 'Sets or returns the code of the tax authority on which the the tax rate of the current line is based. Field name: STCCode . Length: 8 characters. This is a foreign key to the SalesTaxCodes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~STCCode.html
+  length: 8
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxCodes_Lines~UserFields.html

@@ -1,0 +1,100 @@
+name: MaterialRevaluation_lines
+title: MaterialRevaluation_lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines.html
+description: 'MaterialRevaluation_Lines is a child object of the MaterialRevaluation object representing the line entries of each transaction. Source table: MRV1 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~SetCurrentLine.html
+properties:
+- name: ActualPrice
+  description: 'Returns the current item price (item price before revaluation). Field name: RActPrice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~ActualPrice.html
+  field_name: RActPrice
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~Count.html
+- name: DebitCredit
+  description: Sets or returns the amount of money to be recalculated on items.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DebitCredit.html
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocEntry
+  description: 'Returns the document entry key that uniquely identifies the document. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~DocEntry.html
+- name: FIFOLayers
+  description: The FIFO layers to be revalued. Relevant when the item's valuation method is FIFO.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~FIFOLayers.html
+- name: ItemCode
+  description: 'Sets or returns the item code in the inventory. The item code must be unique. This is a foreign key to the Items object. Field name: ItemCode . Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~ItemCode.html
+  length: 20
+- name: ItemDescription
+  description: 'Sets or returns the item name/description. Field name: Dscription . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~ItemDescription.html
+  field_name: Dscription
+  length: 100
+- name: LineNum
+  description: 'Returns the current row number in the list. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~LineNum.html
+- name: OnHand
+  description: 'Returns the number of available items in warehouse during the revaluation. Field name: ROnHand .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~OnHand.html
+  field_name: ROnHand
+- name: Price
+  description: 'Sets or returns the item price before taxation. Field name: Price .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~Price.html
+- name: Project
+  description: 'The project to which the changed inventory value of the item is allocated. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~Project.html
+  length: 20
+- name: Quantity
+  description: Sets or returns the number of items for recalculating their DebitCredit amount.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~Quantity.html
+- name: RevalAmountToStock
+  description: 'Sets or returns the revaluation amount posted to the Stock Account. Field name: RToStock .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~RevalAmountToStock.html
+  field_name: RToStock
+- name: RevaluationDecrementAccount
+  description: 'Sets or returns the revaluation decrement account code. Field name: RDcrmAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~RevaluationDecrementAccount.html
+  field_name: RDcrmAcct
+  length: 15
+- name: RevaluationIncrementAccount
+  description: 'Sets or returns the revaluation increment account code. Field name: RIncmAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~RevaluationIncrementAccount.html
+  field_name: RIncmAcct
+  length: 15
+- name: SNBLines
+  description: property SNBLines
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~SNBLines.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~UserFields.html
+- name: WarehouseCode
+  description: 'Sets or returns the warehouse code where the item is stored. Field name: WhsCode . Length: 8 characters. This is a foreign key to the Warehoses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluation_lines~WarehouseCode.html
+  field_name: WhsCode
+  length: 8

@@ -1,0 +1,16 @@
+name: Command
+title: Command Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Command.html
+description: The Command object enables to run SQL stored procedures located in the company database. This object is called by the Recordset object.
+methods:
+- name: Execute
+  description: Executes the stored procedure with the Parameters .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Command~Execute.html
+properties:
+- name: Name
+  description: Sets or returns the name of the stored procedure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Command~Name.html
+- name: Parameters
+  description: Returns the CommandParams child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Command~Parameters.html

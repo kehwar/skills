@@ -1,0 +1,67 @@
+name: AdvancedGLAccountParams
+title: AdvancedGLAccountParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams.html
+description: AdvancedGLAccountParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~ToXMLString.html
+properties:
+- name: AccountType
+  description: property AccountType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~AccountType.html
+- name: BPCode
+  description: property BPCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~BPCode.html
+- name: FederalTaxID
+  description: property FederalTaxID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~FederalTaxID.html
+- name: ItemCode
+  description: property ItemCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~ItemCode.html
+- name: PostingDate
+  description: property PostingDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~PostingDate.html
+- name: ShipToCountry
+  description: property ShipToCountry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~ShipToCountry.html
+- name: ShipToState
+  description: property ShipToState
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~ShipToState.html
+- name: UDF1
+  description: property UDF1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~UDF1.html
+- name: UDF2
+  description: property UDF2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~UDF2.html
+- name: UDF3
+  description: property UDF3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~UDF3.html
+- name: UDF4
+  description: property UDF4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~UDF4.html
+- name: UDF5
+  description: property UDF5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~UDF5.html
+- name: Usage
+  description: property Usage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~Usage.html
+- name: VatGroup
+  description: property VatGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~VatGroup.html
+- name: Warehouse
+  description: property Warehouse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AdvancedGLAccountParams~Warehouse.html

@@ -1,0 +1,28 @@
+name: BPBlockSendingMarketingContents
+title: BPBlockSendingMarketingContents Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents.html
+description: Block sending marketing contnet to the business partner.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~SetCurrentLine.html
+properties:
+- name: CardCode
+  description: 'The business partner code. Field name: CardCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~CardCode.html
+  length: 15
+- name: Choose
+  description: Choose to block sending marketing contnet to the business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~Choose.html
+- name: CommunicationMediaId
+  description: 'Communication media code. Field name: CommCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBlockSendingMarketingContents~CommunicationMediaId.html
+  field_name: CommCode
+  length: 50

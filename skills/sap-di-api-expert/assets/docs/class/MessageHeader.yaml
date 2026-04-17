@@ -1,0 +1,50 @@
+name: MessageHeader
+title: MessageHeader Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader.html
+description: 'MessageHeader is a data structure related to the MessagesService . The data is stored temporarily in the memory in a virtual table (at a later stage, the data is stored in the OAOB and OAIB tables). Source tables: - OAOB (Message Sent). OAIB (Received Alerts).'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~ToXMLString.html
+properties:
+- name: Code
+  description: 'Sets or returns the message key. Field name: AlertCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~Code.html
+  field_name: AlertCode
+- name: Read
+  description: 'Determines whether or not the message was read by the recipient (see OAIB table). Field name: WasRead .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~Read.html
+  field_name: WasRead
+- name: Received
+  description: 'Determines whether or not the message was opened by the recipient (see OAIB table).Field name: Opened .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~Received.html
+  field_name: Opened
+- name: ReceivedDate
+  description: 'Returns the received date (see OAIB table). Field name: RecDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~ReceivedDate.html
+  field_name: RecDate
+- name: ReceivedTime
+  description: 'Returns the received time (see OAIB table). Field name: RecTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~ReceivedTime.html
+  field_name: RecTime
+- name: SentDate
+  description: 'Returns the sent date (see OAOB table). Field name: SendDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~SentDate.html
+  field_name: SendDate
+- name: SentTime
+  description: 'Returns the sent time (see OAOB table). Field name: SendTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageHeader~SentTime.html
+  field_name: SendTime

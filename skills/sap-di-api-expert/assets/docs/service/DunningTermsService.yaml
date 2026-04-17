@@ -1,0 +1,31 @@
+name: DunningTermsService
+title: DunningTermsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService.html
+description: 'The DunningTermsService service enables you to add, look up and remove dunning terms for defining when to send out dunning terms for delinquent balances. Each business partner can be assigned to one dunning term, which defines when to send dunning letters to that partner. Source table: ODUT'
+remarks: SAP Business One maintains a template list of up to 10 dunning levels; in the DI API, this list is managed by the DunningLetters object. In the application, a new dunning term automatically contains this list of dunning levels, but the dunning levels in the dunning terms can be changed. In the DI API, if no lines are specified for a new dunning term in the AddDunningTerm method, then the template list of dunning levels is automatically added to the dunning term. To see the list of dunning terms, select Administration --> Setup --> Business partners --> Dunning Terms.
+methods:
+- name: AddDunningTerm
+  description: Adds a dunning term.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~AddDunningTerm.html
+- name: DeleteDunningTerm
+  description: Deletes an existing dunning term. The dunning term is specified by its key ( TermCode ), which is contained in the DunningTermParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~DeleteDunningTerm.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DunningTermsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~GetDataInterfaceFromXMLString.html
+- name: GetDunningTerm
+  description: Retrieves a dunning term. The dunning term is specified by its key ( TermCode ), which is contained in the DunningTermParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~GetDunningTerm.html
+- name: GetDunningTermList
+  description: Retrieves the keys and names of all the dunning terms.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~GetDunningTermList.html
+- name: UpdateDunningTerm
+  description: Updates an existing dunning term. The data for the dunning term, including the key of the dunning term to be updated, is contained in the DunningTerm object passed to the method. To update a dunning term, you must first retrieve it using the GetDunningTerm method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningTermsService~UpdateDunningTerm.html

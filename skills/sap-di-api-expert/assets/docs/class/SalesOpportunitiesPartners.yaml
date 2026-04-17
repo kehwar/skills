@@ -1,0 +1,44 @@
+name: SalesOpportunitiesPartners
+title: SalesOpportunitiesPartners Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners.html
+description: 'SalesOpportunityPartner is a child object of the SalesOpportunities object that represents the partners of the sales opportunity. Source table: OPR2 .'
+remarks: 'To display the form in the application: - Select Sales Opportunities --> Sales Opportunity . - Select the Partners tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the SalesOpportunitiesPartners list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~Count.html
+- name: Details
+  description: 'Sets or returns the details for the sales opportunity partner. Field name: Memo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~Details.html
+  field_name: Memo
+  length: 50
+- name: Partners
+  description: 'Sets or returns the partners table. Field name: ParterId . This is a foreign key to the Partners table ( OPRT ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~Partners.html
+  field_name: ParterId
+- name: RelationshipCode
+  description: 'Sets or returns the relationship ID number. Field name: OrlCode . This is a foreign key to the Relationships object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~RelationshipCode.html
+  field_name: OrlCode
+- name: RowNo
+  description: 'Returns the current row number. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~RowNo.html
+  field_name: Line
+- name: SequenceNo
+  description: 'Returns the sales opportunities partners, sequence no. Field name: OpportId . Returns the sales opportunity unique ID (primary key). Field name: OpportId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~SequenceNo.html
+  field_name: OpportId
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesPartners~UserFields.html

@@ -1,0 +1,28 @@
+name: ProductionOrders_SalesOrderLines
+title: ProductionOrders_SalesOrderLines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines.html
+description: 'The ProductionOrders_SalesOrderLines is a child object of the ProductionOrders object. You can set the sales order to which to link the production order. Source table: WOR2 .'
+remarks: To display the form in the application, choose Production --> Production Orders . And click the link button of the Sales Order field.
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~SetCurrentLine.html
+properties:
+- name: BaseAbsEntry
+  description: 'The production order base entry. Field name: BaseEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~BaseAbsEntry.html
+  field_name: BaseEntry
+- name: BaseLine
+  description: 'The production order base line. Field name: BaseLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~BaseLine.html
+- name: BaseNumber
+  description: 'The production order base number. Field name: BaseNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~BaseNumber.html
+  field_name: BaseNum
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~Count.html
+- name: DocEntry
+  description: 'The internal ID of the production order. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProductionOrders_SalesOrderLines~DocEntry.html

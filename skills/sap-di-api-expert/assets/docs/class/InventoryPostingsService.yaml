@@ -1,0 +1,31 @@
+name: InventoryPostingsService
+title: InventoryPostingsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService.html
+description: 'The InventoryPostingsService service enables you to add, look up, and update inventory posting transactions. Source table: OIQR .'
+remarks: To open the Inventory Posting window, from the SAP Business One Main Menu , choose Inventory --> Inventory Transactions --> Inventory Counting Transactions --> Inventory Posting .
+methods:
+- name: Add
+  description: Adds an inventory posting transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~Add.html
+- name: Get
+  description: Retrieves an inventory posting transaction. The inventory posting transaction is specified by its key, which is contained in the InventoryPostingParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the InventoryPostingsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the InventoryPostingParamsCollection data collection that identifies all inventory posting transactions.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~GetList.html
+- name: SetCopyOption
+  description: SetCopyOption
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~SetCopyOption.html
+- name: Update
+  description: Updates an existing inventory posting transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryPostingsService~Update.html

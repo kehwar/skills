@@ -1,0 +1,55 @@
+name: TechnicianSettingsGroup
+title: TechnicianSettingsGroup Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup.html
+description: TechnicianSettingsGroup Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~ToXMLString.html
+properties:
+- name: AdvancedDashBoard
+  description: property AdvancedDashBoard
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~AdvancedDashBoard.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~Code.html
+- name: CustomizedGroup
+  description: property CustomizedGroup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~CustomizedGroup.html
+- name: EnableActualDuration
+  description: property EnableActualDuration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableActualDuration.html
+- name: EnableEditTime
+  description: property EnableEditTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableEditTime.html
+- name: EnableFollowup
+  description: property EnableFollowup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableFollowup.html
+- name: EnableReject
+  description: property EnableReject
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableReject.html
+- name: EnableResign
+  description: property EnableResign
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableResign.html
+- name: EnableSignature
+  description: property EnableSignature
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableSignature.html
+- name: EnableStarRating
+  description: property EnableStarRating
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~EnableStarRating.html
+- name: Name
+  description: property Name
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TechnicianSettingsGroup~Name.html

@@ -1,0 +1,14 @@
+name: ValidValue
+title: ValidValue Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValue.html
+description: The ValidValue object represents a single valid value element of a specified user field.
+properties:
+- name: Description
+  description: 'Returns the description of the valid value. Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValue~Description.html
+  length: 254
+- name: Value
+  description: 'Returns the valid value. Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ValidValue~Value.html
+  length: 254

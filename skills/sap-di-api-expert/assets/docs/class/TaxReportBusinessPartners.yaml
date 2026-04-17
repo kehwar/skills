@@ -1,0 +1,25 @@
+name: TaxReportBusinessPartners
+title: TaxReportBusinessPartners Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners.html
+description: 'is a Data Collection of TaxReportBusinessPartner data structures. Source table: VTR4 . Remark: VTR4 is a virtual table and not exposed in the database reference files.'
+methods:
+- name: Add
+  description: Adds a new TaxReportBusinessPartner to the TaxReportBusinessPartners data collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing TaxReportBusinessPartner in the collection by its index.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~Item.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~ToXMLString.html
+properties:
+- name: Count
+  description: Returns the number of TaxReportBusinessPartner data structures in the TaxReportBusinessPartners data collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxReportBusinessPartners~Count.html

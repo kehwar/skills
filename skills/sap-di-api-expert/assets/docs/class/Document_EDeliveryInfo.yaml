@@ -1,0 +1,17 @@
+name: Document_EDeliveryInfo
+title: Document_EDeliveryInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_EDeliveryInfo.html
+description: 'Information about electronic marketing documents for deliveries. Source tables: DLN26 , RIN26 , PDN26 , RPC26 .'
+remarks: 'For example, to access EDeliveryInfo in the application: Inventory -> Inventory Transactions -> Inventory Transfer.'
+properties:
+- name: DocEntry
+  description: 'Internal document key. Field name: DocEntry'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_EDeliveryInfo~DocEntry.html
+- name: MoveType
+  description: Type of movement for E-Books in Greece.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_EDeliveryInfo~MoveType.html
+- name: VehicleNo
+  description: 'Vehicle no. for E-Books in Greece. Field name: VehicleNo Length: 15 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_EDeliveryInfo~VehicleNo.html
+  length: 15

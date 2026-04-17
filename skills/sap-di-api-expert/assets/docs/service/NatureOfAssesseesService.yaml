@@ -1,0 +1,31 @@
+name: NatureOfAssesseesService
+title: NatureOfAssesseesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService.html
+description: 'The NatureOfAssesseesService service enables you to add, look up and remove nature of assessees in the nature of assessee master data table. Nature of assessees are used to specify a type of entity subject to TDS (withholding tax). Source table: ONOA'
+remarks: For India only.
+methods:
+- name: AddNatureOfAssessee
+  description: Adds a nature of assessee.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~AddNatureOfAssessee.html
+- name: DeleteNatureOfAssessee
+  description: Deletes an existing nature of assessee. The nature of assessee is specified by its key ( AbsId ), which is contained in the NatureOfAssesseeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~DeleteNatureOfAssessee.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the NatureOfAssesseesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~GetDataInterfaceFromXMLString.html
+- name: GetNatureOfAssessee
+  description: Retrieves a nature of assessee. The nature of assessee is specified by its key ( AbsId ), which is contained in the NatureOfAssesseeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~GetNatureOfAssessee.html
+- name: GetNatureOfAssesseeList
+  description: Retrieves the keys and codes of all nature of assessees.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~GetNatureOfAssesseeList.html
+- name: UpdateNatureOfAssessee
+  description: Updates an existing nature of assessee. The data for the nature of assessee, including the key of the nature of assessee to be updated, is contained in the NatureOfAssessee passed to the method. To update a nature of assessee, you must first retrieve it using the GetNatureOfAssessee method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NatureOfAssesseesService~UpdateNatureOfAssessee.html

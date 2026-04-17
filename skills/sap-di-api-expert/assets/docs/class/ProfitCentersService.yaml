@@ -1,0 +1,31 @@
+name: ProfitCentersService
+title: ProfitCentersService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService.html
+description: 'The ProfitCentersService service enables you to add, look up and remove profit centers. To see the list of profit centers, select Financials --> Cost Accounting --> Cost Centers, and then choose Open Table . Source table: OPRC .'
+remarks: The terminology "Profit Center" and "Cost Center" are the same.
+methods:
+- name: AddProfitCenter
+  description: Adds a profit center.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~AddProfitCenter.html
+- name: DeleteProfitCenter
+  description: Deletes an existing profit center. The profit center is specified by its key ( PrcCode ), which is contained in the ProfitCenterParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~DeleteProfitCenter.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ProfitCentersService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~GetDataInterfaceFromXMLString.html
+- name: GetProfitCenter
+  description: Retrieves a profit center. The profit center is specified by its key ( PrcCode ), which is contained in the ProfitCenterParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~GetProfitCenter.html
+- name: GetProfitCenterList
+  description: Retrieves the keys and names of all the profit centers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~GetProfitCenterList.html
+- name: UpdateProfitCenter
+  description: Updates an existing profit center. The data for the profit center, including the key of the profit center to be updated, is contained in the ProfitCenter object passed to the method. To update a profit center, you must first retrieve it using the GetProfitCenter method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProfitCentersService~UpdateProfitCenter.html

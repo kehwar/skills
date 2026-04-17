@@ -1,0 +1,63 @@
+name: UserActionRecord
+title: UserActionRecord Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord.html
+description: 'Displays the access details and the actions of SAP Business One users who have logged on and logged off with the SAP Business One client or the DI API. Source table: USR5 .'
+remarks: In the SAP Business One application, to open the Access Log window, in the SAP Business One menu bar, choose Tools --> Access Log . To open the Access Log Details window, in the Access Log window, double-click the table row of a user whose access information you want to display.
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~SetCurrentLine.html
+properties:
+- name: Action
+  description: 'The action that the user performed. Field name: Action .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~Action.html
+- name: ActionBy
+  description: 'The user ID of the user who performed the action. Field name: ActionBy . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ActionBy.html
+  length: 8
+- name: ActionDate
+  description: 'The date of the action. Field name: Date .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ActionDate.html
+  field_name: Date
+- name: ActionTime
+  description: 'The time of the action. Field name: Time .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ActionTime.html
+  field_name: Time
+- name: AliveDuration
+  description: property AliveDuration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~AliveDuration.html
+- name: ClientIP
+  description: 'The IP addresses of the SAP Business One client computer in use by the user. Field name: ClientIP . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ClientIP.html
+  length: 200
+- name: ClientName
+  description: 'The name of the SAP Business One client computer in use by the user. Field name: ClientName . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ClientName.html
+  length: 32
+- name: Count
+  description: Returns the total number of records.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~Count.html
+- name: ProcessID
+  description: 'The process ID of the SAP Business One application. Field name: ProcessID.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ProcessID.html
+- name: ProcessName
+  description: 'The process name of the logged-on application. Field name: ProcName. Length: 80 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~ProcessName.html
+  field_name: ProcName
+  length: 80
+- name: UserCode
+  description: Returns the user code. This is the foreign key to the Users object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~UserCode.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~UserFields.html
+- name: WindowsSession
+  description: 'The windows session ID. Field name: WinSessnID.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~WindowsSession.html
+  field_name: WinSessnID
+- name: WindowsUser
+  description: 'The windows user name. Field name: WinUsrName. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserActionRecord~WindowsUser.html
+  field_name: WinUsrName
+  length: 100

@@ -1,0 +1,547 @@
+name: EmployeesInfo
+title: EmployeesInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo.html
+description: 'EmployeesInfo is a business object that represents the employee master data in the Human Resources module. This object enables you to: - Add employee''s details. Retrieve employee''s details by its key. Update employee''s details. Save the object in XML format. Source table: OHEM .'
+remarks: 'Mandatory fields in SAP Business One: FirstName and LastName . To display the form in the application: - Select Human Resources --> Employee Master Data .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Update.html
+properties:
+- name: AbsenceInfo
+  description: Returns the EmployeeAbsenceInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AbsenceInfo.html
+- name: AccountantResponsible
+  description: property AccountantResponsible
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AccountantResponsible.html
+- name: Active
+  description: property Active
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Active.html
+- name: AdditionalAmount
+  description: 'The additional benefit amount of the employee. Field: AddiAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AdditionalAmount.html
+- name: AdditionalCurrency
+  description: 'The currency of the additional benefit amount. Field: AddiCurr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AdditionalCurrency.html
+- name: AdditionalUnit
+  description: 'The time period unit of the additional benefit. Field: AddiUnit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AdditionalUnit.html
+- name: ApplicationUserID
+  description: 'Sets or returns the employee user code of SAP Business One application. Field name: userId . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ApplicationUserID.html
+  field_name: userId
+- name: AttachmentEntry
+  description: 'Sets or returns the Attachment Entry . Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AttachmentEntry.html
+  field_name: AtcEntry
+- name: Attachments
+  description: Returns the Attachments object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Attachments.html
+- name: AuthorizationForRetrieveFromSEFAZ
+  description: 'Authorization to Retrieve NFe from SEFAZ. Field name: ARetSEFAZ .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~AuthorizationForRetrieveFromSEFAZ.html
+  field_name: ARetSEFAZ
+- name: BankAccount
+  description: 'Sets or returns the bank account number of the employee . Field name: bankAcount . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BankAccount.html
+  field_name: bankAcount
+  length: 100
+- name: BankBranch
+  description: 'Sets or returns the bank branch name of the employee . Field name: branch Length: 100 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BankBranch.html
+  field_name: branch
+  length: 100
+- name: BankBranchNum
+  description: 'Sets or returns the bank branch number of the employee . Field name: bankBranNo . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BankBranchNum.html
+  field_name: bankBranNo
+  length: 30
+- name: BankCode
+  description: 'Sets or returns the employee bank name. Field name: bankCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BankCode.html
+  field_name: bankCode
+  length: 30
+- name: BankCodeForDATEV
+  description: 'The bank code for DATEV. Field name: BCodeDateV . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BankCodeForDATEV.html
+  field_name: BCodeDateV
+  length: 20
+- name: BirthPlace
+  description: 'The birth place of the employee. Field: BirthPlace .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BirthPlace.html
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~BPLID.html
+- name: Branch
+  description: 'Sets or returns the branch office of the employee. Field name: branch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Branch.html
+  field_name: branch
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Browser.html
+- name: CitizenshipCountryCode
+  description: 'Sets or returns the citizenship country code. Field name: citizenshp . This is a foreign key to the Countries table ( OCRY - not exposed through the DI API). Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CitizenshipCountryCode.html
+  field_name: citizenshp
+  length: 3
+- name: CompanyNumber
+  description: 'Indicate the company number to which the employee belongs, in case there are various numbers available within the company. Field name: CompanyNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CompanyNumber.html
+  field_name: CompanyNum
+  length: 20
+- name: CostCenterCode
+  description: 'Sets or returns the cost center to which the employee belongs. Field name: CostCenter .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CostCenterCode.html
+  field_name: CostCenter
+- name: CountryOfBirth
+  description: 'Sets or returns the country of birth of the employee. Field name: brthCountr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CountryOfBirth.html
+  field_name: brthCountr
+  length: 3
+- name: CPF
+  description: property CPF
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CPF.html
+- name: CRCNumber
+  description: property CRCNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CRCNumber.html
+- name: CRCState
+  description: property CRCState
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CRCState.html
+- name: CreateDate
+  description: property CreateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CreateDate.html
+- name: CreateTime
+  description: property CreateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~CreateTime.html
+- name: DateOfBirth
+  description: 'Sets or returns the birth date of the employee. Field name: birthDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~DateOfBirth.html
+  field_name: birthDate
+- name: Department
+  description: 'Sets or returns the employee department. Field name: dept This is a foreign key to the Departments table ( OUDP ), which is exposed via the DepartmentsService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Department.html
+  field_name: dept
+- name: DeviatingBankAccountOwner
+  description: 'Indicate whether the bank account owner is a person other than the employee, for example, the spouse of the employee. Field: DevBAOwner .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~DeviatingBankAccountOwner.html
+- name: DIRFResponsible
+  description: property DIRFResponsible
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~DIRFResponsible.html
+- name: EducationInfo
+  description: Returns the EmployeeEducationInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EducationInfo.html
+- name: EducationStatus
+  description: 'The education level of the employee. 1 - Without Profession 2 - With Profession 3 - High school without profession 4 - High school with profession 5 - Professional skilled exam 6 - University 7 - Indication not possible Field: StatusOfE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EducationStatus.html
+- name: eMail
+  description: 'Sets or returns the e-mail address. Field name: email . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~eMail.html
+  field_name: email
+  length: 100
+- name: EmployeeBranchAssignment
+  description: property EmployeeBranchAssignment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeBranchAssignment.html
+- name: EmployeeCode
+  description: property EmployeeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeCode.html
+- name: EmployeeCosts
+  description: 'Sets or returns the employee costs. Field name: empCostCur .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeCosts.html
+  field_name: empCostCur
+- name: EmployeeCostsCurrency
+  description: 'Sets or returns the currency of the employee cost. Field name: empCostCur . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeCostsCurrency.html
+  field_name: empCostCur
+  length: 3
+- name: EmployeeCostUnit
+  description: 'Sets or returns a valid value of BoSalaryCostUnits type that specifies the employee cost unit (for example: per hour, per day, per month, and so on). Field name: empCostUnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeCostUnit.html
+  field_name: empCostUnt
+- name: EmployeeID
+  description: 'Returns the employee ID. Field name: empID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeID.html
+  field_name: empID
+- name: EmployeeRolesInfo
+  description: Returns the EmployeeRolesInfo child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeRolesInfo.html
+- name: EmployeeType
+  description: 'Sets or returns the default role ID of the employee. Field name: type . This is a foreign key to the Employee Type table ( OHTY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~EmployeeType.html
+  field_name: type
+- name: ExemptionAmount
+  description: 'The amount of the exemption benefit of the employee. Field: ExemptAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ExemptionAmount.html
+- name: ExemptionCurrency
+  description: 'The currency of the exemption benefit amount. Field: ExemptCurr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ExemptionCurrency.html
+- name: ExemptionUnit
+  description: 'The time period unit of the exemption benefit. Field: ExemptUnit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ExemptionUnit.html
+- name: ExternalEmployeeNumber
+  description: 'The external employee number. Field: ExtEmpNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ExternalEmployeeNumber.html
+- name: Fax
+  description: 'Sets or returns the fax number. Field name: fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Fax.html
+  field_name: fax
+  length: 50
+- name: FirstName
+  description: 'Sets or returns the employee first name. Field name: firstName . Mandatory property. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~FirstName.html
+  field_name: firstName
+  length: 50
+- name: Gender
+  description: 'Sets or returns a valid value of BoGenderTypes type that specifies the employee gender type. Field name: sex .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Gender.html
+  field_name: sex
+- name: GenderEx
+  description: 'Sets or returns the gender type that you specified in addition to the system predefined employee gender type. Field name: SexEx . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~GenderEx.html
+  field_name: SexEx
+  length: 15
+- name: HealthInsuranceCode
+  description: 'The health insurance code of the employee. Field name: HeaInsCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HealthInsuranceCode.html
+  field_name: HeaInsCode
+  length: 50
+- name: HealthInsuranceName
+  description: 'The health insurance name of the employee. Field name: HeaInsName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HealthInsuranceName.html
+  field_name: HeaInsName
+  length: 50
+- name: HealthInsuranceType
+  description: 'Indicate the type of the employee''s health insurance. AOK - Allgemeine Ortskrankenkasse (AOK) IKK - Innungskrankenkasse (IKK) EKK - Ersatzkasse (EKK) BKK - Betriebskrankenkasse (BKK) BKS - Bundesknappschaft (BKS) LKK - Landeskrankenkasse (LKK) Field name: HeaInsType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HealthInsuranceType.html
+  field_name: HeaInsType
+  length: 20
+- name: HomeBlock
+  description: 'Sets or returns the block of the home address. Field name: homeBlock . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeBlock.html
+  field_name: homeBlock
+  length: 100
+- name: HomeBuildingFloorRoom
+  description: 'Sets or returns additional details of the home address, such as building number, floor number, and room number. Field name: HomeBuild . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeBuildingFloorRoom.html
+  field_name: HomeBuild
+- name: HomeCity
+  description: 'Sets or returns the city of the home address. Field name: homeCity . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeCity.html
+  field_name: homeCity
+  length: 100
+- name: HomeCountry
+  description: 'Sets or returns the country of the home address. Field name: homeCountr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeCountry.html
+  field_name: homeCountr
+  length: 3
+- name: HomeCounty
+  description: 'Sets or returns the county part of the home address. Field name: homeCounty . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeCounty.html
+  field_name: homeCounty
+  length: 100
+- name: HomePhone
+  description: 'Sets or returns the home phone number. Field name: homeTel . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomePhone.html
+  field_name: homeTel
+  length: 50
+- name: HomeState
+  description: 'Sets or returns the state of the home address. Field name: homeState . Length: 3 characters. This is a foreign key to the Countries table ( OCST - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeState.html
+  field_name: homeState
+  length: 3
+- name: HomeStreet
+  description: 'Sets or returns the street of the home address. Field name: homeStreet . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeStreet.html
+  field_name: homeStreet
+  length: 100
+- name: HomeStreetNumber
+  description: property HomeStreetNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeStreetNumber.html
+- name: HomeZipCode
+  description: 'Sets or returns the zip code of the home address. Field name: homeZip . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~HomeZipCode.html
+  field_name: homeZip
+  length: 20
+- name: IdNumber
+  description: 'Sets or returns the personal ID number of the employee (such as, government ID number or social security number). Field name: govID . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~IdNumber.html
+  field_name: govID
+  length: 20
+- name: IDType
+  description: property IDType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~IDType.html
+- name: IncomeTaxLiability
+  description: 'Indicate the income tax liability code: 1 - Unlimited 2 - Restricted 3 - Flat-rate tax 4 - Not liable Field: InTaxLiabi .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~IncomeTaxLiability.html
+- name: JobTitle
+  description: 'Sets or returns the employee job title. Field name: jobTitle . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~JobTitle.html
+  field_name: jobTitle
+  length: 20
+- name: JobTitleCode
+  description: 'The job title of the employee. Field name: J TCode . Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~JobTitleCode.html
+  length: 5
+- name: LastName
+  description: 'Sets or returns the employee last name. Field name: lastName . Mandatory property. Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~LastName.html
+  field_name: lastName
+  length: 50
+- name: LegalRepresentative
+  description: property LegalRepresentative
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~LegalRepresentative.html
+- name: LinkedVendor
+  description: property LinkedVendor
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~LinkedVendor.html
+- name: Manager
+  description: 'Sets or returns the manager''s employee-ID of the employee. Field name: manager . This is a key to the OHEM object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Manager.html
+  field_name: manager
+- name: MartialStatus
+  description: 'Sets or returns a valid value of BoMeritalStatuses type that specifies the merital status. Field name: martStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~MartialStatus.html
+  field_name: martStatus
+- name: MiddleName
+  description: 'Sets or returns the employee middle name. Field name: middleName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~MiddleName.html
+  field_name: middleName
+  length: 50
+- name: MobilePhone
+  description: 'Sets or returns the mobile phone number. Field name: mobile . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~MobilePhone.html
+  field_name: mobile
+  length: 50
+- name: MunicipalityKey
+  description: 'The key of the municipality to which the employee belongs. Field name: MunKey . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~MunicipalityKey.html
+  field_name: MunKey
+  length: 20
+- name: NaturalPer
+  description: 'This shows whether the business partner is natural person or not. Field name: NaturalPer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~NaturalPer.html
+- name: NumOfChildren
+  description: 'Sets or returns the number of children. Field name: nChildren .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~NumOfChildren.html
+  field_name: nChildren
+- name: OfficeExtension
+  description: 'Sets or returns the extension of the office phone number. Field name: officeExt . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~OfficeExtension.html
+  field_name: officeExt
+  length: 50
+- name: OfficePhone
+  description: 'Sets or returns the office phone number. Field name: officeTel . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~OfficePhone.html
+  field_name: officeTel
+  length: 50
+- name: Pager
+  description: 'Sets or returns the pager number. Field name: pager . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Pager.html
+  field_name: pager
+  length: 50
+- name: PartnerReligion
+  description: 'Indicates the religion of the employee''s spouse. -- - No church tax liability AK - Old catholic EV - Protestant FA - Non-denomination Alzey FB - Non-denominational regional congregation Baden FG - Non-denominational regional congregation Palatinate FM - Non-denominational congregation Mainz FR - French-reformed FS - Non-denominational congregation Offenbach/Mainz IB - Israelite Religious Community Baden IL - Israelite Rural IS - Israelite IW - Israelite religious community Wuerttemberg JD - Jewish religion tax JH - Jewish religion tax JS - Jewish religion tax LT - Lutheran RF - Reformed RK - Roman catholic Field: RelPartner .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PartnerReligion.html
+- name: PassportExpirationDate
+  description: 'Sets or returns the expiration date of the passport. Field name: passportEx .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PassportExpirationDate.html
+  field_name: passportEx
+- name: PassportIssueDate
+  description: property PassportIssueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PassportIssueDate.html
+- name: PassportIssuer
+  description: property PassportIssuer
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PassportIssuer.html
+- name: PassportNumber
+  description: 'Sets or returns the employee passport number. Field name: passportNo . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PassportNumber.html
+  field_name: passportNo
+  length: 20
+- name: PaymentMethod
+  description: 'The payment method of the employee. Field name: PymMeth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PaymentMethod.html
+  field_name: PymMeth
+- name: PersonGroup
+  description: 'The person group of the employee. 101 - Social insurance obliged without characteristic 102 - Apprentice 104 - Home worker 105 - Trainee 106 - Student 108 - Early retirement 109 - Part time occupied employee 110 - Short time occupied 112 - Family related person agriculture 113 - Additio. income agriculture 114 - Additio. income agriculture seasonal 116 - Receiver of clearing cash 118 - Unregular occupied 119 - Pensioner 997 - Not specified Field: PersGroup .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PersonGroup.html
+- name: Picture
+  description: 'Sets or returns the picture file name (without the path). Field name: picture . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Picture.html
+  field_name: picture
+  length: 200
+- name: Position
+  description: 'Sets or returns a value that specifies the employee position. This property This is a foreign key to OHPS table, which is not exposed through the DI API. Field name: Position .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Position.html
+- name: PreviousEmpoymentInfo
+  description: Returns the EmployeePrevEmpoymentInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PreviousEmpoymentInfo.html
+- name: PreviousPRWebAccess
+  description: property PreviousPRWebAccess
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PreviousPRWebAccess.html
+- name: ProfessionStatus
+  description: 'The profession of the employee. 0 - Trainee 1 - Worker 2 - Skilled Worker 3 - Supervisor/Foreman 4 - Clerk 5 - Youthhelp/Sheltered Workshop 6 - Participation for profession focused measures 7 - Homeworker 8 - Part time < 18 hrs 9 - Part time > 18 hrs Field: StatusOfP .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ProfessionStatus.html
+- name: PRWebAccess
+  description: property PRWebAccess
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~PRWebAccess.html
+- name: QualificationCode
+  description: property QualificationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~QualificationCode.html
+- name: Religion
+  description: 'Indicates the religion of the employee. -- - No church tax liability AK - Old catholic EV - Protestant FA - Non-denomination Alzey FB - Non-denominational regional congregation Baden FG - Non-denominational regional congregation Palatinate FM - Non-denominational congregation Mainz FR - French-reformed FS - Non-denominational congregation Offenbach/Mainz IB - Israelite Religious Community Baden IL - Israelite Rural IS - Israelite IW - Israelite religious community Wuerttemberg JD - Jewish religion tax JH - Jewish religion tax JS - Jewish religion tax LT - Lutheran RF - Reformed RK - Roman catholic Field: EmTaxCCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Religion.html
+- name: Remarks
+  description: 'Sets or returns a memo type string that specifies remarks on the employee. Field name: remark . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Remarks.html
+  field_name: remark
+- name: ReviewsInfo
+  description: Returns the EmployeeReviewsInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~ReviewsInfo.html
+- name: Salary
+  description: 'Sets or returns the employee salary. Field name: salary .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~Salary.html
+  field_name: salary
+- name: SalaryCurrency
+  description: 'Sets or returns the currency of the salary. Field name: salaryCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SalaryCurrency.html
+  field_name: salaryCurr
+  length: 3
+- name: SalaryUnit
+  description: 'Sets or returns a valid value of BoSalaryCostUnits type that specifies the salary unit (for example: per hour, per day, per month, and so on). Field name: salaryUnit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SalaryUnit.html
+  field_name: salaryUnit
+- name: SalesPersonCode
+  description: 'Sets or returns the sales person code. Field name: salesPrson . This is a foreign key to the SalesPersons Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SalesPersonCode.html
+  field_name: salesPrson
+- name: SavingsPaymentInfo
+  description: Returns the EmployeeSavingsPaymentInfo child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SavingsPaymentInfo.html
+- name: SocialInsuranceNumber
+  description: 'The social insurance number of the employee. Field name: SInsurNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SocialInsuranceNumber.html
+  field_name: SInsurNum
+  length: 20
+- name: SpouseFirstName
+  description: 'The first name of the employee''s spouse. Field name: FNameSP . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SpouseFirstName.html
+  field_name: FNameSP
+  length: 50
+- name: SpouseSurname
+  description: 'The surname of the employee''s spouse. Field name: SurnameSP . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~SpouseSurname.html
+  field_name: SurnameSP
+  length: 50
+- name: StartDate
+  description: 'Sets or returns the date when the employee started the work in the company. Field name: startDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~StartDate.html
+  field_name: startDate
+- name: StatusCode
+  description: 'Sets or returns the employee status code. Field name: status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~StatusCode.html
+  field_name: status
+- name: STDCode
+  description: property STDCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~STDCode.html
+- name: TaxClass
+  description: 'Indicates the tax class of the employee: 1 - Tax Class I 2 - Tax Class II 3 - Tax Class III 4 - Tax Class IV 5 - Tax Class V 6 - Tax Class VI Field name: TaxClass .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~TaxClass.html
+- name: TaxOfficeName
+  description: 'The tax office name of the employee. Field name: TaxOName . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~TaxOfficeName.html
+  field_name: TaxOName
+  length: 50
+- name: TaxOfficeNumber
+  description: 'The tax office number of the employee. Field name: TaxONum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~TaxOfficeNumber.html
+  field_name: TaxONum
+  length: 20
+- name: TerminationDate
+  description: 'Sets or returns the date when the employee terminated the work in the company. Field name: termDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~TerminationDate.html
+  field_name: termDate
+- name: TreminationReason
+  description: 'Sets or returns the termination reason. Field name: termReason . This is a foreign key to the Termination Reason table ( OHTR - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~TreminationReason.html
+  field_name: termReason
+- name: UpdateDate
+  description: property UpdateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~UpdateDate.html
+- name: UpdateTime
+  description: property UpdateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~UpdateTime.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~UserFields.html
+- name: VacationCurrentYear
+  description: 'The employee''s vacation information of the current year. Field name: VacCurYear . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~VacationCurrentYear.html
+  field_name: VacCurYear
+  length: 3
+- name: VacationPreviousYear
+  description: 'The employee''s vacation information of the previous year. Field name: VacPreYear . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~VacationPreviousYear.html
+  field_name: VacPreYear
+  length: 3
+- name: WorkBlock
+  description: 'Sets or returns the block of the workplace address. Field name: workBlock . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkBlock.html
+  field_name: workBlock
+  length: 100
+- name: WorkBuildingFloorRoom
+  description: 'Sets or returns additional details of the workplace address, such as building number, floor number, and room number. Field name: WorkBuild . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkBuildingFloorRoom.html
+  field_name: WorkBuild
+- name: WorkCity
+  description: 'Sets or returns the city of the workplace address. Field name: workCity . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkCity.html
+  field_name: workCity
+  length: 100
+- name: WorkCountryCode
+  description: 'Sets or returns the country of the workplace address. Field name: workCountr . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkCountryCode.html
+  field_name: workCountr
+  length: 3
+- name: WorkCounty
+  description: 'Sets or returns the county of the workplace address. Field name: workCounty . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkCounty.html
+  field_name: workCounty
+  length: 100
+- name: WorkStateCode
+  description: 'Sets or returns the state of the workplace address. Field name: workState . Length: 3 characters. This is a foreign key to the States table ( OCST - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkStateCode.html
+  field_name: workState
+  length: 3
+- name: WorkStreet
+  description: 'Sets or returns the street of the workplace address. Field name: workStreet . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkStreet.html
+  field_name: workStreet
+  length: 100
+- name: WorkStreetNumber
+  description: property WorkStreetNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkStreetNumber.html
+- name: WorkZipCode
+  description: 'Sets or returns the zip code of the workplace address. Field name: workZip . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeesInfo~WorkZipCode.html
+  field_name: workZip
+  length: 20

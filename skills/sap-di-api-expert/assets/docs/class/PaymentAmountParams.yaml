@@ -1,0 +1,52 @@
+name: PaymentAmountParams
+title: PaymentAmountParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams.html
+description: PaymentAmountParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~ToXMLString.html
+properties:
+- name: CashDiscountAmount
+  description: property CashDiscountAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~CashDiscountAmount.html
+- name: CashDiscountAmountFC
+  description: property CashDiscountAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~CashDiscountAmountFC.html
+- name: CashDiscountAmountSC
+  description: property CashDiscountAmountSC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~CashDiscountAmountSC.html
+- name: CashDiscountPercentage
+  description: property CashDiscountPercentage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~CashDiscountPercentage.html
+- name: DocEntry
+  description: property DocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~DocEntry.html
+- name: DocType
+  description: property DocType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~DocType.html
+- name: InstallmentId
+  description: property InstallmentId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~InstallmentId.html
+- name: TotalPaymentAmount
+  description: property TotalPaymentAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~TotalPaymentAmount.html
+- name: TotalPaymentAmountFC
+  description: property TotalPaymentAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~TotalPaymentAmountFC.html
+- name: TotalPaymentAmountSC
+  description: property TotalPaymentAmountSC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentAmountParams~TotalPaymentAmountSC.html

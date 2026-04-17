@@ -1,0 +1,260 @@
+name: JournalEntries_Lines
+title: JournalEntries_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines.html
+description: 'Journal_Entries_Lines is a child object of the JournalEntries object, and represents the line entries of each transaction. This object enables you to add a journal transaction line. Source table: JDT1 .'
+remarks: 'Mandatory fields in SAP Business One: ShortName , and Credit or Debit , . To display the form in the application: - Select Financials --> Journal Entry (view in Expand Editing Mode).'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~SetCurrentLine.html
+properties:
+- name: AccountCode
+  description: 'Sets or returns the control account code, or G/L account code as defined in Chart of Accounts. Field name: Account . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~AccountCode.html
+  field_name: Account
+  length: 15
+- name: AdditionalReference
+  description: 'Sets or returns the additional reference number to the journal entry transaction line. Field name: Ref3Line . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~AdditionalReference.html
+  field_name: Ref3Line
+  length: 27
+- name: BaseSum
+  description: 'Sets or returns the base amount including VAT. Field name: BaseSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~BaseSum.html
+- name: BlockReason
+  description: 'Specify a reason for the payment block. Field name: PayBlckRef . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~BlockReason.html
+  field_name: PayBlckRef
+  length: 50
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~BPLID.html
+- name: BPLName
+  description: property BPLName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~BPLName.html
+- name: CheckAbs
+  description: 'Returns the Internal Check Number . Field name: CheckAbs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CheckAbs.html
+- name: Cig
+  description: property Cig
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Cig.html
+- name: ContraAccount
+  description: 'Sets or returns the offsetting account code to credit or debit opposed to the current account. Field name: ContraAct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ContraAccount.html
+  field_name: ContraAct
+  length: 15
+- name: ControlAccount
+  description: 'The control account for this journal entry. Field name: Account This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ControlAccount.html
+  field_name: Account
+- name: CostElementCode
+  description: property CostElementCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostElementCode.html
+- name: CostingCode
+  description: 'The distribution rule for dimension 1 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: ProfitCode This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostingCode.html
+  field_name: ProfitCode
+- name: CostingCode2
+  description: 'The distribution rule for dimension 2 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode2 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostingCode2.html
+  field_name: OcrCode2
+- name: CostingCode3
+  description: 'The distribution rule for dimension 3 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode3 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostingCode3.html
+  field_name: OcrCode3
+- name: CostingCode4
+  description: 'The distribution rule for dimension 4 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode4 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostingCode4.html
+  field_name: OcrCode4
+- name: CostingCode5
+  description: 'The distribution rule for dimension 5 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode5 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CostingCode5.html
+  field_name: OcrCode5
+- name: Count
+  description: Returns the total journal entries.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Count.html
+- name: Credit
+  description: 'Sets or returns the amount of credit in the current transaction. Mandatory property. Field name: Credit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Credit.html
+- name: CreditSys
+  description: 'Returns the amount of credit in system currency. Field name: SYSCred .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~CreditSys.html
+  field_name: SYSCred
+- name: Cup
+  description: property Cup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Cup.html
+- name: Debit
+  description: 'Sets or returns the amount to debit the G/L account. Field name: Debit . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Debit.html
+- name: DebitSys
+  description: 'Returns the amount of debit in system currency. Field name: SYSDeb .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~DebitSys.html
+  field_name: SYSDeb
+- name: DocumentArray
+  description: property DocumentArray
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~DocumentArray.html
+- name: DocumentLine
+  description: property DocumentLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~DocumentLine.html
+- name: DueDate
+  description: 'Sets or returns the value date of journal entry line. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~DueDate.html
+- name: EqualizationTaxAmount
+  description: 'Equalization tax amount. Field name: EquVatSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~EqualizationTaxAmount.html
+  field_name: EquVatSum
+- name: ExpensesClassificationCategory
+  description: property ExpensesClassificationCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ExpensesClassificationCategory.html
+- name: ExpensesClassificationType
+  description: property ExpensesClassificationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ExpensesClassificationType.html
+- name: ExposedTransNumber
+  description: property ExposedTransNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ExposedTransNumber.html
+- name: FCCredit
+  description: 'Returns the amount of credit in foreign currency. Field name: FCCredit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~FCCredit.html
+- name: FCCurrency
+  description: 'Sets or returns the foreign currency used in this line. Field name: FCCurrency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~FCCurrency.html
+  length: 3
+- name: FCDebit
+  description: 'Returns the amount of debit in foreign currency. Field name: FCDebit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~FCDebit.html
+- name: FederalTaxID
+  description: property FederalTaxID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~FederalTaxID.html
+- name: GrossValue
+  description: 'Returns the total amount including VAT in the journal entry line. Field name: GrossValue .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~GrossValue.html
+- name: IncomeClassificationCategory
+  description: property IncomeClassificationCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~IncomeClassificationCategory.html
+- name: IncomeClassificationType
+  description: property IncomeClassificationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~IncomeClassificationType.html
+- name: Line_ID
+  description: 'Returns the current line number. Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Line_ID.html
+- name: LineAllocationNumber
+  description: property LineAllocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~LineAllocationNumber.html
+- name: LineMemo
+  description: 'Sets or returns the details of the current transaction line. Field name: LineMemo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~LineMemo.html
+  length: 50
+- name: LocationCode
+  description: 'Sets or returns the location code in journal entries line. Applicable for cluster B . Field name: LocCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~LocationCode.html
+  field_name: LocCode
+- name: PaymentBlock
+  description: 'Indicates whether the document is blocked and excluded from the payment wizard run. Field name: PayBlckRef'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~PaymentBlock.html
+  field_name: PayBlckRef
+- name: PaymentOrdered
+  description: property PaymentOrdered
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~PaymentOrdered.html
+- name: PrimaryFormItems
+  description: property PrimaryFormItems
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~PrimaryFormItems.html
+- name: ProjectCode
+  description: 'Sets or returns the project code related to the journal entry. Field name: Project , length: 8 characters. This is a foriegn key to Project Codes table, exposed via ProjectsService . In SAP Business One, you can relate business transactions to projects. This can help you to create cost/income analyzes reports based on projects.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ProjectCode.html
+  field_name: Project
+  length: 8
+- name: Reference1
+  description: 'Sets or returns the first reference code. Field name: Ref1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Reference1.html
+  field_name: Ref1
+  length: 100
+- name: Reference2
+  description: 'Sets or returns the second reference code. Field name: Ref2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~Reference2.html
+  field_name: Ref2
+  length: 100
+- name: ReferenceDate1
+  description: 'Not used. Field name: RefDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ReferenceDate1.html
+  field_name: RefDate
+- name: ReferenceDate2
+  description: 'Not used. Field name: Ref2Date .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ReferenceDate2.html
+  field_name: Ref2Date
+- name: ShortName
+  description: 'Sets or returns the account name/description as defined in Chart of Accounts. Field name: ShortName . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~ShortName.html
+  length: 15
+- name: SystemBaseAmount
+  description: 'Sets or returns the base amount (without VAT) in system currency. Relevant to tax a account only (an account that is related to a tax group or stamp tax) Field name: SYSBaseSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~SystemBaseAmount.html
+  field_name: SYSBaseSum
+- name: SystemEqualizationTaxAmount
+  description: 'System equalization tax amount. Field name: EquVatSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~SystemEqualizationTaxAmount.html
+  field_name: EquVatSum
+- name: SystemTotalTax
+  description: 'Total system tax amount. Field name: SYSEquSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~SystemTotalTax.html
+  field_name: SYSEquSum
+- name: SystemVatAmount
+  description: 'Sets or returns the VAT amount in system currency. Relevant to tax a account only (an account that is related to a tax group or stamp tax) field name: SYSVatSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~SystemVatAmount.html
+  field_name: SYSVatSum
+- name: TaxCode
+  description: 'Sets or returns the tax code. This is a foreign key to SalesTaxCodes object. Country-specific for Canada, USA, Chile, and Mexico. Field name: TaxCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~TaxCode.html
+  length: 8
+- name: TaxDate
+  description: 'Sets or returns the date for the tax calculation or payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~TaxDate.html
+- name: TaxGroup
+  description: 'Sets or returns the tax group as defined in SAP Business One. Field name: VatGroup ). Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~TaxGroup.html
+  field_name: VatGroup
+  length: 8
+- name: TaxPostAccount
+  description: 'Sets or returns a valid value that specifies the tax posting account type for the journal entry line. Country-specific for Canada, USA, Chile, and Mexico. Field name: TaxPostAcc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~TaxPostAccount.html
+  field_name: TaxPostAcc
+- name: TotalTax
+  description: 'Total tax amount. Field name: TotalVat'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~TotalTax.html
+  field_name: TotalVat
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~UserFields.html
+- name: VatAmount
+  description: 'Sets or returns the total tax amount payed. Field name: VatAmount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VatAmount.html
+- name: VatClassificationCategory
+  description: property VATClassificationCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VatClassificationCategory.html
+- name: VatClassificationType
+  description: property VATClassificationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VatClassificationType.html
+- name: VatDate
+  description: 'Sets or returns the date from which the tax rate for this VAT Group code applies. Field name: vatdate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VatDate.html
+  field_name: vatdate
+- name: VATExemptionCause
+  description: 'VAT exemption cause for E-Books in Greece. Field name: EBVatExCau .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VATExemptionCause.html
+  field_name: EBVatExCau
+- name: VatLine
+  description: 'Determines whether or not the transaction line refers to tax account (an account that is related to a tax group or stamp tax). Field name: VatLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VatLine.html
+- name: VATRegNum
+  description: property VATRegNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~VATRegNum.html
+- name: WTLiable
+  description: 'Indicates whether this journal entry line is liable for withholding tax. Field name: WTLiable'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~WTLiable.html
+- name: WTRow
+  description: 'Indicates whether this journal entry line represents withholding tax. Field name: WTLine'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~JournalEntries_Lines~WTRow.html
+  field_name: WTLine

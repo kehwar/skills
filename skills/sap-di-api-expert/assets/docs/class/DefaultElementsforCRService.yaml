@@ -1,0 +1,21 @@
+name: DefaultElementsforCRService
+title: DefaultElementsforCRService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService.html
+description: 'The DefaultElementsforCRService service enables you to add and look up default elements for Crystal Reports. Source table: OMLP .'
+methods:
+- name: Add
+  description: Adds a default element.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService~Add.html
+- name: Get
+  description: Retrieves a default element. The default element is specified by its key, which is contained in the DefaultElementsforCRParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DefaultElementsforCRService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DefaultElementsforCRService~GetDataInterfaceFromXMLString.html

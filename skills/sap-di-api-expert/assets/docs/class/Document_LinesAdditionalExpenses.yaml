@@ -1,0 +1,196 @@
+name: Document_LinesAdditionalExpenses
+title: Document_LinesAdditionalExpenses Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses.html
+description: 'Document_LinesAdditionalExpenses is a child object of Document_Lines and represents the line entries of the additional expenses document in the Marketing Documents module. The source table for each document is according to the document type as follows: INV2 , RIN2 , DLN2 , RDN2 , RDR2 , QUT2 , PCH2 , RPC2 , PDN2 , RPD2 , POR2 , and DRF2 .'
+remarks: 'Mandatory field in SAP Business One: ExpenseCode and of Name of AdditionalExpenses object. You can add up to three (3) additional expenses in a row of a document and SAP Business One assigns a number ( GroupCode ) for each of the additional expenses. If no additional expense is defined in SAP Business One, the GetByKey method will retrieve null.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~SetCurrentLine.html
+properties:
+- name: AquisitionTax
+  description: 'Specifies whether or not the additional expense is subject to acquisition tax. Relevant to input tax groups (A/P) only. Field name: IsAcquistn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~AquisitionTax.html
+  field_name: IsAcquistn
+- name: BaseGroup
+  description: 'Sets or returns the number of the additional expense to draw from the base document (per line). Field name: BaseGroup .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~BaseGroup.html
+- name: Count
+  description: Returns total rows in the additional expenses table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~Count.html
+- name: CUSplit
+  description: 'If this flag is set to true, the amounts that are not subject to withholding tax and are not supplier income amounts are distinguished and split in a standalone report page. Field name: CUSplit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~CUSplit.html
+- name: DeductibleTaxSum
+  description: 'Internal use only. Field name: DedVatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DeductibleTaxSum.html
+  field_name: DedVatSum
+- name: DeductibleTaxSumFC
+  description: 'Internal use only. Field name: DedVatSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DeductibleTaxSumFC.html
+  field_name: DedVatSumF
+- name: DeductibleTaxSumSys
+  description: 'Internal use only. Field name: DedVatSumS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DeductibleTaxSumSys.html
+  field_name: DedVatSumS
+- name: DistributionRule
+  description: 'The distribution rule for allocating costs and revenues (both direct and indirect) to one or more cost centers. This is a foreign key to the DistributionRule object. Field name: OcrCode'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode2'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode3'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode4'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'Multiple distribution rules for allocating costs and revenues (both direct and indirect) to one or more cost centers. Field name: OcrCode5'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocFreight
+  description: 'Indicates whether freight costs, including freight tax costs, are included in the calculation of the operating profit and net income. This checkbox is only available in the Brazil localization. Field name: DocFreight .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~DocFreight.html
+- name: EBooksDetails
+  description: property EBooksDetails
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~EBooksDetails.html
+- name: EqualizationTaxFC
+  description: 'Returns the equalization tax amount, in foreign currency, calculated for the additional expense. Field name: EquVatSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~EqualizationTaxFC.html
+  field_name: EquVatSumF
+- name: EqualizationTaxPercent
+  description: 'Returns the equalization tax percent for the additional expense calculations. Field name: EquVatPer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~EqualizationTaxPercent.html
+  field_name: EquVatPer
+- name: EqualizationTaxSum
+  description: 'Returns the equalization tax amount, calculated for the additional expense. Field name: EquVatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~EqualizationTaxSum.html
+  field_name: EquVatSum
+- name: EqualizationTaxSys
+  description: 'Returns the equalization tax amount, calculated for the additional expense in system currency. Field name: EquVatSumS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~EqualizationTaxSys.html
+  field_name: EquVatSumS
+- name: ExpenseCode
+  description: 'Sets or returns the freight code . Field name: ExpnsCode . This is a foreign key to the AdditionalExpenses object. Sets or returns the code of the additional expense as defined by SAP Business One. Field name: ExpnsCode . This is a foreign key to the AdditionalExpenses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~ExpenseCode.html
+  field_name: ExpnsCode
+- name: ExternalCalcTaxAmount
+  description: property ExternalCalcTaxAmount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~ExternalCalcTaxAmount.html
+- name: ExternalCalcTaxAmountFC
+  description: property ExternalCalcTaxAmountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~ExternalCalcTaxAmountFC.html
+- name: ExternalCalcTaxAmountSC
+  description: property ExternalCalcTaxAmountSC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~ExternalCalcTaxAmountSC.html
+- name: ExternalCalcTaxRate
+  description: property ExternalCalcTaxRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~ExternalCalcTaxRate.html
+- name: GroupCode
+  description: 'Returns the number of the additional expense in the row of the document (0, 1, or 2). Field name: GroupNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~GroupCode.html
+  field_name: GroupNum
+- name: LineNumber
+  description: 'Sets or returns the row number in the list in the parent document (such as INV1 table). Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~LineNumber.html
+  field_name: LineNum
+- name: LineTotal
+  description: 'Sets or returns the total amount (in local currency) of the additional expense. Field name: LineTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~LineTotal.html
+- name: LineTotalFC
+  description: 'Returns the total amount of the additional expense in foreign currency. Field name: TotalFrgn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~LineTotalFC.html
+  field_name: TotalFrgn
+- name: LineTotalSys
+  description: 'Returns the total amount of the additional expense in system currency. Field name: TotalSumSy ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~LineTotalSys.html
+  field_name: TotalSumSy
+- name: PaidToDate
+  description: 'Returns the paid amount of the additional expense in local currency. Field name: PaidToDate . Not supported in DI API version 6.5.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~PaidToDate.html
+- name: PaidToDateFC
+  description: 'Returns the total amount of the additional expense in foreign currency. Field name: PaidFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~PaidToDateFC.html
+  field_name: PaidFC
+- name: PaidToDateSys
+  description: 'Returns the paid amount of the additional expense in system currency. Field name: PaidSys ). Not supported in DI API version 6.5.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~PaidToDateSys.html
+  field_name: PaidSys
+- name: Project
+  description: 'The project that relates to the freight. Field: Project . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~Project.html
+  length: 20
+- name: TaxCode
+  description: 'Sets or returns the sales Tax Code Id. Field name: TaxCode . Length: 8 characters. This is a foreign key to the SalesTaxCodes Object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxCode.html
+  length: 8
+- name: TaxJurisdictions
+  description: Returns the TaxJurisdictions object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxJurisdictions.html
+- name: TaxLiable
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the additional expense is VAT liable. Field name: TaxStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxLiable.html
+  field_name: TaxStatus
+- name: TaxPaid
+  description: 'Not used. Field name: PaidToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxPaid.html
+  field_name: PaidToDate
+- name: TaxPaidFC
+  description: 'Not used. Field name: PaidFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxPaidFC.html
+  field_name: PaidFC
+- name: TaxPaidSys
+  description: 'Not used. Field name: PaidSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxPaidSys.html
+  field_name: PaidSys
+- name: TaxPercent
+  description: 'Returns the tax percentage for the additional expense. Field name: VatPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxPercent.html
+  field_name: VatPrcnt
+- name: TaxSum
+  description: 'The tax amount, in local currency, calculated for the additional expense. You can manually adjust the tax amount according to the business need. Field name: VatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxSum.html
+  field_name: VatSum
+- name: TaxSumFC
+  description: 'Returns the tax amount, in foreign currency, calculated for the additional expense. Field name: VatSumFrgn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxSumFC.html
+  field_name: VatSumFrgn
+- name: TaxSumSys
+  description: 'Returns the total tax amount, in system currency, calculated for the additional expense. Field name: VatSumSy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxSumSys.html
+  field_name: VatSumSy
+- name: TaxTotalSum
+  description: 'Returns the total tax amount ( TaxSum + EqualizationTaxSum ) in local currency. Field name: EquVatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxTotalSum.html
+  field_name: EquVatSum
+- name: TaxTotalSumFC
+  description: 'Returns the total tax amount ( TaxSumFC + EqualizationTaxFC ) in foreign currency. Field name: EquVatSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxTotalSumFC.html
+  field_name: EquVatSumF
+- name: TaxTotalSumSys
+  description: 'Returns the total tax amount ( TaxSumSys + EqualizationTaxSys ) in system currency. Field name: EquVatSumS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxTotalSumSys.html
+  field_name: EquVatSumS
+- name: TaxType
+  description: 'Returns a valid value of BoAdEpnsTaxTypes type that specifies tax type for the additional expense. Field name: TaxType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~TaxType.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~UserFields.html
+- name: VatGroup
+  description: 'Sets or returns the VAT group for the additional expense. Field name: VatGroup . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~VatGroup.html
+  length: 8
+- name: WTLiable
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the additional expense is subject to Withholding tax. Field name: TaxStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_LinesAdditionalExpenses~WTLiable.html
+  field_name: TaxStatus

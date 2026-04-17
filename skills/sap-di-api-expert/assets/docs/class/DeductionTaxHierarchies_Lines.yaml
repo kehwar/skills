@@ -1,0 +1,32 @@
+name: DeductionTaxHierarchies_Lines
+title: DeductionTaxHierarchies_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines.html
+description: 'The DeductionTaxHierarchies_Lines is a child object of DeductionTaxHierarchies object. It enables to define the deduction percentage and maximum amount for each taxation level. Source table: DDT1 .'
+remarks: 'Country-specific for Israel. To display the form in the application: - Select Business Partners -->Business Partner Master Data -->Accounting tab -->Tax tab . Click the Hierarchies button. Click the Withholding Tax Deduction Hierarchy button.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~Count.html
+- name: DeductionPercent
+  description: 'Sets or returns the Deduction Percent . Field name: DdctPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~DeductionPercent.html
+  field_name: DdctPrcnt
+- name: MaximumTotal
+  description: 'Sets or returns the maximum amount for which the deduction percentage applies. Field name: MaxSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~MaximumTotal.html
+  field_name: MaxSum
+- name: RowNumber
+  description: 'Returns the row number of the taxation level. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~RowNumber.html
+  field_name: LineNum
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeductionTaxHierarchies_Lines~UserFields.html

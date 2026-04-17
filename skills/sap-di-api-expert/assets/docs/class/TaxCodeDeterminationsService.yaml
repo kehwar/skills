@@ -1,0 +1,31 @@
+name: TaxCodeDeterminationsService
+title: TaxCodeDeterminationsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService.html
+description: 'The TaxCodeDeterminationsService service enables you to add, look up, update, and remove tax code determination rules. For all localizations except Brazil, India, Israel and Puerto Rico, you can set up tax code determination rules that take precedence over the tax information in the business partner or item master data, and in G/L account determination. Source table: OTCX .'
+remarks: To see the list of tax code determination rules, choose Administration --> Setup --> Financials --> Tax --> Tax Code Determination .
+methods:
+- name: AddTaxCodeDetermination
+  description: Adds a tax code determination rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~AddTaxCodeDetermination.html
+- name: DeleteTaxCodeDetermination
+  description: Deletes an existing tax code determination rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~DeleteTaxCodeDetermination.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the TaxCodeDeterminationsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~GetDataInterfaceFromXMLString.html
+- name: GetTaxCodeDetermination
+  description: Retrieves a tax code determination rule. The tax code determination rule is specified by its key, which is contained in the TaxCodeDeterminationParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~GetTaxCodeDetermination.html
+- name: GetTaxCodeDeterminationList
+  description: Returns the TaxCodeDeterminationsParams data collection that identifies all tax code determination rules.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~GetTaxCodeDeterminationList.html
+- name: UpdateTaxCodeDetermination
+  description: Updates an existing tax code determination rule. The data for the tax code determination rule, including the key of the tax code determination rule to be updated, is contained in the TaxCodeDetermination object passed to the method. To update a tax code determination rule, you must first retrieve it using the GetTaxCodeDetermination method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationsService~UpdateTaxCodeDetermination.html

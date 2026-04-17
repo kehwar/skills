@@ -1,0 +1,25 @@
+name: DeterminationCriteriasService
+title: DeterminationCriteriasService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService.html
+description: The DeterminationCriteriasService service enables you to look up and update determination criteria.
+remarks: To open the Determination Criteria window, from the SAP Business One Main Menu , choose Administration -> Setup -> Financials -> G/L Account Determination -> Determination Criteria . This window is available only if the Enable Advanced G/L Account Determination checkbox is selected ( Administration -> System Initialization -> Company Details -> Basic Initialization tab ).
+methods:
+- name: Get
+  description: Retrieves a determination criteria. The determination criteria is specified by its key, which is contained in the DeterminationCriteriaParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DeterminationCriteriasService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the DeterminationCriteriaParamsCollection data collection that identifies all determination criteria.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~GetList.html
+- name: Update
+  description: Updates an existing determination criteria.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DeterminationCriteriasService~Update.html

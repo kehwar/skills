@@ -1,0 +1,83 @@
+name: TaxCodeDeterminationTCDKeyField
+title: TaxCodeDeterminationTCDKeyField Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField.html
+description: TaxCodeDeterminationTCDKeyField Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~ToXMLString.html
+properties:
+- name: AbsId
+  description: property AbsId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~AbsId.html
+- name: Description
+  description: property Description
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~Description.html
+- name: KeyField1
+  description: property KeyField1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~KeyField1.html
+- name: KeyField2
+  description: property KeyField2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~KeyField2.html
+- name: KeyField3
+  description: property KeyField3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~KeyField3.html
+- name: KeyField4
+  description: property KeyField4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~KeyField4.html
+- name: KeyField5
+  description: property KeyField5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~KeyField5.html
+- name: LegalText
+  description: 'Legal text defined on the Tax Code Determination - Setup window. Field name: LegalText . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~LegalText.html
+  length: 250
+- name: Priority
+  description: property Priority
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~Priority.html
+- name: UDFAlias1
+  description: property UDFAlias1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFAlias1.html
+- name: UDFAlias2
+  description: property UDFAlias2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFAlias2.html
+- name: UDFAlias3
+  description: property UDFAlias3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFAlias3.html
+- name: UDFAlias4
+  description: property UDFAlias4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFAlias4.html
+- name: UDFAlias5
+  description: property UDFAlias5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFAlias5.html
+- name: UDFTable1
+  description: property UDFTable1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFTable1.html
+- name: UDFTable2
+  description: property UDFTable2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFTable2.html
+- name: UDFTable3
+  description: property UDFTable3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFTable3.html
+- name: UDFTable4
+  description: property UDFTable4
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFTable4.html
+- name: UDFTable5
+  description: property UDFTable5
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~UDFTable5.html
+- name: Values
+  description: property Values
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxCodeDeterminationTCDKeyField~Values.html

@@ -1,0 +1,49 @@
+name: NotaFiscalCFOP
+title: NotaFiscalCFOP Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP.html
+description: 'Represents CFOP codes for Nota Fiscal documents. CFOP codes describes the business transaction from the tax authorities'' point of view. Source table: OCFP'
+remarks: 'For Brazil only. To display the form in the application: - Select Administration > Definitions > Financials > Tax > Nota Fiscal > Define CFOP Code .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data in XML formatted data to a file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Update.html
+properties:
+- name: Application
+  description: 'The application name. Length: 16 characters Field name: App'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Application.html
+  field_name: App
+  length: 16
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Browser.html
+- name: Code
+  description: 'The CFOP code. Field name: Code Length: 6 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Code.html
+  length: 6
+- name: Description
+  description: 'A description for the CFOP code. Field name: Descrip Length: 16 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~Description.html
+  field_name: Descrip
+  length: 16
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NotaFiscalCFOP~UserFields.html

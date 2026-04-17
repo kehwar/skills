@@ -1,0 +1,25 @@
+name: DimensionsService
+title: DimensionsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService.html
+description: 'The DimensionsService service enables you to activate dimensions, as well as change a dimension''s description. To see the list of dimensions, select Financials --> Cost Accounting --> Define Dimensions. Source table: ODIM'
+remarks: You cannot add or delete dimensions. Relevant for China, Japan, Republic of Korea, Singapore, India and Brazil only.
+methods:
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the DimensionsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~GetDataInterfaceFromXMLString.html
+- name: GetDimension
+  description: Retrieves a dimension. The dimension is specified by its key ( DimCode ), which is contained in the DimensionParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~GetDimension.html
+- name: GetDimensionList
+  description: Retrieves the keys and names of all the dimensions.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~GetDimensionList.html
+- name: UpdateDimension
+  description: Updates an existing dimension. The data for the dimension, including the key of the dimension to be updated, is contained in the Dimension object passed to the method. To update a dimension, you must first retrieve it using the GetDimension method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DimensionsService~UpdateDimension.html

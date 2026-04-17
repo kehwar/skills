@@ -1,0 +1,36 @@
+name: MessageDataLine
+title: MessageDataLine Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine.html
+description: 'The MessageDataLine is a child data structure related to the MessageDataColumn . It contains the value of a specified cell in the Data table, which is defined by its column number ( vtIndex of Item of MessageDataColumns ) and row number ( vtIndex of Item of MessageDataLines . Source table: ALR3 .'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~ToXMLString.html
+properties:
+- name: Object
+  description: 'Sets or returns the object type that is linked to the message. For example, 13 for A/R invoice. Mandatory in case Link ( MessageDataColumn ) is set to tYES . Field name: ObjType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~Object.html
+  field_name: ObjType
+  length: 20
+- name: ObjectKey
+  description: 'Sets or returns the object key that is linked to the message. For example, a document identification key. Mandatory in case Link ( MessageDataColumn ) is set to tYES . Field name: KeyStr . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~ObjectKey.html
+  field_name: KeyStr
+  length: 254
+- name: Value
+  description: 'Sets or returns the value of the cell in the Data table (represented by the column index and line index). Field name: Value . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MessageDataLine~Value.html
+  length: 254

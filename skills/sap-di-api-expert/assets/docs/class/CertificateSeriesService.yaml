@@ -1,0 +1,31 @@
+name: CertificateSeriesService
+title: CertificateSeriesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService.html
+description: 'The CertificateSeriesService service enables you to add, look up and remove certificate series. Certificate series are used for TDS (withholding tax) reports. To see the list of certificate series and create a new one, select Administration --> Setup --> Financials --> TDS --> Certificate Series . Source table: OCSN'
+remarks: For India only.
+methods:
+- name: AddCertificateSeries
+  description: Adds a branch.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~AddCertificateSeries.html
+- name: DeleteCertificateSeries
+  description: Deletes an existing certificate series. The certificate series is specified by its key ( AbsId ), which is contained in the CertificateSeriesParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~DeleteCertificateSeries.html
+- name: GetCertificateSeries
+  description: Retrieves a specific certificate series. The certificate series is specified by its key ( AbsId ), which is contained in the CertificateSeriesParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~GetCertificateSeries.html
+- name: GetCertificateSeriesList
+  description: Retrieves the keys and names of all the certificate series.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~GetCertificateSeriesList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CertificateSeriesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~GetDataInterfaceFromXMLString.html
+- name: UpdateCertificateSeries
+  description: Updates an existing certificate series. The data for the certificate series, including the key of the certificate series to be updated, is contained in the CertificateSeries passed to the method. To update a certificate series, you must first retrieve it using the GetCertificateSeries method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CertificateSeriesService~UpdateCertificateSeries.html

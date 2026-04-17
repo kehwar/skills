@@ -1,0 +1,91 @@
+name: Payments_CreditCards
+title: Payments_CreditCards Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards.html
+description: 'Payments_CreditCards is a child object of the Payments object and represents the payments by credit cards in the Banking module. Source tables: RCT3 (incoming payments) and VPM3 (outgoing payments).'
+remarks: 'Mandatory fields in SAP Business One: CardValidUntil , CreditCard , CreditCardNumber , and CreditSum . To display the form in the application: - For RCT3 table, select Sales - A/R --> A/R Invoice . - or - For VPM3 table, select Purchasing - A/P --> A/P Invoice . On the toolbar, click the Payment Means icon. Select the Credit Card tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~SetCurrentLine.html
+properties:
+- name: AdditionalPaymentSum
+  description: 'Sets or returns the payment amount added to the first payment, due to rounding results. Field name: AddPmntSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~AdditionalPaymentSum.html
+  field_name: AddPmntSum
+- name: CardValidUntil
+  description: 'Sets or returns the credit card expiration date. Mandatory property. Field name: CardValid .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CardValidUntil.html
+  field_name: CardValid
+- name: ConfirmationNum
+  description: 'Sets or returns the confirmation number for the payment through a credit card. Field name: ConfNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~ConfirmationNum.html
+  field_name: ConfNum
+  length: 20
+- name: Count
+  description: Returns the number of lines in this document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~Count.html
+- name: CreditAcct
+  description: 'Sets or returns the credit account number. Field name: CreditAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CreditAcct.html
+  length: 15
+- name: CreditCard
+  description: 'Sets or returns the key of a credit card. Mandatory property. Field name: CreditCard . This is a foreign key to the CreditCards object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CreditCard.html
+- name: CreditCardNumber
+  description: 'Sets or returns the credit card number. Field name: CrCardNum . Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CreditCardNumber.html
+  field_name: CrCardNum
+  length: 20
+- name: CreditSum
+  description: 'Sets or returns the total payment amount. Mandatory property. Field name: CreditSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CreditSum.html
+- name: CreditType
+  description: 'Sets or returns a valid value of BoRcptCredTypes type that specifies the way for providing the credit card details (directly or by phone). Field name: CreditType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~CreditType.html
+- name: FirstPaymentDue
+  description: 'Sets or returns the due date of the first payment. Field name: FirstDue .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~FirstPaymentDue.html
+  field_name: FirstDue
+- name: FirstPaymentSum
+  description: 'Sets or returns the amount of the first payment, when the transaction is divided to installments. Field name: FirstSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~FirstPaymentSum.html
+  field_name: FirstSum
+- name: LineNum
+  description: 'Returns the number of the current line. Field name: LineID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~LineNum.html
+  field_name: LineID
+- name: NumOfCreditPayments
+  description: 'Sets or returns the number of payments through the credit card. Field name: NumOfPmnts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~NumOfCreditPayments.html
+  field_name: NumOfPmnts
+- name: NumOfPayments
+  description: 'Sets or returns the number of installments. Field name: NumOfPmnts .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~NumOfPayments.html
+  field_name: NumOfPmnts
+- name: OwnerIdNum
+  description: 'Sets or returns the ID number of the credit card owner. Field name: OwnerIdNum . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~OwnerIdNum.html
+  length: 15
+- name: OwnerPhone
+  description: 'Sets or returns the phone number of the credit card owner. Field name: OwnerPhone . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~OwnerPhone.html
+  length: 50
+- name: PaymentMethodCode
+  description: 'Sets or returns the key of the credit payment method. Field name: CrTypeCode . This is a foreign key to the CreditPaymentMethods object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~PaymentMethodCode.html
+  field_name: CrTypeCode
+- name: SplitPayments
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to split the payment for the transaction into separate rows. Field name: SpiltCred .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~SplitPayments.html
+  field_name: SpiltCred
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~UserFields.html
+- name: VoucherNum
+  description: 'Sets or returns the number of the credit document. Field name: VoucherNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_CreditCards~VoucherNum.html
+  length: 20

@@ -1,0 +1,58 @@
+name: UserTablesMD
+title: UserTablesMD Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD.html
+description: 'The UserTablesMD object enables to manage user defined tables as follows: - Add a user table. Retrieve a user table from the database by its TableName. Remove a user table. Save the object in XML format. Source table: OUTB . IMPORTANT: After creating a new user-defined table in .NET, you must release the object by executing the following line of code, where myObject is a reference to the UserTablesMD object:'
+remarks: 'DI API allows only one metadata object instance (with no other instances of any object type). This maintains data integrity by preventing any manipulation of a business object while modifying the object''s properties. To display the form in the application: - From the main menu bar, select Tools --> Manage User Fields . Click User Tables .'
+methods:
+- name: Add
+  description: 'Adds a new table to the User-Defined Tables collection. The new table includes two columns by default: Code and Name, where the Code column is the primary key of the specific user table.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~GetByKey.html
+- name: Remove
+  description: Deletes a specified table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~Update.html
+properties:
+- name: ApplyAuthorization
+  description: You can control authorizations for user-defined tables (UDTs) in the General Authorizations window.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~ApplyAuthorization.html
+- name: Archivable
+  description: property Archivable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~Archivable.html
+- name: ArchiveDateField
+  description: property ArchiveDateField
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~ArchiveDateField.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~Browser.html
+- name: DisplayMenu
+  description: 'Determines whether to display the user-defined table as a submenu in the SAP Business One client, or a tile in the Web Client. Field name: DisplyMenu .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~DisplayMenu.html
+  field_name: DisplyMenu
+- name: TableDescription
+  description: 'A string that describes the name and functionality of the table. Field name: Descr . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~TableDescription.html
+  field_name: Descr
+  length: 30
+- name: TableName
+  description: 'Sets or returns the name for the user defined table. Field name: TableName . Length: 19 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~TableName.html
+  length: 19
+- name: TableType
+  description: 'Sets or returns a valid value of BoUTBTableType type that specifies the type of the user table. Field name: ObjectType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserTablesMD~TableType.html
+  field_name: ObjectType

@@ -1,0 +1,31 @@
+name: MaterialGroupsService
+title: MaterialGroupsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService.html
+description: 'The MaterialGroupsService service enables you to add, look up, update, and remove material groups. Source table: OMGP .'
+remarks: Country-specific for Brazil only. To see the material groups, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Tax --> Item Classification --> Material Group .
+methods:
+- name: AddMaterialGroup
+  description: Adds a material group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~AddMaterialGroup.html
+- name: DeleteMaterialGroup
+  description: Deletes an existing material group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~DeleteMaterialGroup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the MaterialGroupsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~GetDataInterfaceFromXMLString.html
+- name: GetMaterialGroup
+  description: Retrieves a material group. The material group is specified by its key, which is contained in the MaterialGroupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~GetMaterialGroup.html
+- name: GetMaterialGroupList
+  description: Returns the MaterialGroupsParams data collection that identify all material groups.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~GetMaterialGroupList.html
+- name: UpdateMaterialGroup
+  description: Updates an existing material group. The data for the material group, including the key of the material group to be updated, is contained in the MaterialGroup object passed to the method. To update a material group, you must first retrieve it using the GetMaterialGroup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialGroupsService~UpdateMaterialGroup.html

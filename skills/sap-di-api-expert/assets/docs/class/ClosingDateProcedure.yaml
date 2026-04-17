@@ -1,0 +1,48 @@
+name: ClosingDateProcedure
+title: ClosingDateProcedure Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure.html
+description: 'The ClosingDateProcedure object enables to retrieve the closing date procedure definition. This object is applicable for cluster B (country-specific for Japan only). Source table: OCDP .'
+remarks: 'To display the form in the application: - Select Administration > Definitions > Business Partners > Define Closing Date Procedure . The application logic is similar to the Payment Terms calculation for the Closing date . In addition, the Closing Date is always greater or equal to Baseline Date (posting date or system date). When Closing Date is earlier than Baseline date, the month of Closing date will be added by 1. For example, Closing Date is every 20th, when posting date is April 19, Closing Date is April 20; when posting date is April 21, Closing Date is May 20.'
+methods:
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~SaveToFile.html
+- name: SaveXML
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~SaveXML.html
+properties:
+- name: BaselineDate
+  description: 'Returns the reference date for executing a transaction: Posting Date or System Date . Field name: BsLineDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~BaselineDate.html
+  field_name: BsLineDate
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~Browser.html
+- name: ClosingDateCode
+  description: 'Returns the code of the closing date procedure. Field name: ClsDtCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~ClosingDateCode.html
+  field_name: ClsDtCode
+  length: 30
+- name: ClosingDateNum
+  description: 'Returns the closing date procedure number. Field name: ClsDateNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~ClosingDateNum.html
+  field_name: ClsDateNum
+- name: DueMonth
+  description: 'Returns the start from date for calculating the transaction due date: begining date of the month, middle date of the month, or end date of the month. Field name: DueMonth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~DueMonth.html
+- name: ExtraDay
+  description: 'Returns the number of additional days for calculating the due date. Field name: ExtraDay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~ExtraDay.html
+- name: ExtraMonth
+  description: 'Returns the number of additional months for calculating the due date. Field name: ExtraMonth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~ExtraMonth.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ClosingDateProcedure~UserFields.html

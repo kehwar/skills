@@ -1,0 +1,350 @@
+name: ServiceCalls
+title: ServiceCalls Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls.html
+description: 'ServiceCalls is a business object that represents the service calls table in the Service module. This object enables you to: - Add a service call. Retrieve a service call by its key. Update a service call. Remove a service call. Save the object in XML format. Source table: OSCL .'
+remarks: 'Mandatory field in SAP Business One: CustomerCode and Subject . To display the form in the application: - Select Service --> Service Call .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~GetByKey.html
+- name: Remove
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Update.html
+properties:
+- name: Activities
+  description: Returns the ServiceCallActivities child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Activities.html
+- name: AddressName
+  description: property AddressName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AddressName.html
+- name: AddressType
+  description: property AddressType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AddressType.html
+- name: AssignedDate
+  description: 'Returns the assigned date for resolving the service call. Field name: AssignDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AssignedDate.html
+  field_name: AssignDate
+- name: AssignedTime
+  description: 'Returns the assigned time for resolving the service call. Field name: AssignTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AssignedTime.html
+  field_name: AssignTime
+- name: AssigneeCode
+  description: 'Sets or returns the code of the user who is responsible for the service call. Field name: assignee . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AssigneeCode.html
+  field_name: assignee
+- name: AttachmentEntry
+  description: property AttachmentEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~AttachmentEntry.html
+- name: BelongsToAQueue
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether he service call belongs to a queue or to an assigned user. Field name: isQueue .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BelongsToAQueue.html
+  field_name: isQueue
+- name: BPAddressComponents
+  description: property BPAddressComponents
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPAddressComponents.html
+- name: BPBillToAddress
+  description: property BPBillToAddress
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPBillToAddress.html
+- name: BPBillToCode
+  description: property BPBillToCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPBillToCode.html
+- name: BPCellular
+  description: property BPCellular
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPCellular.html
+- name: BPContactPerson
+  description: property BPContactPerson
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPContactPerson.html
+- name: BPeMail
+  description: property BPeMail
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPeMail.html
+- name: BPFax
+  description: property BPFax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPFax.html
+- name: BPPhone1
+  description: property BPPhone1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPPhone1.html
+- name: BPPhone2
+  description: property BPPhone2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPPhone2.html
+- name: BPProjectCode
+  description: property BPProjectCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPProjectCode.html
+- name: BPShipToAddress
+  description: property BPShipToAddress
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPShipToAddress.html
+- name: BPShipToCode
+  description: property BPShipToCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPShipToCode.html
+- name: BPTerritory
+  description: property BPTerritory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~BPTerritory.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Browser.html
+- name: CallType
+  description: 'Sets or returns the service call type. Field name: callType . This is a foreign key to the Service Call Types table ( OCST ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CallType.html
+  field_name: callType
+- name: City
+  description: property City
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~City.html
+- name: ClosingDate
+  description: 'The date when the service call status is changed to Closed . Field name: closeDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ClosingDate.html
+  field_name: closeDate
+- name: ClosingTime
+  description: 'The date when the service call status is changed to Closed . Field name: closeTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ClosingTime.html
+  field_name: closeTime
+- name: ClosingTimeEx
+  description: property ClosingTimeEx
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ClosingTimeEx.html
+- name: ContactCode
+  description: 'Sets or returns the code of the contact person from the business partner master data. Field name: contctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ContactCode.html
+  field_name: contctCode
+- name: ContractEndDate
+  description: 'Returns the expiration date of the service contract. Field name: cntrctDate . This is a foreign key to the ServiceContracts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ContractEndDate.html
+  field_name: cntrctDate
+- name: ContractID
+  description: 'Returns the ID of the service contract. Field name: contractID . This is a foreign key to the ServiceContracts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ContractID.html
+  field_name: contractID
+- name: Country
+  description: property Country
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Country.html
+- name: CreationDate
+  description: 'The date when the service call was first opened. Field name: createDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CreationDate.html
+  field_name: createDate
+- name: CreationTime
+  description: 'The time when the service call was first opened. Field name: createTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CreationTime.html
+  field_name: createTime
+- name: CustomerCode
+  description: 'Sets or returns the customer code, which is the card code in the business partner master data. Mandatory property. Field name: customer . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CustomerCode.html
+  field_name: customer
+  length: 15
+- name: CustomerName
+  description: 'Sets or returns the customer name from the business partner master data. Field name: custmrName . Length: 100 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CustomerName.html
+  field_name: custmrName
+  length: 100
+- name: CustomerRefNo
+  description: property CustomerRefNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~CustomerRefNo.html
+- name: Description
+  description: 'Sets or returns a memo type string that specifies the remarks for the service call. Field name: descrption . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Description.html
+  field_name: descrption
+- name: DisplayInCalendar
+  description: property DisplayInCalendar
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~DisplayInCalendar.html
+- name: DocNum
+  description: property DocNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~DocNum.html
+- name: Duration
+  description: property Duration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Duration.html
+- name: DurationType
+  description: property DurationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~DurationType.html
+- name: EndDuedate
+  description: property EndDueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~EndDuedate.html
+- name: EndTime
+  description: property EndTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~EndTime.html
+- name: EntitledforService
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the business partner is entitled for a service based on the existence of a valid contract. Field name: isEntitled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~EntitledforService.html
+  field_name: isEntitled
+- name: Expenses
+  description: Returns the ServiceCallInventoryExpenses child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Expenses.html
+- name: HandWritten
+  description: property HandWritten
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~HandWritten.html
+- name: InternalSerialNum
+  description: 'Sets or returns the unique internal serial number of the item. Field name: internalSN . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~InternalSerialNum.html
+  field_name: internalSN
+  length: 32
+- name: ItemCode
+  description: 'Sets or returns the item code. Field name: itemCode . Length: 20 characters. This is a foreign key to the Items object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ItemCode.html
+  field_name: itemCode
+  length: 20
+- name: ItemDescription
+  description: 'Sets or returns the item description. Field name: itemName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ItemDescription.html
+  field_name: itemName
+  length: 100
+- name: ItemGroupCode
+  description: 'Returns the code of the item group. Field name: itemGroup .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ItemGroupCode.html
+  field_name: itemGroup
+- name: Location
+  description: property Location
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Location.html
+- name: ManufacturerSerialNum
+  description: 'Sets or returns the unique manufacturer serial number of the item. Field name: internalSN . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ManufacturerSerialNum.html
+  field_name: internalSN
+  length: 32
+- name: Origin
+  description: 'Sets or returns the means whereby the complaint was received (such as, e-mail, phone, and so on). Field name: origin . This is a foreign key to the Service Call Origins table ( OCSO ) - not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Origin.html
+  field_name: origin
+- name: PeriodIndicator
+  description: property PeriodIndicator
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~PeriodIndicator.html
+- name: Priority
+  description: 'Sets or returns a valid value of BoSvcCallPriorities type that specifies priority of the complaint (low, medium, or high). Field name: priority .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Priority.html
+  field_name: priority
+- name: ProblemSubType
+  description: property ProblemSubType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ProblemSubType.html
+- name: ProblemType
+  description: 'Sets or returns the type of the problem as defined in the SAP Business One application. Field name: problemTyp . This is a foreign key to the Service Call Problem Types table ( OSCP ) - exposed to DI API using the ServiceCallProblemType object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ProblemType.html
+  field_name: problemTyp
+- name: Queue
+  description: 'Sets or returns the queue ID assigned to the service call. Field name: Queue . Length: 20 characters. This is a foreign key to the Queue table ( OQUE ), not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Queue.html
+  length: 20
+- name: Reminder
+  description: property Reminder
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Reminder.html
+- name: ReminderPeriod
+  description: property ReminderPeriod
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ReminderPeriod.html
+- name: ReminderType
+  description: property ReminderType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ReminderType.html
+- name: Resolution
+  description: 'Sets or returns a memo type string that specifies the description of the resolution. Field name: resolution . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Resolution.html
+  field_name: resolution
+- name: ResolutionDate
+  description: 'Sets or returns the maximum date for resolving a service call. SAP Business One calculates the resolution date based on the the service contract ResolutionTime . Field name: resolution .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResolutionDate.html
+  field_name: resolution
+- name: ResolutionOnDate
+  description: 'Field name: resolution .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResolutionOnDate.html
+  field_name: resolution
+- name: ResolutionOnTime
+  description: 'Returns the actual resolution time based on setting details in Resolution property or Solutions property. Field name: resolOnTim .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResolutionOnTime.html
+  field_name: resolOnTim
+- name: ResolutionTime
+  description: 'Sets or returns the maximum time for resolving a service call. SAP Business One calculates the resolution time based on the the service contract ResolutionTime . Field name: resolOnTim .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResolutionTime.html
+  field_name: resolOnTim
+- name: Responder
+  description: 'Returns the user code of the assignee who responded the service call. Field name: responder .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Responder.html
+  field_name: responder
+- name: ResponseAssignee
+  description: 'Returns the user code of the assignee who was responsible for the service call when it was actually responded by the Responder . Field name: respAssign .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResponseAssignee.html
+  field_name: respAssign
+- name: ResponseByDate
+  description: 'Returns the maximum date for responding to a service call. SAP Business One calculates the response date based on the service contract ResponseTime . Field name: respByDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResponseByDate.html
+  field_name: respByDate
+- name: ResponseByTime
+  description: 'Returns the maximum time for responding to a service call. SAP Business One calculates the response time based on the the service contract ResponseTime . Field name: respByTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResponseByTime.html
+  field_name: respByTime
+- name: ResponseOnDate
+  description: 'Returns the actual response date. Field name: respOnDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResponseOnDate.html
+  field_name: respOnDate
+- name: ResponseOnTime
+  description: 'Returns the actual response time. Field name: respOnTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ResponseOnTime.html
+  field_name: respOnTime
+- name: Room
+  description: property Room
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Room.html
+- name: Schedulings
+  description: property Schedulings
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Schedulings.html
+- name: Series
+  description: property Series
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Series.html
+- name: ServiceBPType
+  description: property ServiceBPType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ServiceBPType.html
+- name: ServiceCallID
+  description: 'Returns the service call identification number. Field name: callID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~ServiceCallID.html
+  field_name: callID
+- name: Solutions
+  description: Returns the ServiceCallSolutions child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Solutions.html
+- name: StartDate
+  description: property StartDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~StartDate.html
+- name: StartTime
+  description: property StartTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~StartTime.html
+- name: State
+  description: property State
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~State.html
+- name: Status
+  description: 'Sets or returns the status of the service call, such as open, pending, or closed as defined in the SAP Business One application. Field name: status . This is a foreign key to the Service Call Statuses table ( OSCS ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Status.html
+  field_name: status
+- name: Street
+  description: property Street
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Street.html
+- name: Subject
+  description: 'Sets or returns a short description of the problem. Mandatory property. Field name: subject . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Subject.html
+  field_name: subject
+  length: 254
+- name: SupplementaryCode
+  description: property SupplementaryCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~SupplementaryCode.html
+- name: TechnicianCode
+  description: 'Sets or returns the technician code as defined in the employee master data. Field name: technician . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~TechnicianCode.html
+  field_name: technician
+- name: Telephone
+  description: property Telephone
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~Telephone.html
+- name: UpdateDate
+  description: property UpdateDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~UpdateDate.html
+- name: UpdatedTime
+  description: 'Returns the update time of the service call, which is used for the history log. Field name: UpdateTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~UpdatedTime.html
+  field_name: UpdateTime
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCalls~UserFields.html

@@ -1,0 +1,35 @@
+name: ItemCycleCount
+title: ItemCycleCount Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount.html
+description: 'ItemCycleCount object hold the information when an item will go through cycle counting. Each Item has a few Warehouses and each Warehouse has one ItemCycleCount. Source table: ITW1'
+properties:
+- name: Alert
+  description: 'Sets or returns a valid value that determines wether or not to activate alert. Field name: Alert .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~Alert.html
+- name: AlertTime
+  description: 'Sets or returns the Alert Time. Field name: Time .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~AlertTime.html
+  field_name: Time
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~Count.html
+- name: CycleCode
+  description: 'Sets or returns the Cycle Code. Field name: CycleCode . This is a foreign key to the OCYC object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~CycleCode.html
+- name: DestinationUser
+  description: 'Sets or returns the alert destination user. Field name: DestUser . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~DestinationUser.html
+  field_name: DestUser
+- name: NextCountingDate
+  description: 'Returns the next counting date for this item. Field name: NextDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~NextCountingDate.html
+  field_name: NextDate
+- name: UserFields
+  description: 'Returns the user signature. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~UserFields.html
+  field_name: UserSign
+- name: WarehouseCode
+  description: 'Returns the warehouse code. Field name: WhsCode . This is a foreign key to the Warehouses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemCycleCount~WarehouseCode.html
+  field_name: WhsCode

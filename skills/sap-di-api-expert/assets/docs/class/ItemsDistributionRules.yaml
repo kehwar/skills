@@ -1,0 +1,55 @@
+name: ItemsDistributionRules
+title: ItemsDistributionRules Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules.html
+description: 'ItemsDistributionRules is a child object of the Items object. You can assign distribution rules to an asset to facilitate cost accounting. Source table: ITM6 .'
+remarks: For asset transactions that create journal entries, SAP Business One carries forward the relevant projects and distribution rules to the journal entries. To access the subtab, from the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data . Select the Fixed Assets tab and then the Cost Accounting subtab.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~Count.html
+- name: DistributionRule
+  description: 'The distribution rule for dimension 1 that you want to assign to the asset. Field name: OcrCode. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~DistributionRule.html
+  field_name: OcrCode
+  length: 8
+- name: DistributionRule2
+  description: 'The distribution rule for dimension 2 that you want to assign to the asset. Field name: OcrCode2. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~DistributionRule2.html
+  field_name: OcrCode2
+  length: 8
+- name: DistributionRule3
+  description: 'The distribution rule for dimension 3 that you want to assign to the asset. Field name: OcrCode3. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~DistributionRule3.html
+  field_name: OcrCode3
+  length: 8
+- name: DistributionRule4
+  description: 'The distribution rule for dimension 4 that you want to assign to the asset. Field name: OcrCode4. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~DistributionRule4.html
+  field_name: OcrCode4
+  length: 8
+- name: DistributionRule5
+  description: 'The distribution rule for dimension 5 that you want to assign to the asset. Field name: OcrCode5. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~DistributionRule5.html
+  field_name: OcrCode5
+  length: 8
+- name: LineNumber
+  description: 'The current row number in the list. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~LineNumber.html
+  field_name: LineNum
+- name: ValidFrom
+  description: 'The start date of the period during which you want to assign a distribution rule to the asset. Field name: ValidFrom .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~ValidFrom.html
+- name: ValidTo
+  description: 'The end date of the period during which you want to assign a distribution rule to the asset. Field name: ValidTo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ItemsDistributionRules~ValidTo.html

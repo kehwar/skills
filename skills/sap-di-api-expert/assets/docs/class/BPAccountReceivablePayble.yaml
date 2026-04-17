@@ -1,0 +1,29 @@
+name: BPAccountReceivablePayble
+title: BPAccountReceivablePayble Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble.html
+description: 'BPAccountReceivablePayble is a child object of the BusinessPartners object and represents the Business Partner Account Receivable Payable table in the Business Partner module. This object enables you to add a business partner account. Source table: CRD3 .'
+remarks: 'To display the form in the application: - Select Business Partners --> Business Partner Master Data . - In the Accounting tab, click the button [ ... ] next to Control Accounts .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~SetCurrentLine.html
+properties:
+- name: AccountCode
+  description: 'Sets or returns the G/L account code of the business partner as defined in Chart of Accounts. Field name: AcctCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~AccountCode.html
+  field_name: AcctCode
+  length: 15
+- name: AccountType
+  description: 'Sets or returns a valid value of BoBpAccountTypes that specifies the account type of the business partner. Field name: AcctType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~AccountType.html
+  field_name: AcctType
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~BPCode.html
+- name: Count
+  description: 'Returns the number of records in the BPAccountReceivablePayble object. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPAccountReceivablePayble~Count.html

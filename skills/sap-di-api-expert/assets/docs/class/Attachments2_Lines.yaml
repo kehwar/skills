@@ -1,0 +1,70 @@
+name: Attachments2_Lines
+title: Attachments2_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines.html
+description: 'The Attachments2_Lines is a child object of the Attachments2 object. Each line stores details about one attachment file. Source table: ATC1 .'
+remarks: 'Mandatory properties: Attachments2_Lines , FileName , and FileExtension . To display the form in the application: - Select the Attachments tab of one of the following forms: Employee Master Data , Contracts , Contract Template , Service Contract , and Customer Equipment Card .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~SetCurrentLine.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the identification key of the attachment file as assigned by SAP Business One when adding an attachment file. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: AttachmentDate
+  description: 'Returns the date when the file was copied to the system attachments folder. Field name: Date .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~AttachmentDate.html
+  field_name: Date
+- name: CopyToProductionOrder
+  description: 'Copy attachments automatically from BOM to production order. Field name: CopyToProd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~CopyToProductionOrder.html
+  field_name: CopyToProd
+- name: CopyToTargetDoc
+  description: 'Copy to target document. Field name: CopyToTrgt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~CopyToTargetDoc.html
+  field_name: CopyToTrgt
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~Count.html
+- name: EDocSign
+  description: A flag that indicate the line relates to document signing.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~EDocSign.html
+- name: FileExtension
+  description: 'Sets or returns the file extension. Field name: FileExt . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~FileExtension.html
+  field_name: FileExt
+  length: 8
+- name: FileName
+  description: 'Sets or returns the file name. Field name: FileName . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~FileName.html
+  length: 254
+- name: FreeText
+  description: 'Free text. Field name: FreeText . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~FreeText.html
+  length: 100
+- name: LineNum
+  description: 'Row number. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~LineNum.html
+  field_name: Line
+- name: Override
+  description: 'Determines whether or not to override a file, with the same name, that is already stored in the system attachments folder. Field name: Override .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~Override.html
+- name: SendInMail
+  description: If speclfied, the attachment will also be sent when this document is sent in email through Microsoft 365.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~SendInMail.html
+- name: SourcePath
+  description: 'Sets or returns the folder name and path where the source files are stored. Field name: srcPath . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~SourcePath.html
+  field_name: srcPath
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~UserFields.html
+- name: UserID
+  description: 'Returns the identification key of the user who operates the system. Field name: UsrID . Returns the identification key of the active user who operates the system.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachments2_Lines~UserID.html
+  field_name: UsrID

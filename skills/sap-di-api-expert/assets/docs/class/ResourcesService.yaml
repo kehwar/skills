@@ -1,0 +1,33 @@
+name: ResourcesService
+title: ResourcesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService.html
+description: 'The ResourcesService service enables you to add, look up, update, and delete resources in SAP Business One. Source table: ORSC .'
+methods:
+- name: Add
+  description: Adds a new resource.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~Add.html
+- name: CreateLinkedItem
+  description: Creates a non-inventory item that links to the resource.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~CreateLinkedItem.html
+- name: Delete
+  description: Deletes an existing resource.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~Delete.html
+- name: Get
+  description: Retrieves a resource. The resource is specified by its key, which is contained in the ResourceParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ResourcesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the ResourceParamsCollection data collection that identify all resources.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~GetList.html
+- name: Update
+  description: Updates an existing resource. The data for the resource, including the key of the resource to be updated, is contained in the Resource object passed to the method. To update a resource, you must first retrieve it using the Get method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ResourcesService~Update.html

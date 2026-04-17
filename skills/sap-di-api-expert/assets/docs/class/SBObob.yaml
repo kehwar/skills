@@ -1,0 +1,93 @@
+name: SBObob
+title: SBObob Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob.html
+description: The SBObob object is raw data access object that enables you to retrieve information quickly and easily. The returned data is usually a Recordset object that enables data manipulation. See SBObob samples .
+methods:
+- name: ConvertEnumValueToValidValue
+  description: Converts a specified enumeration value of an enumeration name to the valid value defined in the company database. See Conversion sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~ConvertEnumValueToValidValue.html
+- name: ConvertValidValueToEnumValue
+  description: Converts a specified valid value of an enumeration name to the enumeration value defined in the company database. See Conversion sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~ConvertValidValueToEnumValue.html
+- name: Format_DateToString
+  description: Converts the system date to a string. See Formatting sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~Format_DateToString.html
+- name: Format_MoneyToString
+  description: Converts a specified amount of money to a string according to a specified precision. See Formatting sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~Format_MoneyToString.html
+- name: Format_StringToDate
+  description: Converts date string to a system date.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~Format_StringToDate.html
+- name: GetAccountSegmentsByCode
+  description: Returns a Recordset object that contains the value of the FormatCode property for a specified AccountCode.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetAccountSegmentsByCode.html
+- name: GetBPList
+  description: Returns a Recordset object that contains a list of business partners keys that can be used as a parameter in many business objects. See Get Business Partners List sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetBPList.html
+- name: GetContactEmployees
+  description: Returns a Recordset object that contains a list of contact employees for a specified business partner. See Get Contact Employees sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetContactEmployees.html
+- name: GetCurrencyRate
+  description: 'Returns a Recordset object that contains the currency rate for a specified date and currency code. See Currency sample . Source table: ORTT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetCurrencyRate.html
+- name: GetDueDate
+  description: Returns the due date for a specified business partner based on the business partner code and the reference date. See Get Due Date sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetDueDate.html
+- name: GetEwaParameters
+  description: 'Returns a Recordset that defines the Early Watch Alert user parameters: EWA Key User Name User PassWord'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetEwaParameters.html
+- name: GetFieldValidValues
+  description: 'Returns a Recordset object that contains the valid values of a specified field and table in the database. Each valid value includes its name and description. For example, the valid values for CardType field in OCRD table are: C - Customer, S - Supplier, and L - Lead.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetFieldValidValues.html
+- name: GetIndexRate
+  description: Returns a Recordset object that contains the index rate for a specified date and index code. See Get Index Rate sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetIndexRate.html
+- name: GetItemList
+  description: Returns a Recordset object that contains an item code and item name. To retrieve the items list, apply this method in a loop. See Get Items List sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetItemList.html
+- name: GetItemPrice
+  description: Returns a Recordset object that contains the item price for specified business partner and item, based on the amount and transaction date. See Get Item Price sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetItemPrice.html
+- name: GetLicenseStatus
+  description: You can get the information whether a user has a license to access a form.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetLicenseStatus.html
+- name: GetLocalCurrency
+  description: Returns the local currency defined in the company database. See Currency sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetLocalCurrency.html
+- name: GetObjectKeyBySingleValue
+  description: Returns a Recordset object that contains the object key by single value. See Get Object Key By Single Value sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetObjectKeyBySingleValue.html
+- name: GetObjectPermission
+  description: Returns a single record that contains the permission type ( BoPermission ) of a specified PermissionId and UserSignature .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetObjectPermission.html
+- name: GetSystemCurrency
+  description: Returns the system currency defined in the company database. See Currency sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetSystemCurrency.html
+- name: GetSystemPermission
+  description: Returns the permission for a type of permission for a specific user.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetSystemPermission.html
+- name: GetTableFieldList
+  description: 'Returns a Recordset object that contains the fields list of a specified table in the database. Each field includes the following parameters (the examples in parenthesis relates to OCRD : CardCode ): Name (CardCode) Type (nvarchar) -- a numeric value representing a BoFieldTypes enumeration value Length (15) Linked table name for foreign key (GroupCode) Valid values indicator, which indicates whether or not this field uses valid values (no) IsNullable -- specifies whether or not nulls are permitted'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetTableFieldList.html
+- name: GetTableList
+  description: 'Returns a Recordset object that contains a list of all the tables in the database. Each table includes its name and description (for example: OCRD, Business Partner .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetTableList.html
+- name: GetUserList
+  description: Returns a recordset that contains a list of user codes defined in the SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetUserList.html
+- name: GetValidValueDescription
+  description: Returns a string that contains the valid value description of a valid value.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetValidValueDescription.html
+- name: GetWareHouseList
+  description: Returns a Recordset object that contains the warehouse code and name defined the company database. To retrieve a list of warehouses, apply this method in a loop. See Get Warehouse List sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~GetWareHouseList.html
+- name: PutEwaParameters
+  description: 'Sets a Recordset that contains the Early Watch Alert user parameters: EWA Key User Name User PassWord'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~PutEwaParameters.html
+- name: SetCurrencyRate
+  description: Sets the exchange rate for a specified date and currency in the company database. See Currency sample .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~SetCurrencyRate.html
+- name: SetSystemPermission
+  description: Sets the permission for a type of permission for a specific user.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SBObob~SetSystemPermission.html

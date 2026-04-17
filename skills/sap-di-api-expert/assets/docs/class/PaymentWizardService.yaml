@@ -1,0 +1,22 @@
+name: PaymentWizardService
+title: PaymentWizardService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService.html
+description: 'The PaymentWizardService service enables you to look up payment runs. Source table: OPWZ .'
+remarks: From the SAP Business One Main Menu , choose Banking -> Payment Wizard . From the Web Client, choose Payment -> Payment Runs -> Payment Run detailed view -> Navigation button.
+methods:
+- name: Get
+  description: Retrieves a payment wizard. The payment wizard is specified by its key, which is contained in the PaymentWizardParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the PaymentWizardService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the PaymentWizardParamsCollection data collection that identify all payment runs.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentWizardService~GetList.html

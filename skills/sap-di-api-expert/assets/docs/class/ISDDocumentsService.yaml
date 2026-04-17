@@ -1,0 +1,31 @@
+name: ISDDocumentsService
+title: ISDDocumentsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService.html
+description: 'The ISDDocumentsService service enables you to add, look up, update, and cancel ISD documents. Source table: OISD .'
+remarks: For India localization only. To access Input Service Distribution documents, the path is Purchasing - A/P --> Input Service Distribution - ISD --> ISD.
+methods:
+- name: Add
+  description: Adds an ISD document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~Add.html
+- name: Cancel
+  description: Cancel an ISD document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~Cancel.html
+- name: Get
+  description: Retrieves an ISD document. The ISD document is specified by its key, which is contained in the ISDParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ISDDocumentsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the ISDParamsCollection data collection that identifies all ISD documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~GetList.html
+- name: Update
+  description: Updates an existing ISD document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ISDDocumentsService~Update.html

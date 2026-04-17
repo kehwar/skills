@@ -1,0 +1,24 @@
+name: BusinessPartnerPropertiesService
+title: BusinessPartnerPropertiesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService.html
+description: 'The BusinessPartnerPropertiesService service enables you to update and look up business partner properties in the business partner properties master data table. There are 64 properties. You can set the name of each property, and assign each property to a business partner as a flag. To see the list of properties, select Select Administration --> Setup --> Business Partners --> Business Partner Properties . Source table: OCQG'
+methods:
+- name: GetBusinessPartnerProperty
+  description: Retrieves a business partner property. The business partner property is specified by its key ( GroupCode ), which is contained in the BusinessPartnerPropertyParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~GetBusinessPartnerProperty.html
+- name: GetBusinessPartnerPropertyList
+  description: Retrieves the keys and names of all the business partner properties.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~GetBusinessPartnerPropertyList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BusinessPartnerPropertiesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~GetDataInterfaceFromXMLString.html
+- name: UpdateBusinessPartnerProperty
+  description: Updates an existing business partner property. The data for the business partner property, including the key of the business partner property to be updated, is contained in the BusinessPartnerProperty object passed to the method. To update a business partner property, you must first retrieve it using the GetBusinessPartnerProperty method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPartnerPropertiesService~UpdateBusinessPartnerProperty.html

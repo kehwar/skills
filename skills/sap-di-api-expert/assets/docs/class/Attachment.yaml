@@ -1,0 +1,9 @@
+name: Attachment
+title: Attachment Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachment.html
+description: The Attachment object represents an external file that is attached to business objects, such as, Contacts , Messages , and ServiceContracts . From DI API version 2005, use the Attachments2 object.
+properties:
+- name: FileName
+  description: Sets or returns the attachment file name.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Attachment~FileName.html

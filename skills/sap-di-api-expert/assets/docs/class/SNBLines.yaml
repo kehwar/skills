@@ -1,0 +1,43 @@
+name: SNBLines
+title: SNBLines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines.html
+description: SNBLines Class
+methods:
+- name: Add
+  description: Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~Add.html
+- name: SetCurrentLine
+  description: Set the current line
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~SetCurrentLine.html
+properties:
+- name: AdmissionDate
+  description: property AdmissionDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~AdmissionDate.html
+- name: BaseLine
+  description: property BaseLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~BaseLine.html
+- name: Count
+  description: Lines Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~Count.html
+- name: DebitCredit
+  description: property DebitCredit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~DebitCredit.html
+- name: ExpirationDate
+  description: property ExpirationDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~ExpirationDate.html
+- name: LotNumber
+  description: property LotNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~LotNumber.html
+- name: ManufactureNumber
+  description: property ManufactureNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~ManufactureNumber.html
+- name: NewCost
+  description: property NewCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~NewCost.html
+- name: SnbAbsEntry
+  description: property SnbAbsEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~SnbAbsEntry.html
+- name: SystemNumber
+  description: property SystemNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SNBLines~SystemNumber.html

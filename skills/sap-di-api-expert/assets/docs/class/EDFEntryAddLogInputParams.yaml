@@ -1,0 +1,55 @@
+name: EDFEntryAddLogInputParams
+title: EDFEntryAddLogInputParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams.html
+description: EDFEntryAddLogInputParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~ToXMLString.html
+properties:
+- name: AuthorityProcess
+  description: When creating records in ECM3 for the current electronic document, this object is used to specify particular data for the ECM3 record. Because users are allowed to modify only specific data in ECM3, this is used only during ECM3 record creation. During log entry creation, authorities processes specify which kind of action is currently relevant, e.g. approval or rejection of current electronic document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~AuthorityProcess.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~Code.html
+- name: ExportFile
+  description: property ExportFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~ExportFile.html
+- name: ExportFormat
+  description: property ExportFormat
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~ExportFormat.html
+- name: GUID
+  description: property GUID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~GUID.html
+- name: IsSensitive
+  description: Distinction for if electronic protocol parameter is sensitive and encrypted in database or it is not sensitive.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~IsSensitive.html
+- name: LogData
+  description: property LogData
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~LogData.html
+- name: LogDataContentType
+  description: property LogDataContentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~LogDataContentType.html
+- name: LogMessage
+  description: property LogMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~LogMessage.html
+- name: LogType
+  description: property LogType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~LogType.html
+- name: ZipLogData
+  description: property ZipLogData
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryAddLogInputParams~ZipLogData.html

@@ -1,0 +1,47 @@
+name: UserObjectMD_EnhancedFormColumns
+title: UserObjectMD_EnhancedFormColumns Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns.html
+description: 'UserObjectMD_EnhancedFormColumns is a child object of the UserObjectsMD object that represents the default fields (columns) to display in the UDO enhanced default form (UDO form with the header-line style). Source table: UDO4 .'
+remarks: 'When adding fields to a default form, the first field must be as follows: - For Master data object type - Code . - For Document object type - DocEntry .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~SetCurrentLine.html
+properties:
+- name: ChildNumber
+  description: 'The number of the child user table to relate to the default user form. Field name: SonNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~ChildNumber.html
+  field_name: SonNum
+- name: Code
+  description: 'Returns the Child Object Unique ID., inherited from Parent Object. This Unique ID is the primary key of the user defined object and its Parent object. Field name: Code . Length: 20 characters (must include at least one alphabetical character).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~Code.html
+  length: 20
+- name: ColumnAlias
+  description: 'The alias name of the default field to display in the default form. Field name: ColAlias . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~ColumnAlias.html
+  field_name: ColAlias
+  length: 20
+- name: ColumnDescription
+  description: 'The description of the default field to display in the default form. Field name: ColDesc . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~ColumnDescription.html
+  field_name: ColDesc
+  length: 30
+- name: ColumnIsUsed
+  description: 'Indicates whether the form column is used or not. Field name: ColIsUsed.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~ColumnIsUsed.html
+  field_name: ColIsUsed
+- name: ColumnNumber
+  description: 'The number of the default field to display in the default form. SAP Business One creates a sequential number for each column that you add. Field name: ColumnNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~ColumnNumber.html
+  field_name: ColumnNum
+- name: Count
+  description: Returns the number of columns in the default form.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~Count.html
+- name: Editable
+  description: 'Indicates whether the form column is editable (active) or not. Field name: ColEdit.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserObjectMD_EnhancedFormColumns~Editable.html
+  field_name: ColEdit

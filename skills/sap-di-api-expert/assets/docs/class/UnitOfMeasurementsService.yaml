@@ -1,0 +1,31 @@
+name: UnitOfMeasurementsService
+title: UnitOfMeasurementsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService.html
+description: 'The UnitOfMeasurementsService service enables you to add, look up, update, and remove unit of measurements. Source table: OUOM .'
+remarks: To access the Units of Measurement - Setup window, choose Administration --> Setup --> Inventory --> Units of Measurement .
+methods:
+- name: Add
+  description: Adds a UoM.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~Add.html
+- name: Delete
+  description: Deletes an existing UoM.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~Delete.html
+- name: Get
+  description: Retrieves a UoM. The UoM is specified by its key, which is contained in the UnitOfMeasurementParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the UnitOfMeasurementsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the UnitOfMeasurementParamsCollection data collection that identifies all UoMs.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~GetList.html
+- name: Update
+  description: Updates an existing UoM.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementsService~Update.html

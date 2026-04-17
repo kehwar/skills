@@ -1,0 +1,31 @@
+name: ExceptionalEventService
+title: ExceptionalEventService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService.html
+description: 'Source table: OEPE .'
+remarks: "For the Italy localization only. Navigation path: Business Partner Master Data â\x86\x92 Accounting â\x86\x92 Tax , select the checkbox Subject to Withholding Tax and go to the field Exceptional Event ."
+methods:
+- name: AddExceptionalEvent
+  description: AddExceptionalEvent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~AddExceptionalEvent.html
+- name: DeleteExceptionalEvent
+  description: DeleteExceptionalEvent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~DeleteExceptionalEvent.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~GetDataInterfaceFromXMLString.html
+- name: GetExceptionalEvent
+  description: GetExceptionalEvent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~GetExceptionalEvent.html
+- name: GetExceptionalEventList
+  description: GetExceptionalEventList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~GetExceptionalEventList.html
+- name: UpdateExceptionalEvent
+  description: UpdateExceptionalEvent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExceptionalEventService~UpdateExceptionalEvent.html

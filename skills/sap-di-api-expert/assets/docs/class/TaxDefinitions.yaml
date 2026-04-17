@@ -1,0 +1,27 @@
+name: TaxDefinitions
+title: TaxDefinitions Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions.html
+description: 'A set of tax rates for different time periods for a particular sales tax jurisdiction. Source table: STA1'
+remarks: For the United States and Canada only.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~SetCurrentLine.html
+properties:
+- name: Effectivefrom
+  description: 'The date from which the tax rate in the Rate property is in effect. This value must be unique within the TaxDefinitions collection. Field name: EfctDate'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~Effectivefrom.html
+  field_name: EfctDate
+- name: Rate
+  description: 'The tax rate for the period starting from the date specified in the Effectivefrom property. Field name: Rate'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~Rate.html
+- name: UserFields
+  description: property UserFields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxDefinitions~UserFields.html

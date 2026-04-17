@@ -1,0 +1,31 @@
+name: FinancialYearsService
+title: FinancialYearsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService.html
+description: 'The FinancialYearsService service enables you to add, look up and remove financial roles for TDS (withholding tax) reports. To see the list of employee roles and create a new one, select Administration --> Setup --> Financials --> TDS --> Financial Year Master . Source table: OFYM .'
+remarks: For India only.
+methods:
+- name: AddFinancialYear
+  description: Adds a financial year.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~AddFinancialYear.html
+- name: DeleteFinancialYear
+  description: Deletes an existing financial year. The financial year is specified by its key ( AbsId ), which is contained in the FinancialYearParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~DeleteFinancialYear.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the FinancialYearsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~GetDataInterfaceFromXMLString.html
+- name: GetFinancialYear
+  description: Retrieves a specific financial year. The financial year is specified by its key ( AbsId ), which is contained in the FinancialYearParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~GetFinancialYear.html
+- name: GetFinancialYearList
+  description: Retrieves the keys and names of all the financial years.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~GetFinancialYearList.html
+- name: UpdateFinancialYear
+  description: Updates an existing financial year. The data for the financial year, including the key of the financial year to be updated, is contained in the FinancialYear passed to the method. To update a financial year, you must first retrieve it using the GetFinancialYear method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FinancialYearsService~UpdateFinancialYear.html

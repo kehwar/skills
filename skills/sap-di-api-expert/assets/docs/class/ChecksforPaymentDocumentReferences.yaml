@@ -1,0 +1,49 @@
+name: ChecksforPaymentDocumentReferences
+title: ChecksforPaymentDocumentReferences Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences.html
+description: 'The document references of checks for payment. Source table: CHO3 .'
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~Add.html
+- name: SetCurrentLine
+  description: method SetCurrentLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~SetCurrentLine.html
+properties:
+- name: Count
+  description: 'The count of rows. Field name: LogInstanc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~Count.html
+  field_name: LogInstanc
+- name: DocEntry
+  description: 'The index (Primary Key). Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~DocEntry.html
+- name: ExternalReferencedDocNumber
+  description: 'External referenced document number. Field name: ExtDocNum . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~ExternalReferencedDocNumber.html
+  field_name: ExtDocNum
+  length: 100
+- name: IssueDate
+  description: 'Issue date. Field name: IssueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~IssueDate.html
+- name: LineNumber
+  description: 'The row number (Primary Key). Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~LineNumber.html
+  field_name: LineNum
+- name: ReferencedDocEntry
+  description: 'Referenced document internal number. Field name: RefDocEntr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~ReferencedDocEntry.html
+  field_name: RefDocEntr
+- name: ReferencedDocNumber
+  description: 'Referenced document number. Field name: RefDocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~ReferencedDocNumber.html
+  field_name: RefDocNum
+- name: ReferencedObjectType
+  description: 'Referenced object type. Field name: RefObjType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~ReferencedObjectType.html
+  field_name: RefObjType
+  length: 20
+- name: Remark
+  description: 'Field name: Remark . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentDocumentReferences~Remark.html
+  length: 254

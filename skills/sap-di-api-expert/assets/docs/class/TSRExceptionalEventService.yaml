@@ -1,0 +1,28 @@
+name: TSRExceptionalEventService
+title: TSRExceptionalEventService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService.html
+description: 'The TSRExceptionalEventService service enables you to add, look up, and update Exceptional Events. Source table: OEEV .'
+remarks: Financials->Financial Reports->Accounting->Tax->Tax Summary Report
+methods:
+- name: Add
+  description: Adds an Exceptional Event.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~Add.html
+- name: Get
+  description: Retrieves an Exceptional Event. The Exceptional Event is specified by its key, which is contained in the TSRExceptionalEventParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the TSRExceptionalEventService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the TSRExceptionalEventParamsCollection data collection that identifies all Exceptional Events.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~GetList.html
+- name: Update
+  description: Updates an existing Exceptional Event.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TSRExceptionalEventService~Update.html

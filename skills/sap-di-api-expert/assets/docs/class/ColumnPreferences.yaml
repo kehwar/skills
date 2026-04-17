@@ -1,0 +1,68 @@
+name: ColumnPreferences
+title: ColumnPreferences Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences.html
+description: 'ColumnPreferences is a Data structure related to the FormPreferencesService . Source table: CPRF .'
+remarks: 'To display the Form Preferences settings in the application: - Select a form. From the main menu, select Tools --> Form Settings .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~ToXMLString.html
+properties:
+- name: Column
+  description: 'Sets or returns the column identification key. Field name: ColumnId . Mandatory property for Table fields. The default value is -1 ( Title field). Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~Column.html
+  field_name: ColumnId
+  length: 10
+- name: EditableInExpanded
+  description: 'Determines whether or not the item in the form can be edited in expanded display mode. Field name: EditInEXP .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~EditableInExpanded.html
+  field_name: EditInEXP
+- name: EditableInForm
+  description: 'Determines whether or not the item in the form can be edited in normal display mode (that is, not expanded mode). Field name: EditInForm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~EditableInForm.html
+  field_name: EditInForm
+- name: ExpandedIndex
+  description: 'Sets or returns the expanded index of this column. Field name: ExpandIndx .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~ExpandedIndex.html
+  field_name: ExpandIndx
+- name: FormID
+  description: 'Sets or returns the form identification key. Field name: FormID . Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~FormID.html
+  length: 20
+- name: ItemNumber
+  description: 'Sets or returns the ID of the field or the table in a form (primary key with FormID ). Field name: ItemID . Mandatory property. Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~ItemNumber.html
+  field_name: ItemID
+  length: 10
+- name: TabsLayout
+  description: 'Sets or returns the display order of the item in the form. For example, set 1 to display the form item in the first column in the table (starting from left). Field name: VisualIndx .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~TabsLayout.html
+  field_name: VisualIndx
+- name: User
+  description: 'Sets or returns the signature of the user that sets this column. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~User.html
+  field_name: UserSign
+- name: VisibleInExpanded
+  description: 'Determines whether or not the item in the form is visible in expanded display mode. Field name: VisInExpnd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~VisibleInExpanded.html
+  field_name: VisInExpnd
+- name: VisibleInForm
+  description: 'Determines whether or not the item is visible in the form in normal display mode (that is, not expanded mode). Field name: VisInForm .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~VisibleInForm.html
+  field_name: VisInForm
+- name: Width
+  description: 'Sets or returns the number of characters to determine the column width. Mandatory property. Field name: Width .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ColumnPreferences~Width.html

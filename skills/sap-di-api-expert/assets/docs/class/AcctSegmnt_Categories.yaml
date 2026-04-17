@@ -1,0 +1,29 @@
+name: AcctSegmnt_Categories
+title: AcctSegmnt_Categories Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories.html
+description: 'The category of the account segmentation. Source table: OASC .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~SetCurrentLine.html
+properties:
+- name: Code
+  description: 'The code of the segment. Field name: Code . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~Code.html
+  length: 20
+- name: Name
+  description: 'The name of the segment. Field name: Name . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~Name.html
+  length: 100
+- name: SegmentID
+  description: 'The ID of the segment. Field name: SegmentId.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~SegmentID.html
+  field_name: SegmentId
+- name: ShortName
+  description: 'The short name of the segment. SAP Business One uses this short name when creating automatic names for your G/L accounts. Field name: ShortName . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AcctSegmnt_Categories~ShortName.html
+  length: 10

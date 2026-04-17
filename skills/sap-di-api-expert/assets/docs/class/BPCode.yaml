@@ -1,0 +1,56 @@
+name: BPCode
+title: BPCode Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode.html
+description: 'BPCode is a data structure related to the BusinessPartnersService . Source table: OPB1 .'
+remarks: 'To display the form related to the data structure: - Select Administration --> System Initialization --> Openning Balances --> Busines Partners Openning Balance.'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~ToXMLString.html
+properties:
+- name: BpCtrlAcct
+  description: property BpCtrlAcct
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~BpCtrlAcct.html
+- name: Code
+  description: 'Sets or returns the business partner code for which to create an opening balance. Field name: CardCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~Code.html
+  field_name: CardCode
+  length: 15
+- name: Credit
+  description: Sets or returns the amount to credit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~Credit.html
+- name: Debit
+  description: Sets or returns the amount to debit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~Debit.html
+- name: DueDate
+  description: Sets or returns the due date of the transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~DueDate.html
+- name: ForeignCredit
+  description: Sets or returns the amount, in foreign currency, to credit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~ForeignCredit.html
+- name: ForeignCurrency
+  description: 'Sets or returns the foreign currency code used in the transaction. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~ForeignCurrency.html
+  length: 3
+- name: ForeignDebit
+  description: Sets or returns the amount, in foreign currency, to debit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~ForeignDebit.html
+- name: SystemCredit
+  description: Sets or returns the amount, in system currency, to credit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~SystemCredit.html
+- name: SystemDebit
+  description: Sets or returns the amount, in system currency, to debit the business partner account.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCode~SystemDebit.html

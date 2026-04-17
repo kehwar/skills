@@ -1,0 +1,25 @@
+name: UserValidValues
+title: UserValidValues Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues.html
+description: 'UserValidValues is an object related to the FormattedSearches object. It enables to define valid values for the field specified by the FormattedSearches object. Source table: CUVV .'
+remarks: 'This object is relevant for fields that their search Action is set to bofsaValidValues . To display the form in the application: - Open a document and click any field. From the menu bar, select Tools --> Search Function --> Define . In the Define Formatted Search form, select the Search in Existing Values option. Click the [...] button. The Define Field Values form opens.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues~Count.html
+- name: FieldValue
+  description: 'Sets or returns the valid value of the field that is specified in the Index property of the FormattedSearches object. Field name: Value . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues~FieldValue.html
+  field_name: Value
+  length: 254
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UserValidValues~UserFields.html

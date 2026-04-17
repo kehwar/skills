@@ -1,0 +1,171 @@
+name: BPBankAccounts
+title: BPBankAccounts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts.html
+description: 'BPBankAccounts is a business object that represents the bank accounts of the business partner. Source table: OCRB .'
+remarks: 'To display the form in the application: - Select Business Partners --> Business Partner Master Data . Select Payment Terms tab. Near the Bank Country field, click the Choose icon.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~SetCurrentLine.html
+properties:
+- name: ABARoutingNumber
+  description: 'The ABA routing number to identify the financial institution upon which payment was drawn. Field name: ABARoutNum . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~ABARoutingNumber.html
+  field_name: ABARoutNum
+  length: 25
+- name: AccountName
+  description: 'Returns the Business partner''s Account Name . Field name: AcctName . Length: 100 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~AccountName.html
+  field_name: AcctName
+  length: 100
+- name: AccountNo
+  description: 'Sets or returns the bank account number. Field name: Account . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~AccountNo.html
+  field_name: Account
+  length: 50
+- name: BankCode
+  description: 'Sets or returns the bank code as defined in the Banks object. Field name: BankCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~BankCode.html
+  length: 30
+- name: BICSwiftCode
+  description: 'The BIC/SWIFT code to be used in transactions and messages between banks. Field name: SwiftNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~BICSwiftCode.html
+  field_name: SwiftNum
+  length: 50
+- name: BIK
+  description: 'Returns the Business partner''s Bank Identification Key. Field name: BIK . Length: 15 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~BIK.html
+  length: 15
+- name: Block
+  description: 'Sets or returns the block address of the bank. Field name: Block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Block.html
+  length: 100
+- name: BPCode
+  description: 'Sets or returns the business partner identification code. Field name: CardCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~BPCode.html
+  field_name: CardCode
+  length: 15
+- name: Branch
+  description: 'Sets or returns the branch number. Field name: Branch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Branch.html
+  length: 50
+- name: BuildingFloorRoom
+  description: 'Sets or returns the additional bank address details, such as building number, floor number, and room number. Field name: Building . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~BuildingFloorRoom.html
+  field_name: Building
+- name: City
+  description: 'Sets or returns the city of the bank address. Field name: City . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~City.html
+  length: 100
+- name: ControlKey
+  description: 'Sets or returns the bank control key of the business partner. Field name: ControlKey . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~ControlKey.html
+  length: 2
+- name: CorrespondentAccount
+  description: 'Returns a G/L account number for the the Business partner''s Correspondent Account . Field name: CorresAcct . Field name: CorresAcct . Length: 30 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~CorrespondentAccount.html
+  field_name: CorresAcct
+  length: 30
+- name: Count
+  description: Returns the total number of bank accounts of the business partners.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Count.html
+- name: Country
+  description: 'Sets or returns the country code of the bank. Field name: Country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Country.html
+  length: 3
+- name: County
+  description: 'Sets or returns the county of the bank. Field name: County . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~County.html
+  length: 100
+- name: CustomerIdNumber
+  description: 'Sets or returns the customer Id. number. Field name: CustIdNum . Field name: CustIdNum . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~CustomerIdNumber.html
+  field_name: CustIdNum
+  length: 254
+- name: Fax
+  description: 'Returns the Business partner''s Bank FAX number. Field name: FAX . Length: 25 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Fax.html
+  field_name: FAX
+  length: 25
+- name: IBAN
+  description: 'Sets or returns the International Bank Account Number (IBAN) for the business partner. Field name: IBAN . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~IBAN.html
+  length: 50
+- name: InternalKey
+  description: 'Sets or returns the internal key identifier of the bank.Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~InternalKey.html
+  field_name: AbsEntry
+- name: ISRBillerID
+  description: 'Sets or returns the business partner ISR biller Id. Field name: ISRBillerI . Length: 9 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~ISRBillerID.html
+  field_name: ISRBillerI
+  length: 9
+- name: ISRType
+  description: 'Sets or returns the ISR type. Field name: ISRType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~ISRType.html
+- name: LogInstance
+  description: 'Sets or returns the key identifier of the log instance. Each activity with the BPBankAccount is logged to the ACRB log table with the LogInstance identifier.Field name: LogInstanc . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~LogInstance.html
+  field_name: LogInstanc
+  length: 3
+- name: MandateExpDate
+  description: property MandateExpDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~MandateExpDate.html
+- name: MandateID
+  description: 'The code to identify the direct debit mandate between the business partner and the company. Field name: MandateID . Length: 35 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~MandateID.html
+  length: 35
+- name: Phone
+  description: 'Returns the Business partner''s Bank Phone number. Field name: Phone . Length: 50 characters. The object is applicable for SAP Business One 2004C CEE (country-specific for Russia)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Phone.html
+  length: 50
+- name: SEPASeqType
+  description: property SEPASeqType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~SEPASeqType.html
+- name: SignatureDate
+  description: 'The date on which the mandate is signed. Field name: SignDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~SignatureDate.html
+  field_name: SignDate
+- name: State
+  description: 'Sets or returns the state code of the business partner bank account. Field name: State . Length: 3 characters. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~State.html
+  length: 3
+- name: Street
+  description: 'Sets or returns the street of the bank address. Field name: State . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~Street.html
+  field_name: State
+  length: 100
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~UserFields.html
+- name: UserNo1
+  description: 'Sets or returns the payee bank user number 1 or password. User numbers 1 - 4 are used to identify the payment file. Field name: UsrNumber1 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~UserNo1.html
+  field_name: UsrNumber1
+  length: 25
+- name: UserNo2
+  description: 'Sets or returns the payee bank user number 2 or password. User numbers 1 - 4 are used to identify the payment file. Field name: UsrNumber2 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~UserNo2.html
+  field_name: UsrNumber2
+  length: 25
+- name: UserNo3
+  description: 'Sets or returns the payee bank user number 3 or password. User numbers 1 - 4 are used to identify the payment file. Field name: UsrNumber3 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~UserNo3.html
+  field_name: UsrNumber3
+  length: 25
+- name: UserNo4
+  description: 'Sets or returns the payee bank user number 4 or password. User numbers 1 - 4 are used to identify the payment file. Field name: UsrNumber4 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~UserNo4.html
+  field_name: UsrNumber4
+  length: 25
+- name: ZipCode
+  description: 'Sets or returns the zip code of the bank address. Field name: ZipCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPBankAccounts~ZipCode.html
+  length: 20

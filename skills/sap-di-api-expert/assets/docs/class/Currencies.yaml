@@ -1,0 +1,107 @@
+name: Currencies
+title: Currencies Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies.html
+description: 'Currencies is a business object that represents the currency codes in the Administration module. This object enables you to: - Add a currency code. Retrieve a currency code by its key. Update a currency code. Remove a currency code. Save the object in XML format. Source table: OCRN .'
+remarks: 'Mandatory fields in SAP Business One: Code and DocumentsCode . To display the form in the application: - Select Administration --> Setup --> Financials --> Currencies .'
+methods:
+- name: Add
+  description: Adds a new currency rate.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Browser.html
+- name: Code
+  description: 'Sets or returns the currency code, for example, USD, EUR. Field name: CurrCode . Mandatory property. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Code.html
+  field_name: CurrCode
+  length: 3
+- name: Decimals
+  description: Sets or returns a value that specifies the decimal rounding type for the currency.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Decimals.html
+- name: DocumentsCode
+  description: 'Sets or returns the currency internatioanl code on printed documents (e.g. $, ? ). Field name: DocCurrCod . Mandatory property. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~DocumentsCode.html
+  field_name: DocCurrCod
+  length: 3
+- name: EnglishHundredthName
+  description: 'Sets or returns the English singular name of the decimal unit (e.g. Cent). Field name: F100Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~EnglishHundredthName.html
+  field_name: F100Name
+  length: 20
+- name: EnglishName
+  description: 'Sets or returns the English singular name of the currency (e.g. Canadian Dollar). Field name: FrgnName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~EnglishName.html
+  field_name: FrgnName
+  length: 20
+- name: HundredthName
+  description: 'Sets or returns the singular name of the decimal unit (e.g. Cent) on printed checks. Field name: Chk100Name . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~HundredthName.html
+  field_name: Chk100Name
+  length: 20
+- name: InternationalDescription
+  description: 'Sets or returns the international singular name of the currency on printed chacks (e.g. Canadian Dollar). Field name: ChkName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~InternationalDescription.html
+  field_name: ChkName
+  length: 20
+- name: MaxIncomingAmtDiff
+  description: property MaxIncomingAmtDiff
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~MaxIncomingAmtDiff.html
+- name: MaxIncomingAmtDiffPercent
+  description: property MaxIncomingAmtDiffPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~MaxIncomingAmtDiffPercent.html
+- name: MaxOutgoingAmtDiff
+  description: property MaxOutgoingAmtDiff
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~MaxOutgoingAmtDiff.html
+- name: MaxOutgoingAmtDiffPercent
+  description: property MaxOutgoingAmtDiffPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~MaxOutgoingAmtDiffPercent.html
+- name: Name
+  description: 'Sets or returns the currency name (e.g. Canadian Dollar). Field name: CurrName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Name.html
+  field_name: CurrName
+  length: 20
+- name: PluralEnglishHundredthName
+  description: 'Sets or returns the English plural name of the decimal unit (e.g. Cents). Applicable for cluster B only. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~PluralEnglishHundredthName.html
+  length: 20
+- name: PluralEnglishName
+  description: 'Sets or returns the English plural name of the currency (e.g. Canadian Dollars). Applicable for cluster B only. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~PluralEnglishName.html
+  length: 20
+- name: PluralHundredthName
+  description: 'Sets or returns the plural name of the decimal unit (e.g. Cents) on printed checks. Applicable for cluster B only. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~PluralHundredthName.html
+  length: 20
+- name: PluralInternationalDescription
+  description: 'Sets or returns the international plural name of the currency on printed chacks (e.g. Canadian Dollar). Applicable for cluster B only. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~PluralInternationalDescription.html
+  length: 20
+- name: Rounding
+  description: Sets or returns a valid value that determines the rounding method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~Rounding.html
+- name: RoundingInPayment
+  description: Sets or returns a valid value that determines whether or not to round the total in payments.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~RoundingInPayment.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Currencies~UserFields.html

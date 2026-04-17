@@ -1,0 +1,40 @@
+name: CockpitsService
+title: CockpitsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService.html
+description: 'The CockpitsService service enables you to add, look up, update, and remove cockpits. Source table: OCPT .'
+remarks: 'Note: - If you log on to an SAP Business One company with the cockpit enabled, and you connect to the same company via DI-API, the changes you make to the cockpits via DI-API are lost after you exit the SAP Business One application. It does not affect add/delete operations, only the update operations of the existing cockpits. You can update the cockpits successfully via DI-API without running the SAP Business One application that connects to the same company database. - If you make changes via DI-API to the database tables, the GUI of the SAP Business One application does not get updated immediately. To see the changes you have made via DI-API, re-open the Cockpit Management window. To open the Cockpit Management window, from the SAP Business One menu bar, choose Tools --> Cockpit --> Cockpit Management . Changes via DI-API are also available when you log on again to the company, or restart the SAP Business One application and connect to the company.'
+methods:
+- name: AddCockpit
+  description: Adds a cockpit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~AddCockpit.html
+- name: DeleteCockpit
+  description: Deletes an existing cockpit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~DeleteCockpit.html
+- name: GetCockpit
+  description: Retrieves a specific cockpit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetCockpit.html
+- name: GetCockpitList
+  description: Retrieves the keys and names of all the cockpits.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetCockpitList.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CockpitsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetDataInterfaceFromXMLString.html
+- name: GetTemplateCockpitList
+  description: GetTemplateCockpitList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetTemplateCockpitList.html
+- name: GetUserCockpitList
+  description: GetUserCockpitList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~GetUserCockpitList.html
+- name: PublishCockpit
+  description: PublishCockpit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~PublishCockpit.html
+- name: UpdateCockpit
+  description: Updates an existing cockpit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CockpitsService~UpdateCockpit.html

@@ -1,0 +1,28 @@
+name: AlternativeItemsService
+title: AlternativeItemsService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService.html
+description: 'This service manages alternative items in SAP Business One (add, delete, get by key, and update). Source table: OALI .'
+remarks: To access Alternative Items in the application, choose Inventory > Item Management > Alternative Items .
+methods:
+- name: AddItem
+  description: Adds an alternative item specified in the data structure OriginalItem (ItemCode and ItemName) .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~AddItem.html
+- name: DeleteItem
+  description: Deletes the alternative item specified in data structure OriginalItemParams (ItemCode and ItemName) .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~DeleteItem.html
+- name: GetDataInterface
+  description: Creates empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates data structure from specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates data structure from specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~GetDataInterfaceFromXMLString.html
+- name: GetItem
+  description: Returns an instance of the data structure OriginalItem.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~GetItem.html
+- name: UpdateItem
+  description: Replaces an alternative item with the specified OriginalItem data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlternativeItemsService~UpdateItem.html

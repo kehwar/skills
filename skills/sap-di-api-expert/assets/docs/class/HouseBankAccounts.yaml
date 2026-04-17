@@ -1,0 +1,275 @@
+name: HouseBankAccounts
+title: HouseBankAccounts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts.html
+description: 'The HouseBankAccounts object enables to define the company bank accounts. Source table: DSC1 .'
+remarks: 'Mandatory fields in SAP Business One: BankKey . To display the form in the application: - Select Administration -->Setup -->Banking -->House Bank Accounts .'
+methods:
+- name: Add
+  description: Adds a new record of house bank accounts table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~GetByKey.html
+- name: Remove
+  description: Deletes the current record.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Update.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the identification key of the house bank account as assigned by the system when adding a new entry. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: AccNo
+  description: 'Sets or returns the account number of the house bank. Field name: Account . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AccNo.html
+  field_name: Account
+  length: 50
+- name: AccountCheckDigit
+  description: 'Sets or returns the account check digit. Field name: AccountChk . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AccountCheckDigit.html
+  field_name: AccountChk
+  length: 1
+- name: AccountName
+  description: 'The name of the bank account. Field: AcctName . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AccountName.html
+  length: 250
+- name: AddressType
+  description: Sets or returns the address type, such as, City or Street . This property is applicable for cluster B only (country-specific for Brazil).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AddressType.html
+- name: AgreementNumber
+  description: 'Sets or returns the agreement number. Field name: AgreeNum . Length: 4 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~AgreementNumber.html
+  field_name: AgreeNum
+  length: 4
+- name: BankCode
+  description: 'Returns the bank code as defined in the Banks object. Field name: BankCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BankCode.html
+  length: 30
+- name: BankKey
+  description: 'Sets or returns the foreign key of the bank as defined in the Banks object. Field name: BankKey . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BankKey.html
+- name: BankonCollection
+  description: 'Sets or returns the G/L account for bank on collection of bill-of-exchange transactions. Field name: BankCollec . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BankonCollection.html
+  field_name: BankCollec
+  length: 15
+- name: BankonDiscounted
+  description: 'Sets or returns the G/L account for bank on discounted bill-of-exchange transactions. Field name: BankDiscou . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BankonDiscounted.html
+  field_name: BankDiscou
+  length: 15
+- name: BICSwiftCode
+  description: 'The BIC/SWIFT code to be used in transactions and messages between banks. Field: SwiftNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BICSwiftCode.html
+  length: 50
+- name: BISR
+  description: 'Determines whether or not to enable printing the bank name and address on BISR invoices. Field name: BISR .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BISR.html
+- name: Block
+  description: 'Sets or returns the block of the house bank address. Field name: Block . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Block.html
+  length: 100
+- name: Branch
+  description: 'Sets or returns the branch of the house bank. Field name: Branch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Branch.html
+  length: 50
+- name: BranchCheckDigit
+  description: property BranchCheckDigit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~BranchCheckDigit.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Browser.html
+- name: Building
+  description: 'Sets or returns the Building/Floor/Room details of the house bank address. Field name: Building . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Building.html
+- name: City
+  description: 'Sets or returns the city of the house bank address. Field name: City . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~City.html
+  length: 100
+- name: CollectionCode
+  description: property CollectionCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~CollectionCode.html
+- name: ControlKey
+  description: 'Returns control key of the house bank. Field name: ControlKey . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ControlKey.html
+  length: 2
+- name: Country
+  description: 'Sets or returns the country code of the house bank (for example: DE). Field name: Country . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Country.html
+  length: 3
+- name: County
+  description: 'Sets or returns the county of the house bank address. Field name: County . Length: 100 characters. This is a foreign key to the States table ( OCST - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~County.html
+  length: 100
+- name: CustomerIdNumber
+  description: 'Sets or returns the customer''s Id number. Field name: CustIdNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~CustomerIdNumber.html
+  field_name: CustIdNum
+- name: DaysInAdvance
+  description: 'Sets or returns the number of days in advance. Field name: DaysInAdva .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~DaysInAdvance.html
+  field_name: DaysInAdva
+- name: DebtofDiscountedBillofExc
+  description: 'Sets or returns the G/L account for debt of discounted bill-of-exchange transactions. Field name: DscountBOE . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~DebtofDiscountedBillofExc.html
+  field_name: DscountBOE
+  length: 15
+- name: DiscountAccount
+  description: property DiscountAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~DiscountAccount.html
+- name: DiscountLimit
+  description: 'Sets or returns the maximum discount allowed in a bill-of-exchage payment. Field name: DscntLimit.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~DiscountLimit.html
+  field_name: DscntLimit
+- name: ECheck
+  description: 'Specifies whether the account is relevant for e-check functionality or not. Field name: ECheck.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ECheck.html
+- name: FileSeqNextNumber
+  description: property FileSeqNextNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~FileSeqNextNumber.html
+- name: FineAccount
+  description: property FineAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~FineAccount.html
+- name: GLAccount
+  description: 'Sets or returns the G/L account number related to the house bank. This is a foreign key to ChartOfAccounts object. Field name: GLAccount . Lentgh: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~GLAccount.html
+- name: GLInterimAccount
+  description: 'Sets or returns the G/L account number for intermidiate transactions related to the house bank. G/L accounts are defined through the ChartOfAccounts object. Field name: GLIntriAct . Lentgh: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~GLInterimAccount.html
+  field_name: GLIntriAct
+- name: IBAN
+  description: 'Sets or returns the International Bank Account Number (IBAN). Field name: IBAN . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~IBAN.html
+  length: 50
+- name: ImportFileName
+  description: 'Sets or returns the XML file format from which the system downloads the bank statement data of the bank account. Field name: FilePlug . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ImportFileName.html
+  field_name: FilePlug
+  length: 50
+- name: IncomingPaymentSeries
+  description: 'Sets or returns the numbering series to be used for incoming payment documents that are created through bank statement processing. This is a foreign key to the Series object. Field name: InSeri .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~IncomingPaymentSeries.html
+  field_name: InSeri
+- name: InterestAccount
+  description: property InterestAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~InterestAccount.html
+- name: IOFTaxAccount
+  description: property IOFTaxAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~IOFTaxAccount.html
+- name: ISRBillerID
+  description: 'Sets or returns the ISRBillerId. (country-specific for Switzerland only). Field name: ISRBillerI .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ISRBillerID.html
+  field_name: ISRBillerI
+- name: ISRType
+  description: 'Sets or returns a valid value that determines this house bank account ISR type. Country-specific for Switzerland only. Field name: ISRType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ISRType.html
+- name: JournalEntrySeries
+  description: 'Sets or returns the numbering series to be used for journal entries that are posted through bank statement processing. This is a foreign key to the Series object. Field name: JDTSeri .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~JournalEntrySeries.html
+  field_name: JDTSeri
+- name: LockChecksPrinting
+  description: 'Determines whether or not to prevent printing checks of the same house bank account by different users simultaneously. Field name: LockChk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~LockChecksPrinting.html
+  field_name: LockChk
+- name: MaxAmountofBillofExchan
+  description: 'Sets or returns the maximum amount allowed in a bill-of-exchange payment. Field name: MaxAmntBOE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~MaxAmountofBillofExchan.html
+  field_name: MaxAmntBOE
+- name: MaximumLines
+  description: 'Sets or returns the maximum lines to print in the check stub. Field name: MaxChkLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~MaximumLines.html
+  field_name: MaxChkLine
+- name: MinAmountofBillofExchang
+  description: 'Sets or returns the minimum amount allowed in a bill-of-exchange payment. Field name: MinAmntBOE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~MinAmountofBillofExchang.html
+  field_name: MinAmntBOE
+- name: NextCheckNo
+  description: 'Sets or returns the number for the next check. Field name: NextCheck .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~NextCheckNo.html
+  field_name: NextCheck
+- name: NoValidationForStartingEndingBal
+  description: 'Define whether you can finalize a bank statement even if the difference does not equal zero; and whether the starting balance of your current bank statement can be different to the ending balance of the previous one. Field name: NoValidBal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~NoValidationForStartingEndingBal.html
+  field_name: NoValidBal
+- name: OtherExpensesAccount
+  description: property OtherExpensesAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~OtherExpensesAccount.html
+- name: OtherIncomesAccount
+  description: property OtherIncomesAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~OtherIncomesAccount.html
+- name: OurNumber
+  description: 'Sets or returns the house bank number for Boleto method of payment. This property is applicable for cluser B (country-specific for Brazil). Field name: OurNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~OurNumber.html
+  field_name: OurNum
+- name: OutgoingPaymentSeries
+  description: 'Sets or returns the numbering series to be used for outgoing payment documents that are created through bank statement processing. This is a foreign key to the Series object. Field name: OutSeri .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~OutgoingPaymentSeries.html
+  field_name: OutSeri
+- name: PrintOn
+  description: 'Determines the paper type and printing method of payment checks. Field name: LockChk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~PrintOn.html
+  field_name: LockChk
+- name: RetornoFileName
+  description: property RetornoFileName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~RetornoFileName.html
+- name: ServiceFeeAccount
+  description: property ServiceFeeAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ServiceFeeAccount.html
+- name: State
+  description: 'Sets or returns the state code of the house bank. This is a foreign key to the States table ( OCST ), which is not exposed through the DI API. Field name: State . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~State.html
+  length: 3
+- name: Street
+  description: 'Sets or returns the street of the house bank address. Field name: Street . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~Street.html
+  length: 100
+- name: StreetNo
+  description: Sets or returns the street number of the house bank address. This property is applicable for cluster B only (country-specific for Brazil).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~StreetNo.html
+- name: TemplateName
+  description: 'Sets or returns the layout code of the checks template. The layout code is the key of the ReportLayoutParams object. Field name: TmpltName . Lentgh: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~TemplateName.html
+  field_name: TmpltName
+- name: ToleranceDays
+  description: 'Sets or returns the number of days earlier than the calculated due date to start expecting the bill-of-exchange payment. Field name: TolrnceDay .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ToleranceDays.html
+  field_name: TolrnceDay
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~UserFields.html
+- name: UserNo1
+  description: 'Sets or returns the first number or password, defined by the user, for identifying a payment file for the specific account. Field name: UsrNumber1 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~UserNo1.html
+  field_name: UsrNumber1
+  length: 25
+- name: UserNo2
+  description: 'Sets or returns the second number or password, defined by the user, for identifying a payment file for the specific account. Field name: UsrNumber2 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~UserNo2.html
+  field_name: UsrNumber2
+  length: 25
+- name: UserNo3
+  description: 'Sets or returns the third number or password, defined by the user, for identifying a payment file for the specific account. Field name: UsrNumber3 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~UserNo3.html
+  field_name: UsrNumber3
+  length: 25
+- name: UserNo4
+  description: 'Sets or returns the forth number or password, defined by the user, for identifying a payment file for the specific account. Field name: UsrNumber4 . Length: 25 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~UserNo4.html
+  field_name: UsrNumber4
+  length: 25
+- name: ZipCode
+  description: 'Sets or returns the zip code of the house bank address. Field name: ZipCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~HouseBankAccounts~ZipCode.html
+  length: 20

@@ -1,0 +1,63 @@
+name: BankStatementParams
+title: BankStatementParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams.html
+description: A data structure holding idnetification properties for the BankStatementService .
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~ToXMLString.html
+properties:
+- name: BankAccountKey
+  description: 'Returns the bank account code. Field name: ActKey .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~BankAccountKey.html
+  field_name: ActKey
+- name: Currency
+  description: 'Returns the statement currency. Field name: Currency .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~Currency.html
+- name: EndingBalanceF
+  description: 'Returns the statement end balance in foreign currency. Field name: EndBlncF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~EndingBalanceF.html
+  field_name: EndBlncF
+- name: EndingBalanceL
+  description: 'Returns the statement end balance in local currency. Field name: EndBlncL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~EndingBalanceL.html
+  field_name: EndBlncL
+- name: Imported
+  description: Returns a valid value specifying whether or not the statement created manually or imported from file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~Imported.html
+- name: InternalNumber
+  description: 'Sets or returns the unique ID of the statement in the system. Field name: IdNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~InternalNumber.html
+  field_name: IdNumber
+- name: StartingBalanceF
+  description: 'Returns the statement start balance in foreign currency. Field name: StrtBlncF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~StartingBalanceF.html
+  field_name: StrtBlncF
+- name: StartingBalanceL
+  description: 'Returns the statement start balance in local currency. Field name: StrtBlncL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~StartingBalanceL.html
+  field_name: StrtBlncL
+- name: StatementDate
+  description: 'Returns the statement creation date. Field name: BSDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~StatementDate.html
+  field_name: BSDate
+- name: StatementNumber
+  description: 'Returns the satatement sequential number. Field name: BSNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~StatementNumber.html
+  field_name: BSNum
+- name: Status
+  description: 'Returns a value specifying the statement status. Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BankStatementParams~Status.html

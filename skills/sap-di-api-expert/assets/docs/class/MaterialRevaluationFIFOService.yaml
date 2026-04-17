@@ -1,0 +1,18 @@
+name: MaterialRevaluationFIFOService
+title: MaterialRevaluationFIFOService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationFIFOService.html
+description: The MaterialRevaluationFIFOService service enables you to retrieve the FIFO layers for a specific item and location. You can then use information about the FIFO layers to specify specific layers to revalue ( FIFOLayers ) and provide these to the MaterialRevaluation object. To perform material revaluation, select Inventory --> Inventory Transactions --> Inventory Revaluation .
+methods:
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the MaterialRevaluationFIFOService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationFIFOService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationFIFOService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationFIFOService~GetDataInterfaceFromXMLString.html
+- name: GetMaterialRevaluationFIFO
+  description: Retrieves the FIFO layers for a specific item and location.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~MaterialRevaluationFIFOService~GetMaterialRevaluationFIFO.html

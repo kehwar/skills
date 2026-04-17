@@ -1,0 +1,60 @@
+name: WorkOrder_Lines
+title: WorkOrder_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines.html
+description: 'WorkOrder_Lines is child object of the WorkOrders object that represents a collection of parent items in a work order. The parent item is connected to its bill of material. Source table: WKO1 .'
+remarks: 'Mandatory fields in SAP Business One: ItemCode . To display the form in the application: - Select Production --> Work Order . Note: The properties SerialNumbers and BatchNumbers were removed from this object because they are not supported. If you have an add-on from the previous version 6.5 that includes these properties, a compilation error will occur, therefore you must remove these properties from your add-on.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~SetCurrentLine.html
+properties:
+- name: ActiveAccountCode
+  description: 'Sets or returns the active G/L account code to debit. Field name: ActWorkCod . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ActiveAccountCode.html
+  field_name: ActWorkCod
+  length: 15
+- name: Count
+  description: Returns the total data rows in the WorkOrder_Lines object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~Count.html
+- name: ItemCode
+  description: 'Sets or returns the code of the item ordered for production. Mandatory in SAP Business One. Field name: ItemCode . Length: 20 characters. This is a foreign key to the ProductTrees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ItemCode.html
+  length: 20
+- name: ItemDescription
+  description: 'Returns the item description/name. Field name: Descript . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ItemDescription.html
+  field_name: Descript
+  length: 100
+- name: ItemPrice
+  description: 'Sets or returns the item price. Field name: Price .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ItemPrice.html
+  field_name: Price
+- name: ItemQuantity
+  description: 'Sets or returns the quantity of items to be produced. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ItemQuantity.html
+  field_name: Quantity
+- name: ItemWarehouse
+  description: 'Sets or returns the warehouse where the finished product should be stored. Field name: WhsCode . Length: 8 characters. This is a foreign key to the Warehouses object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~ItemWarehouse.html
+  field_name: WhsCode
+  length: 8
+- name: PriceCurrency
+  description: 'Returns the currency of the item price. Field name: Currency . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~PriceCurrency.html
+  field_name: Currency
+  length: 3
+- name: RowNumber
+  description: 'Returns the current available row number (starts from 1). Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~RowNumber.html
+  field_name: Line_ID
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~UserFields.html
+- name: WorkSum
+  description: 'Sets or returns the labor price. SAP Business One adds this price to the total price ( OrderTotal ). Field name: ActWorkSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WorkOrder_Lines~WorkSum.html
+  field_name: ActWorkSum

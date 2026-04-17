@@ -1,0 +1,34 @@
+name: AssetDocumentService
+title: AssetDocumentService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService.html
+description: 'The AssetDocumentService service enables you to add, look up, update, cancel, and remove asset documents. Source table: OACQ .'
+remarks: From the SAP Business One Main Menu , choose Financials --> Fixed Assets.
+methods:
+- name: Add
+  description: Adds an asset document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~Add.html
+- name: Cancel
+  description: Cancels an existing asset document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~Cancel.html
+- name: Delete
+  description: Deletes an existing asset document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~Delete.html
+- name: Get
+  description: Retrieves an asset document. The asset document is specified by its key, which is contained in the AssetDocumentParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the AssetDocumentService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the AssetDocumentParamsCollection data collection that identifies all asset documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~GetList.html
+- name: Update
+  description: Updates an existing asset document. The data for the asset document, including the key of the asset document to be updated, is contained in the AssetDocument object passed to the method. To update an asset document, you must first retrieve it using the Get method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AssetDocumentService~Update.html

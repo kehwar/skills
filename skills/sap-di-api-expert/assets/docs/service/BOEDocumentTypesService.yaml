@@ -1,0 +1,30 @@
+name: BOEDocumentTypesService
+title: BOEDocumentTypesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService.html
+description: 'This service manages document types in SAP Business One. Mandatory properties: DocDescription , DocType . Source table: ODTY .'
+methods:
+- name: AddBOEDocumentType
+  description: Adds a DocumentType with DocType and DocDescription as specified in the BOEDocumentType data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~AddBOEDocumentType.html
+- name: DeleteBOEDocumentType
+  description: Deletes a DocumentType with DocEntry specified in BOEDocumentTypeParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~DeleteBOEDocumentType.html
+- name: GetBOEDocumentType
+  description: Returns an instance of the BOEDocumentType data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~GetBOEDocumentType.html
+- name: GetBOEDocumentTypeList
+  description: Returns a collection of instances for the BOEDocumentTypes data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~GetBOEDocumentTypeList.html
+- name: GetDataInterface
+  description: Creates an empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates a data structure from specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates a data structure from a specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~GetDataInterfaceFromXMLString.html
+- name: UpdateBOEDocumentType
+  description: Replaces DocType and DocDescription of DocumentType with the specified BOEDocumentTypes data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEDocumentTypesService~UpdateBOEDocumentType.html

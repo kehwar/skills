@@ -1,0 +1,48 @@
+name: SalesOpportunitiesCompetition
+title: SalesOpportunitiesCompetition Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition.html
+description: 'SalesOpportunityCompetition is a child object of the SalesOpportunities object that represents the competitors of the sales opportunity. Source table: OPR3 .'
+remarks: 'To display the form in the application: - Select Sales Opportunities --> Sales Opportunity . - Select the Competitors tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~SetCurrentLine.html
+properties:
+- name: Competition
+  description: 'Sets or returns the Competitors Id. This is a foreign key to the Competitors table ( OCMT ), which is exposed via the SalesOpportunityCompetitorSetup object. Field name: CompetId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~Competition.html
+  field_name: CompetId
+- name: Count
+  description: Returns the total number of rows in the SalesOpportunitiesCompetition list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~Count.html
+- name: Details
+  description: 'Sets or returns the details for the sales opportunity competition. Field name: Details . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~Details.html
+  length: 50
+- name: RowNo
+  description: 'Returns the current available row number (starts from 1). Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~RowNo.html
+  field_name: Line
+- name: SequenceNo
+  description: 'Returns the sales opportunity unique ID (primary key). Field name: OpportId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~SequenceNo.html
+  field_name: OpportId
+- name: ThreatLevel
+  description: 'The threat level for a sales opportunity competitor. Field name: ThreatLevl .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~ThreatLevel.html
+  field_name: ThreatLevl
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~UserFields.html
+- name: WonOrLost
+  description: 'Sets or returns a valid value that determines whether the company won or lost the sales opportunity. Field name: Won . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesCompetition~WonOrLost.html
+  field_name: Won
+  length: 1

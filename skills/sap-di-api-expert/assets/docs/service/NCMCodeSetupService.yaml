@@ -1,0 +1,31 @@
+name: NCMCodeSetupService
+title: NCMCodesSetupService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService.html
+description: 'The NCMCodesSetupService service enables you to add, look up and remove NCM codes in the NCM codes master data table. NCM codes can be assigned to items via the NCMCode field of the Items object. To see the list of NCM codes, select Inventory --> Item Master Data, and select an item. In the NCM Code field, select Define New . Source table: ONCM'
+remarks: Relevant for Brazil only.
+methods:
+- name: AddNCMCodeSetup
+  description: Adds an NCM code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~AddNCMCodeSetup.html
+- name: DeleteNCMCodeSetup
+  description: Deletes an existing NCM code. The NCM code is specified by its key ( AbsEntry ), which is contained in the NCMCodeSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~DeleteNCMCodeSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the NCMCodesSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~GetDataInterfaceFromXMLString.html
+- name: GetNCMCodeSetup
+  description: Retrieves an NCM code. The NCM code is specified by its key ( AbsEntry ), which is contained in the NCMCodeSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~GetNCMCodeSetup.html
+- name: GetNCMCodeSetupList
+  description: Retrieves the keys and names of all the NCM codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~GetNCMCodeSetupList.html
+- name: UpdateNCMCodeSetup
+  description: Updates an existing NCM code. The data for the NCM code, including the key of the NCM code to be updated, is contained in the NCMCodeSetup object passed to the method. To update a NCM code, you must first retrieve it using the GetNCMCodeSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~NCMCodesSetupService~UpdateNCMCodeSetup.html

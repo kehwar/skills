@@ -1,0 +1,106 @@
+name: Budget_Lines
+title: Budget_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines.html
+description: 'Budget_Lines is a child object of Budget object and represents the budget item details of an account. Source table: BGT1 .'
+remarks: 'The budget item details of an account contains 12 lines, one for each monthly budget. The monthly budget percentage ( PrecentOfAnnualBudgetAmount ) depends on the budget distribution method ( DivisionCode ). To initialize the budget management: - Select Administration --> System Initialization --> General Settings . In the Budget tab, select Budget Initialization . Set the budget initialization parameters and click OK. To display the form in the application: - Select Financials --> Budget --> Define Budget . In the Define Budget dialog box, select a scenario and click OK. The budget management window opens. Click the number of a budget entry in the budget management table. The budget item details window opens.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~SetCurrentLine.html
+properties:
+- name: AccountCode
+  description: 'Returns the G/L account code as defined in Chart of Accounts. Field name: AcctCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~AccountCode.html
+  field_name: AcctCode
+  length: 15
+- name: BalSysTotCredit
+  description: 'Returns the line budget balance in system currency of the revenue account (credit side), based on the journal transactions. Field name: CredSTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BalSysTotCredit.html
+  field_name: CredSTotal
+- name: BalSysTotDebit
+  description: 'Returns the line budget balance in system currency of the account (debit side), based on the journal transactions. Field name: DebSTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BalSysTotDebit.html
+  field_name: DebSTotal
+- name: BalTotCredit
+  description: 'Returns the line budget balance in local currency of the revenue account (credit side), based on the journal transactions. Field name: CredLTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BalTotCredit.html
+  field_name: CredLTotal
+- name: BalTotDebit
+  description: 'Returns the line budget balance in local currency of the account (debit side), based on the journal transactions. Field name: DebLTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BalTotDebit.html
+  field_name: DebLTotal
+- name: BudgetKey
+  description: 'Returns the identification key of the budget as assigned by SAP Business One. Field name: BudgId . This is a foreign key to the Budget object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BudgetKey.html
+  field_name: BudgId
+- name: BudgetSysTotCredit
+  description: 'Returns the budget in the line in system currency of the revenue account (credit side). Field name: CredSTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BudgetSysTotCredit.html
+  field_name: CredSTotal
+- name: BudgetSysTotDebit
+  description: 'Returns the budget in the line in system currency of the account (debit side). Field name: DebSTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BudgetSysTotDebit.html
+  field_name: DebSTotal
+- name: BudgetTotCredit
+  description: 'Returns the budget in the line in local currency of the revenue account (credit side). Field name: CrdRLTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BudgetTotCredit.html
+  field_name: CrdRLTotal
+- name: BudgetTotDebit
+  description: 'Returns the budget in the line in local currency of the account (debit side). Field name: DebRLTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~BudgetTotDebit.html
+  field_name: DebRLTotal
+- name: Count
+  description: Returns the total budget rows.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~Count.html
+- name: FutExpenCredit
+  description: 'Returns the expense amount in the line (in local currency) of open purchase orders and purchase delivery notes related to the revenue account (credit side). Field name: FtrOCRLSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutExpenCredit.html
+  field_name: FtrOCRLSum
+- name: FutExpenDebit
+  description: 'Returns the expense amount in the line (in local currency) of open purchase orders and purchase delivery notes related to the account (debit side). Field name: FtrODRLSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutExpenDebit.html
+  field_name: FtrODRLSum
+- name: FutExpenSysCredit
+  description: 'Returns the expense amount in the line (in system currency) of open purchase orders and purchase delivery notes related to the revenue account (credit side). Field name: FtrOCRSSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutExpenSysCredit.html
+  field_name: FtrOCRSSum
+- name: FutExpenSysDebit
+  description: 'Returns the expense amount in the line (in system currency) of open purchase orders and purchase delivery notes related to the account (debit side). Field name: FtrODRSSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutExpenSysDebit.html
+  field_name: FtrODRSSum
+- name: FutIncomesCredit
+  description: 'Returns the future income in the line (in local currency) related to the revenue account (credit side). Field name: FtrICRLSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutIncomesCredit.html
+  field_name: FtrICRLSum
+- name: FutIncomesSysCredit
+  description: 'Returns the future income in the line (in system currency) related to the revenue account (credit side). Field name: FtrICRSSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutIncomesSysCredit.html
+  field_name: FtrICRSSum
+- name: FutIncomesSysDebit
+  description: 'Returns the future revenue in the line (in system currency) related to the account (debit side). Field name: FtrIDRSSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutIncomesSysDebit.html
+  field_name: FtrIDRSSum
+- name: FutureIncomeDeb
+  description: 'Returns the future revenue in the line (in local currency) related to the account (debit side). Field name: FtrIDRLSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~FutureIncomeDeb.html
+  field_name: FtrIDRLSum
+- name: PrecentOfAnnualBudgetAmount
+  description: 'Returns the percentage of the annual budget amount for calculating the monthly budget. The value of this property depends on the budget distribution method ( DivisionCode ). Field name: MonthPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~PrecentOfAnnualBudgetAmount.html
+  field_name: MonthPrcnt
+- name: RowDetails
+  description: 'Sets or returns a description about the monthly budget. Length: 50 characters. Field name: LineMemo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~RowDetails.html
+  field_name: LineMemo
+  length: 50
+- name: RowNumber
+  description: 'Returns the current available row number (month). Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~RowNumber.html
+  field_name: Line_ID
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Budget_Lines~UserFields.html

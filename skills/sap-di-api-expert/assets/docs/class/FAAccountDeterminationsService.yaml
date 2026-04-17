@@ -1,0 +1,31 @@
+name: FAAccountDeterminationsService
+title: FAAccountDeterminationsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService.html
+description: 'The FAAccountDeterminationsService service enables you to define and view different sets of G/L accounts for your fixed assets. Source table: OADT .'
+remarks: To open the Account Determination - Setup window, from the SAP Business One Main Menu , choose Administration --> Setup --> Financials --> Fixed Assets --> Account Determination .
+methods:
+- name: Add
+  description: Adds a fixed asset account determination rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~Add.html
+- name: Delete
+  description: Deletes an existing fixed asset account determination rule.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~Delete.html
+- name: Get
+  description: Retrieves a fixed asset account determination rule. The fixed asset account determination rule is specified by its key, which is contained in the FAAccountDeterminationParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the FAAccountDeterminationsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the FAAccountDeterminationParamsCollection data collection that identifies all fixed asset account determination rules.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~GetList.html
+- name: Update
+  description: Updates an existing fixed asset account determination rule. The data for the fixed asset account determination rule, including the key of the fixed asset account determination rule to be updated, is contained in the FAAccountDetermination object passed to the method. To update a fixed asset account determination rule, you must first retrieve it using the Get method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~FAAccountDeterminationsService~Update.html

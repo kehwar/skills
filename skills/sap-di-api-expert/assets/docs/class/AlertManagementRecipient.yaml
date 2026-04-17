@@ -1,0 +1,43 @@
+name: AlertManagementRecipient
+title: AlertManagementRecipient Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient.html
+description: 'is a data structure related to the AlertManagementService and defines the properties of the AlertManagementService ''s recipient. Source table: ALT1 .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object's data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~ToXMLString.html
+properties:
+- name: Code
+  description: 'Returns the Internal Number of this alert''s Recipient. Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~Code.html
+- name: SendEmail
+  description: 'Sets or returns valid value that determines whether or not to alert the recipient by sending an email. Field name: SendEMail .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~SendEmail.html
+  field_name: SendEMail
+- name: SendFax
+  description: 'Sets or returns valid value that determines whether or not to alert the recipient by sending a FAX. Field name: SendFax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~SendFax.html
+- name: SendInternal
+  description: 'Sets or returns valid value that determines whether or not to alert the recipient by sending Internal message. Field name: SendIntrnl .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~SendInternal.html
+  field_name: SendIntrnl
+- name: SendSMS
+  description: 'Sets or returns valid value that determines whether or not to alert the recipient by sending an SMS message. Field name: SendSMS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~SendSMS.html
+- name: UserCode
+  description: 'Sets or returns the User Signature . Field name: UserSign . This is foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AlertManagementRecipient~UserCode.html
+  field_name: UserSign

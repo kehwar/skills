@@ -1,0 +1,153 @@
+name: Users
+title: Users Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users.html
+description: 'Users is a business object that represents the users table of the SAP Business One application. The users table includes the users list, login details, and authorizations. This object enables you to: - Add users to the users list. Retrieve user''s details by its key. Update user''s details. Remove users from the users list. Save the object in XML format. Source table: OUSR .'
+remarks: 'Mandatory fields in SAP Business One: UserCode and UserPassword . To display the form in the application: - Select Administration --> Setup --> General --> Users .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Add.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~GetByKey.html
+- name: Remove
+  description: Deletes a user from the users list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Remove.html
+- name: RemoveUserAndLicense
+  description: Removes the user and their license allocation.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~RemoveUserAndLicense.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Update.html
+properties:
+- name: Branch
+  description: 'Sets or returns the user''s branch code. Field name: Branch . This is a foreign key to the Branches table ( OUBR - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Branch.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Browser.html
+- name: CashLimit
+  description: 'Indicates whether to set the maximum cash amount a regular user is authorized to enter in an incoming payment ( Payment Means window, Cash tab). Field name: CashLimit .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~CashLimit.html
+- name: Defaults
+  description: 'Sets or returns the users group code. Length: 8 characters. Field name: DfltsGroup . This is a foreign key to the UserDefaultGroups object , which provides the default values related to the users group.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Defaults.html
+  field_name: DfltsGroup
+  length: 8
+- name: Department
+  description: 'Sets or returns the user''s department code. Field name: Department . This is a foreign key to the Departments table ( OUDP ), which is exposed via the DepartmentsService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Department.html
+- name: eMail
+  description: 'Sets or returns the user''s e-mail that can be used by the system for sending messages to the user. Field name: E_Mail . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~eMail.html
+  field_name: E_Mail
+  length: 100
+- name: FaxNumber
+  description: 'Sets or returns the user''s fax number that can be used by the system for sending messages to the user. Field name: Fax . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~FaxNumber.html
+  field_name: Fax
+  length: 50
+- name: Group
+  description: 'Returns a valid value that determines whether the user group status is Regular or Deleted . Field name: GROUPS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Group.html
+  field_name: GROUPS
+- name: InternalKey
+  description: 'Returns the internal key identifier of a user. This is a serial number assigned by the system used as a reference for other documents in the system. Field name: INTERNAL_K .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~InternalKey.html
+  field_name: INTERNAL_K
+- name: LanguageCode
+  description: Language code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LanguageCode.html
+- name: LastLoginTime
+  description: 'The time at which the user last logged on to SAP Business One. Field name: LstLoginT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LastLoginTime.html
+  field_name: LstLoginT
+- name: LastLogoutDate
+  description: 'The date on which the user last logged off from SAP Business One. Field name: LstLogoutD .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LastLogoutDate.html
+  field_name: LstLogoutD
+- name: LastLogoutTime
+  description: 'The time at which the user last logged off from SAP Business One. Field name: LstLogoutT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LastLogoutTime.html
+  field_name: LstLogoutT
+- name: LastPasswordChangedBy
+  description: 'The user who last changed the password. Field name: LstPwdChB .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LastPasswordChangedBy.html
+  field_name: LstPwdChB
+- name: LastPasswordChangeTime
+  description: 'The time at which the password was last changed. Field name: LstPwdChT .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~LastPasswordChangeTime.html
+  field_name: LstPwdChT
+- name: Locked
+  description: 'Returns a valid value that determines whether the user status is Locked or or not. Field name: Locked .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Locked.html
+- name: MaxCashAmtForIncmngPayts
+  description: 'Sets the maximum cash amount a regular user is authorized to enter in an incoming payment ( Payment Means window, Cash tab). Field name: MaxCashSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~MaxCashAmtForIncmngPayts.html
+  field_name: MaxCashSum
+- name: MaxDiscountGeneral
+  description: 'Sets the maximum discount (in percentage) relevant to all discounts, except for sales and purchase documents, including: Business partner master data Payment terms Discount in goods issue, goods receipt, and inventory transfer Special price Field name: Discoun t.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~MaxDiscountGeneral.html
+  field_name: Discoun
+- name: MaxDiscountPurchase
+  description: 'Sets the maximum discount (in percentage) for purchase documents. Field name: PurchDisc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~MaxDiscountPurchase.html
+  field_name: PurchDisc
+- name: MaxDiscountSales
+  description: 'Sets the maximum discount (in percentage) for sales documents. Field name: SalesDisc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~MaxDiscountSales.html
+  field_name: SalesDisc
+- name: MobilePhoneNumber
+  description: 'Sets or returns the user''s mobile phone number that can be used by the system for sending SMS messages to the user. Field name: PortNum . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~MobilePhoneNumber.html
+  field_name: PortNum
+  length: 50
+- name: NaturalPer
+  description: 'This shows whether the business partner is natural person or not. Field name: NaturalPer .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~NaturalPer.html
+- name: Superuser
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the user is a super-user. Super-users have automatic authorizations to all objects and are authorized to perform all functions in the system. Authorizations for super-users cannot be reduced or changed. However, super-users can deny super-user rights from other super-users in the system. Field name: SUPERUSER .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~Superuser.html
+  field_name: SUPERUSER
+- name: UserActionRecord
+  description: To display a list of actions and details related to a specific user's access activity in SAP Business One.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserActionRecord.html
+- name: UserBranchAssignment
+  description: property UserBranchAssignment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserBranchAssignment.html
+- name: UserCode
+  description: 'Sets or returns the unique user code for log on to the system. Length: 8 characters (case-sensitive). Mandatory property. Field name: USER_CODE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserCode.html
+  field_name: USER_CODE
+  length: 8
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserFields.html
+- name: UserGroupByUser
+  description: property UserGroupByUser
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserGroupByUser.html
+- name: UserName
+  description: 'Sets or returns the user name used for information only and not for reference. The user name can be non unique. Field name: U_Name . Length: 155 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserName.html
+  field_name: U_Name
+  length: 155
+- name: UserPassword
+  description: 'Sets or returns the password for log on to the system. The password must be unique. Length: 4 to 8 characters (case-sensitive). Mandatory property. Field name: PASSWORD .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserPassword.html
+  field_name: PASSWORD
+- name: UserPermission
+  description: Returns the UserPermission child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Users~UserPermission.html

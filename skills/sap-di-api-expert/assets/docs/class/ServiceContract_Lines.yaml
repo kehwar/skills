@@ -1,0 +1,60 @@
+name: ServiceContract_Lines
+title: ServiceContract_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines.html
+description: 'ServiceContract_Lines is a child object of the ServiceContracts object that represents the line entries of each service contract. This object is part of the Service module. Source table: CTR1 .'
+remarks: 'To display the form in the application: - Select Service --> Service Contract . - Select the Items tab.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total data rows in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~Count.html
+- name: EndDate
+  description: 'Sets or returns the end date of the service contract for a specified item group. Field name: EndDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~EndDate.html
+- name: InternalSerialNum
+  description: 'Sets or returns the unique internal serial number of the item. Field name: InternalSN . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~InternalSerialNum.html
+  field_name: InternalSN
+  length: 32
+- name: ItemCode
+  description: 'Sets or returns the item code. Field name: ItemCode . Length: 20 characters. This is a foreign key to the Items object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~ItemCode.html
+  length: 20
+- name: ItemGroup
+  description: 'Sets or returns the code of the item group. Field name: ItemGroup . This is a foreign key to the ItemGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~ItemGroup.html
+- name: ItemGroupName
+  description: 'Returns the name of the ItemGroup . Field name: ItmGrpName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~ItemGroupName.html
+  field_name: ItmGrpName
+  length: 20
+- name: ItemName
+  description: 'Sets or returns the item name. Field name: ItemName . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~ItemName.html
+  length: 200
+- name: LineNum
+  description: 'Returns the current row number. Field name: Line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~LineNum.html
+  field_name: Line
+- name: ManufacturerSerialNum
+  description: 'Sets or returns the unique manufacturer serial number of the item. Field name: ManufSN . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~ManufacturerSerialNum.html
+  field_name: ManufSN
+  length: 32
+- name: StartDate
+  description: 'Sets or returns the start date of the service contract for a specified item group. Field name: StartDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~StartDate.html
+- name: TerminationDate
+  description: 'Sets or returns the termination date of the service contract. Field name: TermDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~TerminationDate.html
+  field_name: TermDate
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceContract_Lines~UserFields.html

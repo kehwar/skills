@@ -1,0 +1,80 @@
+name: PickLists
+title: PickLists Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists.html
+description: 'The PickLists object supports the picking process of items from the warehouse. The picking process is applicable only for items that are already approved in sales orders. Source table: OPKL .'
+remarks: To display the form in the application, select Inventory --> Pick and Pack --> Pick List .
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Add.html
+- name: Close
+  description: Closes a record of the object in SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~GetAsXML.html
+- name: GetByKey
+  description: Retrieves the values of the object's properties by the object's absolute key from the Company database. Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~GetByKey.html
+- name: GetReleasedAllocation
+  description: GetReleasedAllocation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~GetReleasedAllocation.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Update.html
+- name: UpdateReleasedAllocation
+  description: method UpdateReleasedAllocation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~UpdateReleasedAllocation.html
+properties:
+- name: AbsoluteEntry
+  description: 'Returns the pick list number (sequential) as assigned by the system. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~AbsoluteEntry.html
+  field_name: AbsEntry
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Browser.html
+- name: CreateQRCodeFrom
+  description: Holds some document data, which are used to create QR code for that particular document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~CreateQRCodeFrom.html
+- name: Lines
+  description: Returns the PickLists_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Lines.html
+- name: Name
+  description: 'Sets or returns the name of the employee who is responsible for the picking (picker). Field name: Name . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Name.html
+  length: 30
+- name: ObjectType
+  description: 'Returns the type of the table (in this case OPKL ). Field name: ObjType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~ObjectType.html
+  field_name: ObjType
+  length: 20
+- name: OwnerCode
+  description: 'Sets or returns the code of the user who prepares the pick list. This is a foreign key to the Users object (see InternalKey ). Field name: OwnerCode . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~OwnerCode.html
+- name: OwnerName
+  description: 'Returns the name of the user who prepares the pick list. Field name: OwnerName . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~OwnerName.html
+  length: 30
+- name: PickDate
+  description: 'Sets or returns the planned delivery date. Field name: PickDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~PickDate.html
+- name: Remarks
+  description: 'Sets or returns the remarks related to the pick list. Field name: Remarks . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Remarks.html
+- name: Status
+  description: 'Returns a valid value that specifies the status of the pick list. For example: released for picking, already picked, and so on. Field name: Status .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~Status.html
+- name: UseBaseUnits
+  description: 'Inventory UoM Field name: UseBaseUn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~UseBaseUnits.html
+  field_name: UseBaseUn
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PickLists~UserFields.html

@@ -1,0 +1,26 @@
+name: ApprovalTemplateQueries
+title: ApprovalTemplateQueries Collection
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries.html
+description: 'ApprovalTemplateQueries is a Data Collection of ApprovalTemplateQuery data structures. Source table: WTM5 .'
+methods:
+- name: Add
+  description: Adds a new record to the Data Collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~Add.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~GetXMLSchema.html
+- name: Item
+  description: Returns reference to existing ApprovalTemplateQuery in the collection (by its index).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~Item.html
+- name: ToXMLFile
+  description: Creates XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~ToXMLString.html
+properties:
+- name: Count
+  description: 'Returns the number of ApprovalTemplateQuery data structures. in the ApprovalTemplateQueries data collection. Field name: NumOfDocs .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplateQueries~Count.html
+  field_name: NumOfDocs

@@ -1,0 +1,57 @@
+name: SalesTaxAuthoritiesTypes
+title: SalesTaxAuthoritiesTypes Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes.html
+description: 'SalesTaxAuthoritiesTypes is a business object that represents the type of sales tax authorities. It specifies whether or not the sales tax authority includes also VAT. This object enables you to: - Add a sales tax authority type. Retrieve a sales tax authority type by its key. Update a sales tax authority type data. Save the object in XML format. Source table: OSTT .'
+remarks: 'Mandatory field in SAP Business One: Name . To display the form in the application (US and Canada localizations): - Select Administration --> Setup --> Financials --> Tax --> Sales Tax Jurisdiction Types . To display the form in the application (Latin America localization): - Select Administration --> Setup --> Financials --> Tax --> Tax Categories .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~Browser.html
+- name: Name
+  description: 'Sets or returns the name of the tax authority type. For example, State , Country , and City , which are default for US and Canada localizations. Mandatory in SAP Business One. Field name: Name . Length: 40 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~Name.html
+  length: 40
+- name: NfTaxId
+  description: property NfTaxId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~NfTaxId.html
+- name: Numerator
+  description: 'Returns the identification key of the Tax Authority Type as assigned by SAP Business One (starts from 1). Field name: AbsId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~Numerator.html
+  field_name: AbsId
+- name: TaxCreditControl
+  description: property TaxCreditControl
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~TaxCreditControl.html
+- name: TaxParamSetId
+  description: property TaxParamSetId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~TaxParamSetId.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~UserFields.html
+- name: UserSignature
+  description: 'Returns the ID of the user who enters the object''s details. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~UserSignature.html
+  field_name: UserSign
+- name: VAT
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the tax type includes also VAT. Field name: IsVat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesTaxAuthoritiesTypes~VAT.html
+  field_name: IsVat

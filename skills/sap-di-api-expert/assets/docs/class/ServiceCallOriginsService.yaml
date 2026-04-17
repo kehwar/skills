@@ -1,0 +1,30 @@
+name: ServiceCallOriginsService
+title: ServiceCallOriginsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService.html
+description: 'The ServiceCallOriginsService service enables you to add, look up and remove service call origins in the service call origin master data table. Service call origins are used to specify the channel through which a call was made, such as by telephone or via the Web. To see the list of service call origins, select Service --> Service Call, and then select the General tab. The service call origins are listed in the Origin field. Source table: OSCO'
+methods:
+- name: AddServiceCallOrigin
+  description: Adds a service call origin.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~AddServiceCallOrigin.html
+- name: DeleteServiceCallOrigin
+  description: Deletes an existing service call origin. The service call origin is specified by its key ( originID ), which is contained in the ServiceCallOriginParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~DeleteServiceCallOrigin.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ServiceCallOriginsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~GetDataInterfaceFromXMLString.html
+- name: GetServiceCallOrigin
+  description: Retrieves a service call origin. The service call origin is specified by its key ( originID ), which is contained in the ServiceCallOriginParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~GetServiceCallOrigin.html
+- name: GetServiceCallOriginList
+  description: Retrieves the keys and names of all the service call origins.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~GetServiceCallOriginList.html
+- name: UpdateServiceCallOrigin
+  description: Updates an existing service call origin. The data for the service call origin, including the key of the origin to be updated, is contained in the ServiceCallOrigin passed to the method. To update a service call origin, you must first retrieve it using the GetServiceCallOrigin method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ServiceCallOriginsService~UpdateServiceCallOrigin.html

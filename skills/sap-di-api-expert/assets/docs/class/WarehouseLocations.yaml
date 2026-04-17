@@ -1,0 +1,149 @@
+name: WarehouseLocations
+title: WarehouseLocations Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations.html
+description: 'The WarehouseLocations object enables to define geographical locations for warehouses. Source table: OLCT .'
+remarks: 'To display the form in the application: - Select Administration --> Setup --> Inventory --> Warehouses . From the Location field select Define New . Defining few locations for a warehouse is required when the warehouse includes few areas, where each area can be concidered as a separate warehouse, with the same address as the main warehouse.'
+methods:
+- name: Add
+  description: Adds a warehouse location definition.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GetByKey.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Update.html
+properties:
+- name: AssesseeType
+  description: 'Sets or returns the assessee type in the location definition. Applicable for cluster B only. Field name: AsseType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~AssesseeType.html
+  field_name: AsseType
+- name: Block
+  description: 'Sets or returns the block name in the location definition. Applicable for cluster B only. Field name: Block .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Block.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Browser.html
+- name: BuildingFloorRoom
+  description: 'Sets or returns the building in the location definition. Applicable for cluster B only. Field name: Building .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~BuildingFloorRoom.html
+  field_name: Building
+- name: CECommissionerate
+  description: 'Sets or returns the C.E. commissionerate in the location definition. Applicable for cluster B only. Field name: CeComRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CECommissionerate.html
+  field_name: CeComRate
+- name: CEDivision
+  description: 'Sets or returns the C.E division in the location definition. Applicable for cluster B only. Field name: CeDivision .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CEDivision.html
+  field_name: CeDivision
+- name: CERange
+  description: 'Sets or returns the C.E range in the location definition. Applicable for cluster B only. Field name: CeRange .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CERange.html
+  field_name: CeRange
+- name: CERegisterNumber
+  description: 'Sets or returns the C.E Register number in the location definition. Applicable for cluster B only. Field name: CeRegNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CERegisterNumber.html
+  field_name: CeRegNo
+- name: City
+  description: 'Sets or returns the city in the location definition. Applicable for cluster B only. Field name: City .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~City.html
+- name: Code
+  description: 'Returns the warehouse location code (primary key) in the Location definition. Field name: Code .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Code.html
+- name: CompanyType
+  description: 'Sets or returns the company type in the location definition. Applicable for cluster B only. Field name: CompType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CompanyType.html
+  field_name: CompType
+- name: Country
+  description: 'Sets or returns the country in the location definition. Applicable for cluster B only. Field name: Country .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Country.html
+- name: County
+  description: 'Sets or returns the county in the location definition. Applicable for cluster B only. Field name: County .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~County.html
+- name: CSTNumber
+  description: 'Sets or returns the CST number in the location definition. Applicable for cluster B only. Field name: CstNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~CSTNumber.html
+  field_name: CstNo
+- name: EccNumber
+  description: 'Sets or returns the E.C.C number in the location definition. Applicable for cluster B only. Field name: EccNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~EccNumber.html
+  field_name: EccNo
+- name: ExemptionNumber
+  description: 'Sets or returns the exempt number in the location definition. Applicable for cluster B only. Field name: EccNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~ExemptionNumber.html
+  field_name: EccNo
+- name: GSTIN
+  description: property GSTIN
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GSTIN.html
+- name: GSTISD
+  description: property GSTISD
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GSTISD.html
+- name: GSTTDS
+  description: property GSTTDS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GSTTDS.html
+- name: GstType
+  description: property GstType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~GstType.html
+- name: Jurisdiction
+  description: 'Sets or returns the jurisdiction in the location definition. Applicable for cluster B only. Field name: Jurisd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Jurisdiction.html
+  field_name: Jurisd
+- name: LSTVATNumber
+  description: 'Sets or returns the LST/VAT number in the location definition. Applicable for cluster B only. Field name: LstVatNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~LSTVATNumber.html
+  field_name: LstVatNo
+- name: ManufacturerCode
+  description: 'Sets or returns the manufacture code in the location definition. Applicable for cluster B only. Field name: ManuCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~ManufacturerCode.html
+  field_name: ManuCode
+- name: Name
+  description: 'Sets or returns the name of the geographical location for warehouses. Field name: Location . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Name.html
+  field_name: Location
+  length: 100
+- name: NatureOfBusiness
+  description: 'Sets or returns the nature of business in the location definition. Applicable for cluster B only. Field name: NatOfBiz .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~NatureOfBusiness.html
+  field_name: NatOfBiz
+- name: PANNumber
+  description: 'Sets or returns the PAN number in the location definition. Applicable for cluster B only. Field name: PanNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~PANNumber.html
+  field_name: PanNo
+- name: RegistrationType
+  description: 'Returns the registration type in the location definition. Applicable for cluster B only. Field name: RegType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~RegistrationType.html
+  field_name: RegType
+- name: ServiceTaxNumber
+  description: 'Sets or returns the Service Tax Number in the location definition. Applicable for cluster B only. Field name: ServTaxNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~ServiceTaxNumber.html
+  field_name: ServTaxNo
+- name: State
+  description: 'Sets or returns the state in the location definition. Applicable for cluster B only. Field name: State .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~State.html
+- name: Street
+  description: 'Sets or returns the street in the location definition. Applicable for cluster B only. Field name: Street .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~Street.html
+- name: TANNumber
+  description: 'Sets or returns the TAN number in the location definition. Applicable for cluster B only. Field name: TanNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~TANNumber.html
+  field_name: TanNo
+- name: TINNumber
+  description: 'Sets or returns the T.I.N number in the location definition. Applicable for cluster B only. Field name: TinNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~TINNumber.html
+  field_name: TinNo
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~UserFields.html
+- name: ZipCode
+  description: 'Sets or returns the zip code in the location definition. Applicable for cluster B only. Field name: ZipCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~WarehouseLocations~ZipCode.html

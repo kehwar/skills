@@ -1,0 +1,28 @@
+name: ExternalReconciliationsService
+title: ExternalReconciliationsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService.html
+description: 'The ExternalReconciliationsService service enables you to add, look up, and cancel external reconciliations. Source table: OMTH .'
+remarks: "To perform external reconciliations, choose Banking --> Bank Statements and External Reconciliations --> Reconciliation . In the External Reconciliation â\x80\x93 Selection Criteria window, select either the Manual or Automatic radio button, specify the selection criteria, and choose the Reconcile button."
+methods:
+- name: CancelReconciliation
+  description: Cancels an external reconciliation.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~CancelReconciliation.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the ExternalReconciliationsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~GetDataInterfaceFromXMLString.html
+- name: GetReconciliation
+  description: Retrieves an external reconciliation.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~GetReconciliation.html
+- name: GetReconciliationList
+  description: Returns the ExternalReconciliationsParamsCollection data collection that identifies all external reconciliations.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~GetReconciliationList.html
+- name: Reconcile
+  description: Performs an external reconciliation.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalReconciliationsService~Reconcile.html

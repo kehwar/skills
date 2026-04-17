@@ -1,0 +1,22 @@
+name: CreditLinesService
+title: CreditLinesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService.html
+description: 'The CreditLinesService service enables you to get deposits for credit card vouchers. Source table: OCRH .'
+remarks: To view details on a deposited credit card voucher, from SAP Business One, choose Banking --> Deposits --> Deposit --> Credit Card .
+methods:
+- name: GetCreditLine
+  description: Retrieves a deposit for a credit card voucher. The credit card voucher is specified by its key, which is contained in the CreditLineParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService~GetCreditLine.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the CreditLinesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService~GetDataInterfaceFromXMLString.html
+- name: GetValidCreditLineList
+  description: Returns the CreditLinesParams data collection that identify all deposits of credit card vouchers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CreditLinesService~GetValidCreditLineList.html

@@ -1,0 +1,124 @@
+name: Series
+title: Series Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series.html
+description: 'Series is a data structure related to the SeriesService . It represents the series object, a part of a document name. Source table: NNM1 (Documents Numbering - Series).'
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~ToXMLString.html
+properties:
+- name: ATDocumentType
+  description: property ATDocumentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~ATDocumentType.html
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~BPLID.html
+- name: CostAccountOnly
+  description: property CostAccountOnly
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~CostAccountOnly.html
+- name: DigitNumber
+  description: property DigitNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~DigitNumber.html
+- name: Document
+  description: 'Sets or returns Document name. Field name: ObjectCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Document.html
+  field_name: ObjectCode
+  length: 20
+- name: DocumentSubType
+  description: 'Sets or returns the document sub-type, part of the document name. Field name: DocSubType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~DocumentSubType.html
+  field_name: DocSubType
+- name: GroupCode
+  description: 'Sets or returns a Group Code for current series. Field name: GroupCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~GroupCode.html
+- name: InitialNumber
+  description: 'Sets or returns Initial Number of current Series. Field name: InitialNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~InitialNumber.html
+  field_name: InitialNum
+- name: InvoiceType
+  description: property InvoiceType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~InvoiceType.html
+- name: InvoiceTypeOfNegativeInvoice
+  description: property InvoiceTypeOfNegativeInvoice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~InvoiceTypeOfNegativeInvoice.html
+- name: IsDigitalSeries
+  description: property IsDigitalSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~IsDigitalSeries.html
+- name: IsElectronicCommEnabled
+  description: property IsElectronicCommEnabled
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~IsElectronicCommEnabled.html
+- name: IsManual
+  description: property IsManual
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~IsManual.html
+- name: LastNumber
+  description: 'Sets or returns the last number allowed for current Series. Field name: LastNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~LastNumber.html
+  field_name: LastNum
+- name: Locked
+  description: 'Determines whether or not the current series is locked. Field name: Locked .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Locked.html
+- name: Name
+  description: 'Sets or returns current Series name. Field name: SeriesName . Length:8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Name.html
+  field_name: SeriesName
+  length: 8
+- name: NextNumber
+  description: 'Sets or returns the next number to be used from current series. Field name: NextNumber .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~NextNumber.html
+- name: PeriodIndicator
+  description: 'Sets or returns the period indicator. Field name: Indicator . This is a foreign key to the Period Indicators table OPID , which is not exposed through the DI API. Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~PeriodIndicator.html
+  field_name: Indicator
+  length: 10
+- name: PortugalSeriesAction
+  description: 'Field name: Action . Length: 1 Characters. R - Report C - Cancel F - Finalize'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~PortugalSeriesAction.html
+  field_name: Action
+  length: 1
+- name: PortugalSeriesPhase
+  description: 'Field name: Phase . Length: 1 Characters. T - To Be Processed I - In Process O - OK E - Error'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~PortugalSeriesPhase.html
+  field_name: Phase
+  length: 1
+- name: PortugalSeriesStatus
+  description: 'Field name: Status . Length: 1 Characters. R - Reported C - Canceled F - Finalized'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~PortugalSeriesStatus.html
+  field_name: Status
+  length: 1
+- name: Prefix
+  description: 'Sets or returns the folio prefix string of this series. Field name: BeginStr . Length: 2 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Prefix.html
+  field_name: BeginStr
+  length: 2
+- name: Remarks
+  description: 'Sets or returns remarks regarding current series. Field name: Remark . Length: 50 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Remarks.html
+  field_name: Remark
+  length: 50
+- name: Series
+  description: 'Returns current Series value.Field name: Series .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Series.html
+- name: SeriesType
+  description: property SeriesType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~SeriesType.html
+- name: Suffix
+  description: 'Sets or returns the suffix string of this series. Field name: EndStr . Length: 8 Characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~Suffix.html
+  field_name: EndStr
+  length: 8
+- name: UserFields
+  description: Get User Fields
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Series~UserFields.html

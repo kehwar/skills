@@ -1,0 +1,42 @@
+name: BOEPortfolio
+title: BOEPortfolio Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio.html
+description: 'A data structure object holding properties for the BOEPortfoliosService . Source table: OPTF .'
+methods:
+- name: FromXMLFile
+  description: Imports data from an XML file to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~FromXMLFile.html
+- name: FromXMLString
+  description: Imports data from an XML string to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~FromXMLString.html
+- name: GetXMLSchema
+  description: Retrieves the XML schema of the data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~GetXMLSchema.html
+- name: ToXMLFile
+  description: Creates an XML file that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~ToXMLFile.html
+- name: ToXMLString
+  description: Creates an XML string that represents the object data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~ToXMLString.html
+properties:
+- name: PortfolioCode
+  description: 'Sets or returns a string specifying the portfolio code. Field name: PtfCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~PortfolioCode.html
+  field_name: PtfCode
+- name: PortfolioDescription
+  description: 'Sets or returns a string specifying the portfolio description. Field name: PtfDespt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~PortfolioDescription.html
+  field_name: PtfDespt
+- name: PortfolioEntry
+  description: 'Returns a number specifying the portfolio entry. Field name: AbsEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~PortfolioEntry.html
+  field_name: AbsEntry
+- name: PortfolioID
+  description: 'Sets or returns a string specifying the internal portfolio id. Field name: PtfId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~PortfolioID.html
+  field_name: PtfId
+- name: PortfolioNum
+  description: 'Sets or returns a string specifying the portfolio number. Field name: PtfNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BOEPortfolio~PortfolioNum.html
+  field_name: PtfNum

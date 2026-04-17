@@ -1,0 +1,29 @@
+name: ContactEmployeeBlockSendingMarketingContents
+title: ContactEmployeeBlockSendingMarketingContents Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents.html
+description: Block sending marketing contnet to the contact employee.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~SetCurrentLine.html
+properties:
+- name: Choose
+  description: Choose to block sending marketing contnet to the contact employee.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~Choose.html
+- name: CommunicationMediaId
+  description: 'Communication media code. Field name: CommCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~CommunicationMediaId.html
+  field_name: CommCode
+  length: 50
+- name: ContactEmployeeAbsEntry
+  description: 'The contact employee code. Field name: CntctCode . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ContactEmployeeBlockSendingMarketingContents~ContactEmployeeAbsEntry.html
+  field_name: CntctCode
+  length: 11

@@ -1,0 +1,30 @@
+name: SalesOpportunityReasonsSetupService
+title: SalesOpportunityReasonsSetupService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService.html
+description: 'The SalesOpportunityReasonsSetupService service enables you to add, look up and remove reasons in the reasons master data table. Reasons can be assigned to sales opportunities; the reason explain why a sales opportunity was won or lost. To see the list of reasons, select Sales Opportunities --> Sales Opportunity, and then select the Summary tab. In the Description column of the Reasons list, select Define New . The Reasons list is disabled if the Opportunity Status is Open . Source table: OOFR'
+methods:
+- name: AddSalesOpportunityReasonSetup
+  description: Adds a reason.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~AddSalesOpportunityReasonSetup.html
+- name: DeleteSalesOpportunityReasonSetup
+  description: Deletes an existing reason. The reason is specified by its key ( Num ), which is contained in the SalesOpportunityReasonSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~DeleteSalesOpportunityReasonSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SalesOpportunityReasonsSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~GetDataInterfaceFromXMLString.html
+- name: GetSalesOpportunityReasonSetup
+  description: Retrieves a reason. The reason is specified by its key ( Num ), which is contained in the SalesOpportunityReasonSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~GetSalesOpportunityReasonSetup.html
+- name: GetSalesOpportunityReasonSetupList
+  description: Retrieves the keys and names of all the reasons.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~GetSalesOpportunityReasonSetupList.html
+- name: UpdateSalesOpportunityReasonSetup
+  description: Updates an existing reason. The data for the reason, including the key of the reason to be updated, is contained in the SalesOpportunityReasonSetup object passed to the method. To update a reason, you must first retrieve it using the GetSalesOpportunityReasonSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunityReasonsSetupService~UpdateSalesOpportunityReasonSetup.html

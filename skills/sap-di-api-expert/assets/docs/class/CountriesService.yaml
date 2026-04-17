@@ -1,0 +1,31 @@
+name: CountriesService
+title: CountriesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService.html
+description: 'The CountriesService manages the setting of each country in SAP Business One. For example, country code, country name and address format. Source table: OCRY .'
+remarks: 'To access countries in the application: Choose Administration > Setup > Business Partners > Countries/Regions .'
+methods:
+- name: AddCountry
+  description: Adds a Country as specified in the Country data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~AddCountry.html
+- name: DeleteCountry
+  description: Deletes the country as specified in CountryParams object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~DeleteCountry.html
+- name: GetCountry
+  description: Returns an instance of the Country data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~GetCountry.html
+- name: GetCountryList
+  description: Returns a collection of CountryParams.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~GetCountryList.html
+- name: GetDataInterface
+  description: Creates empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates data structure from specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates data structure from specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~GetDataInterfaceFromXMLString.html
+- name: UpdateCountry
+  description: Update the specified Country with the updated data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~CountriesService~UpdateCountry.html

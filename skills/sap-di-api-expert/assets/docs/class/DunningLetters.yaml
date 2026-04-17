@@ -1,0 +1,71 @@
+name: DunningLetters
+title: DunningLetters Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters.html
+description: 'Represents a list of dunning levels that is used as a template when creating a new dunning term. You can define up to 10 dunning levels, and relate each level to a dunning letter format. This object enables you to: - Add a dunning level. Retrieve a dunning level by its key. Update a dunning level. Remove a dunning level. Save the object in XML format. This object manages a list of dunning levels. This list is a template when creating a new dunning term, and the template list does not directly affect business partners or the dunning letters functionality. Dunning terms can be assigned to business partners and are managed by the DunningTermsService . Source table: ODUN .'
+remarks: 'Mandatory fields: RowNumber , LetterFormat and Effectiveafter . To display the form in the application: - Select Administration --> Setup --> Business Partners --> Dunning Levels .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Update.html
+properties:
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Browser.html
+- name: CalcInterest
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to calculate interest on a delinquent debt. Field name: CalcIntert .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~CalcInterest.html
+  field_name: CalcIntert
+- name: Effectiveafter
+  description: 'Sets or returns the overdue number of days. Field name: EffctAftr . Mandatory in SAP Business One. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Effectiveafter.html
+  field_name: EffctAftr
+  length: 3
+- name: FeeCurrency
+  description: 'Sets or returns the currency of the dunning letter fee. Field name: FeeCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~FeeCurrency.html
+  field_name: FeeCurr
+  length: 3
+- name: Feeperletter
+  description: 'Sets or returns the fee for each dunning letter sent to the business partner. Field name: LetterFee .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~Feeperletter.html
+  field_name: LetterFee
+- name: LetterFormat
+  description: 'Sets or returns the letter format to relate to the dunning level. Field name: LetrFormat . Mandatory in SAP Business One. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~LetterFormat.html
+  field_name: LetrFormat
+  length: 8
+- name: MinimumBalance
+  description: 'Sets or returns the minimum balance of the debt. SAP Business One will send a dunning letter only for a debt balance higher than this minimum amount. Field name: MinBalance .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~MinimumBalance.html
+  field_name: MinBalance
+- name: MinimumBalanceCurrency
+  description: 'Sets or returns the currency of MinimumBalance . Field name: MinBlnCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~MinimumBalanceCurrency.html
+  field_name: MinBlnCurr
+  length: 3
+- name: RowNumber
+  description: 'Sets or returns the dunning level number, which is used as an identification key. Field name: LineNum . Mandatory in SAP Business One.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~RowNumber.html
+  field_name: LineNum
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~DunningLetters~UserFields.html

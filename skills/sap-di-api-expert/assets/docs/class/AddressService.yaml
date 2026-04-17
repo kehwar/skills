@@ -1,0 +1,22 @@
+name: AddressService
+title: AddressService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService.html
+description: 'The AddressService service enables you to retrieve Address Format and full address. Source table: OADF .'
+remarks: "From the SAP Business One Main Menu , choose Administration â\x86\x92 Setup â\x86\x92 Business Partners â\x86\x92 Address Formats , create a new Address Formats."
+methods:
+- name: GetAddressFormat
+  description: Retrieves an address format. The address format is specified by its key, which is contained in the AddressFormatParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService~GetAddressFormat.html
+- name: GetDataInterface
+  description: AddressService data interfaces.Creates an empty data structure for use with the GeneralService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService~GetDataInterfaceFromXMLString.html
+- name: GetFullAddress
+  description: Retrieves a full address. The full address is specified by its key, which is contained in the AddressReturnParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~AddressService~GetFullAddress.html

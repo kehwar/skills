@@ -1,0 +1,103 @@
+name: Payments_Invoices
+title: Payments_Invoices Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices.html
+description: 'Payments_Invoices is a child object of the Payments object and represents the invoices related to the payments in the Banking module. Source tables: RCT2 (incoming payments) and VPM2 (outgoing payments).'
+remarks: 'Mandatory field in SAP Business One: DocEntry . To display the form in the application: - For RCT2 table, select Banking --> Incoming Payments --> Incoming Payments . - For VPM2 table, select Banking --> Outgoing Payments --> Payments to Vendors .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~SetCurrentLine.html
+properties:
+- name: AppliedFC
+  description: 'Sets or returns the amount paid in foreign currency. Field name: AppliedFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~AppliedFC.html
+- name: Count
+  description: Returns the number of lines in this document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~Count.html
+- name: DiscountPercent
+  description: 'Sets or returns the discount percentage you specify for a customer, or the discount percentage a supplier specifies for you. Field name: Discount . Sets or returns the discount percentage you specify for a customer, or the discount percentage a supplier specifies for you. Field name: Discount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DiscountPercent.html
+  field_name: Discount
+- name: DistributionRule
+  description: 'The distribution rule for dimension 1 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DistributionRule.html
+  field_name: OcrCode
+- name: DistributionRule2
+  description: 'The distribution rule for dimension 2 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode2 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DistributionRule2.html
+  field_name: OcrCode2
+- name: DistributionRule3
+  description: 'The distribution rule for dimension 3 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode3 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DistributionRule3.html
+  field_name: OcrCode3
+- name: DistributionRule4
+  description: 'The distribution rule for dimension 4 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode4 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DistributionRule4.html
+  field_name: OcrCode4
+- name: DistributionRule5
+  description: 'The distribution rule for dimension 5 for allocating costs and revenues (both direct and indirect) to one or more profit centers. Field name: OcrCode5 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DistributionRule5.html
+  field_name: OcrCode5
+- name: DocEntry
+  description: 'Sets or returns the invoice key. Mandatory property. Field name: DocEntry . This is a foreign key to the Documents object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DocEntry.html
+- name: DocLine
+  description: 'Sets or returns the row key in the invoice document. Field name: DocLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DocLine.html
+- name: DocNum
+  description: 'Document number. Field name: DocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~DocNum.html
+- name: InstallmentId
+  description: 'Sets or returns the installment ID of the invoice payment. Field name: InstId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~InstallmentId.html
+  field_name: InstId
+- name: InvoiceType
+  description: 'Sets or returns a valid value of BoRcptInvTypes type that specifies the invoice type (incoming payment, tax invoice, correction invoice, and so on). Field name: InvType . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~InvoiceType.html
+  field_name: InvType
+  length: 20
+- name: LineNum
+  description: 'Returns the active row number. Field name: DocLine .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~LineNum.html
+  field_name: DocLine
+- name: LinkDate
+  description: 'Returns the date when the payment was connected to the invoice. Field name: DpmPosted .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~LinkDate.html
+  field_name: DpmPosted
+- name: PaidSum
+  description: 'Returns the amount (of the invoice) paid that applies to the 1099 report. Field name: PaidSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~PaidSum.html
+- name: SumApplied
+  description: 'Sets or returns the amount (of the invoice) paid. Field name: SumApplied .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~SumApplied.html
+- name: TotalDiscount
+  description: 'The total discount (from the cash discount settings) in local currency. Field name: DcntSum'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~TotalDiscount.html
+  field_name: DcntSum
+- name: TotalDiscountFC
+  description: 'The total discount (from the cash discount settings) in foreign currency. Field name: DcntSumFC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~TotalDiscountFC.html
+  field_name: DcntSumFC
+- name: TotalDiscountSC
+  description: 'The total discount (from the cash discount settings) in system currency. Field name: DcntSumSy'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~TotalDiscountSC.html
+  field_name: DcntSumSy
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~UserFields.html
+- name: WitholdingTaxApplied
+  description: 'Returns the amount of the withholding tax that was applied for the invoice (in local currency). Field name: WtAppld .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~WitholdingTaxApplied.html
+  field_name: WtAppld
+- name: WitholdingTaxAppliedFC
+  description: 'Returns the amount of the withholding tax that applied for the invoice (in foreign currency). Field name: WtAppldFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~WitholdingTaxAppliedFC.html
+  field_name: WtAppldFC
+- name: WitholdingTaxAppliedSC
+  description: 'Returns the amount of the withholding tax that applied for the invoice (in system currency). Field name: WtAppldSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Payments_Invoices~WitholdingTaxAppliedSC.html
+  field_name: WtAppldSC

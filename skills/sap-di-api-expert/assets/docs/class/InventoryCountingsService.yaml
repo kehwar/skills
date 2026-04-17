@@ -1,0 +1,31 @@
+name: InventoryCountingsService
+title: InventoryCountingsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService.html
+description: 'The InventoryCountingsService service enables you to add, look up, update, and close inventory counting transactions. Source table: OINC .'
+remarks: To open the Inventory Counting window, from the SAP Business One Main Menu , choose Inventory --> Inventory Transactions --> Inventory Counting Transactions --> Inventory Counting .
+methods:
+- name: Add
+  description: Adds an inventory counting transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~Add.html
+- name: Close
+  description: Closes an existing inventory counting transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~Close.html
+- name: Get
+  description: Retrieves an inventory counting transaction. The inventory counting transaction is specified by its key, which is contained in the InventoryCountingParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the InventoryCountingsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: The XML with which to create the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the InventoryCountingParamsCollection data collection that identifies all inventory counting transactions.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~GetList.html
+- name: Update
+  description: Updates an existing inventory counting transaction.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~InventoryCountingsService~Update.html

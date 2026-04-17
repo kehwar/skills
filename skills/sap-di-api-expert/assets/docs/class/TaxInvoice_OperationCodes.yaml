@@ -1,0 +1,28 @@
+name: TaxInvoice_OperationCodes
+title: TaxInvoice_OperationCodes Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes.html
+description: TaxInvoice_OperationCodes is a child object of the TaxInvoices object that represents the operation codes of the tax invoice document.
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~SetCurrentLine.html
+properties:
+- name: BaseEntry
+  description: Document key of tax invoice. Same as DocEntry of TaxInvoices object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~BaseEntry.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~Count.html
+- name: LineNum
+  description: Obsolete. Do not use anymore.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~LineNum.html
+- name: OpCode
+  description: The operation code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~OpCode.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_OperationCodes~UserFields.html

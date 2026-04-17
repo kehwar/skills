@@ -1,0 +1,201 @@
+name: BusinessPlaces
+title: BusinessPlaces Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces.html
+description: 'BusinessPlaces is a business object that represents a company''s business locations. Each Korean company that issues tax invoices and VAT reports must indicate its business place. Each business place is bound with a VAT registry number. This object enables you to: - Retrieve a business place of a company by its key ( BPLID ). Retrieve a business place of a company from XML data. Save the object to a file as XML data. Save the object as XML formatted data. Source table: OBPL .'
+remarks: 'Country-specific for Korea. Business Place is a mandatory field in all marketing documents. You can get all defined Business Place objects through this object and assign the Business Place on marketing documents. To display the form in the application: - Select Administration --> Setup --> Financials --> Define Business Places .'
+methods:
+- name: Add
+  description: method Add
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~GetAsXML.html
+- name: GetByKey
+  description: GetByKey
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~GetByKey.html
+- name: Remove
+  description: method Remove
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~SaveXML.html
+- name: Update
+  description: Method Update
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Update.html
+properties:
+- name: AdditionalIdNumber
+  description: property AdditionalIdNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~AdditionalIdNumber.html
+- name: Address
+  description: 'Returns the business place address. Field name: Address . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Address.html
+  length: 30
+- name: Addressforeign
+  description: 'Returns the foreign name of the business place address. Field name: AddressFr . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Addressforeign.html
+  field_name: AddressFr
+  length: 100
+- name: AddressType
+  description: property AddressType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~AddressType.html
+- name: AliasName
+  description: proprety AliasName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~AliasName.html
+- name: Block
+  description: property Block
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Block.html
+- name: BPLID
+  description: 'Returns the business place ID (primary key). Field name: BPLId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~BPLID.html
+  field_name: BPLId
+- name: BPLName
+  description: 'Returns the business place identification name. Field name: BPLName . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~BPLName.html
+  length: 20
+- name: BPLNameForeign
+  description: 'Returns the foreign identification name of the business place. Field name: BPLFrName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~BPLNameForeign.html
+  field_name: BPLFrName
+  length: 100
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Browser.html
+- name: Building
+  description: property Building
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Building.html
+- name: Business
+  description: 'Returns the type of business that each business place manages. Field name: Business . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Business.html
+  length: 20
+- name: City
+  description: property City
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~City.html
+- name: CommercialRegister
+  description: property CommercialRegister
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~CommercialRegister.html
+- name: CompanyQualificationCode
+  description: property CompanyQualificationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~CompanyQualificationCode.html
+- name: CooperativeAssociationTypeCode
+  description: property CooperativeAssociationTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~CooperativeAssociationTypeCode.html
+- name: Country
+  description: property Country
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Country.html
+- name: County
+  description: property County
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~County.html
+- name: CreditContributionOriginCode
+  description: property CreditContributionOriginCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~CreditContributionOriginCode.html
+- name: DateOfIncorporation
+  description: property DateOfIncorporation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DateOfIncorporation.html
+- name: DeclarerTypeCode
+  description: property DeclarerTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DeclarerTypeCode.html
+- name: DefaultCustomerID
+  description: property DefaultCustomerID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DefaultCustomerID.html
+- name: DefaultResourceWarehouseID
+  description: property DefaultResourceWarehouseID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DefaultResourceWarehouseID.html
+- name: DefaultTaxCode
+  description: property DefaultTaxCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DefaultTaxCode.html
+- name: DefaultVendorID
+  description: property DefaultVendorID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DefaultVendorID.html
+- name: DefaultWarehouseID
+  description: property DefaultWarehouseID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~DefaultWarehouseID.html
+- name: Disabled
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether to disable (Y) or enable (N) the business place. Field name: Disabled .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Disabled.html
+- name: EconomicActivityTypeCode
+  description: property EconomicActivityTypeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~EconomicActivityTypeCode.html
+- name: EnvironmentType
+  description: property EnvironmentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~EnvironmentType.html
+- name: FederalTaxID
+  description: property FederalTaxID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~FederalTaxID.html
+- name: FederalTaxID2
+  description: property FederalTaxID2
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~FederalTaxID2.html
+- name: FederalTaxID3
+  description: property FederalTaxID3
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~FederalTaxID3.html
+- name: GlobalLocationNumber
+  description: property GlobalLocationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~GlobalLocationNumber.html
+- name: IENumbers
+  description: Get IENumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~IENumbers.html
+- name: Industry
+  description: 'Returns the type of the industry that each business place manages. Field name: Industry . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Industry.html
+  length: 20
+- name: IPIPeriodCode
+  description: property IPIPeriodCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~IPIPeriodCode.html
+- name: MainBPL
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether the business place is the main business place (Y) or not (N). Field name: MainBPL .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~MainBPL.html
+- name: NatureOfCompanyCode
+  description: property NatureOfCompanyCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~NatureOfCompanyCode.html
+- name: Opting4ICMS
+  description: property Opting4ICMS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Opting4ICMS.html
+- name: PaymentClearingAccount
+  description: property PaymentClearingAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~PaymentClearingAccount.html
+- name: PreferredStateCode
+  description: property PreferredStateCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~PreferredStateCode.html
+- name: ProfitTaxationCode
+  description: property ProfitTaxationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~ProfitTaxationCode.html
+- name: RepName
+  description: 'Returns the owner name of the business place. Field name: RepName . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~RepName.html
+  length: 15
+- name: SPEDProfile
+  description: property SPEDProfile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~SPEDProfile.html
+- name: State
+  description: property State
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~State.html
+- name: Street
+  description: property Street
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~Street.html
+- name: StreetNo
+  description: property StreetNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~StreetNo.html
+- name: TaxOffice
+  description: property TaxOffice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~TaxOffice.html
+- name: TaxOfficeNo
+  description: 'Returns the tax office number of the business place. This number is used in the VAT report of the company. Field name: TxOffcNo . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~TaxOfficeNo.html
+  field_name: TxOffcNo
+  length: 3
+- name: TributaryInfos
+  description: property TributaryInfos
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~TributaryInfos.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~UserFields.html
+- name: VATRegNum
+  description: 'Returns the VAT registration number of the business place. Field name: VATRegNum . Length: 12 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~VATRegNum.html
+  length: 12
+- name: ZipCode
+  description: property ZipCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BusinessPlaces~ZipCode.html

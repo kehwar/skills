@@ -1,0 +1,64 @@
+name: EDFEntryListInputParams
+title: EDFEntryListInputParams Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams.html
+description: EDFEntryListInputParams Class
+methods:
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ToXMLString.html
+properties:
+- name: Ascending
+  description: property Ascending
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~Ascending.html
+- name: BranchID
+  description: property BranchID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~BranchID.html
+- name: CancellationStatusSet
+  description: property CancellationStatusSet
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~CancellationStatusSet.html
+- name: Code
+  description: property Code
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~Code.html
+- name: FromDate
+  description: property FromDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~FromDate.html
+- name: FromEntryID
+  description: property FromEntryID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~FromEntryID.html
+- name: FromTime
+  description: property FromTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~FromTime.html
+- name: MaxLines
+  description: property MaxLines
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~MaxLines.html
+- name: ProcessingTarget
+  description: property ProcessingTarget
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ProcessingTarget.html
+- name: ProcessingTargetStr
+  description: property ProcessingTargetStr
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ProcessingTargetStr.html
+- name: StoreEntryStatusSet
+  description: property StoreEntryStatusSet
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~StoreEntryStatusSet.html
+- name: StoreEntryTypeSet
+  description: property StoreEntryTypeSet
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~StoreEntryTypeSet.html
+- name: ToDate
+  description: property ToDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ToDate.html
+- name: ToTime
+  description: property ToTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EDFEntryListInputParams~ToTime.html

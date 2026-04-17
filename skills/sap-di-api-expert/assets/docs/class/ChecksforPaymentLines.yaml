@@ -1,0 +1,56 @@
+name: ChecksforPaymentLines
+title: ChecksforPaymentLines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines.html
+description: 'ChecksforPaymentLines is a child object of the ChecksforPayment object that represents the appendix of the check. Source table: CHO1 .'
+remarks: 'Mandatory field in SAP Business One: RowTotal . To display the form in the application: - Select Banking --> Outgoing Payments --> Checks for Payment .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total data rows of the ChecksforPaymentLines object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~Count.html
+- name: CreditedAccount
+  description: 'Sets or returns the G/L account to debit. Field name: CredAcct . Length: 15 characters. This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~CreditedAccount.html
+  field_name: CredAcct
+  length: 15
+- name: LineTotal
+  description: 'Returns the total amount (including tax) per row. Field name: LinesSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~LineTotal.html
+  field_name: LinesSum
+- name: RowCurrency
+  description: 'Sets or returns the currency for the row. Field name: LineCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~RowCurrency.html
+  field_name: LineCurr
+  length: 3
+- name: RowDetails
+  description: 'Sets or returns the row details. Field name: LineDitail . Length: 40 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~RowDetails.html
+  field_name: LineDitail
+  length: 40
+- name: RowNumber
+  description: 'Returns the current available row number (starts from 1). Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~RowNumber.html
+  field_name: Line_ID
+- name: RowTotal
+  description: 'Sets or returns the total amount in the row. Field name: LineMoney . Mandatory property.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~RowTotal.html
+  field_name: LineMoney
+- name: TaxDefinition
+  description: 'Sets or returns the tax group for the row. Field name: Code . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~TaxDefinition.html
+  field_name: Code
+  length: 8
+- name: TaxPercent
+  description: 'Returns the tax percentage according to the tax group ( TaxDefinition ). Field name: VatPercent .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~TaxPercent.html
+  field_name: VatPercent
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChecksforPaymentLines~UserFields.html

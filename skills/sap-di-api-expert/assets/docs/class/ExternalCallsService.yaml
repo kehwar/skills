@@ -1,0 +1,24 @@
+name: ExternalCallsService
+title: ExternalCallsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService.html
+description: 'External Call Service is used as an communication mechanism between Business One and any 3rd party or external applications. When Business One application is initiating an operation that requires real time external application (e.g. Business One integration), an external call request record is added to OREQ table. External applications could access this request via External Call Service, update the status of the request and attach response messages to the request. Mandatory properties: ID , Category , Status . Source table: OREQ .'
+methods:
+- name: GetCall
+  description: Returns an instance of an external call by ID.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~GetCall.html
+- name: GetDataInterface
+  description: Creates an empty data interface. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Retrieves the Data Interface from XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Retrieves the Data Interface from XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~GetDataInterfaceFromXMLString.html
+- name: SendCall
+  description: Creates a new Call.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~SendCall.html
+- name: UpdateCall
+  description: Updates a call.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ExternalCallsService~UpdateCall.html

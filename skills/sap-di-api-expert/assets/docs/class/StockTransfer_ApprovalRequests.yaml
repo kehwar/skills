@@ -1,0 +1,26 @@
+name: StockTransfer_ApprovalRequests
+title: StockTransfer_ApprovalRequests Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests.html
+description: 'StockTransfer_ApprovalRequests is a child object of the StockTransfer object. You can set the remarks field of the approval request. Source table: OWDDV .'
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~SetCurrentLine.html
+properties:
+- name: ActiveForUpdate
+  description: property ActiveForUpdate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~ActiveForUpdate.html
+- name: ApprovalTemplatesID
+  description: 'The ID of the approval template. Field: WtmCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~ApprovalTemplatesID.html
+- name: ApprovalTemplatesName
+  description: property ApprovalTemplatesName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~ApprovalTemplatesName.html
+- name: Count
+  description: property Count
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~Count.html
+- name: Remarks
+  description: 'Remarks made by the originator that are included with the approval request. Field: Remarks . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~StockTransfer_ApprovalRequests~Remarks.html
+  length: 100

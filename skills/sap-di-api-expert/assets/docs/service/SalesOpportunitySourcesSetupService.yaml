@@ -1,0 +1,30 @@
+name: SalesOpportunitySourcesSetupService
+title: SalesOpportunitySourcesSetupService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService.html
+description: 'The SalesOpportunitySourcesSetupService service enables you to add, look up and remove sources in the sources master data table. Sources can be assigned to sales opportunities; the source explains how a sales opportunity was generated. To see the list of sources, select Sales Opportunities --> Sales Opportunity, and then select the General tab. In the Information Source field, select Define New . Source table: OOSR'
+methods:
+- name: AddSalesOpportunitySourceSetup
+  description: Adds a source.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~AddSalesOpportunitySourceSetup.html
+- name: DeleteSalesOpportunitySourceSetup
+  description: Deletes an existing source. The source is specified by its key ( Num ), which is contained in the SalesOpportunitySourceSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~DeleteSalesOpportunitySourceSetup.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the SalesOpportunitySourcesSetupService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~GetDataInterfaceFromXMLString.html
+- name: GetSalesOpportunitySourceSetup
+  description: Retrieves a source. The source is specified by its key ( Num ), which is contained in the SalesOpportunitySourceSetupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~GetSalesOpportunitySourceSetup.html
+- name: GetSalesOpportunitySourceSetupList
+  description: Retrieves the keys and names of all the sources.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~GetSalesOpportunitySourceSetupList.html
+- name: UpdateSalesOpportunitySourceSetup
+  description: Updates an existing source. The data for the source, including the key of the source to be updated, is contained in the SalesOpportunitySourceSetup object passed to the method. To update a source, you must first retrieve it using the GetSalesOpportunitySourceSetup method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitySourcesSetupService~UpdateSalesOpportunitySourceSetup.html

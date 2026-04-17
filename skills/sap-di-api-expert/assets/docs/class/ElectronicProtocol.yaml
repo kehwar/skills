@@ -1,0 +1,88 @@
+name: ElectronicProtocol
+title: ElectronicProtocol Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol.html
+description: ElectronicProtocol Class
+methods:
+- name: ClearCartaPorteID
+  description: method ClearCartaPorteID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~ClearCartaPorteID.html
+- name: FromXMLFile
+  description: method FromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~FromXMLFile.html
+- name: FromXMLString
+  description: method FromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~FromXMLString.html
+- name: GetXMLSchema
+  description: method GetXMLSchema
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~GetXMLSchema.html
+- name: ToXMLFile
+  description: method ToXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~ToXMLFile.html
+- name: ToXMLString
+  description: method ToXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~ToXMLString.html
+properties:
+- name: CartaPorteID
+  description: '"Complemento Carta Porte" ID is used for the identification of folios for the Mexico authorities in CFDI. Field name: CartaPorte . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~CartaPorteID.html
+  field_name: CartaPorte
+  length: 50
+- name: CFDiCancellationReason
+  description: property CFDiCancellationReason
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~CFDiCancellationReason.html
+- name: CFDiCancellationReference
+  description: property CFDiCancellationReference
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~CFDiCancellationReference.html
+- name: CFDiCancellationResponse
+  description: property CFDiCancellationResponse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~CFDiCancellationResponse.html
+- name: CFDiExport
+  description: property CFDiExport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~CFDiExport.html
+- name: Confirmation
+  description: property Confirmation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~Confirmation.html
+- name: EBooksInvoiceType
+  description: property EBooksInvoiceType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksInvoiceType.html
+- name: EBooksInvoiceTypeofNegative
+  description: property EBooksInvoiceTypeofNegative
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksInvoiceTypeofNegative.html
+- name: EBooksMARK
+  description: property EBooksMARK
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksMARK.html
+- name: EBooksMARKofNegative
+  description: property EBooksMARKofNegative
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksMARKofNegative.html
+- name: EBooksQRCodePath
+  description: 'QR Code for A/R marketing document that links to information from the authorities. Field name: PosiQRPath . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksQRCodePath.html
+  field_name: PosiQRPath
+  length: 200
+- name: EBooksQRCodePathofNegative
+  description: 'QR Code for negative value A/R marketing document that links to information from the authorities. Field name: NegaQRPath . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksQRCodePathofNegative.html
+  field_name: NegaQRPath
+  length: 200
+- name: EBooksRelevant
+  description: property EBooksRelevant
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EBooksRelevant.html
+- name: EDocType
+  description: property EDocType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~EDocType.html
+- name: GenerationType
+  description: property GenerationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~GenerationType.html
+- name: MappingID
+  description: property MappingID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~MappingID.html
+- name: ProtocolCode
+  description: property ProtocolCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~ProtocolCode.html
+- name: RelatedDocuments
+  description: property RelatedDocuments
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~RelatedDocuments.html
+- name: TestingMode
+  description: property TestingMode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ElectronicProtocol~TestingMode.html

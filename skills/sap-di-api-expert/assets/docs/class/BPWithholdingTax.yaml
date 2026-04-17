@@ -1,0 +1,26 @@
+name: BPWithholdingTax
+title: BPWithholdingTax Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax.html
+description: 'BPWithholdingTax is a child object of the BusinessPartners object that represents the withholding tax data related to the business partner. Source table: CRD4 .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~SetCurrentLine.html
+properties:
+- name: BPCode
+  description: The key to the current object's parent business partner.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~BPCode.html
+- name: Count
+  description: Returns the total number of records in the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~Count.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~UserFields.html
+- name: WTCode
+  description: 'Sets or returns the withholding tax code assigned to the business partner. Field name: WTCode . Length: 4 characters. This is a foreign key to the WithholdingTaxCodes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPWithholdingTax~WTCode.html
+  length: 4

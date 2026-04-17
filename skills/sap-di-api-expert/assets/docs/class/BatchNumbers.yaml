@@ -1,0 +1,74 @@
+name: BatchNumbers
+title: BatchNumbers Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers.html
+description: 'BatchNumbers is a business object that represents the batch numbers of an item in the Inventory and Production module. This object enables you to add batch numbers for a selected item row (one record per item). Source table: OBTN , OBTW , OBTQ , OITL , ITL1 .'
+remarks: 'Mandatory field in SAP Business One: BatchNumber . To display the form in the application: - Select Inventory --> Item Management --> Batches --> Define and Update Batch Numbers . In the Batch No. for Receipt - Selection Criteria window, set your selection criteria and then click OK . To deallocate batches without actually remove them from the stock (based on a delivery document) is to update the Sales Order so that it has no batches defined. Note that batches allocated by Reserve Invoice cannot be deallocated. Batches allocated by Reserve Invoice can only be drawn to a Delivery or Invoice document.'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~SetCurrentLine.html
+properties:
+- name: AddmisionDate
+  description: 'Sets or returns the admission date for the batch. Field name: InDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~AddmisionDate.html
+  field_name: InDate
+- name: BaseLineNumber
+  description: 'Sets or returns the row number in the current document. Field name: BaseNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~BaseLineNumber.html
+  field_name: BaseNum
+- name: BatchNumber
+  description: 'Sets or returns the batch number. The combination of the batchNumber, ItemCode , and WarehouseCode values must be unique. Field name: BatchNum . Mandatory property. Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~BatchNumber.html
+  field_name: BatchNum
+  length: 32
+- name: Count
+  description: Returns the number of records in the BatchNumbers object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~Count.html
+- name: ExpiryDate
+  description: 'Sets or returns the expiration date for the batch. Field name: ExpDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~ExpiryDate.html
+  field_name: ExpDate
+- name: InternalSerialNumber
+  description: 'Sets or returns the internal serial number for the item. Length: 32 characters. Field name: IntrSerial .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~InternalSerialNumber.html
+  field_name: IntrSerial
+  length: 32
+- name: ItemCode
+  description: property ItemCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~ItemCode.html
+- name: Location
+  description: 'Sets or returns the location of the batch, for example, in the warehouse. Length: 100 characters. Field name: Located .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~Location.html
+  field_name: Located
+  length: 100
+- name: ManufacturerSerialNumber
+  description: 'Sets or returns the manufacturer''s serial number for the selected item. Field name: SuppSerial . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~ManufacturerSerialNumber.html
+  field_name: SuppSerial
+  length: 32
+- name: ManufacturingDate
+  description: 'Sets or returns the manufacturing date for the batch. Field name: PrdDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~ManufacturingDate.html
+  field_name: PrdDate
+- name: Notes
+  description: 'Sets or returns a memo type string that specifies comments for the batch number. Length: 64,000 characters. Field name: Notes .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~Notes.html
+- name: Quantity
+  description: 'Sets or returns the quantity of items that are used to define or update batch numbers. Field name: Quantity .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~Quantity.html
+- name: SystemSerialNumber
+  description: property SystemSerialNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~SystemSerialNumber.html
+- name: TrackingNote
+  description: property TrackingNote
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~TrackingNote.html
+- name: TrackingNoteLine
+  description: property TrackingNoteLine
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~TrackingNoteLine.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BatchNumbers~UserFields.html

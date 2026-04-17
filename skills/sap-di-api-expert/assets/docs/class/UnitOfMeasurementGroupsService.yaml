@@ -1,0 +1,31 @@
+name: UnitOfMeasurementGroupsService
+title: UnitOfMeasurementGroupsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService.html
+description: 'The UnitOfMeasurementGroupsService service enables you to add, look up, update, and remove unit of measurement groups. Source table: OUGP .'
+remarks: "- From the SAP Business One Main Menu , choose Administration --> Setup --> Inventory --> Unit of Measurement Groups . In the Unit of Measurement - Setup window, enter a group name and its description. Choose Group Definition to open the Unit of Measurement Groups â\x80\x93 <Group> â\x80\x93 Setup window."
+methods:
+- name: Add
+  description: Adds a UoM group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~Add.html
+- name: Delete
+  description: Deletes an existing UoM group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~Delete.html
+- name: Get
+  description: Retrieves a UoM group. The UoM group is specified by its key, which is contained in the UnitOfMeasurementGroupParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the UnitOfMeasurementGroupsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the UnitOfMeasurementGroupParamsCollection data collection that identifies all UoM groups.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~GetList.html
+- name: Update
+  description: Updates an existing UoM group.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~UnitOfMeasurementGroupsService~Update.html

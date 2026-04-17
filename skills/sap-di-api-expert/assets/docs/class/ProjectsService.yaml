@@ -1,0 +1,31 @@
+name: ProjectsService
+title: ProjectsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService.html
+description: 'This service manages projects in SAP Business One. The service enables to add or delete projects, and update projects'' name and code. Source table: OPRJ .'
+remarks: To access projects in the application, choose Administration > Setup > Financials > Projects .
+methods:
+- name: AddProject
+  description: Adds a project code and name as specified in the Project data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~AddProject.html
+- name: DeleteProject
+  description: Deletes project code and name specified in ProjectParams .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~DeleteProject.html
+- name: GetDataInterface
+  description: Creates empty data structure. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates data structure from specified XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates data structure from specified XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~GetDataInterfaceFromXMLString.html
+- name: GetProject
+  description: Returns an instance of the Project data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~GetProject.html
+- name: GetProjectList
+  description: Returns a collection of instances for the Project data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~GetProjectList.html
+- name: UpdateProject
+  description: Replaces project code and name with the specified Project data structure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ProjectsService~UpdateProject.html

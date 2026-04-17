@@ -1,0 +1,83 @@
+name: TaxJurisdictions
+title: TaxJurisdictions Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions.html
+description: 'Represents the tax amount of a document. Source table: PCH4 . TaxJurisdictions is a child object of the following existing objects: - Document_Lines object (Source table: PCH1 ) - Document_LinesAdditionalExpenses object (Source table: PCH2 ) - DocumentsAdditionalExpenses object (Source table: PCH3 )'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~SetCurrentLine.html
+properties:
+- name: BaseSum
+  description: property BaseSum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~BaseSum.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~Count.html
+- name: DocEntry
+  description: property DocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~DocEntry.html
+- name: Exempt
+  description: property Exempt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~Exempt.html
+- name: ExternalCalcTaxAmount
+  description: 'The external calculated tax amount, in local currency. Field name: ExtTaxSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~ExternalCalcTaxAmount.html
+  field_name: ExtTaxSum
+- name: ExternalCalcTaxAmountFC
+  description: 'Returns the external calculated tax amount, in foreign currency. Field name: ExtTaxSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~ExternalCalcTaxAmountFC.html
+  field_name: ExtTaxSumF
+- name: ExternalCalcTaxAmountSC
+  description: 'Returns the external calculated tax amount, in system currency. Field name: ExtTaxSumS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~ExternalCalcTaxAmountSC.html
+  field_name: ExtTaxSumS
+- name: ExternalCalcTaxRate
+  description: 'External calculated tax rate. Field: ExtTaxRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~ExternalCalcTaxRate.html
+- name: JurisdictionCode
+  description: 'The jurisdiction tax code. Field: StaCode . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~JurisdictionCode.html
+  length: 8
+- name: JurisdictionType
+  description: 'The type of the jurisdiction tax code. Field: staType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~JurisdictionType.html
+- name: LineNumber
+  description: property LineNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~LineNumber.html
+- name: NonDeductiblePercent
+  description: property NonDeductiblePercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~NonDeductiblePercent.html
+- name: RowSequence
+  description: property RowSequence
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~RowSequence.html
+- name: TaxAmount
+  description: 'The tax amount, in local currency, calculated for the transaction. You can manually adjust the tax amount according to the business need. Field name: TaxSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxAmount.html
+  field_name: TaxSum
+- name: TaxAmountFC
+  description: 'Returns the tax amount, in foreign currency, calculated for the transaction. Field name: TaxSumFrgn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxAmountFC.html
+  field_name: TaxSumFrgn
+- name: TaxAmountSC
+  description: 'Returns the total tax amount, in system currency, calculated for the transaction. Field name: TaxSumSys .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxAmountSC.html
+  field_name: TaxSumSys
+- name: TaxInPrice
+  description: property TaxInPrice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxInPrice.html
+- name: TaxOnReserveInvoice
+  description: property TaxOnReserveInvoice
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxOnReserveInvoice.html
+- name: TaxRate
+  description: 'The rate of the jurisdiction tax. Field: TaxRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~TaxRate.html
+- name: Unencumbered
+  description: 'Field: Unencumbered .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~Unencumbered.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxJurisdictions~UserFields.html

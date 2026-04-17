@@ -1,0 +1,28 @@
+name: PaymentReasonCodeService
+title: PaymentReasonCodeService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService.html
+description: 'Source table: OPTR .'
+remarks: "For the Italy localization only. Navigation path 1: Administration â\x86\x92 Setup â\x86\x92 Financial â\x86\x92 Tax â\x86\x92 Withholding Tax , and go to the column Payment Reason Code . Navigation path 2: Business Partner Master Data â\x86\x92 Accounting â\x86\x92 Tax , select the checkbox Subject to Withholding Tax , choose the browser button next to the Specific WTax Amounts Setup field, and go to the column Payment Reason Code ."
+methods:
+- name: AddPaymentReasonCode
+  description: AddPaymentReasonCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~AddPaymentReasonCode.html
+- name: DeletePaymentReasonCode
+  description: DeletePaymentReasonCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~DeletePaymentReasonCode.html
+- name: GetDataInterface
+  description: GetDataInterface
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: GetDataInterfaceFromXMLFile
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: GetDataInterfaceFromXMLString
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~GetDataInterfaceFromXMLString.html
+- name: GetPaymentReasonCode
+  description: GetPaymentReasonCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~GetPaymentReasonCode.html
+- name: GetPaymentReasonCodeList
+  description: GetPaymentReasonCodeList
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~PaymentReasonCodeService~GetPaymentReasonCodeList.html

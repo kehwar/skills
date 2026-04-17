@@ -1,0 +1,31 @@
+name: ApprovalTemplatesService
+title: ApprovalTemplatesService Object
+kind: service
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService.html
+description: 'ApprovalTemplatesService is a business object that manages the Approval of deviations from organization limitations. This object enables to: - Add a new Approval Stage to approval process. Get Approval Stage from approval process. Get a list of Approval Stages from approval process. Remove an Approval Stage from approval process. Update an Approval Stage within approval process. Source table: OWTM .'
+remarks: 'The ApprovalTemplatesService does not trigger the approval process for objects added via the DI API. To use the service: - Connect to a valid company. Call the CompanyService , which is the main DI service that you must call before using any other service. Call the method GetBusinessService for the required service. Create an empty data structure related to the required service. - or- You can create a data structure from an XML file or XML string. Set the required properties of the specified data structure. Call the required service method. To display the form in the application: Select Administration --> Approval Procedure --> Approval Templates .'
+methods:
+- name: AddApprovalTemplate
+  description: Adds a new instance of ApprovalTemplate Object to the ApprovalTemplates collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~AddApprovalTemplate.html
+- name: GetApprovalTemplate
+  description: Gets an instance of the ApprovalTemplate Object from the ApprovalTemplates collection by its params.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~GetApprovalTemplate.html
+- name: GetApprovalTemplateList
+  description: Returns the ApprovalTemplatesParams data collection that identify all instances of ApprovalTemplate exists in ApprovalTemplates collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~GetApprovalTemplateList.html
+- name: GetDataInterface
+  description: Creates an empty data interface. This means the structure contains the default setting/values of the database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Retrieves the Data Interface schema from XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Retrieves the Data Interface schema from XML string.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~GetDataInterfaceFromXMLString.html
+- name: RemoveApprovalTemplate
+  description: Remove ApprovalTemplate identified by its ApprovalTemplateParams from ApprovalTemplates collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~RemoveApprovalTemplate.html
+- name: UpdateApprovalTemplate
+  description: Update this ApprovalTemplate by another ApprovalTemplate .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ApprovalTemplatesService~UpdateApprovalTemplate.html

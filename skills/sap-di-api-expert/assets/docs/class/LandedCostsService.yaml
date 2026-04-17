@@ -1,0 +1,34 @@
+name: LandedCostsService
+title: LandedCostsService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService.html
+description: 'The LandedCostsService service enables you to add, look up, update, cancel, and close landed costs documents. Source table: OIPF .'
+remarks: To access the window, choose Purchasing A/P --> Landed Costs .
+methods:
+- name: AddLandedCost
+  description: Adds a landed costs document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~AddLandedCost.html
+- name: CancelLandedCost
+  description: Cancels an existing landed costs document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~CancelLandedCost.html
+- name: CloseLandedCost
+  description: Closes an existing landed costs document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~CloseLandedCost.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the LandedCostsService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~GetDataInterfaceFromXMLString.html
+- name: GetLandedCost
+  description: Retrieves a landed costs document. The landed costs document is specified by its key, which is contained in the LandedCostParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~GetLandedCost.html
+- name: GetLandedCostList
+  description: Returns the LandedCostsParams data collection that identifies all landed costs documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~GetLandedCostList.html
+- name: UpdateLandedCost
+  description: Updates an existing landed costs document. The data for the landed costs document, including the key of the landed costs document to be updated, is contained in the LandedCost object passed to the method. To update a landed costs document, you must first retrieve it using the GetLandedCost method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~LandedCostsService~UpdateLandedCost.html

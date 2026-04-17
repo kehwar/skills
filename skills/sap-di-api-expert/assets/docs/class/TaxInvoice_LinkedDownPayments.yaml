@@ -1,0 +1,96 @@
+name: TaxInvoice_LinkedDownPayments
+title: TaxInvoice_LinkedDownPayments Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments.html
+description: 'Link to tax invoices from down payments for Russia localization. The whole "Linked Down Payments" subobject is read-only, meaning it is completed automatically during the adding of Tax Invoices (no matter if via UI or DI) and user can read the values via DI API using this subobject (LinkedDownPayments). Source table: TSI4 for A/R tax invoices, TPI4 for A/P tax invoices.'
+remarks: Sales - A/R -> A/R Tax Invoice -> option Down Payments Purchasing - A/P -> A/P Tax Invoice -> option Down Payments
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~SetCurrentLine.html
+properties:
+- name: AmountToDraw
+  description: 'The amount of the down payment that is used. Field name: DrawnSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~AmountToDraw.html
+  field_name: DrawnSum
+- name: AmountToDrawFC
+  description: 'The amount of the down payment that is used in foreign currency. Field name: DrawnSumFc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~AmountToDrawFC.html
+  field_name: DrawnSumFc
+- name: AmountToDrawSC
+  description: 'The amount of the down payment that is used in system currency. Field name: DrawnSumSc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~AmountToDrawSC.html
+  field_name: DrawnSumSc
+- name: Count
+  description: Number of records in a LinkedDownPayments collection.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~Count.html
+- name: DocCurrency
+  description: "Document currency code (Ñ\x80Ñ\x83Ð±, EUR). Field name: DocCur ."
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~DocCurrency.html
+  field_name: DocCur
+- name: DocEntry
+  description: 'Absolute ID of the current Tax Invoice. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~DocEntry.html
+- name: DownPaymentEntry
+  description: 'Down payment entry. (203: A/R Down Payment, 204: A/P Down Payment); on UI just the Document Number is visible with link arrow to DPM called "Down Payment No." Field name: DpmDocEntr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~DownPaymentEntry.html
+  field_name: DpmDocEntr
+- name: DownPaymentNum
+  description: 'Down payment number. (203: A/R Down Payment, 204: A/P Down Payment); on UI just the Document Number is visible with link arrow to DPM called "Down Payment No." Field name: DpmDocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~DownPaymentNum.html
+  field_name: DpmDocNum
+- name: DownPaymentType
+  description: 'Down payment object type. (203: A/R Down Payment, 204: A/P Down Payment); on UI just the Document Number is visible with link arrow to DPM called "Down Payment No." Field name: DpmObjType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~DownPaymentType.html
+  field_name: DpmObjType
+- name: GrossAmountToDraw
+  description: 'The gross amount of the down payment that is used. Field name: Gross .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~GrossAmountToDraw.html
+  field_name: Gross
+- name: GrossAmountToDrawFC
+  description: 'The gross amount of the down payment that is used in foreign currency. Field name: GrossFc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~GrossAmountToDrawFC.html
+  field_name: GrossFc
+- name: GrossAmountToDrawSC
+  description: 'The gross amount of the down payment that is used in system currency. Field name: GrossSc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~GrossAmountToDrawSC.html
+  field_name: GrossSc
+- name: LineNum
+  description: 'Line number in a LinkedDownPayments collection. Field name: LineNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~LineNum.html
+- name: PaymentEntry
+  description: 'Payment entry. (24: Incoming Payment, 46: Outgoing Payment); on UI just the Document Number is visible with link arrow to Payment called "Payment No." Field name: PmnDocEntr .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~PaymentEntry.html
+  field_name: PmnDocEntr
+- name: PaymentNum
+  description: 'Payment number. (24: Incoming Payment, 46: Outgoing Payment); on UI just the Document Number is visible with link arrow to Payment called "Payment No." Field name: PmnDocNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~PaymentNum.html
+  field_name: PmnDocNum
+- name: PaymentTaxDate
+  description: 'Date of payment. Field name: PmnTaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~PaymentTaxDate.html
+  field_name: PmnTaxDate
+- name: PaymentType
+  description: 'Type of payment object. (24: Incoming Payment, 46: Outgoing Payment); on UI just the Document Number is visible with link arrow to Payment called "Payment No." Field name: PmnObjType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~PaymentType.html
+  field_name: PmnObjType
+- name: Tax
+  description: 'Tax amount. Field name: Vat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~Tax.html
+  field_name: Vat
+- name: TaxFC
+  description: 'Tax amount in foreign currency. Field name: VatFc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~TaxFC.html
+  field_name: VatFc
+- name: TaxSC
+  description: 'Tax amount in system currency. Field name: VatSc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~TaxSC.html
+  field_name: VatSc
+- name: TransferDate
+  description: 'Date of transfer. Copied from the payment of the linked DPM, when using Bank Transfer payment method. Field name: TrsfrDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~TransferDate.html
+  field_name: TrsfrDate
+- name: TransferReference
+  description: 'Reference of transfer. Copied from the payment of the linked DPM, when using Bank Transfer payment method. Field name: TrsfrRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxInvoice_LinkedDownPayments~TransferReference.html
+  field_name: TrsfrRef

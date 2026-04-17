@@ -1,0 +1,31 @@
+name: BarCodesService
+title: BarCodesService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService.html
+description: The BarCodesService service enables you to add, look up, update, and remove bar codes.
+remarks: To access the Bar Codes window, from the SAP Business One Main Menu , choose Inventory --> Bar Codes.
+methods:
+- name: Add
+  description: Adds a bar code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~Add.html
+- name: Delete
+  description: Deletes an existing bar code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~Delete.html
+- name: Get
+  description: Retrieves a bar code. The bar code is specified by its key, which is contained in the BarCodeParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BarCodesService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the BarCodeParamsCollection data collection that identifies all bar codes.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~GetList.html
+- name: Update
+  description: Updates an existing bar code.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BarCodesService~Update.html

@@ -1,0 +1,29 @@
+name: RecordsetEx
+title: RecordsetEx Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx.html
+description: RecordsetEx is a raw data access object that enables you to fetch data from the database table. The main method of this object is DoQuery , which lets you run SQL select queries in its query string.
+remarks: 'The RecordsetEx object includes two browsing mechanisms. The first mechanism applies to result sets that contain only one row (by the use of Select Top); it retrieves only one record each time. With the second mechanism, the browsing is performed on the existing result set only. The following Data Manipulation Language (DML) operations are blocked: UPDATE, INSERT, DELETE, TRUNCATE, UPSERT, REPLACE, and MERGE. The following Data Definition Language (DDL) operations are blocked: CREATE, DROP, ALTER, and RENAME. This object is for the SAP HANA database only. It does not support Microsoft SQL Server database usage. When the sub-query is not introduced with EXISTS, only one expression can be specified in the select list. As of SAP Business One 10.0, the DoQuery function can access the current logon company DB only. If you access Common DB, the DoQuery function will throw exception.'
+methods:
+- name: DoQuery
+  description: Runs SQL queries.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~DoQuery.html
+- name: GetColumnType
+  description: Returns the column type by its position or by its alias.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~GetColumnType.html
+- name: GetColumnValue
+  description: Returns the column value by its position or by its alias.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~GetColumnValue.html
+- name: MoveNext
+  description: Get next row data from query result; if it returns false, it means next row does not exist, else returns true.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~MoveNext.html
+properties:
+- name: ColumnsCount
+  description: Returns the column number of the result set.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~ColumnsCount.html
+- name: EoF
+  description: Returns a Boolean value that indicates whether or not the current row is the last row in the result set (End of File).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~EoF.html
+- name: RecordSetAudit
+  description: For security enhancement, if this flag is set to true, the querying will be logged in table RSAT . By default, the flag is set to false.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~RecordsetEx~RecordSetAudit.html

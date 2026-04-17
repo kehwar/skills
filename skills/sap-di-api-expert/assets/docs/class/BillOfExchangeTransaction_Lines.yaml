@@ -1,0 +1,31 @@
+name: BillOfExchangeTransaction_Lines
+title: BillOfExchangeTransaction_Lines Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines.html
+description: 'BillOfExchangeTransaction_Lines is a child object of the BillOfExchangeTransaction object, and represents the line entries of the Bill Of Exchange Transaction. This object enables you to add a line entry to the Bill Of Exchange Transaction table. Source table: BOT1 .'
+remarks: 'Mandatory fields in SAP Business One: BillOfExchangeNo and BillOfExchangeType .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~SetCurrentLine.html
+properties:
+- name: BillOfExchangeDueDate
+  description: 'Returns the due date of Bill Of Exchange on which the payment transaction will occur. Field name: DueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~BillOfExchangeDueDate.html
+  field_name: DueDate
+- name: BillOfExchangeNo
+  description: 'Sets or returns the Bill Of Exchange number as defined in SAP Business One. Field name: BOENumber . Mandatory field is SAP Business One.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~BillOfExchangeNo.html
+  field_name: BOENumber
+- name: BillOfExchangeType
+  description: 'Sets or returns a valid value of BoBOETypes type that specifies the Bill Of Exchange type: incoming or outgoing. Mandatory field is SAP Business One.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~BillOfExchangeType.html
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~Count.html
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BillOfExchangeTransaction_Lines~UserFields.html

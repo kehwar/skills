@@ -1,0 +1,28 @@
+name: BEMReplicationPeriodService
+title: BEMReplicationPeriodService Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService.html
+description: 'The BEMReplicationPeriodService service enables you to add, look up, and update Replication Scope Period of PFMCOP System. Source table: OBEM .'
+remarks: Administration -> Integration Service -> Integration with SAP Product Footprint Management for Clean Operations
+methods:
+- name: Add
+  description: Adds a Replication Scope Period.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~Add.html
+- name: Get
+  description: Retrieves a Replication Scope Period. The Replication Scope Period is specified by its key, which is contained in the BEMReplicationPeriodParams object passed to the method.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~Get.html
+- name: GetDataInterface
+  description: Creates an empty data structure for use with the BEMReplicationPeriodService .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~GetDataInterface.html
+- name: GetDataInterfaceFromXMLFile
+  description: Creates an object from an XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~GetDataInterfaceFromXMLFile.html
+- name: GetDataInterfaceFromXMLString
+  description: Creates an object from XML.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~GetDataInterfaceFromXMLString.html
+- name: GetList
+  description: Returns the BEMReplicationPeriodParamsCollection data collection that identifies all Replication Scope Periods.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~GetList.html
+- name: Update
+  description: Updates an existing Replication Scope Period.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BEMReplicationPeriodService~Update.html

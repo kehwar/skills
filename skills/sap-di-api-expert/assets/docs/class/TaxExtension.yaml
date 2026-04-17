@@ -1,0 +1,208 @@
+name: TaxExtension
+title: TaxExtension Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension.html
+description: 'TaxExtension is a child object of the Documents object. It stores fiscal IDs of marketing documents. Every marketing document has a set of fiscal IDs. The TaxExtension object is applicable for cluster B (country-specific for Brazil and India). Source tables: CPI12 , CPV12 , CSI12 , CSV12 , DLN12 , DRF12 , IGE12 , IGN12 , INV12 , PCH12 , PDN12 , POR12 , QUT12 , RDN12 , RDR12 , RIN12 , RPC12 , RPD12 , and WTR12 .'
+remarks: 'To display the form in the application:'
+properties:
+- name: BillOfEntryDate
+  description: property BillOfEntryDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BillOfEntryDate.html
+- name: BillOfEntryNo
+  description: property BillOfEntryNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BillOfEntryNo.html
+- name: BlockB
+  description: Sets or returns the block of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BlockB.html
+- name: BlockS
+  description: Sets or returns the block of the ship-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BlockS.html
+- name: BoEValue
+  description: property BoEValue
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BoEValue.html
+- name: Brand
+  description: 'Sets or returns the brand fiscal Id. Field name: Brand . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~Brand.html
+  length: 20
+- name: BuildingB
+  description: Sets or returns the Building of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BuildingB.html
+- name: BuildingS
+  description: 'Sets or returns the Building of the ship-to address. Field name: Building .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~BuildingS.html
+  field_name: Building
+- name: Carrier
+  description: 'Sets or returns the carrier code. Field name: Carrier . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~Carrier.html
+  length: 15
+- name: CityB
+  description: Sets or returns the Building of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CityB.html
+- name: CityS
+  description: Sets or returns the City of the ship-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CityS.html
+- name: ClaimRefund
+  description: property ClaimRefund
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ClaimRefund.html
+- name: CountryB
+  description: Sets or returns the Country of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CountryB.html
+- name: CountryS
+  description: Sets or returns the Country of the ship-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CountryS.html
+- name: County
+  description: 'Sets or returns the county code. Field name: County . Length: 7 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~County.html
+  length: 7
+- name: CountyB
+  description: Sets or returns the County of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CountyB.html
+- name: CountyS
+  description: Sets or returns the County of the Ship-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~CountyS.html
+- name: DifferentialOfTaxRate
+  description: property DifferentialOfTaxRate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~DifferentialOfTaxRate.html
+- name: DocEntry
+  description: property DocEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~DocEntry.html
+- name: GlobalLocationNumberB
+  description: property GlobalLocationNumberB
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~GlobalLocationNumberB.html
+- name: GlobalLocationNumberS
+  description: property GlobalLocationNumberS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~GlobalLocationNumberS.html
+- name: GrossWeight
+  description: Sets or returns the gross weight.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~GrossWeight.html
+- name: ImportOrExport
+  description: 'Sets or returns a valid value that specifies whether the Sales Tax Invoice is for import or export . Applicable for cluster B (country-specific for India). Field name: ImpOrExp (INV12).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ImportOrExport.html
+  field_name: ImpOrExp
+- name: ImportOrExportType
+  description: property ImportOrExportType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ImportOrExportType.html
+- name: Incoterms
+  description: 'Sets or returns the Internationally Accepted Commerce terms. Field name: Incoterms . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~Incoterms.html
+  length: 3
+- name: IsIGSTAccount
+  description: property IsIGSTAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~IsIGSTAccount.html
+- name: MainUsage
+  description: property MainUsage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~MainUsage.html
+- name: NetWeight
+  description: 'Sets or returns the net weight. Field name: NetWeight .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~NetWeight.html
+- name: NFRef
+  description: 'Sets or returns the NF reference. Field name: NfRef .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~NFRef.html
+  field_name: NfRef
+- name: OriginalBillOfEntryDate
+  description: property OriginalBillOfEntryDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~OriginalBillOfEntryDate.html
+- name: OriginalBillOfEntryNo
+  description: property OriginalBillOfEntryNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~OriginalBillOfEntryNo.html
+- name: PackDescription
+  description: 'Sets or returns the pack description. Field name: PackDesc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~PackDescription.html
+  field_name: PackDesc
+- name: PackQuantity
+  description: 'Sets or returns the quantity of packs. Field name: QoP .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~PackQuantity.html
+  field_name: QoP
+- name: PortCode
+  description: property PortCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~PortCode.html
+- name: ShipUnitNo
+  description: 'Sets or returns the number of shipping unit. Field name: NoSU .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ShipUnitNo.html
+  field_name: NoSU
+- name: State
+  description: 'Sets or returns the state code. Field name: State . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~State.html
+  length: 3
+- name: StateB
+  description: Sets or returns the Building of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~StateB.html
+- name: StateS
+  description: Sets or returns the State of the bill-to address.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~StateS.html
+- name: StreetB
+  description: Sets or returns the Street of the bill-to address.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~StreetB.html
+- name: StreetS
+  description: Sets or returns the Street of the Ship-to address.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~StreetS.html
+- name: TaxId0
+  description: 'Sets or returns the CNPJ code (country-specific to Brazil). Field name: TaxId0 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId0.html
+  length: 100
+- name: TaxId1
+  description: 'Sets or returns the I.E. (country-specific to Brazil). Field name: TaxId1 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId1.html
+  length: 100
+- name: TaxId12
+  description: 'Tax ID 12. Field name: TaxId12 . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId12.html
+  length: 50
+- name: TaxId13
+  description: 'Deductee Ref. No. in India. Field name: TaxId13 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId13.html
+  length: 100
+- name: TaxId14
+  description: 'ITR Filing. Field name: TaxId14 . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId14.html
+  length: 250
+- name: TaxId2
+  description: 'Sets or returns the I.E.S.T (country-specific to Brazil). Field name: TaxId2 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId2.html
+  length: 100
+- name: TaxId3
+  description: 'Sets or returns the I.M. (country-specific to Brazil). Field name: TaxId3 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId3.html
+  length: 100
+- name: TaxId4
+  description: 'Sets or returns the CPF code (country-specific to Brazil). Field name: TaxId4 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId4.html
+  length: 100
+- name: TaxId5
+  description: 'Sets or returns the Foreigner ID (country-specific to Brazil). Field name: TaxId5 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId5.html
+  length: 100
+- name: TaxId6
+  description: 'Sets or returns the Foreigner description (country-specific to Brazil). Field name: TaxId6 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId6.html
+  length: 100
+- name: TaxId7
+  description: 'Sets or returns the INSS Inscription (country-specific to Brazil). Field name: TaxId7 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId7.html
+  length: 100
+- name: TaxId8
+  description: 'Sets or returns the Suframa (country-specific to Brazil). Field name: TaxId8 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId8.html
+  length: 100
+- name: TaxId9
+  description: 'Reserved. Field name: TaxId9 . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~TaxId9.html
+  length: 100
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~UserFields.html
+- name: Vehicle
+  description: 'Sets or returns the vehicle ID. Field name: Vehicle . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~Vehicle.html
+  length: 10
+- name: VehicleState
+  description: 'Sets or returns the state of the vehicle ID. Field name: VidState . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~VehicleState.html
+  field_name: VidState
+  length: 3
+- name: ZipCodeB
+  description: Sets or returns the Zip Code of the bill-to address .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ZipCodeB.html
+- name: ZipCodeS
+  description: Sets or returns the Zip Code part of the Ship-to address.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~TaxExtension~ZipCodeS.html

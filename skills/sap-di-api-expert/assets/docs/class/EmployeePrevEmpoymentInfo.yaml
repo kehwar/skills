@@ -1,0 +1,50 @@
+name: EmployeePrevEmpoymentInfo
+title: EmployeePrevEmpoymentInfo Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo.html
+description: 'EmployeePrevEmploymentInfo is a child object of the EmployeesInfo object and represents the employee previous employment information. Source table: HEM4 .'
+remarks: 'To display the form in the application: - Select Human Resources --> Employee Master Data. Select the Administration tab. Click Previous Employment .'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~Add.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the number of lines in the employee previous employment list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~Count.html
+- name: EmployeeNo
+  description: 'P>Sets or returns the employee ID, which SAP Business One generates automatically when adding a new employee. Field name: empID . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~EmployeeNo.html
+  field_name: empID
+- name: Employer
+  description: 'Sets or returns the name of the previous employer. Field name: employer . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~Employer.html
+  field_name: employer
+  length: 50
+- name: FromDtae
+  description: 'Sets or returns the start date of the previous employment period. Field name: fromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~FromDtae.html
+  field_name: fromDate
+- name: LineNum
+  description: 'Returns the current row number in the employee reviews list. Field name: line .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~LineNum.html
+  field_name: line
+- name: Position
+  description: 'Sets or returns the employee position in the previous employment. Field name: position . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~Position.html
+  field_name: position
+  length: 50
+- name: Remarks
+  description: 'Sets or returns a memo type string that specifies remarks of the previous employment. Field name: remarks . Length: 64,000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~Remarks.html
+  field_name: remarks
+- name: ToDate
+  description: 'Sets or returns the end date of the previous employment period. Field name: toDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~ToDate.html
+  field_name: toDate
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~EmployeePrevEmpoymentInfo~UserFields.html

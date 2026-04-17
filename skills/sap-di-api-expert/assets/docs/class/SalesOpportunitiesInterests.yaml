@@ -1,0 +1,39 @@
+name: SalesOpportunitiesInterests
+title: SalesOpportunitiesInterests Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests.html
+description: 'SalesOpportunitiesInterests is a child object of the SalesOpportunities object and represents the interests range of sales opportunity. Source table: OPR4 .'
+remarks: 'To display the form in the application: - Select Sales Opportunities --> Sales Opportunity . Select the Potential tab (the Interset Range table is enabled only when the sales opportunity status is Open ).'
+methods:
+- name: Add
+  description: Adds a new data line to the object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~Add.html
+- name: Delete
+  description: Deletes the current line. Returns a result value that indicates success or failure.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~Delete.html
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total rows in the SalesOpportunitiesInterests list.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~Count.html
+- name: InterestId
+  description: 'Sets or returns the interest ID. This is a foreign key to the Interest table ( OOIN ), which is exposed via the SalesOpportunityInterestsSetupService object. Field name: IntId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~InterestId.html
+  field_name: IntId
+- name: PrimaryInterest
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the sales opportunity interset is primary. Field name: Prmry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~PrimaryInterest.html
+  field_name: Prmry
+- name: RowNo
+  description: 'Returns the current available row number (starts from 1). Field name: Line . Returns the current available row number (starts from 1). Field name: Line_ID .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~RowNo.html
+  field_name: Line
+- name: SequenceNo
+  description: 'Returns the sales opportunity unique ID (primary key). Field name: OpportId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~SequenceNo.html
+  field_name: OpportId
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~SalesOpportunitiesInterests~UserFields.html

@@ -1,0 +1,22 @@
+name: BPCurrencies
+title: BPCurrencies Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCurrencies.html
+description: 'Business Partners currency. Source table: CRD13 .'
+methods:
+- name: SetCurrentLine
+  description: Sets the active row to a specified row number.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCurrencies~SetCurrentLine.html
+properties:
+- name: Count
+  description: Returns the total number of records in the table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCurrencies~Count.html
+- name: CurrencyCode
+  description: 'Field name: CurrCode . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCurrencies~CurrencyCode.html
+  field_name: CurrCode
+  length: 3
+- name: Include
+  description: 'Field name: INCLUDE .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~BPCurrencies~Include.html
+  field_name: INCLUDE
