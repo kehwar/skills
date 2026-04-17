@@ -120,6 +120,82 @@ Use `assets/DI_API_INDEX.yaml` to find the correct `doc_path` for any name.
 
 ---
 
+## Fetching individual property / method detail pages
+
+Each entry in a `.yaml` doc file exposes a `url` key for every member
+(property, method, or enum value).  When the short `description` in the YAML
+is insufficient — for example, to see parameter signatures, return types,
+allowed values, or full usage notes — fetch that URL and parse it.
+
+### 1 — Identify the member URL from the YAML
+
+```python
+import yaml, pathlib
+
+doc = yaml.safe_load(
+    (pathlib.Path("assets/docs/class/Documents.yaml")).read_text()
+)
+
+# Find a specific property
+prop = next(p for p in doc.get("properties", []) if p["name"] == "CardCode")
+print(prop["url"])
+# → https://help.sap.com/doc/.../SDKHelp/SAPbobsCOM~Documents~CardCode.html
+
+# Find a specific method
+method = next(m for m in doc.get("methods", []) if m["name"] == "GetByKey")
+print(method["url"])
+```
+
+### 2 — Fetch the detail page
+
+**Option A — using the `fetch_webpage` tool (in-agent, no script needed)**
+
+Pass the member URL directly to the `fetch_webpage` tool with a query describing
+what you need (e.g. "GetByKey parameters and return type").  The tool returns the
+parsed text of the SAP Help page.
+
+**Option B — fetch via script**
+
+```python
+import requests, urllib3
+from common import REQUEST_HEADERS, fetch_html
+
+urllib3.disable_warnings()
+session = requests.Session()
+html = fetch_html(member_url, session)
+# parse with BeautifulSoup or pass to html_to_data()
+```
+
+**Option C — open in browser**
+
+```
+"$BROWSER" "<member_url>"
+```
+
+### 3 — What the detail page adds
+
+| Section | Contents |
+|---|---|
+| **Description** | Full prose description, constraints, business rules |
+| **Syntax** | Parameter names, types, return type (for methods) |
+| **Remarks** | Edge cases, version notes, related properties |
+| **Example** | Inline code snippet (if available) |
+| **See Also** | Links to sibling properties / related objects |
+
+### 4 — Batch-fetch all member pages for an object (offline cache)
+
+If you expect to need several member pages for the same object, cache them all
+at once with `build_docs.py`'s `--kind` filter — but member pages are **not**
+saved by `build_docs.py` (it only caches the object-level pages).  Fetch member
+pages on demand using Option A or B above.
+
+> **Tip:** Member URLs follow a predictable pattern:
+> `SAPbobsCOM~<ClassName>~<MemberName>.html`
+> You can construct them without reading the YAML when you already know the class
+> and member name.
+
+---
+
 ## Related skills
 
 | Skill | When to use |
