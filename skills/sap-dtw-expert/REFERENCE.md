@@ -142,16 +142,18 @@ DTW templates contain **all** available columns. Only a subset is required by SA
 
 ## COM property names vs DB column names
 
-DTW, the Service Layer, and the DI API all operate through the SAPbobsCOM layer and use **COM property names** — not raw HANA database column names.
+DTW uses the DI API (SAPbobsCOM) under the hood and therefore uses **DI API COM property names** — not raw HANA database column names.
 
-| COM property name (DTW / Service Layer / DI API) | DB column (HANA SQL) |
+The Service Layer is independent and does **not** use the DI API under the hood. It shares property names with the DI API for most fields by convention, but there are exceptions — always verify Service Layer field names against the Service Layer OpenAPI spec rather than assuming parity with DI API names.
+
+| DI API COM property name (used by DTW) | DB column (HANA SQL) |
 |---|---|
 | `FederalTaxID` | `OCRD.LicTradNum` |
 | `Mother` | `OCRD.FatherCard` |
 | `DiscountPercent` | `OINV.TradeDisc` |
 | `InventoryUOM` | `OITM.InvntryUom` |
 
-Always verify unfamiliar property names in DTW row 1 against `sap-di-api-expert` class docs or the `sap-service-layer-expert` OpenAPI spec. Use `sap-schema-expert` only when you need the raw DB column name for HANA SQL.
+Always verify unfamiliar DTW (row 1) field names against `sap-di-api-expert` class docs. For Service Layer field names, use the `sap-service-layer-expert` OpenAPI spec — do not assume they match DI API names exactly. Use `sap-schema-expert` only when you need the raw DB column name for HANA SQL.
 
 ---
 

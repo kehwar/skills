@@ -38,7 +38,8 @@ Each index entry has: `table_code`, `object_name`, `module`, `category`, `path`.
 - **Custom fields**: append `U_FieldName` to the end of row 1; DTW rejects unrecognised names.
 - **Encoding**: UTF-8 without BOM; no tab characters inside data values.
 - **DTW vs Service Layer**: DTW for bulk migrations; Service Layer for real-time/programmatic writes.
-- **COM vs DB names**: DTW field names are COM property names (e.g. `FederalTaxID`), not raw HANA column names (e.g. `LicTradNum`). Use `sap-schema-expert` to map them.
+- **DTW vs DI API field names**: DTW uses DI API COM property names (e.g. `FederalTaxID`), not raw HANA column names (e.g. `LicTradNum`). Use `sap-schema-expert` to map them.
+- **Service Layer field names**: Service Layer is independent of the DI API — it shares most property names by convention but has exceptions. Always verify against the Service Layer OpenAPI spec, not DI API docs.
 
 ## Reference
 
