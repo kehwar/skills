@@ -1,0 +1,324 @@
+name: ChartOfAccounts
+title: ChartOfAccounts Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts.html
+description: 'ChartOfAccounts is a business object that represents the General Ledger (G/L) accounts in the Finance module. This object enables you to: - Add a G/L account. Retrieve a G/L account by its key. Update a G/L account. Remove a G/L account. Save the object in XML format. Source table: OACT .'
+remarks: 'The Chart of Accounts is an index of all G/L accounts that are used by one or more companies. For every G/L account there is an account number, an account description, and information that determines the function of the account. You have to assign a Chart of Accounts to every company. This Chart of Accounts becomes operative after you carry out posting for these businesses in your daily business. After choosing the most suitable Chart of Accounts, you can customize your choice by adding, adjusting, and changing. However, once posting were made to Chart of Accounts you cannot delete it. Mandatory fields in SAP Business One: Code or FormatCode (when working with account segmentation), and FatherAccountKey . To display the form in the application: - Select Financials --> Chart of Accounts (or Edit Chart of Accounts ).'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Add.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~GetByKey.html
+- name: Remove
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Update.html
+properties:
+- name: AccountLevel
+  description: 'Returns the level of the account. Field name: Levels .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AccountLevel.html
+  field_name: Levels
+- name: AccountPurposeCode
+  description: property AccountPurposeCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AccountPurposeCode.html
+- name: AccountType
+  description: 'Sets or returns a valid value of BoAccountTypes that specifies the account type (revenues, expenses, or other) for active accounts only. Field name: ActType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AccountType.html
+  field_name: ActType
+- name: AcctCurrency
+  description: 'Sets or returns the currency in which all the journal entries for that account are recorded. Field name: ActCurr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AcctCurrency.html
+  field_name: ActCurr
+  length: 3
+- name: ActiveAccount
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether the account is an active account or just a title. title is used to organize and display data in financial reports, and can summarize several active accounts or several active accounts and titles together . Field name: Postable .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ActiveAccount.html
+  field_name: Postable
+- name: AllowChangeVatGroup
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to allow change of the VAT group. Field name: VatChange .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AllowChangeVatGroup.html
+  field_name: VatChange
+- name: AllowMultipleLinking
+  description: 'Specify whether to link this account more than once within the same financial template. Field: MultiLink .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~AllowMultipleLinking.html
+- name: Balance
+  description: 'Returns the account balance in local currency. Field name: CurrTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Balance.html
+  field_name: CurrTotal
+- name: Balance_FrgnCurr
+  description: 'Returns the account balance in foreign currency. Field name: FcTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Balance_FrgnCurr.html
+  field_name: FcTotal
+- name: Balance_syscurr
+  description: 'Returns the account balance in system currency. Field name: SysTotal ).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Balance_syscurr.html
+  field_name: SysTotal
+- name: BlockManualPosting
+  description: property BlockManualPosting
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~BlockManualPosting.html
+- name: BPLID
+  description: property BPLID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~BPLID.html
+- name: BPLName
+  description: property BPLName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~BPLName.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Browser.html
+- name: BudgetAccount
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account (active account only) is relevant to budget management.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~BudgetAccount.html
+- name: CashAccount
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether the account is a monetary account or indexed account. Field name: CashBox .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~CashAccount.html
+  field_name: CashBox
+- name: CashFlowRelevant
+  description: property CashFlowRelevant
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~CashFlowRelevant.html
+- name: Category
+  description: 'Sets or returns this chart of account category. Field name: category . This is a foreign key to the OACG object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Category.html
+  field_name: category
+- name: Code
+  description: 'Sets or returns the G/L account code. Field name: AcctCode . Mandatory field in SAP Business One when not working with segmentation. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Code.html
+  field_name: AcctCode
+  length: 15
+- name: CostAccountingOnly
+  description: property CostAccountingOnly
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~CostAccountingOnly.html
+- name: CostElementCode
+  description: property CostElementCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~CostElementCode.html
+- name: CostElementRelevant
+  description: property CostElementRelevant
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~CostElementRelevant.html
+- name: DataExportCode
+  description: 'Sets or returns an alternate code for identifying the account in data that is exported to other programs. Field name: ExportCode . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DataExportCode.html
+  field_name: ExportCode
+  length: 10
+- name: DatevAccount
+  description: Property DatevAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DatevAccount.html
+- name: DatevAutoAccount
+  description: Property DatevAutoAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DatevAutoAccount.html
+- name: DatevFirstDataEntry
+  description: Property DatevFirstDataEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DatevFirstDataEntry.html
+- name: DefaultVatGroup
+  description: 'Sets or returns the default VAT group. Field name: DfltVat . Length: 8 characters. This is a foreign key to the VatGroups object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DefaultVatGroup.html
+  field_name: DfltVat
+  length: 8
+- name: Details
+  description: 'Sets or returns details about the account. Field name: Details . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Details.html
+  length: 254
+- name: DistributionRule2Relevant
+  description: 'Specify whether the G/L account is relevant to the distribution rules of corresponding dimensions. Field: Dim2Relvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DistributionRule2Relevant.html
+- name: DistributionRule3Relevant
+  description: 'Specify whether the G/L account is relevant to the distribution rules of corresponding dimensions. Field: Dim3Relvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DistributionRule3Relevant.html
+- name: DistributionRule4Relevant
+  description: 'Specify whether the G/L account is relevant to the distribution rules of corresponding dimensions. Field: Dim4Relvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DistributionRule4Relevant.html
+- name: DistributionRule5Relevant
+  description: 'Specify whether the G/L account is relevant to the distribution rules of corresponding dimensions. Field: Dim5Relvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DistributionRule5Relevant.html
+- name: DistributionRuleRelevant
+  description: 'Specify whether the G/L account is relevant to the distribution rules of corresponding dimensions. Field: Dim1Relvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~DistributionRuleRelevant.html
+- name: ExchangeRateDifference
+  description: 'Exchange Rate Differences. Field name: ExchRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ExchangeRateDifference.html
+  field_name: ExchRate
+- name: ExpenseClassificationCategory
+  description: 'Field name: ExClassCat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ExpenseClassificationCategory.html
+  field_name: ExClassCat
+- name: ExpenseClassificationType
+  description: 'Field name: ExClassTyp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ExpenseClassificationType.html
+  field_name: ExClassTyp
+- name: ExternalCode
+  description: 'Sets or returns an additional code that is used for information only. The external code allows you to refine queries when generating customized reports. Field name: AccntntCod . Length: 12 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ExternalCode.html
+  field_name: AccntntCod
+  length: 12
+- name: ExternalReconNo
+  description: 'Returns the external reconciliation number. Field name: ExtrMatch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ExternalReconNo.html
+  field_name: ExtrMatch
+- name: FatherAccountKey
+  description: 'Sets or returns the parent account key that is used to define the G/L account location in drawer. Field name: FatherNum . Mandatory property. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FatherAccountKey.html
+  field_name: FatherNum
+  length: 15
+- name: ForeignName
+  description: 'Sets or returns an alternative account name (for example in foreign language). Field name: FrgnName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ForeignName.html
+  field_name: FrgnName
+  length: 100
+- name: FormatCode
+  description: 'Sets or returns the account number when account segmentation is defined in SAP Business One. Field name: FormatCode . Length: 210 characters. Mandatory field in SAP Business One when working with account segmentation'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FormatCode.html
+  length: 210
+- name: FrozenFor
+  description: property FrozenFor
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FrozenFor.html
+- name: FrozenFrom
+  description: property FrozenFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FrozenFrom.html
+- name: FrozenRemarks
+  description: property FrozenRemarks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FrozenRemarks.html
+- name: FrozenTo
+  description: property FrozenTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~FrozenTo.html
+- name: IncomeClassificationCategory
+  description: 'Field name: InClassCat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~IncomeClassificationCategory.html
+  field_name: InClassCat
+- name: IncomeClassificationType
+  description: 'Field name: InClassTyp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~IncomeClassificationType.html
+  field_name: InClassTyp
+- name: InternalReconNo
+  description: 'Returns the internal reconciliation number (internal reconciliation are also known as financial statement analyses). Field name: IntrMatch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~InternalReconNo.html
+  field_name: IntrMatch
+- name: LiableForAdvances
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is liable for advances. Field name: Advance .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LiableForAdvances.html
+  field_name: Advance
+- name: LoadingFactorCode
+  description: 'The distribution rule for dimension 1 for allocating this account to one or more profit centers. Field name: OverCode This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingFactorCode.html
+  field_name: OverCode
+- name: LoadingFactorCode2
+  description: 'The distribution rule for dimension 2 for allocating this account to one or more profit centers. Field name: OverCode2 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingFactorCode2.html
+  field_name: OverCode2
+- name: LoadingFactorCode3
+  description: 'The distribution rule for dimension 3 for allocating this account to one or more profit centers. Field name: OverCode3 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingFactorCode3.html
+  field_name: OverCode3
+- name: LoadingFactorCode4
+  description: 'The distribution rule for dimension 4 for allocating this account to one or more profit centers. Field name: OverCode4 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingFactorCode4.html
+  field_name: OverCode4
+- name: LoadingFactorCode5
+  description: 'The distribution rule for dimension 5 for allocating this account to one or more profit centers. Field name: OverCode5 This is a foreign key to the DistributionRule object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingFactorCode5.html
+  field_name: OverCode5
+- name: LoadingType
+  description: 'Indicates whether the chart of accounts is associated with distribution rules, which are defined in the LoadFactorCode properties. Field name: OverType'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LoadingType.html
+  field_name: OverType
+- name: LockManualTransaction
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account (active account only) can be added to the first two drawers in Chart of Accounts: Assets and Liabilities. Field name: LocManTran .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~LockManualTransaction.html
+  field_name: LocManTran
+- name: Name
+  description: 'Sets or returns the account name. Field name: AcctName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Name.html
+  field_name: AcctName
+  length: 100
+- name: OfficialAccountCode
+  description: 'Contains codes from official chart of accounts for mapping system accounts. Field name: OffcCode . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~OfficialAccountCode.html
+  field_name: OffcCode
+  length: 15
+- name: PCN874ReportRelevant
+  description: property PCN874ReportRelevant
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~PCN874ReportRelevant.html
+- name: PlanningLevel
+  description: 'The planning level that reflects the typical financial transactions and explains the origin of the data. Field name: PlngLevel . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~PlanningLevel.html
+  field_name: PlngLevel
+  length: 2
+- name: PrimaryAccount
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the account is a primary account (fixed). Field name: Fixed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~PrimaryAccount.html
+  field_name: Fixed
+- name: PrimaryClosingAccount
+  description: property PrimaryClosingAccount
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~PrimaryClosingAccount.html
+- name: ProjectCode
+  description: 'Sets or returns the project code related to the account. Field name: Project . Length: 8 characters. This is a foreign key to the Countries table OPRJ (not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ProjectCode.html
+  field_name: Project
+  length: 8
+- name: ProjectRelevant
+  description: 'Specify whether the G/L account is relevant to a project. Field: PrjRelvnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ProjectRelevant.html
+- name: Protected
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is confidential. Field name: Protected .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~Protected.html
+- name: RateConversion
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to include the account (active account only) in the calculation of conversion rate differences. Field name: RateTrans .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~RateConversion.html
+  field_name: RateTrans
+- name: ReconciledAccount
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is a reconciliation account. Field name: RealAcct .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ReconciledAccount.html
+  field_name: RealAcct
+- name: ReferentialAccountCode
+  description: property ReferentialAccountCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ReferentialAccountCode.html
+- name: RevaluationCoordinated
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is coordinated with revaluation. Field name: RevalMatch .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~RevaluationCoordinated.html
+  field_name: RevalMatch
+- name: StandardAccountCode
+  description: property StandardAccountCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~StandardAccountCode.html
+- name: TaxExemptAccount
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is VAT exempted. Field name: ExmIncome .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~TaxExemptAccount.html
+  field_name: ExmIncome
+- name: TaxLiableAccount
+  description: 'Field name: .Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the account is liable to VAT. Field name: .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~TaxLiableAccount.html
+- name: TaxonomyCode
+  description: property TaxonomyCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~TaxonomyCode.html
+- name: TransactionCode
+  description: 'Sets or returns this ChartOfAccount transaction code. Field name: TransCode . Length: 4 characters. This is a foreign key to the OTRC object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~TransactionCode.html
+  field_name: TransCode
+  length: 4
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~UserFields.html
+- name: ValidFor
+  description: property ValidFor
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ValidFor.html
+- name: ValidFrom
+  description: property ValidFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ValidFrom.html
+- name: ValidRemarks
+  description: property ValidRemarks
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ValidRemarks.html
+- name: ValidTo
+  description: property ValidTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~ValidTo.html
+- name: VATRegNum
+  description: property VATRegNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~ChartOfAccounts~VATRegNum.html

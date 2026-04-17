@@ -1,0 +1,820 @@
+name: Items
+title: Items Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items.html
+description: 'Items is a business object that represents the items master data in the Inventory and Production module. This object enables you to: - Add an item details. Retrieve an item by its key. Update item details. Save the object in XML format. Source table: OITM .'
+remarks: 'Mandatory fields in SAP Business One: ItemCode and Manufacturer . To display the Item Master Data window, from the SAP Business One Main Menu , choose Inventory --> Item Master Data . SAP Business One also lets you manage all fixed assets in the asset master data. To access the Asset Master Data window, from the SAP Business One Main Menu , choose Financials --> Fixed Assets --> Asset Master Data .'
+methods:
+- name: Add
+  description: Adds a new record to the OITM table. Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Add.html
+- name: Cancel
+  description: Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Cancel.html
+- name: Close
+  description: Not supported.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Close.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GetByKey.html
+- name: Remove
+  description: Deletes a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Remove.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Update.html
+properties:
+- name: ApTaxCode
+  description: 'Sets or returns the Tax Code (AP) for purchase documents. Field name: TaxCodeAP . This is a foreign key to the SalesTaxCodes Object. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ApTaxCode.html
+  field_name: TaxCodeAP
+  length: 8
+- name: ArTaxCode
+  description: 'Sets or returns the Tax Code (AR) for sales documents. Field name: TaxCodeAR . This is a foreign key to the SalesTaxCodes Object Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ArTaxCode.html
+  field_name: TaxCodeAR
+  length: 8
+- name: AssessableValue
+  description: property AssessableValue
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssessableValue.html
+- name: AssetClass
+  description: 'The asset class to which the asset belongs. Field name: AssetClass . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssetClass.html
+  length: 20
+- name: AssetGroup
+  description: 'The asset group to which the asset belongs. Field name: AssetGroup . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssetGroup.html
+  length: 15
+- name: AssetItem
+  description: 'Determines whether or not this item is a Fixed Assets . Field name: AssetItem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssetItem.html
+- name: AssetSerialNumber
+  description: 'The serial number of the asset. Field name: AssetSerNo. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssetSerialNumber.html
+  field_name: AssetSerNo
+  length: 30
+- name: AssetStatus
+  description: 'The asset''s status. Field name: AsstStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssetStatus.html
+  field_name: AsstStatus
+- name: AssVal4WTR
+  description: property AssVal4WTR
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AssVal4WTR.html
+- name: AttachmentEntry
+  description: 'Sets or returns the Attachment Entry . Field name: AtcEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AttachmentEntry.html
+  field_name: AtcEntry
+- name: AttributeGroups
+  description: Returns the ItemsAttributeGroups child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AttributeGroups.html
+- name: AutoCreateSerialNumbersOnRelease
+  description: Determines whether or not to create automatically a serial number when releasing the item. Applicable for cluster B only.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AutoCreateSerialNumbersOnRelease.html
+- name: AvgStdPrice
+  description: 'Sets or returns the Item Cost . Field name: AvgPrice .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~AvgStdPrice.html
+  field_name: AvgPrice
+- name: BarCode
+  description: 'Sets or returns the Bar Code (EAN code) for this item. Field name: CodeBars . Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BarCode.html
+  field_name: CodeBars
+  length: 16
+- name: BarCodes
+  description: property BarCodes
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BarCodes.html
+- name: BaseUnitName
+  description: 'Sets or returns the inventory Unit Name . Field name: BaseUnit . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BaseUnitName.html
+  field_name: BaseUnit
+  length: 20
+- name: BeverageCommercialBrandCode
+  description: property BeverageCommercialBrandCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BeverageCommercialBrandCode.html
+- name: BeverageGroupCode
+  description: property BeverageGroupCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BeverageGroupCode.html
+- name: BeverageTableCode
+  description: property BeverageTableCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~BeverageTableCode.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Browser.html
+- name: CapitalGoodsOnHoldLimit
+  description: property CapitalGoodsOnHoldLimit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CapitalGoodsOnHoldLimit.html
+- name: CapitalGoodsOnHoldPercent
+  description: property CapitalGoodsOnHoldPercent
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CapitalGoodsOnHoldPercent.html
+- name: CapitalizationDate
+  description: 'The date on which the asset is capitalized. Field name: CapDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CapitalizationDate.html
+  field_name: CapDate
+- name: Cession
+  description: 'Indicates whether the asset is owned by your company but financed by a bank mortgage. Field name: Cession.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Cession.html
+- name: CESTCode
+  description: 'CEST Code. Field name: CESTCode.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CESTCode.html
+- name: ChapterID
+  description: property ChapterID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ChapterID.html
+- name: CommissionGroup
+  description: 'Sets or returns the Commission Group code. Field name: CommisGrp .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CommissionGroup.html
+  field_name: CommisGrp
+- name: CommissionPercent
+  description: 'Sets or returns the commission percentage for the specified Business Partner. Field name: CommisPcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CommissionPercent.html
+  field_name: CommisPcnt
+- name: CommissionSum
+  description: 'Sets or returns the Total Commission for Item . Field name: CommisSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CommissionSum.html
+  field_name: CommisSum
+- name: CommodityClassification
+  description: 'Commodity classification. Field name: CommClass .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CommodityClassification.html
+  field_name: CommClass
+- name: ComponentWarehouse
+  description: property ComponentWarehouse
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ComponentWarehouse.html
+- name: CostAccountingMethod
+  description: 'Sets or returns the Valuation Method used to evaluate inventory. Field name: EvalSystem .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CostAccountingMethod.html
+  field_name: EvalSystem
+- name: CountingItemsPerUnit
+  description: 'The number of items per counting unit. Field name: NumInCnt.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CountingItemsPerUnit.html
+  field_name: NumInCnt
+- name: CreateDate
+  description: 'The date when the item master data created. Field name: CreateDate.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CreateDate.html
+- name: CreateQRCodeFrom
+  description: 'Provide data source that is used to create a QR Code. Field name: QRCodeSrc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CreateQRCodeFrom.html
+  field_name: QRCodeSrc
+- name: CreateTime
+  description: 'The timestamp of the item master data created is recorded in the hhmmss format. Field name: CreateTS.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CreateTime.html
+  field_name: CreateTS
+- name: CtrSealQty
+  description: 'Specify the Control Seal Quantity for Item Master Data. Field name: CtrSealQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CtrSealQty.html
+- name: CustomsGroupCode
+  description: 'Sets or returns the Customs Group code. Customs groups determine the customs duty for an item purchased abroad. Field name: CstGrpCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~CustomsGroupCode.html
+  field_name: CstGrpCode
+- name: DataExportCode
+  description: 'Sets or returns the Data Export Code . Field name: ExportCode . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DataExportCode.html
+  field_name: ExportCode
+  length: 20
+- name: DeactivateAfterUsefulLife
+  description: 'Deactivate a low value asset when the asset''s useful life ends. Field name: DeacAftUL.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DeactivateAfterUsefulLife.html
+  field_name: DeacAftUL
+- name: DefaultCountingUnit
+  description: 'The name of the default inventory counting unit. Field name: CntUnitMsr. Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DefaultCountingUnit.html
+  field_name: CntUnitMsr
+  length: 100
+- name: DefaultCountingUoMEntry
+  description: 'Specify a UoM to be used as the default inventory counting UoM. Field name: INUoMEntry.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DefaultCountingUoMEntry.html
+  field_name: INUoMEntry
+- name: DefaultPurchasingUoMEntry
+  description: 'The internal key of the default purchasing UoM. Field name: PUoMEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DefaultPurchasingUoMEntry.html
+  field_name: PUoMEntry
+- name: DefaultSalesUoMEntry
+  description: 'The internal key of the default sales UoM. Field name: SUoMEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DefaultSalesUoMEntry.html
+  field_name: SUoMEntry
+- name: DefaultWarehouse
+  description: 'Sets or returns the Default Warehouse . Field name: DfltWH . Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DefaultWarehouse.html
+  field_name: DfltWH
+  length: 8
+- name: DepreciationGroup
+  description: 'The depreciation areas you have specified in the asset class. Field name: DeprGroup. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DepreciationGroup.html
+  field_name: DeprGroup
+  length: 15
+- name: DepreciationParameters
+  description: Returns the ItemsDepreciationParameters child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DepreciationParameters.html
+- name: DesiredInventory
+  description: 'Sets or returns the Preferred Quantity in Purchase Units . Field name: ReorderQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DesiredInventory.html
+  field_name: ReorderQty
+- name: DistributionRules
+  description: Returns the ItemsDistributionRules child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DistributionRules.html
+- name: DNFEntry
+  description: 'The DNF code for this item. Field name: DNFEntry This is a foreign key to the DNFCodeSetup object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~DNFEntry.html
+- name: ECExpensesAccount
+  description: 'Sets or returns the EU Expense Account . Field name: ECExpAcc . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ECExpensesAccount.html
+  field_name: ECExpAcc
+  length: 15
+- name: ECRevenuesAccount
+  description: 'Sets or returns the EU revenues account. Field name: ECInAcct . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ECRevenuesAccount.html
+  field_name: ECInAcct
+  length: 15
+- name: Employee
+  description: 'The employee to whom the asset is physically assigned. Field name: Technician.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Employee.html
+  field_name: Technician
+- name: EnforceAssetSerialNumbers
+  description: property EnforceAssetSerialNumbers
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~EnforceAssetSerialNumbers.html
+- name: Excisable
+  description: property Excisable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Excisable.html
+- name: ExemptIncomeAccount
+  description: Not used from DI API version 6.2 and up.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ExemptIncomeAccount.html
+- name: ExpanseAccount
+  description: Not used from DI API version 6.2 and up.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ExpanseAccount.html
+- name: ForceSelectionOfSerialNumber
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to force selection of serial numbers for documents. Field name: BlockOut .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ForceSelectionOfSerialNumber.html
+  field_name: BlockOut
+- name: ForeignExpensesAccount
+  description: 'Sets or returns the foreign expenses account. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ForeignExpensesAccount.html
+  length: 15
+- name: ForeignName
+  description: 'Sets or returns the item name or a description in foreign language. Field name: FrgnName. Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ForeignName.html
+  field_name: FrgnName
+  length: 200
+- name: ForeignRevenuesAccount
+  description: 'Sets or returns the foreign revenues account. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ForeignRevenuesAccount.html
+  length: 15
+- name: Frozen
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is on hold.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Frozen.html
+- name: FrozenFrom
+  description: Sets or returns the start date for keeping the item on hold.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~FrozenFrom.html
+- name: FrozenRemarks
+  description: 'Sets or returns the remarks regarding the on hold period. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~FrozenRemarks.html
+  length: 30
+- name: FrozenTo
+  description: Sets or returns the end date for keeping the item on hold.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~FrozenTo.html
+- name: FuelID
+  description: property FuelID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~FuelID.html
+- name: GLMethod
+  description: 'Sets or returns a valid value of BoGLMethods type that specifies the default G/L accounts for posting transactions related to the item. source: Warehouses , ItemGroups , or specified in the item level.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GLMethod.html
+- name: GSTRelevnt
+  description: property GSTRelevnt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GSTRelevnt.html
+- name: GSTTaxCategory
+  description: property GSTTaxCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GSTTaxCategory.html
+- name: GTSItemSpec
+  description: property GTSItemSpec
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GTSItemSpec.html
+- name: GTSItemTaxCategory
+  description: property GTSItemTaxCategory
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~GTSItemTaxCategory.html
+- name: ImportedItem
+  description: property ImportedItem
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ImportedItem.html
+- name: IncomeAccount
+  description: Not used from DI API version 6.2 and up.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IncomeAccount.html
+- name: IncomingServiceCode
+  description: 'Sets or returns the Item''s incoming service code . Field name: ISvcCode . This is a foreign key to the Service Code table ( OSCD ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IncomingServiceCode.html
+  field_name: ISvcCode
+- name: InCostRollup
+  description: property InCostRollup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InCostRollup.html
+- name: IndirectTax
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to apply indirect tax.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IndirectTax.html
+- name: IntrastatExtension
+  description: Returns the ItemIntrastatExtension child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IntrastatExtension.html
+- name: InventoryItem
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is a warehouse item (not a service).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryItem.html
+- name: InventoryNumber
+  description: 'The inventory number of the asset. Field name: InventoryNo . Length: 12 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryNumber.html
+  field_name: InventoryNo
+  length: 12
+- name: InventoryUOM
+  description: 'Sets or returns the Unit of Measurement for the item (for example, box , case , piece .) Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryUOM.html
+  length: 5
+- name: InventoryUoMEntry
+  description: 'The internal key of an inventory UoM. Field name: IUoMEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryUoMEntry.html
+  field_name: IUoMEntry
+- name: InventoryWeight
+  description: property InventoryWeight
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryWeight.html
+- name: InventoryWeight1
+  description: property InventoryWeight1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryWeight1.html
+- name: InventoryWeightUnit
+  description: property InventoryWeightUnit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryWeightUnit.html
+- name: InventoryWeightUnit1
+  description: property InventoryWeightUnit1
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~InventoryWeightUnit1.html
+- name: IsPhantom
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the item is a phantom item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IsPhantom.html
+- name: IssueMethod
+  description: 'Sets or returns a valid value that specifies the method for issuing the item from the inventory: Backflash (automatic) or Manual .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IssueMethod.html
+- name: IssuePrimarilyBy
+  description: 'Specify whether you want to pick the serial or batch items for issuing according to their bin locations or their serial or batch information. Field name: IssuePriBy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~IssuePrimarilyBy.html
+  field_name: IssuePriBy
+- name: ItemClass
+  description: 'Sets or returns a valid value of ItemClassEnum that determines wether or not current Item is a Service or Material. Field name: ItemClass .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemClass.html
+- name: ItemCode
+  description: 'Sets or returns the item code in the inventory. The item code must be unique. Mandatory property. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemCode.html
+  length: 20
+- name: ItemCountryOrg
+  description: 'Sets or returns the origin country of the item. Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemCountryOrg.html
+  length: 3
+- name: ItemName
+  description: 'Sets or returns the item name/description. Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemName.html
+  length: 200
+- name: ItemsGroupCode
+  description: Sets or returns the items group code. The user can classify items by groups. Each item can be assigned to one group only. The items group is used for reports and evaluations.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemsGroupCode.html
+- name: ItemType
+  description: 'Sets or returns a valid value of this Item Type . Field name: ItemType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ItemType.html
+- name: LeadTime
+  description: Sets or returns the lead time in days for ordering the item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~LeadTime.html
+- name: LegalText
+  description: 'Legal text. Field name: LegalText . Length: 250 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~LegalText.html
+  length: 250
+- name: LinkedResource
+  description: property LinkedResource
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~LinkedResource.html
+- name: LocalizationInfos
+  description: Returns the ItemLocalizationInfos child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~LocalizationInfos.html
+- name: Location
+  description: 'The location of the asset. Field name: Location.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Location.html
+- name: Mainsupplier
+  description: 'Sets or returns the card code of the main supplier of this item. Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Mainsupplier.html
+  length: 15
+- name: ManageBatchNumbers
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is managed by batch numbers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ManageBatchNumbers.html
+- name: ManageByQuantity
+  description: 'Indicates whether the asset is managed by quantity. Field name: MgrByQty.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ManageByQuantity.html
+  field_name: MgrByQty
+- name: ManageSerialNumbers
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is managed by serial numbers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ManageSerialNumbers.html
+- name: ManageSerialNumbersOnReleaseOnly
+  description: 'Sets or returns a valid value of BoYesNoEnum type that determines whether or not to create automatic serial numbers upon reception. Field name: ManOutOnly .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ManageSerialNumbersOnReleaseOnly.html
+  field_name: ManOutOnly
+- name: ManageStockByWarehouse
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the inventory is managed by the warehouse quantity levels.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ManageStockByWarehouse.html
+- name: Manufacturer
+  description: Sets or returns the manufacturer code of the item (foreign key of the Manufacturers object). Mandatory property.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Manufacturer.html
+- name: MaterialGroup
+  description: 'Sets or returns the Item''s Material Group . Field name: MatGrp . This is a foreign key to the Material Group OMGP object, not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MaterialGroup.html
+  field_name: MatGrp
+- name: MaterialType
+  description: 'Sets or returns a valid value of BoMaterialTypes that determines current material state from Raw Material to Finished Goods. Field name: MatType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MaterialType.html
+  field_name: MatType
+- name: MaxInventory
+  description: Sets or returns the maximum inventory quantity for this item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MaxInventory.html
+- name: MinInventory
+  description: Sets or returns the minimum inventory quantity for this item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MinInventory.html
+- name: MinOrderQuantity
+  description: 'Sets or returns this Item Minimum Order Quantity limitation . Field name: MinOrdrQty .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MinOrderQuantity.html
+  field_name: MinOrdrQty
+- name: MovingAveragePrice
+  description: Returns the average price of an item calculated according to quantities and prices.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~MovingAveragePrice.html
+- name: NCMCode
+  description: 'Returns the item classification issued by the Brazilian government and used to determine the IPI tax rate. NCM stands for N omenclatura C ommun do M ercosul. Field name: NCMCode This is a foreign key to the NCM Code table ( ONCM ), which is exposed via the NCMCodesSetupService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~NCMCode.html
+- name: NoDiscounts
+  description: property NoDiscounts
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~NoDiscounts.html
+- name: NVECode
+  description: 'Enter the NVE code. Field name: NVECode . Length: 6 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~NVECode.html
+  length: 6
+- name: OrderIntervals
+  description: Sets or returns the inventory cycle such as, every week on Monday, or every first day of the month. The inventory cycles are defined in SAP Business One (OCYC table, which is not exposed through the DI API).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~OrderIntervals.html
+- name: OrderMultiple
+  description: Sets or returns the multiple quantity in addition to the minimum quantity of items in a single order.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~OrderMultiple.html
+- name: OutgoingServiceCode
+  description: 'Sets or returns the Outgoing Service Code. Field name: OSvcCode . This is a foreign key to the Service Code Table ( OSCD ), not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~OutgoingServiceCode.html
+  field_name: OSvcCode
+- name: PeriodControls
+  description: Returns the ItemsPeriodControls child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PeriodControls.html
+- name: Picture
+  description: 'Sets or returns the picture file name to attach to an item. Field name: PicturName . Length: 200 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Picture.html
+  field_name: PicturName
+  length: 200
+- name: PlanningSystem
+  description: 'Sets or returns a valid value of BoPlanningSystem type that specifies the inventory planning system: MRP or None .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PlanningSystem.html
+- name: PlasticPackageExemptionReasonForProduction
+  description: Reason for exemption from tax; options are determined by the authorities.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PlasticPackageExemptionReasonForProduction.html
+- name: PlasticPackageExemptionReasonForPurchase
+  description: Reason for exemption from tax; options are determined by the authorities.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PlasticPackageExemptionReasonForPurchase.html
+- name: PlasticPackageTaxCategory
+  description: Categories include single-use plastic container, plastic semi-finished products, and plastic packaging.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PlasticPackageTaxCategory.html
+- name: PreferredVendors
+  description: Returns the Items_PreferredVendors child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PreferredVendors.html
+- name: PriceList
+  description: Returns the Items_Prices child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PriceList.html
+- name: PricingUnit
+  description: property PricingUnit
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PricingUnit.html
+- name: ProcurementMethod
+  description: 'Sets or returns a valid value of BoProcurementMethod type that specifies the procurement method of items: Buy or Make .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ProcurementMethod.html
+- name: ProdStdCost
+  description: property ProdStdCost
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ProdStdCost.html
+- name: ProductSource
+  description: 'Sets or returns a valid value of BoProductSources that determines the product source. Field name: ProductSrc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ProductSource.html
+  field_name: ProductSrc
+- name: Projects
+  description: Returns the ItemsProjects child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Projects.html
+- name: Properties
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item belongs to one or more query groups.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Properties.html
+- name: PurchaseFactor1
+  description: 'Sets or returns the factor #1 by which the base price list is multiplied to calculate the purchase prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseFactor1.html
+- name: PurchaseFactor2
+  description: 'Sets or returns the factor #2 by which the base price list is multiplied to calculate the purchase prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseFactor2.html
+- name: PurchaseFactor3
+  description: 'Sets or returns the factor #3 by which the base price list is multiplied to calculate the purchase prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseFactor3.html
+- name: PurchaseFactor4
+  description: 'Sets or returns the factor #4 by which the base price list is multiplied to calculate the purchase prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseFactor4.html
+- name: PurchaseHeightUnit
+  description: 'Sets or returns the units for the purchase unit width (cm, inch, etc.). Length: 6 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseHeightUnit.html
+  length: 6
+- name: PurchaseHeightUnit1
+  description: Sets or returns the secondary units for the purchase unit width (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseHeightUnit1.html
+- name: PurchaseItem
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is for purchase (for example, an item can be defined as an asset).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseItem.html
+- name: PurchaseItemsPerUnit
+  description: Sets or returns the number of items per purchasing unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseItemsPerUnit.html
+- name: PurchaseLengthUnit
+  description: Sets or returns the units for the purchase unit length (cm, inches, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseLengthUnit.html
+- name: PurchaseLengthUnit1
+  description: Sets or returns the secondary units for the purchase unit length (cm, inches, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseLengthUnit1.html
+- name: PurchasePackagingUnit
+  description: 'Sets or returns the purchase packaging unit. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchasePackagingUnit.html
+  length: 8
+- name: PurchaseQtyPerPackUnit
+  description: Sets or returns the number of items per purchase packaging unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseQtyPerPackUnit.html
+- name: PurchaseUnit
+  description: 'Sets or returns the purchasing unit. For example, an item, which is sold in bottles, is purchased in crates of 12 bottles. The purchasing unit is, in this case, a crate. Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnit.html
+  length: 5
+- name: PurchaseUnitHeight
+  description: Sets or returns the height of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitHeight.html
+- name: PurchaseUnitHeight1
+  description: Sets or returns the secondary height of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitHeight1.html
+- name: PurchaseUnitLength
+  description: Sets or returns the length of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitLength.html
+- name: PurchaseUnitLength1
+  description: Sets or returns the secondary length of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitLength1.html
+- name: PurchaseUnitVolume
+  description: Sets or returns the volume of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitVolume.html
+- name: PurchaseUnitWeight
+  description: Sets or returns the weight of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitWeight.html
+- name: PurchaseUnitWeight1
+  description: Sets or returns the secondary weight of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitWeight1.html
+- name: PurchaseUnitWidth
+  description: Sets or returns the width of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitWidth.html
+- name: PurchaseUnitWidth1
+  description: Sets or returns the secondary width of the purchase unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseUnitWidth1.html
+- name: PurchaseVATGroup
+  description: 'Sets or returns the VAT group for a purchase item. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseVATGroup.html
+  length: 8
+- name: PurchaseVolumeUnit
+  description: Sets or returns the units for the purchase unit volume (m3, ft3, litter, gallon, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseVolumeUnit.html
+- name: PurchaseWeightUnit
+  description: Sets or returns the units for the purchase unit weight (kg, lb, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseWeightUnit.html
+- name: PurchaseWeightUnit1
+  description: Sets or returns the secondary units for the purchase unit weight (kg, lb, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseWeightUnit1.html
+- name: PurchaseWidthUnit
+  description: Sets or returns the units for the purchase unit width (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseWidthUnit.html
+- name: PurchaseWidthUnit1
+  description: Sets or returns the secondary units for the purchase unit width (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~PurchaseWidthUnit1.html
+- name: QuantityOnStock
+  description: Sets or returns the total quantity of the item in the warehouse.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~QuantityOnStock.html
+- name: QuantityOrderedByCustomers
+  description: Sets or returns the total quantity of the items ordered by customers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~QuantityOrderedByCustomers.html
+- name: QuantityOrderedFromVendors
+  description: Sets or returns the total quantity of the items ordered from vendors.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~QuantityOrderedFromVendors.html
+- name: SACEntry
+  description: property SACEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SACEntry.html
+- name: SAFTProductType
+  description: 'Standard Audit File-Tax (SAF-T) product types according to the Portuguese tax authority. Field name: ProdctType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SAFTProductType.html
+  field_name: ProdctType
+- name: SAFTProductTypeEx
+  description: 'Standard Audit File-Tax (SAF-T) define-new option for product types according to the Portuguese tax authority. Field name: ProdTypeEx . Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SAFTProductTypeEx.html
+  field_name: ProdTypeEx
+  length: 10
+- name: SalesFactor1
+  description: 'Sets or returns the factor #1 by which the base price list is multiplied to calculate the sale prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesFactor1.html
+- name: SalesFactor2
+  description: 'Sets or returns the factor #2 by which the base price list is multiplied to calculate the sale prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesFactor2.html
+- name: SalesFactor3
+  description: 'Sets or returns the factor #3 by which the base price list is multiplied to calculate the sale prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesFactor3.html
+- name: SalesFactor4
+  description: 'Sets or returns the factor #4 by which the base price list is multiplied to calculate the sale prices.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesFactor4.html
+- name: SalesHeightUnit
+  description: Sets or returns the units for the sales unit height (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesHeightUnit.html
+- name: SalesHeightUnit1
+  description: Sets or returns the secondary units for the sales unit height (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesHeightUnit1.html
+- name: SalesItem
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is a sales item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesItem.html
+- name: SalesItemsPerUnit
+  description: Sets or returns the number of items per sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesItemsPerUnit.html
+- name: SalesLengthUnit
+  description: Sets or returns the units for the sales unit length (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesLengthUnit.html
+- name: SalesLengthUnit1
+  description: Sets or returns the secondary units for the sales unit length (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesLengthUnit1.html
+- name: SalesPackagingUnit
+  description: 'Sets or returns the sales packaging unit. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesPackagingUnit.html
+  length: 8
+- name: SalesQtyPerPackUnit
+  description: Sets or returns the number of items per sales packaging unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesQtyPerPackUnit.html
+- name: SalesUnit
+  description: 'Sets or returns the sales unit. Length: 5 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnit.html
+  length: 5
+- name: SalesUnitHeight
+  description: Sets or returns the height of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitHeight.html
+- name: SalesUnitHeight1
+  description: Sets or returns the secondary height of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitHeight1.html
+- name: SalesUnitLength
+  description: Sets or returns the length of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitLength.html
+- name: SalesUnitLength1
+  description: Sets or returns the secondary length of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitLength1.html
+- name: SalesUnitVolume
+  description: Sets or returns the volume of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitVolume.html
+- name: SalesUnitWeight
+  description: Sets or returns the weight of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitWeight.html
+- name: SalesUnitWeight1
+  description: Sets or returns the secondary weight of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitWeight1.html
+- name: SalesUnitWidth
+  description: Sets or returns the width of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitWidth.html
+- name: SalesUnitWidth1
+  description: Sets or returns the secondary width of the sales unit.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesUnitWidth1.html
+- name: SalesVATGroup
+  description: 'Sets or returns the VAT group for a sales item. Length: 8 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesVATGroup.html
+  length: 8
+- name: SalesVolumeUnit
+  description: Sets or returns the units for the sales unit volume (m3, ft3, litter, gallon, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesVolumeUnit.html
+- name: SalesWeightUnit
+  description: Sets or returns the units for the sales unit weight (kg, lb, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesWeightUnit.html
+- name: SalesWeightUnit1
+  description: 'Sets or returns the secondary units for the sales unit weight (kg, lb, etc.). Length: 6 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesWeightUnit1.html
+  length: 6
+- name: SalesWidthUnit
+  description: 'Sets or returns the units for the sales unit width (cm, inch, etc.). Length: 6 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesWidthUnit.html
+  length: 6
+- name: SalesWidthUnit1
+  description: Sets or returns the secondary units for the sales unit width (cm, inch, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SalesWidthUnit1.html
+- name: ScsCode
+  description: property ScsCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ScsCode.html
+- name: SerialNum
+  description: 'Sets or returns the serial number of the item. Length: 17 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SerialNum.html
+  length: 17
+- name: Series
+  description: property Series
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Series.html
+- name: ServiceCategoryEntry
+  description: property ServiceCategoryEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ServiceCategoryEntry.html
+- name: ServiceGroup
+  description: 'Sets or returns the Item''s Service Group. Field name: ServiceGrp . This is a foreign key to the OSGP object, not exposed through the DI API.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ServiceGroup.html
+  field_name: ServiceGrp
+- name: ShipType
+  description: Sets or returns the shipping type of the item (air cargo, courier, etc.).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ShipType.html
+- name: SOIExcisable
+  description: property SOIExcisable
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SOIExcisable.html
+- name: SpProdType
+  description: property SpProdType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SpProdType.html
+- name: SRIAndBatchManageMethod
+  description: Sets or returns a valid value that specifies the method for managing serial numbers and batch numbers.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SRIAndBatchManageMethod.html
+- name: StandardItemIdentification
+  description: 'Standard item identification. Field name: StdItemId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~StandardItemIdentification.html
+  field_name: StdItemId
+- name: StatisticalAsset
+  description: 'Indicates whether the asset is only a statistical asset that is not owned by your company. Field name: StatAsset.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~StatisticalAsset.html
+  field_name: StatAsset
+- name: SupplierCatalogNo
+  description: 'Sets or returns the item catalog number as provided by the main supplier. Length: 17 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SupplierCatalogNo.html
+  length: 17
+- name: SWW
+  description: 'Sets or returns an additional identifier of the item. Length: 16 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~SWW.html
+  length: 16
+- name: TaxType
+  description: Sets or returns a valid value of BoTaxTypes type that specifies the sales tax system for the item.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~TaxType.html
+- name: Technician
+  description: 'Assign an employee for maintenance of the asset. Field name: Technician.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Technician.html
+- name: TNVED
+  description: property TNVED
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~TNVED.html
+- name: ToleranceDays
+  description: property ToleranceDays
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ToleranceDays.html
+- name: TraceableItem
+  description: 'Indicate whether the item is traceable. Field name: Traceable.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~TraceableItem.html
+  field_name: Traceable
+- name: TreeType
+  description: Returns a valid value of BoItemTreeTypes type that specifies the product tree type of the item (also known as bill of material type).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~TreeType.html
+- name: TypeOfAdvancedRules
+  description: 'Indicates whether the advanced rule type assigned to an item is General , Warehouse , or Item Group . You can change the advanced rule type if required. Field name: GLPickMeth .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~TypeOfAdvancedRules.html
+  field_name: GLPickMeth
+- name: UnitOfMeasurements
+  description: Returns the ItemUnitOfMeasurements child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~UnitOfMeasurements.html
+- name: UoMGroupEntry
+  description: 'The internal key of a unit of measurement group. Field name: UgpEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~UoMGroupEntry.html
+  field_name: UgpEntry
+- name: UpdateDate
+  description: 'The date when the item master data updated. Field name: UpdateDate.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~UpdateDate.html
+- name: UpdateTime
+  description: 'The timestamp of the item master data updated is recorded in the hhmmss format. Field name: UpdateTS.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~UpdateTime.html
+  field_name: UpdateTS
+- name: User_Text
+  description: 'Sets or returns a free text string for this item. Length: 10 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~User_Text.html
+  length: 10
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~UserFields.html
+- name: Valid
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is valid.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~Valid.html
+- name: ValidFrom
+  description: Sets or returns the start date of the item's validity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ValidFrom.html
+- name: ValidRemarks
+  description: 'Sets or returns the remarks regarding the validity period. Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ValidRemarks.html
+  length: 30
+- name: ValidTo
+  description: Sets or returns the end date of the item's validity.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~ValidTo.html
+- name: VatLiable
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is subject to VAT.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~VatLiable.html
+- name: VirtualAssetItem
+  description: property VirtualAssetItem
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~VirtualAssetItem.html
+- name: WarrantyTemplate
+  description: 'Sets or returns the template for service warranty. Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~WarrantyTemplate.html
+  length: 20
+- name: WeightOfRecycledPlastic
+  description: Weight of recycled plastic per kg of item in master data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~WeightOfRecycledPlastic.html
+- name: WhsInfo
+  description: Returns the ItemWarehouseInfo object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~WhsInfo.html
+- name: WTLiable
+  description: Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this item is subject to Withholding tax.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Items~WTLiable.html

@@ -1,0 +1,1149 @@
+name: Documents
+title: Documents Object
+kind: class
+url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents.html
+description: 'Documents is a business object that represents the header data of documents in the Marketing Documents and Receipts module and the Inventory and Production module of SAP Business One application. The source table for each document is according to the document type as follows: - Documents(oInvoices) - OINV Documents(oCorrectionInvoice) - OCSI Documents(oCorrectionInvoiceReversal) - OCSV Documents(oCreditNotes) - ORIN Documents(oDeliveryNotes) - ODLN Documents(oReturns) - ORDN Documents(oOrders) - ORDR Documents(oQuotations) - OQUT Documents(oPurchaseInvoices) - OPCH Documents(oCorrectionPurchaseInvoice) - OCPI Documents(oCorrectionPurchaseInvoiceReversal) - OCPV Documents(oPurchaseCreditNotes) - ORPC Documents(oPurchaseDeliveryNotes) - OPDN Documents(oPurchaseReturns) - ORPD Documents(oPurchaseOrders) - OPOR Documents(oPurchaseQuotations) - OPQT Documents(oPurchaseRequests) - OPRQ Documents(oInventoryGenEntry) - OIGN Documents(oInventoryGenExit) - OIGE Documents(oDrafts) - ODRF Documents(oDownPaymentAP) - ODPO Documents(oDownPaymentAR) - ODPI'
+remarks: 'Mandatory fields in SAP Business One: CardCode and ItemCode (from Document_Lines object). To create a draft document (oDraft) also set the document object type ( DocObjectCode ). To display the form in the application: - For OINV table, select Sales - A/R --> A/R Invoice . For ORIN table, select Sales - A/R --> A/R Credit Memo . For ODLN table, select Sales - A/R --> Delivery . For ORDN table, select Sales - A/R --> Returns . For ORDR table, select Sales - A/R --> Order . For OQUT table, select Sales - A/R --> Quotation . For OPCH table, select Purchasing - A/P --> A/P Invoice . For ORPC table, select Purchasing - A/P --> A/P Credit Memo . For OPDN table, select Purchasing - A/P --> Goods Receipt PO . For ORPD table, select Purchasing - A/P --> Goods Returns . For OPOR table, select Purchasing - A/P --> A/R Invoice . For OPQT table, select Purchasing - A/P --> Purchase Quotation . For OIGN table, select Inventory --> Inventory Transactions --> Goods Receipt . Or, in case of receipt from production, select Production --> Receipt from Production (see ProductionOrders ). For OIGE table, select Inventory --> Inventory Transactions --> Goods Issue . Or, in case of issue for production, select Production --> Issue for Production (see ProductionOrders ). For ODRF table, select Sales - A/R (or Purchasing - A/P ) --> Document Draft . Set your selection criteria, and click OK .'
+methods:
+- name: Add
+  description: Adds a record to the object table in SAP Business One company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Add.html
+- name: Cancel
+  description: Cancels a record from the object table.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Cancel.html
+- name: Close
+  description: Closes a record of the object in SAP Business One database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Close.html
+- name: CreateCancellationDocument
+  description: Creates a cancellation document when a marketing document is added in error, has become invalid, or has no concrete transactions associated with it.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CreateCancellationDocument.html
+- name: ExportEWayBill
+  description: method ExportEWayBill
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExportEWayBill.html
+- name: GetApprovalTemplates
+  description: Gets the related approval template.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GetApprovalTemplates.html
+- name: GetAsXML
+  description: Returns the object from XML data, which is stored as string in a buffer.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GetAsXML.html
+- name: GetByKey
+  description: Retrieves and sets the values of the object's properties by the object's absolute key from the Company database. If serial numbers and batch numbers are set to the specified Document object lines, the returned object will contain references to these child objects.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GetByKey.html
+- name: HandleApprovalRequest
+  description: method HandleApprovalRequest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~HandleApprovalRequest.html
+- name: Remove
+  description: 'Not supported. SAP Business One does not allow to remove a document object from the database. Note: The remove feature is supported for Purchase Quotation .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Remove.html
+- name: Reopen
+  description: Reopens a closed document. The method is only relevant for China, Japan, Korea, India, Brazil and Singapore.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Reopen.html
+- name: RequestApproveCancellation
+  description: method RequestApproveCancellation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequestApproveCancellation.html
+- name: SaveDraftToDocument
+  description: Converts an approved draft document to a valid document.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SaveDraftToDocument.html
+- name: SaveToFile
+  description: Save the object to a file as XML data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SaveToFile.html
+- name: SaveXML
+  description: Saves the object data to XML formatted data.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SaveXML.html
+- name: Update
+  description: Updates the object data in the company database.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Update.html
+- name: UpdateFromXML
+  description: Receives and processes the XML content. You can remove sub-object lines from the Document object via the XML file.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UpdateFromXML.html
+properties:
+- name: AdditionalLegalInformation
+  description: 'Additional legal information text. Field name: AddLegIn . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AdditionalLegalInformation.html
+  field_name: AddLegIn
+  length: 100
+- name: Address
+  description: 'The business partner''s Bill To address (sales documents) or the warehouse address (purchase documents). If the AddressExtension property contains values for its BillTo subproperties, then the Address property value is replaced with a formatted address string based on the values in the AddressExtension property. Field name: Address Length: 254 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Address.html
+  length: 254
+- name: Address2
+  description: 'The business partner''s Ship To address. If the AddressExtension property contains values for its ShipTo subproperties, then the Address2 property value is replaced with a formatted address string based on these values in the AddressExtension property. Field name: Address2 Length: 254 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Address2.html
+  length: 254
+- name: AddressExtension
+  description: 'The Bill To and Ship To addresses for the document. This property enables you to specify the BillTo and ShipTo addresses by defining their component parts -- for example, the street name, city name, and country -- instead of specifying the address as free-text strings. After setting the AddressExtension property, the system does the following: Clears the Address and Address2 properties. Creates BillTo and ShipTo addresses based on the values in the AddressExtension property. The address format is determined by the country''s address format, which is specified at Administration --> Setup --> Business Partner --> Countries . The format used is either the format for the country specified in the BillToCountry or ShipToCountry property of the AddressExtension property or, if no country is specified, the company country. Copies these addresses to the Address and Address2 properties.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AddressExtension.html
+- name: AddressForReturn
+  description: 'Sub-object of address for return documents. Field name: Address3 Length: 254 characters'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AddressForReturn.html
+  field_name: Address3
+  length: 254
+- name: AgentCode
+  description: 'Sets or returns the code of the company employee responsible for the collection and management of bill of exchange transactions related to the business partner. Field name: AgentCode . Length: 32 characters. This is a foreign key to the OAGP object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AgentCode.html
+  length: 32
+- name: AllocationNumberIL
+  description: Allocation Number (used in Electronic Invoice for Israel)
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AllocationNumberIL.html
+- name: AnnualInvoiceDeclarationReference
+  description: property AnnualInvoiceDeclarationReference
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AnnualInvoiceDeclarationReference.html
+- name: ApplyCurrentVATRatesForDownPaymentsToDraw
+  description: property ApplyCurrentVATRatesForDownPaymentsToDraw
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ApplyCurrentVATRatesForDownPaymentsToDraw.html
+- name: ApplyTaxOnFirstInstallment
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to add the tax amount calculated in the invoice to the amount of the first installment. Field name: VATFirst .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ApplyTaxOnFirstInstallment.html
+  field_name: VATFirst
+- name: ArchiveNonremovableSalesQuotation
+  description: 'Indicates whether to archive the document even when it is linked to other documents that cannot be archived. The document must still be in the archive date range and conform to all the other rules for being archived. Applies to sales quotations only. Field name: IgnRelDoc'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ArchiveNonremovableSalesQuotation.html
+  field_name: IgnRelDoc
+- name: AssetValueDate
+  description: property AssetValueDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AssetValueDate.html
+- name: ATDocumentType
+  description: property ATDocumentType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ATDocumentType.html
+- name: AttachmentEntry
+  description: 'The attachment for marketing documents. Field name: AtcEntry'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AttachmentEntry.html
+  field_name: AtcEntry
+- name: AuthorizationCode
+  description: property AuthorizationCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AuthorizationCode.html
+- name: AuthorizationStatus
+  description: 'Returns the status of the authorization for this payment. Field name: wddStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~AuthorizationStatus.html
+  field_name: wddStatus
+- name: BaseAmount
+  description: 'Returns the net amount (amount excluding tax, including expenses) of the document, in local currency. Field name: BaseAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BaseAmount.html
+  field_name: BaseAmnt
+- name: BaseAmountFC
+  description: 'Returns the net amount (amount excluding tax, including expenses) of the document, in foreign currency. Field name: BaseAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BaseAmountFC.html
+  field_name: BaseAmntFC
+- name: BaseAmountSC
+  description: 'Returns the net amount (amount excluding tax, including expenses) of the document, in system currency. Field name: BaseAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BaseAmountSC.html
+  field_name: BaseAmntSC
+- name: BaseEntry
+  description: 'The base document internal key for inventory transfer in India localization. Field name: BaseEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BaseEntry.html
+- name: BaseType
+  description: 'The base document type for inventory transfer in India localization. The object code for WTR is 67. Field name: BaseType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BaseType.html
+- name: BillOfExchangeReserved
+  description: 'Not used. Field name: BoeReserev .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BillOfExchangeReserved.html
+  field_name: BoeReserev
+- name: BlanketAgreementNumber
+  description: property BlanketAgreementNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BlanketAgreementNumber.html
+- name: BlockDunning
+  description: 'Sets or returns a valid value that determines wether or not to block dunning. Field name: BlockDunn . Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to block dunning letters to the business partner. Field name: BlockDunn . Length: 1 character.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BlockDunning.html
+  field_name: BlockDunn
+  length: 1
+- name: Box1099
+  description: 'Default value is retrieved from Box1099 property of the BusinessPartners object. Field name: Box1099 . Country-specific property for USA. Sets or returns the number of Box 1099 on the Form 1099 where the payment should be entered. Field name: Box1099 . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Box1099.html
+  length: 20
+- name: BPChannelCode
+  description: 'Sets or returns the distribution channel for the business partner (the distribution channel is also a business partner). Relevant to business partners of customer type only. Field name: BPChCode . Length: 15 characters. This is a foreign key to the BusinessPartners object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BPChannelCode.html
+  field_name: BPChCode
+  length: 15
+- name: BPChannelContact
+  description: 'Sets or returns the contact person of the business partner channel. Field name: BPChCntc . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BPChannelContact.html
+  field_name: BPChCntc
+- name: BPL_IDAssignedToInvoice
+  description: 'Sets or returns the business place ID assigned to a marketing document (such as, invoice). Field name: BPLId .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BPL_IDAssignedToInvoice.html
+  field_name: BPLId
+- name: BPLName
+  description: property BPLName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~BPLName.html
+- name: Browser
+  description: Returns the DataBrowser object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Browser.html
+- name: CancelDate
+  description: 'Sets or returns the cancel date of the sales order or purchase order. After this date, shipping the goods to the customer or from the vendor is not allowed. Field name: CancelDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CancelDate.html
+- name: Cancelled
+  description: Indicates whether the document was cancelled.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Cancelled.html
+- name: CancelStatus
+  description: Indicates the document cancel status.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CancelStatus.html
+- name: CardCode
+  description: 'Sets or returns the customer or vendor code. Field name: CardCode . This is a foreign key to the BusinessPartners object. Sets or returns the business partner identification number in SAP Business One. Field name: CardCode . Length: 15 characters. This is a foreign key to the BusinessPartners Object'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CardCode.html
+  length: 15
+- name: CardName
+  description: 'Sets or returns the customer or vendor name. Field name: CardName . Length: 100 characters. Sets or returns the business partner''s full name. Field name: CardFName . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CardName.html
+  length: 100
+- name: CashDiscountDateOffset
+  description: property CashDiscountDateOffset
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CashDiscountDateOffset.html
+- name: CentralBankIndicator
+  description: 'Sets or returns the central bank indicator for foreign documents as defined in SAP Business One. Field name: CntrlBnk . Length: 15 characters. This is a foreign key to the Central Bank Ind. object ( OCBI ), not exposed through the DI API)'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CentralBankIndicator.html
+  field_name: CntrlBnk
+  length: 15
+- name: CertificationNumber
+  description: property CertificationNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CertificationNumber.html
+- name: Cig
+  description: property Cig
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Cig.html
+- name: ClosingDate
+  description: 'Set or retrieves Document closing date. Field name: ClsDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ClosingDate.html
+  field_name: ClsDate
+- name: ClosingOption
+  description: 'To close a goods receipt PO or a goods return, specify a posting date to be used in the clearing journal entry. Field: ClosingOpt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ClosingOption.html
+- name: ClosingRemarks
+  description: 'Sets or returns the Footer text of the sales or purchasing document. Field name: Footer . Length: 64000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ClosingRemarks.html
+  field_name: Footer
+  length: 64000
+- name: Comments
+  description: 'Sets or returns comments for the document. Field name: Comments . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Comments.html
+  length: 254
+- name: CommissionTrade
+  description: property CommissionTrade
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CommissionTrade.html
+- name: CommissionTradeReturn
+  description: property CommissionTradeReturn
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CommissionTradeReturn.html
+- name: Confirmed
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not this document is confirmed. The information of confirmed documents can be used as a basis for creating other documents (such as invoices). Field name: Confirmed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Confirmed.html
+- name: ContactPersonCode
+  description: 'Sets or returns the Contact Person code. Field name: CntctCode . This is a foreign key to the ContactEmployees object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ContactPersonCode.html
+  field_name: CntctCode
+- name: ControlAccount
+  description: 'The control account for this document. Field name: CtlAccount This is a foreign key to the ChartOfAccounts object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ControlAccount.html
+  field_name: CtlAccount
+- name: CreateOnlineQuotation
+  description: property CreateOnlineQuotation
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CreateOnlineQuotation.html
+- name: CreateQRCodeFrom
+  description: property CreateQRCodeFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CreateQRCodeFrom.html
+- name: CreationDate
+  description: 'Returns the creation date of the document. Field name: CreateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CreationDate.html
+  field_name: CreateDate
+- name: Cup
+  description: property Cup
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Cup.html
+- name: CustOffice
+  description: 'Enter Customs Office Name . It is mandatory if Export Process form is filled in.. Field name: CustOffice . Length: 60 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CustOffice.html
+  length: 60
+- name: DANFELegalText
+  description: 'DANFE Legal Text. Field name: DANFELgTxt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DANFELegalText.html
+  field_name: DANFELgTxt
+- name: DateOfReportingControlStatementVAT
+  description: property DateOfReportingControlStatementVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DateOfReportingControlStatementVAT.html
+- name: DeferredTax
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the business partner applies deferred tax. Field name: DeferrTax . Length: 1 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DeferredTax.html
+  field_name: DeferrTax
+  length: 1
+- name: DigitalPayments
+  description: 'Indicates whether it uses digital payment. Field name: DigPayment .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DigitalPayments.html
+  field_name: DigPayment
+- name: DigitalPayToAddress
+  description: 'The pay-to address of the digital payment. Field name: DPayToAddr . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DigitalPayToAddress.html
+  field_name: DPayToAddr
+  length: 50
+- name: DiscountPercent
+  description: 'Sets or returns the discount percentage you specify for a customer, or the discount percentage a supplier specifies for you. Field name: Discount .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DiscountPercent.html
+  field_name: Discount
+- name: DocCurrency
+  description: 'Sets or returns the currency used in the document. Field name: DocCur . Length: 3 characters. This is a foreign key to the Currencies object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocCurrency.html
+  field_name: DocCur
+  length: 3
+- name: DocDate
+  description: 'Sets or returns the document posting date. Field name: DocDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocDate.html
+- name: DocDueDate
+  description: 'Sets or returns the document due date (for example, Delivery Date in sales orders, Value Date in invoices, Valid To in quotations, and so on). Field name: DocDueDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocDueDate.html
+- name: DocEntry
+  description: 'Returns the document entry key that uniquely identifies the document. Field name: DocEntry .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocEntry.html
+- name: DocNum
+  description: 'Sets or returns the number of the document. Mandatory field in SAP Business One only in case the value of the HandWritten property is tYES . Field name: DocNum . and also verify Relevant to sales documents only. In case the value of the HandWritten property is tNO and you add a sales document, SAP Business One automatically assigns the next available number to the document, in accordance with the document numbering system defined during system configuration. When saving the document as a draft, this number is stored for the document draft only. So that the number of the draft is still available in the system for other new documents. The system may assign this number to a new document of the same type. When saving the draft as a document, SAP Business One assigns a new available number. In case the value of the HandWritten property is tYES , set a value (greater than 0) to the DocNum property and also set the Series property to -1.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocNum.html
+- name: DocObjectCode
+  description: 'Sets or returns a valid value of BoObjectTypes type that specifies the object type related to a draft document. Note: This property is replaced by DocObjectCodeEx property (string), but remains in the collection due to backward compatibility.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocObjectCode.html
+- name: DocObjectCodeEx
+  description: Sets or returns the a valid value of BoObjectTypes that defines the document object code (replaces the valid values of DocObjectCode property).
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocObjectCodeEx.html
+- name: DocRate
+  description: 'Sets or returns the exchange rate with local currency for the document. Field name: DocRate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocRate.html
+- name: DocTime
+  description: 'Sets or returns the document creation time. Field name: DocTime .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocTime.html
+- name: DocTotal
+  description: 'Sets or returns the total amount in the document. Field name: DocTotal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocTotal.html
+- name: DocTotalFc
+  description: 'Sets or returns the total amount, in foreign currency, in the document. Field name: DocTotalFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocTotalFc.html
+  field_name: DocTotalFC
+- name: DocTotalSys
+  description: 'Sets or returns the total amount, in system currency, in the document. Field name: DocTotalSy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocTotalSys.html
+  field_name: DocTotalSy
+- name: DocType
+  description: 'Sets or returns a valid value of BoDocumentTypes type that specifies the business transaction content type: Items Transaction or Service Transaction . Field name: DocType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocType.html
+- name: Document_ApprovalRequests
+  description: Returns the Document_ApprovalRequests object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Document_ApprovalRequests.html
+- name: DocumentDelivery
+  description: Property DocumentDelivery
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentDelivery.html
+- name: DocumentReferences
+  description: property DocumentReferences
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentReferences.html
+- name: DocumentsOwner
+  description: 'Sets or returns the document owner. Field name: OwnerCode . This is a foreign key to the EmployeesInfo object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentsOwner.html
+  field_name: OwnerCode
+- name: DocumentStatus
+  description: 'Returns a valid value of BoStatus type that specifies document status (closed or open). Field name: DocStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentStatus.html
+  field_name: DocStatus
+- name: DocumentSubType
+  description: 'Sets or returns a valid value of BoDocumentSubType type that specifies document sub-type. Field name: DocSubType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentSubType.html
+  field_name: DocSubType
+- name: DocumentTaxID
+  description: property DocumentTaxID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentTaxID.html
+- name: DownPayment
+  description: Deprecated in Release 2006 A. Instead, use the properties DownPaymentAmount , DownPaymentAmountFC , DownPaymentAmountSC .
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPayment.html
+- name: DownPaymentAmount
+  description: 'Returns the total down payment amount in local currency. Field name: DpmAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentAmount.html
+  field_name: DpmAmnt
+- name: DownPaymentAmountFC
+  description: 'Returns the total down payment amount in foreign currency. Field name: DpmAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentAmountFC.html
+  field_name: DpmAmntFC
+- name: DownPaymentAmountSC
+  description: 'Returns the total down payment amount in system currency. Field name: DpmAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentAmountSC.html
+  field_name: DpmAmntSC
+- name: DownPaymentPercentage
+  description: 'Sets or returns percentage of down payment. Field name: DpmPrcnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentPercentage.html
+  field_name: DpmPrcnt
+- name: DownPaymentStatus
+  description: property DownPaymentStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentStatus.html
+- name: DownPaymentsToDraw
+  description: Returns an instance of DownPaymentsToDraw object holding properties of available down payments (sales and purchase) that can be drawn to A/R or A/P invoice.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentsToDraw.html
+- name: DownPaymentTrasactionID
+  description: property DownPaymentTrasactionID
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentTrasactionID.html
+- name: DownPaymentType
+  description: 'Returns or sets a value specifying whether the down payment document is invoice or request. Field name: Posted .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DownPaymentType.html
+  field_name: Posted
+- name: DraftKey
+  description: 'Document draft internal ID. Field name: draftKey .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DraftKey.html
+  field_name: draftKey
+- name: DutyStatus
+  description: 'Whether this document is with or without payment of duty. Field name: DutyStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DutyStatus.html
+- name: ECommerceGSTIN
+  description: property ECommerceGSTIN
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ECommerceGSTIN.html
+- name: ECommerceOperator
+  description: property ECommerceOperator
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ECommerceOperator.html
+- name: EDeliveryInfo
+  description: Information about electronic marketing documents for deliveries.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDeliveryInfo.html
+- name: EDocErrorCode
+  description: property EDocErrorCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocErrorCode.html
+- name: EDocErrorMessage
+  description: property EDocErrorMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocErrorMessage.html
+- name: EDocExportFormat
+  description: property EDocExportFormat
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocExportFormat.html
+- name: EDocGenerationType
+  description: property EDocGenerationType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocGenerationType.html
+- name: EDocNum
+  description: property EDocNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocNum.html
+- name: EDocSeries
+  description: property EDocSeries
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocSeries.html
+- name: EDocStatus
+  description: property EDocStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocStatus.html
+- name: EDocType
+  description: property EDocType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EDocType.html
+- name: ElecCommMessage
+  description: property ElecCommMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ElecCommMessage.html
+- name: ElecCommStatus
+  description: property ElecCommStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ElecCommStatus.html
+- name: ElectronicProtocols
+  description: property ElectronicProtocols
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ElectronicProtocols.html
+- name: EndAt
+  description: property EndAt
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EndAt.html
+- name: EndDeliveryDate
+  description: property EndDeliveryDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EndDeliveryDate.html
+- name: EndDeliveryTime
+  description: property EndDeliveryTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EndDeliveryTime.html
+- name: ETaxNumber
+  description: property ETaxNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ETaxNumber.html
+- name: ETaxWebSite
+  description: property ETaxWebSite
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ETaxWebSite.html
+- name: EWayBillDetails
+  description: property EWayBillDetails
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~EWayBillDetails.html
+- name: ExcludeFromTaxReportControlStatementVAT
+  description: property ExcludeFromTaxReportControlStatementVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExcludeFromTaxReportControlStatementVAT.html
+- name: ExemptionValidityDateFrom
+  description: 'Sets or returns the Exemption Validity Date From. This property is linked to the ExemptionValidityDateFrom property of the BusinessPartners object. Relevant to invoice documents only. Field name: FromDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExemptionValidityDateFrom.html
+  field_name: FromDate
+- name: ExemptionValidityDateTo
+  description: 'Sets or returns the Exemption Validity Date To. This property is linked to the ExemptionValidityDateTo property of the BusinessPartners object. Relevant to invoice documents only. Field name: ToDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExemptionValidityDateTo.html
+  field_name: ToDate
+- name: Expenses
+  description: Returns the DocumentsAdditionalExpenses child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Expenses.html
+- name: ExternalCorrectedDocNum
+  description: 'Not used. Field name: CorrExt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExternalCorrectedDocNum.html
+  field_name: CorrExt
+- name: ExtraDays
+  description: property ExtraDays
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExtraDays.html
+- name: ExtraMonth
+  description: property ExtraMonth
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ExtraMonth.html
+- name: FatherCard
+  description: 'Sets or returns the card code of the parent business partner (for example, card code of the head office related to the current business partner). Field name: FatherCard . Length: 15 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FatherCard.html
+  length: 15
+- name: FatherType
+  description: 'Sets or returns a valid value of BoFatherCardTypes that specifies the method of handling deliveries and payments used by the parent business partner. Field name: FatherType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FatherType.html
+- name: FCEAsPaymentMeans
+  description: property FCEAsPaymentMeans
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FCEAsPaymentMeans.html
+- name: FCI
+  description: 'Enter the FCI Number . Field name: FCI . Length: 36 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FCI.html
+  length: 36
+- name: FederalTaxID
+  description: 'Sets or returns the federal tax ID of the business partner. Field name: LicTradNum . Length: 32 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FederalTaxID.html
+  field_name: LicTradNum
+  length: 32
+- name: FinancialPeriod
+  description: 'Returns the financial period. Field name: FinncPriod . This is a foreign key to the CompanyService object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FinancialPeriod.html
+  field_name: FinncPriod
+- name: FiscalDocNum
+  description: property FiscalDocNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FiscalDocNum.html
+- name: FolioNumber
+  description: 'Sets or returns the additional number for a printed document. Field name: FolioNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FolioNumber.html
+  field_name: FolioNum
+- name: FolioNumberFrom
+  description: property FolioNumberFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FolioNumberFrom.html
+- name: FolioNumberTo
+  description: property FolioNumberTo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FolioNumberTo.html
+- name: FolioPrefixString
+  description: 'Sets or returns the prefix for the FolioNumber . Field name: FolioPref . Length: 2 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~FolioPrefixString.html
+  field_name: FolioPref
+  length: 2
+- name: Form1099
+  description: 'Sets or returns the 1099 form. Field name: Form1099 . This is a foreign key to the Forms1099 object. Sets or returns the code of the Form 1099 . Field name: FormCode . This is a foreign key to the Forms1099 object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Form1099.html
+- name: GroupHandWritten
+  description: 'Specify whether to have the manual number of the purchase quotation group. Field name: PQTGrpHW .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GroupHandWritten.html
+  field_name: PQTGrpHW
+- name: GroupNumber
+  description: 'Number of the purchase quotation group. That is, all items that are contained in one purchase quotation share the same group number. Field: PQTGrpNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GroupNumber.html
+- name: GroupSeries
+  description: 'Sets or returns the auto-number series that are generated for the purchase quotation group. Field name: PQTGrpSer.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GroupSeries.html
+  field_name: PQTGrpSer
+- name: GSTTransactionType
+  description: property GSTTransactionType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GSTTransactionType.html
+- name: GTSChecker
+  description: property GTSChecker
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GTSChecker.html
+- name: GTSPayee
+  description: property GTSPayee
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~GTSPayee.html
+- name: HandWritten
+  description: 'Determines whether or not this document is based on a handwritten document. Field name: Handwrtten .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~HandWritten.html
+  field_name: Handwrtten
+- name: ImportFileNum
+  description: 'Sets or returns the landed costs key (import file number). The import file is used as a basis for purchase documents (purchase order and goods receipt). Field name: LndCstNum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ImportFileNum.html
+  field_name: LndCstNum
+- name: Indicator
+  description: 'Sets or returns the factoring indicator . Field name: Indicator . This is a foreign key to the FactoringIndicators object. The Factoring Indicators object enables to define a key that can be used as a selection criterion in various reports. Sets or returns the Factoring Indicator for the business partner master record. Field name: Indicator . Length: 2 characters. This is a foreign key to the FactoringIndicators object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Indicator.html
+  length: 2
+- name: IndicatorForFinalConsumer
+  description: 'The checkbox Final Consumer on the header of an A/R invoice, A/R sales order, A/R sales quotation, delivery, return or credit note. Field name: IndFinal .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~IndicatorForFinalConsumer.html
+  field_name: IndFinal
+- name: Installments
+  description: Returns an instance of Document_Installments object holding installments properties.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Installments.html
+- name: InsuranceOperation347
+  description: 'Indicates if this document is reported with the insurance operation type in 347 reports. Field name: InsurOp347'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~InsuranceOperation347.html
+  field_name: InsurOp347
+- name: InterimType
+  description: property InterimType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~InterimType.html
+- name: InternalCorrectedDocNum
+  description: Not used.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~InternalCorrectedDocNum.html
+- name: IntrastatExpenses
+  description: property IntrastatExpenses
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~IntrastatExpenses.html
+- name: InventoryStatus
+  description: property InventoryStatus
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~InventoryStatus.html
+- name: InvoicePayment
+  description: property InvoicePayment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~InvoicePayment.html
+- name: IsAlteration
+  description: property IsAlteration
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~IsAlteration.html
+- name: IsPayToBank
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether to specify the bank details or only the PayToCode for the outgoing payment. Field name: IsPaytoBnk .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~IsPayToBank.html
+  field_name: IsPaytoBnk
+- name: IssuingReason
+  description: property IssuingReason
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~IssuingReason.html
+- name: JournalMemo
+  description: 'Sets or returns the journal entry remarks that is copied later to the accounting document. Field name: JrnlMemo . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~JournalMemo.html
+  field_name: JrnlMemo
+  length: 50
+- name: LanguageCode
+  description: 'Sets or returns the Language Code of the document. Field name: LangCode . Field name: LangCode . This is the foreign key of the UserLanguages object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~LanguageCode.html
+  field_name: LangCode
+- name: LastPageFolioNumber
+  description: 'Folio number of the last page of the marketing document in the Chile localization. Field name: LPgFolioN .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~LastPageFolioNumber.html
+  field_name: LPgFolioN
+- name: LegalTextFormat
+  description: 'Legal text format template. Field name: LegTextF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~LegalTextFormat.html
+  field_name: LegTextF
+- name: Letter
+  description: property Letter
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Letter.html
+- name: Lines
+  description: Returns the Document_Lines child object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Lines.html
+- name: ManualNumber
+  description: 'Sets or returns the manual number of the document. Field name: ExpAnSys . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ManualNumber.html
+  field_name: ExpAnSys
+  length: 20
+- name: MaximumCashDiscount
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to calculate the discount in a payment run even if its due date is expired. Field name: MaxDscn .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~MaximumCashDiscount.html
+  field_name: MaxDscn
+- name: NetProcedure
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to calculate a cash discount in A/P invoices according the payment terms with the vendor. Field name: NetProc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NetProcedure.html
+  field_name: NetProc
+- name: NextCorrectingDocument
+  description: Not used.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NextCorrectingDocument.html
+- name: NotRelevantForMonthlyInvoice
+  description: 'Excludes specific documents from the monthly invoice. Field name: NotRel4MI .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NotRelevantForMonthlyInvoice.html
+  field_name: NotRel4MI
+- name: NTSApproved
+  description: property NTSApproved
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NTSApproved.html
+- name: NTSApprovedNumber
+  description: property NTSApprovedNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NTSApprovedNumber.html
+- name: NumAtCard
+  description: 'Sets or returns a unique code by which your vendor/customer identifies your company. Field name: NumAtCard . Length: 100 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NumAtCard.html
+  length: 100
+- name: NumberOfInstallments
+  description: 'Sets or returns the number of installments for the payment. Field name: Installmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~NumberOfInstallments.html
+  field_name: Installmnt
+- name: OpenForLandedCosts
+  description: 'Enables the landed costs feature. Field name: OpenForLaC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OpenForLandedCosts.html
+  field_name: OpenForLaC
+- name: OpeningRemarks
+  description: 'Sets or returns the Header text of the sales or purchasing document. Field name: Header . Length: 64000 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OpeningRemarks.html
+  field_name: Header
+  length: 64000
+- name: OriginalCreditOrDebitDate
+  description: property OriginalCreditOrDebitDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OriginalCreditOrDebitDate.html
+- name: OriginalCreditOrDebitNo
+  description: property OriginalCreditOrDebitNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OriginalCreditOrDebitNo.html
+- name: OriginalRefDate
+  description: property OriginalRefDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OriginalRefDate.html
+- name: OriginalRefNo
+  description: property OriginalRefNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~OriginalRefNo.html
+- name: Packages
+  description: Returns the DocumentPackages object, which is a child object of Documents holding package details for items in Delivery and A/R Invoice documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Packages.html
+- name: PaidToDate
+  description: property PaidToDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaidToDate.html
+- name: PaidToDateFC
+  description: property PaidToDateFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaidToDateFC.html
+- name: PaidToDateSys
+  description: property PaidToDateSys
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaidToDateSys.html
+- name: PartialSupply
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not only some of the items were supplied to the customer. Field name: PartSupply .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PartialSupply.html
+  field_name: PartSupply
+- name: PaymentBlock
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to block a payment due to a reason specified in PaymentBlockEntry property. Field name: PayBlock .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaymentBlock.html
+  field_name: PayBlock
+- name: PaymentBlockEntry
+  description: 'Sets or returns a description of the payment block reason as defined in SAP Business One in ''Define Payment Block'' table. Field name: PayBlckRef . This is a foreign key to the OPYB object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaymentBlockEntry.html
+  field_name: PayBlckRef
+- name: PaymentGroupCode
+  description: 'Sets or returns the payment terms used in the document . Field name: GroupNum . This is a foreign key to the PaymentTermsTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaymentGroupCode.html
+  field_name: GroupNum
+- name: PaymentMethod
+  description: 'Sets or returns the payment method for outgoing payments (for example: check, bank transfer, and so on). Field name: PeyMethod . Length: 15 characters. This is a foreign key to the WizardPaymentMethods object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaymentMethod.html
+  field_name: PeyMethod
+  length: 15
+- name: PaymentReference
+  description: 'Returns the payment reference that authorizes the payment process (according to the legal requirements). Field name: PaymentRef . Length: 27 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PaymentReference.html
+  field_name: PaymentRef
+  length: 27
+- name: PayToBankAccountNo
+  description: 'Sets or returns the bank account number for the outgoing payment. Field name: BnkAccount . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PayToBankAccountNo.html
+  field_name: BnkAccount
+  length: 50
+- name: PayToBankBranch
+  description: 'Sets or returns the bank branch for the outgoing payment. Field name: BnkBranch . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PayToBankBranch.html
+  field_name: BnkBranch
+  length: 50
+- name: PayToBankCode
+  description: 'Sets or returns the bank code for the outgoing payment. Field name: BankCode . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PayToBankCode.html
+  field_name: BankCode
+  length: 30
+- name: PayToBankCountry
+  description: 'Sets or returns the bank country for the outgoing payment. Field name: BnkCntry . Length: 3 characters. This is a foreign key to the Countries table ( OCRY - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PayToBankCountry.html
+  field_name: BnkCntry
+  length: 3
+- name: PayToCode
+  description: 'Sets or returns the destination code for the outgoing payment. Field name: PayToCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PayToCode.html
+  length: 50
+- name: PeriodIndicator
+  description: 'Returns the period indicator of the document. Field name: PIndicator . Length: 10 characters. This is a foreign key to the Period Indicator table ( OPID - not exposed through the DI API).'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PeriodIndicator.html
+  field_name: PIndicator
+  length: 10
+- name: Pick
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not to create a pick list document. Field name: pick .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Pick.html
+  field_name: pick
+- name: PickRemark
+  description: 'Sets or returns the Pick Remarks , the remarks related to the pick process . Field name: PickRmrk . Length: 254 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PickRemark.html
+  field_name: PickRmrk
+  length: 254
+- name: PickStatus
+  description: 'Returns a valid value that specifies the picking status of the items specified in the document: picked, not picked, released for picking, or partially picked from the warehouse. Field name: PickStatus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PickStatus.html
+- name: PlasticPackagingTaxRelevant
+  description: 'Document relevant for plastic packaging tax in UK localization. Field name: Rel4PPTax .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PlasticPackagingTaxRelevant.html
+  field_name: Rel4PPTax
+- name: PointOfIssueCode
+  description: property PointOfIssueCode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PointOfIssueCode.html
+- name: POS_CashRegister
+  description: property POS_CashRegister
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POS_CashRegister.html
+- name: POSCashierNumber
+  description: property POSCashierNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POSCashierNumber.html
+- name: POSDailySummaryNo
+  description: property POSDailySummaryNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POSDailySummaryNo.html
+- name: POSEquipmentNumber
+  description: property POSEquipmentNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POSEquipmentNumber.html
+- name: POSManufacturerSerialNumber
+  description: property POSManufacturerSerialNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POSManufacturerSerialNumber.html
+- name: POSReceiptNo
+  description: property POSReceiptNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~POSReceiptNo.html
+- name: PriceListNum
+  description: property PriceListNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PriceListNum.html
+- name: PriceMode
+  description: property PriceMode
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PriceMode.html
+- name: Printed
+  description: 'Sets or returns a valid value of PrintStatusEnum type that specifies whether or not this document was printed. Field name: Printed .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Printed.html
+- name: PrintSEPADirect
+  description: property PrintSEPADirect
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PrintSEPADirect.html
+- name: PrivateKeyVersion
+  description: property PrivateKeyVersion
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~PrivateKeyVersion.html
+- name: Project
+  description: 'Sets or returns the project code related to the document. Field name: Project . Length: 8 characters This is a foreign key to Project Codes table - OPRJ . You can work with this table using the ProjectsService .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Project.html
+  length: 8
+- name: Receiver
+  description: property Receiver
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Receiver.html
+- name: Reference1
+  description: 'Sets or returns the first reference code of the document. Field name: Ref1 . Length: 11 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Reference1.html
+  field_name: Ref1
+  length: 11
+- name: Reference2
+  description: 'Sets or returns the second reference code of the document. Field name: Ref2 . Length: 11 characters. This property is relevant also for oInventoryGenEntry and oInventoryGenExit document types.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Reference2.html
+  field_name: Ref2
+  length: 11
+- name: RelatedEntry
+  description: property RelatedEntry
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RelatedEntry.html
+- name: RelatedType
+  description: property RelatedType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RelatedType.html
+- name: Releaser
+  description: property Releaser
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Releaser.html
+- name: RelevantToGTS
+  description: property RelevantToGTS
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RelevantToGTS.html
+- name: ReopenManuallyClosedOrCanceledDocument
+  description: 'Specifies whether to reopen an original document that was manually closed or cancelled. Field: ReopManCls .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReopenManuallyClosedOrCanceledDocument.html
+- name: ReopenOriginalDocument
+  description: 'Specifies whether to reopen a sales or purchasing order when you create a return or goods return document that is based on the sales or purchasing order, or when you create a credit memo based on an invoice. Field: ReopOriDoc .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReopenOriginalDocument.html
+- name: ReportingSectionControlStatementVAT
+  description: property ReportingSectionControlStatementVAT
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReportingSectionControlStatementVAT.html
+- name: ReqCode
+  description: 'Requester code. Field name: ReqCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReqCode.html
+  length: 50
+- name: ReqType
+  description: property ReqType
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReqType.html
+- name: Requester
+  description: property Requester
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Requester.html
+- name: RequesterBranch
+  description: property RequesterBranch
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequesterBranch.html
+- name: RequesterDepartment
+  description: property RequesterDepartment
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequesterDepartment.html
+- name: RequesterEmail
+  description: property RequesterEmail
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequesterEmail.html
+- name: RequesterName
+  description: property RequesterName
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequesterName.html
+- name: RequriedDate
+  description: 'Sets or returns the date in which the customer expects the goods. Field name: ReqDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RequriedDate.html
+  field_name: ReqDate
+- name: Reserve
+  description: 'Returns a valid value that specifies whether or not this document was saved by the payment wizard. Field name: Reserve .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Reserve.html
+- name: ReserveInvoice
+  description: 'Determines whether or not this document is a Reserve Invoice , invoice that can be drawn to a delivery. Field name: isIns .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReserveInvoice.html
+  field_name: isIns
+- name: ReuseDocumentNum
+  description: property ReuseDocumentNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReuseDocumentNum.html
+- name: ReuseNotaFiscalNum
+  description: property ReuseNotaFiscalNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReuseNotaFiscalNum.html
+- name: Revision
+  description: property Revision
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Revision.html
+- name: RevisionPo
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to split a purchase order to different warehouses in different locations. Field name: RevisionPo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RevisionPo.html
+- name: Rounding
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to round the total amount in sales or purchase documents. Field name: Rounding .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Rounding.html
+- name: RoundingDiffAmount
+  description: 'The difference between the original amount and the rounded amount. Field name: RoundDif'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RoundingDiffAmount.html
+  field_name: RoundDif
+- name: RoundingDiffAmountFC
+  description: 'The difference between the original amount and the rounded amount in foreign currency. Field name: RoundDifFC'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RoundingDiffAmountFC.html
+  field_name: RoundDifFC
+- name: RoundingDiffAmountSC
+  description: 'The difference between the original amount and the rounded amount in system currency. Field name: RoundDifSy'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RoundingDiffAmountSC.html
+  field_name: RoundDifSy
+- name: RoutingCode
+  description: "This is a code used in Franceâ\x80\x99s e-invoicing system to route invoices to the correct recipient platform via the centralized Annuaire directory; it complements the mandatory SIREN number. Field name: RoutingCod ."
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~RoutingCode.html
+  field_name: RoutingCod
+- name: SalesPersonCode
+  description: 'Sets or returns the code of the sales employee who has created this document. Field name: SlpCode . This is a foreign key to the SalesPersons object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SalesPersonCode.html
+  field_name: SlpCode
+- name: SAPPassport
+  description: property SAPPassport
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SAPPassport.html
+- name: Segment
+  description: 'Returns the segment number of a child document related to a parent document (parent document number is the value of DocNum property). Field name: Segment .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Segment.html
+- name: SendNotification
+  description: property SendNotification
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SendNotification.html
+- name: SequenceCode
+  description: 'Sets or returns the Sequence Code. Field name: SeqCode .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SequenceCode.html
+  field_name: SeqCode
+- name: SequenceModel
+  description: 'Sets or returns the Nota Fiscal Model . Field name: Model .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SequenceModel.html
+  field_name: Model
+- name: SequenceSerial
+  description: 'Sets or returns the Nota Fiscal Sequence Serial . Field name: Serial .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SequenceSerial.html
+  field_name: Serial
+- name: Series
+  description: 'Sets or returns the auto-number series that generated the document number. Field name: Series . This is a foreign key to the Series object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Series.html
+- name: SeriesString
+  description: 'Sets or returns the Series String. Field name: SeriesStr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SeriesString.html
+  field_name: SeriesStr
+  length: 3
+- name: ServiceGrossProfitPercent
+  description: 'The gross profit percent for a service document. Field name: SrvGpPrcnt'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ServiceGrossProfitPercent.html
+  field_name: SrvGpPrcnt
+- name: ShipFrom
+  description: property ShipFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShipFrom.html
+- name: ShipPlace
+  description: 'Enter Shipment Place Name . It is mandatory if Export Process form is filled in.. Field name: ShipPlace . Length: 60 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShipPlace.html
+  length: 60
+- name: ShipState
+  description: 'Enter Shipment State Code . It is mandatory if Export Process form is filled in.. Field name: ShipState . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShipState.html
+  length: 3
+- name: ShipToCode
+  description: 'Sets or returns the Ship To address name. Field name: ShipToCode . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShipToCode.html
+  length: 50
+- name: ShipToCodeForReturn
+  description: 'Sets or returns the Ship To address in return documents. Field name: RShipToCod . Length: 50 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShipToCodeForReturn.html
+  field_name: RShipToCod
+  length: 50
+- name: ShowSCN
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not to show the BP catalog number instead of item code. Field name: ShowSCN .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ShowSCN.html
+- name: SignatureDigest
+  description: property SignatureDigest
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SignatureDigest.html
+- name: SignatureInputMessage
+  description: property SignatureInputMessage
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SignatureInputMessage.html
+- name: SirenNumber
+  description: 'This is a French business identifier. SIREN (9 digits) identifies a company. Field name: SirenNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SirenNumber.html
+  field_name: SirenNo
+- name: SiretNumber
+  description: 'This is a French business identifier. SIRET (14 digits) identifies a specific establishment. Field name: SiretNo .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SiretNumber.html
+  field_name: SiretNo
+- name: SOIWizardId
+  description: property SOIWizardId
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SOIWizardId.html
+- name: SpecialLines
+  description: Returns an instance of Document_SpecialLines object holding properties for text or subtotal lines in documents.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SpecialLines.html
+- name: SpecifiedClosingDate
+  description: 'To close a goods receipt PO or a goods return, specify a date other than the current system date and the original posting date. Field: SpecDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SpecifiedClosingDate.html
+- name: StartDeliveryDate
+  description: property StartDeliveryDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~StartDeliveryDate.html
+- name: StartDeliveryTime
+  description: property StartDeliveryTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~StartDeliveryTime.html
+- name: StartFrom
+  description: property StartFrom
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~StartFrom.html
+- name: Submitted
+  description: 'Returns a valid value of BoYesNoEnum type that specifies whether or not the document was submitted. Field name: submitted .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Submitted.html
+  field_name: submitted
+- name: SubSeriesString
+  description: 'Sets or returns the document''s Subseries String. Field name: SubStr . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SubSeriesString.html
+  field_name: SubStr
+  length: 3
+- name: Suffix
+  description: 'This field provides additional information or helps organize invoices, especially when multiple systems or departments are involved in the invoicing process. While not a mandatory part of all e-Invoicing standards, it is common practice for businesses to use it for internal management or specific transactional data. Field name: Suffix . Length: 3 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Suffix.html
+  length: 3
+- name: SummeryType
+  description: 'Sets or returns a valid value of BoDocSummaryTypes type that specifies the summary method to be used for table rows in a document. Field name: SummryType .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~SummeryType.html
+  field_name: SummryType
+- name: Supplier
+  description: property Supplier
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~Supplier.html
+- name: TaxDate
+  description: 'Sets or returns the date for the tax calculation or payment. Field name: TaxDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxDate.html
+- name: TaxExemptionLetterNum
+  description: 'Sets or returns the tax exemption letter number. Field name: LetterNum . Length: 20 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxExemptionLetterNum.html
+  field_name: LetterNum
+  length: 20
+- name: TaxExtension
+  description: 'Sets or returns the Tracking Number . Field name: TrackNo . Length: 30 characters.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxExtension.html
+  field_name: TrackNo
+  length: 30
+- name: TaxInvoiceDate
+  description: property TaxInvoiceDate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxInvoiceDate.html
+- name: TaxInvoiceNo
+  description: property TaxInvoiceNo
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxInvoiceNo.html
+- name: TaxOnInstallments
+  description: Indicates the types to apply tax on installment.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TaxOnInstallments.html
+- name: TotalDiscount
+  description: 'Returns the Total Discount for current document. Field name: DiscSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalDiscount.html
+  field_name: DiscSum
+- name: TotalDiscountFC
+  description: property TotalDiscountFC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalDiscountFC.html
+- name: TotalDiscountSC
+  description: property TotalDiscountSC
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalDiscountSC.html
+- name: TotalEqualizationTax
+  description: 'Returns the total equalization tax amount, in local currency, calculated for the document. Field name: EquVatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalEqualizationTax.html
+  field_name: EquVatSum
+- name: TotalEqualizationTaxFC
+  description: 'Returns the total equalization tax amount, in foreign currency, calculated for the document. Field name: EquVatSumF .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalEqualizationTaxFC.html
+  field_name: EquVatSumF
+- name: TotalEqualizationTaxSC
+  description: 'Returns the total equalization tax amount, in system currency, calculated for the document. Field name: EquVatSumS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TotalEqualizationTaxSC.html
+  field_name: EquVatSumS
+- name: TrackingNumber
+  description: property TrackingNumber
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TrackingNumber.html
+- name: TransNum
+  description: 'Returns the transaction number that SAP Business One creates for the document. Field name: TransId . This is a foreign key to the JournalEntries object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TransNum.html
+  field_name: TransId
+- name: TransportationCode
+  description: 'Sets or returns the shipping type. Field name: TrnspCode . This is a foreign key to the ShippingTypes object. Sets or returns the code of the shipping type (such as, Courier or Air Cargo). Field name: ShipType . This is a foreign key to the ShippingTypes object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~TransportationCode.html
+  field_name: TrnspCode
+- name: UpdateDate
+  description: 'Returns the date when the document was last updated. Field name: UpdateDate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UpdateDate.html
+- name: UpdateTime
+  description: property UpdateTime
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UpdateTime.html
+- name: UseBillToAddrToDetermineTax
+  description: property UseBillToAddrToDetermineTax
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UseBillToAddrToDetermineTax.html
+- name: UseCorrectionVATGroup
+  description: 'Sets or returns a valid value that determines wether or not to use the correction vat group. Field name: UseCorrVat .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UseCorrectionVATGroup.html
+  field_name: UseCorrVat
+- name: UserFields
+  description: Returns the UserFields object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UserFields.html
+- name: UserSign
+  description: 'Returns the ID of the user who enters the object''s details. Field name: UserSign . This is a foreign key to the Users object.'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UserSign.html
+- name: UseShpdGoodsAct
+  description: 'Sets or returns a valid value of BoYesNoEnum type that specifies whether or not the document uses Shipped Goods account. Field name: UseShpdGd .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~UseShpdGoodsAct.html
+  field_name: UseShpdGd
+- name: VatDate
+  description: 'Sets or returns the date from which the tax rate for this VAT Group code applies. Field name: vatdate .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatDate.html
+  field_name: vatdate
+- name: VatPercent
+  description: 'The tax rate for the document. Field name: VatPercent'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatPercent.html
+- name: VATRegNum
+  description: property VATRegNum
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VATRegNum.html
+- name: VatSum
+  description: 'Returns the total tax amount, in local currency, calculated for the document. Field name: VatSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatSum.html
+- name: VatSumFc
+  description: 'Returns the total tax amount, in foreign currency, calculated for the document. Field name: VatSumFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatSumFc.html
+  field_name: VatSumFC
+- name: VatSumSys
+  description: 'Returns the total tax amount, in system currency, calculated for the document. Field name: VatSumSy .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatSumSys.html
+  field_name: VatSumSy
+- name: VehiclePlate
+  description: property VehiclePlate
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VehiclePlate.html
+- name: WareHouseUpdateType
+  description: 'Not Used. Field name: InvntSttus .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WareHouseUpdateType.html
+  field_name: InvntSttus
+- name: WithholdingTaxData
+  description: Returns the WithholdingTaxData object.
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WithholdingTaxData.html
+- name: WithholdingTaxDataWTX
+  description: property WithholdingTaxDataWTX
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WithholdingTaxDataWTX.html
+- name: WTAmount
+  description: 'Returns the total withholding tax amount in the document, in local currency. Field name: WTSum .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTAmount.html
+  field_name: WTSum
+- name: WTAmountFC
+  description: 'Returns the total withholding tax amount in the document, in local currency. Field name: WTSumSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTAmountFC.html
+  field_name: WTSumSC
+- name: WTAmountSC
+  description: 'Returns the total withholding tax amount in the document, in system currency. Field name: WTSumSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTAmountSC.html
+  field_name: WTSumSC
+- name: WTApplied
+  description: 'Returns the total withholding tax applied, in local currency. Field name: WTApplied .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTApplied.html
+- name: WTAppliedFC
+  description: 'Returns the total withholding tax applied, in foreign currency. Field name: WTAppliedF . Returns the total withholding tax amount in the document, in local currency. Field name: WTSumSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTAppliedFC.html
+  field_name: WTAppliedF
+- name: WTAppliedSC
+  description: 'Returns the total withholding tax applied, in system currency. Field name: WTAppliedS .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTAppliedSC.html
+  field_name: WTAppliedS
+- name: WTExemptedAmount
+  description: 'Returns the exempted amount, in local currency, from the document. Field name: ExepAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTExemptedAmount.html
+  field_name: ExepAmnt
+- name: WTExemptedAmountFC
+  description: 'Returns the exempted amount, in foreign currency, from the document. Field name: ExepAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTExemptedAmountFC.html
+  field_name: ExepAmntFC
+- name: WTExemptedAmountSC
+  description: 'Returns the exempted amount, in system currency, from the document. Field name: ExepAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTExemptedAmountSC.html
+  field_name: ExepAmntSC
+- name: WTNonSubjectAmount
+  description: 'Returns the amount, in local currency, that is not subject to withholding tax in the document. Field name: NnSbAmnt .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTNonSubjectAmount.html
+  field_name: NnSbAmnt
+- name: WTNonSubjectAmountFC
+  description: 'Returns the amount, in foreign currency, that is not subject to withholding tax in the document. Field name: NbSbAmntFC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTNonSubjectAmountFC.html
+  field_name: NbSbAmntFC
+- name: WTNonSubjectAmountSC
+  description: 'Returns the amount, in system currency, that is not subject to withholding tax in the document. Field name: NnSbAmntSC .'
+  url: https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~WTNonSubjectAmountSC.html
+  field_name: NnSbAmntSC
