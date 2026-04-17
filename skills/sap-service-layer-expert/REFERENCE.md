@@ -1,5 +1,23 @@
 # SAP Service Layer — Reference
 
+## Base URL and authentication
+
+```
+{scheme}://{host}:{port}/b1s/v2
+```
+
+`SAP_SL_HOST` is the full origin including port, e.g. `https://192.168.1.100:50000`.
+
+Authentication is cookie-based — no Bearer token.
+
+1. `POST /b1s/v2/Login` with `{"UserName":"…","Password":"…","CompanyDB":"…"}`
+2. Session cookie `B1SESSION` is sent automatically by `requests.Session`
+3. `POST /b1s/v2/Logout` in `finally` — `ServiceLayer.__exit__` handles this
+
+Sessions expire after 30 min of inactivity.
+
+---
+
 ## OData query parameters
 
 Append as URL query strings on any `GET` collection call:
@@ -206,3 +224,39 @@ Naming convention — `snake_case`, verb first:
 - `patch_business_partners`
 - `create_sales_order`
 - `delete_price_list_entries`
+
+---
+
+## Schema resolution
+
+### ⚠️ Bundled OpenAPI spec is incomplete — fill gaps before writing scripts
+
+The spec files in `assets/spec/paths/` document available endpoints and HTTP methods but **do not contain full request body schemas**. Most operations work by passing a JSON body whose structure is not fully described in the spec.
+
+When the user does not know which fields are required or available, use these strategies in order:
+
+1. **Fetch a live sample** — `GET` an existing record and inspect its shape. The response body reveals all writable property names, child array structures, and current values:
+   ```python
+   record = sl.get("Items('A1001')")
+   ```
+2. **Cross-reference `sap-di-api-expert`** — DI API class docs (e.g. `Items.yaml`) list scalar properties and their underlying DB column names (`field_name`). Property names often match the Service Layer by convention.
+3. **Cross-reference `sap-schema-expert`** — HANA table schemas (e.g. `OITM.yaml`) show all columns, types, and allowed values. Use the DB column name to identify the matching Service Layer property.
+
+Never guess field names. If none of the above resolves the schema, tell the user which fields are uncertain and ask them to confirm before writing the script.
+
+### ⚠️ Service Layer property names differ from raw DB column names
+
+The Service Layer is an independent REST API — it does **not** use the DI API (SAPbobsCOM) under the hood. However, like the DI API, its property names do not always match the underlying HANA column names. By convention the two APIs share many property names, but there can be differences between them.
+
+Always look up the correct property name in `assets/spec/paths/{Resource}_id.yaml` — **do not assume the DB column name or DI API property name is valid**.
+
+Known divergences (non-exhaustive):
+
+| Service Layer property name | DB column (HANA SQL) |
+|---|---|
+| `FederalTaxID` | `OCRD.LicTradNum` |
+| `Mother` | `OCRD.FatherCard` |
+| `DiscountPercent` | `OINV.TradeDisc` |
+| `InventoryUOM` | `OITM.InvntryUom` |
+
+When cross-referencing with `sap-schema-expert` (HANA SQL), remap Service Layer property names to DB column names. Service Layer and DI API names often match by convention, but verify against the OpenAPI spec when in doubt.

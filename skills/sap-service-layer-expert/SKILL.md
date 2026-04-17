@@ -11,29 +11,7 @@ description: Expert guidance for writing correct, runnable Python scripts that i
 2. Copy `assets/script_template.py` as the starting point for every new script.
 3. Look up endpoint schemas in `assets/spec/paths/{ResourceName}.yaml` for field names.
 4. Check [ENDPOINTS.md](ENDPOINTS.md) for available HTTP methods and action functions per resource.
-5. See [REFERENCE.md](REFERENCE.md) for OData params, HTTP semantics, document chaining, and more.
-
----
-
-## Base URL
-
-```
-{scheme}://{host}:{port}/b1s/v2
-```
-
-`SAP_SL_HOST` is the full origin including port, e.g. `https://192.168.1.100:50000`.
-
----
-
-## Authentication
-
-Cookie-based sessions — no Bearer token.
-
-1. `POST /b1s/v2/Login` with `{"UserName":"…","Password":"…","CompanyDB":"…"}`
-2. Session cookie `B1SESSION` is sent automatically by `requests.Session`
-3. `POST /b1s/v2/Logout` in `finally` — `ServiceLayer.__exit__` handles this
-
-Sessions expire after 30 min of inactivity.
+5. See [REFERENCE.md](REFERENCE.md) for base URL/auth, OData params, HTTP semantics, document chaining, and schema resolution strategies.
 
 ---
 
@@ -86,3 +64,15 @@ When the user asks to run a script:
 cd <main-repo-root>
 /workspace/development/frappe-bench/env/bin/python .temp/<operation>_run.py
 ```
+
+---
+
+## Related skills
+
+| Skill | When to use |
+|---|---|
+| `sap-schema-expert` | Look up DB column names, table structure, and encoded values |
+| `sap-di-api-expert` | COM-based automation and read/write via DI API |
+| `sap-dtw-expert` | Bulk import/export via Data Transfer Workbench TSV files |
+
+See [REFERENCE.md](REFERENCE.md) for schema resolution strategies and ⚠️ property name / DB column mapping pitfalls.

@@ -51,3 +51,35 @@ See [REFERENCE.md](REFERENCE.md) for:
 - Finding related tables via `REVERSE_REFS.yaml` and `TABLE_INDEX.yaml`
 - Regenerating derived asset files after schema updates
 
+---
+
+## Related skills
+
+| Skill | When to use |
+|---|---|
+| `sap-service-layer-expert` | Read/write SAP B1 data via REST API |
+| `sap-di-api-expert` | Read/write SAP B1 data via COM automation (DI API) |
+| `sap-dtw-expert` | Bulk import/export via Data Transfer Workbench TSV files |
+
+### ⚠️ DB column names ≠ COM property names
+
+The **DI API, Service Layer, and DTW all use COM property names** (from the SAPbobsCOM type library). These are **not always identical** to the underlying HANA database column names used in raw SQL.
+
+| Layer | Authoritative source | Name style |
+|---|---|---|
+| **HANA SQL / Schema** | `assets/schemas/<TABLE>.yaml` (this skill) | Raw DB column names |
+| **DI API** | `assets/docs/class/` in `sap-di-api-expert` | COM property names |
+| **Service Layer** | `assets/spec/paths/` in `sap-service-layer-expert` | COM property names |
+| **DTW** | Row 2 of TSV template in `sap-dtw-expert` | COM property names |
+
+Known divergences (non-exhaustive):
+
+| DB column (HANA SQL) | COM property name (DI API / Service Layer / DTW) |
+|---|---|
+| `OCRD.LicTradNum` | `FederalTaxID` |
+| `OCRD.FatherCard` | `Mother` |
+| `OINV.TradeDisc` | `DiscountPercent` |
+| `OITM.InvntryUom` | `InventoryUOM` |
+
+When writing HANA SQL, use DB column names from `assets/schemas/`. When working with DI API, Service Layer, or DTW, use COM property names from their respective reference docs.
+
