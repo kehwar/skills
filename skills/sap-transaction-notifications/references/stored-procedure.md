@@ -152,55 +152,97 @@ Always `ALTER PROCEDURE` (not `CREATE OR REPLACE`) — the procedure already exi
 
 ---
 
-## Extended Object Type Code Table
+## Primary Key Parameters
 
-Object codes not in the SKILL.md quick-reference:
+SAP passes the primary key as three coordinated parameters:
+
+| Parameter | Type | Content |
+|-----------|------|---------|
+| `num_of_cols_in_key` | `int` | Number of key columns |
+| `list_of_key_cols_tab_del` | `nvarchar(255)` | Tab-delimited column **names** |
+| `list_of_cols_val_tab_del` | `nvarchar(255)` | Tab-delimited column **values** |
+
+Only `list_of_cols_val_tab_del` is forwarded to sub-procedures. The column names and count remain available in the main procedure body but are typically not forwarded.
+
+### Simple key (one column)
+
+```sql
+-- single value — use directly
+DECLARE item_code nvarchar(50);
+item_code := :list_of_cols_val_tab_del;
+```
+
+### Composite key (multiple columns)
+
+```sql
+DECLARE tab_pos   int;
+DECLARE doc_entry nvarchar(50);
+DECLARE line_num  nvarchar(50);
+
+tab_pos   := LOCATE(:list_of_cols_val_tab_del, CHAR(9));  -- CHAR(9) = tab
+doc_entry := SUBSTRING(:list_of_cols_val_tab_del, 1, tab_pos - 1);
+line_num  := SUBSTRING(:list_of_cols_val_tab_del, tab_pos + 1);
+```
+
+---
+
+## Object Type Code Table
+
+The same codes appear in `OIVL.TransType`, `OITL.DocType`, and any generic `ObjType` column.
 
 | Code | Table | Description |
 |------|-------|-------------|
-| `3`  | ODSC  | Banks |
-| `11` | OCPR  | Contact Persons |
-| `12` | OUSR  | Users |
-| `13` | OINV  | A/R Invoices |
-| `14` | ORIN  | A/R Credit Notes |
-| `15` | ODLN  | Deliveries |
-| `16` | ORDN  | Sales Returns |
-| `18` | OPCH  | A/P Invoices |
-| `19` | ORPC  | A/P Credit Notes |
-| `20` | OPDN  | Goods Receipt PO |
-| `21` | ORPD  | Goods Return |
-| `22` | OPOR  | Purchase Orders |
-| `24` | ORCT  | Incoming Payments |
-| `25` | ODPS  | Deposits |
-| `30` | OJDT  | Journal Entries |
-| `37` | OCRN  | Currencies |
-| `38` | OIDX  | Indexes |
-| `40` | OCTG  | Payment Terms |
-| `43` | OMRC  | Manufacturers |
-| `44` | OCQG  | BP Properties |
-| `46` | OVPM  | Outgoing Payments |
-| `48` | OALC  | Landed Cost Definitions |
-| `52` | OITB  | Item Groups |
-| `53` | OSLP  | Sales Persons |
-| `57` | OCHO  | Checks for Payment |
-| `59` | OIGN  | Goods Receipt / Production Receipt |
-| `60` | OIGE  | Goods Issue / Production Issue |
-| `63` | OPRJ  | Projects |
-| `66` | OITT  | Bills of Material |
-| `67` | OWTR  | Stock Transfer |
-| `69` | OIPF  | Landed Costs |
-| `80` | OALT  | Alerts |
-| `95` | OFRT  | Financial Report Templates |
-| `97` | OOPR  | Sales Opportunities |
-| `112` | ODRF | Draft Documents |
-| `120` | OWST | Approval Stages |
-| `121` | OWTM | Approval Templates |
-| `125` | OEXD | Additional Expenses |
-| `126` | OSTA | Tax Classes |
-| `128` | OSTC | Tax Codes |
-| `162` | OMRV | Inventory Revaluation |
-| `178` | OWHT | Withholding Tax |
-| `202` | OWOR | Production Orders |
-| `212` | OORL | BP Relationships |
-| `231` | DSC1 | Bank Accounts |
+| `1`   | OACT  | Chart of Accounts |
+| `2`   | OCRD  | Business Partners |
+| `3`   | ODSC  | Banks |
+| `4`   | OITM  | Items |
+| `8`   | OITG  | Item Properties |
+| `10`  | OCRG  | Business Partner Groups |
+| `11`  | OCPR  | Contact Persons |
+| `12`  | OUSR  | Users |
+| `13`  | OINV  | A/R Invoices |
+| `14`  | ORIN  | A/R Credit Notes |
+| `15`  | ODLN  | Deliveries |
+| `16`  | ORDN  | Sales Returns |
+| `17`  | ORDR  | Sales Orders |
+| `18`  | OPCH  | A/P Invoices |
+| `19`  | ORPC  | A/P Credit Notes |
+| `20`  | OPDN  | Goods Receipt PO |
+| `21`  | ORPD  | Goods Return |
+| `22`  | OPOR  | Purchase Orders |
+| `23`  | OQUT  | Quotations |
+| `24`  | ORCT  | Incoming Payments |
+| `25`  | ODPS  | Deposits |
+| `30`  | OJDT  | Journal Entries |
+| `37`  | OCRN  | Currencies |
+| `38`  | OIDX  | Indexes |
+| `40`  | OCTG  | Payment Terms |
+| `43`  | OMRC  | Manufacturers |
+| `44`  | OCQG  | BP Properties |
+| `46`  | OVPM  | Outgoing Payments |
+| `48`  | OALC  | Landed Cost Definitions |
+| `52`  | OITB  | Item Groups |
+| `53`  | OSLP  | Sales Persons |
+| `57`  | OCHO  | Checks for Payment |
+| `59`  | OIGN  | Goods Receipt / Production Receipt |
+| `60`  | OIGE  | Goods Issue / Production Issue |
+| `63`  | OPRJ  | Projects |
+| `64`  | OWHS  | Warehouses |
+| `66`  | OITT  | Bills of Material |
+| `67`  | OWTR  | Stock Transfer |
+| `69`  | OIPF  | Landed Costs |
+| `80`  | OALT  | Alerts |
+| `95`  | OFRT  | Financial Report Templates |
+| `97`  | OOPR  | Sales Opportunities |
+| `112` | ODRF  | Draft Documents |
+| `120` | OWST  | Approval Stages |
+| `121` | OWTM  | Approval Templates |
+| `125` | OEXD  | Additional Expenses |
+| `126` | OSTA  | Tax Classes |
+| `128` | OSTC  | Tax Codes |
+| `162` | OMRV  | Inventory Revaluation |
+| `178` | OWHT  | Withholding Tax |
+| `202` | OWOR  | Production Orders |
+| `212` | OORL  | BP Relationships |
+| `231` | DSC1  | Bank Accounts |
 | `540000006` | OPQT | Purchase Quotations |
