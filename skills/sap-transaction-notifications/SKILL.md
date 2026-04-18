@@ -1,6 +1,6 @@
 ---
 name: sap-transaction-notifications
-description: Expert guidance for the SAP Business One Transaction Notification mechanism — the stored-procedure hook SAP calls on every committed transaction. Use when writing or reviewing SBO_SP_TransactionNotification, adding object-type routing guards, understanding transaction types (A/U/D/C/L), looking up SAP internal object type codes, or registering the procedure in SAP Business One. For the Frappe-side implementation that consumes these events, use the sap-transaction-notification-expert skill instead.
+description: Expert guidance for the SAP Business One Transaction Notification mechanism — the stored-procedure hook SAP calls on every committed transaction. Use when writing or reviewing SBO_SP_TransactionNotification, adding object-type routing guards, understanding transaction types (A/U/D/C/L), looking up SAP internal object type codes, or registering the procedure in SAP Business One.
 ---
 
 # SAP Transaction Notifications
