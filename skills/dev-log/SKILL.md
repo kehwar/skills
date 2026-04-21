@@ -79,25 +79,30 @@ date: YYYY-MM-DD
 
 # <Title>
 
-## Context / Problem Statement
+## Problem Statement
 
-<Why this entry exists. What problem or situation prompted it. 2–4 sentences.>
+<Why this entry exists. What problem, situation, or question prompted it — from the developer's perspective. 2–4 sentences.>
 
-## What happened / What was decided
+## Solution
 
-<The core content. Be specific. Include code snippets, SQL, config values, or file paths where useful.>
+<What was built, fixed, or decided. Be specific. Include code snippets, config values, or file paths where useful.>
 
-## Why
+## Implementation Decisions
 
-<Reasoning. For decisions: why this option over alternatives. For bugs: root cause chain. For insights: what changed in your understanding.>
+<A list of the key technical choices made. For each decision, include what was chosen and why. Cover:>
 
-## Alternatives considered
+- Modules built or modified and their interfaces
+- Architectural choices
+- Schema or API changes
+- Non-obvious constraints or discoveries
 
-<List alternatives and why they were rejected.>
+## Alternatives Considered
 
-## Outcome
+<Alternatives that were evaluated and rejected, and the reason each was ruled out.>
 
-<Result: what now works, what changed, what future work this enables or constrains.>
+## Further Notes
+
+<Result: what now works, what changed, what future work this enables or constrains, and any loose ends or follow-up observations.>
 ```
 
 ---
