@@ -16,6 +16,56 @@ For Typst language fundamentals (modes, functions), see [basics.md](basics.md). 
 
 For full Typst syntax details on headings, lists, links, and references, see [basics.md](basics.md).
 
+## From LaTeX: Package and Concept Map
+
+Typst is "batteries included" — most common LaTeX packages are built in:
+
+| LaTeX package            | Typst equivalent                                            |
+| ------------------------ | ----------------------------------------------------------- |
+| `graphicx`, `svg`        | `image()` function                                          |
+| `tabularx`, `tabularray` | `table()`, `grid()`                                         |
+| `amsmath`, `amssymb`     | Built into math mode; see [academic.md](academic.md)        |
+| `hyperref`               | `link()` function                                           |
+| `biblatex`, `natbib`     | `cite()`, `bibliography()` — see [academic.md](academic.md) |
+| `geometry`, `fancyhdr`   | `#set page(margin: ..., header: ..., footer: ...)`          |
+| `xcolor`                 | `#set text(fill: rgb("#..."))`, `luma()`, etc.              |
+| `babel`, `polyglossia`   | `#set text(lang: "zh")`                                     |
+| `lstlisting`, `minted`   | `raw()` function, ` ` ` ` markup                            |
+| `caption`                | `figure(caption: ...)`                                      |
+| `enumitem`               | `list()`, `enum()`, `terms()` parameters                    |
+| `parskip`                | `#set par(spacing: ..., first-line-indent: ...)`            |
+| `nicefrac`               | `frac(a, b, style: "horizontal")` or `"skewed"`             |
+| `csquotes`               | Smart quotes auto-active; set `text(lang: ...)`             |
+
+### Concept mappings
+
+| LaTeX                             | Typst                                         |
+| --------------------------------- | --------------------------------------------- |
+| `\documentclass{article}`         | `#show: template.with(...)` (from a template) |
+| `\newcommand{\foo}{...}`          | `#let foo = ...` or `#let foo(x) = ...`       |
+| `\textbf{x}` (style-only, no tag) | `#text(weight: "bold")[x]` — style only       |
+| Semantic strong emphasis          | `*x*` or `#strong[x]` — tagged for a11y       |
+| `\emph{x}` (semantic)             | `_x_` or `#emph[x]`                           |
+| `\textit{x}` (style-only)         | `#text(style: "italic")[x]`                   |
+| `\bfseries` (declaration-style)   | `#set text(weight: "bold")` in current scope  |
+| `\textsc{x}`                      | `#smallcaps[x]`                               |
+| `\left( ... \right)`              | Auto-scaling in math; use `lr(( ))` to force  |
+| `\label{foo}` / `\ref{foo}`       | `<foo>` / `@foo`                              |
+
+Set rules act like LaTeX declarations scoped to the current block; direct function calls act like argument-style commands.
+
+### "LaTeX look" starter
+
+Reproduces the Computer Modern / justified / tight-leading look of a classic LaTeX article:
+
+```typst
+#set page(margin: 1.75in)
+#set par(leading: 0.55em, spacing: 0.55em, first-line-indent: 1.8em, justify: true)
+#set text(font: "New Computer Modern")
+#show raw: set text(font: "New Computer Modern Mono")
+#show heading: set block(above: 1.4em, below: 1em)
+```
+
 ## Math Conversion
 
 ### Inline vs Display Math
@@ -30,18 +80,20 @@ $ integral_0^infinity e^(-x) dif x = 1 $
 
 ### Common Conversions
 
-| LaTeX            | Typst          |
-| ---------------- | -------------- |
-| `\frac{a}{b}`    | `frac(a, b)`   |
-| `\sqrt{x}`       | `sqrt(x)`      |
-| `\sum_{i=1}^{n}` | `sum_(i=1)^n`  |
-| `\int_a^b`       | `integral_a^b` |
-| `\alpha, \beta`  | `alpha, beta`  |
-| `\mathbf{x}`     | `bold(x)`      |
-| `\text{word}`    | `"word"`       |
-| `\left( \right)` | `lr(( ))`      |
-| `\begin{matrix}` | `mat(...)`     |
-| `\begin{cases}`  | `cases(...)`   |
+| LaTeX                           | Typst                                                       |
+| ------------------------------- | ----------------------------------------------------------- |
+| `\frac{a}{b}`                   | `frac(a, b)`                                                |
+| `\sqrt{x}`                      | `sqrt(x)`                                                   |
+| `\sum_{i=1}^{n}`                | `sum_(i=1)^n`                                               |
+| `\int_a^b`                      | `integral_a^b`                                              |
+| `\alpha, \beta`                 | `alpha, beta`                                               |
+| `\mathbf{x}`                    | `bold(x)`                                                   |
+| `\text{word}`                   | `"word"`                                                    |
+| `\left( \right)`                | auto (use `lr(( ))` to force)                               |
+| `\begin{matrix}`                | `mat(...)`                                                  |
+| `\begin{cases}`                 | `cases(...)`                                                |
+| `\citet{key}`, `\textcite{key}` | `#cite(<key>, form: "prose")`                               |
+| `\arrow`, alt forms             | `arrow.r.squiggly`, `arrow.l.long`, etc. (symbol modifiers) |
 
 ### Math Examples
 
@@ -264,113 +316,40 @@ Some *bold* and _italic_ text.
 - List item 2
 ```
 
+## Current Limitations vs LaTeX
+
+- **Plotting ecosystem**: LaTeX has mature PGF/TikZ. Typst's `cetz` is catching up but narrower. See [package search](scripts/search-packages.py) for alternatives.
+- **Mid-page margin changes**: `#set page(margin: ...)` forces a page break. For local stretching, use `pad()` with negative padding.
+- **Change bars / track-changes workflows**: No first-class equivalent yet.
+- **`\input` with partial scope**: Typst `include` evaluates a whole file; scoping differs from TeX's `\input`.
+- **Some niche journal templates** may not yet be on Typst Universe — check before committing a submission to Typst-only.
+
 ## Using Pandoc for Conversion
 
-Pandoc (since v2.18) supports Typst as an output format, enabling automated conversion from Markdown, LaTeX, and other formats.
-
-### Basic Commands
+Pandoc (since v2.18) supports Typst as an output format.
 
 ```bash
-# Markdown to Typst
-pandoc -f markdown -t typst input.md -o output.typ
-
-# LaTeX to Typst
-pandoc -f latex -t typst input.tex -o output.typ
-
-# Multiple formats to Typst
-pandoc input.md input2.md -t typst -o combined.typ
-
-# Markdown to PDF via Typst
-pandoc input.md -o output.pdf --pdf-engine=typst
+pandoc -f markdown -t typst input.md -o output.typ    # Markdown → Typst
+pandoc -f latex -t typst input.tex -o output.typ       # LaTeX → Typst
+pandoc input.md -o output.pdf --pdf-engine=typst        # Markdown → PDF via Typst
 ```
 
-### Metadata Variables
-
-Control output via YAML frontmatter or command-line `-V`:
-
-```yaml
----
-title: "Document Title"
-author: "Author Name"
-date: "2026-01-01"
-papersize: a4
-margin:
-  x: 2cm
-  y: 2.5cm
-fontsize: 11pt
-mainfont: "Libertinus Serif"
-mathfont: "Libertinus Math"
-codefont: "Fira Code"
-section-numbering: "1.1"
-page-numbering: "1"
-columns: 1
-linestretch: 1.25
-linkcolor: "4183c4"
----
-```
-
-Or via command line:
+### Common Options
 
 ```bash
 pandoc input.md -t typst -o output.typ \
-  -V papersize=a4 \
-  -V fontsize=12pt \
-  -V mainfont="Times New Roman"
+  -V papersize=a4 -V fontsize=12pt -V mainfont="Libertinus Serif" \
+  -V section-numbering="1.1" --toc
 ```
 
-All variables shown in the YAML example above (`title`, `author`, `papersize`, `margin`, `fontsize`, `mainfont`/`mathfont`/`codefont`, `section-numbering`, `page-numbering`, `columns`, `linestretch`, `linkcolor`, `citecolor`) can also be set via `-V key=value`.
+Key `-V` variables: `title`, `author`, `papersize`, `margin`, `fontsize`, `mainfont`/`mathfont`/`codefont`, `section-numbering`, `page-numbering`, `columns`, `linestretch`, `linkcolor`. These can also be set via YAML frontmatter.
 
-### Custom Templates
-
-Extract and modify the default template:
-
-```bash
-# Get default template
-pandoc -D typst > my-template.typ
-
-# Use custom template
-pandoc input.md -t typst --template=my-template.typ -o output.typ
-```
-
-### Direct PDF Generation
-
-```bash
-# Basic PDF via Typst
-pandoc input.md -o output.pdf --pdf-engine=typst
-
-# With PDF/A-2b compliance (Typst 0.12+)
-pandoc input.md -o output.pdf --pdf-engine=typst \
-  --pdf-engine-opt=--pdf-standard=a-2b
-```
+Custom templates: `pandoc -D typst > template.typ`, then `pandoc input.md --template=template.typ -o output.typ`.
 
 ### Known Limitations
 
-1. **Citation handling**: `@ref` in Markdown becomes `#cite(<ref>)` in Typst. Escape with `\@` if literal `@` needed.
+- **Citations**: `@ref` in Markdown → `#cite(<ref>)` in Typst. Escape literal `@` with `\@`.
+- **Complex tables**: Cell merging needs manual adjustment.
+- **Raw Typst blocks**: Use ```` ```{=typst} ```` fenced blocks for unsupported features.
 
-2. **Image sizing**: Default image dimensions may differ from other outputs. Specify width explicitly:
-
-   ```markdown
-   ![Alt text](image.png){width=80%}
-   ```
-
-3. **Complex tables**: Cell merging and advanced table features may need manual adjustment.
-
-4. **Raw blocks**: Use raw Typst blocks for unsupported features:
-
-   ````markdown
-   ```{=typst}
-   #set text(fill: red)
-   Custom Typst code here.
-   ```
-   ````
-
-### Workflow
-
-```bash
-pandoc document.md -t typst -o document.typ \
-  -V papersize=a4 -V mainfont="Libertinus Serif" \
-  -V section-numbering="1.1" --toc
-typst compile document.typ
-```
-
-Review and refine Pandoc output for complex documents — cell merging, custom styling, and advanced layout usually need manual adjustment.
+Review and refine Pandoc output — custom styling and advanced layout usually need manual adjustment.

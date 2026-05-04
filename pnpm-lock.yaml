@@ -6,4 +6,28 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      skills:
+        specifier: ^1.5.3
+        version: 1.5.3
+
+packages:
+
+  skills@1.5.3:
+    resolution: {integrity: sha512-lgZa7NvOGJA1WcwyqsOysO3ojMabq4R/NdQGNbry05y5ccDb/8CFed0HoSU9fvKfjuGbXSCVoV++4gcLMKAykQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  yaml@2.8.4:
+    resolution: {integrity: sha512-ml/JPOj9fOQK8RNnWojA67GbZ0ApXAUlN2UQclwv2eVgTgn7O9gg9o7paZWKMp4g0H3nTLtS9LVzhkpOFIKzog==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+snapshots:
+
+  skills@1.5.3:
+    dependencies:
+      yaml: 2.8.4
+
+  yaml@2.8.4: {}

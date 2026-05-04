@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "A personal collection of skills for AI coding agents",
   "type": "module",
+  "keywords": [
+    "skills",
+    "ai",
+    "agents"
+  ],
   "scripts": {
-    "sync-from-home": "node scripts/sync-from-home.js",
-    "sync-to-home": "node scripts/sync-to-home.js"
+    "build": "node src/build.js",
+    "add-skill": "node src/add-skill.js",
+    "opencode": "opencode web --hostname 0.0.0.0"
   },
-  "keywords": ["skills", "ai", "agents"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "skills": "^1.5.3"
+  }
 }
