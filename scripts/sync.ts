@@ -6,10 +6,11 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import { dirname, join } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import { sources, vendors } from '../meta.ts'
+import type { Meta } from './types.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
+const { sources, vendors } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
 
 function exec(cmd: string, cwd = root): string {
   return execSync(cmd, { cwd, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim()

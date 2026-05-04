@@ -1,12 +1,14 @@
 /**
- * Find and report (or remove with -y) skills and submodules not declared in meta.ts.
+ * Find and report (or remove with -y) skills and submodules not declared in meta.json.
  */
 
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import { manual, sources, vendors } from '../meta.ts'
+import type { Meta } from './types.ts'
+
+const { manual, sources, vendors } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')

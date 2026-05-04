@@ -2,14 +2,15 @@
  * Check submodules for available upstream updates without pulling.
  */
 
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import { sources, vendors } from '../meta.ts'
+import type { Meta } from './types.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
+const { sources, vendors } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
 
 function execSafe(cmd: string, cwd: string): string | null {
   try {
