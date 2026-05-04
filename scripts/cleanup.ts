@@ -6,9 +6,9 @@ import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Meta } from './types.ts'
+import type { Meta, SkillMeta } from './types.ts'
 
-const { manual, sources, vendors } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
+const { sources, vendors } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -23,7 +23,18 @@ function getExpectedSkillNames(): Set<string> {
   for (const name of Object.keys(sources)) expected.add(name)
   for (const config of Object.values(vendors))
     for (const outputName of Object.values(config.skills)) expected.add(outputName)
-  for (const name of manual) expected.add(name)
+  // Skills with authored/authored-from-source meta.json are never orphans
+  const skillsDir = join(root, 'skills')
+  if (existsSync(skillsDir)) {
+    for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue
+      const metaPath = join(skillsDir, entry.name, 'meta.json')
+      if (!existsSync(metaPath)) continue
+      const skillMeta = JSON.parse(readFileSync(metaPath, 'utf-8')) as SkillMeta
+      if (skillMeta.type === 'authored' || skillMeta.type === 'authored-from-source')
+        expected.add(entry.name)
+    }
+  }
   return expected
 }
 

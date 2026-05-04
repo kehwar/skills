@@ -1,6 +1,0 @@
-# Sync Info
-
-- **Source:** `vendor/mattpocock/skills/engineering/zoom-out`
-- **Git SHA:** `b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8`
-- **Content hash:** `8357aeaece3b`
-- **Synced:** 2026-05-04

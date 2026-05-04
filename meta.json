@@ -1,6 +1,9 @@
 {
   "sources": {
-    "typst": "https://github.com/typst/typst"
+    "typst": "https://github.com/typst/typst",
+    "frappe": "https://github.com/frappe/frappe",
+    "erpnext": "https://github.com/frappe/erpnext",
+    "print_designer": "https://github.com/frappe/print_designer"
   },
   "vendors": {
     "antfu": {
@@ -217,32 +220,5 @@
         "skills/vueuse-functions": "bc6cedc4961d"
       }
     }
-  },
-  "manual": [
-    "dev-log",
-    "frappe-app-include-js",
-    "frappe-customizations-baker",
-    "frappe-customizations-writer",
-    "frappe-dev-debugger",
-    "frappe-doctype-controller",
-    "frappe-doctype-form-view",
-    "frappe-doctype-list-view",
-    "frappe-doctype-schema",
-    "frappe-doctype-tests",
-    "frappe-js-api",
-    "frappe-live-code-extractor",
-    "frappe-restore-latest-backup-task",
-    "frappe-run-tests",
-    "frappe-standard-script-report-controller",
-    "frappe-standard-script-report-schema",
-    "frappe-standard-script-report-view",
-    "frappe-system-console",
-    "frappe-translations-writer",
-    "sap-di-api-expert",
-    "sap-dtw-expert",
-    "sap-schema-expert",
-    "sap-service-layer-expert",
-    "sap-transaction-notifications",
-    "typst-syntax-expert"
-  ]
+  }
 }

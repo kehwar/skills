@@ -15,7 +15,7 @@ import type { Dirent } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Meta, VendorSkillMeta } from './types.ts'
+import type { Meta, SkillMeta, VendorSkillMeta } from './types.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -98,10 +98,16 @@ function copySkills(vendorName: string, vendorDir: string, config: VendorSkillMe
       if (existsSync(src)) { cpSync(src, join(outputPath, 'LICENSE.md')); break }
     }
 
-    writeFileSync(
-      join(outputPath, 'SYNC.md'),
-      `# Sync Info\n\n- **Source:** \`vendor/${vendorName}/${skillPath}\`\n- **Git SHA:** \`${sha ?? 'unknown'}\`\n- **Synced:** ${date}\n`,
-    )
+    const skillMeta: SkillMeta = {
+      type: 'synced',
+      vendor: vendorName,
+      sourceUrl: url,
+      skillPath,
+      gitSha: sha ?? 'unknown',
+      contentHash: 'pending',
+      syncedAt: date,
+    }
+    writeFileSync(join(outputPath, 'meta.json'), JSON.stringify(skillMeta, null, 2) + '\n')
 
     p.log.step(`copied  ${skillPath} → skills/${outputName}`)
   }

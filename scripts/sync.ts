@@ -4,12 +4,12 @@
  */
 
 import { createHash } from 'node:crypto'
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import type { Dirent } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Meta } from './types.ts'
+import type { Meta, SkillMeta } from './types.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -176,13 +176,84 @@ for (const [vendorName, config] of Object.entries(vendors)) {
     const sha = getGitSha(vendorPath)
     const contentHash = meta.vendors[vendorName].available[skillPath] ?? 'unknown'
     const date = new Date().toISOString().split('T')[0]
-    writeFileSync(
-      join(outputPath, 'SYNC.md'),
-      `# Sync Info\n\n- **Source:** \`vendor/${vendorName}/${skillPath}\`\n- **Git SHA:** \`${sha ?? 'unknown'}\`\n- **Content hash:** \`${contentHash}\`\n- **Synced:** ${date}\n`,
-    )
+    const skillMeta: SkillMeta = {
+      type: 'synced',
+      vendor: vendorName,
+      sourceUrl: meta.vendors[vendorName].source,
+      skillPath,
+      gitSha: sha ?? 'unknown',
+      contentHash,
+      syncedAt: date,
+    }
+    writeFileSync(join(outputPath, 'meta.json'), JSON.stringify(skillMeta, null, 2) + '\n')
 
     console.log(`synced  ${vendorName}/${skillPath} → skills/${outputName}`)
   }
 }
+
+// ── Step 5: Maintain authored/ symlinks ──────────────────────────────────────
+
+const authoredDir = join(root, 'authored')
+
+// Collect all authored skills from per-skill meta.json
+const skillsDir = join(root, 'skills')
+for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue
+  const skillMetaPath = join(skillsDir, entry.name, 'meta.json')
+  if (!existsSync(skillMetaPath)) continue
+
+  const skillMeta = JSON.parse(readFileSync(skillMetaPath, 'utf-8')) as SkillMeta
+  let linkPath: string
+  let linkTarget: string
+
+  if (skillMeta.type === 'authored') {
+    linkPath = join(authoredDir, entry.name)
+    linkTarget = relative(authoredDir, join(skillsDir, entry.name))
+  }
+  else if (skillMeta.type === 'authored-from-source') {
+    const sourceDir = join(authoredDir, skillMeta.source)
+    mkdirSync(sourceDir, { recursive: true })
+    linkPath = join(sourceDir, entry.name)
+    linkTarget = relative(sourceDir, join(skillsDir, entry.name))
+  }
+  else {
+    continue
+  }
+
+  if (!existsSync(linkPath)) {
+    mkdirSync(dirname(linkPath), { recursive: true })
+    symlinkSync(linkTarget, linkPath)
+    console.log(`linked  authored: ${entry.name}`)
+  }
+}
+
+// Remove stale symlinks in authored/
+function pruneStaleSymlinks(dir: string): void {
+  if (!existsSync(dir)) return
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name)
+    if (entry.isSymbolicLink()) {
+      // Resolve symlink relative to its parent dir to get skill name
+      const skillName = entry.name
+      const targetMetaPath = join(skillsDir, skillName, 'meta.json')
+      if (!existsSync(targetMetaPath)) {
+        rmSync(full)
+        console.log(`removed stale authored symlink: ${skillName}`)
+        continue
+      }
+      const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf-8')) as SkillMeta
+      if (targetMeta.type !== 'authored' && targetMeta.type !== 'authored-from-source') {
+        rmSync(full)
+        console.log(`removed stale authored symlink: ${skillName}`)
+      }
+    }
+    else if (entry.isDirectory()) {
+      pruneStaleSymlinks(full)
+      // Remove empty subdirs
+      if (readdirSync(full).length === 0) rmSync(full)
+    }
+  }
+}
+pruneStaleSymlinks(authoredDir)
 
 console.log('\nDone')

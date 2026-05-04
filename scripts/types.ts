@@ -16,6 +16,18 @@ export interface Meta {
   sources: Record<string, string>
   /** Pre-built skill repos. Submoduled under vendor/<name>. */
   vendors: Record<string, VendorSkillMeta>
-  /** Manually authored skills in skills/. Never overwritten by sync. */
-  manual: string[]
 }
+
+/** Written as meta.json inside each skill folder. */
+export type SkillMeta =
+  | { type: 'authored' }
+  | { type: 'authored-from-source'; source: string }
+  | {
+      type: 'synced'
+      vendor: string
+      sourceUrl: string
+      skillPath: string
+      gitSha: string
+      contentHash: string
+      syncedAt: string
+    }
