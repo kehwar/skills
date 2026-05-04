@@ -175,7 +175,7 @@ for (const skillPath of selected as string[]) {
 
 const newVendors = { ...currentVendors }
 if (Object.keys(skillsMap).length > 0) {
-  newVendors[vendorName] = { source: url, skills: skillsMap }
+  newVendors[vendorName] = { source: url, skills: skillsMap, available: existingConfig?.available ?? {} }
 }
 else if (vendorName in newVendors) {
   delete newVendors[vendorName]
@@ -199,6 +199,6 @@ if (existingConfig) {
 }
 
 if (Object.keys(skillsMap).length > 0)
-  copySkills(vendorName, vendorDir, { source: url, skills: skillsMap })
+  copySkills(vendorName, vendorDir, { source: url, skills: skillsMap, available: existingConfig?.available ?? {} })
 
 p.outro('Done')

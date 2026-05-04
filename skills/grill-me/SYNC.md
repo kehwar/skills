@@ -2,4 +2,5 @@
 
 - **Source:** `vendor/mattpocock/skills/productivity/grill-me`
 - **Git SHA:** `b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8`
+- **Content hash:** `784f0dbb7403`
 - **Synced:** 2026-05-04

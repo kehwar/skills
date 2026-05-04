@@ -1,8 +1,14 @@
 export interface VendorSkillMeta {
   /** GitHub HTTPS clone URL */
   source: string
-  /** Map of path-within-submodule to output skill name in skills/ */
+  /** Selected skills: path-within-submodule → output skill name in skills/ */
   skills: Record<string, string>
+  /**
+   * All skills found in the vendor repo at last sync.
+   * Maps path-within-submodule → sha256 of folder contents (first 12 chars).
+   * Updated on every sync regardless of selection. Used to detect upstream changes.
+   */
+  available: Record<string, string>
 }
 
 export interface Meta {

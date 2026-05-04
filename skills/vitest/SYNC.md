@@ -2,4 +2,5 @@
 
 - **Source:** `vendor/antfu/skills/vitest`
 - **Git SHA:** `50deaeb269d80d92db7a2c5a677290309ae307fc`
+- **Content hash:** `cabca6b1defd`
 - **Synced:** 2026-05-04
