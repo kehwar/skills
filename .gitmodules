@@ -1,41 +1,42 @@
-[submodule "vendor/antfu"]
-	path = vendor/antfu
-	url = https://github.com/antfu/skills
-[submodule "vendor/mattpocock"]
-	path = vendor/mattpocock
-	url = https://github.com/mattpocock/skills
-[submodule "vendor/anthropics"]
-	path = vendor/anthropics
-	url = https://github.com/anthropics/skills
-[submodule "vendor/lucifer1004"]
-	path = vendor/lucifer1004
-	url = https://github.com/lucifer1004/claude-skill-typst
-[submodule "vendor/noartem"]
-	path = vendor/noartem
-	url = https://github.com/noartem/laravel-vue-skills
-[submodule "vendor/silvainfm"]
-	path = vendor/silvainfm
-	url = https://github.com/silvainfm/claude-skills
-[submodule "vendor/vuejs-ai"]
-	path = vendor/vuejs-ai
-	url = https://github.com/vuejs-ai/skills
-[submodule "vendor/vueuse"]
-	path = vendor/vueuse
-	url = https://github.com/vueuse/skills
-[submodule "sources/typst"]
-	path = sources/typst
+
+[submodule "upstream/typst"]
+	path = upstream/typst
 	url = https://github.com/typst/typst
-[submodule "sources/frappe"]
-	path = sources/frappe
+[submodule "upstream/frappe"]
+	path = upstream/frappe
 	url = https://github.com/frappe/frappe
 	branch = version-15
-[submodule "sources/erpnext"]
-	path = sources/erpnext
+[submodule "upstream/erpnext"]
+	path = upstream/erpnext
 	url = https://github.com/frappe/erpnext
 	branch = version-15
-[submodule "sources/print_designer"]
-	path = sources/print_designer
+[submodule "upstream/print_designer"]
+	path = upstream/print_designer
 	url = https://github.com/frappe/print_designer
-[submodule "sources/press"]
-	path = sources/press
+[submodule "upstream/press"]
+	path = upstream/press
 	url = https://github.com/frappe/press
+[submodule "upstream/antfu"]
+	path = upstream/antfu
+	url = https://github.com/antfu/skills
+[submodule "upstream/mattpocock"]
+	path = upstream/mattpocock
+	url = https://github.com/mattpocock/skills
+[submodule "upstream/anthropics"]
+	path = upstream/anthropics
+	url = https://github.com/anthropics/skills
+[submodule "upstream/lucifer1004"]
+	path = upstream/lucifer1004
+	url = https://github.com/lucifer1004/claude-skill-typst
+[submodule "upstream/noartem"]
+	path = upstream/noartem
+	url = https://github.com/noartem/laravel-vue-skills
+[submodule "upstream/silvainfm"]
+	path = upstream/silvainfm
+	url = https://github.com/silvainfm/claude-skills
+[submodule "upstream/vuejs-ai"]
+	path = upstream/vuejs-ai
+	url = https://github.com/vuejs-ai/skills
+[submodule "upstream/vueuse"]
+	path = upstream/vueuse
+	url = https://github.com/vueuse/skills

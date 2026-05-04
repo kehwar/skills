@@ -1,50 +1,32 @@
 # Skills
 
-A personal collection of skills for AI coding agents, installable via the [skills CLI](https://github.com/vercel-labs/skills).
+A personal aggregator of AI agent skills. Pulls skills from upstream repos and keeps them available under `skills/` for AI coding agents to consume.
 
-## Install All Skills from This Collection
+## Layout
 
-To install all skills tracked in this repository:
-
-```bash
-npx skills add kehwar/skills -a github-copilot -g
+```
+skills/          ← flat directory of all skills (agents read from here)
+upstream/        ← Upstream submodules (read-only, never edited)
+instructions/    ← companion notes for reference-only upstreams
+authored/        ← symlinks to Authored and Source-Derived skills
+scripts/         ← sync, upstream, check, cleanup
+meta.json        ← declared upstreams with url, branch, and skill selections
 ```
 
-## Updating Skills from Home Directory
+## Commands
 
-Sync your installed skills from home directory to the repository:
+| Command | Purpose |
+|---|---|
+| `pnpm upstream <url> [--branch <branch>] [--name <key>]` | Add or update an Upstream; optionally select which skills to sync |
+| `pnpm sync` | Pull latest submodules, copy selected skills into `skills/` |
+| `pnpm check` | Report how many commits behind each submodule is upstream |
+| `pnpm cleanup [-y]` | Detect (and with `-y`, remove) orphaned skills and submodules |
 
-```bash
-pnpm sync-from-home
-```
+## Skill types
 
-This command:
-1. Copies `.skill-lock.json` from `~/.agents/` to repo `.agents/`
-2. For each skill in the lockfile, removes old copy and syncs fresh skill folder from `~/.agents/skills/`
-3. Prepares your current skill setup for git commit
-
-**Use cases:**
-- Backup your installed skills to the repository
-- Share skills configuration across team/machines via git
-- Track skill installations and their contents in version control
-
-## Restoring Skills to Home Directory
-
-Sync skills from the repository to your home directory:
-
-```bash
-pnpm sync-to-home
-```
-
-This command:
-1. Copies `.skill-lock.json` from repo `.agents/` to `~/.agents/`
-2. For each skill in the lockfile, removes old copy and syncs skill folder from repo to `~/.agents/skills/`
-3. Restores your skill setup from the repository
-
-**Use cases:**
-- Restore skills on a new machine after cloning
-- Sync with repository's skill configuration
-- Recover skills from version control
+- **Authored** — owned by this repo, never touched by `sync`
+- **Source-Derived** — authored using an Upstream as reference
+- **Synced** — copied from an Upstream on every `sync`
 
 ## License
 

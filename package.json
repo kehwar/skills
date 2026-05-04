@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "sync": "tsx scripts/sync.ts",
-    "vendor": "tsx scripts/vendor.ts",
-    "source": "tsx scripts/source.ts",
+    "upstream": "tsx scripts/upstream.ts",
     "check": "tsx scripts/check.ts",
     "cleanup": "tsx scripts/cleanup.ts",
     "opencode": "opencode web --hostname 0.0.0.0"

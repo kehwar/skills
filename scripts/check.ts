@@ -10,7 +10,7 @@ import type { Meta } from './types.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
-const { sources, vendors } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
+const { upstreams } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
 
 function execSafe(cmd: string, cwd: string): string | null {
   try {
@@ -25,22 +25,18 @@ console.log('Fetching remote changes...')
 execSync('git submodule foreach git fetch', { cwd: root, stdio: 'inherit' })
 console.log()
 
-const updates: Array<{ name: string; type: string; behind: number }> = []
+const updates: Array<{ name: string; behind: number; skills?: string }> = []
 
-for (const name of Object.keys(sources)) {
-  const path = join(root, 'sources', name)
-  if (!existsSync(path)) continue
-  const count = parseInt(execSafe('git rev-list HEAD..@{u} --count', path) ?? '0')
-  if (count > 0) updates.push({ name, type: 'source', behind: count })
-}
-
-for (const [name, config] of Object.entries(vendors)) {
-  const path = join(root, 'vendor', name)
+for (const [name, config] of Object.entries(upstreams)) {
+  const path = join(root, 'upstream', name)
   if (!existsSync(path)) continue
   const count = parseInt(execSafe('git rev-list HEAD..@{u} --count', path) ?? '0')
   if (count > 0) {
-    const skills = Object.values(config.skills).join(', ')
-    updates.push({ name: `${name} (${skills})`, type: 'vendor', behind: count })
+    updates.push({
+      name,
+      behind: count,
+      skills: config.skills ? Object.values(config.skills).join(', ') : undefined,
+    })
   }
 }
 
@@ -50,6 +46,7 @@ if (updates.length === 0) {
 else {
   console.log('Updates available:')
   for (const u of updates) {
-    console.log(`  ${u.name} [${u.type}]: ${u.behind} commit(s) behind`)
+    const detail = u.skills ? ` (${u.skills})` : ''
+    console.log(`  ${u.name}${detail}: ${u.behind} commit(s) behind`)
   }
 }

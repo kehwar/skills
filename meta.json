@@ -1,26 +1,7 @@
 {
-  "sources": {
-    "typst": {
-      "url": "https://github.com/typst/typst"
-    },
-    "frappe": {
-      "url": "https://github.com/frappe/frappe",
-      "branch": "version-15"
-    },
-    "erpnext": {
-      "url": "https://github.com/frappe/erpnext",
-      "branch": "version-15"
-    },
-    "print_designer": {
-      "url": "https://github.com/frappe/print_designer"
-    },
-    "press": {
-      "url": "https://github.com/frappe/press"
-    }
-  },
-  "vendors": {
+  "upstreams": {
     "antfu": {
-      "source": "https://github.com/antfu/skills",
+      "url": "https://github.com/antfu/skills",
       "skills": {
         "skills/antfu": "antfu",
         "skills/nuxt": "nuxt",
@@ -50,8 +31,51 @@
         "skills/web-design-guidelines": "65a2e7d85753"
       }
     },
+    "anthropics": {
+      "url": "https://github.com/anthropics/skills",
+      "skills": {
+        "skills/pdf": "pdf"
+      },
+      "available": {
+        "skills/algorithmic-art": "b2ca295de7f9",
+        "skills/brand-guidelines": "e48840db6ea7",
+        "skills/canvas-design": "1f0341e58d0b",
+        "skills/claude-api": "d75e42034f8a",
+        "skills/doc-coauthoring": "b964e4c3ffe1",
+        "skills/docx": "eaa28b10e439",
+        "skills/frontend-design": "063a0e644812",
+        "skills/internal-comms": "1bd16f3a2115",
+        "skills/mcp-builder": "09dbc5304106",
+        "skills/pdf": "69e2ac9eb2bb",
+        "skills/pptx": "fe530e7c5496",
+        "skills/skill-creator": "b2bfe91d69ca",
+        "skills/slack-gif-creator": "1aec3adac439",
+        "skills/theme-factory": "598ddfa9784a",
+        "skills/web-artifacts-builder": "4e532be18d37",
+        "skills/webapp-testing": "8320d78c8563",
+        "skills/xlsx": "38d1187a140b",
+        "template": "38c88f722b57"
+      }
+    },
+    "erpnext": {
+      "url": "frappe/erpnext",
+      "branch": "version-15"
+    },
+    "frappe": {
+      "url": "https://github.com/frappe/frappe",
+      "branch": "version-15"
+    },
+    "lucifer1004": {
+      "url": "https://github.com/lucifer1004/claude-skill-typst",
+      "skills": {
+        "skills/typst": "typst"
+      },
+      "available": {
+        "skills/typst": "eb54b32e1c2e"
+      }
+    },
     "mattpocock": {
-      "source": "https://github.com/mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
       "skills": {
         "skills/productivity/caveman": "caveman",
         "skills/productivity/grill-me": "grill-me",
@@ -88,43 +112,8 @@
         "skills/productivity/write-a-skill": "b44d8aab2ead"
       }
     },
-    "anthropics": {
-      "source": "https://github.com/anthropics/skills",
-      "skills": {
-        "skills/pdf": "pdf"
-      },
-      "available": {
-        "skills/algorithmic-art": "b2ca295de7f9",
-        "skills/brand-guidelines": "e48840db6ea7",
-        "skills/canvas-design": "1f0341e58d0b",
-        "skills/claude-api": "d75e42034f8a",
-        "skills/doc-coauthoring": "b964e4c3ffe1",
-        "skills/docx": "eaa28b10e439",
-        "skills/frontend-design": "063a0e644812",
-        "skills/internal-comms": "1bd16f3a2115",
-        "skills/mcp-builder": "09dbc5304106",
-        "skills/pdf": "69e2ac9eb2bb",
-        "skills/pptx": "fe530e7c5496",
-        "skills/skill-creator": "b2bfe91d69ca",
-        "skills/slack-gif-creator": "1aec3adac439",
-        "skills/theme-factory": "598ddfa9784a",
-        "skills/web-artifacts-builder": "4e532be18d37",
-        "skills/webapp-testing": "8320d78c8563",
-        "skills/xlsx": "38d1187a140b",
-        "template": "38c88f722b57"
-      }
-    },
-    "lucifer1004": {
-      "source": "https://github.com/lucifer1004/claude-skill-typst",
-      "skills": {
-        "skills/typst": "typst"
-      },
-      "available": {
-        "skills/typst": "eb54b32e1c2e"
-      }
-    },
     "noartem": {
-      "source": "https://github.com/noartem/laravel-vue-skills",
+      "url": "https://github.com/noartem/laravel-vue-skills",
       "skills": {
         "skills/shadcn-vue": "shadcn-vue"
       },
@@ -162,8 +151,14 @@
         "skills/vue3-component-decomposition": "b37833bd5188"
       }
     },
+    "press": {
+      "url": "https://github.com/frappe/press"
+    },
+    "print_designer": {
+      "url": "https://github.com/frappe/print_designer"
+    },
     "silvainfm": {
-      "source": "https://github.com/silvainfm/claude-skills",
+      "url": "https://github.com/silvainfm/claude-skills",
       "skills": {
         "duckdb": "duckdb"
       },
@@ -207,8 +202,11 @@
         "webapp-testing": "4e3565fdbaa8"
       }
     },
+    "typst": {
+      "url": "https://github.com/typst/typst"
+    },
     "vuejs-ai": {
-      "source": "https://github.com/vuejs-ai/skills",
+      "url": "https://github.com/vuejs-ai/skills",
       "skills": {
         "skills/vue-best-practices": "vue-best-practices",
         "skills/vue-testing-best-practices": "vue-testing-best-practices"
@@ -225,7 +223,7 @@
       }
     },
     "vueuse": {
-      "source": "vueuse/skills",
+      "url": "https://github.com/vueuse/skills",
       "skills": {
         "skills/vueuse-functions": "vueuse-functions"
       },

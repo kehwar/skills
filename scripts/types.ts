@@ -1,29 +1,24 @@
-export interface SourceMeta {
+export interface UpstreamMeta {
+  /** GitHub HTTPS clone URL */
   url: string
   /** Branch to track. Omit to use the repo default. */
   branch?: string
-}
-
-export interface VendorSkillMeta {
-  /** GitHub HTTPS clone URL */
-  source: string
-  /** Branch to track. Omit to use the repo default. */
-  branch?: string
-  /** Selected skills: path-within-submodule → output skill name in skills/ */
-  skills: Record<string, string>
   /**
-   * All skills found in the vendor repo at last sync.
-   * Maps path-within-submodule → sha256 of folder contents (first 12 chars).
-   * Updated on every sync regardless of selection. Used to detect upstream changes.
+   * Selected skills to copy into skills/: path-within-submodule → output skill name.
+   * Omit or leave empty for reference-only upstreams.
    */
-  available: Record<string, string>
+  skills?: Record<string, string>
+  /**
+   * All skills found in the upstream at last sync.
+   * Maps path-within-submodule → sha256 content hash (first 12 chars).
+   * Updated on every sync regardless of selection.
+   */
+  available?: Record<string, string>
 }
 
 export interface Meta {
-  /** Raw documentation repos. Submoduled under sources/<name>. */
-  sources: Record<string, SourceMeta>
-  /** Pre-built skill repos. Submoduled under vendor/<name>. */
-  vendors: Record<string, VendorSkillMeta>
+  /** All tracked upstream repos. Submoduled under upstream/<key>. */
+  upstreams: Record<string, UpstreamMeta>
 }
 
 /** Written as meta.json inside each skill folder. */
@@ -32,7 +27,7 @@ export type SkillMeta =
   | { type: 'authored-from-source'; source: string }
   | {
       type: 'synced'
-      vendor: string
+      upstream: string
       sourceUrl: string
       branch?: string
       skillPath: string

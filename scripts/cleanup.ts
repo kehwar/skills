@@ -8,7 +8,7 @@ import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import type { Meta, SkillMeta } from './types.ts'
 
-const { sources, vendors } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
+const { upstreams } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -20,9 +20,11 @@ function exec(cmd: string): void {
 
 function getExpectedSkillNames(): Set<string> {
   const expected = new Set<string>()
-  for (const name of Object.keys(sources)) expected.add(name)
-  for (const config of Object.values(vendors))
-    for (const outputName of Object.values(config.skills)) expected.add(outputName)
+  for (const config of Object.values(upstreams)) {
+    if (config.skills) {
+      for (const outputName of Object.values(config.skills)) expected.add(outputName)
+    }
+  }
   // Skills with authored/authored-from-source meta.json are never orphans
   const skillsDir = join(root, 'skills')
   if (existsSync(skillsDir)) {
@@ -39,10 +41,7 @@ function getExpectedSkillNames(): Set<string> {
 }
 
 function getExpectedSubmodulePaths(): Set<string> {
-  const expected = new Set<string>()
-  for (const name of Object.keys(sources)) expected.add(`sources/${name}`)
-  for (const name of Object.keys(vendors)) expected.add(`vendor/${name}`)
-  return expected
+  return new Set(Object.keys(upstreams).map(name => `upstream/${name}`))
 }
 
 function getExistingSubmodulePaths(): string[] {
