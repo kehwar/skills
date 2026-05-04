@@ -23,9 +23,14 @@ const metaPath = join(root, 'meta.json')
 const meta = JSON.parse(readFileSync(metaPath, 'utf-8')) as Meta
 const currentVendors = meta.vendors
 
-const url = process.argv[2]
+const args = process.argv.slice(2)
+const branchFlagIdx = args.findIndex(a => a === '--branch' || a === '-b')
+const branch: string | undefined = branchFlagIdx !== -1 ? args[branchFlagIdx + 1] : undefined
+const positional = args.filter((_, i) => i !== branchFlagIdx && (branchFlagIdx === -1 || i !== branchFlagIdx + 1))
+const url = positional[0]
+
 if (!url) {
-  console.error('Usage: pnpm vendor <github-url>')
+  console.error('Usage: pnpm vendor <github-url> [--branch <branch>]')
   process.exit(1)
 }
 
@@ -101,7 +106,8 @@ function copySkills(vendorName: string, vendorDir: string, config: VendorSkillMe
     const skillMeta: SkillMeta = {
       type: 'synced',
       vendor: vendorName,
-      sourceUrl: url,
+      sourceUrl: config.source,
+      ...(config.branch ? { branch: config.branch } : {}),
       skillPath,
       gitSha: sha ?? 'unknown',
       contentHash: 'pending',
@@ -126,9 +132,9 @@ const vendorDir = join(root, submodulePath)
 const spinner = p.spinner()
 
 if (!submoduleExists(submodulePath)) {
-  spinner.start(`Adding submodule ${submodulePath}`)
+  spinner.start(`Adding submodule ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
   try {
-    exec(`git submodule add --depth 1 ${url} ${submodulePath}`)
+    exec(`git submodule add --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${submodulePath}`)
     spinner.stop(`Added ${submodulePath}`)
   }
   catch (e) {
@@ -181,7 +187,7 @@ for (const skillPath of selected as string[]) {
 
 const newVendors = { ...currentVendors }
 if (Object.keys(skillsMap).length > 0) {
-  newVendors[vendorName] = { source: url, skills: skillsMap, available: existingConfig?.available ?? {} }
+  newVendors[vendorName] = { source: url, ...(branch ? { branch } : {}), skills: skillsMap, available: existingConfig?.available ?? {} }
 }
 else if (vendorName in newVendors) {
   delete newVendors[vendorName]
@@ -205,6 +211,6 @@ if (existingConfig) {
 }
 
 if (Object.keys(skillsMap).length > 0)
-  copySkills(vendorName, vendorDir, { source: url, skills: skillsMap, available: existingConfig?.available ?? {} })
+  copySkills(vendorName, vendorDir, { source: url, ...(branch ? { branch } : {}), skills: skillsMap, available: existingConfig?.available ?? {} })
 
 p.outro('Done')

@@ -1,9 +1,22 @@
 {
   "sources": {
-    "typst": "https://github.com/typst/typst",
-    "frappe": "https://github.com/frappe/frappe",
-    "erpnext": "https://github.com/frappe/erpnext",
-    "print_designer": "https://github.com/frappe/print_designer"
+    "typst": {
+      "url": "https://github.com/typst/typst"
+    },
+    "frappe": {
+      "url": "https://github.com/frappe/frappe",
+      "branch": "version-15"
+    },
+    "erpnext": {
+      "url": "https://github.com/frappe/erpnext",
+      "branch": "version-15"
+    },
+    "print_designer": {
+      "url": "https://github.com/frappe/print_designer"
+    },
+    "press": {
+      "url": "https://github.com/frappe/press"
+    }
   },
   "vendors": {
     "antfu": {

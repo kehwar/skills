@@ -1,6 +1,14 @@
+export interface SourceMeta {
+  url: string
+  /** Branch to track. Omit to use the repo default. */
+  branch?: string
+}
+
 export interface VendorSkillMeta {
   /** GitHub HTTPS clone URL */
   source: string
+  /** Branch to track. Omit to use the repo default. */
+  branch?: string
   /** Selected skills: path-within-submodule → output skill name in skills/ */
   skills: Record<string, string>
   /**
@@ -13,7 +21,7 @@ export interface VendorSkillMeta {
 
 export interface Meta {
   /** Raw documentation repos. Submoduled under sources/<name>. */
-  sources: Record<string, string>
+  sources: Record<string, SourceMeta>
   /** Pre-built skill repos. Submoduled under vendor/<name>. */
   vendors: Record<string, VendorSkillMeta>
 }
@@ -26,6 +34,7 @@ export type SkillMeta =
       type: 'synced'
       vendor: string
       sourceUrl: string
+      branch?: string
       skillPath: string
       gitSha: string
       contentHash: string

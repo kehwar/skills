@@ -28,9 +28,14 @@
 [submodule "sources/frappe"]
 	path = sources/frappe
 	url = https://github.com/frappe/frappe
+	branch = version-15
 [submodule "sources/erpnext"]
 	path = sources/erpnext
 	url = https://github.com/frappe/erpnext
+	branch = version-15
 [submodule "sources/print_designer"]
 	path = sources/print_designer
 	url = https://github.com/frappe/print_designer
+[submodule "sources/press"]
+	path = sources/press
+	url = https://github.com/frappe/press

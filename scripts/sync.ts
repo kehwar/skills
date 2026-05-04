@@ -81,32 +81,56 @@ function hashSkillDir(dir: string): string {
 
 // ── Step 1: Add any missing submodules ───────────────────────────────────────
 
-const toAdd: Array<{ path: string; url: string }> = []
+const toAdd: Array<{ path: string; url: string; branch?: string }> = []
 
-for (const [name, url] of Object.entries(sources)) {
+for (const [name, sourceMeta] of Object.entries(sources)) {
   const path = `sources/${name}`
-  if (!submoduleExists(path)) toAdd.push({ path, url })
+  if (!submoduleExists(path)) toAdd.push({ path, url: sourceMeta.url, branch: sourceMeta.branch })
 }
 
 for (const [name, config] of Object.entries(vendors)) {
   const path = `vendor/${name}`
-  if (!submoduleExists(path)) toAdd.push({ path, url: config.source })
+  if (!submoduleExists(path)) toAdd.push({ path, url: config.source, branch: config.branch })
 }
 
-for (const { path, url } of toAdd) {
+for (const { path, url, branch } of toAdd) {
   const parentDir = join(root, dirname(path))
   if (!existsSync(parentDir)) mkdirSync(parentDir, { recursive: true })
-  console.log(`Adding: ${path}`)
-  execInherit(`git submodule add --depth 1 ${url} ${path}`)
+  console.log(`Adding: ${path}${branch ? ` (branch: ${branch})` : ''}`)
+  execInherit(`git submodule add --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${path}`)
 }
 
-// ── Step 2: Pull latest (shallow) ────────────────────────────────────────────
+// ── Step 2: Ensure .gitmodules branch config matches meta.json ───────────────
+
+for (const [name, sourceMeta] of Object.entries(sources)) {
+  const path = `sources/${name}`
+  if (!submoduleExists(path)) continue
+  if (sourceMeta.branch) {
+    exec(`git config -f .gitmodules submodule.${path}.branch ${sourceMeta.branch}`)
+  }
+  else {
+    try { exec(`git config -f .gitmodules --unset submodule.${path}.branch`) } catch { /* not set */ }
+  }
+}
+
+for (const [name, config] of Object.entries(vendors)) {
+  const path = `vendor/${name}`
+  if (!submoduleExists(path)) continue
+  if (config.branch) {
+    exec(`git config -f .gitmodules submodule.${path}.branch ${config.branch}`)
+  }
+  else {
+    try { exec(`git config -f .gitmodules --unset submodule.${path}.branch`) } catch { /* not set */ }
+  }
+}
+
+// ── Step 3: Pull latest (shallow) ────────────────────────────────────────────
 
 console.log('\nUpdating submodules...')
 execInherit('git submodule update --remote --merge --depth 1')
 console.log('Submodules updated\n')
 
-// ── Step 3: Scan available skills, diff hashes, update meta.json ─────────────
+// ── Step 4: Scan available skills, diff hashes, update meta.json ─────────────
 
 for (const [vendorName, config] of Object.entries(vendors)) {
   const vendorPath = join(root, 'vendor', vendorName)
@@ -146,7 +170,7 @@ for (const [vendorName, config] of Object.entries(vendors)) {
 
 writeFileSync(metaPath, JSON.stringify(meta, null, 2) + '\n')
 
-// ── Step 4: Copy selected vendor skills to skills/ ───────────────────────────
+// ── Step 5: Copy selected vendor skills to skills/ ───────────────────────────
 
 for (const [vendorName, config] of Object.entries(vendors)) {
   const vendorPath = join(root, 'vendor', vendorName)
@@ -176,10 +200,12 @@ for (const [vendorName, config] of Object.entries(vendors)) {
     const sha = getGitSha(vendorPath)
     const contentHash = meta.vendors[vendorName].available[skillPath] ?? 'unknown'
     const date = new Date().toISOString().split('T')[0]
+    const vendorConfig = meta.vendors[vendorName]
     const skillMeta: SkillMeta = {
       type: 'synced',
       vendor: vendorName,
-      sourceUrl: meta.vendors[vendorName].source,
+      sourceUrl: vendorConfig.source,
+      ...(vendorConfig.branch ? { branch: vendorConfig.branch } : {}),
       skillPath,
       gitSha: sha ?? 'unknown',
       contentHash,
@@ -191,7 +217,7 @@ for (const [vendorName, config] of Object.entries(vendors)) {
   }
 }
 
-// ── Step 5: Maintain authored/ symlinks ──────────────────────────────────────
+// ── Step 6: Maintain authored/ symlinks ──────────────────────────────────────
 
 const authoredDir = join(root, 'authored')
 
