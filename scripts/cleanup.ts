@@ -2,21 +2,17 @@
  * Find and report (or remove with -y) skills and submodules not declared in meta.json.
  */
 
+import type { Meta, SkillMeta } from './types.ts'
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Meta, SkillMeta } from './types.ts'
+import { exec } from './lib.ts'
 
 const { upstreams } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
-
-function exec(cmd: string): void {
-  execSync(cmd, { cwd: root, stdio: 'inherit' })
-}
 
 function getExpectedSkillNames(): Set<string> {
   const expected = new Set<string>()
@@ -29,9 +25,11 @@ function getExpectedSkillNames(): Set<string> {
   const skillsDir = join(root, 'skills')
   if (existsSync(skillsDir)) {
     for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
-      if (!entry.isDirectory()) continue
+      if (!entry.isDirectory())
+        continue
       const metaPath = join(skillsDir, entry.name, 'meta.json')
-      if (!existsSync(metaPath)) continue
+      if (!existsSync(metaPath))
+        continue
       const skillMeta = JSON.parse(readFileSync(metaPath, 'utf-8')) as SkillMeta
       if (skillMeta.type === 'authored' || skillMeta.type === 'authored-from-source')
         expected.add(entry.name)
@@ -46,16 +44,18 @@ function getExpectedSubmodulePaths(): Set<string> {
 
 function getExistingSubmodulePaths(): string[] {
   const gitmodulesPath = join(root, '.gitmodules')
-  if (!existsSync(gitmodulesPath)) return []
+  if (!existsSync(gitmodulesPath))
+    return []
   const content = readFileSync(gitmodulesPath, 'utf-8')
   return Array.from(content.matchAll(/path\s*=\s*(.+)/g), m => m[1].trim())
 }
 
 function removeSubmodule(submodulePath: string): void {
-  execSync(`git submodule deinit -f ${submodulePath}`, { cwd: root, stdio: 'pipe' })
+  exec(`git submodule deinit -f ${submodulePath}`, { cwd: root, safe: true })
   const gitModulesDir = join(root, '.git', 'modules', submodulePath)
-  if (existsSync(gitModulesDir)) rmSync(gitModulesDir, { recursive: true })
-  exec(`git rm -f ${submodulePath}`)
+  if (existsSync(gitModulesDir))
+    rmSync(gitModulesDir, { recursive: true })
+  exec(`git rm -f ${submodulePath}`, { cwd: root, inherit: true })
 }
 
 let hasOrphans = false

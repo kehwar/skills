@@ -2,35 +2,27 @@
  * Check submodules for available upstream updates without pulling.
  */
 
+import type { Meta } from './types.ts'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Meta } from './types.ts'
+import { exec } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const { upstreams } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
 
-function execSafe(cmd: string, cwd: string): string | null {
-  try {
-    return execSync(cmd, { cwd, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim()
-  }
-  catch {
-    return null
-  }
-}
-
 console.log('Fetching remote changes...')
-execSync('git submodule foreach git fetch', { cwd: root, stdio: 'inherit' })
+exec('git submodule foreach git fetch', { cwd: root, inherit: true })
 console.log()
 
-const updates: Array<{ name: string; behind: number; skills?: string }> = []
+const updates: Array<{ name: string, behind: number, skills?: string }> = []
 
 for (const [name, config] of Object.entries(upstreams)) {
   const path = join(root, 'upstream', name)
-  if (!existsSync(path)) continue
-  const count = parseInt(execSafe('git rev-list HEAD..@{u} --count', path) ?? '0')
+  if (!existsSync(path))
+    continue
+  const count = Number.parseInt(exec('git rev-list HEAD..@{u} --count', { cwd: path, safe: true }) ?? '0')
   if (count > 0) {
     updates.push({
       name,

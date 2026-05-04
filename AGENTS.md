@@ -17,6 +17,17 @@ Check its `skills/<name>/meta.json`:
 - `type: "authored"` or `type: "authored-from-source"` → safe to edit, will never be overwritten
 - `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
 
+### After making code changes
+
+Run both checks before considering work done:
+
+```
+pnpm typecheck  # verify TypeScript types
+pnpm lint:fix   # auto-fix style issues
+```
+
+Fix any remaining errors that `lint:fix` could not auto-resolve.
+
 ### Domain docs
 
 Single-context — `CONTEXT.md` at repo root.

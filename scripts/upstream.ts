@@ -10,13 +10,12 @@
  * 6. Creates blank instructions file (if not already present)
  */
 
-import * as p from '@clack/prompts'
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
-import type { Dirent } from 'node:fs'
-import { dirname, join, relative } from 'node:path'
-import { execSync } from 'node:child_process'
-import { fileURLToPath } from 'node:url'
 import type { Meta, SkillMeta, UpstreamMeta } from './types.ts'
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import * as p from '@clack/prompts'
+import { exec, findSkillDirs, getGitSha, submoduleExists } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -29,8 +28,10 @@ const branch: string | undefined = branchFlagIdx !== -1 ? args[branchFlagIdx + 1
 const nameFlagIdx = args.findIndex(a => a === '--name' || a === '-n')
 const nameOverride: string | undefined = nameFlagIdx !== -1 ? args[nameFlagIdx + 1] : undefined
 const positional = args.filter((_, i) => {
-  if (branchFlagIdx !== -1 && (i === branchFlagIdx || i === branchFlagIdx + 1)) return false
-  if (nameFlagIdx !== -1 && (i === nameFlagIdx || i === nameFlagIdx + 1)) return false
+  if (branchFlagIdx !== -1 && (i === branchFlagIdx || i === branchFlagIdx + 1))
+    return false
+  if (nameFlagIdx !== -1 && (i === nameFlagIdx || i === nameFlagIdx + 1))
+    return false
   return true
 })
 const url = positional[0]
@@ -41,53 +42,14 @@ if (!url) {
 }
 
 // --- Utilities ---
-
-function exec(cmd: string): void {
-  execSync(cmd, { cwd: root, stdio: 'inherit' })
-}
-
-function execCapture(cmd: string, cwd = root): string {
-  return execSync(cmd, { cwd, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim()
-}
-
-function submoduleExists(path: string): boolean {
-  const gitmodulesPath = join(root, '.gitmodules')
-  if (!existsSync(gitmodulesPath)) return false
-  return readFileSync(gitmodulesPath, 'utf-8').includes(`path = ${path}`)
-}
-
-function getGitSha(dir: string): string | null {
-  try { return execCapture('git rev-parse HEAD', dir) }
-  catch { return null }
-}
-
-/** Recursively find directories that contain a SKILL.md, relative to `dir`. */
-function findSkillDirs(dir: string): string[] {
-  const results: string[] = []
-  function walk(current: string): void {
-    let entries: Dirent[]
-    try { entries = readdirSync(current, { withFileTypes: true }) }
-    catch { return }
-    if (entries.some(e => e.isFile() && e.name === 'SKILL.md')) {
-      results.push(relative(dir, current) || '.')
-      return
-    }
-    for (const entry of entries) {
-      if (entry.isDirectory() && entry.name !== 'node_modules' && !entry.name.startsWith('.'))
-        walk(join(current, entry.name))
-    }
-  }
-  walk(dir)
-  return results
-}
-
 function saveMeta(): void {
   meta.upstreams = Object.fromEntries(Object.entries(meta.upstreams).sort(([a], [b]) => a.localeCompare(b)))
-  writeFileSync(metaPath, JSON.stringify(meta, null, 2) + '\n')
+  writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
 }
 
 function copySkills(upstreamName: string, upstreamDir: string, config: UpstreamMeta): void {
-  if (!config.skills) return
+  if (!config.skills)
+    return
   const sha = getGitSha(upstreamDir)
   const date = new Date().toISOString().split('T')[0]
 
@@ -100,7 +62,8 @@ function copySkills(upstreamName: string, upstreamDir: string, config: UpstreamM
       continue
     }
 
-    if (existsSync(outputPath)) rmSync(outputPath, { recursive: true })
+    if (existsSync(outputPath))
+      rmSync(outputPath, { recursive: true })
     mkdirSync(outputPath, { recursive: true })
     cpSync(sourcePath, outputPath, { recursive: true })
 
@@ -119,7 +82,7 @@ function copySkills(upstreamName: string, upstreamDir: string, config: UpstreamM
       contentHash: 'pending',
       syncedAt: date,
     }
-    writeFileSync(join(outputPath, 'meta.json'), JSON.stringify(skillMeta, null, 2) + '\n')
+    writeFileSync(join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, null, 2)}\n`)
     p.log.step(`copied  ${skillPath} → skills/${outputName}`)
   }
 }
@@ -138,7 +101,7 @@ const existing = meta.upstreams[upstreamKey]
 if (existing && existing.url !== url && !nameOverride) {
   const answer = await p.text({
     message: `Key "${upstreamKey}" is already used by ${existing.url}. Enter a different key:`,
-    validate: v => (!v.trim() ? 'Key cannot be empty' : undefined),
+    validate: v => (!v?.trim() ? 'Key cannot be empty' : undefined),
   })
   if (p.isCancel(answer)) { p.cancel('Cancelled'); process.exit(0) }
   upstreamKey = answer as string
@@ -152,10 +115,10 @@ const submodulePath = `upstream/${upstreamKey}`
 const upstreamDir = join(root, submodulePath)
 const spinner = p.spinner()
 
-if (!submoduleExists(submodulePath)) {
+if (!submoduleExists(root, submodulePath)) {
   spinner.start(`Adding submodule ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
   try {
-    exec(`git submodule add --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${submodulePath}`)
+    exec(`git submodule add --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${submodulePath}`, { cwd: root, inherit: true })
     spinner.stop(`Added ${submodulePath}`)
   }
   catch (e) {
@@ -166,7 +129,7 @@ if (!submoduleExists(submodulePath)) {
 else {
   spinner.start(`Updating ${submodulePath}`)
   try {
-    exec(`git submodule update --remote --merge --depth 1 -- ${submodulePath}`)
+    exec(`git submodule update --remote --merge --depth 1 -- ${submodulePath}`, { cwd: root, inherit: true })
     spinner.stop(`Updated ${submodulePath}`)
   }
   catch (e) {
@@ -181,7 +144,7 @@ const skillDirs = findSkillDirs(upstreamDir).sort((a, b) =>
 )
 
 const existingConfig = meta.upstreams[upstreamKey]
-let skillsMap: Record<string, string> = {}
+const skillsMap: Record<string, string> = {}
 
 if (skillDirs.length > 0) {
   const existingPaths = new Set(existingConfig?.skills ? Object.keys(existingConfig.skills) : [])
@@ -232,7 +195,8 @@ p.log.success('Updated meta.json')
 
 // --- Copy selected skills ---
 
-if (Object.keys(skillsMap).length > 0) copySkills(upstreamKey, upstreamDir, newConfig)
+if (Object.keys(skillsMap).length > 0)
+  copySkills(upstreamKey, upstreamDir, newConfig)
 
 // --- Create instructions file (if this is a reference-only upstream with no skills) ---
 
