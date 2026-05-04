@@ -9,13 +9,16 @@
     "agents"
   ],
   "scripts": {
-    "build": "node src/build.js",
-    "add-skill": "node src/add-skill.js",
+    "sync": "tsx scripts/sync.ts",
+    "check": "tsx scripts/check.ts",
+    "cleanup": "tsx scripts/cleanup.ts",
     "opencode": "opencode web --hostname 0.0.0.0"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "skills": "^1.5.3"
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }
