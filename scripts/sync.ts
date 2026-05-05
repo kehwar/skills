@@ -6,6 +6,7 @@
 import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import * as p from '@clack/prompts'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
 import { getGitSha } from './lib/gitOps.ts'
 import { MetaStore } from './lib/metaStore.ts'
@@ -35,13 +36,13 @@ if (urlsNormalized)
 
 // ── Add/update all submodules ───────────────────────────────────────────────
 
-console.log('Updating submodules...')
+p.log.step('Updating submodules...')
 for (const [name, config] of Object.entries(upstreams)) {
   const path = `upstream/${name}`
-  console.log(`  ${name}${config.branch ? ` (branch: ${config.branch})` : ''}`)
+  p.log.info(`  ${name}${config.branch ? ` (branch: ${config.branch})` : ''}`)
   ensureSubmodule(root, path, config.url, config.branch)
 }
-console.log('Submodules updated\n')
+p.log.step('Submodules updated')
 
 // ── Scan available skills, capture git SHA, diff hashes, update meta.json ───
 
@@ -67,21 +68,21 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 
   // Report changes
   const allPaths = new Set([...Object.keys(oldAvailable), ...Object.keys(newAvailable)])
-  const isSelected = (p: string) => p in config.skills!
+  const isSelected = (path: string) => path in config.skills!
 
-  for (const p of [...allPaths].sort()) {
-    const oldHash = oldAvailable[p]
-    const newHash = newAvailable[p]
-    const tag = isSelected(p) ? ' [included]' : ''
+  for (const path of [...allPaths].sort()) {
+    const oldHash = oldAvailable[path]
+    const newHash = newAvailable[path]
+    const tag = isSelected(path) ? ' [included]' : ''
 
     if (!oldHash) {
-      console.log(`  + ${upstreamName}/${p}${tag}  (new)`)
+      p.log.info(`  + ${upstreamName}/${path}${tag}  (new)`)
     }
     else if (!newHash) {
-      console.log(`  - ${upstreamName}/${p}${tag}  (removed)`)
+      p.log.info(`  - ${upstreamName}/${path}${tag}  (removed)`)
     }
     else if (oldHash !== newHash) {
-      console.log(`  ~ ${upstreamName}/${p}${tag}  (${oldHash} → ${newHash})`)
+      p.log.info(`  ~ ${upstreamName}/${path}${tag}  (${oldHash} → ${newHash})`)
     }
   }
 
@@ -97,11 +98,22 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
     continue
   const upstreamPath = join(root, 'upstream', upstreamName)
   if (!existsSync(upstreamPath)) {
-    console.warn(`SKIP upstream/${upstreamName} — submodule directory missing`)
+    p.log.warn(`SKIP upstream/${upstreamName} — submodule directory missing`)
     continue
   }
 
-  copySkillsFromUpstream(upstreamName, upstreamPath, config, root, console.log, force)
+  const result = copySkillsFromUpstream(upstreamName, upstreamPath, config, root, force)
+
+  // Log results
+  for (const skill of result.synced) {
+    p.log.step(`synced  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of result.skipped) {
+    p.log.info(`unchanged  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of result.errors) {
+    p.log.error(`FAILED ${upstreamName}/${skill.skillPath}: ${skill.error}`)
+  }
 }
 
 // ── Maintain authored/ symlinks ─────────────────────────────────────────────
@@ -110,7 +122,7 @@ const authoredDir = join(root, 'authored')
 const skillsDir = join(root, 'skills')
 
 const collected = collectAuthoredSkills(skillsDir)
-linkAuthoredSkills(collected, skillsDir, authoredDir, console.log)
-pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, console.log)
+linkAuthoredSkills(collected, skillsDir, authoredDir, msg => p.log.step(msg))
+pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, msg => p.log.step(msg))
 
-console.log('\nDone')
+p.outro('Done')

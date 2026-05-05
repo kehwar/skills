@@ -26,7 +26,9 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
+    expect(result.synced).toHaveLength(1)
     expect(existsSync(join(root, 'skills', 'my-skill', 'SKILL.md'))).toBe(true)
   })
 
@@ -35,7 +37,9 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
+    expect(result.synced).toHaveLength(1)
     const meta = JSON.parse(readFileSync(join(root, 'skills', 'my-skill', 'meta.json'), 'utf-8')) as SkillMeta
     expect(meta.type).toBe('synced')
     if (meta.type === 'synced') {
@@ -50,7 +54,8 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
     expect(existsSync(join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
   })
 
@@ -60,7 +65,8 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
     expect(existsSync(join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
   })
 
@@ -72,7 +78,8 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
     expect(existsSync(join(outputPath, 'stale.txt'))).toBe(false)
   })
 
@@ -81,7 +88,9 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'nonexistent-skill': 'nonexistent-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
+    expect(result.skipped).toHaveLength(1)
     expect(existsSync(join(root, 'skills', 'nonexistent-skill'))).toBe(false)
   })
 
@@ -91,7 +100,9 @@ describe('copySkillsFromUpstream', () => {
       branch: 'main',
       skills: { 'my-skill': 'out-skill' },
     }
-    copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    expect(result.ok).toBe(true)
+    expect(result.synced).toHaveLength(1)
     const meta = JSON.parse(readFileSync(join(root, 'skills', 'out-skill', 'meta.json'), 'utf-8')) as SkillMeta
     expect(meta.type).toBe('synced')
     if (meta.type === 'synced') {

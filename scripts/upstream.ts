@@ -148,8 +148,20 @@ p.log.success('Updated meta.json')
 
 // --- Copy selected skills ---
 
-if (Object.keys(skillsMap).length > 0)
-  copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root, p.log.step)
+if (Object.keys(skillsMap).length > 0) {
+  const result = copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root)
+
+  // Log results
+  for (const skill of result.synced) {
+    p.log.step(`synced  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of result.skipped) {
+    p.log.info(`unchanged  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of result.errors) {
+    p.log.error(`FAILED ${upstreamKey}/${skill.skillPath}: ${skill.error}`)
+  }
+}
 
 // --- Create instructions file (if this is a reference-only upstream with no skills) ---
 

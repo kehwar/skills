@@ -36,3 +36,23 @@ export type SkillMeta
       contentHash: string
       syncedAt: string
     }
+
+/**
+ * Result type for git command execution.
+ * Simplifies error handling in lib functions.
+ */
+export type ExecResult
+  = { ok: true, output: string }
+    | { ok: false, error: string, code?: number }
+
+/**
+ * Generic result type for lib operations.
+ * Allows functions to return structured success/failure info.
+ */
+export interface OperationResult<T = unknown> {
+  ok: boolean
+  data?: T
+  error?: string
+  count?: number
+  skipped?: number
+}

@@ -24,28 +24,59 @@ describe('ensureSubmodule', () => {
     // Create a local "remote" repo with two branches
     remote = join(tmp, 'remote')
     mkdirSync(remote)
-    exec('git init', { cwd: remote })
-    exec('git config user.email "t@t.com"', { cwd: remote })
-    exec('git config user.name "T"', { cwd: remote })
+    const initRes = exec('git init', { cwd: remote })
+    if (!initRes.ok)
+      throw new Error(initRes.error)
+    const emailRes = exec('git config user.email "t@t.com"', { cwd: remote })
+    if (!emailRes.ok)
+      throw new Error(emailRes.error)
+    const nameRes = exec('git config user.name "T"', { cwd: remote })
+    if (!nameRes.ok)
+      throw new Error(nameRes.error)
     writeFileSync(join(remote, 'file.txt'), 'default content')
-    exec('git add .', { cwd: remote })
-    exec('git commit -m "init"', { cwd: remote })
-    defaultBranch = exec('git branch --show-current', { cwd: remote })
-    exec('git checkout -b feature', { cwd: remote })
+    const addRes = exec('git add .', { cwd: remote })
+    if (!addRes.ok)
+      throw new Error(addRes.error)
+    const commitRes = exec('git commit -m "init"', { cwd: remote })
+    if (!commitRes.ok)
+      throw new Error(commitRes.error)
+    const branchRes = exec('git branch --show-current', { cwd: remote })
+    if (!branchRes.ok)
+      throw new Error(branchRes.error)
+    defaultBranch = branchRes.output
+    const checkoutRes = exec('git checkout -b feature', { cwd: remote })
+    if (!checkoutRes.ok)
+      throw new Error(checkoutRes.error)
     writeFileSync(join(remote, 'file.txt'), 'feature content')
-    exec('git add .', { cwd: remote })
-    exec('git commit -m "feature"', { cwd: remote })
-    exec(`git checkout ${defaultBranch}`, { cwd: remote })
+    const addRes2 = exec('git add .', { cwd: remote })
+    if (!addRes2.ok)
+      throw new Error(addRes2.error)
+    const commitRes2 = exec('git commit -m "feature"', { cwd: remote })
+    if (!commitRes2.ok)
+      throw new Error(commitRes2.error)
+    const checkoutRes2 = exec(`git checkout ${defaultBranch}`, { cwd: remote })
+    if (!checkoutRes2.ok)
+      throw new Error(checkoutRes2.error)
 
     // Create a root git repo that will hold the submodule
     root = join(tmp, 'root')
     mkdirSync(root)
-    exec('git init', { cwd: root })
-    exec('git config user.email "t@t.com"', { cwd: root })
-    exec('git config user.name "T"', { cwd: root })
-    writeFileSync(join(root, '.gitkeep'), '')
-    exec('git add .', { cwd: root })
-    exec('git commit -m "init"', { cwd: root })
+    const rootInitRes = exec('git init', { cwd: root })
+    if (!rootInitRes.ok)
+      throw new Error(rootInitRes.error)
+    const rootEmailRes = exec('git config user.email "t@t.com"', { cwd: root })
+    if (!rootEmailRes.ok)
+      throw new Error(rootEmailRes.error)
+    const rootNameRes = exec('git config user.name "T"', { cwd: root })
+    if (!rootNameRes.ok)
+      throw new Error(rootNameRes.error)
+    writeFileSync(join(root, 'README.md'), '# Root')
+    const rootAddRes = exec('git add .', { cwd: root })
+    if (!rootAddRes.ok)
+      throw new Error(rootAddRes.error)
+    const rootCommitRes = exec('git commit -m "init"', { cwd: root })
+    if (!rootCommitRes.ok)
+      throw new Error(rootCommitRes.error)
   })
 
   afterEach(() => {
@@ -64,15 +95,25 @@ describe('ensureSubmodule', () => {
 
   it('checks out the specified branch on a new submodule', () => {
     ensureSubmodule(root, 'upstream/sub', remote, 'feature')
-    const branch = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
-    expect(branch).toBe('feature')
+    const result = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
+    if (result.ok) {
+      expect(result.output).toBe('feature')
+    }
+    else {
+      throw new Error(`Expected success: ${result.error}`)
+    }
   })
 
   it('switches to a new branch on an existing submodule', () => {
     ensureSubmodule(root, 'upstream/sub', remote, defaultBranch)
     ensureSubmodule(root, 'upstream/sub', remote, 'feature')
-    const branch = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
-    expect(branch).toBe('feature')
+    const result = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
+    if (result.ok) {
+      expect(result.output).toBe('feature')
+    }
+    else {
+      throw new Error(`Expected success: ${result.error}`)
+    }
   })
 
   it('updates .gitmodules branch entry when switching branches', () => {

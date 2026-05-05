@@ -110,59 +110,76 @@ export class RealGitAdapter implements GitAdapter {
   }
 
   addSubmodule(root: string, url: string, path: string): void {
-    exec(`git submodule add --depth 1 ${url} ${path}`, { cwd: root, inherit: true })
+    const result = exec(`git submodule add --depth 1 ${url} ${path}`, { cwd: root, inherit: true })
+    if (!result.ok)
+      throw new Error(`Failed to add submodule: ${result.error}`)
   }
 
   initSubmodule(url: string, path: string, branch?: string): void {
     mkdirSync(path, { recursive: true })
-    exec(`git clone --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${path}`, {
+    const result = exec(`git clone --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${path}`, {
       inherit: true,
     })
+    if (!result.ok)
+      throw new Error(`Failed to initialize submodule: ${result.error}`)
   }
 
   fetchSubmodule(path: string, branch?: string): void {
     if (branch) {
-      exec(
+      const result = exec(
         `git fetch --depth 1 origin +refs/heads/${branch}:refs/remotes/origin/${branch}`,
         { cwd: path, inherit: true },
       )
+      if (!result.ok)
+        throw new Error(`Failed to fetch submodule branch: ${result.error}`)
     }
     else {
       // Fetch HEAD to a local ref to avoid ambiguous FETCH_HEAD warnings
-      exec('git fetch --depth 1 origin HEAD:refs/remotes/origin/HEAD', { cwd: path, inherit: true })
+      const result = exec('git fetch --depth 1 origin HEAD:refs/remotes/origin/HEAD', { cwd: path, inherit: true })
+      if (!result.ok)
+        throw new Error(`Failed to fetch submodule: ${result.error}`)
     }
   }
 
   checkoutBranch(path: string, branch: string): void {
     if (branch === 'FETCH_HEAD') {
       // Resolve the default remote branch and check it out
-      const symRefOutput = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path, safe: true })
+      const symRefResult = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path })
 
-      if (symRefOutput) {
+      if (symRefResult.ok) {
         // Extract branch name from symref like "refs/remotes/origin/main"
-        const branches = symRefOutput.trim().split('/')
+        const branches = symRefResult.output.trim().split('/')
         const defaultBranch = branches[branches.length - 1]
 
         if (defaultBranch && defaultBranch !== 'HEAD') {
           // Check out the default branch as a tracking branch
-          exec(`git checkout -B ${defaultBranch} refs/remotes/origin/${defaultBranch}`, { cwd: path, inherit: true })
+          const result = exec(`git checkout -B ${defaultBranch} refs/remotes/origin/${defaultBranch}`, { cwd: path, inherit: true })
+          if (!result.ok)
+            throw new Error(`Failed to checkout branch: ${result.error}`)
           return
         }
       }
 
       // Fallback: detached HEAD at the remote HEAD
-      exec(`git checkout --detach refs/remotes/origin/HEAD`, { cwd: path, inherit: true })
+      const result = exec(`git checkout --detach refs/remotes/origin/HEAD`, { cwd: path, inherit: true })
+      if (!result.ok)
+        throw new Error(`Failed to checkout detached HEAD: ${result.error}`)
     }
     else {
-      exec(`git checkout -B ${branch} refs/remotes/origin/${branch}`, { cwd: path, inherit: true })
+      const result = exec(`git checkout -B ${branch} refs/remotes/origin/${branch}`, { cwd: path, inherit: true })
+      if (!result.ok)
+        throw new Error(`Failed to checkout branch: ${result.error}`)
     }
   }
 
   setSubmoduleBranch(root: string, path: string, branch: string): void {
-    exec(`git config -f .gitmodules submodule.${path}.branch ${branch}`, { cwd: root })
+    const result = exec(`git config -f .gitmodules submodule.${path}.branch ${branch}`, { cwd: root })
+    if (!result.ok)
+      throw new Error(`Failed to set submodule branch: ${result.error}`)
   }
 
   unsetSubmoduleBranch(root: string, path: string): void {
-    exec(`git config -f .gitmodules --unset submodule.${path}.branch`, { cwd: root, safe: true })
+    const _result = exec(`git config -f .gitmodules --unset submodule.${path}.branch`, { cwd: root })
+    // Ignore errors on unset (it's ok if the key doesn't exist)
   }
 }

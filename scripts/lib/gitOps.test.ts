@@ -7,26 +7,45 @@ import { exec, getGitSha, submoduleExists } from './gitOps.ts'
 // ── exec ─────────────────────────────────────────────────────────────────────
 
 describe('exec', () => {
-  it('returns trimmed stdout', () => {
-    expect(exec('echo hello')).toBe('hello')
+  it('returns trimmed stdout in result object', () => {
+    const result = exec('echo hello')
+    if (result.ok) {
+      expect(result.output).toBe('hello')
+    }
+    else {
+      throw new Error('Expected success')
+    }
   })
 
-  it('returns null on failure when safe: true', () => {
-    expect(exec('false', { safe: true })).toBeNull()
+  it('returns error result on failure', () => {
+    const result = exec('false')
+    if (!result.ok) {
+      expect(result.error).toBeDefined()
+      expect(result.code).toBeDefined()
+    }
+    else {
+      throw new Error('Expected failure')
+    }
   })
 
-  it('throws on failure by default', () => {
-    expect(() => exec('false')).toThrow()
-  })
-
-  it('returns undefined (void) for inherit variant', () => {
+  it('returns success result for inherit variant', () => {
     const result = exec('echo hi', { inherit: true })
-    expect(result).toBeUndefined()
+    if (result.ok) {
+      expect(result.output).toBe('')
+    }
+    else {
+      throw new Error('Expected success')
+    }
   })
 
   it('respects cwd option', () => {
     const result = exec('pwd', { cwd: '/tmp' })
-    expect(result).toContain('tmp')
+    if (result.ok) {
+      expect(result.output).toContain('tmp')
+    }
+    else {
+      throw new Error('Expected success')
+    }
   })
 })
 

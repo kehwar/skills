@@ -5,6 +5,7 @@
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import * as p from '@clack/prompts'
 import { pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
 import { exec } from './lib/gitOps.ts'
 import { MetaStore } from './lib/metaStore.ts'
@@ -47,33 +48,39 @@ function getExistingSubmodulePaths(): string[] {
 }
 
 function removeSubmodule(submodulePath: string): void {
-  exec(`git submodule deinit -f ${submodulePath}`, { cwd: root, safe: true })
+  const deinitResult = exec(`git submodule deinit -f ${submodulePath}`, { cwd: root })
+  if (!deinitResult.ok) {
+    p.log.warn(`Failed to deinit submodule ${submodulePath}: ${deinitResult.error}`)
+  }
   const gitModulesDir = join(root, '.git', 'modules', submodulePath)
   if (existsSync(gitModulesDir))
     rmSync(gitModulesDir, { recursive: true })
-  exec(`git rm -f ${submodulePath}`, { cwd: root, inherit: true })
+  const rmResult = exec(`git rm -f ${submodulePath}`, { cwd: root })
+  if (!rmResult.ok) {
+    p.log.warn(`Failed to remove submodule ${submodulePath}: ${rmResult.error}`)
+  }
 }
 
 let hasOrphans = false
 
 // 1. Orphaned submodules
 const extraSubmodules = getExistingSubmodulePaths().filter(
-  p => !getExpectedSubmodulePaths().has(p),
+  path => !getExpectedSubmodulePaths().has(path),
 )
 
 if (extraSubmodules.length > 0) {
   hasOrphans = true
-  console.log(`Orphaned submodules (${extraSubmodules.length}):`)
-  for (const p of extraSubmodules) console.log(`  - ${p}`)
+  p.log.warn(`Orphaned submodules (${extraSubmodules.length}):`)
+  for (const path of extraSubmodules) p.log.warn(`  - ${path}`)
 
   if (skipPrompt) {
-    for (const p of extraSubmodules) {
-      console.log(`Removing: ${p}`)
-      removeSubmodule(p)
+    for (const path of extraSubmodules) {
+      p.log.step(`Removing: ${path}`)
+      removeSubmodule(path)
     }
   }
   else {
-    console.log('  → Re-run with -y to remove\n')
+    p.log.info('  → Re-run with -y to remove')
   }
 }
 
@@ -89,24 +96,24 @@ const extraSkills = existingSkills.filter(name => !getExpectedSkillNames().has(n
 
 if (extraSkills.length > 0) {
   hasOrphans = true
-  console.log(`Orphaned skills (${extraSkills.length}):`)
-  for (const name of extraSkills) console.log(`  - skills/${name}`)
+  p.log.warn(`Orphaned skills (${extraSkills.length}):`)
+  for (const name of extraSkills) p.log.warn(`  - skills/${name}`)
 
   if (skipPrompt) {
     for (const name of extraSkills) {
-      console.log(`Removing: skills/${name}`)
+      p.log.step(`Removing: skills/${name}`)
       rmSync(join(skillsDir, name), { recursive: true })
     }
   }
   else {
-    console.log('  → Re-run with -y to remove\n')
+    p.log.info('  → Re-run with -y to remove')
   }
 }
 
 if (!hasOrphans) {
-  console.log('Everything is clean')
+  p.log.step('Everything is clean')
 }
 
 // 3. Stale symlinks in authored/
 const authoredDir = join(root, 'authored')
-pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, console.log)
+pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, msg => p.log.step(msg))
