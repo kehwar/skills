@@ -128,12 +128,34 @@ export class RealGitAdapter implements GitAdapter {
       )
     }
     else {
-      exec('git fetch --depth 1', { cwd: path, inherit: true })
+      // Fetch HEAD to a local ref to avoid ambiguous FETCH_HEAD warnings
+      exec('git fetch --depth 1 origin HEAD:refs/remotes/origin/HEAD', { cwd: path, inherit: true })
     }
   }
 
   checkoutBranch(path: string, branch: string): void {
-    exec(`git checkout -B ${branch} FETCH_HEAD`, { cwd: path, inherit: true })
+    if (branch === 'FETCH_HEAD') {
+      // Resolve the default remote branch and check it out
+      const symRefOutput = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path, safe: true })
+
+      if (symRefOutput) {
+        // Extract branch name from symref like "refs/remotes/origin/main"
+        const branches = symRefOutput.trim().split('/')
+        const defaultBranch = branches[branches.length - 1]
+
+        if (defaultBranch && defaultBranch !== 'HEAD') {
+          // Check out the default branch as a tracking branch
+          exec(`git checkout -B ${defaultBranch} refs/remotes/origin/${defaultBranch}`, { cwd: path, inherit: true })
+          return
+        }
+      }
+
+      // Fallback: detached HEAD at the remote HEAD
+      exec(`git checkout --detach refs/remotes/origin/HEAD`, { cwd: path, inherit: true })
+    }
+    else {
+      exec(`git checkout -B ${branch} refs/remotes/origin/${branch}`, { cwd: path, inherit: true })
+    }
   }
 
   setSubmoduleBranch(root: string, path: string, branch: string): void {
