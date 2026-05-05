@@ -13,6 +13,7 @@
   "scripts": {
     "sync": "tsx scripts/sync.ts",
     "upstream": "tsx scripts/upstream.ts",
+    "write-skill": "tsx scripts/write-skill.ts",
     "check": "tsx scripts/check.ts",
     "cleanup": "tsx scripts/cleanup.ts",
     "test": "vitest run --project scripts",
