@@ -15,7 +15,12 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { copySkillsFromUpstream, ensureSubmodule, findSkillDirs, normalizeUrl, saveMeta, submoduleExists } from './lib.ts'
+import { submoduleExists } from './lib/gitOps.ts'
+import { saveMeta } from './lib/metadataOps.ts'
+import { discoverSkills } from './lib/skillDiscovery.ts'
+import { copySkillsFromUpstream } from './lib/skillOps.ts'
+import { ensureSubmodule } from './lib/submoduleOps.ts'
+import { normalizeUrl } from './lib/urlOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -82,9 +87,11 @@ catch (e) {
 
 // --- Skill selection (only if SKILL.md files exist) ---
 
-const skillDirs = findSkillDirs(upstreamDir).sort((a, b) =>
-  (a.split('/').pop() ?? a).localeCompare(b.split('/').pop() ?? b),
-)
+const skillDirs = discoverSkills(upstreamDir)
+  .map(skill => skill.path)
+  .sort((a, b) =>
+    (a.split('/').pop() ?? a).localeCompare(b.split('/').pop() ?? b),
+  )
 
 const existingConfig = meta.upstreams[upstreamKey]
 const skillsMap: Record<string, string> = {}

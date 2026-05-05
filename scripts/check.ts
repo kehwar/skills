@@ -6,7 +6,7 @@ import type { Meta } from './types.ts'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { exec } from './lib.ts'
+import { exec } from './lib/gitOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')

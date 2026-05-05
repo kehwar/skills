@@ -7,7 +7,11 @@ import type { Meta, SkillMeta } from './types.ts'
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { copySkillsFromUpstream, ensureSubmodule, findSkillDirs, hashSkillDir, normalizeUrl, saveMeta } from './lib.ts'
+import { saveMeta } from './lib/metadataOps.ts'
+import { discoverSkills } from './lib/skillDiscovery.ts'
+import { copySkillsFromUpstream, hashSkillDir } from './lib/skillOps.ts'
+import { ensureSubmodule } from './lib/submoduleOps.ts'
+import { normalizeUrl } from './lib/urlOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -52,7 +56,8 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
   const oldAvailable = config.available ?? {}
   const newAvailable: Record<string, string> = {}
 
-  for (const skillPath of findSkillDirs(upstreamPath)) {
+  for (const skill of discoverSkills(upstreamPath)) {
+    const skillPath = skill.path
     newAvailable[skillPath] = hashSkillDir(
       skillPath === '.' ? upstreamPath : join(upstreamPath, skillPath),
     )
