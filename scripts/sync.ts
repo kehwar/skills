@@ -3,44 +3,17 @@
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
-import type { Dirent } from 'node:fs'
 import type { Meta, SkillMeta } from './types.ts'
-import { createHash } from 'node:crypto'
-import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { exec, findSkillDirs, getGitSha, submoduleExists } from './lib.ts'
+import { copySkillsFromUpstream, exec, findSkillDirs, hashSkillDir, saveMeta, submoduleExists } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const metaPath = join(root, 'meta.json')
 const meta = JSON.parse(readFileSync(metaPath, 'utf-8')) as Meta
 const { upstreams } = meta
-
-/** Hash all file contents in a directory (sorted by relative path). 12-char prefix. */
-function hashSkillDir(dir: string): string {
-  const h = createHash('sha256')
-  const entries: string[] = []
-  function collect(current: string): void {
-    let dirents: Dirent[]
-    try { dirents = readdirSync(current, { withFileTypes: true }) }
-    catch { return }
-    for (const d of dirents) {
-      const full = join(current, d.name)
-      if (d.isDirectory() && !d.name.startsWith('.'))
-        collect(full)
-      else if (d.isFile())
-        entries.push(relative(dir, full))
-    }
-  }
-  collect(dir)
-  entries.sort()
-  for (const rel of entries) {
-    h.update(rel)
-    h.update(readFileSync(join(dir, rel)))
-  }
-  return h.digest('hex').slice(0, 12)
-}
 
 // ── Step 1: Add any missing submodules ───────────────────────────────────────
 
@@ -152,8 +125,7 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
   meta.upstreams[upstreamName].available = newAvailable
 }
 
-meta.upstreams = Object.fromEntries(Object.entries(meta.upstreams).sort(([a], [b]) => a.localeCompare(b)))
-writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
+saveMeta(meta, root)
 
 // ── Step 5: Copy selected upstream skills to skills/ ─────────────────────────
 
@@ -166,43 +138,7 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
     continue
   }
 
-  for (const [skillPath, outputName] of Object.entries(config.skills)) {
-    const sourcePath = skillPath === '.' ? upstreamPath : join(upstreamPath, skillPath)
-    const outputPath = join(root, 'skills', outputName)
-
-    if (!existsSync(sourcePath)) {
-      console.warn(`SKIP ${upstreamName}/${skillPath} — path not found in submodule`)
-      continue
-    }
-
-    if (existsSync(outputPath))
-      rmSync(outputPath, { recursive: true })
-    mkdirSync(outputPath, { recursive: true })
-    cpSync(sourcePath, outputPath, { recursive: true })
-
-    for (const name of ['LICENSE', 'LICENSE.md', 'LICENSE.txt']) {
-      const licenseSrc = join(upstreamPath, name)
-      if (existsSync(licenseSrc)) { cpSync(licenseSrc, join(outputPath, 'LICENSE.md')); break }
-    }
-
-    const sha = getGitSha(upstreamPath)
-    const contentHash = meta.upstreams[upstreamName].available?.[skillPath] ?? 'unknown'
-    const date = new Date().toISOString().split('T')[0]
-    const upstreamConfig = meta.upstreams[upstreamName]
-    const skillMeta: SkillMeta = {
-      type: 'synced',
-      upstream: upstreamName,
-      sourceUrl: upstreamConfig.url,
-      ...(upstreamConfig.branch ? { branch: upstreamConfig.branch } : {}),
-      skillPath,
-      gitSha: sha ?? 'unknown',
-      contentHash,
-      syncedAt: date,
-    }
-    writeFileSync(join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, null, 2)}\n`)
-
-    console.log(`synced  ${upstreamName}/${skillPath} → skills/${outputName}`)
-  }
+  copySkillsFromUpstream(upstreamName, upstreamPath, config, root)
 }
 
 // ── Step 6: Maintain authored/ symlinks ──────────────────────────────────────

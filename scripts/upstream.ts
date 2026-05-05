@@ -10,12 +10,12 @@
  * 6. Creates blank instructions file (if not already present)
  */
 
-import type { Meta, SkillMeta, UpstreamMeta } from './types.ts'
-import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import type { Meta, UpstreamMeta } from './types.ts'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { exec, findSkillDirs, getGitSha, submoduleExists } from './lib.ts'
+import { copySkillsFromUpstream, exec, findSkillDirs, saveMeta, submoduleExists } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -39,52 +39,6 @@ const url = positional[0]
 if (!url) {
   console.error('Usage: pnpm upstream <github-url> [--branch <branch>] [--name <key>]')
   process.exit(1)
-}
-
-// --- Utilities ---
-function saveMeta(): void {
-  meta.upstreams = Object.fromEntries(Object.entries(meta.upstreams).sort(([a], [b]) => a.localeCompare(b)))
-  writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
-}
-
-function copySkills(upstreamName: string, upstreamDir: string, config: UpstreamMeta): void {
-  if (!config.skills)
-    return
-  const sha = getGitSha(upstreamDir)
-  const date = new Date().toISOString().split('T')[0]
-
-  for (const [skillPath, outputName] of Object.entries(config.skills)) {
-    const sourcePath = skillPath === '.' ? upstreamDir : join(upstreamDir, skillPath)
-    const outputPath = join(root, 'skills', outputName)
-
-    if (!existsSync(sourcePath)) {
-      p.log.warn(`SKIP ${skillPath} — not found in submodule`)
-      continue
-    }
-
-    if (existsSync(outputPath))
-      rmSync(outputPath, { recursive: true })
-    mkdirSync(outputPath, { recursive: true })
-    cpSync(sourcePath, outputPath, { recursive: true })
-
-    for (const name of ['LICENSE', 'LICENSE.md', 'LICENSE.txt']) {
-      const src = join(upstreamDir, name)
-      if (existsSync(src)) { cpSync(src, join(outputPath, 'LICENSE.md')); break }
-    }
-
-    const skillMeta: SkillMeta = {
-      type: 'synced',
-      upstream: upstreamName,
-      sourceUrl: config.url,
-      ...(config.branch ? { branch: config.branch } : {}),
-      skillPath,
-      gitSha: sha ?? 'unknown',
-      contentHash: 'pending',
-      syncedAt: date,
-    }
-    writeFileSync(join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, null, 2)}\n`)
-    p.log.step(`copied  ${skillPath} → skills/${outputName}`)
-  }
 }
 
 // --- Derive key ---
@@ -190,13 +144,13 @@ const newConfig: UpstreamMeta = {
   ...(existingConfig?.available ? { available: existingConfig.available } : {}),
 }
 meta.upstreams[upstreamKey] = newConfig
-saveMeta()
+saveMeta(meta, root)
 p.log.success('Updated meta.json')
 
 // --- Copy selected skills ---
 
 if (Object.keys(skillsMap).length > 0)
-  copySkills(upstreamKey, upstreamDir, newConfig)
+  copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root, p.log.step)
 
 // --- Create instructions file (if this is a reference-only upstream with no skills) ---
 
