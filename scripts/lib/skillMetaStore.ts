@@ -1,4 +1,4 @@
-import type { SkillMeta } from '../types.ts'
+import type { Result, SkillMeta } from '../types.ts'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -102,23 +102,46 @@ export class SkillMetaStore {
     return false
   }
 
-  saveSkill(skillName: string): void {
+  saveSkill(skillName: string): Result<void> {
     const meta = this.skills.get(skillName)
     if (!meta) {
-      throw new Error(`Skill not found: ${skillName}`)
+      return {
+        ok: false,
+        error: `Skill not found: ${skillName}`,
+      }
     }
 
-    const skillPath = join(this.skillsDir, skillName)
-    mkdirSync(skillPath, { recursive: true })
-    const metaPath = join(skillPath, 'meta.json')
-    writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
-    this.original.set(skillName, this.cloneMeta(meta))
+    try {
+      const skillPath = join(this.skillsDir, skillName)
+      mkdirSync(skillPath, { recursive: true })
+      const metaPath = join(skillPath, 'meta.json')
+      writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
+      this.original.set(skillName, this.cloneMeta(meta))
+      return { ok: true, data: undefined }
+    }
+    catch (err) {
+      return {
+        ok: false,
+        error: `Failed to save skill meta for '${skillName}': ${err instanceof Error ? err.message : String(err)}`,
+      }
+    }
   }
 
-  saveAll(): void {
-    for (const skillName of this.skills.keys()) {
-      if (JSON.stringify(this.skills.get(skillName)) !== JSON.stringify(this.original.get(skillName))) {
-        this.saveSkill(skillName)
+  saveAll(): Result<void> {
+    try {
+      for (const skillName of this.skills.keys()) {
+        if (JSON.stringify(this.skills.get(skillName)) !== JSON.stringify(this.original.get(skillName))) {
+          const result = this.saveSkill(skillName)
+          if (!result.ok)
+            return result
+        }
+      }
+      return { ok: true, data: undefined }
+    }
+    catch (err) {
+      return {
+        ok: false,
+        error: `Failed to save skills: ${err instanceof Error ? err.message : String(err)}`,
       }
     }
   }

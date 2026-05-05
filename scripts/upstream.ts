@@ -26,6 +26,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const store = new MetaStore(root)
 const meta = store.readMeta()
+const errors: string[] = []
 
 const args = process.argv.slice(2)
 const branchFlagIdx = args.findIndex(a => a === '--branch' || a === '-b')
@@ -78,22 +79,30 @@ const spinner = p.spinner()
 
 const isNew = !submoduleExists(root, submodulePath)
 spinner.start(`${isNew ? 'Adding' : 'Updating'} ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
-try {
-  ensureSubmodule(root, submodulePath, url, branch)
-  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
+const ensureResult = ensureSubmodule(root, submodulePath, url, branch)
+if (!ensureResult.ok) {
+  spinner.stop(`Failed: ${ensureResult.error}`)
+  errors.push(ensureResult.error)
 }
-catch (e) {
-  spinner.stop(`Failed: ${e}`)
-  process.exit(1)
+else {
+  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
 }
 
 // --- Skill selection (only if SKILL.md files exist) ---
 
-const skillDirs = discoverSkills(upstreamDir)
-  .map(skill => skill.path)
-  .sort((a, b) =>
-    (a.split('/').pop() ?? a).localeCompare(b.split('/').pop() ?? b),
-  )
+let skillDirs: string[] = []
+const discoverResult = discoverSkills(upstreamDir)
+if (!discoverResult.ok) {
+  p.log.warn(`Failed to discover skills: ${discoverResult.error}`)
+  errors.push(`Failed to discover skills: ${discoverResult.error}`)
+}
+else {
+  skillDirs = discoverResult.data
+    .map(skill => skill.path)
+    .sort((a, b) =>
+      (a.split('/').pop() ?? a).localeCompare(b.split('/').pop() ?? b),
+    )
+}
 
 const existingConfig = meta.upstreams[upstreamKey]
 const skillsMap: Record<string, string> = {}
@@ -145,23 +154,38 @@ const newConfig: UpstreamMeta = {
   ...(existingConfig?.available ? { available: existingConfig.available } : {}),
 }
 store.updateUpstream(upstreamKey, newConfig)
-store.saveMeta()
-p.log.success('Updated meta.json')
+const saveResult = store.saveMeta()
+if (!saveResult.ok) {
+  p.log.error(`Failed to save meta.json: ${saveResult.error}`)
+  errors.push(saveResult.error)
+}
+else {
+  p.log.success('Updated meta.json')
+}
 
 // --- Copy selected skills ---
 
 if (Object.keys(skillsMap).length > 0) {
-  const result = copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root)
+  const copyResult = copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root)
 
-  // Log results
-  for (const skill of result.synced) {
-    p.log.step(`synced  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
+  if (!copyResult.ok) {
+    p.log.error(`Failed to copy skills: ${copyResult.error}`)
+    errors.push(copyResult.error)
   }
-  for (const skill of result.skipped) {
-    p.log.info(`unchanged  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
-  }
-  for (const skill of result.errors) {
-    p.log.error(`FAILED ${upstreamKey}/${skill.skillPath}: ${skill.error}`)
+  else {
+    const result = copyResult.data
+
+    // Log results
+    for (const skill of result.synced) {
+      p.log.step(`synced  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
+    }
+    for (const skill of result.skipped) {
+      p.log.info(`unchanged  ${upstreamKey}/${skill.skillPath} → skills/${skill.outputName}`)
+    }
+    for (const skill of result.errors) {
+      p.log.error(`FAILED ${upstreamKey}/${skill.skillPath}: ${skill.error}`)
+      errors.push(`Skill copy failed: ${upstreamKey}/${skill.skillPath}: ${skill.error}`)
+    }
   }
 }
 
@@ -173,6 +197,17 @@ if (!Object.keys(skillsMap).length && !existsSync(instructionsFile)) {
   mkdirSync(instructionsDir, { recursive: true })
   writeFileSync(instructionsFile, `# ${upstreamKey}\n\n<!-- Notes for authoring skills from this upstream -->\n`)
   p.log.step(`created instructions/${upstreamKey}.md`)
+}
+
+// ── Report and exit ───────────────────────────────────────────────────────
+
+if (errors.length > 0) {
+  p.log.warn(`${errors.length} error(s) occurred:`)
+  for (const err of errors) {
+    p.log.warn(`  - ${err}`)
+  }
+  p.outro('Upstream completed with errors')
+  process.exit(1)
 }
 
 p.outro('Done')

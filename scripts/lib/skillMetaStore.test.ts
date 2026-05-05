@@ -258,9 +258,11 @@ describe('skillMetaStore', () => {
     it('throws when saving nonexistent skill', () => {
       const store = new SkillMetaStore(skillsDir)
 
-      expect(() => {
-        store.saveSkill('nonexistent')
-      }).toThrow('Skill not found')
+      const result = store.saveSkill('nonexistent')
+      expect(result.ok).toBe(false)
+      if (result.ok)
+        throw new Error('Expected failure')
+      expect(result.error).toContain('Skill not found')
     })
   })
 

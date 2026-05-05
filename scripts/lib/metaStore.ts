@@ -1,4 +1,4 @@
-import type { Meta, UpstreamMeta } from '../types.ts'
+import type { Meta, Result, UpstreamMeta } from '../types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -74,12 +74,21 @@ export class MetaStore {
     return JSON.stringify(this.meta) !== JSON.stringify(this.original)
   }
 
-  saveMeta(): void {
+  saveMeta(): Result<void> {
     if (!this.hasChanges()) {
-      return
+      return { ok: true, data: undefined }
     }
 
-    const metaPath = join(this.root, 'meta.json')
-    writeFileSync(metaPath, this.serializeMeta())
+    try {
+      const metaPath = join(this.root, 'meta.json')
+      writeFileSync(metaPath, this.serializeMeta())
+      return { ok: true, data: undefined }
+    }
+    catch (err) {
+      return {
+        ok: false,
+        error: `Failed to save meta.json: ${err instanceof Error ? err.message : String(err)}`,
+      }
+    }
   }
 }

@@ -1,34 +1,33 @@
-import type { ExecResult } from '../types.ts'
+import type { Result } from '../types.ts'
 import { execSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 interface ExecOpts {
   cwd?: string
-  /** If true, inherit stdio and return void. */
+  /** If true, inherit stdio and return empty string. */
   inherit?: boolean
 }
 
 /**
  * Execute a shell command safely.
  * Always returns a Result; never throws.
- * - { ok: true, output } on success
- * - { ok: false, error, code } on failure
+ * - { ok: true, data: output } on success
+ * - { ok: false, error } on failure
  */
-export function exec(cmd: string, opts?: ExecOpts): ExecResult {
+export function exec(cmd: string, opts?: ExecOpts): Result<string> {
   const cwd = opts?.cwd
   try {
     if (opts?.inherit) {
       execSync(cmd, { cwd, stdio: 'inherit' })
-      return { ok: true, output: '' }
+      return { ok: true, data: '' }
     }
     const output = execSync(cmd, { cwd, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim()
-    return { ok: true, output }
+    return { ok: true, data: output }
   }
   catch (e) {
     const error = e instanceof Error ? e.message : String(e)
-    const code = (e as any)?.status
-    return { ok: false, error, code }
+    return { ok: false, error }
   }
 }
 
@@ -38,7 +37,7 @@ export function exec(cmd: string, opts?: ExecOpts): ExecResult {
  */
 export function getGitSha(dir: string): string | null {
   const result = exec('git rev-parse HEAD', { cwd: dir })
-  return result.ok ? result.output : null
+  return result.ok ? result.data : null
 }
 
 /**

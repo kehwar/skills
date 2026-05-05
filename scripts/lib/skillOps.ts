@@ -1,5 +1,5 @@
 import type { Dirent } from 'node:fs'
-import type { SkillMeta, UpstreamMeta } from '../types.ts'
+import type { Result, SkillMeta, UpstreamMeta } from '../types.ts'
 import { createHash } from 'node:crypto'
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -42,10 +42,16 @@ export function hashSkillDir(dir: string): string {
  * Copy selected skills from an Upstream submodule directory into `skills/`.
  * Handles directory reset, file copy, LICENSE discovery, hash computation,
  * and per-skill meta.json write.
- * Returns structured result with counts of synced, skipped, and failed skills.
+ *
+ * Returns Result<CopySkillsResult> where the data contains:
+ * - synced: skills that were copied
+ * - skipped: skills that were unchanged or not found
+ * - errors: skills that failed to copy (individual failures)
+ *
+ * The outer Result is ok: true if the operation completed (even if individual skills failed).
+ * It's ok: false only for catastrophic failures that prevent processing.
  */
 export interface CopySkillsResult {
-  ok: boolean
   synced: Array<{ skillPath: string, outputName: string }>
   skipped: Array<{ skillPath: string, outputName: string, reason: string }>
   errors: Array<{ skillPath: string, outputName: string, error: string }>
@@ -57,16 +63,15 @@ export function copySkillsFromUpstream(
   config: UpstreamMeta,
   root: string,
   force = false,
-): CopySkillsResult {
+): Result<CopySkillsResult> {
   const result: CopySkillsResult = {
-    ok: true,
     synced: [],
     skipped: [],
     errors: [],
   }
 
   if (!config.skills)
-    return result
+    return { ok: true, data: result }
 
   const sha = getGitSha(upstreamDir)
   const today = new Date().toISOString().split('T')[0]
@@ -140,7 +145,6 @@ export function copySkillsFromUpstream(
       result.synced.push({ skillPath, outputName })
     }
     catch (err) {
-      result.ok = false
       result.errors.push({
         skillPath,
         outputName,
@@ -149,5 +153,5 @@ export function copySkillsFromUpstream(
     }
   }
 
-  return result
+  return { ok: true, data: result }
 }

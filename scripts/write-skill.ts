@@ -23,6 +23,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const skillsDir = join(root, 'skills')
 const authoredDir = join(root, 'authored')
+const errors: string[] = []
 
 // ── Parse CLI arguments ─────────────────────────────────────────────────────
 
@@ -148,7 +149,11 @@ try {
   // Use SkillMetaStore to add and save the skill
   const skillStore = new SkillMetaStore(skillsDir)
   skillStore.addSkill(skillName, skillMeta)
-  skillStore.saveSkill(skillName)
+  const saveResult = skillStore.saveSkill(skillName)
+  if (!saveResult.ok) {
+    errors.push(`Failed to save skill metadata: ${saveResult.error}`)
+    throw new Error(saveResult.error)
+  }
 
   // Write SKILL.md with template
   const skillMdContent = `---
@@ -179,13 +184,19 @@ description: |
 
   if (selectedDomain) {
     const collected = [{ name: skillName, meta: skillMeta }]
-    const linkMessages = linkAuthoredSkills(
+    const linkResult = linkAuthoredSkills(
       collected,
       skillsDir,
       authoredDir,
     )
-    for (const msg of linkMessages) {
-      p.log.success(msg)
+    if (!linkResult.ok) {
+      errors.push(`Failed to link skill in authored directory: ${linkResult.error}`)
+      p.log.warn(linkResult.error)
+    }
+    else {
+      for (const msg of linkResult.data) {
+        p.log.success(msg)
+      }
     }
   }
 
@@ -199,9 +210,22 @@ description: |
     p.log.info(`Source: ${normalizedSource}`)
   }
 
+  if (errors.length > 0) {
+    p.log.warn(`${errors.length} error(s) occurred:`)
+    for (const err of errors) {
+      p.log.warn(`  - ${err}`)
+    }
+    p.outro('Skill created with errors')
+    process.exit(1)
+  }
+
   p.outro('Done')
 }
 catch (e) {
-  p.outro(`Failed: ${e instanceof Error ? e.message : String(e)}`)
+  const msg = e instanceof Error ? e.message : String(e)
+  if (!errors.includes(msg)) {
+    errors.push(msg)
+  }
+  p.outro(`Failed: ${msg}`)
   process.exit(1)
 }

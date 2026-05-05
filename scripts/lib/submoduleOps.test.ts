@@ -43,7 +43,7 @@ describe('ensureSubmodule', () => {
     const branchRes = exec('git branch --show-current', { cwd: remote })
     if (!branchRes.ok)
       throw new Error(branchRes.error)
-    defaultBranch = branchRes.output
+    defaultBranch = branchRes.data
     const checkoutRes = exec('git checkout -b feature', { cwd: remote })
     if (!checkoutRes.ok)
       throw new Error(checkoutRes.error)
@@ -96,24 +96,20 @@ describe('ensureSubmodule', () => {
   it('checks out the specified branch on a new submodule', () => {
     ensureSubmodule(root, 'upstream/sub', remote, 'feature')
     const result = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
-    if (result.ok) {
-      expect(result.output).toBe('feature')
-    }
-    else {
-      throw new Error(`Expected success: ${result.error}`)
-    }
+    expect(result.ok).toBe(true)
+    if (!result.ok)
+      throw new Error(result.error)
+    expect(result.data).toBe('feature')
   })
 
   it('switches to a new branch on an existing submodule', () => {
     ensureSubmodule(root, 'upstream/sub', remote, defaultBranch)
     ensureSubmodule(root, 'upstream/sub', remote, 'feature')
     const result = exec('git branch --show-current', { cwd: join(root, 'upstream/sub') })
-    if (result.ok) {
-      expect(result.output).toBe('feature')
-    }
-    else {
-      throw new Error(`Expected success: ${result.error}`)
-    }
+    expect(result.ok).toBe(true)
+    if (!result.ok)
+      throw new Error(result.error)
+    expect(result.data).toBe('feature')
   })
 
   it('updates .gitmodules branch entry when switching branches', () => {

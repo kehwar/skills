@@ -9,43 +9,34 @@ import { exec, getGitSha, submoduleExists } from './gitOps.ts'
 describe('exec', () => {
   it('returns trimmed stdout in result object', () => {
     const result = exec('echo hello')
-    if (result.ok) {
-      expect(result.output).toBe('hello')
-    }
-    else {
-      throw new Error('Expected success')
-    }
+    expect(result.ok).toBe(true)
+    if (!result.ok)
+      throw new Error(result.error)
+    expect(result.data).toBe('hello')
   })
 
   it('returns error result on failure', () => {
     const result = exec('false')
-    if (!result.ok) {
-      expect(result.error).toBeDefined()
-      expect(result.code).toBeDefined()
-    }
-    else {
+    expect(result.ok).toBe(false)
+    if (result.ok)
       throw new Error('Expected failure')
-    }
+    expect(result.error).toBeDefined()
   })
 
   it('returns success result for inherit variant', () => {
     const result = exec('echo hi', { inherit: true })
-    if (result.ok) {
-      expect(result.output).toBe('')
-    }
-    else {
-      throw new Error('Expected success')
-    }
+    expect(result.ok).toBe(true)
+    if (!result.ok)
+      throw new Error(result.error)
+    expect(result.data).toBe('')
   })
 
   it('respects cwd option', () => {
     const result = exec('pwd', { cwd: '/tmp' })
-    if (result.ok) {
-      expect(result.output).toContain('tmp')
-    }
-    else {
-      throw new Error('Expected success')
-    }
+    expect(result.ok).toBe(true)
+    if (!result.ok)
+      throw new Error(result.error)
+    expect(result.data).toContain('tmp')
   })
 })
 

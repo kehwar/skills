@@ -38,21 +38,11 @@ export type SkillMeta
     }
 
 /**
- * Result type for git command execution.
- * Simplifies error handling in lib functions.
+ * Generic Result type for all lib operations.
+ * Standardizes error handling across the codebase.
+ * - ok: true → operation succeeded, data contains result
+ * - ok: false → operation failed, error contains message
  */
-export type ExecResult
-  = { ok: true, output: string }
-    | { ok: false, error: string, code?: number }
-
-/**
- * Generic result type for lib operations.
- * Allows functions to return structured success/failure info.
- */
-export interface OperationResult<T = unknown> {
-  ok: boolean
-  data?: T
-  error?: string
-  count?: number
-  skipped?: number
-}
+export type Result<T>
+  = | { ok: true, data: T }
+    | { ok: false, error: string }

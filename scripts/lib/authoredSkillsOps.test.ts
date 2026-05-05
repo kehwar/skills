@@ -23,7 +23,10 @@ describe('authoredSkillsOps', () => {
   describe('collectAuthoredSkills', () => {
     it('returns empty array when skills directory does not exist', () => {
       const result = collectAuthoredSkills(join(tmp, 'nonexistent'))
-      expect(result).toEqual([])
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
+      expect(result.data).toEqual([])
     })
 
     it('returns empty array when no skills have type="authored"', () => {
@@ -32,7 +35,10 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath, 'meta.json'), JSON.stringify({ type: 'synced', upstream: 'test' }))
 
       const result = collectAuthoredSkills(skillsDir)
-      expect(result).toEqual([])
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
+      expect(result.data).toEqual([])
     })
 
     it('collects skills with type="authored"', () => {
@@ -47,9 +53,12 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath2, 'meta.json'), JSON.stringify(meta2))
 
       const result = collectAuthoredSkills(skillsDir)
-      expect(result).toHaveLength(2)
-      const m1 = result.find(s => s.name === 'authored-skill-1')?.meta
-      const m2 = result.find(s => s.name === 'authored-skill-2')?.meta
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
+      expect(result.data).toHaveLength(2)
+      const m1 = result.data.find((s: any) => s.name === 'authored-skill-1')?.meta
+      const m2 = result.data.find((s: any) => s.name === 'authored-skill-2')?.meta
       expect(m1?.type === 'authored' && m1.domain).toBeUndefined()
       expect(m2?.type === 'authored' && m2.domain).toBe('frappe')
     })
@@ -59,7 +68,10 @@ describe('authoredSkillsOps', () => {
       mkdirSync(skillPath, { recursive: true })
 
       const result = collectAuthoredSkills(skillsDir)
-      expect(result).toEqual([])
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
+      expect(result.data).toEqual([])
     })
   })
 
@@ -70,12 +82,15 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath, 'SKILL.md'), '# My Skill')
 
       const collected = [{ name: 'my-skill', meta: { type: 'authored' } as SkillMeta }]
-      const messages = linkAuthoredSkills(collected, skillsDir, authoredDir)
+      const result = linkAuthoredSkills(collected, skillsDir, authoredDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       const linkPath = join(authoredDir, 'my-skill')
       expect(readdirSync(authoredDir)).toContain('my-skill')
       expect(readlinkSync(linkPath)).toContain('my-skill')
-      expect(messages).toContain('linked  authored: my-skill')
+      expect(result.data).toContain('linked  authored: my-skill')
     })
 
     it('creates domain-grouped symlinks for skills with domain', () => {
@@ -84,13 +99,16 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath, 'SKILL.md'), '# Frappe Skill')
 
       const collected = [{ name: 'frappe-skill', meta: { type: 'authored', domain: 'frappe' } as SkillMeta }]
-      const messages = linkAuthoredSkills(collected, skillsDir, authoredDir)
+      const result = linkAuthoredSkills(collected, skillsDir, authoredDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       const linkPath = join(authoredDir, 'frappe', 'frappe-skill')
       expect(readdirSync(authoredDir)).toContain('frappe')
       expect(readdirSync(join(authoredDir, 'frappe'))).toContain('frappe-skill')
       expect(readlinkSync(linkPath)).toContain('frappe-skill')
-      expect(messages).toContain('linked  authored: frappe-skill (domain: frappe)')
+      expect(result.data).toContain('linked  authored: frappe-skill (domain: frappe)')
     })
 
     it('re-links when domain changes', () => {
@@ -100,7 +118,8 @@ describe('authoredSkillsOps', () => {
 
       // First link to frappe
       const collected1 = [{ name: 'migrated-skill', meta: { type: 'authored', domain: 'frappe' } as SkillMeta }]
-      linkAuthoredSkills(collected1, skillsDir, authoredDir)
+      const result1 = linkAuthoredSkills(collected1, skillsDir, authoredDir)
+      expect(result1.ok).toBe(true)
       expect(readdirSync(join(authoredDir, 'frappe'))).toContain('migrated-skill')
 
       // Re-link to sap
@@ -134,10 +153,13 @@ describe('authoredSkillsOps', () => {
       const staleLink = join(authoredDir, 'stale-skill')
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       expect(readdirSync(authoredDir)).not.toContain('stale-skill')
-      expect(messages).toContain('removed stale authored symlink: stale-skill')
+      expect(result.data).toContain('removed stale authored symlink: stale-skill')
     })
 
     it('removes symlinks pointing to non-authored skills', () => {
@@ -149,10 +171,13 @@ describe('authoredSkillsOps', () => {
       const linkPath = join(authoredDir, 'synced-skill')
       symlinkSync(join(skillsDir, 'synced-skill'), linkPath)
 
-      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       expect(readdirSync(authoredDir)).not.toContain('synced-skill')
-      expect(messages).toContain('removed stale authored symlink: synced-skill')
+      expect(result.data).toContain('removed stale authored symlink: synced-skill')
     })
 
     it('keeps symlinks pointing to valid authored skills', () => {
@@ -163,10 +188,13 @@ describe('authoredSkillsOps', () => {
       const linkPath = join(authoredDir, 'valid-skill')
       symlinkSync(join(skillsDir, 'valid-skill'), linkPath)
 
-      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       expect(readdirSync(authoredDir)).toContain('valid-skill')
-      expect(messages).toHaveLength(0)
+      expect(result.data).toHaveLength(0)
     })
 
     it('prunes stale symlinks in domain subdirectories', () => {
@@ -174,11 +202,14 @@ describe('authoredSkillsOps', () => {
       mkdirSync(join(authoredDir, 'frappe'), { recursive: true })
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
+      if (!result.ok)
+        throw new Error(result.error)
 
       // frappe dir is removed because it's now empty
       expect(existsSync(join(authoredDir, 'frappe'))).toBe(false)
-      expect(messages).toContain('removed stale authored symlink: stale-skill')
+      expect(result.data).toContain('removed stale authored symlink: stale-skill')
     })
 
     it('removes empty domain directories after pruning', () => {
@@ -186,7 +217,8 @@ describe('authoredSkillsOps', () => {
       mkdirSync(join(authoredDir, 'frappe'), { recursive: true })
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
 
       expect(readdirSync(authoredDir)).not.toContain('frappe')
     })
@@ -196,7 +228,8 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(authoredDir, 'regular-dir', 'nested-file.txt'), 'content')
       writeFileSync(join(authoredDir, 'regular-file.txt'), 'content')
 
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      const result = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+      expect(result.ok).toBe(true)
 
       expect(readdirSync(authoredDir)).toContain('regular-dir')
       expect(readdirSync(authoredDir)).toContain('regular-file.txt')

@@ -16,6 +16,7 @@ const root = join(__dirname, '..')
 const store = new MetaStore(root)
 const upstreams = store.getAllUpstreams()
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
+const errors: string[] = []
 
 function getExpectedSkillNames(): Set<string> {
   const expected = new Set<string>()
@@ -118,9 +119,25 @@ if (!hasOrphans) {
 
 // 3. Stale symlinks in authored/
 const authoredDir = join(root, 'authored')
-const pruneMessages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
-for (const msg of pruneMessages) {
-  p.log.step(msg)
+const pruneResult = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+if (!pruneResult.ok) {
+  errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
+}
+else {
+  for (const msg of pruneResult.data) {
+    p.log.step(msg)
+  }
+}
+
+// ── Report and exit ───────────────────────────────────────────────────────
+
+if (errors.length > 0) {
+  p.log.warn(`${errors.length} error(s) occurred:`)
+  for (const err of errors) {
+    p.log.warn(`  - ${err}`)
+  }
+  p.outro('Cleanup completed with errors')
+  process.exit(1)
 }
 
 p.outro('Done')

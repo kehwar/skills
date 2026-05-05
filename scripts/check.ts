@@ -30,7 +30,7 @@ for (const [name, config] of Object.entries(upstreams)) {
   if (!existsSync(path))
     continue
   const countResult = exec('git rev-list HEAD..@{u} --count', { cwd: path })
-  const count = countResult.ok ? Number.parseInt(countResult.output) || 0 : 0
+  const count = countResult.ok ? Number.parseInt(countResult.data) || 0 : 0
   if (count > 0) {
     updates.push({
       name,
