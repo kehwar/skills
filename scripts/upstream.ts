@@ -10,13 +10,13 @@
  * 6. Creates blank instructions file (if not already present)
  */
 
-import type { Meta, UpstreamMeta } from './types.ts'
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import type { UpstreamMeta } from './types.ts'
+import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { submoduleExists } from './lib/gitOps.ts'
-import { saveMeta } from './lib/metadataOps.ts'
+import { MetaStore } from './lib/metaStore.ts'
 import { discoverSkills } from './lib/skillDiscovery.ts'
 import { copySkillsFromUpstream } from './lib/skillOps.ts'
 import { ensureSubmodule } from './lib/submoduleOps.ts'
@@ -24,8 +24,8 @@ import { normalizeUrl } from './lib/urlOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
-const metaPath = join(root, 'meta.json')
-const meta = JSON.parse(readFileSync(metaPath, 'utf-8')) as Meta
+const store = new MetaStore(root)
+const meta = store.readMeta()
 
 const args = process.argv.slice(2)
 const branchFlagIdx = args.findIndex(a => a === '--branch' || a === '-b')
@@ -112,8 +112,11 @@ if (skillDirs.length > 0) {
 
   if (p.isCancel(selected)) { p.cancel('Cancelled'); process.exit(0) }
 
-  for (const skillPath of selected as string[]) {
-    skillsMap[skillPath] = existingConfig?.skills?.[skillPath] ?? (skillPath.split('/').pop() ?? skillPath)
+  const selectedPaths = Array.isArray(selected) ? selected : []
+  for (const skillPath of selectedPaths) {
+    if (typeof skillPath === 'string') {
+      skillsMap[skillPath] = existingConfig?.skills?.[skillPath] ?? (skillPath.split('/').pop() ?? skillPath)
+    }
   }
 
   // Remove skills that were deselected
@@ -139,8 +142,8 @@ const newConfig: UpstreamMeta = {
   ...(Object.keys(skillsMap).length > 0 ? { skills: skillsMap } : existingConfig?.skills ? { skills: existingConfig.skills } : {}),
   ...(existingConfig?.available ? { available: existingConfig.available } : {}),
 }
-meta.upstreams[upstreamKey] = newConfig
-saveMeta(meta, root)
+store.updateUpstream(upstreamKey, newConfig)
+store.saveMeta()
 p.log.success('Updated meta.json')
 
 // --- Copy selected skills ---

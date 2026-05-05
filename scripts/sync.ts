@@ -3,12 +3,11 @@
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
-import type { Meta } from './types.ts'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
-import { saveMeta } from './lib/metadataOps.ts'
+import { MetaStore } from './lib/metaStore.ts'
 import { discoverSkills } from './lib/skillDiscovery.ts'
 import { copySkillsFromUpstream, hashSkillDir } from './lib/skillOps.ts'
 import { ensureSubmodule } from './lib/submoduleOps.ts'
@@ -16,24 +15,22 @@ import { normalizeUrl } from './lib/urlOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
-const metaPath = join(root, 'meta.json')
-const meta = JSON.parse(readFileSync(metaPath, 'utf-8')) as Meta
+const store = new MetaStore(root)
 const force = process.argv.includes('--force')
 
 // ── Normalize any shorthand URLs in meta.json ───────────────────────────────
 
 let urlsNormalized = false
-for (const config of Object.values(meta.upstreams)) {
+const upstreams = store.getAllUpstreams()
+for (const [key, config] of Object.entries(upstreams)) {
   const full = normalizeUrl(config.url)
   if (full !== config.url) {
-    config.url = full
+    store.updateUpstream(key, { url: full })
     urlsNormalized = true
   }
 }
 if (urlsNormalized)
-  saveMeta(meta, root)
-
-const { upstreams } = meta
+  store.saveMeta()
 
 // ── Add/update all submodules ───────────────────────────────────────────────
 
@@ -84,10 +81,10 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
     }
   }
 
-  meta.upstreams[upstreamName].available = newAvailable
+  store.updateUpstream(upstreamName, { available: newAvailable })
 }
 
-saveMeta(meta, root)
+store.saveMeta()
 
 // ── Copy selected upstream skills to skills/ ────────────────────────────────
 
