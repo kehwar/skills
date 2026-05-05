@@ -23,8 +23,7 @@ export interface Meta {
 
 /** Written as meta.json inside each skill folder. */
 export type SkillMeta
-  = | { type: 'authored' }
-    | { type: 'authored-from-source', source: string }
+  = | { type: 'authored', domain?: string, sourceUrl?: string }
     | {
       type: 'synced'
       upstream: string

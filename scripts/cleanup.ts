@@ -21,7 +21,7 @@ function getExpectedSkillNames(): Set<string> {
       for (const outputName of Object.values(config.skills)) expected.add(outputName)
     }
   }
-  // Skills with authored/authored-from-source meta.json are never orphans
+  // Skills with authored meta.json are never orphans
   const skillsDir = join(root, 'skills')
   if (existsSync(skillsDir)) {
     for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
@@ -31,7 +31,7 @@ function getExpectedSkillNames(): Set<string> {
       if (!existsSync(metaPath))
         continue
       const skillMeta = JSON.parse(readFileSync(metaPath, 'utf-8')) as SkillMeta
-      if (skillMeta.type === 'authored' || skillMeta.type === 'authored-from-source')
+      if (skillMeta.type === 'authored')
         expected.add(entry.name)
     }
   }

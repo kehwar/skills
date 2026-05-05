@@ -11,10 +11,6 @@ A self-contained folder containing at minimum a `SKILL.md`, consumed directly by
 A skill owned by this repo — committed directly here and never overwritten by Sync.
 _Avoid_: Manual skill, custom skill
 
-**Source-Derived Skill**:
-An Authored Skill produced using an Upstream as reference material.
-_Avoid_: Generated skill, extracted skill
-
 **Upstream**:
 An external GitHub repo tracked as a git submodule under `upstream/<key>`. May contribute Skills (if it contains `SKILL.md` files) and/or serve as reference material for Authored Skills.
 _Avoid_: Vendor, source, provider, dependency
@@ -28,15 +24,14 @@ The process of detecting and removing skills or submodules that are no longer de
 
 ## Relationships
 
-- A **Skill** is either an **Authored Skill**, a **Source-Derived Skill**, or copied from an **Upstream**
-- A **Source-Derived Skill** is a specialisation of **Authored Skill** — the **Upstream** is reference only; the skill is still owned here
+- A **Skill** is either an **Authored Skill** or copied from an **Upstream**
 - An **Upstream** contributes zero or more **Skills** (selected subset, not all)
-- **Sync** only touches Upstream-sourced skills; **Authored Skills** and **Source-Derived Skills** are never overwritten
+- **Sync** only touches Upstream-sourced skills; **Authored Skills** are never overwritten
 
 ## Example dialogue
 
 > **Dev:** "I added a new Frappe doctype skill — should I commit it under the frappe Upstream?"
-> **Domain expert:** "No. Upstreams are read-only. Your skill goes under `skills/` as an Authored Skill — or a Source-Derived Skill if you used the frappe Upstream as reference."
+> **Domain expert:** "No. Upstreams are read-only. Your skill goes under `skills/` as an Authored Skill. You can optionally reference the Upstream as its source, but it's owned here."
 
 > **Dev:** "What's the difference between `frappe` and `antfu` as Upstreams?"
 > **Domain expert:** "None structurally. `antfu` happens to have `SKILL.md` files so Sync copies skills from it. `frappe` doesn't, so it's reference-only. Same concept either way."

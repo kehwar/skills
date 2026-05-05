@@ -8,7 +8,7 @@ A personal aggregator of AI agent skills. Pulls skills from upstream repos and k
 skills/          ← flat directory of all skills (agents read from here)
 upstream/        ← Upstream submodules (read-only, never edited)
 instructions/    ← companion notes for reference-only upstreams
-authored/        ← symlinks to Authored and Source-Derived skills
+authored/        ← symlinks to Authored skills, organized by domain (authored/{domain}/*)
 scripts/         ← sync, upstream, check, cleanup
 meta.json        ← declared upstreams with url, branch, and skill selections
 ```
@@ -24,8 +24,7 @@ meta.json        ← declared upstreams with url, branch, and skill selections
 
 ## Skill types
 
-- **Authored** — owned by this repo, never touched by `sync`
-- **Source-Derived** — authored using an Upstream as reference
+- **Authored** — owned by this repo, never touched by `sync`. Optionally grouped by `domain` in `authored/` (e.g., `authored/frappe/`, `authored/sap/`)
 - **Synced** — copied from an Upstream on every `sync`
 
 ## License

@@ -120,14 +120,17 @@ for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
   let linkTarget: string
 
   if (skillMeta.type === 'authored') {
-    linkPath = join(authoredDir, entry.name)
-    linkTarget = relative(authoredDir, join(skillsDir, entry.name))
-  }
-  else if (skillMeta.type === 'authored-from-source') {
-    const sourceDir = join(authoredDir, skillMeta.source)
-    mkdirSync(sourceDir, { recursive: true })
-    linkPath = join(sourceDir, entry.name)
-    linkTarget = relative(sourceDir, join(skillsDir, entry.name))
+    // If domain is set, place in authored/{domain}/skill-name; otherwise flat in authored/
+    if (skillMeta.domain) {
+      const domainDir = join(authoredDir, skillMeta.domain)
+      mkdirSync(domainDir, { recursive: true })
+      linkPath = join(domainDir, entry.name)
+      linkTarget = relative(domainDir, join(skillsDir, entry.name))
+    }
+    else {
+      linkPath = join(authoredDir, entry.name)
+      linkTarget = relative(authoredDir, join(skillsDir, entry.name))
+    }
   }
   else {
     continue
@@ -136,7 +139,7 @@ for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
   if (!existsSync(linkPath)) {
     mkdirSync(dirname(linkPath), { recursive: true })
     symlinkSync(linkTarget, linkPath)
-    console.log(`linked  authored: ${entry.name}`)
+    console.log(`linked  authored: ${entry.name}${skillMeta.domain ? ` (domain: ${skillMeta.domain})` : ''}`)
   }
 }
 
@@ -155,7 +158,7 @@ function pruneStaleSymlinks(dir: string): void {
         continue
       }
       const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf-8')) as SkillMeta
-      if (targetMeta.type !== 'authored' && targetMeta.type !== 'authored-from-source') {
+      if (targetMeta.type !== 'authored') {
         rmSync(full)
         console.log(`removed stale authored symlink: ${skillName}`)
       }
