@@ -14,6 +14,8 @@ export interface UpstreamMeta {
    * Updated on every sync regardless of selection.
    */
   available?: Record<string, string>
+  /** Commit SHA of the upstream at last sync. */
+  gitSha?: string
 }
 
 export interface Meta {

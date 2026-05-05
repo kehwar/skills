@@ -7,6 +7,7 @@ import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
+import { getGitSha } from './lib/gitOps.ts'
 import { MetaStore } from './lib/metaStore.ts'
 import { discoverSkills } from './lib/skillDiscovery.ts'
 import { copySkillsFromUpstream, hashSkillDir } from './lib/skillOps.ts'
@@ -42,7 +43,7 @@ for (const [name, config] of Object.entries(upstreams)) {
 }
 console.log('Submodules updated\n')
 
-// ── Scan available skills, diff hashes, update meta.json ───────────────────
+// ── Scan available skills, capture git SHA, diff hashes, update meta.json ───
 
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
@@ -60,6 +61,9 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
       skillPath === '.' ? upstreamPath : join(upstreamPath, skillPath),
     )
   }
+
+  // Capture git SHA
+  const gitSha = getGitSha(upstreamPath)
 
   // Report changes
   const allPaths = new Set([...Object.keys(oldAvailable), ...Object.keys(newAvailable)])
@@ -81,7 +85,7 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
     }
   }
 
-  store.updateUpstream(upstreamName, { available: newAvailable })
+  store.updateUpstream(upstreamName, { available: newAvailable, ...(gitSha && { gitSha }) })
 }
 
 store.saveMeta()
