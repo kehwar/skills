@@ -1,69 +1,52 @@
-import { existsSync, mkdirSync } from 'node:fs'
+import type { GitAdapter } from './gitAdapter.ts'
+import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { exec, submoduleExists } from './gitOps.ts'
+import { RealGitAdapter } from './gitAdapter.ts'
 
 /**
  * Add or update a git submodule at `submodulePath` inside `root`.
  *
- * Three scenarios:
- * 1. Not registered: adds via `git submodule add`, then checks out the branch if given.
- * 2. Registered but directory missing: clones directly.
- * 3. Already exists: updates `.gitmodules` branch config, then fetches and checks out the branch.
+ * Simplified logic using GitAdapter:
+ * 1. If not registered: add submodule, then set branch and fetch/checkout if branch given
+ * 2. If registered but directory missing: clone directly with branch if given
+ * 3. If exists: update branch config and fetch/checkout the new branch, or unset/fetch/checkout for default
  */
 export function ensureSubmodule(
   root: string,
   submodulePath: string,
   url: string,
   branch?: string,
+  adapter: GitAdapter = new RealGitAdapter(),
 ): void {
   const subDir = join(root, submodulePath)
 
-  if (!submoduleExists(root, submodulePath)) {
-    // Case 1: New submodule
-    exec(
-      `git submodule add --depth 1 ${url} ${submodulePath}`,
-      { cwd: root, inherit: true },
-    )
+  if (!adapter.submoduleExists(root, submodulePath)) {
+    // Case 1: Not registered - add it
+    adapter.addSubmodule(root, url, submodulePath)
     if (branch) {
-      exec(
-        `git config -f .gitmodules submodule.${submodulePath}.branch ${branch}`,
-        { cwd: root },
-      )
-      exec(
-        `git fetch --depth 1 origin +refs/heads/${branch}:refs/remotes/origin/${branch}`,
-        { cwd: subDir, inherit: true },
-      )
-      exec(`git checkout -B ${branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
+      adapter.setSubmoduleBranch(root, submodulePath, branch)
+      adapter.fetchSubmodule(subDir, branch)
+      adapter.checkoutBranch(subDir, branch)
     }
   }
   else if (!existsSync(subDir)) {
-    // Case 2: Registered but missing
-    mkdirSync(subDir, { recursive: true })
-    exec(
-      `git clone --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${subDir}`,
-      { inherit: true },
-    )
+    // Case 2: Registered but directory missing - clone it
+    adapter.initSubmodule(url, subDir, branch)
+    if (branch) {
+      adapter.checkoutBranch(subDir, branch)
+    }
   }
   else {
-    // Case 3: Exists, update branch if specified
+    // Case 3: Exists - update branch if specified
     if (branch) {
-      exec(
-        `git config -f .gitmodules submodule.${submodulePath}.branch ${branch}`,
-        { cwd: root },
-      )
-      exec(
-        `git fetch --depth 1 origin +refs/heads/${branch}:refs/remotes/origin/${branch}`,
-        { cwd: subDir, inherit: true },
-      )
-      exec(`git checkout -B ${branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
+      adapter.setSubmoduleBranch(root, submodulePath, branch)
+      adapter.fetchSubmodule(subDir, branch)
+      adapter.checkoutBranch(subDir, branch)
     }
     else {
-      exec(
-        `git config -f .gitmodules --unset submodule.${submodulePath}.branch`,
-        { cwd: root, safe: true },
-      )
-      exec('git fetch --depth 1', { cwd: subDir, inherit: true })
-      exec('git reset --hard FETCH_HEAD', { cwd: subDir, inherit: true })
+      adapter.unsetSubmoduleBranch(root, submodulePath)
+      adapter.fetchSubmodule(subDir)
+      adapter.checkoutBranch(subDir, 'FETCH_HEAD')
     }
   }
 }
