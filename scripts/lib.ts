@@ -95,6 +95,18 @@ export function hashSkillDir(dir: string): string {
   return h.digest('hex').slice(0, 12)
 }
 
+// ── normalizeUrl ─────────────────────────────────────────────────────────────
+
+/** Expand `owner/repo` shorthand to a full GitHub HTTPS URL. Full URLs pass through unchanged. */
+export function normalizeUrl(url: string): string {
+  if (/^https?:\/\//.test(url) || url.startsWith('git@'))
+    return url
+  const parts = url.split('/')
+  if (parts.length === 2)
+    return `https://github.com/${url}`
+  return url
+}
+
 // ── saveMeta ──────────────────────────────────────────────────────────────────
 
 /** Serialise meta.json with sorted upstream keys and a trailing newline. */
@@ -104,6 +116,66 @@ export function saveMeta(meta: Meta, root: string): void {
     Object.entries(meta.upstreams).sort(([a], [b]) => a.localeCompare(b)),
   )
   writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
+}
+
+// ── ensureSubmodule ───────────────────────────────────────────────────────────
+
+/**
+ * Add or update a git submodule at `submodulePath` inside `root`.
+ * - Not registered: adds via `git submodule add`, then checks out the branch if given.
+ * - Registered but directory missing: clones directly.
+ * - Already exists: updates `.gitmodules` branch config, then fetches and checks out the branch.
+ */
+export function ensureSubmodule(
+  root: string,
+  submodulePath: string,
+  url: string,
+  branch?: string,
+): void {
+  const subDir = join(root, submodulePath)
+
+  if (!submoduleExists(root, submodulePath)) {
+    exec(
+      `git submodule add --depth 1 ${url} ${submodulePath}`,
+      { cwd: root, inherit: true },
+    )
+    if (branch) {
+      exec(
+        `git config -f .gitmodules submodule.${submodulePath}.branch ${branch}`,
+        { cwd: root },
+      )
+      exec(
+        `git fetch --depth 1 origin +refs/heads/${branch}:refs/remotes/origin/${branch}`,
+        { cwd: subDir, inherit: true },
+      )
+      exec(`git checkout -B ${branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
+    }
+  }
+  else if (!existsSync(subDir)) {
+    mkdirSync(subDir, { recursive: true })
+    exec(
+      `git clone --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${subDir}`,
+      { inherit: true },
+    )
+  }
+  else {
+    if (branch) {
+      exec(
+        `git config -f .gitmodules submodule.${submodulePath}.branch ${branch}`,
+        { cwd: root },
+      )
+      exec(
+        `git fetch --depth 1 origin +refs/heads/${branch}:refs/remotes/origin/${branch}`,
+        { cwd: subDir, inherit: true },
+      )
+      exec(`git checkout -B ${branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
+    }
+    else {
+      exec(`git config -f .gitmodules --unset submodule.${submodulePath}.branch`, { cwd: root, safe: true })
+      exec('git fetch --depth 1', { cwd: subDir, inherit: true })
+      exec('git reset --hard FETCH_HEAD', { cwd: subDir, inherit: true })
+    }
+  }
 }
 
 // ── copySkillsFromUpstream ────────────────────────────────────────────────────
@@ -119,12 +191,13 @@ export function copySkillsFromUpstream(
   config: UpstreamMeta,
   root: string,
   log: (msg: string) => void = console.log,
+  force = false,
 ): void {
   if (!config.skills)
     return
 
   const sha = getGitSha(upstreamDir)
-  const date = new Date().toISOString().split('T')[0]
+  const today = new Date().toISOString().split('T')[0]
 
   for (const [skillPath, outputName] of Object.entries(config.skills)) {
     const sourcePath = skillPath === '.' ? upstreamDir : join(upstreamDir, skillPath)
@@ -133,6 +206,27 @@ export function copySkillsFromUpstream(
     if (!existsSync(sourcePath)) {
       log(`SKIP ${upstreamName}/${skillPath} — path not found in submodule`)
       continue
+    }
+
+    const contentHash = hashSkillDir(sourcePath)
+
+    // Read existing meta to compare hash and carry forward syncedAt if unchanged
+    let oldSyncedAt: string | undefined
+    let hashUnchanged = false
+    const existingMetaPath = join(outputPath, 'meta.json')
+    if (existsSync(existingMetaPath)) {
+      try {
+        const old = JSON.parse(readFileSync(existingMetaPath, 'utf-8')) as SkillMeta
+        if (old.type === 'synced') {
+          oldSyncedAt = old.syncedAt
+          hashUnchanged = old.contentHash === contentHash
+          if (!force && hashUnchanged) {
+            log(`unchanged  ${upstreamName}/${skillPath} → skills/${outputName}`)
+            continue
+          }
+        }
+      }
+      catch { /* corrupt meta — fall through to re-copy */ }
     }
 
     if (existsSync(outputPath))
@@ -145,7 +239,7 @@ export function copySkillsFromUpstream(
       if (existsSync(licenseSrc)) { cpSync(licenseSrc, join(outputPath, 'LICENSE.md')); break }
     }
 
-    const contentHash = hashSkillDir(sourcePath)
+    const syncedAt = hashUnchanged && oldSyncedAt != null ? oldSyncedAt : today
     const skillMeta: SkillMeta = {
       type: 'synced',
       upstream: upstreamName,
@@ -154,7 +248,7 @@ export function copySkillsFromUpstream(
       skillPath,
       gitSha: sha ?? 'unknown',
       contentHash,
-      syncedAt: date,
+      syncedAt,
     }
     writeFileSync(join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, null, 2)}\n`)
     log(`synced  ${upstreamName}/${skillPath} → skills/${outputName}`)

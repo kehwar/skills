@@ -15,7 +15,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { copySkillsFromUpstream, exec, findSkillDirs, saveMeta, submoduleExists } from './lib.ts'
+import { copySkillsFromUpstream, ensureSubmodule, findSkillDirs, normalizeUrl, saveMeta, submoduleExists } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -41,9 +41,9 @@ if (!url) {
   process.exit(1)
 }
 
-// --- Derive key ---
+// --- Normalize and derive key ---
 
-const normalizedUrl = url.replace(/\.git$/, '')
+const normalizedUrl = normalizeUrl(url.replace(/\.git$/, ''))
 const urlParts = normalizedUrl.split('/')
 const repoName = urlParts[urlParts.length - 1]!
 const orgName = urlParts[urlParts.length - 2]!
@@ -52,7 +52,7 @@ let upstreamKey = nameOverride ?? (repoName === 'skills' ? orgName : repoName)
 
 // Check for collision with existing key pointing to a different URL
 const existing = meta.upstreams[upstreamKey]
-if (existing && existing.url !== url && !nameOverride) {
+if (existing && existing.url !== normalizedUrl && !nameOverride) {
   const answer = await p.text({
     message: `Key "${upstreamKey}" is already used by ${existing.url}. Enter a different key:`,
     validate: v => (!v?.trim() ? 'Key cannot be empty' : undefined),
@@ -69,26 +69,15 @@ const submodulePath = `upstream/${upstreamKey}`
 const upstreamDir = join(root, submodulePath)
 const spinner = p.spinner()
 
-if (!submoduleExists(root, submodulePath)) {
-  spinner.start(`Adding submodule ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
-  try {
-    exec(`git submodule add --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${submodulePath}`, { cwd: root, inherit: true })
-    spinner.stop(`Added ${submodulePath}`)
-  }
-  catch (e) {
-    spinner.stop(`Failed: ${e}`)
-    process.exit(1)
-  }
+const isNew = !submoduleExists(root, submodulePath)
+spinner.start(`${isNew ? 'Adding' : 'Updating'} ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
+try {
+  ensureSubmodule(root, submodulePath, url, branch)
+  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
 }
-else {
-  spinner.start(`Updating ${submodulePath}`)
-  try {
-    exec(`git submodule update --remote --merge --depth 1 -- ${submodulePath}`, { cwd: root, inherit: true })
-    spinner.stop(`Updated ${submodulePath}`)
-  }
-  catch (e) {
-    spinner.stop(`Failed to update: ${e}`)
-  }
+catch (e) {
+  spinner.stop(`Failed: ${e}`)
+  process.exit(1)
 }
 
 // --- Skill selection (only if SKILL.md files exist) ---
@@ -138,7 +127,7 @@ if (skillDirs.length > 0) {
 // --- Update meta.json ---
 
 const newConfig: UpstreamMeta = {
-  url,
+  url: normalizedUrl,
   ...(branch ? { branch } : existingConfig?.branch ? { branch: existingConfig.branch } : {}),
   ...(Object.keys(skillsMap).length > 0 ? { skills: skillsMap } : existingConfig?.skills ? { skills: existingConfig.skills } : {}),
   ...(existingConfig?.available ? { available: existingConfig.available } : {}),

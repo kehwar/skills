@@ -7,84 +7,40 @@ import type { Meta, SkillMeta } from './types.ts'
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { copySkillsFromUpstream, exec, findSkillDirs, hashSkillDir, saveMeta, submoduleExists } from './lib.ts'
+import { copySkillsFromUpstream, ensureSubmodule, findSkillDirs, hashSkillDir, normalizeUrl, saveMeta } from './lib.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const metaPath = join(root, 'meta.json')
 const meta = JSON.parse(readFileSync(metaPath, 'utf-8')) as Meta
+const force = process.argv.includes('--force')
+
+// ── Normalize any shorthand URLs in meta.json ───────────────────────────────
+
+let urlsNormalized = false
+for (const config of Object.values(meta.upstreams)) {
+  const full = normalizeUrl(config.url)
+  if (full !== config.url) {
+    config.url = full
+    urlsNormalized = true
+  }
+}
+if (urlsNormalized)
+  saveMeta(meta, root)
+
 const { upstreams } = meta
 
-// ── Step 1: Add any missing submodules ───────────────────────────────────────
+// ── Add/update all submodules ───────────────────────────────────────────────
 
+console.log('Updating submodules...')
 for (const [name, config] of Object.entries(upstreams)) {
   const path = `upstream/${name}`
-  const subDir = join(root, path)
-  if (!submoduleExists(root, path)) {
-    // Not in .gitmodules at all — add from scratch
-    const parentDir = join(root, dirname(path))
-    if (!existsSync(parentDir))
-      mkdirSync(parentDir, { recursive: true })
-    console.log(`Adding: ${path}${config.branch ? ` (branch: ${config.branch})` : ''}`)
-    exec(`git submodule add --depth 1 ${config.url} ${path}`, { cwd: root, inherit: true })
-    if (config.branch) {
-      exec(
-        `git fetch --depth 1 origin +refs/heads/${config.branch}:refs/remotes/origin/${config.branch}`,
-        { cwd: subDir, inherit: true },
-      )
-      exec(`git checkout -B ${config.branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
-    }
-  }
-  else if (!existsSync(subDir)) {
-    // Registered in .gitmodules but directory missing — clone directly
-    console.log(`Restoring: ${path}${config.branch ? ` (branch: ${config.branch})` : ''}`)
-    mkdirSync(subDir, { recursive: true })
-    exec(
-      `git clone --depth 1${config.branch ? ` -b ${config.branch}` : ''} ${config.url} ${subDir}`,
-      { inherit: true },
-    )
-  }
-}
-
-// ── Step 2: Ensure .gitmodules branch config matches meta.json ───────────────
-
-for (const [name, config] of Object.entries(upstreams)) {
-  const path = `upstream/${name}`
-  if (!submoduleExists(root, path))
-    continue
-  if (config.branch) {
-    exec(`git config -f .gitmodules submodule.${path}.branch ${config.branch}`, { cwd: root })
-  }
-  else {
-    exec(`git config -f .gitmodules --unset submodule.${path}.branch`, { cwd: root, safe: true })
-  }
-}
-
-// ── Step 3: Pull latest (shallow) ────────────────────────────────────────────
-
-console.log('\nUpdating submodules...')
-for (const [name, config] of Object.entries(upstreams)) {
-  const subDir = join(root, 'upstream', name)
-  if (!existsSync(subDir)) {
-    console.warn(`SKIP upstream/${name} — directory missing`)
-    continue
-  }
-  if (config.branch) {
-    console.log(`  fetching ${name} (branch: ${config.branch})`)
-    exec(
-      `git fetch --depth 1 origin +refs/heads/${config.branch}:refs/remotes/origin/${config.branch}`,
-      { cwd: subDir, inherit: true },
-    )
-    exec(`git checkout -B ${config.branch} FETCH_HEAD`, { cwd: subDir, inherit: true })
-  }
-  else {
-    exec('git fetch --depth 1', { cwd: subDir, inherit: true })
-    exec('git reset --hard FETCH_HEAD', { cwd: subDir, inherit: true })
-  }
+  console.log(`  ${name}${config.branch ? ` (branch: ${config.branch})` : ''}`)
+  ensureSubmodule(root, path, config.url, config.branch)
 }
 console.log('Submodules updated\n')
 
-// ── Step 4: Scan available skills, diff hashes, update meta.json ─────────────
+// ── Scan available skills, diff hashes, update meta.json ───────────────────
 
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
@@ -127,7 +83,7 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 
 saveMeta(meta, root)
 
-// ── Step 5: Copy selected upstream skills to skills/ ─────────────────────────
+// ── Copy selected upstream skills to skills/ ────────────────────────────────
 
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
@@ -138,10 +94,10 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
     continue
   }
 
-  copySkillsFromUpstream(upstreamName, upstreamPath, config, root)
+  copySkillsFromUpstream(upstreamName, upstreamPath, config, root, console.log, force)
 }
 
-// ── Step 6: Maintain authored/ symlinks ──────────────────────────────────────
+// ── Maintain authored/ symlinks ─────────────────────────────────────────────
 
 const authoredDir = join(root, 'authored')
 
