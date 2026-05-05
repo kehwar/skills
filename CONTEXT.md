@@ -11,6 +11,10 @@ A self-contained folder containing at minimum a `SKILL.md`, consumed directly by
 A skill owned by this repo — committed directly here and never overwritten by Sync.
 _Avoid_: Manual skill, custom skill
 
+**Domain**:
+An organizational category for Authored Skills (e.g., `frappe`, `sap`, `typst`, `engineering`). Skills with a domain are grouped in `authored/<domain>/`. Domain names may match Upstream names, but they are independent concepts.
+_Avoid_: Upstream, category, folder, organization
+
 **Upstream**:
 An external GitHub repo tracked as a git submodule under `upstream/<key>`. May contribute Skills (if it contains `SKILL.md` files) and/or serve as reference material for Authored Skills.
 _Avoid_: Vendor, source, provider, dependency
@@ -35,3 +39,6 @@ The process of detecting and removing skills or submodules that are no longer de
 
 > **Dev:** "What's the difference between `frappe` and `antfu` as Upstreams?"
 > **Domain expert:** "None structurally. `antfu` happens to have `SKILL.md` files so Sync copies skills from it. `frappe` doesn't, so it's reference-only. Same concept either way."
+
+> **Dev:** "I organized my Frappe skills under `authored/frappe/`. Does that mean they're synced from the Frappe upstream?"
+> **Domain expert:** "No. The domain is just a folder organization choice. `upstream/frappe` is the reference source (read-only). The authored skills you wrote in `authored/frappe/` are yours and never overwritten. They happen to use Frappe APIs, but they're not synced."

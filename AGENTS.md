@@ -9,13 +9,29 @@ Read `CONTEXT.md` for domain language before making changes.
 - `upstream/` — read-only Upstream submodules. Never edit files here.
 - `authored/` — symlinks to Authored and Source-Derived skills for navigation only.
 - `scripts/` — all automation: `sync.ts`, `upstream.ts`, `check.ts`, `cleanup.ts`.
-- `instructions/` — one `.md` per reference-only Upstream; notes to guide skill authoring from that upstream.
+- `instructions/` — optional authoring guidance organized by domain or skill name. Agents read these when scaffolding new skills.
 
 ### Before touching a skill
 
 Check its `skills/<name>/meta.json`:
 - `type: "authored"` → safe to edit, will never be overwritten. Optional `domain` field groups skills by domain (e.g., `frappe`, `sap`) in `authored/{domain}/ `; skills without domain remain flat in `authored/`.
 - `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
+
+### Creating Authored Skills
+
+To scaffold a new authored skill:
+
+1. **Gather context** (optional but encouraged):
+   - Determine the skill's domain (e.g., `frappe`, `sap`) if any. Flat skills have no domain.
+   - Identify the upstream source or webpage the skill draws from.
+
+2. **Scaffold with write-skill**:
+   ```bash
+   pnpm write-skill <skill-name> [--domain <domain>]
+   ```
+   This bootstraps the skill structure (SKILL.md, meta.json, etc.).
+
+3. **Use `write-a-skill-with-instructions` skill** for development.
 
 ### After making code changes
 

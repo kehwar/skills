@@ -1,5 +1,5 @@
 ---
-name: write-a-skill
+name: write-a-skill-with-instructions
 description: Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, or build a new skill.
 ---
 
@@ -7,18 +7,23 @@ description: Create new agent skills with proper structure, progressive disclosu
 
 ## Process
 
-1. **Gather requirements** - ask user about:
+1. **Read applicable instructions** - check if any of these exist:
+   - `instructions/domain/<domain>.md` — domain-specific authoring conventions
+   - `instructions/skills/<skill-name>.md` — skill-specific guidance
+   - Use these as constraints and context for the skill you're about to create
+
+2. **Gather requirements** - ask user about:
    - What task/domain does the skill cover?
    - What specific use cases should it handle?
    - Does it need executable scripts or just instructions?
    - Any reference materials to include?
 
-2. **Draft the skill** - create:
+3. **Draft the skill** - create:
    - SKILL.md with concise instructions
    - Additional reference files if content exceeds 500 lines
    - Utility scripts if deterministic operations needed
 
-3. **Review with user** - present draft and ask:
+4. **Review with user** - present draft and ask:
    - Does this cover your use cases?
    - Anything missing or unclear?
    - Should any section be more/less detailed?
