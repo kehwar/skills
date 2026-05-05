@@ -33,6 +33,8 @@ for (const [key, config] of Object.entries(upstreams)) {
 if (urlsNormalized)
   store.saveMeta()
 
+p.intro('Sync')
+
 // ── Add/update all submodules ───────────────────────────────────────────────
 
 p.log.step('Updating submodules...')
@@ -118,7 +120,14 @@ const authoredDir = join(root, 'authored')
 const skillsDir = join(root, 'skills')
 
 const collected = collectAuthoredSkills(skillsDir)
-linkAuthoredSkills(collected, skillsDir, authoredDir, msg => p.log.step(msg))
-pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, msg => p.log.step(msg))
+const linkMessages = linkAuthoredSkills(collected, skillsDir, authoredDir)
+for (const msg of linkMessages) {
+  p.log.step(msg)
+}
+
+const pruneMessages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+for (const msg of pruneMessages) {
+  p.log.step(msg)
+}
 
 p.outro('Done')

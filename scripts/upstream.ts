@@ -41,12 +41,15 @@ const positional = args.filter((_, i) => {
 })
 const url = positional[0]
 
+// ── Validate URL early (before UI) ──────────────────────────────────────────
+
 if (!url) {
-  console.error('Usage: pnpm upstream <github-url> [--branch <branch>] [--name <key>]')
+  p.intro('Upstream')
+  p.log.error('Usage: pnpm upstream <github-url> [--branch <branch>] [--name <key>]')
   process.exit(1)
 }
 
-// --- Normalize and derive key ---
+// ── Normalize and derive key ────────────────────────────────────────────────
 
 const normalizedUrl = normalizeUrl(url.replace(/\.git$/, ''))
 const urlParts = normalizedUrl.split('/')
@@ -55,7 +58,10 @@ const orgName = urlParts[urlParts.length - 2]!
 
 let upstreamKey = nameOverride ?? (repoName === 'skills' ? orgName : repoName)
 
-// Check for collision with existing key pointing to a different URL
+p.intro('Upstream')
+
+// ── Check for upstream key collision ────────────────────────────────────────
+
 const existing = meta.upstreams[upstreamKey]
 if (existing && existing.url !== normalizedUrl && !nameOverride) {
   const answer = await p.text({
@@ -65,10 +71,6 @@ if (existing && existing.url !== normalizedUrl && !nameOverride) {
   if (p.isCancel(answer)) { p.cancel('Cancelled'); process.exit(0) }
   upstreamKey = answer as string
 }
-
-// --- Main ---
-
-p.intro('Upstream')
 
 const submodulePath = `upstream/${upstreamKey}`
 const upstreamDir = join(root, submodulePath)

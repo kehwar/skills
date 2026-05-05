@@ -35,13 +35,14 @@ export function collectAuthoredSkills(skillsDir: string): Array<{ name: string, 
 /**
  * Link authored skills into authored/ directory, respecting domain grouping.
  * If domain is set in meta, places in authored/{domain}/skill-name; otherwise flat in authored/.
+ * Returns array of messages describing actions taken.
  */
 export function linkAuthoredSkills(
   collected: Array<{ name: string, meta: SkillMeta }>,
   skillsDir: string,
   authoredDir: string,
-  logger: (msg: string) => void,
-): void {
+): string[] {
+  const messages: string[] = []
   mkdirSync(authoredDir, { recursive: true })
 
   // First pass: remove all stale links for skills being relinked
@@ -86,8 +87,10 @@ export function linkAuthoredSkills(
 
     mkdirSync(dirname(linkPath), { recursive: true })
     symlinkSync(linkTarget, linkPath)
-    logger(`linked  authored: ${name}${meta.domain ? ` (domain: ${meta.domain})` : ''}`)
+    messages.push(`linked  authored: ${name}${meta.domain ? ` (domain: ${meta.domain})` : ''}`)
   }
+
+  return messages
 }
 
 /**
@@ -95,12 +98,14 @@ export function linkAuthoredSkills(
  * Removes symlinks that:
  * - Point to a skill that no longer has type='authored' in its meta.json
  * - Point to a skill that doesn't exist at all
+ * Returns array of messages describing actions taken.
  */
 export function pruneStaleLinksinAuthoredDir(
   authoredDir: string,
   skillsDir: string,
-  logger: (msg: string) => void,
-): void {
+): string[] {
+  const messages: string[] = []
+
   function pruneRecursive(dir: string): void {
     if (!existsSync(dir))
       return
@@ -114,14 +119,14 @@ export function pruneStaleLinksinAuthoredDir(
 
         if (!existsSync(targetMetaPath)) {
           rmSync(full)
-          logger(`removed stale authored symlink: ${skillName}`)
+          messages.push(`removed stale authored symlink: ${skillName}`)
           continue
         }
 
         const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf-8')) as SkillMeta
         if (targetMeta.type !== 'authored') {
           rmSync(full)
-          logger(`removed stale authored symlink: ${skillName}`)
+          messages.push(`removed stale authored symlink: ${skillName}`)
         }
       }
       else if (entry.isDirectory()) {
@@ -134,4 +139,5 @@ export function pruneStaleLinksinAuthoredDir(
   }
 
   pruneRecursive(authoredDir)
+  return messages
 }

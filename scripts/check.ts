@@ -14,6 +14,8 @@ const root = join(__dirname, '..')
 const store = new MetaStore(root)
 const upstreams = store.getAllUpstreams()
 
+p.intro('Check')
+
 p.log.step('Fetching remote changes...')
 const fetchResult = exec('git submodule foreach git fetch', { cwd: root })
 if (!fetchResult.ok) {
@@ -48,3 +50,5 @@ else {
     p.log.info(`  ${u.name}${detail}: ${u.behind} commit(s) behind`)
   }
 }
+
+p.outro('Done')

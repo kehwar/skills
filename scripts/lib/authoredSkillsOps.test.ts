@@ -2,7 +2,7 @@ import type { SkillMeta } from '../types.ts'
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readlinkSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './authoredSkillsOps.ts'
 
 describe('authoredSkillsOps', () => {
@@ -70,13 +70,12 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath, 'SKILL.md'), '# My Skill')
 
       const collected = [{ name: 'my-skill', meta: { type: 'authored' } as SkillMeta }]
-      const logger = vi.fn()
-      linkAuthoredSkills(collected, skillsDir, authoredDir, logger)
+      const messages = linkAuthoredSkills(collected, skillsDir, authoredDir)
 
       const linkPath = join(authoredDir, 'my-skill')
       expect(readdirSync(authoredDir)).toContain('my-skill')
       expect(readlinkSync(linkPath)).toContain('my-skill')
-      expect(logger).toHaveBeenCalledWith('linked  authored: my-skill')
+      expect(messages).toContain('linked  authored: my-skill')
     })
 
     it('creates domain-grouped symlinks for skills with domain', () => {
@@ -85,14 +84,13 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(skillPath, 'SKILL.md'), '# Frappe Skill')
 
       const collected = [{ name: 'frappe-skill', meta: { type: 'authored', domain: 'frappe' } as SkillMeta }]
-      const logger = vi.fn()
-      linkAuthoredSkills(collected, skillsDir, authoredDir, logger)
+      const messages = linkAuthoredSkills(collected, skillsDir, authoredDir)
 
       const linkPath = join(authoredDir, 'frappe', 'frappe-skill')
       expect(readdirSync(authoredDir)).toContain('frappe')
       expect(readdirSync(join(authoredDir, 'frappe'))).toContain('frappe-skill')
       expect(readlinkSync(linkPath)).toContain('frappe-skill')
-      expect(logger).toHaveBeenCalledWith('linked  authored: frappe-skill (domain: frappe)')
+      expect(messages).toContain('linked  authored: frappe-skill (domain: frappe)')
     })
 
     it('re-links when domain changes', () => {
@@ -102,12 +100,12 @@ describe('authoredSkillsOps', () => {
 
       // First link to frappe
       const collected1 = [{ name: 'migrated-skill', meta: { type: 'authored', domain: 'frappe' } as SkillMeta }]
-      linkAuthoredSkills(collected1, skillsDir, authoredDir, vi.fn())
+      linkAuthoredSkills(collected1, skillsDir, authoredDir)
       expect(readdirSync(join(authoredDir, 'frappe'))).toContain('migrated-skill')
 
       // Re-link to sap
       const collected2 = [{ name: 'migrated-skill', meta: { type: 'authored', domain: 'sap' } as SkillMeta }]
-      linkAuthoredSkills(collected2, skillsDir, authoredDir, vi.fn())
+      linkAuthoredSkills(collected2, skillsDir, authoredDir)
       expect(readdirSync(join(authoredDir, 'sap'))).toContain('migrated-skill')
       expect(readdirSync(join(authoredDir, 'frappe')).length).toBe(0)
     })
@@ -122,7 +120,7 @@ describe('authoredSkillsOps', () => {
         { name: 'frappe-skill-1', meta: { type: 'authored', domain: 'frappe' } as SkillMeta },
         { name: 'frappe-skill-2', meta: { type: 'authored', domain: 'frappe' } as SkillMeta },
       ]
-      linkAuthoredSkills(collected, skillsDir, authoredDir, vi.fn())
+      linkAuthoredSkills(collected, skillsDir, authoredDir)
 
       const frappe = join(authoredDir, 'frappe')
       expect(readdirSync(frappe)).toContain('frappe-skill-1')
@@ -136,11 +134,10 @@ describe('authoredSkillsOps', () => {
       const staleLink = join(authoredDir, 'stale-skill')
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      const logger = vi.fn()
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, logger)
+      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       expect(readdirSync(authoredDir)).not.toContain('stale-skill')
-      expect(logger).toHaveBeenCalledWith('removed stale authored symlink: stale-skill')
+      expect(messages).toContain('removed stale authored symlink: stale-skill')
     })
 
     it('removes symlinks pointing to non-authored skills', () => {
@@ -152,11 +149,10 @@ describe('authoredSkillsOps', () => {
       const linkPath = join(authoredDir, 'synced-skill')
       symlinkSync(join(skillsDir, 'synced-skill'), linkPath)
 
-      const logger = vi.fn()
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, logger)
+      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       expect(readdirSync(authoredDir)).not.toContain('synced-skill')
-      expect(logger).toHaveBeenCalledWith('removed stale authored symlink: synced-skill')
+      expect(messages).toContain('removed stale authored symlink: synced-skill')
     })
 
     it('keeps symlinks pointing to valid authored skills', () => {
@@ -167,11 +163,10 @@ describe('authoredSkillsOps', () => {
       const linkPath = join(authoredDir, 'valid-skill')
       symlinkSync(join(skillsDir, 'valid-skill'), linkPath)
 
-      const logger = vi.fn()
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, logger)
+      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       expect(readdirSync(authoredDir)).toContain('valid-skill')
-      expect(logger).not.toHaveBeenCalled()
+      expect(messages).toHaveLength(0)
     })
 
     it('prunes stale symlinks in domain subdirectories', () => {
@@ -179,12 +174,11 @@ describe('authoredSkillsOps', () => {
       mkdirSync(join(authoredDir, 'frappe'), { recursive: true })
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      const logger = vi.fn()
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, logger)
+      const messages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       // frappe dir is removed because it's now empty
       expect(existsSync(join(authoredDir, 'frappe'))).toBe(false)
-      expect(logger).toHaveBeenCalledWith('removed stale authored symlink: stale-skill')
+      expect(messages).toContain('removed stale authored symlink: stale-skill')
     })
 
     it('removes empty domain directories after pruning', () => {
@@ -192,7 +186,7 @@ describe('authoredSkillsOps', () => {
       mkdirSync(join(authoredDir, 'frappe'), { recursive: true })
       symlinkSync(join(skillsDir, 'stale-skill'), staleLink)
 
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, vi.fn())
+      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       expect(readdirSync(authoredDir)).not.toContain('frappe')
     })
@@ -202,7 +196,7 @@ describe('authoredSkillsOps', () => {
       writeFileSync(join(authoredDir, 'regular-dir', 'nested-file.txt'), 'content')
       writeFileSync(join(authoredDir, 'regular-file.txt'), 'content')
 
-      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, vi.fn())
+      pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
 
       expect(readdirSync(authoredDir)).toContain('regular-dir')
       expect(readdirSync(authoredDir)).toContain('regular-file.txt')

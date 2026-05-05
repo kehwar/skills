@@ -61,6 +61,8 @@ function removeSubmodule(submodulePath: string): void {
   }
 }
 
+p.intro('Cleanup')
+
 let hasOrphans = false
 
 // 1. Orphaned submodules
@@ -116,4 +118,9 @@ if (!hasOrphans) {
 
 // 3. Stale symlinks in authored/
 const authoredDir = join(root, 'authored')
-pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, msg => p.log.step(msg))
+const pruneMessages = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
+for (const msg of pruneMessages) {
+  p.log.step(msg)
+}
+
+p.outro('Done')
