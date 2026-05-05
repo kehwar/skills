@@ -1,11 +1,21 @@
-## Sync instructions
+## Sync guidance
 
-- Template from existing `write-a-skill` skill from `mattpocock` upstream.
-- Add step to read applicable instructions before gathering requirements.
+When the `write-a-skill` skill from `mattpocock` upstream updates:
 
-```md
-1. **Read applicable instructions** - check if any of these exist:
-   - `instructions/domain/<domain>.md` — domain-specific authoring conventions
-   - `instructions/skills/<skill-name>.md` — skill-specific guidance
-   - Use these as constraints and context for the skill you're about to create
-```
+1. **Preserve repo-specific additions**:
+   - Domain prompting step (determines domain with user if unclear)
+   - Reading `instructions/domain/<domain>.md` and `instructions/skills/<skill-name>.md`
+   - Using `pnpm write-skill <skill-name> [--domain <domain>]` to scaffold
+
+2. **Preserve editing workflow**:
+   - "When editing an existing skill" section covering:
+     - Checking `skills/<skill-name>/meta.json` for skill type (authored vs synced)
+     - Reading applicable instructions before editing
+     - Updating SKILL.md, reviewing changes
+
+3. **Merge upstream content**:
+   - Copy general guidance (SKILL.md template, description requirements, scripts)
+   - Keep progressive disclosure structure
+   - Update examples and checklists from upstream
+
+**Rationale**: The upstream skill focuses on creation; this version integrates domain-aware scaffolding and editing workflows specific to this repo's architecture.

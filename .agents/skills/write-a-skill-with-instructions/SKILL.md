@@ -1,32 +1,63 @@
 ---
 name: write-a-skill-with-instructions
-description: Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, or build a new skill.
+description: Create or edit agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, edit, or build a new skill.
 ---
 
 # Writing Skills
 
-## Process
+## When creating a new skill
 
-1. **Read applicable instructions** - check if any of these exist:
+1. **Determine domain** - ask user if unclear:
+   - Does this skill belong to a domain (e.g., `frappe`, `sap`, `typst`, `engineering`)?
+   - Flat skills (no domain) stay at `authored/`; domain skills group in `authored/<domain>/`
+
+2. **Read applicable instructions** - check if any exist:
    - `instructions/domain/<domain>.md` — domain-specific authoring conventions
    - `instructions/skills/<skill-name>.md` — skill-specific guidance
-   - Use these as constraints and context for the skill you're about to create
+   - Use these as constraints and context
 
-2. **Gather requirements** - ask user about:
+3. **Scaffold with pnpm write-skill** - run:
+   ```bash
+   pnpm write-skill <skill-name> [--domain <domain>]
+   ```
+   This creates the skill structure: SKILL.md, meta.json, etc.
+
+4. **Gather requirements** - ask user about:
    - What task/domain does the skill cover?
    - What specific use cases should it handle?
    - Does it need executable scripts or just instructions?
    - Any reference materials to include?
 
-3. **Draft the skill** - create:
+5. **Draft the skill** - create/update:
    - SKILL.md with concise instructions
    - Additional reference files if content exceeds 500 lines
    - Utility scripts if deterministic operations needed
 
-4. **Review with user** - present draft and ask:
+6. **Review with user** - present draft and ask:
    - Does this cover your use cases?
    - Anything missing or unclear?
    - Should any section be more/less detailed?
+
+## When editing an existing skill
+
+1. **Check skill type** - review `skills/<skill-name>/meta.json`:
+   - `type: "authored"` → safe to edit directly
+   - `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
+
+2. **Read applicable instructions** - check if any exist:
+   - `instructions/domain/<domain>.md` — domain-specific conventions (if skill has a domain)
+   - `instructions/skills/<skill-name>.md` — skill-specific guidance
+   - Apply these as constraints to your edits
+
+3. **Make targeted updates** - edit:
+   - SKILL.md frontmatter (description, name triggers)
+   - Workflow sections for clarity and completeness
+   - Reference files and examples as needed
+
+4. **Review changes** - ensure:
+   - Description still clearly signals when to use the skill
+   - Workflows follow established domain conventions
+   - All examples remain accurate and tested
 
 ## Skill Structure
 
@@ -35,11 +66,14 @@ skill-name/
 ├── SKILL.md           # Main instructions (required)
 ├── REFERENCE.md       # Detailed docs (if needed)
 ├── EXAMPLES.md        # Usage examples (if needed)
+├── meta.json          # Skill metadata (auto-generated)
 └── scripts/           # Utility scripts (if needed)
     └── helper.js
 ```
 
 ## SKILL.md Template
+
+A SKILL.md file starts with YAML frontmatter and contains clear, progressive disclosure:
 
 ```md
 ---
@@ -64,9 +98,9 @@ description: Brief description of capability. Use when [specific triggers].
 
 ## Description Requirements
 
-The description is **the only thing your agent sees** when deciding which skill to load. It's surfaced in the system prompt alongside all other installed skills. Your agent reads these descriptions and picks the relevant skill based on the user's request.
+The frontmatter `description` is **the only thing the agent sees** when deciding which skill to load. It's surfaced in the system prompt alongside all other installed skills. Your agent reads these descriptions and picks the relevant skill based on the user's request.
 
-**Goal**: Give your agent just enough info to know:
+**Goal**: Give the agent just enough info to know:
 
 1. What capability this skill provides
 2. When/why to trigger it (specific keywords, contexts, file types)
@@ -90,7 +124,7 @@ Extract text and tables from PDF files, fill forms, merge documents. Use when wo
 Helps with documents.
 ```
 
-The bad example gives your agent no way to distinguish this from other document skills.
+The bad example gives the agent no way to distinguish this from other document skills.
 
 ## When to Add Scripts
 
@@ -98,6 +132,7 @@ Add utility scripts when:
 
 - Operation is deterministic (validation, formatting)
 - Same code would be generated repeatedly
+- Operation reduces manual errors
 - Errors need explicit handling
 
 Scripts save tokens and improve reliability vs generated code.
