@@ -6,6 +6,7 @@ import type { Meta, SkillMeta } from './types.ts'
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
 import { exec } from './lib/gitOps.ts'
 
 const { upstreams } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
@@ -110,3 +111,7 @@ if (extraSkills.length > 0) {
 if (!hasOrphans) {
   console.log('Everything is clean')
 }
+
+// 3. Stale symlinks in authored/
+const authoredDir = join(root, 'authored')
+pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, console.log)

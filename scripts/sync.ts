@@ -3,10 +3,11 @@
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
-import type { Meta, SkillMeta } from './types.ts'
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
-import { dirname, join, relative } from 'node:path'
+import type { Meta } from './types.ts'
+import { existsSync, readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
 import { saveMeta } from './lib/metadataOps.ts'
 import { discoverSkills } from './lib/skillDiscovery.ts'
 import { copySkillsFromUpstream, hashSkillDir } from './lib/skillOps.ts'
@@ -105,72 +106,10 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 // ── Maintain authored/ symlinks ─────────────────────────────────────────────
 
 const authoredDir = join(root, 'authored')
-
-// Collect all authored skills from per-skill meta.json
 const skillsDir = join(root, 'skills')
-for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
-  if (!entry.isDirectory())
-    continue
-  const skillMetaPath = join(skillsDir, entry.name, 'meta.json')
-  if (!existsSync(skillMetaPath))
-    continue
 
-  const skillMeta = JSON.parse(readFileSync(skillMetaPath, 'utf-8')) as SkillMeta
-  let linkPath: string
-  let linkTarget: string
-
-  if (skillMeta.type === 'authored') {
-    // If domain is set, place in authored/{domain}/skill-name; otherwise flat in authored/
-    if (skillMeta.domain) {
-      const domainDir = join(authoredDir, skillMeta.domain)
-      mkdirSync(domainDir, { recursive: true })
-      linkPath = join(domainDir, entry.name)
-      linkTarget = relative(domainDir, join(skillsDir, entry.name))
-    }
-    else {
-      linkPath = join(authoredDir, entry.name)
-      linkTarget = relative(authoredDir, join(skillsDir, entry.name))
-    }
-  }
-  else {
-    continue
-  }
-
-  if (!existsSync(linkPath)) {
-    mkdirSync(dirname(linkPath), { recursive: true })
-    symlinkSync(linkTarget, linkPath)
-    console.log(`linked  authored: ${entry.name}${skillMeta.domain ? ` (domain: ${skillMeta.domain})` : ''}`)
-  }
-}
-
-// Remove stale symlinks in authored/
-function pruneStaleSymlinks(dir: string): void {
-  if (!existsSync(dir))
-    return
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const full = join(dir, entry.name)
-    if (entry.isSymbolicLink()) {
-      const skillName = entry.name
-      const targetMetaPath = join(skillsDir, skillName, 'meta.json')
-      if (!existsSync(targetMetaPath)) {
-        rmSync(full)
-        console.log(`removed stale authored symlink: ${skillName}`)
-        continue
-      }
-      const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf-8')) as SkillMeta
-      if (targetMeta.type !== 'authored') {
-        rmSync(full)
-        console.log(`removed stale authored symlink: ${skillName}`)
-      }
-    }
-    else if (entry.isDirectory()) {
-      pruneStaleSymlinks(full)
-      // Remove empty subdirs
-      if (readdirSync(full).length === 0)
-        rmSync(full)
-    }
-  }
-}
-pruneStaleSymlinks(authoredDir)
+const collected = collectAuthoredSkills(skillsDir)
+linkAuthoredSkills(collected, skillsDir, authoredDir, console.log)
+pruneStaleLinksinAuthoredDir(authoredDir, skillsDir, console.log)
 
 console.log('\nDone')
