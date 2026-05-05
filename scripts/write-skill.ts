@@ -16,6 +16,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { linkAuthoredSkills } from './lib/authoredSkillsOps.ts'
+import { SkillMetaStore } from './lib/skillMetaStore.ts'
 import { normalizeUrl } from './lib/urlOps.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -148,10 +149,10 @@ p.intro('Write Skill')
       ...(normalizedSource && { sourceUrl: normalizedSource }),
     }
 
-    writeFileSync(
-      join(skillPath, 'meta.json'),
-      `${JSON.stringify(skillMeta, null, 2)}\n`,
-    )
+    // Use SkillMetaStore to add and save the skill
+    const skillStore = new SkillMetaStore(skillsDir)
+    skillStore.addSkill(skillName, skillMeta)
+    skillStore.saveSkill(skillName)
 
     // Write SKILL.md with template
     const skillMdContent = `---

@@ -2,17 +2,18 @@
  * Find and report (or remove with -y) skills and submodules not declared in meta.json.
  */
 
-import type { Meta, SkillMeta } from './types.ts'
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
 import { exec } from './lib/gitOps.ts'
-
-const { upstreams } = JSON.parse(readFileSync(new URL('../meta.json', import.meta.url), 'utf-8')) as Meta
+import { MetaStore } from './lib/metaStore.ts'
+import { SkillMetaStore } from './lib/skillMetaStore.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
+const store = new MetaStore(root)
+const upstreams = store.getAllUpstreams()
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
 
 function getExpectedSkillNames(): Set<string> {
@@ -24,17 +25,11 @@ function getExpectedSkillNames(): Set<string> {
   }
   // Skills with authored meta.json are never orphans
   const skillsDir = join(root, 'skills')
-  if (existsSync(skillsDir)) {
-    for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
-      if (!entry.isDirectory())
-        continue
-      const metaPath = join(skillsDir, entry.name, 'meta.json')
-      if (!existsSync(metaPath))
-        continue
-      const skillMeta = JSON.parse(readFileSync(metaPath, 'utf-8')) as SkillMeta
-      if (skillMeta.type === 'authored')
-        expected.add(entry.name)
-    }
+  const skillStore = new SkillMetaStore(skillsDir)
+  const allSkills = skillStore.readAllSkills()
+  for (const [name, meta] of Object.entries(allSkills)) {
+    if (meta.type === 'authored')
+      expected.add(name)
   }
   return expected
 }

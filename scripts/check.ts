@@ -2,15 +2,16 @@
  * Check submodules for available upstream updates without pulling.
  */
 
-import type { Meta } from './types.ts'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { exec } from './lib/gitOps.ts'
+import { MetaStore } from './lib/metaStore.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
-const { upstreams } = JSON.parse(readFileSync(join(root, 'meta.json'), 'utf-8')) as Meta
+const store = new MetaStore(root)
+const upstreams = store.getAllUpstreams()
 
 console.log('Fetching remote changes...')
 exec('git submodule foreach git fetch', { cwd: root, inherit: true })
