@@ -91,7 +91,8 @@ description: |
       }
     }
 
-    const message = `Created skill: ${skillName}${domain ? ` in domain ${domain}` : ''}`
+    const domainSuffix = domain ? ` in domain ${domain}` : ''
+    const message = `Created skill: ${skillName}${domainSuffix}`
     return {
       ok: true,
       data: {

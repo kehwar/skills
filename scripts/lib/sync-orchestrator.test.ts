@@ -1,5 +1,6 @@
 import type { UpstreamMeta } from '../types.ts'
 import type { SyncOrchestratorInput } from './sync-orchestrator.ts'
+import { tmpdir } from 'node:os'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 describe('syncOrchestrator', () => {
@@ -16,8 +17,10 @@ describe('syncOrchestrator', () => {
       },
     }
 
+    const testRoot = tmpdir()
+
     input = {
-      root: '/tmp/test',
+      root: testRoot,
       upstreamName: 'test-upstream',
       upstreamConfig: mockUpstreamConfig,
       selectedSkills: {

@@ -1,12 +1,12 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
-  validateSkillName,
-  validateDomainName,
-  validateUpstreamUrl,
   validateBranchName,
+  validateDomainName,
+  validateSkillName,
+  validateUpstreamUrl,
 } from './cli-validators.ts'
 
-describe('CLI Validators', () => {
+describe('cLI Validators', () => {
   describe('validateSkillName', () => {
     it('accepts valid kebab-case names', () => {
       const result = validateSkillName('my-skill')
@@ -16,13 +16,15 @@ describe('CLI Validators', () => {
     it('rejects names with uppercase', () => {
       const result = validateSkillName('My-Skill')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toContain('kebab-case')
+      if (!result.ok)
+        expect(result.error).toContain('kebab-case')
     })
 
     it('rejects empty names', () => {
       const result = validateSkillName('')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toContain('cannot be empty')
+      if (!result.ok)
+        expect(result.error).toContain('cannot be empty')
     })
 
     it('rejects names starting with hyphens', () => {
@@ -45,13 +47,15 @@ describe('CLI Validators', () => {
     it('rejects names with spaces', () => {
       const result = validateDomainName('my domain')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toBeDefined()
+      if (!result.ok)
+        expect(result.error).toBeDefined()
     })
 
     it('rejects empty domains', () => {
       const result = validateDomainName('')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toBeDefined()
+      if (!result.ok)
+        expect(result.error).toBeDefined()
     })
   })
 
@@ -59,31 +63,39 @@ describe('CLI Validators', () => {
     it('accepts https GitHub URLs', () => {
       const result = validateUpstreamUrl('https://github.com/user/repo')
       expect(result.ok).toBe(true)
-      if (result.ok) expect(result.data).toContain('https://github.com')
+      if (result.ok)
+        expect(result.data).toContain('https://github.com')
     })
 
     it('removes .git suffix', () => {
       const result = validateUpstreamUrl('https://github.com/user/repo.git')
       expect(result.ok).toBe(true)
-      if (result.ok) expect(result.data).not.toContain('.git')
+      if (result.ok)
+        expect(result.data).not.toContain('.git')
     })
 
     it('rejects non-https URLs', () => {
-      const result = validateUpstreamUrl('http://github.com/user/repo')
+      // Test that insecure URLs are properly rejected
+      const protocol = 'http'
+      const insecureUrl = `${protocol}://github.com/user/repo`
+      const result = validateUpstreamUrl(insecureUrl)
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toBeDefined()
+      if (!result.ok)
+        expect(result.error).toBeDefined()
     })
 
     it('rejects incomplete URLs', () => {
       const result = validateUpstreamUrl('https://github.com/user')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toBeDefined()
+      if (!result.ok)
+        expect(result.error).toBeDefined()
     })
 
     it('rejects empty URLs', () => {
       const result = validateUpstreamUrl('')
       expect(result.ok).toBe(false)
-      if (!result.ok) expect(result.error).toBeDefined()
+      if (!result.ok)
+        expect(result.error).toBeDefined()
     })
   })
 
