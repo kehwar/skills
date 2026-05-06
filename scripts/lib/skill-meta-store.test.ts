@@ -1,28 +1,28 @@
 import type { SkillMeta } from '../types.ts'
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { SkillMetaStore } from './skillMetaStore.ts'
+import { SkillMetaStore } from './skill-meta-store.ts'
 
 describe('skillMetaStore', () => {
-  let tempDir: string
-  let skillsDir: string
+  let temporaryDirectory: string
+  let skillsDirectory: string
 
   beforeEach(() => {
-    tempDir = mkdtempSync(join(tmpdir(), 'skillmetastore-'))
-    skillsDir = join(tempDir, 'skills')
-    mkdirSync(skillsDir, { recursive: true })
+    temporaryDirectory = mkdtempSync(path.join(tmpdir(), 'skillmetastore-'))
+    skillsDirectory = path.join(temporaryDirectory, 'skills')
+    mkdirSync(skillsDirectory, { recursive: true })
   })
 
   afterEach(() => {
-    rmSync(tempDir, { recursive: true })
+    rmSync(temporaryDirectory, { recursive: true })
   })
 
   const createSkill = (name: string, meta: SkillMeta) => {
-    const skillPath = join(skillsDir, name)
+    const skillPath = path.join(skillsDirectory, name)
     mkdirSync(skillPath, { recursive: true })
-    writeFileSync(join(skillPath, 'meta.json'), JSON.stringify(meta))
+    writeFileSync(path.join(skillPath, 'meta.json'), JSON.stringify(meta))
   }
 
   describe('lOAD & SCAN', () => {
@@ -41,7 +41,7 @@ describe('skillMetaStore', () => {
       createSkill('my-authored-skill', authoredMeta)
       createSkill('my-synced-skill', syncedMeta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       const allMeta = store.readAllSkills()
 
       expect(allMeta).toHaveProperty('my-authored-skill')
@@ -55,12 +55,12 @@ describe('skillMetaStore', () => {
       createSkill('valid-skill', authoredMeta)
 
       // Create skill folder without meta.json
-      const invalidSkillPath = join(skillsDir, 'invalid-skill')
+      const invalidSkillPath = path.join(skillsDirectory, 'invalid-skill')
       mkdirSync(invalidSkillPath, { recursive: true })
-      writeFileSync(join(invalidSkillPath, 'SKILL.md'), '# Skill')
+      writeFileSync(path.join(invalidSkillPath, 'SKILL.md'), '# Skill')
 
       const warnings: string[] = []
-      const store = new SkillMetaStore(skillsDir, { onWarning: msg => warnings.push(msg) })
+      const store = new SkillMetaStore(skillsDirectory, { onWarning: message => warnings.push(message) })
       const allMeta = store.readAllSkills()
 
       expect(allMeta).toHaveProperty('valid-skill')
@@ -74,12 +74,12 @@ describe('skillMetaStore', () => {
       createSkill('valid-skill', validMeta)
 
       // Create skill with invalid JSON
-      const brokenPath = join(skillsDir, 'broken-skill')
+      const brokenPath = path.join(skillsDirectory, 'broken-skill')
       mkdirSync(brokenPath, { recursive: true })
-      writeFileSync(join(brokenPath, 'meta.json'), 'not valid json {')
+      writeFileSync(path.join(brokenPath, 'meta.json'), 'not valid json {')
 
       const warnings: string[] = []
-      const store = new SkillMetaStore(skillsDir, { onWarning: msg => warnings.push(msg) })
+      const store = new SkillMetaStore(skillsDirectory, { onWarning: message => warnings.push(message) })
       const allMeta = store.readAllSkills()
 
       expect(allMeta).toHaveProperty('valid-skill')
@@ -87,15 +87,15 @@ describe('skillMetaStore', () => {
       expect(warnings.length).toBeGreaterThan(0)
     })
 
-    it('returns empty object when skills dir is empty', () => {
-      const store = new SkillMetaStore(skillsDir)
+    it('returns empty object when skills directory is empty', () => {
+      const store = new SkillMetaStore(skillsDirectory)
       const allMeta = store.readAllSkills()
 
       expect(allMeta).toEqual({})
     })
 
-    it('returns empty object when skills dir does not exist', () => {
-      const store = new SkillMetaStore(join(skillsDir, 'nonexistent'))
+    it('returns empty object when skills directory does not exist', () => {
+      const store = new SkillMetaStore(path.join(skillsDirectory, 'nonexistent'))
       const allMeta = store.readAllSkills()
 
       expect(allMeta).toEqual({})
@@ -107,26 +107,26 @@ describe('skillMetaStore', () => {
       const meta: SkillMeta = { type: 'authored', domain: 'frappe' }
       createSkill('test-skill', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       const result = store.getSkillMeta('test-skill')
 
       expect(result).toEqual(meta)
     })
 
     it('returns undefined for nonexistent skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       const result = store.getSkillMeta('nonexistent')
 
       expect(result).toBeUndefined()
     })
 
     it('returns undefined for skill with invalid meta.json', () => {
-      const brokenPath = join(skillsDir, 'broken-skill')
+      const brokenPath = path.join(skillsDirectory, 'broken-skill')
       mkdirSync(brokenPath, { recursive: true })
-      writeFileSync(join(brokenPath, 'meta.json'), 'invalid')
+      writeFileSync(path.join(brokenPath, 'meta.json'), 'invalid')
 
       const warnings: string[] = []
-      const store = new SkillMetaStore(skillsDir, { onWarning: msg => warnings.push(msg) })
+      const store = new SkillMetaStore(skillsDirectory, { onWarning: message => warnings.push(message) })
       const result = store.getSkillMeta('broken-skill')
 
       expect(result).toBeUndefined()
@@ -135,7 +135,7 @@ describe('skillMetaStore', () => {
 
   describe('aDD SKILL', () => {
     it('adds a new skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       const meta: SkillMeta = { type: 'authored', domain: 'frappe' }
       store.addSkill('new-skill', meta)
 
@@ -143,7 +143,7 @@ describe('skillMetaStore', () => {
     })
 
     it('tracks changes after adding skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       expect(store.hasChanges()).toBe(false)
 
       const meta: SkillMeta = { type: 'authored' }
@@ -155,20 +155,20 @@ describe('skillMetaStore', () => {
       const meta: SkillMeta = { type: 'authored' }
       createSkill('existing-skill', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       expect(() => {
         store.addSkill('existing-skill', meta)
       }).toThrow('Skill already exists')
     })
 
     it('can save newly added skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       const meta: SkillMeta = { type: 'authored', domain: 'frappe' }
       store.addSkill('new-skill', meta)
       store.saveSkill('new-skill')
 
       const saved = JSON.parse(
-        readFileSync(join(skillsDir, 'new-skill', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'new-skill', 'meta.json'), 'utf8'),
       )
       expect(saved).toEqual(meta)
     })
@@ -179,7 +179,7 @@ describe('skillMetaStore', () => {
       const originalMeta: SkillMeta = { type: 'authored' }
       createSkill('test-skill', originalMeta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       expect(store.hasChanges()).toBe(false)
 
       store.updateSkill('test-skill', { type: 'authored', domain: 'frappe' })
@@ -190,7 +190,7 @@ describe('skillMetaStore', () => {
       const originalMeta: SkillMeta = { type: 'authored' }
       createSkill('test-skill', originalMeta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       store.updateSkill('test-skill', { type: 'authored', domain: 'frappe' })
 
       const updated = store.getSkillMeta('test-skill')
@@ -198,7 +198,7 @@ describe('skillMetaStore', () => {
     })
 
     it('throws when updating nonexistent skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
 
       expect(() => {
         store.updateSkill('nonexistent', { type: 'authored' })
@@ -211,12 +211,12 @@ describe('skillMetaStore', () => {
       const originalMeta: SkillMeta = { type: 'authored' }
       createSkill('test-skill', originalMeta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       store.updateSkill('test-skill', { type: 'authored', domain: 'frappe' })
       store.saveSkill('test-skill')
 
       const saved = JSON.parse(
-        readFileSync(join(skillsDir, 'test-skill', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'test-skill', 'meta.json'), 'utf8'),
       )
       expect(saved).toEqual({ type: 'authored', domain: 'frappe' })
     })
@@ -225,11 +225,11 @@ describe('skillMetaStore', () => {
       const meta: SkillMeta = { type: 'authored' }
       createSkill('test-skill', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       // saveSkill on unchanged skill should not reformat
       store.saveSkill('test-skill')
 
-      const afterContent = readFileSync(join(skillsDir, 'test-skill', 'meta.json'), 'utf-8')
+      const afterContent = readFileSync(path.join(skillsDirectory, 'test-skill', 'meta.json'), 'utf8')
       // Just verify it doesn't throw; formatting may differ
       expect(afterContent).toBeTruthy()
     })
@@ -239,16 +239,16 @@ describe('skillMetaStore', () => {
       createSkill('skill1', meta)
       createSkill('skill2', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       store.updateSkill('skill1', { type: 'authored', domain: 'frappe' })
       store.updateSkill('skill2', { type: 'authored', domain: 'sap' })
       store.saveSkill('skill1')
 
       const skill1Meta = JSON.parse(
-        readFileSync(join(skillsDir, 'skill1', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'skill1', 'meta.json'), 'utf8'),
       )
       const skill2Meta = JSON.parse(
-        readFileSync(join(skillsDir, 'skill2', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'skill2', 'meta.json'), 'utf8'),
       )
 
       expect(skill1Meta.domain).toBe('frappe')
@@ -256,7 +256,7 @@ describe('skillMetaStore', () => {
     })
 
     it('throws when saving nonexistent skill', () => {
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
 
       const result = store.saveSkill('nonexistent')
       expect(result.ok).toBe(false)
@@ -272,16 +272,16 @@ describe('skillMetaStore', () => {
       createSkill('skill1', meta)
       createSkill('skill2', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       store.updateSkill('skill1', { type: 'authored', domain: 'frappe' })
       store.updateSkill('skill2', { type: 'authored', domain: 'sap' })
       store.saveAll()
 
       const skill1Meta = JSON.parse(
-        readFileSync(join(skillsDir, 'skill1', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'skill1', 'meta.json'), 'utf8'),
       )
       const skill2Meta = JSON.parse(
-        readFileSync(join(skillsDir, 'skill2', 'meta.json'), 'utf-8'),
+        readFileSync(path.join(skillsDirectory, 'skill2', 'meta.json'), 'utf8'),
       )
 
       expect(skill1Meta.domain).toBe('frappe')
@@ -292,7 +292,7 @@ describe('skillMetaStore', () => {
       const meta: SkillMeta = { type: 'authored' }
       createSkill('test-skill', meta)
 
-      const store = new SkillMetaStore(skillsDir)
+      const store = new SkillMetaStore(skillsDirectory)
       store.updateSkill('test-skill', { type: 'authored', domain: 'frappe' })
       expect(store.hasChanges()).toBe(true)
 

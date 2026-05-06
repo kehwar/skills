@@ -2,24 +2,24 @@ import type { Meta } from '../types.ts'
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { MetaStore } from './metaStore.ts'
+import { MetaStore } from './meta-store.ts'
 
 describe('metaStore', () => {
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = mkdtempSync(join(tmpdir(), 'metastore-'))
+    temporaryDirectory = mkdtempSync(path.join(tmpdir(), 'metastore-'))
   })
 
   afterEach(() => {
-    rmSync(tempDir, { recursive: true })
+    rmSync(temporaryDirectory, { recursive: true })
   })
 
   const createStoreWithMeta = (meta: Meta) => {
-    writeFileSync(join(tempDir, 'meta.json'), JSON.stringify(meta))
-    return new MetaStore(tempDir)
+    writeFileSync(path.join(temporaryDirectory, 'meta.json'), JSON.stringify(meta))
+    return new MetaStore(temporaryDirectory)
   }
 
   describe('rEAD & VALIDATE', () => {
@@ -41,22 +41,22 @@ describe('metaStore', () => {
     })
 
     it('throws when meta.json does not exist', () => {
-      expect(() => new MetaStore(tempDir)).toThrow()
+      expect(() => new MetaStore(temporaryDirectory)).toThrow()
     })
 
     it('throws when meta.json is invalid JSON', () => {
-      writeFileSync(join(tempDir, 'meta.json'), 'not valid json {')
-      expect(() => new MetaStore(tempDir)).toThrow()
+      writeFileSync(path.join(temporaryDirectory, 'meta.json'), 'not valid json {')
+      expect(() => new MetaStore(temporaryDirectory)).toThrow()
     })
 
     it('throws when upstreams field is missing', () => {
-      writeFileSync(join(tempDir, 'meta.json'), JSON.stringify({}))
-      expect(() => new MetaStore(tempDir)).toThrow()
+      writeFileSync(path.join(temporaryDirectory, 'meta.json'), JSON.stringify({}))
+      expect(() => new MetaStore(temporaryDirectory)).toThrow()
     })
 
     it('throws when upstreams is not an object', () => {
-      writeFileSync(join(tempDir, 'meta.json'), JSON.stringify({ upstreams: [] }))
-      expect(() => new MetaStore(tempDir)).toThrow()
+      writeFileSync(path.join(temporaryDirectory, 'meta.json'), JSON.stringify({ upstreams: [] }))
+      expect(() => new MetaStore(temporaryDirectory)).toThrow()
     })
   })
 
@@ -195,7 +195,7 @@ describe('metaStore', () => {
       store.updateUpstream('zebra', { url: 'https://github.com/z/z-updated' })
       store.saveMeta()
 
-      const saved = JSON.parse(readFileSync(join(tempDir, 'meta.json'), 'utf-8'))
+      const saved = JSON.parse(readFileSync(path.join(temporaryDirectory, 'meta.json'), 'utf8'))
       const keys = Object.keys(saved.upstreams)
       expect(keys).toEqual(['antfu', 'frappe', 'zebra'])
     })
@@ -211,7 +211,7 @@ describe('metaStore', () => {
       store.updateUpstream('antfu', { url: 'https://github.com/antfu/skills-updated' })
       store.saveMeta()
 
-      const content = readFileSync(join(tempDir, 'meta.json'), 'utf-8')
+      const content = readFileSync(path.join(temporaryDirectory, 'meta.json'), 'utf8')
       expect(content).toMatch(/\n$/)
     })
 
@@ -231,7 +231,7 @@ describe('metaStore', () => {
       store.updateUpstream('antfu', { url: 'https://github.com/new/url' })
       store.saveMeta()
 
-      const saved = JSON.parse(readFileSync(join(tempDir, 'meta.json'), 'utf-8'))
+      const saved = JSON.parse(readFileSync(path.join(temporaryDirectory, 'meta.json'), 'utf8'))
       expect(saved.upstreams.antfu).toEqual({
         url: 'https://github.com/new/url',
         skills: { 'skills/vue': 'vue' },

@@ -2,13 +2,13 @@ import type { Dirent } from 'node:fs'
 import type { Result, SkillMeta, UpstreamMeta } from '../types.ts'
 import { createHash } from 'node:crypto'
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
-import { getGitSha } from './gitOps.ts'
+import path from 'node:path'
+import { getGitSha } from './git-ops.ts'
 
 /**
  * Hash all file contents in a directory (sorted by relative path). 12-char prefix.
  */
-export function hashSkillDir(dir: string): string {
+export function hashSkillDirectory(directory: string): string {
   const h = createHash('sha256')
   const entries: string[] = []
 
@@ -21,19 +21,19 @@ export function hashSkillDir(dir: string): string {
       return
     }
     for (const d of dirents) {
-      const full = join(current, d.name)
+      const full = path.join(current, d.name)
       if (d.isDirectory() && !d.name.startsWith('.'))
         collect(full)
       else if (d.isFile())
-        entries.push(full.slice(dir.length + 1))
+        entries.push(full.slice(directory.length + 1))
     }
   }
 
-  collect(dir)
+  collect(directory)
   entries.sort()
-  for (const rel of entries) {
-    h.update(rel)
-    h.update(readFileSync(join(dir, rel)))
+  for (const relative of entries) {
+    h.update(relative)
+    h.update(readFileSync(path.join(directory, relative)))
   }
   return h.digest('hex').slice(0, 12)
 }
@@ -59,7 +59,7 @@ export interface CopySkillsResult {
 
 export function copySkillsFromUpstream(
   upstreamName: string,
-  upstreamDir: string,
+  upstreamDirectory: string,
   config: UpstreamMeta,
   root: string,
   force = false,
@@ -73,7 +73,7 @@ export function copySkillsFromUpstream(
   if (!config.skills)
     return { ok: true, data: result }
 
-  const sha = getGitSha(upstreamDir)
+  const sha = getGitSha(upstreamDirectory)
   const today = new Date().toISOString().split('T')[0]
 
   for (const [skillPath, outputName] of Object.entries(config.skills)) {
@@ -81,7 +81,7 @@ export function copySkillsFromUpstream(
       skillPath,
       outputName,
       upstreamName,
-      upstreamDir,
+      upstreamDirectory,
       config,
       root,
       sha,
@@ -98,17 +98,17 @@ function processSingleSkill(
   skillPath: string,
   outputName: string,
   upstreamName: string,
-  upstreamDir: string,
+  upstreamDirectory: string,
   config: UpstreamMeta,
   root: string,
-  sha: string | null,
+  sha: string | undefined,
   today: string,
   force: boolean,
   result: CopySkillsResult,
 ): void {
   try {
-    const sourcePath = skillPath === '.' ? upstreamDir : join(upstreamDir, skillPath)
-    const outputPath = join(root, 'skills', outputName)
+    const sourcePath = skillPath === '.' ? upstreamDirectory : path.join(upstreamDirectory, skillPath)
+    const outputPath = path.join(root, 'skills', outputName)
 
     if (!existsSync(sourcePath)) {
       result.skipped.push({
@@ -119,7 +119,7 @@ function processSingleSkill(
       return
     }
 
-    const contentHash = hashSkillDir(sourcePath)
+    const contentHash = hashSkillDirectory(sourcePath)
     const skipResult = checkIfSkillUnchanged(outputPath, skillPath, outputName, contentHash, force)
     if (skipResult) {
       result.skipped.push(skipResult)
@@ -129,9 +129,9 @@ function processSingleSkill(
     const oldSyncedAt = readPreviousSyncedAt(outputPath)
     const hashUnchanged = readPreviousHash(outputPath) === contentHash
 
-    copySkilldirectory(sourcePath, outputPath, upstreamDir)
+    copySkilldirectory(sourcePath, outputPath, upstreamDirectory)
 
-    const syncedAt = hashUnchanged && oldSyncedAt != null ? oldSyncedAt : today
+    const syncedAt = hashUnchanged && oldSyncedAt !== undefined ? oldSyncedAt : today
     const skillMeta: SkillMeta = {
       type: 'synced',
       upstream: upstreamName,
@@ -142,14 +142,14 @@ function processSingleSkill(
       contentHash,
       syncedAt,
     }
-    writeFileSync(join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, null, 2)}\n`)
+    writeFileSync(path.join(outputPath, 'meta.json'), `${JSON.stringify(skillMeta, undefined, 2)}\n`)
     result.synced.push({ skillPath, outputName })
   }
-  catch (err) {
+  catch (error) {
     result.errors.push({
       skillPath,
       outputName,
-      error: err instanceof Error ? err.message : String(err),
+      error: error instanceof Error ? error.message : String(error),
     })
   }
 }
@@ -160,13 +160,13 @@ function checkIfSkillUnchanged(
   outputName: string,
   contentHash: string,
   force: boolean,
-): { skillPath: string, outputName: string, reason: string } | null {
-  const existingMetaPath = join(outputPath, 'meta.json')
+): { skillPath: string, outputName: string, reason: string } | undefined {
+  const existingMetaPath = path.join(outputPath, 'meta.json')
   if (!existsSync(existingMetaPath))
-    return null
+    return undefined
 
   try {
-    const old = JSON.parse(readFileSync(existingMetaPath, 'utf-8')) as SkillMeta
+    const old = JSON.parse(readFileSync(existingMetaPath, 'utf8')) as SkillMeta
     if (old.type === 'synced' && !force && old.contentHash === contentHash) {
       return {
         skillPath,
@@ -178,16 +178,16 @@ function checkIfSkillUnchanged(
   catch {
     // corrupt meta — fall through to re-copy
   }
-  return null
+  return undefined
 }
 
 function readPreviousSyncedAt(outputPath: string): string | undefined {
-  const existingMetaPath = join(outputPath, 'meta.json')
+  const existingMetaPath = path.join(outputPath, 'meta.json')
   if (!existsSync(existingMetaPath))
     return undefined
 
   try {
-    const old = JSON.parse(readFileSync(existingMetaPath, 'utf-8')) as SkillMeta
+    const old = JSON.parse(readFileSync(existingMetaPath, 'utf8')) as SkillMeta
     if (old.type === 'synced')
       return old.syncedAt
   }
@@ -198,12 +198,12 @@ function readPreviousSyncedAt(outputPath: string): string | undefined {
 }
 
 function readPreviousHash(outputPath: string): string | undefined {
-  const existingMetaPath = join(outputPath, 'meta.json')
+  const existingMetaPath = path.join(outputPath, 'meta.json')
   if (!existsSync(existingMetaPath))
     return undefined
 
   try {
-    const old = JSON.parse(readFileSync(existingMetaPath, 'utf-8')) as SkillMeta
+    const old = JSON.parse(readFileSync(existingMetaPath, 'utf8')) as SkillMeta
     if (old.type === 'synced')
       return old.contentHash
   }
@@ -213,20 +213,20 @@ function readPreviousHash(outputPath: string): string | undefined {
   return undefined
 }
 
-function copySkilldirectory(sourcePath: string, outputPath: string, upstreamDir: string): void {
+function copySkilldirectory(sourcePath: string, outputPath: string, upstreamDirectory: string): void {
   if (existsSync(outputPath))
     rmSync(outputPath, { recursive: true })
   mkdirSync(outputPath, { recursive: true })
   cpSync(sourcePath, outputPath, { recursive: true })
 
-  copyLicenseFile(upstreamDir, outputPath)
+  copyLicenseFile(upstreamDirectory, outputPath)
 }
 
-function copyLicenseFile(upstreamDir: string, outputPath: string): void {
+function copyLicenseFile(upstreamDirectory: string, outputPath: string): void {
   for (const name of ['LICENSE', 'LICENSE.md', 'LICENSE.txt']) {
-    const licenseSrc = join(upstreamDir, name)
-    if (existsSync(licenseSrc)) {
-      cpSync(licenseSrc, join(outputPath, 'LICENSE.md'))
+    const licenseSource = path.join(upstreamDirectory, name)
+    if (existsSync(licenseSource)) {
+      cpSync(licenseSource, path.join(outputPath, 'LICENSE.md'))
       break
     }
   }

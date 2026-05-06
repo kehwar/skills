@@ -1,6 +1,6 @@
 import type { Meta, Result, UpstreamMeta } from '../types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import path from 'node:path'
 
 export class MetaStore {
   private root: string
@@ -14,8 +14,8 @@ export class MetaStore {
   }
 
   private load(): Meta {
-    const metaPath = join(this.root, 'meta.json')
-    const content = readFileSync(metaPath, 'utf-8')
+    const metaPath = path.join(this.root, 'meta.json')
+    const content = readFileSync(metaPath, 'utf8')
     return JSON.parse(content)
   }
 
@@ -33,7 +33,7 @@ export class MetaStore {
   }
 
   private cloneMeta(meta: Meta): Meta {
-    return JSON.parse(JSON.stringify(meta))
+    return structuredClone(meta)
   }
 
   private sortUpstreams(upstreams: Record<string, UpstreamMeta>): Record<string, UpstreamMeta> {
@@ -45,7 +45,7 @@ export class MetaStore {
   private serializeMeta(): string {
     const sorted = this.sortUpstreams(this.meta.upstreams)
     const toWrite = { upstreams: sorted }
-    return `${JSON.stringify(toWrite, null, 2)}\n`
+    return `${JSON.stringify(toWrite, undefined, 2)}\n`
   }
 
   readMeta(): Meta {
@@ -80,14 +80,14 @@ export class MetaStore {
     }
 
     try {
-      const metaPath = join(this.root, 'meta.json')
+      const metaPath = path.join(this.root, 'meta.json')
       writeFileSync(metaPath, this.serializeMeta())
       return { ok: true, data: undefined }
     }
-    catch (err) {
+    catch (error) {
       return {
         ok: false,
-        error: `Failed to save meta.json: ${err instanceof Error ? err.message : String(err)}`,
+        error: `Failed to save meta.json: ${error instanceof Error ? error.message : String(error)}`,
       }
     }
   }

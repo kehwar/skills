@@ -1,19 +1,20 @@
+#!/usr/bin/env node
 /**
  * Find and report (or remove with -y) skills and submodules not declared in meta.json.
  */
 
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
-import { exec } from './lib/gitOps.ts'
-import { MetaStore } from './lib/metaStore.ts'
-import { SkillMetaStore } from './lib/skillMetaStore.ts'
+import { pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
+import { exec } from './lib/git-ops.ts'
+import { MetaStore } from './lib/meta-store.ts'
+import { SkillMetaStore } from './lib/skill-meta-store.ts'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = join(__dirname, '..')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.join(__dirname, '..')
 const store = new MetaStore(root)
 const upstreams = store.getAllUpstreams()
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
@@ -27,8 +28,8 @@ function getExpectedSkillNames(): Set<string> {
     }
   }
   // Skills with authored meta.json are never orphans
-  const skillsDir = join(root, 'skills')
-  const skillStore = new SkillMetaStore(skillsDir)
+  const skillsDirectory = path.join(root, 'skills')
+  const skillStore = new SkillMetaStore(skillsDirectory)
   const allSkills = skillStore.readAllSkills()
   for (const [name, meta] of Object.entries(allSkills)) {
     if (meta.type === 'authored')
@@ -42,10 +43,10 @@ function getExpectedSubmodulePaths(): Set<string> {
 }
 
 function getExistingSubmodulePaths(): string[] {
-  const gitmodulesPath = join(root, '.gitmodules')
+  const gitmodulesPath = path.join(root, '.gitmodules')
   if (!existsSync(gitmodulesPath))
     return []
-  const content = readFileSync(gitmodulesPath, 'utf-8')
+  const content = readFileSync(gitmodulesPath, 'utf8')
   return Array.from(content.matchAll(/path\s*=\s*(.+)/g), m => m[1].trim())
 }
 
@@ -54,9 +55,9 @@ function removeSubmodule(submodulePath: string): void {
   if (!deinitResult.ok) {
     p.log.warn(`Failed to deinit submodule ${submodulePath}: ${deinitResult.error}`)
   }
-  const gitModulesDir = join(root, '.git', 'modules', submodulePath)
-  if (existsSync(gitModulesDir))
-    rmSync(gitModulesDir, { recursive: true })
+  const gitModulesDirectory = path.join(root, '.git', 'modules', submodulePath)
+  if (existsSync(gitModulesDirectory))
+    rmSync(gitModulesDirectory, { recursive: true })
   const rmResult = exec(`git rm -f ${submodulePath}`, { cwd: root })
   if (!rmResult.ok) {
     p.log.warn(`Failed to remove submodule ${submodulePath}: ${rmResult.error}`)
@@ -89,11 +90,11 @@ if (extraSubmodules.length > 0) {
 }
 
 // 2. Orphaned skills
-const skillsDir = join(root, 'skills')
-const existingSkills = existsSync(skillsDir)
-  ? readdirSync(skillsDir, { withFileTypes: true })
-      .filter(e => e.isDirectory())
-      .map(e => e.name)
+const skillsDirectory = path.join(root, 'skills')
+const existingSkills = existsSync(skillsDirectory)
+  ? readdirSync(skillsDirectory, { withFileTypes: true })
+      .filter(entry => entry.isDirectory())
+      .map(entry => entry.name)
   : []
 
 const extraSkills = existingSkills.filter(name => !getExpectedSkillNames().has(name))
@@ -106,7 +107,7 @@ if (extraSkills.length > 0) {
   if (skipPrompt) {
     for (const name of extraSkills) {
       p.log.step(`Removing: skills/${name}`)
-      rmSync(join(skillsDir, name), { recursive: true })
+      rmSync(path.join(skillsDirectory, name), { recursive: true })
     }
   }
   else {
@@ -119,23 +120,23 @@ if (!hasOrphans) {
 }
 
 // 3. Stale symlinks in authored/
-const authoredDir = join(root, 'authored')
-const pruneResult = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
-if (!pruneResult.ok) {
-  errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
+const authoredDirectory = path.join(root, 'authored')
+const pruneResult = pruneStaleLinksinAuthoredDirectory(authoredDirectory, skillsDirectory)
+if (pruneResult.ok) {
+  for (const message of pruneResult.data) {
+    p.log.step(message)
+  }
 }
 else {
-  for (const msg of pruneResult.data) {
-    p.log.step(msg)
-  }
+  errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
 }
 
 // ── Report and exit ───────────────────────────────────────────────────────
 
 if (errors.length > 0) {
   p.log.warn(`${errors.length} error(s) occurred:`)
-  for (const err of errors) {
-    p.log.warn(`  - ${err}`)
+  for (const error of errors) {
+    p.log.warn(`  - ${error}`)
   }
   p.outro('Cleanup completed with errors')
   process.exit(1)

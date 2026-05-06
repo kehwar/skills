@@ -1,17 +1,18 @@
+#!/usr/bin/env node
 /**
  * Check submodules for available upstream updates without pulling.
  */
 
 import { existsSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { exec } from './lib/gitOps.ts'
-import { MetaStore } from './lib/metaStore.ts'
+import { exec } from './lib/git-ops.ts'
+import { MetaStore } from './lib/meta-store.ts'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = join(__dirname, '..')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.join(__dirname, '..')
 const store = new MetaStore(root)
 const upstreams = store.getAllUpstreams()
 
@@ -27,10 +28,10 @@ if (!fetchResult.ok) {
 const updates: Array<{ name: string, behind: number, skills?: string }> = []
 
 for (const [name, config] of Object.entries(upstreams)) {
-  const path = join(root, 'upstream', name)
-  if (!existsSync(path))
+  const subPath = path.join(root, 'upstream', name)
+  if (!existsSync(subPath))
     continue
-  const countResult = exec('git rev-list HEAD..@{u} --count', { cwd: path })
+  const countResult = exec('git rev-list HEAD..@{u} --count', { cwd: subPath })
   const count = countResult.ok ? Number.parseInt(countResult.data) || 0 : 0
   if (count > 0) {
     updates.push({

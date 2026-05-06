@@ -1,8 +1,8 @@
 import type { Result } from '../types.ts'
-import type { GitAdapter } from './gitAdapter.ts'
+import type { GitAdapter } from './git-adapter.ts'
 import { existsSync } from 'node:fs'
-import { join } from 'node:path'
-import { RealGitAdapter } from './gitAdapter.ts'
+import path from 'node:path'
+import { RealGitAdapter } from './git-adapter.ts'
 
 /**
  * Add or update a git submodule at `submodulePath` inside `root`.
@@ -22,24 +22,24 @@ export function ensureSubmodule(
   branch?: string,
   adapter: GitAdapter = new RealGitAdapter(),
 ): Result<void> {
-  const subDir = join(root, submodulePath)
+  const subDirectory = path.join(root, submodulePath)
 
   if (!adapter.submoduleExists(root, submodulePath)) {
-    return handleNotRegistered(root, submodulePath, url, subDir, branch, adapter)
+    return handleNotRegistered(root, submodulePath, url, subDirectory, branch, adapter)
   }
 
-  if (!existsSync(subDir)) {
-    return handleMissingDirectory(url, subDir, branch, adapter)
+  if (!existsSync(subDirectory)) {
+    return handleMissingDirectory(url, subDirectory, branch, adapter)
   }
 
-  return handleExistingSubmodule(root, submodulePath, subDir, branch, adapter)
+  return handleExistingSubmodule(root, submodulePath, subDirectory, branch, adapter)
 }
 
 function handleNotRegistered(
   root: string,
   submodulePath: string,
   url: string,
-  subDir: string,
+  subDirectory: string,
   branch: string | undefined,
   adapter: GitAdapter,
 ): Result<void> {
@@ -49,24 +49,24 @@ function handleNotRegistered(
     return addResult
 
   if (branch) {
-    return setupBranch(root, submodulePath, subDir, branch, adapter)
+    return setupBranch(root, submodulePath, subDirectory, branch, adapter)
   }
   return { ok: true, data: undefined }
 }
 
 function handleMissingDirectory(
   url: string,
-  subDir: string,
+  subDirectory: string,
   branch: string | undefined,
   adapter: GitAdapter,
 ): Result<void> {
   // Case 2: Registered but directory missing - clone it
-  const initResult = adapter.initSubmodule(url, subDir, branch)
+  const initResult = adapter.initSubmodule(url, subDirectory, branch)
   if (!initResult.ok)
     return initResult
 
   if (branch) {
-    const checkoutResult = adapter.checkoutBranch(subDir, branch)
+    const checkoutResult = adapter.checkoutBranch(subDirectory, branch)
     if (!checkoutResult.ok)
       return checkoutResult
   }
@@ -76,23 +76,18 @@ function handleMissingDirectory(
 function handleExistingSubmodule(
   root: string,
   submodulePath: string,
-  subDir: string,
+  subDirectory: string,
   branch: string | undefined,
   adapter: GitAdapter,
 ): Result<void> {
   // Case 3: Exists - update branch if specified
-  if (branch) {
-    return setupBranch(root, submodulePath, subDir, branch, adapter)
-  }
-  else {
-    return checkoutDefaultBranch(root, submodulePath, subDir, adapter)
-  }
+  return branch ? setupBranch(root, submodulePath, subDirectory, branch, adapter) : checkoutDefaultBranch(root, submodulePath, subDirectory, adapter)
 }
 
 function setupBranch(
   root: string,
   submodulePath: string,
-  subDir: string,
+  subDirectory: string,
   branch: string,
   adapter: GitAdapter,
 ): Result<void> {
@@ -100,11 +95,11 @@ function setupBranch(
   if (!setBranchResult.ok)
     return setBranchResult
 
-  const fetchResult = adapter.fetchSubmodule(subDir, branch)
+  const fetchResult = adapter.fetchSubmodule(subDirectory, branch)
   if (!fetchResult.ok)
     return fetchResult
 
-  const checkoutResult = adapter.checkoutBranch(subDir, branch)
+  const checkoutResult = adapter.checkoutBranch(subDirectory, branch)
   if (!checkoutResult.ok)
     return checkoutResult
 
@@ -114,18 +109,18 @@ function setupBranch(
 function checkoutDefaultBranch(
   root: string,
   submodulePath: string,
-  subDir: string,
+  subDirectory: string,
   adapter: GitAdapter,
 ): Result<void> {
   const unsetResult = adapter.unsetSubmoduleBranch(root, submodulePath)
   if (!unsetResult.ok)
     return unsetResult
 
-  const fetchResult = adapter.fetchSubmodule(subDir)
+  const fetchResult = adapter.fetchSubmodule(subDirectory)
   if (!fetchResult.ok)
     return fetchResult
 
-  const checkoutResult = adapter.checkoutBranch(subDir, 'FETCH_HEAD')
+  const checkoutResult = adapter.checkoutBranch(subDirectory, 'FETCH_HEAD')
   if (!checkoutResult.ok)
     return checkoutResult
 

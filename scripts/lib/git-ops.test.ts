@@ -1,8 +1,8 @@
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { exec, getGitSha, submoduleExists } from './gitOps.ts'
+import { exec, getGitSha, submoduleExists } from './git-ops.ts'
 
 // ── exec ─────────────────────────────────────────────────────────────────────
 
@@ -32,64 +32,70 @@ describe('exec', () => {
   })
 
   it('respects cwd option', () => {
-    const result = exec('pwd', { cwd: '/tmp' })
-    expect(result.ok).toBe(true)
-    if (!result.ok) {
-      throw new Error(result.error)
+    const temporaryDirectory = mkdtempSync(path.join(tmpdir(), 'exec-cwd-test-'))
+    try {
+      const result = exec('pwd', { cwd: temporaryDirectory })
+      expect(result.ok).toBe(true)
+      if (!result.ok) {
+        throw new Error(result.error)
+      }
+      expect(result.data).toContain('exec-cwd-test-')
     }
-    expect(result.data).toContain('tmp')
+    finally {
+      rmSync(temporaryDirectory, { recursive: true })
+    }
   })
 })
 
 // ── submoduleExists ───────────────────────────────────────────────────────────
 
 describe('submoduleExists', () => {
-  let tmp: string
+  let temporary: string
   beforeEach(() => {
-    tmp = mkdtempSync(join(tmpdir(), 'skills-test-'))
+    temporary = mkdtempSync(path.join(tmpdir(), 'skills-test-'))
   })
   afterEach(() => {
-    rmSync(tmp, { recursive: true })
+    rmSync(temporary, { recursive: true })
   })
 
   it('returns false when .gitmodules does not exist', () => {
-    expect(submoduleExists(tmp, 'upstream/foo')).toBe(false)
+    expect(submoduleExists(temporary, 'upstream/foo')).toBe(false)
   })
 
   it('returns false when .gitmodules does not contain the path', () => {
-    writeFileSync(join(tmp, '.gitmodules'), '[submodule "upstream/bar"]\n\tpath = upstream/bar\n')
-    expect(submoduleExists(tmp, 'upstream/foo')).toBe(false)
+    writeFileSync(path.join(temporary, '.gitmodules'), '[submodule "upstream/bar"]\n\tpath = upstream/bar\n')
+    expect(submoduleExists(temporary, 'upstream/foo')).toBe(false)
   })
 
   it('returns true when .gitmodules contains the path', () => {
-    writeFileSync(join(tmp, '.gitmodules'), '[submodule "upstream/foo"]\n\tpath = upstream/foo\n')
-    expect(submoduleExists(tmp, 'upstream/foo')).toBe(true)
+    writeFileSync(path.join(temporary, '.gitmodules'), '[submodule "upstream/foo"]\n\tpath = upstream/foo\n')
+    expect(submoduleExists(temporary, 'upstream/foo')).toBe(true)
   })
 })
 
 // ── getGitSha ─────────────────────────────────────────────────────────────────
 
 describe('getGitSha', () => {
-  let tmp: string
+  let temporary: string
   beforeEach(() => {
-    tmp = mkdtempSync(join(tmpdir(), 'skills-test-'))
+    temporary = mkdtempSync(path.join(tmpdir(), 'skills-test-'))
   })
   afterEach(() => {
-    rmSync(tmp, { recursive: true })
+    rmSync(temporary, { recursive: true })
   })
 
   it('returns null for a non-git directory', () => {
-    expect(getGitSha(tmp)).toBeNull()
+    expect(getGitSha(temporary)).toBeUndefined()
   })
 
   it('returns a sha string for a git repo', () => {
-    exec('git init', { cwd: tmp })
-    exec('git config user.email "test@test.com"', { cwd: tmp })
-    exec('git config user.name "Test"', { cwd: tmp })
-    writeFileSync(join(tmp, 'file.txt'), 'hello')
-    exec('git add .', { cwd: tmp })
-    exec('git commit -m "init"', { cwd: tmp })
-    const sha = getGitSha(tmp)
-    expect(sha).toMatch(/^[0-9a-f]{40}$/)
+    exec('git init', { cwd: temporary })
+    exec('git config user.email "test@test.com"', { cwd: temporary })
+    exec('git config user.name "Test"', { cwd: temporary })
+    writeFileSync(path.join(temporary, 'file.txt'), 'hello')
+    exec('git add .', { cwd: temporary })
+    exec('git commit -m "init"', { cwd: temporary })
+    const sha = getGitSha(temporary)
+    expect(sha).toMatch(/^[\da-f]{40}$/)
   })
 })

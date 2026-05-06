@@ -1,22 +1,23 @@
+#!/usr/bin/env node
 /**
  * Add missing submodules (shallow), pull latest, copy upstream skill folders into skills/,
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
 import { existsSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
-import { MetaStore } from './lib/metaStore.ts'
-import { discoverSkills } from './lib/skillDiscovery.ts'
-import { copySkillsFromUpstream, hashSkillDir } from './lib/skillOps.ts'
-import { ensureSubmodule } from './lib/submoduleOps.ts'
-import { normalizeUrl } from './lib/urlOps.ts'
+import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
+import { MetaStore } from './lib/meta-store.ts'
+import { discoverSkills } from './lib/skill-discovery.ts'
+import { copySkillsFromUpstream, hashSkillDirectory } from './lib/skill-ops.ts'
+import { ensureSubmodule } from './lib/submodule-ops.ts'
+import { normalizeUrl } from './lib/url-ops.ts'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = join(__dirname, '..')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.join(__dirname, '..')
 const store = new MetaStore(root)
 const force = process.argv.includes('--force')
 const errors: string[] = []
@@ -59,7 +60,7 @@ p.log.step('Submodules updated')
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
     continue
-  const upstreamPath = join(root, 'upstream', upstreamName)
+  const upstreamPath = path.join(root, 'upstream', upstreamName)
   if (!existsSync(upstreamPath))
     continue
 
@@ -74,8 +75,8 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 
   for (const skill of discoverResult.data) {
     const skillPath = skill.path
-    newAvailable[skillPath] = hashSkillDir(
-      skillPath === '.' ? upstreamPath : join(upstreamPath, skillPath),
+    newAvailable[skillPath] = hashSkillDirectory(
+      skillPath === '.' ? upstreamPath : path.join(upstreamPath, skillPath),
     )
   }
 
@@ -111,7 +112,7 @@ if (!saveMeta.ok)
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
     continue
-  const upstreamPath = join(root, 'upstream', upstreamName)
+  const upstreamPath = path.join(root, 'upstream', upstreamName)
   if (!existsSync(upstreamPath)) {
     p.log.warn(`SKIP upstream/${upstreamName} — submodule directory missing`)
     continue
@@ -139,41 +140,41 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 
 // ── Maintain authored/ symlinks ─────────────────────────────────────────────
 
-const authoredDir = join(root, 'authored')
-const skillsDir = join(root, 'skills')
+const authoredDirectory = path.join(root, 'authored')
+const skillsDirectory = path.join(root, 'skills')
 
-const collectResult = collectAuthoredSkills(skillsDir)
-if (!collectResult.ok) {
-  errors.push(`Failed to collect authored skills: ${collectResult.error}`)
-}
-else {
-  const linkResult = linkAuthoredSkills(collectResult.data, skillsDir, authoredDir)
-  if (!linkResult.ok) {
+const collectResult = collectAuthoredSkills(skillsDirectory)
+if (collectResult.ok) {
+  const linkResult = linkAuthoredSkills(collectResult.data, skillsDirectory, authoredDirectory)
+  if (linkResult.ok) {
+    for (const message of linkResult.data) {
+      p.log.step(message)
+    }
+  }
+  else {
     errors.push(`Failed to link authored skills: ${linkResult.error}`)
   }
-  else {
-    for (const msg of linkResult.data) {
-      p.log.step(msg)
+
+  const pruneResult = pruneStaleLinksinAuthoredDirectory(authoredDirectory, skillsDirectory)
+  if (pruneResult.ok) {
+    for (const message of pruneResult.data) {
+      p.log.step(message)
     }
   }
-
-  const pruneResult = pruneStaleLinksinAuthoredDir(authoredDir, skillsDir)
-  if (!pruneResult.ok) {
+  else {
     errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
   }
-  else {
-    for (const msg of pruneResult.data) {
-      p.log.step(msg)
-    }
-  }
+}
+else {
+  errors.push(`Failed to collect authored skills: ${collectResult.error}`)
 }
 
 // ── Report and exit ───────────────────────────────────────────────────────
 
 if (errors.length > 0) {
   p.log.warn(`${errors.length} error(s) occurred:`)
-  for (const err of errors) {
-    p.log.warn(`  - ${err}`)
+  for (const error of errors) {
+    p.log.warn(`  - ${error}`)
   }
   p.outro('Sync completed with errors')
   process.exit(1)

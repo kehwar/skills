@@ -1,22 +1,22 @@
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { discoverSkills } from './skillDiscovery.ts'
+import { discoverSkills } from './skill-discovery.ts'
 
 describe('discoverSkills', () => {
-  let tmp: string
+  let temporary: string
 
   beforeEach(() => {
-    tmp = mkdtempSync(join(tmpdir(), 'skills-discovery-test-'))
+    temporary = mkdtempSync(path.join(tmpdir(), 'skills-discovery-test-'))
   })
 
   afterEach(() => {
-    rmSync(tmp, { recursive: true })
+    rmSync(temporary, { recursive: true })
   })
 
   it('returns empty array when no SKILL.md exists', () => {
-    const result = discoverSkills(tmp)
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -24,8 +24,8 @@ describe('discoverSkills', () => {
   })
 
   it('returns [{path: "."}] when root contains SKILL.md', () => {
-    writeFileSync(join(tmp, 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    writeFileSync(path.join(temporary, 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -33,20 +33,20 @@ describe('discoverSkills', () => {
   })
 
   it('finds SKILL.md in a subdirectory', () => {
-    mkdirSync(join(tmp, 'my-skill'))
-    writeFileSync(join(tmp, 'my-skill', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    mkdirSync(path.join(temporary, 'my-skill'))
+    writeFileSync(path.join(temporary, 'my-skill', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
     expect(result.data).toEqual([{ path: 'my-skill' }])
   })
 
-  it('stops recursion when finding a skill (does not recurse into matched dir)', () => {
-    mkdirSync(join(tmp, 'parent', 'nested'), { recursive: true })
-    writeFileSync(join(tmp, 'parent', 'SKILL.md'), '')
-    writeFileSync(join(tmp, 'parent', 'nested', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+  it('stops recursion when finding a skill (does not recurse into matched directory)', () => {
+    mkdirSync(path.join(temporary, 'parent', 'nested'), { recursive: true })
+    writeFileSync(path.join(temporary, 'parent', 'SKILL.md'), '')
+    writeFileSync(path.join(temporary, 'parent', 'nested', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -54,9 +54,9 @@ describe('discoverSkills', () => {
   })
 
   it('skips node_modules', () => {
-    mkdirSync(join(tmp, 'node_modules', 'some-skill'), { recursive: true })
-    writeFileSync(join(tmp, 'node_modules', 'some-skill', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    mkdirSync(path.join(temporary, 'node_modules', 'some-skill'), { recursive: true })
+    writeFileSync(path.join(temporary, 'node_modules', 'some-skill', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -64,9 +64,9 @@ describe('discoverSkills', () => {
   })
 
   it('skips hidden directories', () => {
-    mkdirSync(join(tmp, '.hidden-skill'))
-    writeFileSync(join(tmp, '.hidden-skill', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    mkdirSync(path.join(temporary, '.hidden-skill'))
+    writeFileSync(path.join(temporary, '.hidden-skill', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -74,11 +74,11 @@ describe('discoverSkills', () => {
   })
 
   it('finds multiple skills in different branches', () => {
-    mkdirSync(join(tmp, 'skill1'))
-    mkdirSync(join(tmp, 'skill2'))
-    writeFileSync(join(tmp, 'skill1', 'SKILL.md'), '')
-    writeFileSync(join(tmp, 'skill2', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    mkdirSync(path.join(temporary, 'skill1'))
+    mkdirSync(path.join(temporary, 'skill2'))
+    writeFileSync(path.join(temporary, 'skill1', 'SKILL.md'), '')
+    writeFileSync(path.join(temporary, 'skill2', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -87,11 +87,11 @@ describe('discoverSkills', () => {
   })
 
   it('finds skills at various nesting levels', () => {
-    mkdirSync(join(tmp, 'a', 'b', 'skill1'), { recursive: true })
-    mkdirSync(join(tmp, 'a', 'skill2'), { recursive: true })
-    writeFileSync(join(tmp, 'a', 'b', 'skill1', 'SKILL.md'), '')
-    writeFileSync(join(tmp, 'a', 'skill2', 'SKILL.md'), '')
-    const result = discoverSkills(tmp)
+    mkdirSync(path.join(temporary, 'a', 'b', 'skill1'), { recursive: true })
+    mkdirSync(path.join(temporary, 'a', 'skill2'), { recursive: true })
+    writeFileSync(path.join(temporary, 'a', 'b', 'skill1', 'SKILL.md'), '')
+    writeFileSync(path.join(temporary, 'a', 'skill2', 'SKILL.md'), '')
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
@@ -99,10 +99,10 @@ describe('discoverSkills', () => {
   })
 
   it('handles unreachable directories gracefully (permission denied)', () => {
-    mkdirSync(join(tmp, 'accessible'))
-    writeFileSync(join(tmp, 'accessible', 'SKILL.md'), '')
+    mkdirSync(path.join(temporary, 'accessible'))
+    writeFileSync(path.join(temporary, 'accessible', 'SKILL.md'), '')
     // Note: chmod is platform-specific; we just verify it doesn't crash
-    const result = discoverSkills(tmp)
+    const result = discoverSkills(temporary)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)

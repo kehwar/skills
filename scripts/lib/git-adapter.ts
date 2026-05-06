@@ -6,7 +6,7 @@
 
 import type { Result } from '../types.ts'
 import { mkdirSync } from 'node:fs'
-import { submoduleExists as checkSubmoduleExists, exec } from './gitOps.ts'
+import { submoduleExists as checkSubmoduleExists, exec } from './git-ops.ts'
 
 export interface GitAdapter {
   /**
@@ -47,16 +47,16 @@ export interface GitAdapter {
 
 export class MockGitAdapter implements GitAdapter {
   private registered: Set<string> = new Set()
-  private calls: Array<{ method: string, args: unknown[] }> = []
+  private calls: Array<{ method: string, arguments_: unknown[] }> = []
   private shouldFail: Map<string, string> = new Map()
 
   submoduleExists(root: string, path: string): boolean {
-    this.calls.push({ method: 'submoduleExists', args: [root, path] })
+    this.calls.push({ method: 'submoduleExists', arguments_: [root, path] })
     return this.registered.has(path)
   }
 
   addSubmodule(root: string, url: string, path: string): Result<void> {
-    this.calls.push({ method: 'addSubmodule', args: [root, url, path] })
+    this.calls.push({ method: 'addSubmodule', arguments_: [root, url, path] })
     if (this.shouldFail.has('addSubmodule'))
       return { ok: false, error: this.shouldFail.get('addSubmodule')! }
     this.registered.add(path)
@@ -64,35 +64,35 @@ export class MockGitAdapter implements GitAdapter {
   }
 
   initSubmodule(url: string, path: string, branch?: string): Result<void> {
-    this.calls.push({ method: 'initSubmodule', args: [url, path, branch] })
+    this.calls.push({ method: 'initSubmodule', arguments_: [url, path, branch] })
     if (this.shouldFail.has('initSubmodule'))
       return { ok: false, error: this.shouldFail.get('initSubmodule')! }
     return { ok: true, data: undefined }
   }
 
   fetchSubmodule(path: string, branch?: string): Result<void> {
-    this.calls.push({ method: 'fetchSubmodule', args: [path, branch] })
+    this.calls.push({ method: 'fetchSubmodule', arguments_: [path, branch] })
     if (this.shouldFail.has('fetchSubmodule'))
       return { ok: false, error: this.shouldFail.get('fetchSubmodule')! }
     return { ok: true, data: undefined }
   }
 
   checkoutBranch(path: string, branch: string): Result<void> {
-    this.calls.push({ method: 'checkoutBranch', args: [path, branch] })
+    this.calls.push({ method: 'checkoutBranch', arguments_: [path, branch] })
     if (this.shouldFail.has('checkoutBranch'))
       return { ok: false, error: this.shouldFail.get('checkoutBranch')! }
     return { ok: true, data: undefined }
   }
 
   setSubmoduleBranch(root: string, path: string, branch: string): Result<void> {
-    this.calls.push({ method: 'setSubmoduleBranch', args: [root, path, branch] })
+    this.calls.push({ method: 'setSubmoduleBranch', arguments_: [root, path, branch] })
     if (this.shouldFail.has('setSubmoduleBranch'))
       return { ok: false, error: this.shouldFail.get('setSubmoduleBranch')! }
     return { ok: true, data: undefined }
   }
 
   unsetSubmoduleBranch(root: string, path: string): Result<void> {
-    this.calls.push({ method: 'unsetSubmoduleBranch', args: [root, path] })
+    this.calls.push({ method: 'unsetSubmoduleBranch', arguments_: [root, path] })
     if (this.shouldFail.has('unsetSubmoduleBranch'))
       return { ok: false, error: this.shouldFail.get('unsetSubmoduleBranch')! }
     return { ok: true, data: undefined }
@@ -101,7 +101,7 @@ export class MockGitAdapter implements GitAdapter {
   /**
    * Get recorded method calls for assertions.
    */
-  getCallSequence(): Array<{ method: string, args: unknown[] }> {
+  getCallSequence(): Array<{ method: string, arguments_: unknown[] }> {
     return this.calls
   }
 
@@ -154,8 +154,8 @@ export class RealGitAdapter implements GitAdapter {
 
   initSubmodule(url: string, path: string, branch?: string): Result<void> {
     mkdirSync(path, { recursive: true })
-    const branchArg = branch ? ` -b ${branch}` : ''
-    const cloneCmd = `git clone --depth 1${branchArg} ${url} ${path}`
+    const branchArgument = branch ? ` -b ${branch}` : ''
+    const cloneCmd = `git clone --depth 1${branchArgument} ${url} ${path}`
     const result = exec(cloneCmd, {
       inherit: true,
     })
@@ -190,10 +190,10 @@ export class RealGitAdapter implements GitAdapter {
   }
 
   private checkoutFetchHead(path: string): Result<void> {
-    const symRefResult = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path })
+    const symReferenceResult = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path })
 
-    if (symRefResult.ok) {
-      const defaultBranch = this.extractDefaultBranch(symRefResult.data)
+    if (symReferenceResult.ok) {
+      const defaultBranch = this.extractDefaultBranch(symReferenceResult.data)
       if (defaultBranch) {
         return this.checkoutTrackingBranch(path, defaultBranch)
       }
@@ -202,14 +202,14 @@ export class RealGitAdapter implements GitAdapter {
     return this.checkoutDetachedHead(path)
   }
 
-  private extractDefaultBranch(symRefData: string): string | null {
-    const branches = symRefData.trim().split('/')
-    const defaultBranch = branches[branches.length - 1]
+  private extractDefaultBranch(symReferenceData: string): string | undefined {
+    const branches = symReferenceData.trim().split('/')
+    const defaultBranch = branches.at(-1)
 
     if (defaultBranch && defaultBranch !== 'HEAD') {
       return defaultBranch
     }
-    return null
+    return undefined
   }
 
   private checkoutTrackingBranch(path: string, branch: string): Result<void> {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { MockGitAdapter } from './gitAdapter.ts'
+import { MockGitAdapter } from './git-adapter.ts'
 
 /**
  * This test models how ensureSubmodule() should work with GitAdapter.
@@ -23,7 +23,7 @@ describe('ensureSubmodule with GitAdapter', () => {
       }
     }
 
-    const calls = adapter.getCallSequence().map((c: { method: string, args: unknown[] }) => c.method)
+    const calls = adapter.getCallSequence().map((c: { method: string, arguments_: unknown[] }) => c.method)
     expect(calls).toEqual(['submoduleExists', 'addSubmodule', 'setSubmoduleBranch', 'fetchSubmodule', 'checkoutBranch'])
   })
 
@@ -46,7 +46,7 @@ describe('ensureSubmodule with GitAdapter', () => {
       }
     }
 
-    const calls = adapter.getCallSequence().map((c: { method: string, args: unknown[] }) => c.method)
+    const calls = adapter.getCallSequence().map((c: { method: string, arguments_: unknown[] }) => c.method)
     expect(calls).toEqual(['submoduleExists', 'initSubmodule', 'checkoutBranch'])
   })
 
@@ -62,15 +62,13 @@ describe('ensureSubmodule with GitAdapter', () => {
     adapter.resetCalls()
 
     // Workflow: exists with old branch, update to new branch
-    if (adapter.submoduleExists(root, path)) {
-      if (newBranch) {
-        adapter.setSubmoduleBranch(root, path, newBranch)
-        adapter.fetchSubmodule(path, newBranch)
-        adapter.checkoutBranch(path, newBranch)
-      }
+    if (adapter.submoduleExists(root, path) && newBranch) {
+      adapter.setSubmoduleBranch(root, path, newBranch)
+      adapter.fetchSubmodule(path, newBranch)
+      adapter.checkoutBranch(path, newBranch)
     }
 
-    const calls = adapter.getCallSequence().map((c: { method: string, args: unknown[] }) => c.method)
+    const calls = adapter.getCallSequence().map((c: { method: string, arguments_: unknown[] }) => c.method)
     expect(calls).toEqual(['submoduleExists', 'setSubmoduleBranch', 'fetchSubmodule', 'checkoutBranch'])
   })
 
@@ -93,7 +91,7 @@ describe('ensureSubmodule with GitAdapter', () => {
       adapter.checkoutBranch(path, 'FETCH_HEAD')
     }
 
-    const calls = adapter.getCallSequence().map((c: { method: string, args: unknown[] }) => c.method)
+    const calls = adapter.getCallSequence().map((c: { method: string, arguments_: unknown[] }) => c.method)
     expect(calls).toEqual(['submoduleExists', 'unsetSubmoduleBranch', 'fetchSubmodule', 'checkoutBranch'])
   })
 })

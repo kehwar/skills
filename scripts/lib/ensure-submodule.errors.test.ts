@@ -1,13 +1,13 @@
 import type { Result } from '../types.ts'
 import { describe, expect, it } from 'vitest'
-import { MockGitAdapter } from './gitAdapter.ts'
-import { ensureSubmodule } from './submoduleOps.ts'
+import { MockGitAdapter } from './git-adapter.ts'
+import { ensureSubmodule } from './submodule-ops.ts'
 
 /**
  * FailingGitAdapter returns errors at specified points for testing error handling.
  */
 class FailingGitAdapter extends MockGitAdapter {
-  private failAt: string | null = null
+  private failAt: string | undefined = undefined
 
   setFailurePoint(method: string): void {
     this.failAt = method

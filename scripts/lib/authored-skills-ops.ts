@@ -4,27 +4,27 @@
 
 import type { Result, SkillMeta } from '../types.ts'
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
-import { dirname, join, relative } from 'node:path'
+import path from 'node:path'
 
 /**
  * Collect all authored skills from skills/ directory.
  * Returns Result<array of skill name + metadata pairs>.
  */
-export function collectAuthoredSkills(skillsDir: string): Result<Array<{ name: string, meta: SkillMeta }>> {
+export function collectAuthoredSkills(skillsDirectory: string): Result<Array<{ name: string, meta: SkillMeta }>> {
   const collected: Array<{ name: string, meta: SkillMeta }> = []
 
   try {
-    if (!existsSync(skillsDir))
+    if (!existsSync(skillsDirectory))
       return { ok: true, data: collected }
 
-    for (const entry of readdirSync(skillsDir, { withFileTypes: true })) {
+    for (const entry of readdirSync(skillsDirectory, { withFileTypes: true })) {
       if (!entry.isDirectory())
         continue
-      const skillMetaPath = join(skillsDir, entry.name, 'meta.json')
+      const skillMetaPath = path.join(skillsDirectory, entry.name, 'meta.json')
       if (!existsSync(skillMetaPath))
         continue
 
-      const skillMeta = JSON.parse(readFileSync(skillMetaPath, 'utf-8')) as SkillMeta
+      const skillMeta = JSON.parse(readFileSync(skillMetaPath, 'utf8')) as SkillMeta
       if (skillMeta.type === 'authored') {
         collected.push({ name: entry.name, meta: skillMeta })
       }
@@ -32,10 +32,10 @@ export function collectAuthoredSkills(skillsDir: string): Result<Array<{ name: s
 
     return { ok: true, data: collected }
   }
-  catch (err) {
+  catch (error) {
     return {
       ok: false,
-      error: `Failed to collect authored skills: ${err instanceof Error ? err.message : String(err)}`,
+      error: `Failed to collect authored skills: ${error instanceof Error ? error.message : String(error)}`,
     }
   }
 }
@@ -43,17 +43,17 @@ export function collectAuthoredSkills(skillsDir: string): Result<Array<{ name: s
 /**
  * Remove all stale links for a skill being relinked.
  */
-function removeStaleSkillLinks(name: string, authoredDir: string): void {
+function removeStaleSkillLinks(name: string, authoredDirectory: string): void {
   // Remove from flat location if it exists
-  const flatLink = join(authoredDir, name)
+  const flatLink = path.join(authoredDirectory, name)
   if (existsSync(flatLink))
     rmSync(flatLink, { force: true })
 
   // Remove from any domain subdirectory
-  if (existsSync(authoredDir)) {
-    for (const domain of readdirSync(authoredDir, { withFileTypes: true })) {
+  if (existsSync(authoredDirectory)) {
+    for (const domain of readdirSync(authoredDirectory, { withFileTypes: true })) {
       if (domain.isDirectory()) {
-        const domainLink = join(authoredDir, domain.name, name)
+        const domainLink = path.join(authoredDirectory, domain.name, name)
         if (existsSync(domainLink))
           rmSync(domainLink, { force: true })
       }
@@ -67,24 +67,24 @@ function removeStaleSkillLinks(name: string, authoredDir: string): void {
 function createSkillLink(
   name: string,
   meta: Extract<SkillMeta, { type: 'authored' }>,
-  skillsDir: string,
-  authoredDir: string,
+  skillsDirectory: string,
+  authoredDirectory: string,
 ): string {
   let linkPath: string
   let linkTarget: string
 
   if (meta.domain) {
-    const domainDir = join(authoredDir, meta.domain)
-    mkdirSync(domainDir, { recursive: true })
-    linkPath = join(domainDir, name)
-    linkTarget = relative(domainDir, join(skillsDir, name))
+    const domainDirectory = path.join(authoredDirectory, meta.domain)
+    mkdirSync(domainDirectory, { recursive: true })
+    linkPath = path.join(domainDirectory, name)
+    linkTarget = path.relative(domainDirectory, path.join(skillsDirectory, name))
   }
   else {
-    linkPath = join(authoredDir, name)
-    linkTarget = relative(authoredDir, join(skillsDir, name))
+    linkPath = path.join(authoredDirectory, name)
+    linkTarget = path.relative(authoredDirectory, path.join(skillsDirectory, name))
   }
 
-  mkdirSync(dirname(linkPath), { recursive: true })
+  mkdirSync(path.dirname(linkPath), { recursive: true })
   symlinkSync(linkTarget, linkPath)
 
   return meta.domain ? ` (domain: ${meta.domain})` : ''
@@ -97,33 +97,33 @@ function createSkillLink(
  */
 export function linkAuthoredSkills(
   collected: Array<{ name: string, meta: SkillMeta }>,
-  skillsDir: string,
-  authoredDir: string,
+  skillsDirectory: string,
+  authoredDirectory: string,
 ): Result<string[]> {
   const messages: string[] = []
 
   try {
-    mkdirSync(authoredDir, { recursive: true })
+    mkdirSync(authoredDirectory, { recursive: true })
 
     // First pass: remove all stale links for skills being relinked
     for (const { name } of collected)
-      removeStaleSkillLinks(name, authoredDir)
+      removeStaleSkillLinks(name, authoredDirectory)
 
     // Second pass: create new links
     for (const { name, meta } of collected) {
       if (meta.type !== 'authored')
         continue
 
-      const domainSuffix = createSkillLink(name, meta as Extract<SkillMeta, { type: 'authored' }>, skillsDir, authoredDir)
+      const domainSuffix = createSkillLink(name, meta as Extract<SkillMeta, { type: 'authored' }>, skillsDirectory, authoredDirectory)
       messages.push(`linked  authored: ${name}${domainSuffix}`)
     }
 
     return { ok: true, data: messages }
   }
-  catch (err) {
+  catch (error) {
     return {
       ok: false,
-      error: `Failed to link authored skills: ${err instanceof Error ? err.message : String(err)}`,
+      error: `Failed to link authored skills: ${error instanceof Error ? error.message : String(error)}`,
     }
   }
 }
@@ -135,23 +135,23 @@ export function linkAuthoredSkills(
  * - Point to a skill that doesn't exist at all
  * Returns Result<array of messages> describing actions taken.
  */
-export function pruneStaleLinksinAuthoredDir(
-  authoredDir: string,
-  skillsDir: string,
+export function pruneStaleLinksinAuthoredDirectory(
+  authoredDirectory: string,
+  skillsDirectory: string,
 ): Result<string[]> {
   const messages: string[] = []
 
   try {
-    function pruneRecursive(dir: string): void {
-      if (!existsSync(dir))
+    function pruneRecursive(directory: string): void {
+      if (!existsSync(directory))
         return
 
-      for (const entry of readdirSync(dir, { withFileTypes: true })) {
-        const full = join(dir, entry.name)
+      for (const entry of readdirSync(directory, { withFileTypes: true })) {
+        const full = path.join(directory, entry.name)
 
         if (entry.isSymbolicLink()) {
           const skillName = entry.name
-          const targetMetaPath = join(skillsDir, skillName, 'meta.json')
+          const targetMetaPath = path.join(skillsDirectory, skillName, 'meta.json')
 
           if (!existsSync(targetMetaPath)) {
             rmSync(full)
@@ -159,7 +159,7 @@ export function pruneStaleLinksinAuthoredDir(
             continue
           }
 
-          const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf-8')) as SkillMeta
+          const targetMeta = JSON.parse(readFileSync(targetMetaPath, 'utf8')) as SkillMeta
           if (targetMeta.type !== 'authored') {
             rmSync(full)
             messages.push(`removed stale authored symlink: ${skillName}`)
@@ -174,13 +174,13 @@ export function pruneStaleLinksinAuthoredDir(
       }
     }
 
-    pruneRecursive(authoredDir)
+    pruneRecursive(authoredDirectory)
     return { ok: true, data: messages }
   }
-  catch (err) {
+  catch (error) {
     return {
       ok: false,
-      error: `Failed to prune stale authored symlinks: ${err instanceof Error ? err.message : String(err)}`,
+      error: `Failed to prune stale authored symlinks: ${error instanceof Error ? error.message : String(error)}`,
     }
   }
 }

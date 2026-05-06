@@ -1,7 +1,7 @@
 import type { Dirent } from 'node:fs'
 import type { Result } from '../types.ts'
 import { readdirSync } from 'node:fs'
-import { join, relative } from 'node:path'
+import path from 'node:path'
 
 export interface Skill {
   path: string
@@ -14,7 +14,7 @@ export interface Skill {
  * - Returns "." if root itself contains SKILL.md
  * Returns Result<Skill[]> to capture any file system errors.
  */
-export function discoverSkills(dir: string): Result<Skill[]> {
+export function discoverSkills(directory: string): Result<Skill[]> {
   const results: Skill[] = []
 
   try {
@@ -27,9 +27,9 @@ export function discoverSkills(dir: string): Result<Skill[]> {
         return
       }
 
-      // Check if current dir is a skill
-      if (entries.some(e => e.isFile() && e.name === 'SKILL.md')) {
-        results.push({ path: relative(dir, current) || '.' })
+      // Check if current directory is a skill
+      if (entries.some(entry => entry.isFile() && entry.name === 'SKILL.md')) {
+        results.push({ path: path.relative(directory, current) || '.' })
         return // Stop recursion for this branch
       }
 
@@ -40,18 +40,18 @@ export function discoverSkills(dir: string): Result<Skill[]> {
           && entry.name !== 'node_modules'
           && !entry.name.startsWith('.')
         ) {
-          walk(join(current, entry.name))
+          walk(path.join(current, entry.name))
         }
       }
     }
 
-    walk(dir)
+    walk(directory)
     return { ok: true, data: results }
   }
-  catch (err) {
+  catch (error) {
     return {
       ok: false,
-      error: `Failed to discover skills: ${err instanceof Error ? err.message : String(err)}`,
+      error: `Failed to discover skills: ${error instanceof Error ? error.message : String(error)}`,
     }
   }
 }

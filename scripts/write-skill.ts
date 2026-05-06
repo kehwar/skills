@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Create a new authored skill interactively.
  * Usage: pnpm write-skill <name> [--domain <domain>] [--source <url>]
@@ -12,44 +13,44 @@
 
 import type { SkillMeta } from './types.ts'
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { linkAuthoredSkills } from './lib/authoredSkillsOps.ts'
-import { SkillMetaStore } from './lib/skillMetaStore.ts'
-import { normalizeUrl } from './lib/urlOps.ts'
+import { linkAuthoredSkills } from './lib/authored-skills-ops.ts'
+import { SkillMetaStore } from './lib/skill-meta-store.ts'
+import { normalizeUrl } from './lib/url-ops.ts'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = join(__dirname, '..')
-const skillsDir = join(root, 'skills')
-const authoredDir = join(root, 'authored')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.join(__dirname, '..')
+const skillsDirectory = path.join(root, 'skills')
+const authoredDirectory = path.join(root, 'authored')
 const errors: string[] = []
 
 // ── Parse CLI arguments ─────────────────────────────────────────────────────
 
-const args = process.argv.slice(2)
-const domainFlagIdx = args.findIndex(a => a === '--domain' || a === '-d')
-const domain: string | undefined = domainFlagIdx !== -1 ? args[domainFlagIdx + 1] : undefined
-const sourceFlagIdx = args.findIndex(a => a === '--source' || a === '-s')
-const sourceUrl: string | undefined = sourceFlagIdx !== -1 ? args[sourceFlagIdx + 1] : undefined
-const positional = args.filter((_, i) => {
-  if (domainFlagIdx !== -1 && (i === domainFlagIdx || i === domainFlagIdx + 1))
+const arguments_ = process.argv.slice(2)
+const domainFlagIndex = arguments_.findIndex(a => a === '--domain' || a === '-d')
+const domain: string | undefined = domainFlagIndex === -1 ? undefined : arguments_[domainFlagIndex + 1]
+const sourceFlagIndex = arguments_.findIndex(a => a === '--source' || a === '-s')
+const sourceUrl: string | undefined = sourceFlagIndex === -1 ? undefined : arguments_[sourceFlagIndex + 1]
+const positional = arguments_.find((_, index) => {
+  if (domainFlagIndex !== -1 && (index === domainFlagIndex || index === domainFlagIndex + 1))
     return false
-  if (sourceFlagIdx !== -1 && (i === sourceFlagIdx || i === sourceFlagIdx + 1))
+  if (sourceFlagIndex !== -1 && (index === sourceFlagIndex || index === sourceFlagIndex + 1))
     return false
   return true
 })
-const skillName = positional[0]
+const skillName = positional
 
 // ── Determine domain ────────────────────────────────────────────────────────
 
 let selectedDomain: string | undefined
 
 function getDomains(): string[] {
-  if (!existsSync(authoredDir))
+  if (!existsSync(authoredDirectory))
     return []
-  return readdirSync(authoredDir, { withFileTypes: true })
+  return readdirSync(authoredDirectory, { withFileTypes: true })
     .filter(f => f.isDirectory() && !f.name.startsWith('.'))
     .map(f => f.name)
     .sort()
@@ -64,13 +65,13 @@ if (!skillName) {
   process.exit(1)
 }
 
-const kebabCaseRegex = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+const kebabCaseRegex = /^[\da-z](?:[\da-z-]*[\da-z])?$/
 if (!kebabCaseRegex.test(skillName)) {
   p.log.error(`Invalid skill name "${skillName}". Must be kebab-case (lowercase, hyphens, no spaces).`)
   process.exit(1)
 }
 
-const skillPath = join(skillsDir, skillName)
+const skillPath = path.join(skillsDirectory, skillName)
 if (existsSync(skillPath)) {
   p.log.error(`Skill already exists: ${skillName}`)
   process.exit(1)
@@ -107,7 +108,6 @@ else {
           return 'Domain name cannot be empty'
         if (!kebabCaseRegex.test(v))
           return 'Domain name must be kebab-case'
-        return undefined
       },
     })
 
@@ -148,7 +148,7 @@ try {
   }
 
   // Use SkillMetaStore to add and save the skill
-  const skillStore = new SkillMetaStore(skillsDir)
+  const skillStore = new SkillMetaStore(skillsDirectory)
   skillStore.addSkill(skillName, skillMeta)
   const saveResult = skillStore.saveSkill(skillName)
   if (!saveResult.ok) {
@@ -177,7 +177,7 @@ description: |
 
 [Link to additional docs if needed]
 `
-  writeFileSync(join(skillPath, 'SKILL.md'), skillMdContent)
+  writeFileSync(path.join(skillPath, 'SKILL.md'), skillMdContent)
 
   spinner.stop(`Created skill: ${skillName}`)
 
@@ -187,17 +187,17 @@ description: |
     const collected = [{ name: skillName, meta: skillMeta }]
     const linkResult = linkAuthoredSkills(
       collected,
-      skillsDir,
-      authoredDir,
+      skillsDirectory,
+      authoredDirectory,
     )
-    if (!linkResult.ok) {
-      errors.push(`Failed to link skill in authored directory: ${linkResult.error}`)
-      p.log.warn(linkResult.error)
+    if (linkResult.ok) {
+      for (const message of linkResult.data) {
+        p.log.success(message)
+      }
     }
     else {
-      for (const msg of linkResult.data) {
-        p.log.success(msg)
-      }
+      errors.push(`Failed to link skill in authored directory: ${linkResult.error}`)
+      p.log.warn(linkResult.error)
     }
   }
 
@@ -213,8 +213,8 @@ description: |
 
   if (errors.length > 0) {
     p.log.warn(`${errors.length} error(s) occurred:`)
-    for (const err of errors) {
-      p.log.warn(`  - ${err}`)
+    for (const error of errors) {
+      p.log.warn(`  - ${error}`)
     }
     p.outro('Skill created with errors')
     process.exit(1)
@@ -222,11 +222,11 @@ description: |
 
   p.outro('Done')
 }
-catch (e) {
-  const msg = e instanceof Error ? e.message : String(e)
-  if (!errors.includes(msg)) {
-    errors.push(msg)
+catch (error) {
+  const message = error instanceof Error ? error.message : String(error)
+  if (!errors.includes(message)) {
+    errors.push(message)
   }
-  p.outro(`Failed: ${msg}`)
+  p.outro(`Failed: ${message}`)
   process.exit(1)
 }

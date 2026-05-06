@@ -1,19 +1,19 @@
 import type { Result, SkillMeta } from '../types.ts'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import path from 'node:path'
 
 export interface SkillMetaStoreOptions {
   onWarning?: (message: string) => void
 }
 
 export class SkillMetaStore {
-  private skillsDir: string
+  private skillsDirectory: string
   private skills: Map<string, SkillMeta>
   private original: Map<string, SkillMeta>
   private onWarning: (message: string) => void
 
-  constructor(skillsDir: string, options?: SkillMetaStoreOptions) {
-    this.skillsDir = skillsDir
+  constructor(skillsDirectory: string, options?: SkillMetaStoreOptions) {
+    this.skillsDirectory = skillsDirectory
     this.onWarning = options?.onWarning ?? (() => {})
     this.skills = new Map()
     this.original = new Map()
@@ -21,18 +21,18 @@ export class SkillMetaStore {
   }
 
   private loadAllSkills(): void {
-    if (!existsSync(this.skillsDir)) {
+    if (!existsSync(this.skillsDirectory)) {
       return
     }
 
-    const entries = readdirSync(this.skillsDir, { withFileTypes: true })
+    const entries = readdirSync(this.skillsDirectory, { withFileTypes: true })
     for (const entry of entries) {
       if (!entry.isDirectory()) {
         continue
       }
 
       const skillName = entry.name
-      const metaPath = join(this.skillsDir, skillName, 'meta.json')
+      const metaPath = path.join(this.skillsDirectory, skillName, 'meta.json')
 
       if (!existsSync(metaPath)) {
         this.onWarning(`Skill '${skillName}' is missing meta.json`)
@@ -40,7 +40,7 @@ export class SkillMetaStore {
       }
 
       try {
-        const content = readFileSync(metaPath, 'utf-8')
+        const content = readFileSync(metaPath, 'utf8')
         const meta = JSON.parse(content) as SkillMeta
         this.skills.set(skillName, meta)
         this.original.set(skillName, this.cloneMeta(meta))
@@ -52,7 +52,7 @@ export class SkillMetaStore {
   }
 
   private cloneMeta(meta: SkillMeta): SkillMeta {
-    return JSON.parse(JSON.stringify(meta))
+    return structuredClone(meta)
   }
 
   readAllSkills(): Record<string, SkillMeta> {
@@ -112,17 +112,17 @@ export class SkillMetaStore {
     }
 
     try {
-      const skillPath = join(this.skillsDir, skillName)
+      const skillPath = path.join(this.skillsDirectory, skillName)
       mkdirSync(skillPath, { recursive: true })
-      const metaPath = join(skillPath, 'meta.json')
-      writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`)
+      const metaPath = path.join(skillPath, 'meta.json')
+      writeFileSync(metaPath, `${JSON.stringify(meta, undefined, 2)}\n`)
       this.original.set(skillName, this.cloneMeta(meta))
       return { ok: true, data: undefined }
     }
-    catch (err) {
+    catch (error) {
       return {
         ok: false,
-        error: `Failed to save skill meta for '${skillName}': ${err instanceof Error ? err.message : String(err)}`,
+        error: `Failed to save skill meta for '${skillName}': ${error instanceof Error ? error.message : String(error)}`,
       }
     }
   }
@@ -138,10 +138,10 @@ export class SkillMetaStore {
       }
       return { ok: true, data: undefined }
     }
-    catch (err) {
+    catch (error) {
       return {
         ok: false,
-        error: `Failed to save skills: ${err instanceof Error ? err.message : String(err)}`,
+        error: `Failed to save skills: ${error instanceof Error ? error.message : String(error)}`,
       }
     }
   }

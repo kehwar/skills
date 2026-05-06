@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Interactive upstream management.
  * Usage: pnpm upstream <github-url> [--branch <branch>] [--name <key>]
@@ -12,36 +13,36 @@
 
 import type { UpstreamMeta } from './types.ts'
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { submoduleExists } from './lib/gitOps.ts'
-import { MetaStore } from './lib/metaStore.ts'
-import { discoverSkills } from './lib/skillDiscovery.ts'
-import { copySkillsFromUpstream } from './lib/skillOps.ts'
-import { ensureSubmodule } from './lib/submoduleOps.ts'
-import { normalizeUrl } from './lib/urlOps.ts'
+import { submoduleExists } from './lib/git-ops.ts'
+import { MetaStore } from './lib/meta-store.ts'
+import { discoverSkills } from './lib/skill-discovery.ts'
+import { copySkillsFromUpstream } from './lib/skill-ops.ts'
+import { ensureSubmodule } from './lib/submodule-ops.ts'
+import { normalizeUrl } from './lib/url-ops.ts'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = join(__dirname, '..')
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.join(__dirname, '..')
 const store = new MetaStore(root)
 const meta = store.readMeta()
 const errors: string[] = []
 
-const args = process.argv.slice(2)
-const branchFlagIdx = args.findIndex(a => a === '--branch' || a === '-b')
-const branch: string | undefined = branchFlagIdx !== -1 ? args[branchFlagIdx + 1] : undefined
-const nameFlagIdx = args.findIndex(a => a === '--name' || a === '-n')
-const nameOverride: string | undefined = nameFlagIdx !== -1 ? args[nameFlagIdx + 1] : undefined
-const positional = args.filter((_, i) => {
-  if (branchFlagIdx !== -1 && (i === branchFlagIdx || i === branchFlagIdx + 1))
+const arguments_ = process.argv.slice(2)
+const branchFlagIndex = arguments_.findIndex(a => a === '--branch' || a === '-b')
+const branch: string | undefined = branchFlagIndex === -1 ? undefined : arguments_[branchFlagIndex + 1]
+const nameFlagIndex = arguments_.findIndex(a => a === '--name' || a === '-n')
+const nameOverride: string | undefined = nameFlagIndex === -1 ? undefined : arguments_[nameFlagIndex + 1]
+const positional = arguments_.find((_, index) => {
+  if (branchFlagIndex !== -1 && (index === branchFlagIndex || index === branchFlagIndex + 1))
     return false
-  if (nameFlagIdx !== -1 && (i === nameFlagIdx || i === nameFlagIdx + 1))
+  if (nameFlagIndex !== -1 && (index === nameFlagIndex || index === nameFlagIndex + 1))
     return false
   return true
 })
-const url = positional[0]
+const url = positional
 
 // ── Validate URL early (before UI) ──────────────────────────────────────────
 
@@ -55,8 +56,8 @@ if (!url) {
 
 const normalizedUrl = normalizeUrl(url.replace(/\.git$/, ''))
 const urlParts = normalizedUrl.split('/')
-const repoName = urlParts[urlParts.length - 1]!
-const orgName = urlParts[urlParts.length - 2]!
+const repoName = urlParts.at(-1)!
+const orgName = urlParts.at(-2)!
 
 let upstreamKey = nameOverride ?? (repoName === 'skills' ? orgName : repoName)
 
@@ -68,7 +69,7 @@ const existing = meta.upstreams[upstreamKey]
 if (existing && existing.url !== normalizedUrl && !nameOverride) {
   const answer = await p.text({
     message: `Key "${upstreamKey}" is already used by ${existing.url}. Enter a different key:`,
-    validate: v => (!v?.trim() ? 'Key cannot be empty' : undefined),
+    validate: v => (v?.trim() ? undefined : 'Key cannot be empty'),
   })
   if (p.isCancel(answer)) {
     p.cancel('Cancelled')
@@ -78,7 +79,7 @@ if (existing && existing.url !== normalizedUrl && !nameOverride) {
 }
 
 const submodulePath = `upstream/${upstreamKey}`
-const upstreamDir = join(root, submodulePath)
+const upstreamDirectory = path.join(root, submodulePath)
 const spinner = p.spinner()
 
 const isNew = !submoduleExists(root, submodulePath)
@@ -86,44 +87,44 @@ const updateAction = isNew ? 'Adding' : 'Updating'
 const branchSuffix = branch ? ` (branch: ${branch})` : ''
 spinner.start(`${updateAction} ${submodulePath}${branchSuffix}`)
 const ensureResult = ensureSubmodule(root, submodulePath, url, branch)
-if (!ensureResult.ok) {
-  spinner.stop(`Failed: ${ensureResult.error}`)
-  errors.push(ensureResult.error)
+if (ensureResult.ok) {
+  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
 }
 else {
-  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
+  spinner.stop(`Failed: ${ensureResult.error}`)
+  errors.push(ensureResult.error)
 }
 
 // --- Skill selection (only if SKILL.md files exist) ---
 
-let skillDirs: string[] = []
-const discoverResult = discoverSkills(upstreamDir)
-if (!discoverResult.ok) {
-  p.log.warn(`Failed to discover skills: ${discoverResult.error}`)
-  errors.push(`Failed to discover skills: ${discoverResult.error}`)
-}
-else {
-  skillDirs = discoverResult.data
+let skillDirectories: string[] = []
+const discoverResult = discoverSkills(upstreamDirectory)
+if (discoverResult.ok) {
+  skillDirectories = discoverResult.data
     .map(skill => skill.path)
     .sort((a, b) =>
       (a.split('/').pop() ?? a).localeCompare(b.split('/').pop() ?? b),
     )
 }
+else {
+  p.log.warn(`Failed to discover skills: ${discoverResult.error}`)
+  errors.push(`Failed to discover skills: ${discoverResult.error}`)
+}
 
 const existingConfig = meta.upstreams[upstreamKey]
 const skillsMap: Record<string, string> = {}
 
-if (skillDirs.length > 0) {
+if (skillDirectories.length > 0) {
   const existingPaths = new Set(existingConfig?.skills ? Object.keys(existingConfig.skills) : [])
 
   const selected = await p.multiselect({
-    message: `Select skills to sync from ${upstreamKey} (${skillDirs.length} found, space to skip all)`,
-    options: skillDirs.map(skillPath => ({
+    message: `Select skills to sync from ${upstreamKey} (${skillDirectories.length} found, space to skip all)`,
+    options: skillDirectories.map(skillPath => ({
       value: skillPath,
       label: skillPath.split('/').pop() ?? skillPath,
       hint: skillPath === '.' ? '(repo root)' : skillPath,
     })),
-    initialValues: skillDirs.filter(s => existingPaths.has(s)),
+    initialValues: skillDirectories.filter(s => existingPaths.has(s)),
     required: false,
   })
 
@@ -144,7 +145,7 @@ if (skillDirs.length > 0) {
     const selectedOutputNames = new Set(Object.values(skillsMap))
     for (const outputName of Object.values(existingConfig.skills)) {
       if (!selectedOutputNames.has(outputName)) {
-        const outputPath = join(root, 'skills', outputName)
+        const outputPath = path.join(root, 'skills', outputName)
         if (existsSync(outputPath)) {
           rmSync(outputPath, { recursive: true })
           p.log.step(`removed skills/${outputName}`)
@@ -167,24 +168,20 @@ const newConfig: UpstreamMeta = {
 }
 store.updateUpstream(upstreamKey, newConfig)
 const saveResult = store.saveMeta()
-if (!saveResult.ok) {
-  p.log.error(`Failed to save meta.json: ${saveResult.error}`)
-  errors.push(saveResult.error)
+if (saveResult.ok) {
+  p.log.success('Updated meta.json')
 }
 else {
-  p.log.success('Updated meta.json')
+  p.log.error(`Failed to save meta.json: ${saveResult.error}`)
+  errors.push(saveResult.error)
 }
 
 // --- Copy selected skills ---
 
 if (Object.keys(skillsMap).length > 0) {
-  const copyResult = copySkillsFromUpstream(upstreamKey, upstreamDir, newConfig, root)
+  const copyResult = copySkillsFromUpstream(upstreamKey, upstreamDirectory, newConfig, root)
 
-  if (!copyResult.ok) {
-    p.log.error(`Failed to copy skills: ${copyResult.error}`)
-    errors.push(copyResult.error)
-  }
-  else {
+  if (copyResult.ok) {
     const result = copyResult.data
 
     // Log results
@@ -199,14 +196,18 @@ if (Object.keys(skillsMap).length > 0) {
       errors.push(`Skill copy failed: ${upstreamKey}/${skill.skillPath}: ${skill.error}`)
     }
   }
+  else {
+    p.log.error(`Failed to copy skills: ${copyResult.error}`)
+    errors.push(copyResult.error)
+  }
 }
 
 // --- Create instructions file (if this is a reference-only upstream with no skills) ---
 
-const instructionsDir = join(root, 'instructions')
-const instructionsFile = join(instructionsDir, `${upstreamKey}.md`)
-if (!Object.keys(skillsMap).length && !existsSync(instructionsFile)) {
-  mkdirSync(instructionsDir, { recursive: true })
+const instructionsDirectory = path.join(root, 'instructions')
+const instructionsFile = path.join(instructionsDirectory, `${upstreamKey}.md`)
+if (Object.keys(skillsMap).length === 0 && !existsSync(instructionsFile)) {
+  mkdirSync(instructionsDirectory, { recursive: true })
   writeFileSync(instructionsFile, `# ${upstreamKey}\n\n<!-- Notes for authoring skills from this upstream -->\n`)
   p.log.step(`created instructions/${upstreamKey}.md`)
 }
@@ -215,8 +216,8 @@ if (!Object.keys(skillsMap).length && !existsSync(instructionsFile)) {
 
 if (errors.length > 0) {
   p.log.warn(`${errors.length} error(s) occurred:`)
-  for (const err of errors) {
-    p.log.warn(`  - ${err}`)
+  for (const error of errors) {
+    p.log.warn(`  - ${error}`)
   }
   p.outro('Upstream completed with errors')
   process.exit(1)

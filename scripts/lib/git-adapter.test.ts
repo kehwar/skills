@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { MockGitAdapter } from './gitAdapter.ts'
+import { MockGitAdapter } from './git-adapter.ts'
 
 describe('gitAdapter', () => {
   describe('mockGitAdapter', () => {
@@ -9,7 +9,7 @@ describe('gitAdapter', () => {
       expect(exists).toBe(false)
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'submoduleExists',
-        args: ['/root', 'upstream/foo'],
+        arguments_: ['/root', 'upstream/foo'],
       })
     })
 
@@ -25,7 +25,7 @@ describe('gitAdapter', () => {
       adapter.addSubmodule('/root', 'https://github.com/foo/bar', 'upstream/foo')
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'addSubmodule',
-        args: ['/root', 'https://github.com/foo/bar', 'upstream/foo'],
+        arguments_: ['/root', 'https://github.com/foo/bar', 'upstream/foo'],
       })
     })
 
@@ -34,7 +34,7 @@ describe('gitAdapter', () => {
       adapter.initSubmodule('https://github.com/foo/bar', 'upstream/foo', 'main')
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'initSubmodule',
-        args: ['https://github.com/foo/bar', 'upstream/foo', 'main'],
+        arguments_: ['https://github.com/foo/bar', 'upstream/foo', 'main'],
       })
     })
 
@@ -43,7 +43,7 @@ describe('gitAdapter', () => {
       adapter.fetchSubmodule('upstream/foo', 'main')
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'fetchSubmodule',
-        args: ['upstream/foo', 'main'],
+        arguments_: ['upstream/foo', 'main'],
       })
     })
 
@@ -52,7 +52,7 @@ describe('gitAdapter', () => {
       adapter.checkoutBranch('upstream/foo', 'main')
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'checkoutBranch',
-        args: ['upstream/foo', 'main'],
+        arguments_: ['upstream/foo', 'main'],
       })
     })
 
@@ -61,7 +61,7 @@ describe('gitAdapter', () => {
       adapter.setSubmoduleBranch('/root', 'upstream/foo', 'develop')
       expect(adapter.getCallSequence()).toContainEqual({
         method: 'setSubmoduleBranch',
-        args: ['/root', 'upstream/foo', 'develop'],
+        arguments_: ['/root', 'upstream/foo', 'develop'],
       })
     })
 
@@ -84,7 +84,7 @@ describe('gitAdapter', () => {
       adapter.checkoutBranch('upstream/antfu', 'main')
 
       const calls = adapter.getCallSequence()
-      expect(calls.map((c: { method: string, args: unknown[] }) => c.method)).toEqual([
+      expect(calls.map((c: { method: string, arguments_: unknown[] }) => c.method)).toEqual([
         'submoduleExists',
         'addSubmodule',
         'setSubmoduleBranch',
@@ -107,7 +107,7 @@ describe('gitAdapter', () => {
       adapter.fetchSubmodule('upstream/antfu', 'develop')
       adapter.checkoutBranch('upstream/antfu', 'develop')
 
-      expect(adapter.getCallSequence().map((c: { method: string, args: unknown[] }) => c.method)).toEqual([
+      expect(adapter.getCallSequence().map((c: { method: string, arguments_: unknown[] }) => c.method)).toEqual([
         'submoduleExists',
         'addSubmodule',
         'setSubmoduleBranch',

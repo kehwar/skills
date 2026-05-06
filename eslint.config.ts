@@ -20,5 +20,5 @@ export default antfu(
       ...sonarjs.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
     },
-  } as any,
+  },
 )

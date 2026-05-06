@@ -1,9 +1,9 @@
 import type { Result } from '../types.ts'
 import { spawnSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import path from 'node:path'
 
-interface ExecOpts {
+interface ExecOptions {
   cwd?: string
   /** If true, inherit stdio and return empty string. */
   inherit?: boolean
@@ -15,18 +15,18 @@ interface ExecOpts {
  * - { ok: true, data: output } on success
  * - { ok: false, error } on failure
  */
-export function exec(cmd: string, opts?: ExecOpts): Result<string> {
-  const cwd = opts?.cwd
+export function exec(cmd: string, options?: ExecOptions): Result<string> {
+  const cwd = options?.cwd
   try {
-    // Parse command and arguments: split on first space to separate command from args
+    // Parse command and arguments: split on first space to separate command from arguments_
     const parts = cmd.split(/\s+/)
     const command = parts[0]!
-    const args = parts.slice(1)
+    const arguments_ = parts.slice(1)
 
-    const result = spawnSync(command, args, {
+    const result = spawnSync(command, arguments_, {
       cwd,
-      stdio: opts?.inherit ? 'inherit' : ['pipe', 'pipe', 'pipe'],
-      encoding: 'utf-8',
+      stdio: options?.inherit ? 'inherit' : ['pipe', 'pipe', 'pipe'],
+      encoding: 'utf8',
     })
 
     if (result.error)
@@ -40,27 +40,27 @@ export function exec(cmd: string, opts?: ExecOpts): Result<string> {
     const output = result.stdout?.trim() || ''
     return { ok: true, data: output }
   }
-  catch (e) {
-    const error = e instanceof Error ? e.message : String(e)
+  catch (error_) {
+    const error = error_ instanceof Error ? error_.message : String(error_)
     return { ok: false, error }
   }
 }
 
 /**
  * Get the current HEAD commit SHA of a git repository.
- * Returns null if not a git directory or command fails.
+ * Returns undefined if not a git directory or command fails.
  */
-export function getGitSha(dir: string): string | null {
-  const result = exec('git rev-parse HEAD', { cwd: dir })
-  return result.ok ? result.data : null
+export function getGitSha(directory: string): string | undefined {
+  const result = exec('git rev-parse HEAD', { cwd: directory })
+  return result.ok ? result.data : undefined
 }
 
 /**
  * Check if a git submodule path is registered in .gitmodules.
  */
 export function submoduleExists(root: string, submodulePath: string): boolean {
-  const gitmodulesPath = join(root, '.gitmodules')
+  const gitmodulesPath = path.join(root, '.gitmodules')
   if (!existsSync(gitmodulesPath))
     return false
-  return readFileSync(gitmodulesPath, 'utf-8').includes(`path = ${submodulePath}`)
+  return readFileSync(gitmodulesPath, 'utf8').includes(`path = ${submodulePath}`)
 }

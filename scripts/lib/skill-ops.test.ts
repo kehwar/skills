@@ -1,26 +1,26 @@
 import type { SkillMeta, UpstreamMeta } from '../types.ts'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { copySkillsFromUpstream } from './skillOps.ts'
+import { copySkillsFromUpstream } from './skill-ops.ts'
 
 describe('copySkillsFromUpstream', () => {
-  let tmp: string
-  let upstreamDir: string
+  let temporary: string
+  let upstreamDirectory: string
   let root: string
 
   beforeEach(() => {
-    tmp = mkdtempSync(join(tmpdir(), 'skills-test-'))
-    upstreamDir = join(tmp, 'upstream', 'my-upstream')
-    root = join(tmp, 'root')
-    mkdirSync(join(upstreamDir, 'my-skill'), { recursive: true })
-    mkdirSync(join(root, 'skills'), { recursive: true })
-    writeFileSync(join(upstreamDir, 'my-skill', 'SKILL.md'), '# My Skill')
+    temporary = mkdtempSync(path.join(tmpdir(), 'skills-test-'))
+    upstreamDirectory = path.join(temporary, 'upstream', 'my-upstream')
+    root = path.join(temporary, 'root')
+    mkdirSync(path.join(upstreamDirectory, 'my-skill'), { recursive: true })
+    mkdirSync(path.join(root, 'skills'), { recursive: true })
+    writeFileSync(path.join(upstreamDirectory, 'my-skill', 'SKILL.md'), '# My Skill')
   })
 
   afterEach(() => {
-    rmSync(tmp, { recursive: true })
+    rmSync(temporary, { recursive: true })
   })
 
   it('copies skill files to skills/<outputName>', () => {
@@ -28,12 +28,12 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
     expect(result.data.synced).toHaveLength(1)
-    expect(existsSync(join(root, 'skills', 'my-skill', 'SKILL.md'))).toBe(true)
+    expect(existsSync(path.join(root, 'skills', 'my-skill', 'SKILL.md'))).toBe(true)
   })
 
   it('writes meta.json with a real contentHash (not "pending")', () => {
@@ -41,71 +41,71 @@ describe('copySkillsFromUpstream', () => {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
     expect(result.data.synced).toHaveLength(1)
-    const meta = JSON.parse(readFileSync(join(root, 'skills', 'my-skill', 'meta.json'), 'utf-8')) as SkillMeta
+    const meta = JSON.parse(readFileSync(path.join(root, 'skills', 'my-skill', 'meta.json'), 'utf8')) as SkillMeta
     expect(meta.type).toBe('synced')
     if (meta.type === 'synced') {
       expect(meta.contentHash).not.toBe('pending')
-      expect(meta.contentHash).toMatch(/^[0-9a-f]{12}$/)
+      expect(meta.contentHash).toMatch(/^[\da-f]{12}$/)
     }
   })
 
   it('copies LICENSE to LICENSE.md', () => {
-    writeFileSync(join(upstreamDir, 'LICENSE'), 'MIT License')
+    writeFileSync(path.join(upstreamDirectory, 'LICENSE'), 'MIT License')
     const config: UpstreamMeta = {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
-    expect(existsSync(join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
+    expect(existsSync(path.join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
   })
 
   it('copies LICENSE.txt to LICENSE.md', () => {
-    writeFileSync(join(upstreamDir, 'LICENSE.txt'), 'MIT License')
+    writeFileSync(path.join(upstreamDirectory, 'LICENSE.txt'), 'MIT License')
     const config: UpstreamMeta = {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
-    expect(existsSync(join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
+    expect(existsSync(path.join(root, 'skills', 'my-skill', 'LICENSE.md'))).toBe(true)
   })
 
   it('resets the output directory removing stale files', () => {
-    const outputPath = join(root, 'skills', 'my-skill')
+    const outputPath = path.join(root, 'skills', 'my-skill')
     mkdirSync(outputPath, { recursive: true })
-    writeFileSync(join(outputPath, 'stale.txt'), 'stale')
+    writeFileSync(path.join(outputPath, 'stale.txt'), 'stale')
     const config: UpstreamMeta = {
       url: 'https://example.com/my-upstream',
       skills: { 'my-skill': 'my-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
-    expect(existsSync(join(outputPath, 'stale.txt'))).toBe(false)
+    expect(existsSync(path.join(outputPath, 'stale.txt'))).toBe(false)
   })
 
-  it('does not create output dir when source path is missing', () => {
+  it('does not create output directory when source path is missing', () => {
     const config: UpstreamMeta = {
       url: 'https://example.com/my-upstream',
       skills: { 'nonexistent-skill': 'nonexistent-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
     expect(result.data.skipped).toHaveLength(1)
-    expect(existsSync(join(root, 'skills', 'nonexistent-skill'))).toBe(false)
+    expect(existsSync(path.join(root, 'skills', 'nonexistent-skill'))).toBe(false)
   })
 
   it('writes correct synced meta.json fields', () => {
@@ -114,12 +114,12 @@ describe('copySkillsFromUpstream', () => {
       branch: 'main',
       skills: { 'my-skill': 'out-skill' },
     }
-    const result = copySkillsFromUpstream('my-upstream', upstreamDir, config, root)
+    const result = copySkillsFromUpstream('my-upstream', upstreamDirectory, config, root)
     expect(result.ok).toBe(true)
     if (!result.ok)
       throw new Error(result.error)
     expect(result.data.synced).toHaveLength(1)
-    const meta = JSON.parse(readFileSync(join(root, 'skills', 'out-skill', 'meta.json'), 'utf-8')) as SkillMeta
+    const meta = JSON.parse(readFileSync(path.join(root, 'skills', 'out-skill', 'meta.json'), 'utf8')) as SkillMeta
     expect(meta.type).toBe('synced')
     if (meta.type === 'synced') {
       expect(meta.upstream).toBe('my-upstream')
