@@ -5,6 +5,7 @@
 
 import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDir } from './lib/authoredSkillsOps.ts'
@@ -44,7 +45,8 @@ if (urlsNormalized) {
 p.log.step('Updating submodules...')
 for (const [name, config] of Object.entries(upstreams)) {
   const path = `upstream/${name}`
-  p.log.info(`  ${name}${config.branch ? ` (branch: ${config.branch})` : ''}`)
+  const branchSuffix = config.branch ? ` (branch: ${config.branch})` : ''
+  p.log.info(`  ${name}${branchSuffix}`)
   const result = ensureSubmodule(root, path, config.url, config.branch)
   if (!result.ok) {
     errors.push(`Failed to update submodule ${name}: ${result.error}`)

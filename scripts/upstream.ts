@@ -13,6 +13,7 @@
 import type { UpstreamMeta } from './types.ts'
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { submoduleExists } from './lib/gitOps.ts'
@@ -69,7 +70,10 @@ if (existing && existing.url !== normalizedUrl && !nameOverride) {
     message: `Key "${upstreamKey}" is already used by ${existing.url}. Enter a different key:`,
     validate: v => (!v?.trim() ? 'Key cannot be empty' : undefined),
   })
-  if (p.isCancel(answer)) { p.cancel('Cancelled'); process.exit(0) }
+  if (p.isCancel(answer)) {
+    p.cancel('Cancelled')
+    process.exit(0)
+  }
   upstreamKey = answer as string
 }
 
@@ -78,7 +82,9 @@ const upstreamDir = join(root, submodulePath)
 const spinner = p.spinner()
 
 const isNew = !submoduleExists(root, submodulePath)
-spinner.start(`${isNew ? 'Adding' : 'Updating'} ${submodulePath}${branch ? ` (branch: ${branch})` : ''}`)
+const updateAction = isNew ? 'Adding' : 'Updating'
+const branchSuffix = branch ? ` (branch: ${branch})` : ''
+spinner.start(`${updateAction} ${submodulePath}${branchSuffix}`)
 const ensureResult = ensureSubmodule(root, submodulePath, url, branch)
 if (!ensureResult.ok) {
   spinner.stop(`Failed: ${ensureResult.error}`)
@@ -121,7 +127,10 @@ if (skillDirs.length > 0) {
     required: false,
   })
 
-  if (p.isCancel(selected)) { p.cancel('Cancelled'); process.exit(0) }
+  if (p.isCancel(selected)) {
+    p.cancel('Cancelled')
+    process.exit(0)
+  }
 
   const selectedPaths = Array.isArray(selected) ? selected : []
   for (const skillPath of selectedPaths) {
@@ -147,11 +156,16 @@ if (skillDirs.length > 0) {
 
 // --- Update meta.json ---
 
+// eslint-disable-next-line sonarjs/no-nested-conditional
+const branchValue = branch ? { branch } : existingConfig?.branch ? { branch: existingConfig.branch } : {}
+// eslint-disable-next-line sonarjs/no-nested-conditional
+const skillsValue = Object.keys(skillsMap).length > 0 ? { skills: skillsMap } : existingConfig?.skills ? { skills: existingConfig.skills } : {}
+const availableValue = existingConfig?.available ? { available: existingConfig.available } : {}
 const newConfig: UpstreamMeta = {
   url: normalizedUrl,
-  ...(branch ? { branch } : existingConfig?.branch ? { branch: existingConfig.branch } : {}),
-  ...(Object.keys(skillsMap).length > 0 ? { skills: skillsMap } : existingConfig?.skills ? { skills: existingConfig.skills } : {}),
-  ...(existingConfig?.available ? { available: existingConfig.available } : {}),
+  ...branchValue,
+  ...skillsValue,
+  ...availableValue,
 }
 store.updateUpstream(upstreamKey, newConfig)
 const saveResult = store.saveMeta()

@@ -4,6 +4,7 @@
 
 import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { exec } from './lib/gitOps.ts'

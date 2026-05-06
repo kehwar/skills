@@ -1,5 +1,5 @@
 import type { Result } from '../types.ts'
-import { execSync } from 'node:child_process'
+import { spawnSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -10,7 +10,7 @@ interface ExecOpts {
 }
 
 /**
- * Execute a shell command safely.
+ * Execute a shell command safely using spawn (no shell interpretation).
  * Always returns a Result; never throws.
  * - { ok: true, data: output } on success
  * - { ok: false, error } on failure
@@ -18,11 +18,26 @@ interface ExecOpts {
 export function exec(cmd: string, opts?: ExecOpts): Result<string> {
   const cwd = opts?.cwd
   try {
-    if (opts?.inherit) {
-      execSync(cmd, { cwd, stdio: 'inherit' })
-      return { ok: true, data: '' }
+    // Parse command and arguments: split on first space to separate command from args
+    const parts = cmd.split(/\s+/)
+    const command = parts[0]!
+    const args = parts.slice(1)
+
+    const result = spawnSync(command, args, {
+      cwd,
+      stdio: opts?.inherit ? 'inherit' : ['pipe', 'pipe', 'pipe'],
+      encoding: 'utf-8',
+    })
+
+    if (result.error)
+      return { ok: false, error: result.error.message }
+
+    if (result.status !== 0) {
+      const stderr = result.stderr || result.stdout || 'Command failed'
+      return { ok: false, error: stderr.trim() }
     }
-    const output = execSync(cmd, { cwd, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim()
+
+    const output = result.stdout?.trim() || ''
     return { ok: true, data: output }
   }
   catch (e) {

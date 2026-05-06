@@ -154,7 +154,9 @@ export class RealGitAdapter implements GitAdapter {
 
   initSubmodule(url: string, path: string, branch?: string): Result<void> {
     mkdirSync(path, { recursive: true })
-    const result = exec(`git clone --depth 1${branch ? ` -b ${branch}` : ''} ${url} ${path}`, {
+    const branchArg = branch ? ` -b ${branch}` : ''
+    const cloneCmd = `git clone --depth 1${branchArg} ${url} ${path}`
+    const result = exec(cloneCmd, {
       inherit: true,
     })
     if (!result.ok)
@@ -180,6 +182,7 @@ export class RealGitAdapter implements GitAdapter {
     return { ok: true, data: undefined }
   }
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   checkoutBranch(path: string, branch: string): Result<void> {
     if (branch === 'FETCH_HEAD') {
       // Resolve the default remote branch and check it out
@@ -221,7 +224,7 @@ export class RealGitAdapter implements GitAdapter {
   }
 
   unsetSubmoduleBranch(root: string, path: string): Result<void> {
-    const _result = exec(`git config -f .gitmodules --unset submodule.${path}.branch`, { cwd: root })
+    exec(`git config -f .gitmodules --unset submodule.${path}.branch`, { cwd: root })
     // Ignore errors on unset (it's ok if the key doesn't exist)
     return { ok: true, data: undefined }
   }

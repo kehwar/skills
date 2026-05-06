@@ -18,7 +18,9 @@ describe('authoredSkillsOps', () => {
     mkdirSync(authoredDir, { recursive: true })
   })
 
-  afterEach(() => { rmSync(tmp, { recursive: true }) })
+  afterEach(() => {
+    rmSync(tmp, { recursive: true })
+  })
 
   describe('collectAuthoredSkills', () => {
     it('returns empty array when skills directory does not exist', () => {

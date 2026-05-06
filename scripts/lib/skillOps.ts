@@ -57,6 +57,7 @@ export interface CopySkillsResult {
   errors: Array<{ skillPath: string, outputName: string, error: string }>
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export function copySkillsFromUpstream(
   upstreamName: string,
   upstreamDir: string,

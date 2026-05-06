@@ -19,7 +19,9 @@ describe('copySkillsFromUpstream', () => {
     writeFileSync(join(upstreamDir, 'my-skill', 'SKILL.md'), '# My Skill')
   })
 
-  afterEach(() => { rmSync(tmp, { recursive: true }) })
+  afterEach(() => {
+    rmSync(tmp, { recursive: true })
+  })
 
   it('copies skill files to skills/<outputName>', () => {
     const config: UpstreamMeta = {

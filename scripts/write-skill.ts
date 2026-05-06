@@ -13,6 +13,7 @@
 import type { SkillMeta } from './types.ts'
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { linkAuthoredSkills } from './lib/authoredSkillsOps.ts'

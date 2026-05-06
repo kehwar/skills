@@ -45,6 +45,7 @@ export function collectAuthoredSkills(skillsDir: string): Result<Array<{ name: s
  * If domain is set in meta, places in authored/{domain}/skill-name; otherwise flat in authored/.
  * Returns Result<array of messages> describing actions taken.
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export function linkAuthoredSkills(
   collected: Array<{ name: string, meta: SkillMeta }>,
   skillsDir: string,
@@ -97,7 +98,8 @@ export function linkAuthoredSkills(
 
       mkdirSync(dirname(linkPath), { recursive: true })
       symlinkSync(linkTarget, linkPath)
-      messages.push(`linked  authored: ${name}${meta.domain ? ` (domain: ${meta.domain})` : ''}`)
+      const domainSuffix = meta.domain ? ` (domain: ${meta.domain})` : ''
+      messages.push(`linked  authored: ${name}${domainSuffix}`)
     }
 
     return { ok: true, data: messages }

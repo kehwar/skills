@@ -15,6 +15,7 @@ import { RealGitAdapter } from './gitAdapter.ts'
  * Returns Result<void> — { ok: true, data: undefined } on success,
  * or { ok: false, error: string } if any step fails.
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export function ensureSubmodule(
   root: string,
   submodulePath: string,

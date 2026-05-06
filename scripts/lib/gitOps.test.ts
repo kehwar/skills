@@ -34,8 +34,9 @@ describe('exec', () => {
   it('respects cwd option', () => {
     const result = exec('pwd', { cwd: '/tmp' })
     expect(result.ok).toBe(true)
-    if (!result.ok)
+    if (!result.ok) {
       throw new Error(result.error)
+    }
     expect(result.data).toContain('tmp')
   })
 })
@@ -44,8 +45,12 @@ describe('exec', () => {
 
 describe('submoduleExists', () => {
   let tmp: string
-  beforeEach(() => { tmp = mkdtempSync(join(tmpdir(), 'skills-test-')) })
-  afterEach(() => { rmSync(tmp, { recursive: true }) })
+  beforeEach(() => {
+    tmp = mkdtempSync(join(tmpdir(), 'skills-test-'))
+  })
+  afterEach(() => {
+    rmSync(tmp, { recursive: true })
+  })
 
   it('returns false when .gitmodules does not exist', () => {
     expect(submoduleExists(tmp, 'upstream/foo')).toBe(false)
@@ -66,8 +71,12 @@ describe('submoduleExists', () => {
 
 describe('getGitSha', () => {
   let tmp: string
-  beforeEach(() => { tmp = mkdtempSync(join(tmpdir(), 'skills-test-')) })
-  afterEach(() => { rmSync(tmp, { recursive: true }) })
+  beforeEach(() => {
+    tmp = mkdtempSync(join(tmpdir(), 'skills-test-'))
+  })
+  afterEach(() => {
+    rmSync(tmp, { recursive: true })
+  })
 
   it('returns null for a non-git directory', () => {
     expect(getGitSha(tmp)).toBeNull()
