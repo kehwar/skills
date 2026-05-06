@@ -31,13 +31,8 @@ Run `bd show <id>` to view full details including dependencies and notes.
 **CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
 
 ```
-[ ] 1. git status              (check what changed)
-[ ] 2. git add <files>         (stage code changes)
-[ ] 3. git commit -m "..."     (commit code)
-[ ] 4. git push                (push to remote)
+[ ] bd close <id1> <id2> ...   (close completed issues)
 ```
-
-**NEVER skip this.** Work is not done until pushed.
 
 ## Core Rules
 - **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
@@ -45,7 +40,7 @@ Run `bd show <id>` to view full details including dependencies and notes.
 - **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
 - **Memory**: Use `bd remember "insight"` for persistent knowledge across sessions. Do NOT use MEMORY.md files — they fragment across accounts. Search with `bd memories <keyword>`.
 - Persistence you don't need beats lost context
-- Git workflow: beads auto-commit to Dolt, run `git push` at session end
+- Git workflow: stealth mode (no git ops)
 - Session management: check `bd ready` for available work
 
 ## Essential Commands
@@ -74,8 +69,6 @@ Run `bd show <id>` to view full details including dependencies and notes.
 - `bd show <id>` - See what's blocking/blocked by this issue
 
 ### Sync & Collaboration
-- `bd dolt push` - Push beads to Dolt remote
-- `bd dolt pull` - Pull beads from Dolt remote
 - `bd search <query>` - Search issues by keyword
 
 ### Project Health
@@ -98,3 +91,30 @@ Run `bd show <id>` to view full details including dependencies and notes.
 - `bd stale` - Find issues with no recent activity
 - `bd orphans` - Find issues with broken dependencies
 - `bd preflight` - Pre-PR checks (lint, stale, orphans)
+- `bd human <id>` - Flag for human decision (list/respond/dismiss)
+
+### Structured Workflows
+- `bd formula list` - See available workflow templates
+- `bd mol pour <name>` - Start structured workflow from formula
+
+## Common Workflows
+
+**Starting work:**
+```bash
+bd ready           # Find available work
+bd show <id>       # Review issue details
+bd update <id> --claim  # Claim it
+```
+
+**Completing work:**
+```bash
+bd close <id1> <id2> ...    # Close all completed issues at once
+```
+
+**Creating dependent work:**
+```bash
+# Run bd create commands in parallel (use subagents for many items)
+bd create --title="Implement feature X" --description="Why this issue exists and what needs to be done" --type=feature
+bd create --title="Write tests for X" --description="Why this issue exists and what needs to be done" --type=task
+bd dep add beads-yyy beads-xxx  # Tests depend on Feature (Feature blocks tests)
+```
