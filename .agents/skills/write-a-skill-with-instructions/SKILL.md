@@ -38,7 +38,7 @@ description: Create or edit agent skills with proper structure, progressive disc
    - Anything missing or unclear?
    - Should any section be more/less detailed?
 
-## When editing an existing skill
+## When updating an existing skill
 
 1. **Check skill type** - review `skills/<skill-name>/meta.json`:
    - `type: "authored"` → safe to edit directly

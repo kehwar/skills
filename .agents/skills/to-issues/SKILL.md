@@ -1,13 +1,11 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
+description: Break a plan, spec, or PRD into independently-grabbable issues on Beads using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
 ---
 
 # To Issues
 
 Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
-
-The issue tracker should have been configured via `/setup-workflow-skills`.
 
 ## Process
 
@@ -49,9 +47,9 @@ Ask the user:
 
 Iterate until the user approves the breakdown.
 
-### 5. Publish the issues to the issue tracker
+### 5. Publish the issues to Beads
 
-For each approved slice, publish a new issue to the issue tracker. Use the issue body template below.
+For each approved slice, publish a new issue to Beads. Use the issue body template below.
 
 Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
 
