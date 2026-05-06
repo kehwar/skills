@@ -76,7 +76,7 @@ This installs the Beads CLI system-wide.
 
 **If Beads project initialization is needed:**
 
-Run the command: `bd init`
+Run the command: `bd init --stealth --non-interactive`
 
 This will create `beads.config.json` and the necessary Beads directory structure in this project.
 
