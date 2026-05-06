@@ -8,6 +8,11 @@ diff upstream/mattpocock/skills/engineering/to-issues/SKILL.md authored/engineer
 
 ## Customizations for this repo
 
+**Skill renamed to `to-tasks`:**
+- Originally named `to-issues` in upstream mattpocock/skills
+- Renamed to `to-tasks` to align with Beads terminology
+- All functionality remains the same; the name better reflects the output format in Beads
+
 **Explicit Beads references:**
 - Changed "issue tracker" to "Beads" throughout the skill
 - Description explicitly names Beads as the target platform

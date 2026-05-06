@@ -1,6 +1,6 @@
 ---
 name: to-tasks
-description: Break a plan, spec, or PRD into independently-grabbable tasks on Beads using tracer-bullet vertical slices. Use when user wants to convert a plan into tasks, create implementation tickets, or break down work into tasks.
+description: Break a plan, spec, or PRD into independently-grabbable tasks/issues on Beads using tracer-bullet vertical slices. Use when user wants to convert a plan into tasks, create implementation tickets, or break down work into tasks.
 ---
 
 # To Tasks
