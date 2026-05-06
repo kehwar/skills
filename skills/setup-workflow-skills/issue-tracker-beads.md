@@ -31,13 +31,8 @@ Run `bd show <id>` to view full details including dependencies and notes.
 **CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
 
 ```
-[ ] 1. git status              (check what changed)
-[ ] 2. git add <files>         (stage code changes)
-[ ] 3. git commit -m "..."     (commit code)
-[ ] 4. git push                (push to remote)
+[ ] bd close <id1> <id2> ...   (close completed issues)
 ```
-
-**NEVER skip this.** Work is not done until pushed.
 
 ## Core Rules
 - **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
@@ -45,7 +40,7 @@ Run `bd show <id>` to view full details including dependencies and notes.
 - **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
 - **Memory**: Use `bd remember "insight"` for persistent knowledge across sessions. Do NOT use MEMORY.md files — they fragment across accounts. Search with `bd memories <keyword>`.
 - Persistence you don't need beats lost context
-- Git workflow: beads auto-commit to Dolt, run `git push` at session end
+- Git workflow: stealth mode (no git ops)
 - Session management: check `bd ready` for available work
 
 ## Essential Commands
@@ -74,8 +69,6 @@ Run `bd show <id>` to view full details including dependencies and notes.
 - `bd show <id>` - See what's blocking/blocked by this issue
 
 ### Sync & Collaboration
-- `bd dolt push` - Push beads to Dolt remote
-- `bd dolt pull` - Pull beads from Dolt remote
 - `bd search <query>` - Search issues by keyword
 
 ### Project Health
@@ -116,8 +109,6 @@ bd update <id> --claim  # Claim it
 **Completing work:**
 ```bash
 bd close <id1> <id2> ...    # Close all completed issues at once
-git add . && git commit -m "..."  # Commit code changes
-git push                    # Push to remote
 ```
 
 **Creating dependent work:**
