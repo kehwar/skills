@@ -1,6 +1,7 @@
 ## Agent orientation
 
-Read `CONTEXT.md` for domain language before making changes.
+Always read `CONTEXT.md` for domain language before making changes.
+Always read `ISSUE_TRACKER.md` when working on a feature or bug fix.
 
 ### Key locations
 
@@ -9,13 +10,6 @@ Read `CONTEXT.md` for domain language before making changes.
 - `upstream/` — read-only Upstream submodules. Never edit files here.
 - `authored/` — symlinks to Authored and Source-Derived skills for navigation only.
 - `scripts/` — all automation: `sync.ts`, `upstream.ts`, `check.ts`, `cleanup.ts`.
-- `instructions/` — optional authoring guidance organized by domain or skill name. Agents read these when scaffolding new skills.
-
-### Before touching a skill
-
-Check its `skills/<name>/meta.json`:
-- `type: "authored"` → safe to edit, will never be overwritten. Optional `domain` field groups skills by domain (e.g., `frappe`, `sap`) in `authored/{domain}/ `; skills without domain remain flat in `authored/`.
-- `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
 
 ### Creating Authored Skills
 
@@ -33,6 +27,12 @@ To scaffold a new authored skill:
 
 3. **Use `write-a-skill-with-instructions` skill** for development.
 
+### Updating Authored Skills
+
+Check its `skills/<name>/meta.json`:
+- `type: "authored"` → safe to edit, will never be overwritten. Optional `domain` field groups skills by domain (e.g., `frappe`, `sap`) in `authored/{domain}/ `; skills without domain remain flat in `authored/`.
+- `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
+
 ### After making code changes
 
 Run both checks before considering work done:
@@ -43,13 +43,3 @@ pnpm lint:fix   # auto-fix style issues
 ```
 
 Fix any remaining errors that `lint:fix` could not auto-resolve.
-
-## Agent skills
-
-### Issue tracker
-
-Issues are tracked in Beads. See `docs/agents/issue-tracker.md`.
-
-### Domain docs
-
-Single-context repository. See `docs/agents/domain.md`.

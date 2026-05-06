@@ -12,8 +12,8 @@ description: Create or edit agent skills with proper structure, progressive disc
    - Flat skills (no domain) stay at `authored/`; domain skills group in `authored/<domain>/`
 
 2. **Read applicable instructions** - check if any exist:
-   - `instructions/domain/<domain>.md` — domain-specific authoring conventions
-   - `instructions/skills/<skill-name>.md` — skill-specific guidance
+   - `authored/<domain>/AUTHORING.md` — domain-specific authoring conventions (if skill has a domain)
+   - `skills/<skill-name>/AUTHORING.md` — skill-specific guidance (placed alongside SKILL.md)
    - Use these as constraints and context
 
 3. **Scaffold with pnpm write-skill** - run:
@@ -45,8 +45,8 @@ description: Create or edit agent skills with proper structure, progressive disc
    - `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
 
 2. **Read applicable instructions** - check if any exist:
-   - `instructions/domain/<domain>.md` — domain-specific conventions (if skill has a domain)
-   - `instructions/skills/<skill-name>.md` — skill-specific guidance
+   - `authored/<domain>/AUTHORING.md` — domain-specific conventions (if skill has a domain)
+   - `skills/<skill-name>/AUTHORING.md` — skill-specific guidance (placed alongside SKILL.md)
    - Apply these as constraints to your edits
 
 3. **Make targeted updates** - edit:
@@ -64,6 +64,7 @@ description: Create or edit agent skills with proper structure, progressive disc
 ```
 skill-name/
 ├── SKILL.md           # Main instructions (required)
+├── AUTHORING.md       # Authoring guidance (optional, placed alongside SKILL.md)
 ├── REFERENCE.md       # Detailed docs (if needed)
 ├── EXAMPLES.md        # Usage examples (if needed)
 ├── meta.json          # Skill metadata (auto-generated)

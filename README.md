@@ -7,8 +7,9 @@ A personal aggregator of AI agent skills. Pulls skills from upstream repos and k
 ```
 skills/          ← flat directory of all skills (agents read from here)
 upstream/        ← Upstream submodules (read-only, never edited)
-instructions/    ← companion notes for reference-only upstreams
 authored/        ← symlinks to Authored skills, organized by domain (authored/{domain}/*)
+                 ← each skill may have AUTHORING.md alongside SKILL.md
+                 ← domains may have authored/<domain>/AUTHORING.md
 scripts/         ← sync, upstream, check, cleanup
 meta.json        ← declared upstreams with url, branch, and skill selections
 ```

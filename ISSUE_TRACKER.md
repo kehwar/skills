@@ -10,6 +10,7 @@ Issues and work for this repo live in Beads. Use the `bd` CLI for all operations
 - **Comment on an issue**: `bd update <id> --notes="..."` to add notes.
 - **Update fields**: `bd update <id> --title/--description/--notes/--design` to modify inline.
 - **Close**: `bd close <id>` to mark complete, or `bd close <id1> <id2> ...` to close multiple at once.
+- **More commands**: `bd` for full command list.
 
 All work is tracked in Beads. Use `bd` for all operations — do NOT use markdown files or TodoWrite.
 
