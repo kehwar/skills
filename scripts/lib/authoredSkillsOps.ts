@@ -41,11 +41,60 @@ export function collectAuthoredSkills(skillsDir: string): Result<Array<{ name: s
 }
 
 /**
+ * Remove all stale links for a skill being relinked.
+ */
+function removeStaleSkillLinks(name: string, authoredDir: string): void {
+  // Remove from flat location if it exists
+  const flatLink = join(authoredDir, name)
+  if (existsSync(flatLink))
+    rmSync(flatLink, { force: true })
+
+  // Remove from any domain subdirectory
+  if (existsSync(authoredDir)) {
+    for (const domain of readdirSync(authoredDir, { withFileTypes: true })) {
+      if (domain.isDirectory()) {
+        const domainLink = join(authoredDir, domain.name, name)
+        if (existsSync(domainLink))
+          rmSync(domainLink, { force: true })
+      }
+    }
+  }
+}
+
+/**
+ * Create a new link for an authored skill.
+ */
+function createSkillLink(
+  name: string,
+  meta: Extract<SkillMeta, { type: 'authored' }>,
+  skillsDir: string,
+  authoredDir: string,
+): string {
+  let linkPath: string
+  let linkTarget: string
+
+  if (meta.domain) {
+    const domainDir = join(authoredDir, meta.domain)
+    mkdirSync(domainDir, { recursive: true })
+    linkPath = join(domainDir, name)
+    linkTarget = relative(domainDir, join(skillsDir, name))
+  }
+  else {
+    linkPath = join(authoredDir, name)
+    linkTarget = relative(authoredDir, join(skillsDir, name))
+  }
+
+  mkdirSync(dirname(linkPath), { recursive: true })
+  symlinkSync(linkTarget, linkPath)
+
+  return meta.domain ? ` (domain: ${meta.domain})` : ''
+}
+
+/**
  * Link authored skills into authored/ directory, respecting domain grouping.
  * If domain is set in meta, places in authored/{domain}/skill-name; otherwise flat in authored/.
  * Returns Result<array of messages> describing actions taken.
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function linkAuthoredSkills(
   collected: Array<{ name: string, meta: SkillMeta }>,
   skillsDir: string,
@@ -57,48 +106,15 @@ export function linkAuthoredSkills(
     mkdirSync(authoredDir, { recursive: true })
 
     // First pass: remove all stale links for skills being relinked
-    for (const { name } of collected) {
-      // Remove from flat location if it exists
-      const flatLink = join(authoredDir, name)
-      if (existsSync(flatLink)) {
-        rmSync(flatLink, { force: true })
-      }
-
-      // Remove from any domain subdirectory
-      if (existsSync(authoredDir)) {
-        for (const domain of readdirSync(authoredDir, { withFileTypes: true })) {
-          if (domain.isDirectory()) {
-            const domainLink = join(authoredDir, domain.name, name)
-            if (existsSync(domainLink)) {
-              rmSync(domainLink, { force: true })
-            }
-          }
-        }
-      }
-    }
+    for (const { name } of collected)
+      removeStaleSkillLinks(name, authoredDir)
 
     // Second pass: create new links
     for (const { name, meta } of collected) {
       if (meta.type !== 'authored')
         continue
 
-      let linkPath: string
-      let linkTarget: string
-
-      if (meta.domain) {
-        const domainDir = join(authoredDir, meta.domain)
-        mkdirSync(domainDir, { recursive: true })
-        linkPath = join(domainDir, name)
-        linkTarget = relative(domainDir, join(skillsDir, name))
-      }
-      else {
-        linkPath = join(authoredDir, name)
-        linkTarget = relative(authoredDir, join(skillsDir, name))
-      }
-
-      mkdirSync(dirname(linkPath), { recursive: true })
-      symlinkSync(linkTarget, linkPath)
-      const domainSuffix = meta.domain ? ` (domain: ${meta.domain})` : ''
+      const domainSuffix = createSkillLink(name, meta as Extract<SkillMeta, { type: 'authored' }>, skillsDir, authoredDir)
       messages.push(`linked  authored: ${name}${domainSuffix}`)
     }
 

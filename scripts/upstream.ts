@@ -156,10 +156,8 @@ if (skillDirs.length > 0) {
 
 // --- Update meta.json ---
 
-// eslint-disable-next-line sonarjs/no-nested-conditional
-const branchValue = branch ? { branch } : existingConfig?.branch ? { branch: existingConfig.branch } : {}
-// eslint-disable-next-line sonarjs/no-nested-conditional
-const skillsValue = Object.keys(skillsMap).length > 0 ? { skills: skillsMap } : existingConfig?.skills ? { skills: existingConfig.skills } : {}
+const branchValue = getBranchValue(branch, existingConfig)
+const skillsValue = getSkillsValue(skillsMap, existingConfig)
 const availableValue = existingConfig?.available ? { available: existingConfig.available } : {}
 const newConfig: UpstreamMeta = {
   url: normalizedUrl,
@@ -225,3 +223,19 @@ if (errors.length > 0) {
 }
 
 p.outro('Done')
+
+function getBranchValue(branch: string | undefined, existingConfig: UpstreamMeta | undefined): Record<string, string> {
+  if (branch)
+    return { branch }
+  if (existingConfig?.branch)
+    return { branch: existingConfig.branch }
+  return {}
+}
+
+function getSkillsValue(skillsMap: Record<string, string>, existingConfig: UpstreamMeta | undefined): Record<string, Record<string, string>> {
+  if (Object.keys(skillsMap).length > 0)
+    return { skills: skillsMap }
+  if (existingConfig?.skills)
+    return { skills: existingConfig.skills }
+  return {}
+}

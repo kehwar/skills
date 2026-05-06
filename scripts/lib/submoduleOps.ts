@@ -15,7 +15,6 @@ import { RealGitAdapter } from './gitAdapter.ts'
  * Returns Result<void> — { ok: true, data: undefined } on success,
  * or { ok: false, error: string } if any step fails.
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function ensureSubmodule(
   root: string,
   submodulePath: string,
@@ -26,58 +25,109 @@ export function ensureSubmodule(
   const subDir = join(root, submodulePath)
 
   if (!adapter.submoduleExists(root, submodulePath)) {
-    // Case 1: Not registered - add it
-    const addResult = adapter.addSubmodule(root, url, submodulePath)
-    if (!addResult.ok)
-      return addResult
-    if (branch) {
-      const setBranchResult = adapter.setSubmoduleBranch(root, submodulePath, branch)
-      if (!setBranchResult.ok)
-        return setBranchResult
-      const fetchResult = adapter.fetchSubmodule(subDir, branch)
-      if (!fetchResult.ok)
-        return fetchResult
-      const checkoutResult = adapter.checkoutBranch(subDir, branch)
-      if (!checkoutResult.ok)
-        return checkoutResult
-    }
+    return handleNotRegistered(root, submodulePath, url, subDir, branch, adapter)
   }
-  else if (!existsSync(subDir)) {
-    // Case 2: Registered but directory missing - clone it
-    const initResult = adapter.initSubmodule(url, subDir, branch)
-    if (!initResult.ok)
-      return initResult
-    if (branch) {
-      const checkoutResult = adapter.checkoutBranch(subDir, branch)
-      if (!checkoutResult.ok)
-        return checkoutResult
-    }
+
+  if (!existsSync(subDir)) {
+    return handleMissingDirectory(url, subDir, branch, adapter)
+  }
+
+  return handleExistingSubmodule(root, submodulePath, subDir, branch, adapter)
+}
+
+function handleNotRegistered(
+  root: string,
+  submodulePath: string,
+  url: string,
+  subDir: string,
+  branch: string | undefined,
+  adapter: GitAdapter,
+): Result<void> {
+  // Case 1: Not registered - add it
+  const addResult = adapter.addSubmodule(root, url, submodulePath)
+  if (!addResult.ok)
+    return addResult
+
+  if (branch) {
+    return setupBranch(root, submodulePath, subDir, branch, adapter)
+  }
+  return { ok: true, data: undefined }
+}
+
+function handleMissingDirectory(
+  url: string,
+  subDir: string,
+  branch: string | undefined,
+  adapter: GitAdapter,
+): Result<void> {
+  // Case 2: Registered but directory missing - clone it
+  const initResult = adapter.initSubmodule(url, subDir, branch)
+  if (!initResult.ok)
+    return initResult
+
+  if (branch) {
+    const checkoutResult = adapter.checkoutBranch(subDir, branch)
+    if (!checkoutResult.ok)
+      return checkoutResult
+  }
+  return { ok: true, data: undefined }
+}
+
+function handleExistingSubmodule(
+  root: string,
+  submodulePath: string,
+  subDir: string,
+  branch: string | undefined,
+  adapter: GitAdapter,
+): Result<void> {
+  // Case 3: Exists - update branch if specified
+  if (branch) {
+    return setupBranch(root, submodulePath, subDir, branch, adapter)
   }
   else {
-    // Case 3: Exists - update branch if specified
-    if (branch) {
-      const setBranchResult = adapter.setSubmoduleBranch(root, submodulePath, branch)
-      if (!setBranchResult.ok)
-        return setBranchResult
-      const fetchResult = adapter.fetchSubmodule(subDir, branch)
-      if (!fetchResult.ok)
-        return fetchResult
-      const checkoutResult = adapter.checkoutBranch(subDir, branch)
-      if (!checkoutResult.ok)
-        return checkoutResult
-    }
-    else {
-      const unsetResult = adapter.unsetSubmoduleBranch(root, submodulePath)
-      if (!unsetResult.ok)
-        return unsetResult
-      const fetchResult = adapter.fetchSubmodule(subDir)
-      if (!fetchResult.ok)
-        return fetchResult
-      const checkoutResult = adapter.checkoutBranch(subDir, 'FETCH_HEAD')
-      if (!checkoutResult.ok)
-        return checkoutResult
-    }
+    return checkoutDefaultBranch(root, submodulePath, subDir, adapter)
   }
+}
+
+function setupBranch(
+  root: string,
+  submodulePath: string,
+  subDir: string,
+  branch: string,
+  adapter: GitAdapter,
+): Result<void> {
+  const setBranchResult = adapter.setSubmoduleBranch(root, submodulePath, branch)
+  if (!setBranchResult.ok)
+    return setBranchResult
+
+  const fetchResult = adapter.fetchSubmodule(subDir, branch)
+  if (!fetchResult.ok)
+    return fetchResult
+
+  const checkoutResult = adapter.checkoutBranch(subDir, branch)
+  if (!checkoutResult.ok)
+    return checkoutResult
+
+  return { ok: true, data: undefined }
+}
+
+function checkoutDefaultBranch(
+  root: string,
+  submodulePath: string,
+  subDir: string,
+  adapter: GitAdapter,
+): Result<void> {
+  const unsetResult = adapter.unsetSubmoduleBranch(root, submodulePath)
+  if (!unsetResult.ok)
+    return unsetResult
+
+  const fetchResult = adapter.fetchSubmodule(subDir)
+  if (!fetchResult.ok)
+    return fetchResult
+
+  const checkoutResult = adapter.checkoutBranch(subDir, 'FETCH_HEAD')
+  if (!checkoutResult.ok)
+    return checkoutResult
 
   return { ok: true, data: undefined }
 }

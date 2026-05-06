@@ -182,38 +182,58 @@ export class RealGitAdapter implements GitAdapter {
     return { ok: true, data: undefined }
   }
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
   checkoutBranch(path: string, branch: string): Result<void> {
     if (branch === 'FETCH_HEAD') {
-      // Resolve the default remote branch and check it out
-      const symRefResult = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path })
+      return this.checkoutFetchHead(path)
+    }
+    return this.checkoutNamedBranch(path, branch)
+  }
 
-      if (symRefResult.ok) {
-        // Extract branch name from symref like "refs/remotes/origin/main"
-        const branches = symRefResult.data.trim().split('/')
-        const defaultBranch = branches[branches.length - 1]
+  private checkoutFetchHead(path: string): Result<void> {
+    const symRefResult = exec(`git symbolic-ref refs/remotes/origin/HEAD`, { cwd: path })
 
-        if (defaultBranch && defaultBranch !== 'HEAD') {
-          // Check out the default branch as a tracking branch
-          const result = exec(`git checkout -B ${defaultBranch} refs/remotes/origin/${defaultBranch}`, { cwd: path, inherit: true })
-          if (!result.ok)
-            return { ok: false, error: `Failed to checkout branch: ${result.error}` }
-          return { ok: true, data: undefined }
-        }
+    if (symRefResult.ok) {
+      const defaultBranch = this.extractDefaultBranch(symRefResult.data)
+      if (defaultBranch) {
+        return this.checkoutTrackingBranch(path, defaultBranch)
       }
+    }
 
-      // Fallback: detached HEAD at the remote HEAD
-      const result = exec(`git checkout --detach refs/remotes/origin/HEAD`, { cwd: path, inherit: true })
-      if (!result.ok)
-        return { ok: false, error: `Failed to checkout detached HEAD: ${result.error}` }
-      return { ok: true, data: undefined }
+    return this.checkoutDetachedHead(path)
+  }
+
+  private extractDefaultBranch(symRefData: string): string | null {
+    const branches = symRefData.trim().split('/')
+    const defaultBranch = branches[branches.length - 1]
+
+    if (defaultBranch && defaultBranch !== 'HEAD') {
+      return defaultBranch
     }
-    else {
-      const result = exec(`git checkout -B ${branch} refs/remotes/origin/${branch}`, { cwd: path, inherit: true })
-      if (!result.ok)
-        return { ok: false, error: `Failed to checkout branch: ${result.error}` }
-      return { ok: true, data: undefined }
+    return null
+  }
+
+  private checkoutTrackingBranch(path: string, branch: string): Result<void> {
+    return this.executeCheckout(path, branch)
+  }
+
+  private checkoutDetachedHead(path: string): Result<void> {
+    const result = exec(`git checkout --detach refs/remotes/origin/HEAD`, { cwd: path, inherit: true })
+    if (!result.ok) {
+      return { ok: false, error: `Failed to checkout detached HEAD: ${result.error}` }
     }
+    return { ok: true, data: undefined }
+  }
+
+  private checkoutNamedBranch(path: string, branch: string): Result<void> {
+    return this.executeCheckout(path, branch)
+  }
+
+  private executeCheckout(path: string, branch: string): Result<void> {
+    const result = exec(`git checkout -B ${branch} refs/remotes/origin/${branch}`, { cwd: path, inherit: true })
+    if (!result.ok) {
+      return { ok: false, error: `Failed to checkout branch: ${result.error}` }
+    }
+    return { ok: true, data: undefined }
   }
 
   setSubmoduleBranch(root: string, path: string, branch: string): Result<void> {
