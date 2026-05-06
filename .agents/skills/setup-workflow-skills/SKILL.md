@@ -1,6 +1,6 @@
 ---
 name: setup-workflow-skills
-description: Sets up an `## Agent orientation` block in AGENTS.md/CLAUDE.md so the engineering skills know this repo uses Beads for issue tracking. Run before first use of `to-issues`, `to-prd`, `tdd`, `improve-codebase-architecture`, or `zoom-out`.
+description: Sets up an `## Agent orientation` block in AGENTS.md/CLAUDE.md so the engineering skills know this repo uses Beads for issue tracking. Run before first use of `to-tasks`, `to-prd`, `tdd`, `improve-codebase-architecture`, or `zoom-out`.
 disable-model-invocation: true
 ---
 
@@ -79,4 +79,4 @@ This will create `beads.config.json` and the necessary Beads directory structure
 
 ### 4. Done
 
-Tell the user the setup is complete. If Beads CLI was installed or the project was initialized, confirm what ran successfully. The `## Agent orientation` block is now in place, and downstream skills (`to-issues`, `tdd`, etc.) will have the context they need.
+Tell the user the setup is complete. If Beads CLI was installed or the project was initialized, confirm what ran successfully. The `## Agent orientation` block is now in place, and downstream skills (`to-tasks`, `tdd`, etc.) will have the context they need.
