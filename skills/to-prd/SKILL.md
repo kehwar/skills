@@ -1,11 +1,9 @@
 ---
 name: to-prd
-description: Turn the current conversation context into a PRD and publish it to the project issue tracker. Use when user wants to create a PRD from the current context.
+description: Turn the current conversation context into a PRD and publish it to Beads. Use when user wants to create a PRD from the current context.
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.
-
-The issue tracker should have been configured via `/setup-workflow-skills`.
 
 ## Process
 
@@ -17,7 +15,7 @@ A deep module (as opposed to a shallow module) is one which encapsulates a lot o
 
 Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-3. Write the PRD using the template below, then publish it to the project issue tracker.
+3. Write the PRD using the template below, then publish it to Beads.
 
 <prd-template>
 
