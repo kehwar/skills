@@ -2,6 +2,16 @@
 
 This file provides instructions and context for AI coding agents working on this project.
 
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in Beads. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context repo with `CONTEXT.md` and `docs/adr/` at the root. See `docs/agents/domain.md`.
+
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:ca08a54f -->
 ## Beads Issue Tracker
 

@@ -4,16 +4,13 @@
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
-import { existsSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
-import { discoverSkills } from './lib/skill-discovery.ts'
-import { copySkillsFromUpstream, hashSkillDirectory } from './lib/skill-ops.ts'
-import { ensureSubmodule } from './lib/submodule-ops.ts'
+import { runSyncOrchestrator } from './lib/sync-orchestrator.ts'
 import { normalizeUrl } from './lib/url-ops.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -41,102 +38,90 @@ if (urlsNormalized) {
     errors.push(saveResult.error)
 }
 
-// ── Add/update all submodules ───────────────────────────────────────────────
+// ── Sync each upstream using orchestrator ──────────────────────────────────
 
-p.log.step('Updating submodules...')
-for (const [name, config] of Object.entries(upstreams)) {
-  const path = `upstream/${name}`
-  const branchSuffix = config.branch ? ` (branch: ${config.branch})` : ''
-  p.log.info(`  ${name}${branchSuffix}`)
-  const result = ensureSubmodule(root, path, config.url, config.branch)
-  if (!result.ok) {
-    errors.push(`Failed to update submodule ${name}: ${result.error}`)
-  }
-}
-p.log.step('Submodules updated')
-
-// ── Scan available skills, capture git SHA, diff hashes, update meta.json ───
-
+p.log.step('Syncing upstreams...')
 for (const [upstreamName, config] of Object.entries(upstreams)) {
   if (!config.skills)
     continue
-  const upstreamPath = path.join(root, 'upstream', upstreamName)
-  if (!existsSync(upstreamPath))
-    continue
+
+  const branchSuffix = config.branch ? ` (branch: ${config.branch})` : ''
+  p.log.info(`  ${upstreamName}${branchSuffix}`)
 
   const oldAvailable = config.available ?? {}
   const newAvailable: Record<string, string> = {}
 
-  const discoverResult = discoverSkills(upstreamPath)
-  if (!discoverResult.ok) {
-    errors.push(`Failed to discover skills in ${upstreamName}: ${discoverResult.error}`)
+  const orcResult = runSyncOrchestrator(
+    {
+      root,
+      upstreamName,
+      upstreamConfig: config,
+      selectedSkills: config.skills,
+      force,
+    },
+    {
+      onPhaseSuccess: () => {
+        // Silent success; we log after orchestration completes
+      },
+      onPhaseFailed: (phaseName, error) => {
+        p.log.error(`  Phase ${phaseName} failed: ${error}`)
+      },
+    },
+  )
+
+  if (!orcResult.ok) {
+    errors.push(`Failed to sync upstream ${upstreamName}: ${orcResult.error}`)
     continue
   }
 
-  for (const skill of discoverResult.data) {
-    const skillPath = skill.path
-    newAvailable[skillPath] = hashSkillDirectory(
-      skillPath === '.' ? upstreamPath : path.join(upstreamPath, skillPath),
-    )
+  const { discoveredSkills, syncResult } = orcResult.data
+
+  // Build the new available map from discovered hashes
+  for (const { path: skillPath, hash } of discoveredSkills) {
+    newAvailable[skillPath] = hash
   }
 
   // Report changes
   const allPaths = new Set([...Object.keys(oldAvailable), ...Object.keys(newAvailable)])
-  const isSelected = (path: string) => path in config.skills!
+  const isSelected = (skillPath: string) => skillPath in config.skills!
 
-  for (const path of [...allPaths].sort()) {
-    const oldHash = oldAvailable[path]
-    const newHash = newAvailable[path]
-    const tag = isSelected(path) ? ' [included]' : ''
+  for (const skillPath of [...allPaths].sort()) {
+    const oldHash = oldAvailable[skillPath]
+    const newHash = newAvailable[skillPath]
+    const tag = isSelected(skillPath) ? ' [included]' : ''
 
     if (!oldHash) {
-      p.log.info(`  + ${upstreamName}/${path}${tag}  (new)`)
+      p.log.info(`    + ${upstreamName}/${skillPath}${tag}  (new)`)
     }
     else if (!newHash) {
-      p.log.info(`  - ${upstreamName}/${path}${tag}  (removed)`)
+      p.log.info(`    - ${upstreamName}/${skillPath}${tag}  (removed)`)
     }
     else if (oldHash !== newHash) {
-      p.log.info(`  ~ ${upstreamName}/${path}${tag}  (${oldHash} → ${newHash})`)
+      p.log.info(`    ~ ${upstreamName}/${skillPath}${tag}  (${oldHash} → ${newHash})`)
     }
   }
 
+  // Log sync results
+  for (const skill of syncResult.synced) {
+    p.log.step(`    synced  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of syncResult.skipped) {
+    p.log.info(`    unchanged  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  }
+  for (const skill of syncResult.errors) {
+    p.log.error(`    FAILED ${upstreamName}/${skill.skillPath}: ${skill.error}`)
+    errors.push(`Skill copy failed: ${upstreamName}/${skill.skillPath}: ${skill.error}`)
+  }
+
+  // Update available map in config
   store.updateUpstream(upstreamName, { available: newAvailable })
 }
+
+p.log.step('Syncing upstreams completed')
 
 const saveMeta = store.saveMeta()
 if (!saveMeta.ok)
   errors.push(saveMeta.error)
-
-// ── Copy selected upstream skills to skills/ ────────────────────────────────
-
-for (const [upstreamName, config] of Object.entries(upstreams)) {
-  if (!config.skills)
-    continue
-  const upstreamPath = path.join(root, 'upstream', upstreamName)
-  if (!existsSync(upstreamPath)) {
-    p.log.warn(`SKIP upstream/${upstreamName} — submodule directory missing`)
-    continue
-  }
-
-  const result = copySkillsFromUpstream(upstreamName, upstreamPath, config, root, force)
-
-  if (!result.ok) {
-    errors.push(`Failed to copy skills from ${upstreamName}: ${result.error}`)
-    continue
-  }
-
-  // Log results
-  for (const skill of result.data.synced) {
-    p.log.step(`synced  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
-  }
-  for (const skill of result.data.skipped) {
-    p.log.info(`unchanged  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
-  }
-  for (const skill of result.data.errors) {
-    p.log.error(`FAILED ${upstreamName}/${skill.skillPath}: ${skill.error}`)
-    errors.push(`Skill copy failed: ${upstreamName}/${skill.skillPath}: ${skill.error}`)
-  }
-}
 
 // ── Maintain authored/ symlinks ─────────────────────────────────────────────
 

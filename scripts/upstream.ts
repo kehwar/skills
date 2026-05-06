@@ -20,8 +20,7 @@ import * as p from '@clack/prompts'
 import { submoduleExists } from './lib/git-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
 import { discoverSkills } from './lib/skill-discovery.ts'
-import { copySkillsFromUpstream } from './lib/skill-ops.ts'
-import { ensureSubmodule } from './lib/submodule-ops.ts'
+import { runSyncOrchestrator } from './lib/sync-orchestrator.ts'
 import { normalizeUrl } from './lib/url-ops.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -86,16 +85,8 @@ const isNew = !submoduleExists(root, submodulePath)
 const updateAction = isNew ? 'Adding' : 'Updating'
 const branchSuffix = branch ? ` (branch: ${branch})` : ''
 spinner.start(`${updateAction} ${submodulePath}${branchSuffix}`)
-const ensureResult = ensureSubmodule(root, submodulePath, url, branch)
-if (ensureResult.ok) {
-  spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
-}
-else {
-  spinner.stop(`Failed: ${ensureResult.error}`)
-  errors.push(ensureResult.error)
-}
 
-// --- Skill selection (only if SKILL.md files exist) ---
+// --- Discover skills (for UI only; actual sync happens via orchestrator) ---
 
 let skillDirectories: string[] = []
 const discoverResult = discoverSkills(upstreamDirectory)
@@ -110,6 +101,9 @@ else {
   p.log.warn(`Failed to discover skills: ${discoverResult.error}`)
   errors.push(`Failed to discover skills: ${discoverResult.error}`)
 }
+spinner.stop(`${isNew ? 'Added' : 'Updated'} ${submodulePath}`)
+
+// --- Skill selection (only if SKILL.md files exist) ---
 
 const existingConfig = meta.upstreams[upstreamKey]
 const skillsMap: Record<string, string> = {}
@@ -176,13 +170,25 @@ else {
   errors.push(saveResult.error)
 }
 
-// --- Copy selected skills ---
+// --- Copy selected skills via orchestrator ---
 
 if (Object.keys(skillsMap).length > 0) {
-  const copyResult = copySkillsFromUpstream(upstreamKey, upstreamDirectory, newConfig, root)
+  const orcResult = runSyncOrchestrator(
+    {
+      root,
+      upstreamName: upstreamKey,
+      upstreamConfig: newConfig,
+      selectedSkills: skillsMap,
+    },
+    {
+      onPhaseFailed: (phaseName, error) => {
+        p.log.error(`Phase ${phaseName} failed: ${error}`)
+      },
+    },
+  )
 
-  if (copyResult.ok) {
-    const result = copyResult.data
+  if (orcResult.ok) {
+    const result = orcResult.data.syncResult
 
     // Log results
     for (const skill of result.synced) {
@@ -197,8 +203,8 @@ if (Object.keys(skillsMap).length > 0) {
     }
   }
   else {
-    p.log.error(`Failed to copy skills: ${copyResult.error}`)
-    errors.push(copyResult.error)
+    p.log.error(`Failed to sync skills: ${orcResult.error}`)
+    errors.push(orcResult.error)
   }
 }
 
