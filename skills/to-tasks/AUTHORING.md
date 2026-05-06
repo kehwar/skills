@@ -1,12 +1,17 @@
-# to-issues
+# to-tasks
 
 Sourced from: `upstream/mattpocock/skills/engineering/to-issues/`
 
 ```bash
-diff upstream/mattpocock/skills/engineering/to-issues/SKILL.md authored/engineering/to-issues/SKILL.md
+diff upstream/mattpocock/skills/engineering/to-issues/SKILL.md authored/engineering/to-tasks/SKILL.md
 ```
 
 ## Customizations for this repo
+
+**Skill renamed to `to-tasks`:**
+- Originally named `to-issues` in upstream mattpocock/skills
+- Renamed to `to-tasks` to align with Beads terminology
+- All functionality remains the same; the name better reflects the output format in Beads
 
 **Explicit Beads references:**
 - Changed "issue tracker" to "Beads" throughout the skill

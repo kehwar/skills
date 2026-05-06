@@ -1,9 +1,9 @@
-# to-issues
+# to-tasks
 
 Sourced from: `upstream/mattpocock/skills/engineering/to-issues/`
 
 ```bash
-diff upstream/mattpocock/skills/engineering/to-issues/SKILL.md authored/engineering/to-issues/SKILL.md
+diff upstream/mattpocock/skills/engineering/to-issues/SKILL.md authored/engineering/to-tasks/SKILL.md
 ```
 
 ## Customizations for this repo
