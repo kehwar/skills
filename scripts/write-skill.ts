@@ -3,29 +3,26 @@
  * Create a new authored skill interactively.
  * Usage: pnpm write-skill <name> [--domain <domain>] [--source <url>]
  *
+ * Workflow:
  * 1. Validates skill name (kebab-case)
  * 2. Prompts for domain if not specified
  * 3. Normalizes source URL (if provided)
- * 4. Creates skills/<name>/ folder with SKILL.md, meta.json, README.md
- * 5. Uses authoring lib to create symlink in authored/<domain>/ if domain specified
- * 6. Prints success message
+ * 4. Calls handler to create skill folder, meta.json, SKILL.md, and symlink
  */
 
-import type { SkillMeta } from './types.ts'
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { linkAuthoredSkills } from './lib/authored-skills-ops.ts'
-import { SkillMetaStore } from './lib/skill-meta-store.ts'
+import { handleWriteSkill } from './lib/cli-handlers-write-skill.ts'
+import { promptForDomain } from './lib/cli-prompts.ts'
+import { getDomains, skillExists, validateDomainName, validateSkillName } from './lib/cli-validators.ts'
 import { normalizeUrl } from './lib/url-ops.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 const skillsDirectory = path.join(root, 'skills')
 const authoredDirectory = path.join(root, 'authored')
-const errors: string[] = []
 
 // ── Parse CLI arguments ─────────────────────────────────────────────────────
 
@@ -43,84 +40,60 @@ const positional = arguments_.find((_, index) => {
 })
 const skillName = positional
 
-// ── Determine domain ────────────────────────────────────────────────────────
-
-let selectedDomain: string | undefined
-
-function getDomains(): string[] {
-  if (!existsSync(authoredDirectory))
-    return []
-  return readdirSync(authoredDirectory, { withFileTypes: true })
-    .filter(f => f.isDirectory() && !f.name.startsWith('.'))
-    .map(f => f.name)
-    .sort()
-}
-
 p.intro('Write Skill')
 
-// ── Validate CLI arguments ──────────────────────────────────────────────────
+// ── Validate skill name ─────────────────────────────────────────────────────
 
 if (!skillName) {
   p.log.error('Usage: pnpm write-skill <name> [--domain <domain>] [--source <url>]')
   process.exit(1)
 }
 
-const kebabCaseRegex = /^[\da-z](?:[\da-z-]*[\da-z])?$/
-if (!kebabCaseRegex.test(skillName)) {
-  p.log.error(`Invalid skill name "${skillName}". Must be kebab-case (lowercase, hyphens, no spaces).`)
+const nameValidation = validateSkillName(skillName)
+if (!nameValidation.ok) {
+  p.log.error(nameValidation.error)
   process.exit(1)
 }
 
-const skillPath = path.join(skillsDirectory, skillName)
-if (existsSync(skillPath)) {
+if (skillExists(skillName, skillsDirectory)) {
   p.log.error(`Skill already exists: ${skillName}`)
   process.exit(1)
 }
+
+// ── Determine domain ────────────────────────────────────────────────────────
+
+let selectedDomain: string | undefined
+
 if (domain) {
-  // Domain specified via CLI
+  // Domain specified via CLI — validate it
+  const domainValidation = validateDomainName(domain)
+  if (!domainValidation.ok) {
+    p.log.error(domainValidation.error)
+    process.exit(1)
+  }
   selectedDomain = domain
   p.log.info(`Domain: ${selectedDomain}`)
 }
 else {
   // Prompt for domain selection
-  const existingDomains = getDomains()
-  const choices = [
-    ...existingDomains.map(d => ({ value: d, label: d })),
-    { value: '__none__', label: 'None (no domain)' },
-    { value: '__new__', label: 'New domain...' },
-  ]
+  const promptedDomain = await promptForDomain(authoredDirectory)
 
-  const selected = await p.select({
-    message: 'Select domain:',
-    options: choices,
-  })
-
-  if (p.isCancel(selected)) {
+  if (promptedDomain === undefined) {
     p.cancel('Cancelled')
     process.exit(0)
   }
 
-  if (selected === '__new__') {
-    const newDomain = await p.text({
-      message: 'Enter new domain name (kebab-case):',
-      validate: (v) => {
-        if (!v?.trim())
-          return 'Domain name cannot be empty'
-        if (!kebabCaseRegex.test(v))
-          return 'Domain name must be kebab-case'
-      },
-    })
-
-    if (p.isCancel(newDomain)) {
-      p.cancel('Cancelled')
-      process.exit(0)
+  // If promptedDomain is a new domain name (user selected "New domain..."),
+  // validate it before using it
+  if (promptedDomain && !getDomains(authoredDirectory).includes(promptedDomain)) {
+    const newDomainValidation = validateDomainName(promptedDomain)
+    if (!newDomainValidation.ok) {
+      p.log.error(newDomainValidation.error)
+      process.exit(1)
     }
+  }
 
-    selectedDomain = newDomain as string
-  }
-  else if (selected !== '__none__') {
-    selectedDomain = selected as string
-  }
+  selectedDomain = promptedDomain
 }
 
 // ── Normalize source URL ────────────────────────────────────────────────────
@@ -130,103 +103,35 @@ if (sourceUrl) {
   normalizedSource = normalizeUrl(sourceUrl)
 }
 
-// ── Create skill folder and files ───────────────────────────────────────────
+// ── Create skill via handler ────────────────────────────────────────────────
 
 const spinner = p.spinner()
+spinner.start(`Creating skill "${skillName}"...`)
 
-try {
-  spinner.start(`Creating skill "${skillName}"...`)
+const result = handleWriteSkill({
+  skillName,
+  domain: selectedDomain,
+  sourceUrl: normalizedSource,
+  root,
+})
 
-  // Create skills folder
-  mkdirSync(skillPath, { recursive: true })
-
-  // Write meta.json
-  const skillMeta: SkillMeta = {
-    type: 'authored',
-    ...(selectedDomain && { domain: selectedDomain }),
-    ...(normalizedSource && { sourceUrl: normalizedSource }),
-  }
-
-  // Use SkillMetaStore to add and save the skill
-  const skillStore = new SkillMetaStore(skillsDirectory)
-  skillStore.addSkill(skillName, skillMeta)
-  const saveResult = skillStore.saveSkill(skillName)
-  if (!saveResult.ok) {
-    errors.push(`Failed to save skill metadata: ${saveResult.error}`)
-    throw new Error(saveResult.error)
-  }
-
-  // Write SKILL.md with template
-  const skillMdContent = `---
-name: ${skillName}
-description: |
-  [Add a 1-2 sentence description. Include "Use when" trigger.]
----
-
-# ${skillName}
-
-## Quick start
-
-[Minimal working example]
-
-## Workflows
-
-[Step-by-step processes]
-
-## Advanced features
-
-[Link to additional docs if needed]
-`
-  writeFileSync(path.join(skillPath, 'SKILL.md'), skillMdContent)
-
-  spinner.stop(`Created skill: ${skillName}`)
-
-  // ── Link skill in authored/ directory ───────────────────────────────────
-
-  if (selectedDomain) {
-    const collected = [{ name: skillName, meta: skillMeta }]
-    const linkResult = linkAuthoredSkills(
-      collected,
-      skillsDirectory,
-      authoredDirectory,
-    )
-    if (linkResult.ok) {
-      for (const message of linkResult.data) {
-        p.log.success(message)
-      }
-    }
-    else {
-      errors.push(`Failed to link skill in authored directory: ${linkResult.error}`)
-      p.log.warn(linkResult.error)
-    }
-  }
-
-  // ── Print summary ───────────────────────────────────────────────────────
-
-  p.log.info(`Next steps:`)
-  p.log.info(`  1. Edit skills/${skillName}/SKILL.md to add your skill content`)
-  p.log.info(`  2. Fill in the description in the frontmatter`)
-  p.log.info(`  3. Commit the new skill to git`)
-  if (normalizedSource) {
-    p.log.info(`Source: ${normalizedSource}`)
-  }
-
-  if (errors.length > 0) {
-    p.log.warn(`${errors.length} error(s) occurred:`)
-    for (const error of errors) {
-      p.log.warn(`  - ${error}`)
-    }
-    p.outro('Skill created with errors')
-    process.exit(1)
-  }
-
-  p.outro('Done')
-}
-catch (error) {
-  const message = error instanceof Error ? error.message : String(error)
-  if (!errors.includes(message)) {
-    errors.push(message)
-  }
-  p.outro(`Failed: ${message}`)
+if (!result.ok) {
+  spinner.stop(`Failed: ${result.error}`)
+  p.log.error(result.error)
   process.exit(1)
 }
+
+const output = result.data
+spinner.stop(output.message)
+
+// ── Print next steps ────────────────────────────────────────────────────────
+
+p.log.info(`Next steps:`)
+p.log.info(`  1. Edit skills/${skillName}/SKILL.md to add your skill content`)
+p.log.info(`  2. Fill in the description in the frontmatter`)
+p.log.info(`  3. Commit the new skill to git`)
+if (normalizedSource) {
+  p.log.info(`Source: ${normalizedSource}`)
+}
+
+p.outro('Done')
