@@ -8,11 +8,12 @@ export default antfu(
     ignores: [
       'upstream/**',
       'skills/**',
+      '.beads/**',
     ],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
-    ignores: ['upstream/**', 'skills/**'],
+    ignores: ['upstream/**', 'skills/**', '.beads/**'],
     plugins: {
       sonarjs,
     },
