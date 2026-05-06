@@ -17,7 +17,7 @@ import * as p from '@clack/prompts'
 import { handleWriteSkill } from './lib/cli-handlers-write-skill.ts'
 import { promptForDomain } from './lib/cli-prompts.ts'
 import { getDomains, skillExists, validateDomainName, validateSkillName } from './lib/cli-validators.ts'
-import { normalizeUrl } from './lib/url-ops.ts'
+import { parseAndNormalizeUrl } from './lib/url.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -100,7 +100,14 @@ else {
 
 let normalizedSource: string | undefined
 if (sourceUrl) {
-  normalizedSource = normalizeUrl(sourceUrl)
+  const parseResult = parseAndNormalizeUrl(sourceUrl)
+  if (parseResult.ok) {
+    normalizedSource = parseResult.data.normalized
+  }
+  else {
+    p.log.error(`Invalid source URL: ${parseResult.error}`)
+    process.exit(1)
+  }
 }
 
 // ── Create skill via handler ────────────────────────────────────────────────

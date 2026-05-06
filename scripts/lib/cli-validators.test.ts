@@ -3,7 +3,6 @@ import {
   validateBranchName,
   validateDomainName,
   validateSkillName,
-  validateUpstreamUrl,
 } from './cli-validators.ts'
 
 describe('cLI Validators', () => {
@@ -53,46 +52,6 @@ describe('cLI Validators', () => {
 
     it('rejects empty domains', () => {
       const result = validateDomainName('')
-      expect(result.ok).toBe(false)
-      if (!result.ok)
-        expect(result.error).toBeDefined()
-    })
-  })
-
-  describe('validateUpstreamUrl', () => {
-    it('accepts https GitHub URLs', () => {
-      const result = validateUpstreamUrl('https://github.com/user/repo')
-      expect(result.ok).toBe(true)
-      if (result.ok)
-        expect(result.data).toContain('https://github.com')
-    })
-
-    it('removes .git suffix', () => {
-      const result = validateUpstreamUrl('https://github.com/user/repo.git')
-      expect(result.ok).toBe(true)
-      if (result.ok)
-        expect(result.data).not.toContain('.git')
-    })
-
-    it('rejects non-https URLs', () => {
-      // Test that insecure URLs are properly rejected
-      const protocol = 'http'
-      const insecureUrl = `${protocol}://github.com/user/repo`
-      const result = validateUpstreamUrl(insecureUrl)
-      expect(result.ok).toBe(false)
-      if (!result.ok)
-        expect(result.error).toBeDefined()
-    })
-
-    it('rejects incomplete URLs', () => {
-      const result = validateUpstreamUrl('https://github.com/user')
-      expect(result.ok).toBe(false)
-      if (!result.ok)
-        expect(result.error).toBeDefined()
-    })
-
-    it('rejects empty URLs', () => {
-      const result = validateUpstreamUrl('')
       expect(result.ok).toBe(false)
       if (!result.ok)
         expect(result.error).toBeDefined()

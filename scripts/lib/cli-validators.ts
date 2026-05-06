@@ -54,42 +54,6 @@ export function validateDomainName(name: string): Result<string> {
 }
 
 /**
- * Validate an upstream URL (must be https GitHub URL or similar).
- */
-export function validateUpstreamUrl(url: string): Result<string> {
-  if (!url || !url.trim()) {
-    return { ok: false, error: 'URL cannot be empty' }
-  }
-
-  const trimmed = url.trim().replace(/\.git$/, '')
-
-  // Accept https:// GitHub URLs and similar
-  if (!trimmed.startsWith('https://')) {
-    return {
-      ok: false,
-      error: 'URL must start with https:// (e.g., https://github.com/user/repo)',
-    }
-  }
-
-  // Remove protocol: https:// → rest
-  const afterProtocol = trimmed.slice(8) // 'https://'.length === 8
-
-  // Split by / and filter empties
-  const parts = afterProtocol.split('/').filter(p => p.length > 0)
-
-  // Should have at least domain + org + repo
-  // e.g., github.com, user, repo
-  if (parts.length < 3) {
-    return {
-      ok: false,
-      error: 'URL must have org/repo structure (e.g., https://github.com/user/repo)',
-    }
-  }
-
-  return { ok: true, data: trimmed }
-}
-
-/**
  * Validate a git branch name.
  */
 export function validateBranchName(name: string): Result<string> {

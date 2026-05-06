@@ -18,10 +18,11 @@ import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { handleAddUpstream } from './lib/cli-handlers-upstream.ts'
 import { promptForSkillSelection, promptForUpstreamKey } from './lib/cli-prompts.ts'
-import { validateBranchName, validateUpstreamUrl } from './lib/cli-validators.ts'
+import { validateBranchName } from './lib/cli-validators.ts'
 import { submoduleExists } from './lib/git-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
 import { discoverSkills } from './lib/skill-discovery.ts'
+import { parseAndNormalizeUrl } from './lib/url.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -51,13 +52,16 @@ if (!url) {
   process.exit(1)
 }
 
-const urlValidation = validateUpstreamUrl(url)
-if (!urlValidation.ok) {
-  p.log.error(urlValidation.error)
+const urlParseResult = parseAndNormalizeUrl(url)
+if (!urlParseResult.ok) {
+  p.log.error(urlParseResult.error)
   process.exit(1)
 }
 
-const normalizedUrl = urlValidation.data
+const urlInfo = urlParseResult.data
+const normalizedUrl = urlInfo.normalized
+const orgName = urlInfo.owner
+const repoName = urlInfo.repo
 
 // ── Validate branch if provided ─────────────────────────────────────────────
 
@@ -70,10 +74,6 @@ if (branch) {
 }
 
 // ── Derive upstream key ─────────────────────────────────────────────────────
-
-const urlParts = normalizedUrl.split('/')
-const repoName = urlParts.at(-1)!
-const orgName = urlParts.at(-2)!
 
 let upstreamKey = nameOverride ?? (repoName === 'skills' ? orgName : repoName)
 

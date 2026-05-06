@@ -11,7 +11,7 @@ import * as p from '@clack/prompts'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
 import { runSyncOrchestrator } from './lib/sync-orchestrator.ts'
-import { normalizeUrl } from './lib/url-ops.ts'
+import { parseAndNormalizeUrl } from './lib/url.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -26,10 +26,13 @@ p.intro('Sync')
 let urlsNormalized = false
 const upstreams = store.getAllUpstreams()
 for (const [key, config] of Object.entries(upstreams)) {
-  const full = normalizeUrl(config.url)
-  if (full !== config.url) {
-    store.updateUpstream(key, { url: full })
+  const parseResult = parseAndNormalizeUrl(config.url)
+  if (parseResult.ok && parseResult.data.normalized !== config.url) {
+    store.updateUpstream(key, { url: parseResult.data.normalized })
     urlsNormalized = true
+  }
+  else if (!parseResult.ok) {
+    errors.push(`Invalid upstream URL for ${key}: ${parseResult.error}`)
   }
 }
 if (urlsNormalized) {
