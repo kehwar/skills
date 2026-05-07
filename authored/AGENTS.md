@@ -1,2 +1,1 @@
 - Use `write-a-skill-with-instructions` skill for development.
-

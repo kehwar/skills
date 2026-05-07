@@ -58,7 +58,8 @@ To scaffold a new authored skill:
 ## Updating Authored Skills
 
 Check its `skills/<name>/meta.json`:
-- `type: "authored"` → safe to edit, will never be overwritten. Optional `domain` field groups skills by domain (e.g., `frappe`, `sap`) in `authored/{domain}/ `; skills without domain remain flat in `authored/`.
+
+- `type: "authored"` → safe to edit, will never be overwritten. Optional `domain` field groups skills by domain (e.g., `frappe`, `sap`) in `authored/{domain}/`; skills without domain remain flat in `authored/`.
 - `type: "synced"` → managed by Sync; edits will be lost on next `pnpm sync`
 
 ## After making code changes

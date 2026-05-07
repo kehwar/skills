@@ -16,12 +16,12 @@ meta.json        ← declared upstreams with url, branch, and skill selections
 
 ## Commands
 
-| Command | Purpose |
-|---|---|
+| Command                                                  | Purpose                                                           |
+| -------------------------------------------------------- | ----------------------------------------------------------------- |
 | `pnpm upstream <url> [--branch <branch>] [--name <key>]` | Add or update an Upstream; optionally select which skills to sync |
-| `pnpm sync` | Pull latest submodules, copy selected skills into `skills/` |
-| `pnpm check` | Report how many commits behind each submodule is upstream |
-| `pnpm cleanup [-y]` | Detect (and with `-y`, remove) orphaned skills and submodules |
+| `pnpm sync`                                              | Pull latest submodules, copy selected skills into `skills/`       |
+| `pnpm check`                                             | Report how many commits behind each submodule is upstream         |
+| `pnpm cleanup [-y]`                                      | Detect (and with `-y`, remove) orphaned skills and submodules     |
 
 ## Skill types
 
