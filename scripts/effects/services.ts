@@ -16,142 +16,102 @@
  * Core Layer (primitives, no Effect dependencies)
  * ```
  *
- * ## Service Definition Pattern
+ * ## Layer 1: Core Primitives
  *
- * Each service is defined by:
+ * Pure Effect wrappers around Node.js APIs with typed error handling:
  *
- * 1. **An interface or class** — The service's public API
- *    ```typescript
- *    export class FileSystem { readSync(path) { ... } }
- *    ```
+ * - **fs.ts** — Filesystem operations (readFile, writeFile, mkdir, etc.)
+ * - **git.ts** — Git command execution (exec, getHeadSha, submodule ops)
+ * - **logger.ts** — Structured logging with levels and indentation
+ * - **clock.ts** — Time operations (now, iso8601)
+ * - **process.ts** — Process access (cwd, env, exit)
  *
- * 2. **A Context.Tag** — Used by Effect to inject the service
- *    ```typescript
- *    export const FileSystemTag = Context.Tag<FileSystem>()
- *    ```
+ * Each module exports:
+ * - Effect functions that represent operations
+ * - Custom error types (e.g., NotFound, CommandFailed, InvalidBranch)
+ * - JSDoc with error handling patterns and examples
  *
- * 3. **Production and test implementations**
- *    ```typescript
- *    // Production: touches real filesystem
- *    export const productionFileSystem = Layer.succeed(
- *      FileSystemTag,
- *      new RealFileSystem()
- *    )
+ * ## Dependency Injection with Effect.provide()
  *
- *    // Test: in-memory filesystem
- *    export const testFileSystem = Layer.succeed(
- *      FileSystemTag,
- *      new MockFileSystem()
- *    )
- *    ```
- *
- * ## Usage in Orchestrators
- *
- * An orchestrator (e.g., `syncOrchestrator()`) is an Effect that depends on services:
+ * These primitives are typically used directly in domain operations and orchestrators:
  *
  * ```typescript
- * export const syncOrchestrator = Effect.flatMap(
- *   Effect.service(FileSystemTag),
- *   (fs) => Effect.flatMap(
- *     Effect.service(GitOpsTag),
- *     (git) => {
- *       // Use fs and git here
- *       fs.writeSync('/path', 'data')
- *       git.execSync('git status')
- *       return Effect.succeed(result)
- *     }
- *   )
+ * // In an orchestrator
+ * import { readFile } from '../effects/fs.js'
+ * import { getHeadSha } from '../effects/git.js'
+ *
+ * export const myOrchestrator = pipe(
+ *   getHeadSha(),
+ *   Effect.flatMap(sha => readFile(`.git/refs/heads/${sha}`))
  * )
  * ```
  *
- * ## Composition in CLI
- *
- * At the CLI layer, compose all service layers and run the orchestrator:
+ * For advanced DI patterns (e.g., swapping implementations), wrap in Context.Tag:
  *
  * ```typescript
- * // sync.ts entry point
- * const layers = [
- *   productionFileSystem,
- *   productionGitOps,
- *   productionLogger,
- * ]
+ * import { Context } from 'effect'
  *
- * const result = Effect.runSync(
- *   Effect.provide(Layer.mergeAll(...layers))(
- *     syncOrchestrator
- *   )
- * )
- * ```
- *
- * ## Composition in Tests
- *
- * In tests, inject mocks instead:
- *
- * ```typescript
- * const mockLayers = [
- *   testFileSystem,      // MockFileSystem instead of RealFileSystem
- *   testGitOps,          // MockGitOps instead of RealGitOps
- *   testLogger,          // MockLogger instead of RealLogger
- * ]
- *
- * const result = Effect.runSync(
- *   Effect.provide(Layer.mergeAll(...mockLayers))(
- *     syncOrchestrator
- *   )
- * )
- *
- * // Now the orchestrator uses mocks, no real filesystem/git calls
- * ```
- *
- * ## Context Shapes
- *
- * Each service's Context describes what data it provides.
- *
- * For example, FileSystem's context provides the interface:
- * ```typescript
  * interface FileSystem {
- *   readSync(path: string, encoding: string): string
- *   writeSync(path: string, content: string): void
+ *   readFile(path: string): Effect<string, NotFound | IOError>
+ * }
+ *
+ * export const FileSystemTag = Context.Tag<FileSystem>('FileSystem')
+ *
+ * // Production layer
+ * export const productionFS = Layer.succeed(FileSystemTag, {
+ *   readFile: (path) => readFile(path)
+ * })
+ *
+ * // Test layer
+ * export const mockFS = Layer.succeed(FileSystemTag, {
+ *   readFile: (path) => Effect.succeed('mock content')
+ * })
+ * ```
+ *
+ * ## Usage in Tests
+ *
+ * Test utilities can mock Layer 1 services by providing alternative implementations:
+ *
+ * ```typescript
+ * // Mock all operations to return test data
+ * const mockServices = {
+ *   fs: {
+ *     readFile: () => Effect.succeed('test file'),
+ *     writeFile: () => Effect.succeed(undefined),
+ *   },
+ *   git: {
+ *     exec: () => Effect.succeed('git status'),
+ *   }
  * }
  * ```
  *
- * This shape is enforced at compile time by TypeScript.
- * If an orchestrator tries to call a method that doesn't exist,
- * TypeScript will catch it before runtime.
- *
  * ## Benefits of This Pattern
  *
- * 1. **Testability** — No global mocks or spies. Inject test doubles via layers.
- * 2. **Composability** — Services can be combined; new workflows reuse existing services.
- * 3. **Clarity** — Data flow is explicit: services are parameters, not hidden.
- * 4. **Type Safety** — TypeScript verifies at compile time that all services exist.
- * 5. **Observability** — Each service can add logging/tracing transparently.
- * 6. **Recovery** — Effect layers can implement retry, timeout, and error handlers.
+ * 1. **Type Safety** — Effect's error channel enforces error handling
+ * 2. **Testability** — All operations are Effects; easily mocked with Effect.succeed
+ * 3. **Composability** — Combine operations with pipe(), flatMap(), etc.
+ * 4. **Error Propagation** — Errors short-circuit automatically; no manual threading
+ * 5. **Observable** — Effect allows introspection, retry, timeout, and tracing
+ * 6. **Gradual Migration** — Old Result<T> and new Effect code can coexist
  */
 
 import { MockFileSystem } from './mock-fs.js'
 import { MockGitOps } from './mock-git-ops.js'
 
 /**
- * Context tags for dependency injection.
- * Used with Effect.service() in orchestrators to request a service.
+ * Context tags for dependency injection (for advanced DI patterns).
+ * These are optional; Layer 1 primitives can be used directly without tags.
  *
- * Note: These are simple markers for now; full Effect composition
- * will be implemented in future slices when orchestrators use them.
+ * Usage:
+ * ```typescript
+ * export const FileSystemTag = Context.Tag<FileSystem>('FileSystem')
+ * export const GitOpsTag = Context.Tag<GitOps>('GitOps')
+ * ```
+ *
+ * Note: Currently, tags are not exported; Layer 1 uses direct Effect functions.
+ * If orchestrators need to swap implementations, add Context.Tag exports here.
  */
-export const FileSystemTag = 'FileSystem'
-export const GitOpsTag = 'GitOps'
 
-/**
- * Layers that provide services for testing.
- *
- * In production, these would be replaced with:
- * - RealFileSystem (touches actual filesystem)
- * - RealGitOps (executes real git commands)
- * - RealLogger (writes to console/files)
- *
- * By default, this module provides test implementations for scripting.
- */
 export function createTestFileSystemLayer() {
   return new MockFileSystem()
 }
@@ -163,10 +123,17 @@ export function createTestGitOpsLayer() {
 /**
  * Get all test service instances for convenient composition.
  *
+ * DEPRECATED: Use Layer 1 Effect functions directly (fs.ts, git.ts, etc.)
+ *
  * Usage in tests:
  * ```typescript
+ * // Old pattern (still supported for backward compatibility)
  * const services = getTestServices()
- * // services.fs and services.git are available for orchestrator use
+ * services.fs.readFileSync(path)
+ *
+ * // New pattern (recommended)
+ * import { readFile } from './fs.js'
+ * Effect.runSync(readFile(path))
  * ```
  */
 export function getTestServices() {
@@ -175,3 +142,40 @@ export function getTestServices() {
     git: createTestGitOpsLayer(),
   }
 }
+
+/**
+ * Layer 1 Service Summary
+ *
+ * All services are now Effect-based and fully typed:
+ *
+ * - **fs module**: readFile, writeFile, mkdir, copy, symlink, remove, exists, readDir
+ *   Error types: NotFound, PermissionDenied, IOError
+ *
+ * - **git module**: exec, getHeadSha, addSubmodule, initSubmodule, fetchSubmodule,
+ *   setSubmoduleBranch, checkoutBranch, deinitSubmodule, removeSubmoduleFromGitmodules, revListCount
+ *   Error types: GitNotFound, CommandFailed, InvalidBranch
+ *
+ * - **logger module**: log, indent
+ *   No errors; logging is always successful
+ *
+ * - **clock module**: now, iso8601
+ *   No errors; time operations always succeed
+ *
+ * - **process module**: exit, cwd, env
+ *   No errors; process operations always succeed
+ *
+ * To use these services in an orchestrator:
+ *
+ * ```typescript
+ * import * as fs from './fs.js'
+ * import * as git from './git.js'
+ * import * as logger from './logger.js'
+ *
+ * export const myOrchestrator = pipe(
+ *   logger.log('info', 'Starting sync...'),
+ *   Effect.flatMap(() => fs.readFile('/tmp/config.json')),
+ *   Effect.flatMap(config => git.exec('git status')),
+ *   Effect.catch(fs.NotFound, () => 'config not found')
+ * )
+ * ```
+ */
