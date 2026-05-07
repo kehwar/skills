@@ -10,10 +10,17 @@
  * - State 3: Exists (registered and directory present)
  */
 
-import path from 'node:path'
-import { spawn } from '@npmcli/git'
 import { Effect, pipe } from 'effect'
 import { exists, readFile, remove } from './fs.js'
+import {
+  addSubmodule,
+  deinitSubmodule,
+  removeSubmoduleFromGitmodules,
+  rmFromIndex,
+  setSubmoduleBranch,
+  updateSubmoduleInit,
+  updateSubmoduleRemote,
+} from './git.js'
 
 /**
  * SubmoduleError — Failed submodule operation.
@@ -57,35 +64,15 @@ export function ensureSubmodule(url: string, subPath: string, branch?: string): 
         return Effect.void
       }
 
-      // Build submodule add arguments
-      const addArguments = ['submodule', 'add']
-      if (branch) {
-        addArguments.push('--branch', branch)
-      }
-      addArguments.push(url, subPath)
-
+      // Add submodule with optional branch
       return pipe(
-        Effect.tryPromise({
-          try: async () => {
-            try {
-              await spawn(addArguments)
-            }
-            catch (error) {
-              throw new Error(`Failed to add submodule: ${error instanceof Error ? error.message : String(error)}`)
-            }
-
-            try {
-              await spawn(['submodule', 'update', '--init', '--recursive', '--', subPath])
-            }
-            catch (error) {
-              throw new Error(`Failed to update submodule: ${error instanceof Error ? error.message : String(error)}`)
-            }
-          },
-          catch: (error) => {
-            return new SubmoduleError(`Failed to ensure submodule: ${error instanceof Error ? error.message : String(error)}`)
-          },
-        }),
-        Effect.flatMap(() => Effect.void),
+        addSubmodule(url, subPath, branch),
+        Effect.flatMap(() => updateSubmoduleInit(subPath)),
+        Effect.mapError(
+          error => new SubmoduleError(
+            `Failed to ensure submodule: ${error instanceof Error ? error.message : String(error)}`,
+          ),
+        ),
       )
     }),
   )
@@ -99,33 +86,19 @@ export function ensureSubmodule(url: string, subPath: string, branch?: string): 
  * @returns Effect with void
  */
 export function updateSubmoduleBranch(subPath: string, branch: string): Effect.Effect<void, SubmoduleError> {
-  return Effect.tryPromise({
-    try: async () => {
-      if (!branch || !/^[\w./-]+$/.test(branch)) {
-        throw new Error(`Invalid branch name: ${branch}`)
-      }
+  if (!branch || !/^[\w./-]+$/.test(branch)) {
+    return Effect.fail(new SubmoduleError(`Invalid branch name: ${branch}`))
+  }
 
-      try {
-        await spawn(['config', '-f', '.gitmodules', `submodule.${subPath}.branch`, branch])
-      }
-      catch (error) {
-        throw new Error(`Failed to set branch config: ${error instanceof Error ? error.message : String(error)}`)
-      }
-
-      try {
-        await spawn(['submodule', 'update', '--remote', '--', subPath])
-      }
-      catch (error) {
-        throw new Error(`Failed to update submodule remote: ${error instanceof Error ? error.message : String(error)}`)
-      }
-    },
-    catch: (error) => {
-      if (error instanceof SubmoduleError) {
-        return error
-      }
-      return new SubmoduleError(`Failed to update submodule branch: ${error instanceof Error ? error.message : String(error)}`)
-    },
-  })
+  return pipe(
+    setSubmoduleBranch(subPath, branch),
+    Effect.flatMap(() => updateSubmoduleRemote(subPath)),
+    Effect.mapError(
+      error => new SubmoduleError(
+        `Failed to update submodule branch: ${error instanceof Error ? error.message : String(error)}`,
+      ),
+    ),
+  )
 }
 
 /**
@@ -136,51 +109,29 @@ export function updateSubmoduleBranch(subPath: string, branch: string): Effect.E
  */
 export function removeSubmodule(subPath: string): Effect.Effect<void, SubmoduleError> {
   return pipe(
-    // Check if directory exists using Layer 1 primitive
     exists(subPath),
     Effect.flatMap((directoryExists) => {
-      return Effect.tryPromise({
-        try: async () => {
-          // Deinitialize submodule
-          try {
-            await spawn(['submodule', 'deinit', '-f', '--', subPath])
+      return pipe(
+        // Deinitialize, remove from index, and remove from .gitmodules
+        deinitSubmodule(subPath),
+        Effect.flatMap(() => rmFromIndex(subPath)),
+        Effect.flatMap(() => removeSubmoduleFromGitmodules(subPath)),
+        Effect.mapError(
+          error => new SubmoduleError(
+            `Failed to remove submodule: ${error instanceof Error ? error.message : String(error)}`,
+          ),
+        ),
+        Effect.flatMap(() => {
+          // Clean up directory if it exists
+          if (directoryExists) {
+            return pipe(
+              remove(subPath, true),
+              Effect.catchAll(() => Effect.void), // Ignore removal errors
+            )
           }
-          catch (error) {
-            throw new Error(`Failed to deinit submodule: ${error instanceof Error ? error.message : String(error)}`)
-          }
-
-          // Remove from git index
-          try {
-            await spawn(['rm', '-f', subPath])
-          }
-          catch (error) {
-            throw new Error(`Failed to remove from index: ${error instanceof Error ? error.message : String(error)}`)
-          }
-
-          // Remove from .gitmodules
-          try {
-            await spawn(['config', '-f', '.gitmodules', '--remove-section', `submodule.${subPath}`])
-          }
-          catch (error) {
-            throw new Error(`Failed to remove .gitmodules section: ${error instanceof Error ? error.message : String(error)}`)
-          }
-
-          // Return whether we need to clean up directory
-          return { needsRemove: directoryExists }
-        },
-        catch: (error) => {
-          return new SubmoduleError(`Failed to remove submodule: ${error instanceof Error ? error.message : String(error)}`)
-        },
-      })
-    }),
-    Effect.flatMap((result) => {
-      if (result.needsRemove) {
-        return pipe(
-          remove(subPath, true),
-          Effect.catchAll(() => Effect.void), // Ignore removal errors for this operation
-        )
-      }
-      return Effect.void
+          return Effect.void
+        }),
+      )
     }),
   )
 }

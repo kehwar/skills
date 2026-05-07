@@ -28,8 +28,10 @@
  */
 
 import process from 'node:process'
-import { spawn } from '@npmcli/git'
+import git from '@npmcli/git'
 import { Effect } from 'effect'
+
+const spawn = git
 
 /**
  * GitNotFound — Git command not found or not in PATH.
@@ -154,15 +156,19 @@ export function getHeadSha(): Effect.Effect<string, CommandFailed | GitNotFound>
  *
  * @param url — Repository URL
  * @param path — Path where submodule will be cloned
+ * @param branch — Optional branch to track
  * @returns Effect that adds the submodule
  * @throws CommandFailed if add fails
  *
  * @example
  * ```typescript
- * await Effect.runPromise(addSubmodule('https://github.com/user/repo.git', 'vendor/repo'))
+ * await Effect.runPromise(addSubmodule('https://github.com/user/repo.git', 'vendor/repo', 'main'))
  * ```
  */
-export function addSubmodule(url: string, path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
+export function addSubmodule(url: string, path: string, branch?: string): Effect.Effect<void, CommandFailed | GitNotFound> {
+  if (branch) {
+    return Effect.map(runGitCommand('submodule', 'add', '--branch', branch, url, path), () => {})
+  }
   return Effect.map(runGitCommand('submodule', 'add', url, path), () => {})
 }
 
@@ -180,6 +186,22 @@ export function addSubmodule(url: string, path: string): Effect.Effect<void, Com
  */
 export function initSubmodule(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
   return Effect.map(runGitCommand('submodule', 'init', path), () => {})
+}
+
+/**
+ * Update and initialize a git submodule recursively.
+ *
+ * @param path — Submodule path
+ * @returns Effect that updates the submodule
+ * @throws CommandFailed if update fails
+ *
+ * @example
+ * ```typescript
+ * await Effect.runPromise(updateSubmoduleInit('vendor/repo'))
+ * ```
+ */
+export function updateSubmoduleInit(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
+  return Effect.map(runGitCommand('submodule', 'update', '--init', '--recursive', '--', path), () => {})
 }
 
 /**
@@ -279,6 +301,38 @@ export function removeSubmoduleFromGitmodules(path: string): Effect.Effect<void,
     runGitCommand('config', '--file', '.gitmodules', '--remove-section', `submodule.${path}`),
     () => {},
   )
+}
+
+/**
+ * Remove a path from git index.
+ *
+ * @param path — Path to remove
+ * @returns Effect that removes the path
+ * @throws CommandFailed if removal fails
+ *
+ * @example
+ * ```typescript
+ * await Effect.runPromise(rmFromIndex('vendor/repo'))
+ * ```
+ */
+export function rmFromIndex(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
+  return Effect.map(runGitCommand('rm', '-f', path), () => {})
+}
+
+/**
+ * Update submodule to remote branch.
+ *
+ * @param path — Submodule path
+ * @returns Effect that updates the submodule remote
+ * @throws CommandFailed if update fails
+ *
+ * @example
+ * ```typescript
+ * await Effect.runPromise(updateSubmoduleRemote('vendor/repo'))
+ * ```
+ */
+export function updateSubmoduleRemote(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
+  return Effect.map(runGitCommand('submodule', 'update', '--remote', '--', path), () => {})
 }
 
 /**
