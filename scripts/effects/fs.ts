@@ -215,12 +215,11 @@ export function exists(path: string): Effect.Effect<boolean, never> {
  *
  * @example
  * ```typescript
- * const entries = Effect.runSync(readDir('/tmp'))
+ * const entries = Effect.runSync(readDirectory('/tmp'))
  * // entries: ['file1.txt', 'subdir', ...]
  * ```
  */
-// eslint-disable-next-line unicorn/prevent-abbreviations -- readDir is the standard name for this operation
-export function readDir(path: string): Effect.Effect<string[], NotFound | IOError> {
+export function readDirectory(path: string): Effect.Effect<string[], NotFound | IOError> {
   return Effect.try({
     try: () => fs.readdirSync(path),
     catch: (error) => {
@@ -272,8 +271,8 @@ export function remove(path: string, recursive = false): Effect.Effect<void, IOE
 /**
  * Copy a file from source to destination.
  *
- * @param src — Source file path
- * @param dest — Destination file path
+ * @param source — Source file path
+ * @param destination — Destination file path
  * @returns Effect that copies the file
  * @throws NotFound if source does not exist
  * @throws IOError for other filesystem errors
@@ -284,23 +283,21 @@ export function remove(path: string, recursive = false): Effect.Effect<void, IOE
  * ```
  */
 export function copy(
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- src is standard abbreviation
-  src: string,
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- dest is standard abbreviation
-  dest: string,
+  source: string,
+  destination: string,
 ): Effect.Effect<void, NotFound | IOError> {
   return Effect.try({
     try: () => {
-      fs.copyFileSync(src, dest)
+      fs.copyFileSync(source, destination)
     },
     catch: (error) => {
       if (error instanceof Error) {
         const code = (error as NodeJS.ErrnoException).code
         if (code === 'ENOENT') {
-          return new NotFound(src)
+          return new NotFound(source)
         }
       }
-      return new IOError(`Failed to copy file from ${src} to ${dest}`)
+      return new IOError(`Failed to copy file from ${source} to ${destination}`)
     },
   })
 }

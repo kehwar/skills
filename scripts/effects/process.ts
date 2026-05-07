@@ -2,7 +2,7 @@
  * Process — Effect-based process operations.
  *
  * Provides access to process information and control.
- * Can be used to get environment variables, current working directory, and exit the process.
+ * Can be used to get environment variables, current working directory.
  *
  * Example:
  * ```typescript
@@ -10,10 +10,7 @@
  * const dir = Effect.runSync(cwd())
  *
  * // Get environment variable
- * const nodeEnv = Effect.runSync(env('NODE_ENV'))
- *
- * // Exit process
- * Effect.runSync(exit(0))
+ * const nodeEnv = Effect.runSync(environment('NODE_ENV'))
  * ```
  */
 
@@ -21,25 +18,34 @@ import process from 'node:process'
 import { Effect } from 'effect'
 
 /**
- * Exit the process with a specific code.
+ * Exit code — Signals the application to exit with a specific code.
+ * The actual process exit should be handled by CLI layer.
+ */
+export class ExitCode extends Error {
+  constructor(readonly code: number) {
+    super(`Exit with code: ${code}`)
+    this.name = 'ExitCode'
+  }
+}
+
+/**
+ * Request process exit with a specific code.
+ * Should be caught by CLI layer and handled with process.exit().
  *
  * @param code — Exit code (0 for success, non-zero for error)
- * @returns Effect that exits the process
+ * @returns Effect that signals exit
  *
  * @example
  * ```typescript
- * // Exit with success
- * Effect.runSync(exit(0))
+ * // Request exit with success
+ * Effect.runSync(requestExit(0))
  *
- * // Exit with error
- * Effect.runSync(exit(1))
+ * // Request exit with error
+ * Effect.runSync(requestExit(1))
  * ```
  */
-export function exit(code: number): Effect.Effect<void, never> {
-  return Effect.sync(() => {
-    // eslint-disable-next-line unicorn/no-process-exit -- process.exit is intended for CLI entry points
-    process.exit(code)
-  })
+export function requestExit(code: number): Effect.Effect<never, ExitCode> {
+  return Effect.fail(new ExitCode(code))
 }
 
 /**
@@ -65,14 +71,13 @@ export function cwd(): Effect.Effect<string, never> {
  *
  * @example
  * ```typescript
- * const nodeEnv = Effect.runSync(env('NODE_ENV'))
+ * const nodeEnv = Effect.runSync(environment('NODE_ENV'))
  * // nodeEnv: 'production' | 'development' | undefined
  *
- * const path = Effect.runSync(env('PATH'))
+ * const path = Effect.runSync(environment('PATH'))
  * // path: '/usr/local/bin:/usr/bin:...'
  * ```
  */
-// eslint-disable-next-line unicorn/prevent-abbreviations -- env is the standard name for environment variable access
-export function env(key: string): Effect.Effect<string | undefined, never> {
+export function environment(key: string): Effect.Effect<string | undefined, never> {
   return Effect.sync(() => process.env[key])
 }

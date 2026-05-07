@@ -8,7 +8,7 @@ import {
   exists,
   mkdir,
   NotFound,
-  readDir, // eslint-disable-line unicorn/prevent-abbreviations -- readDir is the standard name
+  readDirectory,
   readFile,
   remove,
   symlink,
@@ -16,22 +16,21 @@ import {
 } from './fs.js'
 
 describe('fs.readFile', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
     // Create a temporary directory for test files
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
     // Clean up temp directory
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should read content from an existing file', () => {
     // Arrange: write test file
-    const testFile = path.join(tempDir, 'test.txt')
+    const testFile = path.join(temporaryDirectory, 'test.txt')
     const testContent = 'Hello, Effect!'
     fs.writeFileSync(testFile, testContent)
 
@@ -45,7 +44,7 @@ describe('fs.readFile', () => {
 
   it('should return NotFound error when file does not exist', () => {
     // Arrange
-    const nonexistentFile = path.join(tempDir, 'nonexistent.txt')
+    const nonexistentFile = path.join(temporaryDirectory, 'nonexistent.txt')
 
     // Act & Assert: catch the error
     const effect = pipe(
@@ -66,7 +65,7 @@ describe('fs.readFile', () => {
 
   it('should read file with custom encoding', () => {
     // Arrange: write test file
-    const testFile = path.join(tempDir, 'utf8.txt')
+    const testFile = path.join(temporaryDirectory, 'utf8.txt')
     const testContent = 'こんにちは' // Japanese text
     fs.writeFileSync(testFile, testContent, 'utf8')
 
@@ -80,20 +79,19 @@ describe('fs.readFile', () => {
 })
 
 describe('fs.writeFile', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should write content to a file', () => {
     // Arrange
-    const testFile = path.join(tempDir, 'write-test.txt')
+    const testFile = path.join(temporaryDirectory, 'write-test.txt')
     const testContent = 'Hello, writeFile!'
 
     // Act
@@ -107,7 +105,7 @@ describe('fs.writeFile', () => {
 
   it('should overwrite existing file', () => {
     // Arrange
-    const testFile = path.join(tempDir, 'overwrite.txt')
+    const testFile = path.join(temporaryDirectory, 'overwrite.txt')
     fs.writeFileSync(testFile, 'original')
 
     // Act
@@ -122,61 +120,57 @@ describe('fs.writeFile', () => {
 })
 
 describe('fs.mkdir', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should create a directory', () => {
     // Arrange
-    // eslint-disable-next-line unicorn/prevent-abbreviations -- testDir is standard naming for test directories
-    const testDir = path.join(tempDir, 'newdir')
+    const testDirectory = path.join(temporaryDirectory, 'newdir')
 
     // Act
-    const effect = mkdir(testDir)
+    const effect = mkdir(testDirectory)
     Effect.runSync(effect)
 
     // Assert
-    expect(fs.existsSync(testDir)).toBe(true)
-    expect(fs.statSync(testDir).isDirectory()).toBe(true)
+    expect(fs.existsSync(testDirectory)).toBe(true)
+    expect(fs.statSync(testDirectory).isDirectory()).toBe(true)
   })
 
   it('should create nested directories with recursive option', () => {
     // Arrange
-    // eslint-disable-next-line unicorn/prevent-abbreviations -- testDir is standard naming for test directories
-    const testDir = path.join(tempDir, 'a', 'b', 'c')
+    const testDirectory = path.join(temporaryDirectory, 'a', 'b', 'c')
 
     // Act
-    const effect = mkdir(testDir, true)
+    const effect = mkdir(testDirectory, true)
     Effect.runSync(effect)
 
     // Assert
-    expect(fs.existsSync(testDir)).toBe(true)
-    expect(fs.statSync(testDir).isDirectory()).toBe(true)
+    expect(fs.existsSync(testDirectory)).toBe(true)
+    expect(fs.statSync(testDirectory).isDirectory()).toBe(true)
   })
 })
 
 describe('fs.exists', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should return true if file exists', () => {
     // Arrange
-    const testFile = path.join(tempDir, 'exists.txt')
+    const testFile = path.join(temporaryDirectory, 'exists.txt')
     fs.writeFileSync(testFile, 'content')
 
     // Act
@@ -189,7 +183,7 @@ describe('fs.exists', () => {
 
   it('should return false if file does not exist', () => {
     // Arrange
-    const testFile = path.join(tempDir, 'nonexistent.txt')
+    const testFile = path.join(temporaryDirectory, 'nonexistent.txt')
 
     // Act
     const effect = exists(testFile)
@@ -200,26 +194,25 @@ describe('fs.exists', () => {
   })
 })
 
-describe('fs.readDir', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+describe('fs.readDirectory', () => {
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should read directory contents', () => {
     // Arrange
-    fs.writeFileSync(path.join(tempDir, 'file1.txt'), 'a')
-    fs.writeFileSync(path.join(tempDir, 'file2.txt'), 'b')
-    fs.mkdirSync(path.join(tempDir, 'subdir'))
+    fs.writeFileSync(path.join(temporaryDirectory, 'file1.txt'), 'a')
+    fs.writeFileSync(path.join(temporaryDirectory, 'file2.txt'), 'b')
+    fs.mkdirSync(path.join(temporaryDirectory, 'subdir'))
 
     // Act
-    const effect = readDir(tempDir)
+    const effect = readDirectory(temporaryDirectory)
     const result = Effect.runSync(effect)
 
     // Assert
@@ -228,7 +221,7 @@ describe('fs.readDir', () => {
 
   it('should return empty array for empty directory', () => {
     // Act
-    const effect = readDir(tempDir)
+    const effect = readDirectory(temporaryDirectory)
     const result = Effect.runSync(effect)
 
     // Assert
@@ -237,12 +230,11 @@ describe('fs.readDir', () => {
 
   it('should return NotFound error for nonexistent directory', () => {
     // Arrange
-    // eslint-disable-next-line unicorn/prevent-abbreviations -- nonexistentDir is standard naming for test directories
-    const nonexistentDir = path.join(tempDir, 'nonexistent')
+    const nonexistentDirectory = path.join(temporaryDirectory, 'nonexistent')
 
     // Act & Assert
     const effect = pipe(
-      readDir(nonexistentDir),
+      readDirectory(nonexistentDirectory),
       Effect.match({
         onSuccess: () => 'unexpected success',
         onFailure: error => error,
@@ -255,20 +247,19 @@ describe('fs.readDir', () => {
 })
 
 describe('fs.remove', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should remove a file', () => {
     // Arrange
-    const testFile = path.join(tempDir, 'remove.txt')
+    const testFile = path.join(temporaryDirectory, 'remove.txt')
     fs.writeFileSync(testFile, 'content')
 
     // Act
@@ -281,36 +272,34 @@ describe('fs.remove', () => {
 
   it('should remove a directory recursively', () => {
     // Arrange
-    // eslint-disable-next-line unicorn/prevent-abbreviations -- testDir is standard naming for test directories
-    const testDir = path.join(tempDir, 'removedir')
-    fs.mkdirSync(testDir)
-    fs.writeFileSync(path.join(testDir, 'file.txt'), 'content')
+    const testDirectory = path.join(temporaryDirectory, 'removedir')
+    fs.mkdirSync(testDirectory)
+    fs.writeFileSync(path.join(testDirectory, 'file.txt'), 'content')
 
     // Act
-    const effect = remove(testDir, true)
+    const effect = remove(testDirectory, true)
     Effect.runSync(effect)
 
     // Assert
-    expect(fs.existsSync(testDir)).toBe(false)
+    expect(fs.existsSync(testDirectory)).toBe(false)
   })
 })
 
 describe('fs.copy', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should copy a file', () => {
     // Arrange
-    const source = path.join(tempDir, 'source.txt')
-    const destination = path.join(tempDir, 'dest.txt')
+    const source = path.join(temporaryDirectory, 'source.txt')
+    const destination = path.join(temporaryDirectory, 'dest.txt')
     const content = 'copied content'
     fs.writeFileSync(source, content)
 
@@ -325,8 +314,8 @@ describe('fs.copy', () => {
 
   it('should return NotFound when source does not exist', () => {
     // Arrange
-    const source = path.join(tempDir, 'nonexistent.txt')
-    const destination = path.join(tempDir, 'dest.txt')
+    const source = path.join(temporaryDirectory, 'nonexistent.txt')
+    const destination = path.join(temporaryDirectory, 'dest.txt')
 
     // Act & Assert
     const effect = pipe(
@@ -343,21 +332,20 @@ describe('fs.copy', () => {
 })
 
 describe('fs.symlink', () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- tempDir is standard naming for temporary directories
-  let tempDir: string
+  let temporaryDirectory: string
 
   beforeEach(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
+    temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-test-'))
   })
 
   afterEach(() => {
-    fs.rmSync(tempDir, { recursive: true, force: true })
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true })
   })
 
   it('should create a symbolic link', () => {
     // Arrange
-    const target = path.join(tempDir, 'target.txt')
-    const link = path.join(tempDir, 'link.txt')
+    const target = path.join(temporaryDirectory, 'target.txt')
+    const link = path.join(temporaryDirectory, 'link.txt')
     fs.writeFileSync(target, 'target content')
 
     // Act

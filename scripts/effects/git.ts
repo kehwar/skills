@@ -11,23 +11,24 @@
  * Example:
  * ```typescript
  * // Get current HEAD SHA
- * const sha = Effect.runSync(getHeadSha())
+ * const sha = await Effect.runPromise(getHeadSha())
  *
  * // With error handling
  * pipe(
  *   checkoutBranch('feature-branch'),
  *   Effect.catch(InvalidBranch, () => console.log('Branch does not exist')),
- *   Effect.runSync
+ *   Effect.runPromise
  * )
  * ```
  *
  * ## Git Command Execution
  *
- * All operations use synchronous git commands via child_process.
+ * All operations use @npmcli/git for safe command execution.
  * Errors are caught and mapped to custom error types.
  */
 
-import { execSync } from 'node:child_process'
+import process from 'node:process'
+import { spawn } from '@npmcli/git'
 import { Effect } from 'effect'
 
 /**
@@ -61,42 +62,74 @@ export class InvalidBranch extends Error {
 }
 
 /**
- * Helper to execute git commands safely.
+ * Helper to execute git commands using @npmcli/git.
+ * Returns an Effect that resolves to the command output.
  */
-function runGitCommand(command: string): Effect.Effect<string, CommandFailed | GitNotFound> {
-  return Effect.try({
-    try: () => {
-      // eslint-disable-next-line sonarjs/os-command -- git command is safe and validated
-      return execSync(`git ${command}`, { encoding: 'utf8' }).trim()
+function runGitCommand(
+  subcommand: string,
+  ...commandArguments: string[]
+): Effect.Effect<string, CommandFailed | GitNotFound> {
+  return Effect.tryPromise({
+    try: async () => {
+      // spawn from @npmcli/git - types don't match runtime
+      const result = (await spawn([subcommand, ...commandArguments], {
+        cwd: process.cwd(),
+      })) as any
+      // spawn returns { cmd, args, code, signal, stdout, stderr }
+      if (result.code !== 0) {
+        throw new Error(`Git command failed with code ${result.code}: ${result.stderr}`)
+      }
+      return (result.stdout || '').toString().trim()
     },
     catch: (error) => {
+      if (error instanceof GitNotFound) {
+        return error
+      }
       if (error instanceof Error) {
         const message = error.message
-        if (message.includes('not found') || message.includes('ENOENT')) {
+        if (message.includes('not found') || message.includes('ENOENT') || message.includes('git not found')) {
           return new GitNotFound()
         }
       }
+      const command = [subcommand, ...commandArguments].join(' ')
       return new CommandFailed(command, (error as Error).message)
     },
   })
 }
 
 /**
- * Execute a git command and return its output.
+ * Execute a known git command and return its output.
+ * For safety, use specific functions like getHeadSha(), checkoutBranch(), etc.
+ * This function is for commands not covered by specific wrappers.
  *
- * @param cmd — Git command to execute (e.g., 'status', 'log --oneline')
+ * @param subcommand — First git subcommand (e.g., 'status', 'log')
+ * @param commandArguments — Arguments for the subcommand
  * @returns Effect that executes the command and returns stdout
  * @throws CommandFailed if command fails
  * @throws GitNotFound if git is not installed
  *
  * @example
  * ```typescript
- * const status = Effect.runSync(exec('status'))
- * const log = Effect.runSync(exec('log --oneline -5'))
+ * const status = await Effect.runPromise(exec('status'))
+ * const log = await Effect.runPromise(exec('log', '--oneline', '-5'))
  * ```
  */
-export function exec(cmd: string): Effect.Effect<string, CommandFailed | GitNotFound> {
-  return runGitCommand(cmd)
+export function exec(subcommand: string, ...commandArguments: string[]): Effect.Effect<string, CommandFailed | GitNotFound> {
+  return runGitCommand(subcommand, ...commandArguments)
+}
+
+/**
+ * Execute a known git command and return its output.
+ * Alias for exec() for explicit naming.
+ *
+ * @param subcommand — First git subcommand (e.g., 'status', 'log')
+ * @param commandArguments — Arguments for the subcommand
+ * @returns Effect that executes the command and returns stdout
+ * @throws CommandFailed if command fails
+ * @throws GitNotFound if git is not installed
+ */
+export function runGitOperation(subcommand: string, ...commandArguments: string[]): Effect.Effect<string, CommandFailed | GitNotFound> {
+  return runGitCommand(subcommand, ...commandArguments)
 }
 
 /**
@@ -108,12 +141,12 @@ export function exec(cmd: string): Effect.Effect<string, CommandFailed | GitNotF
  *
  * @example
  * ```typescript
- * const sha = Effect.runSync(getHeadSha())
+ * const sha = await Effect.runPromise(getHeadSha())
  * // sha: 'a1b2c3d4e5f6...'
  * ```
  */
 export function getHeadSha(): Effect.Effect<string, CommandFailed | GitNotFound> {
-  return runGitCommand('rev-parse HEAD')
+  return runGitCommand('rev-parse', 'HEAD')
 }
 
 /**
@@ -126,11 +159,11 @@ export function getHeadSha(): Effect.Effect<string, CommandFailed | GitNotFound>
  *
  * @example
  * ```typescript
- * Effect.runSync(addSubmodule('https://github.com/user/repo.git', 'vendor/repo'))
+ * await Effect.runPromise(addSubmodule('https://github.com/user/repo.git', 'vendor/repo'))
  * ```
  */
 export function addSubmodule(url: string, path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
-  return Effect.map(runGitCommand(`submodule add ${url} ${path}`), () => {})
+  return Effect.map(runGitCommand('submodule', 'add', url, path), () => {})
 }
 
 /**
@@ -142,11 +175,11 @@ export function addSubmodule(url: string, path: string): Effect.Effect<void, Com
  *
  * @example
  * ```typescript
- * Effect.runSync(initSubmodule('vendor/repo'))
+ * await Effect.runPromise(initSubmodule('vendor/repo'))
  * ```
  */
 export function initSubmodule(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
-  return Effect.map(runGitCommand(`submodule init ${path}`), () => {})
+  return Effect.map(runGitCommand('submodule', 'init', path), () => {})
 }
 
 /**
@@ -158,12 +191,12 @@ export function initSubmodule(path: string): Effect.Effect<void, CommandFailed |
  *
  * @example
  * ```typescript
- * Effect.runSync(fetchSubmodule('vendor/repo'))
+ * await Effect.runPromise(fetchSubmodule('vendor/repo'))
  * ```
  */
 export function fetchSubmodule(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
   return Effect.map(
-    runGitCommand(`-C ${path} fetch`),
+    runGitCommand('-C', path, 'fetch'),
     () => {},
   )
 }
@@ -179,12 +212,12 @@ export function fetchSubmodule(path: string): Effect.Effect<void, CommandFailed 
  *
  * @example
  * ```typescript
- * Effect.runSync(setSubmoduleBranch('vendor/repo', 'main'))
+ * await Effect.runPromise(setSubmoduleBranch('vendor/repo', 'main'))
  * ```
  */
 export function setSubmoduleBranch(path: string, branch: string): Effect.Effect<void, CommandFailed | InvalidBranch | GitNotFound> {
   return Effect.map(
-    runGitCommand(`config -f .gitmodules submodule.${path}.branch ${branch}`),
+    runGitCommand('config', '-f', '.gitmodules', `submodule.${path}.branch`, branch),
     () => {},
   )
 }
@@ -199,13 +232,13 @@ export function setSubmoduleBranch(path: string, branch: string): Effect.Effect<
  *
  * @example
  * ```typescript
- * Effect.runSync(checkoutBranch('feature-branch'))
+ * await Effect.runPromise(checkoutBranch('feature-branch'))
  * ```
  */
 export function checkoutBranch(branch: string): Effect.Effect<void, CommandFailed | InvalidBranch | GitNotFound> {
-  return Effect.flatMap(runGitCommand(`checkout ${branch}`), () => {
+  return Effect.flatMap(runGitCommand('checkout', branch), () => {
     // Verify branch was checked out
-    return Effect.map(runGitCommand('rev-parse --abbrev-ref HEAD'), (current) => {
+    return Effect.map(runGitCommand('rev-parse', '--abbrev-ref', 'HEAD'), (current) => {
       if (current !== branch) {
         throw new InvalidBranch(branch)
       }
@@ -222,11 +255,11 @@ export function checkoutBranch(branch: string): Effect.Effect<void, CommandFaile
  *
  * @example
  * ```typescript
- * Effect.runSync(deinitSubmodule('vendor/repo'))
+ * await Effect.runPromise(deinitSubmodule('vendor/repo'))
  * ```
  */
 export function deinitSubmodule(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
-  return Effect.map(runGitCommand(`submodule deinit -f ${path}`), () => {})
+  return Effect.map(runGitCommand('submodule', 'deinit', '-f', path), () => {})
 }
 
 /**
@@ -238,12 +271,12 @@ export function deinitSubmodule(path: string): Effect.Effect<void, CommandFailed
  *
  * @example
  * ```typescript
- * Effect.runSync(removeSubmoduleFromGitmodules('vendor/repo'))
+ * await Effect.runPromise(removeSubmoduleFromGitmodules('vendor/repo'))
  * ```
  */
 export function removeSubmoduleFromGitmodules(path: string): Effect.Effect<void, CommandFailed | GitNotFound> {
   return Effect.map(
-    runGitCommand(`config --file .gitmodules --remove-section submodule.${path}`),
+    runGitCommand('config', '--file', '.gitmodules', '--remove-section', `submodule.${path}`),
     () => {},
   )
 }
@@ -251,20 +284,19 @@ export function removeSubmoduleFromGitmodules(path: string): Effect.Effect<void,
 /**
  * Count commits in a reference range.
  *
- * @param ref — Git reference (e.g., 'HEAD', 'origin/main..HEAD')
+ * @param gitReference — Git reference (e.g., 'HEAD', 'origin/main..HEAD')
  * @returns Effect that returns count of commits
  * @throws CommandFailed if count fails
  *
  * @example
  * ```typescript
- * const count = Effect.runSync(revListCount('origin/main..HEAD'))
+ * const count = await Effect.runPromise(revListCount('origin/main..HEAD'))
  * ```
  */
 export function revListCount(
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- ref is standard abbreviation for git reference
-  ref: string,
+  gitReference: string,
 ): Effect.Effect<number, CommandFailed> {
-  return Effect.map(runGitCommand(`rev-list --count ${ref}`), (output) => {
+  return Effect.map(runGitCommand('rev-list', '--count', gitReference), (output) => {
     const count = Number.parseInt(output, 10)
     return Number.isNaN(count) ? 0 : count
   })

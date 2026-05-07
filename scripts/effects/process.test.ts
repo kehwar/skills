@@ -1,6 +1,6 @@
 import { Effect } from 'effect'
 import { describe, expect, it } from 'vitest'
-import { cwd, env as environment, exit } from './process.js'
+import { cwd, environment, requestExit } from './process.js'
 
 describe('process.cwd', () => {
   it('should return current working directory', () => {
@@ -26,8 +26,8 @@ describe('process.env', () => {
   })
 
   it('should return undefined for non-existent variable', () => {
-    // eslint-disable-next-line sonarjs/pseudo-random -- Math.random is sufficient for test
-    const effect = environment(`NON_EXISTENT_VAR_${Math.random()}`)
+    const uniqueVariableName = `NON_EXISTENT_VAR_${Date.now()}`
+    const effect = environment(uniqueVariableName)
     const result = Effect.runSync(effect)
 
     expect(result).toBeUndefined()
@@ -43,10 +43,10 @@ describe('process.env', () => {
   })
 })
 
-// Note: We don't test exit() directly as it would terminate the test suite.
-// exit() can be tested in integration tests or by mocking process.exit.
-describe('process.exit', () => {
-  it('should export exit function', () => {
-    expect(typeof exit).toBe('function')
+// Note: We don't test requestExit() directly as it throws an ExitCode error.
+// requestExit() can be tested in integration tests or by catching the error.
+describe('process.requestExit', () => {
+  it('should export requestExit function', () => {
+    expect(typeof requestExit).toBe('function')
   })
 })
