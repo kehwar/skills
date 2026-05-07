@@ -23,6 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@npmcli/git": "^7.0.2",
     "effect": "^3.21.2"
   },
   "devDependencies": {
