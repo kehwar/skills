@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", wants integration tests, or asks for test-first development.
+description: Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", wants integration tests, or asks for test-first development. Tracks progress in Beads Issue Tracker.
 ---
 
 # Test-Driven Development
@@ -44,6 +44,7 @@ RIGHT (vertical):
 
 ### 1. Planning
 
+The user must pass an issue reference as an argument, fetch it from the Beads Issue Tracker `bd show <id>`, fetch any parent and linked issues for full context.
 When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
 
 Before writing any code:
@@ -54,6 +55,7 @@ Before writing any code:
 - [ ] Design interfaces for [testability](interface-design.md)
 - [ ] List the behaviors to test (not implementation steps)
 - [ ] Get user approval on the plan
+- [ ] Run `bd update <id> --claim`
 
 Ask: "What should the public interface look like? Which behaviors are most important to test?"
 
@@ -108,12 +110,14 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 [ ] No speculative features added
 ```
 
-## Beads Issue Tracker Reference
+### 5. Update issue tracker
 
-- **Create an issue**: `bd create --title="..." --description="..." --type=task|bug|feature|epic [--parent=<parent_id>]`. Use multi-line descriptions for context.
-- **Read an issue**: `bd show <id>` to view full details, dependencies, and notes.
-- **List issues**: `bd list --status=open` for open issues, `bd list --status=in_progress` for active work, `bd ready` for issues ready to start (no blockers).
-- **Comment on an issue**: `bd update <id> --notes="..."` to set notes.
-- **Update fields**: `bd update <id> --title/--description/--notes/--design` to modify inline.
-- **Close**: `bd close <id>` to mark complete, or `bd close <id1> <id2> ...` to close multiple at once.
-- **More commands**: `bd` for full command list.
+```bash
+bd update <id> --acceptance "<multi-line-acceptance-criteria>" --notes "<implementation-summary>" --status closed
+```
+
+<multi-line-acceptance-criteria-template>
+- [x] Criterion 1
+- [x] Criterion 2
+- [x] Criterion 3
+</multi-line-acceptance-criteria-template>
