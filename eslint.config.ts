@@ -5,6 +5,10 @@ import unicorn from 'eslint-plugin-unicorn'
 export default antfu(
   {
     typescript: true,
+    markdown: false,
+    formatters: {
+      markdown: 'dprint',
+    },
     ignores: [
       'upstream/**',
       'skills/**',

@@ -106,7 +106,7 @@ describe('uRL Pipeline', () => {
     })
 
     it('rejects HTTP URLs (requires HTTPS or SSH)', () => {
-      const unsecureProtocol = "http"
+      const unsecureProtocol = 'http'
       const result = parseAndNormalizeUrl(`${unsecureProtocol}://github.com/user/repo`)
       expect(result.ok).toBe(false)
       if (!result.ok) {
