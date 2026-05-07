@@ -5,24 +5,25 @@
  *
  * Workflow:
  * 1. Validates URL, derives upstream key
- * 2. Ensures submodule exists
+ * 2. Checks for key collision (prompts if needed)
  * 3. Discovers SKILL.md files
  * 4. Prompts user to select skills (if found)
- * 5. Updates meta.json and syncs skills via handler + orchestrator
- * 6. Creates instructions file if reference-only upstream
+ * 5. Calls upstreamAdd orchestrator for submodule + sync
+ * 6. Updates meta.json with results
  */
 
+import type { UpstreamAddInput } from './orchestrators/upstream-add.js'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { handleAddUpstream } from './lib/cli-handlers-upstream.ts'
+import { Effect } from 'effect'
 import { promptForSkillSelection, promptForUpstreamKey } from './lib/cli-prompts.ts'
 import { validateBranchName } from './lib/cli-validators.ts'
-import { submoduleExists } from './lib/git-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
 import { discoverSkills } from './lib/skill-discovery.ts'
 import { parseAndNormalizeUrl } from './lib/url.ts'
+import { upstreamAdd } from './orchestrators/upstream-add.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -93,7 +94,8 @@ const submodulePath = `upstream/${upstreamKey}`
 const upstreamDirectory = path.join(root, submodulePath)
 const spinner = p.spinner()
 
-const isNew = !submoduleExists(root, submodulePath)
+// For now, detect isNew from meta (will be refined in future phase)
+const isNew = !meta.upstreams[upstreamKey]
 const updateAction = isNew ? 'Adding' : 'Updating'
 const branchSuffix = branch ? ` (branch: ${branch})` : ''
 spinner.start(`${updateAction} ${submodulePath}${branchSuffix}`)
@@ -142,30 +144,61 @@ if (skillPaths.length > 0) {
   }
 }
 
-// --- Add upstream and sync skills via handler ---
+// --- Call upstreamAdd orchestrator ---
 
-const result = handleAddUpstream({
-  url: normalizedUrl,
+const spinner2 = p.spinner()
+spinner2.start(`Syncing skills...`)
+
+const input: UpstreamAddInput = {
+  root,
   upstreamKey,
+  url: normalizedUrl,
   branch,
   selectedSkills: skillsMap,
-  root,
-})
+}
 
-if (!result.ok) {
-  p.log.error(result.error)
-  p.outro('Failed to add upstream')
+const result = Effect.runSync(upstreamAdd(input))
+
+spinner2.stop(`Skills synced`)
+
+// --- Update meta.json with discovered skills ---
+
+const upstreamConfig: typeof meta.upstreams[string] = {
+  url: normalizedUrl,
+  ...(branch && { branch }),
+  skills: skillsMap,
+  available: {}, // Will be populated from discovered skills
+  gitSha: '', // Git SHA detection implemented in skills-bv3.6
+}
+
+// Populate available map from discovered skills
+for (const { path: skillPath, hash } of result.discoveredSkills) {
+  upstreamConfig.available![skillPath] = hash
+}
+
+store.updateUpstream(upstreamKey, upstreamConfig)
+const saveResult = store.saveMeta()
+if (!saveResult.ok) {
+  p.log.error(saveResult.error)
+  p.outro('Failed to save meta.json')
   process.exit(1)
 }
 
-const output = result.data
-p.log.success(output.message)
+// --- Report results ---
 
-if (output.skillsSynced > 0) {
-  p.log.info(`  Synced: ${output.skillsSynced} skills`)
+p.log.success(`Added upstream: ${upstreamKey}`)
+
+if (result.syncResult.synced.length > 0) {
+  p.log.info(`  Synced: ${result.syncResult.synced.length} skills`)
 }
-if (output.skillsFailed > 0) {
-  p.log.warn(`  Failed: ${output.skillsFailed} skills`)
+if (result.syncResult.skipped.length > 0) {
+  p.log.info(`  Skipped: ${result.syncResult.skipped.length} skills`)
+}
+if (result.syncResult.errors.length > 0) {
+  p.log.warn(`  Failed: ${result.syncResult.errors.length} skills`)
+  for (const { skillPath, outputName, error } of result.syncResult.errors) {
+    p.log.warn(`    ${outputName} (${skillPath}): ${error}`)
+  }
 }
 
 p.outro('Done')
