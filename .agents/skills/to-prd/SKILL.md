@@ -1,6 +1,6 @@
 ---
 name: to-prd
-description: Turn the current conversation context into a PRD and publish it to Beads. Use when user wants to create a PRD from the current context.
+description: Turn the current conversation context into a PRD and publish it to Beads Issue Tracker. Use when user wants to create a PRD from the current context.
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.
@@ -15,9 +15,13 @@ A deep module (as opposed to a shallow module) is one which encapsulates a lot o
 
 Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-3. Write the PRD using the template below, then publish it to Beads.
+3. Write the PRD using the template below, then publish it to Beads Issue Tracker using:
 
-<prd-template>
+```bash
+bd create --type=epic --title="<prd-title>" --description="<multi-line-prd-body>"
+```
+
+<multi-line-prd-body-template>
 
 ## Problem Statement
 
@@ -69,14 +73,4 @@ A description of the things that are out of scope for this PRD.
 
 Any further notes about the feature.
 
-</prd-template>
-
-## Beads Issue Tracker Reference
-
-- **Create an issue**: `bd create --title="..." --description="..." --type=task|bug|feature|epic [--parent=<parent_id>]`. Use multi-line descriptions for context.
-- **Read an issue**: `bd show <id>` to view full details, dependencies, and notes.
-- **List issues**: `bd list --status=open` for open issues, `bd list --status=in_progress` for active work, `bd ready` for issues ready to start (no blockers).
-- **Comment on an issue**: `bd update <id> --notes="..."` to set notes.
-- **Update fields**: `bd update <id> --title/--description/--notes/--design` to modify inline.
-- **Close**: `bd close <id>` to mark complete, or `bd close <id1> <id2> ...` to close multiple at once.
-- **More commands**: `bd` for full command list.
+</multi-line-prd-body-template>
