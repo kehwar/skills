@@ -3,8 +3,8 @@
  *
  * ## Dependency Injection Pattern
  *
- * This module demonstrates filesystem operations using Layer 1 primitives (readDir).
- * It builds domain logic on top of the fs Layer 1 service.
+ * This module demonstrates filesystem operations using Layer 1 primitives (readDirectory, exists).
+ * It builds domain logic on top of the fs Layer 1 service by composing multiple primitives.
  *
  * Example:
  * ```typescript
@@ -19,10 +19,9 @@
  * ```
  */
 
-import type { Dirent } from 'node:fs'
-import { readdirSync } from 'node:fs'
 import path from 'node:path'
-import { Effect } from 'effect'
+import { Effect, pipe } from 'effect'
+import { readDirectory } from './fs.js'
 
 /**
  * DiscoveryError — Failed to discover skills in directory.
@@ -52,6 +51,8 @@ export interface Skill {
  * - Does not recurse into matched skill directories
  * - Returns relative paths from root
  *
+ * Uses Layer 1 primitives readDirectory and exists to compose discovery logic.
+ *
  * @param directory — Root directory to search
  * @returns Effect that succeeds with array of Skill paths, fails with DiscoveryError
  *
@@ -62,46 +63,78 @@ export interface Skill {
  * ```
  */
 export function discoverSkills(directory: string): Effect.Effect<Skill[], DiscoveryError> {
-  return Effect.sync(() => {
-    const results: Skill[] = []
+  return Effect.catchAll(
+    walkDirectory(directory, directory),
+    (error: unknown) => {
+      const message = error instanceof Error ? error.message : String(error)
+      return Effect.fail(new DiscoveryError(`Failed to discover skills: ${message}`))
+    },
+  )
+}
 
-    function walk(current: string): void {
-      let entries: Dirent[]
-      try {
-        entries = readdirSync(current, { withFileTypes: true })
-      }
-      catch {
-        // Permission denied or other errors - skip this directory
-        return
+/**
+ * Recursively walk directory using Layer 1 primitives.
+ * @param currentDirectory — Current directory being walked
+ * @param rootDirectory — Root directory for relative path calculation
+ * @returns Effect with array of discovered skills, converting errors to DiscoveryError
+ */
+function walkDirectory(currentDirectory: string, rootDirectory: string): Effect.Effect<Skill[], DiscoveryError> {
+  return pipe(
+    readDirectory(currentDirectory),
+    Effect.flatMap((entries) => {
+      // Check if current directory contains SKILL.md
+      const isSkill = entries.includes('SKILL.md')
+
+      if (isSkill) {
+        const relativePath = path.relative(rootDirectory, currentDirectory) || '.'
+        return Effect.succeed([{ path: relativePath }])
       }
 
-      // Check if current directory is a skill
-      if (entries.some(entry => entry.isFile() && entry.name === 'SKILL.md')) {
-        const relativePath = path.relative(directory, current) || '.'
-        results.push({ path: relativePath })
-        return // Stop recursion for this branch
-      }
-
-      // Recurse into subdirectories
-      for (const entry of entries) {
-        if (
-          entry.isDirectory()
-          && entry.name !== 'node_modules'
-          && !entry.name.startsWith('.')
-        ) {
-          walk(path.join(current, entry.name))
-        }
-      }
-    }
-
-    try {
-      walk(directory)
-      return results
-    }
-    catch (error) {
-      throw new DiscoveryError(
-        `Failed to discover skills: ${error instanceof Error ? error.message : String(error)}`,
+      // Process subdirectories for recursion
+      const skipEntries = new Set(['node_modules'])
+      const subdirs = entries.filter(
+        entry =>
+          !entry.startsWith('.')
+          && !skipEntries.has(entry),
       )
-    }
-  })
+
+      // Check each entry to see if it's a directory
+      const checkDirectoryEffects = subdirs.map((entry) => {
+        const entryPath = path.join(currentDirectory, entry)
+        return pipe(
+          readDirectory(entryPath),
+          Effect.map(() => true), // If readDirectory succeeds, it's a directory
+          Effect.catchAll(() => Effect.succeed(false)), // If it fails, it's not a directory
+        )
+      })
+
+      return pipe(
+        Effect.all(checkDirectoryEffects),
+        Effect.flatMap((isDirectoryFlags) => {
+          const directoriesPath = subdirs.filter((_, index) => isDirectoryFlags[index])
+
+          // Recursively walk each subdirectory
+          const walkEffects = directoriesPath.map(entry =>
+            walkDirectory(path.join(currentDirectory, entry), rootDirectory),
+          )
+
+          return pipe(
+            Effect.all(walkEffects),
+            Effect.map((results) => {
+              // Flatten array of arrays
+              const flattened: Skill[] = []
+              for (const result of results) {
+                flattened.push(...result)
+              }
+              return flattened
+            }),
+          )
+        }),
+      )
+    }),
+    Effect.catchAll((error: unknown) => {
+      const message = error instanceof Error ? error.message : String(error)
+      return Effect.fail(new DiscoveryError(`Failed to walk directory: ${message}`))
+    }),
+  )
 }

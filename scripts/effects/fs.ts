@@ -325,3 +325,33 @@ export function symlink(target: string, path: string): Effect.Effect<void, IOErr
     },
   })
 }
+
+/**
+ * Copy a directory recursively from source to destination.
+ *
+ * @param source — Source directory path
+ * @param destination — Destination directory path
+ * @param options — Optional configuration object
+ * @param options.force — If true, overwrite existing destination (default: false)
+ * @returns Effect that copies the directory recursively
+ * @throws IOError if copy fails
+ *
+ * @example
+ * ```typescript
+ * Effect.runSync(recursiveCopy('/tmp/source', '/tmp/destination', { force: true }))
+ * ```
+ */
+export function recursiveCopy(
+  source: string,
+  destination: string,
+  options: { force?: boolean } = {},
+): Effect.Effect<void, IOError> {
+  return Effect.try({
+    try: () => {
+      fs.cpSync(source, destination, { recursive: true, force: options.force ?? false })
+    },
+    catch: () => {
+      return new IOError(`Failed to recursively copy from ${source} to ${destination}`)
+    },
+  })
+}
