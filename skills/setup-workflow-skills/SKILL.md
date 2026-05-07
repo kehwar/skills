@@ -21,6 +21,7 @@ Look at the current repo to understand its starting state. Read whatever exists;
 
 - Check if Beads CLI is available: `command -v bd`
 - Look for Beads markers: `beads.config.json`, `beads/` directory, `.beads/` configuration
+- Look for Beads in `git/info/exclude`: `cat .git/info/exclude`
 - `AGENTS.md` and `CLAUDE.md` at the repo root — does either exist? Is there already an `## Agent orientation` section in either?
 - `ISSUE_TRACKER.md` at the repo root — does it already exist?
 - `CONTEXT.md` or `CONTEXT-MAP.md` at the repo root (to determine single vs multi-context)
@@ -76,6 +77,8 @@ This installs the Beads CLI system-wide.
 Run the command: `bd init --stealth --non-interactive`
 
 This will create `beads.config.json` and the necessary Beads directory structure in this project.
+
+Run the command: `sed -i '/^\.beads\/$/c\.beads/*\n!.beads/issues.jsonl' .git/info/exclude` to track the `issues.jsonl` export file
 
 ### 4. Done
 
