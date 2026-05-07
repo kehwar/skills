@@ -8,10 +8,11 @@ import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
+import { Effect } from 'effect'
 import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
 import { MetaStore } from './lib/meta-store.ts'
-import { runSyncOrchestrator } from './lib/sync-orchestrator.ts'
 import { parseAndNormalizeUrl } from './lib/url.ts'
+import { syncAllUpstreams } from './orchestrators/sync-all-upstreams.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -41,43 +42,42 @@ if (urlsNormalized) {
     errors.push(saveResult.error)
 }
 
-// ── Sync each upstream using orchestrator ──────────────────────────────────
+// ── Sync each upstream using Effect orchestrator ─────────────────────────────
 
 p.log.step('Syncing upstreams...')
-for (const [upstreamName, config] of Object.entries(upstreams)) {
-  if (!config.skills)
+
+const upstreamMap = Object.fromEntries(
+  Object.entries(upstreams).filter(([, config]) => config.skills),
+)
+
+const syncEffect = syncAllUpstreams({
+  root,
+  upstreams: upstreamMap,
+  concurrency: 3,
+  force,
+})
+
+const syncResult = Effect.runSync(syncEffect)
+
+// Process results and update meta
+for (const detail of syncResult.details) {
+  const config = upstreams[detail.upstreamName]
+  if (!config)
     continue
 
   const branchSuffix = config.branch ? ` (branch: ${config.branch})` : ''
-  p.log.info(`  ${upstreamName}${branchSuffix}`)
+  p.log.info(`  ${detail.upstreamName}${branchSuffix}`)
 
-  const oldAvailable = config.available ?? {}
-  const newAvailable: Record<string, string> = {}
-
-  const orcResult = runSyncOrchestrator(
-    {
-      root,
-      upstreamName,
-      upstreamConfig: config,
-      selectedSkills: config.skills,
-      force,
-    },
-    {
-      onPhaseSuccess: () => {
-        // Silent success; we log after orchestration completes
-      },
-      onPhaseFailed: (phaseName, error) => {
-        p.log.error(`  Phase ${phaseName} failed: ${error}`)
-      },
-    },
-  )
-
-  if (!orcResult.ok) {
-    errors.push(`Failed to sync upstream ${upstreamName}: ${orcResult.error}`)
+  if (!detail.success) {
+    errors.push(`Failed to sync upstream ${detail.upstreamName}: ${detail.error}`)
+    p.log.error(`  Error: ${detail.error}`)
     continue
   }
 
-  const { discoveredSkills, syncResult } = orcResult.data
+  const { discoveredSkills, syncResult: skillSyncResult } = detail.output!
+
+  const oldAvailable = config.available ?? {}
+  const newAvailable: Record<string, string> = {}
 
   // Build the new available map from discovered hashes
   for (const { path: skillPath, hash } of discoveredSkills) {
@@ -86,38 +86,37 @@ for (const [upstreamName, config] of Object.entries(upstreams)) {
 
   // Report changes
   const allPaths = new Set([...Object.keys(oldAvailable), ...Object.keys(newAvailable)])
-  const isSelected = (skillPath: string) => skillPath in config.skills!
 
   for (const skillPath of [...allPaths].sort()) {
     const oldHash = oldAvailable[skillPath]
     const newHash = newAvailable[skillPath]
-    const tag = isSelected(skillPath) ? ' [included]' : ''
+    const tag = skillPath in config.skills! ? ' [included]' : ''
 
     if (!oldHash) {
-      p.log.info(`    + ${upstreamName}/${skillPath}${tag}  (new)`)
+      p.log.info(`    + ${detail.upstreamName}/${skillPath}${tag}  (new)`)
     }
     else if (!newHash) {
-      p.log.info(`    - ${upstreamName}/${skillPath}${tag}  (removed)`)
+      p.log.info(`    - ${detail.upstreamName}/${skillPath}${tag}  (removed)`)
     }
     else if (oldHash !== newHash) {
-      p.log.info(`    ~ ${upstreamName}/${skillPath}${tag}  (${oldHash} → ${newHash})`)
+      p.log.info(`    ~ ${detail.upstreamName}/${skillPath}${tag}  (${oldHash} → ${newHash})`)
     }
   }
 
   // Log sync results
-  for (const skill of syncResult.synced) {
-    p.log.step(`    synced  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  for (const skill of skillSyncResult.synced) {
+    p.log.step(`    synced  ${detail.upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
   }
-  for (const skill of syncResult.skipped) {
-    p.log.info(`    unchanged  ${upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
+  for (const skill of skillSyncResult.skipped) {
+    p.log.info(`    unchanged  ${detail.upstreamName}/${skill.skillPath} → skills/${skill.outputName}`)
   }
-  for (const skill of syncResult.errors) {
-    p.log.error(`    FAILED ${upstreamName}/${skill.skillPath}: ${skill.error}`)
-    errors.push(`Skill copy failed: ${upstreamName}/${skill.skillPath}: ${skill.error}`)
+  for (const skill of skillSyncResult.errors) {
+    p.log.error(`    FAILED ${detail.upstreamName}/${skill.skillPath}: ${skill.error}`)
+    errors.push(`Skill copy failed: ${detail.upstreamName}/${skill.skillPath}: ${skill.error}`)
   }
 
   // Update available map in config
-  store.updateUpstream(upstreamName, { available: newAvailable })
+  store.updateUpstream(detail.upstreamName, { available: newAvailable })
 }
 
 p.log.step('Syncing upstreams completed')
