@@ -11,7 +11,7 @@ Break a plan into independently-grabbable issues using vertical slices (tracer b
 
 ### 1. Gather context
 
-Work from whatever is already in the conversation context. If the user passes an issue reference as an argument, fetch it from the Beads Issue Tracker `bd show <id>`, fetch any parent and linked issues for full context.
+Work from whatever is already in the conversation context. If the user passes an issue reference as an argument, fetch it from the Beads Issue Tracker `bd show <id>`, fetch any parent for full context and any blocker for prior art.
 
 ### 2. Explore the codebase (optional)
 
