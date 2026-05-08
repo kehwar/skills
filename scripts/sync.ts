@@ -4,42 +4,70 @@
  * and update the `available` map in meta.json with content hashes for all upstream skills.
  */
 
+import type { Meta } from './types.js'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
-import { collectAuthoredSkills, linkAuthoredSkills, pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
-import { MetaStore } from './lib/meta-store.ts'
-import { parseAndNormalizeUrl } from './lib/url.ts'
+import {
+  collectAuthoredSkillsWithMetadata,
+  linkAuthoredSkillsToDirectory,
+  pruneStaleLinksinAuthoredDirectory,
+} from './effects/authored-skills.js'
+import { readFile, writeFile } from './effects/fs.js'
+import { loadMeta, saveMeta } from './effects/meta-io.js'
+import { parseGitHubUrl } from './effects/url-parsing.js'
 import { syncAllUpstreams } from './orchestrators/sync-all-upstreams.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
-const store = new MetaStore(root)
 const force = process.argv.includes('--force')
 const errors: string[] = []
 
 p.intro('Sync')
 
-// ── Normalize any shorthand URLs in meta.json ───────────────────────────────
+// ── Load and normalize meta.json using Effects ──────────────────────────────
 
-let urlsNormalized = false
-const upstreams = store.getAllUpstreams()
-for (const [key, config] of Object.entries(upstreams)) {
-  const parseResult = parseAndNormalizeUrl(config.url)
-  if (parseResult.ok && parseResult.data.normalized !== config.url) {
-    store.updateUpstream(key, { url: parseResult.data.normalized })
-    urlsNormalized = true
+const syncWorkflow = Effect.gen(function* () {
+  // Load meta.json
+  const metaJson = yield* readFile(path.join(root, 'meta.json'))
+  const meta = yield* loadMeta(metaJson)
+
+  // Normalize URLs
+  let urlsNormalized = false
+  const normalizedUpstreams: Record<string, any> = {}
+
+  for (const [key, config] of Object.entries(meta.upstreams)) {
+    const urlInfo = yield* parseGitHubUrl(config.url)
+    if (urlInfo.normalized !== config.url)
+      urlsNormalized = true
+
+    normalizedUpstreams[key] = {
+      ...config,
+      url: urlInfo.normalized,
+    }
   }
-  else if (!parseResult.ok) {
-    errors.push(`Invalid upstream URL for ${key}: ${parseResult.error}`)
+
+  // Save normalized meta if needed
+  if (urlsNormalized) {
+    const normalizedMeta = { upstreams: normalizedUpstreams }
+    const serialized = yield* saveMeta(normalizedMeta)
+    yield* writeFile(path.join(root, 'meta.json'), serialized)
   }
+
+  return normalizedUpstreams
+})
+
+// Execute the workflow
+let upstreams: Record<string, any> = {}
+try {
+  upstreams = Effect.runSync(syncWorkflow)
 }
-if (urlsNormalized) {
-  const saveResult = store.saveMeta()
-  if (!saveResult.ok)
-    errors.push(saveResult.error)
+catch (error: unknown) {
+  errors.push(
+    `Failed to load/normalize meta.json: ${error instanceof Error ? error.message : String(error)}`,
+  )
 }
 
 // ── Sync each upstream using Effect orchestrator ─────────────────────────────
@@ -59,11 +87,15 @@ const syncEffect = syncAllUpstreams({
 
 const syncResult = Effect.runSync(syncEffect)
 
-// Process results and update meta
-for (const detail of syncResult.details) {
-  const config = upstreams[detail.upstreamName]
+// ── Helper: Process a single upstream sync result ──────────────────────────
+
+function processSyncDetail(
+  detail: typeof syncResult.details[0],
+  meta: Meta,
+): Record<string, string> {
+  const config = meta.upstreams[detail.upstreamName]
   if (!config)
-    continue
+    return {}
 
   const branchSuffix = config.branch ? ` (branch: ${config.branch})` : ''
   p.log.info(`  ${detail.upstreamName}${branchSuffix}`)
@@ -71,7 +103,7 @@ for (const detail of syncResult.details) {
   if (!detail.success) {
     errors.push(`Failed to sync upstream ${detail.upstreamName}: ${detail.error}`)
     p.log.error(`  Error: ${detail.error}`)
-    continue
+    return {}
   }
 
   const { discoveredSkills, syncResult: skillSyncResult } = detail.output!
@@ -115,45 +147,69 @@ for (const detail of syncResult.details) {
     errors.push(`Skill copy failed: ${detail.upstreamName}/${skill.skillPath}: ${skill.error}`)
   }
 
-  // Update available map in config
-  store.updateUpstream(detail.upstreamName, { available: newAvailable })
+  return newAvailable
+}
+
+// ── Process results and update meta ──────────────────────────────────────────
+
+// Load meta again to get fresh state (might have changed during sync)
+const updateMetaWorkflow = Effect.gen(function* () {
+  const metaJson = yield* readFile(path.join(root, 'meta.json'))
+  const updatedMeta = yield* loadMeta(metaJson)
+
+  for (const detail of syncResult.details) {
+    const newAvailable = processSyncDetail(detail, updatedMeta)
+    if (Object.keys(newAvailable).length > 0) {
+      updatedMeta.upstreams[detail.upstreamName] = {
+        ...updatedMeta.upstreams[detail.upstreamName],
+        available: newAvailable,
+      }
+    }
+  }
+
+  // Save updated meta
+  const serialized = yield* saveMeta(updatedMeta)
+  yield* writeFile(path.join(root, 'meta.json'), serialized)
+
+  return updatedMeta
+})
+
+try {
+  Effect.runSync(updateMetaWorkflow)
+}
+catch (error: unknown) {
+  errors.push(
+    `Failed to update meta.json: ${error instanceof Error ? error.message : String(error)}`,
+  )
 }
 
 p.log.step('Syncing upstreams completed')
 
-const saveMeta = store.saveMeta()
-if (!saveMeta.ok)
-  errors.push(saveMeta.error)
-
-// ── Maintain authored/ symlinks ─────────────────────────────────────────────
+// ── Maintain authored/ symlinks using Effects ────────────────────────────────
 
 const authoredDirectory = path.join(root, 'authored')
 const skillsDirectory = path.join(root, 'skills')
 
-const collectResult = collectAuthoredSkills(skillsDirectory)
-if (collectResult.ok) {
-  const linkResult = linkAuthoredSkills(collectResult.data, skillsDirectory, authoredDirectory)
-  if (linkResult.ok) {
-    for (const message of linkResult.data) {
-      p.log.step(message)
-    }
-  }
-  else {
-    errors.push(`Failed to link authored skills: ${linkResult.error}`)
+const authoredWorkflow = Effect.gen(function* () {
+  const collected = yield* collectAuthoredSkillsWithMetadata(skillsDirectory)
+  const linkMessages = yield* linkAuthoredSkillsToDirectory(collected, skillsDirectory, authoredDirectory)
+  for (const message of linkMessages) {
+    p.log.step(message)
   }
 
-  const pruneResult = pruneStaleLinksinAuthoredDirectory(authoredDirectory, skillsDirectory)
-  if (pruneResult.ok) {
-    for (const message of pruneResult.data) {
-      p.log.step(message)
-    }
+  const pruneMessages = yield* pruneStaleLinksinAuthoredDirectory(authoredDirectory, skillsDirectory)
+  for (const message of pruneMessages) {
+    p.log.step(message)
   }
-  else {
-    errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
-  }
+})
+
+try {
+  Effect.runSync(authoredWorkflow)
 }
-else {
-  errors.push(`Failed to collect authored skills: ${collectResult.error}`)
+catch (error: unknown) {
+  errors.push(
+    `Failed to manage authored skills: ${error instanceof Error ? error.message : String(error)}`,
+  )
 }
 
 // ── Report and exit ───────────────────────────────────────────────────────

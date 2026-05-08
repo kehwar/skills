@@ -197,7 +197,8 @@ function parseShorthand(raw: string, normalized: string): Effect.Effect<URLInfo,
 }
 
 /**
- * Validate GitHub owner or repo name: alphanumerics, hyphens and dots, no leading/trailing hyphens or dots.
+ * Validate GitHub owner or repo name: alphanumerics, hyphens, underscores and dots, no leading/trailing hyphens or dots.
+ * GitHub allows hyphens, underscores, and dots in repository and user names.
  */
 function isValidOwnerOrRepo(name: string): boolean {
   if (!name || name.length === 0) {
@@ -209,8 +210,8 @@ function isValidOwnerOrRepo(name: string): boolean {
     return false
   }
 
-  // Can contain alphanumerics, hyphens, dots
-  if (!/^[\d.a-z-]+$/i.test(name)) {
+  // Can contain alphanumerics, hyphens, underscores, dots
+  if (!/^[\w.-]+$/.test(name)) {
     return false
   }
 
