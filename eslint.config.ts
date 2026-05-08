@@ -1,6 +1,5 @@
 import antfu from '@antfu/eslint-config'
 import sonarjs from 'eslint-plugin-sonarjs'
-import unicorn from 'eslint-plugin-unicorn'
 
 export default antfu(
   {
@@ -16,6 +15,7 @@ export default antfu(
     ],
   },
   {
+    name: 'sonarjs',
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
     ignores: ['upstream/**', 'skills/**', '.beads/**'],
     plugins: {
@@ -23,7 +23,17 @@ export default antfu(
     },
     rules: {
       ...sonarjs.configs.recommended.rules,
-      ...unicorn.configs.recommended.rules,
     },
   },
+  // {
+  //   "name": "unicorn",
+  //   files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+  //   ignores: ['upstream/**', 'skills/**', '.beads/**'],
+  //   plugins: {
+  //     unicorn,
+  //   },
+  //   rules: {
+  //     ...unicorn.configs['flat/recommended'].rules,
+  //   },
+  // },
 )
