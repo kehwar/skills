@@ -1,54 +1,23 @@
 #!/usr/bin/env node
 /**
  * Find and report (or remove with -y) skills and submodules not declared in meta.json.
+ *
+ * This is the CLI entry point that calls the cleanup orchestrator.
  */
 
-import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
+import { existsSync, rmSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { pruneStaleLinksinAuthoredDirectory } from './lib/authored-skills-ops.ts'
+import { Effect } from 'effect'
 import { exec } from './lib/git-ops.ts'
-import { MetaStore } from './lib/meta-store.ts'
-import { SkillMetaStore } from './lib/skill-meta-store.ts'
+import { cleanup } from './orchestrators/cleanup.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
-const store = new MetaStore(root)
-const upstreams = store.getAllUpstreams()
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
 const errors: string[] = []
-
-function getExpectedSkillNames(): Set<string> {
-  const expected = new Set<string>()
-  for (const config of Object.values(upstreams)) {
-    if (config.skills) {
-      for (const outputName of Object.values(config.skills)) expected.add(outputName)
-    }
-  }
-  // Skills with authored meta.json are never orphans
-  const skillsDirectory = path.join(root, 'skills')
-  const skillStore = new SkillMetaStore(skillsDirectory)
-  const allSkills = skillStore.readAllSkills()
-  for (const [name, meta] of Object.entries(allSkills)) {
-    if (meta.type === 'authored')
-      expected.add(name)
-  }
-  return expected
-}
-
-function getExpectedSubmodulePaths(): Set<string> {
-  return new Set(Object.keys(upstreams).map(name => `upstream/${name}`))
-}
-
-function getExistingSubmodulePaths(): string[] {
-  const gitmodulesPath = path.join(root, '.gitmodules')
-  if (!existsSync(gitmodulesPath))
-    return []
-  const content = readFileSync(gitmodulesPath, 'utf8')
-  return Array.from(content.matchAll(/path\s*=\s*(.+)/g), m => m[1].trim())
-}
 
 function removeSubmodule(submodulePath: string): void {
   const deinitResult = exec(`git submodule deinit -f ${submodulePath}`, { cwd: root })
@@ -64,82 +33,85 @@ function removeSubmodule(submodulePath: string): void {
   }
 }
 
-p.intro('Cleanup')
-
-let hasOrphans = false
-
-// 1. Orphaned submodules
-const extraSubmodules = getExistingSubmodulePaths().filter(
-  path => !getExpectedSubmodulePaths().has(path),
-)
-
-if (extraSubmodules.length > 0) {
-  hasOrphans = true
-  p.log.warn(`Orphaned submodules (${extraSubmodules.length}):`)
-  for (const path of extraSubmodules) p.log.warn(`  - ${path}`)
-
+function handleOrphanedSubmodules(submodules: string[]): boolean {
+  if (submodules.length === 0)
+    return false
+  p.log.warn(`Orphaned submodules (${submodules.length}):`)
+  for (const submodulePath of submodules) {
+    p.log.warn(`  - ${submodulePath}`)
+  }
   if (skipPrompt) {
-    for (const path of extraSubmodules) {
-      p.log.step(`Removing: ${path}`)
-      removeSubmodule(path)
+    for (const submodulePath of submodules) {
+      p.log.step(`Removing: ${submodulePath}`)
+      removeSubmodule(submodulePath)
     }
   }
   else {
     p.log.info('  → Re-run with -y to remove')
   }
+  return true
 }
 
-// 2. Orphaned skills
-const skillsDirectory = path.join(root, 'skills')
-const existingSkills = existsSync(skillsDirectory)
-  ? readdirSync(skillsDirectory, { withFileTypes: true })
-      .filter(entry => entry.isDirectory())
-      .map(entry => entry.name)
-  : []
-
-const extraSkills = existingSkills.filter(name => !getExpectedSkillNames().has(name))
-
-if (extraSkills.length > 0) {
-  hasOrphans = true
-  p.log.warn(`Orphaned skills (${extraSkills.length}):`)
-  for (const name of extraSkills) p.log.warn(`  - skills/${name}`)
-
+function handleOrphanedSkills(skills: string[]): boolean {
+  if (skills.length === 0)
+    return false
+  p.log.warn(`Orphaned skills (${skills.length}):`)
+  for (const skillName of skills) {
+    p.log.warn(`  - skills/${skillName}`)
+  }
   if (skipPrompt) {
-    for (const name of extraSkills) {
-      p.log.step(`Removing: skills/${name}`)
-      rmSync(path.join(skillsDirectory, name), { recursive: true })
+    const skillsDirectory = path.join(root, 'skills')
+    for (const skillName of skills) {
+      p.log.step(`Removing: skills/${skillName}`)
+      rmSync(path.join(skillsDirectory, skillName), { recursive: true })
     }
   }
   else {
     p.log.info('  → Re-run with -y to remove')
   }
+  return true
 }
 
-if (!hasOrphans) {
-  p.log.step('Everything is clean')
+function handleStaleSymlinks(links: string[]): boolean {
+  if (links.length === 0)
+    return false
+  p.log.warn(`Stale symlinks (${links.length}):`)
+  for (const link of links) {
+    p.log.warn(`  - ${link}`)
+  }
+  return true
 }
 
-// 3. Stale symlinks in authored/
-const authoredDirectory = path.join(root, 'authored')
-const pruneResult = pruneStaleLinksinAuthoredDirectory(authoredDirectory, skillsDirectory)
-if (pruneResult.ok) {
-  for (const message of pruneResult.data) {
-    p.log.step(message)
+async function main() {
+  try {
+    p.intro('Cleanup')
+
+    const result = await Effect.runPromise(cleanup({ root }))
+
+    const hasOrphans = handleOrphanedSubmodules(result.orphanedSubmodules)
+      || handleOrphanedSkills(result.orphanedSkills)
+      || handleStaleSymlinks(result.staleLinksinAuthored)
+
+    if (!hasOrphans) {
+      p.log.step('Everything is clean')
+    }
+
+    // Report any errors
+    if (errors.length > 0) {
+      p.log.warn(`${errors.length} error(s) occurred:`)
+      for (const error of errors) {
+        p.log.warn(`  - ${error}`)
+      }
+      p.outro('Cleanup completed with errors')
+      process.exit(1)
+    }
+
+    p.outro('Done')
+  }
+  catch (error) {
+    p.log.error(`Fatal error: ${(error as Error).message}`)
+    process.exit(1)
   }
 }
-else {
-  errors.push(`Failed to prune stale symlinks: ${pruneResult.error}`)
-}
 
-// ── Report and exit ───────────────────────────────────────────────────────
-
-if (errors.length > 0) {
-  p.log.warn(`${errors.length} error(s) occurred:`)
-  for (const error of errors) {
-    p.log.warn(`  - ${error}`)
-  }
-  p.outro('Cleanup completed with errors')
-  process.exit(1)
-}
-
-p.outro('Done')
+await main()

@@ -27,11 +27,11 @@
  * Errors are caught and mapped to custom error types.
  */
 
+/// <reference types="./@npmcli-git.d.ts" />
+
 import process from 'node:process'
 import git from '@npmcli/git'
-import { Effect } from 'effect'
-
-const spawn = git
+import { Effect, pipe } from 'effect'
 
 /**
  * GitNotFound — Git command not found or not in PATH.
@@ -71,12 +71,22 @@ function runGitCommand(
   subcommand: string,
   ...commandArguments: string[]
 ): Effect.Effect<string, CommandFailed | GitNotFound> {
+  return runGitCommandInDirectory(process.cwd(), subcommand, ...commandArguments)
+}
+
+/**
+ * Helper to execute git commands in a specific directory.
+ * Uses git's -C flag to change directory before executing the command.
+ */
+function runGitCommandInDirectory(
+  cwd: string,
+  subcommand: string,
+  ...commandArguments: string[]
+): Effect.Effect<string, CommandFailed | GitNotFound> {
   return Effect.tryPromise({
     try: async () => {
-      // spawn from @npmcli/git - types don't match runtime
-      const result = (await spawn([subcommand, ...commandArguments], {
-        cwd: process.cwd(),
-      })) as any
+      // Use git -C flag to change directory
+      const result = await git.spawn(['-C', cwd, subcommand, ...commandArguments])
       // spawn returns { cmd, args, code, signal, stdout, stderr }
       if (result.code !== 0) {
         throw new Error(`Git command failed with code ${result.code}: ${result.stderr}`)
@@ -93,7 +103,7 @@ function runGitCommand(
           return new GitNotFound()
         }
       }
-      const command = [subcommand, ...commandArguments].join(' ')
+      const command = ['-C', cwd, subcommand, ...commandArguments].join(' ')
       return new CommandFailed(command, (error as Error).message)
     },
   })
@@ -337,6 +347,9 @@ export function updateSubmoduleRemote(path: string): Effect.Effect<void, Command
 
 /**
  * Count commits in a reference range.
+ * Overloaded signatures:
+ * - revListCount(gitReference) — count in current working directory
+ * - revListCount(directory, gitReference) — count in specific directory
  *
  * @param gitReference — Git reference (e.g., 'HEAD', 'origin/main..HEAD')
  * @returns Effect that returns count of commits
@@ -345,13 +358,27 @@ export function updateSubmoduleRemote(path: string): Effect.Effect<void, Command
  * @example
  * ```typescript
  * const count = await Effect.runPromise(revListCount('origin/main..HEAD'))
+ * const countInDir = await Effect.runPromise(revListCount('/path/to/repo', 'HEAD..@{u}'))
  * ```
  */
 export function revListCount(
   gitReference: string,
+): Effect.Effect<number, CommandFailed>
+export function revListCount(
+  directory: string,
+  gitReference: string,
+): Effect.Effect<number, CommandFailed>
+export function revListCount(
+  directoryOrReference: string,
+  gitReference?: string,
 ): Effect.Effect<number, CommandFailed> {
-  return Effect.map(runGitCommand('rev-list', '--count', gitReference), (output) => {
-    const count = Number.parseInt(output, 10)
-    return Number.isNaN(count) ? 0 : count
-  })
+  return pipe(
+    gitReference === undefined
+      ? runGitCommand('rev-list', '--count', directoryOrReference)
+      : runGitCommandInDirectory(directoryOrReference, 'rev-list', '--count', gitReference),
+    Effect.flatMap((output) => {
+      const count = Number.parseInt(output, 10)
+      return Effect.succeed(Number.isNaN(count) ? 0 : count)
+    }),
+  )
 }

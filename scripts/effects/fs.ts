@@ -355,3 +355,35 @@ export function recursiveCopy(
     },
   })
 }
+/**
+ * Read directory entries with file type information.
+ *
+ * @param path — Directory path
+ * @returns Effect that returns array of Dirent objects with type information
+ * @throws NotFound if directory does not exist
+ * @throws IOError if read fails
+ *
+ * @example
+ * ```typescript
+ * const entries = await Effect.runPromise(readDirectoryWithTypes('/path/to/dir'))
+ * for (const entry of entries) {
+ *   if (entry.isDirectory()) {
+ *     console.log(`Directory: ${entry.name}`)
+ *   }
+ * }
+ * ```
+ */
+export function readDirectoryWithTypes(path: string): Effect.Effect<fs.Dirent[], NotFound | IOError> {
+  return Effect.try({
+    try: () => fs.readdirSync(path, { withFileTypes: true }),
+    catch: (error) => {
+      if (error instanceof Error) {
+        const code = (error as NodeJS.ErrnoException).code
+        if (code === 'ENOENT') {
+          return new NotFound(path)
+        }
+      }
+      return new IOError(`Failed to read directory: ${path}`)
+    },
+  })
+}
