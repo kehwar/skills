@@ -10,8 +10,8 @@ import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { Effect } from 'effect'
-import { exec } from './lib/git-ops.ts'
+import { Effect, pipe } from 'effect'
+import { deinitSubmodule, rmFromIndex } from './effects/git.js'
 import { cleanup } from './orchestrators/cleanup.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -19,37 +19,51 @@ const root = path.join(__dirname, '..')
 const skipPrompt = process.argv.includes('-y') || process.argv.includes('--yes')
 const errors: string[] = []
 
-function removeSubmodule(submodulePath: string): void {
-  const deinitResult = exec(`git submodule deinit -f ${submodulePath}`, { cwd: root })
-  if (!deinitResult.ok) {
-    p.log.warn(`Failed to deinit submodule ${submodulePath}: ${deinitResult.error}`)
+async function removeSubmodule(submodulePath: string): Promise<void> {
+  // Use Effect.runPromise to execute git operations
+  const removeEffect = pipe(
+    deinitSubmodule(submodulePath),
+    Effect.flatMap(() => {
+      // Remove the .git/modules directory
+      const gitModulesDirectory = path.join(root, '.git', 'modules', submodulePath)
+      if (existsSync(gitModulesDirectory)) {
+        rmSync(gitModulesDirectory, { recursive: true })
+      }
+      return Effect.succeed(undefined)
+    }),
+    Effect.flatMap(() => rmFromIndex(submodulePath)),
+    Effect.catchAll(() => {
+      // Catch all errors and continue (don't throw)
+      return Effect.succeed(undefined)
+    }),
+  )
+
+  try {
+    await Effect.runPromise(removeEffect)
   }
-  const gitModulesDirectory = path.join(root, '.git', 'modules', submodulePath)
-  if (existsSync(gitModulesDirectory))
-    rmSync(gitModulesDirectory, { recursive: true })
-  const rmResult = exec(`git rm -f ${submodulePath}`, { cwd: root })
-  if (!rmResult.ok) {
-    p.log.warn(`Failed to remove submodule ${submodulePath}: ${rmResult.error}`)
+  catch (error) {
+    p.log.warn(`Failed to remove submodule ${submodulePath}: ${error instanceof Error ? error.message : String(error)}`)
   }
 }
 
-function handleOrphanedSubmodules(submodules: string[]): boolean {
+function handleOrphanedSubmodules(submodules: string[]): Promise<boolean> {
   if (submodules.length === 0)
-    return false
+    return Promise.resolve(false)
   p.log.warn(`Orphaned submodules (${submodules.length}):`)
   for (const submodulePath of submodules) {
     p.log.warn(`  - ${submodulePath}`)
   }
   if (skipPrompt) {
-    for (const submodulePath of submodules) {
+    const promises = submodules.map(async (submodulePath) => {
       p.log.step(`Removing: ${submodulePath}`)
-      removeSubmodule(submodulePath)
-    }
+      await removeSubmodule(submodulePath)
+    })
+    return Promise.all(promises).then(() => true)
   }
   else {
     p.log.info('  → Re-run with -y to remove')
+    return Promise.resolve(true)
   }
-  return true
 }
 
 function handleOrphanedSkills(skills: string[]): boolean {
@@ -88,9 +102,11 @@ async function main() {
 
     const result = await Effect.runPromise(cleanup({ root }))
 
-    const hasOrphans = handleOrphanedSubmodules(result.orphanedSubmodules)
-      || handleOrphanedSkills(result.orphanedSkills)
-      || handleStaleSymlinks(result.staleLinksinAuthored)
+    const orphanedSubmodulesHandled = await handleOrphanedSubmodules(result.orphanedSubmodules)
+    const orphanedSkillsHandled = handleOrphanedSkills(result.orphanedSkills)
+    const staleLinksHandled = handleStaleSymlinks(result.staleLinksinAuthored)
+
+    const hasOrphans = orphanedSubmodulesHandled || orphanedSkillsHandled || staleLinksHandled
 
     if (!hasOrphans) {
       p.log.step('Everything is clean')

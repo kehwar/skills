@@ -1,6 +1,7 @@
 # Typst Styling Reference
 
 ## Table of Contents
+
 - [Set rules](#set-rules)
 - [Show rules](#show-rules)
 - [Common styling patterns](#patterns)

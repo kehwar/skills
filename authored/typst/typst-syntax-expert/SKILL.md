@@ -11,33 +11,33 @@ description: Expert knowledge of Typst markup language syntax, scripting, and st
 
 Typst has three syntactical modes:
 
-| Mode   | How to enter                        | Example                         |
-|--------|-------------------------------------|---------------------------------|
-| Markup | Default in `.typ` files             | `= Heading`, `*bold*`           |
-| Math   | Surround with `$...$`               | `$x^2 + y^2 = z^2$`            |
-| Code   | Prefix with `#` or inside `{...}`   | `#let x = 1`, `#if x > 0 {...}`|
+| Mode   | How to enter                      | Example                         |
+| ------ | --------------------------------- | ------------------------------- |
+| Markup | Default in `.typ` files           | `= Heading`, `*bold*`           |
+| Math   | Surround with `$...$`             | `$x^2 + y^2 = z^2$`             |
+| Code   | Prefix with `#` or inside `{...}` | `#let x = 1`, `#if x > 0 {...}` |
 
 Once in code mode with `#`, no further `#` is needed until returning to markup.
 
 ## Markup Quick Reference
 
-| Element          | Syntax                        |
-|------------------|-------------------------------|
-| Heading (h1–h6)  | `= H1`, `== H2`, `=== H3`    |
-| Bold             | `*bold*`                      |
-| Italic           | `_italic_`                    |
-| Raw/code inline  | `` `code` ``                  |
-| Raw block        | ` ```lang ... ``` `           |
-| Link             | `https://typst.app/`          |
-| Label            | `<my-label>`                  |
-| Reference        | `@my-label`                   |
-| Bullet list      | `- item`                      |
-| Numbered list    | `+ item`                      |
-| Term list        | `/ Term: description`         |
-| Line break       | `\` (backslash)               |
-| Paragraph break  | Blank line                    |
-| Comment          | `// line` or `/* block */`    |
-| Escape           | `\#`, `\$`, `\*` etc.         |
+| Element         | Syntax                     |
+| --------------- | -------------------------- |
+| Heading (h1–h6) | `= H1`, `== H2`, `=== H3`  |
+| Bold            | `*bold*`                   |
+| Italic          | `_italic_`                 |
+| Raw/code inline | `` `code` ``               |
+| Raw block       | `` ```lang ... ``` ``      |
+| Link            | `https://typst.app/`       |
+| Label           | `<my-label>`               |
+| Reference       | `@my-label`                |
+| Bullet list     | `- item`                   |
+| Numbered list   | `+ item`                   |
+| Term list       | `/ Term: description`      |
+| Line break      | `\` (backslash)            |
+| Paragraph break | Blank line                 |
+| Comment         | `// line` or `/* block */` |
+| Escape          | `\#`, `\$`, `\*` etc.      |
 
 ## Styling System
 
@@ -211,38 +211,38 @@ A template is a function that wraps `doc` content:
 
 ## Common Functions
 
-| Function     | Purpose                                      |
-|--------------|----------------------------------------------|
-| `text()`     | Font, size, color, style for text            |
-| `page()`     | Paper size, margins, header, footer, columns |
-| `par()`      | Justify, leading, spacing                    |
-| `heading()`  | Numbering, appearance                        |
-| `image()`    | Include image with optional width/height     |
-| `figure()`   | Captioned figure with optional label         |
-| `table()`    | Grid-based table with columns arg            |
-| `grid()`     | Low-level grid layout                        |
-| `align()`    | Horizontal/vertical alignment                |
-| `box()`      | Inline container, prevents line breaks       |
-| `block()`    | Block container with spacing                 |
-| `columns()`  | Multi-column layout                          |
-| `place()`    | Absolute placement on page                   |
-| `bibliography()` | Insert bibliography from .bib file      |
-| `cite()` / `@label` | Cite a bibliography entry           |
-| `lorem(n)`   | Generate n words of Lorem Ipsum placeholder  |
-| `counter()`  | Create/access named counter                  |
-| `state()`    | Mutable document-wide state                  |
-| `query()`    | Query elements by selector                   |
-| `raw()`      | Verbatim code block with syntax highlighting |
-| `link()`     | Hyperlink                                    |
-| `ref()`      | Cross-reference to label                     |
-| `footnote()` | Footnote                                     |
-| `outline()`  | Table of contents                            |
+| Function            | Purpose                                      |
+| ------------------- | -------------------------------------------- |
+| `text()`            | Font, size, color, style for text            |
+| `page()`            | Paper size, margins, header, footer, columns |
+| `par()`             | Justify, leading, spacing                    |
+| `heading()`         | Numbering, appearance                        |
+| `image()`           | Include image with optional width/height     |
+| `figure()`          | Captioned figure with optional label         |
+| `table()`           | Grid-based table with columns arg            |
+| `grid()`            | Low-level grid layout                        |
+| `align()`           | Horizontal/vertical alignment                |
+| `box()`             | Inline container, prevents line breaks       |
+| `block()`           | Block container with spacing                 |
+| `columns()`         | Multi-column layout                          |
+| `place()`           | Absolute placement on page                   |
+| `bibliography()`    | Insert bibliography from .bib file           |
+| `cite()` / `@label` | Cite a bibliography entry                    |
+| `lorem(n)`          | Generate n words of Lorem Ipsum placeholder  |
+| `counter()`         | Create/access named counter                  |
+| `state()`           | Mutable document-wide state                  |
+| `query()`           | Query elements by selector                   |
+| `raw()`             | Verbatim code block with syntax highlighting |
+| `link()`            | Hyperlink                                    |
+| `ref()`             | Cross-reference to label                     |
+| `footnote()`        | Footnote                                     |
+| `outline()`         | Table of contents                            |
 
 ## Reference Files
 
-| Topic | When to read |
-|-------|-------------|
-| [references/math.md](references/math.md) | Math functions, symbols, and advanced math typesetting |
-| [references/styling.md](references/styling.md) | Advanced set/show rule patterns and styling techniques |
-| [references/scripting.md](references/scripting.md) | Data types, operators, destructuring, methods |
-| [references/tables.md](references/tables.md) | Table structure, column sizing, headers, merging, strokes, fills, alignment |
+| Topic                                              | When to read                                                                |
+| -------------------------------------------------- | --------------------------------------------------------------------------- |
+| [references/math.md](references/math.md)           | Math functions, symbols, and advanced math typesetting                      |
+| [references/styling.md](references/styling.md)     | Advanced set/show rule patterns and styling techniques                      |
+| [references/scripting.md](references/scripting.md) | Data types, operators, destructuring, methods                               |
+| [references/tables.md](references/tables.md)       | Table structure, column sizing, headers, merging, strokes, fills, alignment |

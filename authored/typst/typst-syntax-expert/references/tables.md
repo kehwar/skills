@@ -1,6 +1,7 @@
 # Typst Tables Reference
 
 ## Table of Contents
+
 - [Basic structure](#basic)
 - [Column sizes](#columns)
 - [Headers and footers](#headers)
@@ -66,6 +67,7 @@ Auto-style header cells with a show rule:
 ```
 
 Column size options:
+
 - `auto` — fit content
 - `1fr`, `2fr` — fractional share of remaining space (`2fr` = twice as wide as `1fr`)
 - `6cm`, `1in`, `1.5em` — absolute/relative length
@@ -339,7 +341,7 @@ Tables inside `figure` don't break by default — enable it:
 
 ## table vs grid { #grid }
 
-`table` — for tabular data (semantic, styled by templates, accessible).  
+`table` — for tabular data (semantic, styled by templates, accessible).
 `grid` — for layout/presentational purposes (no strokes or inset by default).
 
 Both have the same API; use `grid.cell`, `grid.hline`, `grid.vline` instead of `table.*` counterparts.

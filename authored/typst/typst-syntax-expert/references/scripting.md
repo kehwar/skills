@@ -1,6 +1,7 @@
 # Typst Scripting Reference
 
 ## Table of Contents
+
 - [Data types](#types)
 - [Operators](#operators)
 - [Destructuring](#destructuring)
@@ -48,17 +49,17 @@
 
 ## Operators { #operators }
 
-| Operator | Effect              | Precedence |
-|----------|---------------------|------------|
-| `-`      | Negation (unary)    | 7          |
-| `*`, `/` | Multiply, divide    | 6          |
-| `+`, `-` | Add, subtract       | 5          |
-| `==`, `!=`, `<`, `<=`, `>`, `>=` | Comparison | 4 |
-| `in`, `not in` | Collection membership | 4 |
-| `not`    | Logical NOT         | 3          |
-| `and`    | Logical AND         | 3          |
-| `or`     | Logical OR          | 2          |
-| `=`, `+=`, `-=`, `*=`, `/=` | Assignment | 1 |
+| Operator                         | Effect                | Precedence |
+| -------------------------------- | --------------------- | ---------- |
+| `-`                              | Negation (unary)      | 7          |
+| `*`, `/`                         | Multiply, divide      | 6          |
+| `+`, `-`                         | Add, subtract         | 5          |
+| `==`, `!=`, `<`, `<=`, `>`, `>=` | Comparison            | 4          |
+| `in`, `not in`                   | Collection membership | 4          |
+| `not`                            | Logical NOT           | 3          |
+| `and`                            | Logical AND           | 3          |
+| `or`                             | Logical OR            | 2          |
+| `=`, `+=`, `-=`, `*=`, `/=`      | Assignment            | 1          |
 
 Content concatenation: `[Hello] + [ world]`
 

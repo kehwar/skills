@@ -1,6 +1,7 @@
 # Typst Math Reference
 
 ## Table of Contents
+
 - [Inline vs Block equations](#inline-vs-block)
 - [Symbols and Greek letters](#symbols)
 - [Subscripts, superscripts, and fractions](#attachments)
@@ -24,6 +25,7 @@ $ E = m c^2 $
 Greek letters are spelled by name: `alpha`, `beta`, `gamma`, `delta`, `epsilon`, `zeta`, `eta`, `theta`, `iota`, `kappa`, `lambda`, `mu`, `nu`, `xi`, `pi`, `rho`, `sigma`, `tau`, `upsilon`, `phi`, `chi`, `psi`, `omega` (uppercase: `Alpha`, `Beta`, etc.)
 
 Common symbols:
+
 - `nabla`, `partial`, `infinity` (∞)
 - `RR` (ℝ), `ZZ` (ℤ), `NN` (ℕ), `QQ` (ℚ), `CC` (ℂ)
 - `sum`, `product`, `integral`, `union`, `inter`

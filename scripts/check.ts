@@ -9,17 +9,29 @@ import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
-import { Effect } from 'effect'
-import { MetaStore } from './lib/meta-store.ts'
+import { Effect, pipe } from 'effect'
+import { readFile } from './effects/fs.js'
+import { loadMeta } from './effects/meta-io.js'
 import { check } from './orchestrators/check.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 
+/**
+ * Load meta.json using Effect operations
+ * Returns an Effect that produces the upstreams from meta.json
+ */
+function loadMetaUpstreams(root: string): Effect.Effect<Record<string, any>, any> {
+  return pipe(
+    readFile(path.join(root, 'meta.json')),
+    Effect.flatMap(content => loadMeta(content)),
+    Effect.map(meta => meta.upstreams),
+  )
+}
+
 async function main() {
   try {
-    const store = new MetaStore(root)
-    const upstreams = store.getAllUpstreams()
+    const upstreams = await Effect.runPromise(loadMetaUpstreams(root))
 
     p.intro('Check')
 
