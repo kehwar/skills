@@ -4,59 +4,11 @@
       "source": "./authored/engineering",
       "name": "engineering",
       "skills": [
-        "./dev-log",
         "./setup-workflow-skills",
         "./tdd",
         "./to-prd",
         "./to-tasks"
       ]
-    },
-    {
-      "source": "./authored/frappe",
-      "name": "frappe",
-      "skills": [
-        "./frappe-app-include-js",
-        "./frappe-customizations-baker",
-        "./frappe-customizations-writer",
-        "./frappe-dev-debugger",
-        "./frappe-doctype-controller",
-        "./frappe-doctype-form-view",
-        "./frappe-doctype-list-view",
-        "./frappe-doctype-schema",
-        "./frappe-doctype-tests",
-        "./frappe-js-api",
-        "./frappe-live-code-extractor",
-        "./frappe-restore-latest-backup-task",
-        "./frappe-run-tests",
-        "./frappe-standard-script-report-controller",
-        "./frappe-standard-script-report-schema",
-        "./frappe-standard-script-report-view",
-        "./frappe-system-console",
-        "./frappe-translations-writer"
-      ]
-    },
-    {
-      "source": "./authored/sap",
-      "name": "sap",
-      "skills": [
-        "./sap-di-api-expert",
-        "./sap-dtw-expert",
-        "./sap-schema-expert",
-        "./sap-service-layer-expert",
-        "./sap-transaction-notifications"
-      ]
-    },
-    {
-      "source": "./authored/typst",
-      "name": "typst",
-      "skills": [
-        "./typst-syntax-expert"
-      ]
-    },
-    {
-        "source": "https://github.com/vercel-labs/agent-skills",
-        "name": "vercel-labs",
-        "skills": ["./skills/web-design"]
     }
   ]
 }
