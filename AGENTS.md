@@ -37,7 +37,7 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 - `skills/` — flat directory of all skills consumed by agents. Each subfolder has a `meta.json` with `type: "authored" | "synced"`.
 - `upstream/` — read-only Upstream submodules. Never edit files here.
 - `authored/` — symlinks to Authored and Source-Derived skills for navigation only.
-- `scripts/` — all automation: `sync.ts`, `upstream.ts`, `check.ts`, `cleanup.ts`.
+- `scripts/` — all automation: `sync.ts`, `upstream.ts`, `check.ts`, `cleanup.ts`. To be deprecated.
 
 ## Creating Authored Skills
 
