@@ -1,6 +1,8 @@
 ---
 name: write-a-skill-with-instructions
 description: Create or edit agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, edit, or build a new skill.
+metadata:
+  internal: true
 ---
 
 # Writing Skills
