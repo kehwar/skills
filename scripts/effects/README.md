@@ -78,7 +78,7 @@ main()
 ```
 CLI Entrypoint (sync.ts, check.ts, etc.)
   ↓ composes services via Effect.provide()
-Orchestrators (sync-orchestrator.ts, check-orchestrator.ts)
+Orchestrators (orchestrators/sync-all-upstreams.ts, orchestrators/check.ts, etc.)
   ↓ uses
 Services/Effects (mock-fs.ts, mock-git-ops.ts, mock-logger.ts)
   ↓ calls
