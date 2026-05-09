@@ -55,6 +55,7 @@ Before writing any code:
 - [ ] Design interfaces for [testability](interface-design.md)
 - [ ] List the behaviors to test (not implementation steps)
 - [ ] Get user approval on the plan
+- [ ] If the implementation looks like it will be large, consider breaking this feature down further into narrower features, ask user
 - [ ] Run `bd update <id> --claim`
 
 Ask: "What should the public interface look like? Which behaviors are most important to test?"
