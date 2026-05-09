@@ -3,7 +3,7 @@
 Sourced from: `upstream/mattpocock/skills/engineering/to-prd/`
 
 ```bash
-diff upstream/mattpocock/skills/engineering/to-prd/SKILL.md authored/engineering/to-prd/SKILL.md
+diff upstream/mattpocock/skills/engineering/to-prd/SKILL.md authored/engineering/to-epic/SKILL.md
 ```
 
 ## Customizations for this repo
@@ -23,7 +23,3 @@ If the upstream skill changes, preserve these customizations:
 - Keep explicit Beads references throughout (do not revert to generic "issue tracker" language)
 - Do NOT add triage labels back into the publish step
 - Keep the workflow label-free
-
-## Beads Issue Tracker Reference
-
-Copy the "Conventions" block from [`../setup-workflow-skills/issue-tracker.md`](../setup-workflow-skills/issue-tracker.md) into the skill's SKILL.md when syncing or updating references to Beads commands. This ensures consistency across skills when the Beads reference is updated.
