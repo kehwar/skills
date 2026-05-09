@@ -5,6 +5,27 @@ description: Turn the current conversation context into a PRD and publish it to 
 
 This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.
 
+## Principles
+
+### Durability over precision
+
+The PRD may stay on backlog for days or weeks. The codebase will change in the meantime. Write the PRD so it stays useful even as files are renamed, moved, or refactored.
+
+- **Do** describe interfaces, types, and behavioral contracts
+- **Do** name specific types, function signatures, or config shapes that the agent should look for or modify
+- **Don't** reference file paths — they go stale
+- **Don't** reference line numbers
+- **Don't** assume the current implementation structure will remain the same
+
+### Behavioral, not procedural
+
+Describe **what** the system should do, not **how** to implement it. The agent will explore the codebase fresh and make its own implementation decisions.
+
+- **Good:** "The `SkillConfig` type should accept an optional `schedule` field of type `CronExpression`"
+- **Bad:** "Open src/types/skill.ts and add a schedule field on line 42"
+- **Good:** "When a user runs `/triage` with no arguments, they should see a summary of issues needing attention"
+- **Bad:** "Add a switch statement in the main handler function"
+
 ## Process
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the PRD, and respect any ADRs in the area you're touching.
@@ -18,18 +39,18 @@ Check with the user that these modules match their expectations. Check with the 
 3. Write the PRD using the template below, then publish it to Beads Issue Tracker using:
 
 ```bash
-bd create --type=epic --title="<prd-title>" --description="<multi-line-prd-body>"
+bd create --type=epic --title="<prd-title>" --description="<multi-line-prd-body>" --acceptance="<multi-line-acceptance-criteria>"
 ```
 
 <multi-line-prd-body-template>
 
-## Problem Statement
+## Current State
 
-The problem that the user is facing, from the user's perspective.
+The current state or the problem that the user is facing, from the user's perspective.
 
-## Solution
+## Desired State
 
-The solution to the problem, from the user's perspective.
+The desired state or the solution to the problem, from the user's perspective.
 
 ## User Stories
 
@@ -43,28 +64,6 @@ A LONG, numbered list of user stories. Each user story should be in the format o
 
 This list of user stories should be extremely extensive and cover all aspects of the feature.
 
-## Implementation Decisions
-
-A list of implementation decisions that were made. This can include:
-
-- The modules that will be built/modified
-- The interfaces of those modules that will be modified
-- Technical clarifications from the developer
-- Architectural decisions
-- Schema changes
-- API contracts
-- Specific interactions
-
-Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
-
-## Testing Decisions
-
-A list of testing decisions that were made. Include:
-
-- A description of what makes a good test (only test external behavior, not implementation details)
-- Which modules will be tested
-- Prior art for the tests (i.e. similar types of tests in the codebase)
-
 ## Out of Scope
 
 A description of the things that are out of scope for this PRD.
@@ -74,3 +73,9 @@ A description of the things that are out of scope for this PRD.
 Any further notes about the feature.
 
 </multi-line-prd-body-template>
+
+<multi-line-acceptance-criteria-template>
+- [ ] Testable criterion 1
+- [ ] Testable criterion 2
+- [ ] Testable criterion 3
+</multi-line-acceptance-criteria-template>
