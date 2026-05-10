@@ -24,7 +24,7 @@ meta.json        ← declared upstreams with url, branch, and skill selections
 | `pnpm sync`                                              | Pull latest submodules, copy selected skills into `skills/`       |
 | `pnpm check`                                             | Report how many commits behind each submodule is upstream         |
 | `pnpm cleanup [-y]`                                      | Detect (and with `-y`, remove) orphaned skills and submodules     |
-| `npx @claudeai/skills --from-plugin .`                  | Discover authored skills via plugin.json                          |
+| `npx @claudeai/skills --from-plugin .`                   | Discover authored skills via plugin.json                          |
 
 ## Skill types
 

@@ -9,5 +9,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "upstream/**", "skills/**"]
+  "exclude": ["node_modules", "upstream/**", "skills/**", "authored/**", "scripts/**"]
 }

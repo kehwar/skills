@@ -1,23 +1,30 @@
 import antfu from '@antfu/eslint-config'
 import sonarjs from 'eslint-plugin-sonarjs'
+import unicorn from 'eslint-plugin-unicorn'
+
+const ignores = [
+  'upstream/**',
+  'skills/**',
+  '.beads/**',
+  'authored/**',
+  'scripts/**',
+]
 
 export default antfu(
   {
-    typescript: true,
+    typescript: {
+      tsconfigPath: './tsconfig.json',
+    },
     markdown: false,
     formatters: {
       markdown: 'dprint',
     },
-    ignores: [
-      'upstream/**',
-      'skills/**',
-      '.beads/**',
-    ],
+    ignores,
   },
   {
     name: 'sonarjs',
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
-    ignores: ['upstream/**', 'skills/**', '.beads/**'],
+    ignores,
     plugins: {
       sonarjs,
     },
@@ -25,15 +32,15 @@ export default antfu(
       ...sonarjs.configs.recommended.rules,
     },
   },
-  // {
-  //   "name": "unicorn",
-  //   files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
-  //   ignores: ['upstream/**', 'skills/**', '.beads/**'],
-  //   plugins: {
-  //     unicorn,
-  //   },
-  //   rules: {
-  //     ...unicorn.configs['flat/recommended'].rules,
-  //   },
-  // },
+  {
+    name: 'unicorn',
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+    ignores,
+    plugins: {
+      unicorn,
+    },
+    rules: {
+      ...unicorn.configs.recommended.rules,
+    },
+  },
 )
