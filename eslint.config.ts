@@ -1,12 +1,11 @@
 import antfu from '@antfu/eslint-config'
 import sonarjs from 'eslint-plugin-sonarjs'
-import unicorn from 'eslint-plugin-unicorn'
 
 const ignores = [
   'upstream/**',
   'skills/**',
   '.beads/**',
-  'authored/**',
+  'authored/**/*.yaml',
   'scripts/**',
 ]
 
@@ -16,9 +15,6 @@ export default antfu(
       tsconfigPath: './tsconfig.json',
     },
     markdown: false,
-    formatters: {
-      markdown: 'dprint',
-    },
     ignores,
   },
   {
@@ -30,17 +26,6 @@ export default antfu(
     },
     rules: {
       ...sonarjs.configs.recommended.rules,
-    },
-  },
-  {
-    name: 'unicorn',
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
-    ignores,
-    plugins: {
-      unicorn,
-    },
-    rules: {
-      ...unicorn.configs.recommended.rules,
     },
   },
 )
