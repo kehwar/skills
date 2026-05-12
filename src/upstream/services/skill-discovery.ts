@@ -1,5 +1,5 @@
 import * as fs from 'node:fs/promises'
-import * as path from 'node:path'
+import path from 'node:path'
 import { Data, Effect } from 'effect'
 
 export class DirectoryReadError extends Data.TaggedError('DirectoryReadError')<{
@@ -21,10 +21,10 @@ export class SkillDiscoveryService extends Effect.Service<SkillDiscoveryService>
 
               for (const entry of entries) {
                 const fullPath = path.join(currentPath, entry.name)
-                const relPath = relativePath ? path.join(relativePath, entry.name) : entry.name
+                const relativePath_ = relativePath ? path.join(relativePath, entry.name) : entry.name
 
                 if (entry.isDirectory()) {
-                  await walkDirectory(fullPath, relPath)
+                  await walkDirectory(fullPath, relativePath_)
                 }
                 else if (entry.name === 'SKILL.md') {
                   skills.push(relativePath)

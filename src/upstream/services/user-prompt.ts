@@ -17,11 +17,11 @@ export class UserPromptService extends Effect.Service<UserPromptService>()(
           }
           return choice
         }).pipe(
-          Effect.catchAll((err: unknown) =>
+          Effect.catchAll((error: unknown) =>
             Effect.fail(
-              err instanceof PromptError
-                ? err
-                : new PromptError({ message: String(err) }),
+              error instanceof PromptError
+                ? error
+                : new PromptError({ message: String(error) }),
             ),
           ),
         ),
@@ -34,11 +34,11 @@ export class UserPromptService extends Effect.Service<UserPromptService>()(
           }
           return choice
         }).pipe(
-          Effect.catchAll((err: unknown) =>
+          Effect.catchAll((error: unknown) =>
             Effect.fail(
-              err instanceof PromptError
-                ? err
-                : new PromptError({ message: String(err) }),
+              error instanceof PromptError
+                ? error
+                : new PromptError({ message: String(error) }),
             ),
           ),
         ),
@@ -51,11 +51,11 @@ export class UserPromptService extends Effect.Service<UserPromptService>()(
           }
           return answer
         }).pipe(
-          Effect.catchAll((err: unknown) =>
+          Effect.catchAll((error: unknown) =>
             Effect.fail(
-              err instanceof PromptError
-                ? err
-                : new PromptError({ message: String(err) }),
+              error instanceof PromptError
+                ? error
+                : new PromptError({ message: String(error) }),
             ),
           ),
         ),

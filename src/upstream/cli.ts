@@ -1,5 +1,7 @@
+#!/usr/bin/env node
+
 import process from 'node:process'
-import { defineCommand } from 'citty'
+import { defineCommand, runMain } from 'citty'
 import { Effect } from 'effect'
 import {
   GitService,
@@ -23,12 +25,12 @@ export interface CommandInput {
 
 function handleUpstream(input: CommandInput): Effect.Effect<CommandResult, Error> {
   return Effect.gen(function* () {
-    const args = input.args
-    const nameIndex = args.findIndex(a => a === '--name' || a === '-n')
-    const nameOverride = nameIndex === -1 ? undefined : args[nameIndex + 1]
-    const url = args.find((_, i) => !(nameIndex !== -1 && (i === nameIndex || i === nameIndex + 1)))
+    const arguments_ = input.args
+    const nameIndex = arguments_.findIndex(a => a === '--name' || a === '-n')
+    const nameOverride = nameIndex === -1 ? undefined : arguments_[nameIndex + 1]
+    const url = arguments_.find((_, index) => !(nameIndex !== -1 && (index === nameIndex || index === nameIndex + 1)))
 
-    if (typeof url === 'undefined') {
+    if (url === undefined) {
       return { exitCode: 1, message: 'Missing URL argument' }
     }
 
@@ -80,14 +82,14 @@ export const upstreamCmd = defineCommand({
     },
   },
   async run({ args }) {
-    const cmdArgs: string[] = [args.url]
+    const cmdArguments: string[] = [args.url]
 
     if (typeof args.name === 'string') {
-      cmdArgs.push('--name', args.name)
+      cmdArguments.push('--name', args.name)
     }
 
     const result = await Effect.runPromise(
-      handleUpstream({ root: process.cwd(), args: cmdArgs }),
+      handleUpstream({ root: process.cwd(), args: cmdArguments }),
     )
 
     if (typeof result.message === 'string') {
@@ -97,3 +99,6 @@ export const upstreamCmd = defineCommand({
     process.exit(result.exitCode)
   },
 })
+
+// Run if called directly
+void runMain(upstreamCmd)

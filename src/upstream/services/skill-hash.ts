@@ -1,7 +1,7 @@
 import type { Buffer } from 'node:buffer'
 import * as crypto from 'node:crypto'
 import * as fs from 'node:fs/promises'
-import * as path from 'node:path'
+import path from 'node:path'
 import { Data, Effect } from 'effect'
 
 export class FileReadError extends Data.TaggedError('FileReadError')<{
@@ -9,65 +9,63 @@ export class FileReadError extends Data.TaggedError('FileReadError')<{
   message: string
 }> {}
 
-export class SkillHashService extends Effect.Service<SkillHashService>()('upstream/SkillHashService', {
-  effect: Effect.sync(() => {
-    async function hashSkillDirectoryImpl(skillDir: string): Promise<string> {
-      const files: Array<{ relativePath: string, content: Buffer }> = []
-      await collectFiles(skillDir, skillDir, files)
+async function collectFiles(
+  baseDirectory: string,
+  currentDirectory: string,
+  results: Array<{ relativePath: string, content: Buffer }>,
+): Promise<void> {
+  const entries = await fs.readdir(currentDirectory, { withFileTypes: true })
 
-      // Sort by relative path for deterministic hashing
-      files.sort((a, b) => a.relativePath.localeCompare(b.relativePath))
+  await Promise.all(
+    entries.map(async (entry) => {
+      const fullPath = path.join(currentDirectory, entry.name)
 
-      const hash = crypto.createHash('sha256')
-      for (const file of files) {
-        // Include the path in the hash so renames are detected
-        hash.update(file.relativePath)
-        hash.update(file.content)
+      if (entry.isDirectory()) {
+        // Skip .git and node_modules within skill dirs
+        if (entry.name === '.git' || entry.name === 'node_modules')
+          return
+        await collectFiles(baseDirectory, fullPath, results)
       }
+      else if (entry.isFile()) {
+        const content = await fs.readFile(fullPath)
+        const relativePath = path.relative(baseDirectory, fullPath).split('\\').join('/')
+        results.push({ relativePath, content })
+      }
+    }),
+  )
+}
 
-      return hash.digest('hex')
-    }
+async function hashSkillDirectoryImpl(skillDirectory: string): Promise<string> {
+  const files: Array<{ relativePath: string, content: Buffer }> = []
+  await collectFiles(skillDirectory, skillDirectory, files)
 
-    async function collectFiles(
-      baseDir: string,
-      currentDir: string,
-      results: Array<{ relativePath: string, content: Buffer }>,
-    ): Promise<void> {
-      const entries = await fs.readdir(currentDir, { withFileTypes: true })
+  // Sort by relative path for deterministic hashing
+  files.sort((a, b) => a.relativePath.localeCompare(b.relativePath))
 
-      await Promise.all(
-        entries.map(async (entry) => {
-          const fullPath = path.join(currentDir, entry.name)
+  const hash = crypto.createHash('sha256')
+  for (const file of files) {
+    // Include the path in the hash so renames are detected
+    hash.update(file.relativePath)
+    hash.update(file.content)
+  }
 
-          if (entry.isDirectory()) {
-            // Skip .git and node_modules within skill dirs
-            if (entry.name === '.git' || entry.name === 'node_modules')
-              return
-            await collectFiles(baseDir, fullPath, results)
-          }
-          else if (entry.isFile()) {
-            const content = await fs.readFile(fullPath)
-            const relativePath = path.relative(baseDir, fullPath).split('\\').join('/')
-            results.push({ relativePath, content })
-          }
-        }),
-      )
-    }
+  return hash.digest('hex')
+}
 
-    return {
-      hashSkillDirectory: (directoryPath: string) =>
-        Effect.gen(function* () {
-          const result = yield* Effect.tryPromise({
-            try: async () => hashSkillDirectoryImpl(directoryPath),
-            catch: () =>
-              new FileReadError({
-                path: directoryPath,
-                message: `Could not hash skill directory at ${directoryPath}`,
-              }),
-          })
+export class SkillHashService extends Effect.Service<SkillHashService>()('upstream/SkillHashService', {
+  effect: Effect.sync(() => ({
+    hashSkillDirectory: (directoryPath: string) =>
+      Effect.gen(function* () {
+        const result = yield* Effect.tryPromise({
+          try: async () => hashSkillDirectoryImpl(directoryPath),
+          catch: () =>
+            new FileReadError({
+              path: directoryPath,
+              message: `Could not hash skill directory at ${directoryPath}`,
+            }),
+        })
 
-          return result
-        }),
-    }
-  }),
+        return result
+      }),
+  })),
 }) {}

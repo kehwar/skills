@@ -1,6 +1,6 @@
 import type { DirectoryReadError, FileReadError, SubmoduleAuthFailed, SubmoduleCloneFailed } from './services/index.js'
 import * as fs from 'node:fs/promises'
-import * as path from 'node:path'
+import path from 'node:path'
 import { Data, Effect } from 'effect'
 import { GitService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from './services/index.js'
 
@@ -12,7 +12,7 @@ export interface UpstreamKeyOptions {
   needsUserInput: boolean
 }
 
-export function parseGitHubUrl(url: string): { owner: string, repo: string, normalizedUrl: string } | null {
+export function parseGitHubUrl(url: string): { owner: string, repo: string, normalizedUrl: string } | undefined {
   const normalized = url.endsWith('.git') ? url.slice(0, -4) : url
 
   // https://github.com/owner/repo
@@ -36,10 +36,10 @@ export function parseGitHubUrl(url: string): { owner: string, repo: string, norm
     return { owner: match[1], repo: match[2], normalizedUrl: `https://${normalized}` }
   }
 
-  return null
+  return undefined
 }
 
-export function resolveUpstreamKey(parsed: { owner: string, repo: string, normalizedUrl?: string } | null): UpstreamKeyOptions {
+export function resolveUpstreamKey(parsed: { owner: string, repo: string, normalizedUrl?: string } | undefined): UpstreamKeyOptions {
   if (!parsed) {
     return {
       default: 'upstream-unknown',
@@ -49,8 +49,8 @@ export function resolveUpstreamKey(parsed: { owner: string, repo: string, normal
   }
 
   const { owner, repo } = parsed
-  const repoCandidate = repo.toLowerCase().replace(/[^a-z0-9-]/g, '-')
-  const ownerCandidate = owner.toLowerCase().replace(/[^a-z0-9-]/g, '-')
+  const repoCandidate = repo.toLowerCase().replaceAll(/[^a-z0-9-]/g, '-')
+  const ownerCandidate = owner.toLowerCase().replaceAll(/[^a-z0-9-]/g, '-')
 
   // Prefer author name for generic "skills" repo names
   if (repoCandidate === 'skills') {
@@ -170,10 +170,7 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
 
     const url = parsed.normalizedUrl
     let upstreamKey: string
-    if (typeof input.upstreamKey !== 'undefined') {
-      upstreamKey = input.upstreamKey
-    }
-    else {
+    if (input.upstreamKey === undefined) {
       const keyOptions = resolveUpstreamKey(parsed)
       const allCandidates = [keyOptions.default, ...keyOptions.alternatives]
       const availableCandidates = allCandidates.filter(c => !(c in metaJson.upstreams))
@@ -194,9 +191,13 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
         upstreamKey = choice === '__other__' ? (yield* userPromptService.prompt('Enter upstream name:')) : choice
       }
     }
+    else {
+      upstreamKey = input.upstreamKey
+    }
 
     const existing = metaJson.upstreams[upstreamKey]
-    if (typeof existing !== 'undefined' && existing.url !== url) {
+    // eslint-disable-next-line sonarjs/different-types-comparison
+    if (existing !== undefined && existing.url !== url) {
       return yield* Effect.fail(
         new UpstreamConflict({
           key: upstreamKey,
@@ -216,14 +217,14 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
       yield* gitService.addSubmodule(root, upstreamKey, url)
     }
 
-    const upstreamDir = path.join(root, 'upstream', upstreamKey)
-    const discoveredSkillPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDir)
+    const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
+    const discoveredSkillPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDirectory)
 
     const discoveredSkills: DiscoveredSkill[] = []
     const availableMap: Record<string, string> = {}
 
     for (const skillPath of discoveredSkillPaths) {
-      const skillFullPath = path.join(upstreamDir, skillPath)
+      const skillFullPath = path.join(upstreamDirectory, skillPath)
       const hash = yield* skillHashService.hashSkillDirectory(skillFullPath)
       discoveredSkills.push({ path: skillPath, hash })
       availableMap[skillPath] = hash

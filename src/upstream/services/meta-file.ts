@@ -15,7 +15,7 @@ export class MetaFileService extends Effect.Service<MetaFileService>()('upstream
       Effect.tryPromise({
         try: async () => {
           try {
-            const content = await fs.readFile(filePath, 'utf-8')
+            const content = await fs.readFile(filePath, 'utf8')
             return JSON.parse(content) as Record<string, unknown>
           }
           catch {
@@ -29,7 +29,7 @@ export class MetaFileService extends Effect.Service<MetaFileService>()('upstream
     write: (filePath: string, data: Record<string, unknown>) =>
       Effect.tryPromise({
         try: async () => {
-          await fs.writeFile(filePath, JSON.stringify(data, null, 2))
+          await fs.writeFile(filePath, JSON.stringify(data, undefined, 2))
         },
         catch: () => new MetaFileWriteError({ message: 'Failed to write meta.json' }),
       }),

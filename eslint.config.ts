@@ -5,7 +5,8 @@ const ignores = [
   'upstream/**',
   'skills/**',
   '.beads/**',
-  'authored/**/*.yaml',
+  'authored/sap/**/assets/**/*.yaml',
+  'authored/frappe/**/assets/**/*.json',
   'scripts/**',
 ]
 
@@ -13,6 +14,9 @@ export default antfu(
   {
     typescript: {
       tsconfigPath: './tsconfig.json',
+    },
+    unicorn: {
+      allRecommended: true,
     },
     markdown: false,
     ignores,
