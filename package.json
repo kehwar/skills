@@ -11,7 +11,8 @@
     "agents"
   ],
   "scripts": {
-    "test": "vitest run --project scripts",
+    "test": "vitest run",
+    "upstream": "tsx src/cli.ts upstream",
     "opencode": "opencode web --hostname 0.0.0.0",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -19,7 +20,9 @@
   },
   "dependencies": {
     "@npmcli/git": "^7.0.2",
-    "effect": "^3.21.2"
+    "citty": "^0.2.2",
+    "effect": "^3.21.2",
+    "simple-git": "^3.30.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^8.2.0",
