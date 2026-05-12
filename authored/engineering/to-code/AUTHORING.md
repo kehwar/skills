@@ -3,7 +3,7 @@
 Sourced from: `upstream/mattpocock/skills/engineering/tdd/`
 
 ```bash
-diff upstream/mattpocock/skills/engineering/tdd/SKILL.md authored/engineering/tdd/SKILL.md
+diff upstream/mattpocock/skills/engineering/tdd/SKILL.md authored/engineering/to-code/SKILL.md
 ```
 
 ## Customizations for this repo

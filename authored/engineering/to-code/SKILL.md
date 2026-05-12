@@ -1,9 +1,9 @@
 ---
-name: tdd
-description: Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", wants integration tests, or asks for test-first development. Tracks progress in Beads Issue Tracker.
+name: to-code
+description: Workflow for taking issues from the tracker through planning, implementation (TDD), and closure. Use as entrypoint with `/to-code <issue-id>`. Handles issue tracking, interface design, test-driven development, refactoring, and issue updates.
 ---
 
-# Test-Driven Development
+# Test-Driven Development Issue to Code Workflow
 
 ## Philosophy
 
@@ -14,6 +14,17 @@ description: Test-driven development with red-green-refactor loop. Use when user
 **Bad tests** are coupled to implementation. They mock internal collaborators, test private methods, or verify through external means (like querying a database directly instead of using the interface). The warning sign: your test breaks when you refactor, but behavior hasn't changed. If you rename an internal function and tests fail, those tests were testing implementation, not behavior.
 
 See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+
+## Naming & Comments
+
+**Self-documenting code:**
+- Use full names, no abbreviations: `validationErrors` not `valErrs`
+- Names reveal intent; readers shouldn't hunt documentation
+
+**Comments:**
+- Explain _why_, not _what_
+- Use for obscure logic: regex, bitwise ops, algorithms
+- If a function needs many comments to explain, refactor it
 
 ## Anti-Pattern: Horizontal Slices
 
