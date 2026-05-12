@@ -37,6 +37,7 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 - `authored/` — Authored skills organized by domain (e.g., `authored/engineering/`, `authored/frappe/`, `authored/sap/`). Each skill has a `meta.json` with `type: "authored"`.
 - `skills/` — flat directory of synced skills from upstreams. Each subfolder has a `meta.json` with `type: "synced"`.
 - `upstream/` — read-only Upstream submodules. Never edit files here.
+- `scripts/` — **⚠️ DEPRECATED — Dead code**. Do not reference or add new functionality here.
 
 ## Creating Authored Skills
 

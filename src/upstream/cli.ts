@@ -3,6 +3,7 @@
 import process from 'node:process'
 import { defineCommand, runMain } from 'citty'
 import { Effect } from 'effect'
+import { isCalledDirectly } from '../shared/index.js'
 import {
   GitService,
   LogService,
@@ -28,7 +29,12 @@ function handleUpstream(input: CommandInput): Effect.Effect<CommandResult, Error
     const arguments_ = input.args
     const nameIndex = arguments_.findIndex(a => a === '--name' || a === '-n')
     const nameOverride = nameIndex === -1 ? undefined : arguments_[nameIndex + 1]
-    const url = arguments_.find((_, index) => !(nameIndex !== -1 && (index === nameIndex || index === nameIndex + 1)))
+    const branchIndex = arguments_.findIndex(a => a === '--branch' || a === '-b')
+    const branch = branchIndex === -1 ? undefined : arguments_[branchIndex + 1]
+    const url = arguments_.find((_, index) =>
+      !(nameIndex !== -1 && (index === nameIndex || index === nameIndex + 1))
+      && !(branchIndex !== -1 && (index === branchIndex || index === branchIndex + 1)),
+    )
 
     if (url === undefined) {
       return { exitCode: 1, message: 'Missing URL argument' }
@@ -38,6 +44,7 @@ function handleUpstream(input: CommandInput): Effect.Effect<CommandResult, Error
       root: input.root,
       url,
       upstreamKey: nameOverride,
+      branch,
       selectedSkills: {},
     })
 
@@ -80,12 +87,21 @@ export const upstreamCmd = defineCommand({
       alias: 'n',
       description: 'Upstream name (auto-derived from URL if omitted)',
     },
+    branch: {
+      type: 'string',
+      alias: 'b',
+      description: 'Git branch to track (default: repository default branch)',
+    },
   },
   async run({ args }) {
     const cmdArguments: string[] = [args.url]
 
     if (typeof args.name === 'string') {
       cmdArguments.push('--name', args.name)
+    }
+
+    if (typeof args.branch === 'string') {
+      cmdArguments.push('--branch', args.branch)
     }
 
     const result = await Effect.runPromise(
@@ -100,5 +116,6 @@ export const upstreamCmd = defineCommand({
   },
 })
 
-// Run if called directly
-void runMain(upstreamCmd)
+if (isCalledDirectly(import.meta.url)) {
+  void runMain(upstreamCmd)
+}

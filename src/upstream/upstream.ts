@@ -1,8 +1,8 @@
-import type { DirectoryReadError, FileReadError, SubmoduleAuthFailed, SubmoduleCloneFailed } from './services/index.js'
+import type { DirectoryReadError, FileReadError, InvalidBranch, SubmoduleAuthFailed, SubmoduleCloneFailed } from './services/index.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
-import { GitService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from './services/index.js'
+import { GitService, LogService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from './services/index.js'
 
 export class InvalidUrl extends Data.TaggedError('InvalidUrl')<{ message: string }> {}
 
@@ -15,24 +15,21 @@ export interface UpstreamKeyOptions {
 export function parseGitHubUrl(url: string): { owner: string, repo: string, normalizedUrl: string } | undefined {
   const normalized = url.endsWith('.git') ? url.slice(0, -4) : url
 
-  // https://github.com/owner/repo
-  const httpsRegex = /https:\/\/github\.com\/([^/]+)\/(.+)$/
+  const httpsRegex = /https:\/\/github\.com\/([^/]+)\/(.+)$/ // Matches: https://github.com/owner/repo
   let match = httpsRegex.exec(normalized)
-  if (match) {
+  if (match && match[1] !== undefined && match[2] !== undefined) {
     return { owner: match[1], repo: match[2], normalizedUrl: normalized }
   }
 
-  // git@github.com:owner/repo
-  const sshRegex = /git@github\.com:([^/]+)\/(.+)$/
+  const sshRegex = /git@github\.com:([^/]+)\/(.+)$/ // Matches: git@github.com:owner/repo
   match = sshRegex.exec(normalized)
-  if (match) {
+  if (match && match[1] !== undefined && match[2] !== undefined) {
     return { owner: match[1], repo: match[2], normalizedUrl: `https://github.com/${match[1]}/${match[2]}` }
   }
 
-  // github.com/owner/repo (no protocol)
-  const plainRegex = /github\.com\/([^/]+)\/(.+)$/
+  const plainRegex = /github\.com\/([^/]+)\/(.+)$/ // Matches: github.com/owner/repo (no protocol)
   match = plainRegex.exec(normalized)
-  if (match) {
+  if (match && match[1] !== undefined && match[2] !== undefined) {
     return { owner: match[1], repo: match[2], normalizedUrl: `https://${normalized}` }
   }
 
@@ -52,7 +49,6 @@ export function resolveUpstreamKey(parsed: { owner: string, repo: string, normal
   const repoCandidate = repo.toLowerCase().replaceAll(/[^a-z0-9-]/g, '-')
   const ownerCandidate = owner.toLowerCase().replaceAll(/[^a-z0-9-]/g, '-')
 
-  // Prefer author name for generic "skills" repo names
   if (repoCandidate === 'skills') {
     return {
       default: ownerCandidate,
@@ -90,6 +86,7 @@ export class MetaWriteError extends Data.TaggedError('MetaWriteError')<{ message
 export type UpstreamAddError
   = | InvalidUrl
     | UpstreamConflict
+    | InvalidBranch
     | SubmoduleCloneFailed
     | SubmoduleAuthFailed
     | DirectoryReadError
@@ -102,6 +99,7 @@ export interface UpstreamAddInput {
   root: string
   url: string
   upstreamKey?: string
+  branch?: string
   selectedSkills: Record<string, string>
 }
 
@@ -126,6 +124,7 @@ interface MetaJson {
     string,
     {
       url: string
+      branch?: string
       skills: Record<string, string>
       available: Record<string, string>
     }
@@ -143,60 +142,54 @@ export function normalizeGitHubUrl(url: string): string {
   return withoutGit
 }
 
-export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddOutput, UpstreamAddError> {
+function resolveUpstreamKeyFromInput(
+  input: UpstreamAddInput,
+  metaJson: MetaJson,
+): Effect.Effect<string, unknown, UserPromptService | LogService> {
   return Effect.gen(function* () {
-    const { root, selectedSkills } = input
-    const metaFileService = yield* MetaFileService
     const userPromptService = yield* UserPromptService
-    const gitService = yield* GitService
-    const skillDiscoveryService = yield* SkillDiscoveryService
-    const skillHashService = yield* SkillHashService
+    const logService = yield* LogService
+
+    if (input.upstreamKey !== undefined) {
+      return input.upstreamKey
+    }
 
     const parsed = parseGitHubUrl(input.url)
-
     if (!parsed) {
-      return yield* Effect.fail(new InvalidUrl({ message: 'URL must be a valid GitHub URL' }))
+      return 'upstream-unknown'
     }
 
-    const metaPath = path.join(root, 'meta.json')
-    const metaData = yield* metaFileService.read(metaPath).pipe(
-      Effect.catchTag('MetaFileReadError', () =>
-        Effect.fail(new MetaReadError({ message: `Failed to read meta.json at ${metaPath}` }))),
-    )
-    const metaJson: MetaJson = {
-      upstreams: {},
-      ...metaData,
+    const keyOptions = resolveUpstreamKey(parsed)
+    const allCandidates = [keyOptions.default, ...keyOptions.alternatives]
+    const availableCandidates = allCandidates.filter(c => !(c in metaJson.upstreams))
+    const takenCandidates = allCandidates.filter(c => c in metaJson.upstreams)
+
+    if (takenCandidates.length > 0) {
+      yield* logService.info(`Upstream names already in use: ${takenCandidates.join(', ')}`)
     }
 
-    const url = parsed.normalizedUrl
-    let upstreamKey: string
-    if (input.upstreamKey === undefined) {
-      const keyOptions = resolveUpstreamKey(parsed)
-      const allCandidates = [keyOptions.default, ...keyOptions.alternatives]
-      const availableCandidates = allCandidates.filter(c => !(c in metaJson.upstreams))
-      const takenCandidates = allCandidates.filter(c => c in metaJson.upstreams)
-
-      if (takenCandidates.length > 0) {
-        console.warn(`[upstream-add] Note: These upstream names are already in use: ${takenCandidates.join(', ')}`)
-      }
-      if (availableCandidates.length === 0) {
-        upstreamKey = yield* userPromptService.prompt('Enter upstream name:')
-      }
-      else {
-        const promptOptions = [
-          ...availableCandidates.map(c => ({ label: c, value: c })),
-          { label: 'Other (enter custom name)', value: '__other__' },
-        ]
-        const choice = yield* userPromptService.selectFromList('Upstream name (no upstreamKey provided)', promptOptions)
-        upstreamKey = choice === '__other__' ? (yield* userPromptService.prompt('Enter upstream name:')) : choice
-      }
-    }
-    else {
-      upstreamKey = input.upstreamKey
+    if (availableCandidates.length === 0) {
+      return yield* userPromptService.prompt('Enter upstream name:')
     }
 
+    const promptOptions = [
+      ...availableCandidates.map(c => ({ label: c, value: c })),
+      { label: 'Other (enter custom name)', value: '__other__' },
+    ]
+    const choice = yield* userPromptService.selectFromList('Upstream name', promptOptions)
+    return choice === '__other__'
+      ? yield* userPromptService.prompt('Enter upstream name:')
+      : choice
+  })
+}
+
+function validateUpstreamInput(
+  url: string,
+  upstreamKey: string,
+  metaJson: MetaJson,
+): Effect.Effect<void, UpstreamConflict> {
+  return Effect.gen(function* () {
     const existing = metaJson.upstreams[upstreamKey]
-    // eslint-disable-next-line sonarjs/different-types-comparison
     if (existing !== undefined && existing.url !== url) {
       return yield* Effect.fail(
         new UpstreamConflict({
@@ -205,35 +198,89 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
         }),
       )
     }
+  })
+}
 
-    // Skip if submodule already exists (idempotent operation)
-    const submodulePath = path.join(root, 'upstream', upstreamKey)
-    const submoduleExists = yield* Effect.tryPromise({
-      try: async () => fs.stat(submodulePath).then(() => true).catch(() => false),
-      catch: () => false as const,
-    })
+function setupSubmodule(
+  root: string,
+  upstreamKey: string,
+  url: string,
+  branch: string | undefined,
+): Effect.Effect<void, SubmoduleCloneFailed | SubmoduleAuthFailed | InvalidBranch, GitService | LogService> {
+  return Effect.gen(function* () {
+    const gitService = yield* GitService
+    const logService = yield* LogService
 
-    if (!submoduleExists) {
-      yield* gitService.addSubmodule(root, upstreamKey, url)
+    if (branch !== undefined && branch.length > 0) {
+      yield* logService.info(`Validating branch: ${branch}`)
+      yield* gitService.validateBranchExists(url, branch)
     }
 
+    const submodulePath = path.join(root, 'upstream', upstreamKey)
+    const checkExists = Effect.tryPromise({
+      try: async () => fs.stat(submodulePath).then(() => true).catch(() => false),
+      catch: () => new Error('Failed to check submodule existence'),
+    }).pipe(Effect.orDie)
+
+    const submoduleExists = yield* checkExists
+
+    if (!submoduleExists) {
+      yield* logService.info('Cloning submodule...')
+      yield* gitService.addSubmodule(root, upstreamKey, url, branch)
+    }
+
+    if (branch !== undefined && branch.length > 0) {
+      yield* logService.info(`Checking out branch: ${branch}`)
+      yield* gitService.checkoutBranch(root, path.join('upstream', upstreamKey), branch)
+      yield* gitService.setSubmoduleBranch(root, upstreamKey, branch)
+    }
+  })
+}
+
+function discoverAndHashSkills(
+  root: string,
+  upstreamKey: string,
+): Effect.Effect<DiscoveredSkill[], DirectoryReadError | FileReadError, SkillDiscoveryService | SkillHashService | LogService> {
+  return Effect.gen(function* () {
+    const skillDiscoveryService = yield* SkillDiscoveryService
+    const skillHashService = yield* SkillHashService
+    const logService = yield* LogService
+
+    yield* logService.info('Discovering skills...')
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
     const discoveredSkillPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDirectory)
 
     const discoveredSkills: DiscoveredSkill[] = []
-    const availableMap: Record<string, string> = {}
-
     for (const skillPath of discoveredSkillPaths) {
       const skillFullPath = path.join(upstreamDirectory, skillPath)
       const hash = yield* skillHashService.hashSkillDirectory(skillFullPath)
       discoveredSkills.push({ path: skillPath, hash })
-      availableMap[skillPath] = hash
     }
 
-    const isNew = !(upstreamKey in metaJson.upstreams)
+    return discoveredSkills
+  })
+}
+
+function updateMetaFile(
+  metaPath: string,
+  metaJson: MetaJson,
+  upstreamKey: string,
+  url: string,
+  branch: string | undefined,
+  selectedSkills: Record<string, string>,
+  discoveredSkills: DiscoveredSkill[],
+): Effect.Effect<void, MetaWriteError, MetaFileService> {
+  return Effect.gen(function* () {
+    const metaFileService = yield* MetaFileService
+
+    const availableMap: Record<string, string> = {}
+    for (const skill of discoveredSkills) {
+      availableMap[skill.path] = skill.hash
+    }
 
     metaJson.upstreams[upstreamKey] = {
       url,
+      ...(branch !== undefined && branch.length > 0 ? { branch } : {}),
       skills: selectedSkills,
       available: availableMap,
     }
@@ -242,13 +289,47 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
       Effect.catchTag('MetaFileWriteError', () =>
         Effect.fail(new MetaWriteError({ message: `Failed to write meta.json at ${metaPath}` }))),
     )
+  })
+}
 
-    const result: UpstreamAddOutput = {
+export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddOutput, UpstreamAddError> {
+  return Effect.gen(function* () {
+    const metaFileService = yield* MetaFileService
+    const logService = yield* LogService
+
+    const parsed = parseGitHubUrl(input.url)
+    if (!parsed) {
+      return yield* Effect.fail(new InvalidUrl({ message: 'URL must be a valid GitHub URL' }))
+    }
+
+    const metaPath = path.join(input.root, 'meta.json')
+    const metaData = yield* metaFileService.read(metaPath).pipe(
+      Effect.catchTag('MetaFileReadError', () =>
+        Effect.fail(new MetaReadError({ message: `Failed to read meta.json at ${metaPath}` }))),
+    )
+    const metaJson: MetaJson = { upstreams: {}, ...metaData }
+
+    const upstreamKey = yield* resolveUpstreamKeyFromInput(input, metaJson).pipe(
+      Effect.catchAll(() => Effect.succeed('upstream-unknown')),
+    )
+
+    const url = parsed.normalizedUrl
+    yield* validateUpstreamInput(url, upstreamKey, metaJson)
+
+    yield* logService.info(`Fetching upstream: ${upstreamKey}`)
+    yield* setupSubmodule(input.root, upstreamKey, url, input.branch)
+
+    const discoveredSkills = yield* discoverAndHashSkills(input.root, upstreamKey)
+
+    const isNew = !(upstreamKey in metaJson.upstreams)
+    yield* updateMetaFile(metaPath, metaJson, upstreamKey, url, input.branch, input.selectedSkills, discoveredSkills)
+
+    return {
       isNew,
       upstreamKey,
       discoveredSkills,
       syncResult: {
-        synced: Object.entries(selectedSkills).map(([skillPath, outputName]) => ({
+        synced: Object.entries(input.selectedSkills).map(([skillPath, outputName]) => ({
           skillPath,
           outputName,
         })),
@@ -256,7 +337,5 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
         errors: [],
       },
     }
-
-    return result
-  }) as Effect.Effect<UpstreamAddOutput, UpstreamAddError>
+  }) as unknown as Effect.Effect<UpstreamAddOutput, UpstreamAddError>
 }

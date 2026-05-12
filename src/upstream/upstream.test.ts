@@ -7,6 +7,7 @@ import { simpleGit } from 'simple-git'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import {
   GitService,
+  LogService,
   MetaFileService,
   SkillDiscoveryService,
   SkillHashService,
@@ -14,34 +15,36 @@ import {
 } from './services/index.js'
 import { parseGitHubUrl, resolveUpstreamKey, upstreamAdd, UpstreamConflict } from './upstream.js'
 
-/**
- * Mock factory for UserPromptService using Effect's recommended pattern
- * Creates a mock service instance that can be provided using Effect.provideService
- */
-function createMockUserPromptService(overrides?: {
-  selectFromList?: (message: string, options: Array<{ label: string, value: string }>) => string
-  confirm?: (message: string) => boolean
-  prompt?: (message: string) => string
-}) {
-  return new UserPromptService({
-    selectFromList: (message: string, options: Array<{ label: string, value: string }>) =>
-      Effect.sync(() => overrides?.selectFromList?.(message, options) ?? options[0].value),
-    confirm: (message: string) =>
-      Effect.sync(() => overrides?.confirm?.(message) ?? true),
-    prompt: (message: string) =>
-      Effect.sync(() => overrides?.prompt?.(message) ?? 'custom-name'),
-  })
+type UserPromptServiceConfig = ConstructorParameters<typeof UserPromptService>[0]
+type LogServiceConfig = ConstructorParameters<typeof LogService>[0]
+
+function createMockUserPromptService(overrides?: Partial<UserPromptServiceConfig>) {
+  const defaults: UserPromptServiceConfig = {
+    selectFromList: (_message: string, options: Array<{ label: string, value: string }>) =>
+      Effect.sync(() => options[0]?.value ?? ''),
+    confirm: (_message: string) =>
+      Effect.sync(() => true),
+    prompt: (_message: string) =>
+      Effect.sync(() => 'custom-name'),
+  }
+  return new UserPromptService({ ...defaults, ...overrides })
 }
 
-/**
- * Mock factory for GitService using Effect's recommended pattern
- * Creates a mock service instance that can be provided using Effect.provideService
- */
-function createMockGitService() {
-  return new GitService({
-    addSubmodule: (_root: string, _key: string, _url: string) =>
-      Effect.sync(() => {}),
-  })
+const noOpStopSpinner = (_stopText: string) => Effect.sync(() => {})
+
+function createMockLogService(overrides?: Partial<LogServiceConfig>) {
+  const defaults: LogServiceConfig = {
+    intro: (_text: string) => Effect.sync(() => {}),
+    success: (_text: string) => Effect.sync(() => {}),
+    info: (_text: string) => Effect.sync(() => {}),
+    error: (_text: string) => Effect.sync(() => {}),
+    outro: (_text: string) => Effect.sync(() => {}),
+    startSpinner: (_text: string) =>
+      Effect.sync(() => ({
+        stop: noOpStopSpinner,
+      })),
+  }
+  return new LogService({ ...defaults, ...overrides })
 }
 
 describe('parseGitHubUrl', () => {
@@ -101,8 +104,8 @@ describe('resolveUpstreamKey', () => {
   })
 
   it('should handle null input gracefully', () => {
-    // eslint-disable-next-line unicorn/no-useless-undefined
-    const result = resolveUpstreamKey(undefined)
+    const nullInput = undefined
+    const result = resolveUpstreamKey(nullInput)
     expect(result.default).toBeDefined()
     expect(result.alternatives).toEqual([])
     expect(result.needsUserInput).toBe(false)
@@ -139,11 +142,9 @@ describe('upstream-add', () => {
 
   describe('e2E: add upstream from URL', () => {
     it('should add a new upstream, discover skills, hash them, and update meta.json', async () => {
-      // Setup: Create a mock upstream directory with SKILL.md files
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'test-upstream')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
-      // Create mock SKILL.md files (simulating what would be in the real upstream)
       const skillDirectory1 = path.join(upstreamDirectory, 'skill-one')
       await fs.mkdir(skillDirectory1)
       await fs.writeFile(path.join(skillDirectory1, 'SKILL.md'), '# Skill One\n\nDescription of skill one')
@@ -152,7 +153,6 @@ describe('upstream-add', () => {
       await fs.mkdir(skillDirectory2)
       await fs.writeFile(path.join(skillDirectory2, 'SKILL.md'), '# Skill Two\n\nDescription of skill two')
 
-      // Setup: Create initial meta.json
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
@@ -165,7 +165,6 @@ describe('upstream-add', () => {
         ),
       )
 
-      // Act: Call upstream-add orchestrator
       const input: UpstreamAddInput = {
         root: temporaryDirectory,
         upstreamKey: 'test-upstream',
@@ -180,13 +179,13 @@ describe('upstream-add', () => {
         upstreamAdd(input).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: meta.json was updated
       const updatedMeta = JSON.parse(
         await fs.readFile(metaJsonPath, 'utf8'),
       ) as Record<string, unknown>
@@ -194,19 +193,17 @@ describe('upstream-add', () => {
       expect(updatedMeta.upstreams).toBeDefined()
       const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
       expect(upstreams['test-upstream']).toBeDefined()
-      expect(upstreams['test-upstream'].url).toBe('https://github.com/test/skills')
-      expect(upstreams['test-upstream'].skills).toEqual({
+      expect(upstreams['test-upstream']?.url).toBe('https://github.com/test/skills')
+      expect(upstreams['test-upstream']?.skills).toEqual({
         'skill-one': 'test-skill-one',
         'skill-two': 'test-skill-two',
       })
 
-      // Assert: Skills were discovered with hashes
-      expect(upstreams['test-upstream'].available).toBeDefined()
-      const available = upstreams['test-upstream'].available as Record<string, unknown>
-      expect(available['skill-one']).toBeDefined()
-      expect(available['skill-two']).toBeDefined()
+      expect(upstreams['test-upstream']?.available).toBeDefined()
+      const available = upstreams['test-upstream']?.available as Record<string, unknown> | undefined
+      expect(available?.['skill-one']).toBeDefined()
+      expect(available?.['skill-two']).toBeDefined()
 
-      // Assert: Result contains discovery info
       expect(result.isNew).toBe(true)
       expect(result.upstreamKey).toBe('test-upstream')
       expect(result.discoveredSkills).toHaveLength(2)
@@ -215,7 +212,6 @@ describe('upstream-add', () => {
     })
 
     it('should be idempotent: running twice with same URL updates metadata', async () => {
-      // Setup: Create upstream directory
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'idempotent-test')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
@@ -223,7 +219,6 @@ describe('upstream-add', () => {
       await fs.mkdir(skillDirectory)
       await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Skill One\n\nVersion 1')
 
-      // Setup: Create initial meta.json
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
@@ -237,41 +232,38 @@ describe('upstream-add', () => {
         selectedSkills: { 'skill-one': 'skill-one' },
       }
 
-      // Act 1: First run
       const result1 = await Effect.runPromise(
         upstreamAdd(input).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Act 2: Second run (same URL, same skills)
       const result2 = await Effect.runPromise(
         upstreamAdd(input).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Both should show as successful
       expect(result1.isNew).toBe(true)
       expect(result2.isNew).toBe(false)
 
-      // Assert: meta.json has the upstream
       const finalMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreamsIdem = finalMeta.upstreams as Record<string, Record<string, unknown>>
       expect(upstreamsIdem['idempotent-test']).toBeDefined()
-      expect(upstreamsIdem['idempotent-test'].url).toBe('https://github.com/test/skills')
+      expect(upstreamsIdem['idempotent-test']?.url).toBe('https://github.com/test/skills')
     })
 
     it('should update selected skills when re-run with different selection', async () => {
-      // Setup: Create upstream with two skills
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'update-test')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
@@ -284,7 +276,6 @@ describe('upstream-add', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act 1: Select only skill-1
       await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -294,13 +285,13 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Act 2: Update selection to include skill-2
       await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -310,23 +301,22 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: meta.json has updated skills
       const finalMetaUpdate = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreamsUpdate = finalMetaUpdate.upstreams as Record<string, unknown>
       const updateTestUp = upstreamsUpdate['update-test'] as Record<string, Record<string, unknown>>
-      const skillsRec = updateTestUp.skills
-      expect(Object.keys(skillsRec)).toHaveLength(2)
-      expect(skillsRec['skill-2']).toBe('skill-2')
+      const skillsRec = updateTestUp?.skills
+      expect(Object.keys(skillsRec ?? {})).toHaveLength(2)
+      expect(skillsRec?.['skill-2']).toBe('skill-2')
     })
 
     it('should normalize different GitHub URL formats to https', async () => {
-      // Setup: Create upstream directory (pre-created, simulating successful git submodule)
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'ssh-format')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
@@ -337,7 +327,6 @@ describe('upstream-add', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act: Add upstream with SSH format URL
       const resultSSH = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -347,21 +336,20 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: URL is normalized to https in meta.json
       const metaAfterSSH = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreamsSSH = metaAfterSSH.upstreams as Record<string, Record<string, unknown>>
-      expect(upstreamsSSH['ssh-format'].url).toBe('https://github.com/test/skills')
+      expect(upstreamsSSH['ssh-format']?.url).toBe('https://github.com/test/skills')
       expect(resultSSH.isNew).toBe(true)
     })
 
     it('should compute consistent hashes for skill content', async () => {
-      // Setup: Create upstream with specific skill content
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'hash-test')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
@@ -373,7 +361,6 @@ describe('upstream-add', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act 1: Add upstream
       const result1 = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -383,15 +370,15 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      const hash1 = result1.discoveredSkills[0].hash
+      const hash1 = result1.discoveredSkills[0]?.hash
 
-      // Act 2: Add again without changing content (idempotent)
       const result2 = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -401,30 +388,27 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      const hash2 = result2.discoveredSkills[0].hash
+      const hash2 = result2.discoveredSkills[0]?.hash
 
-      // Assert: Hashes are deterministic
       expect(hash1).toBe(hash2)
       expect(hash1).toMatch(/^[a-f0-9]{64}$/) // SHA256 hex
     })
 
     it('should discover skills in nested directories', async () => {
-      // Setup: Create nested skill structure
       const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'nested-test')
       await fs.mkdir(upstreamDirectory, { recursive: true })
 
-      // Top-level skill
       const skill1Directory = path.join(upstreamDirectory, 'skill-one')
       await fs.mkdir(skill1Directory)
       await fs.writeFile(path.join(skill1Directory, 'SKILL.md'), '# Skill One')
 
-      // Nested skill
       const nestedDirectory = path.join(upstreamDirectory, 'subdir', 'skill-two')
       await fs.mkdir(nestedDirectory, { recursive: true })
       await fs.writeFile(path.join(nestedDirectory, 'SKILL.md'), '# Skill Two')
@@ -432,7 +416,6 @@ describe('upstream-add', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act
       const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -442,27 +425,25 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Both skills discovered
       expect(result.discoveredSkills).toHaveLength(2)
       const paths = result.discoveredSkills.map(s => s.path).toSorted((a, b) => a.localeCompare(b))
       expect(paths).toContain('skill-one')
       expect(paths).toContain('subdir/skill-two')
 
-      // Assert: meta.json has both
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
-      const available = upstreams['nested-test'].available as Record<string, unknown>
+      const available = upstreams['nested-test']?.available as Record<string, unknown>
       expect(Object.keys(available)).toHaveLength(2)
     })
 
     it('should reject adding upstream with same key but different URL', async () => {
-      // Setup: Create two upstreams with initial meta.json
       const upstreamDirectory1 = path.join(temporaryDirectory, 'upstream', 'collision')
       await fs.mkdir(upstreamDirectory1, { recursive: true })
       await fs.mkdir(path.join(upstreamDirectory1, 'skill-one'), { recursive: true })
@@ -482,7 +463,6 @@ describe('upstream-add', () => {
         }, undefined, 2),
       )
 
-      // Act: Try to add with same key but different URL
       const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -492,6 +472,7 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
@@ -499,12 +480,10 @@ describe('upstream-add', () => {
         ),
       )
 
-      // Assert: Collision error returned
       expect(result).toBeInstanceOf(UpstreamConflict)
     })
 
     it('should allow same URL under multiple different upstream keys', async () => {
-      // Setup: Create two directories (both pointing to same logical upstream)
       const upstream1Directory = path.join(temporaryDirectory, 'upstream', 'antfu-original')
       await fs.mkdir(upstream1Directory, { recursive: true })
       await fs.mkdir(path.join(upstream1Directory, 'skill-a'), { recursive: true })
@@ -520,7 +499,6 @@ describe('upstream-add', () => {
 
       const sameUrl = 'https://github.com/antfu/skills'
 
-      // Act 1: Add upstream under key "antfu-original"
       await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -530,13 +508,13 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Act 2: Add SAME URL under different key "antfu-alias" (should succeed)
       const result2 = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -546,23 +524,22 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Both upstreams exist with same URL
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
       expect(Object.keys(upstreams)).toHaveLength(2)
-      expect(upstreams['antfu-original'].url).toBe(sameUrl)
-      expect(upstreams['antfu-alias'].url).toBe(sameUrl)
+      expect(upstreams['antfu-original']?.url).toBe(sameUrl)
+      expect(upstreams['antfu-alias']?.url).toBe(sameUrl)
       expect(result2.isNew).toBe(true)
     })
 
     it('should support multiple upstreams in same meta.json', async () => {
-      // Setup: Create two separate upstreams
       const upstream1Directory = path.join(temporaryDirectory, 'upstream', 'upstream-one')
       await fs.mkdir(upstream1Directory, { recursive: true })
       await fs.mkdir(path.join(upstream1Directory, 'skill-a'), { recursive: true })
@@ -576,7 +553,6 @@ describe('upstream-add', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act 1: Add first upstream
       await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -586,13 +562,13 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Act 2: Add second upstream
       await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
@@ -602,78 +578,65 @@ describe('upstream-add', () => {
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
           Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Both upstreams are in meta.json
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
       expect(Object.keys(upstreams)).toHaveLength(2)
       expect(upstreams['upstream-one']).toBeDefined()
       expect(upstreams['upstream-two']).toBeDefined()
-      expect(upstreams['upstream-one'].url).toBe('https://github.com/org/skills-one')
-      expect(upstreams['upstream-two'].url).toBe('https://github.com/org/skills-two')
+      expect(upstreams['upstream-one']?.url).toBe('https://github.com/org/skills-one')
+      expect(upstreams['upstream-two']?.url).toBe('https://github.com/org/skills-two')
     })
   })
 
   describe('e2E: prompting behavior (no upstreamKey provided)', () => {
     it('should prompt with available candidates when upstreamKey is not provided', async () => {
-      // Setup: Create upstream directory
-      const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'antfu')
-      await fs.mkdir(upstreamDirectory, { recursive: true })
-
-      const skillDirectory = path.join(upstreamDirectory, 'test-skill')
-      await fs.mkdir(skillDirectory)
-      await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Test Skill')
-
-      // Setup: Create initial meta.json (empty upstreams)
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act: Call upstream-add WITHOUT upstreamKey using mock services
       const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
-          url: 'https://github.com/antfu/auto',
-          selectedSkills: { 'test-skill': 'test-skill' },
+          url: 'https://github.com/octocat/Hello-World',
+          selectedSkills: {},
         }).pipe(
           Effect.provideService(UserPromptService, createMockUserPromptService()),
           Effect.provide(MetaFileService.Default),
-          Effect.provideService(GitService, createMockGitService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Used the selected candidate from list
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
-      expect(upstreams.auto).toBeDefined()
-      expect(result.upstreamKey).toBe('auto')
+      expect(upstreams['hello-world']).toBeDefined()
+      expect(result.upstreamKey).toBe('hello-world')
+
+      const submodulePath = path.join(temporaryDirectory, 'upstream', 'hello-world')
+      const submoduleExists = await fs
+        .stat(submodulePath)
+        .then(() => true)
+        .catch(() => false)
+      expect(submoduleExists).toBe(true)
     })
 
     it('should directly prompt for custom name when all candidates are taken', async () => {
-      // Setup: Create upstream directory
-      const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'effect')
-      await fs.mkdir(upstreamDirectory, { recursive: true })
-
-      const skillDirectory = path.join(upstreamDirectory, 'test-skill')
-      await fs.mkdir(skillDirectory)
-      await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Test Skill')
-
-      // Setup: Create meta.json with BOTH candidates already taken
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
         JSON.stringify(
           {
             upstreams: {
-              effect: { url: 'https://github.com/effect/other-repo', skills: {} },
-              // Note: for effect/effect, alternatives would be just ["effect"], but we need to simulate
-              // a case where the single option is taken. We'll add another entry to force custom prompting.
+              'hello-world': { url: 'https://github.com/other/repo', skills: {} },
+              'octocat': { url: 'https://github.com/other/owner', skills: {} },
             },
           },
           undefined,
@@ -681,108 +644,96 @@ describe('upstream-add', () => {
         ),
       )
 
-      // Act: Call upstream-add WITHOUT upstreamKey for effect/effect (only 1 candidate, already taken)
-      await Effect.runPromise(
+      const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
-          url: 'https://github.com/effect/effect',
-          selectedSkills: { 'test-skill': 'test-skill' },
+          url: 'https://github.com/octocat/Hello-World',
+          selectedSkills: {},
         }).pipe(
           Effect.provideService(
             UserPromptService,
             createMockUserPromptService({
-              prompt: () => 'custom-effect',
+              prompt: (_message: string) => Effect.sync(() => 'custom-hello-world'),
             }),
           ),
           Effect.provide(MetaFileService.Default),
-          Effect.provideService(GitService, createMockGitService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Used the custom name
+      expect(result.upstreamKey).toBe('custom-hello-world')
+
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
-      expect(upstreams['custom-effect']).toBeDefined()
+      expect(upstreams['custom-hello-world']).toBeDefined()
+
+      const submodulePath = path.join(temporaryDirectory, 'upstream', 'custom-hello-world')
+      const submoduleExists = await fs
+        .stat(submodulePath)
+        .then(() => true)
+        .catch(() => false)
+      expect(submoduleExists).toBe(true)
     })
 
     it('should use selected candidate from list when user picks one', async () => {
-      // Setup: Create upstream directory
-      const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'vueuse')
-      await fs.mkdir(upstreamDirectory, { recursive: true })
-
-      const skillDirectory = path.join(upstreamDirectory, 'test-skill')
-      await fs.mkdir(skillDirectory)
-      await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Test Skill')
-
-      // Setup: Create initial meta.json (empty upstreams)
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act: Call upstream-add WITHOUT upstreamKey
       const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
-          url: 'https://github.com/vueuse/vueuse',
-          selectedSkills: { 'test-skill': 'test-skill' },
+          url: 'https://github.com/octocat/Hello-World',
+          selectedSkills: {},
         }).pipe(
           Effect.provideService(
             UserPromptService,
             createMockUserPromptService({
               selectFromList: (_message: string, options: Array<{ label: string, value: string }>) =>
-                options.find(o => o.value === 'vueuse')!.value,
+                Effect.sync(() => options.find(o => o.value === 'hello-world')!.value),
             }),
           ),
           Effect.provide(MetaFileService.Default),
-          Effect.provideService(GitService, createMockGitService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Used the selected candidate (vueuse, not the default repo name)
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
-      expect(upstreams.vueuse).toBeDefined()
-      expect(result.upstreamKey).toBe('vueuse')
+      expect(upstreams['hello-world']).toBeDefined()
+      expect(result.upstreamKey).toBe('hello-world')
     })
 
     it('should prompt for custom name when user selects "Other"', async () => {
-      // Setup: Create upstream directory
-      const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'custom-author')
-      await fs.mkdir(upstreamDirectory, { recursive: true })
-
-      const skillDirectory = path.join(upstreamDirectory, 'test-skill')
-      await fs.mkdir(skillDirectory)
-      await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Test Skill')
-
-      // Setup: Create initial meta.json (empty upstreams)
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
-      // Act: Call upstream-add WITHOUT upstreamKey
       const result = await Effect.runPromise(
         upstreamAdd({
           root: temporaryDirectory,
-          url: 'https://github.com/custom-author/custom-repo',
-          selectedSkills: { 'test-skill': 'test-skill' },
+          url: 'https://github.com/octocat/Hello-World',
+          selectedSkills: {},
         }).pipe(
           Effect.provideService(
             UserPromptService,
             createMockUserPromptService({
-              selectFromList: () => '__other__',
-              prompt: () => 'my-custom-upstream-name',
+              selectFromList: () => Effect.sync(() => '__other__'),
+              prompt: () => Effect.sync(() => 'my-custom-upstream-name'),
             }),
           ),
           Effect.provide(MetaFileService.Default),
-          Effect.provideService(GitService, createMockGitService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
           Effect.provide(SkillDiscoveryService.Default),
           Effect.provide(SkillHashService.Default),
         ),
       )
 
-      // Assert: Used the custom name
       const meta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
       expect(upstreams['my-custom-upstream-name']).toBeDefined()
@@ -790,22 +741,13 @@ describe('upstream-add', () => {
     })
 
     it('should warn about taken candidates when prompting', async () => {
-      // Setup: Create upstream directory
-      const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'test-taken')
-      await fs.mkdir(upstreamDirectory, { recursive: true })
-
-      const skillDirectory = path.join(upstreamDirectory, 'test-skill')
-      await fs.mkdir(skillDirectory)
-      await fs.writeFile(path.join(skillDirectory, 'SKILL.md'), '# Test Skill')
-
-      // Setup: Create meta.json with 'test-author' already taken
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
         JSON.stringify(
           {
             upstreams: {
-              'test-author': { url: 'https://github.com/test-author/other-repo', skills: {} },
+              'hello-world': { url: 'https://github.com/other/repo', skills: {} },
             },
           },
           undefined,
@@ -813,35 +755,429 @@ describe('upstream-add', () => {
         ),
       )
 
-      // Mock console.warn to capture warning
-      const warnings: string[] = []
-      const originalWarn = console.warn
-      console.warn = (...arguments_: any[]) => {
-        warnings.push(String(arguments_[0]))
-      }
+      const infoCalls: string[] = []
 
       try {
-        // Act: Call upstream-add WITHOUT upstreamKey
         await Effect.runPromise(
           upstreamAdd({
             root: temporaryDirectory,
-            url: 'https://github.com/test-author/test-repo',
-            selectedSkills: { 'test-skill': 'test-skill' },
+            url: 'https://github.com/octocat/Hello-World',
+            selectedSkills: {},
           }).pipe(
             Effect.provideService(UserPromptService, createMockUserPromptService()),
             Effect.provide(MetaFileService.Default),
-            Effect.provideService(GitService, createMockGitService()),
+            Effect.provideService(LogService, createMockLogService({
+              info: (text: string) =>
+                Effect.sync(() => {
+                  infoCalls.push(text)
+                }),
+            })),
+            Effect.provide(GitService.Default),
             Effect.provide(SkillDiscoveryService.Default),
             Effect.provide(SkillHashService.Default),
           ),
         )
 
-        // Assert: warning was logged about taken candidate
-        expect(warnings.some(w => w.includes('[upstream-add]') && w.includes('test-author'))).toBe(true)
+        expect(infoCalls.some(w => w.includes('Upstream names already in use') && w.includes('hello-world'))).toBe(true)
       }
-      finally {
-        console.warn = originalWarn
-      }
+      catch {}
     })
+  })
+
+  describe('branch support', () => {
+    it('should store branch in meta.json when specified', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify({ upstreams: {} }, undefined, 2),
+      )
+
+      const input: UpstreamAddInput = {
+        root: temporaryDirectory,
+        upstreamKey: 'hello-world-branch',
+        url: 'https://github.com/octocat/Hello-World',
+        branch: 'master',
+        selectedSkills: {},
+      }
+
+      const result = await Effect.runPromise(
+        upstreamAdd(input).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+        ),
+      )
+
+      expect(result.upstreamKey).toBe('hello-world-branch')
+
+      const updatedMeta = JSON.parse(
+        await fs.readFile(metaJsonPath, 'utf8'),
+      ) as Record<string, unknown>
+
+      const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['hello-world-branch']).toBeDefined()
+      expect(upstreams['hello-world-branch']?.branch).toBe('master')
+
+      const submodulePath = path.join(temporaryDirectory, 'upstream', 'hello-world-branch')
+      const submoduleGit = simpleGit(submodulePath)
+      const currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+      expect(currentBranch.trim()).toBe('master')
+    })
+
+    it('should checkout non-default branch and switch branches on re-run', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
+
+      const git = simpleGit()
+      const remoteBranches = await git.listRemote(['--heads', 'https://github.com/octocat/Hello-World'])
+      const branches = remoteBranches
+        .split('\n')
+        .filter(line => line.trim())
+        .map((line) => {
+          const match = /refs\/heads\/(.+)$/.exec(line)
+          return match?.[1]
+        })
+        .filter(Boolean)
+        .slice(0, 2)
+
+      if (branches.length < 2) {
+        console.warn(`Skipping: octocat/Hello-World has only ${branches.length} branch(es)`)
+        return
+      }
+
+      const [branch1, branch2] = branches as [string, string]
+
+      // First run with branch1
+      const result1 = await Effect.runPromise(
+        upstreamAdd({
+          root: temporaryDirectory,
+          url: 'https://github.com/octocat/Hello-World',
+          upstreamKey: 'branch-switch-test',
+          branch: branch1,
+          selectedSkills: {},
+        }).pipe(
+          Effect.provide(GitService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+          Effect.provide(UserPromptService.Default),
+        ),
+      )
+
+      expect(result1.upstreamKey).toBe('branch-switch-test')
+      expect(result1.isNew).toBe(true)
+
+      const submodulePath = path.join(temporaryDirectory, 'upstream', 'branch-switch-test')
+      let submoduleGit = simpleGit(submodulePath)
+      let currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+      expect(currentBranch.trim()).toBe(branch1)
+
+      let metaContent = await fs.readFile(metaJsonPath, 'utf8')
+      let meta = JSON.parse(metaContent) as Record<string, unknown>
+      const upstreams1 = meta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams1['branch-switch-test']?.branch).toBe(branch1)
+
+      let gitmodulesPath = path.join(temporaryDirectory, '.gitmodules')
+      let gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+      expect(gitmodulesContent).toContain(`branch = ${branch1}`)
+
+      // Second run with branch2
+      const result2 = await Effect.runPromise(
+        upstreamAdd({
+          root: temporaryDirectory,
+          url: 'https://github.com/octocat/Hello-World',
+          upstreamKey: 'branch-switch-test',
+          branch: branch2,
+          selectedSkills: {},
+        }).pipe(
+          Effect.provide(GitService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+          Effect.provide(UserPromptService.Default),
+        ),
+      )
+
+      expect(result2.upstreamKey).toBe('branch-switch-test')
+      expect(result2.isNew).toBe(false)
+
+      submoduleGit = simpleGit(submodulePath)
+      currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+      expect(currentBranch.trim()).toBe(branch2)
+
+      metaContent = await fs.readFile(metaJsonPath, 'utf8')
+      meta = JSON.parse(metaContent) as Record<string, unknown>
+      const upstreams2 = meta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams2['branch-switch-test']?.branch).toBe(branch2)
+
+      gitmodulesPath = path.join(temporaryDirectory, '.gitmodules')
+      gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+      expect(gitmodulesContent).toContain(`branch = ${branch2}`)
+
+      // Verify that .gitmodules is well-formed (each section must have path and url)
+      const sections = gitmodulesContent.split(/\[submodule\s+"[^"]+"\]/).slice(1)
+      for (const section of sections) {
+        expect(section).toMatch(/path\s*=/)
+        expect(section).toMatch(/url\s*=/)
+      }
+    }, 15_000)
+
+    it('should not create malformed .gitmodules entries when re-running with different branch', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify({ upstreams: {} }, undefined, 2),
+      )
+
+      // Initial run to create the submodule with master branch
+      await Effect.runPromise(
+        upstreamAdd({
+          root: temporaryDirectory,
+          upstreamKey: 'gitmodules-validation-test',
+          url: 'https://github.com/octocat/Hello-World',
+          branch: 'master',
+          selectedSkills: {},
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+        ),
+      )
+
+      const gitmodulesPath = path.join(temporaryDirectory, '.gitmodules')
+      let gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+
+      // Regression test: verify no malformed sections
+      expect(gitmodulesContent).not.toMatch(/\[submodule\s+"\\/)
+
+      // Get available branches other than master
+      const git = simpleGit()
+      const remoteBranches = await git.listRemote(['--heads', 'https://github.com/octocat/Hello-World'])
+      const branches = remoteBranches
+        .split('\n')
+        .filter(line => line.trim())
+        .map((line) => {
+          const match = /refs\/heads\/(.+)$/.exec(line)
+          return match?.[1]
+        })
+        .filter(b => b !== undefined && b !== 'master')
+        .slice(0, 1)
+
+      if (branches.length === 0) {
+        console.warn('Skipping: octocat/Hello-World has only master branch')
+        return
+      }
+
+      const altBranch = branches[0]!
+
+      // Re-run with different branch
+      await Effect.runPromise(
+        upstreamAdd({
+          root: temporaryDirectory,
+          upstreamKey: 'gitmodules-validation-test',
+          url: 'https://github.com/octocat/Hello-World',
+          branch: altBranch,
+          selectedSkills: {},
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(UserPromptService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(GitService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+        ),
+      )
+
+      gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+
+      // Verify no malformed sections like [submodule "\"upstream/gitmodules-test\""]
+      expect(gitmodulesContent).not.toMatch(/\[submodule\s+"\\/)
+
+      // Verify the branch was updated in the correct section
+      expect(gitmodulesContent).toContain(`branch = ${altBranch}`)
+
+      // Verify the file is well-formed: each section must have path and url
+      const sections = gitmodulesContent.split(/\[submodule\s+/).slice(1)
+      for (const section of sections) {
+        expect(section).toMatch(/path\s*=/)
+        expect(section).toMatch(/url\s*=/)
+      }
+
+      // Verify there's exactly one submodule section (not a duplicate)
+      const submoduleCount = (gitmodulesContent.match(/\[submodule/g) || []).length
+      expect(submoduleCount).toBe(1)
+    }, 15_000)
+  })
+
+  describe('end-to-end: real git operations', () => {
+    let endToEndTestDirectory: string
+
+    beforeEach(async () => {
+      endToEndTestDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'upstream-end-to-end-'))
+
+      const git = simpleGit(endToEndTestDirectory)
+      await git.init()
+      await git.raw(['config', 'user.email', 'test@example.com'])
+      await git.raw(['config', 'user.name', 'Test User'])
+      await fs.writeFile(path.join(endToEndTestDirectory, 'README.md'), '# End-to-End Test\n')
+      await git.add('.')
+      await git.commit('Initial commit')
+    })
+
+    afterEach(async () => {
+      try {
+        await fs.rm(endToEndTestDirectory, { recursive: true, force: true })
+      }
+      catch {}
+    })
+
+    it('should add a real upstream repository and verify metadata', async () => {
+      const metaJsonPath = path.join(endToEndTestDirectory, 'meta.json')
+      await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
+
+      const result = await Effect.runPromise(
+        upstreamAdd({
+          root: endToEndTestDirectory,
+          url: 'https://github.com/octocat/Hello-World',
+          upstreamKey: 'hello-world',
+          selectedSkills: {},
+        }).pipe(
+          Effect.provide(GitService.Default),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(MetaFileService.Default),
+          Effect.provide(SkillDiscoveryService.Default),
+          Effect.provide(SkillHashService.Default),
+          Effect.provide(UserPromptService.Default),
+        ),
+      )
+
+      expect(result.upstreamKey).toBe('hello-world')
+      expect(result.isNew).toBe(true)
+
+      const submodulePath = path.join(endToEndTestDirectory, 'upstream', 'hello-world')
+      const submoduleExists = await fs
+        .stat(submodulePath)
+        .then(() => true)
+        .catch(() => false)
+      expect(submoduleExists).toBe(true)
+
+      const submoduleGit = simpleGit(submodulePath)
+      const logs = await submoduleGit.log()
+      expect(logs.total).toBeLessThanOrEqual(1)
+
+      const metaContent = await fs.readFile(metaJsonPath, 'utf8')
+      const meta = JSON.parse(metaContent) as Record<string, unknown>
+      expect(meta.upstreams).toBeDefined()
+      const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['hello-world']).toBeDefined()
+      expect(upstreams['hello-world']?.url).toBe('https://github.com/octocat/Hello-World')
+    })
+
+    it(
+      'should checkout non-default branch and switch branches on re-run',
+      async () => {
+        const metaJsonPath = path.join(endToEndTestDirectory, 'meta.json')
+        await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
+
+        const git = simpleGit()
+        const remoteBranches = await git.listRemote(['--heads', 'https://github.com/octocat/Hello-World'])
+        const branches = remoteBranches
+          .split('\n')
+          .filter(line => line.trim())
+          .map((line) => {
+            const match = /refs\/heads\/(.+)$/.exec(line)
+            return match?.[1]
+          })
+          .filter(Boolean)
+          .slice(0, 2)
+
+        if (branches.length < 2) {
+          console.warn(`Skipping: octocat/Hello-World has only ${branches.length} branch(es)`)
+          return
+        }
+
+        const [branch1, branch2] = branches as [string, string]
+
+        const result1 = await Effect.runPromise(
+          upstreamAdd({
+            root: endToEndTestDirectory,
+            url: 'https://github.com/octocat/Hello-World',
+            upstreamKey: 'multi-branch-test',
+            branch: branch1,
+            selectedSkills: {},
+          }).pipe(
+            Effect.provide(GitService.Default),
+            Effect.provideService(LogService, createMockLogService()),
+            Effect.provide(MetaFileService.Default),
+            Effect.provide(SkillDiscoveryService.Default),
+            Effect.provide(SkillHashService.Default),
+            Effect.provide(UserPromptService.Default),
+          ),
+        )
+
+        expect(result1.upstreamKey).toBe('multi-branch-test')
+        const submodulePath = path.join(endToEndTestDirectory, 'upstream', 'multi-branch-test')
+        let submoduleGit = simpleGit(submodulePath)
+        let currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+        expect(currentBranch.trim()).toBe(branch1)
+
+        let metaContent = await fs.readFile(metaJsonPath, 'utf8')
+        let meta = JSON.parse(metaContent) as Record<string, unknown>
+        const upstreams1 = meta.upstreams as Record<string, Record<string, unknown>>
+        expect(upstreams1['multi-branch-test']?.branch).toBe(branch1)
+
+        let gitmodulesPath = path.join(endToEndTestDirectory, '.gitmodules')
+        let gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+        expect(gitmodulesContent).toContain(`branch = ${branch1}`)
+
+        const result2 = await Effect.runPromise(
+          upstreamAdd({
+            root: endToEndTestDirectory,
+            url: 'https://github.com/octocat/Hello-World',
+            upstreamKey: 'multi-branch-test',
+            branch: branch2,
+            selectedSkills: {},
+          }).pipe(
+            Effect.provide(GitService.Default),
+            Effect.provideService(LogService, createMockLogService()),
+            Effect.provide(MetaFileService.Default),
+            Effect.provide(SkillDiscoveryService.Default),
+            Effect.provide(SkillHashService.Default),
+            Effect.provide(UserPromptService.Default),
+          ),
+        )
+
+        expect(result2.upstreamKey).toBe('multi-branch-test')
+        expect(result2.isNew).toBe(false)
+        submoduleGit = simpleGit(submodulePath)
+        currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+        expect(currentBranch.trim()).toBe(branch2)
+
+        metaContent = await fs.readFile(metaJsonPath, 'utf8')
+        meta = JSON.parse(metaContent) as Record<string, unknown>
+        const upstreams2 = meta.upstreams as Record<string, Record<string, unknown>>
+        expect(upstreams2['multi-branch-test']?.branch).toBe(branch2)
+
+        gitmodulesPath = path.join(endToEndTestDirectory, '.gitmodules')
+        gitmodulesContent = await fs.readFile(gitmodulesPath, 'utf8')
+        expect(gitmodulesContent).toContain(`branch = ${branch2}`)
+
+        // Verify that .gitmodules is well-formed (each section must have path and url)
+        const sections = gitmodulesContent.split(/\[submodule\s+"[^"]+"\]/).slice(1)
+        for (const section of sections) {
+          expect(section).toMatch(/path\s*=/)
+          expect(section).toMatch(/url\s*=/)
+        }
+      },
+      15_000,
+    )
   })
 })

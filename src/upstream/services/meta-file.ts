@@ -19,7 +19,6 @@ export class MetaFileService extends Effect.Service<MetaFileService>()('upstream
             return JSON.parse(content) as Record<string, unknown>
           }
           catch {
-            // File doesn't exist or is invalid - return empty metadata
             return { upstreams: {} }
           }
         },

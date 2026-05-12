@@ -17,7 +17,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:rules": "npx @eslint/config-inspector@2.0.1",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "beads": "bd export --no-memories -o .beads/beads.jsonl && bv"
   },
   "dependencies": {
     "@npmcli/git": "^7.0.2",
