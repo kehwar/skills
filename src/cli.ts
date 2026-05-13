@@ -1,4 +1,5 @@
 import { defineCommand, runMain } from 'citty'
+import { cloneSkillsCmd } from './clone-skills/index.js'
 import { upstreamCmd } from './upstream/index.js'
 
 export const main = defineCommand({
@@ -7,7 +8,8 @@ export const main = defineCommand({
     description: 'Skills management tooling',
   },
   subCommands: {
-    upstream: upstreamCmd,
+    'upstream': upstreamCmd,
+    'clone-skills': cloneSkillsCmd,
   },
 })
 

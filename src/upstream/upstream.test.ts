@@ -6,6 +6,8 @@ import { Effect } from 'effect'
 import { simpleGit } from 'simple-git'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import {
+  createMockLogService,
+  createMockUserPromptService,
   GitService,
   LogService,
   MetaFileService,
@@ -14,38 +16,6 @@ import {
   UserPromptService,
 } from './services/index.js'
 import { parseGitHubUrl, resolveUpstreamKey, upstreamAdd, UpstreamConflict } from './upstream.js'
-
-type UserPromptServiceConfig = ConstructorParameters<typeof UserPromptService>[0]
-type LogServiceConfig = ConstructorParameters<typeof LogService>[0]
-
-function createMockUserPromptService(overrides?: Partial<UserPromptServiceConfig>) {
-  const defaults: UserPromptServiceConfig = {
-    selectFromList: (_message: string, options: Array<{ label: string, value: string }>) =>
-      Effect.sync(() => options[0]?.value ?? ''),
-    confirm: (_message: string) =>
-      Effect.sync(() => true),
-    prompt: (_message: string) =>
-      Effect.sync(() => 'custom-name'),
-  }
-  return new UserPromptService({ ...defaults, ...overrides })
-}
-
-const noOpStopSpinner = (_stopText: string) => Effect.sync(() => {})
-
-function createMockLogService(overrides?: Partial<LogServiceConfig>) {
-  const defaults: LogServiceConfig = {
-    intro: (_text: string) => Effect.sync(() => {}),
-    success: (_text: string) => Effect.sync(() => {}),
-    info: (_text: string) => Effect.sync(() => {}),
-    error: (_text: string) => Effect.sync(() => {}),
-    outro: (_text: string) => Effect.sync(() => {}),
-    startSpinner: (_text: string) =>
-      Effect.sync(() => ({
-        stop: noOpStopSpinner,
-      })),
-  }
-  return new LogService({ ...defaults, ...overrides })
-}
 
 describe('parseGitHubUrl', () => {
   it('should parse https URLs', () => {

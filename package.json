@@ -13,6 +13,7 @@
   "scripts": {
     "test": "vitest run",
     "upstream": "tsx src/cli.ts upstream",
+    "clone-skills": "tsx src/cli.ts clone-skills",
     "opencode": "opencode web --hostname 0.0.0.0",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

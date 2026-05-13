@@ -1,0 +1,474 @@
+import * as fs from 'node:fs/promises'
+import * as os from 'node:os'
+import path from 'node:path'
+import { Effect } from 'effect'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import {
+  createMockLogService,
+  createMockUserPromptService,
+  LogService,
+  MetaFileService,
+  UserPromptService,
+} from '../shared/index.js'
+import { cloneSkills, InvalidUpstreamName, NoAvailableSkills } from './clone-skills.js'
+
+describe('clone-skills', () => {
+  let temporaryDirectory: string
+
+  beforeEach(async () => {
+    temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'clone-skills-test-'))
+  })
+
+  afterEach(async () => {
+    await fs.rm(temporaryDirectory, { recursive: true, force: true })
+  })
+
+  describe('basic functionality', () => {
+    it('should reject when upstream does not exist', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'nonexistent',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(UserPromptService, createMockUserPromptService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.catchTag('InvalidUpstreamName', error => Effect.succeed(error)),
+        ),
+      )
+
+      expect(result).toBeInstanceOf(InvalidUpstreamName)
+    })
+
+    it('should reject when upstream has no available skills', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'empty-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {},
+                available: {},
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'empty-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(UserPromptService, createMockUserPromptService()),
+          Effect.provideService(LogService, createMockLogService()),
+          Effect.catchTag('NoAvailableSkills', error => Effect.succeed(error)),
+        ),
+      )
+
+      expect(result).toBeInstanceOf(NoAvailableSkills)
+    })
+
+    it('should allow user to select skills from available options', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {},
+                available: {
+                  'skills/skill-a': 'abc123',
+                  'skills/skill-b': 'def456',
+                  'skills/skill-c': 'ghi789',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: (_message: string, options: Array<{ label: string, value: string, hint?: string }>) =>
+                Effect.sync(() => options.slice(0, 2).map(o => o.value)),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result.selectedSkills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-b': 'skill-b',
+      })
+
+      const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
+      const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['test-upstream']?.skills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-b': 'skill-b',
+      })
+    })
+
+    it('should allow user to deselect previously selected skills', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {
+                  'skills/skill-a': 'skill-a',
+                  'skills/skill-b': 'skill-b',
+                },
+                available: {
+                  'skills/skill-a': 'abc123',
+                  'skills/skill-b': 'def456',
+                  'skills/skill-c': 'ghi789',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: (_message: string, _options: Array<{ label: string, value: string, hint?: string }>, initialValues?: string[]) =>
+                // User keeps only skill-a (deselects skill-b)
+                Effect.sync(() => initialValues?.filter(v => v === 'skills/skill-a') ?? []),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result.selectedSkills).toEqual({
+        'skills/skill-a': 'skill-a',
+      })
+
+      const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
+      const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['test-upstream']?.skills).toEqual({
+        'skills/skill-a': 'skill-a',
+      })
+    })
+
+    it('should show currently selected skills as checked in multiselect', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {
+                  'skills/skill-a': 'skill-a',
+                },
+                available: {
+                  'skills/skill-a': 'abc123',
+                  'skills/skill-b': 'def456',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      let receivedInitialValues: string[] | undefined
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: (_message: string, _options: Array<{ label: string, value: string, hint?: string }>, initialValues?: string[]) => {
+                receivedInitialValues = initialValues
+                return Effect.sync(() => initialValues ?? [])
+              },
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(receivedInitialValues).toContain('skills/skill-a')
+      expect(result.message).toContain('Selected 1 skill')
+    })
+
+    it('should handle empty selection gracefully', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {
+                  'skills/skill-a': 'skill-a',
+                },
+                available: {
+                  'skills/skill-a': 'abc123',
+                  'skills/skill-b': 'def456',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: () => Effect.sync(() => []),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result.selectedSkills).toEqual({})
+      expect(result.message).toContain('No skills selected')
+
+      const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
+      const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['test-upstream']?.skills).toEqual({})
+    })
+
+    it('should be re-runnable allowing skills to be added and removed', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {
+                  'skills/skill-a': 'skill-a',
+                },
+                available: {
+                  'skills/skill-a': 'abc123',
+                  'skills/skill-b': 'def456',
+                  'skills/skill-c': 'ghi789',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      // First run: keep skill-a, add skill-c
+      const result1 = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: () => Effect.sync(() => ['skills/skill-a', 'skills/skill-c']),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result1.selectedSkills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-c': 'skill-c',
+      })
+
+      // Second run: add skill-b as well
+      const result2 = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: () => Effect.sync(() => ['skills/skill-a', 'skills/skill-b', 'skills/skill-c']),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result2.selectedSkills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-b': 'skill-b',
+        'skills/skill-c': 'skill-c',
+      })
+
+      // Third run: remove skill-b
+      const result3 = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: () => Effect.sync(() => ['skills/skill-a', 'skills/skill-c']),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result3.selectedSkills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-c': 'skill-c',
+      })
+
+      const finalMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
+      const upstreams = finalMeta.upstreams as Record<string, Record<string, unknown>>
+      expect(upstreams['test-upstream']?.skills).toEqual({
+        'skills/skill-a': 'skill-a',
+        'skills/skill-c': 'skill-c',
+      })
+    })
+
+    it('should handle nested skill paths correctly', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {},
+                available: {
+                  'skills/productivity/caveman': 'abc123',
+                  'skills/engineering/grill-me': 'def456',
+                  'utils/helpers': 'ghi789',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: (_message: string, options: Array<{ label: string, value: string, hint?: string }>) =>
+                Effect.sync(() => options.map(o => o.value)),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      // Should extract the last segment as the skill name
+      expect(result.selectedSkills).toEqual({
+        'skills/productivity/caveman': 'caveman',
+        'skills/engineering/grill-me': 'grill-me',
+        'utils/helpers': 'helpers',
+      })
+    })
+
+    it('should provide message indicating how to sync selected skills', async () => {
+      const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
+      await fs.writeFile(
+        metaJsonPath,
+        JSON.stringify(
+          {
+            upstreams: {
+              'test-upstream': {
+                url: 'https://github.com/test/skills',
+                skills: {},
+                available: {
+                  'skills/skill-a': 'abc123',
+                },
+              },
+            },
+          },
+          undefined,
+          2,
+        ),
+      )
+
+      const result = await Effect.runPromise(
+        cloneSkills({
+          root: temporaryDirectory,
+          upstreamName: 'test-upstream',
+        }).pipe(
+          Effect.provide(MetaFileService.Default),
+          Effect.provideService(
+            UserPromptService,
+            createMockUserPromptService({
+              multiSelect: (_message: string, options: Array<{ label: string, value: string, hint?: string }>) =>
+                Effect.sync(() => options.map(o => o.value)),
+            }),
+          ),
+          Effect.provideService(LogService, createMockLogService()),
+        ),
+      )
+
+      expect(result.message).toContain('Selected 1 skill(s)')
+      expect(result.message).toContain('pnpm sync')
+    })
+  })
+})
