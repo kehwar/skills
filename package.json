@@ -11,6 +11,7 @@
     "agents"
   ],
   "scripts": {
+    "build": "tsx src/cli.ts build",
     "test": "vitest run",
     "upstream": "tsx src/cli.ts upstream",
     "clone-skills": "tsx src/cli.ts clone-skills",

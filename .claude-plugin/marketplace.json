@@ -6,7 +6,6 @@
       "skills": [
         "./dev-log",
         "./setup-workflow-skills",
-        "./to-code",
         "./to-epic",
         "./to-features"
       ]
@@ -33,6 +32,13 @@
         "./frappe-standard-script-report-view",
         "./frappe-system-console",
         "./frappe-translations-writer"
+      ]
+    },
+    {
+      "source": "./authored/productivity",
+      "name": "productivity",
+      "skills": [
+        "./refactor-agents-md"
       ]
     },
     {
