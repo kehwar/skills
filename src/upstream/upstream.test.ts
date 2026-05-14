@@ -37,6 +37,26 @@ describe('parseGitHubUrl', () => {
     const result = parseGitHubUrl('https://gitlab.com/owner/repo')
     expect(result).toBeUndefined()
   })
+
+  it('should parse bare owner/repo.git and strip .git suffix', () => {
+    const result = parseGitHubUrl('antfu/skills.git')
+    expect(result).toEqual({ owner: 'antfu', repo: 'skills', normalizedUrl: 'https://github.com/antfu/skills' })
+  })
+
+  it('should reject owner/repo/sub/path (more than one slash)', () => {
+    const result = parseGitHubUrl('owner/repo/sub/path')
+    expect(result).toBeUndefined()
+  })
+
+  it('should reject bare word without slash', () => {
+    const result = parseGitHubUrl('skills')
+    expect(result).toBeUndefined()
+  })
+
+  it('should parse bare owner/repo shorthand to https://github.com/owner/repo', () => {
+    const result = parseGitHubUrl('antfu/skills')
+    expect(result).toEqual({ owner: 'antfu', repo: 'skills', normalizedUrl: 'https://github.com/antfu/skills' })
+  })
 })
 
 describe('resolveUpstreamKey', () => {

@@ -33,6 +33,12 @@ export function parseGitHubUrl(url: string): { owner: string, repo: string, norm
     return { owner: match[1], repo: match[2], normalizedUrl: `https://${normalized}` }
   }
 
+  const bareRegex = /^([^/]+)\/([^/]+)$/ // Matches: owner/repo (bare shorthand)
+  match = bareRegex.exec(normalized)
+  if (match && match[1] !== undefined && match[2] !== undefined) {
+    return { owner: match[1], repo: match[2], normalizedUrl: `https://github.com/${match[1]}/${match[2]}` }
+  }
+
   return undefined
 }
 
