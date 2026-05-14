@@ -2,9 +2,9 @@ import type { LogService } from '../shared/services/index.js'
 import path from 'node:path'
 import { Effect } from 'effect'
 import {
+  GitService,
   MetaFileService,
 } from '../shared/services/index.js'
-import { GitService } from '../upstream/services/index.js'
 
 export interface CheckInput {
   root: string

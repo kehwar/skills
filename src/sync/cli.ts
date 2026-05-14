@@ -8,7 +8,7 @@ import {
   GitService,
   SkillDiscoveryService,
   SkillHashService,
-} from '../upstream/services/index.js'
+} from '../shared/services/index.js'
 import { sync } from './sync.js'
 
 export interface CommandResult {

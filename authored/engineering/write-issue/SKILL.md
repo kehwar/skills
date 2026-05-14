@@ -1,9 +1,11 @@
 ---
-name: to-issue
-description: Turn the current conversation context into a Beads issue (bug|feature|task|epic) and publish it. Use when user wants to create an issue from the current context.
+name: write-issue
+description: Turn the current conversation context into a Beads issue or edit an existing one. Use when user wants to create or update an issue (bug|feature|task|epic).
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a Beads issue. Do NOT interview the user — just synthesize what you already know.
+This skill takes the current conversation context and codebase understanding and produces or updates a Beads issue. Do NOT interview the user — just synthesize what you already know.
+
+At the start, determine whether we are **creating** a new issue or **editing** an existing one. If the user mentions an issue ID (e.g. "issue 42"), contains words like "edit" or "update", or is refining previously discussed work — treat it as an edit.
 
 ## Principles
 
@@ -28,25 +30,24 @@ Describe **what** the system should do, not **how** to implement it. The agent w
 
 ## Process
 
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the issue, and respect any ADRs in the area you're touching.
-
-2. Infer the issue type from the scope of the change:
+1. Infer the issue type from the scope of the change:
    - **epic** — broad change spanning multiple user stories or subsystems (e.g. "add a plugin system")
    - **feature** — single coherent vertical slice deliverable to a user (e.g. "user can export a CSV")
    - **task** — small, well-defined unit of work (e.g. "add validation to the email field", "upgrade lodash")
    - **bug** — something is currently broken and needs to be fixed
 
-3. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
-
-   A deep module (as opposed to a shallow module) is one which encapsulates a lot of functionality in a simple, testable interface which rarely changes.
-
-   Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
-
-4. Write the issue body using the template below, then publish to Beads Issue Tracker:
+2. Write the issue body using the template below, then publish to Beads Issue Tracker:
 
    ```bash
    bd create --type=<type> --title="<issue-title>" --description="<multi-line-body>" --acceptance="<multi-line-acceptance-criteria>"
+   bd update <id> --title="<new-title>" --description="<new-body>"
    ```
+
+   Accepted flags:
+   - `--title` (required) — a concise, descriptive title of the issue
+   - `--description` (required) — a detailed description of the issue
+   - `--acceptance` (optional) — a list of testable acceptance criteria
+   - `--notes` (optional) — implementation notes
 
 <multi-line-epic-body-template>
 

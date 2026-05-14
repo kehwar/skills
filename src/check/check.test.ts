@@ -11,7 +11,7 @@ import {
 } from '../shared/index.js'
 import {
   GitService,
-} from '../upstream/services/index.js'
+} from '../shared/services/index.js'
 
 const MATT_POCOCK_URL = 'https://github.com/mattpocock/skills'
 

@@ -1,3 +1,6 @@
+export { GitService, InvalidBranch, SubmoduleAuthFailed, SubmoduleCloneFailed } from './git.js'
 export { createMockLogService, LogService } from './log.js'
 export { createMockMetaFileService, MetaFileReadError, MetaFileService, MetaFileWriteError } from './meta-file.js'
+export { DirectoryReadError, SkillDiscoveryService } from './skill-discovery.js'
+export { FileReadError, SkillHashService } from './skill-hash.js'
 export { createMockUserPromptService, PromptError, UserPromptService } from './user-prompt.js'

@@ -13,7 +13,7 @@ import {
   GitService,
   SkillDiscoveryService,
   SkillHashService,
-} from '../upstream/services/index.js'
+} from '../shared/services/index.js'
 
 const MATT_POCOCK_URL = 'https://github.com/mattpocock/skills'
 const KNOW_SKILL_PATH = 'skills/engineering/tdd'

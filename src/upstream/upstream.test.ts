@@ -14,7 +14,7 @@ import {
   SkillDiscoveryService,
   SkillHashService,
   UserPromptService,
-} from './services/index.js'
+} from '../shared/services/index.js'
 import { parseGitHubUrl, resolveUpstreamKey, upstreamAdd, UpstreamConflict } from './upstream.js'
 
 describe('parseGitHubUrl', () => {

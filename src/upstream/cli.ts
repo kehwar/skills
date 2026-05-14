@@ -11,7 +11,7 @@ import {
   SkillDiscoveryService,
   SkillHashService,
   UserPromptService,
-} from './services/index.js'
+} from '../shared/services/index.js'
 import { upstreamAdd } from './upstream.js'
 
 export interface CommandResult {

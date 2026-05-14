@@ -4,7 +4,7 @@ import process from 'node:process'
 import { defineCommand, runMain } from 'citty'
 import { Effect } from 'effect'
 import { isCalledDirectly, LogService, MetaFileService } from '../shared/index.js'
-import { GitService } from '../upstream/services/index.js'
+import { GitService } from '../shared/services/index.js'
 import { check } from './check.js'
 
 export const checkCmd = defineCommand({

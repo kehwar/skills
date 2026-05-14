@@ -2,14 +2,12 @@ import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Cause, Effect } from 'effect'
 import {
+  GitService,
   LogService,
   MetaFileService,
-} from '../shared/services/index.js'
-import {
-  GitService,
   SkillDiscoveryService,
   SkillHashService,
-} from '../upstream/services/index.js'
+} from '../shared/services/index.js'
 
 export interface SyncInput {
   root: string

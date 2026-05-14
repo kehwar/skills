@@ -1,8 +1,8 @@
-import type { DirectoryReadError, FileReadError, InvalidBranch, SubmoduleAuthFailed, SubmoduleCloneFailed } from './services/index.js'
+import type { DirectoryReadError, FileReadError, InvalidBranch, SubmoduleAuthFailed, SubmoduleCloneFailed } from '../shared/services/index.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
-import { GitService, LogService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from './services/index.js'
+import { GitService, LogService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from '../shared/services/index.js'
 
 export class InvalidUrl extends Data.TaggedError('InvalidUrl')<{ message: string }> {}
 

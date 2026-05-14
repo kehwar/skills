@@ -8,7 +8,7 @@ import {
   GitService,
   SkillDiscoveryService,
   SkillHashService,
-} from '../upstream/services/index.js'
+} from '../shared/services/index.js'
 import { cloneSkills } from './clone-skills.js'
 
 export interface CommandResult {
