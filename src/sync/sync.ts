@@ -60,7 +60,7 @@ function processUpstream(
 
     const warnings: string[] = []
     if (submoduleUpdateResult._tag === 'Left') {
-      warnings.push(`Failed to update submodule: ${upstreamKey}`)
+      warnings.push(`Failed to update submodule: ${upstreamKey} — ${submoduleUpdateResult.left.message}`)
     }
 
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
@@ -174,9 +174,16 @@ export function sync(
 
     const results: UpstreamResult[] = []
 
-    for (const [upstreamKey, upstream] of Object.entries(metaJson.upstreams)) {
+    for (const [upstreamKey, rawUpstream] of Object.entries(metaJson.upstreams)) {
+      const upstream = {
+        ...rawUpstream,
+        skills: rawUpstream.skills ?? {},
+        available: rawUpstream.available ?? {},
+      }
       const result = yield* processUpstream(input.root, upstreamKey, upstream)
       results.push(result)
+
+      metaJson.upstreams[upstreamKey] = upstream
     }
 
     yield* metaFileService.write(metaPath, metaJson as unknown as Record<string, unknown>).pipe(

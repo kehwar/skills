@@ -1,85 +1,96 @@
 ---
 name: setup-workflow-skills
-description: Sets up an `## Agent orientation` block in AGENTS.md/CLAUDE.md so the engineering skills know this repo uses Beads for issue tracking. Run before first use of `to-tasks`, `to-prd`, `tdd`, `improve-codebase-architecture`, or `zoom-out`.
+description: Scaffolds AGENTS.md, docs/glossary.md, docs/adr/, docs/issue-tracker.md, and Beads issue tracking in a fresh repo.
 disable-model-invocation: true
 ---
 
 # Setup Workflow Skills
 
-Scaffold the per-repo configuration that the engineering skills assume:
+Scaffold the per-repo configuration:
 
-- **Issue tracker** — this workflow uses Beads. Setup auto-detects if it exists and flags a todo if it doesn't.
-- **Agent orientation** — creates or updates the `## Agent orientation` block in AGENTS.md/CLAUDE.md to point to `CONTEXT.md` and `ISSUE_TRACKER.md`
+- **Agent instructions** — creates or updates `AGENTS.md` / `CLAUDE.md` with sections for glossary, ADRs, issue tracker, vocabulary conventions, and file structure.
+- **Glossary & ADRs** — creates `docs/glossary.md` (stub) and `docs/adr/` directory.
+- **Issue tracker** — creates `docs/issue-tracker.md` and initialises Beads if needed.
 
-This is a prompt-driven skill, not a deterministic script. Explore, check for Beads, present findings, confirm with the user, then write.
+This is a prompt-driven skill, not a deterministic script. Explore, check state, present findings, confirm with the user, then write.
 
 ## Process
 
 ### 1. Explore
 
-Look at the current repo to understand its starting state. Read whatever exists; don't assume:
+Look at the current repo to understand its starting state. Don't assume anything:
 
-- Check if Beads CLI is available: `command -v bd`
-- Look for Beads markers: `beads.config.json`, `beads/` directory, `.beads/` configuration
-- Look for Beads in `git/info/exclude`: `cat .git/info/exclude`
-- `AGENTS.md` and `CLAUDE.md` at the repo root — does either exist? Is there already an `## Agent orientation` section in either?
-- `ISSUE_TRACKER.md` at the repo root — does it already exist?
-- `CONTEXT.md` or `CONTEXT-MAP.md` at the repo root (to determine single vs multi-context)
+- **Beads CLI**: `command -v bd`
+- **Beads markers in repo**: `beads.config.json`, `beads/` directory, `.beads/` configuration
+- **Git exclude**: `cat .git/info/exclude` — does it already track `.beads/issues.jsonl`?
+- **Agent instructions**: does `AGENTS.md` or `CLAUDE.md` exist at root? Does either already have sections for glossary, issue tracker, ADR flags, file structure?
+- **docs/ directory**: does `docs/glossary.md`, `docs/adr/`, `docs/issue-tracker.md` exist?
 
 ### 2. Present findings
 
-Summarise what's present and what's missing. **Include the Beads setup status:**
+Summarise what's present and what's missing. Include:
 
-- **Beads CLI available + project initialized** — Beads is ready. Proceed to write.
-- **Beads CLI available + project not initialized** — Beads CLI is installed but `bd init` hasn't been run yet. The write phase will initialize it.
-- **Beads CLI not available** — The Beads CLI needs to be installed. The write phase will install it and then initialize the project.
+- **Beads status**: CLI available + project initialised? CLI available but not initialised? Not installed?
+- **Agent instructions**: which file exists (`AGENTS.md` / `CLAUDE.md` / neither)? Which sections are present and which are missing?
+- **docs/ layout**: which files exist and which need creating?
 
-### 3. Determine context layout and confirm
+### 3. Draft and confirm
 
-Confirm the layout (this affects the Agent orientation block):
-
-- **Single-context** — one `CONTEXT.md` + `docs/adr/` at the repo root. Most repos are this.
-- **Multi-context** — `CONTEXT-MAP.md` at the root pointing to per-context `CONTEXT.md` files (typically a monorepo).
-
-Then show the user a draft of the entire `## Agent orientation` block to add/update in whichever of `CLAUDE.md` / `AGENTS.md` is chosen (see step 4 for selection rules). 
-
-The content comes from:
-- **Single-context:** entire contents of [domain-single-context.md](./domain-single-context.md)
-- **Multi-context:** entire contents of [domain-multi-context.md](./domain-multi-context.md)
+Show the user the proposed `## Agent orientation` block (or whatever sections will go in the chosen file). The content comes from [instructions-template.md](./instructions-template.md).
 
 Let them edit before writing.
 
 **Pick the file to edit:**
-
 - If `CLAUDE.md` exists, edit it.
 - Else if `AGENTS.md` exists, edit it.
-- If neither exists, ask the user which one to create — don't pick for them.
+- If neither exists, ask the user which one to create.
 
-Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa) — always edit the one that's already there.
+Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa). If an `## Agent orientation` block (or the individual sections like `## Before exploring, read these`) already exist in the chosen file, update them in-place rather than appending duplicates. Don't overwrite user edits to surrounding sections.
 
-If an `## Agent orientation` block already exists in the chosen file, update its contents in-place rather than appending a duplicate. Don't overwrite user edits to the surrounding sections.
+### 4. Write
 
-**Then copy the template:**
+**Agent instructions**: Write/update the chosen file with the template sections + a `## File structure & key locations` section. For the file structure section:
 
-- Copy [issue-tracker.md](./issue-tracker.md) → `ISSUE_TRACKER.md` at the repo root
+Write a `## File structure & key locations` section with a placeholder ASCII tree:
 
-**If Beads CLI is not available:**
-
-Run the command:
 ```
+/
+├── ...  # fill in per-project
+```
+
+After writing, leave it up to the user to customise the ASCII tree.
+
+**docs/ layout**: Create the following if they don't exist:
+- `docs/glossary.md` — write a stub:
+  ```markdown
+  # Glossary
+
+  _(Define domain terms here as the project evolves.)_
+  ```
+- `docs/adr/` — empty directory
+- `docs/issue-tracker.md` — copy from [issue-tracker.md](./issue-tracker.md)
+
+**Beads setup**:
+
+If CLI is not available:
+```bash
 curl -fsSL https://raw.githubusercontent.com/gastownhall/beads/main/scripts/install.sh | bash
 ```
 
-This installs the Beads CLI system-wide.
+If project not initialised:
+```bash
+bd init --stealth --non-interactive
+```
 
-**If Beads project initialization is needed:**
+Track the export file in git exclude:
+```bash
+sed -i '/^\.beads\/$/c\.beads/*\n!.beads/issues.jsonl' .git/info/exclude
+```
 
-Run the command: `bd init --stealth --non-interactive`
+### 5. Done
 
-This will create `beads.config.json` and the necessary Beads directory structure in this project.
-
-Run the command: `sed -i '/^\.beads\/$/c\.beads/*\n!.beads/issues.jsonl' .git/info/exclude` to track the `issues.jsonl` export file
-
-### 4. Done
-
-Tell the user the setup is complete. If Beads CLI was installed or the project was initialized, confirm what ran successfully. The `## Agent orientation` block is now in place, and downstream skills (`to-tasks`, `tdd`, etc.) will have the context they need.
+Tell the user:
+- Which files were created or updated
+- Whether Beads CLI was installed and/or project initialised
+- That the file structure section needs manual customisation
+- That `docs/glossary.md` is a stub and should be populated as the project grows

@@ -318,4 +318,44 @@ describe('sync e2e with real repo', () => {
     ).then(() => true).catch(() => false)
     expect(cavemanExists).toBe(true)
   }, 60_000)
+
+  it('should handle upstreams with missing skills/available fields gracefully', async () => {
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(
+      metaPath,
+      JSON.stringify({
+        upstreams: {
+          'no-skills-field': {
+            url: MATT_POCOCK_URL,
+          },
+        },
+      }),
+    )
+
+    await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
+    const upstreamDirectory = path.join(temporaryDirectory, 'upstream', 'no-skills-field')
+    await fs.rename(
+      path.join(temporaryDirectory, 'upstream', 'mattpocock'),
+      upstreamDirectory,
+    )
+
+    const { sync } = await import('./sync.js')
+    const result = await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    expect(result.upstreams).toHaveLength(1)
+    expect(result.upstreams[0]?.skillsCopied).toBe(0)
+    expect(result.upstreams[0]?.skillsRemoved).toBe(0)
+
+    const updatedMeta = JSON.parse(await fs.readFile(metaPath, 'utf8')) as MetaJson
+    expect(updatedMeta.upstreams['no-skills-field']?.skills).toEqual({})
+    expect(updatedMeta.upstreams['no-skills-field']?.available).toBeDefined()
+  }, 60_000)
 })

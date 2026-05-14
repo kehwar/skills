@@ -11,7 +11,7 @@ Issues are tracked exclusively with Beads Issue Tracker (`bd`). When working wit
 
 ## Use the glossary's vocabulary
 
-When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
+When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `docs/glossary.md`. Don't drift to synonyms the glossary explicitly avoids.
 
 If the concept you need isn't in the glossary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap, flag it to the user.
 
@@ -25,12 +25,5 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 
 ```
 /
-├── docs/glossary.md        # domain glossary
-├── docs/issue-tracker.md   # issue guidelines
-├── docs/adr/               # architecture decisions
-├── meta.json               # Upstream config (url, branch, skill selections)
-├── authored/<domain>/      # Authored Skills (type: "authored") — never overwritten
-├── skills/<name>/          # synced from Upstreams (type: "synced") — ephemeral!
-├── upstream/<key>/         # read-only Upstream submodules — never edit
-└── scripts/                # ⚠️ DEPRECATED — do not reference or add to
+├── ...  # fill in per-project
 ```

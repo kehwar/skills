@@ -148,19 +148,18 @@ export class GitService extends Effect.Service<GitService>()('upstream/GitServic
           const fullPath = path.join(root, submodulePath)
           const git = simpleGit(fullPath)
 
-          await git.fetch(['--depth', '1'])
-
           if (branch !== undefined && branch.length > 0) {
             const remotes = await git.getRemotes()
             const originRemote = remotes.find(r => r.name === 'origin')
             const firstRemoteName = remotes[0]?.name
             const remoteName = originRemote?.name ?? firstRemoteName ?? 'origin'
 
-            await git.raw(['fetch', remoteName, `+refs/heads/${branch}:refs/remotes/${remoteName}/${branch}`])
+            await git.raw(['fetch', '--depth', '1', remoteName, `+refs/heads/${branch}:refs/remotes/${remoteName}/${branch}`])
             await git.checkout(['-B', branch, `${remoteName}/${branch}`])
           }
           else {
-            await git.pull()
+            await git.raw(['fetch', '--depth', '1', 'origin', 'HEAD'])
+            await git.raw(['checkout', 'FETCH_HEAD'])
           }
         },
         catch: (error: unknown) => {
