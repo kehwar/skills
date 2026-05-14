@@ -1,6 +1,6 @@
 ---
-name: to-features
-description: Break a plan, spec, or PRD into independently-grabbable features using tracer-bullet vertical slices. Use when user wants to decompose an epic into independent features that can be implemented sequentially.
+name: break-issue
+description: Decompose any issue into independently-grabbable features using tracer-bullet vertical slices. Use when user wants to break an issue into independent features that can be implemented sequentially.
 ---
 
 # To Features
