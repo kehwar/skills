@@ -13,6 +13,7 @@ export class LogService extends Effect.Service<LogService>()('shared/LogService'
     intro: (text: string) => Effect.sync(() => { p.intro(text) }),
     success: (text: string) => Effect.sync(() => { p.log.success(text) }),
     info: (text: string) => Effect.sync(() => { p.log.info(text) }),
+    warn: (text: string) => Effect.sync(() => { p.log.warn(text) }),
     error: (text: string) => Effect.sync(() => { p.log.error(text) }),
     outro: (text: string) => Effect.sync(() => { p.outro(text) }),
     startSpinner: (text: string) =>
@@ -35,6 +36,7 @@ export function createMockLogService(overrides?: Partial<LogServiceConfig>): Log
     intro: (_text: string) => Effect.sync(() => {}),
     success: (_text: string) => Effect.sync(() => {}),
     info: (_text: string) => Effect.sync(() => {}),
+    warn: (_text: string) => Effect.sync(() => {}),
     error: (_text: string) => Effect.sync(() => {}),
     outro: (_text: string) => Effect.sync(() => {}),
     startSpinner: (_text: string) =>

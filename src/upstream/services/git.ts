@@ -141,6 +141,36 @@ export class GitService extends Effect.Service<GitService>()('upstream/GitServic
           })
         },
       }),
+    updateSubmodule: (root: string, upstreamKey: string, branch?: string) =>
+      Effect.tryPromise({
+        try: async () => {
+          const submodulePath = path.join('upstream', upstreamKey)
+          const fullPath = path.join(root, submodulePath)
+          const git = simpleGit(fullPath)
+
+          await git.fetch(['--depth', '1'])
+
+          if (branch !== undefined && branch.length > 0) {
+            const remotes = await git.getRemotes()
+            const originRemote = remotes.find(r => r.name === 'origin')
+            const firstRemoteName = remotes[0]?.name
+            const remoteName = originRemote?.name ?? firstRemoteName ?? 'origin'
+
+            await git.raw(['fetch', remoteName, `+refs/heads/${branch}:refs/remotes/${remoteName}/${branch}`])
+            await git.checkout(['-B', branch, `${remoteName}/${branch}`])
+          }
+          else {
+            await git.pull()
+          }
+        },
+        catch: (error: unknown) => {
+          const message = error instanceof Error ? error.message : String(error)
+          return new SubmoduleCloneFailed({
+            url: upstreamKey,
+            message: `Failed to update submodule: ${message}`,
+          })
+        },
+      }),
     setSubmoduleBranch: (root: string, upstreamKey: string, branch: string) =>
       Effect.tryPromise({
         try: async () => {
