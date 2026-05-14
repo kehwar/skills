@@ -1,15 +1,15 @@
 ---
-name: to-epic
-description: Turn the current conversation context into an epic and publish it to Beads Issue Tracker. Use when user wants to create an epic from the current context.
+name: to-issue
+description: Turn the current conversation context into a Beads issue (bug|feature|task|epic) and publish it. Use when user wants to create an issue from the current context.
 ---
 
-This skill takes the current conversation context and codebase understanding and produces an epic. Do NOT interview the user — just synthesize what you already know.
+This skill takes the current conversation context and codebase understanding and produces a Beads issue. Do NOT interview the user — just synthesize what you already know.
 
 ## Principles
 
 ### Durability over precision
 
-The epic may stay on backlog for days or weeks. The codebase will change in the meantime. Write the epic so it stays useful even as files are renamed, moved, or refactored.
+The issue may sit on the backlog for days or weeks. The codebase will change in the meantime. Write the description so it stays useful even as files are renamed, moved, or refactored.
 
 - **Do** describe interfaces, types, and behavioral contracts
 - **Do** name specific types, function signatures, or config shapes that the agent should look for or modify
@@ -28,19 +28,25 @@ Describe **what** the system should do, not **how** to implement it. The agent w
 
 ## Process
 
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the epic, and respect any ADRs in the area you're touching.
+1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the issue, and respect any ADRs in the area you're touching.
 
-2. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
+2. Infer the issue type from the scope of the change:
+   - **epic** — broad change spanning multiple user stories or subsystems (e.g. "add a plugin system")
+   - **feature** — single coherent vertical slice deliverable to a user (e.g. "user can export a CSV")
+   - **task** — small, well-defined unit of work (e.g. "add validation to the email field", "upgrade lodash")
+   - **bug** — something is currently broken and needs to be fixed
 
-A deep module (as opposed to a shallow module) is one which encapsulates a lot of functionality in a simple, testable interface which rarely changes.
+3. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
 
-Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
+   A deep module (as opposed to a shallow module) is one which encapsulates a lot of functionality in a simple, testable interface which rarely changes.
 
-3. Write the epic using the template below, then publish it to Beads Issue Tracker using:
+   Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-```bash
-bd create --type=epic --title="<epic-title>" --description="<multi-line-epic-body>" --acceptance="<multi-line-acceptance-criteria>"
-```
+4. Write the issue body using the template below, then publish to Beads Issue Tracker:
+
+   ```bash
+   bd create --type=<type> --title="<issue-title>" --description="<multi-line-body>" --acceptance="<multi-line-acceptance-criteria>"
+   ```
 
 <multi-line-epic-body-template>
 
