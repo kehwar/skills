@@ -1049,6 +1049,10 @@ describe('upstream-add', () => {
       const upstreams = meta.upstreams as Record<string, Record<string, unknown>>
       expect(upstreams['hello-world']).toBeDefined()
       expect(upstreams['hello-world']?.url).toBe('https://github.com/octocat/Hello-World')
+
+      const currentBranch = await submoduleGit.revparse(['--abbrev-ref', 'HEAD'])
+      expect(currentBranch.trim()).not.toBe('HEAD')
+      expect(upstreams['hello-world']?.branch).toBe(currentBranch.trim())
     })
 
     it(

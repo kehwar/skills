@@ -206,14 +206,19 @@ function setupSubmodule(
   upstreamKey: string,
   url: string,
   branch: string | undefined,
-): Effect.Effect<void, SubmoduleCloneFailed | SubmoduleAuthFailed | InvalidBranch, GitService | LogService> {
+): Effect.Effect<string, SubmoduleCloneFailed | SubmoduleAuthFailed | InvalidBranch, GitService | LogService> {
   return Effect.gen(function* () {
     const gitService = yield* GitService
     const logService = yield* LogService
 
-    if (branch !== undefined && branch.length > 0) {
-      yield* logService.info(`Validating branch: ${branch}`)
-      yield* gitService.validateBranchExists(url, branch)
+    let effectiveBranch = branch
+    if (effectiveBranch === undefined || effectiveBranch.length === 0) {
+      effectiveBranch = yield* gitService.detectDefaultBranch(url)
+      yield* logService.info(`Auto-detected branch: ${effectiveBranch}`)
+    }
+    else {
+      yield* logService.info(`Validating branch: ${effectiveBranch}`)
+      yield* gitService.validateBranchExists(url, effectiveBranch)
     }
 
     const submodulePath = path.join(root, 'upstream', upstreamKey)
@@ -224,16 +229,29 @@ function setupSubmodule(
 
     const submoduleExists = yield* checkExists
 
-    if (!submoduleExists) {
+    if (submoduleExists) {
+      const isGitRepo = yield* Effect.tryPromise({
+        try: async () => {
+          const dotGit = path.join(submodulePath, '.git')
+          const stat = await fs.stat(dotGit)
+          return stat.isDirectory() || stat.isFile()
+        },
+        catch: (error: unknown) => new Error(String(error)),
+      }).pipe(Effect.catchAll(() => Effect.succeed(false)))
+      if (isGitRepo) {
+        yield* logService.info(`Checking out branch: ${effectiveBranch}`)
+        yield* gitService.checkoutBranch(root, path.join('upstream', upstreamKey), effectiveBranch)
+        yield* gitService.setSubmoduleBranch(root, upstreamKey, effectiveBranch)
+      }
+    }
+    else {
       yield* logService.info('Cloning submodule...')
-      yield* gitService.addSubmodule(root, upstreamKey, url, branch)
+      yield* gitService.addSubmodule(root, upstreamKey, url, effectiveBranch)
+      yield* gitService.checkoutBranch(root, path.join('upstream', upstreamKey), effectiveBranch)
+      yield* gitService.setSubmoduleBranch(root, upstreamKey, effectiveBranch)
     }
 
-    if (branch !== undefined && branch.length > 0) {
-      yield* logService.info(`Checking out branch: ${branch}`)
-      yield* gitService.checkoutBranch(root, path.join('upstream', upstreamKey), branch)
-      yield* gitService.setSubmoduleBranch(root, upstreamKey, branch)
-    }
+    return effectiveBranch
   })
 }
 
@@ -317,12 +335,12 @@ export function upstreamAdd(input: UpstreamAddInput): Effect.Effect<UpstreamAddO
     yield* validateUpstreamInput(url, upstreamKey, metaJson)
 
     yield* logService.info(`Fetching upstream: ${upstreamKey}`)
-    yield* setupSubmodule(input.root, upstreamKey, url, input.branch)
+    const effectiveBranch = yield* setupSubmodule(input.root, upstreamKey, url, input.branch)
 
     const discoveredSkills = yield* discoverAndHashSkills(input.root, upstreamKey)
 
     const isNew = !(upstreamKey in metaJson.upstreams)
-    yield* updateMetaFile(metaPath, metaJson, upstreamKey, url, input.branch, input.selectedSkills, discoveredSkills)
+    yield* updateMetaFile(metaPath, metaJson, upstreamKey, url, effectiveBranch, input.selectedSkills, discoveredSkills)
 
     return {
       isNew,

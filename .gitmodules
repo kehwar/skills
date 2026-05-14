@@ -2,6 +2,7 @@
 [submodule "upstream/typst"]
 	path = upstream/typst
 	url = https://github.com/typst/typst
+	branch = main
 [submodule "upstream/frappe"]
 	path = upstream/frappe
 	url = https://github.com/frappe/frappe
@@ -13,33 +14,43 @@
 [submodule "upstream/print_designer"]
 	path = upstream/print_designer
 	url = https://github.com/frappe/print_designer
+	branch = develop
 [submodule "upstream/press"]
 	path = upstream/press
 	url = https://github.com/frappe/press
+	branch = develop
 [submodule "upstream/antfu"]
 	path = upstream/antfu
 	url = https://github.com/antfu/skills
+	branch = main
 [submodule "upstream/mattpocock"]
 	path = upstream/mattpocock
 	url = https://github.com/mattpocock/skills
+	branch = main
 [submodule "upstream/anthropics"]
 	path = upstream/anthropics
 	url = https://github.com/anthropics/skills
+	branch = main
 [submodule "upstream/lucifer1004"]
 	path = upstream/lucifer1004
 	url = https://github.com/lucifer1004/claude-skill-typst
+	branch = main
 [submodule "upstream/noartem"]
 	path = upstream/noartem
 	url = https://github.com/noartem/laravel-vue-skills
+	branch = main
 [submodule "upstream/silvainfm"]
 	path = upstream/silvainfm
 	url = https://github.com/silvainfm/claude-skills
+	branch = main
 [submodule "upstream/vuejs-ai"]
 	path = upstream/vuejs-ai
 	url = https://github.com/vuejs-ai/skills
+	branch = main
 [submodule "upstream/vueuse"]
 	path = upstream/vueuse
 	url = https://github.com/vueuse/skills
+	branch = main
 [submodule "upstream/vercel-labs"]
 	path = upstream/vercel-labs
 	url = https://github.com/vercel-labs/skills
@@ -52,9 +63,12 @@
 [submodule "upstream/eslint-config"]
 	path = upstream/eslint-config
 	url = https://github.com/antfu/eslint-config
+	branch = main
 [submodule "upstream/opencode"]
 	path = upstream/opencode
 	url = https://github.com/anomalyco/opencode
+	branch = dev
 [submodule "upstream/dictionary-of-ai-coding"]
 	path = upstream/dictionary-of-ai-coding
 	url = https://github.com/mattpocock/dictionary-of-ai-coding
+	branch = main

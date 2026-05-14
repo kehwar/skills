@@ -238,6 +238,39 @@ describe('sync e2e with real repo', () => {
     expect(Object.keys(skills)).toHaveLength(0)
   }, 60_000)
 
+  it('should auto-detect and persist branch when upstream has none configured', async () => {
+    await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
+
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(
+      metaPath,
+      JSON.stringify({
+        upstreams: {
+          mattpocock: {
+            url: MATT_POCOCK_URL,
+            skills: {},
+            available: {},
+          },
+        },
+      }),
+    )
+
+    const { sync } = await import('./sync.js')
+    await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    const updatedMeta = JSON.parse(await fs.readFile(metaPath, 'utf8')) as MetaJson
+    expect(updatedMeta.upstreams.mattpocock?.branch).toBeDefined()
+    expect(updatedMeta.upstreams.mattpocock?.branch?.length).toBeGreaterThan(0)
+  }, 60_000)
+
   it('should update submodule and available for reference-only upstream (no selected skills)', async () => {
     await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
 

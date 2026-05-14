@@ -62,6 +62,12 @@ function processUpstream(
     if (submoduleUpdateResult._tag === 'Left') {
       warnings.push(`Failed to update submodule: ${upstreamKey} — ${submoduleUpdateResult.left.message}`)
     }
+    else if (submoduleUpdateResult.right) {
+      const effectiveBranch = submoduleUpdateResult.right
+      if (upstream.branch !== effectiveBranch) {
+        upstream.branch = effectiveBranch
+      }
+    }
 
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
 

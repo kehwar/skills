@@ -28,7 +28,7 @@ export class MetaFileService extends Effect.Service<MetaFileService>()('shared/M
     write: (filePath: string, data: Record<string, unknown>) =>
       Effect.tryPromise({
         try: async () => {
-          await fs.writeFile(filePath, JSON.stringify(data, undefined, 2))
+          await fs.writeFile(filePath, `${JSON.stringify(data, undefined, 2)}\n`)
         },
         catch: () => new MetaFileWriteError({ message: 'Failed to write meta.json' }),
       }),
