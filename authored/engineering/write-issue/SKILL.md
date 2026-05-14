@@ -3,10 +3,6 @@ name: write-issue
 description: Turn the current conversation context into a Beads issue or edit an existing one. Use when user wants to create or update an issue (bug|feature|task|epic).
 ---
 
-This skill takes the current conversation context and codebase understanding and produces or updates a Beads issue. Do NOT interview the user — just synthesize what you already know.
-
-At the start, determine whether we are **creating** a new issue or **editing** an existing one. If the user mentions an issue ID (e.g. "issue 42"), contains words like "edit" or "update", or is refining previously discussed work — treat it as an edit.
-
 ## Principles
 
 ### Durability over precision
@@ -39,15 +35,17 @@ Describe **what** the system should do, not **how** to implement it. The agent w
 2. Write the issue body using the template below, then publish to Beads Issue Tracker:
 
    ```bash
+   # To create a new issue
    bd create --type=<type> --title="<issue-title>" --description="<multi-line-body>" --acceptance="<multi-line-acceptance-criteria>"
+   # To update an existing issue
    bd update <id> --title="<new-title>" --description="<new-body>"
    ```
 
    Accepted flags:
-   - `--title` (required) — a concise, descriptive title of the issue
-   - `--description` (required) — a detailed description of the issue
-   - `--acceptance` (optional) — a list of testable acceptance criteria
-   - `--notes` (optional) — implementation notes
+   - `--title` — a concise, descriptive title of the issue
+   - `--description` — a detailed description of the issue
+   - `--acceptance` — a list of testable acceptance criteria
+   - `--notes` — implementation notes, write here when closing the issue to document how it was solved
 
 <multi-line-epic-body-template>
 
