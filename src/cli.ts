@@ -1,5 +1,6 @@
 import { defineCommand, runMain } from 'citty'
 import { buildCmd } from './build/index.js'
+import { checkCmd } from './check/index.js'
 import { cloneSkillsCmd } from './clone-skills/index.js'
 import { syncCmd } from './sync/index.js'
 import { upstreamCmd } from './upstream/index.js'
@@ -11,9 +12,10 @@ export const main = defineCommand({
   },
   subCommands: {
     'build': buildCmd,
+    'check': checkCmd,
+    'clone-skills': cloneSkillsCmd,
     'sync': syncCmd,
     'upstream': upstreamCmd,
-    'clone-skills': cloneSkillsCmd,
   },
 })
 

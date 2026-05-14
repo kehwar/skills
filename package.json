@@ -15,6 +15,7 @@
     "sync": "tsx src/cli.ts sync",
     "test": "vitest run",
     "upstream": "tsx src/cli.ts upstream",
+    "check": "tsx src/cli.ts check",
     "clone-skills": "tsx src/cli.ts clone-skills",
     "opencode": "opencode web --hostname 0.0.0.0",
     "lint": "eslint .",

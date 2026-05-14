@@ -176,6 +176,35 @@ export class GitService extends Effect.Service<GitService>()('upstream/GitServic
           })
         },
       }),
+    fetchSubmodule: (root: string, upstreamKey: string) =>
+      Effect.tryPromise({
+        try: async () => {
+          const submodulePath = path.join('upstream', upstreamKey)
+          const fullPath = path.join(root, submodulePath)
+          const git = simpleGit(fullPath)
+          await git.fetch()
+        },
+        catch: (error: unknown) => {
+          const message = error instanceof Error ? error.message : String(error)
+          return new SubmoduleCloneFailed({
+            url: upstreamKey,
+            message: `Failed to fetch submodule: ${message}`,
+          })
+        },
+      }),
+    countCommitsBehind: (root: string, upstreamKey: string) =>
+      Effect.tryPromise({
+        try: async () => {
+          const submodulePath = path.join('upstream', upstreamKey)
+          const fullPath = path.join(root, submodulePath)
+          const git = simpleGit(fullPath)
+          const count = await git.raw(['rev-list', '--count', 'HEAD..@{u}'])
+          return Number.parseInt(count.trim(), 10)
+        },
+        catch: (error: unknown) => new Error(String(error)),
+      }).pipe(
+        Effect.catchAll(() => Effect.succeed(-1)),
+      ),
     setSubmoduleBranch: (root: string, upstreamKey: string, branch: string) =>
       Effect.tryPromise({
         try: async () => {
