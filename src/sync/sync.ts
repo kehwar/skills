@@ -41,6 +41,25 @@ interface MetaJson {
   >
 }
 
+function shouldSkipSkillCopy(
+  service: SkillHashService,
+  upstream: { available: Record<string, string> },
+  skillPath: string,
+  targetDirectory: string,
+  upstreamHash: string,
+): Effect.Effect<boolean, never, never> {
+  const existingHash = upstream.available[skillPath]
+  if (existingHash !== upstreamHash) {
+    return Effect.succeed(false)
+  }
+  return service.hashSkillDirectory(targetDirectory).pipe(
+    Effect.match({
+      onSuccess: (hash: string) => hash === upstreamHash,
+      onFailure: () => false,
+    }),
+  )
+}
+
 function processUpstream(
   root: string,
   upstreamKey: string,
@@ -112,8 +131,8 @@ function processUpstream(
       validSelected[skillPath] = outputName
       const targetDirectory = path.join(root, 'skills', outputName)
 
-      const existingHash = upstream.available[skillPath]
-      if (existingHash === upstreamHash) {
+      const shouldSkip = yield* shouldSkipSkillCopy(skillHashService, upstream, skillPath, targetDirectory, upstreamHash)
+      if (shouldSkip) {
         skillsSkipped++
         continue
       }

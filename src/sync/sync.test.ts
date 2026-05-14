@@ -352,6 +352,159 @@ describe('sync e2e with real repo', () => {
     expect(cavemanExists).toBe(true)
   }, 60_000)
 
+  it('should re-copy when target skill directory is deleted after initial sync', async () => {
+    await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
+
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(
+      metaPath,
+      JSON.stringify({
+        upstreams: {
+          mattpocock: {
+            url: MATT_POCOCK_URL,
+            skills: { [KNOW_SKILL_PATH]: KNOW_SKILL_OUTPUT },
+            available: {},
+          },
+        },
+      }),
+    )
+
+    const { sync } = await import('./sync.js')
+
+    await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    await fs.rm(
+      path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT),
+      { recursive: true, force: true },
+    )
+
+    const result = await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    expect(result.upstreams[0]?.skillsCopied).toBe(1)
+
+    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const content = await fs.readFile(skillFile, 'utf8')
+    expect(content).toContain('#')
+  }, 90_000)
+
+  it('should re-copy when target skill directory is emptied after initial sync', async () => {
+    await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
+
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(
+      metaPath,
+      JSON.stringify({
+        upstreams: {
+          mattpocock: {
+            url: MATT_POCOCK_URL,
+            skills: { [KNOW_SKILL_PATH]: KNOW_SKILL_OUTPUT },
+            available: {},
+          },
+        },
+      }),
+    )
+
+    const { sync } = await import('./sync.js')
+
+    await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    const skillTargetDirectory = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT)
+    const entries = await fs.readdir(skillTargetDirectory)
+    await Promise.all(
+      entries.map(async (entry) => {
+        await fs.rm(path.join(skillTargetDirectory, entry), { recursive: true, force: true })
+      }),
+    )
+
+    const result = await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    expect(result.upstreams[0]?.skillsCopied).toBe(1)
+
+    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const content = await fs.readFile(skillFile, 'utf8')
+    expect(content).toContain('#')
+  }, 90_000)
+
+  it('should re-copy when files are removed from target skill directory after initial sync', async () => {
+    await addSubmoduleFixture(temporaryDirectory, 'mattpocock')
+
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(
+      metaPath,
+      JSON.stringify({
+        upstreams: {
+          mattpocock: {
+            url: MATT_POCOCK_URL,
+            skills: { [KNOW_SKILL_PATH]: KNOW_SKILL_OUTPUT },
+            available: {},
+          },
+        },
+      }),
+    )
+
+    const { sync } = await import('./sync.js')
+
+    await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    await fs.rm(skillFile)
+
+    const result = await Effect.runPromise(
+      sync({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillDiscoveryService.Default),
+        Effect.provide(SkillHashService.Default),
+        Effect.provideService(LogService, createMockLogService()),
+        Effect.provide(GitService.Default),
+      ),
+    )
+
+    expect(result.upstreams[0]?.skillsCopied).toBe(1)
+
+    const restoredContent = await fs.readFile(skillFile, 'utf8')
+    expect(restoredContent).toContain('#')
+  }, 90_000)
+
   it('should handle upstreams with missing skills/available fields gracefully', async () => {
     const metaPath = path.join(temporaryDirectory, 'meta.json')
     await fs.writeFile(
