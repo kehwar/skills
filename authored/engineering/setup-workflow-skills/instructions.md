@@ -21,9 +21,3 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 
 > _Contradicts ADR-0007 (event-sourced orders) — but worth reopening because…_
 
-## File structure & key locations
-
-```
-/
-├── ...  # fill in per-project
-```

@@ -15,20 +15,25 @@ _Avoid_: Manual skill, custom skill
 An organizational category for Authored Skills (e.g., `frappe`, `sap`, `typst`, `engineering`). Skills with a domain are grouped in `authored/<domain>/`. Domain names may match Upstream names, but they are independent concepts.
 _Avoid_: Upstream, category, folder, organization
 
+**Synced Skill**:
+A copy of a Skill from an Upstream, stored under `synced/<name>/`. Synced Skills are ephemeral — they are created by Sync and can be removed by Cleanup.
+_Avoid_: Upstream skill, copied skill
+
 **Upstream**:
 An external GitHub repo tracked as a git submodule under `upstream/<key>`. May contribute Skills (if it contains `SKILL.md` files) and/or serve as reference material for Authored Skills.
 _Avoid_: Vendor, source, provider, dependency
 
 ## Relationships
 
-- A **Skill** is either an **Authored Skill** or copied from an **Upstream**
-- An **Upstream** contributes zero or more **Skills** (selected subset, not all)
-- **Sync** only touches Upstream-sourced skills; **Authored Skills** are never overwritten
+- A **Skill** is either an **Authored Skill** or a **Synced Skill**
+- A **Synced Skill** is a copy of a Skill from an **Upstream**
+- An **Upstream** contributes zero or more **Synced Skills** (selected subset, not all)
+- **Sync** only touches **Synced Skills**; **Authored Skills** are never overwritten
 
 ## Example dialogue
 
 > **Dev:** "I added a new Frappe doctype skill — should I commit it under the frappe Upstream?"
-> **Domain expert:** "No. Upstreams are read-only. Your skill goes under `skills/` as an Authored Skill. You can optionally reference the Upstream as its source, but it's owned here."
+> **Domain expert:** "No. Upstreams are read-only. Your skill goes under `authored/` as an Authored Skill. You can optionally reference the Upstream as its source, but it's owned here."
 
 > **Dev:** "What's the difference between `frappe` and `antfu` as Upstreams?"
 > **Domain expert:** "None structurally. `antfu` happens to have `SKILL.md` files so Sync copies skills from it. `frappe` doesn't, so it's reference-only. Same concept either way."

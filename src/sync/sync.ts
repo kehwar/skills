@@ -108,7 +108,7 @@ function processUpstream(
 
       if (upstreamHash === undefined) {
         warnings.push(`Skill "${skillPath}" no longer found in upstream "${upstreamKey}"`)
-        const targetDirectory = path.join(root, 'skills', outputName)
+        const targetDirectory = path.join(root, 'synced', outputName)
         yield* Effect.tryPromise({
           try: async () => fs.rm(targetDirectory, { recursive: true, force: true }),
           catch: () => {},
@@ -118,7 +118,7 @@ function processUpstream(
       }
 
       validSelected[skillPath] = outputName
-      const targetDirectory = path.join(root, 'skills', outputName)
+      const targetDirectory = path.join(root, 'synced', outputName)
 
       const shouldSkip = yield* shouldSkipSkillCopy(skillHashService, upstream, skillPath, targetDirectory, upstreamHash)
       if (shouldSkip) {

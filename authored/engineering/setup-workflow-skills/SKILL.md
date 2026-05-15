@@ -1,91 +1,91 @@
 ---
 name: setup-workflow-skills
-description: Scaffolds AGENTS.md, docs/glossary.md, docs/adr/, docs/issue-tracker.md, and Beads issue tracking in a fresh repo.
+description: Detects and fixes deviations from the prescribed repo workflow configuration — AGENTS.md, docs layout, and Beads issue tracking.
 disable-model-invocation: true
 ---
 
 # Setup Workflow Skills
 
-Scaffold the per-repo configuration:
+Reconciles a repo against the following **desired state**:
 
-- **Agent instructions** — creates or updates `AGENTS.md` / `CLAUDE.md` with sections for glossary, ADRs, issue tracker, vocabulary conventions, and file structure.
-- **Glossary & ADRs** — creates `docs/glossary.md` (stub) and `docs/adr/` directory.
-- **Issue tracker** — creates `docs/issue-tracker.md` and initialises Beads if needed.
+| # | Goal | Check |
+|---|------|-------|
+| 1 | `AGENTS.md` exists with 4 prescribed blocks (Before exploring, Issue tracker, Glossary vocabulary, Flag ADRs), contiguous and verbatim | File present, block matches canonical |
+| 2 | `docs/glossary.md` exists | File present |
+| 3 | `docs/adr/` directory exists | Dir present |
+| 4 | `docs/issue-tracker.md` content matches canonical | File present, exact match |
+| 5 | `bd` CLI installed | `command -v bd` succeeds |
+| 6 | Beads project initialised | `bd list` succeeds |
+| 7 | Beads config: no hooks, stealth mode, `.beads/` in `.git/info/exclude` | Config correct, exclude entry present |
+| 8 | Prescribed skills are available: `break-issue`, `grill-with-docs`, `tdd`, `write-issue`, `improve-codebase-architecture` | Each skill has an entry in `skills-lock.json` AND a directory under `.agents/skills/<skill>/` with `SKILL.md` |
 
-This is a prompt-driven skill, not a deterministic script. Explore, check state, present findings, confirm with the user, then write.
+The fix is always **plan-then-execute**: detect all deviations, report them, get user confirmation, then apply.
 
 ## Process
 
 ### 1. Explore
 
-Look at the current repo to understand its starting state. Don't assume anything:
+Check each goal against the current repo state:
 
-- **Beads CLI**: `command -v bd`
-- **Beads markers in repo**: `beads.config.json`, `beads/` directory, `.beads/` configuration
-- **Git exclude**: `cat .git/info/exclude` — does it already track `.beads/issues.jsonl`?
-- **Agent instructions**: does `AGENTS.md` or `CLAUDE.md` exist at root? Does either already have sections for glossary, issue tracker, ADR flags, file structure?
-- **docs/ directory**: does `docs/glossary.md`, `docs/adr/`, `docs/issue-tracker.md` exist?
+- **Goal 1**: Read [instructions.md](./instructions.md) for canonical content. Read `AGENTS.md` (if it exists). Find the contiguous block from `## Before exploring, read these` through end of `## Flag ADR conflicts`. Compare exact string match.
+- **Goals 2-3**: Check file/dir existence.
+- **Goal 4**: Read `docs/issue-tracker.md` (if it exists) and compare full content against [issue-tracker.md](./issue-tracker.md).
+- **Goal 5**: `command -v bd`
+- **Goal 6**: `bd list` (or `bd --version` / equivalent non-mutating command)
+- **Goal 7**: Check for hooks config (beads.config.json or `.beads/` hooks), check stealth flag, check `.git/info/exclude` for `.beads/issues.jsonl`.
+- **Goal 8**: For each prescribed skill, check `skills-lock.json` for an entry keyed by the skill name, and check `.agents/skills/<skill>/SKILL.md` exists. Prescribed skills: `break-issue`, `grill-with-docs`, `tdd`, `write-issue`, `improve-codebase-architecture`.
 
-### 2. Present findings
+### 2. Report
 
-Summarise what's present and what's missing. Include:
-
-- **Beads status**: CLI available + project initialised? CLI available but not initialised? Not installed?
-- **Agent instructions**: which file exists (`AGENTS.md` / `CLAUDE.md` / neither)? Which sections are present and which are missing?
-- **docs/ layout**: which files exist and which need creating?
-
-### 3. Draft and confirm
-
-Show the user the proposed `## Agent orientation` block (or whatever sections will go in the chosen file). The content comes from [instructions-template.md](./instructions-template.md).
-
-Let them edit before writing.
-
-**Pick the file to edit:**
-- If `CLAUDE.md` exists, edit it.
-- Else if `AGENTS.md` exists, edit it.
-- If neither exists, ask the user which one to create.
-
-Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa). If an `## Agent orientation` block (or the individual sections like `## Before exploring, read these`) already exist in the chosen file, update them in-place rather than appending duplicates. Don't overwrite user edits to surrounding sections.
-
-### 4. Write
-
-**Agent instructions**: Write/update the chosen file with the template sections + a `## File structure & key locations` section. For the file structure section:
-
-Write a `## File structure & key locations` section with a placeholder ASCII tree:
+Present a summary:
 
 ```
-/
-├── ...  # fill in per-project
+Found [n]/8 goals satisfied.
+
+Deviations:
+- [Goal 1] ...
+- [Goal 3] ...
+...
 ```
 
-After writing, leave it up to the user to customise the ASCII tree.
+### 3. Confirm
 
-**docs/ layout**: Create the following if they don't exist:
-- `docs/glossary.md` — write a stub:
-  ```markdown
-  # Glossary
+Show the planned fixes. Wait for user approval before applying.
 
-  _(Define domain terms here as the project evolves.)_
-  ```
-- `docs/adr/` — empty directory
-- `docs/issue-tracker.md` — copy from [issue-tracker.md](./issue-tracker.md)
+### 4. Fix
 
-**Beads setup**:
+**Goal 1 (AGENTS.md):**
+- If the prescribed block is missing or drifted, replace the entire contiguous range (`## Before exploring, read these` through end of `## Flag ADR conflicts`) with canonical content from [instructions.md](./instructions.md). Preserve everything outside that range.
+- If `AGENTS.md` doesn't exist, create it with the canonical content.
 
-If CLI is not available:
+**Goal 2 (glossary):** Create `docs/glossary.md` with a stub if missing. Never overwrite existing content.
+
+**Goal 3 (adr):** Create `docs/adr/` if missing.
+
+**Goal 4 (issue tracker):** Write/overwrite `docs/issue-tracker.md` with canonical content from [issue-tracker.md](./issue-tracker.md).
+
+**Goal 5 (CLI):** If `bd` not found:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/gastownhall/beads/main/scripts/install.sh | bash
 ```
 
-If project not initialised:
+**Goal 6 (init):** If project not initialised:
 ```bash
 bd init --stealth --non-interactive
 ```
 
+**Goal 7 (config):**
+- Ensure no beads hooks are configured (check `beads.config.json` or `.beads/`).
+- Ensure `.beads/issues.jsonl` is listed in `.git/info/exclude`. Append if missing.
+
+**Goal 8 (prescribed skills):**
+For each missing skill:
+1. Compute the hash of `authored/engineering/<skill>/SKILL.md` (if it exists) — or locate the skill from the appropriate upstream submodule.
+2. Add or update the entry in `skills-lock.json` with `source: "kehwar/skills"`, `sourceType: "github"`, `skillPath: "authored/engineering/<skill>/SKILL.md"`, and the computed hash.
+3. Create `.agents/skills/<skill>/` and copy `SKILL.md` (and any supporting files) from the source location.
+
+If a skill doesn't exist locally and can't be resolved from an upstream submodule, flag it as requiring manual setup.
+
 ### 5. Done
 
-Tell the user:
-- Which files were created or updated
-- Whether Beads CLI was installed and/or project initialised
-- That the file structure section needs manual customisation
-- That `docs/glossary.md` is a stub and should be populated as the project grows
+Report which fixes were applied. Note any goals that couldn't be auto-fixed.

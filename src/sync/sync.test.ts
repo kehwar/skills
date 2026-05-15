@@ -81,7 +81,7 @@ describe('sync e2e with real repo', () => {
     expect(result.upstreams[0]?.upstreamKey).toBe('mattpocock')
     expect(result.upstreams[0]?.skillsCopied).toBe(1)
 
-    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const skillFile = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'SKILL.md')
     const content = await fs.readFile(skillFile, 'utf8')
     expect(content).toContain('#')
     expect(content.toLowerCase()).toContain('tdd')
@@ -159,7 +159,7 @@ describe('sync e2e with real repo', () => {
       ),
     )
 
-    const staleFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'stale.txt')
+    const staleFile = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'stale.txt')
     await fs.writeFile(staleFile, 'stale')
 
     const metaContent = JSON.parse(await fs.readFile(metaPath, 'utf8')) as MetaJson
@@ -182,7 +182,7 @@ describe('sync e2e with real repo', () => {
     expect(staleExists).toBe(false)
 
     const freshContent = await fs.readFile(
-      path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md'),
+      path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'SKILL.md'),
       'utf8',
     )
     expect(freshContent).toContain('#')
@@ -205,7 +205,7 @@ describe('sync e2e with real repo', () => {
       }),
     )
 
-    const staleDirectory = path.join(temporaryDirectory, 'skills', 'nope')
+    const staleDirectory = path.join(temporaryDirectory, 'synced', 'nope')
     await fs.mkdir(staleDirectory, { recursive: true })
     await fs.writeFile(path.join(staleDirectory, 'SKILL.md'), '# Stale')
 
@@ -336,12 +336,12 @@ describe('sync e2e with real repo', () => {
     expect(result.upstreams[0]?.skillsCopied).toBe(2)
 
     const tddExists = await fs.stat(
-      path.join(temporaryDirectory, 'skills', 'tdd', 'SKILL.md'),
+      path.join(temporaryDirectory, 'synced', 'tdd', 'SKILL.md'),
     ).then(() => true).catch(() => false)
     expect(tddExists).toBe(true)
 
     const cavemanExists = await fs.stat(
-      path.join(temporaryDirectory, 'skills', 'caveman', 'SKILL.md'),
+      path.join(temporaryDirectory, 'synced', 'caveman', 'SKILL.md'),
     ).then(() => true).catch(() => false)
     expect(cavemanExists).toBe(true)
   }, 60_000)
@@ -376,7 +376,7 @@ describe('sync e2e with real repo', () => {
     )
 
     await fs.rm(
-      path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT),
+      path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT),
       { recursive: true, force: true },
     )
 
@@ -392,7 +392,7 @@ describe('sync e2e with real repo', () => {
 
     expect(result.upstreams[0]?.skillsCopied).toBe(1)
 
-    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const skillFile = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'SKILL.md')
     const content = await fs.readFile(skillFile, 'utf8')
     expect(content).toContain('#')
   }, 90_000)
@@ -426,7 +426,7 @@ describe('sync e2e with real repo', () => {
       ),
     )
 
-    const skillTargetDirectory = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT)
+    const skillTargetDirectory = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT)
     const entries = await fs.readdir(skillTargetDirectory)
     await Promise.all(
       entries.map(async (entry) => {
@@ -446,7 +446,7 @@ describe('sync e2e with real repo', () => {
 
     expect(result.upstreams[0]?.skillsCopied).toBe(1)
 
-    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const skillFile = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'SKILL.md')
     const content = await fs.readFile(skillFile, 'utf8')
     expect(content).toContain('#')
   }, 90_000)
@@ -480,7 +480,7 @@ describe('sync e2e with real repo', () => {
       ),
     )
 
-    const skillFile = path.join(temporaryDirectory, 'skills', KNOW_SKILL_OUTPUT, 'SKILL.md')
+    const skillFile = path.join(temporaryDirectory, 'synced', KNOW_SKILL_OUTPUT, 'SKILL.md')
     await fs.rm(skillFile)
 
     const result = await Effect.runPromise(

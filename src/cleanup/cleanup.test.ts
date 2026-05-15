@@ -22,15 +22,15 @@ describe('cleanup', () => {
     )
   }
 
-  async function createSkillsDirectory(name: string): Promise<void> {
-    const directory = path.join(temporaryDirectory, 'skills', name)
+  async function createSyncedDirectory(name: string): Promise<void> {
+    const directory = path.join(temporaryDirectory, 'synced', name)
     await fs.mkdir(directory, { recursive: true })
     await fs.writeFile(path.join(directory, 'SKILL.md'), `# ${name}`)
   }
 
   it('removes a single orphaned skill folder from skills/', async () => {
     await writeMeta({ testupstream: { skills: {} } })
-    await createSkillsDirectory('orphan-skill')
+    await createSyncedDirectory('orphan-skill')
 
     const { cleanup } = await import('./cleanup.js')
     const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
@@ -39,15 +39,15 @@ describe('cleanup', () => {
     expect(result.exitCode).toBe(0)
 
     const orphanExists = await fs.stat(
-      path.join(temporaryDirectory, 'skills', 'orphan-skill'),
+      path.join(temporaryDirectory, 'synced', 'orphan-skill'),
     ).then(() => true).catch(() => false)
     expect(orphanExists).toBe(false)
   })
 
   it('removes multiple orphaned skill folders', async () => {
     await writeMeta({ testupstream: { skills: {} } })
-    await createSkillsDirectory('orphan-a')
-    await createSkillsDirectory('orphan-b')
+    await createSyncedDirectory('orphan-a')
+    await createSyncedDirectory('orphan-b')
 
     const { cleanup } = await import('./cleanup.js')
     const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
@@ -56,16 +56,16 @@ describe('cleanup', () => {
     expect(result.removed).toHaveLength(2)
     expect(result.exitCode).toBe(0)
 
-    const aExists = await fs.stat(path.join(temporaryDirectory, 'skills', 'orphan-a')).then(() => true).catch(() => false)
-    const bExists = await fs.stat(path.join(temporaryDirectory, 'skills', 'orphan-b')).then(() => true).catch(() => false)
+    const aExists = await fs.stat(path.join(temporaryDirectory, 'synced', 'orphan-a')).then(() => true).catch(() => false)
+    const bExists = await fs.stat(path.join(temporaryDirectory, 'synced', 'orphan-b')).then(() => true).catch(() => false)
     expect(aExists).toBe(false)
     expect(bExists).toBe(false)
   })
 
   it('does not remove declared skills', async () => {
     await writeMeta({ testupstream: { skills: { 'some/path': 'declared-skill' } } })
-    await createSkillsDirectory('declared-skill')
-    await createSkillsDirectory('orphan-skill')
+    await createSyncedDirectory('declared-skill')
+    await createSyncedDirectory('orphan-skill')
 
     const { cleanup } = await import('./cleanup.js')
     const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
@@ -73,7 +73,7 @@ describe('cleanup', () => {
     expect(result.removed).toEqual(['orphan-skill'])
 
     const declaredExists = await fs.stat(
-      path.join(temporaryDirectory, 'skills', 'declared-skill'),
+      path.join(temporaryDirectory, 'synced', 'declared-skill'),
     ).then(() => true).catch(() => false)
     expect(declaredExists).toBe(true)
   })
@@ -117,17 +117,17 @@ describe('cleanup', () => {
       upstreamA: { skills: { 'skills/a': 'skill-a' } },
       upstreamB: { skills: { 'skills/b': 'skill-b' } },
     })
-    await createSkillsDirectory('skill-a')
-    await createSkillsDirectory('skill-b')
-    await createSkillsDirectory('skill-c')
+    await createSyncedDirectory('skill-a')
+    await createSyncedDirectory('skill-b')
+    await createSyncedDirectory('skill-c')
 
     const { cleanup } = await import('./cleanup.js')
     const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
 
     expect(result.removed).toEqual(['skill-c'])
 
-    const aExists = await fs.stat(path.join(temporaryDirectory, 'skills', 'skill-a')).then(() => true).catch(() => false)
-    const bExists = await fs.stat(path.join(temporaryDirectory, 'skills', 'skill-b')).then(() => true).catch(() => false)
+    const aExists = await fs.stat(path.join(temporaryDirectory, 'synced', 'skill-a')).then(() => true).catch(() => false)
+    const bExists = await fs.stat(path.join(temporaryDirectory, 'synced', 'skill-b')).then(() => true).catch(() => false)
     expect(aExists).toBe(true)
     expect(bExists).toBe(true)
   })

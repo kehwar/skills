@@ -30,7 +30,7 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 ├── docs/adr/               # architecture decisions
 ├── meta.json               # Upstream config (url, branch, skill selections)
 ├── authored/<domain>/      # Authored Skills (type: "authored") — never overwritten
-├── skills/<name>/          # synced from Upstreams (type: "synced") — ephemeral!
+├── synced/<name>/          # Synced Skills (copied from Upstreams) — ephemeral!
 ├── upstream/<key>/         # read-only Upstream submodules — never edit
 └── scripts/                # ⚠️ DEPRECATED — do not reference or add to
 ```

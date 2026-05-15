@@ -36,7 +36,7 @@ export function cleanup(input: CleanupInput): Effect.Effect<CleanupOutput, never
       }
     }
 
-    const skillsDirectory = path.join(input.root, 'skills')
+    const skillsDirectory = path.join(input.root, 'synced')
     let skillsEntries: string[]
     try {
       skillsEntries = await fs.readdir(skillsDirectory, { withFileTypes: true })

@@ -9,7 +9,7 @@ import { build } from './build.js'
 export const buildCmd = defineCommand({
   meta: {
     name: 'build',
-    description: 'Generate .claude-plugin/marketplace.json from authored/ skills',
+    description: 'Generate .claude-plugin/plugin.json with all authored and synced skills',
   },
   async run() {
     const result = await Effect.runPromise(
@@ -18,6 +18,12 @@ export const buildCmd = defineCommand({
 
     if (typeof result.message === 'string') {
       console.log(result.message)
+    }
+
+    if (result.warnings.length > 0) {
+      for (const warning of result.warnings) {
+        console.warn(`⚠ ${warning}`)
+      }
     }
 
     process.exit(result.exitCode)
