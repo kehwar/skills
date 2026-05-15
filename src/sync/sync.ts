@@ -4,7 +4,10 @@ import type {
   MetaJson,
   SkillDiscoveryService,
 } from '../shared/services/index.js'
-import type { OutputName } from '../shared/services/meta-file.js'
+import type {
+  OutputName,
+  UpstreamEntry,
+} from '../shared/services/meta-file.js'
 import type { SkillPath } from '../shared/services/skill-discovery.js'
 import type { SkillHash } from '../shared/services/skill-hash.js'
 import type { Skill } from '../upstream/upstream.js'
@@ -17,6 +20,9 @@ import {
   SkillCloningService,
   SkillHashService,
 } from '../shared/services/index.js'
+import {
+  buildUpstreamEntry,
+} from '../shared/services/meta-file.js'
 import { discoverAndHashSkills, setupSubmodule } from '../upstream/upstream.js'
 
 export interface SyncInput {
@@ -29,6 +35,7 @@ export interface UpstreamResult {
   skillsSkipped: number
   skillsRemoved: number
   warnings: string[]
+  updatedEntry: UpstreamEntry
 }
 
 export interface SyncOutput {
@@ -180,10 +187,6 @@ function processUpstream(
       upstream.branch,
     )
 
-    if (effectiveBranch !== undefined && upstream.branch !== effectiveBranch) {
-      upstream.branch = effectiveBranch
-    }
-
     const discoveredSkills = yield* discoverAndHashSkills(root, upstreamKey).pipe(
       Effect.catchAll(() => Effect.succeed([] as Skill[])),
     )
@@ -197,13 +200,14 @@ function processUpstream(
     for (const entry of [...diff.toCopy, ...diff.toSkip]) {
       validSelected[entry.skillPath] = entry.outputName
     }
-    upstream.skills = validSelected
 
     const availableMap: Record<SkillPath, SkillHash> = {}
     for (const skill of discoveredSkills) {
       availableMap[skill.path] = skill.hash
     }
-    upstream.available = availableMap
+
+    const resolvedBranch = effectiveBranch ?? upstream.branch
+    const updatedEntry = buildUpstreamEntry(upstream.url, resolvedBranch, validSelected, availableMap)
 
     return {
       upstreamKey,
@@ -211,6 +215,7 @@ function processUpstream(
       skillsSkipped: result.skillsSkipped,
       skillsRemoved: result.skillsRemoved,
       warnings: [...diff.warnings, ...warnings],
+      updatedEntry,
     }
   }).pipe(
     Effect.catchAllCause(cause =>
@@ -220,6 +225,7 @@ function processUpstream(
         skillsSkipped: 0,
         skillsRemoved: 0,
         warnings: [`Failed to sync upstream "${upstreamKey}": ${Cause.pretty(cause)}`],
+        updatedEntry: upstream,
       }),
     ),
   )
@@ -253,7 +259,7 @@ export function sync(
       const result = yield* processUpstream(input.root, upstreamKey, upstream)
       results.push(result)
 
-      metaJson.upstreams[upstreamKey] = upstream
+      metaJson.upstreams[upstreamKey] = result.updatedEntry
     }
 
     yield* metaFileService.write(metaPath, metaJson).pipe(

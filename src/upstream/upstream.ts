@@ -6,6 +6,7 @@ import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
 import { GitService, LogService, MetaFileService, SkillDiscoveryService, SkillHashService, UserPromptService } from '../shared/services/index.js'
+import { buildUpstreamEntry } from '../shared/services/meta-file.js'
 
 export class InvalidUrl extends Data.TaggedError('InvalidUrl')<{ message: string }> {}
 
@@ -293,12 +294,7 @@ function updateMetaFile(
       availableMap[skill.path] = skill.hash
     }
 
-    metaJson.upstreams[upstreamKey] = {
-      url,
-      ...(branch !== undefined && branch.length > 0 ? { branch } : {}),
-      skills: selectedSkills,
-      available: availableMap,
-    }
+    metaJson.upstreams[upstreamKey] = buildUpstreamEntry(url, branch, selectedSkills, availableMap)
 
     yield* metaFileService.write(metaPath, metaJson).pipe(
       Effect.catchTag('MetaFileWriteError', () =>

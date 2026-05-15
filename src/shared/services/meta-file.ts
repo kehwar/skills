@@ -17,6 +17,20 @@ export interface MetaJson {
   upstreams: Record<string, UpstreamEntry>
 }
 
+export function buildUpstreamEntry(
+  url: string,
+  branch: string | undefined,
+  skills: Record<SkillPath, OutputName>,
+  available: Record<SkillPath, SkillHash>,
+): UpstreamEntry {
+  return {
+    url,
+    ...(branch !== undefined && branch.length > 0 ? { branch } : {}),
+    skills,
+    available,
+  }
+}
+
 export class MetaFileNotFoundError extends Data.TaggedError('MetaFileNotFoundError')<{
   filePath: string
 }> {}

@@ -37,7 +37,7 @@ async function addSubmoduleFixture(root: string, upstreamKey: string): Promise<v
   }
 }
 
-function mockSkillHashService(hash: SkillHash | undefined): SkillHashService {
+function mockSkillHashService(hash?: SkillHash): SkillHashService {
   return new SkillHashService({
     hashSkillDirectory: (_path: string) => {
       if (hash === undefined) {
