@@ -4,6 +4,7 @@ import process from 'node:process'
 import { defineCommand, runMain } from 'citty'
 import { Effect } from 'effect'
 import { isCalledDirectly } from '../shared/index.js'
+import { MetaFileService, SkillCleanupService } from '../shared/services/index.js'
 import { cleanup } from './cleanup.js'
 
 export const cleanupCmd = defineCommand({
@@ -13,7 +14,10 @@ export const cleanupCmd = defineCommand({
   },
   async run() {
     const result = await Effect.runPromise(
-      cleanup({ root: process.cwd() }),
+      cleanup({ root: process.cwd() }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
     )
 
     if (result.removed.length > 0) {

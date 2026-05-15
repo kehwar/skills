@@ -6,6 +6,7 @@ import { Effect } from 'effect'
 import { isCalledDirectly, LogService, MetaFileService } from '../shared/index.js'
 import {
   GitService,
+  SkillCloningService,
   SkillDiscoveryService,
   SkillHashService,
 } from '../shared/services/index.js'
@@ -44,6 +45,7 @@ function handleSync(root: string): Effect.Effect<CommandResult, Error> {
     Effect.provide(LogService.Default),
     Effect.provide(SkillDiscoveryService.Default),
     Effect.provide(SkillHashService.Default),
+    Effect.provide(SkillCloningService.Default),
     Effect.provide(GitService.Default),
   )
 }

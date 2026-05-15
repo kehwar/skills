@@ -3,6 +3,7 @@ import * as os from 'node:os'
 import path from 'node:path'
 import { Effect } from 'effect'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { MetaFileService, SkillCleanupService } from '../shared/services/index.js'
 
 describe('cleanup', () => {
   let temporaryDirectory: string
@@ -33,7 +34,12 @@ describe('cleanup', () => {
     await createSyncedDirectory('orphan-skill')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.removed).toEqual(['orphan-skill'])
     expect(result.exitCode).toBe(0)
@@ -50,7 +56,12 @@ describe('cleanup', () => {
     await createSyncedDirectory('orphan-b')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.removed).toEqual(expect.arrayContaining(['orphan-a', 'orphan-b']))
     expect(result.removed).toHaveLength(2)
@@ -68,7 +79,12 @@ describe('cleanup', () => {
     await createSyncedDirectory('orphan-skill')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.removed).toEqual(['orphan-skill'])
 
@@ -86,7 +102,12 @@ describe('cleanup', () => {
     await fs.writeFile(path.join(authoredDirectory, 'SKILL.md'), '# My Skill')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.exitCode).toBe(0)
 
@@ -98,7 +119,12 @@ describe('cleanup', () => {
     await writeMeta({ testupstream: { skills: {} } })
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.exitCode).toBe(0)
     expect(result.removed).toEqual([])
@@ -106,7 +132,12 @@ describe('cleanup', () => {
 
   it('handles missing meta.json gracefully', async () => {
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.exitCode).toBe(0)
     expect(result.removed).toEqual([])
@@ -122,7 +153,12 @@ describe('cleanup', () => {
     await createSyncedDirectory('skill-c')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.removed).toEqual(['skill-c'])
 
@@ -136,7 +172,12 @@ describe('cleanup', () => {
     await fs.writeFile(path.join(temporaryDirectory, 'meta.json'), 'not valid json')
 
     const { cleanup } = await import('./cleanup.js')
-    const result = await Effect.runPromise(cleanup({ root: temporaryDirectory }))
+    const result = await Effect.runPromise(
+      cleanup({ root: temporaryDirectory }).pipe(
+        Effect.provide(MetaFileService.Default),
+        Effect.provide(SkillCleanupService.Default),
+      ),
+    )
 
     expect(result.exitCode).toBe(1)
   })

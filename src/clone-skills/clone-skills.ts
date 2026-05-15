@@ -1,7 +1,13 @@
-import type { MetaJson, PromptError } from '../shared/services/index.js'
+import type { MetaJson } from '../shared/services/index.js'
+import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
-import { LogService, MetaFileService, UserPromptService } from '../shared/services/index.js'
+import {
+  LogService,
+  MetaFileService,
+  SkillCloningService,
+  UserPromptService,
+} from '../shared/services/index.js'
 
 export class InvalidUpstreamName extends Data.TaggedError('InvalidUpstreamName')<{
   message: string
@@ -24,38 +30,41 @@ export interface CloneSkillsOutput {
   upstreamName: string
   selectedSkills: Record<string, string>
   message: string
+  cloned: string[]
+  removed: string[]
 }
 
 function parseSkillPath(skillPath: string): string {
-  // Convert 'skills/skillname' to 'skillname'
   const parts = skillPath.split('/')
   const skillName = parts.at(-1)
   return skillName ?? skillPath
 }
 
+type CloneServices = MetaFileService | UserPromptService | LogService | SkillCloningService
+
 export function cloneSkills(
   input: CloneSkillsInput,
 ): Effect.Effect<
   CloneSkillsOutput,
-  InvalidUpstreamName | NoAvailableSkills | PromptError | MetaFileError,
-  MetaFileService | UserPromptService | LogService
+  unknown,
+  CloneServices
 > {
   return Effect.gen(function* () {
     const metaFileService = yield* MetaFileService
     const userPromptService = yield* UserPromptService
     const logService = yield* LogService
+    const skillCloningService = yield* SkillCloningService
 
     const metaPath = path.join(input.root, 'meta.json')
     const metaData = yield* metaFileService.read(metaPath).pipe(
-      Effect.catchAll(error =>
-        logService.warn(`Failed to read meta.json: ${error._tag}`).pipe(
+      Effect.catchAll((error: unknown) =>
+        logService.warn(`Failed to read meta.json: ${(error as { _tag: string })._tag}`).pipe(
           Effect.andThen(Effect.succeed({ upstreams: {} })),
         ),
       ),
     )
     const metaJson: MetaJson = { upstreams: {}, ...metaData }
 
-    // Validate upstream exists
     const upstream = metaJson.upstreams[input.upstreamName]
     if (upstream === undefined) {
       return yield* Effect.fail(
@@ -65,7 +74,6 @@ export function cloneSkills(
       )
     }
 
-    // Get available skills
     const availableSkillPaths = Object.keys(upstream.available)
 
     if (availableSkillPaths.length === 0) {
@@ -76,7 +84,6 @@ export function cloneSkills(
       )
     }
 
-    // Prepare options for multi-select
     const options = availableSkillPaths.map((skillPath) => {
       const skillName = parseSkillPath(skillPath)
       return {
@@ -86,10 +93,8 @@ export function cloneSkills(
       }
     })
 
-    // Get currently selected skills to show as checked
     const currentSelections = new Set(Object.keys(upstream.skills))
 
-    // Show interactive multi-select
     yield* logService.info(`Available skills in "${input.upstreamName}":`)
     const selectedPaths = yield* userPromptService.multiSelect(
       'Select skills to clone',
@@ -97,14 +102,38 @@ export function cloneSkills(
       [...currentSelections],
     )
 
-    // Build the selected skills map (skillPath -> skillName)
     const selectedSkills: Record<string, string> = {}
     for (const skillPath of selectedPaths) {
       const skillName = parseSkillPath(skillPath)
       selectedSkills[skillPath] = skillName
     }
 
-    // Update meta.json
+    const previouslySelected = Object.keys(upstream.skills)
+    const newlySelected = selectedPaths.filter(p => !currentSelections.has(p))
+    const deselected = previouslySelected.filter(p => !selectedPaths.includes(p))
+
+    const cloned: string[] = []
+    for (const skillPath of newlySelected) {
+      const outputName = selectedSkills[skillPath]!
+      const sourceDirectory = path.join(input.root, 'upstream', input.upstreamName, skillPath)
+      const destinationDirectory = path.join(input.root, 'synced', outputName)
+      yield* skillCloningService.copySkill(sourceDirectory, destinationDirectory).pipe(
+        Effect.catchAll(() => Effect.void),
+      )
+      cloned.push(skillPath)
+    }
+
+    const removed: string[] = []
+    for (const skillPath of deselected) {
+      const outputName = upstream.skills[skillPath]!
+      const targetDirectory = path.join(input.root, 'synced', outputName)
+      yield* Effect.tryPromise({
+        try: async () => fs.rm(targetDirectory, { recursive: true, force: true }),
+        catch: () => {},
+      })
+      removed.push(skillPath)
+    }
+
     const updatedMeta = {
       ...metaJson,
       upstreams: {
@@ -122,14 +151,27 @@ export function cloneSkills(
     )
 
     const count = selectedPaths.length
-    const message = count === 0
-      ? `No skills selected for "${input.upstreamName}"`
-      : `Selected ${count} skill(s) from "${input.upstreamName}" - run 'pnpm sync' to copy them`
+    let message: string
+    if (count === 0) {
+      message = `No skills selected for "${input.upstreamName}"`
+    }
+    else {
+      const parts: string[] = [`Selected ${count} skill(s) from "${input.upstreamName}"`]
+      if (cloned.length > 0) {
+        parts.push(`cloned ${cloned.length}`)
+      }
+      if (removed.length > 0) {
+        parts.push(`removed ${removed.length}`)
+      }
+      message = parts.join(', ')
+    }
 
     return {
       upstreamName: input.upstreamName,
       selectedSkills,
       message,
+      cloned,
+      removed,
     }
   })
 }

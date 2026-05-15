@@ -8,6 +8,7 @@ import {
   GitService,
   LogService,
   MetaFileService,
+  SkillCloningService,
   SkillDiscoveryService,
   SkillHashService,
 } from '../shared/services/index.js'
@@ -28,7 +29,7 @@ export interface SyncOutput {
   upstreams: UpstreamResult[]
 }
 
-type SyncServices = MetaFileService | LogService | SkillDiscoveryService | SkillHashService | GitService
+type SyncServices = MetaFileService | LogService | SkillDiscoveryService | SkillHashService | GitService | SkillCloningService
 
 function shouldSkipSkillCopy(
   service: SkillHashService,
@@ -59,6 +60,7 @@ function processUpstream(
     const gitService = yield* GitService
     const skillDiscoveryService = yield* SkillDiscoveryService
     const skillHashService = yield* SkillHashService
+    const skillCloningService = yield* SkillCloningService
 
     yield* logService.info(`Syncing upstream: ${upstreamKey}`)
 
@@ -128,20 +130,9 @@ function processUpstream(
 
       const sourceDirectory = path.join(root, 'upstream', upstreamKey, skillPath)
 
-      yield* Effect.tryPromise({
-        try: async () => {
-          await fs.rm(targetDirectory, { recursive: true, force: true })
-          await fs.mkdir(targetDirectory, { recursive: true })
-
-          const entries = await fs.readdir(sourceDirectory, { withFileTypes: true })
-          for (const entry of entries) {
-            const sourcePath = path.join(sourceDirectory, entry.name)
-            const targetPath = path.join(targetDirectory, entry.name)
-            await (entry.isDirectory() ? fs.cp(sourcePath, targetPath, { recursive: true }) : fs.copyFile(sourcePath, targetPath))
-          }
-        },
-        catch: () => {},
-      })
+      yield* skillCloningService.copySkill(sourceDirectory, targetDirectory).pipe(
+        Effect.catchAll(() => Effect.void),
+      )
 
       skillsCopied++
     }

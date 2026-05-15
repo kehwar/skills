@@ -5,9 +5,7 @@ import { defineCommand, runMain } from 'citty'
 import { Effect } from 'effect'
 import { isCalledDirectly, LogService, MetaFileService, UserPromptService } from '../shared/index.js'
 import {
-  GitService,
-  SkillDiscoveryService,
-  SkillHashService,
+  SkillCloningService,
 } from '../shared/services/index.js'
 import { cloneSkills } from './clone-skills.js'
 
@@ -43,9 +41,7 @@ function handleCloneSkills(input: CommandInput): Effect.Effect<CommandResult, Er
     Effect.provide(MetaFileService.Default),
     Effect.provide(UserPromptService.Default),
     Effect.provide(LogService.Default),
-    Effect.provide(GitService.Default),
-    Effect.provide(SkillDiscoveryService.Default),
-    Effect.provide(SkillHashService.Default),
+    Effect.provide(SkillCloningService.Default),
   )
 }
 

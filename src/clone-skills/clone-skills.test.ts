@@ -10,6 +10,7 @@ import {
   MetaFileService,
   UserPromptService,
 } from '../shared/index.js'
+import { SkillCloningService } from '../shared/services/index.js'
 import { cloneSkills, InvalidUpstreamName, NoAvailableSkills } from './clone-skills.js'
 
 describe('clone-skills', () => {
@@ -29,18 +30,23 @@ describe('clone-skills', () => {
       await fs.writeFile(metaJsonPath, JSON.stringify({ upstreams: {} }, undefined, 2))
 
       const result = await Effect.runPromise(
-        cloneSkills({
-          root: temporaryDirectory,
-          upstreamName: 'nonexistent',
-        }).pipe(
-          Effect.provide(MetaFileService.Default),
-          Effect.provideService(UserPromptService, createMockUserPromptService()),
-          Effect.provideService(LogService, createMockLogService()),
-          Effect.catchTag('InvalidUpstreamName', error => Effect.succeed(error)),
+        Effect.either(
+          cloneSkills({
+            root: temporaryDirectory,
+            upstreamName: 'nonexistent',
+          }).pipe(
+            Effect.provide(MetaFileService.Default),
+            Effect.provideService(UserPromptService, createMockUserPromptService()),
+            Effect.provideService(LogService, createMockLogService()),
+            Effect.provide(SkillCloningService.Default),
+          ),
         ),
       )
 
-      expect(result).toBeInstanceOf(InvalidUpstreamName)
+      expect(result._tag).toBe('Left')
+      if (result._tag === 'Left') {
+        expect(result.left).toBeInstanceOf(InvalidUpstreamName)
+      }
     })
 
     it('should reject when upstream has no available skills', async () => {
@@ -63,18 +69,23 @@ describe('clone-skills', () => {
       )
 
       const result = await Effect.runPromise(
-        cloneSkills({
-          root: temporaryDirectory,
-          upstreamName: 'empty-upstream',
-        }).pipe(
-          Effect.provide(MetaFileService.Default),
-          Effect.provideService(UserPromptService, createMockUserPromptService()),
-          Effect.provideService(LogService, createMockLogService()),
-          Effect.catchTag('NoAvailableSkills', error => Effect.succeed(error)),
+        Effect.either(
+          cloneSkills({
+            root: temporaryDirectory,
+            upstreamName: 'empty-upstream',
+          }).pipe(
+            Effect.provide(MetaFileService.Default),
+            Effect.provideService(UserPromptService, createMockUserPromptService()),
+            Effect.provideService(LogService, createMockLogService()),
+            Effect.provide(SkillCloningService.Default),
+          ),
         ),
       )
 
-      expect(result).toBeInstanceOf(NoAvailableSkills)
+      expect(result._tag).toBe('Left')
+      if (result._tag === 'Left') {
+        expect(result.left).toBeInstanceOf(NoAvailableSkills)
+      }
     })
 
     it('should allow user to select skills from available options', async () => {
@@ -114,6 +125,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -166,11 +178,11 @@ describe('clone-skills', () => {
             UserPromptService,
             createMockUserPromptService({
               multiSelect: (_message: string, _options: Array<{ label: string, value: string, hint?: string }>, initialValues?: string[]) =>
-                // User keeps only skill-a (deselects skill-b)
                 Effect.sync(() => initialValues?.filter(v => v === 'skills/skill-a') ?? []),
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -226,6 +238,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -270,6 +283,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -306,7 +320,6 @@ describe('clone-skills', () => {
         ),
       )
 
-      // First run: keep skill-a, add skill-c
       const result1 = await Effect.runPromise(
         cloneSkills({
           root: temporaryDirectory,
@@ -320,6 +333,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -328,7 +342,6 @@ describe('clone-skills', () => {
         'skills/skill-c': 'skill-c',
       })
 
-      // Second run: add skill-b as well
       const result2 = await Effect.runPromise(
         cloneSkills({
           root: temporaryDirectory,
@@ -342,6 +355,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -351,7 +365,6 @@ describe('clone-skills', () => {
         'skills/skill-c': 'skill-c',
       })
 
-      // Third run: remove skill-b
       const result3 = await Effect.runPromise(
         cloneSkills({
           root: temporaryDirectory,
@@ -365,6 +378,7 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
@@ -418,10 +432,10 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
-      // Should extract the last segment as the skill name
       expect(result.selectedSkills).toEqual({
         'skills/productivity/caveman': 'caveman',
         'skills/engineering/grill-me': 'grill-me',
@@ -429,7 +443,7 @@ describe('clone-skills', () => {
       })
     })
 
-    it('should provide message indicating how to sync selected skills', async () => {
+    it('should provide message indicating cloned and removed counts', async () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
@@ -464,11 +478,11 @@ describe('clone-skills', () => {
             }),
           ),
           Effect.provideService(LogService, createMockLogService()),
+          Effect.provide(SkillCloningService.Default),
         ),
       )
 
       expect(result.message).toContain('Selected 1 skill(s)')
-      expect(result.message).toContain('pnpm sync')
     })
   })
 })

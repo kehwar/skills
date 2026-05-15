@@ -1,6 +1,10 @@
-import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Effect } from 'effect'
+import {
+  MetaFileNotFoundError,
+  MetaFileService,
+  SkillCleanupService,
+} from '../shared/services/index.js'
 
 export interface CleanupInput {
   root: string
@@ -12,47 +16,40 @@ export interface CleanupOutput {
   message?: string
 }
 
-export function cleanup(input: CleanupInput): Effect.Effect<CleanupOutput, never> {
-  return Effect.tryPromise(async () => {
+type CleanupServices = MetaFileService | SkillCleanupService
+
+export function cleanup(input: CleanupInput): Effect.Effect<CleanupOutput, never, CleanupServices> {
+  return Effect.gen(function* () {
+    const metaFileService = yield* MetaFileService
+    const skillCleanupService = yield* SkillCleanupService
+
     const metaPath = path.join(input.root, 'meta.json')
-    let metaContent: string
-    try {
-      metaContent = await fs.readFile(metaPath, 'utf8')
-    }
-    catch {
-      return { exitCode: 0, removed: [], message: 'No meta.json found' }
-    }
+    const metaData = yield* metaFileService.read(metaPath).pipe(
+      Effect.catchAll((error) => {
+        if (error instanceof MetaFileNotFoundError) {
+          return Effect.succeed({ upstreams: {} })
+        }
+        // Re-throw MetaFileInvalidJsonError and other errors
+        return Effect.fail(error)
+      }),
+    )
 
-    const meta = JSON.parse(metaContent) as { upstreams?: Record<string, { skills?: Record<string, string> }> }
-    const declaredSet = new Set<string>()
-
-    if (meta.upstreams) {
-      for (const upstream of Object.values(meta.upstreams)) {
-        if (upstream.skills) {
-          for (const outputName of Object.values(upstream.skills)) {
-            declaredSet.add(outputName)
+    const declaredNames: string[] = []
+    if (metaData.upstreams !== undefined) {
+      for (const upstream of Object.values(metaData.upstreams)) {
+        const upstreamSkills = (upstream as { skills?: Record<string, string> }).skills
+        if (upstreamSkills !== undefined) {
+          for (const outputName of Object.values(upstreamSkills)) {
+            declaredNames.push(outputName)
           }
         }
       }
     }
 
-    const skillsDirectory = path.join(input.root, 'synced')
-    let skillsEntries: string[]
-    try {
-      skillsEntries = await fs.readdir(skillsDirectory, { withFileTypes: true })
-        .then(entries => entries.filter(entry => entry.isDirectory()).map(entry => entry.name))
-    }
-    catch {
-      return { exitCode: 0, removed: [], message: 'No skills/ directory found' }
-    }
-
-    const orphans = skillsEntries.filter(name => !declaredSet.has(name))
-    const removed: string[] = []
-
-    for (const orphan of orphans) {
-      await fs.rm(path.join(skillsDirectory, orphan), { recursive: true, force: true })
-      removed.push(orphan)
-    }
+    const removed = yield* skillCleanupService.removeOrphans(
+      declaredNames,
+      path.join(input.root, 'synced'),
+    )
 
     return { exitCode: 0, removed }
   }).pipe(
