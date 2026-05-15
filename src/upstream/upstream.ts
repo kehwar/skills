@@ -252,7 +252,7 @@ export function setupSubmodule(
   })
 }
 
-function discoverAndHashSkills(
+export function discoverAndHashSkills(
   root: string,
   upstreamKey: string,
 ): Effect.Effect<Skill[], DirectoryReadError | FileReadError, SkillDiscoveryService | SkillHashService | LogService> {

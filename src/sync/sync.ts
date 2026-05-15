@@ -2,10 +2,12 @@ import type {
   GitService,
 
   MetaJson,
+  SkillDiscoveryService,
 } from '../shared/services/index.js'
 import type { OutputName } from '../shared/services/meta-file.js'
 import type { SkillPath } from '../shared/services/skill-discovery.js'
 import type { SkillHash } from '../shared/services/skill-hash.js'
+import type { Skill } from '../upstream/upstream.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Cause, Effect } from 'effect'
@@ -13,10 +15,9 @@ import {
   LogService,
   MetaFileService,
   SkillCloningService,
-  SkillDiscoveryService,
   SkillHashService,
 } from '../shared/services/index.js'
-import { setupSubmodule } from '../upstream/upstream.js'
+import { discoverAndHashSkills, setupSubmodule } from '../upstream/upstream.js'
 
 export interface SyncInput {
   root: string
@@ -84,7 +85,6 @@ function processUpstream(
 ): Effect.Effect<UpstreamResult, never, SyncServices> {
   return Effect.gen(function* () {
     const logService = yield* LogService
-    const skillDiscoveryService = yield* SkillDiscoveryService
     const skillHashService = yield* SkillHashService
     const skillCloningService = yield* SkillCloningService
 
@@ -101,22 +101,9 @@ function processUpstream(
       upstream.branch = effectiveBranch
     }
 
-    const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
-
-    const discoveredPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDirectory).pipe(
-      Effect.catchAll(() => Effect.succeed([] as SkillPath[])),
+    const discoveredSkills = yield* discoverAndHashSkills(root, upstreamKey).pipe(
+      Effect.catchAll(() => Effect.succeed([] as Skill[])),
     )
-
-    const discoveredSkills: Array<{ path: SkillPath, hash: SkillHash }> = []
-    for (const skillPath of discoveredPaths) {
-      const fullPath = path.join(upstreamDirectory, skillPath)
-      const hash = yield* skillHashService.hashSkillDirectory(fullPath).pipe(
-        Effect.catchAll(() => Effect.succeed('' as SkillHash)),
-      )
-      if (hash.length > 0) {
-        discoveredSkills.push({ path: skillPath, hash })
-      }
-    }
 
     const discoveredMap = new Map(discoveredSkills.map(s => [s.path, s.hash]))
     const selectedEntries = Object.entries(upstream.skills) as Array<[SkillPath, OutputName]>
