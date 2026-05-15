@@ -2,6 +2,7 @@
   "upstreams": {
     "antfu": {
       "url": "https://github.com/antfu/skills",
+      "branch": "main",
       "skills": {
         "skills/antfu": "antfu",
         "skills/nuxt": "nuxt",
@@ -29,11 +30,11 @@
         "skills/vue-testing-best-practices": "18c7d8f42f350f927e37de055e34c97b8cfb9f79c12cf942f7f3d2a0821057b5",
         "skills/vueuse-functions": "fedfc78f035a88fe3e9d823f44725fe8981486c55b966c17fbd0d7c28339e49a",
         "skills/web-design-guidelines": "65a2e7d85753383ae0f88df15475d58b9e39723e9c4bb6891421d6144a85f79c"
-      },
-      "branch": "main"
+      }
     },
     "anthropics": {
       "url": "https://github.com/anthropics/skills",
+      "branch": "main",
       "skills": {
         "skills/pdf": "pdf"
       },
@@ -56,8 +57,7 @@
         "skills/webapp-testing": "ad5b1fc52807e9afa4635e59218a026b164dc58b6c3f41b0f7c644dcd6ccf572",
         "skills/xlsx": "efd0c8011cf0677d8075cf93867ecec804f9a8754a777e1d2fdb46197e9c247f",
         "template": "38c88f722b574a922311d334a70c2008a2a5b896f06eaa75516d716e5725b26f"
-      },
-      "branch": "main"
+      }
     },
     "erpnext": {
       "url": "https://github.com/frappe/erpnext",
@@ -73,16 +73,17 @@
     },
     "lucifer1004": {
       "url": "https://github.com/lucifer1004/claude-skill-typst",
+      "branch": "main",
       "skills": {
         "skills/typst": "typst"
       },
       "available": {
         "skills/typst": "c9d21d84ac9c8c5bbc8665c044643019a374dad19e9af958835f983e2665e4a6"
-      },
-      "branch": "main"
+      }
     },
     "mattpocock": {
       "url": "https://github.com/mattpocock/skills",
+      "branch": "main",
       "skills": {
         "skills/productivity/write-a-skill": "write-a-skill",
         "skills/engineering/zoom-out": "zoom-out",
@@ -119,11 +120,11 @@
         "skills/productivity/grill-me": "784f0dbb7403b0f00324bce9a112f715342777a0daee7bbb7385f9c6f0a170ea",
         "skills/productivity/handoff": "d543685cbfb0c64b7bc51a8dc3465975528da9b64f987f863765973b2f3867ab",
         "skills/productivity/write-a-skill": "b44d8aab2ead83c716e01af4c9a24ccc4575ce70ad58ec4f1749fb88c9cc82ba"
-      },
-      "branch": "main"
+      }
     },
     "noartem": {
       "url": "https://github.com/noartem/laravel-vue-skills",
+      "branch": "main",
       "skills": {
         "skills/shadcn-vue": "shadcn-vue"
       },
@@ -159,23 +160,23 @@
         "skills/laravel-transactions-and-consistency": "f6cb13a5a65515cdbdb9a3cf045ec30bc5478754d7da8e6ea397dff7e6988256",
         "skills/shadcn-vue": "d96cd75c1e8818693ac0a31d9c6f1634bced3863793ad8adca1c5c1ab863010d",
         "skills/vue3-component-decomposition": "db159e33451193841a5bdad35187a487798ab41739f45297c3f8c85b50abfec8"
-      },
-      "branch": "main"
+      }
     },
     "press": {
       "url": "https://github.com/frappe/press",
+      "branch": "develop",
       "skills": {},
-      "available": {},
-      "branch": "develop"
+      "available": {}
     },
     "print_designer": {
       "url": "https://github.com/frappe/print_designer",
+      "branch": "develop",
       "skills": {},
-      "available": {},
-      "branch": "develop"
+      "available": {}
     },
     "silvainfm": {
       "url": "https://github.com/silvainfm/claude-skills",
+      "branch": "main",
       "skills": {
         "duckdb": "duckdb"
       },
@@ -217,17 +218,17 @@
         "streamlit": "88231eee825eca0d7493100312eb11d3ddb118777495688f56a9207597964cb0",
         "tapestry": "a9aeb185fe38d649fcee9ef274fb19969481ad03a2fc358250d9d78ad30b4b3f",
         "webapp-testing": "cf8e5916d474886bd67b09691247f43f331523008b7d366064bc607ab42d6302"
-      },
-      "branch": "main"
+      }
     },
     "typst": {
       "url": "https://github.com/typst/typst",
+      "branch": "main",
       "skills": {},
-      "available": {},
-      "branch": "main"
+      "available": {}
     },
     "vuejs-ai": {
       "url": "https://github.com/vuejs-ai/skills",
+      "branch": "main",
       "skills": {
         "skills/vue-best-practices": "vue-best-practices",
         "skills/vue-testing-best-practices": "vue-testing-best-practices"
@@ -241,41 +242,40 @@
         "skills/vue-pinia-best-practices": "d4ba913bec21910b8e37b2115cd964df2dc43ad62346b981c7b88d4ddc8cf792",
         "skills/vue-router-best-practices": "f0745ed318c113e592ab4a9ded57ceadd0db2edab00cdb46b216c83f5ce0799e",
         "skills/vue-testing-best-practices": "58d365899f54be9e5fa2c2e455093f9567620600578ae92aaa2f31d9b19a59ad"
-      },
-      "branch": "main"
+      }
     },
     "vueuse": {
       "url": "https://github.com/vueuse/skills",
+      "branch": "main",
       "skills": {
         "skills/vueuse-functions": "vueuse-functions"
       },
       "available": {
         "skills/vueuse-functions": "9b6b0afdbc577317e8c29e6ac0ee6890a2ec95d5ad7c8ce66247c1a62b95621d"
-      },
-      "branch": "main"
+      }
     },
     "eslint-config": {
       "url": "https://github.com/antfu/eslint-config",
+      "branch": "main",
       "skills": {},
-      "available": {},
-      "branch": "main"
+      "available": {}
     },
     "opencode": {
       "url": "https://github.com/anomalyco/opencode",
+      "branch": "dev",
       "skills": {},
       "available": {
         ".opencode/skills/effect": "9a4ebb9c1818e77d08dc550a5d7d5ffe6a8426bf10b288a92b9961c6216763c4",
         ".opencode/skills/improve-codebase-architecture": "143913bf057c309f7b314eef7025ea16b11e3247e942cf8cb3218459467cfaef",
         "packages/opencode/test/fixture/skills/agents-sdk": "69f5dc3256f30407605bd4b57c14626e8478addc03e66d4310e88c90dd2126e9",
         "packages/opencode/test/fixture/skills/cloudflare": "e88fcff18d9e2da89c6b363752bc15deeab70f3bdfe8501303caa74d1616dc01"
-      },
-      "branch": "dev"
+      }
     },
     "dictionary-of-ai-coding": {
       "url": "https://github.com/mattpocock/dictionary-of-ai-coding",
+      "branch": "main",
       "skills": {},
-      "available": {},
-      "branch": "main"
+      "available": {}
     }
   }
 }
