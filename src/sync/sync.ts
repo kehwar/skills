@@ -35,25 +35,110 @@ export interface SyncOutput {
   upstreams: UpstreamResult[]
 }
 
+export interface DiffEntry {
+  skillPath: SkillPath
+  outputName: OutputName
+}
+
+export interface DiffResult {
+  toCopy: DiffEntry[]
+  toSkip: DiffEntry[]
+  toRemove: DiffEntry[]
+  warnings: string[]
+}
+
+export interface ApplyResult {
+  skillsCopied: number
+  skillsSkipped: number
+  skillsRemoved: number
+}
+
 type SyncServices = MetaFileService | LogService | SkillDiscoveryService | SkillHashService | GitService | SkillCloningService
 
-function shouldSkipSkillCopy(
-  service: SkillHashService,
+export function computeDiff(
+  root: string,
+  upstreamKey: string,
+  selectedEntries: Array<[SkillPath, OutputName]>,
+  discoveredSkills: Skill[],
   upstream: { available: Record<SkillPath, SkillHash> },
-  skillPath: SkillPath,
-  targetDirectory: string,
-  upstreamHash: SkillHash,
-): Effect.Effect<boolean, never, never> {
-  const existingHash = upstream.available[skillPath]
-  if (existingHash !== upstreamHash) {
-    return Effect.succeed(false)
-  }
-  return service.hashSkillDirectory(targetDirectory).pipe(
-    Effect.match({
-      onSuccess: (hash: SkillHash) => hash === upstreamHash,
-      onFailure: () => false,
-    }),
-  )
+): Effect.Effect<DiffResult, never, SkillHashService> {
+  return Effect.gen(function* () {
+    const skillHashService = yield* SkillHashService
+
+    const discoveredMap = new Map(discoveredSkills.map(s => [s.path, s.hash]))
+
+    const toCopy: DiffEntry[] = []
+    const toSkip: DiffEntry[] = []
+    const toRemove: DiffEntry[] = []
+    const warnings: string[] = []
+
+    for (const [skillPath, outputName] of selectedEntries) {
+      const upstreamHash = discoveredMap.get(skillPath)
+
+      if (upstreamHash === undefined) {
+        warnings.push(`Skill "${skillPath}" no longer found in upstream "${upstreamKey}"`)
+        toRemove.push({ skillPath, outputName })
+        continue
+      }
+
+      const existingHash = upstream.available[skillPath]
+      if (existingHash !== upstreamHash) {
+        toCopy.push({ skillPath, outputName })
+        continue
+      }
+
+      const targetDirectory = path.join(root, 'synced', outputName)
+      const targetHash = yield* skillHashService.hashSkillDirectory(targetDirectory).pipe(
+        Effect.match({ onSuccess: (hash: SkillHash) => hash, onFailure: () => {} }),
+      )
+
+      if (targetHash === upstreamHash) {
+        toSkip.push({ skillPath, outputName })
+      }
+      else {
+        toCopy.push({ skillPath, outputName })
+      }
+    }
+
+    return { toCopy, toSkip, toRemove, warnings }
+  })
+}
+
+export function applyDiff(
+  root: string,
+  upstreamKey: string,
+  diff: DiffResult,
+): Effect.Effect<ApplyResult, never, SkillCloningService> {
+  return Effect.gen(function* () {
+    const skillCloningService = yield* SkillCloningService
+
+    let skillsCopied = 0
+    let skillsRemoved = 0
+
+    for (const entry of diff.toRemove) {
+      const targetDirectory = path.join(root, 'synced', entry.outputName)
+      yield* Effect.tryPromise({
+        try: async () => fs.rm(targetDirectory, { recursive: true, force: true }),
+        catch: () => {},
+      }).pipe(Effect.catchAll(() => Effect.void))
+      skillsRemoved++
+    }
+
+    for (const entry of diff.toCopy) {
+      const sourceDirectory = path.join(root, 'upstream', upstreamKey, entry.skillPath)
+      const targetDirectory = path.join(root, 'synced', entry.outputName)
+      yield* skillCloningService.copySkill(sourceDirectory, targetDirectory).pipe(
+        Effect.catchAll(() => Effect.void),
+      )
+      skillsCopied++
+    }
+
+    return {
+      skillsCopied,
+      skillsSkipped: diff.toSkip.length,
+      skillsRemoved,
+    }
+  })
 }
 
 function updateSubmodulePhase(
@@ -85,8 +170,6 @@ function processUpstream(
 ): Effect.Effect<UpstreamResult, never, SyncServices> {
   return Effect.gen(function* () {
     const logService = yield* LogService
-    const skillHashService = yield* SkillHashService
-    const skillCloningService = yield* SkillCloningService
 
     yield* logService.info(`Syncing upstream: ${upstreamKey}`)
 
@@ -105,47 +188,15 @@ function processUpstream(
       Effect.catchAll(() => Effect.succeed([] as Skill[])),
     )
 
-    const discoveredMap = new Map(discoveredSkills.map(s => [s.path, s.hash]))
     const selectedEntries = Object.entries(upstream.skills) as Array<[SkillPath, OutputName]>
 
-    let skillsCopied = 0
-    let skillsSkipped = 0
-    let skillsRemoved = 0
+    const diff = yield* computeDiff(root, upstreamKey, selectedEntries, discoveredSkills, upstream)
+    const result = yield* applyDiff(root, upstreamKey, diff)
 
     const validSelected: Record<SkillPath, OutputName> = {}
-
-    for (const [skillPath, outputName] of selectedEntries) {
-      const upstreamHash = discoveredMap.get(skillPath)
-
-      if (upstreamHash === undefined) {
-        warnings.push(`Skill "${skillPath}" no longer found in upstream "${upstreamKey}"`)
-        const targetDirectory = path.join(root, 'synced', outputName)
-        yield* Effect.tryPromise({
-          try: async () => fs.rm(targetDirectory, { recursive: true, force: true }),
-          catch: () => {},
-        })
-        skillsRemoved++
-        continue
-      }
-
-      validSelected[skillPath] = outputName
-      const targetDirectory = path.join(root, 'synced', outputName)
-
-      const shouldSkip = yield* shouldSkipSkillCopy(skillHashService, upstream, skillPath, targetDirectory, upstreamHash)
-      if (shouldSkip) {
-        skillsSkipped++
-        continue
-      }
-
-      const sourceDirectory = path.join(root, 'upstream', upstreamKey, skillPath)
-
-      yield* skillCloningService.copySkill(sourceDirectory, targetDirectory).pipe(
-        Effect.catchAll(() => Effect.void),
-      )
-
-      skillsCopied++
+    for (const entry of [...diff.toCopy, ...diff.toSkip]) {
+      validSelected[entry.skillPath] = entry.outputName
     }
-
     upstream.skills = validSelected
 
     const availableMap: Record<SkillPath, SkillHash> = {}
@@ -156,10 +207,10 @@ function processUpstream(
 
     return {
       upstreamKey,
-      skillsCopied,
-      skillsSkipped,
-      skillsRemoved,
-      warnings,
+      skillsCopied: result.skillsCopied,
+      skillsSkipped: result.skillsSkipped,
+      skillsRemoved: result.skillsRemoved,
+      warnings: [...diff.warnings, ...warnings],
     }
   }).pipe(
     Effect.catchAllCause(cause =>

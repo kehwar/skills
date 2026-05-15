@@ -1,8 +1,10 @@
 import type {
   MetaJson,
 } from '../shared/services/index.js'
+import type { OutputName } from '../shared/services/meta-file.js'
 import type { SkillPath } from '../shared/services/skill-discovery.js'
 import type { SkillHash } from '../shared/services/skill-hash.js'
+import type { Skill } from '../upstream/upstream.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
@@ -15,6 +17,7 @@ import {
   MetaFileService,
 } from '../shared/index.js'
 import {
+  FileReadError,
   GitService,
   SkillCloningService,
   SkillDiscoveryService,
@@ -33,6 +36,151 @@ async function addSubmoduleFixture(root: string, upstreamKey: string): Promise<v
     await git.subModule(['add', '--depth', '1', MATT_POCOCK_URL, submodulePath])
   }
 }
+
+function mockSkillHashService(hash: SkillHash | undefined): SkillHashService {
+  return new SkillHashService({
+    hashSkillDirectory: (_path: string) => {
+      if (hash === undefined) {
+        return Effect.fail(new FileReadError({ path: _path, message: 'not found' }))
+      }
+      return Effect.succeed(hash)
+    },
+  })
+}
+
+describe('computeDiff', () => {
+  const root = '/fake/root'
+  const upstreamKey = 'test-upstream'
+
+  it('should mark selected skills not in discovered as toRemove with warning', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], [], { available: {} }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService()),
+      ),
+    )
+
+    expect(result.toRemove).toEqual([{ skillPath: 'foo/bar' as SkillPath, outputName: 'bar' as OutputName }])
+    expect(result.warnings).toEqual(['Skill "foo/bar" no longer found in upstream "test-upstream"'])
+    expect(result.toCopy).toHaveLength(0)
+    expect(result.toSkip).toHaveLength(0)
+  })
+
+  it('should mark as toCopy when stored hash differs from upstream hash', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [{ path: 'foo/bar' as SkillPath, hash: 'abc123' as SkillHash }]
+    const available: Record<SkillPath, SkillHash> = { ['foo/bar' as SkillPath]: 'old-hash' as SkillHash }
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], discovered, { available }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService()),
+      ),
+    )
+
+    expect(result.toCopy).toEqual([{ skillPath: 'foo/bar' as SkillPath, outputName: 'bar' as OutputName }])
+    expect(result.toSkip).toHaveLength(0)
+    expect(result.toRemove).toHaveLength(0)
+    expect(result.warnings).toHaveLength(0)
+  })
+
+  it('should mark as toCopy when skill is not in stored available at all', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [{ path: 'foo/bar' as SkillPath, hash: 'abc123' as SkillHash }]
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], discovered, { available: {} }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService()),
+      ),
+    )
+
+    expect(result.toCopy).toHaveLength(1)
+    expect(result.toSkip).toHaveLength(0)
+  })
+
+  it('should mark as toSkip when stored hash matches upstream and target dir hash matches', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [{ path: 'foo/bar' as SkillPath, hash: 'abc123' as SkillHash }]
+    const available: Record<SkillPath, SkillHash> = { ['foo/bar' as SkillPath]: 'abc123' as SkillHash }
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], discovered, { available }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService('abc123' as SkillHash)),
+      ),
+    )
+
+    expect(result.toSkip).toEqual([{ skillPath: 'foo/bar' as SkillPath, outputName: 'bar' as OutputName }])
+    expect(result.toCopy).toHaveLength(0)
+    expect(result.toRemove).toHaveLength(0)
+  })
+
+  it('should mark as toCopy when stored hash matches upstream but target dir hash differs', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [{ path: 'foo/bar' as SkillPath, hash: 'abc123' as SkillHash }]
+    const available: Record<SkillPath, SkillHash> = { ['foo/bar' as SkillPath]: 'abc123' as SkillHash }
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], discovered, { available }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService('def456' as SkillHash)),
+      ),
+    )
+
+    expect(result.toCopy).toHaveLength(1)
+    expect(result.toSkip).toHaveLength(0)
+  })
+
+  it('should mark as toCopy when stored hash matches upstream but target dir is missing', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [{ path: 'foo/bar' as SkillPath, hash: 'abc123' as SkillHash }]
+    const available: Record<SkillPath, SkillHash> = { ['foo/bar' as SkillPath]: 'abc123' as SkillHash }
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, [['foo/bar' as SkillPath, 'bar' as OutputName]], discovered, { available }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService()),
+      ),
+    )
+
+    expect(result.toCopy).toHaveLength(1)
+    expect(result.toSkip).toHaveLength(0)
+  })
+
+  it('should handle mixed scenarios with multiple entries', async () => {
+    const { computeDiff } = await import('./sync.js')
+
+    const discovered: Skill[] = [
+      { path: 'skills/a' as SkillPath, hash: 'hash-a' as SkillHash },
+      { path: 'skills/b' as SkillPath, hash: 'hash-b' as SkillHash },
+      { path: 'skills/c' as SkillPath, hash: 'hash-c' as SkillHash },
+    ]
+    const available: Record<SkillPath, SkillHash> = { ['skills/a' as SkillPath]: 'hash-a' as SkillHash, ['skills/b' as SkillPath]: 'stale-hash' as SkillHash }
+
+    const selected: Array<[SkillPath, OutputName]> = [
+      ['skills/a' as SkillPath, 'a' as OutputName],
+      ['skills/b' as SkillPath, 'b' as OutputName],
+      ['skills/c' as SkillPath, 'c' as OutputName],
+      ['skills/d' as SkillPath, 'd' as OutputName],
+    ]
+
+    const result = await Effect.runPromise(
+      computeDiff(root, upstreamKey, selected, discovered, { available }).pipe(
+        Effect.provideService(SkillHashService, mockSkillHashService('hash-a' as SkillHash)),
+      ),
+    )
+
+    expect(result.toSkip).toEqual([{ skillPath: 'skills/a' as SkillPath, outputName: 'a' as OutputName }])
+    expect(result.toCopy).toHaveLength(2)
+    const copyPaths = result.toCopy.map(entry => entry.skillPath)
+    expect(copyPaths).toEqual(['skills/b' as SkillPath, 'skills/c' as SkillPath])
+    expect(result.toRemove).toEqual([{ skillPath: 'skills/d' as SkillPath, outputName: 'd' as OutputName }])
+    expect(result.warnings).toHaveLength(1)
+    expect(result.warnings[0]).toContain('skills/d')
+  })
+})
 
 describe('sync e2e with real repo', () => {
   let temporaryDirectory: string
