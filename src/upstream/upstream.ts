@@ -198,7 +198,7 @@ function validateUpstreamInput(
   })
 }
 
-function setupSubmodule(
+export function setupSubmodule(
   root: string,
   upstreamKey: string,
   url: string,

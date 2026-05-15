@@ -1,4 +1,6 @@
 import type {
+  GitService,
+
   MetaJson,
 } from '../shared/services/index.js'
 import type { OutputName } from '../shared/services/meta-file.js'
@@ -8,13 +10,13 @@ import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Cause, Effect } from 'effect'
 import {
-  GitService,
   LogService,
   MetaFileService,
   SkillCloningService,
   SkillDiscoveryService,
   SkillHashService,
 } from '../shared/services/index.js'
+import { setupSubmodule } from '../upstream/upstream.js'
 
 export interface SyncInput {
   root: string
@@ -53,6 +55,28 @@ function shouldSkipSkillCopy(
   )
 }
 
+function updateSubmodulePhase(
+  root: string,
+  upstreamKey: string,
+  url: string,
+  branch: string | undefined,
+): Effect.Effect<{ effectiveBranch: string | undefined, warnings: string[] }, never, GitService | LogService> {
+  return Effect.gen(function* () {
+    const result = yield* Effect.either(
+      setupSubmodule(root, upstreamKey, url, branch),
+    )
+    const warnings: string[] = []
+    let effectiveBranch: string | undefined
+    if (result._tag === 'Left') {
+      warnings.push(`Failed to update submodule: ${upstreamKey} — ${result.left.message}`)
+    }
+    else if (result.right) {
+      effectiveBranch = result.right
+    }
+    return { effectiveBranch, warnings }
+  })
+}
+
 function processUpstream(
   root: string,
   upstreamKey: string,
@@ -60,26 +84,21 @@ function processUpstream(
 ): Effect.Effect<UpstreamResult, never, SyncServices> {
   return Effect.gen(function* () {
     const logService = yield* LogService
-    const gitService = yield* GitService
     const skillDiscoveryService = yield* SkillDiscoveryService
     const skillHashService = yield* SkillHashService
     const skillCloningService = yield* SkillCloningService
 
     yield* logService.info(`Syncing upstream: ${upstreamKey}`)
 
-    const submoduleUpdateResult = yield* Effect.either(
-      gitService.updateSubmodule(root, upstreamKey, upstream.branch),
+    const { effectiveBranch, warnings } = yield* updateSubmodulePhase(
+      root,
+      upstreamKey,
+      upstream.url,
+      upstream.branch,
     )
 
-    const warnings: string[] = []
-    if (submoduleUpdateResult._tag === 'Left') {
-      warnings.push(`Failed to update submodule: ${upstreamKey} — ${submoduleUpdateResult.left.message}`)
-    }
-    else if (submoduleUpdateResult.right) {
-      const effectiveBranch = submoduleUpdateResult.right
-      if (upstream.branch !== effectiveBranch) {
-        upstream.branch = effectiveBranch
-      }
+    if (effectiveBranch !== undefined && upstream.branch !== effectiveBranch) {
+      upstream.branch = effectiveBranch
     }
 
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
