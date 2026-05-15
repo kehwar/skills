@@ -1,4 +1,4 @@
-import type { LogService } from '../shared/services/index.js'
+import type { LogService, UpstreamEntry } from '../shared/services/index.js'
 import path from 'node:path'
 import { Effect } from 'effect'
 import {
@@ -22,13 +22,6 @@ export interface CheckOutput {
 }
 
 type CheckServices = MetaFileService | LogService | GitService
-
-interface UpstreamEntry {
-  url: string
-  branch?: string
-  skills: Record<string, string>
-  available: Record<string, string>
-}
 
 function checkUpstream(
   root: string,
@@ -74,9 +67,7 @@ export function check(
     const metaData = yield* metaFileService.read(metaPath).pipe(
       Effect.catchAllCause(() => Effect.succeed({ upstreams: {} })),
     )
-    const rawUpstreams = 'upstreams' in metaData && typeof metaData.upstreams === 'object' && metaData.upstreams !== null
-      ? metaData.upstreams
-      : {}
+    const rawUpstreams = metaData.upstreams || {}
     const upstreams = rawUpstreams as Record<string, UpstreamEntry>
 
     const upstreamEntries = Object.entries(upstreams)

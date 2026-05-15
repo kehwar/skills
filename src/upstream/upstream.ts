@@ -1,4 +1,4 @@
-import type { DirectoryReadError, FileReadError, InvalidBranch, SubmoduleAuthFailed, SubmoduleCloneFailed } from '../shared/services/index.js'
+import type { DirectoryReadError, FileReadError, InvalidBranch, MetaJson, SubmoduleAuthFailed, SubmoduleCloneFailed } from '../shared/services/index.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
@@ -123,18 +123,6 @@ export interface UpstreamAddOutput {
     skipped: Array<{ skillPath: string, reason: string }>
     errors: Array<{ skillPath: string, error: string }>
   }
-}
-
-interface MetaJson {
-  upstreams: Record<
-    string,
-    {
-      url: string
-      branch?: string
-      skills: Record<string, string>
-      available: Record<string, string>
-    }
-  >
 }
 
 export function normalizeGitHubUrl(url: string): string {
@@ -309,7 +297,7 @@ function updateMetaFile(
       available: availableMap,
     }
 
-    yield* metaFileService.write(metaPath, metaJson as unknown as Record<string, unknown>).pipe(
+    yield* metaFileService.write(metaPath, metaJson).pipe(
       Effect.catchTag('MetaFileWriteError', () =>
         Effect.fail(new MetaWriteError({ message: `Failed to write meta.json at ${metaPath}` }))),
     )

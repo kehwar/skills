@@ -1,4 +1,4 @@
-import type { PromptError } from '../shared/services/index.js'
+import type { MetaJson, PromptError } from '../shared/services/index.js'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
 import { LogService, MetaFileService, UserPromptService } from '../shared/services/index.js'
@@ -24,18 +24,6 @@ export interface CloneSkillsOutput {
   upstreamName: string
   selectedSkills: Record<string, string>
   message: string
-}
-
-interface MetaJson {
-  upstreams: Record<
-    string,
-    {
-      url: string
-      branch?: string
-      skills: Record<string, string>
-      available: Record<string, string>
-    }
-  >
 }
 
 function parseSkillPath(skillPath: string): string {
@@ -125,7 +113,7 @@ export function cloneSkills(
         },
       },
     }
-    yield* metaFileService.write(metaPath, updatedMeta as unknown as Record<string, unknown>).pipe(
+    yield* metaFileService.write(metaPath, updatedMeta).pipe(
       Effect.catchAll(() =>
         Effect.fail(new MetaFileError({ message: 'Failed to write meta.json' })),
       ),

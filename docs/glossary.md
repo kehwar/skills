@@ -19,13 +19,6 @@ _Avoid_: Upstream, category, folder, organization
 An external GitHub repo tracked as a git submodule under `upstream/<key>`. May contribute Skills (if it contains `SKILL.md` files) and/or serve as reference material for Authored Skills.
 _Avoid_: Vendor, source, provider, dependency
 
-**Sync**:
-The non-interactive, idempotent process of pulling latest Upstream submodules and copying selected skills into `skills/`.
-_Avoid_: Install, update, publish
-
-**Cleanup**:
-The process of detecting and removing skills or submodules that are no longer declared in the repo config.
-
 ## Relationships
 
 - A **Skill** is either an **Authored Skill** or copied from an **Upstream**

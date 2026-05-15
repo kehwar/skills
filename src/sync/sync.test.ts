@@ -1,3 +1,6 @@
+import type {
+  MetaJson,
+} from '../shared/services/index.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
@@ -18,15 +21,6 @@ import {
 const MATT_POCOCK_URL = 'https://github.com/mattpocock/skills'
 const KNOW_SKILL_PATH = 'skills/engineering/tdd'
 const KNOW_SKILL_OUTPUT = 'tdd'
-
-interface MetaJson {
-  upstreams: Record<string, {
-    url: string
-    branch?: string
-    skills: Record<string, string>
-    available: Record<string, string>
-  }>
-}
 
 async function addSubmoduleFixture(root: string, upstreamKey: string): Promise<void> {
   const submodulePath = `upstream/${upstreamKey}`

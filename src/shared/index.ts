@@ -10,11 +10,13 @@ export {
   MetaFileReadError,
   MetaFileService,
   MetaFileWriteError,
+  MetaJson,
   PromptError,
   SkillDiscoveryService,
   SkillHashService,
   SubmoduleAuthFailed,
   SubmoduleCloneFailed,
+  UpstreamEntry,
   UserPromptService,
 } from './services/index.js'
 export { isCalledDirectly } from './utils/cli.js'

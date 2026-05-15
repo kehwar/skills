@@ -1,3 +1,6 @@
+import type {
+  MetaJson,
+} from '../shared/services/index.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Cause, Effect } from 'effect'
@@ -26,18 +29,6 @@ export interface SyncOutput {
 }
 
 type SyncServices = MetaFileService | LogService | SkillDiscoveryService | SkillHashService | GitService
-
-interface MetaJson {
-  upstreams: Record<
-    string,
-    {
-      url: string
-      branch?: string
-      skills: Record<string, string>
-      available: Record<string, string>
-    }
-  >
-}
 
 function shouldSkipSkillCopy(
   service: SkillHashService,
@@ -209,7 +200,7 @@ export function sync(
       metaJson.upstreams[upstreamKey] = upstream
     }
 
-    yield* metaFileService.write(metaPath, metaJson as unknown as Record<string, unknown>).pipe(
+    yield* metaFileService.write(metaPath, metaJson).pipe(
       Effect.catchAllCause(() => Effect.void),
     )
 
