@@ -32,5 +32,4 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 ├── authored/<domain>/      # Authored Skills (type: "authored") — never overwritten
 ├── synced/<name>/          # Synced Skills (copied from Upstreams) — ephemeral!
 ├── upstream/<key>/         # read-only Upstream submodules — never edit
-└── scripts/                # ⚠️ DEPRECATED — do not reference or add to
 ```

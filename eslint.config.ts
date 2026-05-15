@@ -7,7 +7,6 @@ const ignores = [
   '.beads/**',
   'authored/sap/**/assets/**/*.yaml',
   'authored/frappe/**/assets/**/*.json',
-  'scripts/**',
 ]
 
 export default antfu(
