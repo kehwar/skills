@@ -82,11 +82,6 @@ If project not initialised:
 bd init --stealth --non-interactive
 ```
 
-Track the export file in git exclude:
-```bash
-sed -i '/^\.beads\/$/c\.beads/*\n!.beads/issues.jsonl' .git/info/exclude
-```
-
 ### 5. Done
 
 Tell the user:
