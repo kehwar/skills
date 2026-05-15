@@ -3,7 +3,7 @@ import sonarjs from 'eslint-plugin-sonarjs'
 
 const ignores = [
   'upstream/**',
-  'skills/**',
+  'synced/**',
   '.beads/**',
   'authored/sap/**/assets/**/*.yaml',
   'authored/frappe/**/assets/**/*.json',
