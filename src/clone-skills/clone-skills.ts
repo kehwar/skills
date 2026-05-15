@@ -1,4 +1,6 @@
 import type { MetaJson } from '../shared/services/index.js'
+import type { OutputName } from '../shared/services/meta-file.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
@@ -21,6 +23,11 @@ export class MetaFileError extends Data.TaggedError('MetaFileError')<{
   message: string
 }> {}
 
+export interface SelectedSkill {
+  sourcePath: SkillPath
+  outputName: OutputName
+}
+
 export interface CloneSkillsInput {
   root: string
   upstreamName: string
@@ -28,7 +35,7 @@ export interface CloneSkillsInput {
 
 export interface CloneSkillsOutput {
   upstreamName: string
-  selectedSkills: Record<string, string>
+  selectedSkills: SelectedSkill[]
   message: string
   cloned: string[]
   removed: string[]
@@ -102,11 +109,16 @@ export function cloneSkills(
       [...currentSelections],
     )
 
-    const selectedSkills: Record<string, string> = {}
+    const selectedSkillsMap: Record<string, OutputName> = {}
     for (const skillPath of selectedPaths) {
       const skillName = parseSkillPath(skillPath)
-      selectedSkills[skillPath] = skillName
+      selectedSkillsMap[skillPath] = skillName as OutputName
     }
+
+    const selectedSkills: SelectedSkill[] = selectedPaths.map(skillPath => ({
+      sourcePath: skillPath as SkillPath,
+      outputName: selectedSkillsMap[skillPath]!,
+    }))
 
     const previouslySelected = Object.keys(upstream.skills)
     const newlySelected = selectedPaths.filter(p => !currentSelections.has(p))
@@ -114,7 +126,7 @@ export function cloneSkills(
 
     const cloned: string[] = []
     for (const skillPath of newlySelected) {
-      const outputName = selectedSkills[skillPath]!
+      const outputName = selectedSkillsMap[skillPath as SkillPath]!
       const sourceDirectory = path.join(input.root, 'upstream', input.upstreamName, skillPath)
       const destinationDirectory = path.join(input.root, 'synced', outputName)
       yield* skillCloningService.copySkill(sourceDirectory, destinationDirectory).pipe(
@@ -125,7 +137,7 @@ export function cloneSkills(
 
     const removed: string[] = []
     for (const skillPath of deselected) {
-      const outputName = upstream.skills[skillPath]!
+      const outputName = upstream.skills[skillPath as SkillPath]!
       const targetDirectory = path.join(input.root, 'synced', outputName)
       yield* Effect.tryPromise({
         try: async () => fs.rm(targetDirectory, { recursive: true, force: true }),
@@ -140,7 +152,7 @@ export function cloneSkills(
         ...metaJson.upstreams,
         [input.upstreamName]: {
           ...upstream,
-          skills: selectedSkills,
+          skills: selectedSkillsMap as Record<SkillPath, OutputName>,
         },
       },
     }

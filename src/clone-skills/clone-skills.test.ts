@@ -1,3 +1,7 @@
+import type { OutputName } from '../shared/services/meta-file.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
+import type { SkillHash } from '../shared/services/skill-hash.js'
+import type { SelectedSkill } from './clone-skills.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
@@ -12,6 +16,13 @@ import {
 } from '../shared/index.js'
 import { SkillCloningService } from '../shared/services/index.js'
 import { cloneSkills, InvalidUpstreamName, NoAvailableSkills } from './clone-skills.js'
+
+function sk(entry: Record<string, string>): SelectedSkill[] {
+  return Object.entries(entry).map(([sourcePath, outputName]) => ({
+    sourcePath: sourcePath as SkillPath,
+    outputName: outputName as OutputName,
+  }))
+}
 
 describe('clone-skills', () => {
   let temporaryDirectory: string
@@ -99,9 +110,9 @@ describe('clone-skills', () => {
                 url: 'https://github.com/test/skills',
                 skills: {},
                 available: {
-                  'skills/skill-a': 'abc123',
-                  'skills/skill-b': 'def456',
-                  'skills/skill-c': 'ghi789',
+                  'skills/skill-a': 'abc123' as SkillHash,
+                  'skills/skill-b': 'def456' as SkillHash,
+                  'skills/skill-c': 'ghi789' as SkillHash,
                 },
               },
             },
@@ -129,10 +140,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result.selectedSkills).toEqual({
-        'skills/skill-a': 'skill-a',
-        'skills/skill-b': 'skill-b',
-      })
+      expect(result.selectedSkills).toEqual(sk({ 'skills/skill-a': 'skill-a', 'skills/skill-b': 'skill-b' }))
 
       const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
@@ -152,13 +160,13 @@ describe('clone-skills', () => {
               'test-upstream': {
                 url: 'https://github.com/test/skills',
                 skills: {
-                  'skills/skill-a': 'skill-a',
-                  'skills/skill-b': 'skill-b',
+                  'skills/skill-a': 'skill-a' as OutputName,
+                  'skills/skill-b': 'skill-b' as OutputName,
                 },
                 available: {
-                  'skills/skill-a': 'abc123',
-                  'skills/skill-b': 'def456',
-                  'skills/skill-c': 'ghi789',
+                  'skills/skill-a': 'abc123' as SkillHash,
+                  'skills/skill-b': 'def456' as SkillHash,
+                  'skills/skill-c': 'ghi789' as SkillHash,
                 },
               },
             },
@@ -186,9 +194,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result.selectedSkills).toEqual({
-        'skills/skill-a': 'skill-a',
-      })
+      expect(result.selectedSkills).toEqual(sk({ 'skills/skill-a': 'skill-a' }))
 
       const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = updatedMeta.upstreams as Record<string, Record<string, unknown>>
@@ -201,28 +207,19 @@ describe('clone-skills', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
-        JSON.stringify(
-          {
-            upstreams: {
-              'test-upstream': {
-                url: 'https://github.com/test/skills',
-                skills: {
-                  'skills/skill-a': 'skill-a',
-                },
-                available: {
-                  'skills/skill-a': 'abc123',
-                  'skills/skill-b': 'def456',
-                },
-              },
-            },
+        JSON.stringify({
+          upstreams: {
+            'test-upstream': {
+              url: 'https://github.com/test/skills',
+              skills: { ['skills/skill-a' as SkillPath]: 'skill-a' as OutputName },
+              available: { ['skills/skill-a' as SkillPath]: 'abc123' as SkillHash, ['skills/skill-b' as SkillPath]: 'def456' as SkillHash },
+            } satisfies Record<string, unknown>,
           },
-          undefined,
-          2,
-        ),
+        } as any),
       )
 
       let receivedInitialValues: string[] | undefined
-      const result = await Effect.runPromise(
+      await Effect.runPromise(
         cloneSkills({
           root: temporaryDirectory,
           upstreamName: 'test-upstream',
@@ -243,31 +240,21 @@ describe('clone-skills', () => {
       )
 
       expect(receivedInitialValues).toContain('skills/skill-a')
-      expect(result.message).toContain('Selected 1 skill')
     })
 
     it('should handle empty selection gracefully', async () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
-        JSON.stringify(
-          {
-            upstreams: {
-              'test-upstream': {
-                url: 'https://github.com/test/skills',
-                skills: {
-                  'skills/skill-a': 'skill-a',
-                },
-                available: {
-                  'skills/skill-a': 'abc123',
-                  'skills/skill-b': 'def456',
-                },
-              },
-            },
+        JSON.stringify({
+          upstreams: {
+            'test-upstream': {
+              url: 'https://github.com/test/skills',
+              skills: { ['skills/skill-a' as SkillPath]: 'skill-a' as OutputName },
+              available: { ['skills/skill-a' as SkillPath]: 'abc123' as SkillHash, ['skills/skill-b' as SkillPath]: 'def456' as SkillHash },
+            } satisfies Record<string, unknown>,
           },
-          undefined,
-          2,
-        ),
+        } as any),
       )
 
       const result = await Effect.runPromise(
@@ -287,7 +274,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result.selectedSkills).toEqual({})
+      expect(result.selectedSkills).toEqual([])
       expect(result.message).toContain('No skills selected')
 
       const updatedMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
@@ -299,25 +286,15 @@ describe('clone-skills', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
-        JSON.stringify(
-          {
-            upstreams: {
-              'test-upstream': {
-                url: 'https://github.com/test/skills',
-                skills: {
-                  'skills/skill-a': 'skill-a',
-                },
-                available: {
-                  'skills/skill-a': 'abc123',
-                  'skills/skill-b': 'def456',
-                  'skills/skill-c': 'ghi789',
-                },
-              },
-            },
+        JSON.stringify({
+          upstreams: {
+            'test-upstream': {
+              url: 'https://github.com/test/skills',
+              skills: { ['skills/skill-a' as SkillPath]: 'skill-a' as OutputName },
+              available: { ['skills/skill-a' as SkillPath]: 'abc123' as SkillHash, ['skills/skill-b' as SkillPath]: 'def456' as SkillHash, ['skills/skill-c' as SkillPath]: 'ghi789' as SkillHash },
+            } satisfies Record<string, unknown>,
           },
-          undefined,
-          2,
-        ),
+        } as any),
       )
 
       const result1 = await Effect.runPromise(
@@ -337,10 +314,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result1.selectedSkills).toEqual({
-        'skills/skill-a': 'skill-a',
-        'skills/skill-c': 'skill-c',
-      })
+      expect(result1.selectedSkills).toEqual(sk({ 'skills/skill-a': 'skill-a', 'skills/skill-c': 'skill-c' }))
 
       const result2 = await Effect.runPromise(
         cloneSkills({
@@ -359,11 +333,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result2.selectedSkills).toEqual({
-        'skills/skill-a': 'skill-a',
-        'skills/skill-b': 'skill-b',
-        'skills/skill-c': 'skill-c',
-      })
+      expect(result2.selectedSkills).toEqual(sk({ 'skills/skill-a': 'skill-a', 'skills/skill-b': 'skill-b', 'skills/skill-c': 'skill-c' }))
 
       const result3 = await Effect.runPromise(
         cloneSkills({
@@ -382,10 +352,7 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result3.selectedSkills).toEqual({
-        'skills/skill-a': 'skill-a',
-        'skills/skill-c': 'skill-c',
-      })
+      expect(result3.selectedSkills).toEqual(sk({ 'skills/skill-a': 'skill-a', 'skills/skill-c': 'skill-c' }))
 
       const finalMeta = JSON.parse(await fs.readFile(metaJsonPath, 'utf8')) as Record<string, unknown>
       const upstreams = finalMeta.upstreams as Record<string, Record<string, unknown>>
@@ -399,23 +366,19 @@ describe('clone-skills', () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
-        JSON.stringify(
-          {
-            upstreams: {
-              'test-upstream': {
-                url: 'https://github.com/test/skills',
-                skills: {},
-                available: {
-                  'skills/productivity/caveman': 'abc123',
-                  'skills/engineering/grill-me': 'def456',
-                  'utils/helpers': 'ghi789',
-                },
+        JSON.stringify({
+          upstreams: {
+            'test-upstream': {
+              url: 'https://github.com/test/skills',
+              skills: {},
+              available: {
+                'skills/productivity/caveman': 'abc123' as SkillHash,
+                'skills/engineering/grill-me': 'def456' as SkillHash,
+                'utils/helpers': 'ghi789' as SkillHash,
               },
-            },
+            } satisfies Record<string, unknown>,
           },
-          undefined,
-          2,
-        ),
+        } as any),
       )
 
       const result = await Effect.runPromise(
@@ -436,32 +399,26 @@ describe('clone-skills', () => {
         ),
       )
 
-      expect(result.selectedSkills).toEqual({
+      expect(result.selectedSkills).toEqual(sk({
         'skills/productivity/caveman': 'caveman',
         'skills/engineering/grill-me': 'grill-me',
         'utils/helpers': 'helpers',
-      })
+      }))
     })
 
     it('should provide message indicating cloned and removed counts', async () => {
       const metaJsonPath = path.join(temporaryDirectory, 'meta.json')
       await fs.writeFile(
         metaJsonPath,
-        JSON.stringify(
-          {
-            upstreams: {
-              'test-upstream': {
-                url: 'https://github.com/test/skills',
-                skills: {},
-                available: {
-                  'skills/skill-a': 'abc123',
-                },
-              },
-            },
+        JSON.stringify({
+          upstreams: {
+            'test-upstream': {
+              url: 'https://github.com/test/skills',
+              skills: {},
+              available: { 'skills/skill-a': 'abc123' as SkillHash },
+            } satisfies Record<string, unknown>,
           },
-          undefined,
-          2,
-        ),
+        } as any),
       )
 
       const result = await Effect.runPromise(

@@ -1,6 +1,9 @@
+import type { Brand } from 'effect'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
+
+export type SkillPath = string & Brand.Brand<'SkillPath'>
 
 export class DirectoryReadError extends Data.TaggedError('DirectoryReadError')<{
   path: string
@@ -13,7 +16,7 @@ export class SkillDiscoveryService extends Effect.Service<SkillDiscoveryService>
     effect: Effect.sync(() => ({
       discoverSkillsInDirectory: (directoryPath: string) =>
         Effect.gen(function* () {
-          const skills: string[] = []
+          const skills: SkillPath[] = []
 
           const walkDirectory = async (currentPath: string, relativePath: string = ''): Promise<void> => {
             try {
@@ -27,7 +30,7 @@ export class SkillDiscoveryService extends Effect.Service<SkillDiscoveryService>
                   await walkDirectory(fullPath, relativePath_)
                 }
                 else if (entry.name === 'SKILL.md') {
-                  skills.push(relativePath)
+                  skills.push(relativePath as SkillPath)
                 }
               }
             }

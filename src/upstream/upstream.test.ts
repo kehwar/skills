@@ -1,3 +1,5 @@
+import type { OutputName } from '../shared/services/meta-file.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
 import type { UpstreamAddInput } from './upstream.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
@@ -162,7 +164,7 @@ describe('upstream-add', () => {
         selectedSkills: {
           'skill-one': 'test-skill-one',
           'skill-two': 'test-skill-two',
-        },
+        } as Record<SkillPath, OutputName>,
       }
 
       const result = await Effect.runPromise(
@@ -219,7 +221,7 @@ describe('upstream-add', () => {
         root: temporaryDirectory,
         upstreamKey: 'idempotent-test',
         url: 'https://github.com/test/skills',
-        selectedSkills: { 'skill-one': 'skill-one' },
+        selectedSkills: { 'skill-one': 'skill-one' } as Record<SkillPath, OutputName>,
       }
 
       const result1 = await Effect.runPromise(
@@ -271,7 +273,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'update-test',
           url: 'https://github.com/test/skills',
-          selectedSkills: { 'skill-1': 'skill-1' },
+          selectedSkills: { 'skill-1': 'skill-1' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -287,7 +289,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'update-test',
           url: 'https://github.com/test/skills',
-          selectedSkills: { 'skill-1': 'skill-1', 'skill-2': 'skill-2' },
+          selectedSkills: { 'skill-1': 'skill-1', 'skill-2': 'skill-2' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -322,7 +324,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'ssh-format',
           url: 'git@github.com:test/skills.git',
-          selectedSkills: { 'skill-one': 'skill-one' },
+          selectedSkills: { 'skill-one': 'skill-one' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -356,7 +358,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'hash-test',
           url: 'https://github.com/test/skills',
-          selectedSkills: { 'skill-one': 'skill-one' },
+          selectedSkills: { 'skill-one': 'skill-one' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -374,7 +376,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'hash-test',
           url: 'https://github.com/test/skills',
-          selectedSkills: { 'skill-one': 'skill-one' },
+          selectedSkills: { 'skill-one': 'skill-one' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -411,7 +413,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'nested-test',
           url: 'https://github.com/test/skills',
-          selectedSkills: { 'skill-one': 'skill-one', 'subdir/skill-two': 'skill-two' },
+          selectedSkills: { 'skill-one': 'skill-one', 'subdir/skill-two': 'skill-two' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -494,7 +496,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'antfu-original',
           url: sameUrl,
-          selectedSkills: { 'skill-a': 'skill-a' },
+          selectedSkills: { 'skill-a': 'skill-a' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -510,7 +512,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'antfu-alias',
           url: sameUrl,
-          selectedSkills: { 'skill-a': 'skill-a' },
+          selectedSkills: { 'skill-a': 'skill-a' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -548,7 +550,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'upstream-one',
           url: 'https://github.com/org/skills-one',
-          selectedSkills: { 'skill-a': 'skill-a' },
+          selectedSkills: { 'skill-a': 'skill-a' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),
@@ -564,7 +566,7 @@ describe('upstream-add', () => {
           root: temporaryDirectory,
           upstreamKey: 'upstream-two',
           url: 'https://github.com/org/skills-two',
-          selectedSkills: { 'skill-b': 'skill-b' },
+          selectedSkills: { 'skill-b': 'skill-b' } as Record<SkillPath, OutputName>,
         }).pipe(
           Effect.provide(MetaFileService.Default),
           Effect.provide(UserPromptService.Default),

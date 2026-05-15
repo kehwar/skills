@@ -1,4 +1,5 @@
-import type { MetaJson, UpstreamEntry } from './meta-file.js'
+import type { MetaJson, OutputName, UpstreamEntry } from './meta-file.js'
+import type { SkillPath } from './skill-discovery.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
@@ -65,7 +66,7 @@ describe('metaJson types from shared module', () => {
         upstreams: {
           test: {
             url: 'https://github.com/test/skills',
-            skills: { 'skills/foo': 'foo' },
+            skills: { 'skills/foo': 'foo' } as Record<SkillPath, OutputName>,
             available: {},
           },
         },
@@ -140,7 +141,7 @@ describe('metaJson types from shared module', () => {
       upstreams: {
         test: {
           url: 'https://github.com/test/skills',
-          skills: { 'skills/foo': 'foo' },
+          skills: { 'skills/foo': 'foo' } as Record<SkillPath, OutputName>,
           available: {},
         },
       },

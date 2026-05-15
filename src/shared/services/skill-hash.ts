@@ -1,8 +1,11 @@
+import type { Brand } from 'effect'
 import type { Buffer } from 'node:buffer'
 import * as crypto from 'node:crypto'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
+
+export type SkillHash = string & Brand.Brand<'SkillHash'>
 
 export class FileReadError extends Data.TaggedError('FileReadError')<{
   path: string
@@ -35,7 +38,7 @@ async function collectFiles(
   )
 }
 
-async function hashSkillDirectoryImpl(skillDirectory: string): Promise<string> {
+async function hashSkillDirectoryImpl(skillDirectory: string): Promise<SkillHash> {
   const files: Array<{ relativePath: string, content: Buffer }> = []
   await collectFiles(skillDirectory, skillDirectory, files)
 
@@ -49,7 +52,7 @@ async function hashSkillDirectoryImpl(skillDirectory: string): Promise<string> {
     hash.update(file.content)
   }
 
-  return hash.digest('hex')
+  return hash.digest('hex') as SkillHash
 }
 
 export class SkillHashService extends Effect.Service<SkillHashService>()('shared/SkillHashService', {

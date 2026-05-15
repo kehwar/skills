@@ -1,11 +1,16 @@
+import type { Brand } from 'effect'
+import type { SkillPath } from './skill-discovery.js'
+import type { SkillHash } from './skill-hash.js'
 import * as fs from 'node:fs/promises'
 import { Data, Effect } from 'effect'
+
+export type OutputName = string & Brand.Brand<'OutputName'>
 
 export interface UpstreamEntry {
   url: string
   branch?: string
-  skills: Record<string, string>
-  available: Record<string, string>
+  skills: Record<SkillPath, OutputName>
+  available: Record<SkillPath, SkillHash>
 }
 
 export interface MetaJson {

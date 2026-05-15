@@ -1,4 +1,6 @@
-export type { MetaJson, UpstreamEntry } from './services/index.js'
+export type { MetaJson, OutputName, UpstreamEntry } from './services/index.js'
+export type { SkillHash } from './services/index.js'
+export type { SkillPath } from './services/index.js'
 export {
   createMockLogService,
   createMockMetaFileService,

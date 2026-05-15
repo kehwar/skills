@@ -1,6 +1,9 @@
 import type {
   MetaJson,
 } from '../shared/services/index.js'
+import type { OutputName } from '../shared/services/meta-file.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
+import type { SkillHash } from '../shared/services/skill-hash.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Cause, Effect } from 'effect'
@@ -33,10 +36,10 @@ type SyncServices = MetaFileService | LogService | SkillDiscoveryService | Skill
 
 function shouldSkipSkillCopy(
   service: SkillHashService,
-  upstream: { available: Record<string, string> },
-  skillPath: string,
+  upstream: { available: Record<SkillPath, SkillHash> },
+  skillPath: SkillPath,
   targetDirectory: string,
-  upstreamHash: string,
+  upstreamHash: SkillHash,
 ): Effect.Effect<boolean, never, never> {
   const existingHash = upstream.available[skillPath]
   if (existingHash !== upstreamHash) {
@@ -44,7 +47,7 @@ function shouldSkipSkillCopy(
   }
   return service.hashSkillDirectory(targetDirectory).pipe(
     Effect.match({
-      onSuccess: (hash: string) => hash === upstreamHash,
+      onSuccess: (hash: SkillHash) => hash === upstreamHash,
       onFailure: () => false,
     }),
   )
@@ -82,28 +85,28 @@ function processUpstream(
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
 
     const discoveredPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDirectory).pipe(
-      Effect.catchAll(() => Effect.succeed([] as string[])),
+      Effect.catchAll(() => Effect.succeed([] as SkillPath[])),
     )
 
-    const discoveredSkills: Array<{ path: string, hash: string }> = []
+    const discoveredSkills: Array<{ path: SkillPath, hash: SkillHash }> = []
     for (const skillPath of discoveredPaths) {
       const fullPath = path.join(upstreamDirectory, skillPath)
       const hash = yield* skillHashService.hashSkillDirectory(fullPath).pipe(
-        Effect.catchAll(() => Effect.succeed('')),
+        Effect.catchAll(() => Effect.succeed('' as SkillHash)),
       )
-      if (hash) {
+      if (hash.length > 0) {
         discoveredSkills.push({ path: skillPath, hash })
       }
     }
 
     const discoveredMap = new Map(discoveredSkills.map(s => [s.path, s.hash]))
-    const selectedEntries = Object.entries(upstream.skills)
+    const selectedEntries = Object.entries(upstream.skills) as Array<[SkillPath, OutputName]>
 
     let skillsCopied = 0
     let skillsSkipped = 0
     let skillsRemoved = 0
 
-    const validSelected: Record<string, string> = {}
+    const validSelected: Record<SkillPath, OutputName> = {}
 
     for (const [skillPath, outputName] of selectedEntries) {
       const upstreamHash = discoveredMap.get(skillPath)
@@ -139,7 +142,7 @@ function processUpstream(
 
     upstream.skills = validSelected
 
-    const availableMap: Record<string, string> = {}
+    const availableMap: Record<SkillPath, SkillHash> = {}
     for (const skill of discoveredSkills) {
       availableMap[skill.path] = skill.hash
     }

@@ -1,4 +1,7 @@
 import type { DirectoryReadError, FileReadError, InvalidBranch, MetaJson, SubmoduleAuthFailed, SubmoduleCloneFailed } from '../shared/services/index.js'
+import type { OutputName } from '../shared/services/meta-file.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
+import type { SkillHash } from '../shared/services/skill-hash.js'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
 import { Data, Effect } from 'effect'
@@ -106,22 +109,22 @@ export interface UpstreamAddInput {
   url: string
   upstreamKey?: string
   branch?: string
-  selectedSkills: Record<string, string>
+  selectedSkills: Record<SkillPath, OutputName>
 }
 
-export interface DiscoveredSkill {
-  path: string
-  hash: string
+export interface Skill {
+  path: SkillPath
+  hash: SkillHash
 }
 
 export interface UpstreamAddOutput {
   isNew: boolean
   upstreamKey: string
-  discoveredSkills: DiscoveredSkill[]
+  discoveredSkills: Skill[]
   syncResult: {
-    synced: Array<{ skillPath: string, outputName: string }>
-    skipped: Array<{ skillPath: string, reason: string }>
-    errors: Array<{ skillPath: string, error: string }>
+    synced: Array<{ skillPath: SkillPath, outputName: OutputName }>
+    skipped: Array<{ skillPath: SkillPath, reason: string }>
+    errors: Array<{ skillPath: SkillPath, error: string }>
   }
 }
 
@@ -252,7 +255,7 @@ function setupSubmodule(
 function discoverAndHashSkills(
   root: string,
   upstreamKey: string,
-): Effect.Effect<DiscoveredSkill[], DirectoryReadError | FileReadError, SkillDiscoveryService | SkillHashService | LogService> {
+): Effect.Effect<Skill[], DirectoryReadError | FileReadError, SkillDiscoveryService | SkillHashService | LogService> {
   return Effect.gen(function* () {
     const skillDiscoveryService = yield* SkillDiscoveryService
     const skillHashService = yield* SkillHashService
@@ -262,7 +265,7 @@ function discoverAndHashSkills(
     const upstreamDirectory = path.join(root, 'upstream', upstreamKey)
     const discoveredSkillPaths = yield* skillDiscoveryService.discoverSkillsInDirectory(upstreamDirectory)
 
-    const discoveredSkills: DiscoveredSkill[] = []
+    const discoveredSkills: Skill[] = []
     for (const skillPath of discoveredSkillPaths) {
       const skillFullPath = path.join(upstreamDirectory, skillPath)
       const hash = yield* skillHashService.hashSkillDirectory(skillFullPath)
@@ -279,13 +282,13 @@ function updateMetaFile(
   upstreamKey: string,
   url: string,
   branch: string | undefined,
-  selectedSkills: Record<string, string>,
-  discoveredSkills: DiscoveredSkill[],
+  selectedSkills: Record<SkillPath, OutputName>,
+  discoveredSkills: Skill[],
 ): Effect.Effect<void, MetaWriteError, MetaFileService> {
   return Effect.gen(function* () {
     const metaFileService = yield* MetaFileService
 
-    const availableMap: Record<string, string> = {}
+    const availableMap: Record<SkillPath, SkillHash> = {}
     for (const skill of discoveredSkills) {
       availableMap[skill.path] = skill.hash
     }

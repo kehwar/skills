@@ -1,6 +1,8 @@
 import type {
   MetaJson,
 } from '../shared/services/index.js'
+import type { SkillPath } from '../shared/services/skill-discovery.js'
+import type { SkillHash } from '../shared/services/skill-hash.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
@@ -168,7 +170,7 @@ describe('sync e2e with real repo', () => {
     await fs.writeFile(staleFile, 'stale')
 
     const metaContent = JSON.parse(await fs.readFile(metaPath, 'utf8')) as MetaJson
-    metaContent.upstreams.mattpocock!.available[KNOW_SKILL_PATH] = 'tampered-hash'
+    metaContent.upstreams.mattpocock!.available[KNOW_SKILL_PATH as SkillPath] = 'tampered-hash' as SkillHash
     await fs.writeFile(metaPath, JSON.stringify(metaContent, undefined, 2))
 
     const result = await Effect.runPromise(
@@ -235,7 +237,7 @@ describe('sync e2e with real repo', () => {
 
     const updatedMeta = JSON.parse(await fs.readFile(metaPath, 'utf8')) as MetaJson
     const skills = updatedMeta.upstreams.mattpocock!.skills
-    expect(skills['nonexistent/skill']).toBeUndefined()
+    expect(skills['nonexistent/skill' as SkillPath]).toBeUndefined()
     expect(Object.keys(skills)).toHaveLength(0)
   }, 60_000)
 
