@@ -17,7 +17,7 @@ Reconciles a repo against the following **desired state**:
 | 5 | `bd` CLI installed | `command -v bd` succeeds |
 | 6 | Beads project initialised | `bd list` succeeds |
 | 7 | Beads config: no hooks, stealth mode, `.beads/` in `.git/info/exclude` | Config correct, exclude entry present |
-| 8 | Prescribed skills are available: `break-issue`, `grill-with-docs`, `tdd`, `write-issue`, `improve-codebase-architecture` | Each skill has an entry in `skills-lock.json` AND a directory under `.agents/skills/<skill>/` with `SKILL.md` |
+| 8 | Prescribed skills are available: `break-issue`, `grill-with-docs`, `handoff`, `improve-codebase-architecture`, `prototype`, `setup-workflow-skills`, `tdd`, `write-a-skill`, `write-issue`, `zoom-out` | Each skill has an entry in `skills-lock.json` AND a directory under `.agents/skills/<skill>/` with `SKILL.md` |
 
 The fix is always **plan-then-execute**: detect all deviations, report them, get user confirmation, then apply.
 
@@ -33,7 +33,7 @@ Check each goal against the current repo state:
 - **Goal 5**: `command -v bd`
 - **Goal 6**: `bd list` (or `bd --version` / equivalent non-mutating command)
 - **Goal 7**: Check for hooks config (beads.config.json or `.beads/` hooks), check stealth flag, check `.git/info/exclude` for `.beads/issues.jsonl`.
-- **Goal 8**: For each prescribed skill, check `skills-lock.json` for an entry keyed by the skill name, and check `.agents/skills/<skill>/SKILL.md` exists. Prescribed skills: `break-issue`, `grill-with-docs`, `tdd`, `write-issue`, `improve-codebase-architecture`.
+- **Goal 8**: For each prescribed skill, check `skills-lock.json` for an entry keyed by the skill name, and check `.agents/skills/<skill>/SKILL.md` exists. Prescribed skills: `break-issue`, `grill-with-docs`, `handoff`, `improve-codebase-architecture`, `prototype`, `setup-workflow-skills`, `tdd`, `write-a-skill`, `write-issue`, `zoom-out`.
 
 ### 2. Report
 
@@ -80,11 +80,11 @@ bd init --stealth --non-interactive
 
 **Goal 8 (prescribed skills):**
 For each missing skill:
-1. Compute the hash of `authored/engineering/<skill>/SKILL.md` (if it exists) — or locate the skill from the appropriate upstream submodule.
-2. Add or update the entry in `skills-lock.json` with `source: "kehwar/skills"`, `sourceType: "github"`, `skillPath: "authored/engineering/<skill>/SKILL.md"`, and the computed hash.
-3. Create `.agents/skills/<skill>/` and copy `SKILL.md` (and any supporting files) from the source location.
+```bash
+npx skills add kehwar/skills --skill <skillname> -y
+```
 
-If a skill doesn't exist locally and can't be resolved from an upstream submodule, flag it as requiring manual setup.
+If `npx skills` is not available, flag it as requiring manual setup.
 
 ### 5. Done
 
