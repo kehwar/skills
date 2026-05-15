@@ -2,13 +2,21 @@ import type { MetaJson, UpstreamEntry } from './meta-file.js'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
 import path from 'node:path'
-import { Effect } from 'effect'
+import { Effect, Either } from 'effect'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { MetaFileService } from './meta-file.js'
+import { MetaFileInvalidJsonError, MetaFileNotFoundError, MetaFileService, MetaFileUnknownError } from './meta-file.js'
 
 async function runWithMetaFileService<T>(effect: Effect.Effect<T, unknown, MetaFileService>): Promise<T> {
   return Effect.runPromise(
     effect.pipe(Effect.provide(MetaFileService.Default)),
+  )
+}
+
+async function runWithMetaFileServiceEither<T, E>(
+  effect: Effect.Effect<T, E, MetaFileService>,
+): Promise<Either.Either<T, E>> {
+  return Effect.runPromise(
+    Effect.either(effect.pipe(Effect.provide(MetaFileService.Default))),
   )
 }
 
@@ -24,7 +32,6 @@ describe('metaJson types from shared module', () => {
   })
 
   it('metaJson and UpstreamEntry types are importable', () => {
-    // Compile-time check: verify types exist by using them
     const entry: UpstreamEntry = {
       url: 'https://github.com/test/skills',
       skills: {},
@@ -73,6 +80,58 @@ describe('metaJson types from shared module', () => {
     )
 
     expect(result.upstreams?.test?.url).toBe('https://github.com/test/skills')
+  })
+
+  it('read returns MetaFileNotFoundError for missing file', async () => {
+    const metaPath = path.join(temporaryDirectory, 'nonexistent.json')
+
+    const result = await runWithMetaFileServiceEither(
+      Effect.gen(function* () {
+        const svc = yield* MetaFileService
+        return yield* svc.read(metaPath)
+      }),
+    )
+
+    expect(Either.isLeft(result)).toBe(true)
+    if (Either.isLeft(result)) {
+      expect(result.left).toBeInstanceOf(MetaFileNotFoundError)
+      expect(result.left.filePath).toBe(metaPath)
+    }
+  })
+
+  it('read returns MetaFileInvalidJsonError for bad JSON', async () => {
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(metaPath, '{ bad json }')
+
+    const result = await runWithMetaFileServiceEither(
+      Effect.gen(function* () {
+        const svc = yield* MetaFileService
+        return yield* svc.read(metaPath)
+      }),
+    )
+
+    expect(Either.isLeft(result)).toBe(true)
+    if (Either.isLeft(result)) {
+      expect(result.left).toBeInstanceOf(MetaFileInvalidJsonError)
+      expect(result.left.filePath).toBe(metaPath)
+    }
+  })
+
+  it('read returns MetaFileUnknownError for non-ENOENT/EACCES system errors', async () => {
+    const metaPath = path.join(temporaryDirectory, 'meta.json')
+    await fs.writeFile(metaPath, '{}')
+
+    const result = await runWithMetaFileServiceEither(
+      Effect.gen(function* () {
+        const svc = yield* MetaFileService
+        return yield* svc.read('/dev/null/meta.json')
+      }),
+    )
+
+    expect(Either.isLeft(result)).toBe(true)
+    if (Either.isLeft(result)) {
+      expect(result.left).toBeInstanceOf(MetaFileUnknownError)
+    }
   })
 
   it('write accepts MetaJson shape', async () => {

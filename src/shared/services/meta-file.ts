@@ -12,7 +12,21 @@ export interface MetaJson {
   upstreams: Record<string, UpstreamEntry>
 }
 
-export class MetaFileReadError extends Data.TaggedError('MetaFileReadError')<{
+export class MetaFileNotFoundError extends Data.TaggedError('MetaFileNotFoundError')<{
+  filePath: string
+}> {}
+
+export class MetaFileInvalidJsonError extends Data.TaggedError('MetaFileInvalidJsonError')<{
+  filePath: string
+  parseError: string
+}> {}
+
+export class MetaFilePermissionDeniedError extends Data.TaggedError('MetaFilePermissionDeniedError')<{
+  filePath: string
+}> {}
+
+export class MetaFileUnknownError extends Data.TaggedError('MetaFileUnknownError')<{
+  filePath: string
   message: string
 }> {}
 
@@ -20,20 +34,44 @@ export class MetaFileWriteError extends Data.TaggedError('MetaFileWriteError')<{
   message: string
 }> {}
 
+function isSystemError(error: unknown): error is { code: string } {
+  return error instanceof Error && 'code' in error
+}
+
 export class MetaFileService extends Effect.Service<MetaFileService>()('shared/MetaFileService', {
   effect: Effect.sync(() => ({
     read: (filePath: string) =>
       Effect.tryPromise({
         try: async () => {
+          let content: string
           try {
-            const content = await fs.readFile(filePath, 'utf8')
+            content = await fs.readFile(filePath, 'utf8')
+          }
+          catch (error) {
+            if (isSystemError(error)) {
+              if (error.code === 'ENOENT') {
+                throw new MetaFileNotFoundError({ filePath })
+              }
+              if (error.code === 'EACCES' || error.code === 'EPERM') {
+                throw new MetaFilePermissionDeniedError({ filePath })
+              }
+            }
+            throw new MetaFileUnknownError({ filePath, message: String(error) })
+          }
+
+          try {
             return JSON.parse(content) as Partial<MetaJson>
           }
-          catch {
-            return { upstreams: {} }
+          catch (error) {
+            throw new MetaFileInvalidJsonError({ filePath, parseError: String(error) })
           }
         },
-        catch: () => new MetaFileReadError({ message: 'Failed to read meta.json' }),
+        catch: error =>
+          error as
+          | MetaFileNotFoundError
+          | MetaFileInvalidJsonError
+          | MetaFilePermissionDeniedError
+          | MetaFileUnknownError,
       }),
 
     write: (filePath: string, data: MetaJson) =>

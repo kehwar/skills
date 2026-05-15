@@ -47,8 +47,10 @@ export function cloneSkills(
 
     const metaPath = path.join(input.root, 'meta.json')
     const metaData = yield* metaFileService.read(metaPath).pipe(
-      Effect.catchAll(() =>
-        Effect.fail(new MetaFileError({ message: 'Failed to read meta.json' })),
+      Effect.catchAll(error =>
+        logService.warn(`Failed to read meta.json: ${error._tag}`).pipe(
+          Effect.andThen(Effect.succeed({ upstreams: {} })),
+        ),
       ),
     )
     const metaJson: MetaJson = { upstreams: {}, ...metaData }

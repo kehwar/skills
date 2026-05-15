@@ -1,8 +1,9 @@
-import type { LogService, UpstreamEntry } from '../shared/services/index.js'
+import type { UpstreamEntry } from '../shared/services/index.js'
 import path from 'node:path'
 import { Effect } from 'effect'
 import {
   GitService,
+  LogService,
   MetaFileService,
 } from '../shared/services/index.js'
 
@@ -62,10 +63,15 @@ export function check(
 ): Effect.Effect<CheckOutput, never, CheckServices> {
   return Effect.gen(function* () {
     const metaFileService = yield* MetaFileService
+    const logService = yield* LogService
 
     const metaPath = path.join(input.root, 'meta.json')
     const metaData = yield* metaFileService.read(metaPath).pipe(
-      Effect.catchAllCause(() => Effect.succeed({ upstreams: {} })),
+      Effect.catchAll(error =>
+        logService.warn(`Failed to read meta.json: ${error._tag}`).pipe(
+          Effect.andThen(Effect.succeed({ upstreams: {} })),
+        ),
+      ),
     )
     const rawUpstreams = metaData.upstreams || {}
     const upstreams = rawUpstreams as Record<string, UpstreamEntry>
