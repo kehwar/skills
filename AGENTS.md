@@ -1,35 +1,43 @@
-## Before exploring, read these
+# Agent context for this repo
 
-- **`docs/glossary.md`** — domain glossary and language for this project
-- **`docs/adr/`** — ADRs that touch the area you're about to work in.
-
-If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront.
-
-## Issue tracker
-
-Issues are tracked exclusively with Beads Issue Tracker (`bd`). When working with issues read `docs/issue-tracker.md`.
-
-## Use the glossary's vocabulary
-
-When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
-
-If the concept you need isn't in the glossary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap, flag it to the user.
-
-## Flag ADR conflicts
-
-If your output contradicts an existing ADR, surface it explicitly rather than silently overriding:
-
-> _Contradicts ADR-0007 (event-sourced orders) — but worth reopening because…_
-
-## File structure & key locations
+## File structure
 
 ```
 /
-├── docs/glossary.md        # domain glossary
-├── docs/issue-tracker.md   # issue guidelines
-├── docs/adr/               # architecture decisions
-├── meta.json               # Upstream config (url, branch, skill selections)
-├── authored/<domain>/      # Authored Skills (type: "authored") — never overwritten
-├── synced/<name>/          # Synced Skills (copied from Upstreams) — ephemeral!
-├── upstream/<key>/         # read-only Upstream submodules — never edit
+├── scripts/upstreams.py       # Manage upstream submodules (update, add, remove)
+├── upstream.yaml              # Metadata for all upstream repos (url, branch, commit, fetch time)
+├── upstream/<key>/            # Git submodules — read-only, never edit directly
+├── skills/engineering/        # Engineering skills (adapted from upstream)
+│   ├── skill-router/          # Router — maps all skills and flows
+│   ├── setup-reference.md     # One-time per-repo config guide
+│   └── .../
+├── skills/archived/           # Old skills no longer in use
+├── skills/frappe/             # Authored skills (frappe domain)
+├── skills/sap/                # Authored skills (SAP domain)
+├── skills/typst/              # Authored skills (typst domain)
+├── docs/                      # Documentation
+└── .gitmodules                # Submodule definitions
 ```
+
+## Skill conventions
+
+When adapting a skill from an upstream source, always add a `metadata.adapted-from-upstream-skill` array to the frontmatter listing every upstream skill it derives from. Each entry must include the upstream submodule commit SHA (abbreviated) pinned with `@sha` — this captures the exact version the skill was adapted from. Keep both the paths and SHAs up to date whenever the adaptation evolves.
+
+Example:
+```yaml
+metadata:
+  adapted-from-upstream-skill:
+    - upstream/mattpocock/skills/engineering/ask-matt@1445797d
+    - upstream/mattpocock/skills/engineering/setup-matt-pocock-skills@1445797d
+```
+
+## Workflow
+
+The main flow is documented in `skill_view('skill-router')`. Key tools:
+
+- **`scripts/upstreams.py`** — manage upstream submodules
+  - `--yaml` — refresh `upstream.yaml` from current submodule state
+  - `--add <name> <url>` — add a new upstream (detects default branch)
+  - `--remove <name>` — remove an upstream
+  - `--update <name>` — update a single upstream
+  - no args — update all upstreams
