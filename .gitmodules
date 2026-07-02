@@ -57,9 +57,11 @@
 [submodule "upstream/effect"]
 	path = upstream/effect
 	url = https://github.com/Effect-TS/effect
+	branch = main
 [submodule "upstream/effect-examples"]
 	path = upstream/effect-examples
 	url = https://github.com/Effect-TS/examples
+	branch = main
 [submodule "upstream/eslint-config"]
 	path = upstream/eslint-config
 	url = https://github.com/antfu/eslint-config
