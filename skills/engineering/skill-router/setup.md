@@ -43,11 +43,11 @@ The block:
 
 ### Issue tracker
 
-[one-line summary of where issues are tracked]. See /issue-tracker skill.
+See /issue-tracker skill.
 
 ### Domain docs
 
-[one-line summary of layout — "single-context" or "multi-context"]. Read `CONTEXT-MAP.md` at the profile root.
+Read `CONTEXT-MAP.md` at the profile root.
 ```
 
 ### 5. Done
