@@ -9,12 +9,8 @@
 ├── upstream/<key>/            # Git submodules — read-only, never edit directly
 ├── skills/engineering/        # Engineering skills (adapted from upstream)
 │   ├── skill-router/          # Router — maps all skills and flows
-│   ├── setup-reference.md     # One-time per-repo config guide
 │   └── .../
 ├── skills/archived/           # Old skills no longer in use
-├── skills/frappe/             # Authored skills (frappe domain)
-├── skills/sap/                # Authored skills (SAP domain)
-├── skills/typst/              # Authored skills (typst domain)
 ├── docs/                      # Documentation
 └── .gitmodules                # Submodule definitions
 ```
@@ -33,7 +29,7 @@ metadata:
 
 ## Workflow
 
-The main flow is documented in `skill_view('skill-router')`. Key tools:
+The main flow is documented in `/skill-router`. Key tools:
 
 - **`scripts/upstreams.py`** — manage upstream submodules
   - `--yaml` — refresh `upstream.yaml` from current submodule state

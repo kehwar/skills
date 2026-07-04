@@ -1,7 +1,6 @@
 ---
 name: implement
 description: "Implement a piece of work based on a PRD or set of issues."
-disable-model-invocation: true
 metadata:
   adapted-from-upstream-skill:
     - upstream/mattpocock/skills/engineering/implement@1445797d
@@ -9,10 +8,10 @@ metadata:
 
 Implement the work described by the user in the PRD or issues.
 
-Use /tdd where possible, at pre-agreed seams.
+Use the /tdd skill where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use /code-review to review the work.
+Once done, use the /code-review skill to review the work.
 
 Commit your work to the current branch.

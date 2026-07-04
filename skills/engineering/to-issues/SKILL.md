@@ -1,7 +1,6 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.
-disable-model-invocation: true
+description: Use when you have a plan, spec, or PRD that needs to be split into independently-grabbable issue-tracker tickets using tracer-bullet vertical slices.
 metadata:
   adapted-from-upstream-skill:
     - upstream/mattpocock/skills/engineering/to-issues@1445797d
@@ -11,7 +10,7 @@ metadata:
 
 Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
 
-The issue tracker and triage label vocabulary should have been provided to you — run skill_view('setup-workflow-skills') if not.
+The issue tracker and triage label vocabulary should have been provided to you — use the /issue-tracker skill if not.
 
 ## Process
 

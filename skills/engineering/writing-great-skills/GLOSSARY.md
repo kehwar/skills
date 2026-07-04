@@ -25,6 +25,7 @@ _Avoid_: ability, tool, capability
 ### User-Invoked
 
 A skill with its **description** stripped — invisible to the agent and reachable only by the human typing its name (user-_only_, where **model-invoked** is user-_and-agent_). Trades agent-discoverability for zero **context load**. Because it has no description, nothing but the human can reach it: no other skill can fire it.
+Not supported by Hermes Agent.
 
 _Avoid_: procedure, workflow, command
 
