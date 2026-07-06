@@ -20,13 +20,10 @@ Actively build and sharpen the profile's domain model as you design. This is the
 ├── CONTEXT.md                        ← profile-wide glossary
 ├── docs/
 │   └── adr/                          ← system-wide decisions
-├── src/
-│   ├── ordering/
+├── <path-to-project>/
+│   ├── <project-a>/
 │   │   ├── CONTEXT.md
 │   │   └── docs/adr/                 ← context-specific decisions
-│   └── billing/
-│       ├── CONTEXT.md
-│       └── docs/adr/
 ```
 
 Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
