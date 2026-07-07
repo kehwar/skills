@@ -1,5 +1,7 @@
 # Agent context for this repo
 
+> **Glossary and domain vocabulary** for this repository are defined in [CONTEXT.md](./CONTEXT.md). Read it first for the shared language used here.
+
 ## File structure
 
 ```
