@@ -75,15 +75,11 @@ skills:
   domain-modeling:
     source: engineering/domain-modeling
     steps:
-      - replace:
-          target: frontmatter.description
-          old: "project's domain model"
-          new: "profile's domain model"
+      - patch: domain-modeling/file-structure.patch
       - replace:
           old: "project's domain model"
           new: "profile's domain model"
           all: true
-      - patch: domain-modeling/file-structure.patch
 
   improve-codebase-architecture:
     source: engineering/improve-codebase-architecture
@@ -96,8 +92,9 @@ skills:
     source: engineering/triage
     steps:
       - replace:
-          old: "These are canonical role names \u2014 the actual label strings used in the issue tracker may differ. The mapping should have been provided to you - run `/setup-matt-pocock-skills` if not.\n\n"
+          old: 'These are canonical role names.*?\n\n'
           new: ""
+          regex: true
       - replace:
           old: 'run the `/grilling` and `/domain-modeling` skills together'
           new: 'run the `/grill-me` skill'
@@ -121,30 +118,33 @@ skills:
           old: "ask-matt"
           new: "skill-router"
       - replace:
-          target: frontmatter.description
           old: "skills in this repo"
           new: "skills in this profile"
       - replace:
           old: '# Ask Matt'
           new: '# Skill Router'
       - replace:
-          old: '[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)'
+          old: '\[smart zone\]\([^)]+\)'
           new: 'smart zone'
+          regex: true
       - replace:
           old: "/grill-with-docs"
           new: "/grill-me"
           all: true
       - replace:
-          old: "- **`/grill-me`** — the same relentless interview as `/grill-me`, but for when you have **no codebase**. Stateless: it saves nothing locally, builds no `CONTEXT.md`. Reach for it to sharpen any plan or design that doesn't live in a repo.\n"
+          old: '^- \*\*`/grill-me`\*\*.*\n'
           new: ""
+          regex: true
           all: true
       - replace:
-          old: "/compact"
-          new: "/compress"
+          old: '/compact(?=\W|$)'
+          new: '/compress'
+          regex: true
           all: true
       - replace:
-          old: "## Precondition\n\n**`/setup-matt-pocock-skills`** \u2014 run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work."
+          old: '## Precondition\n\n\*\*`/setup-matt-pocock-skills`\*\*.*'
           new: ""
+          regex: true
       - replace:
           old: ". Start here when you **have a codebase**:"
           new: ","

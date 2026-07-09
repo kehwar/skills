@@ -40,7 +40,7 @@ def replace_in_file(path, old, new, count=1, regex=False):
     content = _read(p)
     if content is None: return
     if regex:
-        new_content = re.sub(old, new, content, count=count if count > 0 else 0)
+        new_content = re.sub(old, new, content, count=count if count > 0 else 0, flags=re.MULTILINE)
         if content == new_content:
             return print(f"  ⚠  WARNING: regex pattern not found in {p}\n     {old[:80]!r}…")
     else:
