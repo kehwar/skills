@@ -128,6 +128,39 @@ def refresh_yaml(modules=None):
     print(f"\N{check mark} upstream.yaml written ({len(upstreams)} upstreams)")
 
 
+# ── mergify exclusion ─────────────────────────────────────────────────
+
+def exclude_mergify_refs(name):
+    """Configure the submodule to skip mergify/* refs during fetch.
+    These automated backport branches clutter ref storage and cause
+    permissions/locking errors on long branch names.
+    """
+    git_mod_dir = REPO_ROOT / ".git" / "modules" / "upstream" / name
+    config_file = git_mod_dir / "config"
+    if not config_file.exists():
+        return  # not initialised yet — skip
+
+    # Check if the exclusion is already set
+    out, _, rc = run(
+        ["git", "config", "--get", "remote.origin.fetch",
+         r"\^refs/heads/mergify/\*"],
+        cwd=str(git_mod_dir),
+    )
+    if rc == 0 and out:
+        return  # already excluded
+
+    # Add the negative refspec
+    _, _, rc = run(
+        ["git", "config", "--add", "remote.origin.fetch",
+         "^refs/heads/mergify/*"],
+        cwd=str(git_mod_dir),
+    )
+    if rc == 0:
+        print(f"  \N{check mark} mergify refs excluded for {name}")
+    else:
+        print(f"  \u26a0  could not set mergify exclusion for {name}")
+
+
 # ── operations ───────────────────────────────────────────────────────
 
 def update_all():
@@ -143,6 +176,10 @@ def update_all():
     out, _, _ = run(["git", "submodule", "status"])
     for line in out.splitlines():
         print(f"  {line}")
+    # Apply mergify exclusion to all existing submodules
+    modules = parse_gitmodules()
+    for name in modules:
+        exclude_mergify_refs(name)
     refresh_yaml()
 
 
@@ -163,6 +200,7 @@ def update_one(name):
             print(f"     {line}")
     else:
         print("  \N{check mark} updated")
+    exclude_mergify_refs(name)
     # refresh yaml for just this entry
     now = gmt5_now()
     hash_, date_ = get_commit_info(sub_path)
@@ -204,6 +242,8 @@ def add_upstream(name, url, branch=None):
 
     if branch:
         run(["git", "config", "-f", ".gitmodules", f"submodule.{name}.branch", branch])
+
+    exclude_mergify_refs(name)
 
     # re-read modules to get the updated branch info
     modules = parse_gitmodules()

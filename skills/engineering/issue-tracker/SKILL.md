@@ -1,9 +1,6 @@
 ---
 name: issue-tracker
 description: Use when you need to interact with the profile issue tracker.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/setup-matt-pocock-skills@1445797d
 ---
 
 # Issue tracker: Obsidian Vault

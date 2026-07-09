@@ -46,6 +46,9 @@ skills:
   writing-great-skills:
     source: productivity/writing-great-skills
 
+  improve-codebase-architecture:
+    source: engineering/improve-codebase-architecture
+
   # ── Text replacements ──
 
   code-review:
@@ -58,19 +61,29 @@ skills:
           old: 'in `docs/agents/issue-tracker.md`'
           new: 'in /issue-tracker'
 
-  to-issues:
-    source: engineering/to-issues
+  to-tickets:
+    source: engineering/to-tickets
     steps:
       - replace:
-          old: 'run `/setup-matt-pocock-skills` if not.'
-          new: 'use the /issue-tracker skill if not.'
+          old: "run `/setup-matt-pocock-skills` if not."
+          new: "use the /issue-tracker skill if not."
+      - replace:
+          old: "depends on the tracker `/setup-matt-pocock-skills` configured"
+          new: "depends on /issue-tracker skill"
 
-  to-prd:
-    source: engineering/to-prd
+  to-spec:
+    source: engineering/to-spec
     steps:
       - replace:
-          old: 'run `/setup-matt-pocock-skills` if not.'
-          new: 'use the /issue-tracker skill if not.'
+          old: "run `/setup-matt-pocock-skills` if not."
+          new: "use the /issue-tracker skill if not."
+
+  wayfinder:
+    source: engineering/wayfinder
+    steps:
+      - replace:
+          old: "run `/setup-matt-pocock-skills` if not."
+          new: "use the /issue-tracker skill if not."
 
   domain-modeling:
     source: engineering/domain-modeling
@@ -81,13 +94,6 @@ skills:
           new: "profile's domain model"
           all: true
 
-  improve-codebase-architecture:
-    source: engineering/improve-codebase-architecture
-    steps:
-      - replace:
-          old: '`/grilling`'
-          new: '`/grill-me`'
-
   triage:
     source: engineering/triage
     steps:
@@ -95,26 +101,18 @@ skills:
           old: 'These are canonical role names.*?\n\n'
           new: ""
           regex: true
-      - replace:
-          old: 'run the `/grilling` and `/domain-modeling` skills together'
-          new: 'run the `/grill-me` skill'
 
-  grill-me:
+  grilling:
     source: productivity/grilling
     steps:
       - replace:
-          target: frontmatter.name
-          old: "grilling"
-          new: "grill-me"
-      - replace:
-          old: "If a question can be answered by exploring the codebase, explore the codebase instead."
-          new: "If a question can be answered by exploring the codebase, explore the codebase instead.\n\nAs decisions crystallize, run the /domain-modeling skill to keep the domain model current — sharpen terms, update `CONTEXT.md`, and record ADRs inline as you go."
+          old: "The *decisions*, though, are mine — put each one to me and wait for my answer."
+          new: "The *decisions*, though, are mine — put each one to me and wait for my answer. As decisions crystallize, run the /domain-modeling skill to keep the domain model current."
 
   skill-router:
     source: engineering/ask-matt
     steps:
       - replace:
-          target: frontmatter.name
           old: "ask-matt"
           new: "skill-router"
       - replace:
@@ -129,7 +127,7 @@ skills:
           regex: true
       - replace:
           old: "/grill-with-docs"
-          new: "/grill-me"
+          new: "/grilling"
           all: true
       - replace:
           old: '^- \*\*`/grill-me`\*\*.*\n'
