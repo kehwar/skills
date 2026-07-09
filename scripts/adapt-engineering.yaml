@@ -1,0 +1,153 @@
+# Engineering skill adaptation manifest for upstream/mattpocock
+#
+# Only skills listed here are rebuilt from upstream. Skills not listed
+# (custom originals, manually managed) are left untouched.
+#
+# Each entry: source path + optional steps.
+# Steps run in order: copy dir -> replace -> patch.
+#
+# Step types:
+#   - replace: {old: "...", new: ""}          Simple find-and-replace
+#   - replace: {target: "frontmatter.X", ...}  YAML frontmatter field replacement
+#   - replace: {old: "...", new: "...", regex: true}  Regex replacement (\1 groups supported)
+#   - patch: "path/to/patch.patch"            Apply unified diff patch file
+
+patches_dir: patches/mattpocock
+
+skills:
+  # ── Copy-only (no changes needed) ──
+  tdd:
+    source: engineering/tdd
+
+  codebase-design:
+    source: engineering/codebase-design
+
+  prototype:
+    source: engineering/prototype
+
+  research:
+    source: engineering/research
+
+  resolving-merge-conflicts:
+    source: engineering/resolving-merge-conflicts
+
+  diagnosing-bugs:
+    source: engineering/diagnosing-bugs
+
+  implement:
+    source: engineering/implement
+
+  handoff:
+    source: productivity/handoff
+
+  teach:
+    source: productivity/teach
+
+  writing-great-skills:
+    source: productivity/writing-great-skills
+
+  # ── Text replacements ──
+
+  code-review:
+    source: engineering/code-review
+    steps:
+      - replace:
+          old: 'run `/setup-matt-pocock-skills` if `docs/agents/issue-tracker.md` is missing'
+          new: "use the /issue-tracker skill if it's missing"
+      - replace:
+          old: 'in `docs/agents/issue-tracker.md`'
+          new: 'in /issue-tracker'
+
+  to-issues:
+    source: engineering/to-issues
+    steps:
+      - replace:
+          old: 'run `/setup-matt-pocock-skills` if not.'
+          new: 'use the /issue-tracker skill if not.'
+
+  to-prd:
+    source: engineering/to-prd
+    steps:
+      - replace:
+          old: 'run `/setup-matt-pocock-skills` if not.'
+          new: 'use the /issue-tracker skill if not.'
+
+  domain-modeling:
+    source: engineering/domain-modeling
+    steps:
+      - replace:
+          target: frontmatter.description
+          old: "project's domain model"
+          new: "profile's domain model"
+      - replace:
+          old: "project's domain model"
+          new: "profile's domain model"
+          all: true
+      - patch: domain-modeling/file-structure.patch
+
+  improve-codebase-architecture:
+    source: engineering/improve-codebase-architecture
+    steps:
+      - replace:
+          old: '`/grilling`'
+          new: '`/grill-me`'
+
+  triage:
+    source: engineering/triage
+    steps:
+      - replace:
+          old: "These are canonical role names \u2014 the actual label strings used in the issue tracker may differ. The mapping should have been provided to you - run `/setup-matt-pocock-skills` if not.\n\n"
+          new: ""
+      - replace:
+          old: 'run the `/grilling` and `/domain-modeling` skills together'
+          new: 'run the `/grill-me` skill'
+
+  grill-me:
+    source: productivity/grilling
+    steps:
+      - replace:
+          target: frontmatter.name
+          old: "grilling"
+          new: "grill-me"
+      - replace:
+          old: "If a question can be answered by exploring the codebase, explore the codebase instead."
+          new: "If a question can be answered by exploring the codebase, explore the codebase instead.\n\nAs decisions crystallize, run the /domain-modeling skill to keep the domain model current — sharpen terms, update `CONTEXT.md`, and record ADRs inline as you go."
+
+  skill-router:
+    source: engineering/ask-matt
+    steps:
+      - replace:
+          target: frontmatter.name
+          old: "ask-matt"
+          new: "skill-router"
+      - replace:
+          target: frontmatter.description
+          old: "skills in this repo"
+          new: "skills in this profile"
+      - replace:
+          old: '# Ask Matt'
+          new: '# Skill Router'
+      - replace:
+          old: '[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)'
+          new: 'smart zone'
+      - replace:
+          old: "/grill-with-docs"
+          new: "/grill-me"
+          all: true
+      - replace:
+          old: "- **`/grill-me`** — the same relentless interview as `/grill-me`, but for when you have **no codebase**. Stateless: it saves nothing locally, builds no `CONTEXT.md`. Reach for it to sharpen any plan or design that doesn't live in a repo.\n"
+          new: ""
+          all: true
+      - replace:
+          old: "/compact"
+          new: "/compress"
+          all: true
+      - replace:
+          old: "## Precondition\n\n**`/setup-matt-pocock-skills`** \u2014 run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work."
+          new: ""
+      - replace:
+          old: ". Start here when you **have a codebase**:"
+          new: ","
+      - replace:
+          old: " (No codebase? Use `/grill-me` — see Standalone. Both run the same `/grilling` primitive; `grill-with-docs` is the one that leaves a paper trail.)"
+          new: ""

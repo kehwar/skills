@@ -1,9 +1,7 @@
 ---
 name: to-prd
-description: Use when you need to turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/to-prd@1445797d
+description: Turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.
+disable-model-invocation: true
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.

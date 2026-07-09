@@ -1,9 +1,7 @@
 ---
 name: to-issues
-description: Use when you have a plan, spec, or PRD that needs to be split into independently-grabbable issue-tracker tickets using tracer-bullet vertical slices.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/to-issues@1445797d
+description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.
+disable-model-invocation: true
 ---
 
 # To Issues

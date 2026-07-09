@@ -1,9 +1,6 @@
 ---
 name: domain-modeling
 description: Build and sharpen a profile's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/domain-modeling@1445797d
 ---
 
 # Domain Modeling

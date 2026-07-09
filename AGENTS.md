@@ -17,19 +17,32 @@
 └── .gitmodules                # Submodule definitions
 ```
 
-## Skill conventions
+## Engineering skill adaptation
 
-When adapting a skill from an upstream source, always add a `metadata.adapted-from-upstream-skill` array to the frontmatter listing every upstream skill it derives from. Each entry must include the upstream submodule commit SHA (abbreviated) pinned with `@sha` — this captures the exact version the skill was adapted from. Keep both the paths and SHAs up to date whenever the adaptation evolves.
+Engineering skills are adapted from `upstream/mattpocock/`. The adaptation is defined declaratively in **`scripts/adapt-engineering.py`** — a manifest that copies upstream directories, renames skills (e.g. `productivity/handoff` → `engineering/handoff`), and applies text replacements. The script **is** the provenance; no metadata blocks in the output files.
 
-Example:
-```yaml
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/ask-matt@1445797d
-    - upstream/mattpocock/skills/engineering/setup-matt-pocock-skills@1445797d
+### Update workflow
+
+```bash
+# 1. Pull latest upstream submodule
+./scripts/upstreams.py --update mattpocock
+
+# 2. Rebuild adapted skills
+./scripts/adapt-engineering.py
+
+# 3. Review changes
+git diff
+
+# 4. If replacements/patches apply cleanly (no warnings), commit
 ```
 
-## Workflow
+The script reads `scripts/adapt-engineering.yaml` — the build manifest. Only skills listed there are rebuilt from upstream. Skills not listed (custom originals like `skill-router`, `issue-tracker`) are left untouched.
+
+### Beware false positives
+
+`adapt-engineering.py` does **not** warn when a replacement succeeds on changed text that still *looks* right. Always review `git diff` semantically after an update.
+
+## Other workflow
 
 The main flow is documented in `/skill-router`. Key tools:
 

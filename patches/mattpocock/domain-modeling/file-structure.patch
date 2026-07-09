@@ -1,0 +1,39 @@
+--- SKILL.md
++++ SKILL.md
+@@ -9,32 +9,18 @@
+ 
+ ## File structure
+ 
+-Most repos have a single context:
+-
+-```
+-/
+-├── CONTEXT.md
+-├── docs/
+-│   └── adr/
+-│       ├── 0001-event-sourced-orders.md
+-│       └── 0002-postgres-for-write-model.md
+-└── src/
+-```
+-
+-If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
++`CONTEXT-MAP.md` exists at the root, the profile has multiple contexts. The map points to where each one lives:
+ 
+ ```
+ /
+ ├── CONTEXT-MAP.md
++├── CONTEXT.md                        ← profile-wide glossary
+ ├── docs/
+ │   └── adr/                          ← system-wide decisions
+-├── src/
+-│   ├── ordering/
++├── <path-to-project>/
++│   ├── <project-a>/
+ │   │   ├── CONTEXT.md
+ │   │   └── docs/adr/                 ← context-specific decisions
+-│   └── billing/
+-│       ├── CONTEXT.md
+-│       └── docs/adr/
+ ```
+ 
+ Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.

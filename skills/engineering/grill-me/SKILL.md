@@ -1,15 +1,13 @@
 ---
 name: grill-me
-description: Grilling session that also builds docs — a relentless interview to sharpen a plan or design, creating ADRs and glossary entries as decisions land.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/grill-with-docs@1445797d
-    - upstream/mattpocock/skills/productivity/grill-me@1445797d
-    - upstream/mattpocock/skills/productivity/grilling@1445797d
+description: Interview the user relentlessly about a plan or design. Use when the
+  user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.
 ---
 
-Interview the user relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
 
-Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering. If a question can be answered by exploring the codebase, explore the codebase instead.
+Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering.
+
+If a question can be answered by exploring the codebase, explore the codebase instead.
 
 As decisions crystallize, run the /domain-modeling skill to keep the domain model current — sharpen terms, update `CONTEXT.md`, and record ADRs inline as you go.

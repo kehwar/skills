@@ -1,9 +1,6 @@
 ---
 name: tdd
 description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
-metadata:
-  adapted-from-upstream-skill:
-    - upstream/mattpocock/skills/engineering/tdd@1445797d
 ---
 
 # Test-Driven Development
